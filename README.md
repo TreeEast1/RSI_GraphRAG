@@ -6,25 +6,35 @@
 本仓库汇总我们从 2026-10-27 到 2026-11-12 在两台服务器上做的全部实验：代码、结果文件、报告、逐题 case。
 **进度按时间倒序排列，最新的在最上面。**
 
-| 我想看… | 去哪里 |
+## 0. 先看这里：这项工作在做什么？
+
+**RSI GraphRAG** 研究的是：能不能让 GraphRAG 在“读文档时先形成更好的理解”，在“问题到来时再用技能补足检索和回答”，并把验证过的经验保存成可回滚的技能记忆。
+
+![RSI GraphRAG 三段式概念总览](docs/assets/rsigraph-rag-overview.png)
+
+上图只表达“研究闭环”的心智模型：底部回路表示经验持续沉淀，不表示 Question-Time 记忆会改写原始文档或冻结的 `G_raw`；精确的数据流和代码入口见 [§2 方法设计](#2-方法设计与完整-pipeline)。阅读 README 时可以沿着这条路径走：
+
+| 先回答哪个问题？ | 先看哪里？ |
 |---|---|
-| 一分钟了解现状 | [§1 当前结论](#1-当前结论一分钟版) |
-| 方法与完整 pipeline | [§2 方法设计](#2-方法设计与完整-pipeline) · [docs/METHOD.md](docs/METHOD.md) |
-| 每个数据集的实验（新→旧） | [§3 实验进度](#3-实验进度最新在上) · [experiments/](experiments/README.md) |
-| 数据集横向对比 / 别的工作做到多少 | [§4 数据集对比](#4-数据集横向对比) · [docs/REFERENCE_NUMBERS.md](docs/REFERENCE_NUMBERS.md) |
-| 为什么没 work：数据集问题还是方法问题 | [§5 问题诊断](#5-问题诊断数据集问题-vs-方法问题) |
-| 原始结果文件在哪 | [outputs/README.md](outputs/README.md) · [legacy/algernon_musique/](legacy/algernon_musique/README.md) |
-| 代码结构 / 复现 | [§6 仓库结构](#6-仓库结构与代码地图) |
+| 目前到底发现了什么？ | [§1 当前结论](#1-当前结论一分钟版) |
+| 方法由哪些阶段组成？ | [§2 方法设计](#2-方法设计与完整-pipeline) · [docs/METHOD.md](docs/METHOD.md) |
+| 结论由哪些数据集支撑？ | [§3 实验进度](#3-实验进度最新在上) · [experiments/](experiments/README.md) |
+| 是方法问题还是数据集问题？ | [§5 问题诊断](#5-问题诊断数据集问题-vs-方法问题) |
+| 怎么复现或核对原始结果？ | [§6 仓库结构](#6-仓库结构与代码地图) · [outputs/README.md](outputs/README.md) |
+| 想看横向数字和外部参考 | [§4 数据集对比](#4-数据集横向对比) · [docs/REFERENCE_NUMBERS.md](docs/REFERENCE_NUMBERS.md) |
+| 想看每个数据集的完整细节 | [experiments/](experiments/README.md) · [legacy/algernon_musique/](legacy/algernon_musique/README.md) |
 
 ---
 
 ## 1. 当前结论（一分钟版）
 
-```text
-MuSiQue/Wiki ──► LoCoMo ──► QASPER ──► DetectiveQA (当前)
-  语料碎片化，     池太小、已饱和，   图 < dense，      最近前缀 = oracle，
-  长不出跨文档理解  Reader 是瓶颈     unit 覆盖不足      gold 标注不可靠
-```
+先记住三句话：**检索能变好，答案未必跟着变好；Reader 和数据集质量是硬上限；下一步要先修切分和标注，再继续加图。**
+
+| 观察 | 目前结论 | 证据入口 |
+|---|---|---|
+| 检索层 | 局部可改善，但提升经常被 Reader 吃掉 | LoCoMo R@5 `.864 → .885`；QASPER 图低于 dense |
+| 理解层 | 新关系很难进入 top-5 fact，覆盖不是唯一瓶颈 | conv-30 漏斗 `99 → 5 → 1` |
+| 基准层 | DetectiveQA 的 locality、剧透和 gold 质量先于图结构需要修复 | `recent .805 = oracle`；30/41 题 cutoff 前已揭晓 |
 
 1. **检索层可以被改善，答案层几乎不跟随。** LoCoMo test 上图变体把 R@5 从 .864 提到 .885，但 8 个组合的 F1 都在 .472–.494。
 2. **新知识很少能进入检索链路。** conv-30 上有 99/105 题挂了触及 gold 的新关系，但只有 5 题进入 top-5 fact，最后只有 1 题（q16）变对。
@@ -49,44 +59,61 @@ MuSiQue/Wiki ──► LoCoMo ──► QASPER ──► DetectiveQA (当前)
 | **Question-Time Skill** | 问题到来时，QDM 负责拆解，Retrieval Skill 诊断缺失的关系链，Answer Skill 负责校验和修订，以补上静态图覆盖不到的查询形态。 | H5, H6 |
 | **RSI Skill Memory** | 把 Question-Time 学到的经验写成可累积、可版本化、可淘汰的技能记忆，不改模型权重。 | H10 |
 
-### 2.2 完整 pipeline
+### 2.2 三段 pipeline：先看结构，再看实现
+
+把完整系统拆成三个时间尺度后，阅读负担会小很多：**Read-Time 是离线建图，Question-Time 是每题在线推理，RSI Memory 是只在 adaptation 集上学习的反馈回路。**
+
+#### ① Read-Time：把阅读理解写回图
+
+![Read-Time：从多段证据到经过校验的图关系](docs/assets/rsigraph-read-time-detail.png)
+
+这张图只突出“多段证据 → 对照阅读 → 校验 → 新关系”的解释路径；实际写入位置、证据字段和重建方式见下方 Mermaid 与 [docs/METHOD.md](docs/METHOD.md)。
 
 ```mermaid
-flowchart TB
-  subgraph RT["① Read-Time Comprehension Evolution（离线、问题无关）"]
-    direction LR
-    D["原始文档<br/>session / paragraph / 小说 chunk"] --> OIE["官方 HippoRAG2 OpenIE<br/>NER → 三元组"]
-    OIE --> G0[("G_raw（冻结，只读）")]
-    OIE --> GRP["阅读组 / 阅读包<br/>聚类 · section · 实体时间包"]
-    GRP --> JNT["Joint OpenIE<br/>（同上下文对照臂）"]
-    GRP --> CMP["Comprehension<br/>跨 ≥2 文档关系 / Unit<br/>逐字证据 + derivation"]
-    CMP --> VER["规则校验 + LLM Verifier<br/>引用存在 · 非单段复述 · 非虚假因果"]
-    VER --> INJ["注入 openie_state<br/>挂到最晚证据块 → 重跑 index()"]
-    JNT --> INJ
-    G0 --> INJ --> GV[("G_variant")]
-  end
-
-  subgraph QT["② Question-Time（在线、每题）"]
-    direction LR
-    Q["问题（+cutoff）"] --> QDM["QDM 拆解<br/>≤4 子问题"]
-    QDM --> RET["检索<br/>dense / fact→PPR / RRF<br/>prefix-safe mask"]
-    RET --> SUF["Sufficiency 检查<br/>+ Retrieval Skill 补查询"]
-    SUF --> RD["Reader（4096-token 预算）"]
-    RD --> ANS["Answer Skill / Grounded Verifier"]
-  end
-
-  subgraph RSI["③ RSI Skill Memory（只在 adaptation 集上学习）"]
-    direction LR
-    REF["反思<br/>error_type 12 选 1"] --> SAN["Sanitizer<br/>防泄漏"] --> GATE["4 个验证 gate<br/>fix / similar / dissimilar / adversarial"]
-    GATE --> MEM[("Skill Memory<br/>版本 · 合并 · 淘汰")]
-    MEM --> SNAP["dev 快照选择 / 回滚"]
-  end
-
-  GV --> RET
-  ANS --> REF
-  SNAP -. 部署的技能 .-> SUF
-  SNAP -. 部署的技能 .-> ANS
+flowchart LR
+  D["原始文档<br/>session / paragraph / 小说 chunk"] --> OIE["官方 OpenIE<br/>NER → 三元组"]
+  OIE --> G0[("G_raw<br/>冻结、只读")]
+  OIE --> GRP["阅读组 / 阅读包<br/>聚类 · section · 时间包"]
+  GRP --> CMP["Comprehension<br/>跨 ≥2 文档关系 / Unit"]
+  CMP --> VER["证据 + 规则 / LLM 校验"]
+  VER --> GV[("G_variant<br/>openie_state + index()")]
+  G0 --> GV
 ```
+
+对应代码：`src/grouping/`、`src/comprehension/`、`src/graph/variants.py`。这一阶段不看问题，目标是让图保存“理解后的知识”，并保留逐字证据。
+
+#### ② Question-Time：从问题到可核验答案
+
+![Question-Time 与 RSI Memory：从问题到答案，再回到可验证的技能记忆](docs/assets/rsigraph-question-time-detail.png)
+
+这张图把在线问答和反馈回路放在同一张画布上；虚线回路只回到后续检索/回答策略，不回写原始语料或 `G_raw`。
+
+```mermaid
+flowchart LR
+  Q["问题 + cutoff"] --> QDM["QDM 拆解<br/>≤4 子问题"]
+  QDM --> RET["检索<br/>dense / fact→PPR / RRF"]
+  RET --> SUF["充分性检查<br/>+ Retrieval Skill"]
+  SUF --> RD["Reader<br/>4096-token 预算"]
+  RD --> ANS["Answer Skill<br/>Grounded Verifier"]
+  GV[("G_variant")] --> RET
+```
+
+对应代码：`src/retrieval/`、`src/question_skill/`、`src/detectiveqa/graph.py`。DetectiveQA 还会用 prefix-safe mask 去掉 cutoff 之后的 passage、fact 和实体。
+
+#### ③ RSI Skill Memory：把错误变成可回滚经验
+
+```mermaid
+flowchart LR
+  FB["Question-Time 反馈<br/>答案 / 检索错误"] --> REF["反思<br/>error_type 12 选 1"]
+  REF --> SAN["Sanitizer<br/>防泄漏"]
+  SAN --> GATE["4 个验证 gate<br/>fix / similar / dissimilar / adversarial"]
+  GATE --> MEM[("Skill Memory<br/>版本 · 合并 · 淘汰")]
+  MEM --> SNAP["dev 快照选择 / 回滚"]
+  SNAP -. 部署技能 .-> SUF["Retrieval Skill"]
+  SNAP -. 部署技能 .-> ANS["Answer Skill"]
+```
+
+对应代码：`outputs/question_evolution_conv30/qecode/answer_evolve.py`、`outputs/question_evolution_conv30/qecode/retrieval_evolve.py`。这条回路只在 adaptation 集上学习，部署前通过 gate，避免把题目答案直接写进技能。
 
 ### 2.3 各模块要点（细节见 [docs/METHOD.md](docs/METHOD.md)）
 
@@ -120,6 +147,8 @@ flowchart TB
 ---
 
 ## 3. 实验进度（最新在上）
+
+这一节按数据集倒序给出“规模 → 最好结果 → 一句话结论”；想看逐题 case、运行参数和阶段日志，可以直接进入对应实验 README。
 
 | # | 时间 | 数据集 | 机器 | 状态 | 一句话结论 | 详情 |
 |---|---|---|---|---|---|---|
@@ -191,6 +220,8 @@ flowchart TB
 
 ## 4. 数据集横向对比
 
+横向表格用同一组维度比较四个数据集，帮助读者判断哪些差异来自方法，哪些差异来自基准本身。
+
 | 维度 | MuSiQue | LoCoMo | QASPER | DetectiveQA |
 |---|---|---|---|---|
 | 文本形态 | 独立 Wiki 片段 | 两人长对话 | 单篇论文 | 长篇侦探小说 |
@@ -208,6 +239,8 @@ flowchart TB
 ---
 
 ## 5. 问题诊断：数据集问题 vs 方法问题
+
+先按“证据有没有到达 Reader、有没有被正确使用、是否被融合策略挤掉”定位失败，再看数据集是否把方法信号掩盖了。
 
 | 失效模式 | 定义 | 出现在 | 归因 |
 |---|---|---|---|
@@ -227,6 +260,8 @@ flowchart TB
 ---
 
 ## 6. 仓库结构与代码地图
+
+最后一节回答两个审核问题：每个结论对应哪段代码，以及复现实验需要哪些外部资源。
 
 ```text
 RSI_GraphRAG/
