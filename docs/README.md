@@ -2,6 +2,8 @@
 
 | 文档 | 内容 | 什么时候看 |
 |---|---|---|
+| [PROJECT_STATUS.md](PROJECT_STATUS.md) | 当前主线、实验状态、假设台账、决策记录、证据强度 | 想知道"项目现在做到哪里" |
+| [ATTRIBUTION.md](ATTRIBUTION.md) | 失效诊断顺序、D1–D9 失效类型、新实验必报项 | 想判断"问题出在哪里" |
 | [METHOD.md](METHOD.md) | 模块级方法细节：图变体注入、分组、理解层 schema 与校验、检索链条、Question-Time、RSI 状态机、指标口径 | 想知道"具体怎么实现的" |
 | [REFERENCE_NUMBERS.md](REFERENCE_NUMBERS.md) | 各数据集外部工作的数字与口径差异 | 想知道"别人做到多高" |
 | [RSI_GraphRAG_FULL_METHOD_AND_EXPERIMENTS.md](RSI_GraphRAG_FULL_METHOD_AND_EXPERIMENTS.md) | 148KB 主报告：LoCoMo 阶段 A/B/C + QASPER 阶段 D 的全部细节、prompt 原文、17 处文档与代码不一致清单、成本、噪声 | 审稿 / 需要查原始数字 |
