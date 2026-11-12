@@ -1,0 +1,210 @@
+{
+ "paper_id": "2003.03014",
+ "title": "A Framework for the Computational Linguistic Analysis of Dehumanization",
+ "abstract": "Dehumanization is a pernicious psychological process that often leads to extreme intergroup bias, hate speech, and violence aimed at targeted social groups. Despite these serious consequences and the wealth of available data, dehumanization has not yet been computationally studied on a large scale. Drawing upon social psychology research, we create a computational linguistic framework for analyzing dehumanizing language by identifying linguistic correlates of salient components of dehumanization. We then apply this framework to analyze discussions of LGBTQ people in the New York Times from 1986 to 2015. Overall, we find increasingly humanizing descriptions of LGBTQ people over time. However, we find that the label homosexual has emerged to be much more strongly associated with dehumanizing attitudes than other labels, such as gay. Our proposed techniques highlight processes of linguistic variation and change in discourses surrounding marginalized groups. Furthermore, the ability to analyze dehumanizing language at a large scale has implications for automatically detecting and understanding media bias as well as abusive language online.",
+ "sections": [
+  "Keywords:",
+  "Introduction",
+  "Background ::: Dehumanization",
+  "Background ::: Related Computational Work",
+  "Background ::: Attitudes Towards LGBTQ Communities in the United States",
+  "Operationalizing Dehumanization",
+  "Operationalizing Dehumanization ::: Negative Evaluation of a Target Group",
+  "Operationalizing Dehumanization ::: Negative Evaluation of a Target Group ::: Paragraph-level Valence Analysis",
+  "Operationalizing Dehumanization ::: Negative Evaluation of a Target Group ::: Connotation Frames",
+  "Operationalizing Dehumanization ::: Negative Evaluation of a Target Group ::: Word Embedding Neighbor Valence",
+  "Operationalizing Dehumanization ::: Denial of Agency",
+  "Operationalizing Dehumanization ::: Denial of Agency ::: Connotation Frames",
+  "Operationalizing Dehumanization ::: Denial of Agency ::: Word Embedding Neighbor Dominance",
+  "Operationalizing Dehumanization ::: Moral Disgust",
+  "Operationalizing Dehumanization ::: Vermin as a Dehumanizing Metaphor",
+  "Data",
+  "Results ::: Word Embeddings",
+  "Results ::: Negative Evaluation Towards Target Group ::: Paragraph-level Valence Analysis ::: Quantitative Results",
+  "Results ::: Negative Evaluation Towards Target Group ::: Paragraph-level Valence Analysis ::: Qualitative Analysis",
+  "Results ::: Negative Evaluation Towards Target Group ::: Connotation Frames of Perspective ::: Quantitative Results",
+  "Results ::: Negative Evaluation Towards Target Group ::: Connotation Frames of Perspective ::: Qualitative Analysis",
+  "Results ::: Negative Evaluation Towards Target Group ::: Word Embedding Neighbor Valence ::: Quantitative Results",
+  "Results ::: Negative Evaluation Towards Target Group ::: Word Embedding Neighbor Valence ::: Qualitative Analysis",
+  "Results ::: Negative Evaluation Towards Target Group ::: Denial of Agency ::: Quantitative Results",
+  "Results ::: Negative Evaluation Towards Target Group ::: Denial of Agency ::: Qualitative Analysis",
+  "Results ::: Negative Evaluation Towards Target Group ::: Word Embedding Neighbor Dominance ::: Quantitative Results",
+  "Results ::: Negative Evaluation Towards Target Group ::: Word Embedding Neighbor Dominance ::: Qualitative Analysis",
+  "Results ::: Moral Disgust ::: Quantitative Results",
+  "Results ::: Moral Disgust ::: Qualitative Analysis",
+  "Results ::: Vermin as a Dehumanizing Metaphor ::: Quantitative Results",
+  "Results ::: Vermin as a Dehumanizing Metaphor ::: Qualitative Analysis",
+  "Discussion",
+  "Discussion ::: Limitations and Future Work",
+  "Discussion ::: Ethical Implications",
+  "Conclusion",
+  "Acknowledgements",
+  "Appendix ::: Valence prediction results",
+  "Appendix ::: Agency prediction results"
+ ],
+ "n_paragraphs": 108,
+ "n_tokens": 16703,
+ "figures_and_tables": [
+  {
+   "caption_id": "2003.03014::fig000",
+   "paper_id": "2003.03014",
+   "file": "8-Table1-1.png",
+   "caption": "Table 1: Overview of linguistic correlates and our operationalizations for four elements of dehumanization.",
+   "n_tokens": 20
+  },
+  {
+   "caption_id": "2003.03014::fig001",
+   "paper_id": "2003.03014",
+   "file": "8-Table2-1.png",
+   "caption": "Table 2: List of LGBTQ terms",
+   "n_tokens": 8
+  },
+  {
+   "caption_id": "2003.03014::fig002",
+   "paper_id": "2003.03014",
+   "file": "10-Figure1-1.png",
+   "caption": "Figure 1: Counts for the six most frequent LGBTQ labels in each year of the New York Times data.",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "2003.03014::fig003",
+   "paper_id": "2003.03014",
+   "file": "10-Table3-1.png",
+   "caption": "Table 3: Nearest words to weighted average of all LGBTQ terms’ vectors in 1986, 2000, and 2015",
+   "n_tokens": 29
+  },
+  {
+   "caption_id": "2003.03014::fig004",
+   "paper_id": "2003.03014",
+   "file": "11-Table4-1.png",
+   "caption": "Table 4: Nearest words to vector representations of gay and homosexual in 1986, 2000, and 2015",
+   "n_tokens": 27
+  },
+  {
+   "caption_id": "2003.03014::fig005",
+   "paper_id": "2003.03014",
+   "file": "11-Figure2-1.png",
+   "caption": "Figure 2: Average paragraph-level valence for paragraphs containing gay, homosexual, any LGBTQ term, and American, grouped into 5-year intervals. The shaded bands represent 95% confidence intervals. Paragraph-level scores are calculated as the average valence over all words that appear in the NRC VAD lexicon, which range from 0 to 1. Paragraphs containing LGBTQ labels become more positive over time. Paragraphs containing homosexual are significantly more negative than those containing other LGBTQ labels.",
+   "n_tokens": 99
+  },
+  {
+   "caption_id": "2003.03014::fig006",
+   "paper_id": "2003.03014",
+   "file": "13-Table5-1.png",
+   "caption": "Table 5: Example paragraphs with extremely high and low valence scores, along with an interpretation of the patterns we find. Words with extremely high valence scores (greater than 0.85) appear in blue, and somewhat high-valence words (scores between 0.7 and 0.85) appear in light blue. Words with extremely low valence scores (less than 0.15) appear in red, and somewhat low-valence words (scores between 0.15 and 0.3) appear in pink.",
+   "n_tokens": 110
+  },
+  {
+   "caption_id": "2003.03014::fig007",
+   "paper_id": "2003.03014",
+   "file": "13-Table6-1.png",
+   "caption": "Table 6: Examples mischaracterized by paragraph-level valence analysis. Words with extremely high valence scores (greater than 0.85) appear in blue, and somewhat high-valence words (scores between 0.7 and 0.85) appear in light blue. Words with extremely low valence scores (less than 0.15) appear in red, and somewhat low-valence words (scores between 0.15 and 0.3) appear in pink.",
+   "n_tokens": 100
+  },
+  {
+   "caption_id": "2003.03014::fig008",
+   "paper_id": "2003.03014",
+   "file": "14-Figure3-1.png",
+   "caption": "Figure 3: Average connotation frame perspective scores for gay(s), homosexual(s), all LGBTQ terms, and American(s) over five-year intervals with 95% confidence intervals. Scores are calculated for each subject-verb-object triple containing these group labels as the writer’s perspective towards the subject or object (depending on the group label’s position) based on the head verb’s entry in the Connotation Frames lexicon (Rashkin et al., 2016).",
+   "n_tokens": 94
+  },
+  {
+   "caption_id": "2003.03014::fig009",
+   "paper_id": "2003.03014",
+   "file": "15-Table7-1.png",
+   "caption": "Table 7: Examples of paragraphs where the writer’s expresses highly positive and negative perspective towards LGBTQ groups, according to the Connotation Frames lexicon.",
+   "n_tokens": 30
+  },
+  {
+   "caption_id": "2003.03014::fig010",
+   "paper_id": "2003.03014",
+   "file": "16-Table8-1.png",
+   "caption": "Table 8: Examples of paragraphs where the writer’s perspective is mischaracterized by the Connotation Frames lexicon.",
+   "n_tokens": 24
+  },
+  {
+   "caption_id": "2003.03014::fig011",
+   "paper_id": "2003.03014",
+   "file": "17-Figure4-1.png",
+   "caption": "Figure 4: Average valence of 1000 nearest words to our representations of gay, homosexual, all LGBTQ terms, and American, averaged over 10 word2vec models trained on New York Times data from each year. The shaded bands represent 95% confidence intervals, and the solid lines are Lowess curves for visualization purposes. Valence scores for each word come from the word’s (or its lemma’s) entry in the NRC VADValence Lexicon (Mohammad, 2018), which range from 0 (most negative) to 1 (most positive).",
+   "n_tokens": 120
+  },
+  {
+   "caption_id": "2003.03014::fig012",
+   "paper_id": "2003.03014",
+   "file": "18-Table9-1.png",
+   "caption": "Table 9: Example paragraphs from years where LGBTQ terms’ nearest neighbors had exceptionally high and low valence.",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "2003.03014::fig013",
+   "paper_id": "2003.03014",
+   "file": "19-Figure5-1.png",
+   "caption": "Figure 5: Agency of gay, homosexual, all LGBTQ terms, and American using the Connotation Frames lexicon for agency (Sap et al., 2017) over all subject-verb-object (SVO) tuples containing at least one group label. An SVO tuple received a score of 1 if the label appears in a positive agency position relative to its head verb and 0 if it does not. The translucent bands represent 95% confidence intervals, and agency is calculated over five-year intervals.",
+   "n_tokens": 104
+  },
+  {
+   "caption_id": "2003.03014::fig014",
+   "paper_id": "2003.03014",
+   "file": "19-Table10-1.png",
+   "caption": "Table 10: Examples where the writer attributes high and low agency towards LGBTQ groups, according to the Connotation Frames lexicon for agency.",
+   "n_tokens": 28
+  },
+  {
+   "caption_id": "2003.03014::fig015",
+   "paper_id": "2003.03014",
+   "file": "20-Figure6-1.png",
+   "caption": "Figure 6: Average dominance of 1000 nearest words to our representations of gay, homosexual, all LGBTQ terms, and American, averaged over 10 word2vec models trained on New York Times data for each year. Dominance scores for each word come from the word’s (or its lemma’s) entry in the NRC VAD Dominance Lexicon (Mohammad, 2018), which range from 0 (least dominance) to 1 (most dominance). The shaded bands represent 95% confidence intervals and the solid lines are Lowess curves for visualization purposes.",
+   "n_tokens": 118
+  },
+  {
+   "caption_id": "2003.03014::fig016",
+   "paper_id": "2003.03014",
+   "file": "22-Figure7-1.png",
+   "caption": "Figure 7: Cosine distance between our representations of gay, homosexual, all LGBTQ terms, and American and the vector representation of theMoral Disgust concept, averaged over 10 word2vec models trained on New York Times data for each year. Increases in cosine distance indicate decreases in Moral Disgust; possible values range from 0 (most closely associated with Moral Disgust) to 1 (least associated with Moral Disgust). Shaded bands represent 95% confidence intervals and the solid lines are Lowess curves for visualization purposes.",
+   "n_tokens": 113
+  },
+  {
+   "caption_id": "2003.03014::fig017",
+   "paper_id": "2003.03014",
+   "file": "23-Table11-1.png",
+   "caption": "Table 11: Example paragraphs from the data that illustrate the connection between LGBTQ people and moral disgust. The bold words appear in the Moral Foundations Dictionary’s lexicon corresponding to moral disgust (Graham et al., 2009).",
+   "n_tokens": 46
+  },
+  {
+   "caption_id": "2003.03014::fig018",
+   "paper_id": "2003.03014",
+   "file": "23-Figure8-1.png",
+   "caption": "Figure 8: Cosine distance between our representations of gay, homosexual, all LGBTQ terms, and American and the vector representation of the Vermin concept, averaged over 10 word2vec models trained on New York Times data for each year. Possible values for cosine distance range from 0 (most closely associated with Vermin) to 1 (least associated with Vermin). Shaded bands represent 95% confidence intervals, and the solid lines are Lowess curves for visualization purposes.",
+   "n_tokens": 98
+  },
+  {
+   "caption_id": "2003.03014::fig019",
+   "paper_id": "2003.03014",
+   "file": "24-Table12-1.png",
+   "caption": "Table 12: The only three paragraphs from the New York Times data that explicitly form a connection between LGBTQ people and vermin.",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "2003.03014::fig020",
+   "paper_id": "2003.03014",
+   "file": "31-Table13-1.png",
+   "caption": "Table 13: Overall counts for all LGBTQ terms in the New York Times from 1986-2015. Each label includes its morphological and orthographic variants.",
+   "n_tokens": 34
+  },
+  {
+   "caption_id": "2003.03014::fig021",
+   "paper_id": "2003.03014",
+   "file": "32-Figure9-1.png",
+   "caption": "Figure 9: Predicted valence of our representations of gay, homosexual,all LGBTQ terms, and American directly induced by fitting ridge regression models to the NRC VAD Valence Lexicon with the lexicon’s words’Word2Vec vectors as features for each year. Results are averaged over 10Word2Vecmodels trained over each year’s data. Shaded bands represent 95% confidence intervals and the solid lines are Lowess curves as visual aids. Higher scores represent more positive valence.",
+   "n_tokens": 102
+  },
+  {
+   "caption_id": "2003.03014::fig022",
+   "paper_id": "2003.03014",
+   "file": "33-Figure10-1.png",
+   "caption": "Figure 10: Predicted dominance of our representations of gay, homosexual, all LGBTQ terms, and American directly induced by fitting ridge regression models to the NRC VAD Dominance Lexicon with the lexicon’s words’ Word2Vec representations as features for each year. Results are averaged over 10 Word2Vec models trained over each year, shaded bands represent 95% confidence intervals and the solid lines are Lowess curves for visualization purposes. Higher scores represent greater predicted dominance.",
+   "n_tokens": 97
+  }
+ ]
+}

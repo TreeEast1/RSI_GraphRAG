@@ -1,0 +1,231 @@
+{
+  "role": "hist_medium",
+  "cluster_id": "cc-00000-stable-0059",
+  "unit_id": "cc-00000-stable-0059-u012",
+  "method": "B",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 2970,
+    "completion_tokens": 1505,
+    "reasoning_tokens": 512,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r1_hist_hist_medium_B",
+    "cache_key": "41a81bc8dc031b28f65380e80e816c3c6ad0005e3fb83ba5d4378e3288c7182b"
+  },
+  "n_updates": 3,
+  "n_add": 3,
+  "n_accept": 2,
+  "n_reject": 1,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "EXTRACTION_REPAIR": 2,
+    "REDUNDANT": 1
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "local-1",
+      "comprehension_text": "Bobby Morley took a ten-week break from Neighbours in April 2012 to appear in the feature film Blinder.",
+      "new_semantic_relation": "took a break from Neighbours to appear in Blinder",
+      "linked_entity_ids": [
+        "entity-1900c5ca69b3316450d51207065c89d8",
+        "entity-a13ac3b7f65f15af479f775d5a2559ff",
+        "entity-dbae995bfe817b0771a804e687ba538f"
+      ],
+      "source_triple_ids": [
+        "triple-989c71a59365a4d0b60dc4e607e5b7f7",
+        "triple-f85e28cb0495cddb535b7fe344bd68e5"
+      ],
+      "source_passage_ids": [
+        "chunk-56664711c1c4de235b820a051107fb2f"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-56664711c1c4de235b820a051107fb2f",
+          "span": "Morley took a ten-week break from \"Neighbours\" in April 2012 to appear in the feature film, \"Blinder\"."
+        }
+      ],
+      "derivation_type": "derived",
+      "reasoning_summary": "The passage directly connects Morley’s break from Neighbours with his appearance in Blinder, combining the separate break and appearance facts.",
+      "novelty_justification": "No single existing triple states that the break from Neighbours was taken specifically in order to appear in Blinder.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "local-2",
+      "comprehension_text": "Taylor Glockner was given a long-term character in Neighbours after auditioning for guest roles on the show.",
+      "new_semantic_relation": "received long-term character after guest-role auditions",
+      "linked_entity_ids": [
+        "entity-826c45cca2e0d06a3811026eb7cd9e1e",
+        "entity-a13ac3b7f65f15af479f775d5a2559ff"
+      ],
+      "source_triple_ids": [
+        "triple-ec325ade8752b16a269ca15cd3153919",
+        "triple-29c8dadc2b98d6ed3b024ce243f5ba03"
+      ],
+      "source_passage_ids": [
+        "chunk-5d3d787bca10ff123105226827a4e2e2"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-5d3d787bca10ff123105226827a4e2e2",
+          "span": "The actor previously auditioned for guest roles on the show, but the producers decided to develop a long-term character specifically for him instead."
+        }
+      ],
+      "derivation_type": "derived",
+      "reasoning_summary": "The passage links Glockner’s earlier guest-role auditions to the producers’ decision to create a long-term Neighbours character for him.",
+      "novelty_justification": "The existing triples separately record the guest-role auditions and the long-term character, but not the stated progression from one to the other.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "local-3",
+      "comprehension_text": "Paul McClain made a cameo in Annalise Hartman’s documentary about Ramsay Street.",
+      "new_semantic_relation": "made cameo in documentary about Ramsay Street",
+      "linked_entity_ids": [
+        "entity-28b0cb64bc974b922f8979e7f5cb887c",
+        "entity-bc35b38fa56a66615b7563885fdbba00",
+        "entity-d26466b682a7b95f7da27ac6f1e8d59c"
+      ],
+      "source_triple_ids": [
+        "triple-27f61d58e848bd422fdde1ed0e81b0b9",
+        "triple-e5a50570f253461e115cfb6917b0ccd6"
+      ],
+      "source_passage_ids": [
+        "chunk-d0cdf555bbd201eef2d147a7c01fa27e"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-d0cdf555bbd201eef2d147a7c01fa27e",
+          "span": "In 2005, Paul made a cameo in Annalise Hartman's documentary about Ramsay Street."
+        }
+      ],
+      "derivation_type": "derived",
+      "reasoning_summary": "The passage combines Paul’s cameo in the documentary with the documentary’s subject, Ramsay Street.",
+      "novelty_justification": "The existing triples separately state Paul’s cameo and the documentary’s subject, while this update connects the two facts into one event description.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "local-1",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: ten, week, appear, feature, film",
+      "residue": [
+        "ten",
+        "week",
+        "appear",
+        "feature",
+        "film"
+      ],
+      "evidence_sentences": [
+        "Morley took a ten-week break from \"Neighbours\" in April 2012 to appear in the feature film, \"Blinder\". He made his final appearance as Aidan on 17 January 2013."
+      ],
+      "warning": "partial_name_anchored:Bobby Morley",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [
+            "Bobby Morley"
+          ],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Morley took a ten-week break from \"Neighbours\" in April 2012 to appear in the feature film, \"Blinder\". He made his final appearance as Aidan on 17 January 2013."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": [
+            [
+              2012,
+              4,
+              1
+            ]
+          ]
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "ten",
+            "week",
+            "appear",
+            "feature",
+            "film"
+          ],
+          "n_passage_triples": 13,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "local-2",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: after, auditioning, show",
+      "residue": [
+        "after",
+        "auditioning",
+        "show"
+      ],
+      "evidence_sentences": [
+        "The actor previously auditioned for guest roles on the show, but the producers decided to develop a long-term character specifically for him instead. Glockner's character, Mason, was created and introduced along with the Turner family, as part of a major overhaul of the show's cast."
+      ],
+      "warning": "partial_name_anchored:Taylor Glockner",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [
+            "Taylor Glockner"
+          ],
+          "missing_names": [],
+          "evidence_sentences": [
+            "The actor previously auditioned for guest roles on the show, but the producers decided to develop a long-term character specifically for him instead. Glockner's character, Mason, was created and introduced along with the Turner family, as part of a major overhaul of the show's cast."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "after",
+            "auditioning",
+            "show"
+          ],
+          "n_passage_triples": 11,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "local-3",
+      "decision": "REJECT",
+      "failure_stage": "V4",
+      "faithfulness": "supported",
+      "novelty": "duplicate",
+      "audit_type": "REDUNDANT",
+      "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+      "residue": [],
+      "evidence_sentences": [
+        "In 2005, Paul made a cameo in Annalise Hartman's documentary about Ramsay Street."
+      ],
+      "warning": "partial_name_anchored:Paul McClain"
+    }
+  ]
+}

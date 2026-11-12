@@ -1,0 +1,1151 @@
+{
+ "insights": [
+  {
+   "insight_id": "1805.06966::g00:i00",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g00",
+   "concise_text": "The NUS is trained on DSTC2 dialogues and used to train a reinforcement learning based SDS policy, outperforming the ABUS on cross-model evaluation and real users.",
+   "triple": {
+    "subject": "the Neural User Simulator (NUS)",
+    "predicate": "outperforms",
+    "object": "the Agenda-Based User-Simulator (ABUS) on cross-model evaluation and real users"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1805.06966::s00::p002",
+    "1805.06966::s00::p003"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g00:b0:f07",
+    "1805.06966::g00:b0:f10",
+    "1805.06966::g00:b0:f11",
+    "1805.06966::g00:b0:f12",
+    "1805.06966::g00:b0:f13",
+    "1805.06966::g00:b0:f14",
+    "1805.06966::g00:b0:f15"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u000"
+  },
+  {
+   "insight_id": "1805.06966::g00:i01",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g00",
+   "concise_text": "Because the majority of RL algorithms require a lot of interactions and real-user recruitment makes hyper-parameter optimization prohibitively expensive, User Simulators enable unlimited faster dialogues for policy training.",
+   "triple": {
+    "subject": "the majority of RL algorithms requiring a lot of interactions",
+    "predicate": "causes",
+    "object": "User Simulators to enable unlimited faster dialogues for policy training"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1805.06966::s00::p001",
+    "1805.06966::s02::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g00:b0:f04",
+    "1805.06966::g00:b0:f05",
+    "1805.06966::g00:b1:f05",
+    "1805.06966::g00:b1:f06",
+    "1805.06966::g00:b1:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u001"
+  },
+  {
+   "insight_id": "1805.06966::g00:i02",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g00",
+   "concise_text": "The limited state space and likely absence of the optimal dialogue strategy in recorded corpora motivate transforming the static corpus into a user simulator that can explore strategies not in the recorded corpus.",
+   "triple": {
+    "subject": "limited recorded corpora",
+    "predicate": "causes",
+    "object": "a user simulator to explore dialogue strategies not in the recorded corpus"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1805.06966::s02::p001",
+    "1805.06966::s02::p002"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g00:b1:f08",
+    "1805.06966::g00:b1:f09",
+    "1805.06966::g00:b1:f10",
+    "1805.06966::g00:b1:f11",
+    "1805.06966::g00:b1:f12",
+    "1805.06966::g00:b1:f14"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u002"
+  },
+  {
+   "insight_id": "1805.06966::g00:i03",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g00",
+   "concise_text": "The NUS outputs natural language, addressing the semantic-level limitation that training a DM policy with joint SLU and belief tracking is not possible without a natural-language user simulator.",
+   "triple": {
+    "subject": "the Neural User Simulator (NUS) outputting natural language",
+    "predicate": "extends",
+    "object": "DM policy training with joint Spoken Language Understanding (SLU) and belief tracking"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1805.06966::s00::p002",
+    "1805.06966::s02::p004"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g00:b0:f06",
+    "1805.06966::g00:b1:f19",
+    "1805.06966::g00:b1:f20",
+    "1805.06966::g00:b1:f21",
+    "1805.06966::g00:b1:f22"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u003"
+  },
+  {
+   "insight_id": "1805.06966::g00:i04",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g00",
+   "concise_text": "The NUS generates its own goal and possibly changes it during a dialogue, while the Goal Generator updates the goal when the SDS outputs the canthelp dialogue act.",
+   "triple": {
+    "subject": "the Goal Generator",
+    "predicate": "requires",
+    "object": "the SDS canthelp dialogue act to update the NUS goal"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1805.06966::s00::p002",
+    "1805.06966::s03::p000",
+    "1805.06966::s04::p002"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g00:b0:f09",
+    "1805.06966::g00:b2:f00",
+    "1805.06966::g00:b2:f15"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u004"
+  },
+  {
+   "insight_id": "1805.06966::g00:i05",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g00",
+   "concise_text": "The method transforming DSTC2 goal-labels into deployable labels is needed because DSTC2 turn-specific labels predict the future and would not be available when training a policy with the NUS.",
+   "triple": {
+    "subject": "DSTC2 turn-specific labels predicting the future",
+    "predicate": "requires",
+    "object": "a method transforming DSTC2 goal-labels into labels whose behaviour can be replicated during deployment"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1805.06966::s00::p002",
+    "1805.06966::s04::p001",
+    "1805.06966::s04::p002"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g00:b0:f10",
+    "1805.06966::g00:b2:f09",
+    "1805.06966::g00:b2:f12",
+    "1805.06966::g00:b2:f13",
+    "1805.06966::g00:b2:f14"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.89,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u005"
+  },
+  {
+   "insight_id": "1805.06966::g00:i06",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g00",
+   "concise_text": "The NUS main component combines a Feature Extractor that generates feature vectors with a sequence-to-sequence model whose first RNN takes one feature vector at a time as input.",
+   "triple": {
+    "subject": "the Feature Extractor",
+    "predicate": "requires",
+    "object": "the sequence-to-sequence model to take one feature vector at a time as input"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1805.06966::s00::p002",
+    "1805.06966::s05::p000",
+    "1805.06966::s06::p002"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g00:b0:f08",
+    "1805.06966::g00:b2:f16",
+    "1805.06966::g00:b4:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u006"
+  },
+  {
+   "insight_id": "1805.06966::g00:i07",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g00",
+   "concise_text": "The NUS uses a single layer LSTM for both the RNN encoder and decoder, and the decoder terminates decoding when it generates the end-of-sentence (<EOS>) token.",
+   "triple": {
+    "subject": "the single layer LSTM decoder",
+    "predicate": "requires",
+    "object": "the end-of-sentence (<EOS>) token to terminate decoding"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1805.06966::s06::p001",
+    "1805.06966::s06::p004"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g00:b3:f16",
+    "1805.06966::g00:b4:f06",
+    "1805.06966::g00:b4:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u007"
+  },
+  {
+   "insight_id": "1805.06966::g00:i08",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g00",
+   "concise_text": "Because deterministic beam-search prevents the NUS from covering the full breadth of user behaviour, beam-search with sampling makes the NUS non-deterministic and diverse, with 2 beams giving a good trade-off.",
+   "triple": {
+    "subject": "deterministic beam-search",
+    "predicate": "causes",
+    "object": "beam-search with sampling using 2 beams to give a good trade-off between reasonable responses and diversity"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1805.06966::s06::p003",
+    "1805.06966::s06::p006"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g00:b4:f02",
+    "1805.06966::g00:b4:f03",
+    "1805.06966::g00:b4:f12",
+    "1805.06966::g00:b4:f13",
+    "1805.06966::g00:b4:f14",
+    "1805.06966::g00:b4:f16",
+    "1805.06966::g00:b4:f17"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u008"
+  },
+  {
+   "insight_id": "1805.06966::g00:i09",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g00",
+   "concise_text": "The Goal Generator samples DSTC2 constraints with probabilities estimated from the DSTC2 data set, while the ontology defines the possible goals and slot values.",
+   "triple": {
+    "subject": "the Goal Generator",
+    "predicate": "requires",
+    "object": "the ontology and DSTC2-estimated probabilities to sample goals"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1805.06966::s01::p000",
+    "1805.06966::s03::p000",
+    "1805.06966::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g00:b0:f16",
+    "1805.06966::g00:b0:f18",
+    "1805.06966::g00:b0:f19",
+    "1805.06966::g00:b2:f01",
+    "1805.06966::g00:b2:f04",
+    "1805.06966::g00:b2:f06",
+    "1805.06966::g00:b2:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u009"
+  },
+  {
+   "insight_id": "1805.06966::g01:i00",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g01",
+   "concise_text": "Because the only fair comparison is indirect evaluation of policies trained with each US, the cross-model evaluation showing NUS-trained policies perform well on both USs supports NUS over ABUS.",
+   "triple": {
+    "subject": "cross-model evaluation results",
+    "predicate": "provide evidence for",
+    "object": "the indirect comparison of NUS and ABUS"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1805.06966::s08::p000",
+    "1805.06966::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g01:b0:f18",
+    "1805.06966::g01:b1:f04",
+    "1805.06966::g01:b1:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u010"
+  },
+  {
+   "insight_id": "1805.06966::g01:i01",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g01",
+   "concise_text": "The human evaluation setup selected policies from the five cross-model policies, and its results show NUS-trained policies outperformed ABUS-trained policies with real users.",
+   "triple": {
+    "subject": "human evaluation setup",
+    "predicate": "evaluated_on",
+    "object": "policies selected from the five policies for each US"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1805.06966::s09::p000",
+    "1805.06966::s10::p000",
+    "1805.06966::s12::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g01:b0:f20",
+    "1805.06966::g01:b1:f00",
+    "1805.06966::g01:b1:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u011"
+  },
+  {
+   "insight_id": "1805.06966::g01:i02",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g01",
+   "concise_text": "The conclusion that the NUS excelled on both evaluation tasks is supported by cross-model SR results and human evaluation reward and success rate results.",
+   "triple": {
+    "subject": "cross-model and human evaluation results",
+    "predicate": "provide evidence for",
+    "object": "the NUS excelled on both evaluation tasks"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1805.06966::s11::p000",
+    "1805.06966::s12::p000",
+    "1805.06966::s13::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g01:b1:f04",
+    "1805.06966::g01:b1:f05",
+    "1805.06966::g01:b1:f10",
+    "1805.06966::g01:b1:f11",
+    "1805.06966::g01:b1:f12",
+    "1805.06966::g01:b1:f15"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u012"
+  },
+  {
+   "insight_id": "1805.06966::g01:i03",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g01",
+   "concise_text": "Training policies for 4000 dialogues with GP-SARSA and the stated reward function produced cross-model results where NUS-trained policies achieved 94.0% and 96.6% average SR.",
+   "triple": {
+    "subject": "4000-dialogue GP-SARSA policy training",
+    "predicate": "causes",
+    "object": "NUS-trained policies achieved 94.0% and 96.6% average SR"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1805.06966::s07::p003",
+    "1805.06966::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g01:b0:f09",
+    "1805.06966::g01:b0:f10",
+    "1805.06966::g01:b0:f14",
+    "1805.06966::g01:b1:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u013"
+  },
+  {
+   "insight_id": "1805.06966::g01:i04",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g01",
+   "concise_text": "The overfitting concern used to motivate choosing policies best on the NUS and ABUS is supported by the observation that the best policy on the NUS was not best on the ABUS.",
+   "triple": {
+    "subject": "policy choice in human evaluation",
+    "predicate": "requires",
+    "object": "overfitting to a particular user simulator"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1805.06966::s10::p000",
+    "1805.06966::s11::p001"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g01:b1:f00",
+    "1805.06966::g01:b1:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.79,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u014"
+  },
+  {
+   "insight_id": "1805.06966::g01:i05",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g01",
+   "concise_text": "The NUS trained on manual transcriptions of the DSTC2 training set was later used to train dialogue policies with PyDial for 4000 dialogues.",
+   "triple": {
+    "subject": "the sequence-to-sequence model trained on DSTC2 manual transcriptions",
+    "predicate": "extends",
+    "object": "dialogue policies trained with PyDial for 4000 dialogues"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1805.06966::s07::p002",
+    "1805.06966::s07::p003",
+    "1805.06966::s13::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g01:b0:f04",
+    "1805.06966::g01:b0:f08",
+    "1805.06966::g01:b0:f14",
+    "1805.06966::g01:b1:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.74,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u015"
+  },
+  {
+   "insight_id": "1805.06966::g01:i06",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g01",
+   "concise_text": "The human evaluation used 1000 dialogues with 250 per policy, and the best NUS-trained policy achieved 93.4% success rate and 13.8 average rewards.",
+   "triple": {
+    "subject": "1000 dialogues with 250 per policy",
+    "predicate": "evaluated_on",
+    "object": "the best NUS-trained policy achieved 93.4% success rate and 13.8 average rewards"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1805.06966::s10::p000",
+    "1805.06966::s12::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g01:b1:f02",
+    "1805.06966::g01:b1:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u016"
+  },
+  {
+   "insight_id": "1805.06966::g01:i07",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g01",
+   "concise_text": "The cross-model evaluation after 4000 training dialogues used success rate (SR), defined as satisfying both the user's constraints and requests, to compare NUS and ABUS policies.",
+   "triple": {
+    "subject": "cross-model evaluation after 4000 training dialogues",
+    "predicate": "evaluated_on",
+    "object": "success rate (SR)"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1805.06966::s07::p003",
+    "1805.06966::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g01:b0:f12",
+    "1805.06966::g01:b0:f13",
+    "1805.06966::g01:b0:f14",
+    "1805.06966::g01:b1:f04",
+    "1805.06966::g01:b1:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u017"
+  },
+  {
+   "insight_id": "1805.06966::g01:i08",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g01",
+   "concise_text": "The NUS was trained to maximize log probability of user utterances from cleaned DSTC2 transcriptions, then its trained policies were evaluated with simulated and real users.",
+   "triple": {
+    "subject": "NUS log-probability training on cleaned DSTC2 transcriptions",
+    "predicate": "extends",
+    "object": "policy evaluation with simulated and real users"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1805.06966::s07::p000",
+    "1805.06966::s07::p002",
+    "1805.06966::s13::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g01:b0:f00",
+    "1805.06966::g01:b0:f04",
+    "1805.06966::g01:b0:f05",
+    "1805.06966::g01:b1:f15"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.76,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u018"
+  },
+  {
+   "insight_id": "1805.06966::g01:i09",
+   "paper_id": "1805.06966",
+   "group_id": "1805.06966::g01",
+   "concise_text": "The ABUS goal-change behaviour was matched in the NUS by re-sampling, and the resulting cross-model evaluation showed NUS-trained policies performed well on both USs.",
+   "triple": {
+    "subject": "NUS re-sampling to mention the new goal",
+    "predicate": "limits",
+    "object": "ABUS goal-change behaviour affecting cross-model results"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1805.06966::s09::p000",
+    "1805.06966::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.06966::g01:b0:f21",
+    "1805.06966::g01:b1:f04",
+    "1805.06966::g01:b1:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1805.06966::u019"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1805.06966::g00",
+   "insights": [
+    {
+     "insight_id": "1805.06966::g00:i00",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g00",
+     "concise_text": "The NUS is trained on DSTC2 dialogues and used to train a reinforcement learning based SDS policy, outperforming the ABUS on cross-model evaluation and real users.",
+     "triple": {
+      "subject": "the Neural User Simulator (NUS)",
+      "predicate": "outperforms",
+      "object": "the Agenda-Based User-Simulator (ABUS) on cross-model evaluation and real users"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1805.06966::s00::p002",
+      "1805.06966::s00::p003"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g00:b0:f07",
+      "1805.06966::g00:b0:f10",
+      "1805.06966::g00:b0:f11",
+      "1805.06966::g00:b0:f12",
+      "1805.06966::g00:b0:f13",
+      "1805.06966::g00:b0:f14",
+      "1805.06966::g00:b0:f15"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.93,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u000"
+    },
+    {
+     "insight_id": "1805.06966::g00:i01",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g00",
+     "concise_text": "Because the majority of RL algorithms require a lot of interactions and real-user recruitment makes hyper-parameter optimization prohibitively expensive, User Simulators enable unlimited faster dialogues for policy training.",
+     "triple": {
+      "subject": "the majority of RL algorithms requiring a lot of interactions",
+      "predicate": "causes",
+      "object": "User Simulators to enable unlimited faster dialogues for policy training"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1805.06966::s00::p001",
+      "1805.06966::s02::p000"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g00:b0:f04",
+      "1805.06966::g00:b0:f05",
+      "1805.06966::g00:b1:f05",
+      "1805.06966::g00:b1:f06",
+      "1805.06966::g00:b1:f07"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u001"
+    },
+    {
+     "insight_id": "1805.06966::g00:i02",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g00",
+     "concise_text": "The limited state space and likely absence of the optimal dialogue strategy in recorded corpora motivate transforming the static corpus into a user simulator that can explore strategies not in the recorded corpus.",
+     "triple": {
+      "subject": "limited recorded corpora",
+      "predicate": "causes",
+      "object": "a user simulator to explore dialogue strategies not in the recorded corpus"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1805.06966::s02::p001",
+      "1805.06966::s02::p002"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g00:b1:f08",
+      "1805.06966::g00:b1:f09",
+      "1805.06966::g00:b1:f10",
+      "1805.06966::g00:b1:f11",
+      "1805.06966::g00:b1:f12",
+      "1805.06966::g00:b1:f14"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u002"
+    },
+    {
+     "insight_id": "1805.06966::g00:i03",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g00",
+     "concise_text": "The NUS outputs natural language, addressing the semantic-level limitation that training a DM policy with joint SLU and belief tracking is not possible without a natural-language user simulator.",
+     "triple": {
+      "subject": "the Neural User Simulator (NUS) outputting natural language",
+      "predicate": "extends",
+      "object": "DM policy training with joint Spoken Language Understanding (SLU) and belief tracking"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1805.06966::s00::p002",
+      "1805.06966::s02::p004"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g00:b0:f06",
+      "1805.06966::g00:b1:f19",
+      "1805.06966::g00:b1:f20",
+      "1805.06966::g00:b1:f21",
+      "1805.06966::g00:b1:f22"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u003"
+    },
+    {
+     "insight_id": "1805.06966::g00:i04",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g00",
+     "concise_text": "The NUS generates its own goal and possibly changes it during a dialogue, while the Goal Generator updates the goal when the SDS outputs the canthelp dialogue act.",
+     "triple": {
+      "subject": "the Goal Generator",
+      "predicate": "requires",
+      "object": "the SDS canthelp dialogue act to update the NUS goal"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1805.06966::s00::p002",
+      "1805.06966::s03::p000",
+      "1805.06966::s04::p002"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g00:b0:f09",
+      "1805.06966::g00:b2:f00",
+      "1805.06966::g00:b2:f15"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u004"
+    },
+    {
+     "insight_id": "1805.06966::g00:i05",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g00",
+     "concise_text": "The method transforming DSTC2 goal-labels into deployable labels is needed because DSTC2 turn-specific labels predict the future and would not be available when training a policy with the NUS.",
+     "triple": {
+      "subject": "DSTC2 turn-specific labels predicting the future",
+      "predicate": "requires",
+      "object": "a method transforming DSTC2 goal-labels into labels whose behaviour can be replicated during deployment"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1805.06966::s00::p002",
+      "1805.06966::s04::p001",
+      "1805.06966::s04::p002"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g00:b0:f10",
+      "1805.06966::g00:b2:f09",
+      "1805.06966::g00:b2:f12",
+      "1805.06966::g00:b2:f13",
+      "1805.06966::g00:b2:f14"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.89,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u005"
+    },
+    {
+     "insight_id": "1805.06966::g00:i06",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g00",
+     "concise_text": "The NUS main component combines a Feature Extractor that generates feature vectors with a sequence-to-sequence model whose first RNN takes one feature vector at a time as input.",
+     "triple": {
+      "subject": "the Feature Extractor",
+      "predicate": "requires",
+      "object": "the sequence-to-sequence model to take one feature vector at a time as input"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1805.06966::s00::p002",
+      "1805.06966::s05::p000",
+      "1805.06966::s06::p002"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g00:b0:f08",
+      "1805.06966::g00:b2:f16",
+      "1805.06966::g00:b4:f00"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u006"
+    },
+    {
+     "insight_id": "1805.06966::g00:i07",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g00",
+     "concise_text": "The NUS uses a single layer LSTM for both the RNN encoder and decoder, and the decoder terminates decoding when it generates the end-of-sentence (<EOS>) token.",
+     "triple": {
+      "subject": "the single layer LSTM decoder",
+      "predicate": "requires",
+      "object": "the end-of-sentence (<EOS>) token to terminate decoding"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1805.06966::s06::p001",
+      "1805.06966::s06::p004"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g00:b3:f16",
+      "1805.06966::g00:b4:f06",
+      "1805.06966::g00:b4:f07"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u007"
+    },
+    {
+     "insight_id": "1805.06966::g00:i08",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g00",
+     "concise_text": "Because deterministic beam-search prevents the NUS from covering the full breadth of user behaviour, beam-search with sampling makes the NUS non-deterministic and diverse, with 2 beams giving a good trade-off.",
+     "triple": {
+      "subject": "deterministic beam-search",
+      "predicate": "causes",
+      "object": "beam-search with sampling using 2 beams to give a good trade-off between reasonable responses and diversity"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1805.06966::s06::p003",
+      "1805.06966::s06::p006"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g00:b4:f02",
+      "1805.06966::g00:b4:f03",
+      "1805.06966::g00:b4:f12",
+      "1805.06966::g00:b4:f13",
+      "1805.06966::g00:b4:f14",
+      "1805.06966::g00:b4:f16",
+      "1805.06966::g00:b4:f17"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.92,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u008"
+    },
+    {
+     "insight_id": "1805.06966::g00:i09",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g00",
+     "concise_text": "The Goal Generator samples DSTC2 constraints with probabilities estimated from the DSTC2 data set, while the ontology defines the possible goals and slot values.",
+     "triple": {
+      "subject": "the Goal Generator",
+      "predicate": "requires",
+      "object": "the ontology and DSTC2-estimated probabilities to sample goals"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1805.06966::s01::p000",
+      "1805.06966::s03::p000",
+      "1805.06966::s04::p000"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g00:b0:f16",
+      "1805.06966::g00:b0:f18",
+      "1805.06966::g00:b0:f19",
+      "1805.06966::g00:b2:f01",
+      "1805.06966::g00:b2:f04",
+      "1805.06966::g00:b2:f06",
+      "1805.06966::g00:b2:f07"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u009"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 12787,
+    "completion_tokens": 2152,
+    "total_tokens": 14939,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1805.06966::g01",
+   "insights": [
+    {
+     "insight_id": "1805.06966::g01:i00",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g01",
+     "concise_text": "Because the only fair comparison is indirect evaluation of policies trained with each US, the cross-model evaluation showing NUS-trained policies perform well on both USs supports NUS over ABUS.",
+     "triple": {
+      "subject": "cross-model evaluation results",
+      "predicate": "provide evidence for",
+      "object": "the indirect comparison of NUS and ABUS"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1805.06966::s08::p000",
+      "1805.06966::s11::p000"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g01:b0:f18",
+      "1805.06966::g01:b1:f04",
+      "1805.06966::g01:b1:f05"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u010"
+    },
+    {
+     "insight_id": "1805.06966::g01:i01",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g01",
+     "concise_text": "The human evaluation setup selected policies from the five cross-model policies, and its results show NUS-trained policies outperformed ABUS-trained policies with real users.",
+     "triple": {
+      "subject": "human evaluation setup",
+      "predicate": "evaluated_on",
+      "object": "policies selected from the five policies for each US"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1805.06966::s09::p000",
+      "1805.06966::s10::p000",
+      "1805.06966::s12::p000"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g01:b0:f20",
+      "1805.06966::g01:b1:f00",
+      "1805.06966::g01:b1:f10"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u011"
+    },
+    {
+     "insight_id": "1805.06966::g01:i02",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g01",
+     "concise_text": "The conclusion that the NUS excelled on both evaluation tasks is supported by cross-model SR results and human evaluation reward and success rate results.",
+     "triple": {
+      "subject": "cross-model and human evaluation results",
+      "predicate": "provide evidence for",
+      "object": "the NUS excelled on both evaluation tasks"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1805.06966::s11::p000",
+      "1805.06966::s12::p000",
+      "1805.06966::s13::p000"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g01:b1:f04",
+      "1805.06966::g01:b1:f05",
+      "1805.06966::g01:b1:f10",
+      "1805.06966::g01:b1:f11",
+      "1805.06966::g01:b1:f12",
+      "1805.06966::g01:b1:f15"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u012"
+    },
+    {
+     "insight_id": "1805.06966::g01:i03",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g01",
+     "concise_text": "Training policies for 4000 dialogues with GP-SARSA and the stated reward function produced cross-model results where NUS-trained policies achieved 94.0% and 96.6% average SR.",
+     "triple": {
+      "subject": "4000-dialogue GP-SARSA policy training",
+      "predicate": "causes",
+      "object": "NUS-trained policies achieved 94.0% and 96.6% average SR"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1805.06966::s07::p003",
+      "1805.06966::s11::p000"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g01:b0:f09",
+      "1805.06966::g01:b0:f10",
+      "1805.06966::g01:b0:f14",
+      "1805.06966::g01:b1:f04"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u013"
+    },
+    {
+     "insight_id": "1805.06966::g01:i04",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g01",
+     "concise_text": "The overfitting concern used to motivate choosing policies best on the NUS and ABUS is supported by the observation that the best policy on the NUS was not best on the ABUS.",
+     "triple": {
+      "subject": "policy choice in human evaluation",
+      "predicate": "requires",
+      "object": "overfitting to a particular user simulator"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1805.06966::s10::p000",
+      "1805.06966::s11::p001"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g01:b1:f00",
+      "1805.06966::g01:b1:f07"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.79,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u014"
+    },
+    {
+     "insight_id": "1805.06966::g01:i05",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g01",
+     "concise_text": "The NUS trained on manual transcriptions of the DSTC2 training set was later used to train dialogue policies with PyDial for 4000 dialogues.",
+     "triple": {
+      "subject": "the sequence-to-sequence model trained on DSTC2 manual transcriptions",
+      "predicate": "extends",
+      "object": "dialogue policies trained with PyDial for 4000 dialogues"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1805.06966::s07::p002",
+      "1805.06966::s07::p003",
+      "1805.06966::s13::p000"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g01:b0:f04",
+      "1805.06966::g01:b0:f08",
+      "1805.06966::g01:b0:f14",
+      "1805.06966::g01:b1:f13"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.74,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u015"
+    },
+    {
+     "insight_id": "1805.06966::g01:i06",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g01",
+     "concise_text": "The human evaluation used 1000 dialogues with 250 per policy, and the best NUS-trained policy achieved 93.4% success rate and 13.8 average rewards.",
+     "triple": {
+      "subject": "1000 dialogues with 250 per policy",
+      "predicate": "evaluated_on",
+      "object": "the best NUS-trained policy achieved 93.4% success rate and 13.8 average rewards"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1805.06966::s10::p000",
+      "1805.06966::s12::p000"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g01:b1:f02",
+      "1805.06966::g01:b1:f11"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u016"
+    },
+    {
+     "insight_id": "1805.06966::g01:i07",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g01",
+     "concise_text": "The cross-model evaluation after 4000 training dialogues used success rate (SR), defined as satisfying both the user's constraints and requests, to compare NUS and ABUS policies.",
+     "triple": {
+      "subject": "cross-model evaluation after 4000 training dialogues",
+      "predicate": "evaluated_on",
+      "object": "success rate (SR)"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1805.06966::s07::p003",
+      "1805.06966::s11::p000"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g01:b0:f12",
+      "1805.06966::g01:b0:f13",
+      "1805.06966::g01:b0:f14",
+      "1805.06966::g01:b1:f04",
+      "1805.06966::g01:b1:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u017"
+    },
+    {
+     "insight_id": "1805.06966::g01:i08",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g01",
+     "concise_text": "The NUS was trained to maximize log probability of user utterances from cleaned DSTC2 transcriptions, then its trained policies were evaluated with simulated and real users.",
+     "triple": {
+      "subject": "NUS log-probability training on cleaned DSTC2 transcriptions",
+      "predicate": "extends",
+      "object": "policy evaluation with simulated and real users"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1805.06966::s07::p000",
+      "1805.06966::s07::p002",
+      "1805.06966::s13::p000"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g01:b0:f00",
+      "1805.06966::g01:b0:f04",
+      "1805.06966::g01:b0:f05",
+      "1805.06966::g01:b1:f15"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.76,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u018"
+    },
+    {
+     "insight_id": "1805.06966::g01:i09",
+     "paper_id": "1805.06966",
+     "group_id": "1805.06966::g01",
+     "concise_text": "The ABUS goal-change behaviour was matched in the NUS by re-sampling, and the resulting cross-model evaluation showed NUS-trained policies performed well on both USs.",
+     "triple": {
+      "subject": "NUS re-sampling to mention the new goal",
+      "predicate": "limits",
+      "object": "ABUS goal-change behaviour affecting cross-model results"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1805.06966::s09::p000",
+      "1805.06966::s11::p000"
+     ],
+     "supporting_fact_ids": [
+      "1805.06966::g01:b0:f21",
+      "1805.06966::g01:b1:f04",
+      "1805.06966::g01:b1:f05"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.72,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1805.06966::u019"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5736,
+    "completion_tokens": 1937,
+    "total_tokens": 7673,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

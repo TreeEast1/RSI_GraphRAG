@@ -1,0 +1,116 @@
+{
+ "paper_id": "1912.13337",
+ "title": "What Does My QA Model Know? Devising Controlled Probes using Expert Knowledge",
+ "abstract": "Open-domain question answering (QA) is known to involve several underlying knowledge and reasoning challenges, but are models actually learning such knowledge when trained on benchmark tasks? To investigate this, we introduce several new challenge tasks that probe whether state-of-the-art QA models have general knowledge about word definitions and general taxonomic reasoning, both of which are fundamental to more complex forms of reasoning and are widespread in benchmark datasets. As an alternative to expensive crowd-sourcing, we introduce a methodology for automatically building datasets from various types of expert knowledge (e.g., knowledge graphs and lexical taxonomies), allowing for systematic control over the resulting probes and for a more comprehensive evaluation. We find automatically constructing probes to be vulnerable to annotation artifacts, which we carefully control for. Our evaluation confirms that transformer-based QA models are already predisposed to recognize certain types of structural lexical knowledge. However, it also reveals a more nuanced picture: their performance degrades substantially with even a slight increase in the number of hops in the underlying taxonomic hierarchy, or as more challenging distractor candidate answers are introduced. Further, even when these models succeed at the standard instance-level evaluation, they leave much room for improvement when assessed at the level of clusters of semantically connected probes (e.g., all Isa questions about a concept).",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Dataset Probes and Construction",
+  "Dataset Probes and Construction ::: WordNetQA",
+  "Dataset Probes and Construction ::: WordNetQA ::: Example Generation @!START@$\\textsc {gen}(\\tau )$@!END@.",
+  "Dataset Probes and Construction ::: WordNetQA ::: Distractor Generation: @!START@$\\textsc {distr}(\\tau ^{\\prime })$@!END@.",
+  "Dataset Probes and Construction ::: WordNetQA ::: Perturbations and Semantic Clusters",
+  "Dataset Probes and Construction ::: DictionaryQA",
+  "Dataset Probes and Construction ::: DictionaryQA ::: Example and Distractor Generation.",
+  "Probing Methodology and Modeling",
+  "Probing Methodology and Modeling ::: Task Definition and Modeling",
+  "Probing Methodology and Modeling ::: Task Definition and Modeling ::: Question+Answer Encoder.",
+  "Probing Methodology and Modeling ::: Task Definition and Modeling ::: Baselines and Sanity Checks.",
+  "Probing Methodology and Modeling ::: Inoculation and Pre-training",
+  "Probing Methodology and Modeling ::: Evaluating Model Competence",
+  "Results and Findings",
+  "Results and Findings ::: Are our Probes Sufficiently Challenging?",
+  "Results and Findings ::: How well do pre-trained MCQA models do?",
+  "Results and Findings ::: Can Models Be Effectively Inoculated?",
+  "Results and Findings ::: Are Models Consistent across Clusters?",
+  "Discussion and Conclusion"
+ ],
+ "n_paragraphs": 67,
+ "n_tokens": 8779,
+ "figures_and_tables": [
+  {
+   "caption_id": "1912.13337::fig000",
+   "paper_id": "1912.13337",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: An illustration of our experimental setup and probing methodology.",
+   "n_tokens": 14
+  },
+  {
+   "caption_id": "1912.13337::fig001",
+   "paper_id": "1912.13337",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: A description of the different resources used to construct the probes in terms of abstract triples.",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "1912.13337::fig002",
+   "paper_id": "1912.13337",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2: A portion of the WordNet ISA graph (top) and an example distractor function DISTR(τ) (bottom) used to generate distractor choices {a′1, a′2, a′3} for a question q based on information in the graph.",
+   "n_tokens": 59
+  },
+  {
+   "caption_id": "1912.13337::fig003",
+   "paper_id": "1912.13337",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Details of the GEN(τ) function used to construct gold question-answer pairs (q, a) from a triple graph G.",
+   "n_tokens": 30
+  },
+  {
+   "caption_id": "1912.13337::fig004",
+   "paper_id": "1912.13337",
+   "file": "5-Table3-1.png",
+   "caption": "Table 3: Details of our dataset probes, which includes (for WordNetQA above) the number of unique (q, a) pairs, as well as the total number of all questions including perturbations w/ Perturb. (varied distractor choices).",
+   "n_tokens": 55
+  },
+  {
+   "caption_id": "1912.13337::fig005",
+   "paper_id": "1912.13337",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: Example dictionary entries for the word gift.",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1912.13337::fig006",
+   "paper_id": "1912.13337",
+   "file": "7-Table5-1.png",
+   "caption": "Table 5: The MCQA training datasets used. #Question denotes the number of training samples in our version of each dataset, N the number of choices.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1912.13337::fig007",
+   "paper_id": "1912.13337",
+   "file": "9-Table6-1.png",
+   "caption": "Table 6: Instance-level accuracy (%) results on all baselines and main models.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1912.13337::fig008",
+   "paper_id": "1912.13337",
+   "file": "10-Figure3-1.png",
+   "caption": "Figure 3: Combined model accuracies on the different WordNetQA datasets (divided by red lines) broken down (where possible) into number of hops k (rows) and types of distractor sets and hops k′ (rows) across the different stages of inoculation (# ex.). The dashed red lines show some trends related to multi-hop inference.",
+   "n_tokens": 72
+  },
+  {
+   "caption_id": "1912.13337::fig009",
+   "paper_id": "1912.13337",
+   "file": "10-Figure4-1.png",
+   "caption": "Figure 4: Inoculation plots showing accuracy of challenge tasks (red solid lines) and original tasks (red dashed lines) using the best aggregate model Ma,k∗ at each k number of challenge examples (x axis). We also plot the effect of using add-some inoculation shown in the blue (1x matching) and black (x2 matching) lines.",
+   "n_tokens": 76
+  },
+  {
+   "caption_id": "1912.13337::fig010",
+   "paper_id": "1912.13337",
+   "file": "11-Table7-1.png",
+   "caption": "Table 7: Example questions and answers/inferences (involving ISA reasoning) that illustrate semantic clusters, as well as model predictions (shown as # correct questions/total # questions with perturbations).",
+   "n_tokens": 42
+  },
+  {
+   "caption_id": "1912.13337::fig011",
+   "paper_id": "1912.13337",
+   "file": "11-Table8-1.png",
+   "caption": "Table 8: Cluster-level accuracies (%) on the WordNetQA dev. sets for inoculated models and best Choice-only model. ∆ show the absolute difference in percentage points with instance-level accuracies.",
+   "n_tokens": 42
+  }
+ ]
+}

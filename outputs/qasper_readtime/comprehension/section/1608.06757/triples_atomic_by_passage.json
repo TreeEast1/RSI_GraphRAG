@@ -1,0 +1,503 @@
+{
+ "1608.06757::s00::p000": [
+  [
+   "named entity recognition (NER)",
+   "aims to extract",
+   "mentions of entity names in text"
+  ],
+  [
+   "NER",
+   "is necessary for",
+   "entity linking, relation extraction, building knowledge graphs, question answering and intent based search"
+  ],
+  [
+   "NER recall",
+   "is critical",
+   "candidates that are never generated can not be recovered later"
+  ]
+ ],
+ "1608.06757::s01::p000": [
+  [
+   "mentions",
+   "are",
+   "non-recursive and non-overlapping"
+  ]
+ ],
+ "1608.06757::s02::p000": [
+  [
+   "most common errors for recall loss",
+   "are",
+   "misspellings, POS errors, capitalization, unseen words and irregular context"
+  ]
+ ],
+ "1608.06757::s02::p001": [
+  [
+   "Dictionary-based word vectorization methods",
+   "suffer from",
+   "sparse training sets"
+  ],
+  [
+   "the word2vec model of mikolov2013efficient",
+   "generalizes insufficiently for",
+   "rare words in idiosyncratic domains or for misspelled words"
+  ],
+  [
+   "the GENIA data set",
+   "has",
+   "27% unseen words (dictionary misses) in the pretrained word2vec model"
+  ]
+ ],
+ "1608.06757::s02::p002": [
+  [
+   "Mixed-case word encodings",
+   "implicitly include",
+   "capitalization features"
+  ]
+ ],
+ "1608.06757::s03::p000": [
+  [
+   "sparse training data in the idiosyncratic domain",
+   "leads to expectation of",
+   "input data with high variance"
+  ],
+  [
+   "long-range context-sensitive information",
+   "is indispensable for",
+   "high 80–90% NER F1 performance"
+  ],
+  [
+   "LSTMs",
+   "are able to learn",
+   "complex parameters using gradient descent"
+  ],
+  [
+   "LSTMs",
+   "include",
+   "additional recurrent connections between cells to influence weight updates over adjacent time steps"
+  ],
+  [
+   "LSTMs",
+   "have proven to generalize",
+   "context-sensitive sequential data well"
+  ]
+ ],
+ "1608.06757::s03::p001": [
+  [
+   "The hidden layer of the LSTM",
+   "represents",
+   "context from long range dependencies over the entire sentence from left to right"
+  ]
+ ],
+ "1608.06757::s03::p002": [
+  [
+   "word encodings INLINEFORM0 and labels INLINEFORM1",
+   "are",
+   "real-valued vectors"
+  ],
+  [
+   "all gates",
+   "are duplicated and combined into",
+   "forward state INLINEFORM8 and backward state INLINEFORM9"
+  ],
+  [
+   "The network",
+   "is trained using",
+   "backpropagation through time (BPTT)"
+  ]
+ ],
+ "1608.06757::s03::p003": [
+  [
+   "The network",
+   "is used to predict",
+   "label probabilities INLINEFORM0 for unseen word sequences INLINEFORM1"
+  ]
+ ],
+ "1608.06757::s04::p002": [
+  [
+   "DICT",
+   "builds",
+   "a dictionary over all words in the corpus"
+  ],
+  [
+   "DICT",
+   "generates",
+   "the input vector using 1-hot encoding for each word"
+  ]
+ ],
+ "1608.06757::s04::p003": [
+  [
+   "EMB",
+   "uses",
+   "the GoogleNews word2vec embeddings"
+  ],
+  [
+   "the GoogleNews word2vec embeddings",
+   "encodes each word as",
+   "vector of size 300"
+  ]
+ ],
+ "1608.06757::s04::p004": [
+  [
+   "TRI",
+   "implements",
+   "letter-trigram word hashing"
+  ]
+ ],
+ "1608.06757::s04::p005": [
+  [
+   "all tokens of a sentence",
+   "are grouped as",
+   "mini-batch"
+  ]
+ ],
+ "1608.06757::s04::p007": [
+  [
+   "FF",
+   "is",
+   "a non-sequential feed-forward model"
+  ],
+  [
+   "FF",
+   "has",
+   "3 hidden layers of size 150 with relu activation"
+  ],
+  [
+   "FF",
+   "feeds into",
+   "a 3-class softmax classifier"
+  ],
+  [
+   "FF",
+   "is trained using",
+   "backpropagation with stochastic gradient descent and a learning rate of 0.005"
+  ]
+ ],
+ "1608.06757::s04::p008": [
+  [
+   "LSTM",
+   "uses",
+   "a single feed-forward layer of size 150"
+  ],
+  [
+   "LSTM",
+   "uses",
+   "two additional layers of single-direction LSTM with 20 cells"
+  ],
+  [
+   "LSTM",
+   "uses",
+   "a 3-class softmax classifier"
+  ],
+  [
+   "LSTM",
+   "is trained using",
+   "backpropagation-through-time (BPTT) with stochastic gradient descent and a learning rate of 0.005"
+  ]
+ ],
+ "1608.06757::s04::p009": [
+  [
+   "BLSTM",
+   "consists of",
+   "a single feed-forward layer of size 150"
+  ],
+  [
+   "BLSTM",
+   "consists of",
+   "one bidirectional LSTM layer with 20 cells"
+  ],
+  [
+   "BLSTM",
+   "consists of",
+   "an additional single-direction LSTM with 20 cells"
+  ],
+  [
+   "BLSTM",
+   "feeds into",
+   "a 3-class softmax classifier"
+  ],
+  [
+   "The BLSTM model",
+   "is trained",
+   "the same way as the single-direction LSTM"
+  ]
+ ],
+ "1608.06757::s05::p000": [
+  [
+   "the combination of letter-trigram word hashing with bidirectional LSTM",
+   "yields",
+   "the best results"
+  ],
+  [
+   "the combination of letter-trigram word hashing with bidirectional LSTM",
+   "outperforms",
+   "sequence learners based on dictionaries or word2vec"
+  ]
+ ],
+ "1608.06757::s06::p000": [
+  [
+   "two models with identical parameterization",
+   "each with",
+   "2000 randomly chosen labeled sentences from a standard data set"
+  ],
+  [
+   "Training the TRI+BLSTM configuration on a commodity Intel i7 notebook with 4 cores at 2.8GHz",
+   "takes",
+   "approximately 50 minutes"
+  ]
+ ],
+ "1608.06757::s06::p001": [
+  [
+   "The GENIA Corpus BIBREF3",
+   "contains",
+   "biomedical abstracts from the PubMed database"
+  ],
+  [
+   "GENIA technical term annotations 3.02",
+   "cover",
+   "linguistic expressions to entities of interest in molecular biology, e.g. proteins, genes and cells"
+  ],
+  [
+   "CoNLL2003 BIBREF14",
+   "is",
+   "a standard NER dataset based on the Reuters RCV-1 news corpus"
+  ],
+  [
+   "CoNLL2003 BIBREF14",
+   "covers",
+   "named entities of type person, location, organization and misc"
+  ]
+ ],
+ "1608.06757::s07::p001": [
+  [
+   "the evaluation measures defined by cornolti2013framework",
+   "are also used by",
+   "ling2015design"
+  ],
+  [
+   "Each mention INLINEFORM3",
+   "is defined by",
+   "start position INLINEFORM4 and end position INLINEFORM5 in the source document INLINEFORM6"
+  ]
+ ],
+ "1608.06757::s07::p004": [
+  [
+   "Tuning the model configuration with annotation match measurement",
+   "is not always",
+   "feasible"
+  ]
+ ],
+ "1608.06757::s08::p001": [
+  [
+   "Both common and medical models",
+   "are configured identically and trained on",
+   "only 2000 labeled sentences, without any external prior knowledge"
+  ],
+  [
+   "DATEXIS-NER",
+   "achieves",
+   "the highest recall scores of all tested annotators, with 95%–98% on all measured data sets"
+  ],
+  [
+   "DATEXIS-NER precision scores",
+   "are",
+   "equal or better than median"
+  ],
+  [
+   "systems specialized on word-sense disambiguation (Babelfy, DBpedia Spotlight)",
+   "don't perform well on",
+   "“raw” untyped entity recognition tasks"
+  ],
+  [
+   "The highest precision scores",
+   "are reached by",
+   "Stanford NER"
+  ]
+ ],
+ "1608.06757::s08::p002": [
+  [
+   "these well-written Medline abstracts",
+   "have",
+   "not such a strong skew between precision and recall"
+  ],
+  [
+   "the highly specialized GENIA chunker for LingPipe",
+   "achieves",
+   "higher scores"
+  ],
+  [
+   "This chunker",
+   "is",
+   "a very simple generative model predictor that is based on a sliding window of two tokens, word shape and dictionaries"
+  ],
+  [
+   "this model",
+   "will generalize",
+   "hardly considering the simple model"
+  ],
+  [
+   "the MUC-6 trained HMM LingPipe chunker",
+   "performs",
+   "on average on unseen data"
+  ]
+ ],
+ "1608.06757::s08::p003": [
+  [
+   "dictionary-based word encodings (DICT)",
+   "work well for",
+   "idiosyncratic medical domains"
+  ],
+  [
+   "Pretrained word2vec embeddings (EMB)",
+   "perform well on",
+   "news data"
+  ]
+ ],
+ "1608.06757::s08::p004": [
+  [
+   "the contextual LSTM model",
+   "achieves",
+   "scores throughout in the 85%–94% range"
+  ],
+  [
+   "the contextual LSTM model",
+   "significantly outperforms",
+   "the feed-forward (FF) baseline"
+  ],
+  [
+   "the feed-forward (FF) baseline",
+   "shows",
+   "a maximum of 75%"
+  ],
+  [
+   "Bidirectional LSTMs",
+   "can further improve",
+   "label classification in both precision and recall"
+  ]
+ ],
+ "1608.06757::s09::p001": [
+  [
+   "dictionary based configurations (e.g. 1-hot word vector encoding DICT)",
+   "observe",
+   "false negative predictions caused by dictionary misses for words that do not exist in the training data"
+  ],
+  [
+   "These words",
+   "yield",
+   "a null vector result from the encoder"
+  ],
+  [
+   "The error",
+   "increases when using",
+   "word2vec"
+  ]
+ ],
+ "1608.06757::s09::p002": [
+  [
+   "Surface forms",
+   "encode",
+   "important features for NER"
+  ],
+  [
+   "case-sensitive word vectorization methods",
+   "yield",
+   "a large amount of false positive predictions caused by incorrect capitalization in the input data"
+  ],
+  [
+   "An uppercase headline (e.g. TENNIS - U.S. TEAM ON THE ROAD FOR 1997 FED CUP)",
+   "is encoded completely different than",
+   "a lowercase one (e.g. U.S. team on the road for Fed Cup)"
+  ]
+ ],
+ "1608.06757::s09::p003": [
+  [
+   "These groups",
+   "encode",
+   "strong syntagmatic word relations"
+  ],
+  [
+   "correct boundaries in these groups",
+   "can effectively be identified only with",
+   "contextual models such as LSTMs"
+  ]
+ ],
+ "1608.06757::s09::p004": [
+  [
+   "different words in a paradigmatic relation",
+   "can occur in",
+   "the same context"
+  ],
+  [
+   "These groups",
+   "are efficiently represented in",
+   "word2vec"
+  ],
+  [
+   "letter-trigram vectors",
+   "cannot encode",
+   "paradigmatic groups"
+  ],
+  [
+   "letter-trigram vectors",
+   "require",
+   "a larger training sample to capture these relations"
+  ]
+ ],
+ "1608.06757::s09::p005": [
+  [
+   "synonyms",
+   "can only be resolved regarding",
+   "a larger document context than the local sentence context known by the LSTM"
+  ],
+  [
+   "word sense",
+   "is redefined by",
+   "a topic model local to the paragraph"
+  ],
+  [
+   "This problem",
+   "does not heavily affect",
+   "NER recall"
+  ],
+  [
+   "This problem",
+   "is crucial for",
+   "named entity disambiguation and coreference resolution"
+  ]
+ ],
+ "1608.06757::s09::p006": [
+  [
+   "The proposed DATEXIS-NER model",
+   "is restricted to recognize",
+   "boundaries of generic mentions in text"
+  ]
+ ],
+ "1608.06757::s10::p000": [
+  [
+   "ling2015design",
+   "show that",
+   "the task of NER is not clearly defined and rather depends on a specific problem context"
+  ],
+  [
+   "most NER approaches",
+   "are specifically trained on",
+   "fixed datasets in a batch mode"
+  ],
+  [
+   "“Personalizing” and adapting such annotators",
+   "should happen with",
+   "very limited human labeling effort"
+  ]
+ ],
+ "1608.06757::s10::p001": [
+  [
+   "F1 scores between 84–94%",
+   "are reported when using",
+   "bidirectional multi-layered LSTMs, letter-trigram word hashing and surface form features"
+  ],
+  [
+   "F1 scores between 84–94%",
+   "are reported on",
+   "only few hundred training examples"
+  ]
+ ]
+}

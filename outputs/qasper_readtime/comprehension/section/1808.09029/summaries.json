@@ -1,0 +1,472 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1808.09029::s00::p000",
+   "summary": "LSTM units BIBREF1 are popular for sequence modeling and language modeling, but their input and context vectors receive simple linear transformations before gating.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s00::p001",
+   "summary": "Increasing input and context vector dimensions can improve expressiveness but raises parameters and may limit generalizability, as Figure FIGREF1 shows for LSTMs.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s00::p002",
+   "summary": "The Pyramidal Recurrent Unit (PRU) uses pyramidal transformation (PT) for input vectors and grouped linear transformation (GLT) for context vectors.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s00::p003",
+   "summary": "PRUs improve language modeling perplexity by up to 1.3 points, reaching 56.56 and 64.53 on Penn Treebank and WikiText2 with 15-20% fewer parameters.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s01::p000",
+   "summary": "The paper first describes methods with gating structures and transformations for improving RNNs, then reviews recent language modeling work.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s02::p000",
+   "summary": "Pyramidal Recurrent Units (PRUs) improve context modeling with higher dimensional vector representations while learning fewer parameters, as overviewed in Figure FIGREF2.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s03::p000",
+   "summary": "The basic transformation in many recurrent units is a linear transformation INLINEFORM0 defined as DISPLAYFORM0.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s03::p001",
+   "summary": "INLINEFORM0 are learned weights that linearly map INLINEFORM1 to INLINEFORM2, and biases are omitted.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s03::p002",
+   "summary": "Motivated by sub-sampling in computer vision, the input vector INLINEFORM0 is subsampled into INLINEFORM1 pyramidal levels with scale-specific transformations INLINEFORM6.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s03::p003",
+   "summary": "INLINEFORM0 indicates concatenation, and pyramidal transformation with INLINEFORM1 is the same as the linear transformation.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s03::p004",
+   "summary": "An element-wise sum combines input and output when dimensions match to produce a residual analog of pyramidal transformation, as shown in Figure FIGREF2 BIBREF25.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s03::p005",
+   "summary": "The input vector INLINEFORM0 is sub-sampled into INLINEFORM1 pyramidal levels using the kernel-based approach BIBREF8, BIBREF9 with kernel INLINEFORM2.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s03::p006",
+   "summary": "INLINEFORM0 represents the stride and INLINEFORM1.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s03::p007",
+   "summary": "Pyramidal transformation with INLINEFORM0 pyramidal levels reduces linear transformation parameters by a factor of INLINEFORM5, with INLINEFORM8 fewer parameters in an example.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s04::p000",
+   "summary": "Differing semantics of dense word embedding input vectors and highly contextualized context vectors motivate their separate treatment in the PRU architecture.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s04::p001",
+   "summary": "Grouped linear transformation (GLT) is proposed for recurrent connections to improve generalization and enable high dimensional representations, with Section SECREF39 suggesting GLTs are more effective.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s04::p002",
+   "summary": "A GLT splits input vector INLINEFORM3 into INLINEFORM4 smaller groups, applies linear transformation INLINEFORM6 to each, and concatenates INLINEFORM10 outputs into INLINEFORM12.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s04::p003",
+   "summary": "GLTs learn low-dimensional representations, require INLINEFORM0 fewer parameters than linear transformations, and equal linear transformations when INLINEFORM1.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s05::p000",
+   "summary": "The Pyramidal Recurrent Unit (PRU) extends the basic gating architecture of LSTM with pyramidal and grouped linear transformations.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s05::p001",
+   "summary": "At time INLINEFORM0, the PRU combines input vector INLINEFORM1 and previous context vector INLINEFORM2 using a transformation function DISPLAYFORM0.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s05::p002",
+   "summary": "INLINEFORM0 indexes gates in the LSTM model, while INLINEFORM1 and INLINEFORM2 represent pyramidal and grouped linear transformations from EQREF10 and EQREF15.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s05::p003",
+   "summary": "A PRU cell incorporates INLINEFORM0 into LSTM gating architecture, taking INLINEFORM2, INLINEFORM3, and INLINEFORM4 to produce gate signals, context vector INLINEFORM9, and cell state INLINEFORM10.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s05::p004",
+   "summary": "INLINEFORM0 is element-wise multiplication, INLINEFORM1 and INLINEFORM2 are sigmoid and hyperbolic tangent activations, and LSTM is a PRU special case when INLINEFORM3 = INLINEFORM4 =1.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s06::p000",
+   "summary": "The PRU is evaluated on two standard word-level language modeling datasets, compared with state-of-the-art methods, and examined in detail.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s07::p000",
+   "summary": "Experiments use Penn Treebank (PTB) BIBREF28 prepared by BIBREF29 and WikiText2 (WT-2) BIBREF20 with splits from BIBREF0.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s07::p001",
+   "summary": "AWD-LSTM BIBREF0 is extended with 3-layers of PRU, embedding size of 400, model size fixed to 19M, hidden sizes 1000, 1200, and 1400, and word-level perplexity.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s07::p002",
+   "summary": "Regularization experiments use Standard dropout with probability of 0.5 and Advanced dropout with techniques and values from BIBREF0, called AWD-PRU.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s08::p000",
+   "summary": "Table TABREF23 compares the PRU with state-of-the-art methods and shows the PRU achieves the best performance with fewer parameters.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s08::p001",
+   "summary": "PRUs match or outperform LSTMs, improving with increasing INLINEFORM0 and outperforming LSTMs by about 4 points on PTB and about 3 points on WT-2 at INLINEFORM1.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s08::p002",
+   "summary": "Advanced dropouts improve PRUs by about 4 points on PTB and 7 points on WT-2, with finetuning adding about 2 points on PTB and about 1 point on WT-2.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s08::p003",
+   "summary": "With standard dropout, the PRU outperforms most state-of-the-art methods on PTB, and with advanced dropouts improves perplexity by about 1 point while learning 15-20% fewer parameters.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s08::p004",
+   "summary": "With dynamic evaluation on the PTB test set, PRU perplexity improves from 62.42 to 55.23 while LSTM perplexity improves from 66.29 to 58.79.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s09::p000",
+   "summary": "The PRU learns higher-dimensional representations with more generalization power, and analysis reveals factors explaining its language modeling gains.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s09::p001",
+   "summary": "Using 3687 contexts from the PTB validation set and bins of size 0.23, the PRU more often produces lower entropy next-token distributions than the LSTM.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s09::p002",
+   "summary": "The pyramidal transform models words at different resolutions, with pyramid level 1 embeddings showing higher variance than LSTM across all POS categories and pyramid level 2 showing extremely low variance.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s09::p003",
+   "summary": "Saliency analysis shows PRUs give more relevance to contextual words and better gradient coverage than LSTMs, with BIBREF0 converging in 500 epochs with PRU and 750 with LSTM.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s10::p000",
+   "summary": "Ablations use standard dropouts, a single PRU layer, embedding and hidden layer size 600, and word-level perplexities on PTB and WT-2 validation sets.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s10::p001",
+   "summary": "The number of pyramidal levels INLINEFORM0 and groups INLINEFORM1 control the trade-off between performance and number of parameters in PRUs.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s10::p002",
+   "summary": "Increasing pyramidal levels INLINEFORM2 at fixed INLINEFORM3 drops PRU performance by about 1 to 4 points while reducing recurrent unit parameters by up to 15%.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s10::p003",
+   "summary": "Varying INLINEFORM2 at fixed pyramidal levels INLINEFORM3 significantly decreases recurrent unit parameters with minimal perplexity impact, including 77% fewer parameters and about 12% higher perplexity.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s10::p004",
+   "summary": "Table TABREF43 shows pyramidal transformation for input vectors improves perplexity by about 1 point on PTB and WT-2 while reducing recurrent unit parameters by about 14%.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s10::p005",
+   "summary": "Sub-sampling kernel INLINEFORM0 with stride INLINEFORM1 and size of 3 is set using Skip, Convolution, Avg. pool, and Max pool.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s10::p006",
+   "summary": "Table TABREF45 shows average pooling performs best, skipping is comparable, convolution-based sub-sampling underperforms averaging, and max pooling performs poorly.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s11::p000",
+   "summary": "The Pyramidal Recurrent Unit improves language modeling perplexity across settings, improves gradient flow and expands the word embedding subspace, with future work planned on other tasks and inference techniques.",
+   "group_id": "1808.09029::g00"
+  },
+  {
+   "passage_id": "1808.09029::s12::p000",
+   "summary": "This research was supported by NSF (IIS 1616112, III 1703166), Allen Distinguished Investigator Award, and gifts from Allen Institute for AI, Google, Amazon, and Bloomberg.",
+   "group_id": "1808.09029::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1808.09029::g00",
+   "summaries": [
+    {
+     "passage_id": "1808.09029::s00::p000",
+     "summary": "LSTM units BIBREF1 are popular for sequence modeling and language modeling, but their input and context vectors receive simple linear transformations before gating.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s00::p001",
+     "summary": "Increasing input and context vector dimensions can improve expressiveness but raises parameters and may limit generalizability, as Figure FIGREF1 shows for LSTMs.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s00::p002",
+     "summary": "The Pyramidal Recurrent Unit (PRU) uses pyramidal transformation (PT) for input vectors and grouped linear transformation (GLT) for context vectors.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s00::p003",
+     "summary": "PRUs improve language modeling perplexity by up to 1.3 points, reaching 56.56 and 64.53 on Penn Treebank and WikiText2 with 15-20% fewer parameters.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s01::p000",
+     "summary": "The paper first describes methods with gating structures and transformations for improving RNNs, then reviews recent language modeling work.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s02::p000",
+     "summary": "Pyramidal Recurrent Units (PRUs) improve context modeling with higher dimensional vector representations while learning fewer parameters, as overviewed in Figure FIGREF2.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s03::p000",
+     "summary": "The basic transformation in many recurrent units is a linear transformation INLINEFORM0 defined as DISPLAYFORM0.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s03::p001",
+     "summary": "INLINEFORM0 are learned weights that linearly map INLINEFORM1 to INLINEFORM2, and biases are omitted.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s03::p002",
+     "summary": "Motivated by sub-sampling in computer vision, the input vector INLINEFORM0 is subsampled into INLINEFORM1 pyramidal levels with scale-specific transformations INLINEFORM6.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s03::p003",
+     "summary": "INLINEFORM0 indicates concatenation, and pyramidal transformation with INLINEFORM1 is the same as the linear transformation.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s03::p004",
+     "summary": "An element-wise sum combines input and output when dimensions match to produce a residual analog of pyramidal transformation, as shown in Figure FIGREF2 BIBREF25.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s03::p005",
+     "summary": "The input vector INLINEFORM0 is sub-sampled into INLINEFORM1 pyramidal levels using the kernel-based approach BIBREF8, BIBREF9 with kernel INLINEFORM2.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s03::p006",
+     "summary": "INLINEFORM0 represents the stride and INLINEFORM1.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s03::p007",
+     "summary": "Pyramidal transformation with INLINEFORM0 pyramidal levels reduces linear transformation parameters by a factor of INLINEFORM5, with INLINEFORM8 fewer parameters in an example.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s04::p000",
+     "summary": "Differing semantics of dense word embedding input vectors and highly contextualized context vectors motivate their separate treatment in the PRU architecture.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s04::p001",
+     "summary": "Grouped linear transformation (GLT) is proposed for recurrent connections to improve generalization and enable high dimensional representations, with Section SECREF39 suggesting GLTs are more effective.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s04::p002",
+     "summary": "A GLT splits input vector INLINEFORM3 into INLINEFORM4 smaller groups, applies linear transformation INLINEFORM6 to each, and concatenates INLINEFORM10 outputs into INLINEFORM12.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s04::p003",
+     "summary": "GLTs learn low-dimensional representations, require INLINEFORM0 fewer parameters than linear transformations, and equal linear transformations when INLINEFORM1.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s05::p000",
+     "summary": "The Pyramidal Recurrent Unit (PRU) extends the basic gating architecture of LSTM with pyramidal and grouped linear transformations.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s05::p001",
+     "summary": "At time INLINEFORM0, the PRU combines input vector INLINEFORM1 and previous context vector INLINEFORM2 using a transformation function DISPLAYFORM0.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s05::p002",
+     "summary": "INLINEFORM0 indexes gates in the LSTM model, while INLINEFORM1 and INLINEFORM2 represent pyramidal and grouped linear transformations from EQREF10 and EQREF15.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s05::p003",
+     "summary": "A PRU cell incorporates INLINEFORM0 into LSTM gating architecture, taking INLINEFORM2, INLINEFORM3, and INLINEFORM4 to produce gate signals, context vector INLINEFORM9, and cell state INLINEFORM10.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s05::p004",
+     "summary": "INLINEFORM0 is element-wise multiplication, INLINEFORM1 and INLINEFORM2 are sigmoid and hyperbolic tangent activations, and LSTM is a PRU special case when INLINEFORM3 = INLINEFORM4 =1.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s06::p000",
+     "summary": "The PRU is evaluated on two standard word-level language modeling datasets, compared with state-of-the-art methods, and examined in detail.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s07::p000",
+     "summary": "Experiments use Penn Treebank (PTB) BIBREF28 prepared by BIBREF29 and WikiText2 (WT-2) BIBREF20 with splits from BIBREF0.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s07::p001",
+     "summary": "AWD-LSTM BIBREF0 is extended with 3-layers of PRU, embedding size of 400, model size fixed to 19M, hidden sizes 1000, 1200, and 1400, and word-level perplexity.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s07::p002",
+     "summary": "Regularization experiments use Standard dropout with probability of 0.5 and Advanced dropout with techniques and values from BIBREF0, called AWD-PRU.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s08::p000",
+     "summary": "Table TABREF23 compares the PRU with state-of-the-art methods and shows the PRU achieves the best performance with fewer parameters.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s08::p001",
+     "summary": "PRUs match or outperform LSTMs, improving with increasing INLINEFORM0 and outperforming LSTMs by about 4 points on PTB and about 3 points on WT-2 at INLINEFORM1.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s08::p002",
+     "summary": "Advanced dropouts improve PRUs by about 4 points on PTB and 7 points on WT-2, with finetuning adding about 2 points on PTB and about 1 point on WT-2.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s08::p003",
+     "summary": "With standard dropout, the PRU outperforms most state-of-the-art methods on PTB, and with advanced dropouts improves perplexity by about 1 point while learning 15-20% fewer parameters.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s08::p004",
+     "summary": "With dynamic evaluation on the PTB test set, PRU perplexity improves from 62.42 to 55.23 while LSTM perplexity improves from 66.29 to 58.79.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s09::p000",
+     "summary": "The PRU learns higher-dimensional representations with more generalization power, and analysis reveals factors explaining its language modeling gains.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s09::p001",
+     "summary": "Using 3687 contexts from the PTB validation set and bins of size 0.23, the PRU more often produces lower entropy next-token distributions than the LSTM.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s09::p002",
+     "summary": "The pyramidal transform models words at different resolutions, with pyramid level 1 embeddings showing higher variance than LSTM across all POS categories and pyramid level 2 showing extremely low variance.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s09::p003",
+     "summary": "Saliency analysis shows PRUs give more relevance to contextual words and better gradient coverage than LSTMs, with BIBREF0 converging in 500 epochs with PRU and 750 with LSTM.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s10::p000",
+     "summary": "Ablations use standard dropouts, a single PRU layer, embedding and hidden layer size 600, and word-level perplexities on PTB and WT-2 validation sets.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s10::p001",
+     "summary": "The number of pyramidal levels INLINEFORM0 and groups INLINEFORM1 control the trade-off between performance and number of parameters in PRUs.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s10::p002",
+     "summary": "Increasing pyramidal levels INLINEFORM2 at fixed INLINEFORM3 drops PRU performance by about 1 to 4 points while reducing recurrent unit parameters by up to 15%.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s10::p003",
+     "summary": "Varying INLINEFORM2 at fixed pyramidal levels INLINEFORM3 significantly decreases recurrent unit parameters with minimal perplexity impact, including 77% fewer parameters and about 12% higher perplexity.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s10::p004",
+     "summary": "Table TABREF43 shows pyramidal transformation for input vectors improves perplexity by about 1 point on PTB and WT-2 while reducing recurrent unit parameters by about 14%.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s10::p005",
+     "summary": "Sub-sampling kernel INLINEFORM0 with stride INLINEFORM1 and size of 3 is set using Skip, Convolution, Avg. pool, and Max pool.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s10::p006",
+     "summary": "Table TABREF45 shows average pooling performs best, skipping is comparable, convolution-based sub-sampling underperforms averaging, and max pooling performs poorly.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s11::p000",
+     "summary": "The Pyramidal Recurrent Unit improves language modeling perplexity across settings, improves gradient flow and expands the word embedding subspace, with future work planned on other tasks and inference techniques.",
+     "group_id": "1808.09029::g00"
+    },
+    {
+     "passage_id": "1808.09029::s12::p000",
+     "summary": "This research was supported by NSF (IIS 1616112, III 1703166), Allen Distinguished Investigator Award, and gifts from Allen Institute for AI, Google, Amazon, and Bloomberg.",
+     "group_id": "1808.09029::g00"
+    }
+   ],
+   "n_raw": 45,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5686,
+    "completion_tokens": 2407,
+    "total_tokens": 8093,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

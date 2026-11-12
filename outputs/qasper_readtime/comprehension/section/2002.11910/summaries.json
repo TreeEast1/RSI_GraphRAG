@@ -1,0 +1,222 @@
+{
+ "summaries": [
+  {
+   "passage_id": "2002.11910::s00::p000",
+   "summary": "NER is a challenging sequence labeling task for applications such as information extraction and question answering, especially in noisy social media text.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s00::p001",
+   "summary": "Chinese lacks capitalization and word delimitation, so Chinese word segmentation outputs or hidden-layer boundary information often support named entity recognition.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s00::p002",
+   "summary": "Chinese word segmentation faces four challenges involving language-specific models, differing criteria, fragmented compound entity mentions, and poor long-dependency identification.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s00::p003",
+   "summary": "Chinese word segmentation errors can cause cascading failures for NER, while assembling single words may better preserve information groups and sentence structure.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s00::p004",
+   "summary": "The paper integrates boundary assembling into an LSTM model for Chinese word segmentation and feeds output into CRF for NER, improving overall F1 score by 2%.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s00::p005",
+   "summary": "The paper is organized around a model with LSTM for Chinese word segmentation, boundary assembling, and CRF for NER, followed by experiments and conclusion.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s01::p000",
+   "summary": "The model has three modules, using LSTM segmentation outputs, boundary assembling, CRF for CWS, and CRF for NER with multiple feature inputs.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s02::p000",
+   "summary": "The CWS LSTM uses character-positional input embeddings pre-trained over 112,971,734 Weibo messages, containing 52,057 unique characters in a 100-dimension space.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s02::p001",
+   "summary": "The LSTM has a single layer with 150 nodes, uses biased-linear transformation, boundary assembling, transition probabilities, and CRF feedback for updates.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s03::p000",
+   "summary": "Boundary assembling uses BIES labeling and backward greedy search to assemble adjacent noun boundaries, helping long named entities and reducing segmentation-criteria influence.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s04::p000",
+   "summary": "A log-bilinear CRF for NER takes character-positional embeddings, LSTM hidden vectors, and lexical features based on noun-position likelihoods.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s05::p000",
+   "summary": "Datasets include the SIGHAN 2005 bakeoff PKU corpus with 123,530 training and 11,697 testing sentences, and 1,890 Sina Weibo messages split into 1,350, 270, and 270.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s06::p000",
+   "summary": "Training uses stochastic gradient descent in two tandem stages, with 13,500 CWS sentences and 1,350 NER sentences per epoch, until convergence or 30 epochs.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s06::p001",
+   "summary": "Models are trained on a Windows PC with a 2.7 GHz Intel Core i7 CPU, with best-model LSTM training averaging 1897.6 seconds per iteration.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s07::p000",
+   "summary": "The best model uses dropout rate 0.1 and learning rate 0.05, and shows a 2% absolute improvement in overall F1 score over state-of-the-art models.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s07::p001",
+   "summary": "The improvement validates boundary assembling, which preserves sense groups and reduces fragmented information from PKU corpus segmentation for downstream NER.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s07::p002",
+   "summary": "The improvement indicates boundary assembling is not sensitive to the specific domain and is robust for cross-domain scenarios between PKU news articles and Weibo.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s07::p003",
+   "summary": "Identification of adjacent nouns depends on pre-trained lexical features, so out-of-vocabulary datasets may perform poorly due to lacking lexical information.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s08::p000",
+   "summary": "The paper integrates boundary assembling with LSTM and CRF modules for NER in Chinese social media text, with experiments showing effectiveness over existing methods.",
+   "group_id": "2002.11910::g00"
+  },
+  {
+   "passage_id": "2002.11910::s09::p000",
+   "summary": "This research was partially funded by the Engineering Directorate of the National Science Foundation (1820118).",
+   "group_id": "2002.11910::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "2002.11910::g00",
+   "summaries": [
+    {
+     "passage_id": "2002.11910::s00::p000",
+     "summary": "NER is a challenging sequence labeling task for applications such as information extraction and question answering, especially in noisy social media text.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s00::p001",
+     "summary": "Chinese lacks capitalization and word delimitation, so Chinese word segmentation outputs or hidden-layer boundary information often support named entity recognition.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s00::p002",
+     "summary": "Chinese word segmentation faces four challenges involving language-specific models, differing criteria, fragmented compound entity mentions, and poor long-dependency identification.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s00::p003",
+     "summary": "Chinese word segmentation errors can cause cascading failures for NER, while assembling single words may better preserve information groups and sentence structure.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s00::p004",
+     "summary": "The paper integrates boundary assembling into an LSTM model for Chinese word segmentation and feeds output into CRF for NER, improving overall F1 score by 2%.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s00::p005",
+     "summary": "The paper is organized around a model with LSTM for Chinese word segmentation, boundary assembling, and CRF for NER, followed by experiments and conclusion.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s01::p000",
+     "summary": "The model has three modules, using LSTM segmentation outputs, boundary assembling, CRF for CWS, and CRF for NER with multiple feature inputs.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s02::p000",
+     "summary": "The CWS LSTM uses character-positional input embeddings pre-trained over 112,971,734 Weibo messages, containing 52,057 unique characters in a 100-dimension space.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s02::p001",
+     "summary": "The LSTM has a single layer with 150 nodes, uses biased-linear transformation, boundary assembling, transition probabilities, and CRF feedback for updates.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s03::p000",
+     "summary": "Boundary assembling uses BIES labeling and backward greedy search to assemble adjacent noun boundaries, helping long named entities and reducing segmentation-criteria influence.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s04::p000",
+     "summary": "A log-bilinear CRF for NER takes character-positional embeddings, LSTM hidden vectors, and lexical features based on noun-position likelihoods.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s05::p000",
+     "summary": "Datasets include the SIGHAN 2005 bakeoff PKU corpus with 123,530 training and 11,697 testing sentences, and 1,890 Sina Weibo messages split into 1,350, 270, and 270.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s06::p000",
+     "summary": "Training uses stochastic gradient descent in two tandem stages, with 13,500 CWS sentences and 1,350 NER sentences per epoch, until convergence or 30 epochs.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s06::p001",
+     "summary": "Models are trained on a Windows PC with a 2.7 GHz Intel Core i7 CPU, with best-model LSTM training averaging 1897.6 seconds per iteration.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s07::p000",
+     "summary": "The best model uses dropout rate 0.1 and learning rate 0.05, and shows a 2% absolute improvement in overall F1 score over state-of-the-art models.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s07::p001",
+     "summary": "The improvement validates boundary assembling, which preserves sense groups and reduces fragmented information from PKU corpus segmentation for downstream NER.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s07::p002",
+     "summary": "The improvement indicates boundary assembling is not sensitive to the specific domain and is robust for cross-domain scenarios between PKU news articles and Weibo.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s07::p003",
+     "summary": "Identification of adjacent nouns depends on pre-trained lexical features, so out-of-vocabulary datasets may perform poorly due to lacking lexical information.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s08::p000",
+     "summary": "The paper integrates boundary assembling with LSTM and CRF modules for NER in Chinese social media text, with experiments showing effectiveness over existing methods.",
+     "group_id": "2002.11910::g00"
+    },
+    {
+     "passage_id": "2002.11910::s09::p000",
+     "summary": "This research was partially funded by the Engineering Directorate of the National Science Foundation (1820118).",
+     "group_id": "2002.11910::g00"
+    }
+   ],
+   "n_raw": 20,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 2878,
+    "completion_tokens": 995,
+    "total_tokens": 3873,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,207 @@
+{
+  "role": "v52_01",
+  "cluster_id": "cc-00000-stable-0099",
+  "unit_id": "cc-00000-stable-0099-u000",
+  "method": "Ccompact",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 2051,
+    "completion_tokens": 1340,
+    "reasoning_tokens": 512,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r52_units_v52_01_Ccompact",
+    "cache_key": "a5924678c2f7e750b7c940112de51f9f37160e9714290f2f37cc386334bc87b7"
+  },
+  "n_updates": 2,
+  "n_add": 2,
+  "n_accept": 2,
+  "n_reject": 0,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "EXTRACTION_REPAIR": 2
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "c1",
+      "comprehension_text": "Parental responsiveness means responding to a child's needs supportively and acceptingly.",
+      "new_semantic_relation": "responsiveness means supportive response to child needs",
+      "operator": "EXPLICIT_GAP",
+      "chain": [
+        {
+          "passage_id": "chunk-d18ea2208de791c87309c2f0287060f3",
+          "span": "Parental responsiveness refers to the degree to which the parent responds to the child's needs in a supportive and accepting manner."
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-291c1fdf61cceb05cd6f2f47b674aba3"
+      ],
+      "source_triple_ids": [
+        "triple-932dc084c63c5f9603221ea0e9070d12"
+      ],
+      "source_passage_ids": [
+        "chunk-d18ea2208de791c87309c2f0287060f3"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-d18ea2208de791c87309c2f0287060f3",
+          "span": "Parental responsiveness refers to the degree to which the parent responds to the child's needs in a supportive and accepting manner."
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "novel_part": "The supportive and accepting response definition is unstated in the triples.",
+      "reasoning_summary": "The passage explicitly defines parental responsiveness.",
+      "novelty_justification": "Existing triples only identify responsiveness as a typology element.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "c2",
+      "comprehension_text": "Parental demandingness involves behavioral rules, compliance expectations, and repercussions for breaking rules.",
+      "new_semantic_relation": "demandingness involves rules, compliance, and repercussions",
+      "operator": "EXPLICIT_GAP",
+      "chain": [
+        {
+          "passage_id": "chunk-d18ea2208de791c87309c2f0287060f3",
+          "span": "Parental Demandingness refers to the rules in which the parent has in place for their child's behavior, the expectations for their children to comply with these rules, and the level of repercussions that follow if those rules are broken."
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-7b1c3dc044bcaacb0b970bcd2b6b6d2e"
+      ],
+      "source_triple_ids": [
+        "triple-330ce0c1dc99a1c36aac256b1f8efc44"
+      ],
+      "source_passage_ids": [
+        "chunk-d18ea2208de791c87309c2f0287060f3"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-d18ea2208de791c87309c2f0287060f3",
+          "span": "Parental Demandingness refers to the rules in which the parent has in place for their child's behavior, the expectations for their children to comply with these rules, and the level of repercussions that follow if those rules are broken."
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "novel_part": "The rules, compliance expectations, and repercussions definition is unstated in the triples.",
+      "reasoning_summary": "The passage explicitly defines parental demandingness.",
+      "novelty_justification": "Existing triples only identify demandingness as a typology dimension.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "c1",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: parental, means, responding, child, needs, supportively, acceptingly",
+      "residue": [
+        "parental",
+        "means",
+        "responding",
+        "child",
+        "needs",
+        "supportively",
+        "acceptingly"
+      ],
+      "evidence_sentences": [
+        "Parental responsiveness refers to the degree to which the parent responds to the child's needs in a supportive and accepting manner. Parental Demandingness refers to the rules in which the parent has in place for their child's behavior, the expectations for their children to comply with these rules, and the level of repercussions that follow if those rules are broken."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Parental responsiveness refers to the degree to which the parent responds to the child's needs in a supportive and accepting manner. Parental Demandingness refers to the rules in which the parent has in place for their child's behavior, the expectations for their children to comply with these rules, and the level of repercussions that follow if those rules are broken."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "parental",
+            "means",
+            "responding",
+            "child",
+            "needs",
+            "supportively",
+            "acceptingly"
+          ],
+          "n_passage_triples": 13,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "c2",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: parental, demandingness, involves, behavioral, rules, compliance, expectations, repercussions, breaking, rules",
+      "residue": [
+        "parental",
+        "demandingness",
+        "involves",
+        "behavioral",
+        "rules",
+        "compliance",
+        "expectations",
+        "repercussions",
+        "breaking",
+        "rules"
+      ],
+      "evidence_sentences": [
+        "Parental Demandingness refers to the rules in which the parent has in place for their child's behavior, the expectations for their children to comply with these rules, and the level of repercussions that follow if those rules are broken. Through her studies Baumrind identified three initial parenting styles: Authoritative parenting, authoritarian parenting and permissive parenting."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Parental Demandingness refers to the rules in which the parent has in place for their child's behavior, the expectations for their children to comply with these rules, and the level of repercussions that follow if those rules are broken. Through her studies Baumrind identified three initial parenting styles: Authoritative parenting, authoritarian parenting and permissive parenting."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "parental",
+            "demandingness",
+            "involves",
+            "behavioral",
+            "rules",
+            "compliance",
+            "expectations",
+            "repercussions",
+            "breaking",
+            "rules"
+          ],
+          "n_passage_triples": 13,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

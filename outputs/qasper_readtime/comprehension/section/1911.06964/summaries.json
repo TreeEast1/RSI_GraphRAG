@@ -1,0 +1,312 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1911.06964::s00::p000",
+   "summary": "The paper motivates keyword-based autocomplete, noting left-to-right systems can be inefficient and exploring tradeoffs among typing efficiency, reconstruction accuracy, and keyword interpretability.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s00::p001",
+   "summary": "Supervised keyword-sentence datasets are expensive and static, while unsupervised joint learning can produce communication schemes uninterpretable to humans.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s00::p002",
+   "summary": "The proposed unsupervised autocomplete system restricts keywords to source-sentence subsequences and uses multi-objective optimization to control efficiency-accuracy tradeoffs.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s00::p003",
+   "summary": "Naively optimizing a linear combination is unstable, so the authors optimize communication efficiency under an accuracy constraint, improving stability and efficiency at all accuracy levels.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s00::p004",
+   "summary": "The framework yields schemes 52.16% more accurate than rule-based baselines at 77.37% of sentences, 11.73% more accurate than weighted optimization at 53.38%, and saves nearly 50% of time.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s01::p000",
+   "summary": "A communication game has a user pass keywords z from target sequence x using q_{\\alpha }(z\\mid x), while the system guesses x via p_{\\beta }(x\\mid z).",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s01::p001",
+   "summary": "A good communication scheme (q_{\\alpha }, p_{\\beta }) uses fewer keywords as cost and reconstructs target sentence x with high probability as loss.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s01::p002",
+   "summary": "Schemes are restricted to potentially noncontiguous subsequences of the target sentence to ensure interpretability by retaining important content words.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s02::p000",
+   "summary": "An encoder models q_{\\alpha }(z\\mid x) by retaining token subsets, with Bernoulli sampling over token-retention probabilities to keep or drop tokens independently.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s02::p001",
+   "summary": "The decoder p_{\\beta }(x\\mid z) conditions on keywords z and predicts x using a standard sequence-to-sequence model with attention and copying.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s03::p000",
+   "summary": "The goal is to learn encoder-decoder pairs balancing communication cost and reconstruction loss, with the simplest approach weighting \\mathrm {cost}(x, \\alpha ) and \\mathrm {loss}(x, \\alpha , \\beta ) linearly using \\lambda.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s03::p001",
+   "summary": "Naively weighting and searching over \\lambda is suboptimal and unstable, as slight changes produce degenerate schemes keeping all or none of the tokens.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s03::p002",
+   "summary": "The main technical contribution frames the tradeoff as constrained optimization problems minimizing expected cost subject to varying expected reconstruction error constraints \\epsilon.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s03::p003",
+   "summary": "The constrained objective improves training stability, gradually drops uninformative words, and lets \\epsilon directly control maximum reconstruction error unlike \\lambda.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s03::p004",
+   "summary": "To optimize the constrained objective, the authors consider the Lagrangian of Eq (DISPLAY_FORM6).",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s03::p005",
+   "summary": "Unbiased gradients use minibatch averages, and although convergence is guaranteed only for convex objectives, optimization is stable and outperforms Eq (DISPLAY_FORM5).",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s04::p000",
+   "summary": "Optimization with respect to q_{\\alpha }(z\\mid x) is difficult because z is discrete, so the authors use the stochastic REINFORCE estimate BIBREF5.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s04::p001",
+   "summary": "Joint updates on (\\alpha , \\beta , \\lambda ) use standard gradients for \\beta and \\lambda, and an unbiased stochastic gradient estimate for \\alpha with one sample and a moving-average reward baseline.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s05::p000",
+   "summary": "The approach trains on 500K randomly sampled Yelp reviews sentences, measuring efficiency by token retention rate and accuracy by exact matches from greedy decoding.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s06::p000",
+   "summary": "Figure FIGREF10 shows the constrained objective yields more efficient schemes than the linear objective at every accuracy level, including 11.73% more accuracy at 53.38% retention rate.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s06::p001",
+   "summary": "The linear objective is unstable with \\lambda, degenerating at \\lambda \\le 4.2 and \\lambda \\ge 4.4, while the constrained objective is substantially more stable with \\epsilon.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s07::p000",
+   "summary": "The efficiency-accuracy tradeoff is compared with Unif and Stopword baselines, whose decoders are optimized by gradient descent to minimize \\mathrm {loss}(x, \\alpha , \\beta ).",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s07::p001",
+   "summary": "Figure FIGREF10 shows similar baseline tradeoff curves, while the constrained model achieves 52.16% accuracy improvement at 77.37% retention rate compared to Unif.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s08::p000",
+   "summary": "Additional robustness results and analysis of correlations between token retention rates and token properties are deferred to the Appendix.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s09::p000",
+   "summary": "The user study recruited 100 Amazon Mechanical Turk (AMT) crowdworkers across 50 sentences, comparing autocomplete keyword tasks with writing tasks and top three suggestion judgments.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s09::p001",
+   "summary": "Table TABREF13 shows under-specified keywords yield generic suggestions, over-specified keywords yield almost identical sentences, and properly specified keywords are completed with added words and punctuation.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s09::p002",
+   "summary": "The top suggestion was semantically equivalent 80.6% of the time, one of the top 3 was equivalent 90.11%, exact match was 18.39%, and keyword typing took 3.86 seconds versus 5.76 seconds.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s10::p000",
+   "summary": "The authors thank reviewers and Yunseok Jang, and acknowledge support from NSF CAREER Award IIS-1552635 and an Intuit Research Award.",
+   "group_id": "1911.06964::g00"
+  },
+  {
+   "passage_id": "1911.06964::s11::p000",
+   "summary": "All code, data and experiments are available on CodaLab at https://bit.ly/353fbyn.",
+   "group_id": "1911.06964::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1911.06964::g00",
+   "summaries": [
+    {
+     "passage_id": "1911.06964::s00::p000",
+     "summary": "The paper motivates keyword-based autocomplete, noting left-to-right systems can be inefficient and exploring tradeoffs among typing efficiency, reconstruction accuracy, and keyword interpretability.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s00::p001",
+     "summary": "Supervised keyword-sentence datasets are expensive and static, while unsupervised joint learning can produce communication schemes uninterpretable to humans.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s00::p002",
+     "summary": "The proposed unsupervised autocomplete system restricts keywords to source-sentence subsequences and uses multi-objective optimization to control efficiency-accuracy tradeoffs.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s00::p003",
+     "summary": "Naively optimizing a linear combination is unstable, so the authors optimize communication efficiency under an accuracy constraint, improving stability and efficiency at all accuracy levels.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s00::p004",
+     "summary": "The framework yields schemes 52.16% more accurate than rule-based baselines at 77.37% of sentences, 11.73% more accurate than weighted optimization at 53.38%, and saves nearly 50% of time.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s01::p000",
+     "summary": "A communication game has a user pass keywords z from target sequence x using q_{\\alpha }(z\\mid x), while the system guesses x via p_{\\beta }(x\\mid z).",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s01::p001",
+     "summary": "A good communication scheme (q_{\\alpha }, p_{\\beta }) uses fewer keywords as cost and reconstructs target sentence x with high probability as loss.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s01::p002",
+     "summary": "Schemes are restricted to potentially noncontiguous subsequences of the target sentence to ensure interpretability by retaining important content words.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s02::p000",
+     "summary": "An encoder models q_{\\alpha }(z\\mid x) by retaining token subsets, with Bernoulli sampling over token-retention probabilities to keep or drop tokens independently.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s02::p001",
+     "summary": "The decoder p_{\\beta }(x\\mid z) conditions on keywords z and predicts x using a standard sequence-to-sequence model with attention and copying.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s03::p000",
+     "summary": "The goal is to learn encoder-decoder pairs balancing communication cost and reconstruction loss, with the simplest approach weighting \\mathrm {cost}(x, \\alpha ) and \\mathrm {loss}(x, \\alpha , \\beta ) linearly using \\lambda.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s03::p001",
+     "summary": "Naively weighting and searching over \\lambda is suboptimal and unstable, as slight changes produce degenerate schemes keeping all or none of the tokens.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s03::p002",
+     "summary": "The main technical contribution frames the tradeoff as constrained optimization problems minimizing expected cost subject to varying expected reconstruction error constraints \\epsilon.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s03::p003",
+     "summary": "The constrained objective improves training stability, gradually drops uninformative words, and lets \\epsilon directly control maximum reconstruction error unlike \\lambda.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s03::p004",
+     "summary": "To optimize the constrained objective, the authors consider the Lagrangian of Eq (DISPLAY_FORM6).",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s03::p005",
+     "summary": "Unbiased gradients use minibatch averages, and although convergence is guaranteed only for convex objectives, optimization is stable and outperforms Eq (DISPLAY_FORM5).",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s04::p000",
+     "summary": "Optimization with respect to q_{\\alpha }(z\\mid x) is difficult because z is discrete, so the authors use the stochastic REINFORCE estimate BIBREF5.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s04::p001",
+     "summary": "Joint updates on (\\alpha , \\beta , \\lambda ) use standard gradients for \\beta and \\lambda, and an unbiased stochastic gradient estimate for \\alpha with one sample and a moving-average reward baseline.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s05::p000",
+     "summary": "The approach trains on 500K randomly sampled Yelp reviews sentences, measuring efficiency by token retention rate and accuracy by exact matches from greedy decoding.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s06::p000",
+     "summary": "Figure FIGREF10 shows the constrained objective yields more efficient schemes than the linear objective at every accuracy level, including 11.73% more accuracy at 53.38% retention rate.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s06::p001",
+     "summary": "The linear objective is unstable with \\lambda, degenerating at \\lambda \\le 4.2 and \\lambda \\ge 4.4, while the constrained objective is substantially more stable with \\epsilon.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s07::p000",
+     "summary": "The efficiency-accuracy tradeoff is compared with Unif and Stopword baselines, whose decoders are optimized by gradient descent to minimize \\mathrm {loss}(x, \\alpha , \\beta ).",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s07::p001",
+     "summary": "Figure FIGREF10 shows similar baseline tradeoff curves, while the constrained model achieves 52.16% accuracy improvement at 77.37% retention rate compared to Unif.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s08::p000",
+     "summary": "Additional robustness results and analysis of correlations between token retention rates and token properties are deferred to the Appendix.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s09::p000",
+     "summary": "The user study recruited 100 Amazon Mechanical Turk (AMT) crowdworkers across 50 sentences, comparing autocomplete keyword tasks with writing tasks and top three suggestion judgments.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s09::p001",
+     "summary": "Table TABREF13 shows under-specified keywords yield generic suggestions, over-specified keywords yield almost identical sentences, and properly specified keywords are completed with added words and punctuation.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s09::p002",
+     "summary": "The top suggestion was semantically equivalent 80.6% of the time, one of the top 3 was equivalent 90.11%, exact match was 18.39%, and keyword typing took 3.86 seconds versus 5.76 seconds.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s10::p000",
+     "summary": "The authors thank reviewers and Yunseok Jang, and acknowledge support from NSF CAREER Award IIS-1552635 and an Intuit Research Award.",
+     "group_id": "1911.06964::g00"
+    },
+    {
+     "passage_id": "1911.06964::s11::p000",
+     "summary": "All code, data and experiments are available on CodaLab at https://bit.ly/353fbyn.",
+     "group_id": "1911.06964::g00"
+    }
+   ],
+   "n_raw": 29,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3272,
+    "completion_tokens": 1529,
+    "total_tokens": 4801,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

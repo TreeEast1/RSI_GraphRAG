@@ -1,0 +1,302 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1911.07555::s00::p000",
+   "summary": "Accurate language identification (LID) is the first step in many natural language processing and machine comprehension pipelines, enabling appropriate downstream models.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s00::p001",
+   "summary": "LID is important for harvesting scarce language resources, but data availability remains a major roadblock for supervised machine learning in developing countries.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s00::p002",
+   "summary": "Having 11 official languages of South Africa has improved resource availability, yet many South African languages remain under resourced for data driven models.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s00::p003",
+   "summary": "Table TABREF2 shows first language speaker percentages for South Africa's official languages, including similar Nguni and Sotho language groups.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s00::p004",
+   "summary": "This paper presents a hierarchical naive Bayesian and lexicon based classifier for LID of short text of 15-20 characters long.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s00::p005",
+   "summary": "Section SECREF2 reviews existing works, Section SECREF3 discusses the proposed algorithm, and Section SECREF4 presents comparative results.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s01::p000",
+   "summary": "This section focuses on recently published datasets and LID research applicable to the South African context, with a broader survey in BIBREF0.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s01::p001",
+   "summary": "The DSL 2015 & DSL 2017 shared tasks datasets are common LID benchmarks, with the 2017 dataset containing 14 languages, 6 language groups, 18000 training samples and 1000 testing samples per language.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s01::p002",
+   "summary": "JW300 covers over 300 languages with around 100 thousand parallel sentences per language pair, while WiLI-2018 includes around 1000 paragraphs of 235 languages.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s01::p003",
+   "summary": "The NCHLT text corpora can provide 3500 training samples and 600 testing samples of 300+ character sentences per language for South African languages.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s01::p004",
+   "summary": "Existing South African NLP resources include an LID algorithm using a character level n-gram language model, while shallow naive Bayes, SVMs and fasttext work well for LID.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s01::p005",
+   "summary": "Hierarchical stacked classifiers, surname classification between Tshivenda, Xitsonga and Sepedi, data augmentation and adversarial training are discussed as related approaches.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s01::p006",
+   "summary": "Deeper LID models include bidirectional recurrent neural networks and recurrent neural network ensembles, with the latter reported to achieve 95.12% in the DSL 2015 shared task.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s01::p007",
+   "summary": "LID of short texts, informal styles and similar languages remains difficult, while shallow methods work well and research opportunities include data harvesting, standardised datasets and shared tasks.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s02::p000",
+   "summary": "The proposed LID algorithm applies a naive Bayesian classifier with character (2, 4 & 6)-grams, word unigram and word bigram features with a hierarchical lexicon based classifier.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s02::p001",
+   "summary": "The naive Bayesian classifier first classifies text into Nguni, Sotho, English, Afrikaans, Xitsonga or Tshivenda using scikit-learn multinomial naive Bayes with alpha 0.01 and hashed text features.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s02::p002",
+   "summary": "The lexicon based classifier predicts the specific language within Nguni and Sotho groups, using high-confidence lexicon results or otherwise the naive Bayesian classifier's prediction.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s02::p003",
+   "summary": "The lexicon based classifier trades higher precision for lower recall and is confident when the winning language has at least one more word than second place.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s02::p004",
+   "summary": "The stacked classifier is tested against three public LID implementations, including fasttext with character (5-6)-gram features, 16 dimensional vectors, and LanideNN with learning rates 0.001 and 0.0001.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s02::p005",
+   "summary": "The stacked classifier is also tested against four other algorithms using the NCHLT, DSL 2015 and DSL 2017 datasets.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s03::p000",
+   "summary": "Table TABREF9 summarises average classification accuracy for specific language labels, while classifying text by language group or family is much easier.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s03::p001",
+   "summary": "Evaluated classifier variations include NB, NB+NB, NB+Lex, Lex, and a lexicon with 50% training token dropout.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s03::p002",
+   "summary": "DSL 2017 may be harder than DSL 2015 and NCHLT, and low BIBREF23 results are expected on shorter NCHLT-derived texts.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s03::p003",
+   "summary": "The proposed algorithm's accuracy depends on lexicon support, and without a good lexicon a non-stacked naive Bayesian classifier might perform better.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s03::p004",
+   "summary": "Table TABREF10 shows execution performance on an early 2015 13-inch Retina MacBook Pro with a 2.9 GHz CPU, 3.4 GHz Turbo Boost and 8GB RAM.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s04::p000",
+   "summary": "The proposed algorithm was evaluated on three existing datasets, compared with three public LID implementations and four other algorithms, and performed well but depends on lexicon support.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s04::p001",
+   "summary": "Future work includes investigating lexicon value and maintenance using self-supervised learning, deeper language models, and data augmentation strategies.",
+   "group_id": "1911.07555::g00"
+  },
+  {
+   "passage_id": "1911.07555::s04::p002",
+   "summary": "Further research opportunities include data harvesting, standardised datasets and shared tasks for South Africa and the rest of Africa.",
+   "group_id": "1911.07555::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1911.07555::g00",
+   "summaries": [
+    {
+     "passage_id": "1911.07555::s00::p000",
+     "summary": "Accurate language identification (LID) is the first step in many natural language processing and machine comprehension pipelines, enabling appropriate downstream models.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s00::p001",
+     "summary": "LID is important for harvesting scarce language resources, but data availability remains a major roadblock for supervised machine learning in developing countries.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s00::p002",
+     "summary": "Having 11 official languages of South Africa has improved resource availability, yet many South African languages remain under resourced for data driven models.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s00::p003",
+     "summary": "Table TABREF2 shows first language speaker percentages for South Africa's official languages, including similar Nguni and Sotho language groups.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s00::p004",
+     "summary": "This paper presents a hierarchical naive Bayesian and lexicon based classifier for LID of short text of 15-20 characters long.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s00::p005",
+     "summary": "Section SECREF2 reviews existing works, Section SECREF3 discusses the proposed algorithm, and Section SECREF4 presents comparative results.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s01::p000",
+     "summary": "This section focuses on recently published datasets and LID research applicable to the South African context, with a broader survey in BIBREF0.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s01::p001",
+     "summary": "The DSL 2015 & DSL 2017 shared tasks datasets are common LID benchmarks, with the 2017 dataset containing 14 languages, 6 language groups, 18000 training samples and 1000 testing samples per language.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s01::p002",
+     "summary": "JW300 covers over 300 languages with around 100 thousand parallel sentences per language pair, while WiLI-2018 includes around 1000 paragraphs of 235 languages.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s01::p003",
+     "summary": "The NCHLT text corpora can provide 3500 training samples and 600 testing samples of 300+ character sentences per language for South African languages.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s01::p004",
+     "summary": "Existing South African NLP resources include an LID algorithm using a character level n-gram language model, while shallow naive Bayes, SVMs and fasttext work well for LID.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s01::p005",
+     "summary": "Hierarchical stacked classifiers, surname classification between Tshivenda, Xitsonga and Sepedi, data augmentation and adversarial training are discussed as related approaches.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s01::p006",
+     "summary": "Deeper LID models include bidirectional recurrent neural networks and recurrent neural network ensembles, with the latter reported to achieve 95.12% in the DSL 2015 shared task.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s01::p007",
+     "summary": "LID of short texts, informal styles and similar languages remains difficult, while shallow methods work well and research opportunities include data harvesting, standardised datasets and shared tasks.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s02::p000",
+     "summary": "The proposed LID algorithm applies a naive Bayesian classifier with character (2, 4 & 6)-grams, word unigram and word bigram features with a hierarchical lexicon based classifier.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s02::p001",
+     "summary": "The naive Bayesian classifier first classifies text into Nguni, Sotho, English, Afrikaans, Xitsonga or Tshivenda using scikit-learn multinomial naive Bayes with alpha 0.01 and hashed text features.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s02::p002",
+     "summary": "The lexicon based classifier predicts the specific language within Nguni and Sotho groups, using high-confidence lexicon results or otherwise the naive Bayesian classifier's prediction.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s02::p003",
+     "summary": "The lexicon based classifier trades higher precision for lower recall and is confident when the winning language has at least one more word than second place.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s02::p004",
+     "summary": "The stacked classifier is tested against three public LID implementations, including fasttext with character (5-6)-gram features, 16 dimensional vectors, and LanideNN with learning rates 0.001 and 0.0001.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s02::p005",
+     "summary": "The stacked classifier is also tested against four other algorithms using the NCHLT, DSL 2015 and DSL 2017 datasets.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s03::p000",
+     "summary": "Table TABREF9 summarises average classification accuracy for specific language labels, while classifying text by language group or family is much easier.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s03::p001",
+     "summary": "Evaluated classifier variations include NB, NB+NB, NB+Lex, Lex, and a lexicon with 50% training token dropout.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s03::p002",
+     "summary": "DSL 2017 may be harder than DSL 2015 and NCHLT, and low BIBREF23 results are expected on shorter NCHLT-derived texts.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s03::p003",
+     "summary": "The proposed algorithm's accuracy depends on lexicon support, and without a good lexicon a non-stacked naive Bayesian classifier might perform better.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s03::p004",
+     "summary": "Table TABREF10 shows execution performance on an early 2015 13-inch Retina MacBook Pro with a 2.9 GHz CPU, 3.4 GHz Turbo Boost and 8GB RAM.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s04::p000",
+     "summary": "The proposed algorithm was evaluated on three existing datasets, compared with three public LID implementations and four other algorithms, and performed well but depends on lexicon support.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s04::p001",
+     "summary": "Future work includes investigating lexicon value and maintenance using self-supervised learning, deeper language models, and data augmentation strategies.",
+     "group_id": "1911.07555::g00"
+    },
+    {
+     "passage_id": "1911.07555::s04::p002",
+     "summary": "Further research opportunities include data harvesting, standardised datasets and shared tasks for South Africa and the rest of Africa.",
+     "group_id": "1911.07555::g00"
+    }
+   ],
+   "n_raw": 28,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3223,
+    "completion_tokens": 1449,
+    "total_tokens": 4672,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

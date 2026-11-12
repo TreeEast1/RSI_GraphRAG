@@ -1,0 +1,116 @@
+{
+  "selected_on_dev_at": "2026-11-09T03:13:00",
+  "dev_selection_metric_priority": [
+    "official_f1",
+    "project_f1",
+    "project_em",
+    "refusal_rate_answerable",
+    "adversarial_refusal"
+  ],
+  "candidates_for_validation": [
+    "P7",
+    "P8"
+  ],
+  "primary": "P7",
+  "secondary_refusal_calibrated": "P8",
+  "rationale": "P7 (short span + exact words + temporal rules + list completeness + calibrated refusal) has the best dev EM/F1/official-F1. P8 adds a presupposition check that recovers the single dev adversarial loss but costs 8.8pp EM and 9.6pp F1, so it is validated as the conservative alternative.",
+  "dev_summaries": {
+    "P0": {
+      "project_em": 0.23529411764705882,
+      "project_f1": 0.3943437214784463,
+      "official_f1": 0.42326758735677145,
+      "refusal_rate_answerable": 0.2647058823529412,
+      "adversarial_refusal_project": 1.0,
+      "mean_answer_words": 3.675,
+      "n": 40
+    },
+    "P1": {
+      "project_em": 0.0,
+      "project_f1": 0.17847250999060793,
+      "official_f1": 0.1933753609346286,
+      "refusal_rate_answerable": 0.20588235294117646,
+      "adversarial_refusal_project": 0.8333333333333334,
+      "mean_answer_words": 25.3,
+      "n": 40
+    },
+    "P2": {
+      "project_em": 0.029411764705882353,
+      "project_f1": 0.21968760541958207,
+      "official_f1": 0.23945834904304805,
+      "refusal_rate_answerable": 0.23529411764705882,
+      "adversarial_refusal_project": 0.8333333333333334,
+      "mean_answer_words": 21.075,
+      "n": 40
+    },
+    "P3": {
+      "project_em": 0.20588235294117646,
+      "project_f1": 0.44365737834862706,
+      "official_f1": 0.45021347057240046,
+      "refusal_rate_answerable": 0.029411764705882353,
+      "adversarial_refusal_project": 0.0,
+      "mean_answer_words": 21.225,
+      "n": 40
+    },
+    "P4": {
+      "project_em": 0.14705882352941177,
+      "project_f1": 0.36433201906215784,
+      "official_f1": 0.40312055909724553,
+      "refusal_rate_answerable": 0.20588235294117646,
+      "adversarial_refusal_project": 0.8333333333333334,
+      "mean_answer_words": 12.85,
+      "n": 40
+    },
+    "P5": {
+      "project_em": 0.08823529411764706,
+      "project_f1": 0.34486535684018393,
+      "official_f1": 0.3494187866898043,
+      "refusal_rate_answerable": 0.20588235294117646,
+      "adversarial_refusal_project": 0.8333333333333334,
+      "mean_answer_words": 13.025,
+      "n": 40
+    },
+    "P6": {
+      "project_em": 0.14705882352941177,
+      "project_f1": 0.5229081449669685,
+      "official_f1": 0.5836990820443214,
+      "refusal_rate_answerable": 0.11764705882352941,
+      "adversarial_refusal_project": 0.8333333333333334,
+      "mean_answer_words": 5.35,
+      "n": 40
+    },
+    "P7": {
+      "project_em": 0.29411764705882354,
+      "project_f1": 0.5995342821822073,
+      "official_f1": 0.61782051184767,
+      "refusal_rate_answerable": 0.11764705882352941,
+      "adversarial_refusal_project": 0.8333333333333334,
+      "mean_answer_words": 8.375,
+      "n": 40
+    },
+    "P8": {
+      "project_em": 0.20588235294117646,
+      "project_f1": 0.5035242242126233,
+      "official_f1": 0.5435744336155236,
+      "refusal_rate_answerable": 0.20588235294117646,
+      "adversarial_refusal_project": 1.0,
+      "mean_answer_words": 8.9,
+      "n": 40
+    }
+  },
+  "prompt_hashes": {
+    "P0": {
+      "system_sha256": "2893ab72e1ad2300f0df94507899882080b410e099b9cb2a21c92077e20ca602",
+      "template_sha256": "b0efd79e9e395d22d0465537f906f25241fa3ea97b34daf01cb90b663f8edc92"
+    },
+    "P7": {
+      "system_sha256": "1bfa274d8db22fd8fd6da82782ae83b4188d071a15c1c175f0db2f0af79d8755",
+      "template_sha256": "782f4d52c0f094989c7fd4d2196a8c233927b3925894cbb95ee0e7bb4fb43fdd"
+    },
+    "P8": {
+      "system_sha256": "1bfa274d8db22fd8fd6da82782ae83b4188d071a15c1c175f0db2f0af79d8755",
+      "template_sha256": "10cc9487438f3cf281b95012bcefbd4ae10935fd275edb8d93a1232856fe3cb0"
+    }
+  },
+  "split_file": "outputs/prompt_optimization_conv30/splits/split_dev40_val65.json",
+  "note": "validation results were not inspected before this file was written"
+}

@@ -1,0 +1,115 @@
+{
+ "paper_id": "1901.08079",
+ "title": "A Question-Entailment Approach to Question Answering",
+ "abstract": "One of the challenges in large-scale information retrieval (IR) is to develop fine-grained and domain-specific methods to answer natural language questions. Despite the availability of numerous sources and datasets for answer retrieval, Question Answering (QA) remains a challenging problem due to the difficulty of the question understanding and answer extraction tasks. One of the promising tracks investigated in QA is to map new questions to formerly answered questions that are `similar'. In this paper, we propose a novel QA approach based on Recognizing Question Entailment (RQE) and we describe the QA system and resources that we built and evaluated on real medical questions. First, we compare machine learning and deep learning methods for RQE using different kinds of datasets, including textual inference, question similarity and entailment in both the open and clinical domains. Second, we combine IR models with the best RQE method to select entailed questions and rank the retrieved answers. To study the end-to-end QA approach, we built the MedQuAD collection of 47,457 question-answer pairs from trusted medical sources, that we introduce and share in the scope of this paper. Following the evaluation process used in TREC 2017 LiveQA, we find that our approach exceeds the best results of the medical task with a 29.8% increase over the best official score. The evaluation results also support the relevance of question entailment for QA and highlight the effectiveness of combining IR and RQE for future QA efforts. Our findings also show that relying on a restricted set of reliable answer sources can bring a substantial improvement in medical QA.",
+ "sections": [
+  "Introduction",
+  "Background",
+  "Task Definition",
+  "Related Work on Question Answering",
+  "Related Work on Question Similarity and Entailment",
+  "RQE Approaches and Experiments",
+  "Definition",
+  "Deep Learning Model",
+  "Logistic Regression Classifier",
+  "Datasets Used for the RQE Study",
+  "Results of RQE Approaches",
+  "Discussion of RQE Results",
+  "Building a Medical QA Collection from Trusted Resources",
+  "Method",
+  "Question Types",
+  "Medical Resources",
+  "The Proposed Entailment-based QA System",
+  "RQE-based QA Approach",
+  "Finding Similar Question Candidates",
+  "Combining IR and RQE Methods",
+  "Evaluating RQE for Medical Question Answering",
+  "Evaluation Method",
+  "Evaluation of the first retrieved answer",
+  "Evaluation of the top ten answers",
+  "Discussion of entailment-based QA for the medical domain",
+  "Conclusion",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 156,
+ "n_tokens": 9657,
+ "figures_and_tables": [
+  {
+   "caption_id": "1901.08079::fig000",
+   "paper_id": "1901.08079",
+   "file": "5-Figure1-1.png",
+   "caption": "Figure 1: Neural Network Architecture",
+   "n_tokens": 7
+  },
+  {
+   "caption_id": "1901.08079::fig001",
+   "paper_id": "1901.08079",
+   "file": "7-Table1-1.png",
+   "caption": "Table 1: Description of training and test datasets.",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "1901.08079::fig002",
+   "paper_id": "1901.08079",
+   "file": "7-Table2-1.png",
+   "caption": "Table 2: Accuracy (%) of Deep Learning and Machine Learning methods on four datasets SNLI, MultiNLI, Quora, and Clinical-QE.",
+   "n_tokens": 31
+  },
+  {
+   "caption_id": "1901.08079::fig003",
+   "paper_id": "1901.08079",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: Performance on 850 consumer health questions: Accuracy (%) of Machine Learning and Deep Learning Methods.",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "1901.08079::fig004",
+   "paper_id": "1901.08079",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: Results (%) of the hybrid method (Logistic Regression + IR) on community QA datasets (cQA-Test 2016 and cQA-Test 2017).",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "1901.08079::fig005",
+   "paper_id": "1901.08079",
+   "file": "10-Figure2-1.png",
+   "caption": "Figure 2: Examples of QA pairs generated from an article about Langerhans Cell Histiocytosis (NCI).",
+   "n_tokens": 27
+  },
+  {
+   "caption_id": "1901.08079::fig006",
+   "paper_id": "1901.08079",
+   "file": "11-Figure3-1.png",
+   "caption": "Figure 3: Examples of QA pairs generated from an article about Acromegaly (A.D.A.M encyclopedia).",
+   "n_tokens": 24
+  },
+  {
+   "caption_id": "1901.08079::fig007",
+   "paper_id": "1901.08079",
+   "file": "12-Figure4-1.png",
+   "caption": "Figure 4: Overview of the RQE-based Question Answering System.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1901.08079::fig008",
+   "paper_id": "1901.08079",
+   "file": "15-Table5-1.png",
+   "caption": "Table 5: Inter-Annotator Agreement (IAA) over all ratings in the manual evaluation of the retrieved answers. Partial IAA over two ratings \"Correct\" and \"Incorrect\".",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "1901.08079::fig009",
+   "paper_id": "1901.08079",
+   "file": "15-Table6-1.png",
+   "caption": "Table 6: LiveQA Measures: Average Score (main score), Success@i+ and Precision@i+ on LiveQA’17 Test Data. Evaluation of the first retrieved answer for each question. N.B. Evaluating the RQE System alone is not relevant as explained previously (Section 5.1).",
+   "n_tokens": 64
+  },
+  {
+   "caption_id": "1901.08079::fig010",
+   "paper_id": "1901.08079",
+   "file": "16-Table7-1.png",
+   "caption": "Table 7: Common Measures: MAP and MRR on LiveQA’17 Test Questions. Evaluation of top 10 answers for each question.",
+   "n_tokens": 29
+  }
+ ]
+}

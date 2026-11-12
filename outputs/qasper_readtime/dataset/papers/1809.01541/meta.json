@@ -1,0 +1,64 @@
+{
+ "paper_id": "1809.01541",
+ "title": "Copenhagen at CoNLL--SIGMORPHON 2018: Multilingual Inflection in Context with Explicit Morphosyntactic Decoding",
+ "abstract": "This paper documents the Team Copenhagen system which placed first in the CoNLL--SIGMORPHON 2018 shared task on universal morphological reinflection, Task 2 with an overall accuracy of 49.87. Task 2 focuses on morphological inflection in context: generating an inflected word form, given the lemma of the word and the context it occurs in. Previous SIGMORPHON shared tasks have focused on context-agnostic inflection---the\"inflection in context\"task was introduced this year. We approach this with an encoder-decoder architecture over character sequences with three core innovations, all contributing to an improvement in performance: (1) a wide context window; (2) a multi-task learning approach with the auxiliary task of MSD prediction; (3) training models in a multilingual fashion.",
+ "sections": [
+  "Introduction",
+  "System Description",
+  "Baseline",
+  "Our system",
+  "Results and Discussion",
+  "Ablation Study",
+  "Error analysis",
+  "MSD prediction",
+  "Related Work",
+  "Conclusions",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 43,
+ "n_tokens": 2933,
+ "figures_and_tables": [
+  {
+   "caption_id": "1809.01541::fig000",
+   "paper_id": "1809.01541",
+   "file": "2-Table1-1.png",
+   "caption": "Table 1: Example input sentence. Context MSD tags and lemmas, marked in gray, are only available in Track 1. The cyan square marks the main objective of predicting the word form made. The magenta square marks the auxiliary objective of predicting the MSD tag V;PST;V.PTCP;PASS.",
+   "n_tokens": 65
+  },
+  {
+   "caption_id": "1809.01541::fig001",
+   "paper_id": "1809.01541",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Schematic representation of our approach. The focus here is on the prediction of the final character, e, of the word form made. The attention matrix indicates that this character should be based on the final state of the encoder, which contains information about the final character of the input form, and the past and future context. The input and output of the auxiliary decoder are marked in magenta.",
+   "n_tokens": 82
+  },
+  {
+   "caption_id": "1809.01541::fig002",
+   "paper_id": "1809.01541",
+   "file": "3-Table2-1.png",
+   "caption": "Table 2: Official shared task test set results.",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "1809.01541::fig003",
+   "paper_id": "1809.01541",
+   "file": "4-Table3-1.png",
+   "caption": "Table 3: Five best multilingual models for each language.",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1809.01541::fig004",
+   "paper_id": "1809.01541",
+   "file": "5-Figure2-1.png",
+   "caption": "Figure 2: Mean (•) and standard deviation (error bars) over 100 models trained for each language and architecture, and average (×) over the 5 best models. LSTM Enc refers to a model that encodes the full context with an LSTM; Multi-task builds on LSTM Enc with an auxiliary objective of MSD prediction; Multilingual refers to a model with an auxiliary component trained in a multilingual fashion; Finetuned refers to a multilingual model topped with monolingual finetuning.",
+   "n_tokens": 103
+  },
+  {
+   "caption_id": "1809.01541::fig005",
+   "paper_id": "1809.01541",
+   "file": "5-Figure3-1.png",
+   "caption": "Figure 3: Accuracy on the auxiliary task of MSD prediction with different models. See the caption of Figure 2 for more details.",
+   "n_tokens": 27
+  }
+ ]
+}

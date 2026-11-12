@@ -1,0 +1,352 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1911.10049::s00::p000",
+   "summary": "Word embeddings are numerical vectors from neural learning tasks such as word2vec, GloVe, FastText, ELMo, and BERT, trained on large monolingual corpora to preserve semantic relations.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s00::p001",
+   "summary": "word2vec fails to express polysemous words because all senses contribute by frequency, poorly representing rare meanings, as with paper and its 50 closest vectors.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s00::p002",
+   "summary": "Contextual embeddings generate sentence-wise vectors, and this work describes high-quality ELMo models for seven morphologically rich, less-resourced languages.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s00::p003",
+   "summary": "The report has five further sections covering ELMo, datasets, preprocessing and training, evaluation methodology and results, and conclusions with future work.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s01::p000",
+   "summary": "Typical word embeddings like word2vec, GloVe, and FastText lack context, while ELMo remedies this problem with a contextual component.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s01::p001",
+   "summary": "ELMo has three neural network layers: a context-independent character-level CNN layer followed by two biLM layers of concatenated LSTMs.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s01::p002",
+   "summary": "NLP tasks may use any ELMo embedding set, but usually use a weighted average learned for the specific task, and the entire model can be fine-tuned.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s01::p003",
+   "summary": "ELMo handles out-of-vocabulary words but uses a common-token vocabulary file; the original English model used a one billion word corpus and about 800,000 words.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s02::p000",
+   "summary": "ELMoForManyLangs models used 20-million-words data from CoNLL 2017 Shared Task - Automatically Annotated Raw Texts and Word Embeddings and showed questionable quality compared with a full Latvian corpus of about 280 million tokens.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s03::p000",
+   "summary": "ELMo models were trained for Slovenian, Croatian, Finnish, Estonian, Latvian, Lithuanian and Swedish using large monolingual corpora of news articles and general web crawl.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s03::p001",
+   "summary": "The Croatian dataset includes hrWaC 2.1, Riznica, and Styria articles, including 570,219 news articles from the Croatian 24sata news portal and related niche portals.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s03::p002",
+   "summary": "The Estonian dataset contains CoNLL 2017 Shared Task - Automatically Annotated Raw Texts and Word Embeddings and Ekspress Meedia news articles from 2009 to 2019.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s03::p003",
+   "summary": "The Finnish dataset contains STT articles from 1992 to 2018, the Finnish part of CoNLL 2017, and Ylilauta discussions from 2012 to 2014.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s03::p004",
+   "summary": "The Latvian dataset consists only of the Latvian portion of the ConLL 2017 corpus.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s03::p005",
+   "summary": "The Lithuanian dataset comprises Lithuanian Wikipedia articles from 2018, DGT-UD, and LtTenTen, a Lithuanian web corpus collected from the internet in April 2014.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s03::p006",
+   "summary": "The Slovene dataset is formed from Gigafida 2.0, a general language corpus of newspapers, internet pages, magazines, prose, textbooks, and other sources.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s03::p007",
+   "summary": "The Swedish dataset comprises STT Swedish articles from 1992 to 2017 and the Swedish part of CoNLL 2017.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s04::p000",
+   "summary": "Datasets were sentence and word tokenized, with CoNLL 2017, DGT-UD and LtTenTen14 already pre-tokenized, then deduplicated using Onion with 9-grams and a 0.9 threshold.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s04::p001",
+   "summary": "Each language received a vocabulary file of roughly one million most common tokens appearing at least $n$ times, where $n$ is between 15 and 25, and models used original English ELMo (large) defaults.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s05::p000",
+   "summary": "The produced ELMo models for all languages were evaluated using a word analogy task and named entity recognition (NER) task.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s06::p000",
+   "summary": "The word analogy task finds $y$ for $x$ resembling $a : b$, with 5 semantic and 10 syntactic categories, illustrated by “Finland : Helsinki” and “long : longer”.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s06::p001",
+   "summary": "The analogy task uses vector arithmetic and nearest neighbours, with analogy datasets for all tested languages based on the English dataset by BIBREF14 and a modified Slovene-origin translated dataset.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s06::p002",
+   "summary": "Because analogy instances contain only four words, simple sentences were formed, embeddings generated, CSLS used, and accuracy@5 reported for correct words among the five closest.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s06::p003",
+   "summary": "Latvian was chosen to compare EMBEDDIA ELMo with ELMoForManyLangs because both used CoNLL 2017 corpora, differing only in 20 million tokens versus 270 million tokens.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s06::p004",
+   "summary": "The Latvian ELMoForManyLangs model performs significantly worse than EMBEDDIA ELMo Latvian on all word analogy categories, suggesting 20-million token corpora are too small.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s06::p005",
+   "summary": "Table TABREF17 shows first LSTM layer embeddings best in semantic categories, CNN layer best in syntactic categories, and original English ELMo scoring $0.00$ in “opposite adjective”.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s07::p000",
+   "summary": "NER evaluation used a reduced common label set of PER, LOC, ORG, and 'O' to compare results between languages, with label counts in Table TABREF19.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s07::p001",
+   "summary": "NER models averaged three ELMo layer vectors per token and used a single LSTM layer with 128 LSTM cells, 10% dropout, and a time distributed softmax layer with 4 neurons.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s07::p002",
+   "summary": "The NER model used ADAM optimiser with learning rate 0.01 and $10^{-5}$ decay, categorical cross-entropy, 3 epochs, and Macro $F_1$ score.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s07::p003",
+   "summary": "fastText embeddings were used as a baseline with 300 dimensional vectors, 5 epochs, and five trainings and evaluations for both ELMo and fastText.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s07::p004",
+   "summary": "Table TABREF21 shows ELMo improves over fastText most for Croatian and Lithuanian, also improves English and Finnish, and performs slightly worse only on Slovenian.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s08::p000",
+   "summary": "Precomputed ELMo contextual embeddings were prepared for seven languages, trained on larger sets, evaluated on analogy and NER tasks, and shown to outperform the non-contextual fastText baseline.",
+   "group_id": "1911.10049::g00"
+  },
+  {
+   "passage_id": "1911.10049::s09::p000",
+   "summary": "The work was supported by ARRS core research programme P6-0411 and European Union's Horizon 2020 programme under grant agreement No 825153, project EMBEDDIA.",
+   "group_id": "1911.10049::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1911.10049::g00",
+   "summaries": [
+    {
+     "passage_id": "1911.10049::s00::p000",
+     "summary": "Word embeddings are numerical vectors from neural learning tasks such as word2vec, GloVe, FastText, ELMo, and BERT, trained on large monolingual corpora to preserve semantic relations.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s00::p001",
+     "summary": "word2vec fails to express polysemous words because all senses contribute by frequency, poorly representing rare meanings, as with paper and its 50 closest vectors.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s00::p002",
+     "summary": "Contextual embeddings generate sentence-wise vectors, and this work describes high-quality ELMo models for seven morphologically rich, less-resourced languages.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s00::p003",
+     "summary": "The report has five further sections covering ELMo, datasets, preprocessing and training, evaluation methodology and results, and conclusions with future work.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s01::p000",
+     "summary": "Typical word embeddings like word2vec, GloVe, and FastText lack context, while ELMo remedies this problem with a contextual component.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s01::p001",
+     "summary": "ELMo has three neural network layers: a context-independent character-level CNN layer followed by two biLM layers of concatenated LSTMs.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s01::p002",
+     "summary": "NLP tasks may use any ELMo embedding set, but usually use a weighted average learned for the specific task, and the entire model can be fine-tuned.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s01::p003",
+     "summary": "ELMo handles out-of-vocabulary words but uses a common-token vocabulary file; the original English model used a one billion word corpus and about 800,000 words.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s02::p000",
+     "summary": "ELMoForManyLangs models used 20-million-words data from CoNLL 2017 Shared Task - Automatically Annotated Raw Texts and Word Embeddings and showed questionable quality compared with a full Latvian corpus of about 280 million tokens.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s03::p000",
+     "summary": "ELMo models were trained for Slovenian, Croatian, Finnish, Estonian, Latvian, Lithuanian and Swedish using large monolingual corpora of news articles and general web crawl.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s03::p001",
+     "summary": "The Croatian dataset includes hrWaC 2.1, Riznica, and Styria articles, including 570,219 news articles from the Croatian 24sata news portal and related niche portals.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s03::p002",
+     "summary": "The Estonian dataset contains CoNLL 2017 Shared Task - Automatically Annotated Raw Texts and Word Embeddings and Ekspress Meedia news articles from 2009 to 2019.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s03::p003",
+     "summary": "The Finnish dataset contains STT articles from 1992 to 2018, the Finnish part of CoNLL 2017, and Ylilauta discussions from 2012 to 2014.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s03::p004",
+     "summary": "The Latvian dataset consists only of the Latvian portion of the ConLL 2017 corpus.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s03::p005",
+     "summary": "The Lithuanian dataset comprises Lithuanian Wikipedia articles from 2018, DGT-UD, and LtTenTen, a Lithuanian web corpus collected from the internet in April 2014.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s03::p006",
+     "summary": "The Slovene dataset is formed from Gigafida 2.0, a general language corpus of newspapers, internet pages, magazines, prose, textbooks, and other sources.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s03::p007",
+     "summary": "The Swedish dataset comprises STT Swedish articles from 1992 to 2017 and the Swedish part of CoNLL 2017.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s04::p000",
+     "summary": "Datasets were sentence and word tokenized, with CoNLL 2017, DGT-UD and LtTenTen14 already pre-tokenized, then deduplicated using Onion with 9-grams and a 0.9 threshold.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s04::p001",
+     "summary": "Each language received a vocabulary file of roughly one million most common tokens appearing at least $n$ times, where $n$ is between 15 and 25, and models used original English ELMo (large) defaults.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s05::p000",
+     "summary": "The produced ELMo models for all languages were evaluated using a word analogy task and named entity recognition (NER) task.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s06::p000",
+     "summary": "The word analogy task finds $y$ for $x$ resembling $a : b$, with 5 semantic and 10 syntactic categories, illustrated by “Finland : Helsinki” and “long : longer”.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s06::p001",
+     "summary": "The analogy task uses vector arithmetic and nearest neighbours, with analogy datasets for all tested languages based on the English dataset by BIBREF14 and a modified Slovene-origin translated dataset.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s06::p002",
+     "summary": "Because analogy instances contain only four words, simple sentences were formed, embeddings generated, CSLS used, and accuracy@5 reported for correct words among the five closest.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s06::p003",
+     "summary": "Latvian was chosen to compare EMBEDDIA ELMo with ELMoForManyLangs because both used CoNLL 2017 corpora, differing only in 20 million tokens versus 270 million tokens.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s06::p004",
+     "summary": "The Latvian ELMoForManyLangs model performs significantly worse than EMBEDDIA ELMo Latvian on all word analogy categories, suggesting 20-million token corpora are too small.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s06::p005",
+     "summary": "Table TABREF17 shows first LSTM layer embeddings best in semantic categories, CNN layer best in syntactic categories, and original English ELMo scoring $0.00$ in “opposite adjective”.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s07::p000",
+     "summary": "NER evaluation used a reduced common label set of PER, LOC, ORG, and 'O' to compare results between languages, with label counts in Table TABREF19.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s07::p001",
+     "summary": "NER models averaged three ELMo layer vectors per token and used a single LSTM layer with 128 LSTM cells, 10% dropout, and a time distributed softmax layer with 4 neurons.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s07::p002",
+     "summary": "The NER model used ADAM optimiser with learning rate 0.01 and $10^{-5}$ decay, categorical cross-entropy, 3 epochs, and Macro $F_1$ score.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s07::p003",
+     "summary": "fastText embeddings were used as a baseline with 300 dimensional vectors, 5 epochs, and five trainings and evaluations for both ELMo and fastText.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s07::p004",
+     "summary": "Table TABREF21 shows ELMo improves over fastText most for Croatian and Lithuanian, also improves English and Finnish, and performs slightly worse only on Slovenian.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s08::p000",
+     "summary": "Precomputed ELMo contextual embeddings were prepared for seven languages, trained on larger sets, evaluated on analogy and NER tasks, and shown to outperform the non-contextual fastText baseline.",
+     "group_id": "1911.10049::g00"
+    },
+    {
+     "passage_id": "1911.10049::s09::p000",
+     "summary": "The work was supported by ARRS core research programme P6-0411 and European Union's Horizon 2020 programme under grant agreement No 825153, project EMBEDDIA.",
+     "group_id": "1911.10049::g00"
+    }
+   ],
+   "n_raw": 33,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5401,
+    "completion_tokens": 1870,
+    "total_tokens": 7271,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

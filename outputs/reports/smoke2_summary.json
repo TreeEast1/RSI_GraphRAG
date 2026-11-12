@@ -1,0 +1,131 @@
+{
+  "timestamp": "2026-11-05T22:56:38",
+  "args": {
+    "split": null,
+    "convs": "conv-30",
+    "max_questions": 10,
+    "budget": 4096,
+    "top_k": 20,
+    "methods": "dense,hipporag",
+    "force_index": false,
+    "out_prefix": "smoke2",
+    "max_workers": 16
+  },
+  "summaries": {
+    "dense": {
+      "method": "dense",
+      "n": 10,
+      "recall@1": 0.0,
+      "recall@3": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "mrr": 0.0,
+      "ndcg@10": 0.0,
+      "evidence_full@2048": 0.5,
+      "evidence_partial@2048": 0.55,
+      "session_full@2048": 0.0,
+      "evidence_full@4096": 0.8,
+      "evidence_partial@4096": 0.825,
+      "session_full@4096": 0.0,
+      "evidence_full@8192": 1.0,
+      "evidence_partial@8192": 1.0,
+      "session_full@8192": 0.0,
+      "em": 0.0,
+      "f1": 0.20375406566046533,
+      "by_category": {
+        "1": {
+          "n": 3,
+          "em": 0.0,
+          "f1": 0.15083686227061907,
+          "recall@5": 0.0,
+          "evidence_full@4096": 0.6666666666666666
+        },
+        "2": {
+          "n": 5,
+          "em": 0.0,
+          "f1": 0.23693698893698895,
+          "recall@5": 0.0,
+          "evidence_full@4096": 1.0
+        },
+        "4": {
+          "n": 2,
+          "em": 0.0,
+          "f1": 0.2001725625539258,
+          "recall@5": 0.0,
+          "evidence_full@4096": 0.5
+        }
+      },
+      "by_conversation": {
+        "conv-30": {
+          "n": 10,
+          "em": 0.0,
+          "f1": 0.20375406566046533,
+          "recall@5": 0.0
+        }
+      }
+    },
+    "hipporag": {
+      "method": "hipporag",
+      "n": 10,
+      "recall@1": 0.0,
+      "recall@3": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "mrr": 0.0,
+      "ndcg@10": 0.0,
+      "evidence_full@2048": 0.5,
+      "evidence_partial@2048": 0.5666666666666667,
+      "session_full@2048": 0.0,
+      "evidence_full@4096": 0.7,
+      "evidence_partial@4096": 0.7,
+      "session_full@4096": 0.0,
+      "evidence_full@8192": 0.9,
+      "evidence_partial@8192": 0.925,
+      "session_full@8192": 0.0,
+      "em": 0.0,
+      "f1": 0.20795159244505998,
+      "by_category": {
+        "1": {
+          "n": 3,
+          "em": 0.0,
+          "f1": 0.1564625850340136,
+          "recall@5": 0.0,
+          "evidence_full@4096": 0.6666666666666666
+        },
+        "2": {
+          "n": 5,
+          "em": 0.0,
+          "f1": 0.22901060292364642,
+          "recall@5": 0.0,
+          "evidence_full@4096": 1.0
+        },
+        "4": {
+          "n": 2,
+          "em": 0.0,
+          "f1": 0.23253757736516353,
+          "recall@5": 0.0,
+          "evidence_full@4096": 0.0
+        }
+      },
+      "by_conversation": {
+        "conv-30": {
+          "n": 10,
+          "em": 0.0,
+          "f1": 0.20795159244505998,
+          "recall@5": 0.0
+        }
+      }
+    }
+  },
+  "hy4": {
+    "calls": 19,
+    "cache_hits": 1,
+    "errors": 0,
+    "prompt_tokens": 79506,
+    "completion_tokens": 770,
+    "reasoning_tokens": 0,
+    "latency_s": 34.969271659851074
+  }
+}

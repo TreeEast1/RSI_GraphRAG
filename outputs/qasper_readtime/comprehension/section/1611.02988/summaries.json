@@ -1,0 +1,392 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1611.02988::s00::p000",
+   "summary": "The work is licensed under a Creative Commons Attribution 4.0 International Licence, with details at http://creativecommons.org/licenses/by/4.0/.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s00::p001",
+   "summary": "Social media users express feelings minimally and symbolically, and since February 2016 Facebook reactions allow wordless specific emotions such as “joy” or “surprise” instead of generic “like”.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s00::p002",
+   "summary": "Facebook reactions aid targeted advertising and social monitoring, while automatic emotion detection faces costly subjective annotation, motivating unsupervised lexicon-based methods and distant supervision using emoticons and Twitter hashtags.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s00::p003",
+   "summary": "The authors use Facebook reactions as distant supervision proxies for emotion labels, train Support Vector Machine models, achieve competitive or state-of-the-art results on standard datasets, and explore domain adaptation via Facebook pages.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s01::p000",
+   "summary": "Facebook comments and thumbs-up “like” expressed generic, underspecified approval that could mean approval of content or merely of the topic raised.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s01::p001",
+   "summary": "In February 2016, Facebook introduced six specific reactions—Like, Love, Haha, Wow, Sad and Angry—which the authors use as proxies for emotion labels associated to posts.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s01::p002",
+   "summary": "The authors collected Facebook posts and reactions from public pages via the Facebook API and Facebook-sdk python library, selecting varied pages including FoxNews, CNN, ESPN, New York Times, Time magazine, Huffington Post Weird News, The Guardian, Cartoon Network, Cooking Light, Home Cooking Adventure, Justin Bieber, Nickelodeon, Spongebob, and Disney.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s01::p003",
+   "summary": "Thankful was only available during specific time spans related to certain events, such as Mother's Day in May 2016.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s01::p004",
+   "summary": "For each page, the authors downloaded the latest 1000 posts, or fewer if unavailable, from February 2016, producing JSON dictionaries with timestamp, post, and reaction frequency vectors.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s01::p005",
+   "summary": "Each post is assigned the emotion with the highest count, ignoring like; for example, sad is assigned with the highest score 284, without entropy-based selection.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s02::p000",
+   "summary": "The Affective Text dataset, the Fairy Tales dataset, and the ISEAR dataset are used for comparison with state-of-the-art results, with Affective development used to develop models and all three used as benchmarks.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s03::p000",
+   "summary": "Task 14 at SemEval 2007 classified emotions and valence in news headlines using Anger, Disgust, Fear, Joy, Sadness, Surprise, with 250 development headlines, 1000 test headlines, Pearson's r, precision, recall, and f-score.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s04::p000",
+   "summary": "The Fairy Tales dataset contains about 1,000 sentences annotated with Angry, Disgusted, Fearful, Happy, Sad, and Surprised, with only unanimous sentences used and angry and disgusted merged.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s05::p000",
+   "summary": "ISEAR, from a 1990s psychology project, contains reports by approximately 3000 respondents and 7665 sentences labelled with joy, fear, anger, sadness, disgust, shame, or guilt.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s06::p000",
+   "summary": "Table TABREF8 maps dataset and Facebook labels to the final emotions anger, joy, sadness, surprise, used for training and testing models.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s06::p001",
+   "summary": "The distribution of emotions for each dataset is different, as shown in Figure FIGREF9.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s06::p002",
+   "summary": "Figure FIGREF9 shows anger, joy, sadness, surprise distributions per Facebook page, with news pages having more sadness and anger posts and cooking and tv-shows pages having high joy percentages.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s07::p000",
+   "summary": "Model development involves selecting Facebook pages and features, using 250 annotated sentences from Affective development for all results in this section, with other datasets reserved for final evaluation.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s08::p000",
+   "summary": "Page selection used intuition and availability, combinations chosen from a basic model on development data, and feature combinations tested on the development set.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s08::p001",
+   "summary": "An SVM with a simple bag-of-words model and default Scikit-learn parameters led to best model B-M, combining Time, The Guardian and Disney, with Disney boosting Joy.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s09::p000",
+   "summary": "Feature selection relied on previous work and intuition, with tests on Affective development using B-M pages as training data and results in Table TABREF20.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s09::p001",
+   "summary": "Basic text-based features include tf-idf bag-of-words, word (2-3) and character (2-5) ngrams, negation words, and punctuation usage.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s09::p002",
+   "summary": "This feature is used in all unsupervised models to assess its contribution but is not used in the final model.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s09::p003",
+   "summary": "The NRC10 Lexicon, covering anger, anticipation, disgust, fear, joy, sadness, surprise, positive and negative, provides boolean word-emotion values and global sentence scores as features.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s09::p004",
+   "summary": "Word Embeddings are included as an additional feature, using three different embeddings.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s09::p005",
+   "summary": "Google embeddings are pre-trained on Google News with skip-gram architecture, containing 300-dimensional vectors for 3 million words and phrases.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s09::p006",
+   "summary": "Facebook embeddings were trained on scraped Facebook pages totaling 20,000 sentences using gensim, with window size 5, learning rate 0.01, dimensionality 100, and words below 2 occurrences filtered out.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s09::p007",
+   "summary": "Retrofitted embeddings use NRC10 Lexicon emotion-similarity information to bring emotion-similar words closer, with Google and Facebook embeddings retrofitted using handcrafted lexical information.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s10::p000",
+   "summary": "Precision, recall, and f-score are reported on the development set, with average f-score as micro-average due to skewed class distribution and task conventions.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s10::p001",
+   "summary": "Table TABREF20 shows tf-idf bag-of-words reaches f-score 0.368, Google embeddings outperform Facebook embeddings, retrofitting boosts Facebook embeddings, and removing the Lexicon feature improves results.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s11::p000",
+   "summary": "Table TABREF26 reports the model's results on the three datasets standardly used for emotion classification evaluation.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s11::p001",
+   "summary": "B-M uses selected Facebook pages, all features plus Google-based embeddings excluding the lexicon, is independent of manual annotation or handcrafted resources, and is compared to reported literature results.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s12::p000",
+   "summary": "Facebook reactions in distant supervision can support emotion classification, with continuous vector representations yielding competitive results without handcrafted resources and page selection offering domain adaptation.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s12::p001",
+   "summary": "Future improvements include emotion-aware embeddings and retrofitting FB-embeddings trained on a larger corpus, though the latter would rely on an external lexicon.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s12::p002",
+   "summary": "Future work should improve training instance selection through post length, excluding quotes or image captions, expanding linked html pages, entropy-based strong emotion selection, stance-based Facebook page choice, and vocabulary overlap.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s12::p003",
+   "summary": "Single models for each emotion could treat the problem as a multi-label task, better reflecting ambiguity and subjectivity in assigning emotions to text.",
+   "group_id": "1611.02988::g00"
+  },
+  {
+   "passage_id": "1611.02988::s13::p000",
+   "summary": "The authors thank anonymous reviewers, Lucia Passaro, and Barbara Plank for insightful discussions and comments on draft versions.",
+   "group_id": "1611.02988::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1611.02988::g00",
+   "summaries": [
+    {
+     "passage_id": "1611.02988::s00::p000",
+     "summary": "The work is licensed under a Creative Commons Attribution 4.0 International Licence, with details at http://creativecommons.org/licenses/by/4.0/.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s00::p001",
+     "summary": "Social media users express feelings minimally and symbolically, and since February 2016 Facebook reactions allow wordless specific emotions such as “joy” or “surprise” instead of generic “like”.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s00::p002",
+     "summary": "Facebook reactions aid targeted advertising and social monitoring, while automatic emotion detection faces costly subjective annotation, motivating unsupervised lexicon-based methods and distant supervision using emoticons and Twitter hashtags.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s00::p003",
+     "summary": "The authors use Facebook reactions as distant supervision proxies for emotion labels, train Support Vector Machine models, achieve competitive or state-of-the-art results on standard datasets, and explore domain adaptation via Facebook pages.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s01::p000",
+     "summary": "Facebook comments and thumbs-up “like” expressed generic, underspecified approval that could mean approval of content or merely of the topic raised.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s01::p001",
+     "summary": "In February 2016, Facebook introduced six specific reactions—Like, Love, Haha, Wow, Sad and Angry—which the authors use as proxies for emotion labels associated to posts.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s01::p002",
+     "summary": "The authors collected Facebook posts and reactions from public pages via the Facebook API and Facebook-sdk python library, selecting varied pages including FoxNews, CNN, ESPN, New York Times, Time magazine, Huffington Post Weird News, The Guardian, Cartoon Network, Cooking Light, Home Cooking Adventure, Justin Bieber, Nickelodeon, Spongebob, and Disney.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s01::p003",
+     "summary": "Thankful was only available during specific time spans related to certain events, such as Mother's Day in May 2016.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s01::p004",
+     "summary": "For each page, the authors downloaded the latest 1000 posts, or fewer if unavailable, from February 2016, producing JSON dictionaries with timestamp, post, and reaction frequency vectors.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s01::p005",
+     "summary": "Each post is assigned the emotion with the highest count, ignoring like; for example, sad is assigned with the highest score 284, without entropy-based selection.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s02::p000",
+     "summary": "The Affective Text dataset, the Fairy Tales dataset, and the ISEAR dataset are used for comparison with state-of-the-art results, with Affective development used to develop models and all three used as benchmarks.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s03::p000",
+     "summary": "Task 14 at SemEval 2007 classified emotions and valence in news headlines using Anger, Disgust, Fear, Joy, Sadness, Surprise, with 250 development headlines, 1000 test headlines, Pearson's r, precision, recall, and f-score.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s04::p000",
+     "summary": "The Fairy Tales dataset contains about 1,000 sentences annotated with Angry, Disgusted, Fearful, Happy, Sad, and Surprised, with only unanimous sentences used and angry and disgusted merged.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s05::p000",
+     "summary": "ISEAR, from a 1990s psychology project, contains reports by approximately 3000 respondents and 7665 sentences labelled with joy, fear, anger, sadness, disgust, shame, or guilt.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s06::p000",
+     "summary": "Table TABREF8 maps dataset and Facebook labels to the final emotions anger, joy, sadness, surprise, used for training and testing models.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s06::p001",
+     "summary": "The distribution of emotions for each dataset is different, as shown in Figure FIGREF9.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s06::p002",
+     "summary": "Figure FIGREF9 shows anger, joy, sadness, surprise distributions per Facebook page, with news pages having more sadness and anger posts and cooking and tv-shows pages having high joy percentages.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s07::p000",
+     "summary": "Model development involves selecting Facebook pages and features, using 250 annotated sentences from Affective development for all results in this section, with other datasets reserved for final evaluation.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s08::p000",
+     "summary": "Page selection used intuition and availability, combinations chosen from a basic model on development data, and feature combinations tested on the development set.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s08::p001",
+     "summary": "An SVM with a simple bag-of-words model and default Scikit-learn parameters led to best model B-M, combining Time, The Guardian and Disney, with Disney boosting Joy.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s09::p000",
+     "summary": "Feature selection relied on previous work and intuition, with tests on Affective development using B-M pages as training data and results in Table TABREF20.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s09::p001",
+     "summary": "Basic text-based features include tf-idf bag-of-words, word (2-3) and character (2-5) ngrams, negation words, and punctuation usage.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s09::p002",
+     "summary": "This feature is used in all unsupervised models to assess its contribution but is not used in the final model.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s09::p003",
+     "summary": "The NRC10 Lexicon, covering anger, anticipation, disgust, fear, joy, sadness, surprise, positive and negative, provides boolean word-emotion values and global sentence scores as features.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s09::p004",
+     "summary": "Word Embeddings are included as an additional feature, using three different embeddings.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s09::p005",
+     "summary": "Google embeddings are pre-trained on Google News with skip-gram architecture, containing 300-dimensional vectors for 3 million words and phrases.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s09::p006",
+     "summary": "Facebook embeddings were trained on scraped Facebook pages totaling 20,000 sentences using gensim, with window size 5, learning rate 0.01, dimensionality 100, and words below 2 occurrences filtered out.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s09::p007",
+     "summary": "Retrofitted embeddings use NRC10 Lexicon emotion-similarity information to bring emotion-similar words closer, with Google and Facebook embeddings retrofitted using handcrafted lexical information.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s10::p000",
+     "summary": "Precision, recall, and f-score are reported on the development set, with average f-score as micro-average due to skewed class distribution and task conventions.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s10::p001",
+     "summary": "Table TABREF20 shows tf-idf bag-of-words reaches f-score 0.368, Google embeddings outperform Facebook embeddings, retrofitting boosts Facebook embeddings, and removing the Lexicon feature improves results.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s11::p000",
+     "summary": "Table TABREF26 reports the model's results on the three datasets standardly used for emotion classification evaluation.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s11::p001",
+     "summary": "B-M uses selected Facebook pages, all features plus Google-based embeddings excluding the lexicon, is independent of manual annotation or handcrafted resources, and is compared to reported literature results.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s12::p000",
+     "summary": "Facebook reactions in distant supervision can support emotion classification, with continuous vector representations yielding competitive results without handcrafted resources and page selection offering domain adaptation.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s12::p001",
+     "summary": "Future improvements include emotion-aware embeddings and retrofitting FB-embeddings trained on a larger corpus, though the latter would rely on an external lexicon.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s12::p002",
+     "summary": "Future work should improve training instance selection through post length, excluding quotes or image captions, expanding linked html pages, entropy-based strong emotion selection, stance-based Facebook page choice, and vocabulary overlap.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s12::p003",
+     "summary": "Single models for each emotion could treat the problem as a multi-label task, better reflecting ambiguity and subjectivity in assigning emotions to text.",
+     "group_id": "1611.02988::g00"
+    },
+    {
+     "passage_id": "1611.02988::s13::p000",
+     "summary": "The authors thank anonymous reviewers, Lucia Passaro, and Barbara Plank for insightful discussions and comments on draft versions.",
+     "group_id": "1611.02988::g00"
+    }
+   ],
+   "n_raw": 37,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5230,
+    "completion_tokens": 1994,
+    "total_tokens": 7224,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

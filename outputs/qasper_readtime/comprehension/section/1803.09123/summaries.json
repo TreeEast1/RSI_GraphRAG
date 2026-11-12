@@ -1,0 +1,532 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1803.09123::s00::p000",
+   "summary": "Equations are important but challenging for machine learning because most occur only once, while useful representations could benefit scientific literature analysis, retrieval, and navigation.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s00::p001",
+   "summary": "The paper proposes equation embeddings (EqEmb), an unsupervised approach treating each equation as a singleton word represented using surrounding text representations.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s00::p002",
+   "summary": "Figure FIGREF1 shows an article snippet BIBREF0 with a unique arXiv equation whose surrounding text enables an embedding that finds related equations and words.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s00::p003",
+   "summary": "EqEmbs build on exponential family embeddings BIBREF1 to include equations as singleton observations and model variables, symbols and operators using word and equation contexts.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s00::p004",
+   "summary": "EqEmbs were studied on four arXiv collections covering NLP, IR, AI and ML, including INLINEFORM0 87k equations, and provided better models and coherent semantic representations.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s01::p000",
+   "summary": "Word embeddings introduced in BIBREF2, BIBREF3 and variants BIBREF4, BIBREF5, BIBREF6, BIBREF7 use latent feature vectors, and EqEmb extends word embeddings to equations.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s01::p001",
+   "summary": "Prior equation representations include the symbol layout tree BIBREF8, and this work also falls within mathematical language processing (MLP) BIBREF9.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s02::p000",
+   "summary": "EqEmb are based on word embeddings BIBREF5 or Bernoulli embeddings (b-embs) BIBREF1, which model a word INLINEFORM0 given context INLINEFORM1 using INLINEFORM7 dimensional embedding and context vectors.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s02::p001",
+   "summary": "B-emb is an exponential family embedding model where the conditional distribution is a Bernoulli: DISPLAYFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s02::p002",
+   "summary": "The parameter INLINEFORM0 is defined using the word embedding INLINEFORM1 and the word context INLINEFORM2 vectors: DISPLAYFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s02::p003",
+   "summary": "INLINEFORM0 is the logistic function.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s03::p000",
+   "summary": "Given a dataset of words and equations, EqEmb models derive semantic representations of equations by expanding word context to include equations in a possibly larger window.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s03::p001",
+   "summary": "Embeddings are assigned to words (INLINEFORM0, INLINEFORM1) and equations (INLINEFORM2, INLINEFORM3), with an objective containing conditionals over observed words and equations: DISPLAYFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s03::p002",
+   "summary": "The objective sums conditionals over observed words (INLINEFORM0) and observed equations (INLINEFORM1), using interaction INLINEFORM4 and feature vector INLINEFORM5 terminology.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s03::p003",
+   "summary": "The context of word INLINEFORM1 includes original context INLINEFORM2 and equations INLINEFORM3 in a possibly larger window, called the word-equation context window.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s03::p004",
+   "summary": "Both conditionals are Bernoulli distributions, and the first conditional over words in the collection has parameter DISPLAYFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s03::p005",
+   "summary": "The word context function is DISPLAYFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s03::p006",
+   "summary": "This function encompasses words in original word context INLINEFORM0 and equations INLINEFORM1 appearing in a possibly larger window INLINEFORM2.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s03::p007",
+   "summary": "The second objective term sums log conditional probabilities of each equation, with parameter DISPLAYFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s03::p008",
+   "summary": "Equation context INLINEFORM0 contains words in a context window around the equation: DISPLAYFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s03::p009",
+   "summary": "Equation context can have a larger window than word context, and equation feature vectors INLINEFORM0 are only associated with the first objective term containing words where the equation appears in larger context INLINEFORM1.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s03::p010",
+   "summary": "Figure FIGREF1 shows that with word context size INLINEFORM0 and context window size of 4 (INLINEFORM1), modeling \"embedding\" ignores equations, while word-equation context window size INLINEFORM2 =16 includes the equation feature vector.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s04::p000",
+   "summary": "Equation unit embeddings (EqEmb-U) treat equations as sentences of variables, symbols and operators called units, tokenized using BIBREF8 into syntax layout tree (SLT) tuples, with Figure FIGREF11 showing three equations.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s04::p001",
+   "summary": "Each equation INLINEFORM0 is a sequence of equation units INLINEFORM1, INLINEFORM2, and each equation unit INLINEFORM3 receives interaction INLINEFORM4 and feature INLINEFORM5 vectors.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s04::p002",
+   "summary": "Word INLINEFORM0 context includes original context INLINEFORM1 and equation units INLINEFORM2 from equations in the word-equation context window, while unit context INLINEFORM3 contains surrounding units in small window INLINEFORM4: DISPLAYFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s04::p003",
+   "summary": "The objective is over two conditionals, one for each context type: DISPLAYFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s04::p004",
+   "summary": "The two parameters are DISPLAYFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s04::p005",
+   "summary": "Equation-level representations are defined by averaging the representations of their constituent units: DISPLAYFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s05::p000",
+   "summary": "Stochastic gradient descent with Adagrad BIBREF10 fits vectors, with gradients split into non-zero entries INLINEFORM0 and zero entries INLINEFORM1, exact gradients for non-zero points, subsampling for zero data points, and early stopping based on validation accuracy.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s06::p000",
+   "summary": "EqEmb performance was studied on arXiv articles, where EqEmb models provide better fits than existing embedding approaches and infer meaningful semantic relationships between equations and words.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s06::p001",
+   "summary": "Proposed models are compared with Bernoulli embeddings (b-emb) BIBREF1, continuous bag-of-words (CBOW) BIBREF5, Distributed Memory version of Paragraph Vector (PV-DM) BIBREF11 and Global Vectors (GloVe) BIBREF6.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s07::p000",
+   "summary": "Datasets are arXiv scientific articles in LaTeX from NLP, IR, AI and ML, filtered by primary and secondary categories: cs.cl, cs.ir, cs.ai and stat.ml, stat.co, stat.me or cs.lg.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s07::p001",
+   "summary": "Table TABREF22 shows documents, unique words, equations and equation units; display equations were enumerated in LaTeX, and the empirical study used a random subset of 2k singletons plus all equations occurring more than once, while qualitative analysis used all equations.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s07::p002",
+   "summary": "Words were extracted by tokenizing articles using the NLTK package BIBREF12 and restricting vocabulary to noun phrases and adjectives.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s07::p003",
+   "summary": "Vocabulary selection involved removing common stopwords.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s07::p004",
+   "summary": "Vocabulary selection involved treating the top 25 most frequent words as stop words and removing them.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s07::p005",
+   "summary": "Vocabulary selection included words whose term frequency is greater than or equal to 10 and whose character length is greater than or equal to 4.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s07::p006",
+   "summary": "Vocabulary selection included the top 50 most frequent abbreviations whose character length is 3, an exception to the previous rule.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s07::p007",
+   "summary": "Equation tokenization creates an effective vocabulary by converting equations into SLT format, collecting collection wide frequency statistics, and including all equation units whose frequency count is greater than INLINEFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s08::p000",
+   "summary": "Held out sets are generated for each equation by randomly sampling words from its context set, including sampled words, their context window with the equation, negative samples, and a validation set; for each of the INLINEFORM0 equations, two held out words INLINEFORM1 are sampled, with context window size 4 defined as INLINEFORM2.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s08::p001",
+   "summary": "During training, predictive log-likelihood on the validation set is computed after each iteration using a fitted model of interaction and feature vectors, with held out word log probability computed by DISPLAYFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s08::p002",
+   "summary": "The formula is the softmax over negative samples INLINEFORM0 and the held out word; the model ran 20 times across the collection, stopping at the INLINEFORM3-th iteration when predictive log-likelihood no longer improves over the previous INLINEFORM2 iteration.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s08::p003",
+   "summary": "EqEmb modeling uses two passes: first modeling words while ignoring equations, then modeling equations while holding fixed word interaction and feature vectors, treating equations as singleton words.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s08::p004",
+   "summary": "EqEmb models were evaluated across word context (W), word-equation context (E) and embedding vector size (K), compared with b-emb, CBOW, GloVe and PV-DM, using gensim BIBREF13 for CBOW and PV-DM and separate paragraph labels for PV-DM equation contexts.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s09::p000",
+   "summary": "Table TABREF23 compares embedding models on K=25, 50, 75 and 100, Word Context=4, 8 and 16, E=8 and 16 for EqEmb, EqEmb-U and PV-DM, using pseudo log-likelihood BIBREF14 defined as DISPLAYFORM0.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s09::p001",
+   "summary": "This is treated as a downstream task, with the validation set selecting the best model configuration for each model type and latent dimension configuration, and values reported on both datasets.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s09::p002",
+   "summary": "Across all collections EqEmb outperform previous embedding models and EqEmb-U further improves performance.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s10::p000",
+   "summary": "EqEmb help obtain word descriptions of equations, with Table TABREF25 showing an example equation and the 5 most similar words from CBOW, PV-DM, GloVe and EqEmb using Cosine distance between INLINEFORM0 and INLINEFORM1.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s10::p001",
+   "summary": "Equation search using words as queries averages word embedding representations and computes Cosine distance across equation embeddings, with Table TABREF25 showing a three-word query and its 5 nearest equations discovered using EqEmb.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s11::p000",
+   "summary": "EqEmb models capture semantic similarity between equations, with qualitative analysis over all discovered equations across the 4 collection, Table TABREF24 showing the query equation and its 5 most similar equations using EqEmb-U, Appendix A comparisons with CBOW, PV-DM, GloVe and EqEmb, tab:irexample1,tab:nlpexample2 showing additional examples, Cosine distance for similar words, Euclidean distance for similar equations, and additional results in Appendix B.",
+   "group_id": "1803.09123::g00"
+  },
+  {
+   "passage_id": "1803.09123::s12::p000",
+   "summary": "The paper presented unsupervised approaches for semantic representations of mathematical equations using surrounding words, showed more effective modeling across 4 different collections, demonstrated semantic similarity between equations and words, and plans to explore EqEmb for images, captions and inline figures.",
+   "group_id": "1803.09123::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1803.09123::g00",
+   "summaries": [
+    {
+     "passage_id": "1803.09123::s00::p000",
+     "summary": "Equations are important but challenging for machine learning because most occur only once, while useful representations could benefit scientific literature analysis, retrieval, and navigation.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s00::p001",
+     "summary": "The paper proposes equation embeddings (EqEmb), an unsupervised approach treating each equation as a singleton word represented using surrounding text representations.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s00::p002",
+     "summary": "Figure FIGREF1 shows an article snippet BIBREF0 with a unique arXiv equation whose surrounding text enables an embedding that finds related equations and words.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s00::p003",
+     "summary": "EqEmbs build on exponential family embeddings BIBREF1 to include equations as singleton observations and model variables, symbols and operators using word and equation contexts.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s00::p004",
+     "summary": "EqEmbs were studied on four arXiv collections covering NLP, IR, AI and ML, including INLINEFORM0 87k equations, and provided better models and coherent semantic representations.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s01::p000",
+     "summary": "Word embeddings introduced in BIBREF2, BIBREF3 and variants BIBREF4, BIBREF5, BIBREF6, BIBREF7 use latent feature vectors, and EqEmb extends word embeddings to equations.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s01::p001",
+     "summary": "Prior equation representations include the symbol layout tree BIBREF8, and this work also falls within mathematical language processing (MLP) BIBREF9.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s02::p000",
+     "summary": "EqEmb are based on word embeddings BIBREF5 or Bernoulli embeddings (b-embs) BIBREF1, which model a word INLINEFORM0 given context INLINEFORM1 using INLINEFORM7 dimensional embedding and context vectors.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s02::p001",
+     "summary": "B-emb is an exponential family embedding model where the conditional distribution is a Bernoulli: DISPLAYFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s02::p002",
+     "summary": "The parameter INLINEFORM0 is defined using the word embedding INLINEFORM1 and the word context INLINEFORM2 vectors: DISPLAYFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s02::p003",
+     "summary": "INLINEFORM0 is the logistic function.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s03::p000",
+     "summary": "Given a dataset of words and equations, EqEmb models derive semantic representations of equations by expanding word context to include equations in a possibly larger window.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s03::p001",
+     "summary": "Embeddings are assigned to words (INLINEFORM0, INLINEFORM1) and equations (INLINEFORM2, INLINEFORM3), with an objective containing conditionals over observed words and equations: DISPLAYFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s03::p002",
+     "summary": "The objective sums conditionals over observed words (INLINEFORM0) and observed equations (INLINEFORM1), using interaction INLINEFORM4 and feature vector INLINEFORM5 terminology.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s03::p003",
+     "summary": "The context of word INLINEFORM1 includes original context INLINEFORM2 and equations INLINEFORM3 in a possibly larger window, called the word-equation context window.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s03::p004",
+     "summary": "Both conditionals are Bernoulli distributions, and the first conditional over words in the collection has parameter DISPLAYFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s03::p005",
+     "summary": "The word context function is DISPLAYFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s03::p006",
+     "summary": "This function encompasses words in original word context INLINEFORM0 and equations INLINEFORM1 appearing in a possibly larger window INLINEFORM2.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s03::p007",
+     "summary": "The second objective term sums log conditional probabilities of each equation, with parameter DISPLAYFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s03::p008",
+     "summary": "Equation context INLINEFORM0 contains words in a context window around the equation: DISPLAYFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s03::p009",
+     "summary": "Equation context can have a larger window than word context, and equation feature vectors INLINEFORM0 are only associated with the first objective term containing words where the equation appears in larger context INLINEFORM1.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s03::p010",
+     "summary": "Figure FIGREF1 shows that with word context size INLINEFORM0 and context window size of 4 (INLINEFORM1), modeling \"embedding\" ignores equations, while word-equation context window size INLINEFORM2 =16 includes the equation feature vector.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s04::p000",
+     "summary": "Equation unit embeddings (EqEmb-U) treat equations as sentences of variables, symbols and operators called units, tokenized using BIBREF8 into syntax layout tree (SLT) tuples, with Figure FIGREF11 showing three equations.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s04::p001",
+     "summary": "Each equation INLINEFORM0 is a sequence of equation units INLINEFORM1, INLINEFORM2, and each equation unit INLINEFORM3 receives interaction INLINEFORM4 and feature INLINEFORM5 vectors.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s04::p002",
+     "summary": "Word INLINEFORM0 context includes original context INLINEFORM1 and equation units INLINEFORM2 from equations in the word-equation context window, while unit context INLINEFORM3 contains surrounding units in small window INLINEFORM4: DISPLAYFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s04::p003",
+     "summary": "The objective is over two conditionals, one for each context type: DISPLAYFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s04::p004",
+     "summary": "The two parameters are DISPLAYFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s04::p005",
+     "summary": "Equation-level representations are defined by averaging the representations of their constituent units: DISPLAYFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s05::p000",
+     "summary": "Stochastic gradient descent with Adagrad BIBREF10 fits vectors, with gradients split into non-zero entries INLINEFORM0 and zero entries INLINEFORM1, exact gradients for non-zero points, subsampling for zero data points, and early stopping based on validation accuracy.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s06::p000",
+     "summary": "EqEmb performance was studied on arXiv articles, where EqEmb models provide better fits than existing embedding approaches and infer meaningful semantic relationships between equations and words.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s06::p001",
+     "summary": "Proposed models are compared with Bernoulli embeddings (b-emb) BIBREF1, continuous bag-of-words (CBOW) BIBREF5, Distributed Memory version of Paragraph Vector (PV-DM) BIBREF11 and Global Vectors (GloVe) BIBREF6.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s07::p000",
+     "summary": "Datasets are arXiv scientific articles in LaTeX from NLP, IR, AI and ML, filtered by primary and secondary categories: cs.cl, cs.ir, cs.ai and stat.ml, stat.co, stat.me or cs.lg.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s07::p001",
+     "summary": "Table TABREF22 shows documents, unique words, equations and equation units; display equations were enumerated in LaTeX, and the empirical study used a random subset of 2k singletons plus all equations occurring more than once, while qualitative analysis used all equations.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s07::p002",
+     "summary": "Words were extracted by tokenizing articles using the NLTK package BIBREF12 and restricting vocabulary to noun phrases and adjectives.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s07::p003",
+     "summary": "Vocabulary selection involved removing common stopwords.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s07::p004",
+     "summary": "Vocabulary selection involved treating the top 25 most frequent words as stop words and removing them.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s07::p005",
+     "summary": "Vocabulary selection included words whose term frequency is greater than or equal to 10 and whose character length is greater than or equal to 4.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s07::p006",
+     "summary": "Vocabulary selection included the top 50 most frequent abbreviations whose character length is 3, an exception to the previous rule.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s07::p007",
+     "summary": "Equation tokenization creates an effective vocabulary by converting equations into SLT format, collecting collection wide frequency statistics, and including all equation units whose frequency count is greater than INLINEFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s08::p000",
+     "summary": "Held out sets are generated for each equation by randomly sampling words from its context set, including sampled words, their context window with the equation, negative samples, and a validation set; for each of the INLINEFORM0 equations, two held out words INLINEFORM1 are sampled, with context window size 4 defined as INLINEFORM2.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s08::p001",
+     "summary": "During training, predictive log-likelihood on the validation set is computed after each iteration using a fitted model of interaction and feature vectors, with held out word log probability computed by DISPLAYFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s08::p002",
+     "summary": "The formula is the softmax over negative samples INLINEFORM0 and the held out word; the model ran 20 times across the collection, stopping at the INLINEFORM3-th iteration when predictive log-likelihood no longer improves over the previous INLINEFORM2 iteration.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s08::p003",
+     "summary": "EqEmb modeling uses two passes: first modeling words while ignoring equations, then modeling equations while holding fixed word interaction and feature vectors, treating equations as singleton words.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s08::p004",
+     "summary": "EqEmb models were evaluated across word context (W), word-equation context (E) and embedding vector size (K), compared with b-emb, CBOW, GloVe and PV-DM, using gensim BIBREF13 for CBOW and PV-DM and separate paragraph labels for PV-DM equation contexts.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s09::p000",
+     "summary": "Table TABREF23 compares embedding models on K=25, 50, 75 and 100, Word Context=4, 8 and 16, E=8 and 16 for EqEmb, EqEmb-U and PV-DM, using pseudo log-likelihood BIBREF14 defined as DISPLAYFORM0.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s09::p001",
+     "summary": "This is treated as a downstream task, with the validation set selecting the best model configuration for each model type and latent dimension configuration, and values reported on both datasets.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s09::p002",
+     "summary": "Across all collections EqEmb outperform previous embedding models and EqEmb-U further improves performance.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s10::p000",
+     "summary": "EqEmb help obtain word descriptions of equations, with Table TABREF25 showing an example equation and the 5 most similar words from CBOW, PV-DM, GloVe and EqEmb using Cosine distance between INLINEFORM0 and INLINEFORM1.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s10::p001",
+     "summary": "Equation search using words as queries averages word embedding representations and computes Cosine distance across equation embeddings, with Table TABREF25 showing a three-word query and its 5 nearest equations discovered using EqEmb.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s11::p000",
+     "summary": "EqEmb models capture semantic similarity between equations, with qualitative analysis over all discovered equations across the 4 collection, Table TABREF24 showing the query equation and its 5 most similar equations using EqEmb-U, Appendix A comparisons with CBOW, PV-DM, GloVe and EqEmb, tab:irexample1,tab:nlpexample2 showing additional examples, Cosine distance for similar words, Euclidean distance for similar equations, and additional results in Appendix B.",
+     "group_id": "1803.09123::g00"
+    },
+    {
+     "passage_id": "1803.09123::s12::p000",
+     "summary": "The paper presented unsupervised approaches for semantic representations of mathematical equations using surrounding words, showed more effective modeling across 4 different collections, demonstrated semantic similarity between equations and words, and plans to explore EqEmb for images, captions and inline figures.",
+     "group_id": "1803.09123::g00"
+    }
+   ],
+   "n_raw": 51,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5050,
+    "completion_tokens": 2874,
+    "total_tokens": 7924,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

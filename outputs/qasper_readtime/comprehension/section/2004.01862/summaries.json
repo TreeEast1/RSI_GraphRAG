@@ -1,0 +1,272 @@
+{
+ "summaries": [
+  {
+   "passage_id": "2004.01862::s00::p000",
+   "summary": "COVID-19 affected more than one million individuals and caused more than 55,000 deaths as of April 3 in 2020, while population bias creates conflicting radiological findings conclusions.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s00::p001",
+   "summary": "The authors aim to use natural language processing on the CORD-19 dataset, containing over 45,000 scholarly articles including over 33,000 with full text, to discover COVID-19-related clinical findings.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s00::p002",
+   "summary": "The major contributions of this paper include:",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s00::p003",
+   "summary": "The authors develop natural language processing methods to perform unbiased study of the correlation between radiological findings and COVID-19.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s00::p004",
+   "summary": "The authors develop a bootstrapping approach to train a sentence classifier with light-weight manual annotation effort for extracting radiological findings from literature.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s00::p005",
+   "summary": "Experiments verify the method, and from the CORD-19 dataset it successfully discovers clinical findings closely related with COVID-19.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s00::p006",
+   "summary": "Section 2 introduces the data, Section 3 presents the method, Section 4 gives experimental results, and Section 5 concludes the paper.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s01::p000",
+   "summary": "The study uses CORD-19, containing over 45,000 scholarly articles including over 33,000 with full text, and selects 2081 articles and about 360000 sentences published after November 2019.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s02::p000",
+   "summary": "The authors seek NLP methods to discover unbiased correlation between radiological findings and COVID-19, addressing precise sentence extraction with minimum human annotation and structuring unstructured sentences.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s02::p001",
+   "summary": "A sentence classifier with bootstrapping and hard examples addresses the first challenge, while constituent parsing and top-frequency noun phrases address the second challenge.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s03::p000",
+   "summary": "Positive training sentences come from MedPix, which contains more than 9000 topics, 59000 images from 12000 patient cases, while negative sentences are randomly sampled and screened.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s03::p001",
+   "summary": "The authors train a BERT sentence classifier, pretrain BERT on biomedical literature, add a linear layer, and use the architecture and hyperparameters from BIBREF4.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s03::p002",
+   "summary": "To reduce false positives, the authors iteratively mine hard examples by labeling top-K sentences with largest prediction scores and retraining the classifier.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s04::p000",
+   "summary": "The authors use POS tagging and constituent parsing to extract noun phrases containing lesions, abnormalities, diseases, and other important information from unstructured sentences.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s04::p001",
+   "summary": "Extracted noun phrases have stop words removed, undergo lemmatization, are counted and ranked by frequency, and top-frequency phrases are presented to medical professionals.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s05::p000",
+   "summary": "The initial classifier used 2350 positive samples from MedPix, 3000 negative samples from CORD-19, 90% training, 10% validation, Adam with learning rate $2\\times 10^{-5}$, mini-batch size 4, 400 false positives per iteration, and 4 iterations.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s06::p000",
+   "summary": "The final classifier predicts 998 positive sentences, with 717 true positives and precision of 71.8%, while the initial classifier achieves precision of 47% and bootstrapping rounds 1-3 achieve 55%, 57%, and 69%.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s07::p000",
+   "summary": "Table TABREF15 shows top-frequency radiology-relevant noun phrases, with bold phrases such as consolidation, pleural effusion, ground glass opacity, and thickening for further investigation.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s07::p001",
+   "summary": "Example sentences indicate consolidation is a typical manifestation of COVID-19 and pleural effusion, ground glass opacity, thickening, fibrosis, bronchiectasis, and lymphadenopathy are closely related with COVID-19.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s07::p002",
+   "summary": "Pleural effusion is supported by BIBREF6: “In terms of pleural changes, CT showed that six (9.7%) had pleural effusion.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s07::p003",
+   "summary": "Ground glass opacity is supported by BIBREF7: “The predominant pattern of abnormalities after symptom onset was ground-glass opacity (35/78 [45%] to 49/79 [62%] in different periods.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s07::p004",
+   "summary": "Thickening is supported by BIBREF7 describing ground-glass opacity subcategorized into pure ground-glass opacity and ground-glass opacity with smooth interlobular septal thickening.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s07::p005",
+   "summary": "Fibrosis is supported by BIBREF8: “In five patients, follow-up CT showed improvement with the appearance of fibrosis and resolution of GGOs.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s07::p006",
+   "summary": "Bronchiectasis and lymphadenopathy are supported by BIBREF9 listing common and less common chest CT patterns, including bronchiolectasis, pleural effusion, and lymphadenopathy.",
+   "group_id": "2004.01862::g00"
+  },
+  {
+   "passage_id": "2004.01862::s08::p000",
+   "summary": "The paper develops NLP methods using a BERT-based classifier, bootstrapping, and constituent parsing to extract top-frequency noun phrases and discover COVID-19-related radiological findings from CORD-19.",
+   "group_id": "2004.01862::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "2004.01862::g00",
+   "summaries": [
+    {
+     "passage_id": "2004.01862::s00::p000",
+     "summary": "COVID-19 affected more than one million individuals and caused more than 55,000 deaths as of April 3 in 2020, while population bias creates conflicting radiological findings conclusions.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s00::p001",
+     "summary": "The authors aim to use natural language processing on the CORD-19 dataset, containing over 45,000 scholarly articles including over 33,000 with full text, to discover COVID-19-related clinical findings.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s00::p002",
+     "summary": "The major contributions of this paper include:",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s00::p003",
+     "summary": "The authors develop natural language processing methods to perform unbiased study of the correlation between radiological findings and COVID-19.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s00::p004",
+     "summary": "The authors develop a bootstrapping approach to train a sentence classifier with light-weight manual annotation effort for extracting radiological findings from literature.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s00::p005",
+     "summary": "Experiments verify the method, and from the CORD-19 dataset it successfully discovers clinical findings closely related with COVID-19.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s00::p006",
+     "summary": "Section 2 introduces the data, Section 3 presents the method, Section 4 gives experimental results, and Section 5 concludes the paper.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s01::p000",
+     "summary": "The study uses CORD-19, containing over 45,000 scholarly articles including over 33,000 with full text, and selects 2081 articles and about 360000 sentences published after November 2019.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s02::p000",
+     "summary": "The authors seek NLP methods to discover unbiased correlation between radiological findings and COVID-19, addressing precise sentence extraction with minimum human annotation and structuring unstructured sentences.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s02::p001",
+     "summary": "A sentence classifier with bootstrapping and hard examples addresses the first challenge, while constituent parsing and top-frequency noun phrases address the second challenge.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s03::p000",
+     "summary": "Positive training sentences come from MedPix, which contains more than 9000 topics, 59000 images from 12000 patient cases, while negative sentences are randomly sampled and screened.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s03::p001",
+     "summary": "The authors train a BERT sentence classifier, pretrain BERT on biomedical literature, add a linear layer, and use the architecture and hyperparameters from BIBREF4.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s03::p002",
+     "summary": "To reduce false positives, the authors iteratively mine hard examples by labeling top-K sentences with largest prediction scores and retraining the classifier.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s04::p000",
+     "summary": "The authors use POS tagging and constituent parsing to extract noun phrases containing lesions, abnormalities, diseases, and other important information from unstructured sentences.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s04::p001",
+     "summary": "Extracted noun phrases have stop words removed, undergo lemmatization, are counted and ranked by frequency, and top-frequency phrases are presented to medical professionals.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s05::p000",
+     "summary": "The initial classifier used 2350 positive samples from MedPix, 3000 negative samples from CORD-19, 90% training, 10% validation, Adam with learning rate $2\\times 10^{-5}$, mini-batch size 4, 400 false positives per iteration, and 4 iterations.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s06::p000",
+     "summary": "The final classifier predicts 998 positive sentences, with 717 true positives and precision of 71.8%, while the initial classifier achieves precision of 47% and bootstrapping rounds 1-3 achieve 55%, 57%, and 69%.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s07::p000",
+     "summary": "Table TABREF15 shows top-frequency radiology-relevant noun phrases, with bold phrases such as consolidation, pleural effusion, ground glass opacity, and thickening for further investigation.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s07::p001",
+     "summary": "Example sentences indicate consolidation is a typical manifestation of COVID-19 and pleural effusion, ground glass opacity, thickening, fibrosis, bronchiectasis, and lymphadenopathy are closely related with COVID-19.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s07::p002",
+     "summary": "Pleural effusion is supported by BIBREF6: “In terms of pleural changes, CT showed that six (9.7%) had pleural effusion.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s07::p003",
+     "summary": "Ground glass opacity is supported by BIBREF7: “The predominant pattern of abnormalities after symptom onset was ground-glass opacity (35/78 [45%] to 49/79 [62%] in different periods.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s07::p004",
+     "summary": "Thickening is supported by BIBREF7 describing ground-glass opacity subcategorized into pure ground-glass opacity and ground-glass opacity with smooth interlobular septal thickening.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s07::p005",
+     "summary": "Fibrosis is supported by BIBREF8: “In five patients, follow-up CT showed improvement with the appearance of fibrosis and resolution of GGOs.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s07::p006",
+     "summary": "Bronchiectasis and lymphadenopathy are supported by BIBREF9 listing common and less common chest CT patterns, including bronchiolectasis, pleural effusion, and lymphadenopathy.",
+     "group_id": "2004.01862::g00"
+    },
+    {
+     "passage_id": "2004.01862::s08::p000",
+     "summary": "The paper develops NLP methods using a BERT-based classifier, bootstrapping, and constituent parsing to extract top-frequency noun phrases and discover COVID-19-related radiological findings from CORD-19.",
+     "group_id": "2004.01862::g00"
+    }
+   ],
+   "n_raw": 25,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3565,
+    "completion_tokens": 1357,
+    "total_tokens": 4922,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

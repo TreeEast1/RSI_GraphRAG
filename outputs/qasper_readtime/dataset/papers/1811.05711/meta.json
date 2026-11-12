@@ -1,0 +1,100 @@
+{
+ "paper_id": "1811.05711",
+ "title": "From Free Text to Clusters of Content in Health Records: An Unsupervised Graph Partitioning Approach",
+ "abstract": "Electronic Healthcare records contain large volumes of unstructured data in different forms. Free text constitutes a large portion of such data, yet this source of richly detailed information often remains under-used in practice because of a lack of suitable methodologies to extract interpretable content in a timely manner. Here we apply network-theoretical tools to the analysis of free text in Hospital Patient Incident reports in the English National Health Service, to find clusters of reports in an unsupervised manner and at different levels of resolution based directly on the free text descriptions contained within them. To do so, we combine recently developed deep neural network text-embedding methodologies based on paragraph vectors with multi-scale Markov Stability community detection applied to a similarity graph of documents obtained from sparsified text vector similarities. We showcase the approach with the analysis of incident reports submitted in Imperial College Healthcare NHS Trust, London. The multiscale community structure reveals levels of meaning with different resolution in the topics of the dataset, as shown by relevant descriptive terms extracted from the groups of records, as well as by comparing a posteriori against hand-coded categories assigned by healthcare personnel. Our content communities exhibit good correspondence with well-defined hand-coded categories, yet our results also provide further medical detail in certain areas as well as revealing complementary descriptors of incidents beyond the external classification. We also discuss how the method can be used to monitor reports over time and across different healthcare providers, and to detect emerging trends that fall outside of pre-existing categories.",
+ "sections": [
+  "Introduction",
+  "Multiscale graph partitioning for text analysis: description of the framework",
+  "Data description",
+  "Text Preprocessing",
+  "Text Embedding",
+  "Graph Construction",
+  "Multiscale Graph Partitioning",
+  "Visualisation and interpretation of the results",
+  "Quantitative benchmarking of topic clusters",
+  "Multi-resolution community detection extracts content clusters at different levels of granularity",
+  "Interpretation of MS communities: content and a posteriori comparison with hand-coded categories",
+  "Robustness of the results and comparison with other methods",
+  "Discussion",
+  "Availability of Data and Materials",
+  "Competing interests",
+  "List of abbreviations",
+  "Authors' contributions",
+  "Acknowledgements",
+  "Authors' Information"
+ ],
+ "n_paragraphs": 76,
+ "n_tokens": 10961,
+ "figures_and_tables": [
+  {
+   "caption_id": "1811.05711::fig000",
+   "paper_id": "1811.05711",
+   "file": "3-Figure1-1.png",
+   "caption": "Fig. 1 Pipeline for data analysis including the training of the text embedding model and the graph-based unsupervised clustering of documents at different levels of resolution to find topic clusters only from the free text descriptions of hospital incident reports from the NRLS database",
+   "n_tokens": 50
+  },
+  {
+   "caption_id": "1811.05711::fig001",
+   "paper_id": "1811.05711",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1 Benchmarking of text corpora used for Doc2Vec training",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1811.05711::fig002",
+   "paper_id": "1811.05711",
+   "file": "7-Figure2-1.png",
+   "caption": "Fig. 2 Planar layouts using the ForceAtlas2 algorithm (Jacomy et al. 2014) of some of the similarity graphs generated from the dataset of 3229 records. Each node represents a record and is coloured according to its hand-coded, external category to aid visualisation of the structure. Note that the external categories are not used to produce our content-driven multi-resolution clustering in Fig. 3. a Layout for the full, weighted normalised similarity matrix Ŝ without MST-kNN applied. b–e show the layouts of the graphs generated from the data with the MST-kNN algorithm with an increasing level of sparsity: k = 17, 13, 5, 1 respectively. The structure of the graph is sharpened for intermediate values of k, and we choose k = 13 for our analysis here",
+   "n_tokens": 172
+  },
+  {
+   "caption_id": "1811.05711::fig003",
+   "paper_id": "1811.05711",
+   "file": "10-Figure3-1.png",
+   "caption": "Fig. 3 The top plot presents the results of the Markov Stability algorithm across Markov times, showing the number of clusters of the optimised partition (red), the variation of information VI(t) for the ensemble of optimised solutions at each time (blue) and the variation of Information VI(t, t′) between the optimised partitions across Markov time (background colourmap). Relevant partitions are indicated by dips of VI(t) and extended plateaux of VI(t, t′). We choose five levels with different resolutions (from 44 communities to 3) in our analysis. The Sankey diagram below illustrates how the communities of documents (indicated by numbers and colours) map across Markov time scales. The community structure across scales present a strong quasi-hierarchical character—a result of the analysis and the properties of the data, since it is not imposed a priori. The different partitions for the five chosen levels are shown on a graph layout for the document similarity graph created with the MST-kNN algorithm with k = 13. The colours correspond to the communities found by MS indicating content clusters",
+   "n_tokens": 223
+  },
+  {
+   "caption_id": "1811.05711::fig004",
+   "paper_id": "1811.05711",
+   "file": "11-Figure4-1.png",
+   "caption": "Fig. 4 Summary of the 44-community found with the MS algorithm in an unsupervised manner directly from the text of the incident reports, as seen in Fig. 3. To interpret the 44 content communities, we have compared them a posteriori to the 15 external, hand-coded categories (indicated by names and colours). This comparison is presented in two equivalent ways: through a Sankey diagram showing the correspondence between categories and communities (left); and through a normalised contingency table based on z-scores (right). The communities have been assigned a content label based on their word clouds presented in Figure Additional file 1 in the SI",
+   "n_tokens": 132
+  },
+  {
+   "caption_id": "1811.05711::fig005",
+   "paper_id": "1811.05711",
+   "file": "14-Figure5-1.png",
+   "caption": "Fig. 5 Analysis of the results of the 12-community partition of documents obtained by MS based on their text content and their correspondence to the external categories. Some communities and categories are clearly matched while other communities reflect strong medical content",
+   "n_tokens": 46
+  },
+  {
+   "caption_id": "1811.05711::fig006",
+   "paper_id": "1811.05711",
+   "file": "15-Figure6-1.png",
+   "caption": "Fig. 6 Results for the coarser MS partitions of the document similarity graph into: a 7 communities and b 3 communities, showing in each case their correspondence to the external hand-coded categories. Some of the MS communities with strong medical content (e.g., labour ward, radiotherapy, pressure ulcer) remain separate in our content-driven, unsupervised clustering and are not integrated with other procedural records due to their semantic distinctiveness even to this coarsest level of clustering",
+   "n_tokens": 96
+  },
+  {
+   "caption_id": "1811.05711::fig007",
+   "paper_id": "1811.05711",
+   "file": "17-Figure7-1.png",
+   "caption": "Fig. 7 The word clouds of the partitions into 17, 12 and 7 communities show a multi-resolution coarsening in the content descriptive power mirroring the multi-level, quasi-hierarchical community structure found in the document similarity graph",
+   "n_tokens": 49
+  },
+  {
+   "caption_id": "1811.05711::fig008",
+   "paper_id": "1811.05711",
+   "file": "18-Figure8-1.png",
+   "caption": "Fig. 8 Comparison of Markov Stability applied to Doc2Vec versus BoW (using TF-iDF) similarity graphs obtained under the same graph constructions steps. a Similarity against the externally hand-coded categories measured with NMI; b intrinsic topic coherence of the computed clusters measured with ̂PMI",
+   "n_tokens": 62
+  },
+  {
+   "caption_id": "1811.05711::fig009",
+   "paper_id": "1811.05711",
+   "file": "19-Table2-1.png",
+   "caption": "Table 2 Benchmarking of Markov Stability clusters versus LDA topics at different levels of resolution",
+   "n_tokens": 19
+  }
+ ]
+}

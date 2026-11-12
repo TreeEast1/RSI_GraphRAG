@@ -1,0 +1,94 @@
+{
+ "paper_id": "1907.06292",
+ "title": "TWEETQA: A Social Media Focused Question Answering Dataset",
+ "abstract": "With social media becoming increasingly pop-ular on which lots of news and real-time eventsare reported, developing automated questionanswering systems is critical to the effective-ness of many applications that rely on real-time knowledge. While previous datasets haveconcentrated on question answering (QA) forformal text like news and Wikipedia, wepresent the first large-scale dataset for QA oversocial media data. To ensure that the tweetswe collected are useful, we only gather tweetsused by journalists to write news articles. Wethen ask human annotators to write questionsand answers upon these tweets. Unlike otherQA datasets like SQuAD in which the answersare extractive, we allow the answers to be ab-stractive. We show that two recently proposedneural models that perform well on formaltexts are limited in their performance when ap-plied to our dataset. In addition, even the fine-tuned BERT model is still lagging behind hu-man performance with a large margin. Our re-sults thus point to the need of improved QAsystems targeting social media text.",
+ "sections": [
+  "Introduction",
+  "TweetQA",
+  "Data Collection",
+  "Task and Evaluation",
+  "Analysis",
+  "Experiments",
+  "Query Matching Baseline",
+  "Neural Baselines",
+  "Overall Performance",
+  "Performance Analysis over Human-Labeled Question Types",
+  "Conclusion",
+  "Full results of Performance Analysis over Human-Labeled Question Types",
+  "Performance Analysis over Automatically-Labeled Question Types"
+ ],
+ "n_paragraphs": 45,
+ "n_tokens": 4504,
+ "figures_and_tables": [
+  {
+   "caption_id": "1907.06292::fig000",
+   "paper_id": "1907.06292",
+   "file": "1-Table1-1.png",
+   "caption": "Table 1: An example showing challenges of TWEETQA. Note the highly informal nature of the text and the presence of social media specific text like usernames which need to be comprehended to accurately answer the question.",
+   "n_tokens": 44
+  },
+  {
+   "caption_id": "1907.06292::fig001",
+   "paper_id": "1907.06292",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: An example we use to guide the crowdworkers when eliciting question answer pairs. We elicit question that are neither too specific nor too general, do not require background knowledge.",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1907.06292::fig002",
+   "paper_id": "1907.06292",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Basic statistics of TWEETQA",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "1907.06292::fig003",
+   "paper_id": "1907.06292",
+   "file": "4-Table3-1.png",
+   "caption": "Table 3: Question Type statistics of TWEETQA",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1907.06292::fig004",
+   "paper_id": "1907.06292",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: Types of reasoning abilities required by TWEETQA. Underline indicates tweet-specific reasoning types, which are common in TWEETQA but are rarely observed in previous QA datasets. Note that the first type represents questions that only require the ability of paraphrasing, while the rest of the types require some other more salient abilities besides paraphrasing. Overlaps could exist between different reasoning types in the table. For example, the second example requires both the understanding of sentences relations and tweet language habits to answer the question; and the third example requires both the understanding of sentences relations and authorship.",
+   "n_tokens": 122
+  },
+  {
+   "caption_id": "1907.06292::fig005",
+   "paper_id": "1907.06292",
+   "file": "7-Figure2-1.png",
+   "caption": "Figure 2: Visualization of vocabulary differences between SQuAD (left) and TWEETQA (right). Note the presence of a heavy tail of hash-tags and usernames on TWEETQA that are rarely found on SQuAD. The color range from red to gray indicates the frequency (red the highest and gray the lowest).",
+   "n_tokens": 68
+  },
+  {
+   "caption_id": "1907.06292::fig006",
+   "paper_id": "1907.06292",
+   "file": "8-Table5-1.png",
+   "caption": "Table 5: Overall performance of baseline models. EXTRACT-UB refers to our estimation of the upper bound of extractive methods.",
+   "n_tokens": 27
+  },
+  {
+   "caption_id": "1907.06292::fig007",
+   "paper_id": "1907.06292",
+   "file": "8-Table6-1.png",
+   "caption": "Table 6: BiDAF’s and the Generative model’s performance on questions that require different types of reasoning. and † denote the three most difficult reasoning types for the Generative and the BERT models.",
+   "n_tokens": 44
+  },
+  {
+   "caption_id": "1907.06292::fig008",
+   "paper_id": "1907.06292",
+   "file": "12-Table7-1.png",
+   "caption": "Table 7: BiDAF’s and the Generative model’s performance on questions that require different types of reasoning. ?, and † denote the three most difficult reasoning types for BiDAF/Generative/BERT models.",
+   "n_tokens": 46
+  },
+  {
+   "caption_id": "1907.06292::fig009",
+   "paper_id": "1907.06292",
+   "file": "12-Table8-1.png",
+   "caption": "Table 8: BLEU-1 scores on different types of questions. Calculated on the development set.",
+   "n_tokens": 22
+  }
+ ]
+}

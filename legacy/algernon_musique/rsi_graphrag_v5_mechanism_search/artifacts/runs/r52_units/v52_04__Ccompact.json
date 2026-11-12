@@ -1,0 +1,110 @@
+{
+  "role": "v52_04",
+  "cluster_id": "cc-00000-stable-0110",
+  "unit_id": "cc-00000-stable-0110-u000",
+  "method": "Ccompact",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 2336,
+    "completion_tokens": 913,
+    "reasoning_tokens": 512,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r52_units_v52_04_Ccompact",
+    "cache_key": "25d05b755efaf014ac77942d7db4492a7e8555eb40c73310c8d0b17974673f04"
+  },
+  "n_updates": 1,
+  "n_add": 1,
+  "n_accept": 1,
+  "n_reject": 0,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "EXTRACTION_REPAIR": 1
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "c1",
+      "comprehension_text": "The 2003 meeting had 322 persons in attendance at sessions.",
+      "new_semantic_relation": "2003 meeting had attendance of 322 persons",
+      "operator": "EXPLICIT_GAP",
+      "chain": [
+        {
+          "passage_id": "chunk-34f60cd0b3a1c203f5442a6821679b98",
+          "span": "The meeting report states there were 322 persons in attendance at Sessions"
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-a591024321c5e2bdbd23ed35f0574dde"
+      ],
+      "source_triple_ids": [
+        "triple-0607edf7a0d66000d49d79ac597e2fd7",
+        "triple-6017ce3851f2dcaaffac4883c2a1b117"
+      ],
+      "source_passage_ids": [
+        "chunk-34f60cd0b3a1c203f5442a6821679b98"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-34f60cd0b3a1c203f5442a6821679b98",
+          "span": "The meeting report states there were 322 persons in attendance at Sessions"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "novel_part": "The attendance count was 322 persons.",
+      "reasoning_summary": "The report explicitly gives a session attendance count.",
+      "novelty_justification": "Existing triples omit the exact count of 322 attendees.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "c1",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: 322, persons, 322",
+      "residue": [
+        "322",
+        "persons",
+        "322"
+      ],
+      "evidence_sentences": [
+        "The meeting report states there were 322 persons in attendance at Sessions with about seven-eighths of participants being from governmental organizations."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "The meeting report states there were 322 persons in attendance at Sessions with about seven-eighths of participants being from governmental organizations."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "322",
+            "persons",
+            "322"
+          ],
+          "n_passage_triples": 16,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

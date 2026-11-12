@@ -1,0 +1,280 @@
+{
+  "summary": {
+    "dev": {
+      "n": 10,
+      "old_correct": 6,
+      "new_correct": 10
+    },
+    "heldout": {
+      "n": 14,
+      "old_correct": 12,
+      "new_correct": 13
+    }
+  },
+  "rows": [
+    {
+      "id": "dev-kpbd",
+      "split": "dev",
+      "text": "KPBD began broadcasting in June 2005.",
+      "expect": "REDUNDANT",
+      "old": "REDUNDANT",
+      "new": "REDUNDANT",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited passages' OpenIE triples already entail this proposition. Content stems are covered."
+    },
+    {
+      "id": "dev-shades",
+      "split": "dev",
+      "text": "Shades of Blue was renewed for a third season on March 17, 2017.",
+      "expect": "REDUNDANT",
+      "old": "REDUNDANT",
+      "new": "REDUNDANT",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited passages' OpenIE triples already entail this proposition. Content stems are covered."
+    },
+    {
+      "id": "dev-sisters",
+      "split": "dev",
+      "text": "The Sisters of St Joseph of Nazareth have their main centre in Whanganui, New Zealand.",
+      "expect": "REDUNDANT",
+      "old": "REDUNDANT",
+      "new": "REDUNDANT",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited passages' OpenIE triples already entail this proposition. Content stems are covered."
+    },
+    {
+      "id": "dev-lipshitz-broadcast",
+      "split": "dev",
+      "text": "NBC approved the Lipshitz Saves the World pilot in July 2006, but the show was not picked up for broadcast.",
+      "expect": "REDUNDANT",
+      "old": "COMPOSITIONAL_REASONING",
+      "new": "REDUNDANT",
+      "old_match": false,
+      "new_match": true,
+      "detail": "The cited passages' OpenIE triples already entail this proposition. title_anaphor, air_broadcast_synonym"
+    },
+    {
+      "id": "dev-gemma-appearance",
+      "split": "dev",
+      "text": "Gemma Ramsay made her first appearance during the episode broadcast on 20 June 1990.",
+      "expect": "REDUNDANT",
+      "old": "EXTRACTION_REPAIR",
+      "new": "REDUNDANT",
+      "old_match": false,
+      "new_match": true,
+      "detail": "The cited passages' OpenIE triples already entail this proposition. appearance_frame"
+    },
+    {
+      "id": "dev-tristan",
+      "split": "dev",
+      "text": "Tristan von Lahnstein first appeared before Ludwig von Lahnstein, on 23 October 2009 and 22 December 2009 respectively.",
+      "expect": "COMPOSITIONAL_UNDERSTANDING",
+      "old": "CROSS_PASSAGE_REASONING",
+      "new": "COMPOSITIONAL_UNDERSTANDING",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The only addition is an order between dates that come from different passages."
+    },
+    {
+      "id": "dev-kremer",
+      "split": "dev",
+      "text": "Andrea Kremer and Hannah Storm became the first all-women booth to call any major men's team sport.",
+      "expect": "EXTRACTION_REPAIR",
+      "old": "EXTRACTION_REPAIR",
+      "new": "EXTRACTION_REPAIR",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited sentence states these stems, and no OpenIE triple entails them: all, any, booth, call, major, men, sport, team, women"
+    },
+    {
+      "id": "dev-azawad",
+      "split": "dev",
+      "text": "Tuareg rebels took control of northern Mali before declaring the secession of Azawad in April 2012.",
+      "expect": "UNSUPPORTED",
+      "old": "UNSUPPORTED",
+      "new": "UNSUPPORTED",
+      "old_match": true,
+      "new_match": true,
+      "detail": "Logical check failed: before_not_entailed_by_coordination"
+    },
+    {
+      "id": "dev-plainsman-interval",
+      "split": "dev",
+      "text": "October 1, 1959 was earlier than May 5, 1960.",
+      "expect": "TRIVIAL_DERIVATION",
+      "old": "EXTRACTION_REPAIR",
+      "new": "TRIVIAL_DERIVATION",
+      "old_match": false,
+      "new_match": true,
+      "detail": "Both dates are the endpoints of one from/until interval already in the cited sentence."
+    },
+    {
+      "id": "dev-golovko",
+      "split": "dev",
+      "text": "Aleksandr Golovko became the new commander of the Aerospace Defence Forces Branch after Oleg Ostapenko was promoted to Deputy Minister of Defence.",
+      "expect": "REDUNDANT",
+      "old": "EXTRACTION_REPAIR",
+      "new": "REDUNDANT",
+      "old_match": false,
+      "new_match": true,
+      "detail": "The cited passages' OpenIE triples already entail this proposition. succession_wording_entailed"
+    },
+    {
+      "id": "hold-glockner",
+      "split": "heldout",
+      "text": "Taylor Glockner was given a two-year contract to play Mason Turner.",
+      "expect": "EXTRACTION_REPAIR",
+      "old": "EXTRACTION_REPAIR",
+      "new": "SEMANTIC_ABSTRACTION",
+      "old_match": true,
+      "new_match": false,
+      "detail": "The claim adds stems that are not entailed by the triples and are not copied from the cited sentence: contract, play, two, year"
+    },
+    {
+      "id": "hold-morley-chris",
+      "split": "heldout",
+      "text": "Bobby Morley played Aidan Foster, who was introduced to Neighbours as a love interest for Chris Pappas.",
+      "expect": "REDUNDANT",
+      "old": "REDUNDANT",
+      "new": "REDUNDANT",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited passages' OpenIE triples already entail this proposition. Content stems are covered."
+    },
+    {
+      "id": "hold-lipshitz-exact",
+      "split": "heldout",
+      "text": "Lipshitz Saves the World was not picked up for air.",
+      "expect": "REDUNDANT",
+      "old": "REDUNDANT",
+      "new": "REDUNDANT",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited passages' OpenIE triples already entail this proposition. air_broadcast_synonym"
+    },
+    {
+      "id": "hold-sajak",
+      "split": "heldout",
+      "text": "Pat Sajak succeeded Chuck Woolery as host of Wheel of Fortune after Woolery's December 25, 1981 departure.",
+      "expect": "SEMANTIC_ABSTRACTION",
+      "old": "COMPOSITIONAL_REASONING",
+      "new": "SEMANTIC_ABSTRACTION",
+      "old_match": false,
+      "new_match": true,
+      "detail": "The claim adds stems that are not entailed by the triples and are not copied from the cited sentence: after, departure, succeed"
+    },
+    {
+      "id": "hold-gemma-madge",
+      "split": "heldout",
+      "text": "Gemma Ramsay moved to Erinsborough to live with her aunt Madge Bishop after her mother’s death.",
+      "expect": "UNSUPPORTED",
+      "old": "UNSUPPORTED",
+      "new": "UNSUPPORTED",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited sentences do not contain Madge Bishop. Those names occur elsewhere in the cited passage, but no token of the name is in the cited sentence."
+    },
+    {
+      "id": "hold-bobby-contract",
+      "split": "heldout",
+      "text": "Bobby Morley was initially contracted for six months to play Aidan Foster.",
+      "expect": "UNSUPPORTED",
+      "old": "UNSUPPORTED",
+      "new": "UNSUPPORTED",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited sentences do not contain Aidan Foster.. Those names occur elsewhere in the cited passage, but no token of the name is in the cited sentence."
+    },
+    {
+      "id": "hold-next-caller",
+      "split": "heldout",
+      "text": "Next Caller was an unaired television comedy series.",
+      "expect": "EXTRACTION_REPAIR",
+      "old": "EXTRACTION_REPAIR",
+      "new": "EXTRACTION_REPAIR",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited sentence states these stems, and no OpenIE triple entails them: unaired"
+    },
+    {
+      "id": "hold-ten-week",
+      "split": "heldout",
+      "text": "Bobby Morley took a ten-week break from Neighbours in April 2012 to appear in Blinder.",
+      "expect": "EXTRACTION_REPAIR",
+      "old": "EXTRACTION_REPAIR",
+      "new": "EXTRACTION_REPAIR",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited sentence states these stems, and no OpenIE triple entails them: ten, week"
+    },
+    {
+      "id": "hold-aidan-dates",
+      "split": "heldout",
+      "text": "19 June 2011 was earlier than 19 August 2011.",
+      "expect": "COMPOSITIONAL_UNDERSTANDING",
+      "old": "COMPOSITIONAL_REASONING",
+      "new": "COMPOSITIONAL_UNDERSTANDING",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The only addition is an order between two dated events in one passage, and they are not endpoints of one interval."
+    },
+    {
+      "id": "hold-teeth",
+      "split": "heldout",
+      "text": "Permanent teeth begin to form in the twentieth week of prenatal development.",
+      "expect": "EXTRACTION_REPAIR",
+      "old": "EXTRACTION_REPAIR",
+      "new": "EXTRACTION_REPAIR",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited sentence states these stems, and no OpenIE triple entails them: twentieth, week"
+    },
+    {
+      "id": "hold-gao",
+      "split": "heldout",
+      "text": "Gao Wei became emperor at age eight.",
+      "expect": "EXTRACTION_REPAIR",
+      "old": "EXTRACTION_REPAIR",
+      "new": "EXTRACTION_REPAIR",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited sentence states these stems, and no OpenIE triple entails them: age, eight"
+    },
+    {
+      "id": "hold-kreindler",
+      "split": "heldout",
+      "text": "Lee Kreindler was considered the founder of air disaster law.",
+      "expect": "EXTRACTION_REPAIR",
+      "old": "EXTRACTION_REPAIR",
+      "new": "EXTRACTION_REPAIR",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited sentence states these stems, and no OpenIE triple entails them: considered"
+    },
+    {
+      "id": "hold-cristine",
+      "split": "heldout",
+      "text": "Cristine Phoebe replaced Juliana Mikael as the trainer for the third season.",
+      "expect": "REDUNDANT",
+      "old": "UNSUPPORTED",
+      "new": "REDUNDANT",
+      "old_match": false,
+      "new_match": true,
+      "detail": "The cited passages' OpenIE triples already entail this proposition. Content stems are covered."
+    },
+    {
+      "id": "hold-wang",
+      "split": "heldout",
+      "text": "Wang Shen'ai and Emperor Xiaowu had no children.",
+      "expect": "UNSUPPORTED",
+      "old": "UNSUPPORTED",
+      "new": "UNSUPPORTED",
+      "old_match": true,
+      "new_match": true,
+      "detail": "The cited sentences do not contain Wang Shen'ai, Emperor Xiaowu. Those names occur elsewhere in the cited passage, but no token of the name is in the cited sentence."
+    }
+  ]
+}

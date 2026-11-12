@@ -1,0 +1,122 @@
+{
+  "role": "hist_large",
+  "cluster_id": "cc-00000-stable-0074",
+  "unit_id": "cc-00000-stable-0074-u010",
+  "method": "A",
+  "status": "completed",
+  "cache_hit": true,
+  "cache_source": "v5",
+  "usage": {
+    "prompt_tokens": 9629,
+    "completion_tokens": 795,
+    "reasoning_tokens": 435,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r1_hist_hist_large_A",
+    "cache_key": "efa9411438351b2976cb4a64d8c0065d3139de1aaa1861ff5edd76e322d32e14"
+  },
+  "n_updates": 1,
+  "n_add": 1,
+  "n_accept": 1,
+  "n_reject": 0,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "EXTRACTION_REPAIR": 1
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "candidate-001",
+      "comprehension_text": "Andrea Kremer and Hannah Storm formed the first all-women booth to call a major men's team sport.",
+      "new_semantic_relation": "formed first all-women booth with",
+      "linked_entity_ids": [
+        "entity-c30c674749748e4a1b36f06ffa6bed8a",
+        "entity-69f49f8762ac9d26f0ffa17b54ad5948",
+        "entity-68f81ac6bfbfa01e2f789f760a99a5b"
+      ],
+      "source_triple_ids": [
+        "triple-6cb8ed77e8a047470f04d6faea7ce9c7",
+        "triple-e2144098fa4c8835598cbd4ab19b6798"
+      ],
+      "source_passage_ids": [
+        "chunk-c30c674749748e4a1b36f06ffa6bed8a"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-c30c674749748e4a1b36f06ffa6bed8a",
+          "span": "making sports history, along with Hannah Storm, by becoming the first all-women booth to call any major men's team sport"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "reasoning_summary": "The passage explicitly states that Kremer and Storm became the first all-women booth to call a major men's team sport, while the triples only state that they call Thursday Night Football together.",
+      "novelty_justification": "The first-all-women-booth achievement is not stated by the existing triples, which only record their joint calling role.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "candidate-001",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: formed, first, all, women, booth, call, major, men, s, team, sport",
+      "residue": [
+        "formed",
+        "first",
+        "all",
+        "women",
+        "booth",
+        "call",
+        "major",
+        "men",
+        "s",
+        "team",
+        "sport"
+      ],
+      "evidence_sentences": [
+        "She currently calls \"Thursday Night Football\" games for Amazon Prime Video making sports history, along with Hannah Storm, by becoming the first all-women booth to call any major men's team sport, not just football."
+      ],
+      "warning": "partial_name_anchored:Andrea Kremer [title coreference]",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [
+            "Andrea Kremer [title coreference]"
+          ],
+          "missing_names": [],
+          "evidence_sentences": [
+            "She currently calls \"Thursday Night Football\" games for Amazon Prime Video making sports history, along with Hannah Storm, by becoming the first all-women booth to call any major men's team sport, not just football."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "formed",
+            "first",
+            "all",
+            "women",
+            "booth",
+            "call",
+            "major",
+            "men",
+            "s",
+            "team",
+            "sport"
+          ],
+          "n_passage_triples": 17,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+  P1 done 40 in 101s errors=0 cache_hits=1
+  P2 done 40 in 110s errors=0 cache_hits=0
+  P3 done 40 in 112s errors=0 cache_hits=0
+  P4 done 40 in 124s errors=0 cache_hits=0
+  P5 done 40 in 149s errors=0 cache_hits=0
+  P6 done 40 in 122s errors=0 cache_hits=1
+Traceback (most recent call last):
+  File "/group/40150/licochen/Memory/RSI_GraphRAG/scripts/prompt_opt/04_reader_pilot.py", line 170, in <module>
+  File "/group/40150/licochen/Memory/RSI_GraphRAG/scripts/prompt_opt/04_reader_pilot.py", line 153, in main
+    r.update(evaluate(r["pred_answer"], base_rows[r["qidx"]]["gold_answer"],
+  File "/group/40150/licochen/Memory/RSI_GraphRAG/src/prompt_optimization/runner.py", line 112, in summarize_prompt
+    ans = [r for r in rows if r["category"] != 5]
+  File "/group/40150/licochen/Memory/RSI_GraphRAG/src/prompt_optimization/runner.py", line 112, in <listcomp>
+    ans = [r for r in rows if r["category"] != 5]
+KeyError: 'category'

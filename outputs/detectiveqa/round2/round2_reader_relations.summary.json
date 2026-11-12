@@ -1,0 +1,72 @@
+{
+ "n_rows": 164,
+ "conditions": {
+  "q_dense@0": {
+   "n": 41,
+   "accuracy": 0.6585,
+   "gold_any": 0.7561,
+   "gold_all": 0.122,
+   "invalid": 0.0,
+   "total_tokens": 178531
+  },
+  "relations_q_dense@0": {
+   "n": 41,
+   "accuracy": 0.6585,
+   "gold_any": 0.7561,
+   "gold_all": 0.0976,
+   "invalid": 0.0,
+   "total_tokens": 174680
+  },
+  "q_rrf@0": {
+   "n": 41,
+   "accuracy": 0.6341,
+   "gold_any": 0.7805,
+   "gold_all": 0.122,
+   "invalid": 0.0,
+   "total_tokens": 179174
+  },
+  "relations_q_rrf@0": {
+   "n": 41,
+   "accuracy": 0.6585,
+   "gold_any": 0.7073,
+   "gold_all": 0.122,
+   "invalid": 0.0,
+   "total_tokens": 173741
+  }
+ },
+ "paired_seed0": {
+  "q_dense->q_rrf": {
+   "delta": -0.024390243902439025,
+   "ci_low": -0.075,
+   "ci_high": 0.0,
+   "wins": 1,
+   "losses": 2,
+   "mcnemar_exact_p": 1.0
+  },
+  "q_dense->relations_q_dense": {
+   "delta": 0.0,
+   "ci_low": -0.06976744186046512,
+   "ci_high": 0.07317073170731707,
+   "wins": 2,
+   "losses": 2,
+   "mcnemar_exact_p": 1.0
+  },
+  "q_rrf->relations_q_rrf": {
+   "delta": 0.024390243902439025,
+   "ci_low": -0.058823529411764705,
+   "ci_high": 0.10526315789473684,
+   "wins": 2,
+   "losses": 1,
+   "mcnemar_exact_p": 1.0
+  }
+ },
+ "client": {
+  "calls": 96,
+  "cache_hits": 68,
+  "errors": 0,
+  "prompt_tokens": 401409,
+  "completion_tokens": 9725,
+  "reasoning_tokens": 0,
+  "latency_s": 287.31684947013855
+ }
+}

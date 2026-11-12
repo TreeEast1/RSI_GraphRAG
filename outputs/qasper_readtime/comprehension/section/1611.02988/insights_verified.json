@@ -1,0 +1,410 @@
+{
+ "kept": [
+  {
+   "insight_id": "1611.02988::g00:i02",
+   "paper_id": "1611.02988",
+   "group_id": "1611.02988::g00",
+   "concise_text": "Because all labels in each dataset are mapped to anger, joy, sadness, surprise, the Affective Text, Fairy Tales, and ISEAR benchmarks evaluate the same final emotion labels.",
+   "triple": {
+    "subject": "Affective Text dataset, Fairy Tales dataset, and ISEAR dataset",
+    "predicate": "evaluated_on",
+    "object": "anger, joy, sadness, surprise"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1611.02988::s02::p000",
+    "1611.02988::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1611.02988::g00:b1:f07",
+    "1611.02988::g00:b2:f08",
+    "1611.02988::g00:b2:f09",
+    "1611.02988::g00:b2:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Jointly supported: s02:p000 identifies the three datasets as benchmarks, and s06:p000 says all labels in each dataset are mapped to anger, joy, sadness, surprise, the final labels used for training/testing. The concise_text's 'because' is supported by the mapping statement."
+   },
+   "unit_id": "1611.02988::u002"
+  },
+  {
+   "insight_id": "1611.02988::g00:i04",
+   "paper_id": "1611.02988",
+   "group_id": "1611.02988::g00",
+   "concise_text": "The costly and difficult creation of manually annotated datasets motivates the paper's Facebook-reaction distant supervision for training Support Vector Machine models.",
+   "triple": {
+    "subject": "costly and difficult manually annotated datasets",
+    "predicate": "causes",
+    "object": "Facebook-reaction distant supervision"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1611.02988::s00::p002",
+    "1611.02988::s00::p003"
+   ],
+   "supporting_fact_ids": [
+    "1611.02988::g00:b0:f03",
+    "1611.02988::g00:b0:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "s00:p002 states manually annotated datasets are costly and difficult and motivates research on automatic/distant supervision; s00:p003 states the paper uses Facebook reactions as distant-supervision proxies and trains SVM models. The problem-solution causal link is explicitly framed by 'Therefore' and the paper's method."
+   },
+   "unit_id": "1611.02988::u004"
+  },
+  {
+   "insight_id": "1611.02988::g00:i08",
+   "paper_id": "1611.02988",
+   "group_id": "1611.02988::g00",
+   "concise_text": "The final models are evaluated on the Affective Text test set, Fairy Tales dataset, and ISEAR dataset after development on 250 annotated sentences.",
+   "triple": {
+    "subject": "final models",
+    "predicate": "evaluated_on",
+    "object": "Affective Text test set, Fairy Tales dataset, and ISEAR dataset"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1611.02988::s02::p000",
+    "1611.02988::s07::p000",
+    "1611.02988::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1611.02988::g00:b1:f07",
+    "1611.02988::g00:b2:f16",
+    "1611.02988::g00:b2:f18"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.85,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Jointly supported: s07:p000 says development used 250 annotated sentences and that the Task 14 test set plus the other two datasets will evaluate final models; s02:p000 identifies the three datasets and their benchmark roles; s11:p000 confirms results on the three evaluation datasets."
+   },
+   "unit_id": "1611.02988::u008"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1611.02988::g00:i00",
+   "paper_id": "1611.02988",
+   "group_id": "1611.02988::g00",
+   "concise_text": "The final B-M feature set uses Google-based embeddings because Google embeddings performed a lot better than Facebook embeddings on Affective development.",
+   "triple": {
+    "subject": "Google-based embeddings",
+    "predicate": "outperforms",
+    "object": "Facebook embeddings"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1611.02988::s09::p000",
+    "1611.02988::s10::p001",
+    "1611.02988::s11::p001"
+   ],
+   "supporting_fact_ids": [
+    "1611.02988::g00:b3:f06",
+    "1611.02988::g00:b4:f13",
+    "1611.02988::g00:b5:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "The outperformance of Google embeddings over Facebook embeddings is directly stated in s10:p001; concise_text adds final B-M feature-set use from s11:p001, but the triple is a single-paragraph restatement."
+   },
+   "unit_id": "1611.02988::u000"
+  },
+  {
+   "insight_id": "1611.02988::g00:i01",
+   "paper_id": "1611.02988",
+   "group_id": "1611.02988::g00",
+   "concise_text": "The combined set of Time, The Guardian and Disney was selected as B-M using an SVM with a simple bag-of-words model on Affective development.",
+   "triple": {
+    "subject": "combined set of Time, The Guardian and Disney",
+    "predicate": "evaluated_on",
+    "object": "Affective development"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1611.02988::s07::p000",
+    "1611.02988::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1611.02988::g00:b2:f16",
+    "1611.02988::g00:b2:f17",
+    "1611.02988::g00:b3:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "Cited paragraphs support that the combined page set was selected as B-M using an SVM bag-of-words model on Affective development, but the triple only says it was evaluated_on Affective development, which is a paraphrase of the development setting rather than a novel composed insight."
+   },
+   "unit_id": "1611.02988::u001"
+  },
+  {
+   "insight_id": "1611.02988::g00:i03",
+   "paper_id": "1611.02988",
+   "group_id": "1611.02988::g00",
+   "concise_text": "The majority-emotion labelling rule turns reaction vectors into post labels, enabling the observed page-level emotion distributions used to choose pages for a target domain.",
+   "triple": {
+    "subject": "majority-emotion labelling rule",
+    "predicate": "causes",
+    "object": "page-level emotion distributions"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1611.02988::s01::p004",
+    "1611.02988::s01::p005",
+    "1611.02988::s06::p002"
+   ],
+   "supporting_fact_ids": [
+    "1611.02988::g00:b1:f02",
+    "1611.02988::g00:b1:f03",
+    "1611.02988::g00:b1:f04",
+    "1611.02988::g00:b2:f12",
+    "1611.02988::g00:b2:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.83,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "The sources say majority-emotion labels are used and that page-level distributions are observed and used to choose pages, but they do not support the causal claim that the labelling rule causes those distributions."
+   },
+   "unit_id": "1611.02988::u003"
+  },
+  {
+   "insight_id": "1611.02988::g00:i05",
+   "paper_id": "1611.02988",
+   "group_id": "1611.02988::g00",
+   "concise_text": "The six specific reactions Like, Love, Haha, Wow, Sad and Angry are the Facebook reaction feature used as proxies for emotion labels.",
+   "triple": {
+    "subject": "six specific reactions",
+    "predicate": "extends",
+    "object": "Facebook reactions as proxies for emotion labels"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1611.02988::s00::p003",
+    "1611.02988::s01::p001"
+   ],
+   "supporting_fact_ids": [
+    "1611.02988::g00:b0:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "The six reactions are listed and said to be used as proxies for emotion labels in s01:p001, with s00:p003 giving the general distant-supervision statement. However, the triple's 'extends' relation is not supported; the concise_text is essentially an entity-resolution restatement."
+   },
+   "unit_id": "1611.02988::u005"
+  },
+  {
+   "insight_id": "1611.02988::g00:i06",
+   "paper_id": "1611.02988",
+   "group_id": "1611.02988::g00",
+   "concise_text": "Removing the Lexicon feature yields better results and makes the final B-M independent of any manual annotation or handcrafted resource.",
+   "triple": {
+    "subject": "removing the Lexicon feature",
+    "predicate": "improves_on",
+    "object": "B-M independence from manual annotation or handcrafted resource"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1611.02988::s10::p001",
+    "1611.02988::s11::p001"
+   ],
+   "supporting_fact_ids": [
+    "1611.02988::g00:b4:f15",
+    "1611.02988::g00:b5:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.89,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.3,
+    "causality_error": true,
+    "reason": "The sources support that removing the Lexicon feature yields better results and that the final B-M excludes the lexicon, making it independent of manual annotation/handcrafted resources. But the triple says removing the Lexicon improves B-M independence, conflating performance improvement with independence and asserting an unsupported causal relation."
+   },
+   "unit_id": "1611.02988::u006"
+  },
+  {
+   "insight_id": "1611.02988::g00:i07",
+   "paper_id": "1611.02988",
+   "group_id": "1611.02988::g00",
+   "concise_text": "Retrofitting Facebook embeddings with NRC10 Lexicon information boosts them but introduces handcrafted information, which the final B-M excludes.",
+   "triple": {
+    "subject": "retrofitted Facebook embeddings",
+    "predicate": "limits",
+    "object": "final B-M independence from handcrafted resources"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1611.02988::s09::p007",
+    "1611.02988::s10::p001",
+    "1611.02988::s11::p001"
+   ],
+   "supporting_fact_ids": [
+    "1611.02988::g00:b4:f07",
+    "1611.02988::g00:b4:f09",
+    "1611.02988::g00:b4:f14",
+    "1611.02988::g00:b5:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "Sources support that retrofitting boosts Facebook embeddings and that retrofitted embeddings rely on handcrafted lexical information, while final B-M excludes the lexicon and is independent of handcrafted resources. They do not state that retrofitted Facebook embeddings limit final B-M independence; the relation is an unsupported inferred limitation."
+   },
+   "unit_id": "1611.02988::u007"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1611.02988::g00:i00",
+    "verdict": {
+     "insight_id": "1611.02988::g00:i00",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "The outperformance of Google embeddings over Facebook embeddings is directly stated in s10:p001; concise_text adds final B-M feature-set use from s11:p001, but the triple is a single-paragraph restatement."
+    },
+    "reason": "The outperformance of Google embeddings over Facebook embeddings is directly stated in s10:p001; concise_text adds final B-M feature-set use from s11:p001, but the triple is a single-paragraph restatement."
+   },
+   {
+    "insight_id": "1611.02988::g00:i01",
+    "verdict": {
+     "insight_id": "1611.02988::g00:i01",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "Cited paragraphs support that the combined page set was selected as B-M using an SVM bag-of-words model on Affective development, but the triple only says it was evaluated_on Affective development, which is a paraphrase of the development setting rather than a novel composed insight."
+    },
+    "reason": "Cited paragraphs support that the combined page set was selected as B-M using an SVM bag-of-words model on Affective development, but the triple only says it was evaluated_on Affective development, which is a paraphrase of the development setting rather than a novel composed insight."
+   },
+   {
+    "insight_id": "1611.02988::g00:i02",
+    "verdict": {
+     "insight_id": "1611.02988::g00:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Jointly supported: s02:p000 identifies the three datasets as benchmarks, and s06:p000 says all labels in each dataset are mapped to anger, joy, sadness, surprise, the final labels used for training/testing. The concise_text's 'because' is supported by the mapping statement."
+    }
+   },
+   {
+    "insight_id": "1611.02988::g00:i03",
+    "verdict": {
+     "insight_id": "1611.02988::g00:i03",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "The sources say majority-emotion labels are used and that page-level distributions are observed and used to choose pages, but they do not support the causal claim that the labelling rule causes those distributions."
+    },
+    "reason": "The sources say majority-emotion labels are used and that page-level distributions are observed and used to choose pages, but they do not support the causal claim that the labelling rule causes those distributions."
+   },
+   {
+    "insight_id": "1611.02988::g00:i04",
+    "verdict": {
+     "insight_id": "1611.02988::g00:i04",
+     "keep": true,
+     "support": 0.85,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "s00:p002 states manually annotated datasets are costly and difficult and motivates research on automatic/distant supervision; s00:p003 states the paper uses Facebook reactions as distant-supervision proxies and trains SVM models. The problem-solution causal link is explicitly framed by 'Therefore' and the paper's method."
+    }
+   },
+   {
+    "insight_id": "1611.02988::g00:i05",
+    "verdict": {
+     "insight_id": "1611.02988::g00:i05",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "The six reactions are listed and said to be used as proxies for emotion labels in s01:p001, with s00:p003 giving the general distant-supervision statement. However, the triple's 'extends' relation is not supported; the concise_text is essentially an entity-resolution restatement."
+    },
+    "reason": "The six reactions are listed and said to be used as proxies for emotion labels in s01:p001, with s00:p003 giving the general distant-supervision statement. However, the triple's 'extends' relation is not supported; the concise_text is essentially an entity-resolution restatement."
+   },
+   {
+    "insight_id": "1611.02988::g00:i06",
+    "verdict": {
+     "insight_id": "1611.02988::g00:i06",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.3,
+     "causality_error": true,
+     "reason": "The sources support that removing the Lexicon feature yields better results and that the final B-M excludes the lexicon, making it independent of manual annotation/handcrafted resources. But the triple says removing the Lexicon improves B-M independence, conflating performance improvement with independence and asserting an unsupported causal relation."
+    },
+    "reason": "The sources support that removing the Lexicon feature yields better results and that the final B-M excludes the lexicon, making it independent of manual annotation/handcrafted resources. But the triple says removing the Lexicon improves B-M independence, conflating performance improvement with independence and asserting an unsupported causal relation."
+   },
+   {
+    "insight_id": "1611.02988::g00:i07",
+    "verdict": {
+     "insight_id": "1611.02988::g00:i07",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "Sources support that retrofitting boosts Facebook embeddings and that retrofitted embeddings rely on handcrafted lexical information, while final B-M excludes the lexicon and is independent of handcrafted resources. They do not state that retrofitted Facebook embeddings limit final B-M independence; the relation is an unsupported inferred limitation."
+    },
+    "reason": "Sources support that retrofitting boosts Facebook embeddings and that retrofitted embeddings rely on handcrafted lexical information, while final B-M excludes the lexicon and is independent of handcrafted resources. They do not state that retrofitted Facebook embeddings limit final B-M independence; the relation is an unsupported inferred limitation."
+   },
+   {
+    "insight_id": "1611.02988::g00:i08",
+    "verdict": {
+     "insight_id": "1611.02988::g00:i08",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Jointly supported: s07:p000 says development used 250 annotated sentences and that the Task 14 test set plus the other two datasets will evaluate final models; s02:p000 identifies the three datasets and their benchmark roles; s11:p000 confirms results on the three evaluation datasets."
+    }
+   }
+  ],
+  "calls": [
+   {
+    "n": 9,
+    "parsed": true,
+    "usage": {
+     "prompt_tokens": 4816,
+     "completion_tokens": 882,
+     "total_tokens": 5698,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

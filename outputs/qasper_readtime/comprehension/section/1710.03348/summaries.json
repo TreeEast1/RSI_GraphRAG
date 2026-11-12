@@ -1,0 +1,502 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1710.03348::s00::p000",
+   "summary": "NMT has improved translation quality, uses encoder-decoder architectures, and attentional NMT is popular for using relevant source parts and translating longer sentences.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s00::p001",
+   "summary": "Figure FIGREF1 illustrates attention using relevant source words, while the paper studies smeared attention cases like “would” and “like”.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s00::p002",
+   "summary": "Prior work modified attention, compared it with traditional word alignment, trained attention with alignments, and viewed attention as reordering and alignment.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s00::p003",
+   "summary": "The paper investigates differences between attention and alignment, asking whether attention only models alignment and how similarity varies across syntactic phenomena.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s00::p004",
+   "summary": "Analysis shows attention closely matches traditional alignments for nouns but captures information beyond translational equivalents for verbs.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s00::p005",
+   "summary": "Contributions include comparing attention and word alignment, showing compliance effects, word-type patterns, and context-word attention explaining differences from alignment.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s01::p000",
+   "summary": "Related work trains attention with GIZA++ and fast_align alignments, reports mixed translation gains, separates alignment and translation models, and uses HMM/IBM alignments.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s01::p001",
+   "summary": "shi-padhi-knight:2016:EMNLP2016 find syntactic information in encoder hidden states, while belinkov2017neural show attention improves source-side POS tag learning.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s01::p002",
+   "summary": "koehn2017six briefly analyzed attention-alignment matching across languages using probability mass over automatic alignments and differences based on most attended words.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s01::p003",
+   "summary": "Mixed results from chen2016guided, alkhouli-EtAl:2016:WMT, and liu-EtAl:2016:COLING motivate a more thorough analysis of NMT attention models.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s02::p000",
+   "summary": "This section backgrounds attention and describes non-recurrent global attention and input-feeding attention models used in the paper.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s02::p001",
+   "summary": "Both non-recurrent and input-feeding models compute context vector INLINEFORM0, concatenate it with decoder hidden state, and pass it through a non-linearity before softmax.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s02::p002",
+   "summary": "The models differ in context vector computation; non-recurrent attention compares decoder and encoder hidden states, often by dot product, then applies softmax.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s02::p003",
+   "summary": "INLINEFORM0 is decoder hidden state at INLINEFORM1, INLINEFORM2 is INLINEFORM3 th encoder hidden state, INLINEFORM4 is source length, and alignment weights compute a weighted sum.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s02::p004",
+   "summary": "Input-feeding makes context vector INLINEFORM0 aware of previous context INLINEFORM1 by feeding back INLINEFORM2 and using the resulting hidden state instead of INLINEFORM3.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s02::p005",
+   "summary": "INLINEFORM0 is the stacked LSTM function, INLINEFORM1 is the last generated target word, and INLINEFORM2 is the previous input-feeding network output.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s03::p000",
+   "summary": "The paper investigates whether higher consistency between attention and alignment leads to better translations, testing the common assumption that attention corresponds to word alignments.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s04::p000",
+   "summary": "Hard alignments from RWTH German-English dataset are converted to soft alignments using Equation EQREF10, with cross entropy between attention and soft alignment as loss.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s04::p001",
+   "summary": "INLINEFORM0 is the set of source words aligned to target word INLINEFORM1, and INLINEFORM2 is the number of source words in the set.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s04::p002",
+   "summary": "After converting hard alignments to soft ones, the attention loss is computed as shown.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s04::p003",
+   "summary": "INLINEFORM0 is the source sentence, INLINEFORM1 is the alignment link weight, and INLINEFORM3 is the attention weight INLINEFORM4 for source word INLINEFORM5.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s04::p004",
+   "summary": "The analysis relates translation quality to attention quality using attention loss from Equation EQREF11 and word prediction loss against the reference translation.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s04::p005",
+   "summary": "INLINEFORM0 is the source sentence, INLINEFORM1 is the target word at INLINEFORM2, INLINEFORM3 is target history, and INLINEFORM4 comes from Equation EQREF2.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s04::p006",
+   "summary": "Spearman's rank correlation computes the correlation between attention loss and word prediction loss.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s04::p007",
+   "summary": "INLINEFORM0 and INLINEFORM1 are ranks of attention losses and word prediction losses, INLINEFORM2 is covariance, and INLINEFORM3 and INLINEFORM4 are standard deviations.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s04::p008",
+   "summary": "If word prediction quality relates to attention-alignment consistency, losses should correlate; Figure FIGREF13 shows “will” and “come” with distributed attention.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s05::p000",
+   "summary": "Attention concentration is analyzed as another variable by computing the entropy of the attention distribution.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s06::p000",
+   "summary": "Analysis uses global attention without input-feeding and input-feeding recurrent attention in a unidirectional encoder-decoder NMT system with 4 recurrent layers.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s06::p001",
+   "summary": "Systems were trained with dimension size of 1,000, batch size of 80, 20 epochs, 30K vocabularies, learning rate 1, gradient norm 5, and dropout 0.3.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s07::p000",
+   "summary": "Both systems were trained on WMT15 German-to-English training data, with statistics in Table TABREF18 and BLEU scores in Table TABREF17.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s07::p001",
+   "summary": "Because the analysis uses word-based POS tags and dependency roles, BPE BIBREF13 was not used since it operates at the sub-word level.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s07::p002",
+   "summary": "AER is reported against RWTH German-English dataset human alignments, with hard alignments from most attended words and GIZA++ automatic alignments symmetrized using grow-diag-final-and refined heuristic.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s07::p003",
+   "summary": "Table TABREF20 shows the input-feeding system achieves higher BLEU and uses attentions closer to human alignments.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s07::p004",
+   "summary": "Table TABREF21 compares input-feeding and non-recurrent attention using attention loss from Equation EQREF11 against human alignments, with differences in line with AER.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s07::p005",
+   "summary": "AER considers only the most attended word, while attention loss considers the entire attention distribution.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s08::p000",
+   "summary": "Mixed results on optimizing attention with alignments motivate fine-grained analysis using coarse grained universal POS tags BIBREF15 from Table TABREF25.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s08::p001",
+   "summary": "Figure FIGREF22 shows attention loss varies across POS tags, with NOUN closest to alignments and VERB average attention loss almost two times larger than NOUN.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s08::p002",
+   "summary": "Figure FIGREF22 shows verbs have smaller average word prediction loss than nouns despite attention being more inconsistent with word alignments.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s08::p003",
+   "summary": "Spearman's rank correlation between word prediction loss and attention loss is computed by target-side POS tags for the input-feeding model in Figure FIGREF27.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s08::p004",
+   "summary": "Low verb correlation shows attention beyond aligned words is necessary, while higher noun correlation makes alignment consistency more desirable and explains mixed guided-attention results.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s09::p000",
+   "summary": "Most target words align to one source word, with average aligned source words of 1.1 for nouns and 1.2 for verbs, motivating attention entropy measurement.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s09::p001",
+   "summary": "Figure FIGREF28 shows nouns have low attention entropy, explaining closeness to alignments, and high correlation between attention entropy and attention loss for nouns.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s09::p002",
+   "summary": "Figure FIGREF28 shows verbs have higher attention entropy, while Figure FIGREF32 shows attention concentration is not required when translating into verbs.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s09::p003",
+   "summary": "Figure FIGREF32 shows low correlation for PRON and PRT, whose distributed attention may reflect deliberate attention to multiple relevant places supported by low word prediction losses.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s10::p000",
+   "summary": "The study measures average attention paid to aligned words for each POS tag using the percentage of probability mass assigned to aligned words in Table TABREF35.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s10::p001",
+   "summary": "Less than half of attention goes to alignment points for most POS tags; ParZu parser BIBREF16 parses RWTH data, and Table TABREF33 shows attended dependency roles.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s11::p000",
+   "summary": "The conclusion states attention agrees with alignment to an extent, varies by mechanism and word type, and alignment training helps nouns but harms verbs.",
+   "group_id": "1710.03348::g00"
+  },
+  {
+   "passage_id": "1710.03348::s12::p000",
+   "summary": "This research was funded in part by the Netherlands Organization for Scientific Research (NWO) under project numbers 639.022.213 and 612.001.218.",
+   "group_id": "1710.03348::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1710.03348::g00",
+   "summaries": [
+    {
+     "passage_id": "1710.03348::s00::p000",
+     "summary": "NMT has improved translation quality, uses encoder-decoder architectures, and attentional NMT is popular for using relevant source parts and translating longer sentences.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s00::p001",
+     "summary": "Figure FIGREF1 illustrates attention using relevant source words, while the paper studies smeared attention cases like “would” and “like”.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s00::p002",
+     "summary": "Prior work modified attention, compared it with traditional word alignment, trained attention with alignments, and viewed attention as reordering and alignment.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s00::p003",
+     "summary": "The paper investigates differences between attention and alignment, asking whether attention only models alignment and how similarity varies across syntactic phenomena.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s00::p004",
+     "summary": "Analysis shows attention closely matches traditional alignments for nouns but captures information beyond translational equivalents for verbs.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s00::p005",
+     "summary": "Contributions include comparing attention and word alignment, showing compliance effects, word-type patterns, and context-word attention explaining differences from alignment.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s01::p000",
+     "summary": "Related work trains attention with GIZA++ and fast_align alignments, reports mixed translation gains, separates alignment and translation models, and uses HMM/IBM alignments.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s01::p001",
+     "summary": "shi-padhi-knight:2016:EMNLP2016 find syntactic information in encoder hidden states, while belinkov2017neural show attention improves source-side POS tag learning.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s01::p002",
+     "summary": "koehn2017six briefly analyzed attention-alignment matching across languages using probability mass over automatic alignments and differences based on most attended words.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s01::p003",
+     "summary": "Mixed results from chen2016guided, alkhouli-EtAl:2016:WMT, and liu-EtAl:2016:COLING motivate a more thorough analysis of NMT attention models.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s02::p000",
+     "summary": "This section backgrounds attention and describes non-recurrent global attention and input-feeding attention models used in the paper.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s02::p001",
+     "summary": "Both non-recurrent and input-feeding models compute context vector INLINEFORM0, concatenate it with decoder hidden state, and pass it through a non-linearity before softmax.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s02::p002",
+     "summary": "The models differ in context vector computation; non-recurrent attention compares decoder and encoder hidden states, often by dot product, then applies softmax.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s02::p003",
+     "summary": "INLINEFORM0 is decoder hidden state at INLINEFORM1, INLINEFORM2 is INLINEFORM3 th encoder hidden state, INLINEFORM4 is source length, and alignment weights compute a weighted sum.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s02::p004",
+     "summary": "Input-feeding makes context vector INLINEFORM0 aware of previous context INLINEFORM1 by feeding back INLINEFORM2 and using the resulting hidden state instead of INLINEFORM3.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s02::p005",
+     "summary": "INLINEFORM0 is the stacked LSTM function, INLINEFORM1 is the last generated target word, and INLINEFORM2 is the previous input-feeding network output.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s03::p000",
+     "summary": "The paper investigates whether higher consistency between attention and alignment leads to better translations, testing the common assumption that attention corresponds to word alignments.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s04::p000",
+     "summary": "Hard alignments from RWTH German-English dataset are converted to soft alignments using Equation EQREF10, with cross entropy between attention and soft alignment as loss.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s04::p001",
+     "summary": "INLINEFORM0 is the set of source words aligned to target word INLINEFORM1, and INLINEFORM2 is the number of source words in the set.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s04::p002",
+     "summary": "After converting hard alignments to soft ones, the attention loss is computed as shown.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s04::p003",
+     "summary": "INLINEFORM0 is the source sentence, INLINEFORM1 is the alignment link weight, and INLINEFORM3 is the attention weight INLINEFORM4 for source word INLINEFORM5.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s04::p004",
+     "summary": "The analysis relates translation quality to attention quality using attention loss from Equation EQREF11 and word prediction loss against the reference translation.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s04::p005",
+     "summary": "INLINEFORM0 is the source sentence, INLINEFORM1 is the target word at INLINEFORM2, INLINEFORM3 is target history, and INLINEFORM4 comes from Equation EQREF2.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s04::p006",
+     "summary": "Spearman's rank correlation computes the correlation between attention loss and word prediction loss.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s04::p007",
+     "summary": "INLINEFORM0 and INLINEFORM1 are ranks of attention losses and word prediction losses, INLINEFORM2 is covariance, and INLINEFORM3 and INLINEFORM4 are standard deviations.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s04::p008",
+     "summary": "If word prediction quality relates to attention-alignment consistency, losses should correlate; Figure FIGREF13 shows “will” and “come” with distributed attention.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s05::p000",
+     "summary": "Attention concentration is analyzed as another variable by computing the entropy of the attention distribution.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s06::p000",
+     "summary": "Analysis uses global attention without input-feeding and input-feeding recurrent attention in a unidirectional encoder-decoder NMT system with 4 recurrent layers.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s06::p001",
+     "summary": "Systems were trained with dimension size of 1,000, batch size of 80, 20 epochs, 30K vocabularies, learning rate 1, gradient norm 5, and dropout 0.3.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s07::p000",
+     "summary": "Both systems were trained on WMT15 German-to-English training data, with statistics in Table TABREF18 and BLEU scores in Table TABREF17.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s07::p001",
+     "summary": "Because the analysis uses word-based POS tags and dependency roles, BPE BIBREF13 was not used since it operates at the sub-word level.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s07::p002",
+     "summary": "AER is reported against RWTH German-English dataset human alignments, with hard alignments from most attended words and GIZA++ automatic alignments symmetrized using grow-diag-final-and refined heuristic.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s07::p003",
+     "summary": "Table TABREF20 shows the input-feeding system achieves higher BLEU and uses attentions closer to human alignments.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s07::p004",
+     "summary": "Table TABREF21 compares input-feeding and non-recurrent attention using attention loss from Equation EQREF11 against human alignments, with differences in line with AER.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s07::p005",
+     "summary": "AER considers only the most attended word, while attention loss considers the entire attention distribution.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s08::p000",
+     "summary": "Mixed results on optimizing attention with alignments motivate fine-grained analysis using coarse grained universal POS tags BIBREF15 from Table TABREF25.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s08::p001",
+     "summary": "Figure FIGREF22 shows attention loss varies across POS tags, with NOUN closest to alignments and VERB average attention loss almost two times larger than NOUN.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s08::p002",
+     "summary": "Figure FIGREF22 shows verbs have smaller average word prediction loss than nouns despite attention being more inconsistent with word alignments.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s08::p003",
+     "summary": "Spearman's rank correlation between word prediction loss and attention loss is computed by target-side POS tags for the input-feeding model in Figure FIGREF27.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s08::p004",
+     "summary": "Low verb correlation shows attention beyond aligned words is necessary, while higher noun correlation makes alignment consistency more desirable and explains mixed guided-attention results.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s09::p000",
+     "summary": "Most target words align to one source word, with average aligned source words of 1.1 for nouns and 1.2 for verbs, motivating attention entropy measurement.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s09::p001",
+     "summary": "Figure FIGREF28 shows nouns have low attention entropy, explaining closeness to alignments, and high correlation between attention entropy and attention loss for nouns.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s09::p002",
+     "summary": "Figure FIGREF28 shows verbs have higher attention entropy, while Figure FIGREF32 shows attention concentration is not required when translating into verbs.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s09::p003",
+     "summary": "Figure FIGREF32 shows low correlation for PRON and PRT, whose distributed attention may reflect deliberate attention to multiple relevant places supported by low word prediction losses.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s10::p000",
+     "summary": "The study measures average attention paid to aligned words for each POS tag using the percentage of probability mass assigned to aligned words in Table TABREF35.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s10::p001",
+     "summary": "Less than half of attention goes to alignment points for most POS tags; ParZu parser BIBREF16 parses RWTH data, and Table TABREF33 shows attended dependency roles.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s11::p000",
+     "summary": "The conclusion states attention agrees with alignment to an extent, varies by mechanism and word type, and alignment training helps nouns but harms verbs.",
+     "group_id": "1710.03348::g00"
+    },
+    {
+     "passage_id": "1710.03348::s12::p000",
+     "summary": "This research was funded in part by the Netherlands Organization for Scientific Research (NWO) under project numbers 639.022.213 and 612.001.218.",
+     "group_id": "1710.03348::g00"
+    }
+   ],
+   "n_raw": 48,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5523,
+    "completion_tokens": 2393,
+    "total_tokens": 7916,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

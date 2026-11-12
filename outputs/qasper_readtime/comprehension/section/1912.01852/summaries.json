@@ -1,0 +1,332 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1912.01852::s00::p000",
+   "summary": "Singing synthesis has broad applications, with traditional concatenative or HMM approaches and recent neural methods using lyrics and notes to generate vocoder features autoregressively.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s00::p001",
+   "summary": "Singing voice conversion reproduces musical expression with another singer's voice, faces wider frequency and sharper volume and pitch changes, and prior unsupervised autoencoder methods suffer from joint phonetic and pitch representation.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s00::p002",
+   "summary": "The authors propose an adversarially trained pitch regression network to learn singer-invariant and pitch-invariant representations while extracting source pitch as additional decoder input.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s00::p003",
+   "summary": "The following sections introduce the proposed method, present quantitative and qualitative experiments, conclude, and provide acknowledgements.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s01::p000",
+   "summary": "PitchNet follows the autoencoder architecture in BIBREF0 with an additional pitch regression network and consists of an encoder, decoder, LUT, singer classification network, and pitch regression network.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s01::p001",
+   "summary": "The encoder extracts features with average pooling of stride 800, singer embeddings and interpolated pitch condition the autoregressive decoder, and training minimizes a softmax-based reconstruction loss with teacher-forcing.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s01::p002",
+   "summary": "A singer classification network and pitch regression network adversarially force the encoder into a singer and pitch invariant latent space during end-to-end training.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s02::p000",
+   "summary": "The model is formalized with $E$, $D$, $C_s$, $C_p$, $v_j$, $s^j$, $p(s^j)$, target singer $k$, and $N$ singers.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s02::p001",
+   "summary": "$D$ is autoregressive and feeds its output back to itself, and the reconstruction loss is introduced.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s02::p002",
+   "summary": "$\\mathcal {L}_{ce}(o, y)$ is cross entropy loss, and reconstruction loss alone is insufficient, so singer classification loss or domain confusion loss BIBREF0 encourages singer invariant representations.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s02::p003",
+   "summary": "A pitch regression loss forces the encoder to learn a pitch-independent representation and makes the model obtain pitch information from $p(s^j)$.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s02::p004",
+   "summary": "$\\mathcal {L}_{mse}(a, b)$ is defined as $\\frac{1}{m}||a-b||_2^2$, and the overall minimized loss is introduced.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s02::p005",
+   "summary": "$\\lambda $ and $\\mu $ are two weight factors, and the adversarial loss trains the singer classifier and pitch regression network.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s02::p006",
+   "summary": "Training alternately minimizes $\\mathcal {L}_{ad}$ and $\\mathcal {L}_{total}$.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s02::p007",
+   "summary": "$C_s$ and $C_p$ are optimized one step using $\\mathcal {L}_{ad}$ as the objective function.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s02::p008",
+   "summary": "The whole model is optimized one step using $\\mathcal {L}_{total}$ as the objective function.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s02::p009",
+   "summary": "The training process goes back to step 1.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s02::p010",
+   "summary": "Backtranslation and mixup techniques BIBREF0 are also used to improve the quality of the converted singing voice.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s03::p000",
+   "summary": "The encoder and decoder follow BIBREF13, with three blocks of ten residual-layers, average pooling with kernel size of 800, a WaveNet BIBREF4 vocoder, and interpolation of pitch and encoder output.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s03::p001",
+   "summary": "The singer classification network and pitch regression network share two convolutional neural networks with kernel size of 3 and channels of 100, with differences in averaging and a dropout layer.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s04::p000",
+   "summary": "Experiments compare audio quality between the method and BIBREF0's method, called USVC, using USVC(our) and qualitative analysis of input pitch effects.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s05::p000",
+   "summary": "NUS-48E BIBREF14, with 6 male singers, 6 female singers, 48 songs, and 4 songs per singer, was preprocessed to monophonic 16kHz PCM-16 bit audio with 8-bit mu-law encoding and Kaldi BIBREF15 pitch extraction.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s06::p000",
+   "summary": "USVC and PitchNet were implemented using PyTorch BIBREF16, trained on two Tesla P40 GPUs for four days with Adam optimizer BIBREF17, learning rate of $10^{-3}$, decay factor of 0.98 every 1000 steps, batch size 4, 30k steps, $\\lambda $ of $0.01$, $\\mu $ of $0.1$, and dropout probability $0.2$.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s06::p001",
+   "summary": "Backtranslation and mixup BIBREF0 generated mixed-embedding samples, and after training for 200k steps without them, 96 new audio segments every 2k steps were used to train for 24 steps without adversarial loss.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s06::p002",
+   "summary": "Audio time reversal and phase inversion BIBREF0 augmented the training data by 4 times.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s07::p000",
+   "summary": "Conversions between USVC and PitchNet were compared using an automatic evaluation score and a human evaluation score.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s07::p001",
+   "summary": "The automatic score used librosa package BIBREF18 pitch tracking and normalized cross correlation (NCC) between 0 and 1, with PitchNet performing better on conversion and reconstruction.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s07::p002",
+   "summary": "Mean Opinion Score (MOS) evaluated naturalness and similarity on a 1-5 scale, with PitchNet higher than USVC (Our) and BIBREF0 samples.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s07::p003",
+   "summary": "Qualitative analysis multiplied input pitch by 0.7, 1.0 and 1.3, used the librosa package pitch tracker, and showed output pitch changes significantly with input pitch.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s08::p000",
+   "summary": "PitchNet is an unsupervised singing voice conversion method using a pitch regression network and adversarial loss to separate pitch information, outperforming existing methods and achieving flexible pitch manipulation.",
+   "group_id": "1912.01852::g00"
+  },
+  {
+   "passage_id": "1912.01852::s09::p000",
+   "summary": "The authors thank Kun Xu and other members in the Tencent AI Lab team for discussions and suggestions.",
+   "group_id": "1912.01852::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1912.01852::g00",
+   "summaries": [
+    {
+     "passage_id": "1912.01852::s00::p000",
+     "summary": "Singing synthesis has broad applications, with traditional concatenative or HMM approaches and recent neural methods using lyrics and notes to generate vocoder features autoregressively.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s00::p001",
+     "summary": "Singing voice conversion reproduces musical expression with another singer's voice, faces wider frequency and sharper volume and pitch changes, and prior unsupervised autoencoder methods suffer from joint phonetic and pitch representation.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s00::p002",
+     "summary": "The authors propose an adversarially trained pitch regression network to learn singer-invariant and pitch-invariant representations while extracting source pitch as additional decoder input.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s00::p003",
+     "summary": "The following sections introduce the proposed method, present quantitative and qualitative experiments, conclude, and provide acknowledgements.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s01::p000",
+     "summary": "PitchNet follows the autoencoder architecture in BIBREF0 with an additional pitch regression network and consists of an encoder, decoder, LUT, singer classification network, and pitch regression network.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s01::p001",
+     "summary": "The encoder extracts features with average pooling of stride 800, singer embeddings and interpolated pitch condition the autoregressive decoder, and training minimizes a softmax-based reconstruction loss with teacher-forcing.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s01::p002",
+     "summary": "A singer classification network and pitch regression network adversarially force the encoder into a singer and pitch invariant latent space during end-to-end training.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s02::p000",
+     "summary": "The model is formalized with $E$, $D$, $C_s$, $C_p$, $v_j$, $s^j$, $p(s^j)$, target singer $k$, and $N$ singers.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s02::p001",
+     "summary": "$D$ is autoregressive and feeds its output back to itself, and the reconstruction loss is introduced.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s02::p002",
+     "summary": "$\\mathcal {L}_{ce}(o, y)$ is cross entropy loss, and reconstruction loss alone is insufficient, so singer classification loss or domain confusion loss BIBREF0 encourages singer invariant representations.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s02::p003",
+     "summary": "A pitch regression loss forces the encoder to learn a pitch-independent representation and makes the model obtain pitch information from $p(s^j)$.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s02::p004",
+     "summary": "$\\mathcal {L}_{mse}(a, b)$ is defined as $\\frac{1}{m}||a-b||_2^2$, and the overall minimized loss is introduced.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s02::p005",
+     "summary": "$\\lambda $ and $\\mu $ are two weight factors, and the adversarial loss trains the singer classifier and pitch regression network.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s02::p006",
+     "summary": "Training alternately minimizes $\\mathcal {L}_{ad}$ and $\\mathcal {L}_{total}$.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s02::p007",
+     "summary": "$C_s$ and $C_p$ are optimized one step using $\\mathcal {L}_{ad}$ as the objective function.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s02::p008",
+     "summary": "The whole model is optimized one step using $\\mathcal {L}_{total}$ as the objective function.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s02::p009",
+     "summary": "The training process goes back to step 1.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s02::p010",
+     "summary": "Backtranslation and mixup techniques BIBREF0 are also used to improve the quality of the converted singing voice.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s03::p000",
+     "summary": "The encoder and decoder follow BIBREF13, with three blocks of ten residual-layers, average pooling with kernel size of 800, a WaveNet BIBREF4 vocoder, and interpolation of pitch and encoder output.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s03::p001",
+     "summary": "The singer classification network and pitch regression network share two convolutional neural networks with kernel size of 3 and channels of 100, with differences in averaging and a dropout layer.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s04::p000",
+     "summary": "Experiments compare audio quality between the method and BIBREF0's method, called USVC, using USVC(our) and qualitative analysis of input pitch effects.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s05::p000",
+     "summary": "NUS-48E BIBREF14, with 6 male singers, 6 female singers, 48 songs, and 4 songs per singer, was preprocessed to monophonic 16kHz PCM-16 bit audio with 8-bit mu-law encoding and Kaldi BIBREF15 pitch extraction.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s06::p000",
+     "summary": "USVC and PitchNet were implemented using PyTorch BIBREF16, trained on two Tesla P40 GPUs for four days with Adam optimizer BIBREF17, learning rate of $10^{-3}$, decay factor of 0.98 every 1000 steps, batch size 4, 30k steps, $\\lambda $ of $0.01$, $\\mu $ of $0.1$, and dropout probability $0.2$.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s06::p001",
+     "summary": "Backtranslation and mixup BIBREF0 generated mixed-embedding samples, and after training for 200k steps without them, 96 new audio segments every 2k steps were used to train for 24 steps without adversarial loss.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s06::p002",
+     "summary": "Audio time reversal and phase inversion BIBREF0 augmented the training data by 4 times.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s07::p000",
+     "summary": "Conversions between USVC and PitchNet were compared using an automatic evaluation score and a human evaluation score.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s07::p001",
+     "summary": "The automatic score used librosa package BIBREF18 pitch tracking and normalized cross correlation (NCC) between 0 and 1, with PitchNet performing better on conversion and reconstruction.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s07::p002",
+     "summary": "Mean Opinion Score (MOS) evaluated naturalness and similarity on a 1-5 scale, with PitchNet higher than USVC (Our) and BIBREF0 samples.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s07::p003",
+     "summary": "Qualitative analysis multiplied input pitch by 0.7, 1.0 and 1.3, used the librosa package pitch tracker, and showed output pitch changes significantly with input pitch.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s08::p000",
+     "summary": "PitchNet is an unsupervised singing voice conversion method using a pitch regression network and adversarial loss to separate pitch information, outperforming existing methods and achieving flexible pitch manipulation.",
+     "group_id": "1912.01852::g00"
+    },
+    {
+     "passage_id": "1912.01852::s09::p000",
+     "summary": "The authors thank Kun Xu and other members in the Tencent AI Lab team for discussions and suggestions.",
+     "group_id": "1912.01852::g00"
+    }
+   ],
+   "n_raw": 31,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3715,
+    "completion_tokens": 1643,
+    "total_tokens": 5358,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

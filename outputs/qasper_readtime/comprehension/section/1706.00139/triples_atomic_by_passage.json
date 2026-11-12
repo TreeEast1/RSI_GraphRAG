@@ -1,0 +1,512 @@
+{
+ "1706.00139::s00::p000": [
+  [
+   "Natural Language Generation (NLG)",
+   "plays a critical role in",
+   "Spoken Dialogue Systems (SDS)"
+  ],
+  [
+   "Natural Language Generation (NLG)",
+   "has task to convert",
+   "a meaning representation produced by the Dialogue Manager into natural language utterances"
+  ],
+  [
+   "Conventional approaches",
+   "rely on",
+   "comprehensive hand-tuning templates and rules requiring expert knowledge of linguistic representation"
+  ]
+ ],
+ "1706.00139::s00::p001": [
+  [
+   "Recurrent Neural Networks (RNNs) based approaches",
+   "have shown",
+   "promising performance in tackling the NLG problems"
+  ],
+  [
+   "The RNN-based models",
+   "have been applied for NLG as",
+   "a joint training model BIBREF3 , BIBREF4 and an end-to-end training model BIBREF5"
+  ],
+  [
+   "A recurring problem in such systems",
+   "is requiring",
+   "annotated datasets for particular dialogue acts (DAs)"
+  ],
+  [
+   "the previous RNN-based models",
+   "were further conditioned on",
+   "a 1-hot vector representation of the DA"
+  ],
+  [
+   "a Semantically Conditioned Long Short-term Memory generator (SC-LSTM)",
+   "jointly learned",
+   "the DA gating signal and language model"
+  ]
+ ],
+ "1706.00139::s00::p002": [
+  [
+   "Encoder-Decoder networks BIBREF6 , BIBREF7",
+   "have been explored to solve",
+   "the NLG tasks"
+  ],
+  [
+   "The Attentional RNN Encoder-Decoder BIBREF10 (ARED) based approaches",
+   "have shown",
+   "improved performance on a variety of tasks"
+  ]
+ ],
+ "1706.00139::s00::p003": [
+  [
+   "the RNN-based generators with DA gating-vector",
+   "can prevent",
+   "the undesirable semantic repetitions"
+  ],
+  [
+   "the ARED-based generators",
+   "show signs of",
+   "better adapting to a new domain"
+  ],
+  [
+   "none of the models",
+   "show",
+   "significant advantage from out-of-domain data"
+  ],
+  [
+   "a Refinement Adjustment LSTM-based component (RALSTM)",
+   "is introduced to",
+   "the decoder side"
+  ],
+  [
+   "The proposed model",
+   "can learn from",
+   "unaligned data"
+  ],
+  [
+   "The proposed model",
+   "jointly trains",
+   "the sentence planning and surface realization"
+  ],
+  [
+   "the proposed methods",
+   "significantly outperformed",
+   "the state-of-the-art methods regarding BLEU BIBREF15 and slot error rate ERR scores BIBREF4"
+  ]
+ ],
+ "1706.00139::s01::p000": [
+  [
+   "RNNs-based models",
+   "have shown",
+   "promising performance in tackling the NLG problems"
+  ]
+ ],
+ "1706.00139::s01::p001": [
+  [
+   "SC-LSTM generator",
+   "introduced",
+   "a control sigmoid gate to the LSTM cell"
+  ]
+ ],
+ "1706.00139::s01::p002": [
+  [
+   "RNN encoder-decoder based models with attention mechanism BIBREF10",
+   "have shown",
+   "improved performances in various tasks"
+  ]
+ ],
+ "1706.00139::s02::p000": [
+  [
+   "The recurrent language generator proposed in this paper",
+   "is based on",
+   "a neural language generator BIBREF8"
+  ],
+  [
+   "a neural language generator BIBREF8",
+   "consists of",
+   "three main components"
+  ],
+  [
+   "an Encoder",
+   "incorporates",
+   "the target meaning representation (MR) as the model inputs"
+  ],
+  [
+   "an RNN Decoder",
+   "generates",
+   "output sentences"
+  ],
+  [
+   "The input to the RNN Decoder at each time step",
+   "is",
+   "a 1-hot encoding of a token $\\textbf {w}_{t}$ and an attentive DA representation $\\textbf {d}_{t}$"
+  ]
+ ],
+ "1706.00139::s03::p000": [
+  [
+   "The slots and values",
+   "are",
+   "separated parameters used in the encoder side"
+  ]
+ ],
+ "1706.00139::s04::p000": [
+  [
+   "The Aligner",
+   "utilizes",
+   "attention mechanism"
+  ]
+ ],
+ "1706.00139::s04::p006": [
+  [
+   "the Aligner",
+   "calculates",
+   "dialogue act embedding $\\textbf {d}_{t}$"
+  ]
+ ],
+ "1706.00139::s05::p000": [
+  [
+   "The proposed semantic RALSTM cell applied for Decoder side",
+   "consists of",
+   "three components: a Refinement cell, a traditional LSTM cell, and an Adjustment cell"
+  ]
+ ],
+ "1706.00139::s05::p001": [
+  [
+   "the input",
+   "is recomputed by using",
+   "a semantic gate"
+  ]
+ ],
+ "1706.00139::s05::p003": [
+  [
+   "Element-wise multiplication $\\odot $",
+   "plays a part in",
+   "word-level matching"
+  ]
+ ],
+ "1706.00139::s05::p004": [
+  [
+   "the input gate $\\textbf {i}_{i}$ , forget gate $\\textbf {f}_{t}$ and output gates $\\textbf {o}_{t}$",
+   "are introduced to control",
+   "information flow"
+  ]
+ ],
+ "1706.00139::s05::p006": [
+  [
+   "The cell memory value $\\textbf {c}_{t}$",
+   "is modified to depend on",
+   "the DA representation"
+  ]
+ ],
+ "1706.00139::s05::p008": [
+  [
+   "\\tilde{\\textbf {h}}_{t}",
+   "is",
+   "the output"
+  ]
+ ],
+ "1706.00139::s05::p009": [
+  [
+   "an additional gating cell",
+   "is introduced on top of",
+   "the traditional LSTM"
+  ],
+  [
+   "the proposed cell",
+   "computes",
+   "how much the LSTM output $\\tilde{\\textbf {h}}_{t}$ affects the DA vector"
+  ]
+ ],
+ "1706.00139::s05::p011": [
+  [
+   "an additional output",
+   "is computed by applying",
+   "the output gate $\\textbf {o}_{t}$ on the remaining information in $\\textbf {s}_{t}$"
+  ]
+ ],
+ "1706.00139::s05::p013": [
+  [
+   "Final RALSTM output",
+   "is a combination of",
+   "both outputs of the traditional LSTM cell and the Adjustment cell"
+  ]
+ ],
+ "1706.00139::s05::p015": [
+  [
+   "the output distribution",
+   "is computed by applying",
+   "a softmax function $g$"
+  ],
+  [
+   "the distribution",
+   "can be sampled to obtain",
+   "the next token"
+  ]
+ ],
+ "1706.00139::s06::p000": [
+  [
+   "The objective function",
+   "was",
+   "the negative log-likelihood"
+  ]
+ ],
+ "1706.00139::s06::p002": [
+  [
+   "The proposed generators",
+   "were trained by treating",
+   "each sentence as a mini-batch with $l_{2}$ regularization added to the objective function for every 5 training examples"
+  ]
+ ],
+ "1706.00139::s07::p000": [
+  [
+   "The decoding",
+   "consists of",
+   "two phases: (i) over-generation, and (ii) reranking"
+  ],
+  [
+   "the generator",
+   "use",
+   "a beam search to generate a set of candidate responses"
+  ],
+  [
+   "cost of the generator",
+   "is computed to form",
+   "the reranking score $\\textbf {R}$"
+  ]
+ ],
+ "1706.00139::s07::p002": [
+  [
+   "The slot error rate $\\textbf {ERR}$",
+   "is",
+   "the number of slots generated that is either missing or redundant"
+  ]
+ ],
+ "1706.00139::s08::p000": [
+  [
+   "a set of experiments",
+   "assess",
+   "the effectiveness of the proposed models"
+  ],
+  [
+   "a set of experiments",
+   "use",
+   "several metrics, datasets, and model architectures"
+  ],
+  [
+   "a set of experiments",
+   "compare to",
+   "prior methods"
+  ]
+ ],
+ "1706.00139::s09::p000": [
+  [
+   "proposed models",
+   "were assessed on",
+   "four different NLG domains: finding a restaurant, finding a hotel, buying a laptop, and buying a television"
+  ],
+  [
+   "NLG tasks for the Laptop and TV domains",
+   "become",
+   "much harder"
+  ]
+ ],
+ "1706.00139::s10::p000": [
+  [
+   "generators",
+   "were implemented using",
+   "the TensorFlow library BIBREF31"
+  ],
+  [
+   "generators",
+   "were trained with",
+   "training, validation and testing ratio as 3:1:1"
+  ],
+  [
+   "hidden layer size, beam size",
+   "were set to be",
+   "80 and 10, respectively"
+  ],
+  [
+   "generators",
+   "were trained with",
+   "a $70\\%$ of dropout rate"
+  ]
+ ],
+ "1706.00139::s11::p000": [
+  [
+   "generator performance",
+   "was assessed on",
+   "the two evaluation metrics: the BLEU and the slot error rate ERR"
+  ],
+  [
+   "proposed models",
+   "were compared against",
+   "three strong baselines"
+  ]
+ ],
+ "1706.00139::s11::p001": [
+  [
+   "HLSTM",
+   "used",
+   "a heuristic gate"
+  ]
+ ],
+ "1706.00139::s11::p002": [
+  [
+   "SCLSTM",
+   "can jointly learn",
+   "the gating signal and language model"
+  ]
+ ],
+ "1706.00139::s11::p003": [
+  [
+   "Enc-Dec",
+   "applied",
+   "the attention-based encoder-decoder architecture"
+  ]
+ ],
+ "1706.00139::s12::p000": [
+  [
+   "the proposed models",
+   "achieve",
+   "the better performance regarding both evaluation metrics across all domains in all test cases"
+  ]
+ ],
+ "1706.00139::s12::p001": [
+  [
+   "The ablation studies (Tables 2 , 3 )",
+   "demonstrate",
+   "the contribution of different model components"
+  ],
+  [
+   "the Adjustment cell",
+   "contributes to reducing",
+   "the slot error rate ERR score"
+  ],
+  [
+   "the proposed models",
+   "significantly reduce",
+   "the slot error rate ERR score by a large margin about $2\\%$ to $4\\%$ in every datasets"
+  ]
+ ],
+ "1706.00139::s12::p002": [
+  [
+   "three models (Enc-Dec, SCLSTM, and RALSTM)",
+   "were trained from scratch on",
+   "the unseen laptop domain in varied proportion of training data, from $1\\%$ to $100\\%$"
+  ],
+  [
+   "the RALSTM",
+   "outperforms",
+   "the previous models in all cases"
+  ],
+  [
+   "the Enc-Dec",
+   "has",
+   "a much greater ERR score comparing to the two models"
+  ]
+ ],
+ "1706.00139::s12::p003": [
+  [
+   "the previous models",
+   "still produce",
+   "some errors (missing and misplaced information)"
+  ],
+  [
+   "the proposed models (RALSTM and the models All2* trained by pooling all datasets together)",
+   "can generate",
+   "appropriate sentences"
+  ],
+  [
+   "the proposed models",
+   "tend to generate",
+   "more complete and concise sentences than the other models"
+  ]
+ ],
+ "1706.00139::s12::p004": [
+  [
+   "All these",
+   "prove",
+   "the importance of the proposed components"
+  ],
+  [
+   "the Refinement cell",
+   "aggregating and selecting",
+   "the attentive information"
+  ],
+  [
+   "the Adjustment cell",
+   "controlling",
+   "the feature vector"
+  ]
+ ],
+ "1706.00139::s12::p005": [
+  [
+   "The results",
+   "are consistent with",
+   "the Figure 3"
+  ],
+  [
+   "the RALSTM",
+   "has better performance than",
+   "the Enc-Dec and SCLSTM on all domains in terms of the BLEU and the ERR scores"
+  ],
+  [
+   "the Enc-Dec",
+   "has difficulties in reducing",
+   "the ERR score"
+  ],
+  [
+   "the Refinement with attentional gating",
+   "can effectively select and aggregate",
+   "the information before putting them into the traditional LSTM cell"
+  ],
+  [
+   "the Adjustment with gating DA vector",
+   "can effectively control",
+   "the information flow during generation"
+  ]
+ ],
+ "1706.00139::s12::p006": [
+  [
+   "the models",
+   "were first trained on",
+   "the merging out-of-domain Restaurant and Hotel datasets"
+  ],
+  [
+   "the parameters",
+   "were fine tuned with",
+   "varied amount of in-domain training data (laptop domain)"
+  ],
+  [
+   "The RALSTM model",
+   "outperforms",
+   "the previous model"
+  ],
+  [
+   "The Figure 5 -right",
+   "indicates that",
+   "the RALSTM model can adapt to a new, unseen domain faster than the previous models"
+  ]
+ ],
+ "1706.00139::s13::p000": [
+  [
+   "an RALSTM component",
+   "is introduced to",
+   "select and aggregate semantic elements produced by the Encoder"
+  ],
+  [
+   "an RALSTM component",
+   "is introduced to",
+   "generate the required sentence"
+  ],
+  [
+   "The proposed models",
+   "empirically show",
+   "consistent improvement over the previous methods in both the BLEU and ERR evaluation metrics"
+  ],
+  [
+   "The proposed models",
+   "show",
+   "an ability to extend to a new, unseen domain no matter how much the in-domain training data was fed"
+  ]
+ ]
+}

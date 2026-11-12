@@ -1,0 +1,19 @@
+# P6 — Official-LoCoMo-style short phrase
+# mirrors official QA_PROMPT text; generic date hint instead of gold category
+# system_sha256=8eb8038ec134f67fbb9727a3d794ba74e0f5c5a8520355738bdef9e4f188ceca
+# template_sha256=aa0944a4e8b34b3f77172e5a2454012b8312ec8a9115c39385097b2d907b02a5
+
+--- SYSTEM ---
+You answer questions based on the provided conversation context. Answer with exact words from the context whenever possible.
+
+--- TEMPLATE ---
+{context}
+
+Based on the above context, write an answer in the form of a short phrase for the following question.
+
+Question: {question}
+
+If the question asks for a date, use the date of the conversation to answer with an approximate date.
+If the context does not contain the answer, write "Not mentioned in the conversation".
+
+Short answer:

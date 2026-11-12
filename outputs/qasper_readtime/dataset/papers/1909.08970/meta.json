@@ -1,0 +1,59 @@
+{
+ "paper_id": "1909.08970",
+ "title": "RUN through the Streets: A New Dataset and Baseline Models for Realistic Urban Navigation",
+ "abstract": "Following navigation instructions in natural language requires a composition of language, action, and knowledge of the environment. Knowledge of the environment may be provided via visual sensors or as a symbolic world representation referred to as a map. Here we introduce the Realistic Urban Navigation (RUN) task, aimed at interpreting navigation instructions based on a real, dense, urban map. Using Amazon Mechanical Turk, we collected a dataset of 2515 instructions aligned with actual routes over three regions of Manhattan. We propose a strong baseline for the task and empirically investigate which aspects of the neural architecture are important for the RUN success. Our results empirically show that entity abstraction, attention over words and worlds, and a constantly updating world-state, significantly contribute to task accuracy.",
+ "sections": [
+  "Introduction and Background",
+  "The RUN Task and Dataset",
+  "Models for RUN",
+  "Experiments",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 25,
+ "n_tokens": 2920,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.08970::fig000",
+   "paper_id": "1909.08970",
+   "file": "2-Table1-1.png",
+   "caption": "Table 1: Data Statistics of RUN: statistics over different maps and the full corpus. The table is divided into features of the symbolic world representation and the written paragraphs.",
+   "n_tokens": 34
+  },
+  {
+   "caption_id": "1909.08970::fig001",
+   "paper_id": "1909.08970",
+   "file": "2-Table2-1.png",
+   "caption": "Table 2: Linguistic Analysis of RUN: we analyze 30 randomly sampled instructions in RUN. The table characterizes linguistic phenomena in RUN, categorized according to the catalogue presented in Chen et al. (2018).",
+   "n_tokens": 44
+  },
+  {
+   "caption_id": "1909.08970::fig002",
+   "paper_id": "1909.08970",
+   "file": "2-Table3-1.png",
+   "caption": "Table 3: Quantitative Comparison of the HCRC (Anderson et al., 1991), SAIL (MacMahon et al., 2006), TTW (de Vries et al., 2018), and the new RUN Dataset. *We average over three randomly chosen maps. **de Vries et al. (2018) assume perfect perception: all entities at each location are known in advance.",
+   "n_tokens": 85
+  },
+  {
+   "caption_id": "1909.08970::fig003",
+   "paper_id": "1909.08970",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: An Example of a Short Navigation Paragraph: showing a navigation paragraph at the bottom and two images - full map (left image) and a small part of the map (right image). In the full map, many entities are not seen until zoom-in is applied. The navigation paragraph is divided into four sentences: (1) sentence requires a turn action; (2) requires implicit walk actions and an explicit turn; (3) requires walk actions; the last (4) sentence is a verification only and no action is required.",
+   "n_tokens": 109
+  },
+  {
+   "caption_id": "1909.08970::fig004",
+   "paper_id": "1909.08970",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2: Our Model, Conditioned Generation with Attention over Words and World-States, an Entity Abstraction Layer and an Execution System (CGAEW). The light color (yellow) parts presents a standard Encoder-Decoder with attention, while the dark color (red) are components added on top of a standard CGA.",
+   "n_tokens": 67
+  },
+  {
+   "caption_id": "1909.08970::fig005",
+   "paper_id": "1909.08970",
+   "file": "5-Table5-1.png",
+   "caption": "Table 5: Error analysis of all models, for different instructions, showing succeeded / failure on predicting the path.",
+   "n_tokens": 23
+  }
+ ]
+}

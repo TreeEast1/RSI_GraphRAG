@@ -1,0 +1,118 @@
+{
+ "paper_id": "2003.04642",
+ "title": "A Framework for Evaluation of Machine Reading Comprehension Gold Standards",
+ "abstract": "Machine Reading Comprehension (MRC) is the task of answering a question over a paragraph of text. While neural MRC systems gain popularity and achieve noticeable performance, issues are being raised with the methodology used to establish their performance, particularly concerning the data design of gold standards that are used to evaluate them. There is but a limited understanding of the challenges present in this data, which makes it hard to draw comparisons and formulate reliable hypotheses. As a first step towards alleviating the problem, this paper proposes a unifying framework to systematically investigate the present linguistic features, required reasoning and background knowledge and factual correctness on one hand, and the presence of lexical cues as a lower bound for the requirement of understanding on the other hand. We propose a qualitative annotation schema for the first and a set of approximative metrics for the latter. In a first application of the framework, we analyse modern MRC gold standards and present our findings: the absence of features that contribute towards lexical ambiguity, the varying factual correctness of the expected answers and the presence of lexical cues, all of which potentially lower the reading comprehension complexity and quality of the evaluation data.",
+ "sections": [
+  "Introduction",
+  "Framework for MRC Gold Standard Analysis ::: Problem definition",
+  "Framework for MRC Gold Standard Analysis ::: Dimensions of Interest",
+  "Framework for MRC Gold Standard Analysis ::: Dimensions of Interest ::: Problem setting",
+  "Framework for MRC Gold Standard Analysis ::: Dimensions of Interest ::: Factual Correctness",
+  "Framework for MRC Gold Standard Analysis ::: Dimensions of Interest ::: Required Reasoning",
+  "Framework for MRC Gold Standard Analysis ::: Dimensions of Interest ::: Knowledge",
+  "Framework for MRC Gold Standard Analysis ::: Dimensions of Interest ::: Linguistic Complexity",
+  "Framework for MRC Gold Standard Analysis ::: Dimensions of Interest ::: Complexity",
+  "Application of the Framework ::: Candidate Datasets",
+  "Application of the Framework ::: Annotation Task",
+  "Application of the Framework ::: Qualitative Analysis",
+  "Application of the Framework ::: Qualitative Analysis ::: Linguistic Features",
+  "Application of the Framework ::: Qualitative Analysis ::: Factual Correctness",
+  "Application of the Framework ::: Qualitative Analysis ::: Semantics-altering grammatical modifiers",
+  "Application of the Framework ::: Qualitative Analysis ::: Other",
+  "Application of the Framework ::: Quantitative Results ::: Lexical overlap",
+  "Related Work",
+  "Related Work ::: Adversarial Evaluation",
+  "Related Work ::: Sanity Baselines",
+  "Related Work ::: Benchmark evaluation in NLP",
+  "Related Work ::: Annotation Taxonomies",
+  "Conclusion"
+ ],
+ "n_paragraphs": 59,
+ "n_tokens": 6175,
+ "figures_and_tables": [
+  {
+   "caption_id": "2003.04642::fig000",
+   "paper_id": "2003.04642",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: While initially this looks like a complex question that requires the synthesis of different information across multiple documents, the keyword “2010” appears in the question and only in the sentence that answers it, considerably simplifying the search. Full example with 10 passages can be seen in Appendix D.",
+   "n_tokens": 61
+  },
+  {
+   "caption_id": "2003.04642::fig001",
+   "paper_id": "2003.04642",
+   "file": "3-Figure3-1.png",
+   "caption": "Figure 3: The hierarchy of categories in our proposed annotation framework. Abstract higher-level categories are presented in bold while actual annotation features are shown in italics.",
+   "n_tokens": 33
+  },
+  {
+   "caption_id": "2003.04642::fig002",
+   "paper_id": "2003.04642",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Summary of selected datasets",
+   "n_tokens": 8
+  },
+  {
+   "caption_id": "2003.04642::fig003",
+   "paper_id": "2003.04642",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Inter-Annotator agreement F1 scores, averaged for each dataset",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "2003.04642::fig004",
+   "paper_id": "2003.04642",
+   "file": "6-Figure4-1.png",
+   "caption": "Figure 4: Annotation results",
+   "n_tokens": 6
+  },
+  {
+   "caption_id": "2003.04642::fig005",
+   "paper_id": "2003.04642",
+   "file": "7-Table4-1.png",
+   "caption": "Table 4: (Average) Precision, Recall and F1 score within the 95% confidence interval of a linear classifier optimised on lexical features for the task of predicting supporting facts",
+   "n_tokens": 37
+  },
+  {
+   "caption_id": "2003.04642::fig006",
+   "paper_id": "2003.04642",
+   "file": "7-Figure5-1.png",
+   "caption": "Figure 5: Example of semantics altering lexical features",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "2003.04642::fig007",
+   "paper_id": "2003.04642",
+   "file": "17-Table5-1.png",
+   "caption": "Table 5: Detailed Answer Type results. We calculate percentages relative to the number of examples in the sample.",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "2003.04642::fig008",
+   "paper_id": "2003.04642",
+   "file": "17-Table6-1.png",
+   "caption": "Table 6: Detailed results for the annotation of factual correctness.",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "2003.04642::fig009",
+   "paper_id": "2003.04642",
+   "file": "17-Table7-1.png",
+   "caption": "Table 7: Detailed results for the annotation of factual correctness. We calculate percentages relative to the number of examples that were annotated to be not unanswerable.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "2003.04642::fig010",
+   "paper_id": "2003.04642",
+   "file": "18-Table8-1.png",
+   "caption": "Table 8: Detailed reasoning results. We calculate percentages relative to the number of examples that are not unanswerable, i.e. require reasoning to obtain the answer according to our definition.",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "2003.04642::fig011",
+   "paper_id": "2003.04642",
+   "file": "18-Table9-1.png",
+   "caption": "Table 9: Detailed linguistic feature results. We calculate percentages relative to the number of examples that were annotated to contain supporting facts.",
+   "n_tokens": 26
+  }
+ ]
+}

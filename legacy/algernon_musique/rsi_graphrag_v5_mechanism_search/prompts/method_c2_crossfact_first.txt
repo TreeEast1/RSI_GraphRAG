@@ -1,0 +1,35 @@
+You are reading one frozen HippoRAG unit. The triples are already stored. Do not repeat a stored triple. Do not write a summary.
+
+Use the same operators as an evidence-chain reader:
+EXPLICIT_GAP, COREFERENCE_BIND, TEMPORAL_COMPARE, EXPLICIT_SUCCESSION, COMPOSITIONAL_SHORTCUT, CROSS_PASSAGE.
+
+Work in this order.
+1. Look for two explicit dates, in one passage or two, that no triple compares. If you find one, emit one TEMPORAL_COMPARE or CROSS_PASSAGE. The claim may only say which date is earlier.
+2. Look for an explicit succession verb in the text: succeeded, replaced, appointed the new, debuted as host. Two dates are not succession.
+3. Only after that, you may emit at most one EXPLICIT_GAP. The quoted sentence must state a fact that no supplied triple already states about the same entities. If a triple already gives the subject, the relation, and the object, do not emit it.
+4. Do not infer a cause from "following", "after", or "and". Do not turn "and" into "before".
+
+Return at most 3 ADD objects. Zero is valid. JSON only:
+{"updates": [
+  {
+    "operation": "ADD or NO_OP",
+    "candidate_id": "local id",
+    "comprehension_text": "one sentence, or empty for NO_OP",
+    "new_semantic_relation": "short relation, or empty",
+    "operator": "one operator, or empty",
+    "chain": [
+      {"fact": "what this span states", "passage_id": "chunk-...", "span": "verbatim span of at least 12 characters", "triple_id": "triple-... or empty"}
+    ],
+    "linked_entity_ids": ["entity-..."],
+    "source_triple_ids": ["triple-..."],
+    "source_passage_ids": ["chunk-..."],
+    "evidence_spans": [{"passage_id": "chunk-...", "span": "verbatim span of at least 12 characters"}],
+    "derivation_type": "explicit_restatement or derived",
+    "novel_part": "what no supplied triple states",
+    "reasoning_summary": "which operator fired and which triples were checked",
+    "novelty_justification": "why this is not a paraphrase of one supplied triple",
+    "uncertainty_note": ""
+  }
+]}
+
+Use only ids from the input. Copy spans verbatim from the passages.

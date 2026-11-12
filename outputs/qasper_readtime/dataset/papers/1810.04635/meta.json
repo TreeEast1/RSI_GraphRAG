@@ -1,0 +1,53 @@
+{
+ "paper_id": "1810.04635",
+ "title": "Multimodal Speech Emotion Recognition Using Audio and Text",
+ "abstract": "Speech emotion recognition is a challenging task, and extensive reliance has been placed on models that use audio features in building well-performing classifiers. In this paper, we propose a novel deep dual recurrent encoder model that utilizes text data and audio signals simultaneously to obtain a better understanding of speech data. As emotional dialogue is composed of sound and spoken content, our model encodes the information from audio and text sequences using dual recurrent neural networks (RNNs) and then combines the information from these sources to predict the emotion class. This architecture analyzes speech data from the signal level to the language level, and it thus utilizes the information within the data more comprehensively than models that focus on audio features. Extensive experiments are conducted to investigate the efficacy and properties of the proposed model. Our proposed model outperforms previous state-of-the-art methods in assigning data to one of four emotion categories (i.e., angry, happy, sad and neutral) when the model is applied to the IEMOCAP dataset, as reflected by accuracies ranging from 68.8% to 71.8%.",
+ "sections": [
+  "Introduction",
+  "Related work",
+  "Model",
+  "Audio Recurrent Encoder (ARE)",
+  "Text Recurrent Encoder (TRE)",
+  "Multimodal Dual Recurrent Encoder (MDRE)",
+  "Multimodal Dual Recurrent Encoder with Attention (MDREA)",
+  "Dataset",
+  "Feature extraction",
+  "Implementation details",
+  "Performance evaluation",
+  "Error analysis",
+  "Conclusions",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 31,
+ "n_tokens": 4117,
+ "figures_and_tables": [
+  {
+   "caption_id": "1810.04635::fig000",
+   "paper_id": "1810.04635",
+   "file": "2-Figure1-1.png",
+   "caption": "Fig. 1. Multimodal dual recurrent encoder. The upper part shows the ARE, which encodes audio signals, and the lower part shows the TRE, which encodes textual information.",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1810.04635::fig001",
+   "paper_id": "1810.04635",
+   "file": "3-Figure2-1.png",
+   "caption": "Fig. 2. Architecture of the MDREA model. The weighted sum of the sequence of the hidden states of the text-RNN ht is taken using the attention weight at; at is calculated as the dot product of the final encoding vector of the audio-RNN e and ht.",
+   "n_tokens": 57
+  },
+  {
+   "caption_id": "1810.04635::fig002",
+   "paper_id": "1810.04635",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1. Model performance comparisons. The top 2 bestperforming models (according to the unweighted average recall) are marked in bold. The “-ASR” models are trained with processed transcripts from the Google Cloud Speech API.",
+   "n_tokens": 49
+  },
+  {
+   "caption_id": "1810.04635::fig003",
+   "paper_id": "1810.04635",
+   "file": "5-Figure3-1.png",
+   "caption": "Fig. 3. Confusion matrix of each model.",
+   "n_tokens": 12
+  }
+ ]
+}

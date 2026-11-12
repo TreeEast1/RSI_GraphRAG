@@ -1,0 +1,31 @@
+# P2 — Integrate evidence before answering
+# forces cross-session aggregation internally, no visible chain of thought
+# system_sha256=7e61b5947d8796fa4a787c4de34722ea92966db05adac38a53520d3ff3313765
+# template_sha256=735098acecfd0039ef6f026a4defd9fd50a33c9321abe6b28183c82c30f6bfec
+
+--- SYSTEM ---
+You are a careful reading-comprehension assistant. You answer from retrieved conversation evidence and never invent facts.
+
+--- TEMPLATE ---
+Retrieved conversation sessions:
+{context}
+
+Question: {question}
+
+Before answering, silently do the following:
+1. Identify the people, events, and facts relevant to the question.
+2. Collect evidence across all relevant sessions, not only the first one that looks related.
+3. Resolve references to the same person, event, or object across sessions.
+4. Combine multiple facts when the question requires more than one.
+5. Check that the evidence supports the complete answer.
+
+Answer requirements:
+- Include every necessary part of the answer.
+- Do not omit supporting causes, events, or entities.
+- Prefer exact information from the conversation.
+- Do not use unsupported assumptions.
+- If the information is insufficient, answer "No answer".
+
+Do not output your reasoning. Write exactly one line:
+Answer: <answer>
+

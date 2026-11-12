@@ -1,0 +1,566 @@
+{
+ "insights": [
+  {
+   "insight_id": "1808.09029::g00:i00",
+   "paper_id": "1808.09029",
+   "group_id": "1808.09029::g00",
+   "concise_text": "The PRU addresses the parameter and generalizability limitation of increasing input and context vector dimensions by using pyramidal transformation and grouped linear transformation to learn high-dimensional representations with fewer parameters.",
+   "triple": {
+    "subject": "Pyramidal Recurrent Unit (PRU)",
+    "predicate": "addresses",
+    "object": "the parameter and generalizability limitation of increasing input and context vector dimensions"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1808.09029::s00::p001",
+    "1808.09029::s00::p002"
+   ],
+   "supporting_fact_ids": [
+    "1808.09029::g00:b0:f05",
+    "1808.09029::g00:b0:f06",
+    "1808.09029::g00:b0:f09",
+    "1808.09029::g00:b0:f11",
+    "1808.09029::g00:b0:f12"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1808.09029::u000"
+  },
+  {
+   "insight_id": "1808.09029::g00:i01",
+   "paper_id": "1808.09029",
+   "group_id": "1808.09029::g00",
+   "concise_text": "Because the input vector is a shared dense word embedding and the context vector is highly contextualized, the PRU separately applies pyramidal transformation to input vectors and grouped linear transformation to context vectors.",
+   "triple": {
+    "subject": "differing semantics of input and context vectors",
+    "predicate": "causes",
+    "object": "separate treatment in the PRU architecture"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1808.09029::s00::p002",
+    "1808.09029::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1808.09029::g00:b0:f09",
+    "1808.09029::g00:b0:f11",
+    "1808.09029::g00:b2:f03",
+    "1808.09029::g00:b2:f04",
+    "1808.09029::g00:b2:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1808.09029::u001"
+  },
+  {
+   "insight_id": "1808.09029::g00:i02",
+   "paper_id": "1808.09029",
+   "group_id": "1808.09029::g00",
+   "concise_text": "The PRU extends the LSTM gating structure with pyramidal and grouped linear transformations, and replacing LSTM layers with PRU in AWD-LSTM improves perplexity on Penn Treebank and WikiText2.",
+   "triple": {
+    "subject": "Pyramidal Recurrent Unit (PRU)",
+    "predicate": "extends",
+    "object": "AWD-LSTM by replacing LSTM layers with PRU"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1808.09029::s00::p002",
+    "1808.09029::s05::p000",
+    "1808.09029::s07::p001",
+    "1808.09029::s00::p003"
+   ],
+   "supporting_fact_ids": [
+    "1808.09029::g00:b0:f08",
+    "1808.09029::g00:b3:f00",
+    "1808.09029::g00:b0:f15",
+    "1808.09029::g00:b0:f17"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1808.09029::u002"
+  },
+  {
+   "insight_id": "1808.09029::g00:i03",
+   "paper_id": "1808.09029",
+   "group_id": "1808.09029::g00",
+   "concise_text": "Under advanced dropouts, PRUs improve by about 4 points on the PTB dataset and 7 points on the WT-2 dataset, with finetuning adding about 2 points on PTB and about 1 point on WT-2.",
+   "triple": {
+    "subject": "advanced dropouts",
+    "predicate": "causes",
+    "object": "PRU performance improvements of about 4 points on PTB and 7 points on WT-2"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1808.09029::s07::p002",
+    "1808.09029::s08::p002"
+   ],
+   "supporting_fact_ids": [
+    "1808.09029::g00:b4:f02",
+    "1808.09029::g00:b4:f08",
+    "1808.09029::g00:b4:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1808.09029::u003"
+  },
+  {
+   "insight_id": "1808.09029::g00:i04",
+   "paper_id": "1808.09029",
+   "group_id": "1808.09029::g00",
+   "concise_text": "The PRU is a drop-in replacement for LSTM, and with dynamic evaluation on the PTB test set its perplexity improves from 62.42 to 55.23 while LSTM improves from 66.29 to 58.79.",
+   "triple": {
+    "subject": "dynamic evaluation on the PTB test set",
+    "predicate": "improves",
+    "object": "PRU perplexity from 62.42 to 55.23"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1808.09029::s08::p004",
+    "1808.09029::s00::p003"
+   ],
+   "supporting_fact_ids": [
+    "1808.09029::g00:b5:f05",
+    "1808.09029::g00:b5:f06",
+    "1808.09029::g00:b5:f07",
+    "1808.09029::g00:b0:f17"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1808.09029::u004"
+  },
+  {
+   "insight_id": "1808.09029::g00:i05",
+   "paper_id": "1808.09029",
+   "group_id": "1808.09029::g00",
+   "concise_text": "The PRU's higher-dimensional context vectors are linked to lower entropy next-token distributions from 3687 PTB validation contexts, supporting the claim that PRUs make more confident decisions than LSTMs.",
+   "triple": {
+    "subject": "higher dimensional context vectors",
+    "predicate": "causes",
+    "object": "more confident decisions in the PRU"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1808.09029::s09::p000",
+    "1808.09029::s09::p001"
+   ],
+   "supporting_fact_ids": [
+    "1808.09029::g00:b5:f08",
+    "1808.09029::g00:b5:f09"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1808.09029::u005"
+  },
+  {
+   "insight_id": "1808.09029::g00:i06",
+   "paper_id": "1808.09029",
+   "group_id": "1808.09029::g00",
+   "concise_text": "The pyramidal transform's multiple gradient paths and PRUs' better gradient coverage than LSTMs are consistent with the language model in BIBREF0 converging in 500 epochs with PRU versus 750 epochs with LSTM.",
+   "triple": {
+    "subject": "better gradient coverage",
+    "predicate": "causes",
+    "object": "faster training with PRU"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1808.09029::s09::p002",
+    "1808.09029::s09::p003"
+   ],
+   "supporting_fact_ids": [
+    "1808.09029::g00:b5:f12",
+    "1808.09029::g00:b5:f18",
+    "1808.09029::g00:b5:f19"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.76,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1808.09029::u006"
+  },
+  {
+   "insight_id": "1808.09029::g00:i07",
+   "paper_id": "1808.09029",
+   "group_id": "1808.09029::g00",
+   "concise_text": "Ablations show that using pyramidal transformation for input vectors improves perplexity by about 1 point on PTB and WT-2 while reducing recurrent unit parameters by about 14%, supporting the PRU design.",
+   "triple": {
+    "subject": "pyramidal transformation for input vectors",
+    "predicate": "improves_on",
+    "object": "the PRU design on PTB and WT-2"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1808.09029::s00::p002",
+    "1808.09029::s10::p004"
+   ],
+   "supporting_fact_ids": [
+    "1808.09029::g00:b0:f09",
+    "1808.09029::g00:b6:f12",
+    "1808.09029::g00:b6:f13"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1808.09029::u007"
+  },
+  {
+   "insight_id": "1808.09029::g00:i08",
+   "paper_id": "1808.09029",
+   "group_id": "1808.09029::g00",
+   "concise_text": "Ablations show that using grouped linear transformation for context vectors reduces recurrent unit parameters by about 75% but drops performance by about 11%, clarifying the PRU's parameter-performance trade-off.",
+   "triple": {
+    "subject": "grouped linear transformation for context vectors",
+    "predicate": "limits",
+    "object": "PRU performance by about 11%"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1808.09029::s00::p002",
+    "1808.09029::s10::p001",
+    "1808.09029::s10::p004"
+   ],
+   "supporting_fact_ids": [
+    "1808.09029::g00:b0:f11",
+    "1808.09029::g00:b6:f02",
+    "1808.09029::g00:b6:f15",
+    "1808.09029::g00:b6:f16"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1808.09029::u008"
+  },
+  {
+   "insight_id": "1808.09029::g00:i09",
+   "paper_id": "1808.09029",
+   "group_id": "1808.09029::g00",
+   "concise_text": "The experiments set the number of pyramidal levels to two and use average pooling for sub-sampling, while ablation results show average pooling performs best among the PRU sampling methods.",
+   "triple": {
+    "subject": "average pooling for sub-sampling",
+    "predicate": "evaluated_on",
+    "object": "PRU sampling methods"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1808.09029::s07::p001",
+    "1808.09029::s10::p005",
+    "1808.09029::s10::p006"
+   ],
+   "supporting_fact_ids": [
+    "1808.09029::g00:b6:f17",
+    "1808.09029::g00:b7:f00",
+    "1808.09029::g00:b7:f01",
+    "1808.09029::g00:b7:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1808.09029::u009"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1808.09029::g00",
+   "insights": [
+    {
+     "insight_id": "1808.09029::g00:i00",
+     "paper_id": "1808.09029",
+     "group_id": "1808.09029::g00",
+     "concise_text": "The PRU addresses the parameter and generalizability limitation of increasing input and context vector dimensions by using pyramidal transformation and grouped linear transformation to learn high-dimensional representations with fewer parameters.",
+     "triple": {
+      "subject": "Pyramidal Recurrent Unit (PRU)",
+      "predicate": "addresses",
+      "object": "the parameter and generalizability limitation of increasing input and context vector dimensions"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1808.09029::s00::p001",
+      "1808.09029::s00::p002"
+     ],
+     "supporting_fact_ids": [
+      "1808.09029::g00:b0:f05",
+      "1808.09029::g00:b0:f06",
+      "1808.09029::g00:b0:f09",
+      "1808.09029::g00:b0:f11",
+      "1808.09029::g00:b0:f12"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1808.09029::u000"
+    },
+    {
+     "insight_id": "1808.09029::g00:i01",
+     "paper_id": "1808.09029",
+     "group_id": "1808.09029::g00",
+     "concise_text": "Because the input vector is a shared dense word embedding and the context vector is highly contextualized, the PRU separately applies pyramidal transformation to input vectors and grouped linear transformation to context vectors.",
+     "triple": {
+      "subject": "differing semantics of input and context vectors",
+      "predicate": "causes",
+      "object": "separate treatment in the PRU architecture"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1808.09029::s00::p002",
+      "1808.09029::s04::p000"
+     ],
+     "supporting_fact_ids": [
+      "1808.09029::g00:b0:f09",
+      "1808.09029::g00:b0:f11",
+      "1808.09029::g00:b2:f03",
+      "1808.09029::g00:b2:f04",
+      "1808.09029::g00:b2:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.93,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1808.09029::u001"
+    },
+    {
+     "insight_id": "1808.09029::g00:i02",
+     "paper_id": "1808.09029",
+     "group_id": "1808.09029::g00",
+     "concise_text": "The PRU extends the LSTM gating structure with pyramidal and grouped linear transformations, and replacing LSTM layers with PRU in AWD-LSTM improves perplexity on Penn Treebank and WikiText2.",
+     "triple": {
+      "subject": "Pyramidal Recurrent Unit (PRU)",
+      "predicate": "extends",
+      "object": "AWD-LSTM by replacing LSTM layers with PRU"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1808.09029::s00::p002",
+      "1808.09029::s05::p000",
+      "1808.09029::s07::p001",
+      "1808.09029::s00::p003"
+     ],
+     "supporting_fact_ids": [
+      "1808.09029::g00:b0:f08",
+      "1808.09029::g00:b3:f00",
+      "1808.09029::g00:b0:f15",
+      "1808.09029::g00:b0:f17"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1808.09029::u002"
+    },
+    {
+     "insight_id": "1808.09029::g00:i03",
+     "paper_id": "1808.09029",
+     "group_id": "1808.09029::g00",
+     "concise_text": "Under advanced dropouts, PRUs improve by about 4 points on the PTB dataset and 7 points on the WT-2 dataset, with finetuning adding about 2 points on PTB and about 1 point on WT-2.",
+     "triple": {
+      "subject": "advanced dropouts",
+      "predicate": "causes",
+      "object": "PRU performance improvements of about 4 points on PTB and 7 points on WT-2"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1808.09029::s07::p002",
+      "1808.09029::s08::p002"
+     ],
+     "supporting_fact_ids": [
+      "1808.09029::g00:b4:f02",
+      "1808.09029::g00:b4:f08",
+      "1808.09029::g00:b4:f09"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1808.09029::u003"
+    },
+    {
+     "insight_id": "1808.09029::g00:i04",
+     "paper_id": "1808.09029",
+     "group_id": "1808.09029::g00",
+     "concise_text": "The PRU is a drop-in replacement for LSTM, and with dynamic evaluation on the PTB test set its perplexity improves from 62.42 to 55.23 while LSTM improves from 66.29 to 58.79.",
+     "triple": {
+      "subject": "dynamic evaluation on the PTB test set",
+      "predicate": "improves",
+      "object": "PRU perplexity from 62.42 to 55.23"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1808.09029::s08::p004",
+      "1808.09029::s00::p003"
+     ],
+     "supporting_fact_ids": [
+      "1808.09029::g00:b5:f05",
+      "1808.09029::g00:b5:f06",
+      "1808.09029::g00:b5:f07",
+      "1808.09029::g00:b0:f17"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1808.09029::u004"
+    },
+    {
+     "insight_id": "1808.09029::g00:i05",
+     "paper_id": "1808.09029",
+     "group_id": "1808.09029::g00",
+     "concise_text": "The PRU's higher-dimensional context vectors are linked to lower entropy next-token distributions from 3687 PTB validation contexts, supporting the claim that PRUs make more confident decisions than LSTMs.",
+     "triple": {
+      "subject": "higher dimensional context vectors",
+      "predicate": "causes",
+      "object": "more confident decisions in the PRU"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1808.09029::s09::p000",
+      "1808.09029::s09::p001"
+     ],
+     "supporting_fact_ids": [
+      "1808.09029::g00:b5:f08",
+      "1808.09029::g00:b5:f09"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.78,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1808.09029::u005"
+    },
+    {
+     "insight_id": "1808.09029::g00:i06",
+     "paper_id": "1808.09029",
+     "group_id": "1808.09029::g00",
+     "concise_text": "The pyramidal transform's multiple gradient paths and PRUs' better gradient coverage than LSTMs are consistent with the language model in BIBREF0 converging in 500 epochs with PRU versus 750 epochs with LSTM.",
+     "triple": {
+      "subject": "better gradient coverage",
+      "predicate": "causes",
+      "object": "faster training with PRU"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1808.09029::s09::p002",
+      "1808.09029::s09::p003"
+     ],
+     "supporting_fact_ids": [
+      "1808.09029::g00:b5:f12",
+      "1808.09029::g00:b5:f18",
+      "1808.09029::g00:b5:f19"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.76,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1808.09029::u006"
+    },
+    {
+     "insight_id": "1808.09029::g00:i07",
+     "paper_id": "1808.09029",
+     "group_id": "1808.09029::g00",
+     "concise_text": "Ablations show that using pyramidal transformation for input vectors improves perplexity by about 1 point on PTB and WT-2 while reducing recurrent unit parameters by about 14%, supporting the PRU design.",
+     "triple": {
+      "subject": "pyramidal transformation for input vectors",
+      "predicate": "improves_on",
+      "object": "the PRU design on PTB and WT-2"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1808.09029::s00::p002",
+      "1808.09029::s10::p004"
+     ],
+     "supporting_fact_ids": [
+      "1808.09029::g00:b0:f09",
+      "1808.09029::g00:b6:f12",
+      "1808.09029::g00:b6:f13"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.89,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1808.09029::u007"
+    },
+    {
+     "insight_id": "1808.09029::g00:i08",
+     "paper_id": "1808.09029",
+     "group_id": "1808.09029::g00",
+     "concise_text": "Ablations show that using grouped linear transformation for context vectors reduces recurrent unit parameters by about 75% but drops performance by about 11%, clarifying the PRU's parameter-performance trade-off.",
+     "triple": {
+      "subject": "grouped linear transformation for context vectors",
+      "predicate": "limits",
+      "object": "PRU performance by about 11%"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1808.09029::s00::p002",
+      "1808.09029::s10::p001",
+      "1808.09029::s10::p004"
+     ],
+     "supporting_fact_ids": [
+      "1808.09029::g00:b0:f11",
+      "1808.09029::g00:b6:f02",
+      "1808.09029::g00:b6:f15",
+      "1808.09029::g00:b6:f16"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1808.09029::u008"
+    },
+    {
+     "insight_id": "1808.09029::g00:i09",
+     "paper_id": "1808.09029",
+     "group_id": "1808.09029::g00",
+     "concise_text": "The experiments set the number of pyramidal levels to two and use average pooling for sub-sampling, while ablation results show average pooling performs best among the PRU sampling methods.",
+     "triple": {
+      "subject": "average pooling for sub-sampling",
+      "predicate": "evaluated_on",
+      "object": "PRU sampling methods"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1808.09029::s07::p001",
+      "1808.09029::s10::p005",
+      "1808.09029::s10::p006"
+     ],
+     "supporting_fact_ids": [
+      "1808.09029::g00:b6:f17",
+      "1808.09029::g00:b7:f00",
+      "1808.09029::g00:b7:f01",
+      "1808.09029::g00:b7:f02"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1808.09029::u009"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 14192,
+    "completion_tokens": 1984,
+    "total_tokens": 16176,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

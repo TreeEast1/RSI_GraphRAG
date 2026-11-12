@@ -1,0 +1,824 @@
+{
+ "1907.03060::s00::p000": [
+  [
+   "Neural machine translation (NMT)",
+   "has enabled",
+   "end-to-end training of a translation system"
+  ],
+  [
+   "NMT",
+   "can be significantly better than",
+   "PBSMT in resource-rich scenarios"
+  ],
+  [
+   "PBSMT",
+   "performs better in",
+   "low-resource scenarios"
+  ],
+  [
+   "cross-lingual transfer learning techniques",
+   "can make",
+   "the NMT performance approach PBSMT performance in low-resource scenarios"
+  ]
+ ],
+ "1907.03060::s00::p001": [
+  [
+   "such methods",
+   "usually require",
+   "an NMT model trained on a resource-rich language pair like French INLINEFORM0 English (parent)"
+  ],
+  [
+   "an NMT model trained on a resource-rich language pair like French INLINEFORM0 English (parent)",
+   "is to be fine-tuned for",
+   "a low-resource language pair like Uzbek INLINEFORM1 English (child)"
+  ],
+  [
+   "multilingual approaches",
+   "propose to train",
+   "a single model to translate multiple language pairs"
+  ],
+  [
+   "these approaches",
+   "are effective only when",
+   "the parent target or source language is relatively resource-rich like English (En)"
+  ]
+ ],
+ "1907.03060::s00::p002": [
+  [
+   "Japanese INLINEFORM0 Russian (Ja INLINEFORM1 Ru)",
+   "has",
+   "only 12k lines of news domain parallel corpus"
+  ],
+  [
+   "the amount of indirect in-domain parallel corpora, i.e., Ja INLINEFORM2 En and Ru INLINEFORM3 En",
+   "are",
+   "also small"
+  ]
+ ],
+ "1907.03060::s01::p000": [
+  [
+   "the languages involved",
+   "have",
+   "completely different writing system, phonology, morphology, grammar, and syntax"
+  ],
+  [
+   "news domain",
+   "is",
+   "one of the most challenging tasks"
+  ],
+  [
+   "direct parallel corpora",
+   "are",
+   "scarce"
+  ]
+ ],
+ "1907.03060::s01::p001": [
+  [
+   "clean held-out parallel data for Ja INLINEFORM0 Ru and Ja INLINEFORM1 En news translation",
+   "has not existed",
+   "no clean held-out parallel data"
+  ],
+  [
+   "development and test sets",
+   "were manually compiled using",
+   "News Commentary data as a source"
+  ],
+  [
+   "compiled data",
+   "comprised",
+   "1,654 lines of data comprising trilingual, bilingual, and monolingual segments (mainly sentences)"
+  ],
+  [
+   "600 trilingual sentences",
+   "were randomly chosen to create",
+   "a test set"
+  ]
+ ],
+ "1907.03060::s01::p002": [
+  [
+   "manually aligned development and test sets",
+   "are",
+   "publicly available"
+  ]
+ ],
+ "1907.03060::s02::p000": [
+  [
+   "NMT",
+   "is unable to handle",
+   "low-resource language pairs as opposed to PBSMT"
+  ],
+  [
+   "Transfer learning approaches BIBREF5 , BIBREF6 , BIBREF7",
+   "work well when available",
+   "a large helping parallel corpus"
+  ],
+  [
+   "Approaches involving bi-directional NMT modeling",
+   "is shown to drastically improve",
+   "low-resource translation BIBREF11"
+  ]
+ ],
+ "1907.03060::s02::p001": [
+  [
+   "linguistic distance between Japanese and Russian",
+   "makes extremely difficult",
+   "to learn bilingual knowledge, such as bilingual lexicons and bilingual word embeddings"
+  ],
+  [
+   "Unsupervised MT",
+   "is not promising yet due to",
+   "its heavy reliance on accurate bilingual word embeddings"
+  ],
+  [
+   "Pseudo-parallel data",
+   "can be used to augment",
+   "existing parallel corpora for training"
+  ],
+  [
+   "MT based on pivot languages",
+   "requires",
+   "large in-domain parallel corpora involving the pivot languages"
+  ],
+  [
+   "in-domain parallel corpora for Ja INLINEFORM0 En and Ru INLINEFORM1 En pairs",
+   "are",
+   "also extremely limited"
+  ]
+ ],
+ "1907.03060::s02::p002": [
+  [
+   "improving the translation quality in this way",
+   "can increase",
+   "the likelihood of pseudo-parallel data being useful to further improve translation quality"
+  ]
+ ],
+ "1907.03060::s03::p000": [
+  [
+   "the strongest model",
+   "is used to conduct",
+   "experiments on generating and utilizing back-translated pseudo-parallel data for augmenting NMT"
+  ]
+ ],
+ "1907.03060::s04::p000": [
+  [
+   "MT systems",
+   "trained among",
+   "Japanese, Russian, and English"
+  ],
+  [
+   "parallel data",
+   "provided by",
+   "Global Voices"
+  ]
+ ],
+ "1907.03060::s04::p001": [
+  [
+   "in-domain monolingual data",
+   "useful to improve",
+   "quality of MT"
+  ],
+  [
+   "monolingual data",
+   "used as",
+   "the source of pseudo-parallel data for augmenting training data for NMT"
+  ],
+  [
+   "monolingual data",
+   "used as",
+   "the training data for large and smoothed language models for PBSMT"
+  ],
+  [
+   "sentences already present in the parallel corpus",
+   "removed from",
+   "the Global Voices monolingual corpora"
+  ]
+ ],
+ "1907.03060::s04::p003": [
+  [
+   "English and Russian sentences",
+   "tokenized using",
+   "tokenizer.perl of Moses"
+  ],
+  [
+   "Japanese sentences",
+   "tokenized using",
+   "MeCab with the IPA dictionary"
+  ],
+  [
+   "duplicated sentence pairs",
+   "eliminated after",
+   "tokenization"
+  ],
+  [
+   "sentences with more than 100 tokens",
+   "eliminated for",
+   "all the languages"
+  ]
+ ],
+ "1907.03060::s05::p000": [
+  [
+   "standard MT paradigms",
+   "evaluated as",
+   "PBSMT and NMT"
+  ],
+  [
+   "PBSMT",
+   "examined with",
+   "pivot-based translation relying on a helping language"
+  ],
+  [
+   "PBSMT",
+   "examined with",
+   "induction of phrase tables from monolingual data"
+  ]
+ ],
+ "1907.03060::s05::p001": [
+  [
+   "NMT",
+   "compared",
+   "attentional RNN-based model (RNMT) and the Transformer model"
+  ],
+  [
+   "two multi-directional models",
+   "examined to cope with",
+   "the low-resource problem"
+  ],
+  [
+   "two multi-directional models",
+   "include",
+   "bi-directional model and multi-to-multi (M2M) model"
+  ]
+ ],
+ "1907.03060::s05::p004": [
+  [
+   "English",
+   "used as",
+   "the pivot language"
+  ]
+ ],
+ "1907.03060::s05::p005": [
+  [
+   "2-step decoding",
+   "uses",
+   "the source-to-English and English-to-target systems"
+  ]
+ ],
+ "1907.03060::s05::p007": [
+  [
+   "a new phrase table",
+   "combines",
+   "those for the source-to-English and English-to-target systems"
+  ]
+ ],
+ "1907.03060::s05::p008": [
+  [
+   "triangulation",
+   "is",
+   "the most computationally expensive method"
+  ],
+  [
+   "triangulation",
+   "can generate",
+   "an enormous number of phrase pairs"
+  ],
+  [
+   "the component phrase tables",
+   "were filtered using",
+   "the statistical significance pruning method BIBREF20"
+  ],
+  [
+   "the backward translation probability, INLINEFORM4 , and lexical translation probabilities, INLINEFORM5 and INLINEFORM6",
+   "were calculated for",
+   "each of the retained phrase pairs"
+  ]
+ ],
+ "1907.03060::s05::p009": [
+  [
+   "a publicly available implementation of unsupervised PBSMT BIBREF13",
+   "crashed due to",
+   "unknown reasons"
+  ],
+  [
+   "a set of phrases in Japanese and Russian",
+   "was collected from",
+   "respective monolingual data using the word2phrase algorithm BIBREF21"
+  ],
+  [
+   "randomly selected 10M monolingual sentences",
+   "were used to",
+   "reduce the complexity"
+  ],
+  [
+   "300k most frequent phrases made of words among the 300k most frequent words",
+   "were used to",
+   "reduce the complexity"
+  ]
+ ],
+ "1907.03060::s05::p010": [
+  [
+   "Up to four phrase tables",
+   "were jointly exploited by",
+   "the multiple decoding path ability of Moses"
+  ],
+  [
+   "Weights for the features",
+   "were tuned using",
+   "KB-MIRA BIBREF22 on the development set"
+  ],
+  [
+   "the best weights",
+   "were taken after",
+   "15 iterations"
+  ]
+ ],
+ "1907.03060::s05::p011": [
+  [
+   "A uni-directional model for each of the six translation directions",
+   "was trained on",
+   "the corresponding parallel corpus"
+  ]
+ ],
+ "1907.03060::s05::p012": [
+  [
+   "The hyper-parameters not mentioned in this table",
+   "used",
+   "the default values in tensor2tensor"
+  ],
+  [
+   "Ja INLINEFORM0 Ru and Ja INLINEFORM1 En training data",
+   "were over-sampled for",
+   "M2M systems"
+  ],
+  [
+   "tensor2tensor's internal sub-word segmentation mechanism",
+   "was used to",
+   "reduce the number of unknown words"
+  ],
+  [
+   "shared sub-word vocabularies of size 16k",
+   "were used for",
+   "the uni- and bi-directional models"
+  ],
+  [
+   "shared sub-word vocabularies of size 32k",
+   "were used for",
+   "the M2M models"
+  ],
+  [
+   "training",
+   "was stopped if",
+   "BLEU score for the development set was not improved for 10,000 updates (10 check-points)"
+  ]
+ ],
+ "1907.03060::s05::p013": [
+  [
+   "the last 10 check-points",
+   "were averaged",
+   "Having trained the models"
+  ],
+  [
+   "the test sets",
+   "were decoded with",
+   "a beam size of 4 and a length penalty which was tuned by a linear search on the BLEU score for the development set"
+  ]
+ ],
+ "1907.03060::s05::p014": [
+  [
+   "“Cascade” and “Synthesize” methods",
+   "were evaluated with",
+   "uni-directional NMT models"
+  ]
+ ],
+ "1907.03060::s06::p000": [
+  [
+   "MT models",
+   "were evaluated using",
+   "case-sensitive and tokenized BLEU BIBREF23 on test sets"
+  ],
+  [
+   "Statistical significance ( INLINEFORM0 ) on the difference of BLEU scores",
+   "was tested by",
+   "Moses's bootstrap-hypothesis-difference-significance.pl"
+  ]
+ ],
+ "1907.03060::s06::p001": [
+  [
+   "Tables TABREF27 and TABREF31",
+   "show",
+   "BLEU scores of all the models, except the NMT systems augmented with back-translations"
+  ],
+  [
+   "all the results for Ja INLINEFORM2 Ru",
+   "were",
+   "abysmal"
+  ]
+ ],
+ "1907.03060::s06::p002": [
+  [
+   "Transformer models (b INLINEFORM0 )",
+   "were proven to be better than",
+   "RNMT models (a INLINEFORM1 )"
+  ],
+  [
+   "RNMT models",
+   "could not even outperform",
+   "the uni-directional PBSMT models (c1)"
+  ],
+  [
+   "M2M models (a3) and (b3)",
+   "outperformed",
+   "their corresponding uni- and bi-directional models in most cases"
+  ],
+  [
+   "BLEU scores of the M2M RNMT model for the largest language pair, i.e., Ru INLINEFORM2 En",
+   "were lower than",
+   "those of the uni- and bi-directional RNMT models as in TACL1081"
+  ]
+ ],
+ "1907.03060::s06::p003": [
+  [
+   "Standard PBSMT models (c1)",
+   "achieved higher BLEU scores than",
+   "uni-directional NMT models (a1) and (b1)"
+  ],
+  [
+   "Standard PBSMT models (c1)",
+   "underperform",
+   "the M2M Transformer NMT model (b3)"
+  ],
+  [
+   "further extension with phrase tables induced from monolingual data",
+   "did not push",
+   "the limit"
+  ],
+  [
+   "only 336 and 677 OOV tokens",
+   "were left for",
+   "the two translation directions, respectively"
+  ],
+  [
+   "This",
+   "is due to",
+   "the poor quality of the bilingual word embeddings used to extract the phrase table"
+  ]
+ ],
+ "1907.03060::s06::p004": [
+  [
+   "None of pivot-based approaches with uni-directional NMT models",
+   "could even remotely rival",
+   "the M2M Transformer NMT model (b3)"
+  ]
+ ],
+ "1907.03060::s06::p005": [
+  [
+   "the final models of our multistage fine-tuning",
+   "are",
+   "V and VII"
+  ],
+  [
+   "V and VII",
+   "achieved",
+   "significantly higher BLEU scores than (b3) in Table TABREF27 and #10 in Table TABREF33"
+  ],
+  [
+   "(b3) in Table TABREF27",
+   "is",
+   "a weak baseline without using any monolingual data"
+  ],
+  [
+   "#10 in Table TABREF33",
+   "is",
+   "a strong baseline established with monolingual data"
+  ]
+ ],
+ "1907.03060::s06::p006": [
+  [
+   "The performance of the initial model (I)",
+   "depends on",
+   "the language pair"
+  ],
+  [
+   "The performance on Ja INLINEFORM1 En pair",
+   "was",
+   "much lower than the two baseline models"
+  ],
+  [
+   "Ru INLINEFORM2 En pair",
+   "achieved",
+   "surprisingly high BLEU scores"
+  ]
+ ],
+ "1907.03060::s06::p007": [
+  [
+   "The first fine-tuning stage",
+   "significantly pushed up",
+   "the translation quality for Ja INLINEFORM0 En and Ru INLINEFORM1 En pairs"
+  ],
+  [
+   "both models",
+   "performed",
+   "only poorly for Ja INLINEFORM2 Ru pair"
+  ],
+  [
+   "Either model",
+   "had",
+   "a consistent advantage to the other"
+  ]
+ ],
+ "1907.03060::s06::p008": [
+  [
+   "IV and VI",
+   "were further fine-tuned only on",
+   "the in-domain Ja INLINEFORM0 Ru parallel data"
+  ],
+  [
+   "mixed fine-tuning for the second fine-tuning stage (V and VII)",
+   "resulted in",
+   "consistently better models than conventional fine-tuning (IV and VI)"
+  ],
+  [
+   "the BLEU scores",
+   "still retain",
+   "the large margin against two baselines"
+  ]
+ ],
+ "1907.03060::s06::p009": [
+  [
+   "The last three rows in Table TABREF46",
+   "present",
+   "BLEU scores obtained by the methods with fewer fine-tuning steps"
+  ],
+  [
+   "The most naive model I'",
+   "was trained on",
+   "the balanced mixture of whole five types of corpora from scratch"
+  ],
+  [
+   "the model II'",
+   "was obtained through",
+   "a single-step conventional fine-tuning of I on all the in-domain data"
+  ],
+  [
+   "I' and II'",
+   "achieved",
+   "only BLEU scores consistently worse than VII"
+  ],
+  [
+   "the BLEU scores for the other two language pairs",
+   "are",
+   "much lower than VII"
+  ]
+ ],
+ "1907.03060::s07::p000": [
+  [
+   "the M2M Transformer NMT model (b3)",
+   "achieved",
+   "best results for most of the translation directions"
+  ],
+  [
+   "the M2M Transformer NMT model (b3)",
+   "achieved",
+   "competitive results for the rest"
+  ]
+ ],
+ "1907.03060::s07::p001": [
+  [
+   "the work of lakew2017improving and lakew2018comparison",
+   "concentrate only on",
+   "the zero-shot language pair"
+  ],
+  [
+   "the work of W18-2710",
+   "compares only",
+   "uni- or bi-directional models"
+  ]
+ ],
+ "1907.03060::s07::p002": [
+  [
+   "the procedure",
+   "relies on",
+   "the score proposed by moore:intelligent"
+  ]
+ ],
+ "1907.03060::s07::p003": [
+  [
+   "two 4-gram language models",
+   "are trained using",
+   "KenLM"
+  ],
+  [
+   "an in-domain one",
+   "is trained on",
+   "all the Global Voices data, i.e., both parallel and monolingual data"
+  ],
+  [
+   "a general-domain one",
+   "is trained on",
+   "the concatenation of Global Voices, IWSLT, and Tatoeba data"
+  ]
+ ],
+ "1907.03060::s07::p004": [
+  [
+   "sentences containing OOVs according to the in-domain language model",
+   "are discarded",
+   "for each language"
+  ]
+ ],
+ "1907.03060::s07::p005": [
+  [
+   "the INLINEFORM0 -best monolingual sentences in the news domain",
+   "are selected according to",
+   "the difference between cross-entropy scores given by the in-domain and general-domain language models"
+  ]
+ ],
+ "1907.03060::s07::p006": [
+  [
+   "INLINEFORM0",
+   "was set to",
+   "the number of lines of parallel data of given language pair"
+  ]
+ ],
+ "1907.03060::s07::p007": [
+  [
+   "Selected monolingual sentences",
+   "were translated using",
+   "the M2M Transformer NMT model (b3)"
+  ],
+  [
+   "the pseudo-parallel data",
+   "were enlarged by",
+   "over-sampling"
+  ],
+  [
+   "new NMT models",
+   "were trained on",
+   "the concatenation of the original parallel and pseudo-parallel data"
+  ]
+ ],
+ "1907.03060::s07::p008": [
+  [
+   "the use of all six-way pseudo-parallel data (#10)",
+   "significantly improved",
+   "the base model for all the translation directions, except En INLINEFORM0 Ru"
+  ],
+  [
+   "A translation direction",
+   "often benefited when",
+   "the pseudo-parallel data for that specific direction was used"
+  ]
+ ],
+ "1907.03060::s08::p000": [
+  [
+   "the resulting BLEU scores for Ja INLINEFORM2 Ru and Ru INLINEFORM3 Ja tasks",
+   "do not exceed",
+   "10 BLEU points"
+  ]
+ ],
+ "1907.03060::s09::p000": [
+  [
+   "The limitation of relying only on in-domain data",
+   "motivates",
+   "us to explore other types of parallel data"
+  ]
+ ],
+ "1907.03060::s09::p001": [
+  [
+   "parallel data",
+   "can be classified into",
+   "four categories in Table TABREF40"
+  ],
+  [
+   "out-of-domain data for the language pair of interest",
+   "have been exploited in",
+   "the domain adaptation scenarios (C INLINEFORM0 A)"
+  ],
+  [
+   "no out-of-domain data",
+   "is available for",
+   "Ja INLINEFORM1 Ru"
+  ],
+  [
+   "a multistage fine-tuning method",
+   "combines",
+   "two types of transfer learning"
+  ]
+ ],
+ "1907.03060::s10::p000": [
+  [
+   "NMT systems trained on out-of-domain data",
+   "is known to perform badly for",
+   "in-domain translation"
+  ],
+  [
+   "conventional fine-tuning",
+   "fine-tunes",
+   "an NMT system trained on out-of-domain data only on in-domain data"
+  ],
+  [
+   "mixed fine-tuning BIBREF9",
+   "fine-tunes",
+   "pre-trained out-of-domain NMT system using a mixture of in-domain and out-of-domain data"
+  ]
+ ],
+ "1907.03060::s10::p001": [
+  [
+   "domain adaptation",
+   "is for",
+   "Ja INLINEFORM0 En and Ru INLINEFORM1 En"
+  ],
+  [
+   "multilingual transfer",
+   "is for",
+   "Ja INLINEFORM2 Ru pair"
+  ]
+ ],
+ "1907.03060::s10::p002": [
+  [
+   "a multilingual model",
+   "is pre-trained only on",
+   "the Ja INLINEFORM0 En and Ru INLINEFORM1 En out-of-domain parallel data (I)"
+  ],
+  [
+   "the vocabulary of the model",
+   "is determined on the basis of",
+   "the in-domain parallel data"
+  ]
+ ],
+ "1907.03060::s10::p003": [
+  [
+   "the pre-trained model (I)",
+   "is fine-tuned on",
+   "the in-domain Ja INLINEFORM0 En and Ru INLINEFORM1 En parallel data (fine-tuning, II)"
+  ]
+ ],
+ "1907.03060::s10::p004": [
+  [
+   "the models (each of II and III)",
+   "are further fine-tuned for",
+   "Ja INLINEFORM0 Ru"
+  ],
+  [
+   "fine-tuning, IV and VI",
+   "uses",
+   "in-domain parallel data for this language pair only"
+  ],
+  [
+   "mixed fine-tuning, V and VII",
+   "uses",
+   "all the in-domain parallel data"
+  ]
+ ],
+ "1907.03060::s10::p005": [
+  [
+   "The other reason",
+   "is",
+   "division of labor"
+  ]
+ ],
+ "1907.03060::s11::p000": [
+  [
+   "cleanest 1.5M sentences from the Asian Scientific Paper Excerpt Corpus (ASPEC)",
+   "were used as",
+   "additional large-scale out-of-domain parallel data for Ja INLINEFORM0 En"
+  ],
+  [
+   "UN and Yandex corpora released for the WMT 2018 News Translation Task",
+   "were used for",
+   "Ru INLINEFORM1 En"
+  ],
+  [
+   "Ru INLINEFORM2 En sentence pairs that contain at least one OOV token in both sides",
+   "were retained according to",
+   "the in-domain language model trained in Section SECREF34"
+  ]
+ ],
+ "1907.03060::s12::p002": [
+  [
+   "“new #10”",
+   "achieved",
+   "higher BLEU scores than #10 in Table TABREF33"
+  ],
+  [
+   "“new #10”",
+   "underperformed",
+   "the base NMT model VII"
+  ],
+  [
+   "one more iteration (IX)",
+   "further improved",
+   "BLEU scores for all translation directions, except Ru INLINEFORM0 En"
+  ],
+  [
+   "further iterations",
+   "did not necessarily gain",
+   "BLEU scores"
+  ]
+ ],
+ "1907.03060::s13::p000": [
+  [
+   "a multilingual multistage fine-tuning approach",
+   "substantially improves",
+   "Ja INLINEFORM1 Ru translation by over 3.7 BLEU points compared to a strong baseline"
+  ]
+ ]
+}

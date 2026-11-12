@@ -1,0 +1,442 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1608.06757::s00::p000",
+   "summary": "NER is crucial for information extraction and higher-level tasks, with recall critical because ungenerated candidates cannot be recovered later.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s01::p000",
+   "summary": "NER is formulated as sequential word labeling with BIO2 labels for non-recursive, non-overlapping mentions, using recurrent neural networks for contextual token prediction.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s02::p000",
+   "summary": "Common recall-loss errors include misspellings, POS errors, capitalization, unseen words and irregular context, motivating three generalization layers.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s02::p001",
+   "summary": "Dictionary-based vectors suffer from sparse training sets, with 27% unseen words in GENIA for pretrained word2vec, motivating letter-trigram word hashing.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s02::p002",
+   "summary": "Word shape properties are important for NER, so words use lowercase letter-trigrams plus flag bits for capitalization and case surface information.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s03::p000",
+   "summary": "Sparse idiosyncratic data requires strong generalization, and LSTMs are applied to sequence labeling for long-range context-sensitive information and high 80–90% NER F1 performance.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s03::p001",
+   "summary": "The model feeds letter-trigram vectors into a bidirectional LSTM and combines both directions in a second LSTM layer for label prediction.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s03::p002",
+   "summary": "Word encodings and labels are real-valued vectors, and the LSTM uses gates, internal state, duplicated bidirectional states, and BPTT training.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s03::p003",
+   "summary": "The network iterates over labeled sentences in mini-batches, updates weights, and predicts label probabilities for unseen word sequences.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s04::p000",
+   "summary": "The bidirectional LSTM model is evaluated on three neural network configurations implemented with Deeplearning4j and Stanford CoreNLP preprocessing.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s04::p001",
+   "summary": "The paragraph contains only the marker [noitemsep].",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s04::p002",
+   "summary": "DICT builds a dictionary over all corpus words and generates input vectors using 1-hot encoding for each word.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s04::p003",
+   "summary": "EMB uses GoogleNews word2vec embeddings, encoding each word as a vector of size 300.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s04::p004",
+   "summary": "TRI implements letter-trigram word hashing as described in Section SECREF14.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s04::p005",
+   "summary": "During training and test, sentence tokens are grouped as mini-batch, and three neural network types evaluate the bidirectional sequence learner.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s04::p007",
+   "summary": "FF is a feed-forward baseline with 3 hidden layers of size 150, relu activation, a 3-class softmax classifier, and learning rate of 0.005.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s04::p008",
+   "summary": "LSTM uses a feed-forward layer of size 150, two single-direction LSTM layers with 20 cells, a 3-class softmax classifier, BPTT, and learning rate of 0.005.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s04::p009",
+   "summary": "BLSTM uses a feed-forward layer of size 150, one bidirectional LSTM layer with 20 cells, an additional single-direction LSTM with 20 cells, and a 3-class softmax classifier.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s05::p000",
+   "summary": "Nine configurations are evaluated on five gold standard data sets, with letter-trigram word hashing and bidirectional LSTM yielding the best results.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s06::p000",
+   "summary": "Two identically parameterized models use 2000 randomly chosen labeled sentences, and TRI+BLSTM training takes approximately 50 minutes on a commodity Intel i7 notebook with 4 cores at 2.8GHz.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s06::p001",
+   "summary": "Training data sets include GENIA Corpus with GENIA technical term annotations 3.02 and CoNLL2003 based on the Reuters RCV-1 news corpus.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s06::p002",
+   "summary": "Testing uses CoNLL2003-testA, a 50 document split from GENIA, and complete KORE50, ACE2004 and MSNBC data sets using GERBIL.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s07::p000",
+   "summary": "DATEXIS-NER and state-of-the-art annotators are measured with precision, recall and F1 score, weak annotation match, and token-level BIO2 labeling performance.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s07::p001",
+   "summary": "Overall mention annotation performance uses measures from cornolti2013framework and ling2015design, comparing gold standard mention annotations with predicted annotations.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s07::p002",
+   "summary": "The comparison uses a weak annotation match.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s07::p003",
+   "summary": "The measurement uses micro-averaged precision, recall and NER-style score.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s07::p004",
+   "summary": "For model tuning, label classes are measured separately with binary classification precision, recall and scores, using macro-averaging over the three classes.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s08::p000",
+   "summary": "The evaluation discusses DATEXIS-NER on common and idiosyncratic data.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s08::p001",
+   "summary": "DATEXIS-NER achieves highest recall of 95%–98%, equal or better than median precision, and micro-F1 scores of 84%–94% on news entity recognition.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s08::p002",
+   "summary": "On biomedical entity recognition, DATEXIS-NER outperforms HMM, MEMM, CRF and CDN based models with micro-F1 score of 84%, while the GENIA chunker for LingPipe scores higher.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s08::p003",
+   "summary": "On CoNLL2003 and GENIA, letter-trigram word vectors with bidirectional LSTM report highest macro-F1 scores for BIO2 labeling, while DICT, EMB and TRI show different strengths.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s08::p004",
+   "summary": "The contextual LSTM model achieves scores in the 85%–94% range, outperforms the FF baseline maximum of 75%, and bidirectional LSTMs improve precision and recall.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s09::p000",
+   "summary": "DATEXIS-NER components are investigated by manual inspection of classification errors for false negative detections, false positives and invalid boundaries.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s09::p001",
+   "summary": "Dictionary misses cause false negatives in DICT and word2vec, while the letter-trigram approach resolves this error despite possible unseen trigrams such as thh.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s09::p002",
+   "summary": "Case-sensitive word vectorization causes false positives from incorrect capitalization, so lowercase word vectors with surface form feature flags achieve best results.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s09::p003",
+   "summary": "Ambiguous co-occurring mention groups encode strong syntagmatic word relations, so correct boundaries require contextual models such as LSTMs.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s09::p004",
+   "summary": "Paradigmatic relation groups are efficiently represented in word2vec, but letter-trigram vectors require a larger training sample to capture these relations.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s09::p005",
+   "summary": "Some synonyms require larger document context than local sentence context, affecting named entity disambiguation and coreference resolution more than NER recall.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s09::p006",
+   "summary": "DATEXIS-NER recognizes boundaries of generic mentions without NER-style typing, with specific types possible via multiple independent models and a longest-span semantic type heuristic.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s10::p000",
+   "summary": "NER depends on specific problem context, while most approaches use fixed datasets in batch mode and often suffer from poor recall.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s10::p001",
+   "summary": "The work reports F1 scores between 84–94% using bidirectional multi-layered LSTMs, letter-trigram word hashing and surface form features on only few hundred training examples.",
+   "group_id": "1608.06757::g00"
+  },
+  {
+   "passage_id": "1608.06757::s10::p002",
+   "summary": "Future work will target health, life science, fashion, engineering or automotive domains, joint mention detection and ontology linking, and interactive workflows for personalized named entity linking systems.",
+   "group_id": "1608.06757::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1608.06757::g00",
+   "summaries": [
+    {
+     "passage_id": "1608.06757::s00::p000",
+     "summary": "NER is crucial for information extraction and higher-level tasks, with recall critical because ungenerated candidates cannot be recovered later.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s01::p000",
+     "summary": "NER is formulated as sequential word labeling with BIO2 labels for non-recursive, non-overlapping mentions, using recurrent neural networks for contextual token prediction.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s02::p000",
+     "summary": "Common recall-loss errors include misspellings, POS errors, capitalization, unseen words and irregular context, motivating three generalization layers.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s02::p001",
+     "summary": "Dictionary-based vectors suffer from sparse training sets, with 27% unseen words in GENIA for pretrained word2vec, motivating letter-trigram word hashing.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s02::p002",
+     "summary": "Word shape properties are important for NER, so words use lowercase letter-trigrams plus flag bits for capitalization and case surface information.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s03::p000",
+     "summary": "Sparse idiosyncratic data requires strong generalization, and LSTMs are applied to sequence labeling for long-range context-sensitive information and high 80–90% NER F1 performance.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s03::p001",
+     "summary": "The model feeds letter-trigram vectors into a bidirectional LSTM and combines both directions in a second LSTM layer for label prediction.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s03::p002",
+     "summary": "Word encodings and labels are real-valued vectors, and the LSTM uses gates, internal state, duplicated bidirectional states, and BPTT training.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s03::p003",
+     "summary": "The network iterates over labeled sentences in mini-batches, updates weights, and predicts label probabilities for unseen word sequences.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s04::p000",
+     "summary": "The bidirectional LSTM model is evaluated on three neural network configurations implemented with Deeplearning4j and Stanford CoreNLP preprocessing.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s04::p001",
+     "summary": "The paragraph contains only the marker [noitemsep].",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s04::p002",
+     "summary": "DICT builds a dictionary over all corpus words and generates input vectors using 1-hot encoding for each word.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s04::p003",
+     "summary": "EMB uses GoogleNews word2vec embeddings, encoding each word as a vector of size 300.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s04::p004",
+     "summary": "TRI implements letter-trigram word hashing as described in Section SECREF14.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s04::p005",
+     "summary": "During training and test, sentence tokens are grouped as mini-batch, and three neural network types evaluate the bidirectional sequence learner.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s04::p007",
+     "summary": "FF is a feed-forward baseline with 3 hidden layers of size 150, relu activation, a 3-class softmax classifier, and learning rate of 0.005.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s04::p008",
+     "summary": "LSTM uses a feed-forward layer of size 150, two single-direction LSTM layers with 20 cells, a 3-class softmax classifier, BPTT, and learning rate of 0.005.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s04::p009",
+     "summary": "BLSTM uses a feed-forward layer of size 150, one bidirectional LSTM layer with 20 cells, an additional single-direction LSTM with 20 cells, and a 3-class softmax classifier.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s05::p000",
+     "summary": "Nine configurations are evaluated on five gold standard data sets, with letter-trigram word hashing and bidirectional LSTM yielding the best results.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s06::p000",
+     "summary": "Two identically parameterized models use 2000 randomly chosen labeled sentences, and TRI+BLSTM training takes approximately 50 minutes on a commodity Intel i7 notebook with 4 cores at 2.8GHz.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s06::p001",
+     "summary": "Training data sets include GENIA Corpus with GENIA technical term annotations 3.02 and CoNLL2003 based on the Reuters RCV-1 news corpus.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s06::p002",
+     "summary": "Testing uses CoNLL2003-testA, a 50 document split from GENIA, and complete KORE50, ACE2004 and MSNBC data sets using GERBIL.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s07::p000",
+     "summary": "DATEXIS-NER and state-of-the-art annotators are measured with precision, recall and F1 score, weak annotation match, and token-level BIO2 labeling performance.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s07::p001",
+     "summary": "Overall mention annotation performance uses measures from cornolti2013framework and ling2015design, comparing gold standard mention annotations with predicted annotations.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s07::p002",
+     "summary": "The comparison uses a weak annotation match.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s07::p003",
+     "summary": "The measurement uses micro-averaged precision, recall and NER-style score.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s07::p004",
+     "summary": "For model tuning, label classes are measured separately with binary classification precision, recall and scores, using macro-averaging over the three classes.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s08::p000",
+     "summary": "The evaluation discusses DATEXIS-NER on common and idiosyncratic data.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s08::p001",
+     "summary": "DATEXIS-NER achieves highest recall of 95%–98%, equal or better than median precision, and micro-F1 scores of 84%–94% on news entity recognition.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s08::p002",
+     "summary": "On biomedical entity recognition, DATEXIS-NER outperforms HMM, MEMM, CRF and CDN based models with micro-F1 score of 84%, while the GENIA chunker for LingPipe scores higher.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s08::p003",
+     "summary": "On CoNLL2003 and GENIA, letter-trigram word vectors with bidirectional LSTM report highest macro-F1 scores for BIO2 labeling, while DICT, EMB and TRI show different strengths.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s08::p004",
+     "summary": "The contextual LSTM model achieves scores in the 85%–94% range, outperforms the FF baseline maximum of 75%, and bidirectional LSTMs improve precision and recall.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s09::p000",
+     "summary": "DATEXIS-NER components are investigated by manual inspection of classification errors for false negative detections, false positives and invalid boundaries.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s09::p001",
+     "summary": "Dictionary misses cause false negatives in DICT and word2vec, while the letter-trigram approach resolves this error despite possible unseen trigrams such as thh.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s09::p002",
+     "summary": "Case-sensitive word vectorization causes false positives from incorrect capitalization, so lowercase word vectors with surface form feature flags achieve best results.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s09::p003",
+     "summary": "Ambiguous co-occurring mention groups encode strong syntagmatic word relations, so correct boundaries require contextual models such as LSTMs.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s09::p004",
+     "summary": "Paradigmatic relation groups are efficiently represented in word2vec, but letter-trigram vectors require a larger training sample to capture these relations.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s09::p005",
+     "summary": "Some synonyms require larger document context than local sentence context, affecting named entity disambiguation and coreference resolution more than NER recall.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s09::p006",
+     "summary": "DATEXIS-NER recognizes boundaries of generic mentions without NER-style typing, with specific types possible via multiple independent models and a longest-span semantic type heuristic.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s10::p000",
+     "summary": "NER depends on specific problem context, while most approaches use fixed datasets in batch mode and often suffer from poor recall.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s10::p001",
+     "summary": "The work reports F1 scores between 84–94% using bidirectional multi-layered LSTMs, letter-trigram word hashing and surface form features on only few hundred training examples.",
+     "group_id": "1608.06757::g00"
+    },
+    {
+     "passage_id": "1608.06757::s10::p002",
+     "summary": "Future work will target health, life science, fashion, engineering or automotive domains, joint mention detection and ontology linking, and interactive workflows for personalized named entity linking systems.",
+     "group_id": "1608.06757::g00"
+    }
+   ],
+   "n_raw": 42,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5058,
+    "completion_tokens": 2014,
+    "total_tokens": 7072,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

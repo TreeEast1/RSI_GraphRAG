@@ -1,0 +1,7292 @@
+{
+  "source": "hipporag2_gpt4o_mini",
+  "seconds": 12.529573440551758,
+  "n_chunks": 11656,
+  "normalization": {
+    "raw_strings": 379410,
+    "strings_whose_audit_key_differs_from_hipporag_text_processing": 26888,
+    "invalid_or_empty_endpoint_triples": 61,
+    "mention_edges": 116079,
+    "mention_sum": 116113,
+    "edges_with_mention_count_gt1": 34
+  },
+  "b1": {
+    "entities": {
+      "n_entities": 66088,
+      "n_edges": 116079,
+      "docs_with_zero_entities": 26,
+      "docs_with_zero_frac": 0.002230610844200412,
+      "entities_per_doc": {
+        "n": 11656,
+        "mean": 9.958733699382293,
+        "median": 9.0,
+        "min": 0.0,
+        "max": 105.0,
+        "p75": 12.0,
+        "p90": 16.0,
+        "p95": 20.0,
+        "p99": 31.0
+      },
+      "docs_per_entity": {
+        "n": 66088,
+        "mean": 1.7564308195133762,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1173.0,
+        "p75": 1.0,
+        "p90": 2.0,
+        "p95": 3.0,
+        "p99": 13.0
+      },
+      "titles_per_entity": {
+        "n": 66088,
+        "mean": 1.6645381915022395,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1064.0,
+        "p75": 1.0,
+        "p90": 2.0,
+        "p95": 3.0,
+        "p99": 11.0
+      },
+      "df1_frac": 0.8408788282290279,
+      "df_gt1": 10516,
+      "cross_title_entities": 9181,
+      "intra_title_only_multi_chunk": 1335
+    },
+    "df_histogram": [
+      {
+        "bin": "1",
+        "n_entities": 55572,
+        "frac": 0.8408788282290279
+      },
+      {
+        "bin": "2",
+        "n_entities": 5633,
+        "frac": 0.08523483839728846
+      },
+      {
+        "bin": "3-5",
+        "n_entities": 3147,
+        "frac": 0.04761832707904612
+      },
+      {
+        "bin": "6-10",
+        "n_entities": 908,
+        "frac": 0.013739256748577655
+      },
+      {
+        "bin": "11-20",
+        "n_entities": 430,
+        "frac": 0.00650647621353347
+      },
+      {
+        "bin": "21-50",
+        "n_entities": 247,
+        "frac": 0.0037374409877738773
+      },
+      {
+        "bin": "51-100",
+        "n_entities": 95,
+        "frac": 0.0014374773029899527
+      },
+      {
+        "bin": "101-500",
+        "n_entities": 54,
+        "frac": 0.0008170923616995521
+      },
+      {
+        "bin": "500+",
+        "n_entities": 2,
+        "frac": 3.0262680062946375e-05
+      }
+    ],
+    "components": {
+      "n_components": 226,
+      "unweighted": {
+        "n": 226,
+        "mean": 51.575221238938056,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 11422.0,
+        "p75": 1.0,
+        "p90": 1.0,
+        "p95": 1.0,
+        "p99": 2.0
+      },
+      "doc_weighted": {
+        "n": 11656,
+        "mean": 11192.719457789979,
+        "median": 11422.0,
+        "min": 1.0,
+        "max": 11422.0,
+        "p75": 11422.0,
+        "p90": 11422.0,
+        "p95": 11422.0,
+        "p99": 11422.0
+      },
+      "entity_unweighted": {
+        "n": 226,
+        "mean": 292.42477876106193,
+        "median": 5.0,
+        "min": 0.0,
+        "max": 64871.0,
+        "p75": 7.0,
+        "p90": 10.0,
+        "p95": 12.0,
+        "p99": 18.75
+      },
+      "min_component": {
+        "n_docs": 1,
+        "n_entities": 0,
+        "n_titles": 1
+      },
+      "min_nonempty_component": {
+        "n_docs": 1,
+        "n_entities": 1,
+        "n_titles": 1
+      },
+      "max_component": {
+        "n_docs": 11422,
+        "n_entities": 64871,
+        "n_titles": 9620,
+        "doc_frac": 0.9799245024021963
+      },
+      "top10": [
+        11422,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "top20": [
+        11422,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "top5_doc_frac": 0.9806966369251887,
+      "top10_doc_frac": 0.9814687714481812,
+      "bins": [
+        {
+          "bin": "1",
+          "n_components": 217,
+          "n_docs": 217,
+          "doc_frac": 0.018617021276595744
+        },
+        {
+          "bin": "2-5",
+          "n_components": 8,
+          "n_docs": 17,
+          "doc_frac": 0.0014584763212079615
+        },
+        {
+          "bin": "6-10",
+          "n_components": 0,
+          "n_docs": 0,
+          "doc_frac": 0.0
+        },
+        {
+          "bin": "11-20",
+          "n_components": 0,
+          "n_docs": 0,
+          "doc_frac": 0.0
+        },
+        {
+          "bin": "21-50",
+          "n_components": 0,
+          "n_docs": 0,
+          "doc_frac": 0.0
+        },
+        {
+          "bin": "51-100",
+          "n_components": 0,
+          "n_docs": 0,
+          "doc_frac": 0.0
+        },
+        {
+          "bin": "101-500",
+          "n_components": 0,
+          "n_docs": 0,
+          "doc_frac": 0.0
+        },
+        {
+          "bin": "500+",
+          "n_components": 1,
+          "n_docs": 11422,
+          "doc_frac": 0.9799245024021963
+        }
+      ],
+      "docs_in_multi_title_components": 11433,
+      "multi_title_doc_frac": 0.9808682223747426,
+      "single_title_multichunk_components": 3,
+      "multi_title_components": 6,
+      "ranked_top200": [
+        {
+          "rank": 1,
+          "n_docs": 11422,
+          "n_entities": 64871,
+          "n_titles": 9620,
+          "label": 0
+        },
+        {
+          "rank": 2,
+          "n_docs": 3,
+          "n_entities": 15,
+          "n_titles": 3,
+          "label": 1251
+        },
+        {
+          "rank": 3,
+          "n_docs": 2,
+          "n_entities": 22,
+          "n_titles": 2,
+          "label": 9369
+        },
+        {
+          "rank": 4,
+          "n_docs": 2,
+          "n_entities": 19,
+          "n_titles": 2,
+          "label": 97
+        },
+        {
+          "rank": 5,
+          "n_docs": 2,
+          "n_entities": 16,
+          "n_titles": 2,
+          "label": 3151
+        },
+        {
+          "rank": 6,
+          "n_docs": 2,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 3386
+        },
+        {
+          "rank": 7,
+          "n_docs": 2,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 6675
+        },
+        {
+          "rank": 8,
+          "n_docs": 2,
+          "n_entities": 5,
+          "n_titles": 2,
+          "label": 4407
+        },
+        {
+          "rank": 9,
+          "n_docs": 2,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 9054
+        },
+        {
+          "rank": 10,
+          "n_docs": 1,
+          "n_entities": 18,
+          "n_titles": 1,
+          "label": 11068
+        },
+        {
+          "rank": 11,
+          "n_docs": 1,
+          "n_entities": 15,
+          "n_titles": 1,
+          "label": 2062
+        },
+        {
+          "rank": 12,
+          "n_docs": 1,
+          "n_entities": 14,
+          "n_titles": 1,
+          "label": 10926
+        },
+        {
+          "rank": 13,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 344
+        },
+        {
+          "rank": 14,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 5214
+        },
+        {
+          "rank": 15,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 9809
+        },
+        {
+          "rank": 16,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 5220
+        },
+        {
+          "rank": 17,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 7273
+        },
+        {
+          "rank": 18,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 2099
+        },
+        {
+          "rank": 19,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 5685
+        },
+        {
+          "rank": 20,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 6034
+        },
+        {
+          "rank": 21,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 10086
+        },
+        {
+          "rank": 22,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 11289
+        },
+        {
+          "rank": 23,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 353
+        },
+        {
+          "rank": 24,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 2019
+        },
+        {
+          "rank": 25,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 2030
+        },
+        {
+          "rank": 26,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 2436
+        },
+        {
+          "rank": 27,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 2939
+        },
+        {
+          "rank": 28,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 2948
+        },
+        {
+          "rank": 29,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 5042
+        },
+        {
+          "rank": 30,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 6698
+        },
+        {
+          "rank": 31,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 9111
+        },
+        {
+          "rank": 32,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 11277
+        },
+        {
+          "rank": 33,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 11422
+        },
+        {
+          "rank": 34,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 351
+        },
+        {
+          "rank": 35,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 979
+        },
+        {
+          "rank": 36,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 4382
+        },
+        {
+          "rank": 37,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 5790
+        },
+        {
+          "rank": 38,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 7969
+        },
+        {
+          "rank": 39,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 9210
+        },
+        {
+          "rank": 40,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 9649
+        },
+        {
+          "rank": 41,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 10514
+        },
+        {
+          "rank": 42,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 11403
+        },
+        {
+          "rank": 43,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 240
+        },
+        {
+          "rank": 44,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 1212
+        },
+        {
+          "rank": 45,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 2282
+        },
+        {
+          "rank": 46,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 2365
+        },
+        {
+          "rank": 47,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 4769
+        },
+        {
+          "rank": 48,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 5926
+        },
+        {
+          "rank": 49,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 5965
+        },
+        {
+          "rank": 50,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 6676
+        },
+        {
+          "rank": 51,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 7231
+        },
+        {
+          "rank": 52,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 7377
+        },
+        {
+          "rank": 53,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 7735
+        },
+        {
+          "rank": 54,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 8022
+        },
+        {
+          "rank": 55,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 9547
+        },
+        {
+          "rank": 56,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 10201
+        },
+        {
+          "rank": 57,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 10827
+        },
+        {
+          "rank": 58,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 11275
+        },
+        {
+          "rank": 59,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 348
+        },
+        {
+          "rank": 60,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 416
+        },
+        {
+          "rank": 61,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 986
+        },
+        {
+          "rank": 62,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 1919
+        },
+        {
+          "rank": 63,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 3149
+        },
+        {
+          "rank": 64,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 3672
+        },
+        {
+          "rank": 65,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 4169
+        },
+        {
+          "rank": 66,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 4430
+        },
+        {
+          "rank": 67,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 6088
+        },
+        {
+          "rank": 68,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 6899
+        },
+        {
+          "rank": 69,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 7919
+        },
+        {
+          "rank": 70,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 8804
+        },
+        {
+          "rank": 71,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 9721
+        },
+        {
+          "rank": 72,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 10484
+        },
+        {
+          "rank": 73,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 11237
+        },
+        {
+          "rank": 74,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 266
+        },
+        {
+          "rank": 75,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 743
+        },
+        {
+          "rank": 76,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 1207
+        },
+        {
+          "rank": 77,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 2132
+        },
+        {
+          "rank": 78,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 2270
+        },
+        {
+          "rank": 79,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 2335
+        },
+        {
+          "rank": 80,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 2744
+        },
+        {
+          "rank": 81,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 2961
+        },
+        {
+          "rank": 82,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 3490
+        },
+        {
+          "rank": 83,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 3579
+        },
+        {
+          "rank": 84,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 4356
+        },
+        {
+          "rank": 85,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 4431
+        },
+        {
+          "rank": 86,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 4904
+        },
+        {
+          "rank": 87,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 5477
+        },
+        {
+          "rank": 88,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 5935
+        },
+        {
+          "rank": 89,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 6030
+        },
+        {
+          "rank": 90,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 6312
+        },
+        {
+          "rank": 91,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 6478
+        },
+        {
+          "rank": 92,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 6689
+        },
+        {
+          "rank": 93,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 6818
+        },
+        {
+          "rank": 94,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 6905
+        },
+        {
+          "rank": 95,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 8129
+        },
+        {
+          "rank": 96,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 8567
+        },
+        {
+          "rank": 97,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 8681
+        },
+        {
+          "rank": 98,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 8819
+        },
+        {
+          "rank": 99,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 9514
+        },
+        {
+          "rank": 100,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 9696
+        },
+        {
+          "rank": 101,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 10481
+        },
+        {
+          "rank": 102,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 11098
+        },
+        {
+          "rank": 103,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 11116
+        },
+        {
+          "rank": 104,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 11370
+        },
+        {
+          "rank": 105,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 79
+        },
+        {
+          "rank": 106,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 100
+        },
+        {
+          "rank": 107,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 1823
+        },
+        {
+          "rank": 108,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 3819
+        },
+        {
+          "rank": 109,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 3827
+        },
+        {
+          "rank": 110,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 4503
+        },
+        {
+          "rank": 111,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 4786
+        },
+        {
+          "rank": 112,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 4943
+        },
+        {
+          "rank": 113,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 5488
+        },
+        {
+          "rank": 114,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 5600
+        },
+        {
+          "rank": 115,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 6488
+        },
+        {
+          "rank": 116,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 6695
+        },
+        {
+          "rank": 117,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 6800
+        },
+        {
+          "rank": 118,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 6805
+        },
+        {
+          "rank": 119,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 7801
+        },
+        {
+          "rank": 120,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 7981
+        },
+        {
+          "rank": 121,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 8182
+        },
+        {
+          "rank": 122,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 8343
+        },
+        {
+          "rank": 123,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 9497
+        },
+        {
+          "rank": 124,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 10200
+        },
+        {
+          "rank": 125,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 10332
+        },
+        {
+          "rank": 126,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 10635
+        },
+        {
+          "rank": 127,
+          "n_docs": 1,
+          "n_entities": 5,
+          "n_titles": 1,
+          "label": 11220
+        },
+        {
+          "rank": 128,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 30
+        },
+        {
+          "rank": 129,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 716
+        },
+        {
+          "rank": 130,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 2097
+        },
+        {
+          "rank": 131,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 2636
+        },
+        {
+          "rank": 132,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 2713
+        },
+        {
+          "rank": 133,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 3398
+        },
+        {
+          "rank": 134,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 3689
+        },
+        {
+          "rank": 135,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 3949
+        },
+        {
+          "rank": 136,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 4278
+        },
+        {
+          "rank": 137,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 5369
+        },
+        {
+          "rank": 138,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 5876
+        },
+        {
+          "rank": 139,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 6024
+        },
+        {
+          "rank": 140,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 6083
+        },
+        {
+          "rank": 141,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 6181
+        },
+        {
+          "rank": 142,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 6484
+        },
+        {
+          "rank": 143,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 6673
+        },
+        {
+          "rank": 144,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 6979
+        },
+        {
+          "rank": 145,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 7157
+        },
+        {
+          "rank": 146,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 7325
+        },
+        {
+          "rank": 147,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 7714
+        },
+        {
+          "rank": 148,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 8059
+        },
+        {
+          "rank": 149,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 8249
+        },
+        {
+          "rank": 150,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 9092
+        },
+        {
+          "rank": 151,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 9159
+        },
+        {
+          "rank": 152,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 9802
+        },
+        {
+          "rank": 153,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 10003
+        },
+        {
+          "rank": 154,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 10794
+        },
+        {
+          "rank": 155,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 10825
+        },
+        {
+          "rank": 156,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 11102
+        },
+        {
+          "rank": 157,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 11200
+        },
+        {
+          "rank": 158,
+          "n_docs": 1,
+          "n_entities": 4,
+          "n_titles": 1,
+          "label": 11417
+        },
+        {
+          "rank": 159,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 345
+        },
+        {
+          "rank": 160,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 564
+        },
+        {
+          "rank": 161,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 1808
+        },
+        {
+          "rank": 162,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 2520
+        },
+        {
+          "rank": 163,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 2660
+        },
+        {
+          "rank": 164,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 2783
+        },
+        {
+          "rank": 165,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 3425
+        },
+        {
+          "rank": 166,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 3468
+        },
+        {
+          "rank": 167,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 6055
+        },
+        {
+          "rank": 168,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 6158
+        },
+        {
+          "rank": 169,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 6214
+        },
+        {
+          "rank": 170,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 6586
+        },
+        {
+          "rank": 171,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 6699
+        },
+        {
+          "rank": 172,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 6701
+        },
+        {
+          "rank": 173,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 6786
+        },
+        {
+          "rank": 174,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 7244
+        },
+        {
+          "rank": 175,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 7380
+        },
+        {
+          "rank": 176,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 7401
+        },
+        {
+          "rank": 177,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 8063
+        },
+        {
+          "rank": 178,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 9254
+        },
+        {
+          "rank": 179,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 9305
+        },
+        {
+          "rank": 180,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 9834
+        },
+        {
+          "rank": 181,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 10029
+        },
+        {
+          "rank": 182,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 10170
+        },
+        {
+          "rank": 183,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 10467
+        },
+        {
+          "rank": 184,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 10674
+        },
+        {
+          "rank": 185,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 11424
+        },
+        {
+          "rank": 186,
+          "n_docs": 1,
+          "n_entities": 3,
+          "n_titles": 1,
+          "label": 11445
+        },
+        {
+          "rank": 187,
+          "n_docs": 1,
+          "n_entities": 2,
+          "n_titles": 1,
+          "label": 1926
+        },
+        {
+          "rank": 188,
+          "n_docs": 1,
+          "n_entities": 2,
+          "n_titles": 1,
+          "label": 2103
+        },
+        {
+          "rank": 189,
+          "n_docs": 1,
+          "n_entities": 2,
+          "n_titles": 1,
+          "label": 2933
+        },
+        {
+          "rank": 190,
+          "n_docs": 1,
+          "n_entities": 2,
+          "n_titles": 1,
+          "label": 3441
+        },
+        {
+          "rank": 191,
+          "n_docs": 1,
+          "n_entities": 2,
+          "n_titles": 1,
+          "label": 3607
+        },
+        {
+          "rank": 192,
+          "n_docs": 1,
+          "n_entities": 2,
+          "n_titles": 1,
+          "label": 9675
+        },
+        {
+          "rank": 193,
+          "n_docs": 1,
+          "n_entities": 2,
+          "n_titles": 1,
+          "label": 10611
+        },
+        {
+          "rank": 194,
+          "n_docs": 1,
+          "n_entities": 2,
+          "n_titles": 1,
+          "label": 10660
+        },
+        {
+          "rank": 195,
+          "n_docs": 1,
+          "n_entities": 2,
+          "n_titles": 1,
+          "label": 11218
+        },
+        {
+          "rank": 196,
+          "n_docs": 1,
+          "n_entities": 1,
+          "n_titles": 1,
+          "label": 581
+        },
+        {
+          "rank": 197,
+          "n_docs": 1,
+          "n_entities": 1,
+          "n_titles": 1,
+          "label": 3854
+        },
+        {
+          "rank": 198,
+          "n_docs": 1,
+          "n_entities": 1,
+          "n_titles": 1,
+          "label": 3874
+        },
+        {
+          "rank": 199,
+          "n_docs": 1,
+          "n_entities": 1,
+          "n_titles": 1,
+          "label": 11331
+        },
+        {
+          "rank": 200,
+          "n_docs": 1,
+          "n_entities": 1,
+          "n_titles": 1,
+          "label": 11639
+        }
+      ],
+      "isolated_doc_frac": 0.018617021276595744
+    },
+    "top50": [
+      {
+        "rank": 1,
+        "entity": "United States",
+        "key": "united states",
+        "df": 1173,
+        "title_df": 1064,
+        "other_graph_df": 987,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "United States"
+        ]
+      },
+      {
+        "rank": 2,
+        "entity": "American",
+        "key": "american",
+        "df": 887,
+        "title_df": 854,
+        "other_graph_df": 43,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "American"
+        ]
+      },
+      {
+        "rank": 3,
+        "entity": "Canada",
+        "key": "canada",
+        "df": 360,
+        "title_df": 347,
+        "other_graph_df": 264,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Canada"
+        ]
+      },
+      {
+        "rank": 4,
+        "entity": "France",
+        "key": "france",
+        "df": 314,
+        "title_df": 289,
+        "other_graph_df": 249,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "France"
+        ]
+      },
+      {
+        "rank": 5,
+        "entity": "Australia",
+        "key": "australia",
+        "df": 272,
+        "title_df": 252,
+        "other_graph_df": 229,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Australia"
+        ]
+      },
+      {
+        "rank": 6,
+        "entity": "Germany",
+        "key": "germany",
+        "df": 265,
+        "title_df": 241,
+        "other_graph_df": 219,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Germany"
+        ]
+      },
+      {
+        "rank": 7,
+        "entity": "2010",
+        "key": "2010",
+        "df": 250,
+        "title_df": 230,
+        "other_graph_df": 127,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2010"
+        ]
+      },
+      {
+        "rank": 8,
+        "entity": "India",
+        "key": "india",
+        "df": 241,
+        "title_df": 217,
+        "other_graph_df": 180,
+        "n_surface_variants_capped8": 2,
+        "surfaces": [
+          "INDIA",
+          "India"
+        ]
+      },
+      {
+        "rank": 9,
+        "entity": "England",
+        "key": "england",
+        "df": 217,
+        "title_df": 194,
+        "other_graph_df": 171,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "England"
+        ]
+      },
+      {
+        "rank": 10,
+        "entity": "2008",
+        "key": "2008",
+        "df": 186,
+        "title_df": 174,
+        "other_graph_df": 126,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2008"
+        ]
+      },
+      {
+        "rank": 11,
+        "entity": "2006",
+        "key": "2006",
+        "df": 186,
+        "title_df": 171,
+        "other_graph_df": 117,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2006"
+        ]
+      },
+      {
+        "rank": 12,
+        "entity": "California",
+        "key": "california",
+        "df": 185,
+        "title_df": 175,
+        "other_graph_df": 163,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "California"
+        ]
+      },
+      {
+        "rank": 13,
+        "entity": "Italy",
+        "key": "italy",
+        "df": 184,
+        "title_df": 172,
+        "other_graph_df": 161,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Italy"
+        ]
+      },
+      {
+        "rank": 14,
+        "entity": "2013",
+        "key": "2013",
+        "df": 182,
+        "title_df": 161,
+        "other_graph_df": 100,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2013"
+        ]
+      },
+      {
+        "rank": 15,
+        "entity": "London",
+        "key": "london",
+        "df": 181,
+        "title_df": 167,
+        "other_graph_df": 150,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "London"
+        ]
+      },
+      {
+        "rank": 16,
+        "entity": "2009",
+        "key": "2009",
+        "df": 180,
+        "title_df": 166,
+        "other_graph_df": 117,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2009"
+        ]
+      },
+      {
+        "rank": 17,
+        "entity": "2004",
+        "key": "2004",
+        "df": 179,
+        "title_df": 167,
+        "other_graph_df": 108,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2004"
+        ]
+      },
+      {
+        "rank": 18,
+        "entity": "2007",
+        "key": "2007",
+        "df": 175,
+        "title_df": 162,
+        "other_graph_df": 129,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2007"
+        ]
+      },
+      {
+        "rank": 19,
+        "entity": "New York City",
+        "key": "new york city",
+        "df": 175,
+        "title_df": 143,
+        "other_graph_df": 153,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "New York City"
+        ]
+      },
+      {
+        "rank": 20,
+        "entity": "British",
+        "key": "british",
+        "df": 175,
+        "title_df": 163,
+        "other_graph_df": 44,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "British"
+        ]
+      },
+      {
+        "rank": 21,
+        "entity": "2011",
+        "key": "2011",
+        "df": 173,
+        "title_df": 167,
+        "other_graph_df": 125,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2011"
+        ]
+      },
+      {
+        "rank": 22,
+        "entity": "2005",
+        "key": "2005",
+        "df": 170,
+        "title_df": 160,
+        "other_graph_df": 111,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2005"
+        ]
+      },
+      {
+        "rank": 23,
+        "entity": "China",
+        "key": "china",
+        "df": 168,
+        "title_df": 132,
+        "other_graph_df": 129,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "China"
+        ]
+      },
+      {
+        "rank": 24,
+        "entity": "United Kingdom",
+        "key": "united kingdom",
+        "df": 167,
+        "title_df": 155,
+        "other_graph_df": 148,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "United Kingdom"
+        ]
+      },
+      {
+        "rank": 25,
+        "entity": "2015",
+        "key": "2015",
+        "df": 164,
+        "title_df": 149,
+        "other_graph_df": 89,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2015"
+        ]
+      },
+      {
+        "rank": 26,
+        "entity": "New York",
+        "key": "new york",
+        "df": 163,
+        "title_df": 153,
+        "other_graph_df": 136,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "New York"
+        ]
+      },
+      {
+        "rank": 27,
+        "entity": "2014",
+        "key": "2014",
+        "df": 161,
+        "title_df": 146,
+        "other_graph_df": 91,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2014"
+        ]
+      },
+      {
+        "rank": 28,
+        "entity": "2012",
+        "key": "2012",
+        "df": 160,
+        "title_df": 146,
+        "other_graph_df": 96,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2012"
+        ]
+      },
+      {
+        "rank": 29,
+        "entity": "World War II",
+        "key": "world war ii",
+        "df": 159,
+        "title_df": 155,
+        "other_graph_df": 128,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "World War II"
+        ]
+      },
+      {
+        "rank": 30,
+        "entity": "2001",
+        "key": "2001",
+        "df": 156,
+        "title_df": 146,
+        "other_graph_df": 107,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2001"
+        ]
+      },
+      {
+        "rank": 31,
+        "entity": "2016",
+        "key": "2016",
+        "df": 156,
+        "title_df": 138,
+        "other_graph_df": 85,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2016"
+        ]
+      },
+      {
+        "rank": 32,
+        "entity": "2017",
+        "key": "2017",
+        "df": 155,
+        "title_df": 136,
+        "other_graph_df": 85,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2017"
+        ]
+      },
+      {
+        "rank": 33,
+        "entity": "French",
+        "key": "french",
+        "df": 155,
+        "title_df": 151,
+        "other_graph_df": 58,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "French"
+        ]
+      },
+      {
+        "rank": 34,
+        "entity": "Japan",
+        "key": "japan",
+        "df": 149,
+        "title_df": 136,
+        "other_graph_df": 129,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Japan"
+        ]
+      },
+      {
+        "rank": 35,
+        "entity": "2000",
+        "key": "2000",
+        "df": 146,
+        "title_df": 145,
+        "other_graph_df": 88,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2000"
+        ]
+      },
+      {
+        "rank": 36,
+        "entity": "Spain",
+        "key": "spain",
+        "df": 145,
+        "title_df": 129,
+        "other_graph_df": 128,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Spain"
+        ]
+      },
+      {
+        "rank": 37,
+        "entity": "Florida",
+        "key": "florida",
+        "df": 142,
+        "title_df": 138,
+        "other_graph_df": 127,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Florida"
+        ]
+      },
+      {
+        "rank": 38,
+        "entity": "U.S.",
+        "key": "u s",
+        "df": 140,
+        "title_df": 132,
+        "other_graph_df": 65,
+        "n_surface_variants_capped8": 2,
+        "surfaces": [
+          "U.S",
+          "U.S."
+        ]
+      },
+      {
+        "rank": 39,
+        "entity": "2003",
+        "key": "2003",
+        "df": 138,
+        "title_df": 131,
+        "other_graph_df": 88,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2003"
+        ]
+      },
+      {
+        "rank": 40,
+        "entity": "Europe",
+        "key": "europe",
+        "df": 137,
+        "title_df": 124,
+        "other_graph_df": 112,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Europe"
+        ]
+      },
+      {
+        "rank": 41,
+        "entity": "1999",
+        "key": "1999",
+        "df": 135,
+        "title_df": 125,
+        "other_graph_df": 107,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "1999"
+        ]
+      },
+      {
+        "rank": 42,
+        "entity": "2002",
+        "key": "2002",
+        "df": 132,
+        "title_df": 125,
+        "other_graph_df": 96,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2002"
+        ]
+      },
+      {
+        "rank": 43,
+        "entity": "Poland",
+        "key": "poland",
+        "df": 127,
+        "title_df": 113,
+        "other_graph_df": 109,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Poland"
+        ]
+      },
+      {
+        "rank": 44,
+        "entity": "English",
+        "key": "english",
+        "df": 121,
+        "title_df": 112,
+        "other_graph_df": 80,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "English"
+        ]
+      },
+      {
+        "rank": 45,
+        "entity": "Texas",
+        "key": "texas",
+        "df": 114,
+        "title_df": 106,
+        "other_graph_df": 101,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Texas"
+        ]
+      },
+      {
+        "rank": 46,
+        "entity": "North America",
+        "key": "north america",
+        "df": 114,
+        "title_df": 103,
+        "other_graph_df": 92,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "North America"
+        ]
+      },
+      {
+        "rank": 47,
+        "entity": "1989",
+        "key": "1989",
+        "df": 108,
+        "title_df": 105,
+        "other_graph_df": 74,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "1989"
+        ]
+      },
+      {
+        "rank": 48,
+        "entity": "1993",
+        "key": "1993",
+        "df": 108,
+        "title_df": 106,
+        "other_graph_df": 87,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "1993"
+        ]
+      },
+      {
+        "rank": 49,
+        "entity": "Paris",
+        "key": "paris",
+        "df": 106,
+        "title_df": 96,
+        "other_graph_df": 97,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Paris"
+        ]
+      },
+      {
+        "rank": 50,
+        "entity": "1994",
+        "key": "1994",
+        "df": 105,
+        "title_df": 102,
+        "other_graph_df": 89,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "1994"
+        ]
+      }
+    ]
+  },
+  "b2": {
+    "entities": {
+      "n_entities": 102050,
+      "n_edges": 148656,
+      "docs_with_zero_entities": 8,
+      "docs_with_zero_frac": 0.0006863417982155113,
+      "entities_per_doc": {
+        "n": 11656,
+        "mean": 12.753603294440632,
+        "median": 11.0,
+        "min": 0.0,
+        "max": 105.0,
+        "p75": 15.0,
+        "p90": 20.0,
+        "p95": 24.0,
+        "p99": 33.0
+      },
+      "docs_per_entity": {
+        "n": 102050,
+        "mean": 1.4566976972072514,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 987.0,
+        "p75": 1.0,
+        "p90": 2.0,
+        "p95": 3.0,
+        "p99": 8.0
+      },
+      "titles_per_entity": {
+        "n": 102050,
+        "mean": 1.3998922097011268,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 912.0,
+        "p75": 1.0,
+        "p90": 2.0,
+        "p95": 2.0,
+        "p99": 8.0
+      },
+      "df1_frac": 0.8774032337089662,
+      "df_gt1": 12511,
+      "cross_title_entities": 10777,
+      "intra_title_only_multi_chunk": 1734
+    },
+    "df_histogram": [
+      {
+        "bin": "1",
+        "n_entities": 89539,
+        "frac": 0.8774032337089662
+      },
+      {
+        "bin": "2",
+        "n_entities": 7051,
+        "frac": 0.069093581577658
+      },
+      {
+        "bin": "3-5",
+        "n_entities": 3693,
+        "frac": 0.03618814306712396
+      },
+      {
+        "bin": "6-10",
+        "n_entities": 980,
+        "frac": 0.0096031357177854
+      },
+      {
+        "bin": "11-20",
+        "n_entities": 438,
+        "frac": 0.004292013718765311
+      },
+      {
+        "bin": "21-50",
+        "n_entities": 230,
+        "frac": 0.002253797158255757
+      },
+      {
+        "bin": "51-100",
+        "n_entities": 88,
+        "frac": 0.0008623223909848114
+      },
+      {
+        "bin": "101-500",
+        "n_entities": 30,
+        "frac": 0.0002939735423811857
+      },
+      {
+        "bin": "500+",
+        "n_entities": 1,
+        "frac": 9.799118079372857e-06
+      }
+    ],
+    "components": {
+      "n_components": 304,
+      "unweighted": {
+        "n": 304,
+        "mean": 38.3421052631579,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 11342.0,
+        "p75": 1.0,
+        "p90": 1.0,
+        "p95": 1.0,
+        "p99": 2.0
+      },
+      "doc_weighted": {
+        "n": 11656,
+        "mean": 11036.488160603982,
+        "median": 11342.0,
+        "min": 1.0,
+        "max": 11342.0,
+        "p75": 11342.0,
+        "p90": 11342.0,
+        "p95": 11342.0,
+        "p99": 11342.0
+      },
+      "entity_unweighted": {
+        "n": 304,
+        "mean": 335.6907894736842,
+        "median": 8.0,
+        "min": 0.0,
+        "max": 99454.0,
+        "p75": 11.0,
+        "p90": 14.0,
+        "p95": 17.0,
+        "p99": 22.0
+      },
+      "min_component": {
+        "n_docs": 1,
+        "n_entities": 0,
+        "n_titles": 1
+      },
+      "min_nonempty_component": {
+        "n_docs": 1,
+        "n_entities": 2,
+        "n_titles": 1
+      },
+      "max_component": {
+        "n_docs": 11342,
+        "n_entities": 99454,
+        "n_titles": 9528,
+        "doc_frac": 0.9730610844200411
+      },
+      "top10": [
+        11342,
+        4,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "top20": [
+        11342,
+        4,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "top5_doc_frac": 0.9739190116678106,
+      "top10_doc_frac": 0.9747769389155799,
+      "bins": [
+        {
+          "bin": "1",
+          "n_components": 294,
+          "n_docs": 294,
+          "doc_frac": 0.025223061084420042
+        },
+        {
+          "bin": "2-5",
+          "n_components": 9,
+          "n_docs": 20,
+          "doc_frac": 0.0017158544955387784
+        },
+        {
+          "bin": "6-10",
+          "n_components": 0,
+          "n_docs": 0,
+          "doc_frac": 0.0
+        },
+        {
+          "bin": "11-20",
+          "n_components": 0,
+          "n_docs": 0,
+          "doc_frac": 0.0
+        },
+        {
+          "bin": "21-50",
+          "n_components": 0,
+          "n_docs": 0,
+          "doc_frac": 0.0
+        },
+        {
+          "bin": "51-100",
+          "n_components": 0,
+          "n_docs": 0,
+          "doc_frac": 0.0
+        },
+        {
+          "bin": "101-500",
+          "n_components": 0,
+          "n_docs": 0,
+          "doc_frac": 0.0
+        },
+        {
+          "bin": "500+",
+          "n_components": 1,
+          "n_docs": 11342,
+          "doc_frac": 0.9730610844200411
+        }
+      ],
+      "docs_in_multi_title_components": 11362,
+      "multi_title_doc_frac": 0.9747769389155799,
+      "single_title_multichunk_components": 0,
+      "multi_title_components": 10,
+      "ranked_top200": [
+        {
+          "rank": 1,
+          "n_docs": 11342,
+          "n_entities": 99454,
+          "n_titles": 9528,
+          "label": 0
+        },
+        {
+          "rank": 2,
+          "n_docs": 4,
+          "n_entities": 23,
+          "n_titles": 4,
+          "label": 6399
+        },
+        {
+          "rank": 3,
+          "n_docs": 2,
+          "n_entities": 24,
+          "n_titles": 2,
+          "label": 4617
+        },
+        {
+          "rank": 4,
+          "n_docs": 2,
+          "n_entities": 22,
+          "n_titles": 2,
+          "label": 9369
+        },
+        {
+          "rank": 5,
+          "n_docs": 2,
+          "n_entities": 21,
+          "n_titles": 2,
+          "label": 3151
+        },
+        {
+          "rank": 6,
+          "n_docs": 2,
+          "n_entities": 20,
+          "n_titles": 2,
+          "label": 5757
+        },
+        {
+          "rank": 7,
+          "n_docs": 2,
+          "n_entities": 16,
+          "n_titles": 2,
+          "label": 7311
+        },
+        {
+          "rank": 8,
+          "n_docs": 2,
+          "n_entities": 16,
+          "n_titles": 2,
+          "label": 11170
+        },
+        {
+          "rank": 9,
+          "n_docs": 2,
+          "n_entities": 10,
+          "n_titles": 2,
+          "label": 3605
+        },
+        {
+          "rank": 10,
+          "n_docs": 2,
+          "n_entities": 5,
+          "n_titles": 2,
+          "label": 1834
+        },
+        {
+          "rank": 11,
+          "n_docs": 1,
+          "n_entities": 22,
+          "n_titles": 1,
+          "label": 9972
+        },
+        {
+          "rank": 12,
+          "n_docs": 1,
+          "n_entities": 20,
+          "n_titles": 1,
+          "label": 7735
+        },
+        {
+          "rank": 13,
+          "n_docs": 1,
+          "n_entities": 19,
+          "n_titles": 1,
+          "label": 2364
+        },
+        {
+          "rank": 14,
+          "n_docs": 1,
+          "n_entities": 19,
+          "n_titles": 1,
+          "label": 5129
+        },
+        {
+          "rank": 15,
+          "n_docs": 1,
+          "n_entities": 19,
+          "n_titles": 1,
+          "label": 11237
+        },
+        {
+          "rank": 16,
+          "n_docs": 1,
+          "n_entities": 19,
+          "n_titles": 1,
+          "label": 11337
+        },
+        {
+          "rank": 17,
+          "n_docs": 1,
+          "n_entities": 18,
+          "n_titles": 1,
+          "label": 4413
+        },
+        {
+          "rank": 18,
+          "n_docs": 1,
+          "n_entities": 18,
+          "n_titles": 1,
+          "label": 11068
+        },
+        {
+          "rank": 19,
+          "n_docs": 1,
+          "n_entities": 17,
+          "n_titles": 1,
+          "label": 2849
+        },
+        {
+          "rank": 20,
+          "n_docs": 1,
+          "n_entities": 17,
+          "n_titles": 1,
+          "label": 6559
+        },
+        {
+          "rank": 21,
+          "n_docs": 1,
+          "n_entities": 17,
+          "n_titles": 1,
+          "label": 8307
+        },
+        {
+          "rank": 22,
+          "n_docs": 1,
+          "n_entities": 16,
+          "n_titles": 1,
+          "label": 3143
+        },
+        {
+          "rank": 23,
+          "n_docs": 1,
+          "n_entities": 16,
+          "n_titles": 1,
+          "label": 5468
+        },
+        {
+          "rank": 24,
+          "n_docs": 1,
+          "n_entities": 16,
+          "n_titles": 1,
+          "label": 6698
+        },
+        {
+          "rank": 25,
+          "n_docs": 1,
+          "n_entities": 16,
+          "n_titles": 1,
+          "label": 6902
+        },
+        {
+          "rank": 26,
+          "n_docs": 1,
+          "n_entities": 16,
+          "n_titles": 1,
+          "label": 10926
+        },
+        {
+          "rank": 27,
+          "n_docs": 1,
+          "n_entities": 15,
+          "n_titles": 1,
+          "label": 3360
+        },
+        {
+          "rank": 28,
+          "n_docs": 1,
+          "n_entities": 15,
+          "n_titles": 1,
+          "label": 5790
+        },
+        {
+          "rank": 29,
+          "n_docs": 1,
+          "n_entities": 15,
+          "n_titles": 1,
+          "label": 6671
+        },
+        {
+          "rank": 30,
+          "n_docs": 1,
+          "n_entities": 15,
+          "n_titles": 1,
+          "label": 8386
+        },
+        {
+          "rank": 31,
+          "n_docs": 1,
+          "n_entities": 15,
+          "n_titles": 1,
+          "label": 10332
+        },
+        {
+          "rank": 32,
+          "n_docs": 1,
+          "n_entities": 14,
+          "n_titles": 1,
+          "label": 1900
+        },
+        {
+          "rank": 33,
+          "n_docs": 1,
+          "n_entities": 14,
+          "n_titles": 1,
+          "label": 4951
+        },
+        {
+          "rank": 34,
+          "n_docs": 1,
+          "n_entities": 14,
+          "n_titles": 1,
+          "label": 5914
+        },
+        {
+          "rank": 35,
+          "n_docs": 1,
+          "n_entities": 14,
+          "n_titles": 1,
+          "label": 6267
+        },
+        {
+          "rank": 36,
+          "n_docs": 1,
+          "n_entities": 14,
+          "n_titles": 1,
+          "label": 7873
+        },
+        {
+          "rank": 37,
+          "n_docs": 1,
+          "n_entities": 14,
+          "n_titles": 1,
+          "label": 8253
+        },
+        {
+          "rank": 38,
+          "n_docs": 1,
+          "n_entities": 14,
+          "n_titles": 1,
+          "label": 9809
+        },
+        {
+          "rank": 39,
+          "n_docs": 1,
+          "n_entities": 14,
+          "n_titles": 1,
+          "label": 10821
+        },
+        {
+          "rank": 40,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 2436
+        },
+        {
+          "rank": 41,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 3316
+        },
+        {
+          "rank": 42,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 4338
+        },
+        {
+          "rank": 43,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 5214
+        },
+        {
+          "rank": 44,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 5935
+        },
+        {
+          "rank": 45,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 6030
+        },
+        {
+          "rank": 46,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 6261
+        },
+        {
+          "rank": 47,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 6484
+        },
+        {
+          "rank": 48,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 8119
+        },
+        {
+          "rank": 49,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 9027
+        },
+        {
+          "rank": 50,
+          "n_docs": 1,
+          "n_entities": 13,
+          "n_titles": 1,
+          "label": 11445
+        },
+        {
+          "rank": 51,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 84
+        },
+        {
+          "rank": 52,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 1714
+        },
+        {
+          "rank": 53,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 2939
+        },
+        {
+          "rank": 54,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 4977
+        },
+        {
+          "rank": 55,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 5042
+        },
+        {
+          "rank": 56,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 5220
+        },
+        {
+          "rank": 57,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 7273
+        },
+        {
+          "rank": 58,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 7585
+        },
+        {
+          "rank": 59,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 8182
+        },
+        {
+          "rank": 60,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 9111
+        },
+        {
+          "rank": 61,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 9696
+        },
+        {
+          "rank": 62,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 10234
+        },
+        {
+          "rank": 63,
+          "n_docs": 1,
+          "n_entities": 12,
+          "n_titles": 1,
+          "label": 11370
+        },
+        {
+          "rank": 64,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 79
+        },
+        {
+          "rank": 65,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 266
+        },
+        {
+          "rank": 66,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 1270
+        },
+        {
+          "rank": 67,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 2019
+        },
+        {
+          "rank": 68,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 2030
+        },
+        {
+          "rank": 69,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 2271
+        },
+        {
+          "rank": 70,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 2308
+        },
+        {
+          "rank": 71,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 2874
+        },
+        {
+          "rank": 72,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 3716
+        },
+        {
+          "rank": 73,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 5548
+        },
+        {
+          "rank": 74,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 6041
+        },
+        {
+          "rank": 75,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 6477
+        },
+        {
+          "rank": 76,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 7006
+        },
+        {
+          "rank": 77,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 7231
+        },
+        {
+          "rank": 78,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 7518
+        },
+        {
+          "rank": 79,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 8060
+        },
+        {
+          "rank": 80,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 8542
+        },
+        {
+          "rank": 81,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 9021
+        },
+        {
+          "rank": 82,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 10086
+        },
+        {
+          "rank": 83,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 10410
+        },
+        {
+          "rank": 84,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 10752
+        },
+        {
+          "rank": 85,
+          "n_docs": 1,
+          "n_entities": 11,
+          "n_titles": 1,
+          "label": 11098
+        },
+        {
+          "rank": 86,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 1242
+        },
+        {
+          "rank": 87,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 2097
+        },
+        {
+          "rank": 88,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 2734
+        },
+        {
+          "rank": 89,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 3149
+        },
+        {
+          "rank": 90,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 4451
+        },
+        {
+          "rank": 91,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 4568
+        },
+        {
+          "rank": 92,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 5033
+        },
+        {
+          "rank": 93,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 5260
+        },
+        {
+          "rank": 94,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 6013
+        },
+        {
+          "rank": 95,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 6312
+        },
+        {
+          "rank": 96,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 8031
+        },
+        {
+          "rank": 97,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 9721
+        },
+        {
+          "rank": 98,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 9795
+        },
+        {
+          "rank": 99,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 10704
+        },
+        {
+          "rank": 100,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 11002
+        },
+        {
+          "rank": 101,
+          "n_docs": 1,
+          "n_entities": 10,
+          "n_titles": 1,
+          "label": 11102
+        },
+        {
+          "rank": 102,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 73
+        },
+        {
+          "rank": 103,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 637
+        },
+        {
+          "rank": 104,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 847
+        },
+        {
+          "rank": 105,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 979
+        },
+        {
+          "rank": 106,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 986
+        },
+        {
+          "rank": 107,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 1074
+        },
+        {
+          "rank": 108,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 2017
+        },
+        {
+          "rank": 109,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 2132
+        },
+        {
+          "rank": 110,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 2670
+        },
+        {
+          "rank": 111,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 2741
+        },
+        {
+          "rank": 112,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 2788
+        },
+        {
+          "rank": 113,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 3490
+        },
+        {
+          "rank": 114,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 4515
+        },
+        {
+          "rank": 115,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 4769
+        },
+        {
+          "rank": 116,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 4982
+        },
+        {
+          "rank": 117,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 5202
+        },
+        {
+          "rank": 118,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 5856
+        },
+        {
+          "rank": 119,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 6088
+        },
+        {
+          "rank": 120,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 6220
+        },
+        {
+          "rank": 121,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 6519
+        },
+        {
+          "rank": 122,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 9623
+        },
+        {
+          "rank": 123,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 10027
+        },
+        {
+          "rank": 124,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 10484
+        },
+        {
+          "rank": 125,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 11116
+        },
+        {
+          "rank": 126,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 11279
+        },
+        {
+          "rank": 127,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 11459
+        },
+        {
+          "rank": 128,
+          "n_docs": 1,
+          "n_entities": 9,
+          "n_titles": 1,
+          "label": 11627
+        },
+        {
+          "rank": 129,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 100
+        },
+        {
+          "rank": 130,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 441
+        },
+        {
+          "rank": 131,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 709
+        },
+        {
+          "rank": 132,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 987
+        },
+        {
+          "rank": 133,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 1212
+        },
+        {
+          "rank": 134,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 1348
+        },
+        {
+          "rank": 135,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 1819
+        },
+        {
+          "rank": 136,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 2933
+        },
+        {
+          "rank": 137,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 3672
+        },
+        {
+          "rank": 138,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 4135
+        },
+        {
+          "rank": 139,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 4503
+        },
+        {
+          "rank": 140,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 5039
+        },
+        {
+          "rank": 141,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 5089
+        },
+        {
+          "rank": 142,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 6699
+        },
+        {
+          "rank": 143,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 7408
+        },
+        {
+          "rank": 144,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 7656
+        },
+        {
+          "rank": 145,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 7732
+        },
+        {
+          "rank": 146,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 8534
+        },
+        {
+          "rank": 147,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 8548
+        },
+        {
+          "rank": 148,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 8681
+        },
+        {
+          "rank": 149,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 8908
+        },
+        {
+          "rank": 150,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 8949
+        },
+        {
+          "rank": 151,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 9203
+        },
+        {
+          "rank": 152,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 9497
+        },
+        {
+          "rank": 153,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 9649
+        },
+        {
+          "rank": 154,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 10161
+        },
+        {
+          "rank": 155,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 10460
+        },
+        {
+          "rank": 156,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 10645
+        },
+        {
+          "rank": 157,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 10827
+        },
+        {
+          "rank": 158,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 11017
+        },
+        {
+          "rank": 159,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 11275
+        },
+        {
+          "rank": 160,
+          "n_docs": 1,
+          "n_entities": 8,
+          "n_titles": 1,
+          "label": 11417
+        },
+        {
+          "rank": 161,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 348
+        },
+        {
+          "rank": 162,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 416
+        },
+        {
+          "rank": 163,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 743
+        },
+        {
+          "rank": 164,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 1344
+        },
+        {
+          "rank": 165,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 1368
+        },
+        {
+          "rank": 166,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 1768
+        },
+        {
+          "rank": 167,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 1812
+        },
+        {
+          "rank": 168,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 2366
+        },
+        {
+          "rank": 169,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 2649
+        },
+        {
+          "rank": 170,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 2732
+        },
+        {
+          "rank": 171,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 2744
+        },
+        {
+          "rank": 172,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 3071
+        },
+        {
+          "rank": 173,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 3843
+        },
+        {
+          "rank": 174,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 4169
+        },
+        {
+          "rank": 175,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 5791
+        },
+        {
+          "rank": 176,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 6024
+        },
+        {
+          "rank": 177,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 6673
+        },
+        {
+          "rank": 178,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 6805
+        },
+        {
+          "rank": 179,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 6899
+        },
+        {
+          "rank": 180,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 7089
+        },
+        {
+          "rank": 181,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 7303
+        },
+        {
+          "rank": 182,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 7330
+        },
+        {
+          "rank": 183,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 7822
+        },
+        {
+          "rank": 184,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 7840
+        },
+        {
+          "rank": 185,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 8106
+        },
+        {
+          "rank": 186,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 8964
+        },
+        {
+          "rank": 187,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 9807
+        },
+        {
+          "rank": 188,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 9873
+        },
+        {
+          "rank": 189,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 10003
+        },
+        {
+          "rank": 190,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 10201
+        },
+        {
+          "rank": 191,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 10290
+        },
+        {
+          "rank": 192,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 10592
+        },
+        {
+          "rank": 193,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 11516
+        },
+        {
+          "rank": 194,
+          "n_docs": 1,
+          "n_entities": 7,
+          "n_titles": 1,
+          "label": 11639
+        },
+        {
+          "rank": 195,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 405
+        },
+        {
+          "rank": 196,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 716
+        },
+        {
+          "rank": 197,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 1822
+        },
+        {
+          "rank": 198,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 1894
+        },
+        {
+          "rank": 199,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 2171
+        },
+        {
+          "rank": 200,
+          "n_docs": 1,
+          "n_entities": 6,
+          "n_titles": 1,
+          "label": 2177
+        }
+      ],
+      "isolated_doc_frac": 0.025223061084420042
+    },
+    "top50": [
+      {
+        "rank": 1,
+        "entity": "United States",
+        "key": "united states",
+        "df": 987,
+        "title_df": 912,
+        "other_graph_df": 1173,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "United States"
+        ]
+      },
+      {
+        "rank": 2,
+        "entity": "Canada",
+        "key": "canada",
+        "df": 264,
+        "title_df": 255,
+        "other_graph_df": 360,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Canada"
+        ]
+      },
+      {
+        "rank": 3,
+        "entity": "France",
+        "key": "france",
+        "df": 249,
+        "title_df": 235,
+        "other_graph_df": 314,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "France"
+        ]
+      },
+      {
+        "rank": 4,
+        "entity": "Australia",
+        "key": "australia",
+        "df": 229,
+        "title_df": 215,
+        "other_graph_df": 272,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Australia"
+        ]
+      },
+      {
+        "rank": 5,
+        "entity": "Germany",
+        "key": "germany",
+        "df": 219,
+        "title_df": 201,
+        "other_graph_df": 265,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Germany"
+        ]
+      },
+      {
+        "rank": 6,
+        "entity": "India",
+        "key": "india",
+        "df": 180,
+        "title_df": 164,
+        "other_graph_df": 241,
+        "n_surface_variants_capped8": 2,
+        "surfaces": [
+          "INDIA",
+          "India"
+        ]
+      },
+      {
+        "rank": 7,
+        "entity": "England",
+        "key": "england",
+        "df": 171,
+        "title_df": 153,
+        "other_graph_df": 217,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "England"
+        ]
+      },
+      {
+        "rank": 8,
+        "entity": "California",
+        "key": "california",
+        "df": 163,
+        "title_df": 153,
+        "other_graph_df": 185,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "California"
+        ]
+      },
+      {
+        "rank": 9,
+        "entity": "Italy",
+        "key": "italy",
+        "df": 161,
+        "title_df": 150,
+        "other_graph_df": 184,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Italy"
+        ]
+      },
+      {
+        "rank": 10,
+        "entity": "New York City",
+        "key": "new york city",
+        "df": 153,
+        "title_df": 122,
+        "other_graph_df": 175,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "New York City"
+        ]
+      },
+      {
+        "rank": 11,
+        "entity": "London",
+        "key": "london",
+        "df": 150,
+        "title_df": 143,
+        "other_graph_df": 181,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "London"
+        ]
+      },
+      {
+        "rank": 12,
+        "entity": "United Kingdom",
+        "key": "united kingdom",
+        "df": 148,
+        "title_df": 138,
+        "other_graph_df": 167,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "United Kingdom"
+        ]
+      },
+      {
+        "rank": 13,
+        "entity": "New York",
+        "key": "new york",
+        "df": 136,
+        "title_df": 128,
+        "other_graph_df": 163,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "New York"
+        ]
+      },
+      {
+        "rank": 14,
+        "entity": "2007",
+        "key": "2007",
+        "df": 129,
+        "title_df": 123,
+        "other_graph_df": 175,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2007"
+        ]
+      },
+      {
+        "rank": 15,
+        "entity": "Japan",
+        "key": "japan",
+        "df": 129,
+        "title_df": 123,
+        "other_graph_df": 149,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Japan"
+        ]
+      },
+      {
+        "rank": 16,
+        "entity": "China",
+        "key": "china",
+        "df": 129,
+        "title_df": 109,
+        "other_graph_df": 168,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "China"
+        ]
+      },
+      {
+        "rank": 17,
+        "entity": "Spain",
+        "key": "spain",
+        "df": 128,
+        "title_df": 115,
+        "other_graph_df": 145,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Spain"
+        ]
+      },
+      {
+        "rank": 18,
+        "entity": "World War II",
+        "key": "world war ii",
+        "df": 128,
+        "title_df": 124,
+        "other_graph_df": 159,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "World War II"
+        ]
+      },
+      {
+        "rank": 19,
+        "entity": "2010",
+        "key": "2010",
+        "df": 127,
+        "title_df": 118,
+        "other_graph_df": 250,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2010"
+        ]
+      },
+      {
+        "rank": 20,
+        "entity": "Florida",
+        "key": "florida",
+        "df": 127,
+        "title_df": 125,
+        "other_graph_df": 142,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Florida"
+        ]
+      },
+      {
+        "rank": 21,
+        "entity": "2008",
+        "key": "2008",
+        "df": 126,
+        "title_df": 123,
+        "other_graph_df": 186,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2008"
+        ]
+      },
+      {
+        "rank": 22,
+        "entity": "2011",
+        "key": "2011",
+        "df": 125,
+        "title_df": 122,
+        "other_graph_df": 173,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2011"
+        ]
+      },
+      {
+        "rank": 23,
+        "entity": "2009",
+        "key": "2009",
+        "df": 117,
+        "title_df": 112,
+        "other_graph_df": 180,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2009"
+        ]
+      },
+      {
+        "rank": 24,
+        "entity": "2006",
+        "key": "2006",
+        "df": 117,
+        "title_df": 114,
+        "other_graph_df": 186,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2006"
+        ]
+      },
+      {
+        "rank": 25,
+        "entity": "Europe",
+        "key": "europe",
+        "df": 112,
+        "title_df": 99,
+        "other_graph_df": 137,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Europe"
+        ]
+      },
+      {
+        "rank": 26,
+        "entity": "2005",
+        "key": "2005",
+        "df": 111,
+        "title_df": 108,
+        "other_graph_df": 170,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2005"
+        ]
+      },
+      {
+        "rank": 27,
+        "entity": "Poland",
+        "key": "poland",
+        "df": 109,
+        "title_df": 98,
+        "other_graph_df": 127,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Poland"
+        ]
+      },
+      {
+        "rank": 28,
+        "entity": "2004",
+        "key": "2004",
+        "df": 108,
+        "title_df": 105,
+        "other_graph_df": 179,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2004"
+        ]
+      },
+      {
+        "rank": 29,
+        "entity": "2001",
+        "key": "2001",
+        "df": 107,
+        "title_df": 102,
+        "other_graph_df": 156,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2001"
+        ]
+      },
+      {
+        "rank": 30,
+        "entity": "1999",
+        "key": "1999",
+        "df": 107,
+        "title_df": 99,
+        "other_graph_df": 135,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "1999"
+        ]
+      },
+      {
+        "rank": 31,
+        "entity": "Texas",
+        "key": "texas",
+        "df": 101,
+        "title_df": 95,
+        "other_graph_df": 114,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Texas"
+        ]
+      },
+      {
+        "rank": 32,
+        "entity": "2013",
+        "key": "2013",
+        "df": 100,
+        "title_df": 88,
+        "other_graph_df": 182,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2013"
+        ]
+      },
+      {
+        "rank": 33,
+        "entity": "song",
+        "key": "song",
+        "df": 100,
+        "title_df": 99,
+        "other_graph_df": 1,
+        "n_surface_variants_capped8": 2,
+        "surfaces": [
+          "Song",
+          "song"
+        ]
+      },
+      {
+        "rank": 34,
+        "entity": "Antarctica",
+        "key": "antarctica",
+        "df": 99,
+        "title_df": 95,
+        "other_graph_df": 104,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Antarctica"
+        ]
+      },
+      {
+        "rank": 35,
+        "entity": "2010 census",
+        "key": "2010 census",
+        "df": 97,
+        "title_df": 97,
+        "other_graph_df": 81,
+        "n_surface_variants_capped8": 2,
+        "surfaces": [
+          "2010 Census",
+          "2010 census"
+        ]
+      },
+      {
+        "rank": 36,
+        "entity": "Paris",
+        "key": "paris",
+        "df": 97,
+        "title_df": 88,
+        "other_graph_df": 106,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Paris"
+        ]
+      },
+      {
+        "rank": 37,
+        "entity": "2002",
+        "key": "2002",
+        "df": 96,
+        "title_df": 93,
+        "other_graph_df": 132,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2002"
+        ]
+      },
+      {
+        "rank": 38,
+        "entity": "2012",
+        "key": "2012",
+        "df": 96,
+        "title_df": 90,
+        "other_graph_df": 160,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2012"
+        ]
+      },
+      {
+        "rank": 39,
+        "entity": "Russia",
+        "key": "russia",
+        "df": 92,
+        "title_df": 84,
+        "other_graph_df": 102,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Russia"
+        ]
+      },
+      {
+        "rank": 40,
+        "entity": "North America",
+        "key": "north america",
+        "df": 92,
+        "title_df": 83,
+        "other_graph_df": 114,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "North America"
+        ]
+      },
+      {
+        "rank": 41,
+        "entity": "2014",
+        "key": "2014",
+        "df": 91,
+        "title_df": 85,
+        "other_graph_df": 161,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2014"
+        ]
+      },
+      {
+        "rank": 42,
+        "entity": "2015",
+        "key": "2015",
+        "df": 89,
+        "title_df": 86,
+        "other_graph_df": 164,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2015"
+        ]
+      },
+      {
+        "rank": 43,
+        "entity": "1994",
+        "key": "1994",
+        "df": 89,
+        "title_df": 88,
+        "other_graph_df": 105,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "1994"
+        ]
+      },
+      {
+        "rank": 44,
+        "entity": "2003",
+        "key": "2003",
+        "df": 88,
+        "title_df": 85,
+        "other_graph_df": 138,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2003"
+        ]
+      },
+      {
+        "rank": 45,
+        "entity": "2000",
+        "key": "2000",
+        "df": 88,
+        "title_df": 87,
+        "other_graph_df": 146,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2000"
+        ]
+      },
+      {
+        "rank": 46,
+        "entity": "Soviet Union",
+        "key": "soviet union",
+        "df": 87,
+        "title_df": 62,
+        "other_graph_df": 99,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Soviet Union"
+        ]
+      },
+      {
+        "rank": 47,
+        "entity": "1993",
+        "key": "1993",
+        "df": 87,
+        "title_df": 85,
+        "other_graph_df": 108,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "1993"
+        ]
+      },
+      {
+        "rank": 48,
+        "entity": "2016",
+        "key": "2016",
+        "df": 85,
+        "title_df": 77,
+        "other_graph_df": 156,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2016"
+        ]
+      },
+      {
+        "rank": 49,
+        "entity": "2017",
+        "key": "2017",
+        "df": 85,
+        "title_df": 77,
+        "other_graph_df": 155,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "2017"
+        ]
+      },
+      {
+        "rank": 50,
+        "entity": "Los Angeles",
+        "key": "los angeles",
+        "df": 83,
+        "title_df": 79,
+        "other_graph_df": 90,
+        "n_surface_variants_capped8": 1,
+        "surfaces": [
+          "Los Angeles"
+        ]
+      }
+    ]
+  },
+  "comparison": {
+    "ner_only_entities": 5360,
+    "triple_only_entities": 41322,
+    "in_both": 60728,
+    "ner_df_gt1_and_triple_df_le1": 1287,
+    "passage_entity_edges_ner_not_triple": 17703,
+    "passage_entity_edges_triple_not_ner": 50280,
+    "b1_components_split_by_b2": 1,
+    "b1_multidoc_components": 9,
+    "b1_multidoc_components_split_by_b2": 1
+  },
+  "title_level": {
+    "b1": {
+      "n_titles": 9838,
+      "n_components": 213,
+      "max_titles": 9620,
+      "max_title_frac": 0.9778410245984956,
+      "max_chunks": 11434,
+      "max_chunk_frac": 0.9809540150995195,
+      "title_size_unweighted": {
+        "n": 213,
+        "mean": 46.18779342723005,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 9620.0,
+        "p75": 1.0,
+        "p90": 1.0,
+        "p95": 1.0,
+        "p99": 2.0
+      },
+      "chunk_weighted": {
+        "n": 11656,
+        "mean": 11216.249142072753,
+        "median": 11434.0,
+        "min": 1.0,
+        "max": 11434.0,
+        "p75": 11434.0,
+        "p90": 11434.0,
+        "p95": 11434.0,
+        "p99": 11434.0
+      }
+    },
+    "b2": {
+      "n_titles": 9838,
+      "n_components": 300,
+      "max_titles": 9528,
+      "max_title_frac": 0.9684895303923562,
+      "max_chunks": 11346,
+      "max_chunk_frac": 0.973404255319149,
+      "title_size_unweighted": {
+        "n": 300,
+        "mean": 32.79333333333334,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 9528.0,
+        "p75": 1.0,
+        "p90": 1.0,
+        "p95": 1.0,
+        "p99": 2.0
+      },
+      "chunk_weighted": {
+        "n": 11656,
+        "mean": 11044.273678792038,
+        "median": 11346.0,
+        "min": 1.0,
+        "max": 11346.0,
+        "p75": 11346.0,
+        "p90": 11346.0,
+        "p95": 11346.0,
+        "p99": 11346.0
+      }
+    }
+  },
+  "hub_filters_b1": [
+    {
+      "policy": "raw",
+      "threshold": null,
+      "n_entities_unlinked": 0,
+      "n_entities_linking": 66088,
+      "n_docs_losing_all_links": 0,
+      "n_components": 226,
+      "max_docs": 11422,
+      "max_entities": 64871,
+      "max_titles": 9620,
+      "max_doc_frac": 0.9799245024021963,
+      "p50_unweighted": 1.0,
+      "p95_unweighted": 1.0,
+      "p99_unweighted": 2.0,
+      "p50_weighted": 11422.0,
+      "p95_weighted": 11422.0,
+      "p99_weighted": 11422.0,
+      "isolated_doc_frac": 0.018617021276595744,
+      "docs_in_cc_ge2_frac": 0.9813829787234043,
+      "multi_title_doc_frac": 0.9808682223747426,
+      "top5_doc_frac": 0.9806966369251887,
+      "top10_doc_frac": 0.9814687714481812
+    },
+    {
+      "policy": "df_gt_10",
+      "threshold": 10.0,
+      "n_entities_unlinked": 828,
+      "n_entities_linking": 65260,
+      "n_docs_losing_all_links": 34,
+      "n_components": 2309,
+      "max_docs": 9028,
+      "max_entities": 52994,
+      "max_titles": 7406,
+      "max_doc_frac": 0.7745367192862045,
+      "p50_unweighted": 1.0,
+      "p95_unweighted": 2.0,
+      "p99_unweighted": 3.0,
+      "p50_weighted": 9028.0,
+      "p95_weighted": 9028.0,
+      "p99_weighted": 9028.0,
+      "isolated_doc_frac": 0.17827728208647906,
+      "docs_in_cc_ge2_frac": 0.8217227179135209,
+      "multi_title_doc_frac": 0.817433081674674,
+      "top5_doc_frac": 0.7771962937542897,
+      "top10_doc_frac": 0.779512697323267
+    },
+    {
+      "policy": "df_gt_20",
+      "threshold": 20.0,
+      "n_entities_unlinked": 398,
+      "n_entities_linking": 65690,
+      "n_docs_losing_all_links": 16,
+      "n_components": 1610,
+      "max_docs": 9866,
+      "max_entities": 57193,
+      "max_titles": 8152,
+      "max_doc_frac": 0.8464310226492794,
+      "p50_unweighted": 1.0,
+      "p95_unweighted": 2.0,
+      "p99_unweighted": 3.0,
+      "p50_weighted": 9866.0,
+      "p95_weighted": 9866.0,
+      "p99_weighted": 9866.0,
+      "isolated_doc_frac": 0.1269732326698696,
+      "docs_in_cc_ge2_frac": 0.8730267673301304,
+      "multi_title_doc_frac": 0.8702814001372684,
+      "top5_doc_frac": 0.8485758407687028,
+      "top10_doc_frac": 0.8503774879890186
+    },
+    {
+      "policy": "df_gt_50",
+      "threshold": 50.0,
+      "n_entities_unlinked": 151,
+      "n_entities_linking": 65937,
+      "n_docs_losing_all_links": 5,
+      "n_components": 955,
+      "max_docs": 10637,
+      "max_entities": 61087,
+      "max_titles": 8859,
+      "max_doc_frac": 0.9125772134522993,
+      "p50_unweighted": 1.0,
+      "p95_unweighted": 2.0,
+      "p99_unweighted": 3.0,
+      "p50_weighted": 10637.0,
+      "p95_weighted": 10637.0,
+      "p99_weighted": 10637.0,
+      "isolated_doc_frac": 0.07772820864790665,
+      "docs_in_cc_ge2_frac": 0.9222717913520934,
+      "multi_title_doc_frac": 0.92124227865477,
+      "top5_doc_frac": 0.9142072752230611,
+      "top10_doc_frac": 0.9154941660947151
+    },
+    {
+      "policy": "df_gt_100",
+      "threshold": 100.0,
+      "n_entities_unlinked": 56,
+      "n_entities_linking": 66032,
+      "n_docs_losing_all_links": 3,
+      "n_components": 557,
+      "max_docs": 11067,
+      "max_entities": 63196,
+      "max_titles": 9277,
+      "max_doc_frac": 0.949468085106383,
+      "p50_unweighted": 1.0,
+      "p95_unweighted": 1.0,
+      "p99_unweighted": 2.0,
+      "p50_weighted": 11067.0,
+      "p95_weighted": 11067.0,
+      "p99_weighted": 11067.0,
+      "isolated_doc_frac": 0.04581331503088538,
+      "docs_in_cc_ge2_frac": 0.9541866849691146,
+      "multi_title_doc_frac": 0.9535003431708992,
+      "top5_doc_frac": 0.9510981468771448,
+      "top10_doc_frac": 0.9519560741249142
+    },
+    {
+      "policy": "df_gt_0.5pct",
+      "threshold": 58.28,
+      "n_entities_unlinked": 122,
+      "n_entities_linking": 65966,
+      "n_docs_losing_all_links": 4,
+      "n_components": 849,
+      "max_docs": 10754,
+      "max_entities": 61636,
+      "max_titles": 8973,
+      "max_doc_frac": 0.9226149622512011,
+      "p50_unweighted": 1.0,
+      "p95_unweighted": 1.0,
+      "p99_unweighted": 2.0,
+      "p50_weighted": 10754.0,
+      "p95_weighted": 10754.0,
+      "p99_weighted": 10754.0,
+      "isolated_doc_frac": 0.06932052161976665,
+      "docs_in_cc_ge2_frac": 0.9306794783802333,
+      "multi_title_doc_frac": 0.929821551132464,
+      "top5_doc_frac": 0.924245024021963,
+      "top10_doc_frac": 0.9253603294440631
+    },
+    {
+      "policy": "df_gt_1pct",
+      "threshold": 116.56,
+      "n_entities_unlinked": 44,
+      "n_entities_linking": 66044,
+      "n_docs_losing_all_links": 2,
+      "n_components": 505,
+      "max_docs": 11122,
+      "max_entities": 63474,
+      "max_titles": 9331,
+      "max_doc_frac": 0.9541866849691146,
+      "p50_unweighted": 1.0,
+      "p95_unweighted": 1.0,
+      "p99_unweighted": 2.0,
+      "p50_weighted": 11122.0,
+      "p95_weighted": 11122.0,
+      "p99_weighted": 11122.0,
+      "isolated_doc_frac": 0.041523678792038436,
+      "docs_in_cc_ge2_frac": 0.9584763212079616,
+      "multi_title_doc_frac": 0.9577899794097461,
+      "top5_doc_frac": 0.9557309540150996,
+      "top10_doc_frac": 0.9565888812628689
+    },
+    {
+      "policy": "df_gt_2pct",
+      "threshold": 233.12,
+      "n_entities_unlinked": 8,
+      "n_entities_linking": 66080,
+      "n_docs_losing_all_links": 0,
+      "n_components": 313,
+      "max_docs": 11334,
+      "max_entities": 64455,
+      "max_titles": 9535,
+      "max_doc_frac": 0.9723747426218257,
+      "p50_unweighted": 1.0,
+      "p95_unweighted": 1.0,
+      "p99_unweighted": 2.0,
+      "p50_weighted": 11334.0,
+      "p95_weighted": 11334.0,
+      "p99_weighted": 11334.0,
+      "isolated_doc_frac": 0.02599519560741249,
+      "docs_in_cc_ge2_frac": 0.9740048043925875,
+      "multi_title_doc_frac": 0.973318462594372,
+      "top5_doc_frac": 0.9731468771448181,
+      "top10_doc_frac": 0.9740048043925875
+    }
+  ],
+  "pair_index": {
+    "limit": 30000000,
+    "considered": [
+      {
+        "cap": 50,
+        "pair_slot_updates": 210241,
+        "skipped_entities_df_gt_cap": 151,
+        "skipped_pair_slots": 2097989,
+        "accepted": true
+      },
+      {
+        "cap": 30,
+        "pair_slot_updates": 129053,
+        "skipped_entities_df_gt_cap": 260,
+        "skipped_pair_slots": 2179177,
+        "accepted": true
+      },
+      {
+        "cap": 20,
+        "pair_slot_updates": 86609,
+        "skipped_entities_df_gt_cap": 398,
+        "skipped_pair_slots": 2221621,
+        "accepted": true
+      },
+      {
+        "cap": 10,
+        "pair_slot_updates": 43782,
+        "skipped_entities_df_gt_cap": 828,
+        "skipped_pair_slots": 2264448,
+        "accepted": true
+      }
+    ],
+    "cap": 50,
+    "enumerated_unique_pairs": 189569,
+    "used_entities": 10365,
+    "skipped_entities_df_gt_cap": 151,
+    "skipped_pair_slots_not_unique": 2097989
+  },
+  "grouping": [
+    {
+      "method": "shared_count",
+      "kind": "topk",
+      "param": 2,
+      "stats": {
+        "n_groups_including_singletons": 11656,
+        "n_cross_groups": 10750,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 11656,
+          "mean": 2.8010466712422786,
+          "median": 3.0,
+          "min": 1.0,
+          "max": 3.0,
+          "p75": 3.0,
+          "p90": 3.0,
+          "p95": 3.0,
+          "p99": 3.0
+        },
+        "size_cross": {
+          "n": 10750,
+          "mean": 2.9528372093023254,
+          "median": 3.0,
+          "min": 2.0,
+          "max": 3.0,
+          "p75": 3.0,
+          "p90": 3.0,
+          "p95": 3.0,
+          "p99": 3.0
+        },
+        "token_cross": {
+          "n": 10750,
+          "mean": 405.3059534883721,
+          "median": 388.0,
+          "min": 73.0,
+          "max": 1458.0,
+          "p75": 498.0,
+          "p90": 612.0,
+          "p95": 690.0,
+          "p99": 858.5500000000011
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.00025737817433081676,
+        "coverage_docs_frac": 1.0,
+        "membership_mean": 2.8010466712422786,
+        "membership_p95": 7.0,
+        "membership_max": 59,
+        "total_cross_group_tokens": 4357039,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 3.4144842740778936,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 3.2321408568768617
+      }
+    },
+    {
+      "method": "shared_count",
+      "kind": "topk",
+      "param": 4,
+      "stats": {
+        "n_groups_including_singletons": 11656,
+        "n_cross_groups": 10750,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 11656,
+          "mean": 4.45598833218943,
+          "median": 5.0,
+          "min": 1.0,
+          "max": 5.0,
+          "p75": 5.0,
+          "p90": 5.0,
+          "p95": 5.0,
+          "p99": 5.0
+        },
+        "size_cross": {
+          "n": 10750,
+          "mean": 4.747255813953489,
+          "median": 5.0,
+          "min": 2.0,
+          "max": 5.0,
+          "p75": 5.0,
+          "p90": 5.0,
+          "p95": 5.0,
+          "p99": 5.0
+        },
+        "token_cross": {
+          "n": 10750,
+          "mean": 666.5809302325581,
+          "median": 657.0,
+          "min": 73.0,
+          "max": 2235.0,
+          "p75": 816.0,
+          "p90": 978.0,
+          "p95": 1079.0,
+          "p99": 1288.550000000001
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.0004289636238846946,
+        "coverage_docs_frac": 1.0,
+        "membership_mean": 4.45598833218943,
+        "membership_p95": 12.0,
+        "membership_max": 106,
+        "total_cross_group_tokens": 7165745,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 5.61558517482912,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 5.315696550905577
+      }
+    },
+    {
+      "method": "shared_count",
+      "kind": "topk",
+      "param": 8,
+      "stats": {
+        "n_groups_including_singletons": 11656,
+        "n_cross_groups": 10750,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 11656,
+          "mean": 7.475034317089911,
+          "median": 9.0,
+          "min": 1.0,
+          "max": 9.0,
+          "p75": 9.0,
+          "p90": 9.0,
+          "p95": 9.0,
+          "p99": 9.0
+        },
+        "size_cross": {
+          "n": 10750,
+          "mean": 8.020744186046512,
+          "median": 9.0,
+          "min": 2.0,
+          "max": 9.0,
+          "p75": 9.0,
+          "p90": 9.0,
+          "p95": 9.0,
+          "p99": 9.0
+        },
+        "token_cross": {
+          "n": 10750,
+          "mean": 1141.1162790697674,
+          "median": 1183.5,
+          "min": 73.0,
+          "max": 3396.0,
+          "p75": 1434.0,
+          "p90": 1658.1000000000004,
+          "p95": 1798.0,
+          "p99": 2076.51
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.0007721345229924502,
+        "coverage_docs_frac": 1.0,
+        "membership_mean": 7.475034317089911,
+        "membership_p95": 21.0,
+        "membership_max": 188,
+        "total_cross_group_tokens": 12267000,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 9.61328980303218,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 9.099912094270548
+      }
+    },
+    {
+      "method": "shared_count",
+      "kind": "topk",
+      "param": 16,
+      "stats": {
+        "n_groups_including_singletons": 11656,
+        "n_cross_groups": 10750,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 11656,
+          "mean": 12.654941660947152,
+          "median": 17.0,
+          "min": 1.0,
+          "max": 17.0,
+          "p75": 17.0,
+          "p90": 17.0,
+          "p95": 17.0,
+          "p99": 17.0
+        },
+        "size_cross": {
+          "n": 10750,
+          "mean": 13.637209302325582,
+          "median": 17.0,
+          "min": 2.0,
+          "max": 17.0,
+          "p75": 17.0,
+          "p90": 17.0,
+          "p95": 17.0,
+          "p99": 17.0
+        },
+        "token_cross": {
+          "n": 10750,
+          "mean": 1935.0691162790697,
+          "median": 2137.0,
+          "min": 73.0,
+          "max": 4698.0,
+          "p75": 2583.75,
+          "p90": 2935.1000000000004,
+          "p95": 3122.0,
+          "p99": 3524.5700000000015
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.0014584763212079615,
+        "coverage_docs_frac": 1.0,
+        "membership_mean": 12.654941660947152,
+        "membership_p95": 35.0,
+        "membership_max": 361,
+        "total_cross_group_tokens": 20801993,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 16.301914664518364,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 15.431344883478545
+      }
+    },
+    {
+      "method": "shared_idf",
+      "kind": "topk",
+      "param": 2,
+      "stats": {
+        "n_groups_including_singletons": 11656,
+        "n_cross_groups": 10750,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 11656,
+          "mean": 2.8010466712422786,
+          "median": 3.0,
+          "min": 1.0,
+          "max": 3.0,
+          "p75": 3.0,
+          "p90": 3.0,
+          "p95": 3.0,
+          "p99": 3.0
+        },
+        "size_cross": {
+          "n": 10750,
+          "mean": 2.9528372093023254,
+          "median": 3.0,
+          "min": 2.0,
+          "max": 3.0,
+          "p75": 3.0,
+          "p90": 3.0,
+          "p95": 3.0,
+          "p99": 3.0
+        },
+        "token_cross": {
+          "n": 10750,
+          "mean": 405.3059534883721,
+          "median": 388.0,
+          "min": 73.0,
+          "max": 1458.0,
+          "p75": 498.0,
+          "p90": 612.0,
+          "p95": 690.0,
+          "p99": 858.5500000000011
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.00025737817433081676,
+        "coverage_docs_frac": 1.0,
+        "membership_mean": 2.8010466712422786,
+        "membership_p95": 7.0,
+        "membership_max": 59,
+        "total_cross_group_tokens": 4357039,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 3.4144842740778936,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 3.2321408568768617
+      }
+    },
+    {
+      "method": "shared_idf",
+      "kind": "topk",
+      "param": 4,
+      "stats": {
+        "n_groups_including_singletons": 11656,
+        "n_cross_groups": 10750,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 11656,
+          "mean": 4.45598833218943,
+          "median": 5.0,
+          "min": 1.0,
+          "max": 5.0,
+          "p75": 5.0,
+          "p90": 5.0,
+          "p95": 5.0,
+          "p99": 5.0
+        },
+        "size_cross": {
+          "n": 10750,
+          "mean": 4.747255813953489,
+          "median": 5.0,
+          "min": 2.0,
+          "max": 5.0,
+          "p75": 5.0,
+          "p90": 5.0,
+          "p95": 5.0,
+          "p99": 5.0
+        },
+        "token_cross": {
+          "n": 10750,
+          "mean": 666.5809302325581,
+          "median": 657.0,
+          "min": 73.0,
+          "max": 2235.0,
+          "p75": 816.0,
+          "p90": 978.0,
+          "p95": 1079.0,
+          "p99": 1288.550000000001
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.0004289636238846946,
+        "coverage_docs_frac": 1.0,
+        "membership_mean": 4.45598833218943,
+        "membership_p95": 12.0,
+        "membership_max": 106,
+        "total_cross_group_tokens": 7165745,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 5.61558517482912,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 5.315696550905577
+      }
+    },
+    {
+      "method": "shared_idf",
+      "kind": "topk",
+      "param": 8,
+      "stats": {
+        "n_groups_including_singletons": 11656,
+        "n_cross_groups": 10750,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 11656,
+          "mean": 7.475034317089911,
+          "median": 9.0,
+          "min": 1.0,
+          "max": 9.0,
+          "p75": 9.0,
+          "p90": 9.0,
+          "p95": 9.0,
+          "p99": 9.0
+        },
+        "size_cross": {
+          "n": 10750,
+          "mean": 8.020744186046512,
+          "median": 9.0,
+          "min": 2.0,
+          "max": 9.0,
+          "p75": 9.0,
+          "p90": 9.0,
+          "p95": 9.0,
+          "p99": 9.0
+        },
+        "token_cross": {
+          "n": 10750,
+          "mean": 1141.1162790697674,
+          "median": 1183.5,
+          "min": 73.0,
+          "max": 3396.0,
+          "p75": 1434.0,
+          "p90": 1658.1000000000004,
+          "p95": 1798.0,
+          "p99": 2076.51
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.0007721345229924502,
+        "coverage_docs_frac": 1.0,
+        "membership_mean": 7.475034317089911,
+        "membership_p95": 21.0,
+        "membership_max": 188,
+        "total_cross_group_tokens": 12267000,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 9.61328980303218,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 9.099912094270548
+      }
+    },
+    {
+      "method": "shared_idf",
+      "kind": "topk",
+      "param": 16,
+      "stats": {
+        "n_groups_including_singletons": 11656,
+        "n_cross_groups": 10750,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 11656,
+          "mean": 12.654941660947152,
+          "median": 17.0,
+          "min": 1.0,
+          "max": 17.0,
+          "p75": 17.0,
+          "p90": 17.0,
+          "p95": 17.0,
+          "p99": 17.0
+        },
+        "size_cross": {
+          "n": 10750,
+          "mean": 13.637209302325582,
+          "median": 17.0,
+          "min": 2.0,
+          "max": 17.0,
+          "p75": 17.0,
+          "p90": 17.0,
+          "p95": 17.0,
+          "p99": 17.0
+        },
+        "token_cross": {
+          "n": 10750,
+          "mean": 1935.0691162790697,
+          "median": 2137.0,
+          "min": 73.0,
+          "max": 4698.0,
+          "p75": 2583.75,
+          "p90": 2935.1000000000004,
+          "p95": 3122.0,
+          "p99": 3524.5700000000015
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.0014584763212079615,
+        "coverage_docs_frac": 1.0,
+        "membership_mean": 12.654941660947152,
+        "membership_p95": 35.0,
+        "membership_max": 361,
+        "total_cross_group_tokens": 20801993,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 16.301914664518364,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 15.431344883478545
+      }
+    },
+    {
+      "method": "weighted_jaccard",
+      "kind": "topk",
+      "param": 2,
+      "stats": {
+        "n_groups_including_singletons": 11656,
+        "n_cross_groups": 10750,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 11656,
+          "mean": 2.8010466712422786,
+          "median": 3.0,
+          "min": 1.0,
+          "max": 3.0,
+          "p75": 3.0,
+          "p90": 3.0,
+          "p95": 3.0,
+          "p99": 3.0
+        },
+        "size_cross": {
+          "n": 10750,
+          "mean": 2.9528372093023254,
+          "median": 3.0,
+          "min": 2.0,
+          "max": 3.0,
+          "p75": 3.0,
+          "p90": 3.0,
+          "p95": 3.0,
+          "p99": 3.0
+        },
+        "token_cross": {
+          "n": 10750,
+          "mean": 332.7452093023256,
+          "median": 310.0,
+          "min": 73.0,
+          "max": 1416.0,
+          "p75": 409.0,
+          "p90": 515.0,
+          "p95": 590.0,
+          "p99": 750.0200000000004
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.00025737817433081676,
+        "coverage_docs_frac": 1.0,
+        "membership_mean": 2.8010466712422786,
+        "membership_p95": 7.0,
+        "membership_max": 38,
+        "total_cross_group_tokens": 3577011,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 2.803199100972849,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 2.653500094582114
+      }
+    },
+    {
+      "method": "weighted_jaccard",
+      "kind": "topk",
+      "param": 4,
+      "stats": {
+        "n_groups_including_singletons": 11656,
+        "n_cross_groups": 10750,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 11656,
+          "mean": 4.45598833218943,
+          "median": 5.0,
+          "min": 1.0,
+          "max": 5.0,
+          "p75": 5.0,
+          "p90": 5.0,
+          "p95": 5.0,
+          "p99": 5.0
+        },
+        "size_cross": {
+          "n": 10750,
+          "mean": 4.747255813953489,
+          "median": 5.0,
+          "min": 2.0,
+          "max": 5.0,
+          "p75": 5.0,
+          "p90": 5.0,
+          "p95": 5.0,
+          "p99": 5.0
+        },
+        "token_cross": {
+          "n": 10750,
+          "mean": 533.1254883720931,
+          "median": 510.0,
+          "min": 73.0,
+          "max": 2109.0,
+          "p75": 650.0,
+          "p90": 803.0,
+          "p95": 908.5499999999993,
+          "p99": 1122.5100000000002
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.0004289636238846946,
+        "coverage_docs_frac": 1.0,
+        "membership_mean": 4.45598833218943,
+        "membership_p95": 13.0,
+        "membership_max": 57,
+        "total_cross_group_tokens": 5731099,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 4.491294984663562,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 4.2514467354334275
+      }
+    },
+    {
+      "method": "weighted_jaccard",
+      "kind": "topk",
+      "param": 8,
+      "stats": {
+        "n_groups_including_singletons": 11656,
+        "n_cross_groups": 10750,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 11656,
+          "mean": 7.475034317089911,
+          "median": 9.0,
+          "min": 1.0,
+          "max": 9.0,
+          "p75": 9.0,
+          "p90": 9.0,
+          "p95": 9.0,
+          "p99": 9.0
+        },
+        "size_cross": {
+          "n": 10750,
+          "mean": 8.020744186046512,
+          "median": 9.0,
+          "min": 2.0,
+          "max": 9.0,
+          "p75": 9.0,
+          "p90": 9.0,
+          "p95": 9.0,
+          "p99": 9.0
+        },
+        "token_cross": {
+          "n": 10750,
+          "mean": 909.6112558139534,
+          "median": 900.5,
+          "min": 73.0,
+          "max": 3341.0,
+          "p75": 1131.75,
+          "p90": 1362.1000000000004,
+          "p95": 1513.0,
+          "p99": 1787.0
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.0007721345229924502,
+        "coverage_docs_frac": 1.0,
+        "membership_mean": 7.475034317089911,
+        "membership_p95": 21.0,
+        "membership_max": 79,
+        "total_cross_group_tokens": 9778321,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 7.662984719986584,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 7.253758989937205
+      }
+    },
+    {
+      "method": "weighted_jaccard",
+      "kind": "topk",
+      "param": 16,
+      "stats": {
+        "n_groups_including_singletons": 11656,
+        "n_cross_groups": 10750,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 11656,
+          "mean": 12.654941660947152,
+          "median": 17.0,
+          "min": 1.0,
+          "max": 17.0,
+          "p75": 17.0,
+          "p90": 17.0,
+          "p95": 17.0,
+          "p99": 17.0
+        },
+        "size_cross": {
+          "n": 10750,
+          "mean": 13.637209302325582,
+          "median": 17.0,
+          "min": 2.0,
+          "max": 17.0,
+          "p75": 17.0,
+          "p90": 17.0,
+          "p95": 17.0,
+          "p99": 17.0
+        },
+        "token_cross": {
+          "n": 10750,
+          "mean": 1594.2967441860465,
+          "median": 1672.0,
+          "min": 73.0,
+          "max": 4765.0,
+          "p75": 2072.0,
+          "p90": 2431.0,
+          "p95": 2639.5499999999993,
+          "p99": 3066.0200000000004
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.0014584763212079615,
+        "coverage_docs_frac": 1.0,
+        "membership_mean": 12.654941660947152,
+        "membership_p95": 35.0,
+        "membership_max": 121,
+        "total_cross_group_tokens": 17138690,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 13.431091042172461,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 12.71383161416432
+      }
+    },
+    {
+      "method": "shared_count",
+      "kind": "hard",
+      "param": 1,
+      "pair_cap": 50,
+      "stats": {
+        "n_groups_including_singletons": 955,
+        "n_cross_groups": 49,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 955,
+          "mean": 12.205235602094241,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 10637.0,
+          "p75": 1.0,
+          "p90": 1.0,
+          "p95": 2.0,
+          "p99": 3.0
+        },
+        "size_cross": {
+          "n": 49,
+          "mean": 219.3877551020408,
+          "median": 2.0,
+          "min": 2.0,
+          "max": 10637.0,
+          "p75": 2.0,
+          "p90": 3.0,
+          "p95": 4.799999999999983,
+          "p99": 5534.599999999958
+        },
+        "token_cross": {
+          "n": 49,
+          "mean": 26041.755102040817,
+          "median": 163.0,
+          "min": 73.0,
+          "max": 1266555.0,
+          "p75": 244.0,
+          "p90": 385.80000000000007,
+          "p95": 483.1999999999999,
+          "p99": 658867.319999995
+        },
+        "frac_cross_groups_le_budget": 0.9795918367346939,
+        "frac_cross_groups_gt_budget": 0.02040816326530612,
+        "frac_cross_groups_gt_500_docs": 0.02040816326530612,
+        "max_doc_frac": 0.9125772134522993,
+        "coverage_docs_frac": 0.9222717913520934,
+        "membership_mean": 1.0,
+        "membership_p95": 1.0,
+        "membership_max": 1,
+        "total_cross_group_tokens": 1276046,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 1.0,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 0.9465970839036079
+      }
+    },
+    {
+      "method": "shared_count",
+      "kind": "hard",
+      "param": 2,
+      "pair_cap": 50,
+      "stats": {
+        "n_groups_including_singletons": 6595,
+        "n_cross_groups": 582,
+        "n_singletons": 6013,
+        "size_all": {
+          "n": 6595,
+          "mean": 1.7673995451099318,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 4037.0,
+          "p75": 1.0,
+          "p90": 1.0,
+          "p95": 2.0,
+          "p99": 4.0
+        },
+        "size_cross": {
+          "n": 582,
+          "mean": 9.695876288659793,
+          "median": 2.0,
+          "min": 2.0,
+          "max": 4037.0,
+          "p75": 3.0,
+          "p90": 4.0,
+          "p95": 5.949999999999932,
+          "p99": 10.0
+        },
+        "token_cross": {
+          "n": 582,
+          "mean": 1307.713058419244,
+          "median": 244.5,
+          "min": 64.0,
+          "max": 578787.0,
+          "p75": 370.0,
+          "p90": 561.6999999999999,
+          "p95": 674.9499999999999,
+          "p99": 1561.4999999999911
+        },
+        "frac_cross_groups_le_budget": 0.9982817869415808,
+        "frac_cross_groups_gt_budget": 0.001718213058419244,
+        "frac_cross_groups_gt_500_docs": 0.001718213058419244,
+        "max_doc_frac": 0.3463452299245024,
+        "coverage_docs_frac": 0.4841283459162663,
+        "membership_mean": 1.0,
+        "membership_p95": 1.0,
+        "membership_max": 1,
+        "total_cross_group_tokens": 761089,
+        "unique_covered_doc_tokens": 761089,
+        "repeat_factor": 1.0,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 0.56459142381318
+      }
+    },
+    {
+      "method": "shared_count",
+      "kind": "hard",
+      "param": 3,
+      "pair_cap": 50,
+      "stats": {
+        "n_groups_including_singletons": 9873,
+        "n_cross_groups": 555,
+        "n_singletons": 9318,
+        "size_all": {
+          "n": 9873,
+          "mean": 1.180593537931733,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 227.0,
+          "p75": 1.0,
+          "p90": 1.0,
+          "p95": 2.0,
+          "p99": 4.0
+        },
+        "size_cross": {
+          "n": 555,
+          "mean": 4.212612612612612,
+          "median": 2.0,
+          "min": 2.0,
+          "max": 227.0,
+          "p75": 3.0,
+          "p90": 6.0,
+          "p95": 11.299999999999955,
+          "p99": 27.460000000000036
+        },
+        "token_cross": {
+          "n": 555,
+          "mean": 634.2702702702703,
+          "median": 304.0,
+          "min": 76.0,
+          "max": 40245.0,
+          "p75": 457.0,
+          "p90": 935.0000000000003,
+          "p95": 1440.8999999999953,
+          "p99": 5950.120000000043
+        },
+        "frac_cross_groups_le_budget": 0.9945945945945946,
+        "frac_cross_groups_gt_budget": 0.005405405405405406,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.019474948524365134,
+        "coverage_docs_frac": 0.20058339052848317,
+        "membership_mean": 1.0,
+        "membership_p95": 1.0,
+        "membership_max": 1,
+        "total_cross_group_tokens": 352020,
+        "unique_covered_doc_tokens": 352020,
+        "repeat_factor": 1.0,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 0.26113565300604213
+      }
+    },
+    {
+      "method": "shared_count",
+      "kind": "hard",
+      "param": 5,
+      "pair_cap": 50,
+      "stats": {
+        "n_groups_including_singletons": 11175,
+        "n_cross_groups": 282,
+        "n_singletons": 10893,
+        "size_all": {
+          "n": 11175,
+          "mean": 1.0430425055928412,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 26.0,
+          "p75": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "p99": 2.0
+        },
+        "size_cross": {
+          "n": 282,
+          "mean": 2.7056737588652484,
+          "median": 2.0,
+          "min": 2.0,
+          "max": 26.0,
+          "p75": 2.75,
+          "p90": 3.0,
+          "p95": 5.949999999999989,
+          "p99": 12.139999999999986
+        },
+        "token_cross": {
+          "n": 282,
+          "mean": 443.28014184397165,
+          "median": 334.5,
+          "min": 92.0,
+          "max": 4907.0,
+          "p75": 461.0,
+          "p90": 641.2,
+          "p95": 1134.449999999999,
+          "p99": 3317.08
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.002230610844200412,
+        "coverage_docs_frac": 0.0654598490048044,
+        "membership_mean": 1.0,
+        "membership_p95": 1.0,
+        "membership_max": 1,
+        "total_cross_group_tokens": 125005,
+        "unique_covered_doc_tokens": 125005,
+        "repeat_factor": 1.0,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 0.09273127181415913
+      }
+    },
+    {
+      "method": "shared_idf",
+      "kind": "hard",
+      "param": 4.0,
+      "pair_cap": 50,
+      "stats": {
+        "n_groups_including_singletons": 955,
+        "n_cross_groups": 49,
+        "n_singletons": 906,
+        "size_all": {
+          "n": 955,
+          "mean": 12.205235602094241,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 10637.0,
+          "p75": 1.0,
+          "p90": 1.0,
+          "p95": 2.0,
+          "p99": 3.0
+        },
+        "size_cross": {
+          "n": 49,
+          "mean": 219.3877551020408,
+          "median": 2.0,
+          "min": 2.0,
+          "max": 10637.0,
+          "p75": 2.0,
+          "p90": 3.0,
+          "p95": 4.799999999999983,
+          "p99": 5534.599999999958
+        },
+        "token_cross": {
+          "n": 49,
+          "mean": 26041.755102040817,
+          "median": 163.0,
+          "min": 73.0,
+          "max": 1266555.0,
+          "p75": 244.0,
+          "p90": 385.80000000000007,
+          "p95": 483.1999999999999,
+          "p99": 658867.319999995
+        },
+        "frac_cross_groups_le_budget": 0.9795918367346939,
+        "frac_cross_groups_gt_budget": 0.02040816326530612,
+        "frac_cross_groups_gt_500_docs": 0.02040816326530612,
+        "max_doc_frac": 0.9125772134522993,
+        "coverage_docs_frac": 0.9222717913520934,
+        "membership_mean": 1.0,
+        "membership_p95": 1.0,
+        "membership_max": 1,
+        "total_cross_group_tokens": 1276046,
+        "unique_covered_doc_tokens": 1276046,
+        "repeat_factor": 1.0,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 0.9465970839036079
+      }
+    },
+    {
+      "method": "shared_idf",
+      "kind": "hard",
+      "param": 6.0,
+      "pair_cap": 50,
+      "stats": {
+        "n_groups_including_singletons": 1311,
+        "n_cross_groups": 92,
+        "n_singletons": 1219,
+        "size_all": {
+          "n": 1311,
+          "mean": 8.890922959572846,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 10212.0,
+          "p75": 1.0,
+          "p90": 1.0,
+          "p95": 2.0,
+          "p99": 3.0
+        },
+        "size_cross": {
+          "n": 92,
+          "mean": 113.44565217391305,
+          "median": 2.0,
+          "min": 2.0,
+          "max": 10212.0,
+          "p75": 3.0,
+          "p90": 3.9000000000000057,
+          "p95": 4.450000000000003,
+          "p99": 925.4500000000348
+        },
+        "token_cross": {
+          "n": 92,
+          "mean": 13587.217391304348,
+          "median": 165.5,
+          "min": 73.0,
+          "max": 1231675.0,
+          "p75": 241.75,
+          "p90": 379.30000000000007,
+          "p95": 479.9000000000001,
+          "p99": 111401.3000000042
+        },
+        "frac_cross_groups_le_budget": 0.9891304347826086,
+        "frac_cross_groups_gt_budget": 0.010869565217391304,
+        "frac_cross_groups_gt_500_docs": 0.010869565217391304,
+        "max_doc_frac": 0.8761153054221003,
+        "coverage_docs_frac": 0.8954186684969114,
+        "membership_mean": 1.0,
+        "membership_p95": 1.0,
+        "membership_max": 1,
+        "total_cross_group_tokens": 1250024,
+        "unique_covered_doc_tokens": 1250024,
+        "repeat_factor": 1.0,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 0.9272934308085472
+      }
+    },
+    {
+      "method": "shared_idf",
+      "kind": "hard",
+      "param": 8.0,
+      "pair_cap": 50,
+      "stats": {
+        "n_groups_including_singletons": 4378,
+        "n_cross_groups": 679,
+        "n_singletons": 3699,
+        "size_all": {
+          "n": 4378,
+          "mean": 2.662402923709456,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 6270.0,
+          "p75": 1.0,
+          "p90": 2.0,
+          "p95": 2.0,
+          "p99": 4.0
+        },
+        "size_cross": {
+          "n": 679,
+          "mean": 11.718703976435934,
+          "median": 2.0,
+          "min": 2.0,
+          "max": 6270.0,
+          "p75": 3.0,
+          "p90": 3.0,
+          "p95": 4.0,
+          "p99": 8.0
+        },
+        "token_cross": {
+          "n": 679,
+          "mean": 1496.357879234168,
+          "median": 214.0,
+          "min": 64.0,
+          "max": 843190.0,
+          "p75": 311.0,
+          "p90": 425.20000000000005,
+          "p95": 519.2,
+          "p99": 898.5000000000007
+        },
+        "frac_cross_groups_le_budget": 0.9985272459499264,
+        "frac_cross_groups_gt_budget": 0.0014727540500736377,
+        "frac_cross_groups_gt_500_docs": 0.0014727540500736377,
+        "max_doc_frac": 0.537920384351407,
+        "coverage_docs_frac": 0.682652711050103,
+        "membership_mean": 1.0,
+        "membership_p95": 1.0,
+        "membership_max": 1,
+        "total_cross_group_tokens": 1016027,
+        "unique_covered_doc_tokens": 1016027,
+        "repeat_factor": 1.0,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 0.7537096588738423
+      }
+    },
+    {
+      "method": "shared_idf",
+      "kind": "hard",
+      "param": 10.0,
+      "pair_cap": 50,
+      "stats": {
+        "n_groups_including_singletons": 6595,
+        "n_cross_groups": 582,
+        "n_singletons": 6013,
+        "size_all": {
+          "n": 6595,
+          "mean": 1.7673995451099318,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 4037.0,
+          "p75": 1.0,
+          "p90": 1.0,
+          "p95": 2.0,
+          "p99": 4.0
+        },
+        "size_cross": {
+          "n": 582,
+          "mean": 9.695876288659793,
+          "median": 2.0,
+          "min": 2.0,
+          "max": 4037.0,
+          "p75": 3.0,
+          "p90": 4.0,
+          "p95": 5.949999999999932,
+          "p99": 10.0
+        },
+        "token_cross": {
+          "n": 582,
+          "mean": 1307.713058419244,
+          "median": 244.5,
+          "min": 64.0,
+          "max": 578787.0,
+          "p75": 370.0,
+          "p90": 561.6999999999999,
+          "p95": 674.9499999999999,
+          "p99": 1561.4999999999911
+        },
+        "frac_cross_groups_le_budget": 0.9982817869415808,
+        "frac_cross_groups_gt_budget": 0.001718213058419244,
+        "frac_cross_groups_gt_500_docs": 0.001718213058419244,
+        "max_doc_frac": 0.3463452299245024,
+        "coverage_docs_frac": 0.4841283459162663,
+        "membership_mean": 1.0,
+        "membership_p95": 1.0,
+        "membership_max": 1,
+        "total_cross_group_tokens": 761089,
+        "unique_covered_doc_tokens": 761089,
+        "repeat_factor": 1.0,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 0.56459142381318
+      }
+    },
+    {
+      "method": "shared_idf",
+      "kind": "hard",
+      "param": 12.0,
+      "pair_cap": 50,
+      "stats": {
+        "n_groups_including_singletons": 6860,
+        "n_cross_groups": 637,
+        "n_singletons": 6223,
+        "size_all": {
+          "n": 6860,
+          "mean": 1.699125364431487,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 3551.0,
+          "p75": 1.0,
+          "p90": 1.0,
+          "p95": 2.0,
+          "p99": 4.0
+        },
+        "size_cross": {
+          "n": 637,
+          "mean": 8.529042386185242,
+          "median": 2.0,
+          "min": 2.0,
+          "max": 3551.0,
+          "p75": 3.0,
+          "p90": 4.0,
+          "p95": 6.0,
+          "p99": 14.639999999999986
+        },
+        "token_cross": {
+          "n": 637,
+          "mean": 1157.712715855573,
+          "median": 253.0,
+          "min": 64.0,
+          "max": 521814.0,
+          "p75": 384.0,
+          "p90": 583.7999999999998,
+          "p95": 748.7999999999997,
+          "p99": 1867.6399999999996
+        },
+        "frac_cross_groups_le_budget": 0.9984301412872841,
+        "frac_cross_groups_gt_budget": 0.0015698587127158557,
+        "frac_cross_groups_gt_500_docs": 0.0015698587127158557,
+        "max_doc_frac": 0.3046499656829101,
+        "coverage_docs_frac": 0.46611187371310914,
+        "membership_mean": 1.0,
+        "membership_p95": 1.0,
+        "membership_max": 1,
+        "total_cross_group_tokens": 737463,
+        "unique_covered_doc_tokens": 737463,
+        "repeat_factor": 1.0,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 0.5470651726401763
+      }
+    },
+    {
+      "method": "weighted_jaccard",
+      "kind": "hard",
+      "param": 0.05,
+      "pair_cap": 50,
+      "stats": {
+        "n_groups_including_singletons": 1454,
+        "n_cross_groups": 103,
+        "n_singletons": 1351,
+        "size_all": {
+          "n": 1454,
+          "mean": 8.016506189821182,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 10068.0,
+          "p75": 1.0,
+          "p90": 1.0,
+          "p95": 2.0,
+          "p99": 3.0
+        },
+        "size_cross": {
+          "n": 103,
+          "mean": 100.04854368932038,
+          "median": 2.0,
+          "min": 2.0,
+          "max": 10068.0,
+          "p75": 2.0,
+          "p90": 3.0,
+          "p95": 3.0,
+          "p99": 7.0
+        },
+        "token_cross": {
+          "n": 103,
+          "mean": 11610.611650485436,
+          "median": 210.0,
+          "min": 73.0,
+          "max": 1169983.0,
+          "p75": 351.0,
+          "p90": 474.0,
+          "p95": 535.8999999999997,
+          "p99": 880.8400000000008
+        },
+        "frac_cross_groups_le_budget": 0.9902912621359223,
+        "frac_cross_groups_gt_budget": 0.009708737864077669,
+        "frac_cross_groups_gt_500_docs": 0.009708737864077669,
+        "max_doc_frac": 0.863761153054221,
+        "coverage_docs_frac": 0.8840940288263556,
+        "membership_mean": 1.0,
+        "membership_p95": 1.0,
+        "membership_max": 1,
+        "total_cross_group_tokens": 1195893,
+        "unique_covered_doc_tokens": 1195893,
+        "repeat_factor": 1.0,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 0.8871379452313923
+      }
+    },
+    {
+      "method": "weighted_jaccard",
+      "kind": "hard",
+      "param": 0.1,
+      "pair_cap": 50,
+      "stats": {
+        "n_groups_including_singletons": 6349,
+        "n_cross_groups": 705,
+        "n_singletons": 5644,
+        "size_all": {
+          "n": 6349,
+          "mean": 1.8358796660891479,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 3817.0,
+          "p75": 1.0,
+          "p90": 2.0,
+          "p95": 2.0,
+          "p99": 5.0
+        },
+        "size_cross": {
+          "n": 705,
+          "mean": 8.527659574468085,
+          "median": 2.0,
+          "min": 2.0,
+          "max": 3817.0,
+          "p75": 3.0,
+          "p90": 5.0,
+          "p95": 7.0,
+          "p99": 16.920000000000073
+        },
+        "token_cross": {
+          "n": 705,
+          "mean": 956.2794326241135,
+          "median": 253.0,
+          "min": 69.0,
+          "max": 432879.0,
+          "p75": 382.0,
+          "p90": 566.2000000000002,
+          "p95": 775.3999999999999,
+          "p99": 2089.4800000000014
+        },
+        "frac_cross_groups_le_budget": 0.9985815602836879,
+        "frac_cross_groups_gt_budget": 0.0014184397163120568,
+        "frac_cross_groups_gt_500_docs": 0.0014184397163120568,
+        "max_doc_frac": 0.32747083047357584,
+        "coverage_docs_frac": 0.5157858613589568,
+        "membership_mean": 1.0,
+        "membership_p95": 1.0,
+        "membership_max": 1,
+        "total_cross_group_tokens": 674177,
+        "unique_covered_doc_tokens": 674177,
+        "repeat_factor": 1.0,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 0.50011832037002
+      }
+    },
+    {
+      "method": "weighted_jaccard",
+      "kind": "hard",
+      "param": 0.2,
+      "pair_cap": 50,
+      "stats": {
+        "n_groups_including_singletons": 10515,
+        "n_cross_groups": 666,
+        "n_singletons": 9849,
+        "size_all": {
+          "n": 10515,
+          "mean": 1.1085116500237755,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 20.0,
+          "p75": 1.0,
+          "p90": 1.0,
+          "p95": 2.0,
+          "p99": 3.0
+        },
+        "size_cross": {
+          "n": 666,
+          "mean": 2.7132132132132134,
+          "median": 2.0,
+          "min": 2.0,
+          "max": 20.0,
+          "p75": 3.0,
+          "p90": 4.0,
+          "p95": 5.0,
+          "p99": 11.0
+        },
+        "token_cross": {
+          "n": 666,
+          "mean": 319.57957957957956,
+          "median": 245.5,
+          "min": 68.0,
+          "max": 2270.0,
+          "p75": 379.25,
+          "p90": 551.5,
+          "p95": 789.75,
+          "p99": 1421.3000000000013
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.0017158544955387784,
+        "coverage_docs_frac": 0.15502745367192863,
+        "membership_mean": 1.0,
+        "membership_p95": 1.0,
+        "membership_max": 1,
+        "total_cross_group_tokens": 212840,
+        "unique_covered_doc_tokens": 212840,
+        "repeat_factor": 1.0,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 0.15788907558038182
+      }
+    },
+    {
+      "method": "weighted_jaccard",
+      "kind": "hard",
+      "param": 0.4,
+      "pair_cap": 50,
+      "stats": {
+        "n_groups_including_singletons": 11314,
+        "n_cross_groups": 275,
+        "n_singletons": 11039,
+        "size_all": {
+          "n": 11314,
+          "mean": 1.0302280360615168,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 16.0,
+          "p75": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "p99": 2.0
+        },
+        "size_cross": {
+          "n": 275,
+          "mean": 2.2436363636363637,
+          "median": 2.0,
+          "min": 2.0,
+          "max": 16.0,
+          "p75": 2.0,
+          "p90": 3.0,
+          "p95": 3.0,
+          "p99": 5.259999999999991
+        },
+        "token_cross": {
+          "n": 275,
+          "mean": 280.1454545454545,
+          "median": 251.0,
+          "min": 64.0,
+          "max": 1273.0,
+          "p75": 351.5,
+          "p90": 462.79999999999995,
+          "p95": 533.6000000000001,
+          "p99": 936.3
+        },
+        "frac_cross_groups_le_budget": 1.0,
+        "frac_cross_groups_gt_budget": 0.0,
+        "frac_cross_groups_gt_500_docs": 0.0,
+        "max_doc_frac": 0.0013726835964310226,
+        "coverage_docs_frac": 0.05293411118737131,
+        "membership_mean": 1.0,
+        "membership_p95": 1.0,
+        "membership_max": 1,
+        "total_cross_group_tokens": 77040,
+        "unique_covered_doc_tokens": 77040,
+        "repeat_factor": 1.0,
+        "corpus_tokens": 1348035,
+        "cross_tokens_over_corpus": 0.05714985145044454
+      }
+    }
+  ],
+  "decision_before_gold": {
+    "hard_component": {
+      "status": "no_prespecified_policy_meets_rule",
+      "selected_policy": null,
+      "rule": "max_doc_frac<=0.05 and isolated_doc_frac<=0.20 and 2<=doc_weighted_median<=20"
+    },
+    "topk_shared_idf": {
+      "status": "meets_prespecified_constraint",
+      "k": 2,
+      "constraint": "smallest k in 2,4,8,16 with cross-group token p95<=16000 and mean membership<=4"
+    },
+    "gold_was_not_used": true
+  },
+  "cases": [
+    {
+      "category": "largest_component",
+      "n_docs": 11422,
+      "n_entities": 64871,
+      "n_titles": 9620,
+      "top_entities": [
+        {
+          "entity": "United States",
+          "df": 1173,
+          "key": "united states"
+        },
+        {
+          "entity": "American",
+          "df": 887,
+          "key": "american"
+        },
+        {
+          "entity": "Canada",
+          "df": 360,
+          "key": "canada"
+        },
+        {
+          "entity": "France",
+          "df": 314,
+          "key": "france"
+        },
+        {
+          "entity": "Australia",
+          "df": 272,
+          "key": "australia"
+        },
+        {
+          "entity": "Germany",
+          "df": 265,
+          "key": "germany"
+        },
+        {
+          "entity": "2010",
+          "df": 250,
+          "key": "2010"
+        },
+        {
+          "entity": "India",
+          "df": 241,
+          "key": "india"
+        },
+        {
+          "entity": "England",
+          "df": 217,
+          "key": "england"
+        },
+        {
+          "entity": "2008",
+          "df": 186,
+          "key": "2008"
+        },
+        {
+          "entity": "2006",
+          "df": 186,
+          "key": "2006"
+        },
+        {
+          "entity": "California",
+          "df": 185,
+          "key": "california"
+        },
+        {
+          "entity": "Italy",
+          "df": 184,
+          "key": "italy"
+        },
+        {
+          "entity": "2013",
+          "df": 182,
+          "key": "2013"
+        },
+        {
+          "entity": "London",
+          "df": 181,
+          "key": "london"
+        }
+      ],
+      "note": "The member list is not dumped. These are the fifteen entities with the highest chunk frequency; in a giant component they are the links that hold it together."
+    },
+    {
+      "category": "small_component",
+      "n_docs": 2,
+      "n_entities": 5,
+      "n_titles": 2,
+      "bridge": {
+        "entity": "Nature Publishing Group",
+        "df": 2,
+        "key": "nature publishing group"
+      },
+      "shared_entities": [
+        {
+          "entity": "Nature Publishing Group",
+          "df": 2
+        }
+      ],
+      "passages": [
+        {
+          "passage_id": "chunk-2607b347f3ba50fc96c7dff518818609",
+          "corpus_index": 4407,
+          "title": "European Journal of Human Genetics",
+          "snippet": "The European Journal of Human Genetics is a monthly peer-reviewed scientific journal published by the Nature Publishing Group on behalf of the European Society of Human Genetics. It covers all aspects of human genetics.",
+          "n_entities": 3,
+          "top_entities": [
+            {
+              "entity": "Nature Publishing Group",
+              "df": 2
+            },
+            {
+              "entity": "European Journal of Human Genetics",
+              "df": 1
+            },
+            {
+              "entity": "European Society of Human Genetics",
+              "df": 1
+            }
+          ]
+        },
+        {
+          "passage_id": "chunk-66421bcec2e3446838d196e42da738b3",
+          "corpus_index": 5470,
+          "title": "The Journal of Antibiotics",
+          "snippet": "The Journal of Antibiotics is a peer-reviewed medical journal published by the Nature Publishing Group for the Japan Antibiotics Research Association",
+          "n_entities": 3,
+          "top_entities": [
+            {
+              "entity": "Nature Publishing Group",
+              "df": 2
+            },
+            {
+              "entity": "Japan Antibiotics Research Association",
+              "df": 1
+            },
+            {
+              "entity": "The Journal of Antibiotics",
+              "df": 1
+            }
+          ]
+        }
+      ],
+      "figure": "plots/hipporag2_gpt4o_mini_case_0_small_component.png"
+    },
+    {
+      "category": "small_component",
+      "n_docs": 2,
+      "n_entities": 22,
+      "n_titles": 2,
+      "bridge": {
+        "entity": "Princess of Orange",
+        "df": 2,
+        "key": "princess of orange"
+      },
+      "shared_entities": [
+        {
+          "entity": "Princess of Orange",
+          "df": 2
+        }
+      ],
+      "passages": [
+        {
+          "passage_id": "chunk-ad347174ddf2c5db60ecb71b5f59400e",
+          "corpus_index": 9369,
+          "title": "Monarchy of the Netherlands",
+          "snippet": "King of the Netherlands Koning der Nederlanden Coat of arms of the Netherlands Incumbent Willem - Alexander since 30 April 2013 Details Style His Majesty Heir apparent Catharina - Amalia, Princess of Orange First monarch William I Formation 16 March 1815 Residence Royal Palace of Amsterdam Noordeinde Palace Huis ten Bosch Website The Royal Website",
+          "n_entities": 15,
+          "top_entities": [
+            {
+              "entity": "Princess of Orange",
+              "df": 2
+            },
+            {
+              "entity": "16 March 1815",
+              "df": 1
+            },
+            {
+              "entity": "30 April 2013",
+              "df": 1
+            },
+            {
+              "entity": "Catharina - Amalia",
+              "df": 1
+            },
+            {
+              "entity": "Coat of arms of the Netherlands",
+              "df": 1
+            },
+            {
+              "entity": "His Majesty",
+              "df": 1
+            },
+            {
+              "entity": "Huis ten Bosch",
+              "df": 1
+            },
+            {
+              "entity": "King of the Netherlands",
+              "df": 1
+            },
+            {
+              "entity": "Koning der Nederlanden",
+              "df": 1
+            },
+            {
+              "entity": "Monarchy of the Netherlands",
+              "df": 1
+            },
+            {
+              "entity": "Noordeinde Palace",
+              "df": 1
+            },
+            {
+              "entity": "Royal Palace of Amsterdam",
+              "df": 1
+            }
+          ]
+        },
+        {
+          "passage_id": "chunk-ff26777f0347a099b10d6b2a4e3752e1",
+          "corpus_index": 10072,
+          "title": "Anna of Lorraine",
+          "snippet": "Anna of Lorraine (25 July 1522 – 15 May 1568) was a princess of the House of Lorraine. She was Princess of Orange by her first marriage to René of Châlon, and Duchess of Aarschot by her second marriage to Philippe II of Croÿ.",
+          "n_entities": 8,
+          "top_entities": [
+            {
+              "entity": "Princess of Orange",
+              "df": 2
+            },
+            {
+              "entity": "15 May 1568",
+              "df": 1
+            },
+            {
+              "entity": "25 July 1522",
+              "df": 1
+            },
+            {
+              "entity": "Anna of Lorraine",
+              "df": 1
+            },
+            {
+              "entity": "Duchess of Aarschot",
+              "df": 1
+            },
+            {
+              "entity": "House of Lorraine",
+              "df": 1
+            },
+            {
+              "entity": "Philippe II of Croÿ",
+              "df": 1
+            },
+            {
+              "entity": "René of Châlon",
+              "df": 1
+            }
+          ]
+        }
+      ],
+      "figure": "plots/hipporag2_gpt4o_mini_case_1_small_component.png"
+    },
+    {
+      "category": "small_component",
+      "n_docs": 2,
+      "n_entities": 19,
+      "n_titles": 2,
+      "bridge": {
+        "entity": "Macmillan",
+        "df": 2,
+        "key": "macmillan"
+      },
+      "shared_entities": [
+        {
+          "entity": "Macmillan",
+          "df": 2
+        }
+      ],
+      "passages": [
+        {
+          "passage_id": "chunk-73adb221395bf6740c2daa28fce2318b",
+          "corpus_index": 97,
+          "title": "A Prisoner of Birth",
+          "snippet": "A Prisoner of Birth is a mystery novel by English author Jeffrey Archer, first published on 6 March 2008 by Macmillan. This book is a contemporary retelling of Dumas's \"The Count of Monte Cristo\". The novel saw Archer return to the first place in the fiction best-seller list for the first time in a decade.",
+          "n_entities": 6,
+          "top_entities": [
+            {
+              "entity": "Macmillan",
+              "df": 2
+            },
+            {
+              "entity": "6 March 2008",
+              "df": 1
+            },
+            {
+              "entity": "A Prisoner of Birth",
+              "df": 1
+            },
+            {
+              "entity": "Dumas",
+              "df": 1
+            },
+            {
+              "entity": "Jeffrey Archer",
+              "df": 1
+            },
+            {
+              "entity": "The Count of Monte Cristo",
+              "df": 1
+            }
+          ]
+        },
+        {
+          "passage_id": "chunk-b0643b987855da5c9e7d62814a10ec9f",
+          "corpus_index": 11236,
+          "title": "McMillan (surname)",
+          "snippet": "MacMillan, Macmillan, McMillen or McMillan are variants of a Scottish surname. The origin of the name is said to derive from the origin of the Scottish Clan MacMillan. The progenitor of the Clan was said to be Airbertach, Hebridean prince of the old royal house of Moray. Airbertach had a son named Cormac, who was a Bishop, and Cormac's own son Gilchrist or, in Gaelic, Gille Ch…",
+          "n_entities": 14,
+          "top_entities": [
+            {
+              "entity": "Macmillan",
+              "df": 2
+            },
+            {
+              "entity": "Airbertach",
+              "df": 1
+            },
+            {
+              "entity": "Clann an Mhaoil",
+              "df": 1
+            },
+            {
+              "entity": "Cormac",
+              "df": 1
+            },
+            {
+              "entity": "Gilchrist",
+              "df": 1
+            },
+            {
+              "entity": "Gille Chriosd",
+              "df": 1
+            },
+            {
+              "entity": "Gillemaol",
+              "df": 1
+            },
+            {
+              "entity": "Maolan",
+              "df": 1
+            },
+            {
+              "entity": "McMillan",
+              "df": 1
+            },
+            {
+              "entity": "McMillen",
+              "df": 1
+            },
+            {
+              "entity": "Mhaoillan",
+              "df": 1
+            },
+            {
+              "entity": "Moray",
+              "df": 1
+            }
+          ]
+        }
+      ],
+      "figure": "plots/hipporag2_gpt4o_mini_case_2_small_component.png"
+    },
+    {
+      "category": "generic_hub_pair",
+      "shared_entities": [
+        {
+          "entity": "United States",
+          "df": 1173
+        }
+      ],
+      "passages": [
+        {
+          "passage_id": "chunk-151654358c8c4b3c7582d9182aaeb0bf",
+          "corpus_index": 11,
+          "title": "Lionel Messi",
+          "snippet": "Lionel Messi Messi with Barcelona in December 2016 Full name Lionel Andrés Messi Date of birth (1987 - 06 - 24) 24 June 1987 (age 30) Place of birth Rosario, Argentina Height 1.70 m (5 ft 7 in) Playing position Forward Club information Current team Barcelona Number 10 Youth career 1994 -- 2000 Newell's Old Boys 2001 -- 2004 Barcelona Senior career * Years Team Apps (Gls) 2003…",
+          "n_entities": 35,
+          "top_entities": [
+            {
+              "entity": "United States",
+              "df": 1173
+            },
+            {
+              "entity": "2008",
+              "df": 186
+            },
+            {
+              "entity": "2004",
+              "df": 179
+            },
+            {
+              "entity": "2007",
+              "df": 175
+            },
+            {
+              "entity": "2005",
+              "df": 170
+            },
+            {
+              "entity": "2015",
+              "df": 164
+            },
+            {
+              "entity": "2014",
+              "df": 161
+            },
+            {
+              "entity": "2001",
+              "df": 156
+            },
+            {
+              "entity": "2016",
+              "df": 156
+            },
+            {
+              "entity": "Brazil",
+              "df": 90
+            },
+            {
+              "entity": "Netherlands",
+              "df": 66
+            },
+            {
+              "entity": "Argentina",
+              "df": 42
+            }
+          ]
+        },
+        {
+          "passage_id": "chunk-41e0cf7a0711db3927947a68b172c46d",
+          "corpus_index": 20,
+          "title": "Member states of NATO",
+          "snippet": "Of the 29 member countries, two are located in North America (Canada and the United States) and 27 are European countries while Turkey is in Eurasia. All members have militaries, except for Iceland which does not have a typical army (but does, however, have a coast guard and a small unit of civilian specialists for NATO operations). Three of NATO's members are nuclear weapons…",
+          "n_entities": 13,
+          "top_entities": [
+            {
+              "entity": "United States",
+              "df": 1173
+            },
+            {
+              "entity": "Canada",
+              "df": 360
+            },
+            {
+              "entity": "France",
+              "df": 314
+            },
+            {
+              "entity": "United Kingdom",
+              "df": 167
+            },
+            {
+              "entity": "Turkey",
+              "df": 53
+            },
+            {
+              "entity": "NATO",
+              "df": 35
+            },
+            {
+              "entity": "Cold War",
+              "df": 22
+            },
+            {
+              "entity": "Iceland",
+              "df": 8
+            },
+            {
+              "entity": "12 March 1999",
+              "df": 1
+            },
+            {
+              "entity": "18 February 1952",
+              "df": 1
+            },
+            {
+              "entity": "30 May 1982",
+              "df": 1
+            },
+            {
+              "entity": "5 June 2017",
+              "df": 1
+            }
+          ]
+        }
+      ],
+      "same_b2_entity": false,
+      "figure": "plots/hipporag2_gpt4o_mini_case_3_generic_hub_pair.png"
+    },
+    {
+      "category": "ner_link_without_triple_entity_link",
+      "bridge": {
+        "entity": "Las Palmas",
+        "df": 2,
+        "key": "las palmas"
+      },
+      "shared_ner_entities": [
+        {
+          "entity": "Las Palmas",
+          "df": 2,
+          "in_b2_left": false,
+          "in_b2_right": true
+        }
+      ],
+      "passages": [
+        {
+          "passage_id": "chunk-7b2db166f07ccb8e39f5d677bbfef87a",
+          "corpus_index": 9,
+          "title": "Lionel Messi",
+          "snippet": "Messi opened the 2015 -- 16 season by scoring twice from free kicks in Barcelona's 5 -- 4 victory (after extra time) over Sevilla in the UEFA Super Cup. A subsequent 5 -- 1 aggregate defeat against Athletic Bilbao in the Supercopa de España ended their expressed hopes of a second sextuple, with Messi scoring his side's only goal. On 16 September, he became the youngest player…",
+          "n_entities": 30,
+          "top_entities": [
+            {
+              "entity": "2015",
+              "df": 164
+            },
+            {
+              "entity": "Barcelona",
+              "df": 36
+            },
+            {
+              "entity": "Real Madrid",
+              "df": 26
+            },
+            {
+              "entity": "# 4",
+              "df": 13
+            },
+            {
+              "entity": "UEFA Champions League",
+              "df": 13
+            },
+            {
+              "entity": "-16%",
+              "df": 12
+            },
+            {
+              "entity": "Athletic Bilbao",
+              "df": 12
+            },
+            {
+              "entity": "Lionel Messi",
+              "df": 11
+            },
+            {
+              "entity": "# 1",
+              "df": 9
+            },
+            {
+              "entity": "3’",
+              "df": 8
+            },
+            {
+              "entity": "100%",
+              "df": 7
+            },
+            {
+              "entity": "5’",
+              "df": 5
+            }
+          ]
+        },
+        {
+          "passage_id": "chunk-7b27d7072225397ba5ae7da9c1568193",
+          "corpus_index": 7387,
+          "title": "Yaiza (municipality)",
+          "snippet": "Yaiza is a municipality on the island of Lanzarote in the Canary Islands, Spain. It lies in the southwest of the island and forms part of the province of Las Palmas. The municipality is bounded by the Atlantic Ocean to the west, south and east. To the north, the Timanfaya National Park is partly within the municipality. The eastern part of the municipality is mountainous and,…",
+          "n_entities": 8,
+          "top_entities": [
+            {
+              "entity": "Spain",
+              "df": 145
+            },
+            {
+              "entity": "Atlantic Ocean",
+              "df": 46
+            },
+            {
+              "entity": "Canary Islands",
+              "df": 5
+            },
+            {
+              "entity": "Las Palmas",
+              "df": 2
+            },
+            {
+              "entity": "Lanzarote",
+              "df": 1
+            },
+            {
+              "entity": "Rubicon plain",
+              "df": 1
+            },
+            {
+              "entity": "Timanfaya National Park",
+              "df": 1
+            },
+            {
+              "entity": "Yaiza",
+              "df": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "two_hop_rare_entity",
+      "bridges": [
+        {
+          "entity": "Supercopa de España",
+          "df": 2
+        },
+        {
+          "entity": "Yokohama",
+          "df": 2
+        }
+      ],
+      "passages": [
+        {
+          "passage_id": "chunk-2616c4fd8d98279e5c71593c6ab8a5e4",
+          "corpus_index": 12,
+          "title": "El Clásico",
+          "snippet": "El Clásico Team kits Locale Spain Teams Barcelona Real Madrid Latest meeting Real Madrid 2 -- 0 Barcelona Supercopa de España (16 August 2017) Next meeting Real Madrid v Barcelona La Liga (23 December 2017) Stadiums Camp Nou (Barcelona) Santiago Bernabéu (Real Madrid) Statistics Meetings total Competitive matches: 235 Exhibition matches: 34 Total matches: 269 Most wins Competi…",
+          "n_entities": 14,
+          "top_entities": [
+            {
+              "entity": "Spain",
+              "df": 145
+            },
+            {
+              "entity": "Barcelona",
+              "df": 36
+            },
+            {
+              "entity": "Real Madrid",
+              "df": 26
+            },
+            {
+              "entity": "La Liga",
+              "df": 17
+            },
+            {
+              "entity": "Copa del Rey",
+              "df": 13
+            },
+            {
+              "entity": "Lionel Messi",
+              "df": 11
+            },
+            {
+              "entity": "El Clásico",
+              "df": 5
+            },
+            {
+              "entity": "Camp Nou",
+              "df": 4
+            },
+            {
+              "entity": "19 June 1943",
+              "df": 2
+            },
+            {
+              "entity": "Manolo Sanchís",
+              "df": 2
+            },
+            {
+              "entity": "Santiago Bernabéu",
+              "df": 2
+            },
+            {
+              "entity": "Supercopa de España",
+              "df": 2
+            }
+          ]
+        },
+        {
+          "passage_id": "chunk-7b2db166f07ccb8e39f5d677bbfef87a",
+          "corpus_index": 9,
+          "title": "Lionel Messi",
+          "snippet": "Messi opened the 2015 -- 16 season by scoring twice from free kicks in Barcelona's 5 -- 4 victory (after extra time) over Sevilla in the UEFA Super Cup. A subsequent 5 -- 1 aggregate defeat against Athletic Bilbao in the Supercopa de España ended their expressed hopes of a second sextuple, with Messi scoring his side's only goal. On 16 September, he became the youngest player…",
+          "n_entities": 30,
+          "top_entities": [
+            {
+              "entity": "2015",
+              "df": 164
+            },
+            {
+              "entity": "Barcelona",
+              "df": 36
+            },
+            {
+              "entity": "Real Madrid",
+              "df": 26
+            },
+            {
+              "entity": "# 4",
+              "df": 13
+            },
+            {
+              "entity": "UEFA Champions League",
+              "df": 13
+            },
+            {
+              "entity": "-16%",
+              "df": 12
+            },
+            {
+              "entity": "Athletic Bilbao",
+              "df": 12
+            },
+            {
+              "entity": "Lionel Messi",
+              "df": 11
+            },
+            {
+              "entity": "# 1",
+              "df": 9
+            },
+            {
+              "entity": "3’",
+              "df": 8
+            },
+            {
+              "entity": "100%",
+              "df": 7
+            },
+            {
+              "entity": "5’",
+              "df": 5
+            }
+          ]
+        },
+        {
+          "passage_id": "chunk-69f3a49bf3b61ba2c10f3d54a593a2da",
+          "corpus_index": 10348,
+          "title": "2002 FIFA World Cup Final",
+          "snippet": "The 2002 FIFA World Cup Final was a football match that took place on 30 June 2002 at the International Stadium in Yokohama to determine the winner of the 2002 FIFA World Cup. The final was contested by Germany and Brazil. It was the first World Cup meeting between the two sides. Brazil won the match 2–0, winning a record fifth title. Ronaldo, who became the record World Cup g…",
+          "n_entities": 14,
+          "top_entities": [
+            {
+              "entity": "United States",
+              "df": 1173
+            },
+            {
+              "entity": "Germany",
+              "df": 265
+            },
+            {
+              "entity": "England",
+              "df": 217
+            },
+            {
+              "entity": "2006",
+              "df": 186
+            },
+            {
+              "entity": "Brazil",
+              "df": 90
+            },
+            {
+              "entity": "South Korea",
+              "df": 66
+            },
+            {
+              "entity": "Turkey",
+              "df": 53
+            },
+            {
+              "entity": "Golden Boot",
+              "df": 7
+            },
+            {
+              "entity": "Ronaldo",
+              "df": 2
+            },
+            {
+              "entity": "Yokohama",
+              "df": 2
+            },
+            {
+              "entity": "2002 FIFA World Cup Final",
+              "df": 1
+            },
+            {
+              "entity": "30 June 2002",
+              "df": 1
+            }
+          ]
+        }
+      ],
+      "endpoints_share_b1": false,
+      "endpoints_share_b2": false
+    }
+  ],
+  "gold_posthoc": {
+    "used_for_parameter_selection": false,
+    "n_questions_with_at_least_two_gold_passages": 1000,
+    "role_counts": {
+      "update": 500,
+      "heldout": 399,
+      "dev": 100,
+      "quarantine_token_identical": 1
+    },
+    "hop_counts": {
+      "2": 518,
+      "3": 316,
+      "4": 166
+    },
+    "by_policy": [
+      {
+        "policy": "raw",
+        "questions_all_gold_in_one_component": 996,
+        "n_questions": 1000
+      },
+      {
+        "policy": "df_gt_10",
+        "questions_all_gold_in_one_component": 803,
+        "n_questions": 1000
+      },
+      {
+        "policy": "df_gt_20",
+        "questions_all_gold_in_one_component": 893,
+        "n_questions": 1000
+      },
+      {
+        "policy": "df_gt_50",
+        "questions_all_gold_in_one_component": 967,
+        "n_questions": 1000
+      },
+      {
+        "policy": "df_gt_100",
+        "questions_all_gold_in_one_component": 982,
+        "n_questions": 1000
+      },
+      {
+        "policy": "df_gt_0.5pct",
+        "questions_all_gold_in_one_component": 974,
+        "n_questions": 1000
+      },
+      {
+        "policy": "df_gt_1pct",
+        "questions_all_gold_in_one_component": 983,
+        "n_questions": 1000
+      },
+      {
+        "policy": "df_gt_2pct",
+        "questions_all_gold_in_one_component": 992,
+        "n_questions": 1000
+      }
+    ],
+    "topk_idf": [
+      {
+        "k": 2,
+        "questions_covered_by_one_gold_members_topk": 232,
+        "n_questions": 1000
+      },
+      {
+        "k": 4,
+        "questions_covered_by_one_gold_members_topk": 315,
+        "n_questions": 1000
+      },
+      {
+        "k": 8,
+        "questions_covered_by_one_gold_members_topk": 390,
+        "n_questions": 1000
+      },
+      {
+        "k": 16,
+        "questions_covered_by_one_gold_members_topk": 483,
+        "n_questions": 1000
+      }
+    ],
+    "questions_all_gold_pairs_share_entity_df_le_cap": 470,
+    "pair_cap": 50,
+    "baseline_group_size": 7,
+    "random_partition_colocated": 0,
+    "sequential_partition_colocated": 116,
+    "reason_counts_are_not_accuracy": {
+      "same_raw_component": 803,
+      "same_raw_but_split_by_listed_filter": 193,
+      "empty_ner_on_a_gold_passage": 1,
+      "no_shared_ner_component": 2,
+      "possible_alias_or_partial_name": 1
+    },
+    "examples": [
+      {
+        "question_id": "3hop1__9285_5188_23307",
+        "hop": 3,
+        "split_role": "update",
+        "reason": "same_raw_but_split_by_hub_filter",
+        "filters_that_split": [
+          "df_gt_10",
+          "df_gt_20"
+        ],
+        "titles": [
+          "Szlachta",
+          "Molotov–Ribbentrop Pact",
+          "Warsaw Pact"
+        ]
+      },
+      {
+        "question_id": "3hop1__305282_282081_73772",
+        "hop": 3,
+        "split_role": "update",
+        "reason": "same_raw_but_split_by_hub_filter",
+        "filters_that_split": [
+          "df_gt_10",
+          "df_gt_20"
+        ],
+        "titles": [
+          "III (Stanton Moore album)",
+          "Flyin' the Koop",
+          "Battle of New Orleans"
+        ]
+      },
+      {
+        "question_id": "4hop3__754156_88460_30152_20999",
+        "hop": 4,
+        "split_role": "update",
+        "reason": "same_raw_but_split_by_hub_filter",
+        "filters_that_split": [
+          "df_gt_10",
+          "df_gt_20"
+        ],
+        "titles": [
+          "Ottoman Empire",
+          "A Lim",
+          "Myanmar",
+          "Geography of Myanmar"
+        ]
+      },
+      {
+        "question_id": "3hop1__136129_87694_124169",
+        "hop": 3,
+        "split_role": "heldout",
+        "reason": "same_raw_but_split_by_hub_filter",
+        "filters_that_split": [
+          "df_gt_10"
+        ],
+        "titles": [
+          "Governor of Vatican City",
+          "St. Peter's Basilica",
+          "Đakovo Cathedral"
+        ]
+      },
+      {
+        "question_id": "3hop1__786632_831637_91775",
+        "hop": 3,
+        "split_role": "update",
+        "reason": "same_raw_but_split_by_hub_filter",
+        "filters_that_split": [
+          "df_gt_10"
+        ],
+        "titles": [
+          "List of destroyer classes of the United States Navy",
+          "USS Edsall (DE-129)",
+          "United States Navy SEALs"
+        ]
+      },
+      {
+        "question_id": "4hop3__524186_219173_638950_72134",
+        "hop": 4,
+        "split_role": "update",
+        "reason": "same_raw_but_split_by_hub_filter",
+        "filters_that_split": [
+          "df_gt_10"
+        ],
+        "titles": [
+          "Greenwood Laboratory School",
+          "Margaret Mayo (playwright)",
+          "The Poor Boob",
+          "Springfield, Illinois"
+        ]
+      },
+      {
+        "question_id": "2hop__24648_192417",
+        "hop": 2,
+        "split_role": "heldout",
+        "reason": "empty_ner_on_a_gold_passage",
+        "titles": [
+          "North Carolina",
+          "Sports league ranking"
+        ],
+        "passage_ids": [
+          "chunk-75894c5cbc25046e2981f96a500db775",
+          "chunk-de709c9e816754834cef9e3ec76b27f8"
+        ]
+      },
+      {
+        "question_id": "2hop__161507_77849",
+        "hop": 2,
+        "split_role": "update",
+        "reason": "no_shared_ner_component",
+        "titles": [
+          "Masherbrum",
+          "Chief Justice of Pakistan"
+        ],
+        "passage_ids": [
+          "chunk-9adc6682cd71306def41fc7a854d1aaa",
+          "chunk-b0364915782827f6959acc8fbb7e8dca"
+        ]
+      },
+      {
+        "question_id": "2hop__59612_50883",
+        "hop": 2,
+        "split_role": "heldout",
+        "reason": "no_shared_ner_component",
+        "titles": [
+          "Emergency Response Guidebook",
+          "London broil"
+        ],
+        "passage_ids": [
+          "chunk-707e783a063aa45b0a1c8686c8551f12",
+          "chunk-d80993e71f2a19a443887a44e1b86c13"
+        ]
+      },
+      {
+        "question_id": "2hop__574496_123283",
+        "hop": 2,
+        "split_role": "dev",
+        "reason": "possible_alias_or_partial_name",
+        "titles": [
+          "John Houseman",
+          "Edgar Lansbury (producer)"
+        ],
+        "passage_ids": [
+          "chunk-53c10ccf12bf1699ec2101eafce80bef",
+          "chunk-2be15abd160bd07f5d33f8575b1d0e5b"
+        ]
+      }
+    ],
+    "note": "Same-component rates on the raw graph are structural connectivity, including connectivity caused by generic hubs. They are not a measure of evidence-group correctness."
+  },
+  "formulas": {
+    "idf": "ln((N+1)/(df+1))",
+    "shared_idf_sum": "sum of idf over shared entities whose df<=pair_cap",
+    "weighted_jaccard": "shared_idf_sum / (idf(A)+idf(B)-shared_idf_sum), A and B exclude entities with df>pair_cap",
+    "pair_cap_meaning": "Entities above the cap are omitted from stored candidate pairs and from IDF/Jaccard scores. They remain in the union-find hub-filter experiments."
+  },
+  "_passage_rows": [],
+  "load": {
+    "matched": 11656,
+    "missing": 0,
+    "extra": 0,
+    "content_mismatches": 0,
+    "n_docs_in_file": 11656,
+    "cited_graph_stats": {
+      "num_phrase_nodes": 102194,
+      "num_passage_nodes": 11656,
+      "num_total_nodes": 113850,
+      "num_extracted_triples": 128834,
+      "num_triples_with_passage_node": 148721,
+      "num_synonymy_triples": 1331727,
+      "num_total_triples": 1609282,
+      "graph_vcount": 113850,
+      "graph_ecount": 1609214
+    }
+  }
+}

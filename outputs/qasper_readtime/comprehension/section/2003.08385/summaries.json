@@ -1,0 +1,988 @@
+{
+ "summaries": [
+  {
+   "passage_id": "2003.08385::s00::p000",
+   "summary": "Many automated stance detection datasets contain short texts about politicians or public issues annotated for stance toward a target, but are limited in scope.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s00::p001",
+   "summary": "Current stance detection methods face questionable cross-lingual performance, small single-target multilingual datasets, target-specific models, and lower cross-target performance.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s00::p002",
+   "summary": "The paper proposes x-stance, a larger dataset with more than 150 Swiss politics questions and more than 67k candidate answers from the last decade.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s00::p003",
+   "summary": "Questions are available in English, Swiss Standard German, French, and Italian, with comment language depending on the candidate's region of origin.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s00::p004",
+   "summary": "Data were extracted from Smartvote, where candidates give categorical answers and may add free-text comments justifying, explaining, or differentiating them.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s00::p005",
+   "summary": "The dataset becomes a stance detection task by treating the question as the target representation and the commentary as the input to classify.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s00::p006",
+   "summary": "The dataset is split for zero-shot cross-lingual and cross-target transfer, and a fine-tuned multilingual Bert baseline shows comparable accuracy and some generalization.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s00::p007",
+   "summary": "The dataset and code for reproducing the baseline model are publicly available.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s01::p000",
+   "summary": "IberEval produced two multilingual datasets of annotated Spanish and Catalan tweets focused on Catalan independence, described as the first truly multilingual stance detection datasets.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s01::p001",
+   "summary": "For x-stance languages, only monolingual datasets seem available: French presidential candidate tweets, Italian 2016 constitutional referendum tweets, and a German GermEval 2017 aspect-based sentiment dataset.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s02::p000",
+   "summary": "SemEval-2016 offered multiple targets, with target-specific models in subtask A and lower-performing cross-target transfer to “Donald Trump” in subtask B.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s02::p001",
+   "summary": "BIBREF4 introduced a multi-target stance dataset with two targets per instance, focusing on dependencies within a text sample rather than many samples with many targets.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s03::p000",
+   "summary": "In a target-specific setting, BIBREF10 systematically evaluated stance detection approaches and found Bert consistently outperformed previous approaches.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s03::p001",
+   "summary": "BIBREF10 used single-segment encoding preventing cross-target transfer, while BIBREF11 used conditional encoding with a bidirectional LSTM to generalize to unseen targets.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s04::p000",
+   "summary": "x-stance input consists of a natural language question about a political issue and a natural language commentary on a stance toward it.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s04::p001",
+   "summary": "The predicted label is `favor' or `against`, with no `neither' class, making x-stance a binary classification task.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s04::p002",
+   "summary": "The evaluation metric is the macro-average of the F1-score for `favor' and the F1-score for `against', used for comparability with previous benchmarks.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s05::p000",
+   "summary": "Questions and answers were downloaded via the Smartvote API, covering 175 communal, cantonal and national elections between 2011 and 2020.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s05::p001",
+   "summary": "Smartvote candidates answer the same translated questions with `yes', `rather yes', `rather no', or `no', and may add comments of at most 500 characters.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s05::p002",
+   "summary": "Smartvote questions were edited by political scientists to cover broad political issues relevant at election time, with design documentation provided by BIBREF12.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s06::p000",
+   "summary": "The two labels on each pole were merged into `favor' or `against' to improve consistency and comparability with previous stance detection datasets.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s06::p001",
+   "summary": "The text of the comments was not further preprocessed.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s07::p000",
+   "summary": "Because the API lacks comment language, langdetect BIBREF13 jointly classified all comments per responder, assuming no code-switching.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s07::p001",
+   "summary": "A first run allowed all 55 supported languages plus Romansh, finding no Romansh comments, unexpected outputs as misclassifications, and little or no Swiss German.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s07::p002",
+   "summary": "The second run restricted the identifier's output to English, French, German and Italian.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s08::p000",
+   "summary": "Questions and answers were pre-filtered for quality, with a focus on national-level questions and inclusion of all national election questions and answers.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s08::p001",
+   "summary": "For communal and cantonal elections, only answers to questions also asked nationally were used, augmenting training while validation and test sets used national election answers.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s08::p002",
+   "summary": "The less than 20 comments classified as English were discarded, and instances meeting listed conditions were filtered from the dataset.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s08::p003",
+   "summary": "Instances were filtered if the question is not closed or does not address a clearly defined political issue.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s08::p004",
+   "summary": "Instances were filtered if no comment was submitted or the comment is shorter than 50 characters.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s08::p005",
+   "summary": "Instances were filtered if the comment starts with “but” or a similar indicator that it is not self-contained.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s08::p006",
+   "summary": "Instances were filtered if the comment contains a URL.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s08::p007",
+   "summary": "In total, a fifth of the original comments were filtered out.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s09::p000",
+   "summary": "Smartvote editors organized questions into categories such as “Economy”, which were consolidated into 12 broad topics in Table TABREF7.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s10::p000",
+   "summary": "The dataset is shared under a CC BY-NC 4.0 license, with copyright remaining with www.smartvote.ch.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s10::p001",
+   "summary": "Respondent IDs are hashed, no personal attributes such as party affiliation are included, and a data statement BIBREF15 is provided in Appendix SECREF8.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s11::p000",
+   "summary": "“Healthcare” and “Political System” were held out from training to create a separate cross-topic test set with related questions and answers.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s11::p001",
+   "summary": "To test cross-question generalization within seen topics, 16 held-out questions were manually selected across the remaining 10 topics to ensure no paraphrases appeared in training.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s11::p002",
+   "summary": "Italian was designated test-only, while percentages of German and French respondents were randomly selected for validation or test respondents.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s11::p003",
+   "summary": "The split yielded one training set, one validation set and four test sets, with sizes in Table TABREF8 and no simultaneous cross-lingual and cross-target test sets.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s12::p000",
+   "summary": "Some observations can be made about the composition of x-stance.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s13::p000",
+   "summary": "Figure FIGREF23 shows `favor' and `against` proportions by target, with held-out topics at 49.4% `favor' and other topics at 50.0%.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s14::p000",
+   "summary": "Some questions are paraphrases of the same political issue, but duplicates are not consolidated because they contribute to training data diversity.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s14::p001",
+   "summary": "Some questions in the dataset are short, while others are rather convoluted, with a typical long question following.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s14::p002",
+   "summary": "A long question asks whether the 1% share of direct payments to Swiss agriculture going to organic farming should increase under Switzerland's 2014-2017 agricultural policy.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s14::p003",
+   "summary": "Such longer questions might be more challenging to process semantically.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s15::p000",
+   "summary": "x-stance has more German than French samples, with a language ratio of about 3:1 across all training and test sets, motivating a multi-source M-Bert baseline.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s16::p000",
+   "summary": "Two types of baselines are evaluated to obtain an impression of the task's difficulty.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s17::p000",
+   "summary": "Majority class baselines predict the most frequent class globally or target-wise, with the latter applicable only to the supervised test set.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s18::p000",
+   "summary": "Multilingual Bert (M-Bert), pretrained jointly in 104 languages, is fine-tuned as a baseline and has shown strong multilingual and stance detection performance.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s19::p000",
+   "summary": "The x-stance task is treated as sequence pair classification, with the question as segment A, the comment as segment B, [SEP], [CLS], and a linear layer.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s19::p001",
+   "summary": "The full model is fine-tuned with cross-entropy loss using the AllenNLP library BIBREF21 as the implementation basis.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s20::p000",
+   "summary": "The `favor' class was upsampled for balance, with a maximum sequence length of 512 subwords, batch size of 16, and grid search based on validation accuracy.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s20::p001",
+   "summary": "The grid search learning rates were 5e-5, 3e-5, and 2e-5.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s20::p002",
+   "summary": "The grid search numbers of epochs were 3 and 4.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s20::p003",
+   "summary": "Grid search was repeated independently for every variant, using Adam with ${\\beta }_1=0.9$ and ${\\beta }_2=0.999$, L2 weight decay of $0.01$, warmup over the first 10%, linear decay, and dropout probability of 0.1.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s21::p000",
+   "summary": "Table TABREF36 shows M-Bert consistently outperforms majority class baselines cross-lingually, including zero-short Italian performance above the target-wise majority class baseline.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s21::p001",
+   "summary": "Table TABREF37 shows M-Bert performs worse cross-target but surpasses majority class baselines, with cross-question score slightly lower than cross-topic score.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s22::p000",
+   "summary": "The default setup preserves horizontal language consistency by matching question and comment languages, including Italian questions for Italian test instances.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s22::p001",
+   "summary": "Vertical language consistency is tested by training and evaluating M-Bert with all questions in English, chosen as a lingua franca with the largest M-Bert pretraining share.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s22::p002",
+   "summary": "Table TABREF39 shows negligible effects in most settings but clearly increased cross-lingual performance when all questions are in English.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s23::p000",
+   "summary": "Additional experiments test whether only questions or only comments are necessary to optimally solve the task.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s23::p001",
+   "summary": "One experiment uses a single segment containing the comment and removes questions from training and test data (missing questions).",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s23::p002",
+   "summary": "One experiment uses only the question and removes the comment (missing comments).",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s23::p003",
+   "summary": "Both cases decrease performance across all evaluation settings, with much higher loss for missing comments, indicating comments contain the most important stance information.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s23::p004",
+   "summary": "Missing questions also reduce performance, especially in supervised and cross-lingual settings, while Table TABREF48 shows comments occurring with multiple targets and less pronounced effects in cross-target settings.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s23::p005",
+   "summary": "Single-segment experiments show both comment and question provide crucial information, and randomized test data probe whether M-Bert mainly uses one segment.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s23::p006",
+   "summary": "One probe keeps comments in place and randomly shuffles questions within the same test set and language (random questions).",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s23::p007",
+   "summary": "One probe keeps questions in place and randomizes comments within test set boundaries (random comments).",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s23::p008",
+   "summary": "Table TABREF39 shows performance decreases in both randomized cases, confirming the model learns to take into account both segments.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s24::p000",
+   "summary": "The final experiment tests whether targets need natural language representation or can instead use trainable embeddings.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s24::p001",
+   "summary": "Each target type is represented by a different reserved symbol from the M-Bert vocabulary, with segment A set to that symbol instead of a natural language question.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s24::p002",
+   "summary": "Table TABREF39 shows M-Bert with target embeddings performs clearly worse in supervised and cross-lingual settings, indicating spelled-out natural language questions provide important linguistic detail.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s25::p000",
+   "summary": "Baseline experiments confirm that M-Bert can achieve reasonable accuracy on x-stance.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s25::p001",
+   "summary": "Table TABREF46 lists Bert variant scores on other stance detection datasets, suggesting supervised x-stance has similar difficulty to SemEval-2016 BIBREF0 or MPCHI BIBREF22.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s25::p002",
+   "summary": "In cross-lingual and cross-target settings, the mean score drops by 6–8 percentage points compared to supervised, showing zero-shot transfer is possible but improvable.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s25::p003",
+   "summary": "Additional experiments in Table TABREF39 validate the results and justify the sequence-pair classification approach to stance detection.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s25::p004",
+   "summary": "Table TABREF47 shows high-confidence M-Bert errors, indicating many comments express stance implicitly, a potential dataset weakness partly compensated by the dataset's size and breadth.",
+   "group_id": "2003.08385::g00"
+  },
+  {
+   "passage_id": "2003.08385::s26::p000",
+   "summary": "The x-stance dataset covers broad national Swiss politics topics, enabling multi-target learning and multilingual stance detection in Swiss Standard German, French and Italian.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s26::p001",
+   "summary": "Formal commentary by politicians on political questions adds a new text genre, and a question–answer format naturally conditions stance detection models on a target.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s26::p002",
+   "summary": "Baseline results with multilingual Bert show some zero-shot transfer to unseen languages and targets, with a performance gap and potential value for other fields.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s27::p000",
+   "summary": "This work was funded by the Swiss National Science Foundation (project MUTAMUR; no. 176727), and Isabelle Augenstein is thanked for helpful feedback.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s28::p000",
+   "summary": "Questions and candidate responses on smartvote.ch were downloaded to study automatic stance detection, mainly including national-level issues to reduce variability.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s29::p000",
+   "summary": "The training set has 74.1% de-CH and 25.9% fr-CH, while test sets have 67.1% de-CH, 24.7% fr-CH and 8.2% it-CH, with English translations.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s30::p000",
+   "summary": "Answer speakers were candidates for communal, cantonal or national elections in Switzerland who filled out an online questionnaire.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s30::p001",
+   "summary": "Age is 18 or older – mixed.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s30::p002",
+   "summary": "Gender is Unknown – mixed.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s30::p003",
+   "summary": "Race/ethnicity is Unknown – mixed.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s30::p004",
+   "summary": "Native language is Unknown – mixed.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s30::p005",
+   "summary": "Socioeconomic status is Unknown – mixed.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s30::p006",
+   "summary": "Different speakers represented: 7581.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s30::p007",
+   "summary": "Presence of disordered speech is Unknown.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s31::p000",
+   "summary": "Political scientists edited and translated the questions for a public voting advice website.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s31::p001",
+   "summary": "The answers were written between 2011 and 2020 by the users of the website.",
+   "group_id": "2003.08385::g01"
+  },
+  {
+   "passage_id": "2003.08385::s32::p000",
+   "summary": "Text characteristics include questions, answers, arguments and comments regarding political issues.",
+   "group_id": "2003.08385::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "2003.08385::g00",
+   "summaries": [
+    {
+     "passage_id": "2003.08385::s00::p000",
+     "summary": "Many automated stance detection datasets contain short texts about politicians or public issues annotated for stance toward a target, but are limited in scope.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s00::p001",
+     "summary": "Current stance detection methods face questionable cross-lingual performance, small single-target multilingual datasets, target-specific models, and lower cross-target performance.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s00::p002",
+     "summary": "The paper proposes x-stance, a larger dataset with more than 150 Swiss politics questions and more than 67k candidate answers from the last decade.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s00::p003",
+     "summary": "Questions are available in English, Swiss Standard German, French, and Italian, with comment language depending on the candidate's region of origin.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s00::p004",
+     "summary": "Data were extracted from Smartvote, where candidates give categorical answers and may add free-text comments justifying, explaining, or differentiating them.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s00::p005",
+     "summary": "The dataset becomes a stance detection task by treating the question as the target representation and the commentary as the input to classify.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s00::p006",
+     "summary": "The dataset is split for zero-shot cross-lingual and cross-target transfer, and a fine-tuned multilingual Bert baseline shows comparable accuracy and some generalization.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s00::p007",
+     "summary": "The dataset and code for reproducing the baseline model are publicly available.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s01::p000",
+     "summary": "IberEval produced two multilingual datasets of annotated Spanish and Catalan tweets focused on Catalan independence, described as the first truly multilingual stance detection datasets.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s01::p001",
+     "summary": "For x-stance languages, only monolingual datasets seem available: French presidential candidate tweets, Italian 2016 constitutional referendum tweets, and a German GermEval 2017 aspect-based sentiment dataset.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s02::p000",
+     "summary": "SemEval-2016 offered multiple targets, with target-specific models in subtask A and lower-performing cross-target transfer to “Donald Trump” in subtask B.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s02::p001",
+     "summary": "BIBREF4 introduced a multi-target stance dataset with two targets per instance, focusing on dependencies within a text sample rather than many samples with many targets.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s03::p000",
+     "summary": "In a target-specific setting, BIBREF10 systematically evaluated stance detection approaches and found Bert consistently outperformed previous approaches.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s03::p001",
+     "summary": "BIBREF10 used single-segment encoding preventing cross-target transfer, while BIBREF11 used conditional encoding with a bidirectional LSTM to generalize to unseen targets.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s04::p000",
+     "summary": "x-stance input consists of a natural language question about a political issue and a natural language commentary on a stance toward it.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s04::p001",
+     "summary": "The predicted label is `favor' or `against`, with no `neither' class, making x-stance a binary classification task.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s04::p002",
+     "summary": "The evaluation metric is the macro-average of the F1-score for `favor' and the F1-score for `against', used for comparability with previous benchmarks.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s05::p000",
+     "summary": "Questions and answers were downloaded via the Smartvote API, covering 175 communal, cantonal and national elections between 2011 and 2020.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s05::p001",
+     "summary": "Smartvote candidates answer the same translated questions with `yes', `rather yes', `rather no', or `no', and may add comments of at most 500 characters.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s05::p002",
+     "summary": "Smartvote questions were edited by political scientists to cover broad political issues relevant at election time, with design documentation provided by BIBREF12.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s06::p000",
+     "summary": "The two labels on each pole were merged into `favor' or `against' to improve consistency and comparability with previous stance detection datasets.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s06::p001",
+     "summary": "The text of the comments was not further preprocessed.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s07::p000",
+     "summary": "Because the API lacks comment language, langdetect BIBREF13 jointly classified all comments per responder, assuming no code-switching.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s07::p001",
+     "summary": "A first run allowed all 55 supported languages plus Romansh, finding no Romansh comments, unexpected outputs as misclassifications, and little or no Swiss German.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s07::p002",
+     "summary": "The second run restricted the identifier's output to English, French, German and Italian.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s08::p000",
+     "summary": "Questions and answers were pre-filtered for quality, with a focus on national-level questions and inclusion of all national election questions and answers.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s08::p001",
+     "summary": "For communal and cantonal elections, only answers to questions also asked nationally were used, augmenting training while validation and test sets used national election answers.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s08::p002",
+     "summary": "The less than 20 comments classified as English were discarded, and instances meeting listed conditions were filtered from the dataset.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s08::p003",
+     "summary": "Instances were filtered if the question is not closed or does not address a clearly defined political issue.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s08::p004",
+     "summary": "Instances were filtered if no comment was submitted or the comment is shorter than 50 characters.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s08::p005",
+     "summary": "Instances were filtered if the comment starts with “but” or a similar indicator that it is not self-contained.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s08::p006",
+     "summary": "Instances were filtered if the comment contains a URL.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s08::p007",
+     "summary": "In total, a fifth of the original comments were filtered out.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s09::p000",
+     "summary": "Smartvote editors organized questions into categories such as “Economy”, which were consolidated into 12 broad topics in Table TABREF7.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s10::p000",
+     "summary": "The dataset is shared under a CC BY-NC 4.0 license, with copyright remaining with www.smartvote.ch.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s10::p001",
+     "summary": "Respondent IDs are hashed, no personal attributes such as party affiliation are included, and a data statement BIBREF15 is provided in Appendix SECREF8.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s11::p000",
+     "summary": "“Healthcare” and “Political System” were held out from training to create a separate cross-topic test set with related questions and answers.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s11::p001",
+     "summary": "To test cross-question generalization within seen topics, 16 held-out questions were manually selected across the remaining 10 topics to ensure no paraphrases appeared in training.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s11::p002",
+     "summary": "Italian was designated test-only, while percentages of German and French respondents were randomly selected for validation or test respondents.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s11::p003",
+     "summary": "The split yielded one training set, one validation set and four test sets, with sizes in Table TABREF8 and no simultaneous cross-lingual and cross-target test sets.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s12::p000",
+     "summary": "Some observations can be made about the composition of x-stance.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s13::p000",
+     "summary": "Figure FIGREF23 shows `favor' and `against` proportions by target, with held-out topics at 49.4% `favor' and other topics at 50.0%.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s14::p000",
+     "summary": "Some questions are paraphrases of the same political issue, but duplicates are not consolidated because they contribute to training data diversity.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s14::p001",
+     "summary": "Some questions in the dataset are short, while others are rather convoluted, with a typical long question following.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s14::p002",
+     "summary": "A long question asks whether the 1% share of direct payments to Swiss agriculture going to organic farming should increase under Switzerland's 2014-2017 agricultural policy.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s14::p003",
+     "summary": "Such longer questions might be more challenging to process semantically.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s15::p000",
+     "summary": "x-stance has more German than French samples, with a language ratio of about 3:1 across all training and test sets, motivating a multi-source M-Bert baseline.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s16::p000",
+     "summary": "Two types of baselines are evaluated to obtain an impression of the task's difficulty.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s17::p000",
+     "summary": "Majority class baselines predict the most frequent class globally or target-wise, with the latter applicable only to the supervised test set.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s18::p000",
+     "summary": "Multilingual Bert (M-Bert), pretrained jointly in 104 languages, is fine-tuned as a baseline and has shown strong multilingual and stance detection performance.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s19::p000",
+     "summary": "The x-stance task is treated as sequence pair classification, with the question as segment A, the comment as segment B, [SEP], [CLS], and a linear layer.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s19::p001",
+     "summary": "The full model is fine-tuned with cross-entropy loss using the AllenNLP library BIBREF21 as the implementation basis.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s20::p000",
+     "summary": "The `favor' class was upsampled for balance, with a maximum sequence length of 512 subwords, batch size of 16, and grid search based on validation accuracy.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s20::p001",
+     "summary": "The grid search learning rates were 5e-5, 3e-5, and 2e-5.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s20::p002",
+     "summary": "The grid search numbers of epochs were 3 and 4.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s20::p003",
+     "summary": "Grid search was repeated independently for every variant, using Adam with ${\\beta }_1=0.9$ and ${\\beta }_2=0.999$, L2 weight decay of $0.01$, warmup over the first 10%, linear decay, and dropout probability of 0.1.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s21::p000",
+     "summary": "Table TABREF36 shows M-Bert consistently outperforms majority class baselines cross-lingually, including zero-short Italian performance above the target-wise majority class baseline.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s21::p001",
+     "summary": "Table TABREF37 shows M-Bert performs worse cross-target but surpasses majority class baselines, with cross-question score slightly lower than cross-topic score.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s22::p000",
+     "summary": "The default setup preserves horizontal language consistency by matching question and comment languages, including Italian questions for Italian test instances.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s22::p001",
+     "summary": "Vertical language consistency is tested by training and evaluating M-Bert with all questions in English, chosen as a lingua franca with the largest M-Bert pretraining share.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s22::p002",
+     "summary": "Table TABREF39 shows negligible effects in most settings but clearly increased cross-lingual performance when all questions are in English.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s23::p000",
+     "summary": "Additional experiments test whether only questions or only comments are necessary to optimally solve the task.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s23::p001",
+     "summary": "One experiment uses a single segment containing the comment and removes questions from training and test data (missing questions).",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s23::p002",
+     "summary": "One experiment uses only the question and removes the comment (missing comments).",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s23::p003",
+     "summary": "Both cases decrease performance across all evaluation settings, with much higher loss for missing comments, indicating comments contain the most important stance information.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s23::p004",
+     "summary": "Missing questions also reduce performance, especially in supervised and cross-lingual settings, while Table TABREF48 shows comments occurring with multiple targets and less pronounced effects in cross-target settings.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s23::p005",
+     "summary": "Single-segment experiments show both comment and question provide crucial information, and randomized test data probe whether M-Bert mainly uses one segment.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s23::p006",
+     "summary": "One probe keeps comments in place and randomly shuffles questions within the same test set and language (random questions).",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s23::p007",
+     "summary": "One probe keeps questions in place and randomizes comments within test set boundaries (random comments).",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s23::p008",
+     "summary": "Table TABREF39 shows performance decreases in both randomized cases, confirming the model learns to take into account both segments.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s24::p000",
+     "summary": "The final experiment tests whether targets need natural language representation or can instead use trainable embeddings.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s24::p001",
+     "summary": "Each target type is represented by a different reserved symbol from the M-Bert vocabulary, with segment A set to that symbol instead of a natural language question.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s24::p002",
+     "summary": "Table TABREF39 shows M-Bert with target embeddings performs clearly worse in supervised and cross-lingual settings, indicating spelled-out natural language questions provide important linguistic detail.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s25::p000",
+     "summary": "Baseline experiments confirm that M-Bert can achieve reasonable accuracy on x-stance.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s25::p001",
+     "summary": "Table TABREF46 lists Bert variant scores on other stance detection datasets, suggesting supervised x-stance has similar difficulty to SemEval-2016 BIBREF0 or MPCHI BIBREF22.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s25::p002",
+     "summary": "In cross-lingual and cross-target settings, the mean score drops by 6–8 percentage points compared to supervised, showing zero-shot transfer is possible but improvable.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s25::p003",
+     "summary": "Additional experiments in Table TABREF39 validate the results and justify the sequence-pair classification approach to stance detection.",
+     "group_id": "2003.08385::g00"
+    },
+    {
+     "passage_id": "2003.08385::s25::p004",
+     "summary": "Table TABREF47 shows high-confidence M-Bert errors, indicating many comments express stance implicitly, a potential dataset weakness partly compensated by the dataset's size and breadth.",
+     "group_id": "2003.08385::g00"
+    }
+   ],
+   "n_raw": 78,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 6559,
+    "completion_tokens": 3607,
+    "total_tokens": 10166,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "2003.08385::g01",
+   "summaries": [
+    {
+     "passage_id": "2003.08385::s26::p000",
+     "summary": "The x-stance dataset covers broad national Swiss politics topics, enabling multi-target learning and multilingual stance detection in Swiss Standard German, French and Italian.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s26::p001",
+     "summary": "Formal commentary by politicians on political questions adds a new text genre, and a question–answer format naturally conditions stance detection models on a target.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s26::p002",
+     "summary": "Baseline results with multilingual Bert show some zero-shot transfer to unseen languages and targets, with a performance gap and potential value for other fields.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s27::p000",
+     "summary": "This work was funded by the Swiss National Science Foundation (project MUTAMUR; no. 176727), and Isabelle Augenstein is thanked for helpful feedback.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s28::p000",
+     "summary": "Questions and candidate responses on smartvote.ch were downloaded to study automatic stance detection, mainly including national-level issues to reduce variability.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s29::p000",
+     "summary": "The training set has 74.1% de-CH and 25.9% fr-CH, while test sets have 67.1% de-CH, 24.7% fr-CH and 8.2% it-CH, with English translations.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s30::p000",
+     "summary": "Answer speakers were candidates for communal, cantonal or national elections in Switzerland who filled out an online questionnaire.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s30::p001",
+     "summary": "Age is 18 or older – mixed.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s30::p002",
+     "summary": "Gender is Unknown – mixed.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s30::p003",
+     "summary": "Race/ethnicity is Unknown – mixed.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s30::p004",
+     "summary": "Native language is Unknown – mixed.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s30::p005",
+     "summary": "Socioeconomic status is Unknown – mixed.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s30::p006",
+     "summary": "Different speakers represented: 7581.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s30::p007",
+     "summary": "Presence of disordered speech is Unknown.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s31::p000",
+     "summary": "Political scientists edited and translated the questions for a public voting advice website.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s31::p001",
+     "summary": "The answers were written between 2011 and 2020 by the users of the website.",
+     "group_id": "2003.08385::g01"
+    },
+    {
+     "passage_id": "2003.08385::s32::p000",
+     "summary": "Text characteristics include questions, answers, arguments and comments regarding political issues.",
+     "group_id": "2003.08385::g01"
+    }
+   ],
+   "n_raw": 17,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1055,
+    "completion_tokens": 652,
+    "total_tokens": 1707,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

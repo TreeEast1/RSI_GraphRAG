@@ -1,0 +1,65 @@
+{
+ "paper_id": "1910.12795",
+ "title": "Learning Data Manipulation for Augmentation and Weighting",
+ "abstract": "Manipulating data, such as weighting data examples or augmenting with new instances, has been increasingly used to improve model training. Previous work has studied various rule- or learning-based approaches designed for specific types of data manipulation. In this work, we propose a new method that supports learning different manipulation schemes with the same gradient-based algorithm. Our approach builds upon a recent connection of supervised learning and reinforcement learning (RL), and adapts an off-the-shelf reward learning algorithm from RL for joint data manipulation learning and model training. Different parameterization of the ``data reward'' function instantiates different manipulation schemes. We showcase data augmentation that learns a text transformation network, and data weighting that dynamically adapts the data sample importance. Experiments show the resulting algorithms significantly improve the image and text classification performance in low data regime and class-imbalance problems.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Background",
+  "Background ::: Equivalence between Data and Reward",
+  "Background ::: Gradient-based Reward Learning",
+  "Learning Data Manipulation ::: Method ::: Parameterizing Data Manipulation",
+  "Learning Data Manipulation ::: Method ::: Learning Manipulation Parameters",
+  "Learning Data Manipulation ::: Instantiations: Augmentation & Weighting",
+  "Learning Data Manipulation ::: Instantiations: Augmentation & Weighting ::: Fine-tuning Text Augmentation",
+  "Learning Data Manipulation ::: Instantiations: Augmentation & Weighting ::: Learning Data Weights",
+  "Experiments",
+  "Experiments ::: Experimental Setup",
+  "Experiments ::: Low Data Regime",
+  "Experiments ::: Low Data Regime ::: Setup",
+  "Experiments ::: Low Data Regime ::: Results",
+  "Experiments ::: Imbalanced Labels",
+  "Experiments ::: Imbalanced Labels ::: Setup",
+  "Experiments ::: Imbalanced Labels ::: Results",
+  "Discussions: Algorithm Extrapolation between Learning Paradigms"
+ ],
+ "n_paragraphs": 57,
+ "n_tokens": 6617,
+ "figures_and_tables": [
+  {
+   "caption_id": "1910.12795::fig000",
+   "paper_id": "1910.12795",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1: Algorithm Computation. Blue arrows denote learning model θ. Red arrows denote learning manipulation φ. Solid arrows denote forward pass. Dashed arrows denote backward pass and parameter updates.",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1910.12795::fig001",
+   "paper_id": "1910.12795",
+   "file": "7-Table1-1.png",
+   "caption": "Table 1: Accuracy of Data Manipulation on Text Classification. All results are averaged over 15 runs ± one standard deviation. The numbers in parentheses next to the dataset names indicate the size of the datasets. For example, (40+2) denotes 40 training instances and 2 validation instances per class.",
+   "n_tokens": 63
+  },
+  {
+   "caption_id": "1910.12795::fig002",
+   "paper_id": "1910.12795",
+   "file": "7-Figure2-1.png",
+   "caption": "Figure 2: Words predicted with the highest probabilities by the augmentation LM. Two tokens “striking” and “grey” are masked for substitution. The boxes in respective colors list the predicted words after training epoch 1 and 3, respectively. E.g., “stunning” is the most probable substitution for “striking” in epoch 1.",
+   "n_tokens": 72
+  },
+  {
+   "caption_id": "1910.12795::fig003",
+   "paper_id": "1910.12795",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: Accuracy of Data Weighting on Imbalanced SST-2. The first row shows the number of training examples in each of the two classes.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1910.12795::fig004",
+   "paper_id": "1910.12795",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: Accuracy of Data Weighting on Imbalanced CIFAR10. The first row shows the number of training examples in each of the two classes.",
+   "n_tokens": 32
+  }
+ ]
+}

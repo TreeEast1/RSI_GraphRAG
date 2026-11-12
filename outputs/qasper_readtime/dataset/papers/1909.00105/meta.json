@@ -1,0 +1,97 @@
+{
+ "paper_id": "1909.00105",
+ "title": "Generating Personalized Recipes from Historical User Preferences",
+ "abstract": "Existing approaches to recipe generation are unable to create recipes for users with culinary preferences but incomplete knowledge of ingredients in specific dishes. We propose a new task of personalized recipe generation to help these users: expanding a name and incomplete ingredient details into complete natural-text instructions aligned with the user's historical preferences. We attend on technique- and recipe-level representations of a user's previously consumed recipes, fusing these 'user-aware' representations in an attention fusion layer to control recipe text generation. Experiments on a new dataset of 180K recipes and 700K interactions show our model's ability to generate plausible and personalized recipes compared to non-personalized baselines.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Approach",
+  "Recipe Dataset: Food.com",
+  "Experiments and Results",
+  "Conclusion",
+  "Appendix ::: Food.com: Dataset Details",
+  "Appendix ::: Generated Examples",
+  "Human Evaluation"
+ ],
+ "n_paragraphs": 40,
+ "n_tokens": 3783,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.00105::fig000",
+   "paper_id": "1909.00105",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Statistics of Food.com interactions",
+   "n_tokens": 9
+  },
+  {
+   "caption_id": "1909.00105::fig001",
+   "paper_id": "1909.00105",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: Sample data flow through model architecture. Emphasis on prior recipe attention scores (darker is stronger). Ingredient attention omitted for clarity.",
+   "n_tokens": 30
+  },
+  {
+   "caption_id": "1909.00105::fig002",
+   "paper_id": "1909.00105",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Metrics on generated recipes from test set. D-1/2 = Distinct-1/2, UMA = User Matching Accuracy, MRR = Mean Reciprocal Rank, PP = Pairwise preference over baseline (evaluated for 310 recipe pairs per model).",
+   "n_tokens": 59
+  },
+  {
+   "caption_id": "1909.00105::fig003",
+   "paper_id": "1909.00105",
+   "file": "4-Table3-1.png",
+   "caption": "Table 3: Sample generated recipe. Emphasis on personalization and explicit ingredient mentions via highlights.",
+   "n_tokens": 20
+  },
+  {
+   "caption_id": "1909.00105::fig004",
+   "paper_id": "1909.00105",
+   "file": "5-Table4-1.png",
+   "caption": "Table 4: Coherence metrics on generated recipes from test set.",
+   "n_tokens": 14
+  },
+  {
+   "caption_id": "1909.00105::fig005",
+   "paper_id": "1909.00105",
+   "file": "8-Table5-1.png",
+   "caption": "Table 5: Interaction statistics for Food.com dataset before and after data processing.",
+   "n_tokens": 16
+  },
+  {
+   "caption_id": "1909.00105::fig006",
+   "paper_id": "1909.00105",
+   "file": "9-Table6-1.png",
+   "caption": "Table 6: Sample data from GeniusKitchen with recipe and user interaction details.",
+   "n_tokens": 16
+  },
+  {
+   "caption_id": "1909.00105::fig007",
+   "paper_id": "1909.00105",
+   "file": "9-Figure2-1.png",
+   "caption": "Figure 2: A sample question for pairwise evaluation survey.",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1909.00105::fig008",
+   "paper_id": "1909.00105",
+   "file": "10-Table7-1.png",
+   "caption": "Table 7: Sample generated recipe “Chicken Bell Pepper Chili Weight Watchers” for all models.",
+   "n_tokens": 20
+  },
+  {
+   "caption_id": "1909.00105::fig009",
+   "paper_id": "1909.00105",
+   "file": "11-Table8-1.png",
+   "caption": "Table 8: Sample generated waffle recipe for all models.",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1909.00105::fig010",
+   "paper_id": "1909.00105",
+   "file": "12-Figure3-1.png",
+   "caption": "Figure 3: A sample question for coherence evaluation survey.",
+   "n_tokens": 12
+  }
+ ]
+}

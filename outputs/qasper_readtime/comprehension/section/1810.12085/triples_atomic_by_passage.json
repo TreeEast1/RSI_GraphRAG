@@ -1,0 +1,505 @@
+{
+ "1810.12085::s00::p000": [
+  [
+   "Summarization of patient information",
+   "is essential to",
+   "the practice of medicine"
+  ],
+  [
+   "patient handoff summaries",
+   "facilitate",
+   "provider shift change"
+  ],
+  [
+   "progress notes",
+   "provide",
+   "a daily status update for a patient"
+  ],
+  [
+   "discharge summaries",
+   "provide information about",
+   "a patient's hospital visit to their primary care physician and other outpatient providers"
+  ]
+ ],
+ "1810.12085::s00::p001": [
+  [
+   "Informal, unstructured, or poor quality summaries",
+   "can lead to",
+   "communication failures and even medical errors"
+  ],
+  [
+   "discharge summaries",
+   "are often lacking",
+   "key information, including treatment progression and follow-up protocols"
+  ],
+  [
+   "St. Thomas Hospital in Nashville, TN",
+   "stipulated that",
+   "discharge notes be written within 48 hours of discharge"
+  ]
+ ],
+ "1810.12085::s00::p002": [
+  [
+   "Automated summary generation",
+   "has the potential to",
+   "save clinician time, avoid medical errors, and aid clinical decision making"
+  ],
+  [
+   "algorithms for patient summarization",
+   "can enable",
+   "better communication and care"
+  ],
+  [
+   "medical records of chronically ill patients",
+   "often contain",
+   "hundreds of notes"
+  ],
+  [
+   "discharge summary notes",
+   "are critical to ensuring",
+   "continuity of care after hospitalization"
+  ]
+ ],
+ "1810.12085::s01::p000": [
+  [
+   "Pioneering strategies in summarization",
+   "started by extracting",
+   "\"significant\" sentences in the whole corpus to build an abstract"
+  ],
+  [
+   "\"significant\" sentences",
+   "were defined by",
+   "the number of frequently occurring words"
+  ],
+  [
+   "These initial methods",
+   "did not consider",
+   "word meaning or syntax at either the sentence or paragraph level"
+  ],
+  [
+   "topic modeling",
+   "extends",
+   "initial frequency methods"
+  ]
+ ],
+ "1810.12085::s01::p001": [
+  [
+   "Existing approaches within the field of electronic health record summarization",
+   "have largely been",
+   "extractive and indicative"
+  ],
+  [
+   "Few approaches",
+   "have been deployed in",
+   "practice"
+  ],
+  [
+   "even fewer",
+   "have demonstrated impact on",
+   "quality of care and outcomes"
+  ],
+  [
+   "there",
+   "is no literature to date on",
+   "extractive or abstractive EHR summarization using neural networks"
+  ]
+ ],
+ "1810.12085::s03::p000": [
+  [
+   "Extractive summarization of discharge summaries",
+   "relies on",
+   "the assumption that the information in the discharge summary is documented elsewhere in the rest of the patient's notes"
+  ]
+ ],
+ "1810.12085::s03::p001": [
+  [
+   "Concept Unique Identifiers (CUIs) from the Unified Medical Language System (UMLS)",
+   "were compared in order to assess",
+   "whether clinically relevant concepts in the discharge summary could be located in the remaining notes"
+  ],
+  [
+   "CUIs",
+   "were extracted using",
+   "Apache cTAKES"
+  ],
+  [
+   "CUIs",
+   "were filtered by removing",
+   "the CUIs that are already subsumed by a longer spanning CUI"
+  ]
+ ],
+ "1810.12085::s03::p003": [
+  [
+   "The low recall",
+   "suggests",
+   "that clinicians may incorporate information in the discharge note that had not been previously documented in the EHR"
+  ],
+  [
+   "the CUI recall",
+   "tends to be higher in",
+   "patients with more and longer notes"
+  ],
+  [
+   "The bottom panel in Figure FIGREF11",
+   "demonstrates",
+   "that recall is not correlated with the patient's length of stay outside the ICU"
+  ]
+ ],
+ "1810.12085::s03::p004": [
+  [
+   "The procedure section",
+   "has",
+   "the highest recall of 0.807"
+  ],
+  [
+   "procedures undergone during an inpatient stay",
+   "are most likely to be documented in",
+   "an EHR"
+  ],
+  [
+   "The recall for each of these five sections",
+   "is much higher than",
+   "the overall recall in Table TABREF13"
+  ]
+ ],
+ "1810.12085::s03::p005": [
+  [
+   "this upper bound analysis",
+   "suggests",
+   "that we may not be able to recreate a discharge summary with extractive summarization alone"
+  ],
+  [
+   "CUI comparison",
+   "allows for comparing",
+   "medically relevant concepts"
+  ],
+  [
+   "cTAKES's CUI labelling process",
+   "is not",
+   "perfect"
+  ],
+  [
+   "further work, perhaps through sophisticated regular expressions",
+   "is needed to define",
+   "the limits of extractive summarization"
+  ]
+ ],
+ "1810.12085::s04::p000": [
+  [
+   "classifier",
+   "was developed to label",
+   "topics in the history of present illness (HPI) notes"
+  ],
+  [
+   "random sample",
+   "was taken of",
+   "515 history of present illness notes"
+  ],
+  [
+   "each of the notes",
+   "was manually annotated by",
+   "one of eight annotators"
+  ],
+  [
+   "40% of the HPI notes",
+   "were labeled by",
+   "clinicians"
+  ]
+ ],
+ "1810.12085::s04::p001": [
+  [
+   "Dernoncourt model",
+   "jointly classified",
+   "each sentence in a medical abstract"
+  ]
+ ],
+ "1810.12085::s04::p002": [
+  [
+   "lowercase italics",
+   "is used to denote",
+   "scalars"
+  ],
+  [
+   "lowercase bold",
+   "is used to denote",
+   "vectors"
+  ],
+  [
+   "uppercase italics",
+   "is used to denote",
+   "matrices"
+  ]
+ ],
+ "1810.12085::s04::p003": [
+  [
+   "pretrained word embeddings",
+   "are combined with",
+   "learned character embeddings"
+  ],
+  [
+   "hybrid token embedding",
+   "is created for",
+   "each word in the HPI note"
+  ],
+  [
+   "word embeddings",
+   "were pretrained using",
+   "word2vec BIBREF22 , BIBREF23 , BIBREF24"
+  ],
+  [
+   "word embeddings",
+   "were pretrained on",
+   "all of the notes in MIMIC (v30) and only the discharge notes"
+  ],
+  [
+   "continuous bag of words (CBOW) and skip gram models",
+   "were explored",
+   "Both"
+  ]
+ ],
+ "1810.12085::s04::p004": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the sequence of characters comprising the word INLINEFORM1"
+  ],
+  [
+   "Each character",
+   "is mapped to",
+   "its embedding INLINEFORM2"
+  ],
+  [
+   "all embeddings",
+   "are input into",
+   "a bidirectional LSTM"
+  ],
+  [
+   "bidirectional LSTM",
+   "ultimately outputs",
+   "INLINEFORM3 , the character embedding of the word INLINEFORM4"
+  ]
+ ],
+ "1810.12085::s04::p005": [
+  [
+   "output of the token embedding layer",
+   "is",
+   "the vector e"
+  ],
+  [
+   "vector e",
+   "is the result of concatenation of",
+   "the word embedding, t, and the character embedding, c"
+  ]
+ ],
+ "1810.12085::s04::p006": [
+  [
+   "contextual representation layer",
+   "takes as input",
+   "the sequence of word embeddings, INLINEFORM0"
+  ],
+  [
+   "contextual representation layer",
+   "outputs",
+   "an embedding of the contextual representation for each word in the HPI note"
+  ],
+  [
+   "word embeddings",
+   "are fed into",
+   "a bi-directional LSTM"
+  ],
+  [
+   "bi-directional LSTM",
+   "outputs",
+   "INLINEFORM1 , a concatenation of the hidden states of the two LSTMs for each word"
+  ]
+ ],
+ "1810.12085::s04::p007": [
+  [
+   "each word INLINEFORM0",
+   "is associated with",
+   "a hidden representation of the word, INLINEFORM1"
+  ],
+  [
+   "label scoring layer",
+   "uses",
+   "a fully connected neural network with one hidden layer"
+  ],
+  [
+   "fully connected neural network with one hidden layer",
+   "outputs",
+   "a score associated with each of the 10 categories for each word"
+  ],
+  [
+   "ith component of s",
+   "is",
+   "the score of class i for a given word"
+  ]
+ ],
+ "1810.12085::s04::p008": [
+  [
+   "Label Sequence Optimization Layer",
+   "computes",
+   "the probability of a labeling sequence"
+  ],
+  [
+   "Label Sequence Optimization Layer",
+   "finds",
+   "the sequence with the highest probability"
+  ],
+  [
+   "linear chain conditional random field (CRF)",
+   "defines",
+   "a global score, INLINEFORM0 , for a sequence of words and their associated scores INLINEFORM1 and labels, INLINEFORM2"
+  ]
+ ],
+ "1810.12085::s04::p009": [
+  [
+   "INLINEFORM2",
+   "are",
+   "vectors of scores that describe the cost of beginning or ending with a label"
+  ]
+ ],
+ "1810.12085::s04::p010": [
+  [
+   "probability of a sequence of labels",
+   "is calculated by",
+   "applying a softmax layer"
+  ]
+ ],
+ "1810.12085::s04::p011": [
+  [
+   "Cross-entropy loss, INLINEFORM0",
+   "is used as",
+   "the objective function"
+  ],
+  [
+   "INLINEFORM1",
+   "is",
+   "the correct sequence of labels"
+  ],
+  [
+   "probability INLINEFORM2",
+   "is calculated according to",
+   "the CRF"
+  ]
+ ],
+ "1810.12085::s04::p012": [
+  [
+   "515 annotated history of present illness notes",
+   "were split in",
+   "70% train set, 15% development set, and a 15% test set"
+  ]
+ ],
+ "1810.12085::s04::p014": [
+  [
+   "Models using word embeddings trained on the discharge summaries",
+   "performed better than",
+   "word embeddings trained on all MIMIC notes"
+  ],
+  [
+   "the continuous bag of words embeddings",
+   "outperformed",
+   "skip gram embeddings"
+  ],
+  [
+   "inclusion of character embeddings",
+   "increases",
+   "performance by approximately 3%"
+  ],
+  [
+   "The model with word embeddings learned in the model",
+   "achieves",
+   "the highest performance on the dev set (0.886)"
+  ]
+ ],
+ "1810.12085::s04::p015": [
+  [
+   "The Learned Word Embeddings model",
+   "achieved",
+   "an accuracy of 0.88 and an F1-Score of 0.876 on the test set"
+  ],
+  [
+   "The demographics and patient movement labels",
+   "achieved",
+   "the highest F1 scores (0.96 and 0.93 respectively)"
+  ],
+  [
+   "the vitals/labs and medication history labels",
+   "had",
+   "the lowest F1 scores (0.40 and 0.66 respectively)"
+  ]
+ ],
+ "1810.12085::s04::p016": [
+  [
+   "Words that belonged to the diagnosis history, patient movement, and procedure/results sections",
+   "were frequently labeled as",
+   "symptoms/signs"
+  ],
+  [
+   "many of the misclassification errors",
+   "may be due to",
+   "inconsistency in manual labelling among annotators"
+  ],
+  [
+   "Further standardization among annotators",
+   "is needed to avoid",
+   "these misclassifications"
+  ],
+  [
+   "Future work",
+   "is needed to obtain",
+   "additional manual annotations where each HPI note is annotated by multiple annotators"
+  ],
+  [
+   "Cohen's kappa",
+   "measures",
+   "inter-annotator agreement"
+  ]
+ ],
+ "1810.12085::s04::p017": [
+  [
+   "Future work",
+   "is also needed to better understand",
+   "commonly mislabeled categories and explore alternative model architectures"
+  ],
+  [
+   "the phrase \"history of neck pain\"",
+   "can be labeled with",
+   "both 'diagnosis history' and 'symptoms/signs' labels"
+  ],
+  [
+   "Post-processing",
+   "is needed to create",
+   "a final label prediction for each phrase"
+  ]
+ ],
+ "1810.12085::s04::p018": [
+  [
+   "supplementing the word embeddings in our LSTM model with CUIs",
+   "may further improve",
+   "performance"
+  ],
+  [
+   "word embeddings",
+   "do well in learning",
+   "the contextual context of words"
+  ],
+  [
+   "CUIs",
+   "allow for",
+   "more explicit incorporation of medical domain expertise"
+  ],
+  [
+   "concatenating the CUI for each word with its hybrid token embedding",
+   "may be able to leverage",
+   "both data driven and ontology driven approaches"
+  ]
+ ],
+ "1810.12085::s05::p000": [
+  [
+   "This model",
+   "can be applied to",
+   "the 55,000 discharge summaries in MIMIC"
+  ]
+ ]
+}

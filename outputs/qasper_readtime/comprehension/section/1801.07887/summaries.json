@@ -1,0 +1,182 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1801.07887::s00::p000",
+   "summary": "Active learning has received much interest for reducing annotation costs for text classification.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s00::p001",
+   "summary": "Active learning improves iteratively trained machine learning models by selecting unlabeled samples for annotation, with the number selected per iteration called the batch size.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s00::p002",
+   "summary": "Stopping methods are important for achieving active learning benefits in practice and have attracted substantial development interest.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s00::p003",
+   "summary": "Smaller batch sizes improve learning efficiency, but larger batch sizes improve development speed and ease of annotation, motivating analysis of batch size effects on a leading stopping method.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s00::p004",
+   "summary": "The authors evaluate batch size effects on active learning stopping methods for text classification using the publicly available 20Newsgroups dataset.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s00::p005",
+   "summary": "The base learner is a scikit-learn Support Vector Machine, with closest-to-hyperplane sampling, binary bag of words, words appearing more than three times, and a stop word list.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s00::p006",
+   "summary": "The Oracle Method stops at the first training iteration within a specified percentage of maximum achievable performance, with Oracle-99 set to 99 for contextualizing practical stopping results.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s01::p000",
+   "summary": "Experiments considered batch sizes of 1%, 5%, and 10% of the 20Newsgroups training data, summarized in Table~ SECREF4.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s02::p000",
+   "summary": "Oracle-99 needs more annotations with larger batch percents to reach approximately the same F-Measure as with smaller batch percents.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s02::p001",
+   "summary": "Results agree that larger batch sizes decrease learning efficiency, while raising whether stopping method parameters, especially window size, can reduce performance degradation.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s03::p000",
+   "summary": "BV2009 stops if the mean of the three previous kappa agreement values between consecutive models exceeds a threshold, and stops later than the optimal Oracle Method point for larger batch percents.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s03::p001",
+   "summary": "With window size of one, BV2009 stops with fewer annotations than with window size of three, without losing much F-Measure.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s04::p000",
+   "summary": "BV2009 requires INLINEFORM1 models before checking whether the average kappa agreement is above the threshold, marking its first possible stopping point.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s04::p001",
+   "summary": "Larger batch percents generate fewer models, and low early kappa agreement scores cause BV2009 to stop somewhat sub-optimally at very large batch percents.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s05::p000",
+   "summary": "Stopping methods degrade with larger batch sizes beyond learning efficiency losses, and smaller window sizes help mitigate this degradation.",
+   "group_id": "1801.07887::g00"
+  },
+  {
+   "passage_id": "1801.07887::s06::p000",
+   "summary": "This work was supported by The College of New Jersey SOSA program, MUSE program, and High Performance Computing System.",
+   "group_id": "1801.07887::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1801.07887::g00",
+   "summaries": [
+    {
+     "passage_id": "1801.07887::s00::p000",
+     "summary": "Active learning has received much interest for reducing annotation costs for text classification.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s00::p001",
+     "summary": "Active learning improves iteratively trained machine learning models by selecting unlabeled samples for annotation, with the number selected per iteration called the batch size.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s00::p002",
+     "summary": "Stopping methods are important for achieving active learning benefits in practice and have attracted substantial development interest.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s00::p003",
+     "summary": "Smaller batch sizes improve learning efficiency, but larger batch sizes improve development speed and ease of annotation, motivating analysis of batch size effects on a leading stopping method.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s00::p004",
+     "summary": "The authors evaluate batch size effects on active learning stopping methods for text classification using the publicly available 20Newsgroups dataset.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s00::p005",
+     "summary": "The base learner is a scikit-learn Support Vector Machine, with closest-to-hyperplane sampling, binary bag of words, words appearing more than three times, and a stop word list.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s00::p006",
+     "summary": "The Oracle Method stops at the first training iteration within a specified percentage of maximum achievable performance, with Oracle-99 set to 99 for contextualizing practical stopping results.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s01::p000",
+     "summary": "Experiments considered batch sizes of 1%, 5%, and 10% of the 20Newsgroups training data, summarized in Table~ SECREF4.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s02::p000",
+     "summary": "Oracle-99 needs more annotations with larger batch percents to reach approximately the same F-Measure as with smaller batch percents.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s02::p001",
+     "summary": "Results agree that larger batch sizes decrease learning efficiency, while raising whether stopping method parameters, especially window size, can reduce performance degradation.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s03::p000",
+     "summary": "BV2009 stops if the mean of the three previous kappa agreement values between consecutive models exceeds a threshold, and stops later than the optimal Oracle Method point for larger batch percents.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s03::p001",
+     "summary": "With window size of one, BV2009 stops with fewer annotations than with window size of three, without losing much F-Measure.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s04::p000",
+     "summary": "BV2009 requires INLINEFORM1 models before checking whether the average kappa agreement is above the threshold, marking its first possible stopping point.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s04::p001",
+     "summary": "Larger batch percents generate fewer models, and low early kappa agreement scores cause BV2009 to stop somewhat sub-optimally at very large batch percents.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s05::p000",
+     "summary": "Stopping methods degrade with larger batch sizes beyond learning efficiency losses, and smaller window sizes help mitigate this degradation.",
+     "group_id": "1801.07887::g00"
+    },
+    {
+     "passage_id": "1801.07887::s06::p000",
+     "summary": "This work was supported by The College of New Jersey SOSA program, MUSE program, and High Performance Computing System.",
+     "group_id": "1801.07887::g00"
+    }
+   ],
+   "n_raw": 16,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1814,
+    "completion_tokens": 759,
+    "total_tokens": 2573,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

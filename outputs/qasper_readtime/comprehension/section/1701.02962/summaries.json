@@ -1,0 +1,478 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1701.02962::s00::p000",
+   "summary": "Antonymy and synonymy are central lexical semantic relations whose distinction matters for Machine Translation and Textual Entailment but is challenging due to similar contexts.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s00::p001",
+   "summary": "Two predominant NLP approach families, co-occurrence models and pattern-based models, use distributional vector representations and DSMs to represent meaning vectors and determine semantic relatedness.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s00::p002",
+   "summary": "Co-occurrence models use weighted feature vectors or word embeddings from neural techniques or matrix factorization, addressing sparsity and achieving strong results in many NLP tasks.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s00::p003",
+   "summary": "Pattern-based models use lexico-syntactic surface patterns, with work by Justeson/Katz:91, Hearst:92, Lin2003, Roth2014, and Schwartz:15 distinguishing semantic relations.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s00::p004",
+   "summary": "The paper presents AntSynNET, hypothesizing that antonymous word pairs co-occur in lexico-syntactic patterns within sentences more often than synonymous pairs.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s00::p005",
+   "summary": "AntSynNET induces syntactic-path patterns between X and Y from a large-scale web corpus, adds a distance feature, encodes patterns with LSTM units, and improves over prior pattern-based methods.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s00::p006",
+   "summary": "The paper outlines sections on related work, AntSynNET, pattern induction, LSTM encoding, two classification models, baselines, dataset, experiments, results, feature effects, word embeddings, and conclusion.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s01::p000",
+   "summary": "This section describes AntSynNET, a pattern-based LSTM for distinguishing antonyms from synonyms, including pattern induction, LSTM encoding, and two classification approaches.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s02::p000",
+   "summary": "The method uses patterns as indicators of word pair co-occurrence, deriving lexico-syntactic tree patterns from simple paths between target lemmas in syntactic parse trees.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s02::p001",
+   "summary": "Path patterns represent each syntax-tree node with lemma, POS tag, dependency label, and distance label, where each parent-child step has distance 1 and ancestor nodes have distance 0.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s02::p002",
+   "summary": "Each node vector concatenates the four-feature vectors: lemma, POS, dependency, and distance embeddings.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s02::p003",
+   "summary": "The four vectors represent embeddings of lemma, POS tag, dependency label, and distance label, and the symbol denotes concatenation.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s02::p004",
+   "summary": "A pattern is a sequence of node vectors, and its pattern vector is encoded by applying a recurrent neural network.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s03::p000",
+   "summary": "An RNN models sequential data with state vectors, but long-term dependencies can cause gradient vanishing or exploding, so the methods use an LSTM network.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s03::p001",
+   "summary": "LSTM units use adaptive gating with an input gate, forget gate, output gate, and memory cell, formalized through equations for each time step.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s03::p002",
+   "summary": "W denotes a weight matrix, b denotes layer-specific bias terms, σ denotes the sigmoid function, and the LSTM output is computed from the output gate and memory cell.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s03::p003",
+   "summary": "The symbol denotes element-wise multiplication, and the methods use the last state h_k to represent the vector of a pattern.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s04::p000",
+   "summary": "Two models distinguish antonyms from synonyms: a pattern-based LSTM with logistic regression, and a combined model concatenating word and pattern vectors.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s04::p001",
+   "summary": "The pattern-based model induces patterns for a word pair from a corpus, feeds each pattern into an LSTM, and computes the word pair vector.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s04::p002",
+   "summary": "Eq. 12 computes the word pair vector as a frequency-weighted average of pattern vectors over the pattern set.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s04::p003",
+   "summary": "The word pair vector uses pattern frequencies, is fed into logistic regression, and predicts a positive antonymous pair if probability is larger than 0.5.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s04::p004",
+   "summary": "Inspired by Baroni:12 and Shwartz:16, the combined model uses both patterns and distribution of target pairs to create combined vector representations.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s04::p005",
+   "summary": "Eq. 14 defines the combined vector of a word pair as the concatenation of the two word vectors and the pattern vector.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s04::p006",
+   "summary": "The combined vector includes the vectors of word x, word y, and the pattern vector, and is fed into logistic regression to classify antonyms and synonyms.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s05::p000",
+   "summary": "Two pattern-based baseline methods, the distributional method and the distributed method, are introduced for comparison with AntSynNET.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s06::p000",
+   "summary": "The first baseline, R&SiW, applies Roth2014's vector space model combining standard lexico-syntactic patterns and discourse markers to represent word pairs.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s06::p001",
+   "summary": "Michael Roth computed R&SiW relation classification results for the test sets, with marker-based and pattern-based weights tuned on validation sets and other hyperparameters set as described.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s07::p000",
+   "summary": "The SP method by Schwartz:15 uses symmetric patterns of 3-5 tokens, filters them to 11 patterns, computes PPMI co-occurrence counts, applies smoothing, and uses two Lin2003 patterns for antonym representation.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s07::p001",
+   "summary": "Applying SP to the data uses pre-trained SP embeddings with 500 dimensions, cosine similarity of word pairs, and a Support Vector Machine with Radial Basis Function kernel.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s08::p000",
+   "summary": "Training uses existing large-scale antonym and synonym pairs from Nguyen:16, originally collected from WordNet BIBREF9 and Wordnik.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s08::p001",
+   "summary": "Patterns are extracted from corpus sentences, filtered below five occurrences, restricted to word pairs with at least five patterns, balanced at 1:1, and split into 70% train, 25% test, and 5% validation sets.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s09::p000",
+   "summary": "Experiments use the English Wikipedia dump from June 2016, spaCy, dLCE embeddings with 100 dimensions, 10-dimensional label embeddings, cross-entropy loss, Adadelta, Theano, dropout of 0.5, and 40 epochs.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s10::p000",
+   "summary": "Table 3 shows proposed models significantly outperform baselines for adjectives by > .06 F_1, improve nouns by .02 F_1 over R&SiW and .37 F_1 over SP, and have higher verb recall but not F_1 over R&SiW.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s10::p001",
+   "summary": "High recall supports the co-occurrence hypothesis, while sampled 5 pairs per population showed no true-prediction pattern overlap and false-prediction overlaps of 2, 2, and 4 patterns for noun, adjective, and verb classes.",
+   "group_id": "1701.02962::g00"
+  },
+  {
+   "passage_id": "1701.02962::s11::p000",
+   "summary": "The novel distance feature is integrated along the syntactic path to capture parent-child relationships at $distance = 1$ and ancestor-descendant relationships at $distance > 1$.",
+   "group_id": "1701.02962::g01"
+  },
+  {
+   "passage_id": "1701.02962::s11::p001",
+   "summary": "The distance feature is compared with the direction feature proposed by Shwartz:16, which represented dependency-label direction between two nodes in a path from X to Y.",
+   "group_id": "1701.02962::g01"
+  },
+  {
+   "passage_id": "1701.02962::s11::p002",
+   "summary": "Using the same dataset and patterns as Section \"Overall Results\" and replacing the distance feature by the direction feature, Table 4 shows the distance feature enhances performance more effectively across all word classes.",
+   "group_id": "1701.02962::g01"
+  },
+  {
+   "passage_id": "1701.02962::s12::p000",
+   "summary": "The models replace dLCE word embeddings with pre-trained GloVe word embeddings with 100 dimensions to compare their effects on the performance of the two proposed models.",
+   "group_id": "1701.02962::g01"
+  },
+  {
+   "passage_id": "1701.02962::s12::p001",
+   "summary": "Table 5 shows dLCE word embeddings outperform pre-trained GloVe word embeddings by around .01 $F_1$ for both AntSynNET models on adjective and verb pairs, and around .01 and .04 $F_1$ on noun pairs.",
+   "group_id": "1701.02962::g01"
+  },
+  {
+   "passage_id": "1701.02962::s13::p000",
+   "summary": "The paper presented AntSynNET, a novel pattern-based neural method to distinguish antonyms from synonyms, hypothesizing antonymous word pairs co-occur more often in lexico-syntactic patterns within a sentence.",
+   "group_id": "1701.02962::g01"
+  },
+  {
+   "passage_id": "1701.02962::s13::p001",
+   "summary": "Patterns derived from simple paths in a syntactic parse tree, a novel path distance feature, and two AntSynNET approaches using long short-term memory units or combined vector representations were fed into logistic regression for classification.",
+   "group_id": "1701.02962::g01"
+  },
+  {
+   "passage_id": "1701.02962::s13::p002",
+   "summary": "The proposed models significantly outperformed two baselines mainly in recall, the distance feature outperformed a direction feature, the embeddings outperformed state-of-the-art GloVe embeddings, and the models rely only on corpus data.",
+   "group_id": "1701.02962::g01"
+  },
+  {
+   "passage_id": "1701.02962::s14::p000",
+   "summary": "Michael Roth is thanked for helping compute the results of the R&SiW model on the dataset.",
+   "group_id": "1701.02962::g01"
+  },
+  {
+   "passage_id": "1701.02962::s14::p001",
+   "summary": "The research was supported by the Ministry of Education and Training of the Socialist Republic of Vietnam (Scholarship 977/QD-BGDDT; Kim-Anh Nguyen), the DFG Collaborative Research Centre SFB 732 (Kim-Anh Nguyen, Ngoc Thang Vu), and the DFG Heisenberg Fellowship SCHU-2580/1 (Sabine Schulte im Walde).",
+   "group_id": "1701.02962::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1701.02962::g00",
+   "summaries": [
+    {
+     "passage_id": "1701.02962::s00::p000",
+     "summary": "Antonymy and synonymy are central lexical semantic relations whose distinction matters for Machine Translation and Textual Entailment but is challenging due to similar contexts.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s00::p001",
+     "summary": "Two predominant NLP approach families, co-occurrence models and pattern-based models, use distributional vector representations and DSMs to represent meaning vectors and determine semantic relatedness.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s00::p002",
+     "summary": "Co-occurrence models use weighted feature vectors or word embeddings from neural techniques or matrix factorization, addressing sparsity and achieving strong results in many NLP tasks.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s00::p003",
+     "summary": "Pattern-based models use lexico-syntactic surface patterns, with work by Justeson/Katz:91, Hearst:92, Lin2003, Roth2014, and Schwartz:15 distinguishing semantic relations.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s00::p004",
+     "summary": "The paper presents AntSynNET, hypothesizing that antonymous word pairs co-occur in lexico-syntactic patterns within sentences more often than synonymous pairs.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s00::p005",
+     "summary": "AntSynNET induces syntactic-path patterns between X and Y from a large-scale web corpus, adds a distance feature, encodes patterns with LSTM units, and improves over prior pattern-based methods.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s00::p006",
+     "summary": "The paper outlines sections on related work, AntSynNET, pattern induction, LSTM encoding, two classification models, baselines, dataset, experiments, results, feature effects, word embeddings, and conclusion.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s01::p000",
+     "summary": "This section describes AntSynNET, a pattern-based LSTM for distinguishing antonyms from synonyms, including pattern induction, LSTM encoding, and two classification approaches.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s02::p000",
+     "summary": "The method uses patterns as indicators of word pair co-occurrence, deriving lexico-syntactic tree patterns from simple paths between target lemmas in syntactic parse trees.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s02::p001",
+     "summary": "Path patterns represent each syntax-tree node with lemma, POS tag, dependency label, and distance label, where each parent-child step has distance 1 and ancestor nodes have distance 0.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s02::p002",
+     "summary": "Each node vector concatenates the four-feature vectors: lemma, POS, dependency, and distance embeddings.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s02::p003",
+     "summary": "The four vectors represent embeddings of lemma, POS tag, dependency label, and distance label, and the symbol denotes concatenation.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s02::p004",
+     "summary": "A pattern is a sequence of node vectors, and its pattern vector is encoded by applying a recurrent neural network.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s03::p000",
+     "summary": "An RNN models sequential data with state vectors, but long-term dependencies can cause gradient vanishing or exploding, so the methods use an LSTM network.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s03::p001",
+     "summary": "LSTM units use adaptive gating with an input gate, forget gate, output gate, and memory cell, formalized through equations for each time step.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s03::p002",
+     "summary": "W denotes a weight matrix, b denotes layer-specific bias terms, σ denotes the sigmoid function, and the LSTM output is computed from the output gate and memory cell.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s03::p003",
+     "summary": "The symbol denotes element-wise multiplication, and the methods use the last state h_k to represent the vector of a pattern.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s04::p000",
+     "summary": "Two models distinguish antonyms from synonyms: a pattern-based LSTM with logistic regression, and a combined model concatenating word and pattern vectors.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s04::p001",
+     "summary": "The pattern-based model induces patterns for a word pair from a corpus, feeds each pattern into an LSTM, and computes the word pair vector.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s04::p002",
+     "summary": "Eq. 12 computes the word pair vector as a frequency-weighted average of pattern vectors over the pattern set.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s04::p003",
+     "summary": "The word pair vector uses pattern frequencies, is fed into logistic regression, and predicts a positive antonymous pair if probability is larger than 0.5.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s04::p004",
+     "summary": "Inspired by Baroni:12 and Shwartz:16, the combined model uses both patterns and distribution of target pairs to create combined vector representations.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s04::p005",
+     "summary": "Eq. 14 defines the combined vector of a word pair as the concatenation of the two word vectors and the pattern vector.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s04::p006",
+     "summary": "The combined vector includes the vectors of word x, word y, and the pattern vector, and is fed into logistic regression to classify antonyms and synonyms.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s05::p000",
+     "summary": "Two pattern-based baseline methods, the distributional method and the distributed method, are introduced for comparison with AntSynNET.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s06::p000",
+     "summary": "The first baseline, R&SiW, applies Roth2014's vector space model combining standard lexico-syntactic patterns and discourse markers to represent word pairs.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s06::p001",
+     "summary": "Michael Roth computed R&SiW relation classification results for the test sets, with marker-based and pattern-based weights tuned on validation sets and other hyperparameters set as described.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s07::p000",
+     "summary": "The SP method by Schwartz:15 uses symmetric patterns of 3-5 tokens, filters them to 11 patterns, computes PPMI co-occurrence counts, applies smoothing, and uses two Lin2003 patterns for antonym representation.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s07::p001",
+     "summary": "Applying SP to the data uses pre-trained SP embeddings with 500 dimensions, cosine similarity of word pairs, and a Support Vector Machine with Radial Basis Function kernel.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s08::p000",
+     "summary": "Training uses existing large-scale antonym and synonym pairs from Nguyen:16, originally collected from WordNet BIBREF9 and Wordnik.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s08::p001",
+     "summary": "Patterns are extracted from corpus sentences, filtered below five occurrences, restricted to word pairs with at least five patterns, balanced at 1:1, and split into 70% train, 25% test, and 5% validation sets.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s09::p000",
+     "summary": "Experiments use the English Wikipedia dump from June 2016, spaCy, dLCE embeddings with 100 dimensions, 10-dimensional label embeddings, cross-entropy loss, Adadelta, Theano, dropout of 0.5, and 40 epochs.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s10::p000",
+     "summary": "Table 3 shows proposed models significantly outperform baselines for adjectives by > .06 F_1, improve nouns by .02 F_1 over R&SiW and .37 F_1 over SP, and have higher verb recall but not F_1 over R&SiW.",
+     "group_id": "1701.02962::g00"
+    },
+    {
+     "passage_id": "1701.02962::s10::p001",
+     "summary": "High recall supports the co-occurrence hypothesis, while sampled 5 pairs per population showed no true-prediction pattern overlap and false-prediction overlaps of 2, 2, and 4 patterns for noun, adjective, and verb classes.",
+     "group_id": "1701.02962::g00"
+    }
+   ],
+   "n_raw": 34,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5331,
+    "completion_tokens": 1797,
+    "total_tokens": 7128,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1701.02962::g01",
+   "summaries": [
+    {
+     "passage_id": "1701.02962::s11::p000",
+     "summary": "The novel distance feature is integrated along the syntactic path to capture parent-child relationships at $distance = 1$ and ancestor-descendant relationships at $distance > 1$.",
+     "group_id": "1701.02962::g01"
+    },
+    {
+     "passage_id": "1701.02962::s11::p001",
+     "summary": "The distance feature is compared with the direction feature proposed by Shwartz:16, which represented dependency-label direction between two nodes in a path from X to Y.",
+     "group_id": "1701.02962::g01"
+    },
+    {
+     "passage_id": "1701.02962::s11::p002",
+     "summary": "Using the same dataset and patterns as Section \"Overall Results\" and replacing the distance feature by the direction feature, Table 4 shows the distance feature enhances performance more effectively across all word classes.",
+     "group_id": "1701.02962::g01"
+    },
+    {
+     "passage_id": "1701.02962::s12::p000",
+     "summary": "The models replace dLCE word embeddings with pre-trained GloVe word embeddings with 100 dimensions to compare their effects on the performance of the two proposed models.",
+     "group_id": "1701.02962::g01"
+    },
+    {
+     "passage_id": "1701.02962::s12::p001",
+     "summary": "Table 5 shows dLCE word embeddings outperform pre-trained GloVe word embeddings by around .01 $F_1$ for both AntSynNET models on adjective and verb pairs, and around .01 and .04 $F_1$ on noun pairs.",
+     "group_id": "1701.02962::g01"
+    },
+    {
+     "passage_id": "1701.02962::s13::p000",
+     "summary": "The paper presented AntSynNET, a novel pattern-based neural method to distinguish antonyms from synonyms, hypothesizing antonymous word pairs co-occur more often in lexico-syntactic patterns within a sentence.",
+     "group_id": "1701.02962::g01"
+    },
+    {
+     "passage_id": "1701.02962::s13::p001",
+     "summary": "Patterns derived from simple paths in a syntactic parse tree, a novel path distance feature, and two AntSynNET approaches using long short-term memory units or combined vector representations were fed into logistic regression for classification.",
+     "group_id": "1701.02962::g01"
+    },
+    {
+     "passage_id": "1701.02962::s13::p002",
+     "summary": "The proposed models significantly outperformed two baselines mainly in recall, the distance feature outperformed a direction feature, the embeddings outperformed state-of-the-art GloVe embeddings, and the models rely only on corpus data.",
+     "group_id": "1701.02962::g01"
+    },
+    {
+     "passage_id": "1701.02962::s14::p000",
+     "summary": "Michael Roth is thanked for helping compute the results of the R&SiW model on the dataset.",
+     "group_id": "1701.02962::g01"
+    },
+    {
+     "passage_id": "1701.02962::s14::p001",
+     "summary": "The research was supported by the Ministry of Education and Training of the Socialist Republic of Vietnam (Scholarship 977/QD-BGDDT; Kim-Anh Nguyen), the DFG Collaborative Research Centre SFB 732 (Kim-Anh Nguyen, Ngoc Thang Vu), and the DFG Heisenberg Fellowship SCHU-2580/1 (Sabine Schulte im Walde).",
+     "group_id": "1701.02962::g01"
+    }
+   ],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1202,
+    "completion_tokens": 623,
+    "total_tokens": 1825,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,550 @@
+{
+ "insights": [
+  {
+   "insight_id": "1712.05608::g00:i00",
+   "paper_id": "1712.05608",
+   "group_id": "1712.05608::g00",
+   "concise_text": "s2sL addresses the low data resource problem caused by deep architectures requiring large annotated data by simultaneously considering two samples to train the classifier.",
+   "triple": {
+    "subject": "s2sL",
+    "predicate": "addresses",
+    "object": "low data resource problem caused by large annotated data requirements"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1712.05608::s00::p001",
+    "1712.05608::s00::p002",
+    "1712.05608::s01::p000"
+   ],
+   "supporting_fact_ids": [
+    "1712.05608::g00:b0:f01",
+    "1712.05608::g00:b0:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1712.05608::u000"
+  },
+  {
+   "insight_id": "1712.05608::g00:i01",
+   "paper_id": "1712.05608",
+   "group_id": "1712.05608::g00",
+   "concise_text": "The s2s data representation increases train samples from INLINEFORM6 to INLINEFORM5, supporting the claim that s2sL is effective in low data resource scenarios.",
+   "triple": {
+    "subject": "s2s data representation",
+    "predicate": "supports",
+    "object": "s2sL effectiveness in low data resource scenarios"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1712.05608::s02::p003",
+    "1712.05608::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1712.05608::g00:b1:f03",
+    "1712.05608::g00:b3:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.76,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1712.05608::u001"
+  },
+  {
+   "insight_id": "1712.05608::g00:i02",
+   "paper_id": "1712.05608",
+   "group_id": "1712.05608::g00",
+   "concise_text": "Because s2s data representation has output labels with more than one active unit, s2s-MLP uses sigmoid activation and binary cross-entropy instead of softmax.",
+   "triple": {
+    "subject": "s2s data representation output labels",
+    "predicate": "causes",
+    "object": "s2s-MLP to use sigmoid activation and binary cross-entropy instead of softmax"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1712.05608::s03::p003",
+    "1712.05608::s03::p004"
+   ],
+   "supporting_fact_ids": [
+    "1712.05608::g00:b1:f14",
+    "1712.05608::g00:b1:f15",
+    "1712.05608::g00:b1:f16",
+    "1712.05608::g00:b2:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1712.05608::u002"
+  },
+  {
+   "insight_id": "1712.05608::g00:i03",
+   "paper_id": "1712.05608",
+   "group_id": "1712.05608::g00",
+   "concise_text": "s2s-MLP is trained using the s2s data representation format and adam optimizer, with an input layer accepting two samples simultaneously.",
+   "triple": {
+    "subject": "s2s-MLP",
+    "predicate": "requires",
+    "object": "s2s data representation format, adam optimizer, and an input layer accepting two samples simultaneously"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1712.05608::s03::p001",
+    "1712.05608::s03::p004"
+   ],
+   "supporting_fact_ids": [
+    "1712.05608::g00:b1:f07",
+    "1712.05608::g00:b2:f02",
+    "1712.05608::g00:b2:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1712.05608::u003"
+  },
+  {
+   "insight_id": "1712.05608::g00:i04",
+   "paper_id": "1712.05608",
+   "group_id": "1712.05608::g00",
+   "concise_text": "In s2sL testing, each test sample is combined with preselected reference samples from any of the two classes, and voting over s2s-MLP outputs gives the predicted label.",
+   "triple": {
+    "subject": "s2sL testing",
+    "predicate": "requires",
+    "object": "preselected reference samples and voting over s2s-MLP outputs"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1712.05608::s04::p001",
+    "1712.05608::s04::p002",
+    "1712.05608::s04::p003"
+   ],
+   "supporting_fact_ids": [
+    "1712.05608::g00:b2:f07",
+    "1712.05608::g00:b2:f08",
+    "1712.05608::g00:b2:f09",
+    "1712.05608::g00:b2:f10",
+    "1712.05608::g00:b2:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1712.05608::u004"
+  },
+  {
+   "insight_id": "1712.05608::g00:i05",
+   "paper_id": "1712.05608",
+   "group_id": "1712.05608::g00",
+   "concise_text": "The conclusion that s2sL handles low resourced data imbalance is supported by Anger/Happy classification, where s2sL outperforms MLP, Eusboost, and MWMOTE at lower training data amounts.",
+   "triple": {
+    "subject": "Anger/Happy classification results",
+    "predicate": "support",
+    "object": "s2sL handling low resourced data imbalance"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1712.05608::s05::p004",
+    "1712.05608::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1712.05608::g00:b3:f11",
+    "1712.05608::g00:b3:f12",
+    "1712.05608::g00:b3:f16"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1712.05608::u005"
+  },
+  {
+   "insight_id": "1712.05608::g00:i06",
+   "paper_id": "1712.05608",
+   "group_id": "1712.05608::g00",
+   "concise_text": "Under 5-fold cross validation with different proportions of training data, s2sL outperforms MLP especially at low resource conditions on Speech/Music and Neutral/Sad classification.",
+   "triple": {
+    "subject": "5-fold cross validation with different proportions of training data",
+    "predicate": "setting_outcome",
+    "object": "s2sL outperforms MLP especially at low resource conditions"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1712.05608::s05::p002",
+    "1712.05608::s05::p003"
+   ],
+   "supporting_fact_ids": [
+    "1712.05608::g00:b3:f04",
+    "1712.05608::g00:b3:f05",
+    "1712.05608::g00:b3:f08",
+    "1712.05608::g00:b3:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1712.05608::u006"
+  },
+  {
+   "insight_id": "1712.05608::g00:i07",
+   "paper_id": "1712.05608",
+   "group_id": "1712.05608::g00",
+   "concise_text": "Accuracy (in %) is used for Speech/Music and Neutral/Sad classification because these datasets are balanced, while the more preferred INLINEFORM6 measure is used for imbalanced Anger/Happy classification.",
+   "triple": {
+    "subject": "balanced and imbalanced datasets",
+    "predicate": "cause",
+    "object": "Accuracy (in %) for Speech/Music and Neutral/Sad and INLINEFORM6 for Anger/Happy"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1712.05608::s05::p001",
+    "1712.05608::s05::p002"
+   ],
+   "supporting_fact_ids": [
+    "1712.05608::g00:b3:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1712.05608::u007"
+  },
+  {
+   "insight_id": "1712.05608::g00:i08",
+   "paper_id": "1712.05608",
+   "group_id": "1712.05608::g00",
+   "concise_text": "The proposed s2sL is validated on Speech/Music discrimination using GTZAN Music-Speech dataset and on emotion classification using Berlin speech emotion database (EMO-DB).",
+   "triple": {
+    "subject": "proposed s2sL",
+    "predicate": "evaluated_on",
+    "object": "GTZAN Music-Speech dataset and Berlin speech emotion database (EMO-DB)"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1712.05608::s05::p000",
+    "1712.05608::s05::p001"
+   ],
+   "supporting_fact_ids": [
+    "1712.05608::g00:b2:f12",
+    "1712.05608::g00:b2:f13",
+    "1712.05608::g00:b3:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1712.05608::u008"
+  },
+  {
+   "insight_id": "1712.05608::g00:i09",
+   "paper_id": "1712.05608",
+   "group_id": "1712.05608::g00",
+   "concise_text": "The s2s framework generates multiple instances of the same test sample by combining it with preselected reference samples, enabling voting-based decision making.",
+   "triple": {
+    "subject": "s2s framework",
+    "predicate": "extends",
+    "object": "testing with multiple instances and voting-based decision making"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1712.05608::s04::p001",
+    "1712.05608::s04::p003",
+    "1712.05608::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1712.05608::g00:b2:f07",
+    "1712.05608::g00:b2:f10",
+    "1712.05608::g00:b3:f14"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1712.05608::u009"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1712.05608::g00",
+   "insights": [
+    {
+     "insight_id": "1712.05608::g00:i00",
+     "paper_id": "1712.05608",
+     "group_id": "1712.05608::g00",
+     "concise_text": "s2sL addresses the low data resource problem caused by deep architectures requiring large annotated data by simultaneously considering two samples to train the classifier.",
+     "triple": {
+      "subject": "s2sL",
+      "predicate": "addresses",
+      "object": "low data resource problem caused by large annotated data requirements"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1712.05608::s00::p001",
+      "1712.05608::s00::p002",
+      "1712.05608::s01::p000"
+     ],
+     "supporting_fact_ids": [
+      "1712.05608::g00:b0:f01",
+      "1712.05608::g00:b0:f04"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1712.05608::u000"
+    },
+    {
+     "insight_id": "1712.05608::g00:i01",
+     "paper_id": "1712.05608",
+     "group_id": "1712.05608::g00",
+     "concise_text": "The s2s data representation increases train samples from INLINEFORM6 to INLINEFORM5, supporting the claim that s2sL is effective in low data resource scenarios.",
+     "triple": {
+      "subject": "s2s data representation",
+      "predicate": "supports",
+      "object": "s2sL effectiveness in low data resource scenarios"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1712.05608::s02::p003",
+      "1712.05608::s06::p000"
+     ],
+     "supporting_fact_ids": [
+      "1712.05608::g00:b1:f03",
+      "1712.05608::g00:b3:f13"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.76,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1712.05608::u001"
+    },
+    {
+     "insight_id": "1712.05608::g00:i02",
+     "paper_id": "1712.05608",
+     "group_id": "1712.05608::g00",
+     "concise_text": "Because s2s data representation has output labels with more than one active unit, s2s-MLP uses sigmoid activation and binary cross-entropy instead of softmax.",
+     "triple": {
+      "subject": "s2s data representation output labels",
+      "predicate": "causes",
+      "object": "s2s-MLP to use sigmoid activation and binary cross-entropy instead of softmax"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1712.05608::s03::p003",
+      "1712.05608::s03::p004"
+     ],
+     "supporting_fact_ids": [
+      "1712.05608::g00:b1:f14",
+      "1712.05608::g00:b1:f15",
+      "1712.05608::g00:b1:f16",
+      "1712.05608::g00:b2:f02"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.93,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1712.05608::u002"
+    },
+    {
+     "insight_id": "1712.05608::g00:i03",
+     "paper_id": "1712.05608",
+     "group_id": "1712.05608::g00",
+     "concise_text": "s2s-MLP is trained using the s2s data representation format and adam optimizer, with an input layer accepting two samples simultaneously.",
+     "triple": {
+      "subject": "s2s-MLP",
+      "predicate": "requires",
+      "object": "s2s data representation format, adam optimizer, and an input layer accepting two samples simultaneously"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1712.05608::s03::p001",
+      "1712.05608::s03::p004"
+     ],
+     "supporting_fact_ids": [
+      "1712.05608::g00:b1:f07",
+      "1712.05608::g00:b2:f02",
+      "1712.05608::g00:b2:f03"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1712.05608::u003"
+    },
+    {
+     "insight_id": "1712.05608::g00:i04",
+     "paper_id": "1712.05608",
+     "group_id": "1712.05608::g00",
+     "concise_text": "In s2sL testing, each test sample is combined with preselected reference samples from any of the two classes, and voting over s2s-MLP outputs gives the predicted label.",
+     "triple": {
+      "subject": "s2sL testing",
+      "predicate": "requires",
+      "object": "preselected reference samples and voting over s2s-MLP outputs"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1712.05608::s04::p001",
+      "1712.05608::s04::p002",
+      "1712.05608::s04::p003"
+     ],
+     "supporting_fact_ids": [
+      "1712.05608::g00:b2:f07",
+      "1712.05608::g00:b2:f08",
+      "1712.05608::g00:b2:f09",
+      "1712.05608::g00:b2:f10",
+      "1712.05608::g00:b2:f11"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.92,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1712.05608::u004"
+    },
+    {
+     "insight_id": "1712.05608::g00:i05",
+     "paper_id": "1712.05608",
+     "group_id": "1712.05608::g00",
+     "concise_text": "The conclusion that s2sL handles low resourced data imbalance is supported by Anger/Happy classification, where s2sL outperforms MLP, Eusboost, and MWMOTE at lower training data amounts.",
+     "triple": {
+      "subject": "Anger/Happy classification results",
+      "predicate": "support",
+      "object": "s2sL handling low resourced data imbalance"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1712.05608::s05::p004",
+      "1712.05608::s06::p000"
+     ],
+     "supporting_fact_ids": [
+      "1712.05608::g00:b3:f11",
+      "1712.05608::g00:b3:f12",
+      "1712.05608::g00:b3:f16"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.89,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1712.05608::u005"
+    },
+    {
+     "insight_id": "1712.05608::g00:i06",
+     "paper_id": "1712.05608",
+     "group_id": "1712.05608::g00",
+     "concise_text": "Under 5-fold cross validation with different proportions of training data, s2sL outperforms MLP especially at low resource conditions on Speech/Music and Neutral/Sad classification.",
+     "triple": {
+      "subject": "5-fold cross validation with different proportions of training data",
+      "predicate": "setting_outcome",
+      "object": "s2sL outperforms MLP especially at low resource conditions"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1712.05608::s05::p002",
+      "1712.05608::s05::p003"
+     ],
+     "supporting_fact_ids": [
+      "1712.05608::g00:b3:f04",
+      "1712.05608::g00:b3:f05",
+      "1712.05608::g00:b3:f08",
+      "1712.05608::g00:b3:f09"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1712.05608::u006"
+    },
+    {
+     "insight_id": "1712.05608::g00:i07",
+     "paper_id": "1712.05608",
+     "group_id": "1712.05608::g00",
+     "concise_text": "Accuracy (in %) is used for Speech/Music and Neutral/Sad classification because these datasets are balanced, while the more preferred INLINEFORM6 measure is used for imbalanced Anger/Happy classification.",
+     "triple": {
+      "subject": "balanced and imbalanced datasets",
+      "predicate": "cause",
+      "object": "Accuracy (in %) for Speech/Music and Neutral/Sad and INLINEFORM6 for Anger/Happy"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1712.05608::s05::p001",
+      "1712.05608::s05::p002"
+     ],
+     "supporting_fact_ids": [
+      "1712.05608::g00:b3:f07"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.72,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1712.05608::u007"
+    },
+    {
+     "insight_id": "1712.05608::g00:i08",
+     "paper_id": "1712.05608",
+     "group_id": "1712.05608::g00",
+     "concise_text": "The proposed s2sL is validated on Speech/Music discrimination using GTZAN Music-Speech dataset and on emotion classification using Berlin speech emotion database (EMO-DB).",
+     "triple": {
+      "subject": "proposed s2sL",
+      "predicate": "evaluated_on",
+      "object": "GTZAN Music-Speech dataset and Berlin speech emotion database (EMO-DB)"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1712.05608::s05::p000",
+      "1712.05608::s05::p001"
+     ],
+     "supporting_fact_ids": [
+      "1712.05608::g00:b2:f12",
+      "1712.05608::g00:b2:f13",
+      "1712.05608::g00:b3:f00"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1712.05608::u008"
+    },
+    {
+     "insight_id": "1712.05608::g00:i09",
+     "paper_id": "1712.05608",
+     "group_id": "1712.05608::g00",
+     "concise_text": "The s2s framework generates multiple instances of the same test sample by combining it with preselected reference samples, enabling voting-based decision making.",
+     "triple": {
+      "subject": "s2s framework",
+      "predicate": "extends",
+      "object": "testing with multiple instances and voting-based decision making"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1712.05608::s04::p001",
+      "1712.05608::s04::p003",
+      "1712.05608::s06::p000"
+     ],
+     "supporting_fact_ids": [
+      "1712.05608::g00:b2:f07",
+      "1712.05608::g00:b2:f10",
+      "1712.05608::g00:b3:f14"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1712.05608::u009"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 9725,
+    "completion_tokens": 1853,
+    "total_tokens": 11578,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

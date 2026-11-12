@@ -1,0 +1,55 @@
+{
+ "paper_id": "1709.07814",
+ "title": "Attention-based Wav2Text with Feature Transfer Learning",
+ "abstract": "Conventional automatic speech recognition (ASR) typically performs multi-level pattern recognition tasks that map the acoustic speech waveform into a hierarchy of speech units. But, it is widely known that information loss in the earlier stage can propagate through the later stages. After the resurgence of deep learning, interest has emerged in the possibility of developing a purely end-to-end ASR system from the raw waveform to the transcription without any predefined alignments and hand-engineered models. However, the successful attempts in end-to-end architecture still used spectral-based features, while the successful attempts in using raw waveform were still based on the hybrid deep neural network - Hidden Markov model (DNN-HMM) framework. In this paper, we construct the first end-to-end attention-based encoder-decoder model to process directly from raw speech waveform to the text transcription. We called the model as\"Attention-based Wav2Text\". To assist the training process of the end-to-end model, we propose to utilize a feature transfer learning. Experimental results also reveal that the proposed Attention-based Wav2Text model directly with raw waveform could achieve a better result in comparison with the attentional encoder-decoder model trained on standard front-end filterbank features.",
+ "sections": [
+  "Introduction",
+  "Attention-based Encoder Decoder for Raw Speech Recognition",
+  "Feature Transfer Learning",
+  "Speech Data",
+  "Model Architectures",
+  "Result",
+  "Related Work",
+  "Conclusion",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 26,
+ "n_tokens": 3527,
+ "figures_and_tables": [
+  {
+   "caption_id": "1709.07814::fig000",
+   "paper_id": "1709.07814",
+   "file": "2-Figure1-1.png",
+   "caption": "Fig. 1. Attention-based Wav2Text architecture.",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1709.07814::fig001",
+   "paper_id": "1709.07814",
+   "file": "3-Figure2-1.png",
+   "caption": "Fig. 2. Feature transfer learning: train lower layers of the encoder (convolutional and NIN layers) to predict spectral features given corresponding raw waveform; then transfer the trained layers and parameters (marked by orange square) into attention-based encoder decoder model (see Figure 1).",
+   "n_tokens": 58
+  },
+  {
+   "caption_id": "1709.07814::fig002",
+   "paper_id": "1709.07814",
+   "file": "4-Figure3-1.png",
+   "caption": "Fig. 3. Example of our transfer learning model output: top is the original Mel-spectrogram, and bottom is the predicted Melspectrogram.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1709.07814::fig003",
+   "paper_id": "1709.07814",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1. Layer setting details for convolutional and NIN layers. Sorted from the input layer to the output layer.",
+   "n_tokens": 25
+  },
+  {
+   "caption_id": "1709.07814::fig004",
+   "paper_id": "1709.07814",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2. Character error rate (CER) result from baseline and proposed models on WSJ0 and WSJ1 dataset. All of these results are produced without using language model or lexicon dictionary. Word error rate (WER) for Att Wav2Text + transfer multi-target is 17.04%, compared to Joint CTC+Att (MTL)[25] 18.2% and standard Enc-Dec Att [23] 18.6%.",
+   "n_tokens": 95
+  }
+ ]
+}

@@ -1,0 +1,126 @@
+{
+ "paper_id": "2002.01984",
+ "title": "UNCC Biomedical Semantic Question Answering Systems. BioASQ: Task-7B, Phase-B",
+ "abstract": "In this paper, we detail our submission to the 2019, 7th year, BioASQ competition. We present our approach for Task-7b, Phase B, Exact Answering Task. These Question Answering (QA) tasks include Factoid, Yes/No, List Type Question answering. Our system is based on a contextual word embedding model. We have used a Bidirectional Encoder Representations from Transformers(BERT) based system, fined tuned for biomedical question answering task using BioBERT. In the third test batch set, our system achieved the highest MRR score for Factoid Question Answering task. Also, for List type question answering task our system achieved the highest recall score in the fourth test batch set. Along with our detailed approach, we present the results for our submissions, and also highlight identified downsides for our current approach and ways to improve them in our future experiments.",
+ "sections": [
+  "Introduction",
+  "Related Work ::: BioAsq",
+  "Related Work ::: A minimum background on BERT",
+  "Related Work ::: A minimum background on BERT ::: Comparison of Word Embeddings and Contextual Word Embeddings",
+  "Related Work ::: Comparison of BERT and Bio-BERT",
+  "Experiments: Factoid Question Answering Task",
+  "Experiments: Factoid Question Answering Task ::: Setup",
+  "Experiments: Factoid Question Answering Task ::: Training and error analysis",
+  "Our Systems and Their Performance on Factoid Questions",
+  "Our Systems and Their Performance on Factoid Questions ::: LAT Feature considered and its impact (slightly negative)",
+  "Our Systems and Their Performance on Factoid Questions ::: LAT Feature considered and its impact (slightly negative) ::: Assumptions and rules for deriving lexical answer type.",
+  "Our Systems and Their Performance on Factoid Questions ::: Impact of Training using BioAsq data (slightly negative)",
+  "Our Systems and Their Performance on Factoid Questions ::: Impact of Using Context from URLs (negative)",
+  "Performance on Yes/No and List questions",
+  "Performance on Yes/No and List questions ::: Entailment improves Yes/No accuracy",
+  "Performance on Yes/No and List questions ::: For List-type the URLs have negative impact",
+  "Summary of our results",
+  "Summary of our results ::: Factoid questions ::: Systems used in Batch 5 experiments",
+  "Summary of our results ::: List Questions",
+  "Summary of our results ::: Yes/No questions",
+  "Discussion, Future Experiments, and Conclusions ::: Summary:",
+  "Discussion, Future Experiments, and Conclusions ::: Future experiments",
+  "APPENDIX",
+  "APPENDIX ::: Systems and their descriptions:",
+  "APPENDIX ::: Systems and their descriptions: ::: Factoid Type Question Answering:",
+  "APPENDIX ::: Systems and their descriptions: ::: System description for QA1:",
+  "APPENDIX ::: Systems and their descriptions: ::: System description for UNCC_QA_1:",
+  "APPENDIX ::: Systems and their descriptions: ::: System description for UNCC_QA3:",
+  "APPENDIX ::: Systems and their descriptions: ::: System description for UNCC_QA2:",
+  "APPENDIX ::: Systems and their descriptions: ::: System description for FACTOIDS:",
+  "APPENDIX ::: Systems and their descriptions: ::: List Type Questions:",
+  "APPENDIX ::: Systems and their descriptions: ::: Yes/No Type Questions:",
+  "APPENDIX ::: Additional details for Yes/No Type Questions",
+  "APPENDIX ::: Assumptions, rules and logic flow for deriving Lexical Answer Types from questions",
+  "APPENDIX ::: Assumptions, rules and logic flow for deriving Lexical Answer Types from questions ::: Case-1:",
+  "APPENDIX ::: Assumptions, rules and logic flow for deriving Lexical Answer Types from questions ::: Case-2:",
+  "APPENDIX ::: Assumptions, rules and logic flow for deriving Lexical Answer Types from questions ::: Case-3:",
+  "APPENDIX ::: Proposing Future Experiments"
+ ],
+ "n_paragraphs": 131,
+ "n_tokens": 8669,
+ "figures_and_tables": [
+  {
+   "caption_id": "2002.01984::fig000",
+   "paper_id": "2002.01984",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1: BioBERT fine tuned for question answering task",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "2002.01984::fig001",
+   "paper_id": "2002.01984",
+   "file": "10-Figure2-1.png",
+   "caption": "Figure 2: A simple way of finding the lexical answer types, LATs, of factoid questions: using POS tags to find the question word (e.g. ’which’), and a dependency parse to find the LAT within the window of 3 words. If a noun is not found near the ”Wh-” word, we iterate looking for it, as in the second panel.",
+   "n_tokens": 80
+  },
+  {
+   "caption_id": "2002.01984::fig002",
+   "paper_id": "2002.01984",
+   "file": "12-Figure3-1.png",
+   "caption": "Figure 3: An example of a using BioBERT with additional features: Contextual word embedding for Lexical Answer Type (LAT) given as feature along with the actual contextual embeddings for the words in question and the paragraph. This change produced mixed results and no overall improvement.",
+   "n_tokens": 55
+  },
+  {
+   "caption_id": "2002.01984::fig003",
+   "paper_id": "2002.01984",
+   "file": "15-Table1-1.png",
+   "caption": "Table 1: Factoid Questions. In Batch 3 we obtained the highest score. Also the relative distance between our best system and the top performing system shrunk between Batch 4 and 5.",
+   "n_tokens": 41
+  },
+  {
+   "caption_id": "2002.01984::fig004",
+   "paper_id": "2002.01984",
+   "file": "16-Table2-1.png",
+   "caption": "Table 2: List Questions",
+   "n_tokens": 6
+  },
+  {
+   "caption_id": "2002.01984::fig005",
+   "paper_id": "2002.01984",
+   "file": "17-Table3-1.png",
+   "caption": "Table 3: Yes/No Questions",
+   "n_tokens": 8
+  },
+  {
+   "caption_id": "2002.01984::fig006",
+   "paper_id": "2002.01984",
+   "file": "18-Figure4-1.png",
+   "caption": "Figure 4: Proposed extension. In addition to using BioBERT we propose to add a network that would train on embeddings of questions (Emb Quesi) and paragraphs (Emb Pari) with additional LAT features, or more broadly other semantic features, like relations that can be derived from text",
+   "n_tokens": 59
+  },
+  {
+   "caption_id": "2002.01984::fig007",
+   "paper_id": "2002.01984",
+   "file": "24-Figure5-1.png",
+   "caption": "Figure 5: Flow Chart for Yes/No Question answer processing",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "2002.01984::fig008",
+   "paper_id": "2002.01984",
+   "file": "26-Figure6-1.png",
+   "caption": "Figure 6: Dependency parse visualization for the example ’how’ question.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "2002.01984::fig009",
+   "paper_id": "2002.01984",
+   "file": "26-Figure7-1.png",
+   "caption": "Figure 7: Dependency parse visualization for the example ’which’ question.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "2002.01984::fig010",
+   "paper_id": "2002.01984",
+   "file": "27-Figure8-1.png",
+   "caption": "Figure 8: Dependency parse visualization for the question about the function of the protein Magt1.",
+   "n_tokens": 20
+  }
+ ]
+}

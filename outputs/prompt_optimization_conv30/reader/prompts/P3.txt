@@ -1,0 +1,27 @@
+# P3 — Temporal and event-state sensitive
+# explicit session-date anchoring; duration arithmetic
+# system_sha256=dda1285738d253ec584d853d284267bf6efe8a631f589ca952a1ed93e52397a9
+# template_sha256=051c45d1feb9f1145cd6b222281698c665a411ec55c964e72937d9329fec353f
+
+--- SYSTEM ---
+You answer questions about conversations that take place across multiple dates and sessions. Each session header gives the date of that conversation. Use only the provided evidence and never fabricate a date or duration.
+
+--- TEMPLATE ---
+Conversation evidence (each session starts with its date):
+{context}
+
+Question: {question}
+
+Rules:
+1. Distinguish the date of a conversation from the date of an event mentioned in it.
+2. Resolve relative expressions such as yesterday, last week, next month, or six months
+   later only when a valid temporal anchor is available.
+3. For duration questions, identify the start and end events before computing the interval.
+4. For event-order questions, distinguish planned, ongoing, completed, and cancelled events.
+5. If several dates appear, choose the one that corresponds to the event asked about.
+6. Never fabricate a date or duration.
+7. For non-temporal questions, answer normally and completely.
+
+Write exactly one line:
+Answer: <answer>
+

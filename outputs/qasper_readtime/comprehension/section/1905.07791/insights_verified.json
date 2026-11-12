@@ -1,0 +1,897 @@
+{
+ "kept": [
+  {
+   "insight_id": "1905.07791::g00:i04",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "The strategy of routing difficult instances to domain experts and easier ones to crowd annotators is evaluated by expert re-annotation of 1000 top-ranked difficult abstracts and 1000 randomly sampled abstracts.",
+   "triple": {
+    "subject": "task routing strategy",
+    "predicate": "evaluated_on",
+    "object": "1000 top-ranked difficult abstracts and 1000 randomly sampled abstracts"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1905.07791::s10::p001",
+    "1905.07791::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b6:f07",
+    "1905.07791::g00:b6:f08"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Jointly supported: s10:p001 describes the simulated routing strategy, and s11:p000 states expert re-annotation of 1000 top-ranked difficult abstracts and 1000 randomly sampled abstracts. The insight composes these facts without adding unsupported numbers or causality."
+   },
+   "unit_id": "1905.07791::u004"
+  },
+  {
+   "insight_id": "1905.07791::g01:i05",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The conclusion that crowd annotation supplements expert annotations for medical IE is evidenced by mixed annotations improving at least 1 point F1 score in all three extraction tasks.",
+   "triple": {
+    "subject": "crowd annotation",
+    "predicate": "improves_on",
+    "object": "expert annotations for medical IE"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s12::p002",
+    "1905.07791::s13::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f10",
+    "1905.07791::g01:b0:f14"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.92,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Both passages support that crowd annotations supplement expert annotations for medical IE; p12 gives mixed-annotation F1 improvements and p13 states the conclusion. Composed across passages, not a single-paragraph restatement."
+   },
+   "unit_id": "1905.07791::u015"
+  },
+  {
+   "insight_id": "1905.07791::g01:i07",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The greater gain from routing according to difficulty is supported by D+Other outperforming R+Other by 2 points in F1 and by the 3.5 F1 score improvement.",
+   "triple": {
+    "subject": "routing according to difficulty",
+    "predicate": "outperforms",
+    "object": "randomly selecting the data for expert annotators"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s12::p002",
+    "1905.07791::s14::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f11",
+    "1905.07791::g01:b0:f12",
+    "1905.07791::g01:b1:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "p12 explicitly reports D+Other outperforming R+Other by 2 F1 and a 3.5 F1 improvement, then states greater gain from difficulty routing versus random selection; p14 corroborates routing outperforming random selection. Composed evidence supports the concise_text."
+   },
+   "unit_id": "1905.07791::u017"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1905.07791::g00:i00",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "On EBM-NLP, re-weighting sentences with predicted difficulty above 0.8 using LSTM-CRF-Pattern improves F1 significantly under a sign test (p<0.01).",
+   "triple": {
+    "subject": "re-weighting by difficulty",
+    "predicate": "improves",
+    "object": "LSTM-CRF-Pattern F1 on EBM-NLP"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1905.07791::s07::p001",
+    "1905.07791::s09::p001",
+    "1905.07791::s09::p002"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b5:f05",
+    "1905.07791::g00:b6:f00",
+    "1905.07791::g00:b6:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.4,
+    "novelty": 0.5,
+    "causality_error": false,
+    "reason": "Sources support re-weighting sentences with difficulty above tau=0.8 and significant F1 improvements, but say re-weighting is inversely to difficulty/down-sampling difficult sentences, not 'above 0.8 using predicted difficulty' as phrased; also concise_text says improves F1 significantly under sign test, which is supported, but 're-weighting sentences with predicted difficulty above 0.8' is incomplete/misleading."
+   },
+   "unit_id": "1905.07791::u000"
+  },
+  {
+   "insight_id": "1905.07791::g00:i01",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "The ensemble combining universal sentence encoder and task-specific representations outperforms the baseline SVR model on difficulty prediction, with Pearson's correlation coefficients ranging from 0.550 to 0.622.",
+   "triple": {
+    "subject": "ensemble model",
+    "predicate": "outperforms",
+    "object": "baseline SVR model"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1905.07791::s05::p001",
+    "1905.07791::s06::p002",
+    "1905.07791::s06::p003"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b4:f01",
+    "1905.07791::g00:b4:f10",
+    "1905.07791::g00:b4:f12",
+    "1905.07791::g00:b4:f13",
+    "1905.07791::g00:b4:f14"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.3,
+    "causality_error": false,
+    "reason": "Cited paragraphs support that an ensemble combines USE and task-specific representations and that all models outperform baseline SVR with correlations 0.550-0.622. However the concise_text is essentially a paraphrase/composition of facts in s06:p003 plus model description; the specific range applies to all models, not specifically the ensemble."
+   },
+   "unit_id": "1905.07791::u001"
+  },
+  {
+   "insight_id": "1905.07791::g00:i02",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "Because the training set contains only crowdsourced annotations, predicted spans from LSTM-CRF-Pattern serve as proxy ground truth for difficulty scores validated against expert test-set scores.",
+   "triple": {
+    "subject": "crowdsourced-only training set",
+    "predicate": "requires",
+    "object": "predicted spans as proxy ground truth"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1905.07791::s03::p000",
+    "1905.07791::s03::p003"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b2:f00",
+    "1905.07791::g00:b2:f01",
+    "1905.07791::g00:b2:f05",
+    "1905.07791::g00:b2:f06",
+    "1905.07791::g00:b2:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "The sources state the training set contains only crowdsourced annotations and that predicted spans are used as proxy ground truth, but do not assert that the crowdsourced-only training set 'requires' this proxy. The causal/necessity relation is unsupported."
+   },
+   "unit_id": "1905.07791::u002"
+  },
+  {
+   "insight_id": "1905.07791::g00:i03",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "The claim that difficulty is distinct from inter-annotator agreement is supported by Pearson's r of 0.34, 0.30 and 0.31 for p, i and o.",
+   "triple": {
+    "subject": "Pearson's r of 0.34, 0.30 and 0.31",
+    "predicate": "supports",
+    "object": "difficulty distinct from inter-annotator agreement"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s00::p002",
+    "1905.07791::s04::p002"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b0:f07",
+    "1905.07791::g00:b3:f12",
+    "1905.07791::g00:b3:f13"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "This is a direct restatement/paraphrase of s04:p002 combined with the abstract claim; the cited paragraph explicitly says the Pearson r values confirm difficulty and agreement are distinct. Reject as merely restating a single-paragraph fact."
+   },
+   "unit_id": "1905.07791::u003"
+  },
+  {
+   "insight_id": "1905.07791::g00:i05",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "Models trained with expert-annotated data are superior in F1 to crowd labels, supporting the claim that expert annotations should be collected whenever possible.",
+   "triple": {
+    "subject": "expert-annotated data F1 superiority",
+    "predicate": "supports",
+    "object": "expert annotations should be collected whenever possible"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s00::p003",
+    "1905.07791::s11::p003",
+    "1905.07791::s11::p004"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b0:f13",
+    "1905.07791::g00:b7:f04",
+    "1905.07791::g00:b7:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.3,
+    "causality_error": false,
+    "reason": "The cited paragraphs explicitly state expert-annotated models are superior in F1 and that this suggests expert annotations should be collected whenever possible. This is a direct paraphrase of s11:p003/p004 and s00:p003, not a novel composed insight."
+   },
+   "unit_id": "1905.07791::u005"
+  },
+  {
+   "insight_id": "1905.07791::g00:i06",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "Removing sentences predicted to be difficult marginally improves F1 up to 4% for Population and Interventions and 6% for Outcomes, supporting the hypothesis that difficult instances introduce more noise than signal.",
+   "triple": {
+    "subject": "removing predicted difficult sentences",
+    "predicate": "supports",
+    "object": "difficult instances introduce more noise than signal"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s08::p000",
+    "1905.07791::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b5:f12",
+    "1905.07791::g00:b5:f16",
+    "1905.07791::g00:b5:f18"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.4,
+    "causality_error": false,
+    "reason": "The sources support the hypothesis and the marginal F1 improvements when removing difficult sentences, but the concise_text says 'up to 4% for Population and Interventions and 6% for Outcomes' as if F1 improves by those percentages; the text says improvements occur until dropping 4%/6% of data. Also the conclusion is explicitly stated in s08:p001, making it largely a restatement."
+   },
+   "unit_id": "1905.07791::u006"
+  },
+  {
+   "insight_id": "1905.07791::g00:i07",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "Population has more easy sentences and fewer difficult sentences, which explains why correlations for Intervention and Outcomes are higher than for Population.",
+   "triple": {
+    "subject": "Population difficulty distribution",
+    "predicate": "causes",
+    "object": "lower correlations for Population"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1905.07791::s06::p005",
+    "1905.07791::s03::p005"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b5:f00",
+    "1905.07791::g00:b5:f01",
+    "1905.07791::g00:b5:f02",
+    "1905.07791::g00:b2:f11"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "The sources say higher correlations for Intervention/Outcomes are 'expected given' difficulty distributions and that Population's many easy/few difficult sentences make ranking challenging. This supports an explanatory association, but the insight asserts a causal 'explains/causes' relation stronger than the text and uses 'lower correlations' rather than the stated comparative pattern."
+   },
+   "unit_id": "1905.07791::u007"
+  },
+  {
+   "insight_id": "1905.07791::g00:i08",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "The paper's focus on an operational definition of instance difficulty extends prior task routing work by using predicted difficulty to inform routing.",
+   "triple": {
+    "subject": "operational definition of instance difficulty",
+    "predicate": "extends",
+    "object": "prior task routing work"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1905.07791::s01::p002",
+    "1905.07791::s00::p005"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b1:f06",
+    "1905.07791::g00:b1:f07",
+    "1905.07791::g00:b0:f16"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.8,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.3,
+    "causality_error": false,
+    "reason": "s01:p002 directly states that what distinguishes the work is focus on an operational definition of difficulty, showing it can be predicted, and using it to inform task routing. The insight is a close paraphrase of that single paragraph."
+   },
+   "unit_id": "1905.07791::u008"
+  },
+  {
+   "insight_id": "1905.07791::g00:i09",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "The EBM-NLP corpus's 4,741 crowdsourced training abstracts and 191 expert-labeled test abstracts enable treating domain experts as ground truth for sentence difficulty.",
+   "triple": {
+    "subject": "EBM-NLP corpus",
+    "predicate": "requires",
+    "object": "domain experts as ground truth for sentence difficulty"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1905.07791::s02::p000",
+    "1905.07791::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b1:f08",
+    "1905.07791::g00:b1:f09",
+    "1905.07791::g00:b1:f10",
+    "1905.07791::g00:b1:f11",
+    "1905.07791::g00:b2:f00",
+    "1905.07791::g00:b2:f01",
+    "1905.07791::g00:b2:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.83,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.5,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "The corpus sizes are in s02:p000 and treating experts as ground truth is in s03:p000, but the sources do not say the corpus sizes 'enable' or 'require' treating domain experts as ground truth. The relation is unsupported and causal/necessity-like."
+   },
+   "unit_id": "1905.07791::u009"
+  },
+  {
+   "insight_id": "1905.07791::g01:i00",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "Routing difficult examples to experts and other instances to crowd annotators is supported by D+Other outperforming R+Other by 2 points in F1.",
+   "triple": {
+    "subject": "Simulations in which difficult examples are routed to experts and other instances to crowd annotators",
+    "predicate": "outperforms",
+    "object": "the strategy of randomly selecting data for expert annotation"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s12::p002",
+    "1905.07791::s14::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f12",
+    "1905.07791::g01:b1:f05",
+    "1905.07791::g01:b1:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "The cited paragraphs explicitly state D+Other outperforms R+Other by 2 points and that difficulty-based routing outperforms random selection. This is a direct restatement/paraphrase of s12:p002 and s14:p001."
+   },
+   "unit_id": "1905.07791::u010"
+  },
+  {
+   "insight_id": "1905.07791::g01:i01",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The mixed-annotation models in Rows 4 to 6 used all 5k abstracts, and adding crowd annotation improved at least 1 point F1 score in all three extraction tasks.",
+   "triple": {
+    "subject": "Rows 4 to 6",
+    "predicate": "evaluated_on",
+    "object": "all 5k abstracts with mixed annotations"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1905.07791::s12::p001",
+    "1905.07791::s12::p002"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f08",
+    "1905.07791::g01:b0:f09",
+    "1905.07791::g01:b0:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.3,
+    "causality_error": false,
+    "reason": "s12:p001 directly states Rows 4 to 6 are models trained on all 5k abstracts with mixed annotations, and s12:p002 states adding crowd annotation improves at least 1 point F1. This is a paraphrase of single-paragraph facts."
+   },
+   "unit_id": "1905.07791::u011"
+  },
+  {
+   "insight_id": "1905.07791::g01:i02",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "Because Other means the rest of the abstracts with crowd annotation only, D+Other mixes the difficult subset with expert annotations and the remaining crowd annotation.",
+   "triple": {
+    "subject": "D+Other",
+    "predicate": "extends",
+    "object": "the difficult subset with expert annotations with the remaining crowd annotation"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1905.07791::s12::p001",
+    "1905.07791::s12::p002"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f09",
+    "1905.07791::g01:b0:f11",
+    "1905.07791::g01:b0:f12"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "The sources define Other as the rest with crowd annotation only and refer to D+Other as re-annotating the difficult subset plus Other. The insight is essentially an entity-resolution restatement, not a novel composed insight."
+   },
+   "unit_id": "1905.07791::u012"
+  },
+  {
+   "insight_id": "1905.07791::g01:i03",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The uninformed choice of how many difficult instances to annotate is checked by simulating consecutive batches of the most difficult examples sent to domain experts.",
+   "triple": {
+    "subject": "the choice of how many difficult instances to annotate",
+    "predicate": "requires",
+    "object": "a routing system parameter choice"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1905.07791::s13::p000",
+    "1905.07791::s13::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f16",
+    "1905.07791::g01:b0:f17",
+    "1905.07791::g01:b0:f18"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.5,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "The sources say the choice of how many difficult instances to annotate was uninformed and that future work must address choosing this parameter for a routing system; they also describe simulating consecutive batches. They do not support that the choice 'requires a routing system parameter choice' as stated, nor that the simulation 'checks' the uninformed choice in the exact triple sense."
+   },
+   "unit_id": "1905.07791::u013"
+  },
+  {
+   "insight_id": "1905.07791::g01:i04",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "Adding expert annotations for difficult articles consistently increases F1 scores, and the F1 score after re-annotating the 600 most-difficult articles reaches 68.1%.",
+   "triple": {
+    "subject": "adding expert annotations for difficult articles",
+    "predicate": "causes",
+    "object": "F1 scores to increase"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1905.07791::s13::p001",
+    "1905.07791::s13::p002"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f18",
+    "1905.07791::g01:b0:f20"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "The sources state adding expert annotations consistently increases F1 and that F1 after 600 most-difficult articles reaches 68.1%, but the triple asserts a causal relation ('causes') from a reported trend/observation. Also the concise_text includes a number from s13:p002, but the causal framing is stronger than the text."
+   },
+   "unit_id": "1905.07791::u014"
+  },
+  {
+   "insight_id": "1905.07791::g01:i06",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The feasibility of predicting annotation difficulty, shown by Pearson’s correlation coefficients higher than 0.45, underpins routing difficult examples to experts and other instances to crowd annotators.",
+   "triple": {
+    "subject": "predicting annotation difficulty",
+    "predicate": "requires",
+    "object": "routing difficult examples to experts and other instances to crowd annotators"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1905.07791::s14::p000",
+    "1905.07791::s14::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b1:f01",
+    "1905.07791::g01:b1:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.45,
+    "novelty": 0.55,
+    "causality_error": true,
+    "reason": "The triple says predicting difficulty requires routing, but passages only report feasibility of prediction and separate simulations where routing yields best results; no requirement relation is supported."
+   },
+   "unit_id": "1905.07791::u016"
+  },
+  {
+   "insight_id": "1905.07791::g01:i08",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The system that uses expert annotations for an abstract if it exists otherwise crowd annotations corresponds to simulations routing difficult examples to experts and other instances to crowd annotators.",
+   "triple": {
+    "subject": "the system trained on data that was routed to either experts or crowd annotators depending on their predicted difficult",
+    "predicate": "extends",
+    "object": "Simulations in which difficult examples are routed to experts and other instances to crowd annotators"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1905.07791::s12::p000",
+    "1905.07791::s14::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f01",
+    "1905.07791::g01:b0:f02",
+    "1905.07791::g01:b0:f03",
+    "1905.07791::g01:b1:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.5,
+    "causality_error": false,
+    "reason": "p12 describes a routed system using expert annotations if available otherwise crowd annotations, and p14 mentions simulations routing difficult examples to experts and others to crowd. But the claimed 'extends' relation/entity resolution is not stated or jointly supported."
+   },
+   "unit_id": "1905.07791::u018"
+  },
+  {
+   "insight_id": "1905.07791::g01:i09",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The conclusion that difficult-example routing yields the best results is evidenced by D+R+Other achieving only marginally higher F1 than D+Other.",
+   "triple": {
+    "subject": "Simulations in which difficult examples are routed to experts and other instances to crowd annotators",
+    "predicate": "evaluated_on",
+    "object": "D+R+Other and D+Other"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s12::p002",
+    "1905.07791::s14::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f13",
+    "1905.07791::g01:b1:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.69,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.4,
+    "novelty": 0.45,
+    "causality_error": false,
+    "reason": "p14 says simulations yield best results, while p12 discusses D+R+Other and D+Other models, but it does not say those simulations were evaluated on D+R+Other and D+Other. The marginal F1 comparison also does not evidence 'best results' as written."
+   },
+   "unit_id": "1905.07791::u019"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1905.07791::g00:i00",
+    "verdict": {
+     "insight_id": "1905.07791::g00:i00",
+     "keep": false,
+     "support": 0.4,
+     "novelty": 0.5,
+     "causality_error": false,
+     "reason": "Sources support re-weighting sentences with difficulty above tau=0.8 and significant F1 improvements, but say re-weighting is inversely to difficulty/down-sampling difficult sentences, not 'above 0.8 using predicted difficulty' as phrased; also concise_text says improves F1 significantly under sign test, which is supported, but 're-weighting sentences with predicted difficulty above 0.8' is incomplete/misleading."
+    },
+    "reason": "Sources support re-weighting sentences with difficulty above tau=0.8 and significant F1 improvements, but say re-weighting is inversely to difficulty/down-sampling difficult sentences, not 'above 0.8 using predicted difficulty' as phrased; also concise_text says improves F1 significantly under sign test, which is supported, but 're-weighting sentences with predicted difficulty above 0.8' is incomplete/misleading."
+   },
+   {
+    "insight_id": "1905.07791::g00:i01",
+    "verdict": {
+     "insight_id": "1905.07791::g00:i01",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.3,
+     "causality_error": false,
+     "reason": "Cited paragraphs support that an ensemble combines USE and task-specific representations and that all models outperform baseline SVR with correlations 0.550-0.622. However the concise_text is essentially a paraphrase/composition of facts in s06:p003 plus model description; the specific range applies to all models, not specifically the ensemble."
+    },
+    "reason": "Cited paragraphs support that an ensemble combines USE and task-specific representations and that all models outperform baseline SVR with correlations 0.550-0.622. However the concise_text is essentially a paraphrase/composition of facts in s06:p003 plus model description; the specific range applies to all models, not specifically the ensemble."
+   },
+   {
+    "insight_id": "1905.07791::g00:i02",
+    "verdict": {
+     "insight_id": "1905.07791::g00:i02",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "The sources state the training set contains only crowdsourced annotations and that predicted spans are used as proxy ground truth, but do not assert that the crowdsourced-only training set 'requires' this proxy. The causal/necessity relation is unsupported."
+    },
+    "reason": "The sources state the training set contains only crowdsourced annotations and that predicted spans are used as proxy ground truth, but do not assert that the crowdsourced-only training set 'requires' this proxy. The causal/necessity relation is unsupported."
+   },
+   {
+    "insight_id": "1905.07791::g00:i03",
+    "verdict": {
+     "insight_id": "1905.07791::g00:i03",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "This is a direct restatement/paraphrase of s04:p002 combined with the abstract claim; the cited paragraph explicitly says the Pearson r values confirm difficulty and agreement are distinct. Reject as merely restating a single-paragraph fact."
+    },
+    "reason": "This is a direct restatement/paraphrase of s04:p002 combined with the abstract claim; the cited paragraph explicitly says the Pearson r values confirm difficulty and agreement are distinct. Reject as merely restating a single-paragraph fact."
+   },
+   {
+    "insight_id": "1905.07791::g00:i04",
+    "verdict": {
+     "insight_id": "1905.07791::g00:i04",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Jointly supported: s10:p001 describes the simulated routing strategy, and s11:p000 states expert re-annotation of 1000 top-ranked difficult abstracts and 1000 randomly sampled abstracts. The insight composes these facts without adding unsupported numbers or causality."
+    }
+   },
+   {
+    "insight_id": "1905.07791::g00:i05",
+    "verdict": {
+     "insight_id": "1905.07791::g00:i05",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.3,
+     "causality_error": false,
+     "reason": "The cited paragraphs explicitly state expert-annotated models are superior in F1 and that this suggests expert annotations should be collected whenever possible. This is a direct paraphrase of s11:p003/p004 and s00:p003, not a novel composed insight."
+    },
+    "reason": "The cited paragraphs explicitly state expert-annotated models are superior in F1 and that this suggests expert annotations should be collected whenever possible. This is a direct paraphrase of s11:p003/p004 and s00:p003, not a novel composed insight."
+   },
+   {
+    "insight_id": "1905.07791::g00:i06",
+    "verdict": {
+     "insight_id": "1905.07791::g00:i06",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.4,
+     "causality_error": false,
+     "reason": "The sources support the hypothesis and the marginal F1 improvements when removing difficult sentences, but the concise_text says 'up to 4% for Population and Interventions and 6% for Outcomes' as if F1 improves by those percentages; the text says improvements occur until dropping 4%/6% of data. Also the conclusion is explicitly stated in s08:p001, making it largely a restatement."
+    },
+    "reason": "The sources support the hypothesis and the marginal F1 improvements when removing difficult sentences, but the concise_text says 'up to 4% for Population and Interventions and 6% for Outcomes' as if F1 improves by those percentages; the text says improvements occur until dropping 4%/6% of data. Also the conclusion is explicitly stated in s08:p001, making it largely a restatement."
+   },
+   {
+    "insight_id": "1905.07791::g00:i07",
+    "verdict": {
+     "insight_id": "1905.07791::g00:i07",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "The sources say higher correlations for Intervention/Outcomes are 'expected given' difficulty distributions and that Population's many easy/few difficult sentences make ranking challenging. This supports an explanatory association, but the insight asserts a causal 'explains/causes' relation stronger than the text and uses 'lower correlations' rather than the stated comparative pattern."
+    },
+    "reason": "The sources say higher correlations for Intervention/Outcomes are 'expected given' difficulty distributions and that Population's many easy/few difficult sentences make ranking challenging. This supports an explanatory association, but the insight asserts a causal 'explains/causes' relation stronger than the text and uses 'lower correlations' rather than the stated comparative pattern."
+   },
+   {
+    "insight_id": "1905.07791::g00:i08",
+    "verdict": {
+     "insight_id": "1905.07791::g00:i08",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.3,
+     "causality_error": false,
+     "reason": "s01:p002 directly states that what distinguishes the work is focus on an operational definition of difficulty, showing it can be predicted, and using it to inform task routing. The insight is a close paraphrase of that single paragraph."
+    },
+    "reason": "s01:p002 directly states that what distinguishes the work is focus on an operational definition of difficulty, showing it can be predicted, and using it to inform task routing. The insight is a close paraphrase of that single paragraph."
+   },
+   {
+    "insight_id": "1905.07791::g00:i09",
+    "verdict": {
+     "insight_id": "1905.07791::g00:i09",
+     "keep": false,
+     "support": 0.5,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "The corpus sizes are in s02:p000 and treating experts as ground truth is in s03:p000, but the sources do not say the corpus sizes 'enable' or 'require' treating domain experts as ground truth. The relation is unsupported and causal/necessity-like."
+    },
+    "reason": "The corpus sizes are in s02:p000 and treating experts as ground truth is in s03:p000, but the sources do not say the corpus sizes 'enable' or 'require' treating domain experts as ground truth. The relation is unsupported and causal/necessity-like."
+   },
+   {
+    "insight_id": "1905.07791::g01:i00",
+    "verdict": {
+     "insight_id": "1905.07791::g01:i00",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "The cited paragraphs explicitly state D+Other outperforms R+Other by 2 points and that difficulty-based routing outperforms random selection. This is a direct restatement/paraphrase of s12:p002 and s14:p001."
+    },
+    "reason": "The cited paragraphs explicitly state D+Other outperforms R+Other by 2 points and that difficulty-based routing outperforms random selection. This is a direct restatement/paraphrase of s12:p002 and s14:p001."
+   },
+   {
+    "insight_id": "1905.07791::g01:i01",
+    "verdict": {
+     "insight_id": "1905.07791::g01:i01",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.3,
+     "causality_error": false,
+     "reason": "s12:p001 directly states Rows 4 to 6 are models trained on all 5k abstracts with mixed annotations, and s12:p002 states adding crowd annotation improves at least 1 point F1. This is a paraphrase of single-paragraph facts."
+    },
+    "reason": "s12:p001 directly states Rows 4 to 6 are models trained on all 5k abstracts with mixed annotations, and s12:p002 states adding crowd annotation improves at least 1 point F1. This is a paraphrase of single-paragraph facts."
+   },
+   {
+    "insight_id": "1905.07791::g01:i02",
+    "verdict": {
+     "insight_id": "1905.07791::g01:i02",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "The sources define Other as the rest with crowd annotation only and refer to D+Other as re-annotating the difficult subset plus Other. The insight is essentially an entity-resolution restatement, not a novel composed insight."
+    },
+    "reason": "The sources define Other as the rest with crowd annotation only and refer to D+Other as re-annotating the difficult subset plus Other. The insight is essentially an entity-resolution restatement, not a novel composed insight."
+   },
+   {
+    "insight_id": "1905.07791::g01:i03",
+    "verdict": {
+     "insight_id": "1905.07791::g01:i03",
+     "keep": false,
+     "support": 0.5,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "The sources say the choice of how many difficult instances to annotate was uninformed and that future work must address choosing this parameter for a routing system; they also describe simulating consecutive batches. They do not support that the choice 'requires a routing system parameter choice' as stated, nor that the simulation 'checks' the uninformed choice in the exact triple sense."
+    },
+    "reason": "The sources say the choice of how many difficult instances to annotate was uninformed and that future work must address choosing this parameter for a routing system; they also describe simulating consecutive batches. They do not support that the choice 'requires a routing system parameter choice' as stated, nor that the simulation 'checks' the uninformed choice in the exact triple sense."
+   },
+   {
+    "insight_id": "1905.07791::g01:i04",
+    "verdict": {
+     "insight_id": "1905.07791::g01:i04",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "The sources state adding expert annotations consistently increases F1 and that F1 after 600 most-difficult articles reaches 68.1%, but the triple asserts a causal relation ('causes') from a reported trend/observation. Also the concise_text includes a number from s13:p002, but the causal framing is stronger than the text."
+    },
+    "reason": "The sources state adding expert annotations consistently increases F1 and that F1 after 600 most-difficult articles reaches 68.1%, but the triple asserts a causal relation ('causes') from a reported trend/observation. Also the concise_text includes a number from s13:p002, but the causal framing is stronger than the text."
+   },
+   {
+    "insight_id": "1905.07791::g01:i05",
+    "verdict": {
+     "insight_id": "1905.07791::g01:i05",
+     "keep": true,
+     "support": 0.92,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Both passages support that crowd annotations supplement expert annotations for medical IE; p12 gives mixed-annotation F1 improvements and p13 states the conclusion. Composed across passages, not a single-paragraph restatement."
+    }
+   },
+   {
+    "insight_id": "1905.07791::g01:i06",
+    "verdict": {
+     "insight_id": "1905.07791::g01:i06",
+     "keep": false,
+     "support": 0.45,
+     "novelty": 0.55,
+     "causality_error": true,
+     "reason": "The triple says predicting difficulty requires routing, but passages only report feasibility of prediction and separate simulations where routing yields best results; no requirement relation is supported."
+    },
+    "reason": "The triple says predicting difficulty requires routing, but passages only report feasibility of prediction and separate simulations where routing yields best results; no requirement relation is supported."
+   },
+   {
+    "insight_id": "1905.07791::g01:i07",
+    "verdict": {
+     "insight_id": "1905.07791::g01:i07",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "p12 explicitly reports D+Other outperforming R+Other by 2 F1 and a 3.5 F1 improvement, then states greater gain from difficulty routing versus random selection; p14 corroborates routing outperforming random selection. Composed evidence supports the concise_text."
+    }
+   },
+   {
+    "insight_id": "1905.07791::g01:i08",
+    "verdict": {
+     "insight_id": "1905.07791::g01:i08",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.5,
+     "causality_error": false,
+     "reason": "p12 describes a routed system using expert annotations if available otherwise crowd annotations, and p14 mentions simulations routing difficult examples to experts and others to crowd. But the claimed 'extends' relation/entity resolution is not stated or jointly supported."
+    },
+    "reason": "p12 describes a routed system using expert annotations if available otherwise crowd annotations, and p14 mentions simulations routing difficult examples to experts and others to crowd. But the claimed 'extends' relation/entity resolution is not stated or jointly supported."
+   },
+   {
+    "insight_id": "1905.07791::g01:i09",
+    "verdict": {
+     "insight_id": "1905.07791::g01:i09",
+     "keep": false,
+     "support": 0.4,
+     "novelty": 0.45,
+     "causality_error": false,
+     "reason": "p14 says simulations yield best results, while p12 discusses D+R+Other and D+Other models, but it does not say those simulations were evaluated on D+R+Other and D+Other. The marginal F1 comparison also does not evidence 'best results' as written."
+    },
+    "reason": "p14 says simulations yield best results, while p12 discusses D+R+Other and D+Other models, but it does not say those simulations were evaluated on D+R+Other and D+Other. The marginal F1 comparison also does not evidence 'best results' as written."
+   }
+  ],
+  "calls": [
+   {
+    "n": 15,
+    "parsed": true,
+    "usage": {
+     "prompt_tokens": 6602,
+     "completion_tokens": 1531,
+     "total_tokens": 8133,
+     "reasoning_tokens": null
+    }
+   },
+   {
+    "n": 5,
+    "parsed": true,
+    "usage": {
+     "prompt_tokens": 2462,
+     "completion_tokens": 451,
+     "total_tokens": 2913,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

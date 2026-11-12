@@ -1,0 +1,633 @@
+{
+  "summaries": {
+    "P0": {
+      "all": {
+        "n": 105,
+        "n_answerable": 81,
+        "n_adversarial": 24,
+        "project_em": 0.2222222222222222,
+        "project_f1": 0.41712648910991995,
+        "official_f1": 0.44492299914014166,
+        "official_em": 0.2222222222222222,
+        "adversarial_refusal": 0.9583333333333334,
+        "adversarial_refusal_official_strict": 0.0,
+        "adversarial_refusal_official_adapted": 0.9583333333333334,
+        "refusal_rate_answerable": 0.1728395061728395,
+        "mean_calls": 1.0,
+        "mean_prompt_tokens": 4320.009523809524,
+        "mean_completion_tokens": 8.333333333333334,
+        "mean_latency_s": 1.7737428571428568,
+        "by_category": {
+          "1": {
+            "name": "multi-hop",
+            "n": 11,
+            "em": 0.2727272727272727,
+            "f1": 0.5459539232266505,
+            "official_f1": 0.5387708576858137,
+            "refused": 0.18181818181818182
+          },
+          "2": {
+            "name": "temporal",
+            "n": 26,
+            "em": 0.2692307692307692,
+            "f1": 0.33076923076923076,
+            "official_f1": 0.33076923076923076,
+            "refused": 0.3076923076923077
+          },
+          "4": {
+            "name": "single-hop",
+            "n": 44,
+            "em": 0.18181818181818182,
+            "f1": 0.4359489196002354,
+            "official_f1": 0.4889155339956257,
+            "refused": 0.09090909090909091
+          },
+          "5": {
+            "name": "adversarial",
+            "n": 24,
+            "em": 0.9583333333333334,
+            "f1": 0.9583333333333334,
+            "official_f1": 0.9583333333333334,
+            "refused": 0.9583333333333334
+          }
+        }
+      },
+      "subsets": {
+        "adaptation": {
+          "n": 43,
+          "n_answerable": 33,
+          "n_adversarial": 10,
+          "project_em": 0.15151515151515152,
+          "project_f1": 0.36949020435862545,
+          "official_f1": 0.377540085519712,
+          "official_em": 0.15151515151515152,
+          "adversarial_refusal": 1.0,
+          "adversarial_refusal_official_strict": 0.0,
+          "adversarial_refusal_official_adapted": 1.0,
+          "refusal_rate_answerable": 0.18181818181818182,
+          "mean_calls": 1.0,
+          "mean_prompt_tokens": 4297.511627906977,
+          "mean_completion_tokens": 8.348837209302326,
+          "mean_latency_s": 1.7963953488372093,
+          "by_category": {
+            "1": {
+              "name": "multi-hop",
+              "n": 4,
+              "em": 0.25,
+              "f1": 0.6935810810810811,
+              "official_f1": 0.6756272401433692,
+              "refused": 0.0
+            },
+            "2": {
+              "name": "temporal",
+              "n": 11,
+              "em": 0.18181818181818182,
+              "f1": 0.2545454545454545,
+              "official_f1": 0.2545454545454545,
+              "refused": 0.36363636363636365
+            },
+            "4": {
+              "name": "single-hop",
+              "n": 18,
+              "em": 0.1111111111111111,
+              "f1": 0.36771402330612857,
+              "official_f1": 0.38646188119872327,
+              "refused": 0.1111111111111111
+            },
+            "5": {
+              "name": "adversarial",
+              "n": 10,
+              "em": 1.0,
+              "f1": 1.0,
+              "official_f1": 1.0,
+              "refused": 1.0
+            }
+          }
+        },
+        "development": {
+          "n": 19,
+          "n_answerable": 15,
+          "n_adversarial": 4,
+          "project_em": 0.26666666666666666,
+          "project_f1": 0.4163363363363363,
+          "official_f1": 0.4657516339869281,
+          "official_em": 0.26666666666666666,
+          "adversarial_refusal": 1.0,
+          "adversarial_refusal_official_strict": 0.0,
+          "adversarial_refusal_official_adapted": 1.0,
+          "refusal_rate_answerable": 0.26666666666666666,
+          "mean_calls": 1.0,
+          "mean_prompt_tokens": 4353.631578947368,
+          "mean_completion_tokens": 7.368421052631579,
+          "mean_latency_s": 1.7702631578947368,
+          "by_category": {
+            "1": {
+              "name": "multi-hop",
+              "n": 2,
+              "em": 0.0,
+              "f1": 0.2,
+              "official_f1": 0.25,
+              "refused": 0.5
+            },
+            "2": {
+              "name": "temporal",
+              "n": 5,
+              "em": 0.0,
+              "f1": 0.16,
+              "official_f1": 0.16,
+              "refused": 0.6
+            },
+            "4": {
+              "name": "single-hop",
+              "n": 8,
+              "em": 0.5,
+              "f1": 0.6306306306306306,
+              "official_f1": 0.7107843137254901,
+              "refused": 0.0
+            },
+            "5": {
+              "name": "adversarial",
+              "n": 4,
+              "em": 1.0,
+              "f1": 1.0,
+              "official_f1": 1.0,
+              "refused": 1.0
+            }
+          }
+        },
+        "evaluation": {
+          "n": 43,
+          "n_answerable": 33,
+          "n_adversarial": 10,
+          "project_em": 0.2727272727272727,
+          "project_f1": 0.4651219342128433,
+          "official_f1": 0.5028383514665774,
+          "official_em": 0.2727272727272727,
+          "adversarial_refusal": 0.9,
+          "adversarial_refusal_official_strict": 0.0,
+          "adversarial_refusal_official_adapted": 0.9,
+          "refusal_rate_answerable": 0.12121212121212122,
+          "mean_calls": 1.0,
+          "mean_prompt_tokens": 4327.6511627906975,
+          "mean_completion_tokens": 8.744186046511627,
+          "mean_latency_s": 1.7526279069767445,
+          "by_category": {
+            "1": {
+              "name": "multi-hop",
+              "n": 5,
+              "em": 0.4,
+              "f1": 0.5662337662337663,
+              "official_f1": 0.5447940947940948,
+              "refused": 0.2
+            },
+            "2": {
+              "name": "temporal",
+              "n": 10,
+              "em": 0.5,
+              "f1": 0.5,
+              "official_f1": 0.5,
+              "refused": 0.1
+            },
+            "4": {
+              "name": "single-hop",
+              "n": 18,
+              "em": 0.1111111111111111,
+              "f1": 0.4176586109919443,
+              "official_f1": 0.49276084024592115,
+              "refused": 0.1111111111111111
+            },
+            "5": {
+              "name": "adversarial",
+              "n": 10,
+              "em": 0.9,
+              "f1": 0.9,
+              "official_f1": 0.9,
+              "refused": 0.9
+            }
+          }
+        }
+      },
+      "answer_support": 0.9665258022400879
+    },
+    "P7": {
+      "all": {
+        "n": 105,
+        "n_answerable": 81,
+        "n_adversarial": 24,
+        "project_em": 0.25925925925925924,
+        "project_f1": 0.5393967931295569,
+        "official_f1": 0.5691055622647958,
+        "official_em": 0.25925925925925924,
+        "adversarial_refusal": 0.9166666666666666,
+        "adversarial_refusal_official_strict": 0.0,
+        "adversarial_refusal_official_adapted": 0.9166666666666666,
+        "refusal_rate_answerable": 0.06172839506172839,
+        "mean_calls": 1.0,
+        "mean_prompt_tokens": 4454.009523809524,
+        "mean_completion_tokens": 17.82857142857143,
+        "mean_latency_s": 1.7998190476190477,
+        "by_category": {
+          "1": {
+            "name": "multi-hop",
+            "n": 11,
+            "em": 0.2727272727272727,
+            "f1": 0.51069917863173,
+            "official_f1": 0.5607372425554243,
+            "refused": 0.09090909090909091
+          },
+          "2": {
+            "name": "temporal",
+            "n": 26,
+            "em": 0.5,
+            "f1": 0.8692307692307693,
+            "official_f1": 0.8692307692307693,
+            "refused": 0.038461538461538464
+          },
+          "4": {
+            "name": "single-hop",
+            "n": 44,
+            "em": 0.11363636363636363,
+            "f1": 0.35166930178511574,
+            "official_f1": 0.3938509289849726,
+            "refused": 0.06818181818181818
+          },
+          "5": {
+            "name": "adversarial",
+            "n": 24,
+            "em": 0.9166666666666666,
+            "f1": 0.9166666666666666,
+            "official_f1": 0.9166666666666666,
+            "refused": 0.9166666666666666
+          }
+        }
+      },
+      "subsets": {
+        "adaptation": {
+          "n": 43,
+          "n_answerable": 33,
+          "n_adversarial": 10,
+          "project_em": 0.18181818181818182,
+          "project_f1": 0.4631924655786094,
+          "official_f1": 0.48350694442255526,
+          "official_em": 0.18181818181818182,
+          "adversarial_refusal": 0.9,
+          "adversarial_refusal_official_strict": 0.0,
+          "adversarial_refusal_official_adapted": 0.9,
+          "refusal_rate_answerable": 0.06060606060606061,
+          "mean_calls": 1.0,
+          "mean_prompt_tokens": 4431.511627906977,
+          "mean_completion_tokens": 27.651162790697676,
+          "mean_latency_s": 1.865697674418605,
+          "by_category": {
+            "1": {
+              "name": "multi-hop",
+              "n": 4,
+              "em": 0.25,
+              "f1": 0.4837138667783829,
+              "official_f1": 0.5833333333333334,
+              "refused": 0.0
+            },
+            "2": {
+              "name": "temporal",
+              "n": 11,
+              "em": 0.36363636363636365,
+              "f1": 0.8,
+              "official_f1": 0.8,
+              "refused": 0.09090909090909091
+            },
+            "4": {
+              "name": "single-hop",
+              "n": 18,
+              "em": 0.05555555555555555,
+              "f1": 0.2528053276100321,
+              "official_f1": 0.2679108795894994,
+              "refused": 0.05555555555555555
+            },
+            "5": {
+              "name": "adversarial",
+              "n": 10,
+              "em": 0.9,
+              "f1": 0.9,
+              "official_f1": 0.9,
+              "refused": 0.9
+            }
+          }
+        },
+        "development": {
+          "n": 19,
+          "n_answerable": 15,
+          "n_adversarial": 4,
+          "project_em": 0.3333333333333333,
+          "project_f1": 0.6543484200697822,
+          "official_f1": 0.6771954709468706,
+          "official_em": 0.3333333333333333,
+          "adversarial_refusal": 1.0,
+          "adversarial_refusal_official_strict": 0.0,
+          "adversarial_refusal_official_adapted": 1.0,
+          "refusal_rate_answerable": 0.0,
+          "mean_calls": 1.0,
+          "mean_prompt_tokens": 4487.631578947368,
+          "mean_completion_tokens": 11.368421052631579,
+          "mean_latency_s": 1.7390526315789474,
+          "by_category": {
+            "1": {
+              "name": "multi-hop",
+              "n": 2,
+              "em": 0.0,
+              "f1": 0.42285714285714293,
+              "official_f1": 0.5595238095238095,
+              "refused": 0.0
+            },
+            "2": {
+              "name": "temporal",
+              "n": 5,
+              "em": 0.4,
+              "f1": 0.8800000000000001,
+              "official_f1": 0.8800000000000001,
+              "refused": 0.0
+            },
+            "4": {
+              "name": "single-hop",
+              "n": 8,
+              "em": 0.375,
+              "f1": 0.5711890019165561,
+              "official_f1": 0.5798605556444302,
+              "refused": 0.0
+            },
+            "5": {
+              "name": "adversarial",
+              "n": 4,
+              "em": 1.0,
+              "f1": 1.0,
+              "official_f1": 1.0,
+              "refused": 1.0
+            }
+          }
+        },
+        "evaluation": {
+          "n": 43,
+          "n_answerable": 33,
+          "n_adversarial": 10,
+          "project_em": 0.30303030303030304,
+          "project_f1": 0.5633503811622205,
+          "official_f1": 0.6055724034333659,
+          "official_em": 0.30303030303030304,
+          "adversarial_refusal": 0.9,
+          "adversarial_refusal_official_strict": 0.0,
+          "adversarial_refusal_official_adapted": 0.9,
+          "refusal_rate_answerable": 0.09090909090909091,
+          "mean_calls": 1.0,
+          "mean_prompt_tokens": 4461.6511627906975,
+          "mean_completion_tokens": 10.86046511627907,
+          "mean_latency_s": 1.7607906976744185,
+          "by_category": {
+            "1": {
+              "name": "multi-hop",
+              "n": 5,
+              "em": 0.4,
+              "f1": 0.5674242424242424,
+              "official_f1": 0.5431457431457432,
+              "refused": 0.2
+            },
+            "2": {
+              "name": "temporal",
+              "n": 10,
+              "em": 0.7,
+              "f1": 0.9400000000000001,
+              "official_f1": 0.9400000000000001,
+              "refused": 0.0
+            },
+            "4": {
+              "name": "single-hop",
+              "n": 18,
+              "em": 0.05555555555555555,
+              "f1": 0.3529689647906702,
+              "official_f1": 0.4371200331984646,
+              "refused": 0.1111111111111111
+            },
+            "5": {
+              "name": "adversarial",
+              "n": 10,
+              "em": 0.9,
+              "f1": 0.9,
+              "official_f1": 0.9,
+              "refused": 0.9
+            }
+          }
+        }
+      },
+      "answer_support": 0.96984126984127
+    },
+    "P8": {
+      "all": {
+        "n": 105,
+        "n_answerable": 81,
+        "n_adversarial": 24,
+        "project_em": 0.2222222222222222,
+        "project_f1": 0.503649202134145,
+        "official_f1": 0.5294473331466595,
+        "official_em": 0.2222222222222222,
+        "adversarial_refusal": 0.9583333333333334,
+        "adversarial_refusal_official_strict": 0.0,
+        "adversarial_refusal_official_adapted": 0.9583333333333334,
+        "refusal_rate_answerable": 0.1111111111111111,
+        "mean_calls": 1.0,
+        "mean_prompt_tokens": 4501.009523809524,
+        "mean_completion_tokens": 16.01904761904762,
+        "mean_latency_s": 2.2659904761904763,
+        "by_category": {
+          "1": {
+            "name": "multi-hop",
+            "n": 11,
+            "em": 0.18181818181818182,
+            "f1": 0.4084392031799039,
+            "official_f1": 0.5256723074904893,
+            "refused": 0.18181818181818182
+          },
+          "2": {
+            "name": "temporal",
+            "n": 26,
+            "em": 0.4230769230769231,
+            "f1": 0.8051282051282052,
+            "official_f1": 0.8051282051282052,
+            "refused": 0.07692307692307693
+          },
+          "4": {
+            "name": "single-hop",
+            "n": 44,
+            "em": 0.11363636363636363,
+            "f1": 0.3493050182853061,
+            "official_f1": 0.36748875611706144,
+            "refused": 0.11363636363636363
+          },
+          "5": {
+            "name": "adversarial",
+            "n": 24,
+            "em": 0.9583333333333334,
+            "f1": 0.9583333333333334,
+            "official_f1": 0.9583333333333334,
+            "refused": 0.9583333333333334
+          }
+        }
+      },
+      "subsets": {
+        "adaptation": {
+          "n": 43,
+          "n_answerable": 33,
+          "n_adversarial": 10,
+          "project_em": 0.15151515151515152,
+          "project_f1": 0.4333089666009002,
+          "official_f1": 0.44865720556056077,
+          "official_em": 0.15151515151515152,
+          "adversarial_refusal": 1.0,
+          "adversarial_refusal_official_strict": 0.0,
+          "adversarial_refusal_official_adapted": 1.0,
+          "refusal_rate_answerable": 0.12121212121212122,
+          "mean_calls": 1.0,
+          "mean_prompt_tokens": 4478.511627906977,
+          "mean_completion_tokens": 22.232558139534884,
+          "mean_latency_s": 2.4160232558139536,
+          "by_category": {
+            "1": {
+              "name": "multi-hop",
+              "n": 4,
+              "em": 0.25,
+              "f1": 0.5019651401230348,
+              "official_f1": 0.5666666666666667,
+              "refused": 0.0
+            },
+            "2": {
+              "name": "temporal",
+              "n": 11,
+              "em": 0.2727272727272727,
+              "f1": 0.7090909090909091,
+              "official_f1": 0.7090909090909091,
+              "refused": 0.18181818181818182
+            },
+            "4": {
+              "name": "single-hop",
+              "n": 18,
+              "em": 0.05555555555555555,
+              "f1": 0.249518629852087,
+              "official_f1": 0.2632789509351021,
+              "refused": 0.1111111111111111
+            },
+            "5": {
+              "name": "adversarial",
+              "n": 10,
+              "em": 1.0,
+              "f1": 1.0,
+              "official_f1": 1.0,
+              "refused": 1.0
+            }
+          }
+        },
+        "development": {
+          "n": 19,
+          "n_answerable": 15,
+          "n_adversarial": 4,
+          "project_em": 0.3333333333333333,
+          "project_f1": 0.6319745869362238,
+          "official_f1": 0.6510438600355343,
+          "official_em": 0.3333333333333333,
+          "adversarial_refusal": 1.0,
+          "adversarial_refusal_official_strict": 0.0,
+          "adversarial_refusal_official_adapted": 1.0,
+          "refusal_rate_answerable": 0.06666666666666667,
+          "mean_calls": 1.0,
+          "mean_prompt_tokens": 4534.631578947368,
+          "mean_completion_tokens": 11.368421052631579,
+          "mean_latency_s": 2.2997368421052626,
+          "by_category": {
+            "1": {
+              "name": "multi-hop",
+              "n": 2,
+              "em": 0.0,
+              "f1": 0.2916666666666667,
+              "official_f1": 0.4,
+              "refused": 0.5
+            },
+            "2": {
+              "name": "temporal",
+              "n": 5,
+              "em": 0.4,
+              "f1": 0.8800000000000001,
+              "official_f1": 0.8800000000000001,
+              "refused": 0.0
+            },
+            "4": {
+              "name": "single-hop",
+              "n": 8,
+              "em": 0.375,
+              "f1": 0.5620356838387528,
+              "official_f1": 0.570707237566627,
+              "refused": 0.0
+            },
+            "5": {
+              "name": "adversarial",
+              "n": 4,
+              "em": 1.0,
+              "f1": 1.0,
+              "official_f1": 1.0,
+              "refused": 1.0
+            }
+          }
+        },
+        "evaluation": {
+          "n": 43,
+          "n_answerable": 33,
+          "n_adversarial": 10,
+          "project_em": 0.24242424242424243,
+          "project_f1": 0.5156597173028086,
+          "official_f1": 0.5549663121469062,
+          "official_em": 0.24242424242424243,
+          "adversarial_refusal": 0.9,
+          "adversarial_refusal_official_strict": 0.0,
+          "adversarial_refusal_official_adapted": 0.9,
+          "refusal_rate_answerable": 0.12121212121212122,
+          "mean_calls": 1.0,
+          "mean_prompt_tokens": 4508.6511627906975,
+          "mean_completion_tokens": 11.86046511627907,
+          "mean_latency_s": 2.1010465116279065,
+          "by_category": {
+            "1": {
+              "name": "multi-hop",
+              "n": 5,
+              "em": 0.2,
+              "f1": 0.380327468230694,
+              "official_f1": 0.5431457431457432,
+              "refused": 0.2
+            },
+            "2": {
+              "name": "temporal",
+              "n": 10,
+              "em": 0.6,
+              "f1": 0.8733333333333334,
+              "official_f1": 0.8733333333333334,
+              "refused": 0.0
+            },
+            "4": {
+              "name": "single-hop",
+              "n": 18,
+              "em": 0.05555555555555555,
+              "f1": 0.35454444425032666,
+              "official_f1": 0.38137923621032527,
+              "refused": 0.16666666666666666
+            },
+            "5": {
+              "name": "adversarial",
+              "n": 10,
+              "em": 0.9,
+              "f1": 0.9,
+              "official_f1": 0.9,
+              "refused": 0.9
+            }
+          }
+        }
+      },
+      "answer_support": 0.984936507936508
+    }
+  },
+  "base_variant": "COMP-P4_top5",
+  "context_budget": 4096
+}

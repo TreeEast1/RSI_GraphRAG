@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>Luna relation graph viewer</title>
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; font: 14px/1.45 "IBM Plex Sans", "Noto Sans SC", sans-serif; color: #1c1917; background: #f6f4f1; }
+  header { padding: 16px 20px 8px; }
+  h1 { font-size: 18px; margin: 0 0 6px; font-weight: 600; }
+  p { margin: 0; max-width: 78ch; color: #44403c; }
+  .layout { display: grid; grid-template-columns: 280px 1fr; height: calc(100vh - 92px); }
+  aside { border-right: 1px solid #e7e5e4; padding: 12px; overflow: auto; }
+  button { display: block; width: 100%; text-align: left; margin: 0 0 8px; padding: 8px 10px; border: 1px solid #d6d3d1; background: #fff; cursor: pointer; }
+  button.active { border-color: #1d4ed8; background: #eff6ff; }
+  .meta { font-size: 12px; color: #57534e; margin-top: 4px; }
+  svg { width: 100%; height: 100%; background: #fff; cursor: grab; }
+  .node { fill: #1d4ed8; }
+  .hub { fill: #b45309; }
+  text { font-size: 11px; fill: #1c1917; pointer-events: none; }
+  line { stroke: #a8a29e; }
+  #tip { position: fixed; display: none; background: #1c1917; color: #fafaf9; padding: 6px 8px; font-size: 12px; max-width: 320px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Luna OpenIE 关系图</h1>
+  <p>84,654 个实体里，80,433 个在同一个连通分量中，占 95.0%。下面能拖动的是真实小分量，以及最大分量中的一块两跳局部。整张 8 万节点的图没有画成一张力导向图。</p>
+</header>
+<div class="layout">
+  <aside id="list"></aside>
+  <svg id="view"></svg>
+</div>
+<div id="tip"></div>
+<script>
+const DATA = {"relation_nodes": 84654, "largest_component_nodes": 80433, "largest_share": 0.9501382096534127, "component_count": 1134, "histogram": {"1": 6, "2-5": 930, "6-20": 196, "21-100": 1, "101-1000": 0, "1000+": 1}, "samples": [{"id": "component-1", "kind": "完整连通分量", "n_nodes_in_component": 6, "n_edges_shown": 7, "truncated": false, "nodes": ["adult copepods", "bolinopsis", "crustacean larvae", "mollusc larvae", "pleurobrachia", "rotifers"], "edges": [{"s": "pleurobrachia", "p": "captures", "o": "adult copepods"}, {"s": "bolinopsis", "p": "feeds on", "o": "rotifers"}, {"s": "bolinopsis", "p": "feeds on", "o": "mollusc larvae"}, {"s": "bolinopsis", "p": "feeds on", "o": "crustacean larvae"}, {"s": "pleurobrachia", "p": "and", "o": "bolinopsis"}, {"s": "pleurobrachia", "p": "specializes in prey different from", "o": "bolinopsis"}, {"s": "pleurobrachia", "p": "often reach high population densities alongside", "o": "bolinopsis"}]}, {"id": "component-2", "kind": "完整连通分量", "n_nodes_in_component": 7, "n_edges_shown": 6, "truncated": false, "nodes": ["150 ma", "4 v for low power devices", "400 mb s or more", "900 ma", "data transmission encodings", "six unit loads", "usb 3 0"], "edges": [{"s": "usb 3 0", "p": "introduced additional", "o": "data transmission encodings"}, {"s": "usb 3 0", "p": "has a potential speed of", "o": "400 mb s or more"}, {"s": "usb 3 0", "p": "defines a unit load as", "o": "150 ma"}, {"s": "usb 3 0", "p": "permits a device to draw up to", "o": "six unit loads"}, {"s": "usb 3 0", "p": "has a maximum device current of", "o": "900 ma"}, {"s": "usb 3 0", "p": "requires a minimum operating voltage of", "o": "4 v for low power devices"}]}, {"id": "component-3", "kind": "完整连通分量", "n_nodes_in_component": 7, "n_edges_shown": 8, "truncated": false, "nodes": ["colonel sanders", "december 16  1980", "harland david sanders", "kentucky colonel", "kentucky fried chicken", "kfc", "september 9  1890"], "edges": [{"s": "colonel sanders", "p": "was born on", "o": "september 9  1890"}, {"s": "colonel sanders", "p": "died on", "o": "december 16  1980"}, {"s": "colonel sanders", "p": "also known as", "o": "harland david sanders"}, {"s": "colonel sanders", "p": "founded", "o": "kentucky fried chicken"}, {"s": "kentucky fried chicken", "p": "also known as", "o": "kfc"}, {"s": "colonel sanders", "p": "was brand ambassador and symbol of", "o": "kentucky fried chicken"}, {"s": "colonel sanders", "p": "was awarded the honorary title of", "o": "kentucky colonel"}, {"s": "kentucky fried chicken", "p": "is associated with", "o": "colonel sanders"}]}, {"id": "component-4", "kind": "完整连通分量", "n_nodes_in_component": 7, "n_edges_shown": 10, "truncated": false, "nodes": ["hey mami", "hey mami play it right", "partisan records", "play it right", "sylvan esso", "sylvan esso s eponymous debut album", "trekky records"], "edges": [{"s": "hey mami play it right", "p": "is a single by", "o": "sylvan esso"}, {"s": "hey mami play it right", "p": "was issued as lead single from", "o": "sylvan esso s eponymous debut album"}, {"s": "hey mami", "p": "is the a side of", "o": "hey mami play it right"}, {"s": "play it right", "p": "is the b side of", "o": "hey mami play it right"}, {"s": "hey mami", "p": "is the opening track of", "o": "sylvan esso s eponymous debut album"}, {"s": "play it right", "p": "is the ninth track of", "o": "sylvan esso s eponymous debut album"}, {"s": "hey mami play it right", "p": "was released on", "o": "trekky records"}, {"s": "sylvan esso", "p": "moved from", "o": "trekky records"}, {"s": "sylvan esso", "p": "moved to", "o": "partisan records"}, {"s": "hey mami play it right", "p": "is the only single released by sylvan esso on", "o": "trekky records"}]}, {"id": "giant-local-sample", "kind": "最大连通分量里的两跳局部，不是整张大图", "hub": "k ppen climate classification", "hub_degree_in_giant": 6, "n_nodes_in_component": 80433, "n_edges_shown": 34, "truncated": true, "nodes": ["100  f  38  c", "110  f  43  c", "122  f  50  c", "3300 north central avenue", "75  f  24  c", "ard", "arizona", "arizona sun corridor", "bonn", "cfb", "cfc", "chengdu", "climate", "dave fennoy", "desert diamond west valley phoenix grand prix", "discussion programmes", "documentaries", "earth", "eric marcus municipal airport", "garze county", "german free to air television channel", "humid subtropical climate", "johnny rutherford", "june 26  1990", "k ppen climate classification", "phoenix", "sichuan basin", "subarctic climate"], "edges": [{"s": "phoenix", "p": "is in", "o": "arizona"}, {"s": "phoenix", "p": "is located in", "o": "arizona"}, {"s": "phoenix", "p": "has climate classification", "o": "k ppen climate classification"}, {"s": "phoenix", "p": "receives the most sunshine of any major city on", "o": "earth"}, {"s": "phoenix", "p": "has an average daily temperature of", "o": "75  f  24  c"}, {"s": "phoenix", "p": "recorded an all time high temperature on", "o": "june 26  1990"}, {"s": "phoenix", "p": "recorded a temperature of", "o": "122  f  50  c"}, {"s": "phoenix", "p": "has long  extremely hot summers and short  mild to warm winters", "o": "climate"}, {"s": "phoenix", "p": "has at least 107 days annually with temperatures of", "o": "100  f  38  c"}, {"s": "phoenix", "p": "has an average of 18 days annually with temperatures above", "o": "110  f  43  c"}, {"s": "phoenix", "p": "anchors", "o": "arizona sun corridor"}, {"s": "arizona", "p": "has capital", "o": "phoenix"}, {"s": "phoenix", "p": "is largest city of", "o": "arizona"}, {"s": "phoenix", "p": "located in", "o": "arizona"}, {"s": "eric marcus municipal airport", "p": "located southwest of", "o": "phoenix"}, {"s": "cfb", "p": "is a classification in", "o": "k ppen climate classification"}, {"s": "cfc", "p": "is a classification in", "o": "k ppen climate classification"}, {"s": "sichuan basin", "p": "includes", "o": "chengdu"}, {"s": "k ppen climate classification", "p": "classifies the climate of", "o": "sichuan basin"}, {"s": "sichuan basin", "p": "has climate type", "o": "humid subtropical climate"}, {"s": "chengdu", "p": "has climate type", "o": "humid subtropical climate"}, {"s": "garze county", "p": "has climate type", "o": "subarctic climate"}, {"s": "k ppen climate classification", "p": "classifies the climate of garze county as", "o": "subarctic climate"}, {"s": "k ppen climate classification", "p": "classifies the climate of zoige county as", "o": "subarctic climate"}, {"s": "desert diamond west valley phoenix grand prix", "p": "was held at", "o": "phoenix"}, {"s": "phoenix", "p": "has a history of open wheel races involving", "o": "johnny rutherford"}, {"s": "phoenix", "p": "is a", "o": "german free to air television channel"}, {"s": "phoenix", "p": "is operated jointly by", "o": "ard"}, {"s": "phoenix", "p": "broadcasts", "o": "documentaries"}, {"s": "phoenix", "p": "broadcasts", "o": "discussion programmes"}, {"s": "phoenix", "p": "has headquarters in", "o": "bonn"}, {"s": "3300 north central avenue", "p": "was the fourth tallest building in", "o": "phoenix"}, {"s": "3300 north central avenue", "p": "is currently the 12th tallest building in", "o": "phoenix"}, {"s": "dave fennoy", "p": "worked in", "o": "phoenix"}]}]};
+const svg = document.getElementById("view");
+const list = document.getElementById("list");
+const tip = document.getElementById("tip");
+let sim = null;
+function layout(sample) {
+  const names = [];
+  const index = new Map();
+  sample.edges.forEach(e => { for (const n of [e.s, e.o]) if (!index.has(n)) { index.set(n, names.length); names.push(n); } });
+  const nodes = names.map((name, i) => ({
+    name, x: 280 + 180 * Math.cos(i), y: 240 + 140 * Math.sin(i * 1.7), vx: 0, vy: 0,
+    hub: name === sample.hub
+  }));
+  const edges = sample.edges.map(e => ({...e, a: index.get(e.s), b: index.get(e.o)})).filter(e => e.a != null && e.b != null);
+  return {nodes, edges, sample};
+}
+function draw(state) {
+  const w = svg.clientWidth || 900, h = svg.clientHeight || 640;
+  svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+  svg.innerHTML = "";
+  const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  svg.appendChild(g);
+  state.edges.forEach(e => {
+    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line.dataset.p = e.p;
+    g.appendChild(line);
+    e.el = line;
+  });
+  state.nodes.forEach(n => {
+    const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    c.setAttribute("r", n.hub ? 8 : 5);
+    c.setAttribute("class", n.hub ? "node hub" : "node");
+    const t = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    t.textContent = n.name;
+    g.appendChild(c); g.appendChild(t);
+    n.c = c; n.t = t;
+    c.addEventListener("pointerdown", ev => { state.drag = n; svg.setPointerCapture(ev.pointerId); });
+  });
+  svg.onpointermove = ev => {
+    if (!state.drag) return;
+    const p = svg.createSVGPoint(); p.x = ev.clientX; p.y = ev.clientY;
+    const m = g.getScreenCTM().inverse();
+    const q = p.matrixTransform(m);
+    state.drag.x = q.x; state.drag.y = q.y; state.drag.vx = 0; state.drag.vy = 0;
+  };
+  svg.onpointerup = () => { state.drag = null; };
+  function tick() {
+    const ns = state.nodes;
+    for (let i = 0; i < ns.length; i++) for (let j = i + 1; j < ns.length; j++) {
+      let dx = ns[j].x - ns[i].x, dy = ns[j].y - ns[i].y;
+      let d2 = dx*dx + dy*dy || 0.01;
+      let f = 900 / d2;
+      let d = Math.sqrt(d2);
+      dx /= d; dy /= d;
+      if (state.drag !== ns[i]) { ns[i].vx -= dx * f; ns[i].vy -= dy * f; }
+      if (state.drag !== ns[j]) { ns[j].vx += dx * f; ns[j].vy += dy * f; }
+    }
+    state.edges.forEach(e => {
+      const a = ns[e.a], b = ns[e.b];
+      let dx = b.x - a.x, dy = b.y - a.y;
+      a.vx += dx * 0.02; a.vy += dy * 0.02;
+      b.vx -= dx * 0.02; b.vy -= dy * 0.02;
+    });
+    ns.forEach(n => {
+      if (state.drag === n) return;
+      n.vx = (n.vx + (w/2 - n.x) * 0.01) * 0.75;
+      n.vy = (n.vy + (h/2 - n.y) * 0.01) * 0.75;
+      n.x += n.vx; n.y += n.vy;
+    });
+    state.edges.forEach(e => {
+      const a = ns[e.a], b = ns[e.b];
+      e.el.setAttribute("x1", a.x); e.el.setAttribute("y1", a.y);
+      e.el.setAttribute("x2", b.x); e.el.setAttribute("y2", b.y);
+    });
+    ns.forEach(n => {
+      n.c.setAttribute("cx", n.x); n.c.setAttribute("cy", n.y);
+      n.t.setAttribute("x", n.x + 8); n.t.setAttribute("y", n.y - 8);
+    });
+    state.timer = requestAnimationFrame(tick);
+  }
+  tick();
+  g.querySelectorAll("line").forEach(line => {
+    line.addEventListener("pointerenter", ev => {
+      tip.style.display = "block";
+      tip.textContent = line.dataset.p;
+      tip.style.left = ev.clientX + 8 + "px";
+      tip.style.top = ev.clientY + 8 + "px";
+    });
+    line.addEventListener("pointerleave", () => { tip.style.display = "none"; });
+  });
+}
+DATA.samples.forEach((sample, i) => {
+  const b = document.createElement("button");
+  b.innerHTML = `<strong>${sample.id}</strong><div class="meta">${sample.kind}<br>${sample.n_nodes_in_component.toLocaleString()} 个实体在该分量中，这里画出 ${sample.nodes.length} 个、${sample.edges.length} 条关系</div>`;
+  b.onclick = () => {
+    document.querySelectorAll("button").forEach(x => x.classList.remove("active"));
+    b.classList.add("active");
+    if (sim && sim.timer) cancelAnimationFrame(sim.timer);
+    sim = layout(sample);
+    draw(sim);
+  };
+  list.appendChild(b);
+  if (i === 0) b.click();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,698 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1907.03060::s00::p000",
+   "summary": "NMT enables end-to-end training without PBSMT complexities, but only cross-lingual transfer learning lets NMT approach PBSMT performance in low-resource scenarios.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s00::p001",
+   "summary": "Transfer methods require resource-rich parent pairs and similar domains, while multilingual approaches need resource-rich parent languages like English (En) or domain adaptation.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s00::p002",
+   "summary": "The paper studies Japanese INLINEFORM0 Russian (Ja INLINEFORM1 Ru), with only 12k news parallel lines, and proposes multistage fine-tuning combining multilingual modeling and domain adaptation.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s00::p003",
+   "summary": "The paper addresses two important research questions in extremely low-resource MT and derives rational contributions.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s00::p004",
+   "summary": "The authors claim the first extensive evaluation of extremely low-resource MT and a novel multilingual multistage fine-tuning approach using multilingual modeling and domain adaptation.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s01::p000",
+   "summary": "The paper addresses Ja INLINEFORM0 Ru news translation, a challenging pair with different linguistic systems, OOV tokens, long sentences, and English as a third language.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s01::p001",
+   "summary": "The authors manually compiled development and test sets from News Commentary, obtaining 1,654 lines and selecting 600 trilingual sentences for the test set.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s01::p002",
+   "summary": "The manually aligned development and test sets are publicly available.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s02::p000",
+   "summary": "Prior work shows NMT struggles in low-resource settings, transfer learning needs large helping corpora, and bi-directional NMT improves low-resource translation but focuses on English.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s02::p001",
+   "summary": "Unsupervised MT, parallel sentence mining, pseudo-parallel data, and pivot-language MT are infeasible for Japanese and Russian due to linguistic distance, weak systems, and limited in-domain corpora.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s02::p002",
+   "summary": "The paper explores step-wise fine-tuning combining multilingual modeling and domain adaptation, which may also make pseudo-parallel data more useful.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s03::p000",
+   "summary": "This section answers [RQ1] on translation quality using existing methods and in-domain data, then tests back-translated pseudo-parallel data with the strongest model.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s04::p000",
+   "summary": "Training used Global Voices data at OPUS, with 12k Ja INLINEFORM0 Ru, 47k Ja INLINEFORM1 En, and 82k Ru INLINEFORM2 En parallel sentences.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s04::p001",
+   "summary": "In-domain monolingual data can improve MT through pseudo-parallel data and language models, and sentences already in the parallel corpus were removed from Global Voices monolingual corpora.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s04::p002",
+   "summary": "The paragraph lists URLs for Wikimedia dumps, WMT18, Yomiuri, multi-target TED Talks, and OPUS Tatoeba-v2.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s04::p003",
+   "summary": "English and Russian were tokenized with Moses tokenizer.perl, Japanese with MeCab and the IPA dictionary, and duplicates and sentences over 100 tokens were removed.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p000",
+   "summary": "The authors evaluated PBSMT and NMT, including pivot-based translation and phrase-table induction from monolingual data for PBSMT.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p001",
+   "summary": "NMT experiments compared RNMT and Transformer, plus uni-directional, bi-directional, and multi-to-multi (M2M) models.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p002",
+   "summary": "After identifying the best model, the authors examined back-translation-based data augmentation.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p003",
+   "summary": "PBSMT systems for six directions used SyMGIZA++, Moses, a bi-directional MSD reordering model, and three 5-gram language models trained with KenLM.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p004",
+   "summary": "Using English as pivot, three pivot-based PBSMT system types were examined for Ja INLINEFORM0 Ru and Ru INLINEFORM1 Ja.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p005",
+   "summary": "One pivot-based PBSMT method uses 2-step decoding with source-to-English and English-to-target systems.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p006",
+   "summary": "One method obtains a new phrase table from synthetic parallel data made by translating the English side of target–English data into the source language.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p007",
+   "summary": "One method compiles a new phrase table combining source-to-English and English-to-target phrase tables.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p008",
+   "summary": "Triangulation is most computationally expensive, so pruned phrase tables retained INLINEFORM1-best translations per source phrase and calculated backward and lexical translation probabilities.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p009",
+   "summary": "Unsupervised PBSMT used 10M monolingual sentences, 300k frequent phrases, 300-best target phrases, fastText and vecmap bilingual embeddings, and lexical probabilities from the small parallel corpus.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p010",
+   "summary": "Up to four phrase tables were used by Moses, with KB-MIRA tuning after 15 iterations, grid-searched hyper-parameters, and 200-dimensional embeddings.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p011",
+   "summary": "RNMT and Transformer from tensor2tensor were trained for six directions, with bi-directional and M2M models using target-language tokens and shuffled training data.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p012",
+   "summary": "Baseline NMT used tensor2tensor defaults, over-sampled Ja INLINEFORM0 Ru and Ja INLINEFORM1 En for M2M, shared sub-word vocabularies of 16k or 32k, and early stopping on BLEU.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p013",
+   "summary": "Trained models averaged the last 10 check-points and decoded test sets with beam size 4 and a length penalty tuned on development BLEU.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s05::p014",
+   "summary": "“Cascade” and “Synthesize” methods were also evaluated with uni-directional NMT models.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s06::p000",
+   "summary": "MT models were evaluated with case-sensitive tokenized BLEU using Moses's multi-bleu.perl, and significance was tested with bootstrap-hypothesis-difference-significance.pl.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s06::p001",
+   "summary": "Some models achieved reasonable BLEU for Ja INLINEFORM0 En and Ru INLINEFORM1 En, but all Ja INLINEFORM2 Ru results were abysmal.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s06::p002",
+   "summary": "Transformer models outperformed RNMT, M2M models usually outperformed uni- and bi-directional models, and M2M Transformer also benefited Ru INLINEFORM3 En.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s06::p003",
+   "summary": "Standard PBSMT exceeded uni-directional NMT but underperformed M2M Transformer, while pivot-based PBSMT improved BLEU and reduced OOV tokens, though monolingual phrase tables did not help.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s06::p004",
+   "summary": "No pivot-based approach with uni-directional NMT rivaled the M2M Transformer NMT model (b3).",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s06::p005",
+   "summary": "Final multistage fine-tuning models V and VII achieved significantly higher BLEU than (b3) and #10 baselines.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s06::p006",
+   "summary": "Initial model I performed poorly for Ja INLINEFORM0 Ru and Ja INLINEFORM1 En but surprisingly well for Ru INLINEFORM2 En.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s06::p007",
+   "summary": "First-stage fine-tuning II and III improved Ja INLINEFORM0 En and Ru INLINEFORM1 En, but both remained poor for Ja INLINEFORM2 Ru.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s06::p008",
+   "summary": "Second-stage mixed fine-tuning V and VII outperformed conventional fine-tuning IV and VI and produced a more robust in-domain multilingual model.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s06::p009",
+   "summary": "Fewer-step models I' and II' were worse than VII, while III' improved Ja INLINEFORM0 Ru but had much lower BLEU for the other two pairs.",
+   "group_id": "1907.03060::g00"
+  },
+  {
+   "passage_id": "1907.03060::s07::p000",
+   "summary": "Because the M2M Transformer NMT model (b3) achieved best results for most translation directions and competitive results for the rest, it was further explored through back-translation.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s07::p001",
+   "summary": "The utility of pseudo-parallel data was examined for all six translation directions, unlike lakew2017improving, lakew2018comparison, and W18-2710, to assess benefits in M2M models.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s07::p002",
+   "summary": "Sentences for back-translation were first selected from in-domain monolingual data (Table TABREF13) using the score proposed by moore:intelligent.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s07::p003",
+   "summary": "For each language, two 4-gram language models were trained using KenLM: an in-domain one on all Global Voices data and a general-domain one on Global Voices, IWSLT, and Tatoeba data.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s07::p004",
+   "summary": "For each language, sentences containing OOVs according to the in-domain language model were discarded.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s07::p005",
+   "summary": "For each translation direction, the INLINEFORM0-best monolingual sentences in the news domain were selected using cross-entropy score differences between in-domain and general-domain language models.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s07::p006",
+   "summary": "Unlike W18-2710, a 1:1 ratio between monolingual and parallel data was maintained, with INLINEFORM0 set to the number of lines of parallel data for the given language pair.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s07::p007",
+   "summary": "Selected monolingual sentences were translated using the M2M Transformer NMT model (b3), pseudo-parallel data were over-sampled as in Table TABREF32, and new NMT models were trained from scratch with the same hyper-parameters.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s07::p008",
+   "summary": "Table TABREF33 shows BLEU scores for combinations of six-way pseudo-parallel data, with all six-way data (#10) significantly improving the base model for all directions except En INLINEFORM0 Ru.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s08::p000",
+   "summary": "Extensive MT model variations using only in-domain parallel and monolingual data yielded BLEU scores below 10 BLEU points for Ja INLINEFORM2 Ru and Ru INLINEFORM3 Ja tasks.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s09::p000",
+   "summary": "The limitation of relying only on in-domain data motivates exploring other types of parallel data and effective ways to exploit out-of-domain data under [RQ2].",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s09::p001",
+   "summary": "Parallel data are classified into four categories in Table TABREF40, and a multistage fine-tuning method is proposed to exploit out-of-domain Ja INLINEFORM2 En and Ru INLINEFORM3 En data for Ja INLINEFORM1 Ru.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s10::p000",
+   "summary": "To use large-scale out-of-domain data for the extremely low-resource task, domain adaptation is proposed through conventional fine-tuning or mixed fine-tuning BIBREF9, with the same options for transferring to Ja INLINEFORM2 Ru.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s10::p001",
+   "summary": "Two types of transfer learning are inevitably involved: domain adaptation for Ja INLINEFORM0 En and Ru INLINEFORM1 En and multilingual transfer for Ja INLINEFORM2 Ru pair.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s10::p002",
+   "summary": "A multilingual model is pre-trained only on Ja INLINEFORM0 En and Ru INLINEFORM1 En out-of-domain parallel data (I), with vocabulary determined from in-domain parallel data as in Section SECREF4 M2M NMT models.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s10::p003",
+   "summary": "The pre-trained model (I) is fine-tuned on in-domain Ja INLINEFORM0 En and Ru INLINEFORM1 En parallel data (II) or on mixed in-domain and out-of-domain Ja INLINEFORM2 En and Ru INLINEFORM3 En data (III).",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s10::p004",
+   "summary": "Models II and III are further fine-tuned for Ja INLINEFORM0 Ru on in-domain parallel data for this language pair only (IV and VI) or on all in-domain parallel data (V and VII).",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s10::p005",
+   "summary": "This approach was chosen to balance several different parallel corpora sizes and to divide labor by solving each sub-problem one by one for gradual parameter shifts.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s11::p000",
+   "summary": "For Ja INLINEFORM0 En, the cleanest 1.5M sentences from the Asian Scientific Paper Excerpt Corpus (ASPEC) BIBREF24 were used, while Ru INLINEFORM1 En used UN and Yandex corpora from the WMT 2018 News Translation Task.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s12::p000",
+   "summary": "After obtaining a better model, back-translation was examined again to test whether improved pseudo-parallel data and one more fine-tuning stage outperform training a new model from scratch.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s12::p001",
+   "summary": "Six-way pseudo-parallel data were generated from identical monolingual sentences sampled in Section SECREF34, then the model was fine-tuned on generated and original parallel data with over-sampling, repeated five times.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s12::p002",
+   "summary": "Table TABREF51 shows that “new #10” improved over #10 in Table TABREF33 but underperformed VII, while VIII surpassed VII and IX further improved BLEU scores for all directions except Ru INLINEFORM0 En.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s13::p000",
+   "summary": "The paper challenged Ja INLINEFORM0 Ru news domain translation in an extremely low-resource setting and proposed multilingual multistage fine-tuning that improves Ja INLINEFORM1 Ru by over 3.7 BLEU points compared to a strong baseline.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s13::p001",
+   "summary": "Future work will confirm further fine-tuning for specific translation directions and explore out-of-domain pseudo-parallel data, better domain-adaptation approaches, and additional challenging language pairs.",
+   "group_id": "1907.03060::g01"
+  },
+  {
+   "passage_id": "1907.03060::s14::p000",
+   "summary": "This work was carried out during Aizhan Imankulova’s internship at NICT, Japan, thanks reviewers, and was partly conducted under a MIC, Japan program.",
+   "group_id": "1907.03060::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1907.03060::g00",
+   "summaries": [
+    {
+     "passage_id": "1907.03060::s00::p000",
+     "summary": "NMT enables end-to-end training without PBSMT complexities, but only cross-lingual transfer learning lets NMT approach PBSMT performance in low-resource scenarios.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s00::p001",
+     "summary": "Transfer methods require resource-rich parent pairs and similar domains, while multilingual approaches need resource-rich parent languages like English (En) or domain adaptation.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s00::p002",
+     "summary": "The paper studies Japanese INLINEFORM0 Russian (Ja INLINEFORM1 Ru), with only 12k news parallel lines, and proposes multistage fine-tuning combining multilingual modeling and domain adaptation.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s00::p003",
+     "summary": "The paper addresses two important research questions in extremely low-resource MT and derives rational contributions.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s00::p004",
+     "summary": "The authors claim the first extensive evaluation of extremely low-resource MT and a novel multilingual multistage fine-tuning approach using multilingual modeling and domain adaptation.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s01::p000",
+     "summary": "The paper addresses Ja INLINEFORM0 Ru news translation, a challenging pair with different linguistic systems, OOV tokens, long sentences, and English as a third language.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s01::p001",
+     "summary": "The authors manually compiled development and test sets from News Commentary, obtaining 1,654 lines and selecting 600 trilingual sentences for the test set.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s01::p002",
+     "summary": "The manually aligned development and test sets are publicly available.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s02::p000",
+     "summary": "Prior work shows NMT struggles in low-resource settings, transfer learning needs large helping corpora, and bi-directional NMT improves low-resource translation but focuses on English.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s02::p001",
+     "summary": "Unsupervised MT, parallel sentence mining, pseudo-parallel data, and pivot-language MT are infeasible for Japanese and Russian due to linguistic distance, weak systems, and limited in-domain corpora.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s02::p002",
+     "summary": "The paper explores step-wise fine-tuning combining multilingual modeling and domain adaptation, which may also make pseudo-parallel data more useful.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s03::p000",
+     "summary": "This section answers [RQ1] on translation quality using existing methods and in-domain data, then tests back-translated pseudo-parallel data with the strongest model.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s04::p000",
+     "summary": "Training used Global Voices data at OPUS, with 12k Ja INLINEFORM0 Ru, 47k Ja INLINEFORM1 En, and 82k Ru INLINEFORM2 En parallel sentences.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s04::p001",
+     "summary": "In-domain monolingual data can improve MT through pseudo-parallel data and language models, and sentences already in the parallel corpus were removed from Global Voices monolingual corpora.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s04::p002",
+     "summary": "The paragraph lists URLs for Wikimedia dumps, WMT18, Yomiuri, multi-target TED Talks, and OPUS Tatoeba-v2.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s04::p003",
+     "summary": "English and Russian were tokenized with Moses tokenizer.perl, Japanese with MeCab and the IPA dictionary, and duplicates and sentences over 100 tokens were removed.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p000",
+     "summary": "The authors evaluated PBSMT and NMT, including pivot-based translation and phrase-table induction from monolingual data for PBSMT.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p001",
+     "summary": "NMT experiments compared RNMT and Transformer, plus uni-directional, bi-directional, and multi-to-multi (M2M) models.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p002",
+     "summary": "After identifying the best model, the authors examined back-translation-based data augmentation.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p003",
+     "summary": "PBSMT systems for six directions used SyMGIZA++, Moses, a bi-directional MSD reordering model, and three 5-gram language models trained with KenLM.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p004",
+     "summary": "Using English as pivot, three pivot-based PBSMT system types were examined for Ja INLINEFORM0 Ru and Ru INLINEFORM1 Ja.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p005",
+     "summary": "One pivot-based PBSMT method uses 2-step decoding with source-to-English and English-to-target systems.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p006",
+     "summary": "One method obtains a new phrase table from synthetic parallel data made by translating the English side of target–English data into the source language.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p007",
+     "summary": "One method compiles a new phrase table combining source-to-English and English-to-target phrase tables.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p008",
+     "summary": "Triangulation is most computationally expensive, so pruned phrase tables retained INLINEFORM1-best translations per source phrase and calculated backward and lexical translation probabilities.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p009",
+     "summary": "Unsupervised PBSMT used 10M monolingual sentences, 300k frequent phrases, 300-best target phrases, fastText and vecmap bilingual embeddings, and lexical probabilities from the small parallel corpus.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p010",
+     "summary": "Up to four phrase tables were used by Moses, with KB-MIRA tuning after 15 iterations, grid-searched hyper-parameters, and 200-dimensional embeddings.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p011",
+     "summary": "RNMT and Transformer from tensor2tensor were trained for six directions, with bi-directional and M2M models using target-language tokens and shuffled training data.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p012",
+     "summary": "Baseline NMT used tensor2tensor defaults, over-sampled Ja INLINEFORM0 Ru and Ja INLINEFORM1 En for M2M, shared sub-word vocabularies of 16k or 32k, and early stopping on BLEU.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p013",
+     "summary": "Trained models averaged the last 10 check-points and decoded test sets with beam size 4 and a length penalty tuned on development BLEU.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s05::p014",
+     "summary": "“Cascade” and “Synthesize” methods were also evaluated with uni-directional NMT models.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s06::p000",
+     "summary": "MT models were evaluated with case-sensitive tokenized BLEU using Moses's multi-bleu.perl, and significance was tested with bootstrap-hypothesis-difference-significance.pl.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s06::p001",
+     "summary": "Some models achieved reasonable BLEU for Ja INLINEFORM0 En and Ru INLINEFORM1 En, but all Ja INLINEFORM2 Ru results were abysmal.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s06::p002",
+     "summary": "Transformer models outperformed RNMT, M2M models usually outperformed uni- and bi-directional models, and M2M Transformer also benefited Ru INLINEFORM3 En.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s06::p003",
+     "summary": "Standard PBSMT exceeded uni-directional NMT but underperformed M2M Transformer, while pivot-based PBSMT improved BLEU and reduced OOV tokens, though monolingual phrase tables did not help.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s06::p004",
+     "summary": "No pivot-based approach with uni-directional NMT rivaled the M2M Transformer NMT model (b3).",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s06::p005",
+     "summary": "Final multistage fine-tuning models V and VII achieved significantly higher BLEU than (b3) and #10 baselines.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s06::p006",
+     "summary": "Initial model I performed poorly for Ja INLINEFORM0 Ru and Ja INLINEFORM1 En but surprisingly well for Ru INLINEFORM2 En.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s06::p007",
+     "summary": "First-stage fine-tuning II and III improved Ja INLINEFORM0 En and Ru INLINEFORM1 En, but both remained poor for Ja INLINEFORM2 Ru.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s06::p008",
+     "summary": "Second-stage mixed fine-tuning V and VII outperformed conventional fine-tuning IV and VI and produced a more robust in-domain multilingual model.",
+     "group_id": "1907.03060::g00"
+    },
+    {
+     "passage_id": "1907.03060::s06::p009",
+     "summary": "Fewer-step models I' and II' were worse than VII, while III' improved Ja INLINEFORM0 Ru but had much lower BLEU for the other two pairs.",
+     "group_id": "1907.03060::g00"
+    }
+   ],
+   "n_raw": 41,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5525,
+    "completion_tokens": 2067,
+    "total_tokens": 7592,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1907.03060::g01",
+   "summaries": [
+    {
+     "passage_id": "1907.03060::s07::p000",
+     "summary": "Because the M2M Transformer NMT model (b3) achieved best results for most translation directions and competitive results for the rest, it was further explored through back-translation.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s07::p001",
+     "summary": "The utility of pseudo-parallel data was examined for all six translation directions, unlike lakew2017improving, lakew2018comparison, and W18-2710, to assess benefits in M2M models.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s07::p002",
+     "summary": "Sentences for back-translation were first selected from in-domain monolingual data (Table TABREF13) using the score proposed by moore:intelligent.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s07::p003",
+     "summary": "For each language, two 4-gram language models were trained using KenLM: an in-domain one on all Global Voices data and a general-domain one on Global Voices, IWSLT, and Tatoeba data.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s07::p004",
+     "summary": "For each language, sentences containing OOVs according to the in-domain language model were discarded.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s07::p005",
+     "summary": "For each translation direction, the INLINEFORM0-best monolingual sentences in the news domain were selected using cross-entropy score differences between in-domain and general-domain language models.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s07::p006",
+     "summary": "Unlike W18-2710, a 1:1 ratio between monolingual and parallel data was maintained, with INLINEFORM0 set to the number of lines of parallel data for the given language pair.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s07::p007",
+     "summary": "Selected monolingual sentences were translated using the M2M Transformer NMT model (b3), pseudo-parallel data were over-sampled as in Table TABREF32, and new NMT models were trained from scratch with the same hyper-parameters.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s07::p008",
+     "summary": "Table TABREF33 shows BLEU scores for combinations of six-way pseudo-parallel data, with all six-way data (#10) significantly improving the base model for all directions except En INLINEFORM0 Ru.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s08::p000",
+     "summary": "Extensive MT model variations using only in-domain parallel and monolingual data yielded BLEU scores below 10 BLEU points for Ja INLINEFORM2 Ru and Ru INLINEFORM3 Ja tasks.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s09::p000",
+     "summary": "The limitation of relying only on in-domain data motivates exploring other types of parallel data and effective ways to exploit out-of-domain data under [RQ2].",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s09::p001",
+     "summary": "Parallel data are classified into four categories in Table TABREF40, and a multistage fine-tuning method is proposed to exploit out-of-domain Ja INLINEFORM2 En and Ru INLINEFORM3 En data for Ja INLINEFORM1 Ru.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s10::p000",
+     "summary": "To use large-scale out-of-domain data for the extremely low-resource task, domain adaptation is proposed through conventional fine-tuning or mixed fine-tuning BIBREF9, with the same options for transferring to Ja INLINEFORM2 Ru.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s10::p001",
+     "summary": "Two types of transfer learning are inevitably involved: domain adaptation for Ja INLINEFORM0 En and Ru INLINEFORM1 En and multilingual transfer for Ja INLINEFORM2 Ru pair.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s10::p002",
+     "summary": "A multilingual model is pre-trained only on Ja INLINEFORM0 En and Ru INLINEFORM1 En out-of-domain parallel data (I), with vocabulary determined from in-domain parallel data as in Section SECREF4 M2M NMT models.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s10::p003",
+     "summary": "The pre-trained model (I) is fine-tuned on in-domain Ja INLINEFORM0 En and Ru INLINEFORM1 En parallel data (II) or on mixed in-domain and out-of-domain Ja INLINEFORM2 En and Ru INLINEFORM3 En data (III).",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s10::p004",
+     "summary": "Models II and III are further fine-tuned for Ja INLINEFORM0 Ru on in-domain parallel data for this language pair only (IV and VI) or on all in-domain parallel data (V and VII).",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s10::p005",
+     "summary": "This approach was chosen to balance several different parallel corpora sizes and to divide labor by solving each sub-problem one by one for gradual parameter shifts.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s11::p000",
+     "summary": "For Ja INLINEFORM0 En, the cleanest 1.5M sentences from the Asian Scientific Paper Excerpt Corpus (ASPEC) BIBREF24 were used, while Ru INLINEFORM1 En used UN and Yandex corpora from the WMT 2018 News Translation Task.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s12::p000",
+     "summary": "After obtaining a better model, back-translation was examined again to test whether improved pseudo-parallel data and one more fine-tuning stage outperform training a new model from scratch.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s12::p001",
+     "summary": "Six-way pseudo-parallel data were generated from identical monolingual sentences sampled in Section SECREF34, then the model was fine-tuned on generated and original parallel data with over-sampling, repeated five times.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s12::p002",
+     "summary": "Table TABREF51 shows that “new #10” improved over #10 in Table TABREF33 but underperformed VII, while VIII surpassed VII and IX further improved BLEU scores for all directions except Ru INLINEFORM0 En.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s13::p000",
+     "summary": "The paper challenged Ja INLINEFORM0 Ru news domain translation in an extremely low-resource setting and proposed multilingual multistage fine-tuning that improves Ja INLINEFORM1 Ru by over 3.7 BLEU points compared to a strong baseline.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s13::p001",
+     "summary": "Future work will confirm further fine-tuning for specific translation directions and explore out-of-domain pseudo-parallel data, better domain-adaptation approaches, and additional challenging language pairs.",
+     "group_id": "1907.03060::g01"
+    },
+    {
+     "passage_id": "1907.03060::s14::p000",
+     "summary": "This work was carried out during Aizhan Imankulova’s internship at NICT, Japan, thanks reviewers, and was partly conducted under a MIC, Japan program.",
+     "group_id": "1907.03060::g01"
+    }
+   ],
+   "n_raw": 25,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 2788,
+    "completion_tokens": 1540,
+    "total_tokens": 4328,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

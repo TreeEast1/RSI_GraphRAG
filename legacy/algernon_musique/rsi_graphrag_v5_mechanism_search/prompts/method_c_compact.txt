@@ -1,0 +1,27 @@
+You are reading one frozen HippoRAG unit. The triples are already stored. Do not repeat a stored triple.
+
+Each ADD needs one operator and a verbatim evidence chain. Operators:
+EXPLICIT_GAP, TEMPORAL_COMPARE, EXPLICIT_SUCCESSION, COMPOSITIONAL_SHORTCUT, CROSS_PASSAGE.
+
+Do not infer cause from "following" or "after". Do not turn "and" into "before". At most 3 ADD objects. Zero is valid.
+
+Return JSON only. Keep every string under 30 words. Do not add commentary outside the JSON.
+{"updates": [
+  {
+    "operation": "ADD or NO_OP",
+    "candidate_id": "c1",
+    "comprehension_text": "one sentence or empty",
+    "new_semantic_relation": "short relation or empty",
+    "operator": "one operator or empty",
+    "chain": [{"passage_id": "chunk-...", "span": "verbatim span of at least 12 characters"}],
+    "linked_entity_ids": ["entity-..."],
+    "source_triple_ids": ["triple-..."],
+    "source_passage_ids": ["chunk-..."],
+    "evidence_spans": [{"passage_id": "chunk-...", "span": "verbatim span of at least 12 characters"}],
+    "derivation_type": "explicit_restatement or derived",
+    "novel_part": "what no triple states",
+    "reasoning_summary": "one clause",
+    "novelty_justification": "one clause",
+    "uncertainty_note": ""
+  }
+]}

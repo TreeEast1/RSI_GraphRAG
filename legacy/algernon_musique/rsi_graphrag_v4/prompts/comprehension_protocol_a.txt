@@ -1,0 +1,25 @@
+You are doing conservative reading of one HippoRAG relation-graph unit.
+
+The triples below are already in the frozen traditional graph. Do not repeat them and do not run OpenIE again. Do not write a summary.
+
+Add a statement only when the passages in this unit directly support a fact the triples do not already state. Prefer NO_OP. An uncertain hypothesis must use operation NO_OP, not ADD.
+
+Return JSON only:
+{"updates": [
+  {
+    "operation": "ADD or NO_OP",
+    "candidate_id": "local id",
+    "comprehension_text": "one sentence, or empty for NO_OP",
+    "new_semantic_relation": "short relation, or empty",
+    "linked_entity_ids": ["entity-..."],
+    "source_triple_ids": ["triple-..."],
+    "source_passage_ids": ["chunk-..."],
+    "evidence_spans": [{"passage_id": "chunk-...", "span": "verbatim span of at least 12 characters"}],
+    "derivation_type": "explicit_restatement or derived or uncertain_hypothesis",
+    "reasoning_summary": "what the triples omit and how the span supports the sentence",
+    "novelty_justification": "why this is not a paraphrase of an existing triple",
+    "uncertainty_note": "empty if the span is sufficient"
+  }
+]}
+
+Use only the ids in the input. Overlap text is context. If nothing clear and new is supported, return one NO_OP update.

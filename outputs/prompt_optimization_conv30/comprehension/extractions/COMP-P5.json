@@ -1,0 +1,1174 @@
+{
+ "conv_id": "conv-30",
+ "pid": "COMP-P5",
+ "name": "Generate then verify",
+ "system": "You are a careful analyst building a cross-document knowledge graph from a long conversation. You only state relations that the cited dialogue turns actually support. You output only valid JSON.",
+ "system_sha256": "346943c7ecad6361b637cb123fae87ab682c2f1f25ef6e7d2497927517076db9",
+ "instructions_sha256": "990663ff369217252cbc1222d369a529886eb9e0379ebebe3c84aff7d7712885",
+ "budget": 8192,
+ "groups": [
+  {
+   "group_id": 0,
+   "session_ids": [
+    19,
+    16,
+    7,
+    12,
+    15,
+    9,
+    3,
+    4,
+    13,
+    6,
+    10,
+    17,
+    14,
+    2,
+    11
+   ],
+   "n_facts": 92,
+   "prompt_tokens": 10779,
+   "prompt_sha256": "e5ac05069eb808e67467a778f56ed0aa133085608a29b69c913a9f0c397a9066",
+   "n_raw": 12,
+   "relations": [
+    {
+     "subject": "Jon losing job",
+     "predicate": "pushed_start_of",
+     "object": "dance studio business",
+     "source_dia_ids": [
+      "D9:3",
+      "D11:3",
+      "D17:4"
+     ],
+     "source_sessions": [
+      9,
+      11,
+      17
+     ],
+     "evidence": "Losing my job was tough but it gave me the push I needed to do what I love. || Losing my job gave me the push to finally start my dream business: my own dance studio! || Losing my job was a bummer, but it pushed me to take the plunge and go for my biz dreams.",
+     "derivation": "Composed",
+     "confidence": 0.95,
+     "relation_type": "causal",
+     "supporting_fact_ids": [
+      "f12",
+      "f34",
+      "f86",
+      "f68"
+     ],
+     "group_id": 0,
+     "schema_checks": {
+      "subject_words": 3,
+      "object_words": 3,
+      "predicate_words": 3,
+      "n_sessions": 3,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": true
+    },
+    {
+     "subject": "Jon's dance studio search",
+     "predicate": "led_to",
+     "object": "official opening night",
+     "source_dia_ids": [
+      "D3:1",
+      "D15:5",
+      "D15:6"
+     ],
+     "source_sessions": [
+      3,
+      15
+     ],
+     "evidence": "I'm still searching for a place to open my dance studio. || The official opening night is tomorrow. || I'm so pumped for the launch tomorrow.",
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "relation_type": "goal_outcome",
+     "supporting_fact_ids": [
+      "f37",
+      "f30",
+      "f31",
+      "f33"
+     ],
+     "group_id": 0,
+     "schema_checks": {
+      "subject_words": 4,
+      "object_words": 3,
+      "predicate_words": 2,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": false
+    },
+    {
+     "subject": "The Lean Startup",
+     "predicate": "inspired",
+     "object": "focused efficient business",
+     "source_dia_ids": [
+      "D12:6",
+      "D12:8",
+      "D13:11"
+     ],
+     "source_sessions": [
+      12,
+      13
+     ],
+     "evidence": "I'm currently reading \"The Lean Startup\" and hoping it'll give me tips for my biz. || the book got me thinking about building a focused and efficient business. || I'm using it to stay organized and motivated.",
+     "derivation": "Composed",
+     "confidence": 0.82,
+     "relation_type": "causal",
+     "supporting_fact_ids": [
+      "f24",
+      "f55"
+     ],
+     "group_id": 0,
+     "schema_checks": {
+      "subject_words": 3,
+      "object_words": 3,
+      "predicate_words": 1,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": false
+    },
+    {
+     "subject": "whiteboard",
+     "predicate": "enabled_tracking_of",
+     "object": "ideas and milestones",
+     "source_dia_ids": [
+      "D12:9",
+      "D12:10",
+      "D13:13"
+     ],
+     "source_sessions": [
+      12,
+      13
+     ],
+     "evidence": "that whiteboard's got a bunch of good ideas! || It helps me keep track of ideas and milestones. || I also use whiteboard to stay on track, visualize goals and tokenize successes.",
+     "derivation": "Composed",
+     "confidence": 0.93,
+     "relation_type": "enabling_link",
+     "supporting_fact_ids": [
+      "f25",
+      "f55"
+     ],
+     "group_id": 0,
+     "schema_checks": {
+      "subject_words": 1,
+      "object_words": 3,
+      "predicate_words": 3,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": true
+    },
+    {
+     "subject": "written goals",
+     "predicate": "kept_motivated",
+     "object": "Jon",
+     "source_dia_ids": [
+      "D16:10",
+      "D16:12",
+      "D13:17"
+     ],
+     "source_sessions": [
+      13,
+      16
+     ],
+     "evidence": "I am writing all my plans down. || Seeing my goals written down on paper really helps keep me motivated and focused on what I have to do. || It helps me stay motivated and reminds me why I'm doing this.",
+     "derivation": "Composed",
+     "confidence": 0.88,
+     "relation_type": "causal",
+     "supporting_fact_ids": [
+      "f14",
+      "f55"
+     ],
+     "group_id": 0,
+     "schema_checks": {
+      "subject_words": 2,
+      "object_words": 1,
+      "predicate_words": 2,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": true
+    },
+    {
+     "subject": "Gina's support",
+     "predicate": "helped_make_happen",
+     "object": "Jon's studio",
+     "source_dia_ids": [
+      "D7:13",
+      "D19:9",
+      "D17:10"
+     ],
+     "source_sessions": [
+      7,
+      17,
+      19
+     ],
+     "evidence": "I'm really grateful for your help with staying motivated. || Your support will help me make it happen. || Feeling supported by all of you means so much. It gives me the oomph to keep chasing my dreams.",
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "relation_type": "enabling_link",
+     "supporting_fact_ids": [
+      "f5",
+      "f18"
+     ],
+     "group_id": 0,
+     "schema_checks": {
+      "subject_words": 2,
+      "object_words": 2,
+      "predicate_words": 3,
+      "n_sessions": 3,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": false
+    },
+    {
+     "subject": "Jon's fair attendance",
+     "predicate": "generated",
+     "object": "possible leads",
+     "source_dia_ids": [
+      "D10:1",
+      "D14:3",
+      "D14:5"
+     ],
+     "source_sessions": [
+      10,
+      14
+     ],
+     "evidence": "Yesterday, I went to a fair to show off my studio, it was both stressful and great! I got some possible leads || Been doing some promotion for my business. || I already started doing what you said about social media and posted some of my dance videos.",
+     "derivation": "Composed",
+     "confidence": 0.84,
+     "relation_type": "goal_outcome",
+     "supporting_fact_ids": [
+      "f62",
+      "f63",
+      "f73",
+      "f74"
+     ],
+     "group_id": 0,
+     "schema_checks": {
+      "subject_words": 3,
+      "object_words": 2,
+      "predicate_words": 1,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": true
+    },
+    {
+     "subject": "Gina's marketing advice",
+     "predicate": "enabled",
+     "object": "Jon's dance videos",
+     "source_dia_ids": [
+      "D14:4",
+      "D14:5",
+      "D17:4"
+     ],
+     "source_sessions": [
+      14,
+      17
+     ],
+     "evidence": "Use social media channels and work with influencers for bigger reach. || I already started doing what you said about social media and posted some of my dance videos. || Started to learn all these marketing and analytics tools to push the biz forward today.",
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "relation_type": "enabling_link",
+     "supporting_fact_ids": [
+      "f74",
+      "f69"
+     ],
+     "group_id": 0,
+     "schema_checks": {
+      "subject_words": 3,
+      "object_words": 3,
+      "predicate_words": 1,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": false
+    },
+    {
+     "subject": "Gina's design internship interview",
+     "predicate": "preceded",
+     "object": "fashion internship acceptance",
+     "source_dia_ids": [
+      "D11:14",
+      "D12:1",
+      "D12:3"
+     ],
+     "source_sessions": [
+      11,
+      12
+     ],
+     "evidence": "I had an interview for a design internship yesterday! || I just got accepted for a fashion internship! || It's part-time position in the fashion department of an international company.",
+     "derivation": "Inferred",
+     "confidence": 0.78,
+     "relation_type": "temporal_ordering",
+     "supporting_fact_ids": [
+      "f89",
+      "f21",
+      "f22",
+      "f23"
+     ],
+     "group_id": 0,
+     "schema_checks": {
+      "subject_words": 4,
+      "object_words": 3,
+      "predicate_words": 1,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": true
+    },
+    {
+     "subject": "Gina's online store",
+     "predicate": "enabled",
+     "object": "customer base growth",
+     "source_dia_ids": [
+      "D6:6",
+      "D14:2",
+      "D14:8"
+     ],
+     "source_sessions": [
+      6,
+      14
+     ],
+     "evidence": "My online clothes store is open! || I'm working on my online store, growing the customer base. || I opened an online clothing store and it's been great!",
+     "derivation": "Composed",
+     "confidence": 0.8,
+     "relation_type": "enabling_link",
+     "supporting_fact_ids": [
+      "f59",
+      "f72",
+      "f75"
+     ],
+     "group_id": 0,
+     "schema_checks": {
+      "subject_words": 3,
+      "object_words": 3,
+      "predicate_words": 1,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": false
+    },
+    {
+     "subject": "Jon's one-on-one mentoring",
+     "predicate": "supports_goal_of",
+     "object": "dancers' full potential",
+     "source_dia_ids": [
+      "D13:7",
+      "D13:8",
+      "D17:6"
+     ],
+     "source_sessions": [
+      13,
+      17
+     ],
+     "evidence": "I'm offering one-on-one mentoring and training to help dancers reach their full potential. || Your one-on-one mentoring and training will really push dancers to reach their goals. || I'm also excited to guide and mentor aspiring dancers on their dreams.",
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "relation_type": "goal_outcome",
+     "supporting_fact_ids": [
+      "f53",
+      "f70"
+     ],
+     "group_id": 0,
+     "schema_checks": {
+      "subject_words": 3,
+      "object_words": 3,
+      "predicate_words": 3,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": true
+    },
+    {
+     "subject": "Jon's dance studio",
+     "predicate": "became",
+     "object": "place for self-expression",
+     "source_dia_ids": [
+      "D11:11",
+      "D19:6",
+      "D19:7"
+     ],
+     "source_sessions": [
+      11,
+      19
+     ],
+     "evidence": "I want to create a place for people to dance and express themselves - it's been a dream of mine. || Your studio will be a go-to spot for self-expression. || Can't wait 'til my studio starts welcoming dancers of all ages and backgrounds!",
+     "derivation": "Composed",
+     "confidence": 0.83,
+     "relation_type": "state_change",
+     "supporting_fact_ids": [
+      "f5",
+      "f6",
+      "f87"
+     ],
+     "group_id": 0,
+     "schema_checks": {
+      "subject_words": 3,
+      "object_words": 3,
+      "predicate_words": 1,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": false
+    }
+   ],
+   "rejects": [],
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 11135,
+    "completion_tokens": 1556,
+    "total_tokens": 12691,
+    "reasoning_tokens": null
+   },
+   "retries": 0,
+   "elapsed_s": 14.6
+  },
+  {
+   "group_id": 1,
+   "session_ids": [
+    1,
+    18,
+    8,
+    5
+   ],
+   "n_facts": 139,
+   "prompt_tokens": 5868,
+   "prompt_sha256": "2b78b80a006235b523a2ec238359e11d5c59786b11c839ccb8873671228541b0",
+   "n_raw": 12,
+   "relations": [
+    {
+     "subject": "Jon's banker job loss",
+     "predicate": "enabled_starting",
+     "object": "dance studio",
+     "source_dia_ids": [
+      "D1:2",
+      "D5:10"
+     ],
+     "source_sessions": [
+      1,
+      5
+     ],
+     "evidence": "Lost my job as a banker yesterday, so I'm gonna take a shot at starting my own business. || It's made me grow, and even got me out of my secure 9-5 as a banker. Now, I'm aiming to turn my dancing passion into a business.",
+     "derivation": "Composed",
+     "confidence": 0.86,
+     "relation_type": "causal",
+     "supporting_fact_ids": [
+      "f0",
+      "f3",
+      "f123",
+      "f124"
+     ],
+     "group_id": 1,
+     "schema_checks": {
+      "subject_words": 4,
+      "object_words": 2,
+      "predicate_words": 2,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": true
+    },
+    {
+     "subject": "nearby festival performance",
+     "predicate": "confirmed",
+     "object": "Jon's dance moves",
+     "source_dia_ids": [
+      "D1:24",
+      "D5:2"
+     ],
+     "source_sessions": [
+      1,
+      5
+     ],
+     "evidence": "Finishing up choreography to perform at a nearby festival next month. || Remenber the festival I told you about? Had that performance and it was awesome - so many people there complementing my dance moves.",
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "relation_type": "goal_outcome",
+     "supporting_fact_ids": [
+      "f35",
+      "f36",
+      "f112",
+      "f114"
+     ],
+     "group_id": 1,
+     "schema_checks": {
+      "subject_words": 3,
+      "object_words": 3,
+      "predicate_words": 1,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": false
+    },
+    {
+     "subject": "small group of dancers",
+     "predicate": "became",
+     "object": "Jon's students",
+     "source_dia_ids": [
+      "D1:24",
+      "D5:4"
+     ],
+     "source_sessions": [
+      1,
+      5
+     ],
+     "evidence": "I rehearsed with a small group of dancers after work. || It's great having the freedom to create a space and help dancers of all ages and levels express themselves. I'm super thrilled about dancing each day and seeing my students progress.",
+     "derivation": "Inferred",
+     "confidence": 0.62,
+     "relation_type": "identity_unification",
+     "supporting_fact_ids": [
+      "f30",
+      "f36",
+      "f117",
+      "f118"
+     ],
+     "group_id": 1,
+     "schema_checks": {
+      "subject_words": 4,
+      "object_words": 2,
+      "predicate_words": 1,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": false
+    },
+    {
+     "subject": "Jon's dance studio",
+     "predicate": "changed_from",
+     "object": "tenuous grounds",
+     "source_dia_ids": [
+      "D8:13",
+      "D18:2"
+     ],
+     "source_sessions": [
+      8,
+      18
+     ],
+     "evidence": "I'm expanding my dance studio's social media presence and offering workshops and classes to local schools and centers. || The dance studio is on tenuous grounds right now, but I'm staying positive.",
+     "derivation": "Composed",
+     "confidence": 0.78,
+     "relation_type": "state_change",
+     "supporting_fact_ids": [
+      "f93",
+      "f96",
+      "f98",
+      "f43"
+     ],
+     "group_id": 1,
+     "schema_checks": {
+      "subject_words": 3,
+      "object_words": 2,
+      "predicate_words": 2,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": false
+    },
+    {
+     "subject": "Gina's online store",
+     "predicate": "grew_into",
+     "object": "clothing store",
+     "source_dia_ids": [
+      "D8:4",
+      "D18:1"
+     ],
+     "source_sessions": [
+      8,
+      18
+     ],
+     "evidence": "I got some new offers and promotions going on my online store to try and bring in new customers. || Last week, I built a new website for customers to make orders.",
+     "derivation": "Inferred",
+     "confidence": 0.74,
+     "relation_type": "identity_unification",
+     "supporting_fact_ids": [
+      "f76",
+      "f74",
+      "f42",
+      "f39"
+     ],
+     "group_id": 1,
+     "schema_checks": {
+      "subject_words": 3,
+      "object_words": 2,
+      "predicate_words": 2,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": false
+    },
+    {
+     "subject": "Jon's social media expansion",
+     "predicate": "led_to",
+     "object": "Gina's account management",
+     "source_dia_ids": [
+      "D8:13",
+      "D18:15"
+     ],
+     "source_sessions": [
+      8,
+      18
+     ],
+     "evidence": "I'm expanding my dance studio's social media presence || Let's create some cool content and manage your social media accounts.",
+     "derivation": "Composed",
+     "confidence": 0.76,
+     "relation_type": "goal_outcome",
+     "supporting_fact_ids": [
+      "f93",
+      "f64",
+      "f70",
+      "f71"
+     ],
+     "group_id": 1,
+     "schema_checks": {
+      "subject_words": 4,
+      "object_words": 3,
+      "predicate_words": 2,
+      "n_sessions": 2,
+      "invalid_dia_ids": []
+     },
+     "verified_keep": false
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "needs_two_sessions",
+     "triple": [
+      "Gina's networking advice",
+      "enabled",
+      "Jon's investor meetings"
+     ],
+     "sessions": [
+      18
+     ],
+     "invalid": []
+    },
+    {
+     "reason": "needs_two_sessions",
+     "triple": [
+      "networking event advice",
+      "caused",
+      "Jon's pitch tweaks"
+     ],
+     "sessions": [
+      18
+     ],
+     "invalid": []
+    },
+    {
+     "reason": "needs_two_sessions",
+     "triple": [
+      "Gina's marketing advice",
+      "enabled",
+      "social media collaboration"
+     ],
+     "sessions": [
+      18
+     ],
+     "invalid": []
+    },
+    {
+     "reason": "needs_two_sessions",
+     "triple": [
+      "Gina's new offers",
+      "enabled",
+      "more sales"
+     ],
+     "sessions": [
+      8
+     ],
+     "invalid": []
+    },
+    {
+     "reason": "needs_two_sessions",
+     "triple": [
+      "Gina's fashion mag idea",
+      "enabled",
+      "local artist designs"
+     ],
+     "sessions": [
+      5
+     ],
+     "invalid": []
+    },
+    {
+     "reason": "needs_two_sessions",
+     "triple": [
+      "Jon's dance competition plan",
+      "became",
+      "event with judging"
+     ],
+     "sessions": [
+      8
+     ],
+     "invalid": []
+    }
+   ],
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 6108,
+    "completion_tokens": 1490,
+    "total_tokens": 7598,
+    "reasoning_tokens": null
+   },
+   "retries": 0,
+   "elapsed_s": 13.7
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Jon losing job",
+   "predicate": "pushed_start_of",
+   "object": "dance studio business",
+   "source_dia_ids": [
+    "D9:3",
+    "D11:3",
+    "D17:4"
+   ],
+   "source_sessions": [
+    9,
+    11,
+    17
+   ],
+   "evidence": "Losing my job was tough but it gave me the push I needed to do what I love. || Losing my job gave me the push to finally start my dream business: my own dance studio! || Losing my job was a bummer, but it pushed me to take the plunge and go for my biz dreams.",
+   "derivation": "Composed",
+   "confidence": 0.95,
+   "relation_type": "causal",
+   "supporting_fact_ids": [
+    "f12",
+    "f34",
+    "f86",
+    "f68"
+   ],
+   "group_id": 0,
+   "schema_checks": {
+    "subject_words": 3,
+    "object_words": 3,
+    "predicate_words": 3,
+    "n_sessions": 3,
+    "invalid_dia_ids": []
+   },
+   "verification": {
+    "id": "c0",
+    "keep": true,
+    "reason": "Explicitly supported across sessions: losing job gave Jon the push to start his dream dance studio business.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "causal"
+   }
+  },
+  {
+   "subject": "whiteboard",
+   "predicate": "enabled_tracking_of",
+   "object": "ideas and milestones",
+   "source_dia_ids": [
+    "D12:9",
+    "D12:10",
+    "D13:13"
+   ],
+   "source_sessions": [
+    12,
+    13
+   ],
+   "evidence": "that whiteboard's got a bunch of good ideas! || It helps me keep track of ideas and milestones. || I also use whiteboard to stay on track, visualize goals and tokenize successes.",
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "relation_type": "enabling_link",
+   "supporting_fact_ids": [
+    "f25",
+    "f55"
+   ],
+   "group_id": 0,
+   "schema_checks": {
+    "subject_words": 1,
+    "object_words": 3,
+    "predicate_words": 3,
+    "n_sessions": 2,
+    "invalid_dia_ids": []
+   },
+   "verification": {
+    "id": "c3",
+    "keep": true,
+    "reason": "Explicitly supported: whiteboard helps Jon keep track of ideas and milestones.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "enabling_link"
+   }
+  },
+  {
+   "subject": "written goals",
+   "predicate": "kept_motivated",
+   "object": "Jon",
+   "source_dia_ids": [
+    "D16:10",
+    "D16:12",
+    "D13:17"
+   ],
+   "source_sessions": [
+    13,
+    16
+   ],
+   "evidence": "I am writing all my plans down. || Seeing my goals written down on paper really helps keep me motivated and focused on what I have to do. || It helps me stay motivated and reminds me why I'm doing this.",
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "relation_type": "causal",
+   "supporting_fact_ids": [
+    "f14",
+    "f55"
+   ],
+   "group_id": 0,
+   "schema_checks": {
+    "subject_words": 2,
+    "object_words": 1,
+    "predicate_words": 2,
+    "n_sessions": 2,
+    "invalid_dia_ids": []
+   },
+   "verification": {
+    "id": "c4",
+    "keep": true,
+    "reason": "Explicitly supported: seeing goals written down helps keep Jon motivated and focused.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "causal"
+   }
+  },
+  {
+   "subject": "Jon's fair attendance",
+   "predicate": "generated",
+   "object": "possible leads",
+   "source_dia_ids": [
+    "D10:1",
+    "D14:3",
+    "D14:5"
+   ],
+   "source_sessions": [
+    10,
+    14
+   ],
+   "evidence": "Yesterday, I went to a fair to show off my studio, it was both stressful and great! I got some possible leads || Been doing some promotion for my business. || I already started doing what you said about social media and posted some of my dance videos.",
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "relation_type": "goal_outcome",
+   "supporting_fact_ids": [
+    "f62",
+    "f63",
+    "f73",
+    "f74"
+   ],
+   "group_id": 0,
+   "schema_checks": {
+    "subject_words": 3,
+    "object_words": 2,
+    "predicate_words": 1,
+    "n_sessions": 2,
+    "invalid_dia_ids": []
+   },
+   "verification": {
+    "id": "c6",
+    "keep": true,
+    "reason": "Explicitly supported in one cited turn: Jon attended a fair and got possible leads.",
+    "evidence_ok": true,
+    "cross_session": false,
+    "novel": true,
+    "relation_type": "goal_outcome"
+   }
+  },
+  {
+   "subject": "Gina's design internship interview",
+   "predicate": "preceded",
+   "object": "fashion internship acceptance",
+   "source_dia_ids": [
+    "D11:14",
+    "D12:1",
+    "D12:3"
+   ],
+   "source_sessions": [
+    11,
+    12
+   ],
+   "evidence": "I had an interview for a design internship yesterday! || I just got accepted for a fashion internship! || It's part-time position in the fashion department of an international company.",
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "relation_type": "temporal_ordering",
+   "supporting_fact_ids": [
+    "f89",
+    "f21",
+    "f22",
+    "f23"
+   ],
+   "group_id": 0,
+   "schema_checks": {
+    "subject_words": 4,
+    "object_words": 3,
+    "predicate_words": 1,
+    "n_sessions": 2,
+    "invalid_dia_ids": []
+   },
+   "verification": {
+    "id": "c8",
+    "keep": true,
+    "reason": "Temporal ordering is supported: interview happened yesterday in D11, acceptance is later reported in D12.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "temporal_ordering"
+   }
+  },
+  {
+   "subject": "Jon's one-on-one mentoring",
+   "predicate": "supports_goal_of",
+   "object": "dancers' full potential",
+   "source_dia_ids": [
+    "D13:7",
+    "D13:8",
+    "D17:6"
+   ],
+   "source_sessions": [
+    13,
+    17
+   ],
+   "evidence": "I'm offering one-on-one mentoring and training to help dancers reach their full potential. || Your one-on-one mentoring and training will really push dancers to reach their goals. || I'm also excited to guide and mentor aspiring dancers on their dreams.",
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "relation_type": "goal_outcome",
+   "supporting_fact_ids": [
+    "f53",
+    "f70"
+   ],
+   "group_id": 0,
+   "schema_checks": {
+    "subject_words": 3,
+    "object_words": 3,
+    "predicate_words": 3,
+    "n_sessions": 2,
+    "invalid_dia_ids": []
+   },
+   "verification": {
+    "id": "c10",
+    "keep": true,
+    "reason": "Explicitly supported: one-on-one mentoring and training are offered to help dancers reach full potential/goals.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "goal_outcome"
+   }
+  },
+  {
+   "subject": "Jon's banker job loss",
+   "predicate": "enabled_starting",
+   "object": "dance studio",
+   "source_dia_ids": [
+    "D1:2",
+    "D5:10"
+   ],
+   "source_sessions": [
+    1,
+    5
+   ],
+   "evidence": "Lost my job as a banker yesterday, so I'm gonna take a shot at starting my own business. || It's made me grow, and even got me out of my secure 9-5 as a banker. Now, I'm aiming to turn my dancing passion into a business.",
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "relation_type": "causal",
+   "supporting_fact_ids": [
+    "f0",
+    "f3",
+    "f123",
+    "f124"
+   ],
+   "group_id": 1,
+   "schema_checks": {
+    "subject_words": 4,
+    "object_words": 2,
+    "predicate_words": 2,
+    "n_sessions": 2,
+    "invalid_dia_ids": []
+   },
+   "verification": {
+    "id": "c12",
+    "keep": true,
+    "reason": "Explicitly supported: losing banker job led Jon to take a shot at starting his own business, later specified as turning dancing passion into a business.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "causal"
+   }
+  }
+ ],
+ "n_relations": 7,
+ "verification": {
+  "decisions": {
+   "c0": {
+    "id": "c0",
+    "keep": true,
+    "reason": "Explicitly supported across sessions: losing job gave Jon the push to start his dream dance studio business.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "causal"
+   },
+   "c1": {
+    "id": "c1",
+    "keep": false,
+    "reason": "Unsupported causal link: searching for a place and later official opening night do not explicitly state the search led to the opening.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "goal_outcome"
+   },
+   "c2": {
+    "id": "c2",
+    "keep": false,
+    "reason": "Object is vague and relation overstates causation: book prompted thinking about a focused efficient business, not that it inspired the business itself.",
+    "evidence_ok": true,
+    "cross_session": false,
+    "novel": true,
+    "relation_type": "causal"
+   },
+   "c3": {
+    "id": "c3",
+    "keep": true,
+    "reason": "Explicitly supported: whiteboard helps Jon keep track of ideas and milestones.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "enabling_link"
+   },
+   "c4": {
+    "id": "c4",
+    "keep": true,
+    "reason": "Explicitly supported: seeing goals written down helps keep Jon motivated and focused.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "causal"
+   },
+   "c5": {
+    "id": "c5",
+    "keep": false,
+    "reason": "Overbroad and misleading: support helps motivation and 'make it happen' generally, not explicitly that Gina's support made Jon's studio happen.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "enabling_link"
+   },
+   "c6": {
+    "id": "c6",
+    "keep": true,
+    "reason": "Explicitly supported in one cited turn: Jon attended a fair and got possible leads.",
+    "evidence_ok": true,
+    "cross_session": false,
+    "novel": true,
+    "relation_type": "goal_outcome"
+   },
+   "c7": {
+    "id": "c7",
+    "keep": false,
+    "reason": "Misleading enabling relation: Gina advised social media and Jon posted videos, but advice did not 'enable' the videos as objects.",
+    "evidence_ok": true,
+    "cross_session": false,
+    "novel": true,
+    "relation_type": "enabling_link"
+   },
+   "c8": {
+    "id": "c8",
+    "keep": true,
+    "reason": "Temporal ordering is supported: interview happened yesterday in D11, acceptance is later reported in D12.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "temporal_ordering"
+   },
+   "c9": {
+    "id": "c9",
+    "keep": false,
+    "reason": "Unsupported causal/enabling link: Gina is working on growing the customer base; the store itself is not said to enable that growth.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "enabling_link"
+   },
+   "c10": {
+    "id": "c10",
+    "keep": true,
+    "reason": "Explicitly supported: one-on-one mentoring and training are offered to help dancers reach full potential/goals.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "goal_outcome"
+   },
+   "c11": {
+    "id": "c11",
+    "keep": false,
+    "reason": "State change unsupported: evidence gives a dream/prediction that studio will be a self-expression spot, not that it became one.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "state_change"
+   },
+   "c12": {
+    "id": "c12",
+    "keep": true,
+    "reason": "Explicitly supported: losing banker job led Jon to take a shot at starting his own business, later specified as turning dancing passion into a business.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "causal"
+   },
+   "c13": {
+    "id": "c13",
+    "keep": false,
+    "reason": "Misstates relation: people complimented Jon's dance moves at the festival; the performance did not 'confirm' his dance moves.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "goal_outcome"
+   },
+   "c14": {
+    "id": "c14",
+    "keep": false,
+    "reason": "Unsupported identity unification: rehearsal group is not stated to be Jon's later students.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "identity_unification"
+   },
+   "c15": {
+    "id": "c15",
+    "keep": false,
+    "reason": "Unsupported and misleading state change: evidence says studio is on tenuous grounds, not that it changed from tenuous grounds.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "state_change"
+   },
+   "c16": {
+    "id": "c16",
+    "keep": false,
+    "reason": "Unsupported identity/state change: online store and clothing store are already the same kind of business; evidence does not say it grew into a clothing store.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "identity_unification"
+   },
+   "c17": {
+    "id": "c17",
+    "keep": false,
+    "reason": "Unsupported causal link: Gina offers to manage social media accounts, but Jon's earlier social media expansion is not said to lead to that.",
+    "evidence_ok": true,
+    "cross_session": true,
+    "novel": true,
+    "relation_type": "goal_outcome"
+   }
+  },
+  "n_candidates": 18,
+  "n_kept": 7
+ },
+ "timestamp": "2026-11-09T03:25:35"
+}

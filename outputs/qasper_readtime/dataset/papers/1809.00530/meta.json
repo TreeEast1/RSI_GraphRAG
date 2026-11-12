@@ -1,0 +1,98 @@
+{
+ "paper_id": "1809.00530",
+ "title": "Adaptive Semi-supervised Learning for Cross-domain Sentiment Classification",
+ "abstract": "We consider the cross-domain sentiment classification problem, where a sentiment classifier is to be learned from a source domain and to be generalized to a target domain. Our approach explicitly minimizes the distance between the source and the target instances in an embedded feature space. With the difference between source and target minimized, we then exploit additional information from the target domain by consolidating the idea of semi-supervised learning, for which, we jointly employ two regularizations -- entropy minimization and self-ensemble bootstrapping -- to incorporate the unlabeled target data for classifier refinement. Our experimental results demonstrate that the proposed approach can better leverage unlabeled data from the target domain and achieve substantial improvements over baseline methods in various experimental settings.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Notations and Model Overview",
+  "Feature Adaptation",
+  "Domain Adaptive Semi-supervised Learning (DAS)",
+  "CNN Encoder Implementation",
+  "Datasets and Experimental Settings",
+  "Selection of Development Set",
+  "Training Details and Hyper-parameters",
+  "Models for Comparison",
+  "Main Results",
+  "Further Analysis",
+  "CNN Filter Analysis",
+  "Conclusion",
+  "Results on Amazon Benchmark",
+  "Numerical Results of Figure ",
+  "CNN Filter Analysis Full Results"
+ ],
+ "n_paragraphs": 59,
+ "n_tokens": 6556,
+ "figures_and_tables": [
+  {
+   "caption_id": "1809.00530::fig000",
+   "paper_id": "1809.00530",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Summary of datasets.",
+   "n_tokens": 8
+  },
+  {
+   "caption_id": "1809.00530::fig001",
+   "paper_id": "1809.00530",
+   "file": "7-Figure1-1.png",
+   "caption": "Figure 1: Performance comparison. Average results over 5 runs with random initializations are reported for each neural method. ∗ indicates that the proposed method (either of DAS, DAS-EM, DAS-SE) is significantly better than other baselines (baseline 1-6) with p < 0.05 based on one-tailed unpaired t-test.",
+   "n_tokens": 78
+  },
+  {
+   "caption_id": "1809.00530::fig002",
+   "paper_id": "1809.00530",
+   "file": "8-Figure2-1.png",
+   "caption": "Figure 2: Accuracy vs. percentage of unlabeled target training examples.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1809.00530::fig003",
+   "paper_id": "1809.00530",
+   "file": "8-Figure3-1.png",
+   "caption": "Figure 3: Accuracy vs. number of labeled target training examples.",
+   "n_tokens": 14
+  },
+  {
+   "caption_id": "1809.00530::fig004",
+   "paper_id": "1809.00530",
+   "file": "9-Table2-1.png",
+   "caption": "Table 2: Comparison of the top trigrams (each column) from the target domain (beauty) captured by the 5 most positive-sentiment-related CNN filters learned on E→BT. ∗ denotes a padding.",
+   "n_tokens": 47
+  },
+  {
+   "caption_id": "1809.00530::fig005",
+   "paper_id": "1809.00530",
+   "file": "11-Table3-1.png",
+   "caption": "Table 3: Accuracies on the Amazon benchmark. Average results over 5 runs with random initializations are reported for each neural method. ∗ indicates that the proposed method (DAS-EM, DAS-SE, DAS) is significantly better than other baselines with p < 0.05 based on one-tailed unpaired t-test.",
+   "n_tokens": 74
+  },
+  {
+   "caption_id": "1809.00530::fig006",
+   "paper_id": "1809.00530",
+   "file": "12-Table4-1.png",
+   "caption": "Table 4: Performance comparison. Average results over 5 runs with random initializations are reported for each neural method. ∗ indicates that the proposed method (DAS, DAS-EM, DAS-SE) is significantly better than other baselines with p < 0.05 based on one-tailed unpaired t-test.",
+   "n_tokens": 69
+  },
+  {
+   "caption_id": "1809.00530::fig007",
+   "paper_id": "1809.00530",
+   "file": "13-Table5-1.png",
+   "caption": "Table 5: Top 5 trigrams from the target domain (beauty) captured by the top 10 most positive-sentimentrelated CNN filters learned on E→BT. ∗ denotes a padding.",
+   "n_tokens": 43
+  },
+  {
+   "caption_id": "1809.00530::fig008",
+   "paper_id": "1809.00530",
+   "file": "14-Table6-1.png",
+   "caption": "Table 6: Top 5 trigrams from the target domain (beauty) captured by the top 10 most negative-sentimentrelated CNN filters learned on E→BT. ∗ denotes a padding.",
+   "n_tokens": 43
+  },
+  {
+   "caption_id": "1809.00530::fig009",
+   "paper_id": "1809.00530",
+   "file": "15-Table7-1.png",
+   "caption": "Table 7: Top 5 trigrams from the target domain (beauty) captured by the top 10 most neutral-sentimentrelated CNN filters learned on E→BT. ∗ denotes a padding.",
+   "n_tokens": 43
+  }
+ ]
+}

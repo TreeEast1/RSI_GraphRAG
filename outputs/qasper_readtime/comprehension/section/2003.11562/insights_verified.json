@@ -1,0 +1,444 @@
+{
+ "kept": [
+  {
+   "insight_id": "2003.11562::g00:i00",
+   "paper_id": "2003.11562",
+   "group_id": "2003.11562::g00",
+   "concise_text": "Because BERT's bi-directional context prevents auto-regressive joint probability calculation, the project defines pseudo-perplexity from an approximated joint probability for BERT.",
+   "triple": {
+    "subject": "BERT's bi-directional context",
+    "predicate": "causes",
+    "object": "pseudo-perplexity from approximated joint probability"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "2003.11562::s01::p003",
+    "2003.11562::s01::p004"
+   ],
+   "supporting_fact_ids": [
+    "2003.11562::g00:b1:f07",
+    "2003.11562::g00:b2:f01"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "Both passages jointly support that BERT's bi-directional context prevents auto-regressive joint probability calculation, leading to an approximation and pseudo-perplexity definition; causal/problem-solution link is explicit."
+   },
+   "unit_id": "2003.11562::u000"
+  },
+  {
+   "insight_id": "2003.11562::g00:i02",
+   "paper_id": "2003.11562",
+   "group_id": "2003.11562::g00",
+   "concise_text": "The project uses the same training data as BIBREF8 for fair LSTM comparisons, and that data consists mainly of newspapers and books of around 144 million word tokens and 4.2 million unique tokens.",
+   "triple": {
+    "subject": "same training data as BIBREF8",
+    "predicate": "evaluated_on",
+    "object": "newspapers and books of around 144 million word tokens and 4.2 million unique tokens"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "2003.11562::s00::p004",
+    "2003.11562::s02::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.11562::g00:b0:f08",
+    "2003.11562::g00:b2:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Passages jointly support using the same data as BIBREF8 for fair LSTM comparisons and that the Finnish dataset consists mainly of newspapers/books with 144M word tokens and 4.2M unique tokens."
+   },
+   "unit_id": "2003.11562::u002"
+  },
+  {
+   "insight_id": "2003.11562::g00:i04",
+   "paper_id": "2003.11562",
+   "group_id": "2003.11562::g00",
+   "concise_text": "The BERT experiments and Transformer-XL experiments were both trained for 500K steps on a single NVIDIA Tesla V100 32 GB graphic card.",
+   "triple": {
+    "subject": "BERT experiments and Transformer-XL experiments",
+    "predicate": "requires",
+    "object": "500K steps on a single NVIDIA Tesla V100 32 GB graphic card"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "2003.11562::s03::p000",
+    "2003.11562::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.11562::g00:b2:f12",
+    "2003.11562::g00:b2:f14",
+    "2003.11562::g00:b3:f10",
+    "2003.11562::g00:b3:f12"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.95,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Both passages explicitly state BERT and Transformer-XL experiments were trained for 500K steps on a single NVIDIA Tesla V100 32 GB GPU; composed fact is supported."
+   },
+   "unit_id": "2003.11562::u004"
+  },
+  {
+   "insight_id": "2003.11562::g00:i06",
+   "paper_id": "2003.11562",
+   "group_id": "2003.11562::g00",
+   "concise_text": "Because BERT and Transformer-XL perplexity and pseudo-perplexity scores are calculated quite differently, a downstreaming task is needed to fairly compare BERT and Transformer-XL.",
+   "triple": {
+    "subject": "different perplexity and pseudo-perplexity calculations",
+    "predicate": "requires",
+    "object": "downstreaming task to fairly compare BERT and Transformer-XL"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "2003.11562::s05::p000",
+    "2003.11562::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.11562::g00:b4:f05",
+    "2003.11562::g00:b4:f11"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Passage s05:p000 explicitly says scores are calculated differently, cannot be directly compared, and a downstreaming task is needed to fairly compare BERT and Transformer-XL; s06:p000 corroborates future downstream ASR comparison."
+   },
+   "unit_id": "2003.11562::u006"
+  },
+  {
+   "insight_id": "2003.11562::g00:i08",
+   "paper_id": "2003.11562",
+   "group_id": "2003.11562::g00",
+   "concise_text": "The test dataset used for BERT pseudo-perplexity and Transformer-XL perplexity consists of 2850 Finnish news articles obtained from the Finnish national broadcaster YLE.",
+   "triple": {
+    "subject": "BERT pseudo-perplexity and Transformer-XL perplexity test dataset",
+    "predicate": "evaluated_on",
+    "object": "2850 Finnish news articles obtained from the Finnish national broadcaster YLE"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "2003.11562::s02::p000",
+    "2003.11562::s03::p003",
+    "2003.11562::s04::p002"
+   ],
+   "supporting_fact_ids": [
+    "2003.11562::g00:b2:f11",
+    "2003.11562::g00:b3:f07",
+    "2003.11562::g00:b4:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.83,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Passages jointly identify the test dataset as 2850 YLE Finnish news articles, that BERT pseudo-perplexity uses the test dataset, and that Transformer-XL uses the same test set as BERT."
+   },
+   "unit_id": "2003.11562::u008"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "2003.11562::g00:i01",
+   "paper_id": "2003.11562",
+   "group_id": "2003.11562::g00",
+   "concise_text": "Transformer-XL's unidirectional architecture allows direct perplexity comparison with the previous best BIBREF19, and the Transformer-XL model outperformed it by 27%.",
+   "triple": {
+    "subject": "Transformer-XL's unidirectional architecture",
+    "predicate": "enables",
+    "object": "direct perplexity comparison with previous best BIBREF19 by 27%"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "2003.11562::s01::p007",
+    "2003.11562::s04::p002"
+   ],
+   "supporting_fact_ids": [
+    "2003.11562::g00:b2:f09",
+    "2003.11562::g00:b4:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "Passages support unidirectional Transformer-XL allowing direct perplexity comparison and a 27% improvement, but the triple conflates the 27% result into the object enabled by architecture; concise_text is mostly a restatement/composition of p007 and p002."
+   },
+   "unit_id": "2003.11562::u001"
+  },
+  {
+   "insight_id": "2003.11562::g00:i03",
+   "paper_id": "2003.11562",
+   "group_id": "2003.11562::g00",
+   "concise_text": "Finnish is morphologically richer than English, and the project uses sub-word units with Transformer-XL to cope with the large vocabulary problems associated with the Finnish Language.",
+   "triple": {
+    "subject": "Finnish morphological richness",
+    "predicate": "causes",
+    "object": "sub-word units with Transformer-XL for large vocabulary problems"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "2003.11562::s00::p003",
+    "2003.11562::s00::p004"
+   ],
+   "supporting_fact_ids": [
+    "2003.11562::g00:b0:f07",
+    "2003.11562::g00:b0:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "The text states Finnish is morphologically richer and separately says sub-word units are used to cope with large vocabulary problems; it does not explicitly make morphological richness the cause of that choice."
+   },
+   "unit_id": "2003.11562::u003"
+  },
+  {
+   "insight_id": "2003.11562::g00:i05",
+   "paper_id": "2003.11562",
+   "group_id": "2003.11562::g00",
+   "concise_text": "The left-marked model has better BERT training performance and lower pseudo-perplexity values than left-right-marked, while left+right-marked models have better Transformer-XL training performance.",
+   "triple": {
+    "subject": "left-marked and left+right-marked schemes",
+    "predicate": "causes",
+    "object": "opposite training-performance preferences for BERT and Transformer-XL"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "2003.11562::s03::p002",
+    "2003.11562::s03::p003",
+    "2003.11562::s04::p002"
+   ],
+   "supporting_fact_ids": [
+    "2003.11562::g00:b3:f06",
+    "2003.11562::g00:b3:f09",
+    "2003.11562::g00:b4:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.65,
+    "causality_error": true,
+    "reason": "The passages support the performance facts, but the triple asserts that the marking schemes cause opposite training-performance preferences; the text only reports observed comparisons, not causation."
+   },
+   "unit_id": "2003.11562::u005"
+  },
+  {
+   "insight_id": "2003.11562::g00:i07",
+   "paper_id": "2003.11562",
+   "group_id": "2003.11562::g00",
+   "concise_text": "Transformer-XL obtains strong perplexity results, which justifies recent migration to transformer based architectures in language modeling from LSTM models.",
+   "triple": {
+    "subject": "Transformer-XL strong perplexity results",
+    "predicate": "supports",
+    "object": "migration from LSTM models to transformer based architectures"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "2003.11562::s04::p002",
+    "2003.11562::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.11562::g00:b4:f03",
+    "2003.11562::g00:b4:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "This is essentially a direct restatement of the first sentence of s06:p000; reject as merely paraphrasing a single paragraph."
+   },
+   "unit_id": "2003.11562::u007"
+  },
+  {
+   "insight_id": "2003.11562::g00:i09",
+   "paper_id": "2003.11562",
+   "group_id": "2003.11562::g00",
+   "concise_text": "The original BERT used Byte Pair Encoding (BPE), but to remain consistent with LSTM experiments the Finnish BERT uses Morfessor for subword tokenization.",
+   "triple": {
+    "subject": "Finnish BERT subword tokenization",
+    "predicate": "extends",
+    "object": "original BERT Byte Pair Encoding (BPE) with Morfessor for LSTM consistency"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "2003.11562::s01::p005",
+    "2003.11562::s02::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.11562::g00:b2:f03",
+    "2003.11562::g00:b2:f10"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "The source says original BERT used BPE and Finnish BERT uses Morfessor for LSTM consistency, but the triple says Finnish BERT 'extends' original BPE with Morfessor, which is unsupported and misstates the relation."
+   },
+   "unit_id": "2003.11562::u009"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "2003.11562::g00:i00",
+    "verdict": {
+     "insight_id": "2003.11562::g00:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "Both passages jointly support that BERT's bi-directional context prevents auto-regressive joint probability calculation, leading to an approximation and pseudo-perplexity definition; causal/problem-solution link is explicit."
+    }
+   },
+   {
+    "insight_id": "2003.11562::g00:i01",
+    "verdict": {
+     "insight_id": "2003.11562::g00:i01",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "Passages support unidirectional Transformer-XL allowing direct perplexity comparison and a 27% improvement, but the triple conflates the 27% result into the object enabled by architecture; concise_text is mostly a restatement/composition of p007 and p002."
+    },
+    "reason": "Passages support unidirectional Transformer-XL allowing direct perplexity comparison and a 27% improvement, but the triple conflates the 27% result into the object enabled by architecture; concise_text is mostly a restatement/composition of p007 and p002."
+   },
+   {
+    "insight_id": "2003.11562::g00:i02",
+    "verdict": {
+     "insight_id": "2003.11562::g00:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Passages jointly support using the same data as BIBREF8 for fair LSTM comparisons and that the Finnish dataset consists mainly of newspapers/books with 144M word tokens and 4.2M unique tokens."
+    }
+   },
+   {
+    "insight_id": "2003.11562::g00:i03",
+    "verdict": {
+     "insight_id": "2003.11562::g00:i03",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "The text states Finnish is morphologically richer and separately says sub-word units are used to cope with large vocabulary problems; it does not explicitly make morphological richness the cause of that choice."
+    },
+    "reason": "The text states Finnish is morphologically richer and separately says sub-word units are used to cope with large vocabulary problems; it does not explicitly make morphological richness the cause of that choice."
+   },
+   {
+    "insight_id": "2003.11562::g00:i04",
+    "verdict": {
+     "insight_id": "2003.11562::g00:i04",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Both passages explicitly state BERT and Transformer-XL experiments were trained for 500K steps on a single NVIDIA Tesla V100 32 GB GPU; composed fact is supported."
+    }
+   },
+   {
+    "insight_id": "2003.11562::g00:i05",
+    "verdict": {
+     "insight_id": "2003.11562::g00:i05",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.65,
+     "causality_error": true,
+     "reason": "The passages support the performance facts, but the triple asserts that the marking schemes cause opposite training-performance preferences; the text only reports observed comparisons, not causation."
+    },
+    "reason": "The passages support the performance facts, but the triple asserts that the marking schemes cause opposite training-performance preferences; the text only reports observed comparisons, not causation."
+   },
+   {
+    "insight_id": "2003.11562::g00:i06",
+    "verdict": {
+     "insight_id": "2003.11562::g00:i06",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Passage s05:p000 explicitly says scores are calculated differently, cannot be directly compared, and a downstreaming task is needed to fairly compare BERT and Transformer-XL; s06:p000 corroborates future downstream ASR comparison."
+    }
+   },
+   {
+    "insight_id": "2003.11562::g00:i07",
+    "verdict": {
+     "insight_id": "2003.11562::g00:i07",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "This is essentially a direct restatement of the first sentence of s06:p000; reject as merely paraphrasing a single paragraph."
+    },
+    "reason": "This is essentially a direct restatement of the first sentence of s06:p000; reject as merely paraphrasing a single paragraph."
+   },
+   {
+    "insight_id": "2003.11562::g00:i08",
+    "verdict": {
+     "insight_id": "2003.11562::g00:i08",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Passages jointly identify the test dataset as 2850 YLE Finnish news articles, that BERT pseudo-perplexity uses the test dataset, and that Transformer-XL uses the same test set as BERT."
+    }
+   },
+   {
+    "insight_id": "2003.11562::g00:i09",
+    "verdict": {
+     "insight_id": "2003.11562::g00:i09",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "The source says original BERT used BPE and Finnish BERT uses Morfessor for LSTM consistency, but the triple says Finnish BERT 'extends' original BPE with Morfessor, which is unsupported and misstates the relation."
+    },
+    "reason": "The source says original BERT used BPE and Finnish BERT uses Morfessor for LSTM consistency, but the triple says Finnish BERT 'extends' original BPE with Morfessor, which is unsupported and misstates the relation."
+   }
+  ],
+  "calls": [
+   {
+    "n": 10,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 4642,
+     "completion_tokens": 832,
+     "total_tokens": 5474,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

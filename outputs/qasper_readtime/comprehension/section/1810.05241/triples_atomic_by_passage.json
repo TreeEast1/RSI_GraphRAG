@@ -1,0 +1,963 @@
+{
+ "1810.05241::s00::p000": [
+  [
+   "Keyphrase generation",
+   "is",
+   "the task of automatically predicting keyphrases given a source text"
+  ]
+ ],
+ "1810.05241::s00::p001": [
+  [
+   "a keyphrase",
+   "may or may not be",
+   "a substring of the source text"
+  ],
+  [
+   "keyphrase generation",
+   "is",
+   "an instance of the set generation problem"
+  ]
+ ],
+ "1810.05241::s00::p002": [
+  [
+   "keyphrase generation",
+   "is often formulated as",
+   "a sequence-to-sequence (Seq2Seq) generation task in most prior studies"
+  ],
+  [
+   "Seq2Seq models",
+   "generate",
+   "phrases individually or as a longer sequence jointed by delimiting tokens"
+  ],
+  [
+   "standard Seq2Seq models",
+   "generate",
+   "only one sequence at a time"
+  ],
+  [
+   "Models",
+   "are evaluated by taking",
+   "a fixed number of top predicted phrases (typically 5 or 10)"
+  ]
+ ],
+ "1810.05241::s00::p003": [
+  [
+   "this approach",
+   "has achieved",
+   "good empirical results"
+  ],
+  [
+   "models that use beam search to generate multiple keyphrases",
+   "generally lack",
+   "the ability to determine the dynamic number of keyphrases needed for different source texts"
+  ],
+  [
+   "the parallelism in beam search",
+   "fails to model",
+   "the inter-relation among the generated phrases"
+  ]
+ ],
+ "1810.05241::s00::p004": [
+  [
+   "existing studies",
+   "attempt to match",
+   "a fixed number of outputs against a variable number of ground truth keyphrases"
+  ],
+  [
+   "the number of keyphrases",
+   "can vary drastically for",
+   "different source texts"
+  ],
+  [
+   "the average number of keyphrases per data point",
+   "can range from",
+   "5.3 to 15.7"
+  ],
+  [
+   "the F1 score for the oracle model on the KP20k dataset",
+   "is",
+   "0.858 for INLINEFORM1 and 0.626 for INLINEFORM2"
+  ]
+ ],
+ "1810.05241::s01::p000": [
+  [
+   "keyphrase extraction",
+   "has been formulated as",
+   "a two-step process"
+  ],
+  [
+   "lexical features such as part-of-speech tags",
+   "are used to determine",
+   "a list of phrase candidates by heuristic methods"
+  ],
+  [
+   "a ranking algorithm",
+   "is adopted to rank",
+   "the candidate list"
+  ],
+  [
+   "the top ranked candidates",
+   "are selected as",
+   "keyphrases"
+  ]
+ ],
+ "1810.05241::s01::p001": [
+  [
+   "The main drawback of keyphrase extraction",
+   "is that",
+   "sometimes keyphrases are absent from the source text"
+  ],
+  [
+   "an extractive model",
+   "will fail predicting",
+   "those keyphrases"
+  ],
+  [
+   "the CopyRNN",
+   "is",
+   "a neural generative model that both generates words from vocabulary and points to words from the source text"
+  ],
+  [
+   "none of the above works",
+   "are able to generate",
+   "variable number of phrases"
+  ]
+ ],
+ "1810.05241::s02::p000": [
+  [
+   "Seq2Seq",
+   "has been widely used in",
+   "natural language generation tasks"
+  ],
+  [
+   "Seq2Seq",
+   "was also applied on",
+   "neural sentence simplification BIBREF25 and paraphrase generation tasks BIBREF26"
+  ]
+ ],
+ "1810.05241::s02::p002": [
+  [
+   "Dropout BIBREF28",
+   "is applied to",
+   "both INLINEFORM0 and INLINEFORM1 for regularization"
+  ]
+ ],
+ "1810.05241::s02::p003": [
+  [
+   "The decoder",
+   "is",
+   "a uni-directional GRU"
+  ]
+ ],
+ "1810.05241::s02::p004": [
+  [
+   "The initial state INLINEFORM0",
+   "is derived from",
+   "the final encoder state INLINEFORM1"
+  ],
+  [
+   "Dropout",
+   "is applied to",
+   "both the embeddings INLINEFORM3 and the GRU states INLINEFORM4"
+  ]
+ ],
+ "1810.05241::s02::p005": [
+  [
+   "an attention mechanism BIBREF18",
+   "is employed to infer",
+   "the importance INLINEFORM1 of each source word INLINEFORM2"
+  ],
+  [
+   "This importance",
+   "is measured by",
+   "an energy function with a 2-layer FNN"
+  ]
+ ],
+ "1810.05241::s02::p006": [
+  [
+   "The output over all decoding steps INLINEFORM0",
+   "define",
+   "a distribution over the source sequence"
+  ]
+ ],
+ "1810.05241::s02::p007": [
+  [
+   "These attention scores",
+   "are used as",
+   "weights for a refined representation of the source encodings"
+  ],
+  [
+   "a refined representation of the source encodings",
+   "is concatenated to",
+   "the decoder state INLINEFORM0"
+  ]
+ ],
+ "1810.05241::s02::p008": [
+  [
+   "the output size of INLINEFORM0",
+   "equals to",
+   "the target vocabulary size"
+  ],
+  [
+   "Subscript INLINEFORM1",
+   "indicates",
+   "the abstractive nature of INLINEFORM2"
+  ]
+ ],
+ "1810.05241::s02::p009": [
+  [
+   "the pointer softmax BIBREF19 mechanism",
+   "switches between",
+   "generating a token INLINEFORM0 (from a vocabulary) and pointing (to a token in the source text)"
+  ],
+  [
+   "the pointer softmax module",
+   "computes",
+   "a scalar switch INLINEFORM1 at each generation time-step"
+  ]
+ ],
+ "1810.05241::s03::p001": [
+  [
+   "each data example",
+   "contains",
+   "one source text sequence and multiple target phrase sequences"
+  ],
+  [
+   "each sequence",
+   "can be of",
+   "multi-word"
+  ],
+  [
+   "two paradigms",
+   "can be adopted for",
+   "training Seq2Seq models"
+  ],
+  [
+   "the first one",
+   "is to divide",
+   "each One2Many data example into multiple One2One examples"
+  ],
+  [
+   "the resulting models (e.g. CopyRNN)",
+   "can generate",
+   "one phrase at once"
+  ],
+  [
+   "the resulting models (e.g. CopyRNN)",
+   "must rely on",
+   "beam search technique to produce more unique phrases"
+  ]
+ ],
+ "1810.05241::s03::p002": [
+  [
+   "One2Seq",
+   "concatenates",
+   "multiple phrases into a single sequence with a delimiter INLINEFORM0 SEP INLINEFORM1"
+  ],
+  [
+   "this concatenated sequence",
+   "is used as",
+   "the target for sequence generation during training"
+  ]
+ ],
+ "1810.05241::s04::p000": [
+  [
+   "INLINEFORM0",
+   "denotes",
+   "input text tokens"
+  ],
+  [
+   "INLINEFORM1",
+   "denotes",
+   "token embeddings"
+  ],
+  [
+   "INLINEFORM2",
+   "denotes",
+   "hidden states"
+  ],
+  [
+   "INLINEFORM3",
+   "denotes",
+   "output text tokens"
+  ],
+  [
+   "Superscripts",
+   "denote",
+   "time-steps in a sequence"
+  ],
+  [
+   "subscripts INLINEFORM4 and INLINEFORM5",
+   "indicate",
+   "whether a variable resides in the encoder or the decoder of the model, respectively"
+  ],
+  [
+   "The absence of a superscript",
+   "indicates",
+   "multiplicity in the time dimension"
+  ],
+  [
+   "INLINEFORM6",
+   "refers to",
+   "a linear transformation"
+  ],
+  [
+   "INLINEFORM7",
+   "refers to",
+   "it followed by a non-linear activation function INLINEFORM8"
+  ],
+  [
+   "Angled brackets, INLINEFORM9",
+   "denote",
+   "concatenation"
+  ]
+ ],
+ "1810.05241::s05::p000": [
+  [
+   "Most previous keyphrase generation models",
+   "generate",
+   "multiple phrases by over-generation"
+  ]
+ ],
+ "1810.05241::s05::p001": [
+  [
+   "variable numbers of keyphrases",
+   "are represented as",
+   "delimiter-separated sequences"
+  ]
+ ],
+ "1810.05241::s05::p002": [
+  [
+   "semantic coverage",
+   "focuses on",
+   "the semantic representations of generated phrases"
+  ],
+  [
+   "another uni-directional recurrent model INLINEFORM0",
+   "is dubbed",
+   "target encoder"
+  ],
+  [
+   "target encoder",
+   "encodes",
+   "decoder-generated tokens INLINEFORM1"
+  ],
+  [
+   "This state",
+   "is taken as",
+   "an extra input to the decoder GRU"
+  ]
+ ],
+ "1810.05241::s05::p003": [
+  [
+   "the resulting decoder",
+   "is essentially",
+   "a 2-layer GRU with residual connections"
+  ],
+  [
+   "target encoder's final hidden state vector INLINEFORM0",
+   "is used as",
+   "a general representation of the target phrases"
+  ],
+  [
+   "the remaining INLINEFORM7",
+   "are",
+   "negative samples (sampled at random) from the training data"
+  ],
+  [
+   "The target encoder",
+   "is trained to minimize",
+   "the classification loss: DISPLAYFORM0"
+  ]
+ ],
+ "1810.05241::s05::p004": [
+  [
+   "INLINEFORM0",
+   "is",
+   "bi-linear transformation"
+  ]
+ ],
+ "1810.05241::s05::p005": [
+  [
+   "The motivation here",
+   "is to constrain",
+   "the overall representation of generated keyphrase to be semantically close to the overall meaning of the source text"
+  ],
+  [
+   "the semantic coverage mechanism",
+   "can potentially help to provide",
+   "useful keyphrase information"
+  ],
+  [
+   "the semantic coverage mechanism",
+   "can potentially help to guide",
+   "generation"
+  ]
+ ],
+ "1810.05241::s05::p006": [
+  [
+   "orthogonal regularization",
+   "explicitly encourages",
+   "the delimiter-generating decoder states to be different from each other"
+  ]
+ ],
+ "1810.05241::s05::p007": [
+  [
+   "INLINEFORM0",
+   "is the matrix transpose of",
+   "INLINEFORM1"
+  ],
+  [
+   "INLINEFORM2",
+   "is the identity matrix of rank",
+   "INLINEFORM3"
+  ],
+  [
+   "INLINEFORM4",
+   "indicates",
+   "element wise multiplication"
+  ],
+  [
+   "This loss function",
+   "improves diversity in",
+   "the tokens following the delimiters"
+  ]
+ ],
+ "1810.05241::s05::p008": [
+  [
+   "the widely used negative log-likelihood loss",
+   "is denoted as",
+   "INLINEFORM0"
+  ]
+ ],
+ "1810.05241::s05::p009": [
+  [
+   "INLINEFORM0 and INLINEFORM1",
+   "are",
+   "hyper-parameters"
+  ]
+ ],
+ "1810.05241::s06::p000": [
+  [
+   "various decoding methods",
+   "can be applied to generate",
+   "the target sequence INLINEFORM0"
+  ],
+  [
+   "Prior studies BIBREF0 , BIBREF7",
+   "focus more on generating",
+   "excessive number of phrases"
+  ],
+  [
+   "models trained under One2Seq paradigm",
+   "are capable of determining",
+   "the proper number of phrases to output"
+  ],
+  [
+   "the major difference",
+   "lies in",
+   "whether a model is capable of controlling the number of phrases to output"
+  ]
+ ],
+ "1810.05241::s06::p001": [
+  [
+   "traditional keyphrase tasks",
+   "evaluate models with",
+   "a fixed number of top-ranked predictions (say F-score @5 and @10)"
+  ],
+  [
+   "existing keyphrase generation studies",
+   "have to over-generate phrases by means of",
+   "beam search"
+  ],
+  [
+   "beam search",
+   "is",
+   "a heuristic search algorithm that returns INLINEFORM0 approximate optimal sequences"
+  ],
+  [
+   "each returned sequence",
+   "is",
+   "a unique phrase itself"
+  ],
+  [
+   "each produced sequence",
+   "contains",
+   "several phrases"
+  ]
+ ],
+ "1810.05241::s06::p002": [
+  [
+   "the time complexity of beam search",
+   "is",
+   "INLINEFORM0"
+  ],
+  [
+   "INLINEFORM1",
+   "is",
+   "the beam width"
+  ],
+  [
+   "INLINEFORM2",
+   "is",
+   "the maximum length of generated sequences"
+  ],
+  [
+   "the exhaustive decoding",
+   "is generally",
+   "very computationally expensive"
+  ],
+  [
+   "less than 5% of phrases generated by One2Seq models",
+   "are",
+   "unique"
+  ]
+ ],
+ "1810.05241::s06::p003": [
+  [
+   "the number of keyphrases",
+   "varies depending on",
+   "the document and dataset genre"
+  ],
+  [
+   "dynamically outputting a variable number of phrases",
+   "is",
+   "a desirable property for keyphrase generation models"
+  ],
+  [
+   "the resulting model",
+   "implicitly performs",
+   "the additional task of dynamically estimating the proper size of the target phrase set"
+  ]
+ ],
+ "1810.05241::s06::p004": [
+  [
+   "the self-terminating decoding strategy",
+   "generates",
+   "a set of phrases in a single sequence"
+  ],
+  [
+   "decoding",
+   "can be performed more efficiently than",
+   "exhaustive decoding"
+  ]
+ ],
+ "1810.05241::s07::p000": [
+  [
+   "a model",
+   "predicts",
+   "a list of unique keyphrases INLINEFORM0 ordered by the quality of the predictions INLINEFORM1"
+  ],
+  [
+   "the ground truth keyphrases for the given source text",
+   "is",
+   "the oracle set INLINEFORM2"
+  ],
+  [
+   "precision, recall, and F INLINEFORM5 score",
+   "are conditioned on",
+   "INLINEFORM6"
+  ]
+ ],
+ "1810.05241::s07::p001": [
+  [
+   "the number of generated keyphrases used for evaluation",
+   "can have",
+   "a critical impact on the quality of the resulting evaluation metrics"
+  ]
+ ],
+ "1810.05241::s07::p002": [
+  [
+   "A simple remedy",
+   "is to set",
+   "INLINEFORM0 as a variable number which is specific to each data example"
+  ]
+ ],
+ "1810.05241::s07::p003": [
+  [
+   "both F INLINEFORM1 @ INLINEFORM2 and F INLINEFORM3 @ INLINEFORM4",
+   "are capable of reflecting",
+   "the nature of variable number of phrases for each document"
+  ],
+  [
+   "a model",
+   "can achieve",
+   "the maximum INLINEFORM5 score of INLINEFORM6"
+  ],
+  [
+   "F INLINEFORM7 @ INLINEFORM8",
+   "is independent from",
+   "model outputs"
+  ]
+ ],
+ "1810.05241::s08::p000": [
+  [
+   "INLINEFORM0",
+   "refers to",
+   "the delimiter-concatenated sequence-to-sequences model described in Section SECREF3"
+  ],
+  [
+   "INLINEFORM1",
+   "refers to",
+   "the model augmented with orthogonal regularization and semantic coverage mechanism"
+  ]
+ ],
+ "1810.05241::s08::p001": [
+  [
+   "ground truth keyphrases",
+   "are sorted by",
+   "their order of first occurrence in the source text"
+  ],
+  [
+   "Keyphrases that do not appear in the source text",
+   "are appended to",
+   "the end"
+  ]
+ ],
+ "1810.05241::s08::p002": [
+  [
+   "CopyRNN",
+   "denotes",
+   "the model reported by BIBREF0"
+  ],
+  [
+   "KEA BIBREF4 and Maui BIBREF8",
+   "are trained on",
+   "a subset of 50,000 documents from either KP20k (Table TABREF35 ) or StackEx (Table TABREF37 )"
+  ]
+ ],
+ "1810.05241::s08::p003": [
+  [
+   "no existing model",
+   "supports",
+   "such decoding strategy"
+  ]
+ ],
+ "1810.05241::s09::p000": [
+  [
+   "KP20k",
+   "comprises",
+   "more than half a million scientific publications"
+  ],
+  [
+   "the abstract and title",
+   "are used as",
+   "the source text"
+  ],
+  [
+   "the author keywords",
+   "are used as",
+   "target"
+  ],
+  [
+   "The other four datasets",
+   "are used to test",
+   "transferability of our model (without fine-tuning)"
+  ]
+ ],
+ "1810.05241::s09::p001": [
+  [
+   "The new proposed F INLINEFORM2 @ INLINEFORM3 metric",
+   "indicates",
+   "consistent ranking with INLINEFORM4 for most cases"
+  ],
+  [
+   "its value",
+   "is closer to",
+   "INLINEFORM5 for KP20k and Krapivin"
+  ],
+  [
+   "its value",
+   "is closer to",
+   "INLINEFORM6 for the other three datasets"
+  ]
+ ],
+ "1810.05241::s09::p002": [
+  [
+   "neural-based models",
+   "outperform",
+   "non-neural models by large margins"
+  ],
+  [
+   "the advantage",
+   "is more salient on",
+   "NUS and SemEval"
+  ]
+ ],
+ "1810.05241::s09::p003": [
+  [
+   "both INLINEFORM0 and INLINEFORM1",
+   "yield",
+   "comparable results to CopyRNN"
+  ],
+  [
+   "One2Seq paradigm",
+   "can work well as",
+   "an alternative option for the keyphrase generation"
+  ],
+  [
+   "INLINEFORM2",
+   "outperforms",
+   "INLINEFORM3 on all metrics"
+  ],
+  [
+   "semantic coverage and orthogonal regularization",
+   "help",
+   "the model to generate higher quality keyphrases and achieve better generalizability"
+  ],
+  [
+   "INLINEFORM5",
+   "is still able to outperform",
+   "One2One baselines"
+  ]
+ ],
+ "1810.05241::s10::p001": [
+  [
+   "questions on StackExchange",
+   "contain",
+   "less information than in scientific publications"
+  ],
+  [
+   "StackEx",
+   "has",
+   "fewer keyphrases per data point"
+  ],
+  [
+   "StackExchange",
+   "uses",
+   "a tag recommendation system"
+  ],
+  [
+   "a tag recommendation system",
+   "suggests",
+   "topic-relevant tags to users while submitting questions"
+  ]
+ ],
+ "1810.05241::s10::p002": [
+  [
+   "INLINEFORM0",
+   "performs",
+   "the best"
+  ],
+  [
+   "INLINEFORM0",
+   "outperforms",
+   "INLINEFORM1 by a large margin"
+  ]
+ ],
+ "1810.05241::s11::p001": [
+  [
+   "beam search",
+   "uses",
+   "only the top ranked prediction sequence as output"
+  ],
+  [
+   "no existing model",
+   "is capable of",
+   "generating variable number of keyphrases"
+  ]
+ ],
+ "1810.05241::s11::p002": [
+  [
+   "greedy search",
+   "outperforms",
+   "beam search consistently"
+  ],
+  [
+   "beam search",
+   "tends to generate",
+   "short and similar sequences"
+  ],
+  [
+   "the resulting F INLINEFORM0 @ INLINEFORM1 scores",
+   "are",
+   "generally lower than results reported in previous subsections"
+  ],
+  [
+   "an over-generation decoding strategy",
+   "may still benefit from",
+   "achieving higher recall"
+  ]
+ ],
+ "1810.05241::s12::p000": [
+  [
+   "semantic coverage",
+   "provides significant boost to",
+   "INLINEFORM1 's performance on all datasets"
+  ],
+  [
+   "Orthogonal regularization",
+   "hurts",
+   "performance when is solely applied to INLINEFORM2 model"
+  ],
+  [
+   "INLINEFORM3",
+   "outperforms",
+   "INLINEFORM4 by a noticeable margin on all datasets"
+  ]
+ ],
+ "1810.05241::s13::p001": [
+  [
+   "The resulting numbers",
+   "are",
+   "20.38 and 89.70 for INLINEFORM2 and INLINEFORM3 respectively"
+  ],
+  [
+   "hidden states sampled from INLINEFORM6",
+   "are easier to cluster",
+   "hidden states sampled from INLINEFORM6"
+  ],
+  [
+   "hidden states sampled from INLINEFORM7",
+   "yield",
+   "one mass of vectors with no obvious distinct clusters"
+  ]
+ ],
+ "1810.05241::s14::p000": [
+  [
+   "this example",
+   "has",
+   "29 ground truth phrases"
+  ],
+  [
+   "Neither of the models",
+   "is able to generate",
+   "all of the keyphrases"
+  ],
+  [
+   "predictions from INLINEFORM0",
+   "all start with",
+   "“test”"
+  ],
+  [
+   "predictions from INLINEFORM1",
+   "are",
+   "diverse"
+  ]
+ ],
+ "1810.05241::s15::p000": [
+  [
+   "two extra modules",
+   "enhance",
+   "generation diversity"
+  ]
+ ],
+ "1810.05241::s16::p000": [
+  [
+   "Generating absent keyphrases on scientific publication datasets",
+   "is",
+   "a rather challenging problem"
+  ],
+  [
+   "Existing studies",
+   "often achieve",
+   "seemingly good performance"
+  ],
+  [
+   "Existing studies",
+   "measure",
+   "recall on tens and sometimes hundreds of keyphrases"
+  ],
+  [
+   "exhaustive decoding with a large beam size",
+   "completely ignores",
+   "precision"
+  ]
+ ],
+ "1810.05241::s16::p001": [
+  [
+   "models' R@10/50 scores",
+   "are reported on",
+   "the absent portion of five scientific paper datasets"
+  ]
+ ],
+ "1810.05241::s16::p002": [
+  [
+   "absent keyphrase prediction",
+   "highly prefers",
+   "recall-oriented models"
+  ],
+  [
+   "CopyRNN with beam size of 200",
+   "is innately proper for",
+   "this task setting"
+  ],
+  [
+   "StackEx",
+   "is argued to be",
+   "better testbeds for absent keyphrase generation"
+  ]
+ ],
+ "1810.05241::s17::p000": [
+  [
+   "word embeddings",
+   "are initialized with",
+   "100-dimensional random matrices"
+  ]
+ ],
+ "1810.05241::s17::p001": [
+  [
+   "negative sampling",
+   "randomly samples",
+   "16 samples from the same batch"
+  ],
+  [
+   "target encoding loss in Equation EQREF23",
+   "is",
+   "a 17-way classification loss"
+  ],
+  [
+   "all experiments",
+   "use",
+   "a dropout rate of 0.1"
+  ]
+ ],
+ "1810.05241::s17::p002": [
+  [
+   "Adam BIBREF36",
+   "is used as",
+   "the step rule for optimization"
+  ],
+  [
+   "model",
+   "is implemented using",
+   "PyTorch BIBREF38 and OpenNMT BIBREF37"
+  ]
+ ],
+ "1810.05241::s17::p003": [
+  [
+   "exhaustive decoding",
+   "uses",
+   "a beam size of 50"
+  ],
+  [
+   "exhaustive decoding",
+   "uses",
+   "a maximum sequence length of 40"
+  ]
+ ],
+ "1810.05241::s17::p004": [
+  [
+   "lowercase and stemming",
+   "are performed on",
+   "both the ground truth and generated keyphrases during evaluation"
+  ]
+ ],
+ "1810.05241::s17::p005": [
+  [
+   "2,000 data examples",
+   "are left out as",
+   "validation set for both KP20k and StackEx"
+  ],
+  [
+   "2,000 data examples",
+   "are used to identify",
+   "optimal checkpoints for testing"
+  ],
+  [
+   "all the scores reported in this paper",
+   "are from",
+   "checkpoints with best performances (F INLINEFORM0 @ INLINEFORM1 ) on validation set"
+  ]
+ ]
+}

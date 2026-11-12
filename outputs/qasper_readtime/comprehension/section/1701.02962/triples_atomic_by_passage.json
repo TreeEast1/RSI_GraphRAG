@@ -1,0 +1,596 @@
+{
+ "1701.02962::s00::p000": [
+  [
+   "antonymy",
+   "is defined as",
+   "the oppositeness between words"
+  ],
+  [
+   "synonymy",
+   "refers to",
+   "words that are similar in meaning"
+  ],
+  [
+   "distinguishing between antonymy and synonymy",
+   "is important for",
+   "NLP applications such as Machine Translation and Textual Entailment"
+  ],
+  [
+   "antonyms and synonyms",
+   "often occur in",
+   "similar contexts"
+  ]
+ ],
+ "1701.02962::s00::p001": [
+  [
+   "Two families of approaches",
+   "are predominent in",
+   "NLP"
+  ],
+  [
+   "Both",
+   "make use of",
+   "distributional vector representations"
+  ],
+  [
+   "distributional hypothesis",
+   "states that",
+   "words with similar distributions have related meanings"
+  ],
+  [
+   "distributional semantic models (DSMs)",
+   "offer a means to",
+   "represent meaning vectors of words or word pairs, and to determine their semantic relatedness"
+  ]
+ ],
+ "1701.02962::s00::p002": [
+  [
+   "each word",
+   "is represented by",
+   "a weighted feature vector"
+  ],
+  [
+   "features",
+   "typically correspond to",
+   "words that co-occur in particular contexts"
+  ],
+  [
+   "word embeddings",
+   "address",
+   "the problematic sparsity of word vectors"
+  ],
+  [
+   "word embeddings",
+   "have achieved impressive results in",
+   "many NLP tasks such as word similarity, relation classification, and antonym-synonym distinction"
+  ]
+ ],
+ "1701.02962::s00::p003": [
+  [
+   "vector representations",
+   "make use of",
+   "lexico-syntactic surface patterns to distinguish between the relations of word pairs"
+  ],
+  [
+   "Justeson/Katz:91",
+   "suggested that",
+   "adjectival opposites co-occur with each other in specific linear sequences, such as between X and Y"
+  ],
+  [
+   "Lin2003",
+   "proposed",
+   "two textual patterns indicating semantic incompatibility, from X to Y and either X or Y"
+  ]
+ ],
+ "1701.02962::s00::p004": [
+  [
+   "Fellbaum:95",
+   "stated that",
+   "nominal and verbal opposites co-occur in the same sentence significantly more often than chance"
+  ],
+  [
+   "Lin2003",
+   "argued that",
+   "if two words appear in clear antonym patterns, they are unlikely to represent synonymous pair"
+  ]
+ ],
+ "1701.02962::s00::p005": [
+  [
+   "the pattern",
+   "is derived from",
+   "the simple paths between X and Y in a syntactic parse tree"
+  ],
+  [
+   "All pattern features",
+   "are fed into",
+   "a recurrent neural network with long short-term memory (LSTM) units"
+  ],
+  [
+   "the results from experiments",
+   "show that",
+   "AntSynNET improves the performance over prior pattern-based methods"
+  ]
+ ],
+ "1701.02962::s00::p006": [
+  [
+   "the recurrent neural network with long short-term memory units",
+   "is used to encode",
+   "patterns within a vector representation"
+  ],
+  [
+   "two models",
+   "classify",
+   "antonyms and synonyms"
+  ]
+ ],
+ "1701.02962::s01::p000": [
+  [
+   "the AntSynNET model",
+   "uses",
+   "a pattern-based LSTM for distinguishing antonyms from synonyms"
+  ],
+  [
+   "the recurrent neural network with long short-term memory units",
+   "encodes",
+   "the patterns as vector representation"
+  ]
+ ],
+ "1701.02962::s02::p000": [
+  [
+   "opposites",
+   "co-occur with each other within a sentence",
+   "significantly more often than would be expected by chance"
+  ],
+  [
+   "The simple path",
+   "is",
+   "the shortest path between any two nodes in a tree"
+  ],
+  [
+   "The example pattern between X = old and Y = new in Figure 1",
+   "is represented as",
+   "X/JJ/amod/2 – village/NN/nsubj/1 – provide/VBN/ROOT/0 – with/IN/prep/1 – service/NNS/pobj/2 – Y/JJ/amod/3"
+  ]
+ ],
+ "1701.02962::s02::p001": [
+  [
+   "The path patterns",
+   "make use of",
+   "four features to represent each node in the syntax tree"
+  ],
+  [
+   "The lemma feature",
+   "captures",
+   "the lexical information of words in the sentence"
+  ],
+  [
+   "The POS and dependency features",
+   "capture",
+   "the morpho-syntactic information of the sentence"
+  ],
+  [
+   "The distance label",
+   "measures",
+   "the path distance between the target word nodes in the syntactic tree"
+  ],
+  [
+   "Each step between a parent and a child node",
+   "represents",
+   "a distance of 1"
+  ],
+  [
+   "the ancestor nodes of the remaining nodes in the path",
+   "are represented by",
+   "a distance of 0"
+  ],
+  [
+   "The distances from the node provided to the nodes village and old",
+   "are",
+   "1 and 2, respectively"
+  ]
+ ],
+ "1701.02962::s02::p002": [
+  [
+   "The vector representation of each node",
+   "concatenates",
+   "the four-feature vectors"
+  ]
+ ],
+ "1701.02962::s02::p003": [
+  [
+   "the $\\oplus $",
+   "denotes",
+   "the concatenation operation"
+  ]
+ ],
+ "1701.02962::s02::p004": [
+  [
+   "pattern representation of $p$",
+   "is",
+   "a sequence of vectors: $p=[\\vec{n}_1, \\vec{n}_2, ..., \\vec{n}_k]$"
+  ],
+  [
+   "pattern vector $\\vec{v}_p$",
+   "is encoded by applying",
+   "a recurrent neural network"
+  ]
+ ],
+ "1701.02962::s03::p000": [
+  [
+   "A recurrent neural network (RNN)",
+   "is suitable for",
+   "modeling sequential data by a vector representation"
+  ],
+  [
+   "an RNN",
+   "processes",
+   "each word $n_t$ at a time"
+  ],
+  [
+   "an RNN",
+   "updates",
+   "an internal memory state $h_t$"
+  ]
+ ],
+ "1701.02962::s03::p001": [
+  [
+   "LSTM units",
+   "address",
+   "these problems"
+  ],
+  [
+   "underlying idea of an LSTM",
+   "is to use",
+   "an adaptive gating mechanism"
+  ],
+  [
+   "an LSTM",
+   "comprises",
+   "four components: an input gate $i_t$ , a forget gate $f_t$ , an output gate $o_t$ , and a memory cell $c_t$"
+  ]
+ ],
+ "1701.02962::s04::p000": [
+  [
+   "this section",
+   "presents",
+   "two models to distinguish antonyms from synonyms"
+  ],
+  [
+   "The first model",
+   "makes use of",
+   "patterns to classify antonyms and synonyms"
+  ],
+  [
+   "The first model",
+   "uses",
+   "an LSTM to encode patterns as vector representations"
+  ],
+  [
+   "The first model",
+   "feeds",
+   "those vectors to a logistic regression layer"
+  ],
+  [
+   "The second model",
+   "creates",
+   "combined vector representations of word pairs"
+  ],
+  [
+   "combined vector representations of word pairs",
+   "concatenate",
+   "the vectors of the words and the patterns"
+  ]
+ ],
+ "1701.02962::s04::p001": [
+  [
+   "this model",
+   "makes use of",
+   "a recurrent neural network with LSTM units"
+  ],
+  [
+   "each pattern",
+   "represents",
+   "a path from $x$ to $y$"
+  ],
+  [
+   "each pattern $p$ of the word pair $(x,y)$",
+   "is fed into",
+   "an LSTM"
+  ]
+ ],
+ "1701.02962::s04::p003": [
+  [
+   "The vector $\\vec{v}_{xy}$",
+   "is fed into",
+   "a logistic regression layer"
+  ],
+  [
+   "the pair $(x,y)$",
+   "is predicted as",
+   "positive (i.e., antonymous) word pair"
+  ]
+ ],
+ "1701.02962::s04::p004": [
+  [
+   "the combined vector representation of the pair $(x,y)$",
+   "is determined by using",
+   "both the co-occurrence distribution of the words and the syntactic path patterns"
+  ]
+ ],
+ "1701.02962::s04::p006": [
+  [
+   "the combined vector $\\vec{v}_{comb(x,y)}$",
+   "is fed into",
+   "the logistic regression layer"
+  ]
+ ],
+ "1701.02962::s05::p000": [
+  [
+   "the distributional method",
+   "is",
+   "a pattern-based baseline method"
+  ],
+  [
+   "the distributed method",
+   "is",
+   "a pattern-based baseline method"
+  ]
+ ],
+ "1701.02962::s06::p000": [
+  [
+   "R&SiW",
+   "used",
+   "a vector space model"
+  ],
+  [
+   "the discourse markers",
+   "added",
+   "information to express discourse relations"
+  ],
+  [
+   "contrast relations",
+   "might indicate",
+   "antonymy"
+  ],
+  [
+   "elaborations",
+   "may indicate",
+   "synonymy or hyponymy"
+  ]
+ ],
+ "1701.02962::s06::p001": [
+  [
+   "Michael Roth",
+   "computed",
+   "the relation classification results of the pattern–discourse model for our test sets"
+  ],
+  [
+   "The weights between marker-based and pattern-based models",
+   "were tuned on",
+   "the validation sets"
+  ],
+  [
+   "other hyperparameters",
+   "were set exactly as described by",
+   "the R&SiW method"
+  ]
+ ],
+ "1701.02962::s07::p000": [
+  [
+   "The SP method",
+   "uses",
+   "symmetric patterns for generating word embeddings"
+  ],
+  [
+   "The symmetric patterns",
+   "were defined as",
+   "a sequence of 3-5 tokens consisting of exactly two wildcards and 1-3 words"
+  ],
+  [
+   "the resulting pattern set",
+   "contained",
+   "11 patterns"
+  ],
+  [
+   "a matrix of co-occurrence counts between patterns and words in the vocabulary",
+   "was computed using",
+   "positive point-wise mutual information"
+  ],
+  [
+   "The sparsity problem of vector representations",
+   "was addressed by",
+   "smoothing"
+  ]
+ ],
+ "1701.02962::s08::p000": [
+  [
+   "neural networks",
+   "require",
+   "a large amount of training data"
+  ],
+  [
+   "the data pairs",
+   "were collected from",
+   "WordNet BIBREF9 and Wordnik"
+  ]
+ ],
+ "1701.02962::s08::p001": [
+  [
+   "patterns which occur less than five times",
+   "are filtered out",
+   "all patterns"
+  ],
+  [
+   "word pairs",
+   "contain at least",
+   "five patterns for training, validating and testing"
+  ],
+  [
+   "proportion of positive and negative pairs",
+   "keeps",
+   "a ratio of 1:1 positive (antonym) to negative (synonym) pairs in the dataset"
+  ],
+  [
+   "random splitting",
+   "uses",
+   "70% train, 25% test, and 5% validation sets"
+  ]
+ ],
+ "1701.02962::s09::p000": [
+  [
+   "English Wikipedia dump from June 2016",
+   "is used as",
+   "the corpus resource for our methods and baselines"
+  ],
+  [
+   "spaCy",
+   "is relied on for",
+   "parsing the corpus"
+  ],
+  [
+   "dLCE model",
+   "is re-implemented on Wikipedia with",
+   "100 dimensions"
+  ],
+  [
+   "number of dimensions",
+   "is set to",
+   "10 for the embeddings of POS tags, dependency labels and distance labels"
+  ],
+  [
+   "Regularization",
+   "is applied by",
+   "a dropout of 0.5 on each of component's embeddings"
+  ],
+  [
+   "models",
+   "are trained with",
+   "40 epochs"
+  ]
+ ],
+ "1701.02962::s10::p000": [
+  [
+   "two proposed models",
+   "significantly outperform",
+   "the two baselines"
+  ],
+  [
+   "performance of the baselines",
+   "is around",
+   ".72 for $F_1$"
+  ],
+  [
+   "combined AntSynNET model",
+   "achieves",
+   "an improvement of $>$ .06"
+  ],
+  [
+   "improvement of the new methods",
+   "is",
+   "just .02 $F_1$ in comparison to the R&SiW baseline"
+  ]
+ ],
+ "1701.02962::s10::p001": [
+  [
+   "sampling",
+   "used",
+   "randomly 5 pairs in each population: true positive, true negative, false positive, false negative"
+  ],
+  [
+   "overlap between patterns of true predictions",
+   "is",
+   "no overlap"
+  ],
+  [
+   "number overlap between patterns of false predictions",
+   "is",
+   "2, 2, and 4 patterns for noun, adjective, and verb classes, respectively"
+  ],
+  [
+   "low precision of our models",
+   "stems from",
+   "the patterns which represent both antonymous and synonymous pairs"
+  ]
+ ],
+ "1701.02962::s11::p000": [
+  [
+   "the novel distance feature",
+   "is integrated along",
+   "the syntactic path"
+  ],
+  [
+   "the distance feature",
+   "exploits",
+   "properties of trees in graph theory"
+  ]
+ ],
+ "1701.02962::s11::p001": [
+  [
+   "The direction feature",
+   "represented",
+   "the direction of the dependency label between two nodes in a path from X to Y"
+  ]
+ ],
+ "1701.02962::s11::p002": [
+  [
+   "The distance feature",
+   "enhances",
+   "the performance of our proposed models more effectively than the direction feature does, across all word classes"
+  ]
+ ],
+ "1701.02962::s12::p000": [
+  [
+   "the word embeddings of the dLCE model",
+   "are",
+   "state-of-the-art word embeddings for antonym-synonym distinction"
+  ],
+  [
+   "the word embeddings of the dLCE model",
+   "represent",
+   "information collected from lexical resources"
+  ]
+ ],
+ "1701.02962::s12::p001": [
+  [
+   "the dLCE word embeddings",
+   "are better than",
+   "the pre-trained GloVe word embeddings"
+  ],
+  [
+   "the improvements of the dLCE word embeddings over pre-trained GloVe word embeddings",
+   "achieve",
+   "around .01 and .04 $F_1$ for the pattern-based model and the combined model, respectively"
+  ]
+ ],
+ "1701.02962::s13::p000": [
+  [
+   "a novel pattern-based neural method AntSynNET",
+   "distinguishes",
+   "antonyms from synonyms"
+  ]
+ ],
+ "1701.02962::s13::p001": [
+  [
+   "The patterns",
+   "were derived from",
+   "the simple paths between semantically related words in a syntactic parse tree"
+  ],
+  [
+   "The AntSynNET model",
+   "consists of",
+   "two approaches to classify antonyms and synonyms"
+  ],
+  [
+   "The resulting vectors of patterns in both approaches",
+   "were fed into",
+   "the logistic regression layer for classification"
+  ]
+ ],
+ "1701.02962::s13::p002": [
+  [
+   "the distance feature",
+   "outperformed",
+   "a previously suggested direction feature"
+  ]
+ ]
+}

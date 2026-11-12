@@ -1,0 +1,473 @@
+{
+ "insights": [
+  {
+   "insight_id": "1905.12801::g00:i00",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::g00",
+   "concise_text": "The new loss function equalizes predicted probabilities of gender pairs and, at INLINEFORM2 value of 1, reduces INLINEFORM3 by 58.95%, INLINEFORM4 by 45.74%, INLINEFORM5 by 100%, INLINEFORM6 by 98.52% and INLINEFORM7 by 98.98%.",
+   "triple": {
+    "subject": "the new loss function",
+    "predicate": "reduces",
+    "object": "INLINEFORM3 by 58.95%, INLINEFORM4 by 45.74%, INLINEFORM5 by 100%, INLINEFORM6 by 98.52% and INLINEFORM7 by 98.98%"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1905.12801::s00::p002",
+    "1905.12801::s04::p002",
+    "1905.12801::s08::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::g00:b0:f05",
+    "1905.12801::g00:b1:f04",
+    "1905.12801::g00:b5:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.12801::u000"
+  },
+  {
+   "insight_id": "1905.12801::g00:i01",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::g00",
+   "concise_text": "The combination of CDA and our loss function outperforms all the methods in all measures of biases without compromising perplexity, supporting the claim that the method combined with counterfactual data augmentation achieves the best result.",
+   "triple": {
+    "subject": "the combination of CDA and our loss function",
+    "predicate": "outperforms",
+    "object": "all the methods in all measures of biases without compromising perplexity"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.12801::s00::p003",
+    "1905.12801::s08::p003"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::g00:b0:f06",
+    "1905.12801::g00:b5:f05",
+    "1905.12801::g00:b5:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.95,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.12801::u001"
+  },
+  {
+   "insight_id": "1905.12801::g00:i02",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::g00",
+   "concise_text": "The debiasing approach does not explicitly address the bias in the embedding layer, yet end-to-end debiasing of the language model can achieve word embedding debiasing.",
+   "triple": {
+    "subject": "end-to-end debiasing of the language model",
+    "predicate": "extends",
+    "object": "word embedding debiasing despite not explicitly addressing the embedding layer"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1905.12801::s00::p003",
+    "1905.12801::s05::p013"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::g00:b0:f06",
+    "1905.12801::g00:b4:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.12801::u002"
+  },
+  {
+   "insight_id": "1905.12801::g00:i03",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::g00",
+   "concise_text": "All the debiasing techniques experimented in this paper rely on a predefined set of gender pairs, and gender associated words which do not have pairs, like pregnant, are not treated properly by techniques relying on gender pairs.",
+   "triple": {
+    "subject": "reliance on a predefined set of gender pairs",
+    "predicate": "limits",
+    "object": "treatment of gender associated words which do not have pairs, like pregnant"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1905.12801::s04::p003",
+    "1905.12801::s09::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::g00:b1:f05",
+    "1905.12801::g00:b5:f11",
+    "1905.12801::g00:b5:f14",
+    "1905.12801::g00:b5:f15"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.94,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.12801::u003"
+  },
+  {
+   "insight_id": "1905.12801::g00:i04",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::g00",
+   "concise_text": "Causal occupation bias is measured directly from the models using template datasets, while co-occurrence bias is measured from model-generated texts consisting of 10,000 documents of 500 words each.",
+   "triple": {
+    "subject": "bias evaluation",
+    "predicate": "evaluated_on",
+    "object": "template datasets and 10,000 documents of 500 words each"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1905.12801::s05::p007",
+    "1905.12801::s07::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::g00:b3:f04",
+    "1905.12801::g00:b4:f15",
+    "1905.12801::g00:b4:f16"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.12801::u004"
+  },
+  {
+   "insight_id": "1905.12801::g00:i05",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::g00",
+   "concise_text": "The baseline model amplifies the bias in the training data set, and the training data use Daily Mail news articles claimed to be biased and sensational BIBREF5.",
+   "triple": {
+    "subject": "the baseline model",
+    "predicate": "amplifies",
+    "object": "bias in Daily Mail news articles claimed to be biased and sensational BIBREF5"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1905.12801::s02::p000",
+    "1905.12801::s08::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::g00:b0:f08",
+    "1905.12801::g00:b0:f10",
+    "1905.12801::g00:b5:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.12801::u005"
+  },
+  {
+   "insight_id": "1905.12801::g00:i06",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::g00",
+   "concise_text": "CDA creates a dataset with exactly the same contextual distributions for both genders, yet CDA fails to effectively mitigate occupation bias when compared to our approach.",
+   "triple": {
+    "subject": "CDA's exactly same contextual distributions for both genders",
+    "predicate": "limits",
+    "object": "effective mitigation of occupation bias compared with our approach"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1905.12801::s06::p000",
+    "1905.12801::s08::p002"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::g00:b4:f08",
+    "1905.12801::g00:b5:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.12801::u006"
+  },
+  {
+   "insight_id": "1905.12801::g00:i07",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::g00",
+   "concise_text": "Language models are evaluated using perplexity, and REG results in the best perplexity even though REG is not very effective in mitigating bias when compared to other methods.",
+   "triple": {
+    "subject": "REG",
+    "predicate": "improves_on",
+    "object": "perplexity while not effectively mitigating bias"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1905.12801::s05::p000",
+    "1905.12801::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::g00:b2:f00",
+    "1905.12801::g00:b2:f01",
+    "1905.12801::g00:b5:f01",
+    "1905.12801::g00:b5:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.12801::u007"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1905.12801::g00",
+   "insights": [
+    {
+     "insight_id": "1905.12801::g00:i00",
+     "paper_id": "1905.12801",
+     "group_id": "1905.12801::g00",
+     "concise_text": "The new loss function equalizes predicted probabilities of gender pairs and, at INLINEFORM2 value of 1, reduces INLINEFORM3 by 58.95%, INLINEFORM4 by 45.74%, INLINEFORM5 by 100%, INLINEFORM6 by 98.52% and INLINEFORM7 by 98.98%.",
+     "triple": {
+      "subject": "the new loss function",
+      "predicate": "reduces",
+      "object": "INLINEFORM3 by 58.95%, INLINEFORM4 by 45.74%, INLINEFORM5 by 100%, INLINEFORM6 by 98.52% and INLINEFORM7 by 98.98%"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1905.12801::s00::p002",
+      "1905.12801::s04::p002",
+      "1905.12801::s08::p000"
+     ],
+     "supporting_fact_ids": [
+      "1905.12801::g00:b0:f05",
+      "1905.12801::g00:b1:f04",
+      "1905.12801::g00:b5:f00"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.12801::u000"
+    },
+    {
+     "insight_id": "1905.12801::g00:i01",
+     "paper_id": "1905.12801",
+     "group_id": "1905.12801::g00",
+     "concise_text": "The combination of CDA and our loss function outperforms all the methods in all measures of biases without compromising perplexity, supporting the claim that the method combined with counterfactual data augmentation achieves the best result.",
+     "triple": {
+      "subject": "the combination of CDA and our loss function",
+      "predicate": "outperforms",
+      "object": "all the methods in all measures of biases without compromising perplexity"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1905.12801::s00::p003",
+      "1905.12801::s08::p003"
+     ],
+     "supporting_fact_ids": [
+      "1905.12801::g00:b0:f06",
+      "1905.12801::g00:b5:f05",
+      "1905.12801::g00:b5:f06"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.95,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.12801::u001"
+    },
+    {
+     "insight_id": "1905.12801::g00:i02",
+     "paper_id": "1905.12801",
+     "group_id": "1905.12801::g00",
+     "concise_text": "The debiasing approach does not explicitly address the bias in the embedding layer, yet end-to-end debiasing of the language model can achieve word embedding debiasing.",
+     "triple": {
+      "subject": "end-to-end debiasing of the language model",
+      "predicate": "extends",
+      "object": "word embedding debiasing despite not explicitly addressing the embedding layer"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1905.12801::s00::p003",
+      "1905.12801::s05::p013"
+     ],
+     "supporting_fact_ids": [
+      "1905.12801::g00:b0:f06",
+      "1905.12801::g00:b4:f02"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.12801::u002"
+    },
+    {
+     "insight_id": "1905.12801::g00:i03",
+     "paper_id": "1905.12801",
+     "group_id": "1905.12801::g00",
+     "concise_text": "All the debiasing techniques experimented in this paper rely on a predefined set of gender pairs, and gender associated words which do not have pairs, like pregnant, are not treated properly by techniques relying on gender pairs.",
+     "triple": {
+      "subject": "reliance on a predefined set of gender pairs",
+      "predicate": "limits",
+      "object": "treatment of gender associated words which do not have pairs, like pregnant"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1905.12801::s04::p003",
+      "1905.12801::s09::p001"
+     ],
+     "supporting_fact_ids": [
+      "1905.12801::g00:b1:f05",
+      "1905.12801::g00:b5:f11",
+      "1905.12801::g00:b5:f14",
+      "1905.12801::g00:b5:f15"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.94,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.12801::u003"
+    },
+    {
+     "insight_id": "1905.12801::g00:i04",
+     "paper_id": "1905.12801",
+     "group_id": "1905.12801::g00",
+     "concise_text": "Causal occupation bias is measured directly from the models using template datasets, while co-occurrence bias is measured from model-generated texts consisting of 10,000 documents of 500 words each.",
+     "triple": {
+      "subject": "bias evaluation",
+      "predicate": "evaluated_on",
+      "object": "template datasets and 10,000 documents of 500 words each"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1905.12801::s05::p007",
+      "1905.12801::s07::p000"
+     ],
+     "supporting_fact_ids": [
+      "1905.12801::g00:b3:f04",
+      "1905.12801::g00:b4:f15",
+      "1905.12801::g00:b4:f16"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.12801::u004"
+    },
+    {
+     "insight_id": "1905.12801::g00:i05",
+     "paper_id": "1905.12801",
+     "group_id": "1905.12801::g00",
+     "concise_text": "The baseline model amplifies the bias in the training data set, and the training data use Daily Mail news articles claimed to be biased and sensational BIBREF5.",
+     "triple": {
+      "subject": "the baseline model",
+      "predicate": "amplifies",
+      "object": "bias in Daily Mail news articles claimed to be biased and sensational BIBREF5"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1905.12801::s02::p000",
+      "1905.12801::s08::p000"
+     ],
+     "supporting_fact_ids": [
+      "1905.12801::g00:b0:f08",
+      "1905.12801::g00:b0:f10",
+      "1905.12801::g00:b5:f00"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.12801::u005"
+    },
+    {
+     "insight_id": "1905.12801::g00:i06",
+     "paper_id": "1905.12801",
+     "group_id": "1905.12801::g00",
+     "concise_text": "CDA creates a dataset with exactly the same contextual distributions for both genders, yet CDA fails to effectively mitigate occupation bias when compared to our approach.",
+     "triple": {
+      "subject": "CDA's exactly same contextual distributions for both genders",
+      "predicate": "limits",
+      "object": "effective mitigation of occupation bias compared with our approach"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1905.12801::s06::p000",
+      "1905.12801::s08::p002"
+     ],
+     "supporting_fact_ids": [
+      "1905.12801::g00:b4:f08",
+      "1905.12801::g00:b5:f04"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.12801::u006"
+    },
+    {
+     "insight_id": "1905.12801::g00:i07",
+     "paper_id": "1905.12801",
+     "group_id": "1905.12801::g00",
+     "concise_text": "Language models are evaluated using perplexity, and REG results in the best perplexity even though REG is not very effective in mitigating bias when compared to other methods.",
+     "triple": {
+      "subject": "REG",
+      "predicate": "improves_on",
+      "object": "perplexity while not effectively mitigating bias"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1905.12801::s05::p000",
+      "1905.12801::s08::p001"
+     ],
+     "supporting_fact_ids": [
+      "1905.12801::g00:b2:f00",
+      "1905.12801::g00:b2:f01",
+      "1905.12801::g00:b5:f01",
+      "1905.12801::g00:b5:f02"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.89,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.12801::u007"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "invalid_entity",
+     "item": {
+      "text": "Because CDA creates a dataset twice the size of the original data, our method requires less time to train than CDA since its training data has a smaller size without data augmentation.",
+      "triple": [
+       "CDA's dataset twice the size of the original data",
+       "causes",
+       "our method to require less time to train than CDA"
+      ],
+      "source_passage_ids": [
+       "1905.12801::s06::p000",
+       "1905.12801::s08::p002"
+      ]
+     }
+    },
+    {
+     "reason": "invalid_entity",
+     "item": {
+      "text": "Although REG explicitly aims to reduce gender bias in the embeddings, our loss function outperforms REG in INLINEFORM0 and results in the most debiased embedding as compared to other methods.",
+      "triple": [
+       "our loss function",
+       "outperforms",
+       "REG in INLINEFORM0 and the most debiased embedding"
+      ],
+      "source_passage_ids": [
+       "1905.12801::s06::p001",
+       "1905.12801::s08::p001"
+      ]
+     }
+    }
+   ],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 10763,
+    "completion_tokens": 1900,
+    "total_tokens": 12663,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

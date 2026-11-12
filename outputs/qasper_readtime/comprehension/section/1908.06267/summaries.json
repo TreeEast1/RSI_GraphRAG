@@ -1,0 +1,808 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1908.06267::s00::p000",
+   "summary": "Message passing over graphs and GNNs have long existed, but GNNs were recently investigated with deep learning, including spectral approaches linked to MP.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s00::p001",
+   "summary": "The MP framework recursively aggregates neighborhoods, updating each vertex representation from neighbor messages, and describes all spectral GNNs.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s00::p002",
+   "summary": "The paper proposes MPAD and hierarchical variants for document understanding using word co-occurrence networks, competitive on 10 document classification datasets.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s00::p003",
+   "summary": "The paper outlines background on MP, MPAD, the experimental framework, results, and relevant literature in subsequent sections.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s01::p000",
+   "summary": "BIBREF13 proposed an MP framework reformulating many recent GNNs, with aggregation followed by combination and messages computed from neighbors.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s01::p002",
+   "summary": "The new representation of v combines its current feature vector with the message vector.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s01::p004",
+   "summary": "Messages pass for T time steps through different layers, making final features capture T-height subtree topology and vertex representation distributions.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s01::p005",
+   "summary": "For graph-level feature vectors, a permutation-invariant READOUT pooling function is applied.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s01::p007",
+   "summary": "The authors next present the MP network developed for document understanding.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s02::p000",
+   "summary": "Documents are represented as directed weighted statistical word co-occurrence networks using a sliding window of size 2 overspanning sentences.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s02::p001",
+   "summary": "G compactly represents documents, with immediate neighbors as consecutive words, length 2 paths as bigrams, and longer paths as n-grams or relaxed n-grams.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s02::p002",
+   "summary": "G includes a special document node linked to all other nodes via unit weight bi-directional edges, and n includes the master node.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s03::p000",
+   "summary": "The authors formulate their AGGREGATE function.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s03::p002",
+   "summary": "H^t contains node features, A is asymmetric with zero diagonal, D is the in-degree matrix, MLP is a multi-layer perceptron, and M^{t+1} is the message matrix.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s03::p003",
+   "summary": "An MLP is used because 1-layer perceptrons are inferior for graph classification and are not universal approximators of multiset functions, with a different MLP at each layer.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s03::p004",
+   "summary": "Renormalization uses in-degrees to average incoming neighbor features, losing injectivity in special cases but outperforming summing in an ablation experiment.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s03::p005",
+   "summary": "The COMBINE function uses the Gated Recurrent Unit.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s03::p007",
+   "summary": "Biases are omitted for readability.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s03::p009",
+   "summary": "Trainable W and U matrices are not shared across time steps, while reset and update gates control previous information and interpolation toward new representations.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s03::p010",
+   "summary": "GRU updates should let nodes encode local and global signals by remembering past iterations, and all iteration representations are considered during readout.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s04::p000",
+   "summary": "After T iterations, H^T contains final vertex representations, and G without the special document node has representation matrix Hhat^T.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s04::p001",
+   "summary": "READOUT concatenates self-attention over Hhat^T with the final document node representation, using global self-attention to compute attentional vector u^T.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s04::p004",
+   "summary": "Using multiple context vectors with V^T instead of v^T gave unconvincing results, even with a diversity regularization term.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s04::p005",
+   "summary": "The master node representation bypasses attention via a skip connection, injecting expected global document information into h_G^T.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s04::p006",
+   "summary": "Multi-readout applies readout to all time steps and concatenates results, following recommendations to retain earlier, more local representations.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s04::p008",
+   "summary": "This modification accounts for features aggregated from subtrees of heights from 1 to T, corresponding to local and global features.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s05::p000",
+   "summary": "MPAD may implicitly capture document hierarchy, but the authors propose hierarchical variants representing each sentence as a word co-occurrence network embedded by MPAD.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s05::p001",
+   "summary": "MPAD-sentence-att combines sentence embeddings through self-attention.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s05::p002",
+   "summary": "MPAD-clique builds a complete graph of sentence nodes and feeds it to MPAD initialized with sentence embeddings.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s05::p003",
+   "summary": "MPAD-path builds a path graph linking consecutive sentences with directed edges according to natural text flow.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s06::p000",
+   "summary": "MPAD document embeddings are evaluated on 10 document classification datasets spanning topic identification, sentiment analysis, opinion mining, and subjectivity detection.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s06::p001",
+   "summary": "Reuters contains 1987 Reuters news agency stories, using the ModApte split, the 10 largest classes, and removing multi-class documents and 2 empty classes.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s06::p002",
+   "summary": "BBCSport contains documents from the BBC Sport website corresponding to 2004-2005 sports news articles.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s06::p003",
+   "summary": "Polarity features positive and negative labeled snippets from Rotten Tomatoes.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s06::p004",
+   "summary": "Subjectivity contains Rotten Tomatoes subjective movie review snippets and Internet Movie Database objective plot summaries.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s06::p005",
+   "summary": "MPQA consists of positive and negative phrases annotated during the summer 2002 NRRC Workshop on Multi-Perspective Question Answering.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s06::p006",
+   "summary": "IMDB is a collection of highly polarized positive and negative IMDB movie reviews, with at most 30 reviews for each movie.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s06::p007",
+   "summary": "TREC consists of questions classified into 6 different categories.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s06::p008",
+   "summary": "SST-1 uses the same snippets as Polarity, parsed and split into sentences, with phrases annotated by Amazon Mechanical Turk into five polarity classes.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s06::p009",
+   "summary": "SST-2 is the same as SST-1 but removes neutral reviews and classifies snippets as positive or negative.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s06::p010",
+   "summary": "Yelp2013 features reviews obtained from the 2013 Yelp Dataset Challenge.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p000",
+   "summary": "MPAD is evaluated against multiple state-of-the-art baseline models, including hierarchical ones for fair comparison with hierarchical MPAD variants.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p001",
+   "summary": "doc2vec learns document vectors fully unsupervised and feeds document embeddings to a logistic regression classifier.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p002",
+   "summary": "CNN applies a convolutional neural network architecture to text with one spatial dimension and word embeddings as channels.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p003",
+   "summary": "DAN passes the unweighted average of input word embeddings through multiple dense layers and a final softmax.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p004",
+   "summary": "Tree-LSTM generalizes the standard LSTM architecture to constituency and dependency parse trees.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p005",
+   "summary": "DRNN stacks recursive neural networks and applies them to parse trees.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p006",
+   "summary": "LSTMN extends LSTM by replacing the memory cell with a memory network storing word representations.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p007",
+   "summary": "C-LSTM combines convolutional and recurrent neural networks by feeding CNN region embeddings to a LSTM.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p008",
+   "summary": "SPGK models documents as word co-occurrence networks, computes a shortest-path graph kernel, and uses a SVM to categorize documents.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p009",
+   "summary": "WMD applies Earth Mover's Distance to text and uses a k-nearest neighbor classifier.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p010",
+   "summary": "S-WMD is a supervised extension of the Word Mover's Distance.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p011",
+   "summary": "Semantic-CNN applies a CNN to semantic units obtained by clustering words in the embedding space.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p012",
+   "summary": "LSTM-GRNN is hierarchical, obtaining sentence embeddings with a CNN and feeding sentence representations to a GRU-RNN for a document vector.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s07::p013",
+   "summary": "HN-ATT is hierarchical, using a bidirectional GRU-RNN for sentences and documents with different parameters and self-attention at each level.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s08::p000",
+   "summary": "All datasets are preprocessed with BIBREF38 code, Yelp2013 replaces tokens appearing strictly less than 6 times with UNK, and directed word co-occurrence networks use a window of size 2.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s08::p001",
+   "summary": "Basic MPAD uses T=2, hierarchical variants use two MP iterations per level, d is 64 except d=128 on IMDB and Yelp, and training uses Adam with learning rate 0.001.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s08::p002",
+   "summary": "Batch normalization follows the skip connection, dropout has rate 0.5, the best epoch is capped at 200, and cross-validation uses 10% of each fold's training set.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s08::p003",
+   "summary": "All datasets except Yelp2013 initialize H^0 with publicly available 300-dimensional pre-trained Google News vectors, while Yelp2013 learns word vectors with gensim word2vec.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s08::p004",
+   "summary": "MPAD was implemented in Python 3.6 with PyTorch and run on a 3.4 GHz Intel Core i7 CPU, 16 GB of RAM, and an NVidia GeForce Titan Xp GPU.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "passage_id": "1908.06267::s09::p000",
+   "summary": "Table TABREF28 shows MPAD reaches best performance on 7 out of 10 datasets and close second elsewhere across varied settings.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s09::p001",
+   "summary": "On 9 datasets out of 10, one or more hierarchical variants outperform vanilla MPAD, highlighting benefits of modeling document hierarchy.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s09::p002",
+   "summary": "Standard MPAD outperforms hierarchical variants on Subjectivity and matches accuracy on TREC, possibly due to cross-sentence context in single document graphs.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s10::p000",
+   "summary": "Additional hyperparameter experiments on Reuters, Polarity, and IMDB used non-hierarchical MPAD, with results in Table TABREF29.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s10::p001",
+   "summary": "Varying message passing iterations from 1 to 4 shows more iterations improve performance, attributed to readout from each iteration from 1 to $T$.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s10::p002",
+   "summary": "Undirected edges improve Reuters performance but hurt Polarity and IMDB, explained by topic classification versus sentiment analysis and word order.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s10::p003",
+   "summary": "Removing the master node deteriorates performance across all datasets, showing its value for encoding a document summary during message passing.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s10::p004",
+   "summary": "Using sum instead of mean without renormalization decreases performance everywhere, suggesting neighbor representation distributions matter more than structure.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s10::p005",
+   "summary": "Replacing the GRU combine function with identity makes updates neighbors-only, hurting performance except on Reuters and stressing root node importance.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s11::p000",
+   "summary": "The following brief review covers relevant studies ranked by increasing similarity with this work.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s11::p001",
+   "summary": "BIBREF9, BIBREF54, BIBREF11, and BIBREF10 run node classification on citation networks where text only provides node features.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s11::p002",
+   "summary": "BIBREF55 and BIBREF7 use $k$-nearest neighbor similarity graphs for document classification, with BIBREF7 representing each document as a graph.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s11::p003",
+   "summary": "BIBREF56 uses a GNN for hierarchical classification into a large taxonomy of topics with word co-occurrence networks and word embeddings.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s11::p004",
+   "summary": "BIBREF53 builds one undirected word-document graph with TF-IDF and pointwise mutual information weights for semi-supervised node classification.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s11::p005",
+   "summary": "MPAD differs from BIBREF53 by being inductive, using directed graphs, losing corpus-level dependencies, and avoiding vocabulary-size-dependent PMI computation.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s12::p000",
+   "summary": "MPAD applies message passing to NLP, performs competitively on 10 standard text classification datasets, and includes three improved hierarchical variants.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "passage_id": "1908.06267::s13::p000",
+   "summary": "The authors thank the NVidia corporation for donating a GPU through their GPU grant program.",
+   "group_id": "1908.06267::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1908.06267::g00",
+   "summaries": [
+    {
+     "passage_id": "1908.06267::s00::p000",
+     "summary": "Message passing over graphs and GNNs have long existed, but GNNs were recently investigated with deep learning, including spectral approaches linked to MP.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s00::p001",
+     "summary": "The MP framework recursively aggregates neighborhoods, updating each vertex representation from neighbor messages, and describes all spectral GNNs.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s00::p002",
+     "summary": "The paper proposes MPAD and hierarchical variants for document understanding using word co-occurrence networks, competitive on 10 document classification datasets.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s00::p003",
+     "summary": "The paper outlines background on MP, MPAD, the experimental framework, results, and relevant literature in subsequent sections.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s01::p000",
+     "summary": "BIBREF13 proposed an MP framework reformulating many recent GNNs, with aggregation followed by combination and messages computed from neighbors.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s01::p002",
+     "summary": "The new representation of v combines its current feature vector with the message vector.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s01::p004",
+     "summary": "Messages pass for T time steps through different layers, making final features capture T-height subtree topology and vertex representation distributions.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s01::p005",
+     "summary": "For graph-level feature vectors, a permutation-invariant READOUT pooling function is applied.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s01::p007",
+     "summary": "The authors next present the MP network developed for document understanding.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s02::p000",
+     "summary": "Documents are represented as directed weighted statistical word co-occurrence networks using a sliding window of size 2 overspanning sentences.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s02::p001",
+     "summary": "G compactly represents documents, with immediate neighbors as consecutive words, length 2 paths as bigrams, and longer paths as n-grams or relaxed n-grams.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s02::p002",
+     "summary": "G includes a special document node linked to all other nodes via unit weight bi-directional edges, and n includes the master node.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s03::p000",
+     "summary": "The authors formulate their AGGREGATE function.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s03::p002",
+     "summary": "H^t contains node features, A is asymmetric with zero diagonal, D is the in-degree matrix, MLP is a multi-layer perceptron, and M^{t+1} is the message matrix.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s03::p003",
+     "summary": "An MLP is used because 1-layer perceptrons are inferior for graph classification and are not universal approximators of multiset functions, with a different MLP at each layer.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s03::p004",
+     "summary": "Renormalization uses in-degrees to average incoming neighbor features, losing injectivity in special cases but outperforming summing in an ablation experiment.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s03::p005",
+     "summary": "The COMBINE function uses the Gated Recurrent Unit.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s03::p007",
+     "summary": "Biases are omitted for readability.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s03::p009",
+     "summary": "Trainable W and U matrices are not shared across time steps, while reset and update gates control previous information and interpolation toward new representations.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s03::p010",
+     "summary": "GRU updates should let nodes encode local and global signals by remembering past iterations, and all iteration representations are considered during readout.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s04::p000",
+     "summary": "After T iterations, H^T contains final vertex representations, and G without the special document node has representation matrix Hhat^T.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s04::p001",
+     "summary": "READOUT concatenates self-attention over Hhat^T with the final document node representation, using global self-attention to compute attentional vector u^T.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s04::p004",
+     "summary": "Using multiple context vectors with V^T instead of v^T gave unconvincing results, even with a diversity regularization term.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s04::p005",
+     "summary": "The master node representation bypasses attention via a skip connection, injecting expected global document information into h_G^T.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s04::p006",
+     "summary": "Multi-readout applies readout to all time steps and concatenates results, following recommendations to retain earlier, more local representations.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s04::p008",
+     "summary": "This modification accounts for features aggregated from subtrees of heights from 1 to T, corresponding to local and global features.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s05::p000",
+     "summary": "MPAD may implicitly capture document hierarchy, but the authors propose hierarchical variants representing each sentence as a word co-occurrence network embedded by MPAD.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s05::p001",
+     "summary": "MPAD-sentence-att combines sentence embeddings through self-attention.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s05::p002",
+     "summary": "MPAD-clique builds a complete graph of sentence nodes and feeds it to MPAD initialized with sentence embeddings.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s05::p003",
+     "summary": "MPAD-path builds a path graph linking consecutive sentences with directed edges according to natural text flow.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s06::p000",
+     "summary": "MPAD document embeddings are evaluated on 10 document classification datasets spanning topic identification, sentiment analysis, opinion mining, and subjectivity detection.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s06::p001",
+     "summary": "Reuters contains 1987 Reuters news agency stories, using the ModApte split, the 10 largest classes, and removing multi-class documents and 2 empty classes.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s06::p002",
+     "summary": "BBCSport contains documents from the BBC Sport website corresponding to 2004-2005 sports news articles.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s06::p003",
+     "summary": "Polarity features positive and negative labeled snippets from Rotten Tomatoes.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s06::p004",
+     "summary": "Subjectivity contains Rotten Tomatoes subjective movie review snippets and Internet Movie Database objective plot summaries.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s06::p005",
+     "summary": "MPQA consists of positive and negative phrases annotated during the summer 2002 NRRC Workshop on Multi-Perspective Question Answering.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s06::p006",
+     "summary": "IMDB is a collection of highly polarized positive and negative IMDB movie reviews, with at most 30 reviews for each movie.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s06::p007",
+     "summary": "TREC consists of questions classified into 6 different categories.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s06::p008",
+     "summary": "SST-1 uses the same snippets as Polarity, parsed and split into sentences, with phrases annotated by Amazon Mechanical Turk into five polarity classes.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s06::p009",
+     "summary": "SST-2 is the same as SST-1 but removes neutral reviews and classifies snippets as positive or negative.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s06::p010",
+     "summary": "Yelp2013 features reviews obtained from the 2013 Yelp Dataset Challenge.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p000",
+     "summary": "MPAD is evaluated against multiple state-of-the-art baseline models, including hierarchical ones for fair comparison with hierarchical MPAD variants.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p001",
+     "summary": "doc2vec learns document vectors fully unsupervised and feeds document embeddings to a logistic regression classifier.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p002",
+     "summary": "CNN applies a convolutional neural network architecture to text with one spatial dimension and word embeddings as channels.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p003",
+     "summary": "DAN passes the unweighted average of input word embeddings through multiple dense layers and a final softmax.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p004",
+     "summary": "Tree-LSTM generalizes the standard LSTM architecture to constituency and dependency parse trees.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p005",
+     "summary": "DRNN stacks recursive neural networks and applies them to parse trees.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p006",
+     "summary": "LSTMN extends LSTM by replacing the memory cell with a memory network storing word representations.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p007",
+     "summary": "C-LSTM combines convolutional and recurrent neural networks by feeding CNN region embeddings to a LSTM.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p008",
+     "summary": "SPGK models documents as word co-occurrence networks, computes a shortest-path graph kernel, and uses a SVM to categorize documents.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p009",
+     "summary": "WMD applies Earth Mover's Distance to text and uses a k-nearest neighbor classifier.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p010",
+     "summary": "S-WMD is a supervised extension of the Word Mover's Distance.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p011",
+     "summary": "Semantic-CNN applies a CNN to semantic units obtained by clustering words in the embedding space.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p012",
+     "summary": "LSTM-GRNN is hierarchical, obtaining sentence embeddings with a CNN and feeding sentence representations to a GRU-RNN for a document vector.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s07::p013",
+     "summary": "HN-ATT is hierarchical, using a bidirectional GRU-RNN for sentences and documents with different parameters and self-attention at each level.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s08::p000",
+     "summary": "All datasets are preprocessed with BIBREF38 code, Yelp2013 replaces tokens appearing strictly less than 6 times with UNK, and directed word co-occurrence networks use a window of size 2.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s08::p001",
+     "summary": "Basic MPAD uses T=2, hierarchical variants use two MP iterations per level, d is 64 except d=128 on IMDB and Yelp, and training uses Adam with learning rate 0.001.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s08::p002",
+     "summary": "Batch normalization follows the skip connection, dropout has rate 0.5, the best epoch is capped at 200, and cross-validation uses 10% of each fold's training set.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s08::p003",
+     "summary": "All datasets except Yelp2013 initialize H^0 with publicly available 300-dimensional pre-trained Google News vectors, while Yelp2013 learns word vectors with gensim word2vec.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "passage_id": "1908.06267::s08::p004",
+     "summary": "MPAD was implemented in Python 3.6 with PyTorch and run on a 3.4 GHz Intel Core i7 CPU, 16 GB of RAM, and an NVidia GeForce Titan Xp GPU.",
+     "group_id": "1908.06267::g00"
+    }
+   ],
+   "n_raw": 60,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5848,
+    "completion_tokens": 2588,
+    "total_tokens": 8436,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1908.06267::g01",
+   "summaries": [
+    {
+     "passage_id": "1908.06267::s09::p000",
+     "summary": "Table TABREF28 shows MPAD reaches best performance on 7 out of 10 datasets and close second elsewhere across varied settings.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s09::p001",
+     "summary": "On 9 datasets out of 10, one or more hierarchical variants outperform vanilla MPAD, highlighting benefits of modeling document hierarchy.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s09::p002",
+     "summary": "Standard MPAD outperforms hierarchical variants on Subjectivity and matches accuracy on TREC, possibly due to cross-sentence context in single document graphs.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s10::p000",
+     "summary": "Additional hyperparameter experiments on Reuters, Polarity, and IMDB used non-hierarchical MPAD, with results in Table TABREF29.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s10::p001",
+     "summary": "Varying message passing iterations from 1 to 4 shows more iterations improve performance, attributed to readout from each iteration from 1 to $T$.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s10::p002",
+     "summary": "Undirected edges improve Reuters performance but hurt Polarity and IMDB, explained by topic classification versus sentiment analysis and word order.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s10::p003",
+     "summary": "Removing the master node deteriorates performance across all datasets, showing its value for encoding a document summary during message passing.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s10::p004",
+     "summary": "Using sum instead of mean without renormalization decreases performance everywhere, suggesting neighbor representation distributions matter more than structure.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s10::p005",
+     "summary": "Replacing the GRU combine function with identity makes updates neighbors-only, hurting performance except on Reuters and stressing root node importance.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s11::p000",
+     "summary": "The following brief review covers relevant studies ranked by increasing similarity with this work.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s11::p001",
+     "summary": "BIBREF9, BIBREF54, BIBREF11, and BIBREF10 run node classification on citation networks where text only provides node features.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s11::p002",
+     "summary": "BIBREF55 and BIBREF7 use $k$-nearest neighbor similarity graphs for document classification, with BIBREF7 representing each document as a graph.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s11::p003",
+     "summary": "BIBREF56 uses a GNN for hierarchical classification into a large taxonomy of topics with word co-occurrence networks and word embeddings.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s11::p004",
+     "summary": "BIBREF53 builds one undirected word-document graph with TF-IDF and pointwise mutual information weights for semi-supervised node classification.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s11::p005",
+     "summary": "MPAD differs from BIBREF53 by being inductive, using directed graphs, losing corpus-level dependencies, and avoiding vocabulary-size-dependent PMI computation.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s12::p000",
+     "summary": "MPAD applies message passing to NLP, performs competitively on 10 standard text classification datasets, and includes three improved hierarchical variants.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "passage_id": "1908.06267::s13::p000",
+     "summary": "The authors thank the NVidia corporation for donating a GPU through their GPU grant program.",
+     "group_id": "1908.06267::g01"
+    }
+   ],
+   "n_raw": 17,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 2436,
+    "completion_tokens": 776,
+    "total_tokens": 3212,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

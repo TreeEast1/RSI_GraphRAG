@@ -1,0 +1,70 @@
+{
+ "paper_id": "1909.00512",
+ "title": "How Contextual are Contextualized Word Representations? Comparing the Geometry of BERT, ELMo, and GPT-2 Embeddings",
+ "abstract": "Replacing static word embeddings with contextualized word representations has yielded significant improvements on many NLP tasks. However, just how contextual are the contextualized representations produced by models such as ELMo and BERT? Are there infinitely many context-specific representations for each word, or are words essentially assigned one of a finite number of word-sense representations? For one, we find that the contextualized representations of all words are not isotropic in any layer of the contextualizing model. While representations of the same word in different contexts still have a greater cosine similarity than those of two different words, this self-similarity is much lower in upper layers. This suggests that upper layers of contextualizing models produce more context-specific representations, much like how upper layers of LSTMs produce more task-specific representations. In all layers of ELMo, BERT, and GPT-2, on average, less than 5% of the variance in a word's contextualized representations can be explained by a static embedding for that word, providing some justification for the success of contextualized representations.",
+ "sections": [
+  "Introduction",
+  "Related Work ::: Static Word Embeddings",
+  "Related Work ::: Contextualized Word Representations",
+  "Related Work ::: Probing Tasks",
+  "Approach ::: Contextualizing Models",
+  "Approach ::: Data",
+  "Approach ::: Measures of Contextuality",
+  "Approach ::: Measures of Contextuality ::: Definition 1",
+  "Approach ::: Measures of Contextuality ::: Definition 2",
+  "Approach ::: Measures of Contextuality ::: Definition 3",
+  "Approach ::: Adjusting for Anisotropy",
+  "Findings ::: (An)Isotropy ::: Contextualized representations are anisotropic in all non-input layers.",
+  "Findings ::: (An)Isotropy ::: Contextualized representations are generally more anisotropic in higher layers.",
+  "Findings ::: Context-Specificity ::: Contextualized word representations are more context-specific in higher layers.",
+  "Findings ::: Context-Specificity ::: Stopwords (e.g., `the', `of', `to') have among the most context-specific representations.",
+  "Findings ::: Context-Specificity ::: Context-specificity manifests very differently in ELMo, BERT, and GPT-2.",
+  "Findings ::: Context-Specificity ::: In ELMo, words in the same sentence are more similar to one another in upper layers.",
+  "Findings ::: Context-Specificity ::: In BERT, words in the same sentence are more dissimilar to one another in upper layers.",
+  "Findings ::: Context-Specificity ::: In GPT-2, word representations in the same sentence are no more similar to each other than randomly sampled words.",
+  "Findings ::: Static vs. Contextualized ::: On average, less than 5% of the variance in a word's contextualized representations can be explained by a static embedding.",
+  "Findings ::: Static vs. Contextualized ::: Principal components of contextualized representations in lower layers outperform GloVe and FastText on many benchmarks.",
+  "Future Work",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 44,
+ "n_tokens": 5660,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.00512::fig000",
+   "paper_id": "1909.00512",
+   "file": "5-Figure1-1.png",
+   "caption": "Figure 1: In almost all layers of BERT, ELMo, and GPT-2, the word representations are anisotropic (i.e., not directionally uniform): the average cosine similarity between uniformly randomly sampled words is non-zero. The one exception is ELMo’s input layer; this is not surprising given that it generates character-level embeddings without using context. Representations in higher layers are generally more anisotropic than those in lower ones.",
+   "n_tokens": 94
+  },
+  {
+   "caption_id": "1909.00512::fig001",
+   "paper_id": "1909.00512",
+   "file": "6-Figure2-1.png",
+   "caption": "Figure 2: The average cosine similarity between representations of the same word in different contexts is called the word’s self-similarity (see Definition 1). Above, we plot the average self-similarity of uniformly randomly sampled words after adjusting for anisotropy (see section 3.4). In all three models, the higher the layer, the lower the self-similarity, suggesting that contextualized word representations are more context-specific in higher layers.",
+   "n_tokens": 94
+  },
+  {
+   "caption_id": "1909.00512::fig002",
+   "paper_id": "1909.00512",
+   "file": "7-Figure3-1.png",
+   "caption": "Figure 3: The intra-sentence similarity is the average cosine similarity between each word representation in a sentence and their mean (see Definition 2). Above, we plot the average intra-sentence similarity of uniformly randomly sampled sentences, adjusted for anisotropy. This statistic reflects how context-specificity manifests in the representation space, and as seen above, it manifests very differently for ELMo, BERT, and GPT-2.",
+   "n_tokens": 89
+  },
+  {
+   "caption_id": "1909.00512::fig003",
+   "paper_id": "1909.00512",
+   "file": "8-Figure4-1.png",
+   "caption": "Figure 4: The maximum explainable variance (MEV) of a word is the proportion of variance in its contextualized representations that can be explained by their first principal component (see Definition 3). Above, we plot the average MEV of uniformly randomly sampled words after adjusting for anisotropy. In no layer of any model can more than 5% of the variance in a word’s contextualized representations be explained by a static embedding.",
+   "n_tokens": 91
+  },
+  {
+   "caption_id": "1909.00512::fig004",
+   "paper_id": "1909.00512",
+   "file": "8-Table1-1.png",
+   "caption": "Table 1: The performance of various static embeddings on word embedding benchmark tasks. The best result for each task is in bold. For the contextualizing models (ELMo, BERT, GPT-2), we use the first principal component of a word’s contextualized representations in a given layer as its static embedding. The static embeddings created using ELMo and BERT’s contextualized representations often outperform GloVe and FastText vectors.",
+   "n_tokens": 90
+  }
+ ]
+}

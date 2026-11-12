@@ -1,0 +1,452 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1706.08198::s00::p000",
+   "summary": "NMT has gained popularity, with Cho2014's encoder-decoder using two RNNs and DzmitryBahdana2014's attention-based NMT improving translation adequacy.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s00::p001",
+   "summary": "Open NMT questions include over-translation and under-translation, attributed by Tu2016, Mi2016a, and Feng2016 to incomplete source information transfer and lacking coverage vector.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s00::p002",
+   "summary": "NMT's cross-entropy objective does not directly maximize translation accuracy, while Shen2016's expected BLEU optimization improved accuracy but BLEU may permit word repetition.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s00::p003",
+   "summary": "tu2016neural introduced an encoder-decoder-reconstructor framework using back-translation from output sentences into original source sentences to address repeating and missing words.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s00::p004",
+   "summary": "Experiments on English-Japanese and Japanese-English parallel corpora show significant BLEU improvement and fewer repeating and missing words for English-Japanese, but not Japanese-English.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s00::p005",
+   "summary": "Jointly training forward translation and back-translation without pre-training fails, proving forward translation pre-training similar to conventional attention-based NMT is required.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s00::p006",
+   "summary": "The main contributions of this paper are as follows.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s01::p000",
+   "summary": "Prior NMT studies addressed missing or repeating words using PBSMT outputs or coverage vector, while this method uses back-translation and needs no additional testing parameters.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s01::p001",
+   "summary": "Meng2016 and Feng2016 attention mechanisms indirectly reduce over-translation, whereas this work directly penalizes translation mismatch by considering back-translation.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s01::p002",
+   "summary": "tu2016neural's encoder-decoder-reconstructor optimizes NMT by reconstructor using back-translation and significantly improves BLEU scores on a Chinese-English translation task.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p000",
+   "summary": "The attention-based NMT proposed by DzmitryBahdana2014 is described as shown in Figure FIGREF1.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p001",
+   "summary": "The encoder converts the input sequence INLINEFORM0 into a fixed-length vector using an RNN, with hidden state INLINEFORM2 at time step INLINEFORM1.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p002",
+   "summary": "A bidirectional RNN computes the forward state INLINEFORM0 and backward state INLINEFORM1 by DISPLAYFORM0.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p003",
+   "summary": "The text presents DISPLAYFORM0.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p004",
+   "summary": "INLINEFORM0 and INLINEFORM1 are nonlinear functions, and hidden states INLINEFORM2 are converted into fixed-length vector INLINEFORM3 as DISPLAYFORM0.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p005",
+   "summary": "INLINEFORM0 is a nonlinear function.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p006",
+   "summary": "The decoder converts fixed-length vector INLINEFORM0 into target sequence INLINEFORM1 using an RNN, computing output word INLINEFORM3 probability at time step INLINEFORM2.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p007",
+   "summary": "INLINEFORM0 is a nonlinear function, and decoder hidden state INLINEFORM1 is presented as DISPLAYFORM0.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p008",
+   "summary": "The decoder hidden state uses previous hidden state INLINEFORM0, previous target word INLINEFORM1, and context vector INLINEFORM2.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p009",
+   "summary": "Context vector INLINEFORM0 is a weighted sum of each encoder hidden state INLINEFORM1 and is presented as DISPLAYFORM0.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p010",
+   "summary": "Weight INLINEFORM0 is a normalized probability distribution computed by DISPLAYFORM0.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p012",
+   "summary": "INLINEFORM0 is a weight vector, and INLINEFORM1 and INLINEFORM2 are weight matrices.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p013",
+   "summary": "The objective function is defined by DISPLAYFORM0.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p014",
+   "summary": "INLINEFORM0 is the number of data, and INLINEFORM1 is a model parameter.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s02::p015",
+   "summary": "The hyperbolic tangent function or the rectified linear unit are generally used as nonlinear functions.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s03::p000",
+   "summary": "The encoder-decoder-reconstructor framework combines standard attention-based NMT by DzmitryBahdana2014 with a reconstructor back-translating decoder hidden states to the source sentence.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s03::p001",
+   "summary": "The reconstructor back-translates decoder hidden state into source sequence INLINEFORM0, computing output word INLINEFORM2 probability at time step INLINEFORM1 by DISPLAYFORM0.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s03::p002",
+   "summary": "INLINEFORM0 is a nonlinear function, and reconstructor hidden state INLINEFORM1 is presented as DISPLAYFORM0.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s03::p003",
+   "summary": "The reconstructor hidden state uses previous hidden state INLINEFORM0, previous source word INLINEFORM1, and inverse context vector INLINEFORM2.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s03::p004",
+   "summary": "Inverse context vector INLINEFORM0 is a weighted sum of each decoder hidden state INLINEFORM1 on forward translation and is presented as DISPLAYFORM0.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s03::p009",
+   "summary": "INLINEFORM0 is the number of data, INLINEFORM1 and INLINEFORM2 are model parameters, and INLINEFORM3 weights forward translation and back-translation.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s03::p010",
+   "summary": "The objective function has forward measuring translation fluency and backward measuring translation adequacy, better guiding parameter training for overall translation quality.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s04::p000",
+   "summary": "The encoder-decoder-reconstructor is trained with likelihood of both encoder-decoder and reconstructor, with tu2016neural training back-translation after forward translation pre-training.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s04::p001",
+   "summary": "The authors experiment with jointly training forward translation and back-translation without pre-training, which may learn a globally optimal model.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s05::p000",
+   "summary": "tu2016neural used beam search on testing, but this paper does not use beam search for simplicity and effectiveness.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s06::p000",
+   "summary": "The encoder-decoder-reconstructor framework for NMT was evaluated on English-Japanese and Japanese-English translation tasks.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s07::p000",
+   "summary": "Two parallel corpora, ASPEC and NTCIR PatentMT Parallel Corpus, were used, with ASPEC training data limited to the first 1 million sentences and sentences with more than 40 words excluded.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s08::p000",
+   "summary": "Models included baseline-NMT, encoder-decoder-reconstructor, and jointly trained encoder-decoder-reconstructor without pre-training, with RNN settings of 512 hidden units, 512 embedding units, 30,000 vocabulary size, and 64 batch size.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s09::p000",
+   "summary": "The encoder-decoder-reconstructor significantly improves BLEU by 1.01 points on ASPEC and 1.37 points on NTCIR in English-Japanese translation, but not Japanese-English.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s09::p001",
+   "summary": "Table TABREF24 shows English-Japanese examples where encoder-decoder-reconstructor restores missing text and avoids repeated “UTF8min新生児” and “UTF8min30歳以上の” outputs.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s09::p002",
+   "summary": "Figures FIGREF25 and FIGREF25 show baseline-NMT attention errors and repeated attention, while encoder-decoder-reconstructor attention almost correctly attends input words.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s09::p003",
+   "summary": "Table TABREF28 shows reduced redundant word occurrences in all cases, confirming encoder-decoder-reconstructor reduces repeating and missing words while maintaining translation quality.",
+   "group_id": "1706.08198::g00"
+  },
+  {
+   "passage_id": "1706.08198::s10::p000",
+   "summary": "The encoder-decoder-reconstructor significantly improves BLEU scores and alleviates repeating and missing words on English-Japanese translation, and cannot be trained well without pre-training.",
+   "group_id": "1706.08198::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1706.08198::g00",
+   "summaries": [
+    {
+     "passage_id": "1706.08198::s00::p000",
+     "summary": "NMT has gained popularity, with Cho2014's encoder-decoder using two RNNs and DzmitryBahdana2014's attention-based NMT improving translation adequacy.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s00::p001",
+     "summary": "Open NMT questions include over-translation and under-translation, attributed by Tu2016, Mi2016a, and Feng2016 to incomplete source information transfer and lacking coverage vector.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s00::p002",
+     "summary": "NMT's cross-entropy objective does not directly maximize translation accuracy, while Shen2016's expected BLEU optimization improved accuracy but BLEU may permit word repetition.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s00::p003",
+     "summary": "tu2016neural introduced an encoder-decoder-reconstructor framework using back-translation from output sentences into original source sentences to address repeating and missing words.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s00::p004",
+     "summary": "Experiments on English-Japanese and Japanese-English parallel corpora show significant BLEU improvement and fewer repeating and missing words for English-Japanese, but not Japanese-English.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s00::p005",
+     "summary": "Jointly training forward translation and back-translation without pre-training fails, proving forward translation pre-training similar to conventional attention-based NMT is required.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s00::p006",
+     "summary": "The main contributions of this paper are as follows.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s01::p000",
+     "summary": "Prior NMT studies addressed missing or repeating words using PBSMT outputs or coverage vector, while this method uses back-translation and needs no additional testing parameters.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s01::p001",
+     "summary": "Meng2016 and Feng2016 attention mechanisms indirectly reduce over-translation, whereas this work directly penalizes translation mismatch by considering back-translation.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s01::p002",
+     "summary": "tu2016neural's encoder-decoder-reconstructor optimizes NMT by reconstructor using back-translation and significantly improves BLEU scores on a Chinese-English translation task.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p000",
+     "summary": "The attention-based NMT proposed by DzmitryBahdana2014 is described as shown in Figure FIGREF1.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p001",
+     "summary": "The encoder converts the input sequence INLINEFORM0 into a fixed-length vector using an RNN, with hidden state INLINEFORM2 at time step INLINEFORM1.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p002",
+     "summary": "A bidirectional RNN computes the forward state INLINEFORM0 and backward state INLINEFORM1 by DISPLAYFORM0.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p003",
+     "summary": "The text presents DISPLAYFORM0.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p004",
+     "summary": "INLINEFORM0 and INLINEFORM1 are nonlinear functions, and hidden states INLINEFORM2 are converted into fixed-length vector INLINEFORM3 as DISPLAYFORM0.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p005",
+     "summary": "INLINEFORM0 is a nonlinear function.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p006",
+     "summary": "The decoder converts fixed-length vector INLINEFORM0 into target sequence INLINEFORM1 using an RNN, computing output word INLINEFORM3 probability at time step INLINEFORM2.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p007",
+     "summary": "INLINEFORM0 is a nonlinear function, and decoder hidden state INLINEFORM1 is presented as DISPLAYFORM0.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p008",
+     "summary": "The decoder hidden state uses previous hidden state INLINEFORM0, previous target word INLINEFORM1, and context vector INLINEFORM2.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p009",
+     "summary": "Context vector INLINEFORM0 is a weighted sum of each encoder hidden state INLINEFORM1 and is presented as DISPLAYFORM0.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p010",
+     "summary": "Weight INLINEFORM0 is a normalized probability distribution computed by DISPLAYFORM0.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p012",
+     "summary": "INLINEFORM0 is a weight vector, and INLINEFORM1 and INLINEFORM2 are weight matrices.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p013",
+     "summary": "The objective function is defined by DISPLAYFORM0.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p014",
+     "summary": "INLINEFORM0 is the number of data, and INLINEFORM1 is a model parameter.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s02::p015",
+     "summary": "The hyperbolic tangent function or the rectified linear unit are generally used as nonlinear functions.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s03::p000",
+     "summary": "The encoder-decoder-reconstructor framework combines standard attention-based NMT by DzmitryBahdana2014 with a reconstructor back-translating decoder hidden states to the source sentence.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s03::p001",
+     "summary": "The reconstructor back-translates decoder hidden state into source sequence INLINEFORM0, computing output word INLINEFORM2 probability at time step INLINEFORM1 by DISPLAYFORM0.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s03::p002",
+     "summary": "INLINEFORM0 is a nonlinear function, and reconstructor hidden state INLINEFORM1 is presented as DISPLAYFORM0.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s03::p003",
+     "summary": "The reconstructor hidden state uses previous hidden state INLINEFORM0, previous source word INLINEFORM1, and inverse context vector INLINEFORM2.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s03::p004",
+     "summary": "Inverse context vector INLINEFORM0 is a weighted sum of each decoder hidden state INLINEFORM1 on forward translation and is presented as DISPLAYFORM0.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s03::p009",
+     "summary": "INLINEFORM0 is the number of data, INLINEFORM1 and INLINEFORM2 are model parameters, and INLINEFORM3 weights forward translation and back-translation.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s03::p010",
+     "summary": "The objective function has forward measuring translation fluency and backward measuring translation adequacy, better guiding parameter training for overall translation quality.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s04::p000",
+     "summary": "The encoder-decoder-reconstructor is trained with likelihood of both encoder-decoder and reconstructor, with tu2016neural training back-translation after forward translation pre-training.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s04::p001",
+     "summary": "The authors experiment with jointly training forward translation and back-translation without pre-training, which may learn a globally optimal model.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s05::p000",
+     "summary": "tu2016neural used beam search on testing, but this paper does not use beam search for simplicity and effectiveness.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s06::p000",
+     "summary": "The encoder-decoder-reconstructor framework for NMT was evaluated on English-Japanese and Japanese-English translation tasks.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s07::p000",
+     "summary": "Two parallel corpora, ASPEC and NTCIR PatentMT Parallel Corpus, were used, with ASPEC training data limited to the first 1 million sentences and sentences with more than 40 words excluded.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s08::p000",
+     "summary": "Models included baseline-NMT, encoder-decoder-reconstructor, and jointly trained encoder-decoder-reconstructor without pre-training, with RNN settings of 512 hidden units, 512 embedding units, 30,000 vocabulary size, and 64 batch size.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s09::p000",
+     "summary": "The encoder-decoder-reconstructor significantly improves BLEU by 1.01 points on ASPEC and 1.37 points on NTCIR in English-Japanese translation, but not Japanese-English.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s09::p001",
+     "summary": "Table TABREF24 shows English-Japanese examples where encoder-decoder-reconstructor restores missing text and avoids repeated “UTF8min新生児” and “UTF8min30歳以上の” outputs.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s09::p002",
+     "summary": "Figures FIGREF25 and FIGREF25 show baseline-NMT attention errors and repeated attention, while encoder-decoder-reconstructor attention almost correctly attends input words.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s09::p003",
+     "summary": "Table TABREF28 shows reduced redundant word occurrences in all cases, confirming encoder-decoder-reconstructor reduces repeating and missing words while maintaining translation quality.",
+     "group_id": "1706.08198::g00"
+    },
+    {
+     "passage_id": "1706.08198::s10::p000",
+     "summary": "The encoder-decoder-reconstructor significantly improves BLEU scores and alleviates repeating and missing words on English-Japanese translation, and cannot be trained well without pre-training.",
+     "group_id": "1706.08198::g00"
+    }
+   ],
+   "n_raw": 43,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4016,
+    "completion_tokens": 2079,
+    "total_tokens": 6095,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

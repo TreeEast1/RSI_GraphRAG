@@ -1,0 +1,417 @@
+{
+ "1909.00105::s00::p000": [
+  [
+   "existing recipe generation approaches",
+   "focus on",
+   "creating coherent recipes given all ingredients and a recipe name"
+  ],
+  [
+   "Such models",
+   "do not address",
+   "issues of personal preference (e.g. culinary tastes, garnish choices) and incomplete recipe details"
+  ]
+ ],
+ "1909.00105::s00::p001": [
+  [
+   "user profiles",
+   "are",
+   "learned latent representations of recipes previously consumed by a user"
+  ],
+  [
+   "Quantitative (perplexity, user-ranking) and qualitative analysis on user-aware model outputs",
+   "confirm",
+   "that personalization indeed assists in generating plausible recipes from incomplete ingredients"
+  ]
+ ],
+ "1909.00105::s00::p002": [
+  [
+   "personalized text generation",
+   "has seen success in",
+   "conveying user writing styles in the product review and dialogue spaces"
+  ],
+  [
+   "output quality",
+   "is heavily dependent on",
+   "the content of the instructions—such as ingredients and cooking techniques"
+  ]
+ ],
+ "1909.00105::s00::p006": [
+  [
+   "new evaluation strategies",
+   "center on",
+   "quantitative measures of coherence"
+  ],
+  [
+   "personalized models",
+   "generate",
+   "high-quality and specific recipes that align with historical user preferences"
+  ]
+ ],
+ "1909.00105::s01::p000": [
+  [
+   "Large-scale transformer-based language models",
+   "have shown",
+   "surprising expressivity and fluency in creative and conditional long-text generation"
+  ],
+  [
+   "Recent works",
+   "have proposed",
+   "hierarchical methods that condition on narrative frameworks to generate internally consistent long texts"
+  ]
+ ],
+ "1909.00105::s01::p001": [
+  [
+   "Recipe generation",
+   "belongs to",
+   "the field of data-to-text natural language generation"
+  ],
+  [
+   "Similar hierarchical approaches that infer a full ingredient list to constrain generation",
+   "will not help personalize",
+   "recipes"
+  ]
+ ],
+ "1909.00105::s01::p002": [
+  [
+   "A recent line of work",
+   "has explored",
+   "user- and item-dependent aspect-aware review generation"
+  ]
+ ],
+ "1909.00105::s02::p001": [
+  [
+   "the embedded token sequence",
+   "is passed to",
+   "a two-layered bidirectional GRU (BiGRU)"
+  ]
+ ],
+ "1909.00105::s02::p002": [
+  [
+   "Ingredient Attention",
+   "applies attention over",
+   "the encoded ingredients"
+  ],
+  [
+   "Ingredient Attention",
+   "defines",
+   "an attention-score function $\\alpha $ with key $K$ and query $Q$"
+  ]
+ ],
+ "1909.00105::s02::p003": [
+  [
+   "attention-score function $\\alpha $",
+   "has",
+   "trainable weights $W_{\\alpha }$, bias $\\mathbf {b}_{\\alpha }$, and normalization term $Z$"
+  ],
+  [
+   "ingredient context $\\mathbf {a}_{t}^{i} \\in \\mathbb {R}^{d_h}$",
+   "is calculated at",
+   "decoding time $t$"
+  ]
+ ],
+ "1909.00105::s02::p004": [
+  [
+   "The decoder",
+   "is",
+   "a two-layer GRU with hidden state $h_t$"
+  ],
+  [
+   "hidden state $h_t$",
+   "is conditioned on",
+   "previous hidden state $h_{t-1}$ and input token $w_{r, t}$ from the original recipe text"
+  ],
+  [
+   "concatenated encoder outputs",
+   "are projected as",
+   "the initial decoder hidden state"
+  ]
+ ],
+ "1909.00105::s02::p005": [
+  [
+   "generation",
+   "is biased toward",
+   "user preferences"
+  ],
+  [
+   "two different schemes",
+   "model preferences from",
+   "user histories"
+  ],
+  [
+   "two different schemes",
+   "are",
+   "(1) recipe interactions, and (2) techniques seen therein (defined in data)"
+  ]
+ ],
+ "1909.00105::s02::p006": [
+  [
+   "each recipe",
+   "can be represented by",
+   "an embedding from a recipe embedding layer $\\mathcal {R}$ or an average of the name tokens embedded by $\\mathcal {V}$"
+  ],
+  [
+   "These embeddings",
+   "are used in",
+   "the `Prior Recipe' and `Prior Name' models, respectively"
+  ]
+ ],
+ "1909.00105::s02::p007": [
+  [
+   "recipe representation $\\mathbf {r} \\in \\mathbb {R}^{d_r}$",
+   "has",
+   "$d_r$ as recipe- or vocabulary-embedding size depending on the recipe representation"
+  ],
+  [
+   "prior recipe attention context $\\mathbf {a}_{t}^{r_u}$",
+   "is calculated as",
+   "the prior recipe attention context"
+  ]
+ ],
+ "1909.00105::s02::p008": [
+  [
+   "prior technique preference",
+   "is calculated by",
+   "normalizing co-occurrence between users and techniques seen in $R^+_u$"
+  ],
+  [
+   "normalizing co-occurrence between users and techniques seen in $R^+_u$",
+   "obtains",
+   "a preference vector $\\rho _{u}$"
+  ],
+  [
+   "Each technique $x$",
+   "is embedded via",
+   "a technique embedding layer $\\mathcal {X}$"
+  ]
+ ],
+ "1909.00105::s02::p010": [
+  [
+   "Attention Fusion Layer",
+   "fuses",
+   "all contexts calculated at time $t$"
+  ],
+  [
+   "all contexts calculated at time $t$",
+   "are concatenated with",
+   "decoder GRU output and previous token embedding"
+  ]
+ ],
+ "1909.00105::s02::p012": [
+  [
+   "the log-likelihood of the generated sequence conditioned on input specifications and user preferences",
+   "is maximized",
+   "the log-likelihood of the generated sequence conditioned on input specifications and user preferences"
+  ],
+  [
+   "the Prior Name model",
+   "attends strongly on",
+   "previously consumed savory recipes"
+  ],
+  [
+   "the Prior Name model",
+   "suggests",
+   "the usage of an additional ingredient (`cilantro')"
+  ]
+ ],
+ "1909.00105::s03::p000": [
+  [
+   "discarding users with fewer than 4 reviews",
+   "gives",
+   "180K+ recipes and 700K+ reviews"
+  ]
+ ],
+ "1909.00105::s03::p001": [
+  [
+   "average recipe length",
+   "is",
+   "117 tokens"
+  ],
+  [
+   "Byte-Pair Encoding (BPE) tokenization",
+   "gives",
+   "a training vocabulary of 15K tokens across 19M total mentions"
+  ]
+ ],
+ "1909.00105::s03::p002": [
+  [
+   "most recent review for each user",
+   "is kept as",
+   "the test set"
+  ],
+  [
+   "second most recent review",
+   "is kept for",
+   "validation"
+  ],
+  [
+   "remainder",
+   "is kept for",
+   "training"
+  ],
+  [
+   "evaluation",
+   "is only on",
+   "recipes not in the training set"
+  ]
+ ],
+ "1909.00105::s03::p003": [
+  [
+   "list of cooking techniques",
+   "is",
+   "58 cooking techniques"
+  ],
+  [
+   "cooking actions",
+   "are",
+   "384 cooking actions"
+  ],
+  [
+   "most common techniques (bake, combine, pour, boil)",
+   "account for",
+   "36.5% of technique mentions"
+  ],
+  [
+   "technique adherence",
+   "is approximated via",
+   "string match between the recipe text and technique list"
+  ]
+ ],
+ "1909.00105::s04::p000": [
+  [
+   "top-$k$ sampling",
+   "finds",
+   "$k=3$ to produce satisfactory results"
+  ],
+  [
+   "Embedding dimensions for vocabulary, ingredient, recipe, techniques, and caloric level",
+   "are",
+   "300, 10, 50, 50, and 5 (respectively)"
+  ],
+  [
+   "Adam optimizer",
+   "uses",
+   "a learning rate of $10^{-3}$"
+  ],
+  [
+   "learning rate",
+   "is annealed with",
+   "a decay rate of 0.9"
+  ],
+  [
+   "teacher-forcing",
+   "is used in",
+   "all training epochs"
+  ]
+ ],
+ "1909.00105::s04::p001": [
+  [
+   "personalized models",
+   "are compared against",
+   "two baselines"
+  ],
+  [
+   "first baseline",
+   "is",
+   "a name-based Nearest-Neighbor model (NN)"
+  ],
+  [
+   "simple Encoder-Decoder baseline with ingredient attention (Enc-Dec)",
+   "provides",
+   "comparable performance and lower complexity"
+  ],
+  [
+   "All personalized models",
+   "outperform",
+   "baseline in BPE perplexity"
+  ]
+ ],
+ "1909.00105::s04::p003": [
+  [
+   "Generation quality",
+   "progressively improves from",
+   "generic baseline output to a blended cocktail produced by our best performing model"
+  ],
+  [
+   "Models attending over prior recipes",
+   "explicitly reference",
+   "ingredients"
+  ],
+  [
+   "The Prior Name model",
+   "further suggests",
+   "the addition of lemon and mint"
+  ],
+  [
+   "lemon and mint",
+   "are reasonably associated with",
+   "previously consumed recipes like coconut mousse and pork skewers"
+  ]
+ ],
+ "1909.00105::s04::p004": [
+  [
+   "ten different user profiles",
+   "include",
+   "one `gold' user who consumed the original recipe, and nine randomly generated user profiles"
+  ],
+  [
+   "user matching accuracy (UMA)",
+   "is",
+   "the proportion where the gold user is ranked highest"
+  ],
+  [
+   "The Prior Name model",
+   "achieves",
+   "the best UMA and MRR by a large margin"
+  ]
+ ],
+ "1909.00105::s04::p005": [
+  [
+   "Each recipe step",
+   "is encoded by",
+   "BERT BIBREF34"
+  ]
+ ],
+ "1909.00105::s04::p006": [
+  [
+   "The step entailment score",
+   "is computed as",
+   "the average of scores for each set of consecutive steps in each recipe, averaged over every generated recipe for a model"
+  ]
+ ],
+ "1909.00105::s04::p007": [
+  [
+   "human evaluators",
+   "preferred",
+   "personalized model outputs to baseline 63% of the time"
+  ],
+  [
+   "60% of users",
+   "found",
+   "recipes generated by personalized models to be more coherent and preferable to those generated by baseline models"
+  ]
+ ],
+ "1909.00105::s05::p000": [
+  [
+   "a large novel dataset",
+   "has",
+   "180K recipes and 700K reviews"
+  ]
+ ],
+ "1909.00105::s08::p000": [
+  [
+   "users",
+   "were given",
+   "a partial recipe specification (name and 3-5 key ingredients), as well as two generated recipes labeled `A' and `B'"
+  ],
+  [
+   "one recipe",
+   "is generated by",
+   "one of our three personalized models (Prior Tech, Prior Name, Prior Recipe)"
+  ],
+  [
+   "The order of recipe presentation (A/B)",
+   "is randomly selected for",
+   "each question"
+  ]
+ ]
+}

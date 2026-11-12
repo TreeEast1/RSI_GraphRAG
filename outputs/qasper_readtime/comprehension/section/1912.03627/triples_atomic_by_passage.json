@@ -1,0 +1,804 @@
+{
+ "1912.03627::s00::p000": [
+  [
+   "deep learning techniques",
+   "outperform",
+   "the other conventional methods in most of the speech-related tasks"
+  ],
+  [
+   "Training robust deep neural networks for each task",
+   "depends on",
+   "the availability of powerful processing GPUs, as well as standard and large scale datasets"
+  ],
+  [
+   "large-scale datasets",
+   "are available in",
+   "text-independent speaker verification"
+  ]
+ ],
+ "1912.03627::s00::p001": [
+  [
+   "experiments with end-to-end architectures conducted on large proprietary databases",
+   "have demonstrated",
+   "their superiority over traditional approaches BIBREF1"
+  ],
+  [
+   "text-dependent speaker recognition",
+   "lacks",
+   "large-scale publicly available databases"
+  ],
+  [
+   "RSR2015 BIBREF2",
+   "contains",
+   "speech data collected from 300 individuals in a controlled manner"
+  ],
+  [
+   "RedDots BIBREF3",
+   "is used primarily for",
+   "evaluation rather than training"
+  ],
+  [
+   "RedDots BIBREF3",
+   "has",
+   "only 64 speakers"
+  ]
+ ],
+ "1912.03627::s00::p002": [
+  [
+   "large amounts of training data",
+   "are required for",
+   "training automatic speech recognition (ASR) systems"
+  ],
+  [
+   "Such datasets",
+   "should be characterized by",
+   "high variability with respect to speakers, age and dialects"
+  ],
+  [
+   "several datasets with these properties",
+   "are available for",
+   "languages like English, Mandarin, French"
+  ]
+ ],
+ "1912.03627::s00::p003": [
+  [
+   "The main goal of the DeepMine project",
+   "was to collect",
+   "speech from at least a few thousand speakers"
+  ],
+  [
+   "The project",
+   "started at",
+   "the beginning of 2017"
+  ],
+  [
+   "the data collection",
+   "began in",
+   "the middle of 2017"
+  ],
+  [
+   "The project",
+   "finished at",
+   "the end of 2018"
+  ]
+ ],
+ "1912.03627::s01::p000": [
+  [
+   "DeepMine",
+   "is publicly available for",
+   "everybody with a variety of licenses for different users"
+  ],
+  [
+   "DeepMine",
+   "was collected using",
+   "crowdsourcing BIBREF4"
+  ],
+  [
+   "The data collection",
+   "was done using",
+   "an Android application"
+  ],
+  [
+   "Each respondent",
+   "recorded",
+   "several phrases in different sessions"
+  ]
+ ],
+ "1912.03627::s02::p000": [
+  [
+   "the main post-processing step",
+   "was to filter out",
+   "problematic utterances"
+  ],
+  [
+   "Possible problems",
+   "include",
+   "speaker word insertions (e.g. repeating some part of a phrase), deletions, substitutions, and involuntary disfluencies"
+  ],
+  [
+   "a custom decoding graph",
+   "was generated for",
+   "each phrase"
+  ],
+  [
+   "The decoding graph",
+   "allows for",
+   "word skipping and word insertion in the phrase"
+  ]
+ ],
+ "1912.03627::s02::p001": [
+  [
+   "any utterances with errors",
+   "were removed from",
+   "the enrollment and test lists"
+  ],
+  [
+   "a sub-part of the utterance which is correctly aligned to the corresponding transcription",
+   "is kept for",
+   "the speech recognition part"
+  ],
+  [
+   "around 190 thousand utterances with full transcription",
+   "have remained in",
+   "the database"
+  ],
+  [
+   "10 thousand with sub-part alignment",
+   "have remained in",
+   "the database"
+  ]
+ ],
+ "1912.03627::s03::p000": [
+  [
+   "1969 respondents",
+   "remained in",
+   "the database"
+  ],
+  [
+   "1149 of them",
+   "being",
+   "male"
+  ],
+  [
+   "820 female",
+   "remained in",
+   "the database"
+  ],
+  [
+   "297 of the respondents",
+   "could not read",
+   "English"
+  ]
+ ],
+ "1912.03627::s03::p001": [
+  [
+   "The last status of the database",
+   "can be found on",
+   "its website"
+  ],
+  [
+   "a limited number of samples",
+   "can be found on",
+   "its website"
+  ]
+ ],
+ "1912.03627::s04::p000": [
+  [
+   "The DeepMine database",
+   "consists of",
+   "three parts"
+  ],
+  [
+   "The first one",
+   "contains",
+   "fixed common phrases to perform text-dependent speaker verification"
+  ],
+  [
+   "The second part",
+   "consists of",
+   "random sequences of words useful for text-prompted speaker verification"
+  ],
+  [
+   "the last part",
+   "includes",
+   "phrases with word- and phoneme-level transcription"
+  ]
+ ],
+ "1912.03627::s05::p000": [
+  [
+   "This part",
+   "contains",
+   "a set of fixed phrases"
+  ],
+  [
+   "a set of fixed phrases",
+   "are used to verify",
+   "speakers in text-dependent mode"
+  ],
+  [
+   "Each speaker",
+   "utters",
+   "5 Persian phrases"
+  ],
+  [
+   "5 phrases selected from Part1 of the RedDots database",
+   "are also recorded",
+   "if the speaker can read English"
+  ]
+ ],
+ "1912.03627::s05::p001": [
+  [
+   "speakers with more recording sessions",
+   "are included in",
+   "the evaluation set"
+  ],
+  [
+   "the rest of the speakers",
+   "are used for training in",
+   "the background set"
+  ],
+  [
+   "all background sets",
+   "are basically",
+   "training data"
+  ],
+  [
+   "the rows in Table TABREF13",
+   "corresponds to",
+   "the different experimental setups"
+  ],
+  [
+   "the rows in Table TABREF13",
+   "shows",
+   "the numbers of speakers in each set"
+  ],
+  [
+   "there",
+   "are",
+   "fewer speakers in each set for English than for Persian"
+  ],
+  [
+   "a small “dev” set",
+   "can be used for",
+   "parameter tuning"
+  ]
+ ],
+ "1912.03627::s05::p002": [
+  [
+   "All trials in one trial list",
+   "have",
+   "the same number of enrollment utterances (3 to 6) and only one test utterance"
+  ],
+  [
+   "All enrollment utterances in a trial",
+   "are taken from",
+   "different consecutive sessions"
+  ],
+  [
+   "the test utterance",
+   "is taken from",
+   "yet another session"
+  ],
+  [
+   "the 100-spk with 3-session enrollment (3-sess)",
+   "is considered as",
+   "the main evaluation condition"
+  ],
+  [
+   "the number of trials for Persian 3-sess",
+   "are shown for",
+   "the different types of trial in the text-dependent speaker verification (SV)"
+  ],
+  [
+   "the number of trials for IC and IW cases",
+   "are",
+   "the same"
+  ]
+ ],
+ "1912.03627::s06::p000": [
+  [
+   "3 random sequences of Persian month names",
+   "are shown to",
+   "the respondent in two modes"
+  ],
+  [
+   "the first mode sequence",
+   "consists of",
+   "all 12 months"
+  ],
+  [
+   "The second mode",
+   "contains",
+   "a sequence of 3 month names"
+  ],
+  [
+   "In each 8 sessions received by a respondent from the server",
+   "there are",
+   "3 enrollment phrases of all 12 months (all in just one session), and $7 \\times 3$ other test phrases"
+  ]
+ ],
+ "1912.03627::s06::p001": [
+  [
+   "three experimental setups with different number of speaker in the evaluation set",
+   "are defined",
+   "similar to the text-dependent case"
+  ],
+  [
+   "trials",
+   "are enrolled on",
+   "utterances of all words from 1 to 3 different sessions (i.e. 3 to 9 utterances)"
+  ],
+  [
+   "two conditions for test utterances",
+   "are considered as",
+   "seq test utterance with only 3 or 4 words and full test utterances with all words"
+  ],
+  [
+   "the 100-spk with 1-session enrolment (1-sess)",
+   "is considered as",
+   "the main evaluation condition for the text-prompted case"
+  ]
+ ],
+ "1912.03627::s07::p000": [
+  [
+   "8 Persian phrases that have already been transcribed on the phone level",
+   "are displayed to",
+   "the respondent"
+  ],
+  [
+   "These phrases",
+   "are chosen mostly from",
+   "news and Persian Wikipedia"
+  ],
+  [
+   "8 other Persian phrases",
+   "are also prompted to",
+   "the respondent to have exactly 24 phrases in each recording session"
+  ]
+ ],
+ "1912.03627::s07::p001": [
+  [
+   "This part",
+   "can be useful at least for",
+   "three potential applications"
+  ],
+  [
+   "This part",
+   "can be used for",
+   "text-independent speaker verification"
+  ],
+  [
+   "The second application of this part",
+   "is",
+   "text-prompted speaker verification using random text"
+  ],
+  [
+   "the third application",
+   "is",
+   "large vocabulary speech recognition in Persian"
+  ]
+ ],
+ "1912.03627::s07::p002": [
+  [
+   "respondents with at least 17 recording sessions",
+   "are included to",
+   "the evaluation set"
+  ],
+  [
+   "respondents with 16 sessions",
+   "are included to",
+   "the development"
+  ],
+  [
+   "respondents with at least 8 sessions",
+   "are included to",
+   "the evaluation set"
+  ],
+  [
+   "respondents with 6 or 7 sessions",
+   "are included to",
+   "the development"
+  ]
+ ],
+ "1912.03627::s07::p003": [
+  [
+   "For text-independent SV",
+   "we have considered",
+   "4 scenarios for enrollment and 4 scenarios for test"
+  ],
+  [
+   "The speaker",
+   "can be enrolled using",
+   "utterances from 1, 2 or 3 consecutive sessions (1sess to 3sess) or using 8 utterances from 8 different sessions"
+  ],
+  [
+   "The test speech",
+   "can be",
+   "one utterance (1utt) for short duration scenario or all utterances in one session (1sess) for long duration case"
+  ],
+  [
+   "1sess-1utt and 1sess-1sess for 438-spk set",
+   "are considered as",
+   "the main evaluation setups for text-independent case"
+  ]
+ ],
+ "1912.03627::s07::p004": [
+  [
+   "text-prompted SV with random text",
+   "can use",
+   "the same setup as text-independent case together with corresponding utterance transcriptions"
+  ]
+ ],
+ "1912.03627::s08::p000": [
+  [
+   "Part3 of the DeepMine database",
+   "can be used for",
+   "Persian read speech recognition"
+  ],
+  [
+   "Part3 of the DeepMine database",
+   "can be used for",
+   "speaker recognition applications"
+  ]
+ ],
+ "1912.03627::s08::p001": [
+  [
+   "50 speakers (25 for each gender)",
+   "are randomly selected as",
+   "test speakers"
+  ],
+  [
+   "the utterances in the first 5 sessions",
+   "are included to",
+   "(small) test-set"
+  ],
+  [
+   "the other utterances of test speakers",
+   "are considered as",
+   "a large-test-set"
+  ],
+  [
+   "The test-set, large-test-set and train-set",
+   "contain",
+   "5.9, 28.5 and 450 hours of speech respectively"
+  ]
+ ],
+ "1912.03627::s08::p002": [
+  [
+   "Part3",
+   "has",
+   "about 8300 utterances"
+  ],
+  [
+   "about 8300 utterances in Part3",
+   "contain only",
+   "Persian full names (i.e. first and family name pairs)"
+  ],
+  [
+   "their phoneme transcriptions",
+   "were extracted automatically using",
+   "a trained Grapheme-to-Phoneme (G2P)"
+  ],
+  [
+   "These utterances",
+   "can be used to evaluate",
+   "the performance of a systems for name recognition"
+  ]
+ ],
+ "1912.03627::s10::p000": [
+  [
+   "an experiment",
+   "was conducted on",
+   "text-dependent speaker verification part of the database"
+  ],
+  [
+   "the i-vector based method",
+   "was applied to",
+   "the Persian portion of Part1"
+  ],
+  [
+   "20-dimensional MFCC features along with first and second derivatives",
+   "are extracted from",
+   "16 kHz signals"
+  ],
+  [
+   "20-dimensional MFCC features along with first and second derivatives",
+   "are extracted using",
+   "HTK BIBREF11 with 25 ms Hamming windowed frames with 15 ms overlap"
+  ]
+ ],
+ "1912.03627::s10::p001": [
+  [
+   "reported results",
+   "are obtained with",
+   "a 400-dimensional gender independent i-vector based system"
+  ],
+  [
+   "i-vectors",
+   "are first length-normalized",
+   "length-normalized"
+  ],
+  [
+   "Cosine distance",
+   "is used to obtain",
+   "speaker verification scores"
+  ],
+  [
+   "monophone HMMs",
+   "are used with",
+   "3 states and 8 Gaussian components in each state"
+  ]
+ ],
+ "1912.03627::s10::p002": [
+  [
+   "speaker verification experiments results",
+   "were reported in terms of",
+   "Equal Error Rate (EER) and Normalized Detection Cost Function"
+  ],
+  [
+   "text-dependent SV",
+   "has",
+   "4 types of trials"
+  ],
+  [
+   "Target-Correct and Imposter-Correct",
+   "refer to",
+   "trials when the pass-phrase is uttered correctly by target and imposter speakers respectively"
+  ],
+  [
+   "only the correct trials",
+   "are considered for",
+   "evaluating systems"
+  ]
+ ],
+ "1912.03627::s10::p003": [
+  [
+   "respondents' mobile brand and model",
+   "were used for",
+   "filtering trials"
+  ],
+  [
+   "the most difficult target trials",
+   "are",
+   "“NN”"
+  ],
+  [
+   "the most difficult non-target trials",
+   "are",
+   "“YY”"
+  ]
+ ],
+ "1912.03627::s10::p004": [
+  [
+   "the first row in Table TABREF23",
+   "shows",
+   "the results for all trials"
+  ],
+  [
+   "the DeepMine database",
+   "is more challenging than",
+   "both RSR2015 and RedDots databases"
+  ],
+  [
+   "the same i-vector/HMM-based method with both RWCCN and s-norm",
+   "has achieved",
+   "EER less than 0.3% for both genders"
+  ],
+  [
+   "EERs for DeepMine database without any channel-compensation techniques",
+   "are",
+   "2.1 and 3.7% for males and females respectively"
+  ]
+ ],
+ "1912.03627::s10::p005": [
+  [
+   "One interesting advantage of the DeepMine database",
+   "is having",
+   "several target speakers with more than one mobile device"
+  ],
+  [
+   "the second row in Table TABREF23",
+   "corresponds to",
+   "the most difficult trials"
+  ],
+  [
+   "this kind of channel effects",
+   "caused",
+   "severe degradation"
+  ]
+ ],
+ "1912.03627::s10::p006": [
+  [
+   "the results in the third row",
+   "show",
+   "the condition when target speakers at the test time use exactly the same device that was used for enrollment"
+  ],
+  [
+   "Comparing this row with the results in the first row",
+   "proves",
+   "how much improvement can be achieved when exactly the same device is used by the target speaker"
+  ]
+ ],
+ "1912.03627::s10::p007": [
+  [
+   "imposter speakers",
+   "use",
+   "the same device model at test time to fool the system"
+  ],
+  [
+   "device mismatch",
+   "is absent in",
+   "all trials"
+  ]
+ ],
+ "1912.03627::s10::p008": [
+  [
+   "the fifth row",
+   "shows",
+   "similar results"
+  ],
+  [
+   "imposter speakers",
+   "use",
+   "device of the same brand as the target speaker but with a different model"
+  ],
+  [
+   "the degradation",
+   "is",
+   "negligible"
+  ],
+  [
+   "mobiles from a specific brand (manufacturer)",
+   "have",
+   "different recording channel properties"
+  ]
+ ],
+ "1912.03627::s10::p009": [
+  [
+   "The degraded female results in the sixth row",
+   "show",
+   "the effect of using a different device model from the same brand for target trials"
+  ],
+  [
+   "the filters",
+   "bring",
+   "almost the same subsets of trials"
+  ]
+ ],
+ "1912.03627::s10::p010": [
+  [
+   "the first two and the last row of Table TABREF23",
+   "show",
+   "significantly worse performance obtained for the female trials as compared to males"
+  ],
+  [
+   "rows 3 to 6",
+   "exclude",
+   "such mismatched trials"
+  ],
+  [
+   "the performance for males and females",
+   "is",
+   "comparable"
+  ],
+  [
+   "the degraded results for females",
+   "are caused by",
+   "some problematic trials with device mismatch"
+  ],
+  [
+   "The exact reason for this degradation",
+   "needs",
+   "a further investigation"
+  ]
+ ],
+ "1912.03627::s10::p011": [
+  [
+   "the condition of the second row",
+   "is relaxed in",
+   "the last row of the table"
+  ],
+  [
+   "the target device",
+   "should have",
+   "different model possibly from the same brand"
+  ],
+  [
+   "imposter device",
+   "only needs to be from",
+   "the same brand"
+  ],
+  [
+   "the performance degradation",
+   "is smaller than",
+   "in the second row"
+  ]
+ ],
+ "1912.03627::s11::p000": [
+  [
+   "speech recognition experiments",
+   "are presented on",
+   "Part3"
+  ],
+  [
+   "The experiments",
+   "were performed with",
+   "the Kaldi toolkit"
+  ],
+  [
+   "HMM-based MonoPhone model training",
+   "uses",
+   "only 20 thousands of shortest utterances"
+  ],
+  [
+   "The acoustic model",
+   "is trained for",
+   "10 epochs"
+  ]
+ ],
+ "1912.03627::s11::p001": [
+  [
+   "the created database",
+   "can be used to train",
+   "well performing and practically usable Persian ASR models"
+  ]
+ ],
+ "1912.03627::s12::p000": [
+  [
+   "the DeepMine database",
+   "has been collected using",
+   "crowdsourcing"
+  ],
+  [
+   "the DeepMine database",
+   "is",
+   "the largest public text-dependent and text-prompted speaker verification database in two languages: Persian and English"
+  ],
+  [
+   "the DeepMine database",
+   "is",
+   "the largest text-independent speaker verification evaluation database"
+  ],
+  [
+   "the DeepMine database",
+   "comes with",
+   "phone-level transcription"
+  ]
+ ],
+ "1912.03627::s12::p001": [
+  [
+   "The protocols",
+   "allow researchers to study",
+   "the effects of channels, duration and phrase text on the performance"
+  ],
+  [
+   "one large test set",
+   "has",
+   "more (30 minutes on average) speech"
+  ]
+ ],
+ "1912.03627::s12::p002": [
+  [
+   "speech recognition experiments",
+   "used",
+   "Kaldi toolkit"
+  ],
+  [
+   "Text-dependent results",
+   "have shown",
+   "that the DeepMine database is more challenging than RSR2015 and RedDots databases"
+  ]
+ ],
+ "1912.03627::s13::p000": [
+  [
+   "The data collection project",
+   "was mainly supported by",
+   "Sharif DeepMine company"
+  ],
+  [
+   "The work on the paper",
+   "was supported by",
+   "Czech National Science Foundation (GACR) project \"NEUREM3\" No. 19-26934X"
+  ]
+ ]
+}

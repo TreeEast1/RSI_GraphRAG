@@ -1,0 +1,420 @@
+{
+ "1801.06482::s00::p000": [
+  [
+   "Various studies",
+   "estimated",
+   "between to 10% to 40% of internet users are victims of cyberbullying"
+  ],
+  [
+   "Effects of cyberbullying",
+   "can range from",
+   "temporary anxiety to suicide"
+  ],
+  [
+   "Arvida Byström",
+   "was cyberbullied to the extent of receiving",
+   "rape threats"
+  ]
+ ],
+ "1801.06482::s00::p001": [
+  [
+   "Detection of cyberbullying in social media",
+   "is",
+   "a challenging task"
+  ],
+  [
+   "Definition of what constitutes cyberbullying",
+   "is",
+   "quite subjective"
+  ],
+  [
+   "most similar words as per Twitter dataset for word `fat'",
+   "are",
+   "`female' and `woman'"
+  ],
+  [
+   "Twitter posts",
+   "are",
+   "short and lack anonymity"
+  ]
+ ],
+ "1801.06482::s00::p002": [
+  [
+   "Past works on cyberbullying detection",
+   "have at least one of",
+   "the following three bottlenecks"
+  ],
+  [
+   "Bottleneck B1",
+   "targets",
+   "only one particular social media platform"
+  ],
+  [
+   "Bottleneck B2",
+   "addresses",
+   "only one topic of cyberbullying such as racism, and sexism"
+  ],
+  [
+   "Bottleneck B3",
+   "relies on",
+   "carefully handcrafted features such as swear word list and POS tagging"
+  ]
+ ],
+ "1801.06482::s01::p000": [
+  [
+   "Twitter dataset",
+   "contains",
+   "examples of racism and sexism"
+  ],
+  [
+   "Wikipedia dataset",
+   "contains",
+   "examples of personal attack"
+  ],
+  [
+   "largest post in Wikipedia dataset",
+   "has",
+   "2846 words"
+  ]
+ ],
+ "1801.06482::s01::p001": [
+  [
+   "Formspring dataset",
+   "includes",
+   "12K annotated question and answer pairs"
+  ],
+  [
+   "825 pairs",
+   "were labeled as containing",
+   "cyberbullying content by at least two Amazon Mechanical turk workers"
+  ]
+ ],
+ "1801.06482::s01::p002": [
+  [
+   "Twitter dataset",
+   "includes",
+   "16K annotated tweets"
+  ],
+  [
+   "3117 tweets",
+   "are labeled as",
+   "sexist"
+  ],
+  [
+   "1937 tweets",
+   "are labeled as",
+   "racist"
+  ],
+  [
+   "remaining tweets",
+   "are marked as",
+   "neither sexist nor racist"
+  ]
+ ],
+ "1801.06482::s01::p003": [
+  [
+   "Wikipedia data set",
+   "includes",
+   "over 100k labeled discussion comments from English Wikipedia's talk pages"
+  ],
+  [
+   "Each comment",
+   "was labeled by",
+   "10 annotators via Crowdflower"
+  ],
+  [
+   "13590 comments",
+   "are labeled as",
+   "personal attack"
+  ]
+ ],
+ "1801.06482::s02::p000": [
+  [
+   "Twitter",
+   "does not allow",
+   "anonymous postings"
+  ],
+  [
+   "78% of the swearing posts",
+   "are",
+   "non-bullying"
+  ],
+  [
+   "82% of bullying posts",
+   "do not use",
+   "any swear words"
+  ]
+ ],
+ "1801.06482::s03::p000": [
+  [
+   "cyberbullying detection",
+   "is",
+   "a text classification problem"
+  ],
+  [
+   "These methods",
+   "tend to have",
+   "low precision for cyberbullying detection"
+  ],
+  [
+   "deep learning",
+   "has been applied for",
+   "cyberbullying detection"
+  ]
+ ],
+ "1801.06482::s04::p000": [
+  [
+   "Various models",
+   "differ only in",
+   "the Neural Architecture layer"
+  ],
+  [
+   "Long Short Term Memory networks",
+   "are",
+   "a special kind of RNN, capable of learning long-term dependencies"
+  ],
+  [
+   "Bidirectional LSTMs",
+   "increase",
+   "the amount of input information available to the network"
+  ]
+ ],
+ "1801.06482::s04::p001": [
+  [
+   "The embedding layer",
+   "processes",
+   "a fixed size sequence of words"
+  ],
+  [
+   "Each word",
+   "is represented as",
+   "a real-valued vector, also known as word embeddings"
+  ],
+  [
+   "task specific word embeddings",
+   "capture",
+   "the SMP specific and topic specific style of cyberbullying"
+  ],
+  [
+   "Experimental results reported here",
+   "are with",
+   "dimension size as 50"
+  ]
+ ],
+ "1801.06482::s04::p002": [
+  [
+   "two dropout layers",
+   "were used",
+   "to avoid overfitting"
+  ],
+  [
+   "dropout rates",
+   "were",
+   "0.25 and 0.5 respectively"
+  ],
+  [
+   "All our models",
+   "are trained using",
+   "backpropagation"
+  ],
+  [
+   "the optimizer",
+   "is",
+   "Adam"
+  ],
+  [
+   "the loss function",
+   "is",
+   "categorical cross-entropy"
+  ]
+ ],
+ "1801.06482::s05::p000": [
+  [
+   "performance of all four traditional machine learning models",
+   "was",
+   "significantly lower"
+  ]
+ ],
+ "1801.06482::s05::p001": [
+  [
+   "All DNN models reported here",
+   "were implemented using",
+   "Keras"
+  ],
+  [
+   "standard operations",
+   "include",
+   "removal of stop words, punctuation marks and lowercasing"
+  ]
+ ],
+ "1801.06482::s06::p000": [
+  [
+   "The training datasets",
+   "had",
+   "a major problem of class imbalance with posts marked as bullying in the minority"
+  ],
+  [
+   "all models",
+   "were biased towards",
+   "labeling the posts as non-bullying"
+  ],
+  [
+   "oversampled datasets (F+, T+, W+)",
+   "have",
+   "far better performance than their counterparts (F, T, W respectively)"
+  ],
+  [
+   "replication rate of three",
+   "is",
+   "good enough"
+  ]
+ ],
+ "1801.06482::s07::p000": [
+  [
+   "Initial word embeddings",
+   "decide",
+   "data representation for DNN models"
+  ],
+  [
+   "DNN models",
+   "modify",
+   "these initial word embeddings"
+  ]
+ ],
+ "1801.06482::s08::p000": [
+  [
+   "DNN models",
+   "learn",
+   "word embeddings over the training data"
+  ],
+  [
+   "learned embeddings across multiple datasets",
+   "show",
+   "the difference in nature and style of bullying across cyberbullying topics and SMPs"
+  ]
+ ],
+ "1801.06482::s08::p001": [
+  [
+   "Twitter dataset",
+   "is heavy on",
+   "sexism and racism"
+  ],
+  [
+   "Twitter dataset",
+   "considers",
+   "word slave as similar to targets of racism and sexism"
+  ],
+  [
+   "Wikipedia dataset",
+   "is about",
+   "personal attacks"
+  ]
+ ],
+ "1801.06482::s09::p000": [
+  [
+   "BLSTM with attention",
+   "is used as",
+   "the DNN model"
+  ]
+ ],
+ "1801.06482::s09::p001": [
+  [
+   "Complete Transfer Learning (TL1)",
+   "directly used",
+   "a model trained on one dataset to detect cyberbullying in other datasets without any extra training"
+  ],
+  [
+   "TL1",
+   "resulted in",
+   "significantly low recall"
+  ],
+  [
+   "precision",
+   "was relatively higher for",
+   "TL1"
+  ],
+  [
+   "cyberbullying detection performance for Formspring dataset",
+   "is higher when base model is Wikipedia (precision =0.51 and recall=0.66) as compared to Twitter as the base model (precision=0.38 and recall=0.04)",
+   "with TL1"
+  ]
+ ],
+ "1801.06482::s09::p002": [
+  [
+   "Feature Level Transfer Learning (TL2)",
+   "transferred",
+   "only learned word embeddings to another dataset for training a new model"
+  ],
+  [
+   "recall score",
+   "improved dramatically with",
+   "TL2"
+  ],
+  [
+   "Improvement in precision",
+   "was also significant with",
+   "TL2"
+  ],
+  [
+   "learned word embeddings",
+   "are",
+   "an essential part of knowledge transfer across datasets for cyberbullying detection"
+  ]
+ ],
+ "1801.06482::s09::p003": [
+  [
+   "Model Level Transfer Learning (TL3)",
+   "transferred",
+   "learned word embeddings, as well as network weights, to another dataset for training a new model"
+  ],
+  [
+   "TL3",
+   "does not result in",
+   "any significant improvement over TL2"
+  ],
+  [
+   "transfer of network weights",
+   "is not essential for",
+   "cyberbullying detection"
+  ],
+  [
+   "learned word embeddings",
+   "is",
+   "the key knowledge gained by the DNN models"
+  ]
+ ],
+ "1801.06482::s09::p004": [
+  [
+   "DNN based models coupled with transfer learning",
+   "beat",
+   "the best-known results for all three datasets"
+  ],
+  [
+   "Previous best F1 scores for Wikipedia BIBREF4 and Twitter BIBREF8 datasets",
+   "were",
+   "0.68 and 0.93 respectively"
+  ]
+ ],
+ "1801.06482::s10::p000": [
+  [
+   "DNN models",
+   "can be used for",
+   "cyberbullying detection on various topics across multiple SMPs using three datasets and four DNN models"
+  ],
+  [
+   "These models coupled with transfer learning",
+   "beat",
+   "state of the art results for all three datasets"
+  ],
+  [
+   "These models",
+   "can be further improved with",
+   "extra data such as information about the profile and social graph of users"
+  ],
+  [
+   "Most of the current datasets",
+   "do not provide",
+   "any information about the severity of bullying"
+  ]
+ ]
+}

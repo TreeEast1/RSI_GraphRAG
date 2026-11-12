@@ -1,0 +1,1614 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1901.08079::s00::p000",
+   "summary": "Personalization leads large-scale information retrieval but is unsuitable for domain-specific searches due to lexical, semantic, sparseness, and user-search dissimilarity challenges.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s00::p001",
+   "summary": "Healthcare information professionals spend an average of 60 minutes per collection or database, 3 minutes per document, and 4 hours total, with strategies spanning over 15 lines and reaching up to 105 lines.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s00::p002",
+   "summary": "Abundant medical information sources increasingly challenge consumers, requiring dedicated solutions adapted to the heterogeneity and specifics of health-related information.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s00::p003",
+   "summary": "Dedicated Question Answering (QA) systems are viable solutions because they understand natural language questions without relying on external information on users.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s00::p004",
+   "summary": "Recognizing Question Entailment (RQE) retrieves answers to a premise question INLINEFORM0 through entailed hypothesis questions INLINEFORM1 with associated answers, defining entailment via answers to INLINEFORM4 also answering INLINEFORM5.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s00::p005",
+   "summary": "RQE is relevant due to increasing similar online questions and can address question understanding and answer extraction while supporting models for inference relations and question similarity.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s00::p006",
+   "summary": "Question similarity has attracted international challenges and approaches including Logistic Regression, Recurrent Neural Networks (RNNs), Long Short Term Memory cells (LSTMs), and Convolutional Neural Networks (CNNs).",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s00::p007",
+   "summary": "This paper studies medical-domain question entailment and an end-to-end RQE-based QA approach by evaluating retrieved-answer relevance, claiming the first full medical QA approach based on question entailment for free-text questions.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s00::p008",
+   "summary": "The paper outlines related work, RQE methods on open-domain and clinical datasets, a new medical question-answer pair collection, an RQE-based QA approach, and evaluation on TREC 2017 LiveQA medical questions.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s01::p000",
+   "summary": "This section defines the RQE task and describes related work at the intersection of question answering, question similarity and textual inference.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s02::p000",
+   "summary": "RQE definition can significantly impact QA results, while Natural Language Inference (NLI) meanings vary across tasks such as PASCAL RTE and the Stanford Natural Language Inference corpus SNLI.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s02::p001",
+   "summary": "The multiNLI corpus was shared in RepEval 2017, with annotators writing three sentences for entailment, contradiction, and neutral labels from a premise text.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s02::p002",
+   "summary": "These NLI definitions may suit broad text understanding but do not relate straightforwardly to practical information retrieval or question answering systems.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s02::p003",
+   "summary": "RQE must be tailored to QA, as shown by preferring the less restricted question \"looking for cold medications\" over \"looking for medications for a 30 yo woman\" for relevant answers.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s03::p000",
+   "summary": "Classical QA systems face question analysis and answer extraction challenges, with many open-domain and medical approaches addressing question analysis, retrieval, answer selection, and ranking.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s03::p001",
+   "summary": "Similar-question and FAQ approaches include FAQ FINDER and SimQ, which uses syntactic and semantic features and UMLS, achieving 72.2% precision, 78.0% recall and 75.0% F-score on NetWellness questions.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s03::p002",
+   "summary": "The medical task at TREC 2017 LiveQA aimed to answer complex consumer health questions and identify relevant answer sources complying with medical information retrieval sensitivity.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s03::p003",
+   "summary": "CMU-OAQA achieved 0.637 average score using an attentional encoder-decoder model and Quora, while PRNA achieved 0.49 average score using Wikipedia, Yahoo, Google, subquestions, and SQUAD.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s03::p004",
+   "summary": "Deep neural network models use large training datasets, and CMU-OAQA and PRNA showed open-domain datasets benefited the medical domain, though CMU-OAQA scored 1.139 on the LiveQA open-domain task.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s03::p005",
+   "summary": "The performance gap partly reflects discrepancies between medical test questions and open-domain questions and highlights the need for larger medical datasets for deep learning approaches.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s03::p006",
+   "summary": "ECNU-ICA used two long short-term memory (LSTM) networks and community QA sites, achieving 1.895 in the open-domain task but only 0.402 average score in the medical task.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s03::p007",
+   "summary": "CMU-LiveMedQA used provided training datasets, one focus per question, a convolutional neural network (CNN) with 10 question types, and crawled web pages, obtaining 0.353 average score.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s04::p000",
+   "summary": "Jeon et al. used translation probabilities from a question and answer archive, while Duan et al. proposed language modeling using question topic and question focus.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s04::p001",
+   "summary": "SemEval task 3B reranked similar questions, with the best 2017 system achieving 47.22% MAP using supervised Logistic Regression and the second best achieving 46.93% MAP, using SemEval-cQA from Qatar Living forum.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s04::p002",
+   "summary": "An answer-based RQE definition introduced Clinical-QE and achieved 75% Accuracy on consumer health questions, while Dos Santos et al. and Lei et al. proposed neural semantic representation approaches.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s05::p000",
+   "summary": "Two methods were chosen based on Logistic Regression performance at SemEval 2017 and neural networks on larger datasets such as SNLI, then evaluated on five different datasets.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s06::p000",
+   "summary": "In QA, RQE retrieves answers to a new question by retrieving entailed questions with associated answers, leading to a definition of question entailment.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s06::p001",
+   "summary": "A question INLINEFORM0 entails INLINEFORM1 if every answer to INLINEFORM2 is also a complete or partial answer to INLINEFORM3.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s06::p002",
+   "summary": "Two examples of consumer health questions INLINEFORM0 and entailed questions INLINEFORM1 are presented below.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s06::p003",
+   "summary": "Example 1 states that each answer to the entailed question B1 is a complete answer to A1.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s06::p004",
+   "summary": "A1 asks for the latest news on tennitis or ringing in the ear from a 75-year-old who has had ringing since their mid 5os.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s06::p005",
+   "summary": "B1 asks, \"What is the latest research on Tinnitus?\"",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s06::p006",
+   "summary": "Example 2 states that each answer to the entailed question B2 is a partial answer to A2.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s06::p007",
+   "summary": "A2 asks where to start helping parents with caregiving and what financial options exist for people on fixed incomes after a mother's Alzheimer's diagnosis.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s06::p008",
+   "summary": "B2 asks, \"What resources are available for Alzheimer's caregivers?\"",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s06::p009",
+   "summary": "Including partial answers in question entailment allows efficient relaxation of contextual constraints in the original question INLINEFORM0 to retrieve relevant answers from less restricted entailed questions.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s07::p000",
+   "summary": "The adapted DL model uses three 600d ReLU layers, concatenated sentence representations, a softmax classifier, summed RNN word embeddings, and pretrained GloVe vectors.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s07::p001",
+   "summary": "GloVe generates word vector representations from aggregated word co-occurrence statistics, and the pretrained common crawl version with 840B tokens and 300d vectors is not updated during training.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s08::p000",
+   "summary": "Logistic Regression classifies question pairs into entailment or no-entailment, outperformed SVM and Naive Bayes, and preprocessing removes stop words and applies Porter stemming.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s08::p001",
+   "summary": "Nine features include Word Overlap, Dice coefficient, Cosine, Levenshtein, Jaccard similarities, maximum and average values, question length ratio, and common nouns and verbs using TreeTagger.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s08::p002",
+   "summary": "An RQE question-type feature maps triggers to types such as Treatment, Prognosis, and Inheritance, with values 2 for perfect match, 1 for overlap, and 0 for no common types.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s09::p000",
+   "summary": "RQE methods are evaluated using SNLI, multiNLI, Quora, Clinical-QE, and SemEval-cQA datasets.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s09::p001",
+   "summary": "SNLI contains 569,037 sentence pairs, MultiNLI training has 393,000 pairs from five genres and 20,000 development pairs, and contradiction and neutral labels were converted to non-entailment.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s09::p002",
+   "summary": "The QUORA dataset has 404,279 question pairs, split into 323,423 training, 40,428 development, and 40,428 test pairs.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s09::p003",
+   "summary": "Clinical-QE contains 8,588 question pairs from 4,655 clinical questions, split into 6,870 training, 859 development, and 859 test pairs.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s09::p004",
+   "summary": "SemEval-cQA from SemEval 2016 Task 3B contains 3,869 question pairs for re-ranking related questions and was also used for SemEval 2017 Task 3.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s09::p005",
+   "summary": "The test dataset used Consumer Health Questions (CHQs) from NLM, with 1,721 consumer information requests manually annotated with subquestions, question type, and focus.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s09::p006",
+   "summary": "NIH FAQs sharing focus and question type with CHQs produced positive and negative pairs, manually validated into a final RQE dataset of 850 CHQ-FAQ pairs with 405 positive and 445 negative pairs.",
+   "group_id": "1901.08079::g00"
+  },
+  {
+   "passage_id": "1901.08079::s10::p000",
+   "summary": "The first experiment evaluated DL and ML methods on SNLI, multi-NLI, Quora, and Clinical-QE, with dataset splits and MultiNLI validation and testing sets specified.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s10::p001",
+   "summary": "Table TABREF28 reports first-experiment results, including DL with GloVe accuracies on SNLI, MultiNLI, and Quora, Logistic Regression on Clinical-RQE, and 10-fold cross-validation on Clinical-QE.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s10::p002",
+   "summary": "The second experiment used datasets for training only and compared performance on 850 consumer health questions, with Logistic Regression trained on clinical-RQE reaching 73.18% Accuracy.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s10::p003",
+   "summary": "The LR method was further evaluated on question similarity detection by combining it with the SemEval-cQA IR baseline through a weight-based score combination.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s10::p004",
+   "summary": "INLINEFORM0 is presented.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s10::p005",
+   "summary": "The weight INLINEFORM0 was set on the cQA-2016 development set, and LR+IR achieved the best results on cQA-2016 and cQA-2017 test datasets.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s11::p000",
+   "summary": "Same-corpus results favored DL with GloVe on SNLI, MultiNLI and Quora, while Logistic Regression achieved 98.60% on Clinical-RQE and 73.18% on 850 medical CHQs-FAQs pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s11::p001",
+   "summary": "SNLI, multi-NLI, RTE-1, RTE-2, RTE-3, and SemEval-cQA-2016 models performed poorly on medical RQE data, with several possible explanations discussed.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s12::p000",
+   "summary": "A RQE-based QA system requires question-answer pairs to map, rank, and present answers for new user questions.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s13::p000",
+   "summary": "Trusted medical question-answer pairs were constructed by crawling National Institutes of Health websites and extracting topic synonyms from web pages.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s13::p001",
+   "summary": "Hand-crafted patterns generated question-answer pairs from document structure and section titles, with questions annotated by focus and question type.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s13::p002",
+   "summary": "Questions were automatically annotated with focus, UMLS Concept Unique Identifier (CUI), and Semantic Type using exact string matching, MetaMap Lite, and the UMLS Semantic Network.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p000",
+   "summary": "Question types were derived from manual evaluation of 1,721 consumer health questions, yielding 16 Diseases types, 20 Drugs types, and one Information type.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p001",
+   "summary": "The 16 Diseases question types are Information, Research (or Clinical Trial), Causes, Treatment, Prevention, Diagnosis (Exams and Tests), Prognosis, Complications, Symptoms, Inheritance, Susceptibility, Genetic changes, Frequency, Considerations, Contact a medical professional, and Support Groups.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p002",
+   "summary": "Examples are introduced.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p003",
+   "summary": "The example asks what research (or clinical trial) is being done for DISEASE.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p004",
+   "summary": "The example asks what the outlook is for DISEASE.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p005",
+   "summary": "The example asks how many people are affected by DISEASE.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p006",
+   "summary": "The example asks when to contact a medical professional about DISEASE.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p007",
+   "summary": "The example asks who is at risk for DISEASE.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p008",
+   "summary": "The example asks where to find support for people with DISEASE.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p009",
+   "summary": "The 20 Drugs question types are Information, Interaction with medications, Interaction with food, Interaction with herbs and supplements, Important warning, Special instructions, Brand names, How does it work, How effective is it, Indication, Contraindication, Learn more, Side effects, Emergency or overdose, Severe reaction, Forget a dose, Dietary, Why get vaccinated, Storage and disposal, Usage, and Dose.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p011",
+   "summary": "The example asks whether there are interactions between DRUG and herbs and supplements.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p012",
+   "summary": "The example asks what important warning or information should be known about DRUG.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p013",
+   "summary": "The example asks whether there are safety concerns or special precautions about DRUG.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p014",
+   "summary": "The example asks what the action of DRUG is and how it works.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p015",
+   "summary": "The example asks who should get DRUG and why it is prescribed.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p016",
+   "summary": "The example asks what to do in case of a severe reaction to DRUG.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p017",
+   "summary": "The question type for other medical entities such as Procedure, Exam, and Treatment is Information.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p018",
+   "summary": "The example asks what Coronary Artery Bypass Surgery is.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s14::p019",
+   "summary": "The example asks what Liver Function Tests are.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p000",
+   "summary": "The collection used 12 trusted websites, extracting article free text and synonyms of the article focus for each website.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p001",
+   "summary": "National Cancer Institute (NCI) contributed free text from 116 articles on cancer types and 729 QA pairs, with manually restructured content for complete answers.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p002",
+   "summary": "Genetic and Rare Diseases Information Center (GARD) provided disease question/answer pairs from 4,278 topics and 5,394 QA pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p003",
+   "summary": "Genetics Home Reference (GHR) provided 1,099 articles about diseases and 5,430 QA pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p004",
+   "summary": "MedlinePlus Health Topics provided summary-section free texts from 981 articles and 981 QA pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p005",
+   "summary": "National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) provided text from 174 health information pages and 1,192 QA pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p006",
+   "summary": "National Institute of Neurological Disorders and Stroke (NINDS) provided free text from 277 information pages and 1,104 QA pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p007",
+   "summary": "NIHSeniorHealth provided 71 articles and 769 QA pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p008",
+   "summary": "National Heart, Lung, and Blood Institute (NHLBI) provided text from 135 articles and 559 QA pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p009",
+   "summary": "Centers for Disease Control and Prevention (CDC) provided text from 152 articles and 270 QA pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p010",
+   "summary": "MedlinePlus A.D.A.M. Medical Encyclopedia contains 4,366 articles and yielded 17,348 QA pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p011",
+   "summary": "MedlinePlus Drugs provided free text from 1,316 articles about Drugs and 12,889 QA pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p012",
+   "summary": "MedlinePlus Herbs and Supplements provided free text from 99 articles and 792 QA pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s15::p013",
+   "summary": "The final collection contains 47,457 annotated question-answer pairs about Diseases, Drugs and other named entities from 12 trusted resources.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s16::p000",
+   "summary": "The proposed system ranks recognized Hypothesis Questions for a Premise Question using Logistic Regression trained on the clinical-RQE dataset and classification scores.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s17::p000",
+   "summary": "The RQE-based QA approach filters questions with IR, classifies entailment, merges search engine and RQE scores, and ranks answers using an aggregate score.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s18::p000",
+   "summary": "For each premise question INLINEFORM0, Terrier retrieves INLINEFORM1 relevant question candidates INLINEFORM2, and the RQE classifier predicts labels for the pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s18::p001",
+   "summary": "Questions were indexed without answers but with automatically extracted focus synonyms and manually defined question type triggers to improve retrieval and avoid query expansion shortcomings.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s18::p002",
+   "summary": "The indexed example asks what the treatments for Torticollis are.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s18::p003",
+   "summary": "The example has Focus: Torticollis and Question type: Treatment.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s18::p004",
+   "summary": "The example adds focus synonyms \"Spasmodic torticollis, Wry neck, Loxia, Cervical dystonia\" and question type triggers \"relieve, manage, cure, remedy, therapy\".",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s18::p005",
+   "summary": "The indexed example asks what the outlook for Legionnaire disease is.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s18::p006",
+   "summary": "The example has Focus: Legionnaire disease and Question Type: Prognosis.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s18::p007",
+   "summary": "The example adds focus synonyms \"Legionella pneumonia, Pontiac fever, Legionellosis\" and question type triggers \"prognosis, life expectancy\".",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s18::p008",
+   "summary": "The IR task retrieves hypothesis questions relevant to the submitted question by merging TF-IDF weighting function and In-expB2 DFR model results.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s18::p009",
+   "summary": "Two retrieved question sets are merged by summing scores for each retrieved question in both lists and re-ranking the hypothesis questions.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s19::p000",
+   "summary": "IR models and the RQE Logistic Regression model provide different perspectives, with question entailment understanding relations between important terms and traditional IR identifying important terms.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s19::p001",
+   "summary": "Candidate questions are fetched using IR models, then the RQE classifier filters out non-entailed questions and re-ranks remaining candidates.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s19::p002",
+   "summary": "The premise question INLINEFORM2 constructs N question pairs INLINEFORM3, and the RQE classifier filters out non-entailed pairs and re-ranks remaining pairs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s19::p003",
+   "summary": "Selected candidate questions with positive entailment are ranked by a hybrid score INLINEFORM5 using the IR system score INLINEFORM7 and RQE system score INLINEFORM8.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s19::p004",
+   "summary": "For each system INLINEFORM0 INLINEFORM1, the associated score is normalized by dividing it by the maximum score among INLINEFORM2 candidate questions retrieved by INLINEFORM3 for INLINEFORM4.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s19::p006",
+   "summary": "INLINEFORM0 INLINEFORM1 is presented.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s19::p007",
+   "summary": "In the experiments, INLINEFORM0 was fixed to 100 as a safe threshold value for the task.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s19::p008",
+   "summary": "The collection of 47,457 question-answer pairs from 12 NIH institutes is unlikely to contain more than 100 occurrences of the same focus-type pair.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s19::p009",
+   "summary": "Each question was indexed with additional annotations for the question focus, its synonyms, and the question type synonyms.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s20::p000",
+   "summary": "The evaluation studies RQE effectiveness for Medical Question Answering by comparing the hybrid entailment-based approach, IR method, and TREC 2017 LiveQA-Med QA systems.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s21::p000",
+   "summary": "An interface was developed for manual evaluation, showing top-10 answers of each QA method and LiveQA reference answer(s) for each test question.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s21::p001",
+   "summary": "The evaluation used TREC-2017 LiveQA medical test questions randomly selected from NLM consumer health questions covering different medical entities and question types.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s21::p002",
+   "summary": "The same judgment scores as the LiveQA Track were used for a relevant comparison.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s21::p003",
+   "summary": "Correct and Complete Answer is scored 4.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s21::p004",
+   "summary": "Correct but Incomplete is scored 3.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s21::p005",
+   "summary": "Incorrect but Related is scored 2.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s21::p006",
+   "summary": "Incorrect is scored 1.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s21::p007",
+   "summary": "IR-based and hybrid IR+RQE answers were anonymized and judged by 3 assessors using LiveQA-Med reference answers, with different numbers of answers evaluated.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s21::p008",
+   "summary": "Table TABREF103 reports inter-annotator agreement through F1 score, with 94.33% F1 score average agreement and assessor A evaluations used for both methods.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s22::p000",
+   "summary": "The measures used by TREC LiveQA challenges were computed to evaluate the first retrieved answer for each test question.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s22::p001",
+   "summary": "avgScore(0-3) is the average score over all questions, transferring 1-4 level grades to 0-3 scores and ranking LiveQA runs.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s22::p002",
+   "summary": "succ@i+ is the number of questions with score i or above divided by the total number of questions.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s22::p003",
+   "summary": "prec@i+ is the number of questions with score i or above divided by the number of questions answered by the system.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s22::p004",
+   "summary": "Table TABREF108 shows hybrid IR+RQE achieved 0.827 average score, outperforming IR-based system and LiveQA'17 medical challenge best results.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s23::p000",
+   "summary": "Top-10 answers were evaluated using Mean Average Precision (MAP) and Mean Reciprocal Rank (MRR), with two correct ratings treated as correct answers.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s23::p001",
+   "summary": "MAP is the mean of the Average Precision (AvgP) scores over all questions.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s23::p002",
+   "summary": "(1) INLINEFORM0 is presented.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s23::p003",
+   "summary": "Q is the number of questions, and INLINEFORM0 is the AvgP of the INLINEFORM1 question.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s23::p005",
+   "summary": "K is the number of correct answers, and INLINEFORM0 is the rank of INLINEFORM1 correct answer.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s23::p006",
+   "summary": "MRR is the average of reciprocal ranks for each question, where reciprocal rank is the multiplicative inverse of the first correct answer's rank.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s23::p007",
+   "summary": "(2) INLINEFORM0 is presented.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s23::p008",
+   "summary": "Q is the number of questions, and INLINEFORM0 is the rank of the first correct answer for the INLINEFORM1 question.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s23::p009",
+   "summary": "Table TABREF113 shows IR+RQE outperforms IR-based QA with 0.311 MAP@10 and 0.333 MRR@10.",
+   "group_id": "1901.08079::g01"
+  },
+  {
+   "passage_id": "1901.08079::s24::p000",
+   "summary": "The evaluation followed LiveQA guidelines rigorously, used NIST assessors' paraphrases, achieved 88.5% F1 and 94.3% agreement, and showed RQE exceeded the best medical LiveQA'17 results by 29.8%.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s24::p001",
+   "summary": "The answer source has only 47K question-answer pairs, while LiveQA participating systems relied on much larger collections, including the World Wide Web.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s24::p002",
+   "summary": "The system answered one subquestion at most, while many LiveQA test questions had several subquestions.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s24::p003",
+   "summary": "Observation (b) makes the hybrid IR+RQE approach more promising because it offers large potential for improving answer completeness.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s24::p004",
+   "summary": "Observation (a) suggests reliable-only answer sources can improve QA performance without losing coverage, with at least one answer per test question and the best relevance score.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s24::p005",
+   "summary": "Assessors reported wrong-focus answers, repeated answers from different websites, and better performance on diseases than drugs, suggesting focus recognition, near-duplicate removal, and more drug information.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s24::p006",
+   "summary": "The authors examined private websites used by LiveQA-Med annotators, including ConsumerLab for COENZYME Q10 ingredients and eHealthMe for Phentermine and Dicyclomine interactions unavailable in DailyMed.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s24::p007",
+   "summary": "The authors question whether big data and private websites can automatically answer unavailable medical questions and suggest limiting answerable questions and warning users about online dangers.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s24::p008",
+   "summary": "Medical QA systems should follow strict guidelines about goals, background knowledge, and resources, based on trusted information sources or conventions such as HONcode.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s24::p009",
+   "summary": "Experiments show limiting answer sources with such guidelines is feasible and could enhance QA system performance from an information retrieval perspective.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s25::p000",
+   "summary": "The paper studied machine learning and deep learning for Recognizing Question Entailment, developed a RQE-based QA system, shared 47K medical question-answer pairs, outperformed TREC-2017 LiveQA medical results, and outlined future work.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s26::p000",
+   "summary": "The authors thank Halil Kilicoglu, Sonya E. Shooshan, and Ellen Voorhees for help with crawling, manual evaluation, answer judgment, and TREC LiveQA evaluation.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s26::p001",
+   "summary": "The authors consider question number 36 in the TREC-2017 LiveQA medical test dataset.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s26::p002",
+   "summary": "Question 36 asks about causes of congenital diaphragmatic hernia, cousin marriage, and lifelong lung disease the baby might experience.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s26::p003",
+   "summary": "Question 36 was answered by 5 participating runs versus 8 for other questions, with all submitted answers wrong, while the IR-based QA system retrieved one score 4 answer and hybrid IR+RQE provided 3 excellent answers.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s26::p004",
+   "summary": "This passage labels TREC 2017 LiveQA-Med Participants' Results as section A.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s26::p005",
+   "summary": "This passage labels Our IR-based QA System as section B.",
+   "group_id": "1901.08079::g02"
+  },
+  {
+   "passage_id": "1901.08079::s26::p006",
+   "summary": "This passage labels Our IR+RQE QA System as section C.",
+   "group_id": "1901.08079::g02"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1901.08079::g00",
+   "summaries": [
+    {
+     "passage_id": "1901.08079::s00::p000",
+     "summary": "Personalization leads large-scale information retrieval but is unsuitable for domain-specific searches due to lexical, semantic, sparseness, and user-search dissimilarity challenges.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s00::p001",
+     "summary": "Healthcare information professionals spend an average of 60 minutes per collection or database, 3 minutes per document, and 4 hours total, with strategies spanning over 15 lines and reaching up to 105 lines.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s00::p002",
+     "summary": "Abundant medical information sources increasingly challenge consumers, requiring dedicated solutions adapted to the heterogeneity and specifics of health-related information.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s00::p003",
+     "summary": "Dedicated Question Answering (QA) systems are viable solutions because they understand natural language questions without relying on external information on users.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s00::p004",
+     "summary": "Recognizing Question Entailment (RQE) retrieves answers to a premise question INLINEFORM0 through entailed hypothesis questions INLINEFORM1 with associated answers, defining entailment via answers to INLINEFORM4 also answering INLINEFORM5.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s00::p005",
+     "summary": "RQE is relevant due to increasing similar online questions and can address question understanding and answer extraction while supporting models for inference relations and question similarity.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s00::p006",
+     "summary": "Question similarity has attracted international challenges and approaches including Logistic Regression, Recurrent Neural Networks (RNNs), Long Short Term Memory cells (LSTMs), and Convolutional Neural Networks (CNNs).",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s00::p007",
+     "summary": "This paper studies medical-domain question entailment and an end-to-end RQE-based QA approach by evaluating retrieved-answer relevance, claiming the first full medical QA approach based on question entailment for free-text questions.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s00::p008",
+     "summary": "The paper outlines related work, RQE methods on open-domain and clinical datasets, a new medical question-answer pair collection, an RQE-based QA approach, and evaluation on TREC 2017 LiveQA medical questions.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s01::p000",
+     "summary": "This section defines the RQE task and describes related work at the intersection of question answering, question similarity and textual inference.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s02::p000",
+     "summary": "RQE definition can significantly impact QA results, while Natural Language Inference (NLI) meanings vary across tasks such as PASCAL RTE and the Stanford Natural Language Inference corpus SNLI.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s02::p001",
+     "summary": "The multiNLI corpus was shared in RepEval 2017, with annotators writing three sentences for entailment, contradiction, and neutral labels from a premise text.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s02::p002",
+     "summary": "These NLI definitions may suit broad text understanding but do not relate straightforwardly to practical information retrieval or question answering systems.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s02::p003",
+     "summary": "RQE must be tailored to QA, as shown by preferring the less restricted question \"looking for cold medications\" over \"looking for medications for a 30 yo woman\" for relevant answers.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s03::p000",
+     "summary": "Classical QA systems face question analysis and answer extraction challenges, with many open-domain and medical approaches addressing question analysis, retrieval, answer selection, and ranking.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s03::p001",
+     "summary": "Similar-question and FAQ approaches include FAQ FINDER and SimQ, which uses syntactic and semantic features and UMLS, achieving 72.2% precision, 78.0% recall and 75.0% F-score on NetWellness questions.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s03::p002",
+     "summary": "The medical task at TREC 2017 LiveQA aimed to answer complex consumer health questions and identify relevant answer sources complying with medical information retrieval sensitivity.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s03::p003",
+     "summary": "CMU-OAQA achieved 0.637 average score using an attentional encoder-decoder model and Quora, while PRNA achieved 0.49 average score using Wikipedia, Yahoo, Google, subquestions, and SQUAD.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s03::p004",
+     "summary": "Deep neural network models use large training datasets, and CMU-OAQA and PRNA showed open-domain datasets benefited the medical domain, though CMU-OAQA scored 1.139 on the LiveQA open-domain task.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s03::p005",
+     "summary": "The performance gap partly reflects discrepancies between medical test questions and open-domain questions and highlights the need for larger medical datasets for deep learning approaches.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s03::p006",
+     "summary": "ECNU-ICA used two long short-term memory (LSTM) networks and community QA sites, achieving 1.895 in the open-domain task but only 0.402 average score in the medical task.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s03::p007",
+     "summary": "CMU-LiveMedQA used provided training datasets, one focus per question, a convolutional neural network (CNN) with 10 question types, and crawled web pages, obtaining 0.353 average score.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s04::p000",
+     "summary": "Jeon et al. used translation probabilities from a question and answer archive, while Duan et al. proposed language modeling using question topic and question focus.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s04::p001",
+     "summary": "SemEval task 3B reranked similar questions, with the best 2017 system achieving 47.22% MAP using supervised Logistic Regression and the second best achieving 46.93% MAP, using SemEval-cQA from Qatar Living forum.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s04::p002",
+     "summary": "An answer-based RQE definition introduced Clinical-QE and achieved 75% Accuracy on consumer health questions, while Dos Santos et al. and Lei et al. proposed neural semantic representation approaches.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s05::p000",
+     "summary": "Two methods were chosen based on Logistic Regression performance at SemEval 2017 and neural networks on larger datasets such as SNLI, then evaluated on five different datasets.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s06::p000",
+     "summary": "In QA, RQE retrieves answers to a new question by retrieving entailed questions with associated answers, leading to a definition of question entailment.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s06::p001",
+     "summary": "A question INLINEFORM0 entails INLINEFORM1 if every answer to INLINEFORM2 is also a complete or partial answer to INLINEFORM3.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s06::p002",
+     "summary": "Two examples of consumer health questions INLINEFORM0 and entailed questions INLINEFORM1 are presented below.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s06::p003",
+     "summary": "Example 1 states that each answer to the entailed question B1 is a complete answer to A1.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s06::p004",
+     "summary": "A1 asks for the latest news on tennitis or ringing in the ear from a 75-year-old who has had ringing since their mid 5os.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s06::p005",
+     "summary": "B1 asks, \"What is the latest research on Tinnitus?\"",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s06::p006",
+     "summary": "Example 2 states that each answer to the entailed question B2 is a partial answer to A2.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s06::p007",
+     "summary": "A2 asks where to start helping parents with caregiving and what financial options exist for people on fixed incomes after a mother's Alzheimer's diagnosis.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s06::p008",
+     "summary": "B2 asks, \"What resources are available for Alzheimer's caregivers?\"",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s06::p009",
+     "summary": "Including partial answers in question entailment allows efficient relaxation of contextual constraints in the original question INLINEFORM0 to retrieve relevant answers from less restricted entailed questions.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s07::p000",
+     "summary": "The adapted DL model uses three 600d ReLU layers, concatenated sentence representations, a softmax classifier, summed RNN word embeddings, and pretrained GloVe vectors.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s07::p001",
+     "summary": "GloVe generates word vector representations from aggregated word co-occurrence statistics, and the pretrained common crawl version with 840B tokens and 300d vectors is not updated during training.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s08::p000",
+     "summary": "Logistic Regression classifies question pairs into entailment or no-entailment, outperformed SVM and Naive Bayes, and preprocessing removes stop words and applies Porter stemming.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s08::p001",
+     "summary": "Nine features include Word Overlap, Dice coefficient, Cosine, Levenshtein, Jaccard similarities, maximum and average values, question length ratio, and common nouns and verbs using TreeTagger.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s08::p002",
+     "summary": "An RQE question-type feature maps triggers to types such as Treatment, Prognosis, and Inheritance, with values 2 for perfect match, 1 for overlap, and 0 for no common types.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s09::p000",
+     "summary": "RQE methods are evaluated using SNLI, multiNLI, Quora, Clinical-QE, and SemEval-cQA datasets.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s09::p001",
+     "summary": "SNLI contains 569,037 sentence pairs, MultiNLI training has 393,000 pairs from five genres and 20,000 development pairs, and contradiction and neutral labels were converted to non-entailment.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s09::p002",
+     "summary": "The QUORA dataset has 404,279 question pairs, split into 323,423 training, 40,428 development, and 40,428 test pairs.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s09::p003",
+     "summary": "Clinical-QE contains 8,588 question pairs from 4,655 clinical questions, split into 6,870 training, 859 development, and 859 test pairs.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s09::p004",
+     "summary": "SemEval-cQA from SemEval 2016 Task 3B contains 3,869 question pairs for re-ranking related questions and was also used for SemEval 2017 Task 3.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s09::p005",
+     "summary": "The test dataset used Consumer Health Questions (CHQs) from NLM, with 1,721 consumer information requests manually annotated with subquestions, question type, and focus.",
+     "group_id": "1901.08079::g00"
+    },
+    {
+     "passage_id": "1901.08079::s09::p006",
+     "summary": "NIH FAQs sharing focus and question type with CHQs produced positive and negative pairs, manually validated into a final RQE dataset of 850 CHQ-FAQ pairs with 405 positive and 445 negative pairs.",
+     "group_id": "1901.08079::g00"
+    }
+   ],
+   "n_raw": 48,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5512,
+    "completion_tokens": 2584,
+    "total_tokens": 8096,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1901.08079::g01",
+   "summaries": [
+    {
+     "passage_id": "1901.08079::s10::p000",
+     "summary": "The first experiment evaluated DL and ML methods on SNLI, multi-NLI, Quora, and Clinical-QE, with dataset splits and MultiNLI validation and testing sets specified.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s10::p001",
+     "summary": "Table TABREF28 reports first-experiment results, including DL with GloVe accuracies on SNLI, MultiNLI, and Quora, Logistic Regression on Clinical-RQE, and 10-fold cross-validation on Clinical-QE.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s10::p002",
+     "summary": "The second experiment used datasets for training only and compared performance on 850 consumer health questions, with Logistic Regression trained on clinical-RQE reaching 73.18% Accuracy.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s10::p003",
+     "summary": "The LR method was further evaluated on question similarity detection by combining it with the SemEval-cQA IR baseline through a weight-based score combination.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s10::p004",
+     "summary": "INLINEFORM0 is presented.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s10::p005",
+     "summary": "The weight INLINEFORM0 was set on the cQA-2016 development set, and LR+IR achieved the best results on cQA-2016 and cQA-2017 test datasets.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s11::p000",
+     "summary": "Same-corpus results favored DL with GloVe on SNLI, MultiNLI and Quora, while Logistic Regression achieved 98.60% on Clinical-RQE and 73.18% on 850 medical CHQs-FAQs pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s11::p001",
+     "summary": "SNLI, multi-NLI, RTE-1, RTE-2, RTE-3, and SemEval-cQA-2016 models performed poorly on medical RQE data, with several possible explanations discussed.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s12::p000",
+     "summary": "A RQE-based QA system requires question-answer pairs to map, rank, and present answers for new user questions.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s13::p000",
+     "summary": "Trusted medical question-answer pairs were constructed by crawling National Institutes of Health websites and extracting topic synonyms from web pages.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s13::p001",
+     "summary": "Hand-crafted patterns generated question-answer pairs from document structure and section titles, with questions annotated by focus and question type.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s13::p002",
+     "summary": "Questions were automatically annotated with focus, UMLS Concept Unique Identifier (CUI), and Semantic Type using exact string matching, MetaMap Lite, and the UMLS Semantic Network.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p000",
+     "summary": "Question types were derived from manual evaluation of 1,721 consumer health questions, yielding 16 Diseases types, 20 Drugs types, and one Information type.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p001",
+     "summary": "The 16 Diseases question types are Information, Research (or Clinical Trial), Causes, Treatment, Prevention, Diagnosis (Exams and Tests), Prognosis, Complications, Symptoms, Inheritance, Susceptibility, Genetic changes, Frequency, Considerations, Contact a medical professional, and Support Groups.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p002",
+     "summary": "Examples are introduced.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p003",
+     "summary": "The example asks what research (or clinical trial) is being done for DISEASE.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p004",
+     "summary": "The example asks what the outlook is for DISEASE.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p005",
+     "summary": "The example asks how many people are affected by DISEASE.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p006",
+     "summary": "The example asks when to contact a medical professional about DISEASE.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p007",
+     "summary": "The example asks who is at risk for DISEASE.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p008",
+     "summary": "The example asks where to find support for people with DISEASE.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p009",
+     "summary": "The 20 Drugs question types are Information, Interaction with medications, Interaction with food, Interaction with herbs and supplements, Important warning, Special instructions, Brand names, How does it work, How effective is it, Indication, Contraindication, Learn more, Side effects, Emergency or overdose, Severe reaction, Forget a dose, Dietary, Why get vaccinated, Storage and disposal, Usage, and Dose.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p011",
+     "summary": "The example asks whether there are interactions between DRUG and herbs and supplements.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p012",
+     "summary": "The example asks what important warning or information should be known about DRUG.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p013",
+     "summary": "The example asks whether there are safety concerns or special precautions about DRUG.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p014",
+     "summary": "The example asks what the action of DRUG is and how it works.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p015",
+     "summary": "The example asks who should get DRUG and why it is prescribed.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p016",
+     "summary": "The example asks what to do in case of a severe reaction to DRUG.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p017",
+     "summary": "The question type for other medical entities such as Procedure, Exam, and Treatment is Information.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p018",
+     "summary": "The example asks what Coronary Artery Bypass Surgery is.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s14::p019",
+     "summary": "The example asks what Liver Function Tests are.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p000",
+     "summary": "The collection used 12 trusted websites, extracting article free text and synonyms of the article focus for each website.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p001",
+     "summary": "National Cancer Institute (NCI) contributed free text from 116 articles on cancer types and 729 QA pairs, with manually restructured content for complete answers.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p002",
+     "summary": "Genetic and Rare Diseases Information Center (GARD) provided disease question/answer pairs from 4,278 topics and 5,394 QA pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p003",
+     "summary": "Genetics Home Reference (GHR) provided 1,099 articles about diseases and 5,430 QA pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p004",
+     "summary": "MedlinePlus Health Topics provided summary-section free texts from 981 articles and 981 QA pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p005",
+     "summary": "National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) provided text from 174 health information pages and 1,192 QA pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p006",
+     "summary": "National Institute of Neurological Disorders and Stroke (NINDS) provided free text from 277 information pages and 1,104 QA pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p007",
+     "summary": "NIHSeniorHealth provided 71 articles and 769 QA pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p008",
+     "summary": "National Heart, Lung, and Blood Institute (NHLBI) provided text from 135 articles and 559 QA pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p009",
+     "summary": "Centers for Disease Control and Prevention (CDC) provided text from 152 articles and 270 QA pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p010",
+     "summary": "MedlinePlus A.D.A.M. Medical Encyclopedia contains 4,366 articles and yielded 17,348 QA pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p011",
+     "summary": "MedlinePlus Drugs provided free text from 1,316 articles about Drugs and 12,889 QA pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p012",
+     "summary": "MedlinePlus Herbs and Supplements provided free text from 99 articles and 792 QA pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s15::p013",
+     "summary": "The final collection contains 47,457 annotated question-answer pairs about Diseases, Drugs and other named entities from 12 trusted resources.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s16::p000",
+     "summary": "The proposed system ranks recognized Hypothesis Questions for a Premise Question using Logistic Regression trained on the clinical-RQE dataset and classification scores.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s17::p000",
+     "summary": "The RQE-based QA approach filters questions with IR, classifies entailment, merges search engine and RQE scores, and ranks answers using an aggregate score.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s18::p000",
+     "summary": "For each premise question INLINEFORM0, Terrier retrieves INLINEFORM1 relevant question candidates INLINEFORM2, and the RQE classifier predicts labels for the pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s18::p001",
+     "summary": "Questions were indexed without answers but with automatically extracted focus synonyms and manually defined question type triggers to improve retrieval and avoid query expansion shortcomings.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s18::p002",
+     "summary": "The indexed example asks what the treatments for Torticollis are.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s18::p003",
+     "summary": "The example has Focus: Torticollis and Question type: Treatment.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s18::p004",
+     "summary": "The example adds focus synonyms \"Spasmodic torticollis, Wry neck, Loxia, Cervical dystonia\" and question type triggers \"relieve, manage, cure, remedy, therapy\".",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s18::p005",
+     "summary": "The indexed example asks what the outlook for Legionnaire disease is.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s18::p006",
+     "summary": "The example has Focus: Legionnaire disease and Question Type: Prognosis.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s18::p007",
+     "summary": "The example adds focus synonyms \"Legionella pneumonia, Pontiac fever, Legionellosis\" and question type triggers \"prognosis, life expectancy\".",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s18::p008",
+     "summary": "The IR task retrieves hypothesis questions relevant to the submitted question by merging TF-IDF weighting function and In-expB2 DFR model results.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s18::p009",
+     "summary": "Two retrieved question sets are merged by summing scores for each retrieved question in both lists and re-ranking the hypothesis questions.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s19::p000",
+     "summary": "IR models and the RQE Logistic Regression model provide different perspectives, with question entailment understanding relations between important terms and traditional IR identifying important terms.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s19::p001",
+     "summary": "Candidate questions are fetched using IR models, then the RQE classifier filters out non-entailed questions and re-ranks remaining candidates.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s19::p002",
+     "summary": "The premise question INLINEFORM2 constructs N question pairs INLINEFORM3, and the RQE classifier filters out non-entailed pairs and re-ranks remaining pairs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s19::p003",
+     "summary": "Selected candidate questions with positive entailment are ranked by a hybrid score INLINEFORM5 using the IR system score INLINEFORM7 and RQE system score INLINEFORM8.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s19::p004",
+     "summary": "For each system INLINEFORM0 INLINEFORM1, the associated score is normalized by dividing it by the maximum score among INLINEFORM2 candidate questions retrieved by INLINEFORM3 for INLINEFORM4.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s19::p006",
+     "summary": "INLINEFORM0 INLINEFORM1 is presented.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s19::p007",
+     "summary": "In the experiments, INLINEFORM0 was fixed to 100 as a safe threshold value for the task.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s19::p008",
+     "summary": "The collection of 47,457 question-answer pairs from 12 NIH institutes is unlikely to contain more than 100 occurrences of the same focus-type pair.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s19::p009",
+     "summary": "Each question was indexed with additional annotations for the question focus, its synonyms, and the question type synonyms.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s20::p000",
+     "summary": "The evaluation studies RQE effectiveness for Medical Question Answering by comparing the hybrid entailment-based approach, IR method, and TREC 2017 LiveQA-Med QA systems.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s21::p000",
+     "summary": "An interface was developed for manual evaluation, showing top-10 answers of each QA method and LiveQA reference answer(s) for each test question.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s21::p001",
+     "summary": "The evaluation used TREC-2017 LiveQA medical test questions randomly selected from NLM consumer health questions covering different medical entities and question types.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s21::p002",
+     "summary": "The same judgment scores as the LiveQA Track were used for a relevant comparison.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s21::p003",
+     "summary": "Correct and Complete Answer is scored 4.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s21::p004",
+     "summary": "Correct but Incomplete is scored 3.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s21::p005",
+     "summary": "Incorrect but Related is scored 2.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s21::p006",
+     "summary": "Incorrect is scored 1.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s21::p007",
+     "summary": "IR-based and hybrid IR+RQE answers were anonymized and judged by 3 assessors using LiveQA-Med reference answers, with different numbers of answers evaluated.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s21::p008",
+     "summary": "Table TABREF103 reports inter-annotator agreement through F1 score, with 94.33% F1 score average agreement and assessor A evaluations used for both methods.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s22::p000",
+     "summary": "The measures used by TREC LiveQA challenges were computed to evaluate the first retrieved answer for each test question.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s22::p001",
+     "summary": "avgScore(0-3) is the average score over all questions, transferring 1-4 level grades to 0-3 scores and ranking LiveQA runs.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s22::p002",
+     "summary": "succ@i+ is the number of questions with score i or above divided by the total number of questions.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s22::p003",
+     "summary": "prec@i+ is the number of questions with score i or above divided by the number of questions answered by the system.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s22::p004",
+     "summary": "Table TABREF108 shows hybrid IR+RQE achieved 0.827 average score, outperforming IR-based system and LiveQA'17 medical challenge best results.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s23::p000",
+     "summary": "Top-10 answers were evaluated using Mean Average Precision (MAP) and Mean Reciprocal Rank (MRR), with two correct ratings treated as correct answers.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s23::p001",
+     "summary": "MAP is the mean of the Average Precision (AvgP) scores over all questions.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s23::p002",
+     "summary": "(1) INLINEFORM0 is presented.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s23::p003",
+     "summary": "Q is the number of questions, and INLINEFORM0 is the AvgP of the INLINEFORM1 question.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s23::p005",
+     "summary": "K is the number of correct answers, and INLINEFORM0 is the rank of INLINEFORM1 correct answer.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s23::p006",
+     "summary": "MRR is the average of reciprocal ranks for each question, where reciprocal rank is the multiplicative inverse of the first correct answer's rank.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s23::p007",
+     "summary": "(2) INLINEFORM0 is presented.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s23::p008",
+     "summary": "Q is the number of questions, and INLINEFORM0 is the rank of the first correct answer for the INLINEFORM1 question.",
+     "group_id": "1901.08079::g01"
+    },
+    {
+     "passage_id": "1901.08079::s23::p009",
+     "summary": "Table TABREF113 shows IR+RQE outperforms IR-based QA with 0.311 MAP@10 and 0.333 MRR@10.",
+     "group_id": "1901.08079::g01"
+    }
+   ],
+   "n_raw": 90,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 6566,
+    "completion_tokens": 3963,
+    "total_tokens": 10529,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1901.08079::g02",
+   "summaries": [
+    {
+     "passage_id": "1901.08079::s24::p000",
+     "summary": "The evaluation followed LiveQA guidelines rigorously, used NIST assessors' paraphrases, achieved 88.5% F1 and 94.3% agreement, and showed RQE exceeded the best medical LiveQA'17 results by 29.8%.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s24::p001",
+     "summary": "The answer source has only 47K question-answer pairs, while LiveQA participating systems relied on much larger collections, including the World Wide Web.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s24::p002",
+     "summary": "The system answered one subquestion at most, while many LiveQA test questions had several subquestions.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s24::p003",
+     "summary": "Observation (b) makes the hybrid IR+RQE approach more promising because it offers large potential for improving answer completeness.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s24::p004",
+     "summary": "Observation (a) suggests reliable-only answer sources can improve QA performance without losing coverage, with at least one answer per test question and the best relevance score.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s24::p005",
+     "summary": "Assessors reported wrong-focus answers, repeated answers from different websites, and better performance on diseases than drugs, suggesting focus recognition, near-duplicate removal, and more drug information.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s24::p006",
+     "summary": "The authors examined private websites used by LiveQA-Med annotators, including ConsumerLab for COENZYME Q10 ingredients and eHealthMe for Phentermine and Dicyclomine interactions unavailable in DailyMed.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s24::p007",
+     "summary": "The authors question whether big data and private websites can automatically answer unavailable medical questions and suggest limiting answerable questions and warning users about online dangers.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s24::p008",
+     "summary": "Medical QA systems should follow strict guidelines about goals, background knowledge, and resources, based on trusted information sources or conventions such as HONcode.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s24::p009",
+     "summary": "Experiments show limiting answer sources with such guidelines is feasible and could enhance QA system performance from an information retrieval perspective.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s25::p000",
+     "summary": "The paper studied machine learning and deep learning for Recognizing Question Entailment, developed a RQE-based QA system, shared 47K medical question-answer pairs, outperformed TREC-2017 LiveQA medical results, and outlined future work.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s26::p000",
+     "summary": "The authors thank Halil Kilicoglu, Sonya E. Shooshan, and Ellen Voorhees for help with crawling, manual evaluation, answer judgment, and TREC LiveQA evaluation.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s26::p001",
+     "summary": "The authors consider question number 36 in the TREC-2017 LiveQA medical test dataset.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s26::p002",
+     "summary": "Question 36 asks about causes of congenital diaphragmatic hernia, cousin marriage, and lifelong lung disease the baby might experience.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s26::p003",
+     "summary": "Question 36 was answered by 5 participating runs versus 8 for other questions, with all submitted answers wrong, while the IR-based QA system retrieved one score 4 answer and hybrid IR+RQE provided 3 excellent answers.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s26::p004",
+     "summary": "This passage labels TREC 2017 LiveQA-Med Participants' Results as section A.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s26::p005",
+     "summary": "This passage labels Our IR-based QA System as section B.",
+     "group_id": "1901.08079::g02"
+    },
+    {
+     "passage_id": "1901.08079::s26::p006",
+     "summary": "This passage labels Our IR+RQE QA System as section C.",
+     "group_id": "1901.08079::g02"
+    }
+   ],
+   "n_raw": 18,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1826,
+    "completion_tokens": 891,
+    "total_tokens": 2717,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,194 @@
+{
+ "kept": [
+  {
+   "insight_id": "1809.02279::g00:i02",
+   "paper_id": "1809.02279",
+   "group_id": "1809.02279::g00",
+   "concise_text": "For NLI, SNLI and MultiNLI use fixed GloVe pretrained word embeddings, 300D encoder states, and a 1024D MLP, and the best model achieves 87.0% accuracy on SNLI.",
+   "triple": {
+    "subject": "the NLI experiments",
+    "predicate": "produces",
+    "object": "87.0% accuracy on SNLI with fixed GloVe pretrained word embeddings, 300D encoder states, and a 1024D MLP"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1809.02279::s08::p001",
+    "1809.02279::s08::p002"
+   ],
+   "supporting_fact_ids": [
+    "1809.02279::g00:b5:f04",
+    "1809.02279::g00:b5:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Both passages exist and jointly support the composed setting-outcome: fixed GloVe embeddings, 300D encoder states, 1024D MLP, and best SNLI accuracy of 87.0%."
+   },
+   "unit_id": "1809.02279::u002"
+  },
+  {
+   "insight_id": "1809.02279::g00:i03",
+   "paper_id": "1809.02279",
+   "group_id": "1809.02279::g00",
+   "concise_text": "For SST, models use 300D GloVe vectors, 2-layer 150D or 300D encoders, and a 300D MLP classifier with tuned word embeddings, achieving new state-of-the-art accuracy on SST-2 and competitive accuracy on SST-5.",
+   "triple": {
+    "subject": "the SST models",
+    "predicate": "produces",
+    "object": "new state-of-the-art accuracy on SST-2 and competitive accuracy on SST-5"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1809.02279::s10::p001",
+    "1809.02279::s10::p002"
+   ],
+   "supporting_fact_ids": [
+    "1809.02279::g00:b6:f06",
+    "1809.02279::g00:b6:f09",
+    "1809.02279::g00:b6:f10",
+    "1809.02279::g00:b6:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Both passages exist and jointly support the SST settings and outcomes, including 300D GloVe vectors, 2-layer 150D/300D encoders, 300D MLP, tuned embeddings, SST-2 state-of-the-art and competitive SST-5 accuracy."
+   },
+   "unit_id": "1809.02279::u003"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1809.02279::g00:i00",
+   "paper_id": "1809.02279",
+   "group_id": "1809.02279::g00",
+   "concise_text": "The current stacked LSTM formulation omits the lower-layer cell state, while CAS-LSTM extends it with an additional forget gate that accepts or ignores signals from the previous layer.",
+   "triple": {
+    "subject": "CAS-LSTM",
+    "predicate": "extends",
+    "object": "the stacked LSTM formulation with an additional forget gate for previous-layer signals"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1809.02279::s03::p003",
+    "1809.02279::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1809.02279::g00:b2:f02",
+    "1809.02279::g00:b2:f03",
+    "1809.02279::g00:b2:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.95,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Cited passages exist and support the claim, but it is essentially a direct restatement/paraphrase of the concise_text and the two cited paragraphs."
+   },
+   "unit_id": "1809.02279::u000"
+  },
+  {
+   "insight_id": "1809.02279::g00:i01",
+   "paper_id": "1809.02279",
+   "group_id": "1809.02279::g00",
+   "concise_text": "Because each non-bottom CAS-LSTM layer accepts hidden and cell states from left and below contexts, the burden of selecting information is shared with INLINEFORM8.",
+   "triple": {
+    "subject": "each non-bottom layer of CAS-LSTM",
+    "predicate": "causes",
+    "object": "the burden of selecting information to be shared with INLINEFORM8"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1809.02279::s04::p001",
+    "1809.02279::s04::p002"
+   ],
+   "supporting_fact_ids": [
+    "1809.02279::g00:b2:f08",
+    "1809.02279::g00:b2:f09",
+    "1809.02279::g00:b2:f12",
+    "1809.02279::g00:b2:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.35,
+    "causality_error": true,
+    "reason": "The passages say non-bottom layers accept left and below hidden/cell states and that burden is shared with INLINEFORM8, but do not support the causal 'causes' relation as written."
+   },
+   "unit_id": "1809.02279::u001"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1809.02279::g00:i00",
+    "verdict": {
+     "insight_id": "1809.02279::g00:i00",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Cited passages exist and support the claim, but it is essentially a direct restatement/paraphrase of the concise_text and the two cited paragraphs."
+    },
+    "reason": "Cited passages exist and support the claim, but it is essentially a direct restatement/paraphrase of the concise_text and the two cited paragraphs."
+   },
+   {
+    "insight_id": "1809.02279::g00:i01",
+    "verdict": {
+     "insight_id": "1809.02279::g00:i01",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.35,
+     "causality_error": true,
+     "reason": "The passages say non-bottom layers accept left and below hidden/cell states and that burden is shared with INLINEFORM8, but do not support the causal 'causes' relation as written."
+    },
+    "reason": "The passages say non-bottom layers accept left and below hidden/cell states and that burden is shared with INLINEFORM8, but do not support the causal 'causes' relation as written."
+   },
+   {
+    "insight_id": "1809.02279::g00:i02",
+    "verdict": {
+     "insight_id": "1809.02279::g00:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Both passages exist and jointly support the composed setting-outcome: fixed GloVe embeddings, 300D encoder states, 1024D MLP, and best SNLI accuracy of 87.0%."
+    }
+   },
+   {
+    "insight_id": "1809.02279::g00:i03",
+    "verdict": {
+     "insight_id": "1809.02279::g00:i03",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Both passages exist and jointly support the SST settings and outcomes, including 300D GloVe vectors, 2-layer 150D/300D encoders, 300D MLP, tuned embeddings, SST-2 state-of-the-art and competitive SST-5 accuracy."
+    }
+   }
+  ],
+  "calls": [
+   {
+    "n": 4,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 1824,
+     "completion_tokens": 345,
+     "total_tokens": 2169,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,332 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1904.09535::s00::p001",
+   "summary": "DNN are widely used in industry for NLP tasks such as text classification, sequence labeling, and question answering, but engineers face challenges applying them.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s00::p002",
+   "summary": "The challenges hinder engineer productivity and yield less optimal solutions, motivating an NLP toolkit for DNN models and a survey identifying three typical personas.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s00::p003",
+   "summary": "The NLP toolkit must be generic and flexible; analysis of a commercial centralized GPU cluster found about 87.5% NLP related jobs in common tasks and more than 90% of networks used common components.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s00::p004",
+   "summary": "NeuronBlocks was developed as a DNN toolkit for NLP tasks with an upper layer of end-to-end network templates and a bottom layer of reusable standard components.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s00::p005",
+   "summary": "The technical contributions of NeuronBlocks are summarized into three aspects.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s01::p000",
+   "summary": "General-purpose deep learning frameworks such as TensorFlow, PyTorch and Keras offer flexibility and support NLP tasks, but require large overhead to master framework details.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s01::p001",
+   "summary": "OpenNMT targets neural machine translation or other natural language generation tasks, while AllenNLP provides pre-built models, but both are limited to certain tasks and insufficiently flexible.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s02::p001",
+   "summary": "Neuronblocks is built on PyTorch and consists of the Block Zoo and Model Zoo, with reusable blocks and JSON configuration templates enabling task completion without coding efforts.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s03::p001",
+   "summary": "The Block Zoo recognizes major functional categories of neural network components, covers commonly used modules, and is open for future modules.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s03::p002",
+   "summary": "The paragraph contains item formatting settings: [itemsep= -0.4em,topsep = 0.3em, align=left, labelsep=-0.6em, leftmargin=1.2em].",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s03::p003",
+   "summary": "The Embedding Layer supports Word/character embedding and extra handcrafted feature embedding such as pos-tagging.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s03::p004",
+   "summary": "Neural Network Layers include RNN, CNN, QRNN BIBREF2, Transformer BIBREF3, Highway network, Encoder Decoder architecture, attention layers, and regularization layers.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s03::p005",
+   "summary": "Besides loss functions built in PyTorch, the Block Zoo offers more options such as Focal Loss BIBREF6.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s03::p006",
+   "summary": "Supported Metrics include AUC, Accuracy, Precision/Recall, F1, F1/Accuracy, MSE/RMSE, and ExactMatch/F1 for classification, sequence labeling, knowledge distillation, and MRC tasks.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s04::p001",
+   "summary": "NeuronBlocks identifies four types of most popular NLP tasks and provides various end-to-end network templates for each task.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s04::p003",
+   "summary": "Text Classification and Matching supports tasks such as domain/intent classification and question answer matching.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s04::p004",
+   "summary": "Sequence Labeling predicts each token in a sequence into predefined types, with common tasks including NER, POS tagging, and Slot tagging.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s04::p005",
+   "summary": "NeuronBlocks provides a knowledge distillation template to improve inference speed of heavy DNN models like BERT/GPT.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s04::p006",
+   "summary": "Extractive Machine Reading Comprehension predicts the start and end positions of answer spans in a passage given a question and passage pair.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s05::p000",
+   "summary": "NeuronBlocks provides a convenient user interface for users to build, train, and test DNN models.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s05::p002",
+   "summary": "The I/O interface defines model input/output, such as training data, pre-trained models/embeddings, and model saving path.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s05::p003",
+   "summary": "The Model Architecture interface is the key configuration file part defining the whole model architecture as a list of layers/blocks from the Block Zoo.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s05::p004",
+   "summary": "The Training Parameters interface indicates the model optimizer and all other training hyper parameters.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s06::p000",
+   "summary": "Users write a JSON configuration file to instantiate Model Zoo templates or construct architectures from Block Zoo blocks, with shared configuration across training, test, and prediction.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s07::p001",
+   "summary": "Experiments on CoNLL-2003 BIBREF14, GLUE benchmark BIBREF13, and WikiQA corpus BIBREF15 showed NeuronBlocks models achieved reliable, competitive results with productivity greatly improved.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s08::p000",
+   "summary": "On CoNLL-2003 BIBREF14 English NER, NeuronBlocks used BIOES and 12 layer/block combinations, easily reproducing original model performance with comparative or slightly better performance.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s09::p000",
+   "summary": "On the GLUE benchmark BIBREF13, BiLSTM and Attention based models built by NeuronBlocks achieved competitive or even better results with minimal coding efforts.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s10::p000",
+   "summary": "On Domain Classification Dataset, AUC and QPS showed the student model by NeuronBlocks achieved 23-27 times inference speedup with only small performance regression compared with BERTbase fine-tuned classifier.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s11::p000",
+   "summary": "WikiQA corpus BIBREF15 contains 3,047 questions from Bing query logs, and CNN, BiLSTM, and Attention based models in NeuronBlocks achieved competitive or even better results with simple model configurations.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s12::p000",
+   "summary": "NeuronBlocks is a PyTorch DNN toolkit for NLP tasks with a two-layer solution balancing generality and flexibility, verified by extensive experiments and widely used in a commercial search engine product team.",
+   "group_id": "1904.09535::s00"
+  },
+  {
+   "passage_id": "1904.09535::s12::p001",
+   "summary": "As an open-source toolkit, NeuronBlocks will be further extended in various directions, with a few examples named below.",
+   "group_id": "1904.09535::s00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1904.09535::s00",
+   "summaries": [
+    {
+     "passage_id": "1904.09535::s00::p001",
+     "summary": "DNN are widely used in industry for NLP tasks such as text classification, sequence labeling, and question answering, but engineers face challenges applying them.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s00::p002",
+     "summary": "The challenges hinder engineer productivity and yield less optimal solutions, motivating an NLP toolkit for DNN models and a survey identifying three typical personas.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s00::p003",
+     "summary": "The NLP toolkit must be generic and flexible; analysis of a commercial centralized GPU cluster found about 87.5% NLP related jobs in common tasks and more than 90% of networks used common components.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s00::p004",
+     "summary": "NeuronBlocks was developed as a DNN toolkit for NLP tasks with an upper layer of end-to-end network templates and a bottom layer of reusable standard components.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s00::p005",
+     "summary": "The technical contributions of NeuronBlocks are summarized into three aspects.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s01::p000",
+     "summary": "General-purpose deep learning frameworks such as TensorFlow, PyTorch and Keras offer flexibility and support NLP tasks, but require large overhead to master framework details.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s01::p001",
+     "summary": "OpenNMT targets neural machine translation or other natural language generation tasks, while AllenNLP provides pre-built models, but both are limited to certain tasks and insufficiently flexible.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s02::p001",
+     "summary": "Neuronblocks is built on PyTorch and consists of the Block Zoo and Model Zoo, with reusable blocks and JSON configuration templates enabling task completion without coding efforts.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s03::p001",
+     "summary": "The Block Zoo recognizes major functional categories of neural network components, covers commonly used modules, and is open for future modules.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s03::p002",
+     "summary": "The paragraph contains item formatting settings: [itemsep= -0.4em,topsep = 0.3em, align=left, labelsep=-0.6em, leftmargin=1.2em].",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s03::p003",
+     "summary": "The Embedding Layer supports Word/character embedding and extra handcrafted feature embedding such as pos-tagging.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s03::p004",
+     "summary": "Neural Network Layers include RNN, CNN, QRNN BIBREF2, Transformer BIBREF3, Highway network, Encoder Decoder architecture, attention layers, and regularization layers.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s03::p005",
+     "summary": "Besides loss functions built in PyTorch, the Block Zoo offers more options such as Focal Loss BIBREF6.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s03::p006",
+     "summary": "Supported Metrics include AUC, Accuracy, Precision/Recall, F1, F1/Accuracy, MSE/RMSE, and ExactMatch/F1 for classification, sequence labeling, knowledge distillation, and MRC tasks.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s04::p001",
+     "summary": "NeuronBlocks identifies four types of most popular NLP tasks and provides various end-to-end network templates for each task.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s04::p003",
+     "summary": "Text Classification and Matching supports tasks such as domain/intent classification and question answer matching.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s04::p004",
+     "summary": "Sequence Labeling predicts each token in a sequence into predefined types, with common tasks including NER, POS tagging, and Slot tagging.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s04::p005",
+     "summary": "NeuronBlocks provides a knowledge distillation template to improve inference speed of heavy DNN models like BERT/GPT.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s04::p006",
+     "summary": "Extractive Machine Reading Comprehension predicts the start and end positions of answer spans in a passage given a question and passage pair.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s05::p000",
+     "summary": "NeuronBlocks provides a convenient user interface for users to build, train, and test DNN models.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s05::p002",
+     "summary": "The I/O interface defines model input/output, such as training data, pre-trained models/embeddings, and model saving path.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s05::p003",
+     "summary": "The Model Architecture interface is the key configuration file part defining the whole model architecture as a list of layers/blocks from the Block Zoo.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s05::p004",
+     "summary": "The Training Parameters interface indicates the model optimizer and all other training hyper parameters.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s06::p000",
+     "summary": "Users write a JSON configuration file to instantiate Model Zoo templates or construct architectures from Block Zoo blocks, with shared configuration across training, test, and prediction.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s07::p001",
+     "summary": "Experiments on CoNLL-2003 BIBREF14, GLUE benchmark BIBREF13, and WikiQA corpus BIBREF15 showed NeuronBlocks models achieved reliable, competitive results with productivity greatly improved.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s08::p000",
+     "summary": "On CoNLL-2003 BIBREF14 English NER, NeuronBlocks used BIOES and 12 layer/block combinations, easily reproducing original model performance with comparative or slightly better performance.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s09::p000",
+     "summary": "On the GLUE benchmark BIBREF13, BiLSTM and Attention based models built by NeuronBlocks achieved competitive or even better results with minimal coding efforts.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s10::p000",
+     "summary": "On Domain Classification Dataset, AUC and QPS showed the student model by NeuronBlocks achieved 23-27 times inference speedup with only small performance regression compared with BERTbase fine-tuned classifier.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s11::p000",
+     "summary": "WikiQA corpus BIBREF15 contains 3,047 questions from Bing query logs, and CNN, BiLSTM, and Attention based models in NeuronBlocks achieved competitive or even better results with simple model configurations.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s12::p000",
+     "summary": "NeuronBlocks is a PyTorch DNN toolkit for NLP tasks with a two-layer solution balancing generality and flexibility, verified by extensive experiments and widely used in a commercial search engine product team.",
+     "group_id": "1904.09535::s00"
+    },
+    {
+     "passage_id": "1904.09535::s12::p001",
+     "summary": "As an open-source toolkit, NeuronBlocks will be further extended in various directions, with a few examples named below.",
+     "group_id": "1904.09535::s00"
+    }
+   ],
+   "n_raw": 31,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 2964,
+    "completion_tokens": 1518,
+    "total_tokens": 4482,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

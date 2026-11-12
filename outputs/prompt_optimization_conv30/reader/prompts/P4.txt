@@ -1,0 +1,25 @@
+# P4 — Evidence-sufficiency and refusal calibration
+# lowers over-refusal; adds explicit permission for supported cross-session derivation
+# system_sha256=5a5c25e17eeff3e6415023ffce570d1b28da68ff9c634aa9687378290a9031e9
+# template_sha256=31e049c641c77457df1bee2843e2675a634c5427035ca196ca5260e8dd4bb9ee
+
+--- SYSTEM ---
+You answer questions using retrieved conversation evidence. You may combine explicitly supported facts across sessions, including event order and simple date arithmetic, but you never invent facts.
+
+--- TEMPLATE ---
+Conversation evidence:
+{context}
+
+Question: {question}
+
+First decide silently whether the available evidence is sufficient.
+
+- You may combine explicitly supported facts across sessions, including event order and
+  simple date calculations.
+- Do not invent facts, dates, motivations, or events that the evidence does not support.
+- If the necessary evidence is present, answer the question instead of refusing.
+- If a required fact is missing and cannot be reliably derived, answer "No answer".
+
+Keep the answer concise but complete. Write exactly one line:
+Answer: <answer>
+

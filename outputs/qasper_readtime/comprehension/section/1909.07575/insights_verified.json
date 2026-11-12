@@ -1,0 +1,894 @@
+{
+ "kept": [
+  {
+   "insight_id": "1909.07575::g00:i00",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g00",
+   "concise_text": "TCEN addresses the common pre-training practice's subnet waste, role mismatch and non-pre-trained attention issues by reusing all subnets, keeping roles consistent, and pre-training the attention module.",
+   "triple": {
+    "subject": "TCEN",
+    "predicate": "addresses",
+    "object": "subnet waste, role mismatch and non-pre-trained attention issues"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1909.07575::s02::p002",
+    "1909.07575::s00::p005"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g00:b2:f06",
+    "1909.07575::g00:b0:f16"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Both cited passages jointly state the common practice's three issues and that TCEN addresses them by reusing all subnets, keeping roles consistent, and pre-training attention."
+   },
+   "unit_id": "1909.07575::u000"
+  },
+  {
+   "insight_id": "1909.07575::g00:i01",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g00",
+   "concise_text": "Because the common practice initializes ST with only the ASR encoder and MT decoder, the MT encoder's valuable semantic information cannot be inherited by the final ST system.",
+   "triple": {
+    "subject": "common practice",
+    "predicate": "causes",
+    "object": "loss of valuable semantic information captured by the MT encoder"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1909.07575::s00::p001",
+    "1909.07575::s00::p002"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g00:b0:f06",
+    "1909.07575::g00:b0:f09",
+    "1909.07575::g00:b0:f10"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "The passages jointly support that the common practice initializes ST with ASR encoder and MT decoder, discards the MT encoder, and consequently loses its semantic information."
+   },
+   "unit_id": "1909.07575::u001"
+  },
+  {
+   "insight_id": "1909.07575::g00:i02",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g00",
+   "concise_text": "TCEN's tandem ASR encoder and MT encoder disentangle acoustic and linguistic feature extraction, addressing the role mismatch caused by the speech encoder's changing roles.",
+   "triple": {
+    "subject": "TCEN's tandem ASR encoder and MT encoder",
+    "predicate": "addresses",
+    "object": "role mismatch"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1909.07575::s00::p003",
+    "1909.07575::s00::p006"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g00:b0:f11",
+    "1909.07575::g00:b0:f12",
+    "1909.07575::g00:b0:f13",
+    "1909.07575::g00:b1:f00",
+    "1909.07575::g00:b1:f01"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "The role mismatch paragraph and TCEN tandem-encoder paragraph jointly support that tandem ASR/MT encoders disentangle acoustic and linguistic extraction and ensure role consistency."
+   },
+   "unit_id": "1909.07575::u002"
+  },
+  {
+   "insight_id": "1909.07575::g00:i03",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g00",
+   "concise_text": "TCEN reuses the pre-trained MT attention module in ST, overcoming the prior limitation that the ST attention module did not benefit from pre-training.",
+   "triple": {
+    "subject": "TCEN",
+    "predicate": "overcomes",
+    "object": "non-pre-trained attention module"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1909.07575::s00::p004",
+    "1909.07575::s00::p006"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g00:b0:f14",
+    "1909.07575::g00:b0:f15",
+    "1909.07575::g00:b1:f01"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "The passages jointly support that prior ST attention did not benefit from pre-training and TCEN reuses the pre-trained MT attention module in ST."
+   },
+   "unit_id": "1909.07575::u003"
+  },
+  {
+   "insight_id": "1909.07575::g00:i05",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g00",
+   "concise_text": "Because speech encoder output length is proportional to input frame length and much longer than word embeddings, lengthening MT source sentences with repetitions and blank tokens targets length inconsistency.",
+   "triple": {
+    "subject": "lengthening MT source sentences with word repetitions and blank tokens",
+    "predicate": "addresses",
+    "object": "length inconsistency"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1909.07575::s00::p007",
+    "1909.07575::s10::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g00:b1:f05",
+    "1909.07575::g00:b6:f01",
+    "1909.07575::g00:b6:f02",
+    "1909.07575::g00:b6:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "Both passages explicitly support that speech encoder outputs are much longer than word embeddings and that lengthening MT source sentences with repetitions/blank tokens bridges the length gap."
+   },
+   "unit_id": "1909.07575::u005"
+  },
+  {
+   "insight_id": "1909.07575::g00:i06",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g00",
+   "concise_text": "TCEN is evaluated on the IWSLT18 speech translation benchmark and is significantly better than previous methods by 3.6 and 2.2 BLEU scores for subword-level and character-level decoding.",
+   "triple": {
+    "subject": "TCEN",
+    "predicate": "evaluated_on",
+    "object": "IWSLT18 speech translation benchmark"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1909.07575::s00::p005",
+    "1909.07575::s00::p008"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g00:b0:f16",
+    "1909.07575::g00:b0:f17"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.35,
+    "causality_error": false,
+    "reason": "The cited passages explicitly state evaluation on IWSLT18 and BLEU improvements of 3.6 and 2.2 for subword- and character-level decoding."
+   },
+   "unit_id": "1909.07575::u006"
+  },
+  {
+   "insight_id": "1909.07575::g00:i07",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g00",
+   "concise_text": "The CTC-based ASR pre-training of enc_s on dataset A enables TCEN to avoid an ASR decoder while still reading acoustic features into the source language space.",
+   "triple": {
+    "subject": "CTC-based ASR pre-training of enc_s on dataset A",
+    "predicate": "enables",
+    "object": "TCEN without an ASR decoder"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1909.07575::s00::p005",
+    "1909.07575::s05::p000",
+    "1909.07575::s06::p001"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g00:b0:f18",
+    "1909.07575::g00:b3:f04",
+    "1909.07575::g00:b4:f00",
+    "1909.07575::g00:b4:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "The passages jointly support CTC pre-training of enc_s on dataset A and that CTC removes the decoder requirement while preserving acoustic-to-source-language-space reading."
+   },
+   "unit_id": "1909.07575::u007"
+  },
+  {
+   "insight_id": "1909.07575::g00:i08",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g00",
+   "concise_text": "TCEN's pre-training uses CTC objective for enc_s on dataset A and MT dataset M for enc_t and dec, then fine-tuning jointly updates ASR, MT, and ST tasks.",
+   "triple": {
+    "subject": "TCEN training procedure",
+    "predicate": "requires",
+    "object": "CTC pre-training on dataset A, MT pre-training on dataset M, and joint ASR, MT, and ST fine-tuning"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1909.07575::s05::p000",
+    "1909.07575::s07::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g00:b3:f03",
+    "1909.07575::g00:b3:f04",
+    "1909.07575::g00:b3:f05",
+    "1909.07575::g00:b5:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.94,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.45,
+    "causality_error": false,
+    "reason": "The cited passages explicitly describe CTC pre-training on dataset A, MT pre-training on dataset M, and joint ASR/MT/ST fine-tuning."
+   },
+   "unit_id": "1909.07575::u008"
+  },
+  {
+   "insight_id": "1909.07575::g01:i00",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g01",
+   "concise_text": "TCEN is evaluated on IWSLT18 speech translation task using lowercase BLEU, with tst2010, tst2013, tst2014, tst2015 as test sets.",
+   "triple": {
+    "subject": "TCEN",
+    "predicate": "evaluated_on",
+    "object": "IWSLT18 speech translation task with lowercase BLEU on tst2010, tst2013, tst2014, tst2015"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1909.07575::s11::p000",
+    "1909.07575::s12::p000",
+    "1909.07575::s12::p005",
+    "1909.07575::s13::p005"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g01:b0:f03",
+    "1909.07575::g01:b1:f02",
+    "1909.07575::g01:b2:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "The passages jointly support IWSLT18 task, lowercase BLEU metric, and tst2010/tst2013/tst2014/tst2015 as test sets."
+   },
+   "unit_id": "1909.07575::u010"
+  },
+  {
+   "insight_id": "1909.07575::g01:i01",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g01",
+   "concise_text": "The ASR model used for encoder pre-training is trained on ST-TED and TED-LIUM2, which together provide 272 hours and 207 hours of English speech.",
+   "triple": {
+    "subject": "ASR model used for encoder pre-training",
+    "predicate": "trained_on",
+    "object": "ST-TED and TED-LIUM2 with 272 hours and 207 hours of English speech"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1909.07575::s12::p000",
+    "1909.07575::s12::p001",
+    "1909.07575::s13::p002"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g01:b0:f01",
+    "1909.07575::g01:b0:f04",
+    "1909.07575::g01:b0:f05",
+    "1909.07575::g01:b1:f06",
+    "1909.07575::g01:b1:f08"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "The passages jointly support that the ASR model for encoder pre-training is trained on ST-TED and TED-LIUM2, with 272 and 207 hours of English speech respectively."
+   },
+   "unit_id": "1909.07575::u011"
+  },
+  {
+   "insight_id": "1909.07575::g01:i02",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g01",
+   "concise_text": "The MT model used for decoder pre-training is first trained on WMT data, corresponding to WMT2018 out-of-domain training data with 41M sentence pairs.",
+   "triple": {
+    "subject": "MT model used for decoder pre-training",
+    "predicate": "trained_on",
+    "object": "WMT2018 out-of-domain training data with 41M sentence pairs"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1909.07575::s12::p002",
+    "1909.07575::s13::p002"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g01:b0:f08",
+    "1909.07575::g01:b0:f09",
+    "1909.07575::g01:b1:f07",
+    "1909.07575::g01:b1:f09"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "The passages jointly support that the MT model is first trained on WMT out-of-domain data and that WMT2018 out-of-domain data has 41M sentence pairs."
+   },
+   "unit_id": "1909.07575::u012"
+  },
+  {
+   "insight_id": "1909.07575::g01:i03",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g01",
+   "concise_text": "The MT model used for decoder pre-training is fine-tuned on in-domain data consisting of ST-TED and WIT3 transcription and translation pairs with 130k and 200k sentence pairs.",
+   "triple": {
+    "subject": "MT model used for decoder pre-training",
+    "predicate": "fine-tuned_on",
+    "object": "ST-TED and WIT3 in-domain MT data with 130k and 200k sentence pairs"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1909.07575::s12::p002",
+    "1909.07575::s13::p002"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g01:b0:f06",
+    "1909.07575::g01:b0:f07",
+    "1909.07575::g01:b1:f07",
+    "1909.07575::g01:b1:f10"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "The passages jointly support that the MT model is fine-tuned on in-domain data and that in-domain MT data consists of ST-TED and WIT3 pairs with 130k and 200k sentence pairs."
+   },
+   "unit_id": "1909.07575::u013"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1909.07575::g00:i04",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g00",
+   "concise_text": "The TCEN text encoder receives word embeddings in MT but speech encoder outputs in ST, so sharing the CTC projection matrix with the word embedding matrix targets semantic consistency.",
+   "triple": {
+    "subject": "sharing the CTC projection matrix with the word embedding matrix",
+    "predicate": "addresses",
+    "object": "semantic inconsistency between MT and ST inputs"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1909.07575::s00::p007",
+    "1909.07575::s09::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g00:b1:f02",
+    "1909.07575::g00:b1:f03",
+    "1909.07575::g00:b1:f04",
+    "1909.07575::g00:b5:f05",
+    "1909.07575::g00:b5:f06",
+    "1909.07575::g00:b5:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.91,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.45,
+    "novelty": 0.5,
+    "causality_error": false,
+    "reason": "The cited text says sharing the CTC projection matrix with word embeddings ensures same latent space/semantic consistency, but the insight frames it as addressing semantic inconsistency between MT and ST inputs; partly supported but not exact and introduces 'semantic inconsistency' wording not directly stated."
+   },
+   "unit_id": "1909.07575::u004"
+  },
+  {
+   "insight_id": "1909.07575::g00:i09",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g00",
+   "concise_text": "The many-to-many multi-task model's task-specific attention explains why previous work trains separate ASR, MT and ST attention modules and leaves ST attention unbenefited by pre-training.",
+   "triple": {
+    "subject": "task-specific attention",
+    "predicate": "causes",
+    "object": "ST attention not benefiting from pre-training"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.07575::s00::p004",
+    "1909.07575::s02::p001"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g00:b0:f14",
+    "1909.07575::g00:b0:f15",
+    "1909.07575::g00:b2:f02",
+    "1909.07575::g00:b2:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "The text says attention is task-specific and three attentions are defined, and separately says previous work trains separate attentions hence ST attention does not benefit; it does not explicitly support task-specific attention as the cause of ST attention not benefiting."
+   },
+   "unit_id": "1909.07575::u009"
+  },
+  {
+   "insight_id": "1909.07575::g01:i04",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g01",
+   "concise_text": "The claim that the MT dataset is much larger than the ASR dataset is supported by WMT2018 having 41M sentence pairs versus TED-LIUM2 having 93k transcript sentences.",
+   "triple": {
+    "subject": "WMT2018 with 41M sentence pairs",
+    "predicate": "supports",
+    "object": "the MT dataset being much larger than the ASR dataset"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.07575::s12::p001",
+    "1909.07575::s12::p002",
+    "1909.07575::s13::p006"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g01:b0:f05",
+    "1909.07575::g01:b0:f09",
+    "1909.07575::g01:b2:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.6,
+    "novelty": 0.5,
+    "causality_error": false,
+    "reason": "The cited passages provide dataset sizes and state the MT dataset is much larger than ASR dataset, but do not explicitly say WMT2018 versus TED-LIUM2 supports that claim; comparison mixes sentence pairs with transcript sentences and omits other ASR/MT data."
+   },
+   "unit_id": "1909.07575::u014"
+  },
+  {
+   "insight_id": "1909.07575::g01:i05",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g01",
+   "concise_text": "The vanilla model starts at low accuracy because it is trained from scratch on ST-TED and its networks are not pre-trained on ASR and MT data.",
+   "triple": {
+    "subject": "training from scratch on ST-TED without ASR and MT pre-training",
+    "predicate": "causes",
+    "object": "the vanilla model to start at low accuracy"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1909.07575::s13::p001",
+    "1909.07575::s16::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g01:b1:f04",
+    "1909.07575::g01:b2:f08"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Cited paragraphs exist and explicitly state the causal explanation, but the insight is essentially a restatement/paraphrase of s16:p000 combined with a minor fact from s13:p001; reject for low novelty."
+   },
+   "unit_id": "1909.07575::u015"
+  },
+  {
+   "insight_id": "1909.07575::g01:i06",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g01",
+   "concise_text": "The proposed method reuses every sub-net and keeps sub-net roles consistent, and empirical studies demonstrate that our model significantly outperforms baselines.",
+   "triple": {
+    "subject": "reusing every sub-net and keeping sub-net roles consistent",
+    "predicate": "improves_on",
+    "object": "baselines in empirical studies"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1909.07575::s19::p000",
+    "1909.07575::s14::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g01:b3:f08",
+    "1909.07575::g01:b2:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.74,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.35,
+    "causality_error": true,
+    "reason": "Paragraphs support the method properties and that the model outperforms baselines, but do not explicitly state that reusing every sub-net and keeping roles consistent causes/improves over baselines; this is an inferred causal relation from co-occurring statements."
+   },
+   "unit_id": "1909.07575::u016"
+  },
+  {
+   "insight_id": "1909.07575::g01:i07",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g01",
+   "concise_text": "The char-level models outperform subword-level models in all settings, while subword experiments use English and German vocabularies generated by sentencepiece with 5k tokens.",
+   "triple": {
+    "subject": "sentencepiece 5k-token subword vocabularies",
+    "predicate": "limits",
+    "object": "subword-level models that char-level models outperform in all settings"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1909.07575::s12::p004",
+    "1909.07575::s14::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g01:b0:f13",
+    "1909.07575::g01:b2:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.8,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.45,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "Sources state the 5k sentencepiece vocabularies and that char-level models outperform subword-level models, but do not say the vocabularies limit subword-level models; the causal 'limits' relation is unsupported."
+   },
+   "unit_id": "1909.07575::u017"
+  },
+  {
+   "insight_id": "1909.07575::g01:i08",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g01",
+   "concise_text": "The ablation study on subword-level experiments uses the setting where English and German vocabularies are generated by sentencepiece with a fixed size of 5k tokens.",
+   "triple": {
+    "subject": "ablation study on subword-level experiments",
+    "predicate": "requires",
+    "object": "sentencepiece English and German vocabularies with a fixed size of 5k tokens"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1909.07575::s12::p004",
+    "1909.07575::s15::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g01:b0:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.25,
+    "causality_error": false,
+    "reason": "Sources jointly support that an ablation study was on subword-level experiments and that subword experiments used 5k sentencepiece English/German vocabularies, but 'requires' is too strong and the insight is mostly a composed restatement of experimental settings."
+   },
+   "unit_id": "1909.07575::u018"
+  },
+  {
+   "insight_id": "1909.07575::g01:i09",
+   "paper_id": "1909.07575",
+   "group_id": "1909.07575::g01",
+   "concise_text": "The end-to-end model compared with cascaded systems is TCEN, implemented based on ESPnet with RNN size d=1024 for all models.",
+   "triple": {
+    "subject": "TCEN",
+    "predicate": "implemented_with",
+    "object": "ESPnet and RNN size d=1024 in the cascaded-system comparison"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1909.07575::s13::p005",
+    "1909.07575::s17::p000",
+    "1909.07575::s19::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.07575::g01:b2:f00",
+    "1909.07575::g01:b2:f01",
+    "1909.07575::g01:b3:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.7,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.3,
+    "causality_error": false,
+    "reason": "Sources support TCEN implementation on ESPnet with d=1024 and a comparison with cascaded systems, but do not explicitly identify the compared end-to-end model as TCEN in the cascaded-system comparison; entity resolution is inferred and partly unsupported."
+   },
+   "unit_id": "1909.07575::u019"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1909.07575::g00:i00",
+    "verdict": {
+     "insight_id": "1909.07575::g00:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Both cited passages jointly state the common practice's three issues and that TCEN addresses them by reusing all subnets, keeping roles consistent, and pre-training attention."
+    }
+   },
+   {
+    "insight_id": "1909.07575::g00:i01",
+    "verdict": {
+     "insight_id": "1909.07575::g00:i01",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "The passages jointly support that the common practice initializes ST with ASR encoder and MT decoder, discards the MT encoder, and consequently loses its semantic information."
+    }
+   },
+   {
+    "insight_id": "1909.07575::g00:i02",
+    "verdict": {
+     "insight_id": "1909.07575::g00:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "The role mismatch paragraph and TCEN tandem-encoder paragraph jointly support that tandem ASR/MT encoders disentangle acoustic and linguistic extraction and ensure role consistency."
+    }
+   },
+   {
+    "insight_id": "1909.07575::g00:i03",
+    "verdict": {
+     "insight_id": "1909.07575::g00:i03",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "The passages jointly support that prior ST attention did not benefit from pre-training and TCEN reuses the pre-trained MT attention module in ST."
+    }
+   },
+   {
+    "insight_id": "1909.07575::g00:i04",
+    "verdict": {
+     "insight_id": "1909.07575::g00:i04",
+     "keep": false,
+     "support": 0.45,
+     "novelty": 0.5,
+     "causality_error": false,
+     "reason": "The cited text says sharing the CTC projection matrix with word embeddings ensures same latent space/semantic consistency, but the insight frames it as addressing semantic inconsistency between MT and ST inputs; partly supported but not exact and introduces 'semantic inconsistency' wording not directly stated."
+    },
+    "reason": "The cited text says sharing the CTC projection matrix with word embeddings ensures same latent space/semantic consistency, but the insight frames it as addressing semantic inconsistency between MT and ST inputs; partly supported but not exact and introduces 'semantic inconsistency' wording not directly stated."
+   },
+   {
+    "insight_id": "1909.07575::g00:i05",
+    "verdict": {
+     "insight_id": "1909.07575::g00:i05",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "Both passages explicitly support that speech encoder outputs are much longer than word embeddings and that lengthening MT source sentences with repetitions/blank tokens bridges the length gap."
+    }
+   },
+   {
+    "insight_id": "1909.07575::g00:i06",
+    "verdict": {
+     "insight_id": "1909.07575::g00:i06",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.35,
+     "causality_error": false,
+     "reason": "The cited passages explicitly state evaluation on IWSLT18 and BLEU improvements of 3.6 and 2.2 for subword- and character-level decoding."
+    }
+   },
+   {
+    "insight_id": "1909.07575::g00:i07",
+    "verdict": {
+     "insight_id": "1909.07575::g00:i07",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "The passages jointly support CTC pre-training of enc_s on dataset A and that CTC removes the decoder requirement while preserving acoustic-to-source-language-space reading."
+    }
+   },
+   {
+    "insight_id": "1909.07575::g00:i08",
+    "verdict": {
+     "insight_id": "1909.07575::g00:i08",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.45,
+     "causality_error": false,
+     "reason": "The cited passages explicitly describe CTC pre-training on dataset A, MT pre-training on dataset M, and joint ASR/MT/ST fine-tuning."
+    }
+   },
+   {
+    "insight_id": "1909.07575::g00:i09",
+    "verdict": {
+     "insight_id": "1909.07575::g00:i09",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "The text says attention is task-specific and three attentions are defined, and separately says previous work trains separate attentions hence ST attention does not benefit; it does not explicitly support task-specific attention as the cause of ST attention not benefiting."
+    },
+    "reason": "The text says attention is task-specific and three attentions are defined, and separately says previous work trains separate attentions hence ST attention does not benefit; it does not explicitly support task-specific attention as the cause of ST attention not benefiting."
+   },
+   {
+    "insight_id": "1909.07575::g01:i00",
+    "verdict": {
+     "insight_id": "1909.07575::g01:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "The passages jointly support IWSLT18 task, lowercase BLEU metric, and tst2010/tst2013/tst2014/tst2015 as test sets."
+    }
+   },
+   {
+    "insight_id": "1909.07575::g01:i01",
+    "verdict": {
+     "insight_id": "1909.07575::g01:i01",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "The passages jointly support that the ASR model for encoder pre-training is trained on ST-TED and TED-LIUM2, with 272 and 207 hours of English speech respectively."
+    }
+   },
+   {
+    "insight_id": "1909.07575::g01:i02",
+    "verdict": {
+     "insight_id": "1909.07575::g01:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "The passages jointly support that the MT model is first trained on WMT out-of-domain data and that WMT2018 out-of-domain data has 41M sentence pairs."
+    }
+   },
+   {
+    "insight_id": "1909.07575::g01:i03",
+    "verdict": {
+     "insight_id": "1909.07575::g01:i03",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "The passages jointly support that the MT model is fine-tuned on in-domain data and that in-domain MT data consists of ST-TED and WIT3 pairs with 130k and 200k sentence pairs."
+    }
+   },
+   {
+    "insight_id": "1909.07575::g01:i04",
+    "verdict": {
+     "insight_id": "1909.07575::g01:i04",
+     "keep": false,
+     "support": 0.6,
+     "novelty": 0.5,
+     "causality_error": false,
+     "reason": "The cited passages provide dataset sizes and state the MT dataset is much larger than ASR dataset, but do not explicitly say WMT2018 versus TED-LIUM2 supports that claim; comparison mixes sentence pairs with transcript sentences and omits other ASR/MT data."
+    },
+    "reason": "The cited passages provide dataset sizes and state the MT dataset is much larger than ASR dataset, but do not explicitly say WMT2018 versus TED-LIUM2 supports that claim; comparison mixes sentence pairs with transcript sentences and omits other ASR/MT data."
+   },
+   {
+    "insight_id": "1909.07575::g01:i05",
+    "verdict": {
+     "insight_id": "1909.07575::g01:i05",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Cited paragraphs exist and explicitly state the causal explanation, but the insight is essentially a restatement/paraphrase of s16:p000 combined with a minor fact from s13:p001; reject for low novelty."
+    },
+    "reason": "Cited paragraphs exist and explicitly state the causal explanation, but the insight is essentially a restatement/paraphrase of s16:p000 combined with a minor fact from s13:p001; reject for low novelty."
+   },
+   {
+    "insight_id": "1909.07575::g01:i06",
+    "verdict": {
+     "insight_id": "1909.07575::g01:i06",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.35,
+     "causality_error": true,
+     "reason": "Paragraphs support the method properties and that the model outperforms baselines, but do not explicitly state that reusing every sub-net and keeping roles consistent causes/improves over baselines; this is an inferred causal relation from co-occurring statements."
+    },
+    "reason": "Paragraphs support the method properties and that the model outperforms baselines, but do not explicitly state that reusing every sub-net and keeping roles consistent causes/improves over baselines; this is an inferred causal relation from co-occurring statements."
+   },
+   {
+    "insight_id": "1909.07575::g01:i07",
+    "verdict": {
+     "insight_id": "1909.07575::g01:i07",
+     "keep": false,
+     "support": 0.45,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "Sources state the 5k sentencepiece vocabularies and that char-level models outperform subword-level models, but do not say the vocabularies limit subword-level models; the causal 'limits' relation is unsupported."
+    },
+    "reason": "Sources state the 5k sentencepiece vocabularies and that char-level models outperform subword-level models, but do not say the vocabularies limit subword-level models; the causal 'limits' relation is unsupported."
+   },
+   {
+    "insight_id": "1909.07575::g01:i08",
+    "verdict": {
+     "insight_id": "1909.07575::g01:i08",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.25,
+     "causality_error": false,
+     "reason": "Sources jointly support that an ablation study was on subword-level experiments and that subword experiments used 5k sentencepiece English/German vocabularies, but 'requires' is too strong and the insight is mostly a composed restatement of experimental settings."
+    },
+    "reason": "Sources jointly support that an ablation study was on subword-level experiments and that subword experiments used 5k sentencepiece English/German vocabularies, but 'requires' is too strong and the insight is mostly a composed restatement of experimental settings."
+   },
+   {
+    "insight_id": "1909.07575::g01:i09",
+    "verdict": {
+     "insight_id": "1909.07575::g01:i09",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.3,
+     "causality_error": false,
+     "reason": "Sources support TCEN implementation on ESPnet with d=1024 and a comparison with cascaded systems, but do not explicitly identify the compared end-to-end model as TCEN in the cascaded-system comparison; entity resolution is inferred and partly unsupported."
+    },
+    "reason": "Sources support TCEN implementation on ESPnet with d=1024 and a comparison with cascaded systems, but do not explicitly identify the compared end-to-end model as TCEN in the cascaded-system comparison; entity resolution is inferred and partly unsupported."
+   }
+  ],
+  "calls": [
+   {
+    "n": 15,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 5648,
+     "completion_tokens": 1197,
+     "total_tokens": 6845,
+     "reasoning_tokens": null
+    }
+   },
+   {
+    "n": 5,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 2519,
+     "completion_tokens": 457,
+     "total_tokens": 2976,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

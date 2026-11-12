@@ -1,0 +1,332 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1806.05513::s00::p000",
+   "summary": "Humor bridges languages, cultures, ages and demographics, while Automatic Humor Recognition is challenging due to external knowledge, humor types and differing interpretations.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s00::p001",
+   "summary": "Most social media research focuses on English, but non-English and code-mixed content, especially Hindi-English in India with 41% Hindi speakers and 23.2 million Twitter users, needs technologies.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s00::p002",
+   "summary": "The paper presents a freely available corpus of Latin-script Hindi-English code-mixed tweets manually classified as humorous or non-humorous with token-level language tags.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s01::p000",
+   "summary": "This section explains the techniques used in the creation and annotation of the corpus.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s02::p000",
+   "summary": "Python package twitterscraper extracted 10,478 tweets, from which 4161 English, 2774 Hindi and 3543 English-Hindi code-mixed tweets were identified.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s02::p001",
+   "summary": "The authors tried to make the corpus balanced with uniform distribution of tweets in each category for better supervised classification results.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s03::p000",
+   "summary": "Three university-student annotators fluent in English and Hindi spent approximately 60 hours tagging final code-mixed tweets for humor presence.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s03::p001",
+   "summary": "“For #WontGiveItBack to work, Dhoni needs to say `Trophy toh ghar par hi bhul aaye' ” is an example code-mixed tweet.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s03::p002",
+   "summary": "(For #WontGiveItBack to work, Dhoni needs to say “We forgot the trophy at home”) is the provided translation.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s03::p003",
+   "summary": "Na sadak na naukri bas badh rahi gundagardi #FailedCMNitish is an example code-mixed tweet.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s03::p004",
+   "summary": "(No roads no naukri, only hooliganism increasing #FailedCMNitish ) is the provided translation.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s03::p005",
+   "summary": "Subha ka bhula agar sham ko wapas ghar aa jaye then we must thank GPS technology is an example code-mixed tweet.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s03::p006",
+   "summary": "(If someone lost in the morning return home in the evening then we must thank GPS technology.) is the provided translation.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s03::p007",
+   "summary": "She : Gori hai kalaiyan pehna de mujhe hari hari chudiya He *gets green bangles* She : Not this green ya, bottle green color is an example tweet.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s03::p008",
+   "summary": "(She : (sings a song) My wrists are so beautiful, give me green green bangles He *gets green bangles* She : Not this green ya, bottle green color. ) is the provided translation.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s03::p009",
+   "summary": "Dard dilon ke kam ho jaate... twitter par agar poetries kam ho jaate is an example code-mixed tweet.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s03::p010",
+   "summary": "(pain in the heart will reduce...if number of poetries decreases on twitter). is the provided translation.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s03::p011",
+   "summary": "Annotators used hashtag and keyword searches, humor guidelines, Fleiss' Kappa agreement of 0.821, balanced classes, mixed domains and unimodal filtering to categorize tweets.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s04::p000",
+   "summary": "Tokens were annotated at word level with En, Hi and Ot tags, with ambiguous words resolved by context, meaning and usage.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s05::p000",
+   "summary": "Figure 1 illustrates annotations with tweet id, <tweet></tweet>, <word lang=“ ”></word> and <class></class> tags, and the annotated dataset is available online.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s06::p000",
+   "summary": "Spelling mistakes and variations were corrected, including replacing `dis' with `this' and standardizing transliterated Hindi words across the corpus.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s07::p000",
+   "summary": "This section describes the machine learning model trained and tested on the corpus described in the previous section.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s08::p000",
+   "summary": "Preprocessing tokenizes by spaces, lowercases words, removes punctuation, replaces hashtags, mentions and urls, decomposes camel-case hashtags, and stores humor as the target class.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s09::p000",
+   "summary": "Character level and word level features are used, with words separated by language annotation and combined into each tweet's feature vector.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s09::p001",
+   "summary": "Letter n-grams are language independent and efficient for code-mix texts, so trigrams occurring more than ten times in the corpus were used.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s09::p002",
+   "summary": "A three word window was used as a feature to incorporate contextual information for understanding sentence semantics in humor classification.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s09::p003",
+   "summary": "Common words in jokes, idioms and decomposed hashtags were identified and included as classification features.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s10::p000",
+   "summary": "Four classifiers, support vector machine, random forest, extra tree and naive bayes classifier, were tested using Chi square feature selection and Scikit-learn.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s10::p001",
+   "summary": "10-fold cross validation on 3543 code-mixed tweets yielded 69.3% accuracy for support vector machine with radial basis function kernel and 67.8% for extra tree classifier.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s11::p000",
+   "summary": "The paper describes a freely available corpus of 3453 English-Hindi code-mixed tweets, humor and language tags, features, and best accuracy of 69.3%.",
+   "group_id": "1806.05513::g00"
+  },
+  {
+   "passage_id": "1806.05513::s11::p001",
+   "summary": "Future work includes part-of-speech tags, more domains, more than two languages, transliteration issues, and comparison with merged monolingual English and Hindi tweets.",
+   "group_id": "1806.05513::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1806.05513::g00",
+   "summaries": [
+    {
+     "passage_id": "1806.05513::s00::p000",
+     "summary": "Humor bridges languages, cultures, ages and demographics, while Automatic Humor Recognition is challenging due to external knowledge, humor types and differing interpretations.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s00::p001",
+     "summary": "Most social media research focuses on English, but non-English and code-mixed content, especially Hindi-English in India with 41% Hindi speakers and 23.2 million Twitter users, needs technologies.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s00::p002",
+     "summary": "The paper presents a freely available corpus of Latin-script Hindi-English code-mixed tweets manually classified as humorous or non-humorous with token-level language tags.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s01::p000",
+     "summary": "This section explains the techniques used in the creation and annotation of the corpus.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s02::p000",
+     "summary": "Python package twitterscraper extracted 10,478 tweets, from which 4161 English, 2774 Hindi and 3543 English-Hindi code-mixed tweets were identified.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s02::p001",
+     "summary": "The authors tried to make the corpus balanced with uniform distribution of tweets in each category for better supervised classification results.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s03::p000",
+     "summary": "Three university-student annotators fluent in English and Hindi spent approximately 60 hours tagging final code-mixed tweets for humor presence.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s03::p001",
+     "summary": "“For #WontGiveItBack to work, Dhoni needs to say `Trophy toh ghar par hi bhul aaye' ” is an example code-mixed tweet.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s03::p002",
+     "summary": "(For #WontGiveItBack to work, Dhoni needs to say “We forgot the trophy at home”) is the provided translation.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s03::p003",
+     "summary": "Na sadak na naukri bas badh rahi gundagardi #FailedCMNitish is an example code-mixed tweet.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s03::p004",
+     "summary": "(No roads no naukri, only hooliganism increasing #FailedCMNitish ) is the provided translation.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s03::p005",
+     "summary": "Subha ka bhula agar sham ko wapas ghar aa jaye then we must thank GPS technology is an example code-mixed tweet.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s03::p006",
+     "summary": "(If someone lost in the morning return home in the evening then we must thank GPS technology.) is the provided translation.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s03::p007",
+     "summary": "She : Gori hai kalaiyan pehna de mujhe hari hari chudiya He *gets green bangles* She : Not this green ya, bottle green color is an example tweet.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s03::p008",
+     "summary": "(She : (sings a song) My wrists are so beautiful, give me green green bangles He *gets green bangles* She : Not this green ya, bottle green color. ) is the provided translation.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s03::p009",
+     "summary": "Dard dilon ke kam ho jaate... twitter par agar poetries kam ho jaate is an example code-mixed tweet.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s03::p010",
+     "summary": "(pain in the heart will reduce...if number of poetries decreases on twitter). is the provided translation.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s03::p011",
+     "summary": "Annotators used hashtag and keyword searches, humor guidelines, Fleiss' Kappa agreement of 0.821, balanced classes, mixed domains and unimodal filtering to categorize tweets.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s04::p000",
+     "summary": "Tokens were annotated at word level with En, Hi and Ot tags, with ambiguous words resolved by context, meaning and usage.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s05::p000",
+     "summary": "Figure 1 illustrates annotations with tweet id, <tweet></tweet>, <word lang=“ ”></word> and <class></class> tags, and the annotated dataset is available online.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s06::p000",
+     "summary": "Spelling mistakes and variations were corrected, including replacing `dis' with `this' and standardizing transliterated Hindi words across the corpus.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s07::p000",
+     "summary": "This section describes the machine learning model trained and tested on the corpus described in the previous section.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s08::p000",
+     "summary": "Preprocessing tokenizes by spaces, lowercases words, removes punctuation, replaces hashtags, mentions and urls, decomposes camel-case hashtags, and stores humor as the target class.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s09::p000",
+     "summary": "Character level and word level features are used, with words separated by language annotation and combined into each tweet's feature vector.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s09::p001",
+     "summary": "Letter n-grams are language independent and efficient for code-mix texts, so trigrams occurring more than ten times in the corpus were used.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s09::p002",
+     "summary": "A three word window was used as a feature to incorporate contextual information for understanding sentence semantics in humor classification.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s09::p003",
+     "summary": "Common words in jokes, idioms and decomposed hashtags were identified and included as classification features.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s10::p000",
+     "summary": "Four classifiers, support vector machine, random forest, extra tree and naive bayes classifier, were tested using Chi square feature selection and Scikit-learn.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s10::p001",
+     "summary": "10-fold cross validation on 3543 code-mixed tweets yielded 69.3% accuracy for support vector machine with radial basis function kernel and 67.8% for extra tree classifier.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s11::p000",
+     "summary": "The paper describes a freely available corpus of 3453 English-Hindi code-mixed tweets, humor and language tags, features, and best accuracy of 69.3%.",
+     "group_id": "1806.05513::g00"
+    },
+    {
+     "passage_id": "1806.05513::s11::p001",
+     "summary": "Future work includes part-of-speech tags, more domains, more than two languages, transliteration issues, and comparison with merged monolingual English and Hindi tweets.",
+     "group_id": "1806.05513::g00"
+    }
+   ],
+   "n_raw": 31,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4369,
+    "completion_tokens": 1532,
+    "total_tokens": 5901,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

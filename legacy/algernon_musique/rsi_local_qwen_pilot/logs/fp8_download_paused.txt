@@ -1,0 +1,5 @@
+Paused the in-progress download of Qwen/Qwen3.8-27B-FP8.
+Reason: the machine has RTX 3090 GPUs (compute capability 8.6). FP8 e4m3 kernels in vLLM require compute capability >= 8.9. Only one fully idle card is required for the 9B run, and the FP8 checkpoint is about 31GB, so continuing that download was competing with vLLM installation on the same HDD.
+The partial files were left in place and were not deleted.
+2026-10-27T22:47:49+08:00
+stopped fp8 parent 21934

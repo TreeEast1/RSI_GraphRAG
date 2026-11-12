@@ -1,0 +1,73 @@
+{
+ "paper_id": "1909.02304",
+ "title": "Table-to-Text Generation with Effective Hierarchical Encoder on Three Dimensions (Row, Column and Time)",
+ "abstract": "Although Seq2Seq models for table-to-text generation have achieved remarkable progress, modeling table representation in one dimension is inadequate. This is because (1) the table consists of multiple rows and columns, which means that encoding a table should not depend only on one dimensional sequence or set of records and (2) most of the tables are time series data (e.g. NBA game data, stock market data), which means that the description of the current table may be affected by its historical data. To address aforementioned problems, not only do we model each table cell considering other records in the same row, we also enrich table's representation by modeling each table cell in context of other cells in the same column or with historical (time dimension) data respectively. In addition, we develop a table cell fusion gate to combine representations from row, column and time dimension into one dense vector according to the saliency of each dimension's representation. We evaluated our methods on ROTOWIRE, a benchmark dataset of NBA basketball games. Both automatic and human evaluation results demonstrate the effectiveness of our model with improvement of 2.66 in BLEU over the strong baseline and outperformance of state-of-the-art model.",
+ "sections": [
+  "Introduction",
+  "Preliminaries ::: Notations",
+  "Preliminaries ::: Record Timeline Constrcution",
+  "Preliminaries ::: Baseline Model",
+  "Approach",
+  "Approach ::: Layer 1: Record Encoders ::: Row Dimension Encoder",
+  "Approach ::: Layer 1: Record Encoders ::: Column Dimension Encoder",
+  "Approach ::: Layer 1: Record Encoders ::: Time Dimension Encoder",
+  "Approach ::: Layer 2: Record Fusion Gate",
+  "Approach ::: Layer 3: Row-level Encoder",
+  "Approach ::: Decoder with Dual Attention",
+  "Approach ::: Training",
+  "Experiments ::: Dataset and Evaluation Metrics",
+  "Experiments ::: Implementation Details",
+  "Experiments ::: Results ::: Automatic Evaluation",
+  "Experiments ::: Results ::: Human Evaluation",
+  "Experiments ::: Results ::: Qualitative Example",
+  "Related Work",
+  "Conclusion",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 30,
+ "n_tokens": 6668,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.02304::fig000",
+   "paper_id": "1909.02304",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: Generated example on ROTOWIRE by using Conditional Copy (CC) as baseline (Wiseman et al., 2017). Text that accurately reflects records in the table is in red, and text that contradicts the records is in blue.",
+   "n_tokens": 52
+  },
+  {
+   "caption_id": "1909.02304::fig001",
+   "paper_id": "1909.02304",
+   "file": "3-Figure2-1.png",
+   "caption": "Figure 2: The architecture of our proposed model.",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "1909.02304::fig002",
+   "paper_id": "1909.02304",
+   "file": "6-Table1-1.png",
+   "caption": "Table 1: Automatic evaluation results. Results were obtained using Puduppully et al. (2019)’s updated models",
+   "n_tokens": 27
+  },
+  {
+   "caption_id": "1909.02304::fig003",
+   "paper_id": "1909.02304",
+   "file": "7-Table2-1.png",
+   "caption": "Table 2: Automatic evaluation results on test set. Results were obtained using Wiseman et al. (2017)’s trained extractive evaluation models with relexicalization (Li and Wan, 2018). ∗ We include delayed copy (DEL)’s result in the paper (Li and Wan, 2018) for comparison.",
+   "n_tokens": 71
+  },
+  {
+   "caption_id": "1909.02304::fig004",
+   "paper_id": "1909.02304",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: Human evaluation results.",
+   "n_tokens": 8
+  },
+  {
+   "caption_id": "1909.02304::fig005",
+   "paper_id": "1909.02304",
+   "file": "8-Figure3-1.png",
+   "caption": "Figure 3: An generation example of our model based on the same tables in Figure 1. Text that accurately reflects players (Al Jefferson and Kris Humphries) performance is in red.",
+   "n_tokens": 38
+  }
+ ]
+}

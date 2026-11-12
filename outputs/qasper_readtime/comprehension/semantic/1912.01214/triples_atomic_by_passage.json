@@ -1,0 +1,743 @@
+{
+ "1912.01214::s00::p000": [
+  [
+   "NMT",
+   "heavily relies on",
+   "large-scale parallel data"
+  ],
+  [
+   "NMT",
+   "results in",
+   "poor performance on low-resource or zero-resource language pairs"
+  ],
+  [
+   "pivot-based method",
+   "requires",
+   "doubled decoding time"
+  ],
+  [
+   "pivot-based method",
+   "suffers from",
+   "the propagation of translation errors"
+  ]
+ ],
+ "1912.01214::s00::p001": [
+  [
+   "transfer learning",
+   "leverages",
+   "a high-resource pivot$\\rightarrow $target model (parent)"
+  ],
+  [
+   "transfer learning",
+   "initializes",
+   "a low-resource source$\\rightarrow $target model (child)"
+  ],
+  [
+   "low-resource source$\\rightarrow $target model (child)",
+   "is further optimized with",
+   "a small amount of available parallel data"
+  ],
+  [
+   "performance of the parent model on the child test set",
+   "is",
+   "miserable"
+  ]
+ ],
+ "1912.01214::s00::p002": [
+  [
+   "language space mismatch problem",
+   "is also named",
+   "domain shift problem"
+  ],
+  [
+   "language space mismatch problem",
+   "brings about",
+   "the zero-shot translation failure in transfer learning"
+  ],
+  [
+   "transfer learning",
+   "has no",
+   "explicit training process to guarantee that the source and pivot languages share the same feature distributions"
+  ],
+  [
+   "fine-tuning technique",
+   "forces",
+   "the model to forget the specific knowledge from parent data and learn new features from child data"
+  ]
+ ],
+ "1912.01214::s00::p003": [
+  [
+   "key idea of transfer approach",
+   "is to relieve",
+   "the burden of the domain shift problem by means of cross-lingual pre-training"
+  ],
+  [
+   "BRidge Language Modeling (BRLM)",
+   "is designed to make full use of",
+   "the source$\\leftrightarrow $pivot bilingual data"
+  ],
+  [
+   "BRidge Language Modeling (BRLM)",
+   "is designed to obtain",
+   "a universal encoder for different languages"
+  ]
+ ],
+ "1912.01214::s00::p004": [
+  [
+   "new transfer learning approach for NMT",
+   "uses",
+   "the cross-lingual language model pre-training"
+  ],
+  [
+   "new transfer learning approach for NMT",
+   "enables",
+   "a high performance on zero-shot translation"
+  ]
+ ],
+ "1912.01214::s00::p005": [
+  [
+   "BRLM",
+   "can effectively alleviates",
+   "the distance between different source language spaces"
+  ]
+ ],
+ "1912.01214::s00::p006": [
+  [
+   "the performance on supervised translation direction",
+   "remains",
+   "the same level or even better"
+  ]
+ ],
+ "1912.01214::s01::p000": [
+  [
+   "zero-shot translation in NMT",
+   "has attracted",
+   "widespread attention in academic research"
+  ],
+  [
+   "Existing methods",
+   "are mainly divided into",
+   "four categories: pivot-based method, transfer learning, multilingual NMT, and unsupervised NMT"
+  ]
+ ],
+ "1912.01214::s01::p001": [
+  [
+   "Pivot-based Method",
+   "is",
+   "a common strategy to obtain a source$\\rightarrow $target model by introducing a pivot language"
+  ],
+  [
+   "This approach",
+   "is further divided into",
+   "pivoting and pivot-synthetic"
+  ],
+  [
+   "the pivot-based methods",
+   "can achieve",
+   "not bad performance"
+  ],
+  [
+   "the pivot-based methods",
+   "suffers from",
+   "the error propagation problem"
+  ]
+ ],
+ "1912.01214::s01::p002": [
+  [
+   "a high-resource parent model",
+   "initializes",
+   "the low-resource child model"
+  ],
+  [
+   "these methods",
+   "have",
+   "limited effects in zero-shot translation"
+  ]
+ ],
+ "1912.01214::s01::p003": [
+  [
+   "MNMT",
+   "benefits from",
+   "transfer learning"
+  ],
+  [
+   "MNMT for zero-shot translation",
+   "is sensitive to",
+   "the hyper-parameter setting"
+  ],
+  [
+   "MNMT",
+   "usually performs worse than",
+   "the pivot-based method in zero-shot translation setting"
+  ]
+ ],
+ "1912.01214::s01::p004": [
+  [
+   "Unsupervised NMT (UNMT)",
+   "considers",
+   "a harder setting"
+  ],
+  [
+   "only large-scale monolingual corpora",
+   "are available for",
+   "training"
+  ],
+  [
+   "many methods",
+   "have been proposed to improve",
+   "the performance of UNMT"
+  ],
+  [
+   "UNMT",
+   "performs well between",
+   "similar languages (e.g., English-German translation)"
+  ],
+  [
+   "its performance between distant languages",
+   "is still far from",
+   "expectation"
+  ]
+ ],
+ "1912.01214::s01::p005": [
+  [
+   "traditional transfer methods",
+   "train",
+   "a parent model as starting point"
+  ],
+  [
+   "cross-lingual pre-training methods",
+   "make",
+   "all source languages share the same feature space"
+  ]
+ ],
+ "1912.01214::s02::p000": [
+  [
+   "This method",
+   "is designed for",
+   "a common zero-shot scenario"
+  ],
+  [
+   "the whole training process",
+   "can be summarized as follows step by step",
+   "step by step"
+  ]
+ ],
+ "1912.01214::s02::p001": [
+  [
+   "a universal encoder",
+   "is pre-trained with",
+   "source/pivot monolingual or source$\\leftrightarrow $pivot bilingual data"
+  ]
+ ],
+ "1912.01214::s02::p002": [
+  [
+   "a pivot$\\rightarrow $target parent model",
+   "is built on",
+   "the pre-trained universal encoder"
+  ],
+  [
+   "a pivot$\\rightarrow $target parent model",
+   "is trained with",
+   "the available parallel data"
+  ],
+  [
+   "freezing several layers of the pre-trained universal encoder",
+   "avoids",
+   "the degeneracy issue BIBREF27"
+  ]
+ ],
+ "1912.01214::s02::p003": [
+  [
+   "the parent model",
+   "directly translates",
+   "source sentences into target sentences"
+  ],
+  [
+   "the parent model",
+   "benefits from",
+   "the availability of the universal encoder"
+  ]
+ ],
+ "1912.01214::s02::p004": [
+  [
+   "The key difficulty of this method",
+   "is to ensure",
+   "the intermediate representations of the universal encoder are language invariant"
+  ]
+ ],
+ "1912.01214::s03::p000": [
+  [
+   "Masked Language Modeling (MLM) and Translation Language Modeling (TLM)",
+   "have shown effectiveness on",
+   "XNLI cross-lingual classification task"
+  ],
+  [
+   "these methods",
+   "have not been well studied on",
+   "cross-lingual generation tasks in zero-shot condition"
+  ]
+ ],
+ "1912.01214::s03::p001": [
+  [
+   "MLM",
+   "adopts",
+   "the Cloze objective of BERT BIBREF29"
+  ],
+  [
+   "MLM",
+   "predicts",
+   "the masked words that are randomly selected and replaced with [MASK] token on monolingual corpus"
+  ],
+  [
+   "MLM",
+   "takes as input",
+   "different language monolingual corpora"
+  ],
+  [
+   "word pieces shared in all languages",
+   "have been mapped into",
+   "a shared space"
+  ]
+ ],
+ "1912.01214::s03::p002": [
+  [
+   "MLM objective",
+   "is",
+   "unsupervised"
+  ],
+  [
+   "MLM objective",
+   "only requires",
+   "monolingual data"
+  ],
+  [
+   "TLM",
+   "is designed to leverage",
+   "parallel data"
+  ],
+  [
+   "TLM",
+   "is",
+   "a simple extension of MLM"
+  ],
+  [
+   "TLM",
+   "concatenates",
+   "sentence pair into a whole sentence"
+  ],
+  [
+   "the positions of the target sentence",
+   "are reset to count form",
+   "zero"
+  ]
+ ],
+ "1912.01214::s04::p000": [
+  [
+   "BRidge Language Modeling (BRLM)",
+   "is proposed to further obtain",
+   "word-level representation alignment between different languages"
+  ],
+  [
+   "BRLM",
+   "is designed to strengthen",
+   "the ability to infer words across languages based on alignment information"
+  ]
+ ],
+ "1912.01214::s04::p001": [
+  [
+   "BRLM",
+   "stacks",
+   "shared encoder over both side sentences separately"
+  ],
+  [
+   "two network structures for BRLM",
+   "are divided into",
+   "Hard Alignment (BRLM-HA) and Soft Alignment (BRLM-SA)"
+  ],
+  [
+   "These two structures",
+   "extend",
+   "MLM into a bilingual scenario"
+  ],
+  [
+   "BRLM",
+   "leverages",
+   "external aligner tool or additional attention layer"
+  ]
+ ],
+ "1912.01214::s04::p002": [
+  [
+   "BRLM-HA",
+   "randomly masks",
+   "some words in source sentence"
+  ],
+  [
+   "BRLM-HA",
+   "adopts",
+   "the Transformer BIBREF1 encoder"
+  ],
+  [
+   "the training objective of BRLM-HA",
+   "is to predict",
+   "the masked words"
+  ]
+ ],
+ "1912.01214::s04::p003": [
+  [
+   "BRLM-SA",
+   "introduces",
+   "an additional attention layer"
+  ],
+  [
+   "BRLM-SA",
+   "avoids",
+   "the effect caused by external wrong alignment information"
+  ],
+  [
+   "BRLM-SA",
+   "enables",
+   "many-to-one soft alignment during model training"
+  ],
+  [
+   "the attention layer",
+   "is",
+   "a multi-head attention layer adopted in Transformer"
+  ]
+ ],
+ "1912.01214::s04::p004": [
+  [
+   "MLM and TLM",
+   "can learn",
+   "some implicit alignment information during model training"
+  ],
+  [
+   "the shared word pieces",
+   "only account for",
+   "a small proportion of the whole corpus"
+  ],
+  [
+   "TLM",
+   "concatenates",
+   "the sentence pair into one sequence"
+  ],
+  [
+   "BRLM",
+   "fully utilizes",
+   "the alignment information"
+  ]
+ ],
+ "1912.01214::s05::p000": [
+  [
+   "a high resource pivot language",
+   "has",
+   "parallel data with both source and target languages"
+  ],
+  [
+   "source and target languages",
+   "has no",
+   "parallel data between themselves"
+  ]
+ ],
+ "1912.01214::s05::p001": [
+  [
+   "the pretraining phase",
+   "builds",
+   "a cross-lingual encoder shared by the source and pivot languages"
+  ]
+ ],
+ "1912.01214::s05::p003": [
+  [
+   "the encoder and the decoder",
+   "are also shared across",
+   "each side languages"
+  ]
+ ],
+ "1912.01214::s06::p000": [
+  [
+   "cross-lingual pre-training based transfer approach",
+   "is evaluated against",
+   "several strong baselines"
+  ],
+  [
+   "Europarl BIBREF31 and MultiUN BIBREF32",
+   "contain",
+   "multi-parallel evaluation data"
+  ],
+  [
+   "all experiments",
+   "use",
+   "BLEU"
+  ]
+ ],
+ "1912.01214::s07::p000": [
+  [
+   "Europarl corpus",
+   "is evaluated on",
+   "French-English-Spanish (Fr-En-Es), German-English-French (De-En-Fr) and Romanian-English-German (Ro-En-De)"
+  ],
+  [
+   "English",
+   "acts as",
+   "the pivot language"
+  ],
+  [
+   "devtest2006",
+   "is used as",
+   "the validation set"
+  ],
+  [
+   "vocabulary",
+   "uses",
+   "60K sub-word tokens based on Byte Pair Encoding (BPE) BIBREF33"
+  ]
+ ],
+ "1912.01214::s07::p001": [
+  [
+   "MultiUN corpus",
+   "uses",
+   "four languages"
+  ],
+  [
+   "English (En)",
+   "is set as",
+   "the pivot language"
+  ],
+  [
+   "The three languages",
+   "are",
+   "Arabic (Ar), Spanish (Es), and Russian (Ru)"
+  ],
+  [
+   "mutual translation between themselves",
+   "constitutes",
+   "six zero-shot translation direction for evaluation"
+  ],
+  [
+   "MultiUN corpus",
+   "uses",
+   "80K BPE splits as the vocabulary"
+  ],
+  [
+   "all sentences",
+   "are tokenized by",
+   "the tokenize.perl script"
+  ]
+ ],
+ "1912.01214::s08::p000": [
+  [
+   "baselines",
+   "are",
+   "traditional transfer learning, pivot-based method and multilingual NMT"
+  ],
+  [
+   "Transformer-big model",
+   "has",
+   "1024 embedding/hidden units, 4096 feed-forward filter size, 6 layers and 8 heads per layer"
+  ],
+  [
+   "batch size",
+   "is set to",
+   "2400 per batch"
+  ],
+  [
+   "sentence length",
+   "is limited to",
+   "100 BPE tokens"
+  ],
+  [
+   "Facebook's cross-lingual pretrained models released by XLM",
+   "initialize",
+   "the encoder part"
+  ]
+ ],
+ "1912.01214::s08::p001": [
+  [
+   "MLM",
+   "is first pre-trained on",
+   "monolingual data of both source and pivot languages"
+  ],
+  [
+   "parameters of MLM",
+   "initialize",
+   "TLM and the proposed BRLM"
+  ],
+  [
+   "masking strategy during training",
+   "selects",
+   "15% of BPE tokens"
+  ],
+  [
+   "prediction accuracy of masked words",
+   "is used as",
+   "a stopping criterion in the pre-training stage"
+  ],
+  [
+   "fastalign tool BIBREF34",
+   "is used to extract",
+   "word alignments for BRLM-HA"
+  ]
+ ],
+ "1912.01214::s10::p000": [
+  [
+   "pivoting",
+   "is",
+   "the strongest baseline"
+  ],
+  [
+   "Cross-lingual transfer for languages without shared vocabularies BIBREF16",
+   "manifests",
+   "the worst performance"
+  ],
+  [
+   "Cross-lingual transfer for languages without shared vocabularies BIBREF16",
+   "does not use",
+   "source$\\leftrightarrow $pivot parallel data"
+  ],
+  [
+   "source$\\leftrightarrow $pivot parallel data",
+   "is utilized as",
+   "beneficial supervised signal for the other two baselines"
+  ]
+ ],
+ "1912.01214::s10::p001": [
+  [
+   "MLM+BRLM-SA",
+   "achieves",
+   "the significant superior performance to all baselines in the zero-shot directions"
+  ],
+  [
+   "MLM+BRLM-SA",
+   "improves by",
+   "0.9-4.8 BLEU points over the strong pivoting"
+  ],
+  [
+   "the shared encoder",
+   "is trained on",
+   "both large-scale monolingual data and parallel data between multiple languages"
+  ]
+ ],
+ "1912.01214::s10::p002": [
+  [
+   "MLM alone",
+   "does not use",
+   "source$\\leftrightarrow $pivot parallel data"
+  ],
+  [
+   "MLM alone",
+   "performs much better than",
+   "the cross-lingual transfer"
+  ],
+  [
+   "MLM alone",
+   "achieves",
+   "comparable results to pivoting"
+  ],
+  [
+   "MLM+BRLM-SA",
+   "performs",
+   "the best"
+  ]
+ ],
+ "1912.01214::s11::p000": [
+  [
+   "MLM+BRLM-SA",
+   "performs the best among",
+   "all proposed cross-lingual pretraining based transfer approaches"
+  ]
+ ],
+ "1912.01214::s11::p001": [
+  [
+   "MLM+BRLM-SA",
+   "achieves better performances on",
+   "Es $\\rightarrow $ Ar and Es $\\rightarrow $ Ru than strong pivoting$_{\\rm m}$"
+  ],
+  [
+   "pivoting$_{\\rm m}$",
+   "uses",
+   "MNMT to translate source to pivot then to target in two separate steps"
+  ],
+  [
+   "MLM+BRLM-SA with back translation",
+   "achieves better performance than",
+   "the original supervised Transformer"
+  ]
+ ],
+ "1912.01214::s12::p000": [
+  [
+   "MLM+BRLM-SA",
+   "has",
+   "the most stable and similar cross-lingual representations of sentence pairs on all layers"
+  ],
+  [
+   "the cosine similarity",
+   "decreases",
+   "as the number of layers increases"
+  ]
+ ],
+ "1912.01214::s13::p000": [
+  [
+   "the hidden states generated by MLM+BRLM-SA",
+   "have higher similarity for",
+   "two aligned words"
+  ],
+  [
+   "MLM+BRLM-SA",
+   "can gain",
+   "better word-level representation alignment between source and pivot languages"
+  ]
+ ],
+ "1912.01214::s14::p000": [
+  [
+   "To freeze parameters",
+   "is",
+   "a common strategy to avoid catastrophic forgetting in transfer learning"
+  ],
+  [
+   "En$\\rightarrow $Ru",
+   "denotes",
+   "the parent model"
+  ],
+  [
+   "Ar$\\rightarrow $Ru and Es$\\rightarrow $Ru",
+   "are",
+   "two child models"
+  ],
+  [
+   "all models",
+   "are based on",
+   "MLM+BRLM-SA"
+  ],
+  [
+   "updating all parameters during training",
+   "will cause",
+   "a notable drop on the zero-shot direction due to the catastrophic forgetting"
+  ],
+  [
+   "freezing all the parameters",
+   "leads to",
+   "the decline on supervised direction"
+  ],
+  [
+   "Freezing the first four layers of the transformer",
+   "shows",
+   "the best performance"
+  ]
+ ],
+ "1912.01214::s15::p000": [
+  [
+   "source and target languages",
+   "have no",
+   "parallel data"
+  ],
+  [
+   "they both",
+   "have",
+   "parallel data with a high resource pivot language"
+  ],
+  [
+   "Experiments on public datasets",
+   "show",
+   "that our approaches significantly outperforms several strong baseline systems"
+  ]
+ ]
+}

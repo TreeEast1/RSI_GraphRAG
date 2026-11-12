@@ -1,0 +1,682 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1910.09982::s00::p000",
+   "summary": "Propaganda aims to influence people's mindset to advance a specific agenda, and Internet-era social network sharing lets campaigns reach very large audiences.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s00::p001",
+   "summary": "Propagandist news articles use techniques such as whataboutism, red Herring, and name calling, and fine-grained language analysis can yield more reliable, explainable systems.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s00::p002",
+   "summary": "The authors organised the NLP4IF@EMNLP-IJCNLP 2019 shared task on a corpus of news articles annotated with 18 propagandist techniques at the fragment level.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s01::p000",
+   "summary": "Prior propaganda work mostly used article-level labels from distant supervision, including corpora labelled propaganda, trusted, hoax, or satire and binary propagandist vs. non-propagandist articles.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s01::p001",
+   "summary": "Computational argumentation addresses propaganda-related logical fallacies, including ad hominem corpora and Argotario, whose by-product has $1.3k$ arguments annotated with five fallacies.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s01::p002",
+   "summary": "Unlike BIBREF8, BIBREF9, BIBREF7, the corpus uses 18 techniques on the same news articles and annotates minimal fragments instead of entire arguments.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s01::p003",
+   "summary": "The most relevant related work is the authors' parallel EMNLP-IJCNLP 2019 paper BIBREF10, describing a corpus that is a subset of the shared-task corpus.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s02::p000",
+   "summary": "The shared task uses 18 psychological and rhetorical propaganda techniques found in news articles and intrinsically judgeable without external supporting information.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s03::p000",
+   "summary": "Loaded language uses words/phrases with strong emotional implications, positive or negative, to influence an audience BIBREF11.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s04::p000",
+   "summary": "Name calling or labeling labels the propaganda object as something the target audience fears, hates, finds undesirable, loves, or praises BIBREF12.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s05::p000",
+   "summary": "Repetition repeats the same message over and over again so that the audience will eventually accept it BIBREF13, BIBREF12.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s06::p000",
+   "summary": "Exaggeration or minimization represents something excessively or makes it seem less important or smaller, e.g., saying that an insult was just a joke.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s07::p000",
+   "summary": "Doubt questions the credibility of someone or something.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s08::p000",
+   "summary": "Appeal to fear/prejudice builds support by instilling anxiety and/or panic towards an alternative, possibly based on preconceived judgments.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s09::p000",
+   "summary": "Flag-waving plays on strong national feeling or group feeling, e.g., race, gender, political preference, to justify or promote an action or idea BIBREF15.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s10::p000",
+   "summary": "Causal oversimplification assumes one cause when multiple causes exist and includes scapegoating blame transferred to one person or group without investigating complexities.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s11::p000",
+   "summary": "Slogans are brief, striking phrases that may include labeling and stereotyping and tend to act as emotional appeals BIBREF16.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s12::p000",
+   "summary": "Appeal to authority states a claim is true because a valid authority/expert supports it without other evidence, including non-authority testimonial references.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s13::p000",
+   "summary": "Black-and-white fallacy, dictatorship presents two alternatives as the only possibilities, with dictatorship as an extreme case telling the audience exactly what actions to take.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s14::p000",
+   "summary": "Thought-terminating cliché uses short, generic words or phrases that discourage critical thought and meaningful discussion by offering seemingly simple answers or distracting attention.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s15::p000",
+   "summary": "Whataboutism discredits an opponent's position by charging hypocrisy without directly disproving their argument BIBREF19.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s16::p000",
+   "summary": "Reductio ad Hitlerum persuades audiences to disapprove an action or idea by suggesting it is popular with groups hated in contempt by the target audience.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s17::p000",
+   "summary": "Red herring introduces irrelevant material to divert attention from the points made and lead discussion away from the issue in dispute.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s18::p000",
+   "summary": "Bandwagon attempts to persuade the target audience to join an action because “everyone else is taking the same action” BIBREF15.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s19::p000",
+   "summary": "Obfuscation, intentional vagueness, confusion uses deliberately unclear words to let the audience have its own interpretation BIBREF21, BIBREF11.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s20::p000",
+   "summary": "Straw man substitutes an opponent's proposition with a similar one which is then refuted in place of the original BIBREF22.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s21::p000",
+   "summary": "The shared task features two subtasks.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s22::p000",
+   "summary": "Fragment-Level Classification task (FLC) detects all text spans using a propaganda technique in a news article and identifies the technique for each span.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s23::p000",
+   "summary": "Sentence-Level Classification task (SLC) predicts propaganda or non-propaganda for a sentence, considered propagandist if it contains at least one propagandist fragment.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s24::p000",
+   "summary": "Both tasks use free-text news articles from 36 propagandist and 12 non-propagandist news outlets, with BIBREF10 describing 450 articles and 47 additional articles annotated.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s24::p001",
+   "summary": "Training, development, and test partitions contain 350, 61, and 86 articles and 16,965, 2,235, and 3,526 sentences, respectively, with overlapping annotated fragments.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s24::p002",
+   "summary": "Table TABREF23 reports total instances per technique and percentages of total annotations for the training and development sets.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s25::p000",
+   "summary": "The shared task had a development phase with labeled training and development datasets and a testing phase with testing input.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s25::p001",
+   "summary": "Participants tried to achieve the best performance on the development set, and a live leaderboard tracked submissions.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s25::p002",
+   "summary": "The test set was released, and participants had few days to make final predictions.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s25::p003",
+   "summary": "In phase 2, no immediate feedback on submissions was provided, and the winner was determined by performance on the test set.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s26::p000",
+   "summary": "FLC combines propagandist text fragment identification and 18-way technique classification, using modified F$_1$ for partial span matching and per-technique F$_1$ values.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s27::p000",
+   "summary": "SLC is a binary classification task with imbalanced data, with standard F$_1$ as the official evaluation measure and Precision and Recall also reported.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s28::p000",
+   "summary": "The SLC baseline is a default-parameter logistic regression classifier using sentence length as its single feature, with performance in Tables TABREF33 and TABREF34.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s28::p001",
+   "summary": "The FLC baseline generates spans and randomly selects one of the 18 techniques, with its inefficacy illustrated in Tables TABREF36 and TABREF41.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s29::p000",
+   "summary": "A total of 90 teams registered, 39 submitted 3,065 submissions, with 21 teams making 527 FLC submissions and 35 teams making 2,538 SLC submissions.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s29::p001",
+   "summary": "The authors overview approaches described in participants' papers, with Tables TABREF28 and TABREF29 offering a high-level summary.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s30::p000",
+   "summary": "Team newspeak achieved the best FLC test results using 20-way word-level BERT classification, unsupervised fine-tuning on the 1M news dataset and Wikipedia, and oversampling.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s30::p001",
+   "summary": "Team Stalin used data augmentation and synthetic minority class over-sampling for ELMo, BERT, and Grover contextual embeddings, then fed learned representations into an LSTM.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s31::p000",
+   "summary": "Team CAUnLP used two context-aware BERT representations with article title and previous sentence, subsampling, and BERT$_{BASE}$ and BERT$_{LARGE}$ experiments.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s31::p001",
+   "summary": "Team LIACC used hand-crafted features and pre-trained ELMo embeddings, observing a performance boost when balancing the dataset by dropping negative examples.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s31::p002",
+   "summary": "Team JUSTDeep combined GloVe word embeddings, affection vectors, lexical features, and an ensemble of bi-LSTM, XGBoost, and variations of BERT.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s31::p003",
+   "summary": "Team YMJA used fine-tuned BERT and created an ensemble of models via cross-validation inspired by kaggle competitions on sentiment analysis.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s31::p004",
+   "summary": "Team jinfen used logistic regression with TF.IDF and BERT vectors, vocabularies, and readability measures.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s31::p005",
+   "summary": "Team Tha3aroon implemented an ensemble of three classifiers: two based on BERT and one based on a universal sentence encoder BIBREF36.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s31::p006",
+   "summary": "Team NSIT explored three popular transfer learning models: various versions of ELMo, BERT, and RoBERTa BIBREF38.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s31::p007",
+   "summary": "Team Mindcoders combined BERT, Bi-LSTM and Capsule networks BIBREF40 into one deep neural network pre-trained on related-task corpora, e.g., emotion classification.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s31::p008",
+   "summary": "Team ltuorp used an attention transformer using BERT trained on Wikipedia and BookCorpus.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s32::p000",
+   "summary": "Team MIC-CIS used a voting ensemble for SLC and an LSTM-CRF multi-task neural sequence tagger for FLC, applying sentence- and fragment-level models jointly.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s32::p001",
+   "summary": "Team CUNLP used fine-tuned BERT and a logistic regressor with LIWC and punctuation features for SLC, and Bi-LSTM-CRF with character- and word-level embeddings for FLC.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s32::p002",
+   "summary": "Team ProperGander used BERT with oversampling and cost-sensitive classification for SLC, and a BERT model with Continuous Random Field stacked on an LSTM for FLC.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s33::p000",
+   "summary": "SLC test results are in Table TABREF33 and development results in Table TABREF34, with decreased F$_1$ values suggesting development-set overfitting.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s33::p001",
+   "summary": "Tables TABREF36 and TABREF41 report FLC test and development results, which are more stable, with newspeak nearly maintaining its difference from Antiganda.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s34::p000",
+   "summary": "The NLP4IF@EMNLP-IJCNLP 2019 shared task received 25 SLC and 12 FLC test submissions; SLC was easier, while FLC was more challenging.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s34::p001",
+   "summary": "The authors plan to make the schema and dataset publicly available beyond NLP4IF and hope the corpus interests Argumentation and Sentiment Analysis researchers.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s34::p002",
+   "summary": "As an advertisement, Task 11 at SemEval 2020 is a follow up of this shared task and features two complimentary tasks.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s34::p003",
+   "summary": "Given a free-text article, identify the propagandist text spans.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s34::p004",
+   "summary": "Given a text span already flagged as propagandist and its context, identify the specific propaganda technique it contains.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s34::p005",
+   "summary": "This setting would let participants focus on binary sequence labeling for Task 1 and multi-class classification for Task 2.",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s35::p000",
+   "summary": "This research is part of the Propaganda Analysis Project within the Tanbih project, developed by Qatar Computing Research Institute (QCRI), HBKU and MIT Computer Science and Artificial Intelligence Laboratory (CSAIL).",
+   "group_id": "1910.09982::s00"
+  },
+  {
+   "passage_id": "1910.09982::s35::p001",
+   "summary": "The corpus for the task was annotated by A Data Pro, a company that performs high-quality manual annotations.",
+   "group_id": "1910.09982::s00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1910.09982::s00",
+   "summaries": [
+    {
+     "passage_id": "1910.09982::s00::p000",
+     "summary": "Propaganda aims to influence people's mindset to advance a specific agenda, and Internet-era social network sharing lets campaigns reach very large audiences.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s00::p001",
+     "summary": "Propagandist news articles use techniques such as whataboutism, red Herring, and name calling, and fine-grained language analysis can yield more reliable, explainable systems.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s00::p002",
+     "summary": "The authors organised the NLP4IF@EMNLP-IJCNLP 2019 shared task on a corpus of news articles annotated with 18 propagandist techniques at the fragment level.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s01::p000",
+     "summary": "Prior propaganda work mostly used article-level labels from distant supervision, including corpora labelled propaganda, trusted, hoax, or satire and binary propagandist vs. non-propagandist articles.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s01::p001",
+     "summary": "Computational argumentation addresses propaganda-related logical fallacies, including ad hominem corpora and Argotario, whose by-product has $1.3k$ arguments annotated with five fallacies.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s01::p002",
+     "summary": "Unlike BIBREF8, BIBREF9, BIBREF7, the corpus uses 18 techniques on the same news articles and annotates minimal fragments instead of entire arguments.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s01::p003",
+     "summary": "The most relevant related work is the authors' parallel EMNLP-IJCNLP 2019 paper BIBREF10, describing a corpus that is a subset of the shared-task corpus.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s02::p000",
+     "summary": "The shared task uses 18 psychological and rhetorical propaganda techniques found in news articles and intrinsically judgeable without external supporting information.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s03::p000",
+     "summary": "Loaded language uses words/phrases with strong emotional implications, positive or negative, to influence an audience BIBREF11.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s04::p000",
+     "summary": "Name calling or labeling labels the propaganda object as something the target audience fears, hates, finds undesirable, loves, or praises BIBREF12.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s05::p000",
+     "summary": "Repetition repeats the same message over and over again so that the audience will eventually accept it BIBREF13, BIBREF12.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s06::p000",
+     "summary": "Exaggeration or minimization represents something excessively or makes it seem less important or smaller, e.g., saying that an insult was just a joke.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s07::p000",
+     "summary": "Doubt questions the credibility of someone or something.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s08::p000",
+     "summary": "Appeal to fear/prejudice builds support by instilling anxiety and/or panic towards an alternative, possibly based on preconceived judgments.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s09::p000",
+     "summary": "Flag-waving plays on strong national feeling or group feeling, e.g., race, gender, political preference, to justify or promote an action or idea BIBREF15.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s10::p000",
+     "summary": "Causal oversimplification assumes one cause when multiple causes exist and includes scapegoating blame transferred to one person or group without investigating complexities.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s11::p000",
+     "summary": "Slogans are brief, striking phrases that may include labeling and stereotyping and tend to act as emotional appeals BIBREF16.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s12::p000",
+     "summary": "Appeal to authority states a claim is true because a valid authority/expert supports it without other evidence, including non-authority testimonial references.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s13::p000",
+     "summary": "Black-and-white fallacy, dictatorship presents two alternatives as the only possibilities, with dictatorship as an extreme case telling the audience exactly what actions to take.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s14::p000",
+     "summary": "Thought-terminating cliché uses short, generic words or phrases that discourage critical thought and meaningful discussion by offering seemingly simple answers or distracting attention.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s15::p000",
+     "summary": "Whataboutism discredits an opponent's position by charging hypocrisy without directly disproving their argument BIBREF19.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s16::p000",
+     "summary": "Reductio ad Hitlerum persuades audiences to disapprove an action or idea by suggesting it is popular with groups hated in contempt by the target audience.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s17::p000",
+     "summary": "Red herring introduces irrelevant material to divert attention from the points made and lead discussion away from the issue in dispute.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s18::p000",
+     "summary": "Bandwagon attempts to persuade the target audience to join an action because “everyone else is taking the same action” BIBREF15.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s19::p000",
+     "summary": "Obfuscation, intentional vagueness, confusion uses deliberately unclear words to let the audience have its own interpretation BIBREF21, BIBREF11.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s20::p000",
+     "summary": "Straw man substitutes an opponent's proposition with a similar one which is then refuted in place of the original BIBREF22.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s21::p000",
+     "summary": "The shared task features two subtasks.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s22::p000",
+     "summary": "Fragment-Level Classification task (FLC) detects all text spans using a propaganda technique in a news article and identifies the technique for each span.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s23::p000",
+     "summary": "Sentence-Level Classification task (SLC) predicts propaganda or non-propaganda for a sentence, considered propagandist if it contains at least one propagandist fragment.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s24::p000",
+     "summary": "Both tasks use free-text news articles from 36 propagandist and 12 non-propagandist news outlets, with BIBREF10 describing 450 articles and 47 additional articles annotated.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s24::p001",
+     "summary": "Training, development, and test partitions contain 350, 61, and 86 articles and 16,965, 2,235, and 3,526 sentences, respectively, with overlapping annotated fragments.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s24::p002",
+     "summary": "Table TABREF23 reports total instances per technique and percentages of total annotations for the training and development sets.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s25::p000",
+     "summary": "The shared task had a development phase with labeled training and development datasets and a testing phase with testing input.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s25::p001",
+     "summary": "Participants tried to achieve the best performance on the development set, and a live leaderboard tracked submissions.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s25::p002",
+     "summary": "The test set was released, and participants had few days to make final predictions.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s25::p003",
+     "summary": "In phase 2, no immediate feedback on submissions was provided, and the winner was determined by performance on the test set.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s26::p000",
+     "summary": "FLC combines propagandist text fragment identification and 18-way technique classification, using modified F$_1$ for partial span matching and per-technique F$_1$ values.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s27::p000",
+     "summary": "SLC is a binary classification task with imbalanced data, with standard F$_1$ as the official evaluation measure and Precision and Recall also reported.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s28::p000",
+     "summary": "The SLC baseline is a default-parameter logistic regression classifier using sentence length as its single feature, with performance in Tables TABREF33 and TABREF34.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s28::p001",
+     "summary": "The FLC baseline generates spans and randomly selects one of the 18 techniques, with its inefficacy illustrated in Tables TABREF36 and TABREF41.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s29::p000",
+     "summary": "A total of 90 teams registered, 39 submitted 3,065 submissions, with 21 teams making 527 FLC submissions and 35 teams making 2,538 SLC submissions.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s29::p001",
+     "summary": "The authors overview approaches described in participants' papers, with Tables TABREF28 and TABREF29 offering a high-level summary.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s30::p000",
+     "summary": "Team newspeak achieved the best FLC test results using 20-way word-level BERT classification, unsupervised fine-tuning on the 1M news dataset and Wikipedia, and oversampling.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s30::p001",
+     "summary": "Team Stalin used data augmentation and synthetic minority class over-sampling for ELMo, BERT, and Grover contextual embeddings, then fed learned representations into an LSTM.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s31::p000",
+     "summary": "Team CAUnLP used two context-aware BERT representations with article title and previous sentence, subsampling, and BERT$_{BASE}$ and BERT$_{LARGE}$ experiments.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s31::p001",
+     "summary": "Team LIACC used hand-crafted features and pre-trained ELMo embeddings, observing a performance boost when balancing the dataset by dropping negative examples.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s31::p002",
+     "summary": "Team JUSTDeep combined GloVe word embeddings, affection vectors, lexical features, and an ensemble of bi-LSTM, XGBoost, and variations of BERT.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s31::p003",
+     "summary": "Team YMJA used fine-tuned BERT and created an ensemble of models via cross-validation inspired by kaggle competitions on sentiment analysis.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s31::p004",
+     "summary": "Team jinfen used logistic regression with TF.IDF and BERT vectors, vocabularies, and readability measures.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s31::p005",
+     "summary": "Team Tha3aroon implemented an ensemble of three classifiers: two based on BERT and one based on a universal sentence encoder BIBREF36.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s31::p006",
+     "summary": "Team NSIT explored three popular transfer learning models: various versions of ELMo, BERT, and RoBERTa BIBREF38.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s31::p007",
+     "summary": "Team Mindcoders combined BERT, Bi-LSTM and Capsule networks BIBREF40 into one deep neural network pre-trained on related-task corpora, e.g., emotion classification.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s31::p008",
+     "summary": "Team ltuorp used an attention transformer using BERT trained on Wikipedia and BookCorpus.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s32::p000",
+     "summary": "Team MIC-CIS used a voting ensemble for SLC and an LSTM-CRF multi-task neural sequence tagger for FLC, applying sentence- and fragment-level models jointly.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s32::p001",
+     "summary": "Team CUNLP used fine-tuned BERT and a logistic regressor with LIWC and punctuation features for SLC, and Bi-LSTM-CRF with character- and word-level embeddings for FLC.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s32::p002",
+     "summary": "Team ProperGander used BERT with oversampling and cost-sensitive classification for SLC, and a BERT model with Continuous Random Field stacked on an LSTM for FLC.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s33::p000",
+     "summary": "SLC test results are in Table TABREF33 and development results in Table TABREF34, with decreased F$_1$ values suggesting development-set overfitting.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s33::p001",
+     "summary": "Tables TABREF36 and TABREF41 report FLC test and development results, which are more stable, with newspeak nearly maintaining its difference from Antiganda.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s34::p000",
+     "summary": "The NLP4IF@EMNLP-IJCNLP 2019 shared task received 25 SLC and 12 FLC test submissions; SLC was easier, while FLC was more challenging.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s34::p001",
+     "summary": "The authors plan to make the schema and dataset publicly available beyond NLP4IF and hope the corpus interests Argumentation and Sentiment Analysis researchers.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s34::p002",
+     "summary": "As an advertisement, Task 11 at SemEval 2020 is a follow up of this shared task and features two complimentary tasks.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s34::p003",
+     "summary": "Given a free-text article, identify the propagandist text spans.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s34::p004",
+     "summary": "Given a text span already flagged as propagandist and its context, identify the specific propaganda technique it contains.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s34::p005",
+     "summary": "This setting would let participants focus on binary sequence labeling for Task 1 and multi-class classification for Task 2.",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s35::p000",
+     "summary": "This research is part of the Propaganda Analysis Project within the Tanbih project, developed by Qatar Computing Research Institute (QCRI), HBKU and MIT Computer Science and Artificial Intelligence Laboratory (CSAIL).",
+     "group_id": "1910.09982::s00"
+    },
+    {
+     "passage_id": "1910.09982::s35::p001",
+     "summary": "The corpus for the task was annotated by A Data Pro, a company that performs high-quality manual annotations.",
+     "group_id": "1910.09982::s00"
+    }
+   ],
+   "n_raw": 66,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5734,
+    "completion_tokens": 3230,
+    "total_tokens": 8964,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

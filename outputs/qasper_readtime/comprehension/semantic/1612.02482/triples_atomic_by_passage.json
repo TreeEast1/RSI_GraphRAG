@@ -1,0 +1,837 @@
+{
+ "1612.02482::s00::p000": [
+  [
+   "neural translation models",
+   "require",
+   "only a small fraction of memory used, about 5%"
+  ],
+  [
+   "every module",
+   "is trained to jointly improve",
+   "translation quality"
+  ],
+  [
+   "one of the main downsides of neural translation models",
+   "is",
+   "the heavy corpus requirement in order to ensure learning of deeper contexts"
+  ]
+ ],
+ "1612.02482::s00::p001": [
+  [
+   "languages similar to English",
+   "are",
+   "predominantly fusional languages"
+  ],
+  [
+   "many of the morphologically rich languages",
+   "are",
+   "agglutinative in nature"
+  ]
+ ],
+ "1612.02482::s00::p002": [
+  [
+   "any suffix",
+   "can be added to",
+   "any verb or noun"
+  ],
+  [
+   "Tamil",
+   "has",
+   "at least 30,000 inflectional forms of any given verb"
+  ],
+  [
+   "Tamil",
+   "has",
+   "about 5,000 forms of inflectional forms for any noun"
+  ],
+  [
+   "The merged words",
+   "carry",
+   "information about part of speech (POS) tags, tense, plurality and so forth"
+  ],
+  [
+   "the corresponding root words",
+   "are trained as",
+   "different units"
+  ]
+ ],
+ "1612.02482::s00::p003": [
+  [
+   "The availability of parallel corpus for Tamil",
+   "is",
+   "very scarce"
+  ],
+  [
+   "Most of the other models in the field of English–Tamil MT",
+   "have made use of",
+   "their own translation corpora that were manually created for the purposes of research"
+  ],
+  [
+   "Most of these corpora",
+   "are not available online for",
+   "use"
+  ]
+ ],
+ "1612.02482::s00::p004": [
+  [
+   "Another issue specific to Tamil",
+   "is",
+   "the addition of suffix characters included to the words in the language for smoothness in pronunciation"
+  ],
+  [
+   "there",
+   "is",
+   "a unique suffix for each and every consonant in the language"
+  ],
+  [
+   "These suffixes",
+   "degrade",
+   "performance of MT"
+  ],
+  [
+   "the same words with different such pronounciation-based suffixes",
+   "will be taken as",
+   "different words in training"
+  ]
+ ],
+ "1612.02482::s00::p005": [
+  [
+   "two different forms of the language",
+   "exist",
+   "the written form, rigid in structure and syntax, and the spoken form"
+  ],
+  [
+   "Traditionally defined Tamil and its pronunciations",
+   "aren't",
+   "acoustically pleasing to use"
+  ],
+  [
+   "This divide",
+   "leads to",
+   "the corpus having 2 different versions of the language"
+  ],
+  [
+   "sentences used in the Bible",
+   "are in",
+   "traditional Tamil"
+  ],
+  [
+   "sentences from movie subtitles",
+   "are in",
+   "spoken Tamil format"
+  ]
+ ],
+ "1612.02482::s00::p006": [
+  [
+   "a trade-off between domain specificity and size of the corpus",
+   "is integral in",
+   "building an English–Tamil neural MT system"
+  ]
+ ],
+ "1612.02482::s01::p000": [
+  [
+   "The corpus selected for this experiment",
+   "was",
+   "a combination of different corpora from various domains"
+  ],
+  [
+   "The major part of the corpus",
+   "was made up by",
+   "the EnTam v2 corpus"
+  ],
+  [
+   "The complete corpus",
+   "consisted of",
+   "197,792 sentences"
+  ]
+ ],
+ "1612.02482::s01::p001": [
+  [
+   "An extra monolingual Tamil corpus",
+   "was used for",
+   "the word2vec embedding of the Tamil target language"
+  ],
+  [
+   "An extra monolingual Tamil corpus",
+   "was used to create",
+   "the language model for the phrase-based SMT model"
+  ],
+  [
+   "This corpus",
+   "contained",
+   "567,772 sentences"
+  ],
+  [
+   "the encoding scheme",
+   "was standardized to be",
+   "UTF-8"
+  ]
+ ],
+ "1612.02482::s02::p000": [
+  [
+   "The word embeddings of the source and target language sentences",
+   "are used as",
+   "initial vectors of the model"
+  ],
+  [
+   "The skip gram model of the word2vec algorithm",
+   "optimizes",
+   "the vectors"
+  ]
+ ],
+ "1612.02482::s02::p001": [
+  [
+   "The processes of negative sampling and subsampling of frequent words",
+   "aren't used in",
+   "this experiment"
+  ]
+ ],
+ "1612.02482::s02::p002": [
+  [
+   "a monolingual corpus of 569,772 Tamil sentences",
+   "was used for",
+   "the process of creating semantically meaningful word embeddings"
+  ],
+  [
+   "the increased size of the corpus",
+   "gave",
+   "the vectors more contextual richness"
+  ]
+ ],
+ "1612.02482::s02::p003": [
+  [
+   "the word2vec model",
+   "was trained using",
+   "a vector size of 100"
+  ],
+  [
+   "A standard size of 5",
+   "was used as",
+   "window size"
+  ],
+  [
+   "A batch size of 50 words",
+   "was used for",
+   "training"
+  ],
+  [
+   "The gensim word2vec toolkit",
+   "was used to implement",
+   "this word embedding process"
+  ]
+ ],
+ "1612.02482::s03::p000": [
+  [
+   "The model used for translation",
+   "is",
+   "the one implemented by Bahdanau et al. Bahdanau2014"
+  ],
+  [
+   "A bidirectional LSTM encoder",
+   "takes",
+   "the source sentence"
+  ],
+  [
+   "A bidirectional LSTM encoder",
+   "encodes",
+   "it into a context vector"
+  ],
+  [
+   "The decoder",
+   "is",
+   "attention-based"
+  ]
+ ],
+ "1612.02482::s03::p001": [
+  [
+   "Neural Machine Translation models",
+   "directly compute",
+   "the probability of the target language sentence given the source language sentence, word by word for every time step"
+  ]
+ ],
+ "1612.02482::s03::p002": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the number of words in the target sentence"
+  ],
+  [
+   "INLINEFORM1",
+   "is",
+   "the target sentence"
+  ],
+  [
+   "INLINEFORM2",
+   "is",
+   "the source sentence"
+  ],
+  [
+   "INLINEFORM3",
+   "is",
+   "the fixed length output vector of the encoder"
+  ],
+  [
+   "INLINEFORM4",
+   "is",
+   "the weighted sum of all the hidden layer outputs of the encoder at every time step"
+  ],
+  [
+   "Both the encoder's output context vector and the weighted sum (known as attention vector)",
+   "help to improve",
+   "the quality of translation"
+  ]
+ ],
+ "1612.02482::s03::p003": [
+  [
+   "The decoder LSTM",
+   "computes",
+   "DISPLAYFORM0"
+  ]
+ ],
+ "1612.02482::s03::p004": [
+  [
+   "The context vector INLINEFORM3 for time step INLINEFORM4",
+   "is computed as",
+   "a weighted sum of the output of the entire sentence using a weight parameter INLINEFORM5"
+  ]
+ ],
+ "1612.02482::s03::p005": [
+  [
+   "INLINEFORM3",
+   "is",
+   "the alignment parameter"
+  ],
+  [
+   "This parameter",
+   "is calculated by means of",
+   "a feed forward neural network"
+  ],
+  [
+   "The feed forward network",
+   "is trained along with",
+   "the neural translation model"
+  ]
+ ],
+ "1612.02482::s03::p006": [
+  [
+   "A concatenation of the forward and the reverse hidden layer parameters of the encoder",
+   "is used at each step to compute",
+   "the weights INLINEFORM5 for the attention mechanism"
+  ]
+ ],
+ "1612.02482::s03::p007": [
+  [
+   "A global attention mechanism",
+   "is preferred over",
+   "local attention"
+  ],
+  [
+   "Using local attention mechanism with a monotonic context lookup",
+   "is impractical because of",
+   "the structural discordance between the English and Tamil sentences"
+  ]
+ ],
+ "1612.02482::s03::p008": [
+  [
+   "The No Peepholes (NP) variant of the LSTM cell",
+   "is used in",
+   "this experiment"
+  ],
+  [
+   "The No Peepholes (NP) variant of the LSTM cell",
+   "proved to give",
+   "the best results amongst all the variants of an LSTM cell"
+  ],
+  [
+   "LSTM",
+   "maintains",
+   "its hidden layer in two components, the cell vector INLINEFORM0 and the actual hidden layer output vector INLINEFORM1"
+  ],
+  [
+   "The learnable parameters of an LSTM cell",
+   "are",
+   "all the weights INLINEFORM14 and the biases INLINEFORM15"
+  ]
+ ],
+ "1612.02482::s03::p009": [
+  [
+   "The LSTM specified by equations 7 through 11",
+   "is used for",
+   "the decoder of the model"
+  ],
+  [
+   "The encoder",
+   "uses",
+   "a bidirectional RNN LSTM cell"
+  ],
+  [
+   "a bidirectional RNN LSTM cell",
+   "has",
+   "two hidden layer components INLINEFORM0 and INLINEFORM1"
+  ],
+  [
+   "All the five vectors of the two components",
+   "are exactly the same as",
+   "the LSTM equations specified"
+  ]
+ ],
+ "1612.02482::s04::p000": [
+  [
+   "The morphological segmentation used",
+   "is",
+   "a semi-supervised extension to the generative probabilistic model"
+  ],
+  [
+   "The model parameters INLINEFORM2",
+   "include",
+   "the morph type count, morph token count of training data, the morph strings and their counts"
+  ]
+ ],
+ "1612.02482::s04::p001": [
+  [
+   "The prior INLINEFORM1",
+   "is estimated using",
+   "the Minimum Description Length(MDL) principle"
+  ]
+ ],
+ "1612.02482::s04::p003": [
+  [
+   "An extension to the Viterbi algorithm",
+   "is used for",
+   "the decoding step based on exhaustive mapping of morphemes"
+  ],
+  [
+   "extra parameters ( INLINEFORM0 ) and ( INLINEFORM1 )",
+   "are used with",
+   "the cost function INLINEFORM2 DISPLAYFORM0"
+  ]
+ ],
+ "1612.02482::s04::p004": [
+  [
+   "A decrease in the value of INLINEFORM3",
+   "will cause",
+   "smaller segments and vice versa"
+  ],
+  [
+   "INLINEFORM4",
+   "takes care of",
+   "size discrepancies due to reduced availability of annotated corpus as compared to the training corpus"
+  ]
+ ],
+ "1612.02482::s04::p005": [
+  [
+   "The Python extension to the morphological segmentation tool morfessor 2.0",
+   "was used for",
+   "this experiment to perform the segmentation"
+  ],
+  [
+   "The annotation data for Tamil language collated and released by Anoop Kunchukkutan in the Indic NLP Library",
+   "was used as",
+   "the semi-supervised input to the model"
+  ]
+ ],
+ "1612.02482::s05::p000": [
+  [
+   "The complexities of neural machine translation of morphologically rich languages",
+   "were studied with respect to",
+   "English to Tamil machine translation using the RNN LSTM Bi-directional encoder attention decoder architecture"
+  ],
+  [
+   "a phrase based SMT system",
+   "was implemented using",
+   "the same corpus"
+  ],
+  [
+   "The Factored SMT model with source-side preprocessing by Kumar et al. kumar2014improving",
+   "was used as",
+   "a reference for the translation between these language pairs"
+  ],
+  [
+   "an additional 569,772 monolingual Tamil sentences",
+   "were used for",
+   "the language model of the SMT system"
+  ]
+ ],
+ "1612.02482::s06::p000": [
+  [
+   "distribution of words in the English–Tamil sentence pairs of the corpus",
+   "is centered around",
+   "the 10–20 words region"
+  ]
+ ],
+ "1612.02482::s07::p000": [
+  [
+   "vocabularies for English and Tamil languages for the RNNSearch model",
+   "were restricted to",
+   "60,000 out of 67,768 and 150,000 out of 340,325 respectively"
+  ],
+  [
+   "vocabulary of the languages for the RNNMorph",
+   "could accommodate",
+   "67,768 words for English and 41,906 words for Tamil"
+  ],
+  [
+   "model",
+   "was run on",
+   "a 2GB NVIDIA GeForce GT 650M card with 384 cores"
+  ],
+  [
+   "models",
+   "used",
+   "4 layers of LSTM hidden units in the bidirectional encoder and attention decoder"
+  ]
+ ],
+ "1612.02482::s07::p001": [
+  [
+   "model",
+   "used",
+   "a Stochastic Gradient Descent (SGD) optimization algorithm with a sampled softmax loss of 512 per sample"
+  ],
+  [
+   "model",
+   "was trained with",
+   "a learning rate 1.0 and a decay of rate 0.5"
+  ],
+  [
+   "Gradient clipping",
+   "was carried out based on",
+   "the global norm of 5.0"
+  ],
+  [
+   "model described",
+   "is",
+   "the one used in the Tensorflow BIBREF11 seq2seq library"
+  ]
+ ],
+ "1612.02482::s08::p000": [
+  [
+   "BLEU metric parameters and human evaluation metrics",
+   "were used to evaluate",
+   "the performance of the models"
+  ]
+ ],
+ "1612.02482::s09::p001": [
+  [
+   "BLEU metric",
+   "computes",
+   "the BLEU unigram, bigram, trigram and BLEU-4 modified precision values"
+  ],
+  [
+   "performance of the phrase-based SMT model",
+   "was inferior to",
+   "that of the RNNSearch model"
+  ],
+  [
+   "baseline RNNSearch system",
+   "was further refined by",
+   "using word2vec vectors to embed semantic understanding"
+  ],
+  [
+   "4-gram BLEU scores for the various models",
+   "were plotted as",
+   "a bar graph in Fig. FIGREF26"
+  ]
+ ],
+ "1612.02482::s09::p002": [
+  [
+   "morphological segmentation",
+   "further improved",
+   "the BLEU precision values in the RNNMorph model"
+  ],
+  [
+   "the BLEU score",
+   "computes",
+   "micro-average precision scores"
+  ]
+ ],
+ "1612.02482::s10::p000": [
+  [
+   "A group of 50 native people",
+   "acted as",
+   "annotators for the evaluation"
+  ],
+  [
+   "A collection of samples of about 100 sentences",
+   "were taken from",
+   "the test set results for comparison"
+  ],
+  [
+   "Adequacy rating",
+   "was calculated on",
+   "a 5-point scale of how much of the meaning is conveyed by the translation (All, Most, Much, Little, None)"
+  ]
+ ],
+ "1612.02482::s11::p000": [
+  [
+   "The learning rate decay through the training process of the RNNMorph model",
+   "is showcased in",
+   "the graph in Fig. FIGREF34"
+  ],
+  [
+   "the learning rate",
+   "was decayed after",
+   "the end of specific epochs based on an observed stagnation in perplexity"
+  ],
+  [
+   "The RNNMorph model",
+   "achieved saturation of perplexities much earlier through the epochs than",
+   "the RNNSearch + Word2Vec model"
+  ],
+  [
+   "the morphological segmentation",
+   "has reduced the vocabulary size of the target language from",
+   "340,325 words to a mere 41,906 morphs"
+  ]
+ ],
+ "1612.02482::s11::p001": [
+  [
+   "The error function",
+   "used was",
+   "the sampled SoftMax loss"
+  ],
+  [
+   "A zoomed inset graph (Fig. FIGREF35 )",
+   "has been used to visualize",
+   "the values of the error function for the RNNSearch + Word2Vec and RNNMorph models with 4 hidden layers"
+  ],
+  [
+   "the RNNMorph model",
+   "is consistently better in terms of",
+   "the perplexity values through the time steps"
+  ]
+ ],
+ "1612.02482::s12::p000": [
+  [
+   "attention vectors of both the RNNSearch with Word2Vec embedding and RNNMorph models",
+   "are compared for",
+   "several good translations in Figs. FIGREF37 and FIGREF44"
+  ],
+  [
+   "attention vectors of the RNNSearch model with Word2Vec embeddings",
+   "tend to attend to",
+   "INLINEFORM4 EOS INLINEFORM5 token in the middle of the sentence leading to incomplete translations"
+  ],
+  [
+   "only 44% of the Tamil vocabulary and 74% of the English vocabulary",
+   "is taken for training in",
+   "this model"
+  ]
+ ],
+ "1612.02482::s13::p000": [
+  [
+   "A very large target vocabulary",
+   "is",
+   "an inadvertent consequence of the morphological richness of the Tamil language"
+  ],
+  [
+   "many inflectional forms of the same word",
+   "are trained as",
+   "independent units"
+  ],
+  [
+   "morphological segmentation of Tamil text",
+   "decreased the target vocabulary size from",
+   "340,325 to a mere 41,906"
+  ],
+  [
+   "This morphologically segmented vocabulary",
+   "is divided into",
+   "a collection of morphological roots and inflections as individual units"
+  ]
+ ],
+ "1612.02482::s14::p000": [
+  [
+   "Some of the translations of the RNNMorph model",
+   "have",
+   "repetitions of the same phrases (Fig. FIGREF53 )"
+  ],
+  [
+   "such repetitions",
+   "occur much less frequently in",
+   "the RNNSearch predictions"
+  ],
+  [
+   "These repetitions",
+   "might be due to",
+   "the increase in the general sequence length of the target sentences because of the morphological segmentation"
+  ],
+  [
+   "the RNNMorph",
+   "has",
+   "more input units (morphs) per sentence"
+  ]
+ ],
+ "1612.02482::s15::p000": [
+  [
+   "The translation outputs of the RNNSearch + Word2Vec and Morph2Vec models",
+   "demonstrate",
+   "the effectiveness of using a morphological segmentation tool"
+  ],
+  [
+   "most of the translation sentences of the Morph2Vec model",
+   "have no",
+   "INLINEFORM0 UNK INLINEFORM1 tokens"
+  ]
+ ],
+ "1612.02482::s16::p000": [
+  [
+   "Professors CN Krishnan, Sobha et al",
+   "developed",
+   "a machine-aided-translation (MAT) system similar to the Anusaakara English Hindi MT system"
+  ],
+  [
+   "Vetrivel et al.",
+   "used",
+   "HMMs to align and translate English and Tamil parallel sentences to build an SMT system"
+  ],
+  [
+   "Anglabharathi",
+   "was developed at",
+   "IIT Kanpur"
+  ],
+  [
+   "The use of Statistical Machine Translation",
+   "took over",
+   "the English–Tamil MT system research"
+  ]
+ ],
+ "1612.02482::s16::p001": [
+  [
+   "The use of RNN Encoder Decoder models in machine translation",
+   "has shown",
+   "good results in languages with similar grammatical structure"
+  ],
+  [
+   "Deep MT systems",
+   "have been performing better than",
+   "the other shallow SMT models recently"
+  ],
+  [
+   "One major drawback of these models",
+   "is",
+   "the size of the context vector of the encoder being static in nature"
+  ]
+ ],
+ "1612.02482::s16::p002": [
+  [
+   "variable length word vectors",
+   "were used",
+   "Bahdanau et al. Bahdanau2014"
+  ],
+  [
+   "a weighted sum of the inputs",
+   "is given for",
+   "the decoder"
+  ],
+  [
+   "the attention mechanism",
+   "enabled",
+   "selective lookup to the source sentence during decoding"
+  ],
+  [
+   "Luong et al. luong2015effective",
+   "made a distinction between",
+   "global and local attention"
+  ]
+ ],
+ "1612.02482::s17::p000": [
+  [
+   "the use of morphological segmentation on a morphologically rich language before translation",
+   "helps with",
+   "the performance of the translation in multiple ways"
+  ],
+  [
+   "machine translation involving morphologically rich languages",
+   "should ideally be carried out only after",
+   "morphological segmentation"
+  ],
+  [
+   "both the languages' sentences",
+   "should be individually segmented based on",
+   "morphology"
+  ],
+  [
+   "the schemes that the languages use for the process of agglutination",
+   "might be different",
+   "in which case a mapping between the units would be difficult without the segmentation"
+  ]
+ ],
+ "1612.02482::s17::p001": [
+  [
+   "One drawback of morphological segmentation",
+   "is",
+   "the increase in complexity of the model due to an increase in the average sentence lengths"
+  ],
+  [
+   "the increase in complexity of the model",
+   "cannot be avoided",
+   "as it is essential to enable a correspondence between the sentences of the two languages"
+  ],
+  [
+   "the attention models that have been developed to ensure correctness of translation of long sequences",
+   "can be put to good use",
+   "when involving morphologically rich languages"
+  ],
+  [
+   "morphologically rich languages like Tamil",
+   "generally have",
+   "lesser number of words per sentence than languages like English"
+  ]
+ ],
+ "1612.02482::s18::p000": [
+  [
+   "The model implemented in this paper",
+   "only includes",
+   "source-side morphological segmentation"
+  ],
+  [
+   "The model implemented in this paper",
+   "does not include",
+   "a target side morphological agglutination"
+  ],
+  [
+   "a morphological generator",
+   "is essential",
+   "because the output units of the translation cannot be morphemes"
+  ],
+  [
+   "the output units of the translation",
+   "cannot be",
+   "morphemes"
+  ]
+ ],
+ "1612.02482::s18::p001": [
+  [
+   "The same model implemented",
+   "can be further enhanced by means of",
+   "a better corpus"
+  ],
+  [
+   "a better corpus",
+   "can generalize over",
+   "more than just domain specific source sentences"
+  ],
+  [
+   "the use of a better GPU",
+   "would result in",
+   "a better allocation of the hidden layer sizes and the batch sizes"
+  ]
+ ],
+ "1612.02482::s18::p002": [
+  [
+   "Their model",
+   "fuses",
+   "inferences from each and every individual word"
+  ],
+  [
+   "Their model",
+   "links",
+   "the hidden state of the encoder with that of the decoder"
+  ],
+  [
+   "the hidden state of the encoder with that of the decoder",
+   "is linked by means of",
+   "a weighted sum, trained for optimization"
+  ]
+ ]
+}

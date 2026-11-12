@@ -1,0 +1,422 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1906.01081::s00::p000",
+   "summary": "Generating natural language descriptions of structured data such as tables has grown with sequence to sequence models.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s00::p001",
+   "summary": "Automatic metrics like BLEU and ROUGE compare generated text to references, but WikiBio references can contain extra information divergent from the table.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s00::p002",
+   "summary": "The paper proposes PARENT, which uses reference and table union for precision and intersection for recall via an entailment model.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s01::p000",
+   "summary": "The table-to-text task generates fluent text summarizing records, with evaluation sets of tables, references, generated texts, and n-gram counts.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s02::p000",
+   "summary": "PARENT evaluates each instance separately by computing precision and recall against both the reference and the table.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s03::p000",
+   "summary": "A prior extraction model was limited to basketball tables, so the authors train their own model for open-domain WikiBio.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s03::p001",
+   "summary": "Their pointer-generator network produces linearized tables from text, trained on WikiBio, with extracted tuples compared to ground truth tables.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s03::p002",
+   "summary": "They define CS, RG, and RG-F metrics from extracted pairs, omitting content ordering because records are not aligned to text.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s04::p000",
+   "summary": "Experiments compare automatic metrics by Pearson correlation between human scores for models and metric scores on generated outputs.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s05::p000",
+   "summary": "Main experiments use WikiBio, which is automatically constructed and contains many divergent references, with additional WebNLG results.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s05::p001",
+   "summary": "Several WikiBio models of varying quality were developed, mainly neural sequence-to-sequence methods plus a template-based baseline.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s05::p002",
+   "summary": "Models are divided into WikiBio-Systems and WikiBio-Hyperparams, the latter including 13 PG-Net hyperparameter settings.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s06::p000",
+   "summary": "Human judgments for 16 WikiBio models plus references used paired comparisons aggregated into real-valued scores by Thurstone's method.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s06::p001",
+   "summary": "Annotation covered 1100 tables, 8800 pairwise comparisons, and around 500 workers, with references scoring lower than PG-Net.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s07::p000",
+   "summary": "Text-only compared metrics are BLEU, ROUGE, METEOR, CIDEr, and CIDEr-D using publicly available implementations.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s07::p001",
+   "summary": "Information extraction based compared metrics are CS, RG, and RG-F.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s07::p002",
+   "summary": "Text and table metrics include BLEU-T, PARENT-W, PARENT-C, and tuned PARENT*-W/C variants.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s08::p000",
+   "summary": "Bootstrap sampling with 500 iterations over 1100 tables estimates correlation variation and reports average correlations.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s08::p001",
+   "summary": "Bootstrap samples provide a confidence interval for correlation differences between PARENT and other metrics.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s08::p002",
+   "summary": "Reference-only metrics correlate weakly with humans, often negatively for hyperparams, while BLEU performs best and BLEU-T improves it.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s08::p003",
+   "summary": "RG-F and both PARENT variants achieve highest correlations, with PARENT-W significantly better than the other two for systems.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s08::p004",
+   "summary": "Word-overlap entailment outperformed co-occurrence on this dataset, while tuned INLINEFORM0 can yield significantly higher PARENT correlations.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s09::p000",
+   "summary": "The analysis further examines PARENT-W under different conditions and compares it with other best metrics from Table TABREF37.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s09::p001",
+   "summary": "Workers labeled whether references were entailed by tables, with 3 independent judgments per pair and majority voting.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s09::p002",
+   "summary": "PARENT and RG-F remain stable across entailed-example proportions, while BLEU and BLEU-T vary substantially.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s09::p003",
+   "summary": "Removing entailment probability or Table Recall lowers PARENT-W correlation, showing these components are crucial.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s09::p004",
+   "summary": "Both PARENT variants significantly outperform other metrics in instance-level pairwise accuracy, though best accuracy is only INLINEFORM0.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s10::p000",
+   "summary": "WebNLG evaluation uses human ratings for 9 systems on 223 instances describing 1-5 RDF triples with up to 3 references.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s10::p001",
+   "summary": "Human ratings cover grammaticality, fluency, and semantics, and both PARENT variants are competitive or better on average correlation.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s10::p002",
+   "summary": "BLEU correlates highest for grammar and fluency, while PARENT does best for semantics and PARENT-C is better among entailment models.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s10::p003",
+   "summary": "INLINEFORM0 controls recall against table or reference, with WikiBio relying more on the table and WebNLG more on references.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s11::p000",
+   "summary": "Prior metric studies find no single metric suitable across tasks, and this work first checks divergent table-to-text references.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s11::p001",
+   "summary": "Divergence is framed as hallucination in the reference text, and PARENT discounts n-grams overlapping neither reference nor table.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s11::p002",
+   "summary": "PARENT is inspired by iBLEU but rewards source matches, and is a task-specific metric like SARI and Q-BLEU.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s12::p000",
+   "summary": "PARENT shows highest correlation with humans across divergent WikiBio settings, RG-F is effective, and PARENT is comparable on WebNLG.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s13::p000",
+   "summary": "Bhuwan Dhingra is supported by Siemens and Google, and the authors thank named colleagues, Sam Wiseman, and reviewers.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s14::p000",
+   "summary": "The WikiBio information extraction model is a PG-Net with bi-directional LSTMs, attention, copying, and linearized table outputs.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s14::p001",
+   "summary": "Divergent references cause hallucinated false information, but parsed output tuples can still evaluate generated texts.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s15::p000",
+   "summary": "Tuned hyperparameters include hidden state size 200, vocabularies of 50000 words, Glove embeddings, Adam, dropout, and beam size 8.",
+   "group_id": "1906.01081::s00"
+  },
+  {
+   "passage_id": "1906.01081::s16::p000",
+   "summary": "Table TABREF55 shows sample references and corresponding predictions from the best performing WikiBio model, PG-Net.",
+   "group_id": "1906.01081::s00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1906.01081::s00",
+   "summaries": [
+    {
+     "passage_id": "1906.01081::s00::p000",
+     "summary": "Generating natural language descriptions of structured data such as tables has grown with sequence to sequence models.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s00::p001",
+     "summary": "Automatic metrics like BLEU and ROUGE compare generated text to references, but WikiBio references can contain extra information divergent from the table.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s00::p002",
+     "summary": "The paper proposes PARENT, which uses reference and table union for precision and intersection for recall via an entailment model.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s01::p000",
+     "summary": "The table-to-text task generates fluent text summarizing records, with evaluation sets of tables, references, generated texts, and n-gram counts.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s02::p000",
+     "summary": "PARENT evaluates each instance separately by computing precision and recall against both the reference and the table.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s03::p000",
+     "summary": "A prior extraction model was limited to basketball tables, so the authors train their own model for open-domain WikiBio.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s03::p001",
+     "summary": "Their pointer-generator network produces linearized tables from text, trained on WikiBio, with extracted tuples compared to ground truth tables.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s03::p002",
+     "summary": "They define CS, RG, and RG-F metrics from extracted pairs, omitting content ordering because records are not aligned to text.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s04::p000",
+     "summary": "Experiments compare automatic metrics by Pearson correlation between human scores for models and metric scores on generated outputs.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s05::p000",
+     "summary": "Main experiments use WikiBio, which is automatically constructed and contains many divergent references, with additional WebNLG results.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s05::p001",
+     "summary": "Several WikiBio models of varying quality were developed, mainly neural sequence-to-sequence methods plus a template-based baseline.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s05::p002",
+     "summary": "Models are divided into WikiBio-Systems and WikiBio-Hyperparams, the latter including 13 PG-Net hyperparameter settings.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s06::p000",
+     "summary": "Human judgments for 16 WikiBio models plus references used paired comparisons aggregated into real-valued scores by Thurstone's method.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s06::p001",
+     "summary": "Annotation covered 1100 tables, 8800 pairwise comparisons, and around 500 workers, with references scoring lower than PG-Net.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s07::p000",
+     "summary": "Text-only compared metrics are BLEU, ROUGE, METEOR, CIDEr, and CIDEr-D using publicly available implementations.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s07::p001",
+     "summary": "Information extraction based compared metrics are CS, RG, and RG-F.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s07::p002",
+     "summary": "Text and table metrics include BLEU-T, PARENT-W, PARENT-C, and tuned PARENT*-W/C variants.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s08::p000",
+     "summary": "Bootstrap sampling with 500 iterations over 1100 tables estimates correlation variation and reports average correlations.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s08::p001",
+     "summary": "Bootstrap samples provide a confidence interval for correlation differences between PARENT and other metrics.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s08::p002",
+     "summary": "Reference-only metrics correlate weakly with humans, often negatively for hyperparams, while BLEU performs best and BLEU-T improves it.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s08::p003",
+     "summary": "RG-F and both PARENT variants achieve highest correlations, with PARENT-W significantly better than the other two for systems.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s08::p004",
+     "summary": "Word-overlap entailment outperformed co-occurrence on this dataset, while tuned INLINEFORM0 can yield significantly higher PARENT correlations.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s09::p000",
+     "summary": "The analysis further examines PARENT-W under different conditions and compares it with other best metrics from Table TABREF37.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s09::p001",
+     "summary": "Workers labeled whether references were entailed by tables, with 3 independent judgments per pair and majority voting.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s09::p002",
+     "summary": "PARENT and RG-F remain stable across entailed-example proportions, while BLEU and BLEU-T vary substantially.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s09::p003",
+     "summary": "Removing entailment probability or Table Recall lowers PARENT-W correlation, showing these components are crucial.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s09::p004",
+     "summary": "Both PARENT variants significantly outperform other metrics in instance-level pairwise accuracy, though best accuracy is only INLINEFORM0.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s10::p000",
+     "summary": "WebNLG evaluation uses human ratings for 9 systems on 223 instances describing 1-5 RDF triples with up to 3 references.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s10::p001",
+     "summary": "Human ratings cover grammaticality, fluency, and semantics, and both PARENT variants are competitive or better on average correlation.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s10::p002",
+     "summary": "BLEU correlates highest for grammar and fluency, while PARENT does best for semantics and PARENT-C is better among entailment models.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s10::p003",
+     "summary": "INLINEFORM0 controls recall against table or reference, with WikiBio relying more on the table and WebNLG more on references.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s11::p000",
+     "summary": "Prior metric studies find no single metric suitable across tasks, and this work first checks divergent table-to-text references.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s11::p001",
+     "summary": "Divergence is framed as hallucination in the reference text, and PARENT discounts n-grams overlapping neither reference nor table.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s11::p002",
+     "summary": "PARENT is inspired by iBLEU but rewards source matches, and is a task-specific metric like SARI and Q-BLEU.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s12::p000",
+     "summary": "PARENT shows highest correlation with humans across divergent WikiBio settings, RG-F is effective, and PARENT is comparable on WebNLG.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s13::p000",
+     "summary": "Bhuwan Dhingra is supported by Siemens and Google, and the authors thank named colleagues, Sam Wiseman, and reviewers.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s14::p000",
+     "summary": "The WikiBio information extraction model is a PG-Net with bi-directional LSTMs, attention, copying, and linearized table outputs.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s14::p001",
+     "summary": "Divergent references cause hallucinated false information, but parsed output tuples can still evaluate generated texts.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s15::p000",
+     "summary": "Tuned hyperparameters include hidden state size 200, vocabularies of 50000 words, Glove embeddings, Adam, dropout, and beam size 8.",
+     "group_id": "1906.01081::s00"
+    },
+    {
+     "passage_id": "1906.01081::s16::p000",
+     "summary": "Table TABREF55 shows sample references and corresponding predictions from the best performing WikiBio model, PG-Net.",
+     "group_id": "1906.01081::s00"
+    }
+   ],
+   "n_raw": 40,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5984,
+    "completion_tokens": 1733,
+    "total_tokens": 7717,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

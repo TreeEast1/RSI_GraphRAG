@@ -1,0 +1,131 @@
+{
+  "timestamp": "2026-11-05T22:58:47",
+  "args": {
+    "split": null,
+    "convs": "conv-30",
+    "max_questions": 12,
+    "budget": 4096,
+    "top_k": 20,
+    "methods": "dense,hipporag",
+    "force_index": false,
+    "out_prefix": "smoke3",
+    "max_workers": 16
+  },
+  "summaries": {
+    "dense": {
+      "method": "dense",
+      "n": 12,
+      "recall@1": 0.5,
+      "recall@3": 0.625,
+      "recall@5": 0.8333333333333334,
+      "recall@10": 0.9583333333333334,
+      "recall@20": 1.0,
+      "mrr": 0.6882936507936508,
+      "ndcg@10": 0.7397846003640783,
+      "evidence_full@2048": 0.5833333333333334,
+      "evidence_partial@2048": 0.625,
+      "session_full@2048": 0.5833333333333334,
+      "evidence_full@4096": 0.8333333333333334,
+      "evidence_partial@4096": 0.8541666666666666,
+      "session_full@4096": 0.8333333333333334,
+      "evidence_full@8192": 1.0,
+      "evidence_partial@8192": 1.0,
+      "session_full@8192": 1.0,
+      "em": 0.08333333333333333,
+      "f1": 0.25613026819923373,
+      "by_category": {
+        "1": {
+          "n": 3,
+          "em": 0.0,
+          "f1": 0.13333333333333333,
+          "recall@5": 0.6666666666666666,
+          "evidence_full@4096": 0.6666666666666666
+        },
+        "2": {
+          "n": 7,
+          "em": 0.14285714285714285,
+          "f1": 0.2571428571428572,
+          "recall@5": 1.0,
+          "evidence_full@4096": 1.0
+        },
+        "4": {
+          "n": 2,
+          "em": 0.0,
+          "f1": 0.4367816091954023,
+          "recall@5": 0.5,
+          "evidence_full@4096": 0.5
+        }
+      },
+      "by_conversation": {
+        "conv-30": {
+          "n": 12,
+          "em": 0.08333333333333333,
+          "f1": 0.25613026819923373,
+          "recall@5": 0.8333333333333334
+        }
+      }
+    },
+    "hipporag": {
+      "method": "hipporag",
+      "n": 12,
+      "recall@1": 0.5416666666666666,
+      "recall@3": 0.625,
+      "recall@5": 0.75,
+      "recall@10": 0.9166666666666666,
+      "recall@20": 1.0,
+      "mrr": 0.6611471861471861,
+      "ndcg@10": 0.7183470530689936,
+      "evidence_full@2048": 0.5833333333333334,
+      "evidence_partial@2048": 0.6388888888888888,
+      "session_full@2048": 0.5833333333333334,
+      "evidence_full@4096": 0.75,
+      "evidence_partial@4096": 0.75,
+      "session_full@4096": 0.75,
+      "evidence_full@8192": 0.9166666666666666,
+      "evidence_partial@8192": 0.9375,
+      "session_full@8192": 0.9166666666666666,
+      "em": 0.08333333333333333,
+      "f1": 0.26259600614439327,
+      "by_category": {
+        "1": {
+          "n": 3,
+          "em": 0.0,
+          "f1": 0.3873015873015873,
+          "recall@5": 0.6666666666666666,
+          "evidence_full@4096": 0.6666666666666666
+        },
+        "2": {
+          "n": 7,
+          "em": 0.14285714285714285,
+          "f1": 0.14285714285714285,
+          "recall@5": 1.0,
+          "evidence_full@4096": 1.0
+        },
+        "4": {
+          "n": 2,
+          "em": 0.0,
+          "f1": 0.4946236559139785,
+          "recall@5": 0.0,
+          "evidence_full@4096": 0.0
+        }
+      },
+      "by_conversation": {
+        "conv-30": {
+          "n": 12,
+          "em": 0.08333333333333333,
+          "f1": 0.26259600614439327,
+          "recall@5": 0.75
+        }
+      }
+    }
+  },
+  "hy4": {
+    "calls": 23,
+    "cache_hits": 1,
+    "errors": 0,
+    "prompt_tokens": 98149,
+    "completion_tokens": 164,
+    "reasoning_tokens": 0,
+    "latency_s": 34.2797908782959
+  }
+}

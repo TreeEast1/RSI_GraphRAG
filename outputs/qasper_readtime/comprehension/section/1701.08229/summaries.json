@@ -1,0 +1,312 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1701.08229::s00::p000",
+   "summary": "Social media data has been used to detect, estimate, and track disease prevalence, social risks, and mental health disorders, but more research is needed on supervised machine learning classifiers and feature groups for classifying depression-related tweets.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s00::p001",
+   "summary": "This paper assesses lexical features and emotion contributions to classifying Twitter tweets representing symptoms of major depressive disorder and applies methods to eliminate low-value features.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s01::p000",
+   "summary": "The authors conducted feature ablation and feature elimination studies using an annotated Twitter dataset with 9,473 annotations for 9,300 tweets, binarized by depression evidence and depressive symptoms.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s02::p000",
+   "summary": "The dataset was encoded with 7 feature groups with binarized feature values representing potentially informative features for classifying depression-related classes.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s02::p001",
+   "summary": "Lexical features include unigrams, e.g., “depressed”.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s02::p002",
+   "summary": "Syntactic features include parts of speech, e.g., “cried” encoded as V for verb.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s02::p003",
+   "summary": "Emotion features include emoticons, e.g., :( encoded as SAD.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s02::p004",
+   "summary": "Demographic features include age and gender, e.g., “this semester” encoded as an indicator of 19-22 years of age and “my girlfriend” encoded as an indicator of male gender.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s02::p005",
+   "summary": "Sentiment features include polarity and subjectivity terms with strengths, e.g., “terrible” encoded as strongly negative and strongly subjective.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s02::p006",
+   "summary": "Personality traits include neuroticism, e.g., “pissed off” implies neuroticism.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s02::p007",
+   "summary": "LIWC Features include indicators of an individual's thoughts, feelings, personality, and motivations, e.g., “feeling” suggestions perception, feeling, insight, and cognitive mechanisms experienced by the Twitter user.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s02::p008",
+   "summary": "A more detailed description of leveraged features and their values, including LIWC categories, can be found in BIBREF10.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s02::p009",
+   "summary": "Prior initial experiments showed support vector machines perform with the highest F1-score, and this study assesses each feature group's contribution and the optimal percentile of top ranked features.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s03::p000",
+   "summary": "Feature ablation studies quantify changes in predictive power by comparing all feature groups with performance without a particular feature group, using a linear kernel support vector model and 5-fold, stratified cross-validation.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s03::p001",
+   "summary": "Ablating feature groups produced feature counts and F1-score changes, including major drops for sans lexical and notable disturbed sleep drops for demographics, emotion, and sentiment.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s03::p002",
+   "summary": "Lexical features were the largest contributor to feature counts and critical for identifying depressive symptoms, while non-lexical features had limited contribution for higher hierarchy classes but notable effects for lower hierarchy classes.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s04::p000",
+   "summary": "Feature elimination strategies remove irrelevant or noisy features, improve classifier performance, and reduce training and run times, motivating a three-tiered feature elimination approach.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s04::p001",
+   "summary": "Reduction eliminated features that occur less than twice in the full dataset from the dataset encoded for each class.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s04::p002",
+   "summary": "Selection iteratively applied Chi-Square feature selection on the reduced dataset, selecting top percentile features in increments of 5 percent for a linear kernel support vector model with 5-fold, stratified cross-validation.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s04::p003",
+   "summary": "Rank cumulatively plotted average F1-score performances for each incrementally added percentile and reported the percentile and count of features for the first occurrence of the highest average F1-score for each class.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s04::p004",
+   "summary": "All experiments were programmed using scikit-learn 0.18.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s04::p005",
+   "summary": "Initial matrices of almost 17,000 features were reduced to 5,761 features, then Chi-Square feature selection evaluated top-ranked subsets at 5 percent intervals using a support vector machine with linear kernel and stratified, 5-fold cross validation.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s04::p006",
+   "summary": "Optimal F1-score performance used top feature counts for six classes, including no evidence of depression: F1: 87 (15th percentile, 864 features) and fatigue or loss of energy: F1: 72 (5th percentile, 288 features).",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s04::p007",
+   "summary": "Peak F1-score performances occurred at low percentiles for fatigue or loss of energy, disturbed sleep, depressive symptoms, and no evidence of depression, and at moderate percentiles for evidence of depression and depressed mood.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s05::p000",
+   "summary": "From an annotated dataset of Twitter tweets (n=9,300 tweets), two feature studies classified depression evidence and symptom subtypes using support vector machines, with high performance for no evidence of depression and fatigue or loss of energy.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s06::p000",
+   "summary": "The authors conducted a feature ablation study to assess feature group contributions and a feature elimination study to determine the optimal percentile of top ranked features.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s07::p000",
+   "summary": "Future work will address rarer depressive symptoms and develop a population-level monitoring framework over millions of United States-geocoded tweets, requiring discriminating feature sets and natural language processing classifiers.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s08::p000",
+   "summary": "The authors conclude that simple lexical features and reduced feature sets can produce comparable results to the much larger feature dataset.",
+   "group_id": "1701.08229::g00"
+  },
+  {
+   "passage_id": "1701.08229::s09::p000",
+   "summary": "Research was supported by the National Library of Medicine of the [United States] National Institutes of Health under award numbers K99LM011393 and R00LM011393, with IRB 00076188 exemption and generated example tweets.",
+   "group_id": "1701.08229::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1701.08229::g00",
+   "summaries": [
+    {
+     "passage_id": "1701.08229::s00::p000",
+     "summary": "Social media data has been used to detect, estimate, and track disease prevalence, social risks, and mental health disorders, but more research is needed on supervised machine learning classifiers and feature groups for classifying depression-related tweets.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s00::p001",
+     "summary": "This paper assesses lexical features and emotion contributions to classifying Twitter tweets representing symptoms of major depressive disorder and applies methods to eliminate low-value features.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s01::p000",
+     "summary": "The authors conducted feature ablation and feature elimination studies using an annotated Twitter dataset with 9,473 annotations for 9,300 tweets, binarized by depression evidence and depressive symptoms.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s02::p000",
+     "summary": "The dataset was encoded with 7 feature groups with binarized feature values representing potentially informative features for classifying depression-related classes.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s02::p001",
+     "summary": "Lexical features include unigrams, e.g., “depressed”.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s02::p002",
+     "summary": "Syntactic features include parts of speech, e.g., “cried” encoded as V for verb.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s02::p003",
+     "summary": "Emotion features include emoticons, e.g., :( encoded as SAD.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s02::p004",
+     "summary": "Demographic features include age and gender, e.g., “this semester” encoded as an indicator of 19-22 years of age and “my girlfriend” encoded as an indicator of male gender.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s02::p005",
+     "summary": "Sentiment features include polarity and subjectivity terms with strengths, e.g., “terrible” encoded as strongly negative and strongly subjective.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s02::p006",
+     "summary": "Personality traits include neuroticism, e.g., “pissed off” implies neuroticism.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s02::p007",
+     "summary": "LIWC Features include indicators of an individual's thoughts, feelings, personality, and motivations, e.g., “feeling” suggestions perception, feeling, insight, and cognitive mechanisms experienced by the Twitter user.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s02::p008",
+     "summary": "A more detailed description of leveraged features and their values, including LIWC categories, can be found in BIBREF10.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s02::p009",
+     "summary": "Prior initial experiments showed support vector machines perform with the highest F1-score, and this study assesses each feature group's contribution and the optimal percentile of top ranked features.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s03::p000",
+     "summary": "Feature ablation studies quantify changes in predictive power by comparing all feature groups with performance without a particular feature group, using a linear kernel support vector model and 5-fold, stratified cross-validation.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s03::p001",
+     "summary": "Ablating feature groups produced feature counts and F1-score changes, including major drops for sans lexical and notable disturbed sleep drops for demographics, emotion, and sentiment.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s03::p002",
+     "summary": "Lexical features were the largest contributor to feature counts and critical for identifying depressive symptoms, while non-lexical features had limited contribution for higher hierarchy classes but notable effects for lower hierarchy classes.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s04::p000",
+     "summary": "Feature elimination strategies remove irrelevant or noisy features, improve classifier performance, and reduce training and run times, motivating a three-tiered feature elimination approach.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s04::p001",
+     "summary": "Reduction eliminated features that occur less than twice in the full dataset from the dataset encoded for each class.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s04::p002",
+     "summary": "Selection iteratively applied Chi-Square feature selection on the reduced dataset, selecting top percentile features in increments of 5 percent for a linear kernel support vector model with 5-fold, stratified cross-validation.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s04::p003",
+     "summary": "Rank cumulatively plotted average F1-score performances for each incrementally added percentile and reported the percentile and count of features for the first occurrence of the highest average F1-score for each class.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s04::p004",
+     "summary": "All experiments were programmed using scikit-learn 0.18.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s04::p005",
+     "summary": "Initial matrices of almost 17,000 features were reduced to 5,761 features, then Chi-Square feature selection evaluated top-ranked subsets at 5 percent intervals using a support vector machine with linear kernel and stratified, 5-fold cross validation.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s04::p006",
+     "summary": "Optimal F1-score performance used top feature counts for six classes, including no evidence of depression: F1: 87 (15th percentile, 864 features) and fatigue or loss of energy: F1: 72 (5th percentile, 288 features).",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s04::p007",
+     "summary": "Peak F1-score performances occurred at low percentiles for fatigue or loss of energy, disturbed sleep, depressive symptoms, and no evidence of depression, and at moderate percentiles for evidence of depression and depressed mood.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s05::p000",
+     "summary": "From an annotated dataset of Twitter tweets (n=9,300 tweets), two feature studies classified depression evidence and symptom subtypes using support vector machines, with high performance for no evidence of depression and fatigue or loss of energy.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s06::p000",
+     "summary": "The authors conducted a feature ablation study to assess feature group contributions and a feature elimination study to determine the optimal percentile of top ranked features.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s07::p000",
+     "summary": "Future work will address rarer depressive symptoms and develop a population-level monitoring framework over millions of United States-geocoded tweets, requiring discriminating feature sets and natural language processing classifiers.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s08::p000",
+     "summary": "The authors conclude that simple lexical features and reduced feature sets can produce comparable results to the much larger feature dataset.",
+     "group_id": "1701.08229::g00"
+    },
+    {
+     "passage_id": "1701.08229::s09::p000",
+     "summary": "Research was supported by the National Library of Medicine of the [United States] National Institutes of Health under award numbers K99LM011393 and R00LM011393, with IRB 00076188 exemption and generated example tweets.",
+     "group_id": "1701.08229::g00"
+    }
+   ],
+   "n_raw": 29,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3387,
+    "completion_tokens": 1504,
+    "total_tokens": 4891,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

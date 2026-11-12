@@ -1,0 +1,416 @@
+{
+ "kept": [
+  {
+   "insight_id": "1801.06482::g00:i02",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::g00",
+   "concise_text": "Because task specific word embeddings capture SMP specific and topic specific style, transferring only learned word embeddings in TL2 dramatically improved recall and significantly improved precision over TL1.",
+   "triple": {
+    "subject": "TL2",
+    "predicate": "improves_on",
+    "object": "TL1"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1801.06482::s04::p001",
+    "1801.06482::s09::p001",
+    "1801.06482::s09::p002"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::g00:b1:f18",
+    "1801.06482::g00:b3:f06",
+    "1801.06482::g00:b3:f09",
+    "1801.06482::g00:b3:f10",
+    "1801.06482::g00:b3:f11",
+    "1801.06482::g00:b3:f12"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "Cited ids exist; p001 says task-specific embeddings capture SMP/topic style, and p002 says TL2 transfers learned embeddings and improves recall/precision over TL1. Jointly supports the inferred method-result insight."
+   },
+   "unit_id": "1801.06482::u002"
+  },
+  {
+   "insight_id": "1801.06482::g00:i03",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::g00",
+   "concise_text": "TL3 transfers learned word embeddings and network weights but does not significantly improve over TL2, indicating learned word embeddings are the key knowledge gained by DNN models.",
+   "triple": {
+    "subject": "TL3",
+    "predicate": "extends",
+    "object": "TL2 with network weights"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1801.06482::s09::p002",
+    "1801.06482::s09::p003"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::g00:b3:f09",
+    "1801.06482::g00:b3:f12",
+    "1801.06482::g00:b3:f13",
+    "1801.06482::g00:b3:f14",
+    "1801.06482::g00:b3:f15",
+    "1801.06482::g00:b3:f16"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.94,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Cited ids exist; p002 defines TL2 as transferring learned embeddings, p003 defines TL3 as adding network weights and states no significant improvement over TL2, indicating embeddings are key knowledge. Supports the composed insight."
+   },
+   "unit_id": "1801.06482::u003"
+  },
+  {
+   "insight_id": "1801.06482::g00:i05",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::g00",
+   "concise_text": "The Twitter dataset's sexism and racism focus is reflected in learned embeddings where slave is similar to targets of racism and sexism, unlike the personal attack Wikipedia dataset.",
+   "triple": {
+    "subject": "Twitter dataset",
+    "predicate": "evaluated_on",
+    "object": "sexism and racism"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1801.06482::s01::p000",
+    "1801.06482::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::g00:b0:f11",
+    "1801.06482::g00:b0:f12",
+    "1801.06482::g00:b3:f02",
+    "1801.06482::g00:b3:f03",
+    "1801.06482::g00:b3:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Cited ids exist; p000 states Twitter contains racism/sexism and Wikipedia personal attack, while p001 states Twitter embeddings treat 'slave' as similar to racism/sexism targets and Wikipedia does not show such bias. Jointly supports the composed claim."
+   },
+   "unit_id": "1801.06482::u005"
+  },
+  {
+   "insight_id": "1801.06482::g00:i07",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::g00",
+   "concise_text": "The paper's three datasets instantiate the three social network types named in the Introduction: Formspring, Twitter, and Wikipedia talk pages.",
+   "triple": {
+    "subject": "Formspring, Twitter, and Wikipedia talk pages",
+    "predicate": "evaluated_on",
+    "object": "three different types of social networks"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1801.06482::s00::p002",
+    "1801.06482::s01::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::g00:b0:f07",
+    "1801.06482::g00:b0:f11",
+    "1801.06482::g00:b0:f12"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "Cited ids exist; p002 names the three social network types in the Introduction, and s01:p000 says the datasets cover those same three types. Jointly supports the entity-resolution/composed insight."
+   },
+   "unit_id": "1801.06482::u007"
+  },
+  {
+   "insight_id": "1801.06482::g00:i08",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::g00",
+   "concise_text": "The four DNN models CNN, LSTM, BLSTM, and BLSTM with attention were evaluated with five-fold cross-validation after Keras implementation and standard preprocessing.",
+   "triple": {
+    "subject": "CNN, LSTM, BLSTM, and BLSTM with attention",
+    "predicate": "evaluated_on",
+    "object": "five-fold cross-validation"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1801.06482::s04::p000",
+    "1801.06482::s05::p001"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::g00:b1:f14",
+    "1801.06482::g00:b2:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Cited ids exist; s04:p000 lists the four DNN models, and s05:p001 says all DNN models were implemented in Keras, preprocessed, and evaluated with five-fold cross-validation. Jointly supports the composed setting."
+   },
+   "unit_id": "1801.06482::u008"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1801.06482::g00:i00",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::g00",
+   "concise_text": "Swear word list based methods are unsuitable for cyberbullying detection because 78% of Formspring swearing posts are non-bullying and 82% of Twitter bullying posts use no swear words.",
+   "triple": {
+    "subject": "swear word list based methods",
+    "predicate": "limits",
+    "object": "cyberbullying detection"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1801.06482::s00::p002",
+    "1801.06482::s02::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::g00:b0:f10",
+    "1801.06482::g00:b1:f08",
+    "1801.06482::g00:b1:f09"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.93,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "All cited ids exist and the numbers/claim are supported, but the concise_text is essentially a direct restatement/paraphrase of p002."
+   },
+   "unit_id": "1801.06482::u000"
+  },
+  {
+   "insight_id": "1801.06482::g00:i01",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::g00",
+   "concise_text": "Class imbalance with bullying posts in the minority caused all models to label posts as non-bullying, and oversampling bullying posts thrice significantly improved all DNN models.",
+   "triple": {
+    "subject": "class imbalance",
+    "predicate": "causes",
+    "object": "bias toward labeling posts as non-bullying"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1801.06482::s01::p000",
+    "1801.06482::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::g00:b2:f06",
+    "1801.06482::g00:b2:f07",
+    "1801.06482::g00:b2:f08",
+    "1801.06482::g00:b2:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.95,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Supported by p000 and s06:p000, but it is a near-verbatim restatement of s06:p000; no meaningful composition beyond a single paragraph."
+   },
+   "unit_id": "1801.06482::u001"
+  },
+  {
+   "insight_id": "1801.06482::g00:i04",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::g00",
+   "concise_text": "BLSTM with attention and feature level transfer learning achieved F1 scores of 0.94 for Wikipedia and Twitter, beating previous best F1 scores of 0.68 and 0.93 respectively.",
+   "triple": {
+    "subject": "BLSTM with attention and feature level transfer learning",
+    "predicate": "outperforms",
+    "object": "previous best F1 scores for Wikipedia and Twitter"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1801.06482::s09::p000",
+    "1801.06482::s09::p002",
+    "1801.06482::s09::p004"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::g00:b3:f05",
+    "1801.06482::g00:b3:f09",
+    "1801.06482::g00:b4:f00",
+    "1801.06482::g00:b4:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "All cited ids exist and the exact scores/comparison are supported, but the concise_text is a direct restatement of s09:p004."
+   },
+   "unit_id": "1801.06482::u004"
+  },
+  {
+   "insight_id": "1801.06482::g00:i06",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::g00",
+   "concise_text": "TL1's low recall and better Formspring performance with Wikipedia than Twitter as base model support the claim that Formspring and Wikipedia have more similar cyberbullying nature than Twitter.",
+   "triple": {
+    "subject": "TL1",
+    "predicate": "evaluated_on",
+    "object": "similarity in nature of cyberbullying across three datasets"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1801.06482::s09::p000",
+    "1801.06482::s09::p001"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::g00:b3:f05",
+    "1801.06482::g00:b3:f06",
+    "1801.06482::g00:b3:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Supported by s09:p001, but it is essentially a restatement/paraphrase of that single paragraph's TL1 similarity claim and evidence."
+   },
+   "unit_id": "1801.06482::u006"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1801.06482::g00:i00",
+    "verdict": {
+     "insight_id": "1801.06482::g00:i00",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "All cited ids exist and the numbers/claim are supported, but the concise_text is essentially a direct restatement/paraphrase of p002."
+    },
+    "reason": "All cited ids exist and the numbers/claim are supported, but the concise_text is essentially a direct restatement/paraphrase of p002."
+   },
+   {
+    "insight_id": "1801.06482::g00:i01",
+    "verdict": {
+     "insight_id": "1801.06482::g00:i01",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Supported by p000 and s06:p000, but it is a near-verbatim restatement of s06:p000; no meaningful composition beyond a single paragraph."
+    },
+    "reason": "Supported by p000 and s06:p000, but it is a near-verbatim restatement of s06:p000; no meaningful composition beyond a single paragraph."
+   },
+   {
+    "insight_id": "1801.06482::g00:i02",
+    "verdict": {
+     "insight_id": "1801.06482::g00:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "Cited ids exist; p001 says task-specific embeddings capture SMP/topic style, and p002 says TL2 transfers learned embeddings and improves recall/precision over TL1. Jointly supports the inferred method-result insight."
+    }
+   },
+   {
+    "insight_id": "1801.06482::g00:i03",
+    "verdict": {
+     "insight_id": "1801.06482::g00:i03",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Cited ids exist; p002 defines TL2 as transferring learned embeddings, p003 defines TL3 as adding network weights and states no significant improvement over TL2, indicating embeddings are key knowledge. Supports the composed insight."
+    }
+   },
+   {
+    "insight_id": "1801.06482::g00:i04",
+    "verdict": {
+     "insight_id": "1801.06482::g00:i04",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "All cited ids exist and the exact scores/comparison are supported, but the concise_text is a direct restatement of s09:p004."
+    },
+    "reason": "All cited ids exist and the exact scores/comparison are supported, but the concise_text is a direct restatement of s09:p004."
+   },
+   {
+    "insight_id": "1801.06482::g00:i05",
+    "verdict": {
+     "insight_id": "1801.06482::g00:i05",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Cited ids exist; p000 states Twitter contains racism/sexism and Wikipedia personal attack, while p001 states Twitter embeddings treat 'slave' as similar to racism/sexism targets and Wikipedia does not show such bias. Jointly supports the composed claim."
+    }
+   },
+   {
+    "insight_id": "1801.06482::g00:i06",
+    "verdict": {
+     "insight_id": "1801.06482::g00:i06",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Supported by s09:p001, but it is essentially a restatement/paraphrase of that single paragraph's TL1 similarity claim and evidence."
+    },
+    "reason": "Supported by s09:p001, but it is essentially a restatement/paraphrase of that single paragraph's TL1 similarity claim and evidence."
+   },
+   {
+    "insight_id": "1801.06482::g00:i07",
+    "verdict": {
+     "insight_id": "1801.06482::g00:i07",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "Cited ids exist; p002 names the three social network types in the Introduction, and s01:p000 says the datasets cover those same three types. Jointly supports the entity-resolution/composed insight."
+    }
+   },
+   {
+    "insight_id": "1801.06482::g00:i08",
+    "verdict": {
+     "insight_id": "1801.06482::g00:i08",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Cited ids exist; s04:p000 lists the four DNN models, and s05:p001 says all DNN models were implemented in Keras, preprocessed, and evaluated with five-fold cross-validation. Jointly supports the composed setting."
+    }
+   }
+  ],
+  "calls": [
+   {
+    "n": 9,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 5257,
+     "completion_tokens": 738,
+     "total_tokens": 5995,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

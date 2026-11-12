@@ -1,0 +1,550 @@
+{
+ "insights": [
+  {
+   "insight_id": "1912.01852::g00:i00",
+   "paper_id": "1912.01852",
+   "group_id": "1912.01852::g00",
+   "concise_text": "PitchNet addresses BIBREF0's difficulty on learning joint representation of phonetic and pitch representation by adding an adversarially trained pitch regression network and extracted pitch input to the decoder.",
+   "triple": {
+    "subject": "PitchNet",
+    "predicate": "addresses",
+    "object": "difficulty on learning joint representation of phonetic and pitch representation"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1912.01852::s00::p001",
+    "1912.01852::s00::p002"
+   ],
+   "supporting_fact_ids": [
+    "1912.01852::g00:b0:f06",
+    "1912.01852::g00:b0:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1912.01852::u000"
+  },
+  {
+   "insight_id": "1912.01852::g00:i01",
+   "paper_id": "1912.01852",
+   "group_id": "1912.01852::g00",
+   "concise_text": "The pitch regression loss makes the whole model obtain pitch information from $p(s^j)$, which is the extracted pitch fed into the decoder after linear interpolation.",
+   "triple": {
+    "subject": "pitch regression loss",
+    "predicate": "requires",
+    "object": "extracted pitch $p(s^j)$ as decoder input"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1912.01852::s01::p001",
+    "1912.01852::s02::p000",
+    "1912.01852::s02::p003"
+   ],
+   "supporting_fact_ids": [
+    "1912.01852::g00:b0:f12",
+    "1912.01852::g00:b1:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1912.01852::u001"
+  },
+  {
+   "insight_id": "1912.01852::g00:i02",
+   "paper_id": "1912.01852",
+   "group_id": "1912.01852::g00",
+   "concise_text": "PitchNet's claim of greatly improving converted voice quality is supported by Mean Opinion Score (MOS) results where naturalness and similarity are both higher than the other two ones.",
+   "triple": {
+    "subject": "Mean Opinion Score (MOS) results",
+    "predicate": "support",
+    "object": "PitchNet's greatly improved converted voice quality"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1912.01852::s00::p002",
+    "1912.01852::s07::p002"
+   ],
+   "supporting_fact_ids": [
+    "1912.01852::g00:b0:f07",
+    "1912.01852::g00:b4:f05",
+    "1912.01852::g00:b4:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1912.01852::u002"
+  },
+  {
+   "insight_id": "1912.01852::g00:i03",
+   "paper_id": "1912.01852",
+   "group_id": "1912.01852::g00",
+   "concise_text": "PitchNet's flexible pitch manipulation is evidenced by multiplying input pitch by 0.7, 1.0 and 1.3 and observing output pitch changes significantly along with input pitch.",
+   "triple": {
+    "subject": "input pitch multiplied by 0.7, 1.0 and 1.3",
+    "predicate": "causes",
+    "object": "output pitch changes significantly along with input pitch"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1912.01852::s00::p002",
+    "1912.01852::s07::p003"
+   ],
+   "supporting_fact_ids": [
+    "1912.01852::g00:b0:f07",
+    "1912.01852::g00:b4:f09",
+    "1912.01852::g00:b4:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1912.01852::u003"
+  },
+  {
+   "insight_id": "1912.01852::g00:i04",
+   "paper_id": "1912.01852",
+   "group_id": "1912.01852::g00",
+   "concise_text": "The pitch regression network that separates pitch information out of the latent space is trained adversarially using $\\mathcal {L}_{ad}$ while the whole model uses $\\mathcal {L}_{total}$.",
+   "triple": {
+    "subject": "pitch regression network",
+    "predicate": "requires",
+    "object": "alternate optimization with $\\mathcal {L}_{ad}$ and $\\mathcal {L}_{total}$"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1912.01852::s01::p000",
+    "1912.01852::s02::p005",
+    "1912.01852::s02::p007",
+    "1912.01852::s02::p008"
+   ],
+   "supporting_fact_ids": [
+    "1912.01852::g00:b0:f08",
+    "1912.01852::g00:b2:f00",
+    "1912.01852::g00:b2:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1912.01852::u004"
+  },
+  {
+   "insight_id": "1912.01852::g00:i05",
+   "paper_id": "1912.01852",
+   "group_id": "1912.01852::g00",
+   "concise_text": "The singer classification loss(also named domain confusion loss BIBREF0) corresponds to the confusion loss BIBREF12 used in BIBREF0 to force a singer-invariant representation.",
+   "triple": {
+    "subject": "singer classification loss(also named domain confusion loss BIBREF0)",
+    "predicate": "extends",
+    "object": "confusion loss BIBREF12"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1912.01852::s00::p001",
+    "1912.01852::s02::p002"
+   ],
+   "supporting_fact_ids": [
+    "1912.01852::g00:b0:f05",
+    "1912.01852::g00:b1:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1912.01852::u005"
+  },
+  {
+   "insight_id": "1912.01852::g00:i06",
+   "paper_id": "1912.01852",
+   "group_id": "1912.01852::g00",
+   "concise_text": "PitchNet was evaluated on the male part of NUS-48E BIBREF14 dataset, where each one's singing voice was converted to the other five singer's voice.",
+   "triple": {
+    "subject": "PitchNet",
+    "predicate": "evaluated_on",
+    "object": "male part of NUS-48E BIBREF14 dataset"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1912.01852::s05::p000",
+    "1912.01852::s07::p001",
+    "1912.01852::s07::p002"
+   ],
+   "supporting_fact_ids": [
+    "1912.01852::g00:b3:f11",
+    "1912.01852::g00:b4:f01",
+    "1912.01852::g00:b4:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1912.01852::u006"
+  },
+  {
+   "insight_id": "1912.01852::g00:i07",
+   "paper_id": "1912.01852",
+   "group_id": "1912.01852::g00",
+   "concise_text": "The automatic score using normalized cross correlation (NCC) showed PitchNet performed better than USVC (our) on conversion and reconstruction tasks.",
+   "triple": {
+    "subject": "PitchNet",
+    "predicate": "outperforms",
+    "object": "USVC (our) on conversion and reconstruction tasks"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1912.01852::s04::p000",
+    "1912.01852::s07::p001"
+   ],
+   "supporting_fact_ids": [
+    "1912.01852::g00:b3:f07",
+    "1912.01852::g00:b4:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1912.01852::u007"
+  },
+  {
+   "insight_id": "1912.01852::g00:i08",
+   "paper_id": "1912.01852",
+   "group_id": "1912.01852::g00",
+   "concise_text": "Because only reconstruction loss is not enough to learn conversion, PitchNet adds singer classification loss and pitch regression loss adversarially to the reconstruction loss.",
+   "triple": {
+    "subject": "only reconstruction loss insufficiency",
+    "predicate": "causes",
+    "object": "adversarial singer classification loss and pitch regression loss addition"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1912.01852::s01::p002",
+    "1912.01852::s02::p002",
+    "1912.01852::s02::p003"
+   ],
+   "supporting_fact_ids": [
+    "1912.01852::g00:b1:f01",
+    "1912.01852::g00:b1:f02",
+    "1912.01852::g00:b1:f03",
+    "1912.01852::g00:b1:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1912.01852::u008"
+  },
+  {
+   "insight_id": "1912.01852::g00:i09",
+   "paper_id": "1912.01852",
+   "group_id": "1912.01852::g00",
+   "concise_text": "The conclusion that PitchNet outperforms the existing unsupervised singing voice conversion method is supported by comparisons against USVC(our) using automatic evaluation score and human evaluation score.",
+   "triple": {
+    "subject": "automatic evaluation score and human evaluation score comparisons against USVC(our)",
+    "predicate": "support",
+    "object": "PitchNet outperforms the existing unsupervised singing voice conversion method"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1912.01852::s04::p000",
+    "1912.01852::s07::p000",
+    "1912.01852::s08::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.01852::g00:b3:f07",
+    "1912.01852::g00:b4:f01",
+    "1912.01852::g00:b4:f12"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.83,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1912.01852::u009"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1912.01852::g00",
+   "insights": [
+    {
+     "insight_id": "1912.01852::g00:i00",
+     "paper_id": "1912.01852",
+     "group_id": "1912.01852::g00",
+     "concise_text": "PitchNet addresses BIBREF0's difficulty on learning joint representation of phonetic and pitch representation by adding an adversarially trained pitch regression network and extracted pitch input to the decoder.",
+     "triple": {
+      "subject": "PitchNet",
+      "predicate": "addresses",
+      "object": "difficulty on learning joint representation of phonetic and pitch representation"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1912.01852::s00::p001",
+      "1912.01852::s00::p002"
+     ],
+     "supporting_fact_ids": [
+      "1912.01852::g00:b0:f06",
+      "1912.01852::g00:b0:f07"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.93,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1912.01852::u000"
+    },
+    {
+     "insight_id": "1912.01852::g00:i01",
+     "paper_id": "1912.01852",
+     "group_id": "1912.01852::g00",
+     "concise_text": "The pitch regression loss makes the whole model obtain pitch information from $p(s^j)$, which is the extracted pitch fed into the decoder after linear interpolation.",
+     "triple": {
+      "subject": "pitch regression loss",
+      "predicate": "requires",
+      "object": "extracted pitch $p(s^j)$ as decoder input"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1912.01852::s01::p001",
+      "1912.01852::s02::p000",
+      "1912.01852::s02::p003"
+     ],
+     "supporting_fact_ids": [
+      "1912.01852::g00:b0:f12",
+      "1912.01852::g00:b1:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1912.01852::u001"
+    },
+    {
+     "insight_id": "1912.01852::g00:i02",
+     "paper_id": "1912.01852",
+     "group_id": "1912.01852::g00",
+     "concise_text": "PitchNet's claim of greatly improving converted voice quality is supported by Mean Opinion Score (MOS) results where naturalness and similarity are both higher than the other two ones.",
+     "triple": {
+      "subject": "Mean Opinion Score (MOS) results",
+      "predicate": "support",
+      "object": "PitchNet's greatly improved converted voice quality"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1912.01852::s00::p002",
+      "1912.01852::s07::p002"
+     ],
+     "supporting_fact_ids": [
+      "1912.01852::g00:b0:f07",
+      "1912.01852::g00:b4:f05",
+      "1912.01852::g00:b4:f08"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1912.01852::u002"
+    },
+    {
+     "insight_id": "1912.01852::g00:i03",
+     "paper_id": "1912.01852",
+     "group_id": "1912.01852::g00",
+     "concise_text": "PitchNet's flexible pitch manipulation is evidenced by multiplying input pitch by 0.7, 1.0 and 1.3 and observing output pitch changes significantly along with input pitch.",
+     "triple": {
+      "subject": "input pitch multiplied by 0.7, 1.0 and 1.3",
+      "predicate": "causes",
+      "object": "output pitch changes significantly along with input pitch"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1912.01852::s00::p002",
+      "1912.01852::s07::p003"
+     ],
+     "supporting_fact_ids": [
+      "1912.01852::g00:b0:f07",
+      "1912.01852::g00:b4:f09",
+      "1912.01852::g00:b4:f11"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1912.01852::u003"
+    },
+    {
+     "insight_id": "1912.01852::g00:i04",
+     "paper_id": "1912.01852",
+     "group_id": "1912.01852::g00",
+     "concise_text": "The pitch regression network that separates pitch information out of the latent space is trained adversarially using $\\mathcal {L}_{ad}$ while the whole model uses $\\mathcal {L}_{total}$.",
+     "triple": {
+      "subject": "pitch regression network",
+      "predicate": "requires",
+      "object": "alternate optimization with $\\mathcal {L}_{ad}$ and $\\mathcal {L}_{total}$"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1912.01852::s01::p000",
+      "1912.01852::s02::p005",
+      "1912.01852::s02::p007",
+      "1912.01852::s02::p008"
+     ],
+     "supporting_fact_ids": [
+      "1912.01852::g00:b0:f08",
+      "1912.01852::g00:b2:f00",
+      "1912.01852::g00:b2:f01"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1912.01852::u004"
+    },
+    {
+     "insight_id": "1912.01852::g00:i05",
+     "paper_id": "1912.01852",
+     "group_id": "1912.01852::g00",
+     "concise_text": "The singer classification loss(also named domain confusion loss BIBREF0) corresponds to the confusion loss BIBREF12 used in BIBREF0 to force a singer-invariant representation.",
+     "triple": {
+      "subject": "singer classification loss(also named domain confusion loss BIBREF0)",
+      "predicate": "extends",
+      "object": "confusion loss BIBREF12"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1912.01852::s00::p001",
+      "1912.01852::s02::p002"
+     ],
+     "supporting_fact_ids": [
+      "1912.01852::g00:b0:f05",
+      "1912.01852::g00:b1:f03"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1912.01852::u005"
+    },
+    {
+     "insight_id": "1912.01852::g00:i06",
+     "paper_id": "1912.01852",
+     "group_id": "1912.01852::g00",
+     "concise_text": "PitchNet was evaluated on the male part of NUS-48E BIBREF14 dataset, where each one's singing voice was converted to the other five singer's voice.",
+     "triple": {
+      "subject": "PitchNet",
+      "predicate": "evaluated_on",
+      "object": "male part of NUS-48E BIBREF14 dataset"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1912.01852::s05::p000",
+      "1912.01852::s07::p001",
+      "1912.01852::s07::p002"
+     ],
+     "supporting_fact_ids": [
+      "1912.01852::g00:b3:f11",
+      "1912.01852::g00:b4:f01",
+      "1912.01852::g00:b4:f07"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1912.01852::u006"
+    },
+    {
+     "insight_id": "1912.01852::g00:i07",
+     "paper_id": "1912.01852",
+     "group_id": "1912.01852::g00",
+     "concise_text": "The automatic score using normalized cross correlation (NCC) showed PitchNet performed better than USVC (our) on conversion and reconstruction tasks.",
+     "triple": {
+      "subject": "PitchNet",
+      "predicate": "outperforms",
+      "object": "USVC (our) on conversion and reconstruction tasks"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1912.01852::s04::p000",
+      "1912.01852::s07::p001"
+     ],
+     "supporting_fact_ids": [
+      "1912.01852::g00:b3:f07",
+      "1912.01852::g00:b4:f04"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.89,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1912.01852::u007"
+    },
+    {
+     "insight_id": "1912.01852::g00:i08",
+     "paper_id": "1912.01852",
+     "group_id": "1912.01852::g00",
+     "concise_text": "Because only reconstruction loss is not enough to learn conversion, PitchNet adds singer classification loss and pitch regression loss adversarially to the reconstruction loss.",
+     "triple": {
+      "subject": "only reconstruction loss insufficiency",
+      "predicate": "causes",
+      "object": "adversarial singer classification loss and pitch regression loss addition"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1912.01852::s01::p002",
+      "1912.01852::s02::p002",
+      "1912.01852::s02::p003"
+     ],
+     "supporting_fact_ids": [
+      "1912.01852::g00:b1:f01",
+      "1912.01852::g00:b1:f02",
+      "1912.01852::g00:b1:f03",
+      "1912.01852::g00:b1:f04"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1912.01852::u008"
+    },
+    {
+     "insight_id": "1912.01852::g00:i09",
+     "paper_id": "1912.01852",
+     "group_id": "1912.01852::g00",
+     "concise_text": "The conclusion that PitchNet outperforms the existing unsupervised singing voice conversion method is supported by comparisons against USVC(our) using automatic evaluation score and human evaluation score.",
+     "triple": {
+      "subject": "automatic evaluation score and human evaluation score comparisons against USVC(our)",
+      "predicate": "support",
+      "object": "PitchNet outperforms the existing unsupervised singing voice conversion method"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1912.01852::s04::p000",
+      "1912.01852::s07::p000",
+      "1912.01852::s08::p000"
+     ],
+     "supporting_fact_ids": [
+      "1912.01852::g00:b3:f07",
+      "1912.01852::g00:b4:f01",
+      "1912.01852::g00:b4:f12"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.83,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1912.01852::u009"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 8493,
+    "completion_tokens": 1818,
+    "total_tokens": 10311,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

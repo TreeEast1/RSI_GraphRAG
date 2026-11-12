@@ -1,0 +1,63 @@
+{
+ "paper_id": "1809.03449",
+ "title": "Explicit Utilization of General Knowledge in Machine Reading Comprehension",
+ "abstract": "To bridge the gap between Machine Reading Comprehension (MRC) models and human beings, which is mainly reflected in the hunger for data and the robustness to noise, in this paper, we explore how to integrate the neural networks of MRC models with the general knowledge of human beings. On the one hand, we propose a data enrichment method, which uses WordNet to extract inter-word semantic connections as general knowledge from each given passage-question pair. On the other hand, we propose an end-to-end MRC model named as Knowledge Aided Reader (KAR), which explicitly uses the above extracted general knowledge to assist its attention mechanisms. Based on the data enrichment method, KAR is comparable in performance with the state-of-the-art MRC models, and significantly more robust to noise than them. When only a subset (20%-80%) of the training examples are available, KAR outperforms the state-of-the-art MRC models by a large margin, and is still reasonably robust to noise.",
+ "sections": [
+  "Introduction",
+  "Data Enrichment Method",
+  "Semantic Relation Chain",
+  "Inter-word Semantic Connection",
+  "General Knowledge Extraction",
+  "Knowledge Aided Reader",
+  "Task Definition",
+  "Overall Architecture",
+  "Knowledge Aided Mutual Attention",
+  "Knowledge Aided Self Attention",
+  "Related Works",
+  "Experimental Settings",
+  "Model Comparison in both Performance and the Robustness to Noise",
+  "Model Comparison in the Hunger for Data",
+  "Analysis",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 40,
+ "n_tokens": 5498,
+ "figures_and_tables": [
+  {
+   "caption_id": "1809.03449::fig000",
+   "paper_id": "1809.03449",
+   "file": "2-Table1-1.png",
+   "caption": "Table 1: Two examples about the effects of semantic level inter-word connections on human reading comprehension. In the first example, we can find the answer because we know “facilitate” and “help” are synonyms. Similarly, in the second example, we can find the answer because we know “borough” is a hypernym of “Brooklyn”, or “Brooklyn” is a hyponym of “borough”. Both of the two examples are selected from SQuAD.",
+   "n_tokens": 98
+  },
+  {
+   "caption_id": "1809.03449::fig001",
+   "paper_id": "1809.03449",
+   "file": "5-Figure1-1.png",
+   "caption": "Figure 1: Our MRC model: Knowledge Aided Reader (KAR)",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1809.03449::fig002",
+   "paper_id": "1809.03449",
+   "file": "8-Table2-1.png",
+   "caption": "Table 2: The amount of the extraction results and the performance of KAR under each setting for χ.",
+   "n_tokens": 23
+  },
+  {
+   "caption_id": "1809.03449::fig003",
+   "paper_id": "1809.03449",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: The ablation analysis on the dependency embedding and the synonymy embedding.",
+   "n_tokens": 18
+  },
+  {
+   "caption_id": "1809.03449::fig004",
+   "paper_id": "1809.03449",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: The comparison of different MRC models (published single model performance on the development set of SQuAD).",
+   "n_tokens": 25
+  }
+ ]
+}

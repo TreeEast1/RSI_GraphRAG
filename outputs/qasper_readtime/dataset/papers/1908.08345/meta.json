@@ -1,0 +1,103 @@
+{
+ "paper_id": "1908.08345",
+ "title": "Text Summarization with Pretrained Encoders",
+ "abstract": "Bidirectional Encoder Representations from Transformers (BERT) represents the latest incarnation of pretrained language models which have recently advanced a wide range of natural language processing tasks. In this paper, we showcase how BERT can be usefully applied in text summarization and propose a general framework for both extractive and abstractive models. We introduce a novel document-level encoder based on BERT which is able to express the semantics of a document and obtain representations for its sentences. Our extractive model is built on top of this encoder by stacking several inter-sentence Transformer layers. For abstractive summarization, we propose a new fine-tuning schedule which adopts different optimizers for the encoder and the decoder as a means of alleviating the mismatch between the two (the former is pretrained while the latter is not). We also demonstrate that a two-staged fine-tuning approach can further boost the quality of the generated summaries. Experiments on three datasets show that our model achieves state-of-the-art results across the board in both extractive and abstractive settings. Our code is available at this https URL",
+ "sections": [
+  "Introduction",
+  "Background ::: Pretrained Language Models",
+  "Background ::: Extractive Summarization",
+  "Background ::: Abstractive Summarization",
+  "Fine-tuning Bert for Summarization ::: Summarization Encoder",
+  "Fine-tuning Bert for Summarization ::: Extractive Summarization",
+  "Fine-tuning Bert for Summarization ::: Abstractive Summarization",
+  "Experimental Setup",
+  "Experimental Setup ::: Summarization Datasets",
+  "Experimental Setup ::: Summarization Datasets ::: CNN/DailyMail",
+  "Experimental Setup ::: Summarization Datasets ::: NYT",
+  "Experimental Setup ::: Summarization Datasets ::: XSum",
+  "Experimental Setup ::: Implementation Details",
+  "Experimental Setup ::: Implementation Details ::: Extractive Summarization",
+  "Experimental Setup ::: Implementation Details ::: Abstractive Summarization",
+  "Results ::: Automatic Evaluation",
+  "Results ::: Model Analysis ::: Learning Rates",
+  "Results ::: Model Analysis ::: Position of Extracted Sentences",
+  "Results ::: Model Analysis ::: Novel N-grams",
+  "Results ::: Human Evaluation",
+  "Conclusions",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 46,
+ "n_tokens": 6134,
+ "figures_and_tables": [
+  {
+   "caption_id": "1908.08345::fig000",
+   "paper_id": "1908.08345",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: Architecture of the original BERT model (left) and BERTSUM (right). The sequence on top is the input document, followed by the summation of three kinds of embeddings for each token. The summed vectors are used as input embeddings to several bidirectional Transformer layers, generating contextual vectors for each token. BERTSUM extends BERT by inserting multiple [CLS] symbols to learn sentence representations and using interval segmentation embeddings (illustrated in red and green color) to distinguish multiple sentences.",
+   "n_tokens": 102
+  },
+  {
+   "caption_id": "1908.08345::fig001",
+   "paper_id": "1908.08345",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Comparison of summarization datasets: size of training, validation, and test sets and average document and summary length (in terms of words and sentences). The proportion of novel bi-grams that do not appear in source documents but do appear in the gold summaries quantifies corpus bias towards extractive methods.",
+   "n_tokens": 63
+  },
+  {
+   "caption_id": "1908.08345::fig002",
+   "paper_id": "1908.08345",
+   "file": "6-Table2-1.png",
+   "caption": "Table 2: ROUGE F1 results on CNN/DailyMail test set (R1 and R2 are shorthands for unigram and bigram overlap; RL is the longest common subsequence). Results for comparison systems are taken from the authors’ respective papers or obtained on our data by running publicly released software.",
+   "n_tokens": 65
+  },
+  {
+   "caption_id": "1908.08345::fig003",
+   "paper_id": "1908.08345",
+   "file": "7-Table4-1.png",
+   "caption": "Table 4: ROUGE F1 results on the XSum test set. Results for comparison systems are taken from the authors’ respective papers or obtained on our data by running publicly released software.",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1908.08345::fig004",
+   "paper_id": "1908.08345",
+   "file": "7-Table3-1.png",
+   "caption": "Table 3: ROUGE Recall results on NYT test set. Results for comparison systems are taken from the authors’ respective papers or obtained on our data by running publicly released software. Table cells are filled with — whenever results are not available.",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "1908.08345::fig005",
+   "paper_id": "1908.08345",
+   "file": "8-Table5-1.png",
+   "caption": "Table 5: Model perplexity (CNN/DailyMail; validation set) under different combinations of encoder and decoder learning rates.",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "1908.08345::fig006",
+   "paper_id": "1908.08345",
+   "file": "8-Figure2-1.png",
+   "caption": "Figure 2: Proportion of extracted sentences according to their position in the original document.",
+   "n_tokens": 18
+  },
+  {
+   "caption_id": "1908.08345::fig007",
+   "paper_id": "1908.08345",
+   "file": "9-Figure3-1.png",
+   "caption": "Figure 3: Proportion of novel n-grams in model generated summaries.",
+   "n_tokens": 16
+  },
+  {
+   "caption_id": "1908.08345::fig008",
+   "paper_id": "1908.08345",
+   "file": "9-Table7-1.png",
+   "caption": "Table 7: QA-based and ranking-based evaluation. Models with † are significantly different from BERTSUM (using a paired student t-test; p < 0.05). Table cells are filled with — whenever system output is not available. GOLD is not used in QA setting, and LEAD is not used in Rank evaluation.",
+   "n_tokens": 68
+  },
+  {
+   "caption_id": "1908.08345::fig009",
+   "paper_id": "1908.08345",
+   "file": "9-Table6-1.png",
+   "caption": "Table 6: QA-based evaluation. Models with † are significantly different from BERTSUM (using a paired student t-test; p < 0.05). Table cells are filled with — whenever system output is not available.",
+   "n_tokens": 47
+  }
+ ]
+}

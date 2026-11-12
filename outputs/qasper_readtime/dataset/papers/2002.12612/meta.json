@@ -1,0 +1,108 @@
+{
+ "paper_id": "2002.12612",
+ "title": "A multi-layer approach to disinformation detection on Twitter",
+ "abstract": "We tackle the problem of classifying news articles pertaining to disinformation vs mainstream news by solely inspecting their diffusion mechanisms on Twitter. Our technique is inherently simple compared to existing text-based approaches, as it allows to by-pass the multiple levels of complexity which are found in news content (e.g. grammar, syntax, style). We employ a multi-layer representation of Twitter diffusion networks, and we compute for each layer a set of global network features which quantify different aspects of the sharing process. Experimental results with two large-scale datasets, corresponding to diffusion cascades of news shared respectively in the United States and Italy, show that a simple Logistic Regression model is able to classify disinformation vs mainstream networks with high accuracy (AUROC up to 94%), also when considering the political bias of different sources in the classification task. We also highlight differences in the sharing patterns of the two news domains which appear to be country-independent. We believe that our network-based approach provides useful insights which pave the way to the future development of a system to detect misleading and harmful information spreading on social media.",
+ "sections": [
+  "Introduction and related work",
+  "Methodology ::: Disinformation and mainstream news",
+  "Methodology ::: US dataset",
+  "Methodology ::: Italian dataset",
+  "Methodology ::: Building diffusion networks",
+  "Methodology ::: Global network properties",
+  "Methodology ::: Interpretation of network features and layers",
+  "Experiments ::: Setup",
+  "Experiments ::: Classification performances",
+  "Experiments ::: Layer importance analysis",
+  "Experiments ::: Feature importance analysis",
+  "Experiments ::: Temporal analysis",
+  "Conclusions"
+ ],
+ "n_paragraphs": 70,
+ "n_tokens": 6388,
+ "figures_and_tables": [
+  {
+   "caption_id": "2002.12612::fig000",
+   "paper_id": "2002.12612",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: Distribution of the number of articles per source for US a) mainstream and b) disinformation news. Colors indicate the political bias label of each source.",
+   "n_tokens": 34
+  },
+  {
+   "caption_id": "2002.12612::fig001",
+   "paper_id": "2002.12612",
+   "file": "3-Figure2-1.png",
+   "caption": "Figure 2: Distribution of the number of articles per source for Italian a) mainstream and b) disinformation news.",
+   "n_tokens": 24
+  },
+  {
+   "caption_id": "2002.12612::fig002",
+   "paper_id": "2002.12612",
+   "file": "4-Figure3-1.png",
+   "caption": "Figure 3: An example of Twitter multi-layer diffusion network with four layers.",
+   "n_tokens": 16
+  },
+  {
+   "caption_id": "2002.12612::fig003",
+   "paper_id": "2002.12612",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Composition of the Italian dataset according to class and size.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "2002.12612::fig004",
+   "paper_id": "2002.12612",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Composition of the US dataset according to class, size and political bias.",
+   "n_tokens": 18
+  },
+  {
+   "caption_id": "2002.12612::fig005",
+   "paper_id": "2002.12612",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3: Different evaluation metrics for the LR classifier (using a multi-layer approach) evaluated on different size classes of both the US and the Italian dataset.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "2002.12612::fig006",
+   "paper_id": "2002.12612",
+   "file": "6-Figure4-1.png",
+   "caption": "Figure 4: AUROC values for the Balanced Random Forest classifier trained on left-biased (red) and right-biased (blue) news articles in the US dataset, and tested on the entire dataset. Error bars indicate the standard deviation of AUROC values over different folds of the cross validation.",
+   "n_tokens": 62
+  },
+  {
+   "caption_id": "2002.12612::fig007",
+   "paper_id": "2002.12612",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: Comparison of performances of our multi-layer approach vs the baseline (single-layer). We show AUROC values for the LR classifier evaluated on different size classes of both US and IT datasets.",
+   "n_tokens": 40
+  },
+  {
+   "caption_id": "2002.12612::fig008",
+   "paper_id": "2002.12612",
+   "file": "7-Table5-1.png",
+   "caption": "Table 5: Different evaluations metrics for LR classifier evaluated on different size classes of the US dataset and trained using features separately for each layer. Best scores for each row are written in bold.",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "2002.12612::fig009",
+   "paper_id": "2002.12612",
+   "file": "7-Table6-1.png",
+   "caption": "Table 6: Top-5 most discriminative features according to χ2 test evaluated on both US and IT datasets (considering networks in the [0,+∞) size class).",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "2002.12612::fig010",
+   "paper_id": "2002.12612",
+   "file": "7-Figure5-1.png",
+   "caption": "Figure 5: AUROC values for the LR classifier (evaluated on different size classes of the US dataset) trained using different layers separately and aggregated (our multi-layer approach). Error bars indicate the standard deviation of AUROC values over different folds of the cross validation.",
+   "n_tokens": 54
+  },
+  {
+   "caption_id": "2002.12612::fig011",
+   "paper_id": "2002.12612",
+   "file": "8-Figure6-1.png",
+   "caption": "Figure 6: AUROC values for LR classifier evaluated on US (blue) and IT (green) dataset, considering different lifetimes (or spreading duration) for multi-layer networks. Error bars indicate standard deviations of 10-fold cross validation.",
+   "n_tokens": 49
+  }
+ ]
+}

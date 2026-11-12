@@ -1,0 +1,570 @@
+{
+ "insights": [
+  {
+   "insight_id": "1801.07887::g00:i00",
+   "paper_id": "1801.07887",
+   "group_id": "1801.07887::g00",
+   "concise_text": "On the 20Newsgroups dataset, Oracle-99 needs more annotations with larger batch percents, consistent with decreased learning efficiency with larger batch sizes.",
+   "triple": {
+    "subject": "Oracle-99 on 20Newsgroups",
+    "predicate": "requires",
+    "object": "more annotations with larger batch percents due to decreased learning efficiency"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1801.07887::s00::p004",
+    "1801.07887::s01::p000",
+    "1801.07887::s02::p000",
+    "1801.07887::s02::p001"
+   ],
+   "supporting_fact_ids": [
+    "1801.07887::g00:b1:f03",
+    "1801.07887::g00:b1:f04",
+    "1801.07887::g00:b1:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1801.07887::u000"
+  },
+  {
+   "insight_id": "1801.07887::g00:i01",
+   "paper_id": "1801.07887",
+   "group_id": "1801.07887::g00",
+   "concise_text": "For larger batch percents, BV2009 stops later than the optimal Oracle Method point, while Oracle-99 is the Oracle Method with the percentage set to 99.",
+   "triple": {
+    "subject": "BV2009",
+    "predicate": "evaluated_on",
+    "object": "the optimal Oracle Method point defined by Oracle-99"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1801.07887::s00::p006",
+    "1801.07887::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.07887::g00:b1:f00",
+    "1801.07887::g00:b1:f10"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1801.07887::u001"
+  },
+  {
+   "insight_id": "1801.07887::g00:i02",
+   "paper_id": "1801.07887",
+   "group_id": "1801.07887::g00",
+   "concise_text": "Using a window size of one lets BV2009 stop with fewer annotations than a window size of three without losing much F-Measure, supporting smaller window sizes as mitigation.",
+   "triple": {
+    "subject": "BV2009 with window size of one",
+    "predicate": "improves_on",
+    "object": "BV2009 with window size of three by reducing annotations without much F-Measure loss"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1801.07887::s02::p001",
+    "1801.07887::s03::p001",
+    "1801.07887::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.07887::g00:b1:f07",
+    "1801.07887::g00:b1:f11",
+    "1801.07887::g00:b1:f12",
+    "1801.07887::g00:b2:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1801.07887::u002"
+  },
+  {
+   "insight_id": "1801.07887::g00:i03",
+   "paper_id": "1801.07887",
+   "group_id": "1801.07887::g00",
+   "concise_text": "Larger batch percents generate fewer models, giving BV2009 fewer stopping points and causing somewhat sub-optimal stopping with very large batch percents.",
+   "triple": {
+    "subject": "larger batch percents",
+    "predicate": "causes",
+    "object": "BV2009 to stop somewhat sub-optimally through fewer models and fewer stopping points"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1801.07887::s04::p000",
+    "1801.07887::s04::p001"
+   ],
+   "supporting_fact_ids": [
+    "1801.07887::g00:b2:f02",
+    "1801.07887::g00:b2:f04",
+    "1801.07887::g00:b2:f05",
+    "1801.07887::g00:b2:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1801.07887::u003"
+  },
+  {
+   "insight_id": "1801.07887::g00:i04",
+   "paper_id": "1801.07887",
+   "group_id": "1801.07887::g00",
+   "concise_text": "Because BV2009 needs models before checking the average kappa threshold, low early kappa agreement scores combined with fewer stopping points explain sub-optimal stopping at very large batch percents.",
+   "triple": {
+    "subject": "BV2009's model requirement and low early kappa agreement scores",
+    "predicate": "limits",
+    "object": "stopping quality at very large batch percents"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1801.07887::s04::p000",
+    "1801.07887::s04::p001"
+   ],
+   "supporting_fact_ids": [
+    "1801.07887::g00:b2:f01",
+    "1801.07887::g00:b2:f02",
+    "1801.07887::g00:b2:f05",
+    "1801.07887::g00:b2:f06",
+    "1801.07887::g00:b2:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1801.07887::u004"
+  },
+  {
+   "insight_id": "1801.07887::g00:i05",
+   "paper_id": "1801.07887",
+   "group_id": "1801.07887::g00",
+   "concise_text": "The paper evaluates batch sizes of 1%, 5%, and 10% of the training data on 20Newsgroups using a Support Vector Machine and closest-to-hyperplane sampling.",
+   "triple": {
+    "subject": "the batch-size evaluation on 20Newsgroups",
+    "predicate": "requires",
+    "object": "a Support Vector Machine and closest-to-hyperplane sampling"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1801.07887::s00::p004",
+    "1801.07887::s00::p005",
+    "1801.07887::s01::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.07887::g00:b0:f09",
+    "1801.07887::g00:b1:f02",
+    "1801.07887::g00:b1:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1801.07887::u005"
+  },
+  {
+   "insight_id": "1801.07887::g00:i06",
+   "paper_id": "1801.07887",
+   "group_id": "1801.07887::g00",
+   "concise_text": "Stopping methods enable active learning's annotation-cost benefits in practice, but larger batch sizes degrade stopping method performance beyond decreased learning efficiency.",
+   "triple": {
+    "subject": "larger batch sizes",
+    "predicate": "limits",
+    "object": "the practical annotation-cost benefits enabled by stopping methods"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1801.07887::s00::p000",
+    "1801.07887::s00::p002",
+    "1801.07887::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.07887::g00:b0:f00",
+    "1801.07887::g00:b0:f04",
+    "1801.07887::g00:b2:f08",
+    "1801.07887::g00:b2:f09"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1801.07887::u006"
+  },
+  {
+   "insight_id": "1801.07887::g00:i07",
+   "paper_id": "1801.07887",
+   "group_id": "1801.07887::g00",
+   "concise_text": "The tension between smaller batch sizes for learning efficiency and larger batch sizes for development speed motivates analyzing stopping method parameters such as window size.",
+   "triple": {
+    "subject": "the batch-size tension",
+    "predicate": "requires",
+    "object": "analysis of stopping method parameters such as window size"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1801.07887::s00::p003",
+    "1801.07887::s02::p001",
+    "1801.07887::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.07887::g00:b0:f06",
+    "1801.07887::g00:b0:f07",
+    "1801.07887::g00:b0:f08",
+    "1801.07887::g00:b1:f06",
+    "1801.07887::g00:b2:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.83,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1801.07887::u007"
+  },
+  {
+   "insight_id": "1801.07887::g00:i08",
+   "paper_id": "1801.07887",
+   "group_id": "1801.07887::g00",
+   "concise_text": "Oracle-99 contextualizes practical stopping results because the Oracle Method cannot be used in practice and BV2009 is compared against the optimal Oracle Method point.",
+   "triple": {
+    "subject": "Oracle-99",
+    "predicate": "extends",
+    "object": "contextualization of practical stopping results including BV2009"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1801.07887::s00::p006",
+    "1801.07887::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.07887::g00:b1:f00",
+    "1801.07887::g00:b1:f01",
+    "1801.07887::g00:b1:f10"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.76,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1801.07887::u008"
+  },
+  {
+   "insight_id": "1801.07887::g00:i09",
+   "paper_id": "1801.07887",
+   "group_id": "1801.07887::g00",
+   "concise_text": "The degradation in stopping method performance with larger batch sizes is larger than degradation explained by learning efficiency, and smaller window sizes help mitigate it.",
+   "triple": {
+    "subject": "smaller window sizes",
+    "predicate": "improves_on",
+    "object": "stopping method performance degradation with larger batch sizes beyond learning efficiency"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1801.07887::s02::p001",
+    "1801.07887::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.07887::g00:b1:f05",
+    "1801.07887::g00:b1:f07",
+    "1801.07887::g00:b2:f09",
+    "1801.07887::g00:b2:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1801.07887::u009"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1801.07887::g00",
+   "insights": [
+    {
+     "insight_id": "1801.07887::g00:i00",
+     "paper_id": "1801.07887",
+     "group_id": "1801.07887::g00",
+     "concise_text": "On the 20Newsgroups dataset, Oracle-99 needs more annotations with larger batch percents, consistent with decreased learning efficiency with larger batch sizes.",
+     "triple": {
+      "subject": "Oracle-99 on 20Newsgroups",
+      "predicate": "requires",
+      "object": "more annotations with larger batch percents due to decreased learning efficiency"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1801.07887::s00::p004",
+      "1801.07887::s01::p000",
+      "1801.07887::s02::p000",
+      "1801.07887::s02::p001"
+     ],
+     "supporting_fact_ids": [
+      "1801.07887::g00:b1:f03",
+      "1801.07887::g00:b1:f04",
+      "1801.07887::g00:b1:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1801.07887::u000"
+    },
+    {
+     "insight_id": "1801.07887::g00:i01",
+     "paper_id": "1801.07887",
+     "group_id": "1801.07887::g00",
+     "concise_text": "For larger batch percents, BV2009 stops later than the optimal Oracle Method point, while Oracle-99 is the Oracle Method with the percentage set to 99.",
+     "triple": {
+      "subject": "BV2009",
+      "predicate": "evaluated_on",
+      "object": "the optimal Oracle Method point defined by Oracle-99"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1801.07887::s00::p006",
+      "1801.07887::s03::p000"
+     ],
+     "supporting_fact_ids": [
+      "1801.07887::g00:b1:f00",
+      "1801.07887::g00:b1:f10"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1801.07887::u001"
+    },
+    {
+     "insight_id": "1801.07887::g00:i02",
+     "paper_id": "1801.07887",
+     "group_id": "1801.07887::g00",
+     "concise_text": "Using a window size of one lets BV2009 stop with fewer annotations than a window size of three without losing much F-Measure, supporting smaller window sizes as mitigation.",
+     "triple": {
+      "subject": "BV2009 with window size of one",
+      "predicate": "improves_on",
+      "object": "BV2009 with window size of three by reducing annotations without much F-Measure loss"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1801.07887::s02::p001",
+      "1801.07887::s03::p001",
+      "1801.07887::s05::p000"
+     ],
+     "supporting_fact_ids": [
+      "1801.07887::g00:b1:f07",
+      "1801.07887::g00:b1:f11",
+      "1801.07887::g00:b1:f12",
+      "1801.07887::g00:b2:f10"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1801.07887::u002"
+    },
+    {
+     "insight_id": "1801.07887::g00:i03",
+     "paper_id": "1801.07887",
+     "group_id": "1801.07887::g00",
+     "concise_text": "Larger batch percents generate fewer models, giving BV2009 fewer stopping points and causing somewhat sub-optimal stopping with very large batch percents.",
+     "triple": {
+      "subject": "larger batch percents",
+      "predicate": "causes",
+      "object": "BV2009 to stop somewhat sub-optimally through fewer models and fewer stopping points"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1801.07887::s04::p000",
+      "1801.07887::s04::p001"
+     ],
+     "supporting_fact_ids": [
+      "1801.07887::g00:b2:f02",
+      "1801.07887::g00:b2:f04",
+      "1801.07887::g00:b2:f05",
+      "1801.07887::g00:b2:f07"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1801.07887::u003"
+    },
+    {
+     "insight_id": "1801.07887::g00:i04",
+     "paper_id": "1801.07887",
+     "group_id": "1801.07887::g00",
+     "concise_text": "Because BV2009 needs models before checking the average kappa threshold, low early kappa agreement scores combined with fewer stopping points explain sub-optimal stopping at very large batch percents.",
+     "triple": {
+      "subject": "BV2009's model requirement and low early kappa agreement scores",
+      "predicate": "limits",
+      "object": "stopping quality at very large batch percents"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1801.07887::s04::p000",
+      "1801.07887::s04::p001"
+     ],
+     "supporting_fact_ids": [
+      "1801.07887::g00:b2:f01",
+      "1801.07887::g00:b2:f02",
+      "1801.07887::g00:b2:f05",
+      "1801.07887::g00:b2:f06",
+      "1801.07887::g00:b2:f07"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1801.07887::u004"
+    },
+    {
+     "insight_id": "1801.07887::g00:i05",
+     "paper_id": "1801.07887",
+     "group_id": "1801.07887::g00",
+     "concise_text": "The paper evaluates batch sizes of 1%, 5%, and 10% of the training data on 20Newsgroups using a Support Vector Machine and closest-to-hyperplane sampling.",
+     "triple": {
+      "subject": "the batch-size evaluation on 20Newsgroups",
+      "predicate": "requires",
+      "object": "a Support Vector Machine and closest-to-hyperplane sampling"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1801.07887::s00::p004",
+      "1801.07887::s00::p005",
+      "1801.07887::s01::p000"
+     ],
+     "supporting_fact_ids": [
+      "1801.07887::g00:b0:f09",
+      "1801.07887::g00:b1:f02",
+      "1801.07887::g00:b1:f03"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1801.07887::u005"
+    },
+    {
+     "insight_id": "1801.07887::g00:i06",
+     "paper_id": "1801.07887",
+     "group_id": "1801.07887::g00",
+     "concise_text": "Stopping methods enable active learning's annotation-cost benefits in practice, but larger batch sizes degrade stopping method performance beyond decreased learning efficiency.",
+     "triple": {
+      "subject": "larger batch sizes",
+      "predicate": "limits",
+      "object": "the practical annotation-cost benefits enabled by stopping methods"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1801.07887::s00::p000",
+      "1801.07887::s00::p002",
+      "1801.07887::s05::p000"
+     ],
+     "supporting_fact_ids": [
+      "1801.07887::g00:b0:f00",
+      "1801.07887::g00:b0:f04",
+      "1801.07887::g00:b2:f08",
+      "1801.07887::g00:b2:f09"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.78,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1801.07887::u006"
+    },
+    {
+     "insight_id": "1801.07887::g00:i07",
+     "paper_id": "1801.07887",
+     "group_id": "1801.07887::g00",
+     "concise_text": "The tension between smaller batch sizes for learning efficiency and larger batch sizes for development speed motivates analyzing stopping method parameters such as window size.",
+     "triple": {
+      "subject": "the batch-size tension",
+      "predicate": "requires",
+      "object": "analysis of stopping method parameters such as window size"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1801.07887::s00::p003",
+      "1801.07887::s02::p001",
+      "1801.07887::s05::p000"
+     ],
+     "supporting_fact_ids": [
+      "1801.07887::g00:b0:f06",
+      "1801.07887::g00:b0:f07",
+      "1801.07887::g00:b0:f08",
+      "1801.07887::g00:b1:f06",
+      "1801.07887::g00:b2:f10"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.83,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1801.07887::u007"
+    },
+    {
+     "insight_id": "1801.07887::g00:i08",
+     "paper_id": "1801.07887",
+     "group_id": "1801.07887::g00",
+     "concise_text": "Oracle-99 contextualizes practical stopping results because the Oracle Method cannot be used in practice and BV2009 is compared against the optimal Oracle Method point.",
+     "triple": {
+      "subject": "Oracle-99",
+      "predicate": "extends",
+      "object": "contextualization of practical stopping results including BV2009"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1801.07887::s00::p006",
+      "1801.07887::s03::p000"
+     ],
+     "supporting_fact_ids": [
+      "1801.07887::g00:b1:f00",
+      "1801.07887::g00:b1:f01",
+      "1801.07887::g00:b1:f10"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.76,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1801.07887::u008"
+    },
+    {
+     "insight_id": "1801.07887::g00:i09",
+     "paper_id": "1801.07887",
+     "group_id": "1801.07887::g00",
+     "concise_text": "The degradation in stopping method performance with larger batch sizes is larger than degradation explained by learning efficiency, and smaller window sizes help mitigate it.",
+     "triple": {
+      "subject": "smaller window sizes",
+      "predicate": "improves_on",
+      "object": "stopping method performance degradation with larger batch sizes beyond learning efficiency"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1801.07887::s02::p001",
+      "1801.07887::s05::p000"
+     ],
+     "supporting_fact_ids": [
+      "1801.07887::g00:b1:f05",
+      "1801.07887::g00:b1:f07",
+      "1801.07887::g00:b2:f09",
+      "1801.07887::g00:b2:f10"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.89,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1801.07887::u009"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4676,
+    "completion_tokens": 1920,
+    "total_tokens": 6596,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

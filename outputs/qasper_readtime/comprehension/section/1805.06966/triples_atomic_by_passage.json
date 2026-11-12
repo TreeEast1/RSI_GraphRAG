@@ -1,0 +1,797 @@
+{
+ "1805.06966::s00::p000": [
+  [
+   "Spoken Dialogue Systems (SDS)",
+   "allow",
+   "human-computer interaction using natural speech"
+  ],
+  [
+   "Task-oriented dialogue systems",
+   "help",
+   "users achieve goals such as finding restaurants or booking flights"
+  ]
+ ],
+ "1805.06966::s00::p001": [
+  [
+   "this dialogue management task",
+   "is often formulated as",
+   "a reinforcement learning (RL) problem"
+  ],
+  [
+   "the system",
+   "learns by",
+   "a trial and error process governed by a reward function"
+  ],
+  [
+   "User Simulators",
+   "can be used to train",
+   "the policy of a dialogue manager (DM) without real user interactions"
+  ],
+  [
+   "User Simulators",
+   "allow",
+   "an unlimited number of dialogues to be created"
+  ]
+ ],
+ "1805.06966::s00::p002": [
+  [
+   "the Neural User Simulator (NUS)",
+   "outputs",
+   "natural language"
+  ],
+  [
+   "the Neural User Simulator (NUS)",
+   "has behaviour learned from",
+   "a corpus"
+  ],
+  [
+   "The main component",
+   "consists of",
+   "a feature extractor and a neural network based sequence-to-sequence model"
+  ],
+  [
+   "the NUS",
+   "generates",
+   "its own goal"
+  ],
+  [
+   "a method",
+   "transforms",
+   "the goal-labels of the used dataset (DSTC2) into labels whose behaviour can be replicated during deployment"
+  ]
+ ],
+ "1805.06966::s00::p003": [
+  [
+   "The NUS",
+   "is trained on",
+   "dialogues between real users and an SDS in a restaurant recommendation domain"
+  ],
+  [
+   "an Agenda-Based User-Simulator (ABUS)",
+   "is used to train",
+   "another policy"
+  ],
+  [
+   "The two policies",
+   "are compared against each other by using",
+   "cross-model evaluation"
+  ],
+  [
+   "both trained policies",
+   "are tested on",
+   "real users"
+  ],
+  [
+   "the NUS",
+   "outperforms",
+   "the ABUS"
+  ]
+ ],
+ "1805.06966::s01::p000": [
+  [
+   "A Task-Oriented SDS",
+   "is typically designed according to",
+   "a structured ontology"
+  ],
+  [
+   "a structured ontology",
+   "defines",
+   "what the system can talk about"
+  ],
+  [
+   "the ontology",
+   "defines",
+   "those attributes of a restaurant that the user can choose, called informable slots"
+  ],
+  [
+   "the ontology",
+   "defines",
+   "the attributes that the user can request, called requestable slots"
+  ],
+  [
+   "An attribute",
+   "is referred to as",
+   "a slot"
+  ],
+  [
+   "Together these",
+   "are referred to as",
+   "a slot-value pair (e.g. area=north)"
+  ]
+ ],
+ "1805.06966::s01::p001": [
+  [
+   "the DM",
+   "is trained to act such that is maximises",
+   "the cumulative future reward"
+  ],
+  [
+   "The process by which the DM chooses its next action",
+   "is called",
+   "its policy"
+  ],
+  [
+   "A typical approach to defining the reward function for a task-oriented SDS",
+   "is to apply",
+   "a small per-turn penalty to encourage short dialogues"
+  ],
+  [
+   "A typical approach to defining the reward function for a task-oriented SDS",
+   "is to give",
+   "a large positive reward at the end of each successful interaction"
+  ]
+ ],
+ "1805.06966::s02::p000": [
+  [
+   "the DM's policy",
+   "would be trained by interacting with",
+   "real users"
+  ],
+  [
+   "the majority of RL algorithms",
+   "require",
+   "a lot of interactions"
+  ],
+  [
+   "a set of users",
+   "needs to be recruited",
+   "every time a policy is trained"
+  ],
+  [
+   "common practices such as hyper-parameter optimization",
+   "are made",
+   "prohibitively expensive"
+  ]
+ ],
+ "1805.06966::s02::p001": [
+  [
+   "the state space that was visited during the collection of the data",
+   "is",
+   "limited"
+  ],
+  [
+   "the size of the recorded corpus",
+   "usually falls short of",
+   "the requirements for training a statistical DM"
+  ],
+  [
+   "the optimal dialogue strategy",
+   "is likely not to be contained within",
+   "the recorded corpus"
+  ]
+ ],
+ "1805.06966::s02::p002": [
+  [
+   "A solution",
+   "is to transform",
+   "the static corpus into a dynamic tool: a user simulator"
+  ],
+  [
+   "The user simulator (US)",
+   "is trained on",
+   "a dialogue corpus"
+  ],
+  [
+   "The US",
+   "is trained using",
+   "supervised learning"
+  ],
+  [
+   "The DM's policy",
+   "is optimised using",
+   "the feedback given by either the user simulator or a separate evaluator"
+  ]
+ ],
+ "1805.06966::s02::p003": [
+  [
+   "Most user-simulators",
+   "work on",
+   "the level of user semantics"
+  ],
+  [
+   "These",
+   "usually consist of",
+   "a user dialogue act (e.g. inform, or request) and a corresponding slot-value pair"
+  ],
+  [
+   "The first statistical user simulator BIBREF16",
+   "used",
+   "a simple bi-gram model INLINEFORM0"
+  ],
+  [
+   "The most prominent user model for policy optimisation",
+   "is",
+   "the Agenda-Based User Simulator BIBREF6"
+  ]
+ ],
+ "1805.06966::s02::p004": [
+  [
+   "The aforementioned work",
+   "focuses on",
+   "user simulation at the semantic level"
+  ],
+  [
+   "annotating the user-response with the correct semantics",
+   "is",
+   "costly"
+  ],
+  [
+   "the two modules of an SDS performing Spoken Language Understanding (SLU) and belief tracking",
+   "should be jointly trained as",
+   "a single entity"
+  ],
+  [
+   "systems which used no external SLU module",
+   "outperformed",
+   "all systems that only used an external SLU Module"
+  ]
+ ],
+ "1805.06966::s03::p000": [
+  [
+   "Goal Generator",
+   "generates",
+   "a random goal INLINEFORM0"
+  ],
+  [
+   "ontology",
+   "defines",
+   "the possibilities for INLINEFORM1"
+  ],
+  [
+   "NUS's Feature Extractor",
+   "generates",
+   "a feature vector INLINEFORM4"
+  ],
+  [
+   "sequence-to-sequence model",
+   "generates",
+   "the user's length INLINEFORM8 utterance INLINEFORM9"
+  ]
+ ],
+ "1805.06966::s04::p000": [
+  [
+   "Goal Generator",
+   "generates",
+   "a random goal INLINEFORM0 at the start of the dialogue"
+  ],
+  [
+   "INLINEFORM1",
+   "specify",
+   "the required venue e.g. (food=Spanish, area=north)"
+  ],
+  [
+   "DSTC2 INLINEFORM5",
+   "can consist of",
+   "a maximum of three constraints; food, area and pricerange"
+  ],
+  [
+   "probabilities",
+   "were estimated from",
+   "the DSTC2 data set"
+  ]
+ ],
+ "1805.06966::s04::p001": [
+  [
+   "Goal Generator",
+   "is not used",
+   "when training the sequence-to-sequence model"
+  ],
+  [
+   "goal labels from the DSTC2 dataset",
+   "are used",
+   "when training the sequence-to-sequence model"
+  ],
+  [
+   "DSTC2",
+   "gives",
+   "one goal-label to the entire dialogue"
+  ],
+  [
+   "final goal",
+   "can only be used for",
+   "the requests"
+  ],
+  [
+   "DSTC2",
+   "provides",
+   "turn-specific labels"
+  ]
+ ],
+ "1805.06966::s04::p002": [
+  [
+   "final goal",
+   "was used for",
+   "the entire dialogue"
+  ],
+  [
+   "final turn",
+   "keeps",
+   "its constraints"
+  ],
+  [
+   "goal",
+   "is updated when",
+   "the SDS outputs the canthelp dialogue act"
+  ]
+ ],
+ "1805.06966::s05::p000": [
+  [
+   "Feature Extractor",
+   "generates",
+   "the feature vector"
+  ],
+  [
+   "input to the Feature Extractor",
+   "is",
+   "the output of the DM and the current goal INLINEFORM0"
+  ],
+  [
+   "Feature Extractor",
+   "keeps track of",
+   "the currently accepted venue as well as the current and initial request-vector"
+  ]
+ ],
+ "1805.06966::s05::p001": [
+  [
+   "feature vector INLINEFORM0",
+   "is made up of",
+   "four sub-vectors"
+  ],
+  [
+   "motivation behind the way in which these four vectors were designed",
+   "is to provide",
+   "an embedding for the system response that preserves all necessary value-independent information"
+  ]
+ ],
+ "1805.06966::s05::p002": [
+  [
+   "machine-act vector INLINEFORM0",
+   "encodes",
+   "the dialogue acts of the system response"
+  ],
+  [
+   "INLINEFORM2",
+   "is",
+   "a binary representation of the system dialogue acts present in the input"
+  ],
+  [
+   "Its length",
+   "is",
+   "the number of possible system dialogue acts"
+  ],
+  [
+   "The length",
+   "is",
+   "four times the number of informable slots"
+  ]
+ ],
+ "1805.06966::s05::p003": [
+  [
+   "request-vector INLINEFORM0",
+   "is",
+   "a binary representation of the requests that have not yet been fulfilled"
+  ],
+  [
+   "It's length",
+   "is",
+   "the number of requestable slots"
+  ],
+  [
+   "the feature extractor",
+   "needs to remember",
+   "it for the next turn"
+  ]
+ ],
+ "1805.06966::s05::p004": [
+  [
+   "inconsistency-vector INLINEFORM0",
+   "represents",
+   "the inconsistency between the system's response and INLINEFORM1"
+  ],
+  [
+   "The length of INLINEFORM2",
+   "is",
+   "the number of informable slots"
+  ],
+  [
+   "This vector",
+   "is necessary in order for",
+   "the NUS to correct the system"
+  ]
+ ],
+ "1805.06966::s05::p005": [
+  [
+   "The fourth vector, INLINEFORM0",
+   "is",
+   "a binary representation of the slots that are in the constraints INLINEFORM1"
+  ],
+  [
+   "It's length",
+   "is",
+   "the number of informable slots"
+  ],
+  [
+   "This vector",
+   "is necessary in order for",
+   "the NUS to be able to inform about its preferred venue"
+  ]
+ ],
+ "1805.06966::s06::p000": [
+  [
+   "The sequence-to-sequence model (Figure FIGREF7 )",
+   "consists of",
+   "an RNN encoder, followed by a fully-connect layer and an RNN decoder"
+  ]
+ ],
+ "1805.06966::s06::p001": [
+  [
+   "an RNN",
+   "uses",
+   "an input INLINEFORM1 and an internal state INLINEFORM2"
+  ],
+  [
+   "an RNN",
+   "produces",
+   "its output INLINEFORM3 and its new internal state INLINEFORM4"
+  ],
+  [
+   "a single layer LSTM BIBREF35",
+   "is used for",
+   "both the RNN encoder and decoder"
+  ],
+  [
+   "The exact LSTM version used in this work",
+   "uses",
+   "a forget gate without bias"
+  ]
+ ],
+ "1805.06966::s06::p002": [
+  [
+   "The first RNN",
+   "takes as input",
+   "one feature vector INLINEFORM0 at a time"
+  ],
+  [
+   "the final output of the RNN encoder",
+   "is passed through",
+   "a fully-connected layer with linear activation function"
+  ]
+ ],
+ "1805.06966::s06::p003": [
+  [
+   "the sequence-to-sequence model",
+   "should define",
+   "a probability distribution over different sequences"
+  ],
+  [
+   "the NUS",
+   "can generate",
+   "a diverse set of sentences corresponding to the same dialogue context"
+  ]
+ ],
+ "1805.06966::s06::p004": [
+  [
+   "The decoder RNN",
+   "will be used to model",
+   "INLINEFORM0"
+  ],
+  [
+   "It's input at each time-step",
+   "is",
+   "the concatenation of an embedding INLINEFORM1 (we used 1-hot) of the previous word INLINEFORM2 ( INLINEFORM3 )"
+  ],
+  [
+   "The end of the utterance",
+   "is modelled using",
+   "an end-of-sentence (<EOS>) token"
+  ],
+  [
+   "the decoding process",
+   "is terminated",
+   "when the decoder RNN generates the end-of-sentence token"
+  ]
+ ],
+ "1805.06966::s06::p005": [
+  [
+   "the words",
+   "are not sampled from",
+   "the output distribution"
+  ],
+  [
+   "the true words from the dataset",
+   "are used",
+   "during training"
+  ],
+  [
+   "This",
+   "is often referred to as",
+   "teacher-forcing"
+  ]
+ ],
+ "1805.06966::s06::p006": [
+  [
+   "beam-search",
+   "is often used",
+   "To generate a sequence using an RNN"
+  ],
+  [
+   "This",
+   "is",
+   "a deterministic process"
+  ],
+  [
+   "the NUS",
+   "cannot cover",
+   "the full breadth of user behaviour if beam-search is used"
+  ],
+  [
+   "a type of beam-search with sampling",
+   "is used",
+   "To solve this issue while keeping the benefit of rejecting sequences with low probability"
+  ],
+  [
+   "INLINEFORM13 words per beam",
+   "are sampled from",
+   "the probability distribution"
+  ],
+  [
+   "The NUS",
+   "is now",
+   "non-deterministic resulting in a diverse US"
+  ],
+  [
+   "Using 2 beams",
+   "gave",
+   "a good trade-off between reasonable responses and diversity"
+  ]
+ ],
+ "1805.06966::s07::p000": [
+  [
+   "The neural sequence-to-sequence model",
+   "is trained to maximize",
+   "the log probability that it assigns to the user utterances of the training data set"
+  ]
+ ],
+ "1805.06966::s07::p001": [
+  [
+   "The network",
+   "was implemented in",
+   "Tensorflow"
+  ],
+  [
+   "The network",
+   "was optimized using",
+   "Tensorflow's default setup of the Adam optimizer"
+  ],
+  [
+   "The LSTM layers and the fully-connected layer",
+   "had widths of",
+   "100 each"
+  ]
+ ],
+ "1805.06966::s07::p002": [
+  [
+   "The manual transcriptions of the DSTC2 training set",
+   "were used to train",
+   "the sequence-to-sequence model"
+  ],
+  [
+   "the training set",
+   "consisted of",
+   "1609 dialogues with a total of 11638 dialogue turns"
+  ],
+  [
+   "The validation set",
+   "had",
+   "505 dialogues with 3896 dialogue turns"
+  ],
+  [
+   "The maximum sequence length of the delexicalized turns",
+   "was",
+   "22, including the end of sentence character"
+  ]
+ ],
+ "1805.06966::s07::p003": [
+  [
+   "All dialogue policies",
+   "were trained with",
+   "the PyDial toolkit"
+  ],
+  [
+   "The RL algorithm used",
+   "is",
+   "GP-SARSA"
+  ],
+  [
+   "The reward function used",
+   "gives",
+   "a reward of 20 to a successfully completed dialogue and of -1 for each dialogue turn"
+  ],
+  [
+   "The maximum dialogue length",
+   "was",
+   "25 turns"
+  ],
+  [
+   "The presented metrics",
+   "are",
+   "success rate (SR) and average reward over test dialogues"
+  ],
+  [
+   "SR",
+   "is",
+   "the percentage of dialogues for which the system satisfied both the user's constraints and requests"
+  ],
+  [
+   "The policies",
+   "were trained for",
+   "4000 dialogues"
+  ]
+ ],
+ "1805.06966::s08::p000": [
+  [
+   "Most papers published on user simulation",
+   "evaluate",
+   "their US using direct methods"
+  ],
+  [
+   "These methods",
+   "evaluate",
+   "the US through a statistical measure of similarity between the outputs of the US and a real user on a test set"
+  ],
+  [
+   "The ABUS",
+   "was explicitly proposed as",
+   "a tool to train the policy of a dialogue manager"
+  ],
+  [
+   "the only fair comparison between a new US model and the ABUS",
+   "is to use",
+   "the indirect method of evaluating the policies that were obtained by training with each US"
+  ]
+ ],
+ "1805.06966::s09::p000": [
+  [
+   "cross-model evaluation",
+   "is proposed to compare",
+   "user simulators"
+  ],
+  [
+   "For each US",
+   "are trained",
+   "five policies ( INLINEFORM1 ), each using a different random seed for initialisation"
+  ],
+  [
+   "The ABUS",
+   "is programmed to always mention",
+   "the new goal after a goal change"
+  ]
+ ],
+ "1805.06966::s10::p000": [
+  [
+   "two policies for each US",
+   "are chosen from",
+   "the five policies"
+  ],
+  [
+   "Users",
+   "are recruited through",
+   "the Amazon Mechanical Turk (AMT) service"
+  ],
+  [
+   "1000 dialogues",
+   "were gathered",
+   "250 per policy"
+  ],
+  [
+   "The learnt policies",
+   "were incorporated into",
+   "an SDS pipeline with a commercial ASR system"
+  ]
+ ],
+ "1805.06966::s11::p000": [
+  [
+   "The policies trained with the NUS",
+   "achieved",
+   "an average success rate (SR) of 94.0% and of 96.6% when tested on the ABUS and the NUS, respectively"
+  ],
+  [
+   "the policies trained with the ABUS",
+   "achieved",
+   "average SRs of 99.5% and 45.5% respectively"
+  ],
+  [
+   "the best SRs when tested on the ABUS",
+   "are similar at",
+   "99.9% (ABUS) and 99.8% (NUS)"
+  ]
+ ],
+ "1805.06966::s11::p001": [
+  [
+   "the policy performing best on the NUS",
+   "was not",
+   "the best performing policy on the ABUS"
+  ],
+  [
+   "the average SR of the policies trained on the NUS when tested on the ABUS",
+   "was",
+   "97.3% in comparison to 94.0% after 4000 dialogues"
+  ],
+  [
+   "This behaviour",
+   "was observed for",
+   "all five seeds"
+  ]
+ ],
+ "1805.06966::s12::p000": [
+  [
+   "Both policies trained with the NUS",
+   "outperformed",
+   "those trained on the ABUS in terms of both reward and success rate"
+  ],
+  [
+   "The best performing policy trained on the NUS",
+   "achieves",
+   "a 93.4% success rate and 13.8 average rewards"
+  ],
+  [
+   "the best performing policy trained with the ABUS",
+   "achieves",
+   "only a 90.0% success rate and 13.3 average reward"
+  ]
+ ],
+ "1805.06966::s13::p000": [
+  [
+   "the Neural User Simulator (NUS)",
+   "uses",
+   "the system's response in its semantic form as input"
+  ],
+  [
+   "the Neural User Simulator (NUS)",
+   "gives",
+   "a natural language response"
+  ],
+  [
+   "The NUS",
+   "was compared to",
+   "the Agenda-Based User Simulator"
+  ]
+ ],
+ "1805.06966::s14::p000": [
+  [
+   "This research",
+   "was partly funded by",
+   "the EPSRC grant EP/M018946/1 Open Domain Statistical Spoken Dialogue Systems"
+  ],
+  [
+   "Florian Kreyssig",
+   "is supported by",
+   "the Studienstiftung des Deutschen Volkes"
+  ],
+  [
+   "Paweł Budzianowski",
+   "is supported by",
+   "the EPSRC and Toshiba Research Europe Ltd"
+  ]
+ ]
+}

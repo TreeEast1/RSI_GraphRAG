@@ -1,0 +1,156 @@
+{
+ "paper_id": "1909.08089",
+ "title": "Extractive Summarization of Long Documents by Combining Global and Local Context",
+ "abstract": "In this paper, we propose a novel neural single document extractive summarization model for long documents, incorporating both the global context of the whole document and the local context within the current topic. We evaluate the model on two datasets of scientific papers, Pubmed and arXiv, where it outperforms previous work, both extractive and abstractive models, on ROUGE-1, ROUGE-2 and METEOR scores. We also show that, consistently with our goal, the benefits of our method become stronger as we apply it to longer documents. Rather surprisingly, an ablation study indicates that the benefits of our model seem to come exclusively from modeling the local context, even for the longest documents.",
+ "sections": [
+  "Introduction",
+  "Extractive summarization",
+  "Extractive summarization on Scientific papers",
+  "Datasets for long documents",
+  "Neural Abstractive summarization on long documents",
+  "LSTM-Minus",
+  "Our Model",
+  "Sentence Encoder",
+  "Document Encoder",
+  "Decoder",
+  "Experiments",
+  "Training",
+  "Extractive Label Generation",
+  "Implementation Details",
+  "Models for Comparison",
+  "Results and Analysis",
+  "Ablation Study",
+  "Conclusions and Future Work",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 57,
+ "n_tokens": 5564,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.08089::fig000",
+   "paper_id": "1909.08089",
+   "file": "16-Figure2.1-1.png",
+   "caption": "Figure 2.1: One of the extractor compared in [19], (a) is a simple RNN model, model (b) is an attention-based encoder-decoder model",
+   "n_tokens": 37
+  },
+  {
+   "caption_id": "1909.08089::fig001",
+   "paper_id": "1909.08089",
+   "file": "16-Figure2.2-1.png",
+   "caption": "Figure 2.2: One of the extractor compared in [19], model (c) is the extractor proposed in [4], model (d) is the extractor proposed in [27].",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1909.08089::fig002",
+   "paper_id": "1909.08089",
+   "file": "18-Table2.1-1.png",
+   "caption": "Table 2.1: Comparison of news datasets, scientific paper datasets and the recently proposed patent dataset, [8][36]",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "1909.08089::fig003",
+   "paper_id": "1909.08089",
+   "file": "20-Figure2.3-1.png",
+   "caption": "Figure 2.3: The structure of Cohan’s model of discourse-aware abstractive summarization [8]",
+   "n_tokens": 24
+  },
+  {
+   "caption_id": "1909.08089::fig004",
+   "paper_id": "1909.08089",
+   "file": "21-Figure2.4-1.png",
+   "caption": "Figure 2.4: LSTM-Minus in dependency parsing.",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1909.08089::fig005",
+   "paper_id": "1909.08089",
+   "file": "23-Figure2.5-1.png",
+   "caption": "Figure 2.5: The supervised topic segmentation model proposed in [21]",
+   "n_tokens": 16
+  },
+  {
+   "caption_id": "1909.08089::fig006",
+   "paper_id": "1909.08089",
+   "file": "24-Figure2.6-1.png",
+   "caption": "Figure 2.6: The approximate randomization statistical significance test. [31]",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1909.08089::fig007",
+   "paper_id": "1909.08089",
+   "file": "26-Figure3.1-1.png",
+   "caption": "Figure 3.1: The structure of our model, sei,sri represent the sentence embedding and sentence representation of sentence i, respectively. The binary decision of whether the sentence should be included in the summary is based on the sentence itself (A), the whole document (B) and the current topic (C). The document representation is simply the concatenation of the last hidden states of the forward and backward RNNs, while the topic segment representation is computed by applying LSTM-Minus, as the details shown in Fig 3.2",
+   "n_tokens": 108
+  },
+  {
+   "caption_id": "1909.08089::fig008",
+   "paper_id": "1909.08089",
+   "file": "27-Figure3.2-1.png",
+   "caption": "Figure 3.2: Detail of C, the topic segment representation is computed by applying LSTM-Minus. The RNN in red rectangle is the Document Encoder, the same as the one in the red rectangle in Fig. 3.1",
+   "n_tokens": 49
+  },
+  {
+   "caption_id": "1909.08089::fig009",
+   "paper_id": "1909.08089",
+   "file": "34-Table4.1-1.png",
+   "caption": "Table 4.1: Results on the arXiv dataset. For models with an ∗, we report results from [8]. Models are traditional extractive in the first block, neural abstractive in the second block, while neural extractive in the third block. The Oracle (last row) corresponds to using the ground truth labels, obtained (for training) by the greedy algorithm, see Section 4.1.2. Results that are not significantly distinguished from the best systems are bold.",
+   "n_tokens": 102
+  },
+  {
+   "caption_id": "1909.08089::fig010",
+   "paper_id": "1909.08089",
+   "file": "35-Table4.2-1.png",
+   "caption": "Table 4.2: Results on the Pubmed dataset. For models with an ∗, we report results from [8]. See caption of Table 4.1 above for details on compared models. Results that are not significantly distinguished from the best systems are bold.",
+   "n_tokens": 55
+  },
+  {
+   "caption_id": "1909.08089::fig011",
+   "paper_id": "1909.08089",
+   "file": "36-Table4.3-1.png",
+   "caption": "Table 4.3: Percentage relative improvement of our model, when compared with the SummaRuNNer (SR) and Baseline (BSL) models on both datasets (first and second block). The third block shows Macro average relative improvement across the two datasets .",
+   "n_tokens": 55
+  },
+  {
+   "caption_id": "1909.08089::fig012",
+   "paper_id": "1909.08089",
+   "file": "37-Figure4.1-1.png",
+   "caption": "Figure 4.1: A Comparison between our model, SummaRuNNer and Oracle when applied to documents with increasing length, left-up: ROUGE-1 on Pubmed dataset, right-up: ROUGE-2 on Pubmed dataset, left-down: ROUGE-1 on arXiv dataset, right-down: ROUGE-2 on arXiv dataset",
+   "n_tokens": 76
+  },
+  {
+   "caption_id": "1909.08089::fig013",
+   "paper_id": "1909.08089",
+   "file": "38-Figure4.2-1.png",
+   "caption": "Figure 4.2: The relative position in documents of our predicted sentences, oracle sentences, and the section borders, and the documents are sampled uniformly from the highest ROUGE score(left) to lowest ROUGE score(right). The upper figure shows the position distribution of Pubmed, and the lower one shows the position distribution of arXiv.",
+   "n_tokens": 69
+  },
+  {
+   "caption_id": "1909.08089::fig014",
+   "paper_id": "1909.08089",
+   "file": "39-Table4.4-1.png",
+   "caption": "Table 4.4: Ablation study on the Pubmed dataset. Baseline is the model with sentence representation only, Baseline+segment is the model with sentence and local topic information, Baseline+doc is the model with sentence and global document information, and the last one is the full model with concatenation decoder. Results that are not significantly distinguished from the best systems are bold.",
+   "n_tokens": 80
+  },
+  {
+   "caption_id": "1909.08089::fig015",
+   "paper_id": "1909.08089",
+   "file": "39-Table4.5-1.png",
+   "caption": "Table 4.5: Ablation study on the arXiv dataset. The model descriptions refer to Table 4.4. Results that are not significantly distinguished from the best systems are bold.",
+   "n_tokens": 41
+  },
+  {
+   "caption_id": "1909.08089::fig016",
+   "paper_id": "1909.08089",
+   "file": "40-Table4.6-1.png",
+   "caption": "Table 4.6: Results on the Bigpatent-A dataset.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1909.08089::fig017",
+   "paper_id": "1909.08089",
+   "file": "41-Figure4.3-1.png",
+   "caption": "Figure 4.3: A Comparison between our model, SummaRuNNer and Oracle when applied to documents with increasing length on Bigpatent-a dataset",
+   "n_tokens": 32
+  }
+ ]
+}

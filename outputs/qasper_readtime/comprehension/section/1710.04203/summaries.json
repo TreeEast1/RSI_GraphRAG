@@ -1,0 +1,818 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1710.04203::s00::p000",
+   "summary": "Sentiment analysis uncovers emotion in information, supports political and marketing purposes, product acceptance and feedback systems, and requires sentiment labels defined in a lexicon.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s00::p001",
+   "summary": "Lexicon acquisition labels information elements by class, usually emotion, and lexicon quality directly affects sentiment classification accuracy.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s00::p002",
+   "summary": "Lexicon acquisition and sentiment classification can be automatic or manual, including crowdsourcing, which is widely used for polarity lexicons but rarely beyond polarity.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s00::p003",
+   "summary": "Sentiment analysis commonly uses polarity, distinguishing positive and negative emotion for agreement, disagreement, acceptance, or disapproval toward candidates and products.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s00::p004",
+   "summary": "Beyond polarity, or pure emotion, sentiment analysis uncovers exact emotions based on emotional theories and can improve several applications with distinct emotion lexicons.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s00::p005",
+   "summary": "Beyond polarity lexicons rely on strict rules and expert evaluation, use a single emotion per term, and face uniformity, freedom, cost, scalability, and comprehensiveness problems.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s00::p006",
+   "summary": "This paper presents a multiclass scalable crowdsourced pure emotion lexicon (PEL) based on Plutchik's eight basic emotions, with crowd-identified linguistic elements and worker filtering.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s01::p000",
+   "summary": "Ekam et al. proposed six basic emotions, while Plutchik added trust and anticipation and presented a circumplex model defining contradictions and combinations.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s01::p001",
+   "summary": "Sentiment analysis classifies information by conveyed emotion and is separated into polarity and beyond polarity according to the number of classes/emotions required.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s01::p002",
+   "summary": "Polarity sentiment analysis defines positive and negative states, often with neutral, and may use levels known as fine grained sentiment analysis.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s01::p003",
+   "summary": "Beyond polarity, or pure emotion, sentiment analysis uses a wider range of specific emotion classes such as sadness, boredom, joy, surprise, anger, fear, and disgust.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s01::p004",
+   "summary": "Lexicon acquisition can be manual or automatic, but natural language subjectivity inhibits automated methods, leading researchers to manual annotation, established lexicons, or combined approaches.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s01::p005",
+   "summary": "Crowdsourcing can remove manual lexicon acquisition constraints, with MTurk used for polarity lexicons, one thousand tweets, ten thousand terms, ninety five emoticons, and one thousand four hundred terms.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s01::p006",
+   "summary": "Sentiment classification occurs at phrase/sentence/submission level, aggregates labeled term emotions, and can be automated or performed manually.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s01::p007",
+   "summary": "Term and phrase sentiment are main classification inputs; manual classification achieves high relevance but lacks scalability, while automated processes are scalable with lower relevance.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s02::p000",
+   "summary": "The approach aims at an end to end automated work-flow for pure emotion lexicon creation, evaluation, and enrichment, with pre-processing and crowdsourcing components.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s02::p001",
+   "summary": "Pre-processing uses tokenization, stemming, and spell check, while crowdsourcing annotates database entries, filters answers, updates valid entries, and evaluates annotations against expert linguists.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s03::p000",
+   "summary": "During January 2017, a keyword based crawl collected Europe subreddit articles and comments and Twitter tweets containing \"Brexit\" to capture emotional diversity.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s03::p001",
+   "summary": "The crawl collected one hundred Reddit articles, more than forty thousand comments, and more than three thousand tweets, storing location, time, upvotes, re-tweets, and favourites.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s03::p002",
+   "summary": "The corpus had 30227 unique terms; 19193 were validated and 11034 invalidated using the enchant python library and Great British English dictionary.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s03::p003",
+   "summary": "After validation, Porter Stemming Algorithm identified 10953 distinct term groups, including stop-words, intensifiers, and negators, with unsupervised validation and stemming.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s04::p000",
+   "summary": "The CrowdFlower task asked contributors to label term groups as emotion, intensifier, or none, without a golden standard, rules, or participation restrictions.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s04::p001",
+   "summary": "Each of the eleven main-class options is a \"subclass\"; stem-based term groups have majority main annotations and nonmajority sub annotations, with every annotation logged.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s05::p000",
+   "summary": "The task interface was refined through experiments by simplifying the question, including only three main classes, and replacing positive and negative with amplifying and weakening.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s05::p001",
+   "summary": "Contributors choose among three options, specify eight basic emotions, Amplifying or Weakening, or None, with each term group linked to an English dictionary.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s06::p000",
+   "summary": "More than one hundred eighty contributors performed eighty thousand annotations, with a 660 unique annotation limit, 15% and 85% splits, and mean and median annotations of 429 and 580.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p000",
+   "summary": "Experiments identified 136 assessment term groups testing emotion evoking, intensifying context, and none, with more than ten thousand annotations analysed separately.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p001",
+   "summary": "Workers had to properly annotate 80% of assessment term groups within dominant classes, not subclasses, to contribute and get paid.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p002",
+   "summary": "The paragraph defines workers, eleven subclasses, and the number of total annotations for each worker, followed by DISPLAYFORM0.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p003",
+   "summary": "The paragraph defines worker sets in the assessment and acquisition processes and gives DISPLAYFORM0 DISPLAYFORM1 for INLINEFORM4.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p004",
+   "summary": "The paragraph states \"and: DISPLAYFORM0 DISPLAYFORM1\".",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p005",
+   "summary": "The optimal INLINEFORM0 is found for INLINEFORM1, and the optimal filtering percentage for this study was 40%, INLINEFORM2.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p006",
+   "summary": "Workers from India and Venezuela contributed 92% of the task and annotated more than 30% of term groups with joy, unlike several countries with more than 300 annotations.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p007",
+   "summary": "Analysis found workers with large fractions in a single subclass, such as one worker annotating 99% as joy, while existing spamming solutions require gold standards or objective tasks.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p008",
+   "summary": "Without a gold standard, the authors use a filter relying on annotations and assessment to flag dishonest workers above a single-subclass percentage and discard their annotations.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p009",
+   "summary": "Before implementing the filter, the authors analysed its effect on eligible workers, with Figure FIGREF22 showing assessment and lexicon acquisition percentages.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p010",
+   "summary": "Higher single annotation percentages indicate more certain spamming, with similar exclusion rates overall and reduced assessment exclusions due to cautious behaviour on known test questions.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p011",
+   "summary": "Each assessment term group was annotated more than 120 times by 187 annotators, providing a critical mass of contributors and valuable task findings.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p012",
+   "summary": "Workers rarely clicked the dictionary link, with less than 0.2% clicking on average, likely causing emotional words such as \"vehement, halcyon\" to be annotated as none.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p013",
+   "summary": "Intensifiers are understandable but require critical mass, as initial emotion annotations for \"reduce, little, plethora\" shifted toward weakening weakening intensifying after tens of annotations.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s07::p014",
+   "summary": "All words should be evaluated because words and emotions acquire new links, as \"anti, serious\" were annotated as fear evoking with great emotional diversity.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s08::p000",
+   "summary": "PEL was created after 40% single annotation filtering, retaining 22 thousand annotations for 9737 term groups from more than seventy thousands annotations for 10593 term groups.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s08::p001",
+   "summary": "After filtering, joy is dominant and disgust least annotated, with 148 intensifiers, 43 negators, 6801 none terms, and the full lexicon on github.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s08::p002",
+   "summary": "Workers identified mostly valid intensifiers and negators, but annotations indicate room for improvement in the intensifier class description and examples.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s08::p003",
+   "summary": "Stemming halved cost and time, while 21% and 20% of term groups had subclass and emotional agreement, and 8.6% showed contradicting or multi-emotion agreement.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s08::p004",
+   "summary": "The paragraph defines a term group, eleven subclasses, annotation counts, emotion subclass annotations, intensifying subclass annotations, and none annotations.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s08::p005",
+   "summary": "Each INLINEFORM0 can have a monotonically increasing finite sequence INLINEFORM1 with INLINEFORM2, where DISPLAYFORM0.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s08::p006",
+   "summary": "Term group INLINEFORM0 has subclass agreement if and only if DISPLAYFORM0.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s08::p007",
+   "summary": "INLINEFORM0 has emotional agreement if and only if there is subclass agreement with sequence INLINEFORM1 and DISPLAYFORM0.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s08::p008",
+   "summary": "Subclass agreement means equal annotations between emotional and non-emotional subclasses or multiple non-emotional subclasses, while emotional agreement means equal annotations among multiple emotion subclasses.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s08::p009",
+   "summary": "Subclass agreement negatively correlates with term-group size, is highest for two-term groups with exactly two subclasses, and indicates stemming didn't confuse workers.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s08::p010",
+   "summary": "Emotional agreement appeared in 10% of term groups, subclass agreement in 20%, joy was most common, and 697 emotional agreeing term groups of 1434 terms had exactly two emotions.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s08::p011",
+   "summary": "Dyadic emotional agreements may be interpreted as complex emotions or further annotated, and emotional agreement occurrences decrease as annotations increase.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s08::p012",
+   "summary": "The lexicon features 17740 annotated terms with 3 classes and 11 subclasses, including 7030 emotion, 191 intensifying, 6801 none, and 3718 subclass agreement terms.",
+   "group_id": "1710.04203::g00"
+  },
+  {
+   "passage_id": "1710.04203::s09::p000",
+   "summary": "Single annotation reliability agreement measures agreement for term groups with a majority in exactly one sub class and was low in the lexicon.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s09::p001",
+   "summary": "Based on Fleiss Kappa BIBREF30 and Table TABREF35, term groups with 2 annotations had lowest reliability, while 6 annotations had highest.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s09::p002",
+   "summary": "Restricting the lexicon to emotions increases reliability for any number of annotators except two, due to fewer possible categories.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s10::p000",
+   "summary": "Expert and crowd contributors are compared for 1000 term groups, with two Ph.D. linguists and Crowdflower contributors, and expert costs equal nineteen contributors.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s10::p001",
+   "summary": "Evaluators saw annotation summaries such as \"inequality inequity\" with 50.0% sadness, 33.33% disgust, 16.67% anger, and rated validity from 1 to 5.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s10::p002",
+   "summary": "Figure FIGREF36 shows high annotational agreement yields high evaluation scores, with stricter crowd evaluations and significant validity increase after four annotations.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s10::p003",
+   "summary": "Majority class annotation percentage positively influences evaluation scores except 100% agreement, where reduced total annotations and specific percentages matter.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s10::p004",
+   "summary": "In emotion annotations, Figure FIGREF36 shows crowd and experts follow similar patterns, with anticipation and joy equal and intensifiers and negators higher from the crowd.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s10::p005",
+   "summary": "The final graph in Figure FIGREF36 shows subclass agreement negatively correlates with evaluation scores, with three subclasses not affecting scores.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s10::p006",
+   "summary": "Evaluation scores improve after four annotations, subclass agreement negatively affects three or more subclasses, and the crowd is stricter, cheaper, and more scalable than experts.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s10::p007",
+   "summary": "Evaluation of intensifiers and negators used 541 PEL term groups with at least one intensifying subclass annotation, expecting relatively low evaluation scores.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s10::p008",
+   "summary": "Figure FIGREF40 defines low, mid, and high agreement levels for validity of the intensifying class for experts and the crowd.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s10::p009",
+   "summary": "Experts are far stricter than the crowd for intensifiers and negators, with differences over 40% at low agreement and 5.33% at high agreement.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s11::p000",
+   "summary": "Lexicon acquisition mixes subjective emotion annotation with objective linguistic element annotation, and the presented novel work flow provides quality results for both.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s11::p001",
+   "summary": "Subcomponents of lexicon acquisition could be improved individually, including spell check, filtering, and evaluation process.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s11::p002",
+   "summary": "Crowd diversity in annotation and evaluation is a limiting factor because fixed individuals annotating and evaluating the whole corpus would be preferred.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s11::p003",
+   "summary": "The corpus may limit term groups to domain-specific subjects, with NRC BIBREF21 showing 40% common terms and annotations increasing from 2.3 to 3.2.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s12::p000",
+   "summary": "The crowd can produce and evaluate a quality pure emotion lexicon without gold standards, though spam is common and post-annotation quality assessment should be implemented.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s12::p001",
+   "summary": "Workers labeled term groups as emotion, intensifiers, and stop words, with up to three emotions valid and intensifiers and negators hardest.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s12::p002",
+   "summary": "Stemming reduced costs by 45%, multi-emotion classification was lower than 10%, and minimal instructions worked best in tested interface designs.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s12::p003",
+   "summary": "The crowd is as capable as experts at evaluating lexicons, with strictness varying by emotional or linguistic evaluations and number of evaluators.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s12::p004",
+   "summary": "Future work includes a voluntary platform, Crowd4U or similar platforms, qualitative analysis of intensifiers and negators, and extending the approach to other linguistic elements.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s12::p005",
+   "summary": "Beyond polarity sentiment analysis can enhance simple polarity based applications, including marketing, politics, health monitoring, online social networks, and evaluation processes.",
+   "group_id": "1710.04203::g01"
+  },
+  {
+   "passage_id": "1710.04203::s13::p000",
+   "summary": "This work was supported by the EU project \"QROWD - Because Big Data Integration is Humanly Possible\".",
+   "group_id": "1710.04203::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1710.04203::g00",
+   "summaries": [
+    {
+     "passage_id": "1710.04203::s00::p000",
+     "summary": "Sentiment analysis uncovers emotion in information, supports political and marketing purposes, product acceptance and feedback systems, and requires sentiment labels defined in a lexicon.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s00::p001",
+     "summary": "Lexicon acquisition labels information elements by class, usually emotion, and lexicon quality directly affects sentiment classification accuracy.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s00::p002",
+     "summary": "Lexicon acquisition and sentiment classification can be automatic or manual, including crowdsourcing, which is widely used for polarity lexicons but rarely beyond polarity.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s00::p003",
+     "summary": "Sentiment analysis commonly uses polarity, distinguishing positive and negative emotion for agreement, disagreement, acceptance, or disapproval toward candidates and products.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s00::p004",
+     "summary": "Beyond polarity, or pure emotion, sentiment analysis uncovers exact emotions based on emotional theories and can improve several applications with distinct emotion lexicons.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s00::p005",
+     "summary": "Beyond polarity lexicons rely on strict rules and expert evaluation, use a single emotion per term, and face uniformity, freedom, cost, scalability, and comprehensiveness problems.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s00::p006",
+     "summary": "This paper presents a multiclass scalable crowdsourced pure emotion lexicon (PEL) based on Plutchik's eight basic emotions, with crowd-identified linguistic elements and worker filtering.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s01::p000",
+     "summary": "Ekam et al. proposed six basic emotions, while Plutchik added trust and anticipation and presented a circumplex model defining contradictions and combinations.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s01::p001",
+     "summary": "Sentiment analysis classifies information by conveyed emotion and is separated into polarity and beyond polarity according to the number of classes/emotions required.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s01::p002",
+     "summary": "Polarity sentiment analysis defines positive and negative states, often with neutral, and may use levels known as fine grained sentiment analysis.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s01::p003",
+     "summary": "Beyond polarity, or pure emotion, sentiment analysis uses a wider range of specific emotion classes such as sadness, boredom, joy, surprise, anger, fear, and disgust.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s01::p004",
+     "summary": "Lexicon acquisition can be manual or automatic, but natural language subjectivity inhibits automated methods, leading researchers to manual annotation, established lexicons, or combined approaches.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s01::p005",
+     "summary": "Crowdsourcing can remove manual lexicon acquisition constraints, with MTurk used for polarity lexicons, one thousand tweets, ten thousand terms, ninety five emoticons, and one thousand four hundred terms.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s01::p006",
+     "summary": "Sentiment classification occurs at phrase/sentence/submission level, aggregates labeled term emotions, and can be automated or performed manually.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s01::p007",
+     "summary": "Term and phrase sentiment are main classification inputs; manual classification achieves high relevance but lacks scalability, while automated processes are scalable with lower relevance.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s02::p000",
+     "summary": "The approach aims at an end to end automated work-flow for pure emotion lexicon creation, evaluation, and enrichment, with pre-processing and crowdsourcing components.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s02::p001",
+     "summary": "Pre-processing uses tokenization, stemming, and spell check, while crowdsourcing annotates database entries, filters answers, updates valid entries, and evaluates annotations against expert linguists.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s03::p000",
+     "summary": "During January 2017, a keyword based crawl collected Europe subreddit articles and comments and Twitter tweets containing \"Brexit\" to capture emotional diversity.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s03::p001",
+     "summary": "The crawl collected one hundred Reddit articles, more than forty thousand comments, and more than three thousand tweets, storing location, time, upvotes, re-tweets, and favourites.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s03::p002",
+     "summary": "The corpus had 30227 unique terms; 19193 were validated and 11034 invalidated using the enchant python library and Great British English dictionary.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s03::p003",
+     "summary": "After validation, Porter Stemming Algorithm identified 10953 distinct term groups, including stop-words, intensifiers, and negators, with unsupervised validation and stemming.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s04::p000",
+     "summary": "The CrowdFlower task asked contributors to label term groups as emotion, intensifier, or none, without a golden standard, rules, or participation restrictions.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s04::p001",
+     "summary": "Each of the eleven main-class options is a \"subclass\"; stem-based term groups have majority main annotations and nonmajority sub annotations, with every annotation logged.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s05::p000",
+     "summary": "The task interface was refined through experiments by simplifying the question, including only three main classes, and replacing positive and negative with amplifying and weakening.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s05::p001",
+     "summary": "Contributors choose among three options, specify eight basic emotions, Amplifying or Weakening, or None, with each term group linked to an English dictionary.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s06::p000",
+     "summary": "More than one hundred eighty contributors performed eighty thousand annotations, with a 660 unique annotation limit, 15% and 85% splits, and mean and median annotations of 429 and 580.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p000",
+     "summary": "Experiments identified 136 assessment term groups testing emotion evoking, intensifying context, and none, with more than ten thousand annotations analysed separately.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p001",
+     "summary": "Workers had to properly annotate 80% of assessment term groups within dominant classes, not subclasses, to contribute and get paid.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p002",
+     "summary": "The paragraph defines workers, eleven subclasses, and the number of total annotations for each worker, followed by DISPLAYFORM0.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p003",
+     "summary": "The paragraph defines worker sets in the assessment and acquisition processes and gives DISPLAYFORM0 DISPLAYFORM1 for INLINEFORM4.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p004",
+     "summary": "The paragraph states \"and: DISPLAYFORM0 DISPLAYFORM1\".",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p005",
+     "summary": "The optimal INLINEFORM0 is found for INLINEFORM1, and the optimal filtering percentage for this study was 40%, INLINEFORM2.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p006",
+     "summary": "Workers from India and Venezuela contributed 92% of the task and annotated more than 30% of term groups with joy, unlike several countries with more than 300 annotations.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p007",
+     "summary": "Analysis found workers with large fractions in a single subclass, such as one worker annotating 99% as joy, while existing spamming solutions require gold standards or objective tasks.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p008",
+     "summary": "Without a gold standard, the authors use a filter relying on annotations and assessment to flag dishonest workers above a single-subclass percentage and discard their annotations.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p009",
+     "summary": "Before implementing the filter, the authors analysed its effect on eligible workers, with Figure FIGREF22 showing assessment and lexicon acquisition percentages.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p010",
+     "summary": "Higher single annotation percentages indicate more certain spamming, with similar exclusion rates overall and reduced assessment exclusions due to cautious behaviour on known test questions.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p011",
+     "summary": "Each assessment term group was annotated more than 120 times by 187 annotators, providing a critical mass of contributors and valuable task findings.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p012",
+     "summary": "Workers rarely clicked the dictionary link, with less than 0.2% clicking on average, likely causing emotional words such as \"vehement, halcyon\" to be annotated as none.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p013",
+     "summary": "Intensifiers are understandable but require critical mass, as initial emotion annotations for \"reduce, little, plethora\" shifted toward weakening weakening intensifying after tens of annotations.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s07::p014",
+     "summary": "All words should be evaluated because words and emotions acquire new links, as \"anti, serious\" were annotated as fear evoking with great emotional diversity.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s08::p000",
+     "summary": "PEL was created after 40% single annotation filtering, retaining 22 thousand annotations for 9737 term groups from more than seventy thousands annotations for 10593 term groups.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s08::p001",
+     "summary": "After filtering, joy is dominant and disgust least annotated, with 148 intensifiers, 43 negators, 6801 none terms, and the full lexicon on github.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s08::p002",
+     "summary": "Workers identified mostly valid intensifiers and negators, but annotations indicate room for improvement in the intensifier class description and examples.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s08::p003",
+     "summary": "Stemming halved cost and time, while 21% and 20% of term groups had subclass and emotional agreement, and 8.6% showed contradicting or multi-emotion agreement.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s08::p004",
+     "summary": "The paragraph defines a term group, eleven subclasses, annotation counts, emotion subclass annotations, intensifying subclass annotations, and none annotations.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s08::p005",
+     "summary": "Each INLINEFORM0 can have a monotonically increasing finite sequence INLINEFORM1 with INLINEFORM2, where DISPLAYFORM0.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s08::p006",
+     "summary": "Term group INLINEFORM0 has subclass agreement if and only if DISPLAYFORM0.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s08::p007",
+     "summary": "INLINEFORM0 has emotional agreement if and only if there is subclass agreement with sequence INLINEFORM1 and DISPLAYFORM0.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s08::p008",
+     "summary": "Subclass agreement means equal annotations between emotional and non-emotional subclasses or multiple non-emotional subclasses, while emotional agreement means equal annotations among multiple emotion subclasses.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s08::p009",
+     "summary": "Subclass agreement negatively correlates with term-group size, is highest for two-term groups with exactly two subclasses, and indicates stemming didn't confuse workers.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s08::p010",
+     "summary": "Emotional agreement appeared in 10% of term groups, subclass agreement in 20%, joy was most common, and 697 emotional agreeing term groups of 1434 terms had exactly two emotions.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s08::p011",
+     "summary": "Dyadic emotional agreements may be interpreted as complex emotions or further annotated, and emotional agreement occurrences decrease as annotations increase.",
+     "group_id": "1710.04203::g00"
+    },
+    {
+     "passage_id": "1710.04203::s08::p012",
+     "summary": "The lexicon features 17740 annotated terms with 3 classes and 11 subclasses, including 7030 emotion, 191 intensifying, 6801 none, and 3718 subclass agreement terms.",
+     "group_id": "1710.04203::g00"
+    }
+   ],
+   "n_raw": 54,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5801,
+    "completion_tokens": 2688,
+    "total_tokens": 8489,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1710.04203::g01",
+   "summaries": [
+    {
+     "passage_id": "1710.04203::s09::p000",
+     "summary": "Single annotation reliability agreement measures agreement for term groups with a majority in exactly one sub class and was low in the lexicon.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s09::p001",
+     "summary": "Based on Fleiss Kappa BIBREF30 and Table TABREF35, term groups with 2 annotations had lowest reliability, while 6 annotations had highest.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s09::p002",
+     "summary": "Restricting the lexicon to emotions increases reliability for any number of annotators except two, due to fewer possible categories.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s10::p000",
+     "summary": "Expert and crowd contributors are compared for 1000 term groups, with two Ph.D. linguists and Crowdflower contributors, and expert costs equal nineteen contributors.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s10::p001",
+     "summary": "Evaluators saw annotation summaries such as \"inequality inequity\" with 50.0% sadness, 33.33% disgust, 16.67% anger, and rated validity from 1 to 5.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s10::p002",
+     "summary": "Figure FIGREF36 shows high annotational agreement yields high evaluation scores, with stricter crowd evaluations and significant validity increase after four annotations.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s10::p003",
+     "summary": "Majority class annotation percentage positively influences evaluation scores except 100% agreement, where reduced total annotations and specific percentages matter.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s10::p004",
+     "summary": "In emotion annotations, Figure FIGREF36 shows crowd and experts follow similar patterns, with anticipation and joy equal and intensifiers and negators higher from the crowd.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s10::p005",
+     "summary": "The final graph in Figure FIGREF36 shows subclass agreement negatively correlates with evaluation scores, with three subclasses not affecting scores.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s10::p006",
+     "summary": "Evaluation scores improve after four annotations, subclass agreement negatively affects three or more subclasses, and the crowd is stricter, cheaper, and more scalable than experts.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s10::p007",
+     "summary": "Evaluation of intensifiers and negators used 541 PEL term groups with at least one intensifying subclass annotation, expecting relatively low evaluation scores.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s10::p008",
+     "summary": "Figure FIGREF40 defines low, mid, and high agreement levels for validity of the intensifying class for experts and the crowd.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s10::p009",
+     "summary": "Experts are far stricter than the crowd for intensifiers and negators, with differences over 40% at low agreement and 5.33% at high agreement.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s11::p000",
+     "summary": "Lexicon acquisition mixes subjective emotion annotation with objective linguistic element annotation, and the presented novel work flow provides quality results for both.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s11::p001",
+     "summary": "Subcomponents of lexicon acquisition could be improved individually, including spell check, filtering, and evaluation process.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s11::p002",
+     "summary": "Crowd diversity in annotation and evaluation is a limiting factor because fixed individuals annotating and evaluating the whole corpus would be preferred.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s11::p003",
+     "summary": "The corpus may limit term groups to domain-specific subjects, with NRC BIBREF21 showing 40% common terms and annotations increasing from 2.3 to 3.2.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s12::p000",
+     "summary": "The crowd can produce and evaluate a quality pure emotion lexicon without gold standards, though spam is common and post-annotation quality assessment should be implemented.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s12::p001",
+     "summary": "Workers labeled term groups as emotion, intensifiers, and stop words, with up to three emotions valid and intensifiers and negators hardest.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s12::p002",
+     "summary": "Stemming reduced costs by 45%, multi-emotion classification was lower than 10%, and minimal instructions worked best in tested interface designs.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s12::p003",
+     "summary": "The crowd is as capable as experts at evaluating lexicons, with strictness varying by emotional or linguistic evaluations and number of evaluators.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s12::p004",
+     "summary": "Future work includes a voluntary platform, Crowd4U or similar platforms, qualitative analysis of intensifiers and negators, and extending the approach to other linguistic elements.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s12::p005",
+     "summary": "Beyond polarity sentiment analysis can enhance simple polarity based applications, including marketing, politics, health monitoring, online social networks, and evaluation processes.",
+     "group_id": "1710.04203::g01"
+    },
+    {
+     "passage_id": "1710.04203::s13::p000",
+     "summary": "This work was supported by the EU project \"QROWD - Because Big Data Integration is Humanly Possible\".",
+     "group_id": "1710.04203::g01"
+    }
+   ],
+   "n_raw": 24,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 2819,
+    "completion_tokens": 1157,
+    "total_tokens": 3976,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

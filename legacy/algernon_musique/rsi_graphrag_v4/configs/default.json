@@ -1,0 +1,58 @@
+{
+  "experiment_name": "rsi_graphrag_v4",
+  "seed": 20261030,
+  "hipporag_root": "/data2-HDD-SATA-20T/nzq/TAG-experiment/HippoRAG",
+  "musique_questions": "/data2-HDD-SATA-20T/nzq/TAG-experiment/HippoRAG/reproduce/dataset/musique.json",
+  "musique_corpus": "/data2-HDD-SATA-20T/nzq/TAG-experiment/HippoRAG/reproduce/dataset/musique_corpus.json",
+  "historical_openie": "/data2-HDD-SATA-20T/nzq/TAG-experiment/HippoRAG/outputs/musique/openie_results_ner_gpt-4o-mini.json",
+  "historical_openie_model": "gpt-4o-mini",
+  "embedding_model_path": "/data2-HDD-SATA-20T/nzq/huggingface_model/hub/models--nvidia--NV-Embed-v2/snapshots/3fa59658547db50a1e8e3346cf057fd0c77ed6ef",
+  "llm": {
+    "deployment": "gpt-5.6-luna",
+    "endpoint": "https://gpt-nzq-east-us.openai.azure.com/",
+    "api_version": "2024-12-01-preview",
+    "api_key_env": "AZURE_OPENAI_API_KEY",
+    "seed": 20261030,
+    "openie_reasoning_effort": "low",
+    "comprehension_reasoning_effort": "medium",
+    "analyzer_reasoning_effort": "medium",
+    "reader_reasoning_effort": "low",
+    "temperature": null,
+    "note": "Temperature is omitted. GPT-5.6 Luna rejects a non-default temperature. The response model id is recorded from the API and is not hardcoded beyond the deployment name."
+  },
+  "budget": {
+    "max_fresh_llm_calls": 80,
+    "formal_passage_cap": 4,
+    "mechanism_question_cap": 1,
+    "comprehension_unit_cap": 2,
+    "question_time_cap": 1,
+    "question_time_max_rounds": 2,
+    "openie_workers": 4,
+    "reason": "No dollar ceiling was provided. The automatic run is capped at 80 fresh Luna calls. A probed Luna reply returned model id gpt-5.6-luna-2026-07-09. One MuSiQue question contributes 20 passages, so the mechanism pilot is one update question (40 OpenIE calls) plus a 4-passage corpus-order formal prefix, leaving calls for comprehension and a question-time rerun."
+  },
+  "reading": {
+    "input_token_budget": 16000,
+    "output_token_reserve": 4000,
+    "overlap_hops": 1,
+    "tokenizer": "o200k_base",
+    "leiden_resolution": 1.0,
+    "representative_clusters": 25
+  },
+  "retrieval": {
+    "linking_top_k": 5,
+    "qa_top_k": 5,
+    "passage_node_weight": 0.05,
+    "damping": 0.5,
+    "synonymy_threshold": 0.8,
+    "synonymy_topk": 100,
+    "fact_rerank": "embedding_topk",
+    "fact_rerank_reason": "The HippoRAG tree ships a Llama-3.3-70B DSPy filter. It is not a Luna filter, so every arm in this run uses the same embedding top-k instead of that file."
+  },
+  "split": {
+    "n_questions": 1000,
+    "adaptation": 600,
+    "heldout": 400,
+    "update": 500,
+    "dev": 100
+  }
+}

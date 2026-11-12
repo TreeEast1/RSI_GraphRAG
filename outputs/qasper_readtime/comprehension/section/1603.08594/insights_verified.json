@@ -1,0 +1,440 @@
+{
+ "kept": [
+  {
+   "insight_id": "1603.08594::g00:i00",
+   "paper_id": "1603.08594",
+   "group_id": "1603.08594::g00",
+   "concise_text": "The Dual Decomposition (DD) based algorithm improved PP-attachment accuracy by 10% over the MSTParser baseline on 100 parallel sentences from the Hindi-English Tourism parallel corpus.",
+   "triple": {
+    "subject": "Dual Decomposition (DD) based algorithm",
+    "predicate": "improves_on",
+    "object": "MSTParser baseline by 10% on 100 parallel sentences"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1603.08594::s00::p012",
+    "1603.08594::s05::p001",
+    "1603.08594::s05::p002"
+   ],
+   "supporting_fact_ids": [
+    "1603.08594::g00:b1:f04",
+    "1603.08594::g00:b5:f09",
+    "1603.08594::g00:b5:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "All cited passages exist and jointly support the DD algorithm, MSTParser baseline, 100-sentence test corpus, and 10% improvement."
+   },
+   "unit_id": "1603.08594::u000"
+  },
+  {
+   "insight_id": "1603.08594::g00:i03",
+   "paper_id": "1603.08594",
+   "group_id": "1603.08594::g00",
+   "concise_text": "The DD algorithm's input is a parallel English-Hindi sentence pair with word alignments, while GIZA++ word-alignment errors may cascade and cause the system to underperform.",
+   "triple": {
+    "subject": "GIZA++ word-alignment errors",
+    "predicate": "limits",
+    "object": "DD algorithm using parallel English-Hindi sentence pairs with word alignments"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1603.08594::s02::p000",
+    "1603.08594::s05::p004"
+   ],
+   "supporting_fact_ids": [
+    "1603.08594::g00:b2:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Passages jointly support that DD uses aligned parallel sentence pairs and that GIZA++ alignment errors may cascade and cause underperformance."
+   },
+   "unit_id": "1603.08594::u003"
+  },
+  {
+   "insight_id": "1603.08594::g00:i04",
+   "paper_id": "1603.08594",
+   "group_id": "1603.08594::g00",
+   "concise_text": "The Project Algorithm predicts target-language trees using source-language parse trees and word alignments, and its projected paths are supplied by two classifiers in a pipeline.",
+   "triple": {
+    "subject": "Project Algorithm",
+    "predicate": "requires",
+    "object": "two classifiers in a pipeline for projected paths"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1603.08594::s03::p003",
+    "1603.08594::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1603.08594::g00:b4:f03",
+    "1603.08594::g00:b4:f04",
+    "1603.08594::g00:b4:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Passages jointly support the Project Algorithm's prediction setup and that projected paths are predicted using two classifiers in a pipeline."
+   },
+   "unit_id": "1603.08594::u004"
+  },
+  {
+   "insight_id": "1603.08594::g00:i06",
+   "paper_id": "1603.08594",
+   "group_id": "1603.08594::g00",
+   "concise_text": "The DD algorithm was evaluated on 100 parallel sentences with manually annotated PP-attachment ambiguity, where it marked 64 attachments correctly in the best case.",
+   "triple": {
+    "subject": "DD algorithm",
+    "predicate": "evaluated_on",
+    "object": "100 parallel sentences with manually annotated PP-attachment ambiguity"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1603.08594::s05::p001",
+    "1603.08594::s05::p002"
+   ],
+   "supporting_fact_ids": [
+    "1603.08594::g00:b5:f09",
+    "1603.08594::g00:b5:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Passages jointly support evaluation on 100 manually annotated parallel sentences and the best-case 64 correct attachments."
+   },
+   "unit_id": "1603.08594::u006"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1603.08594::g00:i01",
+   "paper_id": "1603.08594",
+   "group_id": "1603.08594::g00",
+   "concise_text": "The DD algorithm enforces agreement between English and Hindi parse trees subject to word alignments, and its best PP-attachment result occurred at 30 iterations.",
+   "triple": {
+    "subject": "DD algorithm agreement constraints",
+    "predicate": "causes",
+    "object": "best PP-attachment result at 30 iterations"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1603.08594::s02::p000",
+    "1603.08594::s05::p003"
+   ],
+   "supporting_fact_ids": [
+    "1603.08594::g00:b2:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "Passages support agreement constraints and best result at 30 iterations separately, but not that the constraints caused the best result."
+   },
+   "unit_id": "1603.08594::u001"
+  },
+  {
+   "insight_id": "1603.08594::g00:i02",
+   "paper_id": "1603.08594",
+   "group_id": "1603.08594::g00",
+   "concise_text": "Because Hindi case markers waali and se make PP-attachment clear, the proposed approach uses parallel Hindi sentences to disambiguate English PP attachments.",
+   "triple": {
+    "subject": "Hindi case markers waali and se",
+    "predicate": "requires",
+    "object": "parallel Hindi sentences for English PP-attachment disambiguation"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1603.08594::s00::p012",
+    "1603.08594::s00::p019"
+   ],
+   "supporting_fact_ids": [
+    "1603.08594::g00:b1:f05",
+    "1603.08594::g00:b2:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.35,
+    "causality_error": true,
+    "reason": "The text says case markers make PP attachment clear and that parallel Hindi sentences are used, but does not support the 'requires' causal relation as written."
+   },
+   "unit_id": "1603.08594::u002"
+  },
+  {
+   "insight_id": "1603.08594::g00:i05",
+   "paper_id": "1603.08594",
+   "group_id": "1603.08594::g00",
+   "concise_text": "The DD algorithm's projected-path score is the sum of edge scores, and the Project Algorithm's argmax maximization uses the score of the best projected path for all edges.",
+   "triple": {
+    "subject": "Project Algorithm argmax maximization",
+    "predicate": "requires",
+    "object": "projected-path score as the sum of edge scores"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1603.08594::s02::p004",
+    "1603.08594::s03::p006"
+   ],
+   "supporting_fact_ids": [
+    "1603.08594::g00:b3:f04",
+    "1603.08594::g00:b4:f08"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.45,
+    "causality_error": false,
+    "reason": "The passages state both facts, but do not support that the Project Algorithm argmax maximization requires the projected-path score to be the sum of edge scores; relation is unsupported."
+   },
+   "unit_id": "1603.08594::u005"
+  },
+  {
+   "insight_id": "1603.08594::g00:i07",
+   "paper_id": "1603.08594",
+   "group_id": "1603.08594::g00",
+   "concise_text": "The baseline system is the attachment predicted by MSTParser models, and the MSTParser model correctly disambiguated 54 PP-attachments, giving 54% baseline accuracy.",
+   "triple": {
+    "subject": "MSTParser baseline",
+    "predicate": "evaluated_on",
+    "object": "54 PP-attachments and 54% baseline accuracy"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1603.08594::s05::p001",
+    "1603.08594::s05::p002"
+   ],
+   "supporting_fact_ids": [
+    "1603.08594::g00:b5:f09",
+    "1603.08594::g00:b5:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.94,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "Mostly a restatement/composition of explicit facts in the cited paragraphs, with an awkward 'evaluated_on 54 PP-attachments and 54% accuracy' object."
+   },
+   "unit_id": "1603.08594::u007"
+  },
+  {
+   "insight_id": "1603.08594::g00:i08",
+   "paper_id": "1603.08594",
+   "group_id": "1603.08594::g00",
+   "concise_text": "The DD algorithm initializes English and Hindi trees from MSTParser models, and the Coordinate Descent algorithm calls the Project Algorithm until convergence.",
+   "triple": {
+    "subject": "Coordinate Descent algorithm",
+    "predicate": "requires",
+    "object": "MSTParser-initialized English and Hindi trees"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1603.08594::s03::p000",
+    "1603.08594::s03::p001"
+   ],
+   "supporting_fact_ids": [
+    "1603.08594::g00:b3:f07",
+    "1603.08594::g00:b3:f08",
+    "1603.08594::g00:b3:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.45,
+    "causality_error": false,
+    "reason": "Passages support Coordinate Descent calls Project Algorithm until convergence and MSTParser initialization, but not that Coordinate Descent requires MSTParser-initialized trees as stated."
+   },
+   "unit_id": "1603.08594::u008"
+  },
+  {
+   "insight_id": "1603.08594::g00:i09",
+   "paper_id": "1603.08594",
+   "group_id": "1603.08594::g00",
+   "concise_text": "The path-length classifier predicts lengths 1, 2, 3, 4 or 5, while the path-prediction classifiers predict paths of length 2, 3, 4 and 5.",
+   "triple": {
+    "subject": "path-prediction classifiers",
+    "predicate": "extends",
+    "object": "path-length classifier outputs 2, 3, 4 and 5"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1603.08594::s04::p001",
+    "1603.08594::s04::p002"
+   ],
+   "supporting_fact_ids": [
+    "1603.08594::g00:b5:f01",
+    "1603.08594::g00:b5:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.35,
+    "causality_error": false,
+    "reason": "The cited passages support the listed classifier outputs, but 'extends' is not supported; this is a comparison/combined restatement rather than a valid relation."
+   },
+   "unit_id": "1603.08594::u009"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1603.08594::g00:i00",
+    "verdict": {
+     "insight_id": "1603.08594::g00:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "All cited passages exist and jointly support the DD algorithm, MSTParser baseline, 100-sentence test corpus, and 10% improvement."
+    }
+   },
+   {
+    "insight_id": "1603.08594::g00:i01",
+    "verdict": {
+     "insight_id": "1603.08594::g00:i01",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "Passages support agreement constraints and best result at 30 iterations separately, but not that the constraints caused the best result."
+    },
+    "reason": "Passages support agreement constraints and best result at 30 iterations separately, but not that the constraints caused the best result."
+   },
+   {
+    "insight_id": "1603.08594::g00:i02",
+    "verdict": {
+     "insight_id": "1603.08594::g00:i02",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.35,
+     "causality_error": true,
+     "reason": "The text says case markers make PP attachment clear and that parallel Hindi sentences are used, but does not support the 'requires' causal relation as written."
+    },
+    "reason": "The text says case markers make PP attachment clear and that parallel Hindi sentences are used, but does not support the 'requires' causal relation as written."
+   },
+   {
+    "insight_id": "1603.08594::g00:i03",
+    "verdict": {
+     "insight_id": "1603.08594::g00:i03",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Passages jointly support that DD uses aligned parallel sentence pairs and that GIZA++ alignment errors may cascade and cause underperformance."
+    }
+   },
+   {
+    "insight_id": "1603.08594::g00:i04",
+    "verdict": {
+     "insight_id": "1603.08594::g00:i04",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Passages jointly support the Project Algorithm's prediction setup and that projected paths are predicted using two classifiers in a pipeline."
+    }
+   },
+   {
+    "insight_id": "1603.08594::g00:i05",
+    "verdict": {
+     "insight_id": "1603.08594::g00:i05",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.45,
+     "causality_error": false,
+     "reason": "The passages state both facts, but do not support that the Project Algorithm argmax maximization requires the projected-path score to be the sum of edge scores; relation is unsupported."
+    },
+    "reason": "The passages state both facts, but do not support that the Project Algorithm argmax maximization requires the projected-path score to be the sum of edge scores; relation is unsupported."
+   },
+   {
+    "insight_id": "1603.08594::g00:i06",
+    "verdict": {
+     "insight_id": "1603.08594::g00:i06",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Passages jointly support evaluation on 100 manually annotated parallel sentences and the best-case 64 correct attachments."
+    }
+   },
+   {
+    "insight_id": "1603.08594::g00:i07",
+    "verdict": {
+     "insight_id": "1603.08594::g00:i07",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "Mostly a restatement/composition of explicit facts in the cited paragraphs, with an awkward 'evaluated_on 54 PP-attachments and 54% accuracy' object."
+    },
+    "reason": "Mostly a restatement/composition of explicit facts in the cited paragraphs, with an awkward 'evaluated_on 54 PP-attachments and 54% accuracy' object."
+   },
+   {
+    "insight_id": "1603.08594::g00:i08",
+    "verdict": {
+     "insight_id": "1603.08594::g00:i08",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.45,
+     "causality_error": false,
+     "reason": "Passages support Coordinate Descent calls Project Algorithm until convergence and MSTParser initialization, but not that Coordinate Descent requires MSTParser-initialized trees as stated."
+    },
+    "reason": "Passages support Coordinate Descent calls Project Algorithm until convergence and MSTParser initialization, but not that Coordinate Descent requires MSTParser-initialized trees as stated."
+   },
+   {
+    "insight_id": "1603.08594::g00:i09",
+    "verdict": {
+     "insight_id": "1603.08594::g00:i09",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.35,
+     "causality_error": false,
+     "reason": "The cited passages support the listed classifier outputs, but 'extends' is not supported; this is a comparison/combined restatement rather than a valid relation."
+    },
+    "reason": "The cited passages support the listed classifier outputs, but 'extends' is not supported; this is a comparison/combined restatement rather than a valid relation."
+   }
+  ],
+  "calls": [
+   {
+    "n": 10,
+    "parsed": true,
+    "usage": {
+     "prompt_tokens": 3585,
+     "completion_tokens": 712,
+     "total_tokens": 4297,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

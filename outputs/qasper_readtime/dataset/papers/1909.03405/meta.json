@@ -1,0 +1,88 @@
+{
+ "paper_id": "1909.03405",
+ "title": "Symmetric Regularization based BERT for Pair-wise Semantic Reasoning",
+ "abstract": "The ability of semantic reasoning over the sentence pair is essential for many natural language understanding tasks, e.g., natural language inference and machine reading comprehension. A recent significant improvement in these tasks comes from BERT. As reported, the next sentence prediction (NSP) in BERT, which learns the contextual relationship between two sentences, is of great significance for downstream problems with sentence-pair input. Despite the effectiveness of NSP, we suggest that NSP still lacks the essential signal to distinguish between entailment and shallow correlation. To remedy this, we propose to augment the NSP task to a 3-class categorization task, which includes a category for previous sentence prediction (PSP). The involvement of PSP encourages the model to focus on the informative semantics to determine the sentence order, thereby improves the ability of semantic understanding. This simple modification yields remarkable improvement against vanilla BERT. To further incorporate the document-level information, the scope of NSP and PSP is expanded into a broader range, i.e., NSP and PSP also include close but nonsuccessive sentences, the noise of which is mitigated by the label-smoothing technique. Both qualitative and quantitative experimental results demonstrate the effectiveness of the proposed method. Our method consistently improves the performance on the NLI and MRC benchmarks, including the challenging HANS dataset~\\cite{hans}, suggesting that the document-level task is still promising for the pre-training.",
+ "sections": [
+  "Introduction",
+  "Related Work ::: Pair-wise semantic reasoning",
+  "Related Work ::: Unsupervised learning from document",
+  "Method",
+  "Method ::: Previous Sentence Prediction",
+  "Method ::: Gathering More Document-level Information",
+  "Experiment Settings",
+  "Order-invariant with PSP",
+  "Results of NLI Tasks ::: GLUE",
+  "Results of NLI Tasks ::: HANS",
+  "Results of MRC Tasks ::: SQuAD v1.1 and v2.0",
+  "Results of MRC Tasks ::: RACE",
+  "Results of Chinese NLP Tasks",
+  "Conclusion"
+ ],
+ "n_paragraphs": 52,
+ "n_tokens": 5379,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.03405::fig000",
+   "paper_id": "1909.03405",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: An illustration of the proposed method. B denotes the second input sentence. (1) Top: original NSP task. (2) Middle: 3-class categorization task with DiffDoc, IsNext and IsPrev. (3) Bottom: 3-class task, but with a wider scope of NSP and PSP. The in-adjacent sentences are assisted with a label smoothing technique to reduce the noise.",
+   "n_tokens": 88
+  },
+  {
+   "caption_id": "1909.03405::fig001",
+   "paper_id": "1909.03405",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1: The accuracy of BERT and BERT-PN on the validation set of the MNLI and QNLI dataset. P&H denotes that the input is (premise, hypothesis), which is the order used in BERT. The reported accuracy is the average after 5 runs.",
+   "n_tokens": 62
+  },
+  {
+   "caption_id": "1909.03405::fig002",
+   "paper_id": "1909.03405",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Results on the test set of GLUE benchmark. The performance was obtained by the official evaluation server. The number below each task is the number of training examples. The ”Average” column follows the setting in the BERT paper, which excludes the problematic WNLI task. F1 scores are reported for QQP and MRPC, Spearman correlations are reported for STS-B, and accuracy scores are reported for the other tasks. All the listed models are trained on the Wikipedia and the Book Corpus datasets. The results are the average of 5 runs.",
+   "n_tokens": 115
+  },
+  {
+   "caption_id": "1909.03405::fig003",
+   "paper_id": "1909.03405",
+   "file": "5-Table3-1.png",
+   "caption": "Table 3: The performance of various BERT models finetuned on the SQuAD v1.1 and v2.0 dataset. EM means the percentage of exact match. The results of RoBERTa is the DOC-SENTENCES version retrieved from Table 2 in (Liu et al. 2019).",
+   "n_tokens": 67
+  },
+  {
+   "caption_id": "1909.03405::fig004",
+   "paper_id": "1909.03405",
+   "file": "5-Figure2-1.png",
+   "caption": "Figure 2: The accuracy on evaluation set of HANS. It has six sub-components, each defined by its correct label and the heuristic it addresses.",
+   "n_tokens": 31
+  },
+  {
+   "caption_id": "1909.03405::fig005",
+   "paper_id": "1909.03405",
+   "file": "6-Figure3-1.png",
+   "caption": "Figure 3: Performance on thirty detailed sub-components of the HANS evaluation set (30K instances). Each sub-component is defined by three heuristics, i.e., Lexical overlap, Sub-sequence and Constituent. For instance, in prefix “ln” , “l” denotes lexical overlap heuristic, “n” denotes the non-entailment label. The suffix means a specific syntactic rule, e.g., subject/object swap means in the hypothesis sentence, the subject and the object are swapped.",
+   "n_tokens": 104
+  },
+  {
+   "caption_id": "1909.03405::fig006",
+   "paper_id": "1909.03405",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: The experimental results on test set of the RACE dataset. The results of RoBERTa is the DOC-SENTENCES version retrieved from Table 2 in (Liu et al. 2019). All the listed models are trained on the Wikipedia and the Book Corpus datasets.",
+   "n_tokens": 60
+  },
+  {
+   "caption_id": "1909.03405::fig007",
+   "paper_id": "1909.03405",
+   "file": "7-Table5-1.png",
+   "caption": "Table 5: Comparison on the Chinese NLP tasks. All the models are of “base” size. The results of BERT, BERT-wwm are retrieved from literature (Cui et al. 2019), except the results of NLPCC-DBQA which is from ERNIE 2.0 (2019b). The results of ERNIE, ERNIE 2.0 are retrieved from literature (Sun et al. 2019a; 2019b). The best result and the average (in bracket) of 5 runs are reported. The number below the model denotes the number of tokens in the pre-training data.",
+   "n_tokens": 138
+  },
+  {
+   "caption_id": "1909.03405::fig008",
+   "paper_id": "1909.03405",
+   "file": "7-Table6-1.png",
+   "caption": "Table 6: Results on the CMRC-2018 and DRCD datasets. Three BERTBase models are reported from our reproduction, BERTwwm paper (Cui et al. 2019) and ERNIE 2.0 paper (Sun et al. 2019b), respectively. The results of BERTBase-wwm are obtained from the paper (Cui et al. 2019). EM denotes the percentage of exact matching. The best result and the average (in bracket) of 5 runs are reported.",
+   "n_tokens": 113
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+# P0 — Baseline (current project prompt)
+# exact copy of src/retrieval/reader.py; saved baseline outputs are reused, no re-call
+# system_sha256=2893ab72e1ad2300f0df94507899882080b410e099b9cb2a21c92077e20ca602
+# template_sha256=b0efd79e9e395d22d0465537f906f25241fa3ea97b34daf01cb90b663f8edc92
+
+--- SYSTEM ---
+You are a careful reading-comprehension assistant. You answer questions about a long conversation between two speakers using only the retrieved context. Use the dates and session numbers to reason about time when needed; resolve relative expressions such as 'yesterday' or 'last week' against the session date. If the context truly does not contain the answer, reply exactly: No answer
+
+--- TEMPLATE ---
+Retrieved context:
+{context}
+
+Question: {question}
+
+Format rules for the final line:
+- It must start with 'Answer: ' and contain only the answer span itself.
+- No explanation, no full sentence, no quotes, no trailing punctuation.
+- For a date, give it exactly as written in the context.
+- If the answer is not in the context, write 'Answer: No answer'.
+
+Thought: think briefly about where the answer is in the context.
+Answer:

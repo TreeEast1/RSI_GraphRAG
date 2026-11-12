@@ -1,0 +1,306 @@
+{
+ "1904.04358::s00::p000": [
+  [
+   "Decoding intended speech or motor activity from brain signals",
+   "is",
+   "one of the major research areas in Brain Computer Interface (BCI) systems"
+  ],
+  [
+   "BCI technologies",
+   "can be utilized in",
+   "silent communication"
+  ]
+ ],
+ "1904.04358::s00::p001": [
+  [
+   "electroencephalography (EEG)",
+   "has demonstrated",
+   "promising potential to differentiate between various brain activities through measurement of related electric fields"
+  ],
+  [
+   "EEG",
+   "is",
+   "non-invasive, portable, low cost, and provides satisfactory temporal resolution"
+  ],
+  [
+   "EEG data",
+   "is",
+   "high dimensional, have poor SNR, and suffer from low spatial resolution and a multitude of artifacts"
+  ],
+  [
+   "deep learning models for classification of vowels and words",
+   "achieved",
+   "23.45% improvement of accuracy over the baseline"
+  ]
+ ],
+ "1904.04358::s00::p002": [
+  [
+   "Production of articulatory speech",
+   "is",
+   "an extremely complicated process"
+  ],
+  [
+   "most of the existing approaches",
+   "failed to achieve",
+   "satisfactory accuracy on decoding speech tokens from the speech imagery EEG data"
+  ],
+  [
+   "Zhao et al.",
+   "used",
+   "manually handcrafted features from EEG data, combined with speech audio and facial features"
+  ],
+  [
+   "imagined speech classification accuracy based on EEG data alone",
+   "are",
+   "not satisfactory in terms of accuracy and reliability"
+  ]
+ ],
+ "1904.04358::s01::p000": [
+  [
+   "mixed neural network architecture",
+   "is composed of",
+   "three supervised and a single unsupervised learning step"
+  ],
+  [
+   "problem of categorizing EEG data based on speech imagery",
+   "is formulated as",
+   "a non-linear mapping INLINEFORM0 of a multivariate time-series input sequence INLINEFORM1 to fixed output INLINEFORM2"
+  ],
+  [
+   "c and t",
+   "denote",
+   "the EEG channels and time instants respectively"
+  ]
+ ],
+ "1904.04358::s02::p000": [
+  [
+   "pre-processing steps on raw EEG data",
+   "include",
+   "ocular artifact removal using blind source separation, bandpass filtering and subtracting mean value from each channel"
+  ],
+  [
+   "such high-pass filtering",
+   "may decrease",
+   "information content from the signals in the selected bandwidth"
+  ]
+ ],
+ "1904.04358::s03::p000": [
+  [
+   "Multichannel EEG data",
+   "is",
+   "high dimensional multivariate time series data whose dimensionality depends on the number of electrodes"
+  ],
+  [
+   "well-known deep neural networks",
+   "fail to individually learn",
+   "such complex feature representations from single-trial EEG data"
+  ],
+  [
+   "channel cross-covariance",
+   "results in",
+   "positive, semi-definite matrices encoding the connectivity of the electrodes"
+  ],
+  [
+   "higher cognitive processes underlying speech planning and synthesis",
+   "involve",
+   "frequent information exchange between different parts of the brain"
+  ],
+  [
+   "such matrices",
+   "often contain",
+   "more discriminative features and hidden information than mere raw signals"
+  ]
+ ],
+ "1904.04358::s04::p000": [
+  [
+   "CNN",
+   "decodes",
+   "spatial connections between the electrodes from the channel covariance matrix"
+  ],
+  [
+   "CNN",
+   "is",
+   "a four-layered 2D CNN stacking two convolutional and two fully connected hidden layers"
+  ],
+  [
+   "network",
+   "optimizes",
+   "a cross-entropy cost function"
+  ],
+  [
+   "LSTM",
+   "consists of",
+   "two fully connected hidden layers, stacked with two LSTM layers"
+  ]
+ ],
+ "1904.04358::s05::p000": [
+  [
+   "individually-trained parallel networks (CNN and LSTM)",
+   "are",
+   "useful"
+  ],
+  [
+   "last fully-connected layer from the CNN",
+   "is concatenated with",
+   "its counterpart in the LSTM"
+  ],
+  [
+   "single feature vector",
+   "is composed from",
+   "these two penultimate layers"
+  ],
+  [
+   "joint spatio-temporal encoding",
+   "is of",
+   "the cross-covariance matrix"
+  ]
+ ],
+ "1904.04358::s05::p001": [
+  [
+   "unsupervised deep autoenoder (DAE)",
+   "is trained on",
+   "the fused heterogeneous features produced by the combined CNN and LSTM information"
+  ],
+  [
+   "DAE",
+   "has",
+   "3 encoding and 3 decoding layers"
+  ],
+  [
+   "DAE",
+   "has cost function",
+   "mean squared error (MSE)"
+  ]
+ ],
+ "1904.04358::s06::p000": [
+  [
+   "discrete latent vector representation of the deep autoencoder",
+   "is fed into",
+   "an Extreme Gradient Boost based classification layer"
+  ],
+  [
+   "Extreme Gradient Boost based classification layer",
+   "is",
+   "a regularized gradient boosted decision tree"
+  ],
+  [
+   "classifier",
+   "receives",
+   "its input from the latent vectors of the deep autoencoder"
+  ],
+  [
+   "classifier",
+   "is trained in",
+   "a supervised manner"
+  ]
+ ],
+ "1904.04358::s07::p000": [
+  [
+   "KARA ONE",
+   "is composed of",
+   "multimodal data for stimulus-based, imagined and articulated speech state"
+  ],
+  [
+   "KARA ONE",
+   "corresponds to",
+   "7 phonemic/syllabic ( /iy/, /piy/, /tiy/, /diy/, /uw/, /m/, /n/ ) as well as 4 words(pat, pot, knew and gnaw)"
+  ],
+  [
+   "dataset",
+   "consists of",
+   "14 participants"
+  ],
+  [
+   "each prompt",
+   "is presented",
+   "11 times to each individual"
+  ]
+ ],
+ "1904.04358::s08::p000": [
+  [
+   "two sets of experiments",
+   "were performed with",
+   "the single-trial EEG data"
+  ],
+  [
+   "PHASE-ONE",
+   "randomly shuffled and divided",
+   "the data (1913 signals from 14 individuals)"
+  ],
+  [
+   "PHASE-ONE data",
+   "was divided into",
+   "train (80%), development (10%) and test sets (10%)"
+  ],
+  [
+   "PHASE-TWO",
+   "performs",
+   "a leave-one-subject out cross-validation experiment"
+  ]
+ ],
+ "1904.04358::s08::p001": [
+  [
+   "architectural parameters and hyperparameters listed in Table TABREF6",
+   "were selected through",
+   "an exhaustive grid-search based on the validation set of PHASE-ONE"
+  ]
+ ],
+ "1904.04358::s09::p000": [
+  [
+   "mixed network",
+   "performs much better than",
+   "individual blocks"
+  ],
+  [
+   "LSTM alone",
+   "does not perform better than",
+   "chance"
+  ],
+  [
+   "CNN",
+   "is heavily biased towards",
+   "the class label which sees more training data corresponding to it"
+  ]
+ ],
+ "1904.04358::s09::p001": [
+  [
+   "combined network",
+   "improves the classification accuracy by",
+   "a mean margin of 14.45% than the CNN-LSTM network"
+  ],
+  [
+   "autoencoder",
+   "contributes towards filtering out",
+   "the unrelated and noisy features from the concatenated penultimate feature set"
+  ],
+  [
+   "maximum above-chance accuracy (75.92%)",
+   "is recorded for",
+   "presence/absence of the vowel task"
+  ],
+  [
+   "minimum (49.14%)",
+   "is recorded for",
+   "the INLINEFORM0"
+  ]
+ ],
+ "1904.04358::s09::p002": [
+  [
+   "T-distributed Stochastic Neighbor Embedding (tSNE)",
+   "is plotted corresponding to",
+   "INLINEFORM0 and V/C classification tasks"
+  ],
+  [
+   "tSNE visualization",
+   "reveals that",
+   "the second set of features are more easily separable than the first one"
+  ]
+ ],
+ "1904.04358::s09::p003": [
+  [
+   "standard deviation of our model's classification accuracy across all the tasks",
+   "is reduced from",
+   "22.59% BIBREF17 and 17.52% BIBREF18 to a mere 5.41%"
+  ]
+ ]
+}

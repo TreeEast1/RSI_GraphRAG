@@ -1,0 +1,85 @@
+{
+ "paper_id": "1706.01678",
+ "title": "Text Summarization using Abstract Meaning Representation",
+ "abstract": "With an ever increasing size of text present on the Internet, automatic summary generation remains an important problem for natural language understanding. In this work we explore a novel full-fledged pipeline for text summarization with an intermediate step of Abstract Meaning Representation (AMR). The pipeline proposed by us first generates an AMR graph of an input story, through which it extracts a summary graph and finally, generate summary sentences from this summary graph. Our proposed method achieves state-of-the-art results compared to the other text summarization routines based on AMR. We also point out some significant problems in the existing evaluation methods, which make them unsuitable for evaluating summary quality.",
+ "sections": [
+  "Introduction",
+  "Background: AMR Parsing and Generation",
+  "Datasets",
+  "Pipeline for Summary Generation",
+  "Step 1: Story to AMR",
+  "Step 2: Story AMR to Summary AMR",
+  "Step 3: Summary Generation",
+  "Baselines",
+  "Procedure to Analyze and Evaluate each step",
+  "Results on the Proxy report section",
+  "Effects of using JAMR Parser",
+  "Effectiveness of the Generator",
+  "Analyzing the effectiveness of AMR extraction",
+  "Results on the CNN-Dailymail corpus",
+  "Related Work",
+  "Need of an new Dataset and Evaluation Metric",
+  "Possible Future Directions",
+  "Conclusion"
+ ],
+ "n_paragraphs": 50,
+ "n_tokens": 5541,
+ "figures_and_tables": [
+  {
+   "caption_id": "1706.01678::fig000",
+   "paper_id": "1706.01678",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: The graphical representation of the parse of the sentence : ’I looked carefully all around me’ using AMRICA",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "1706.01678::fig001",
+   "paper_id": "1706.01678",
+   "file": "3-Figure2-1.png",
+   "caption": "Figure 2: Graph of the best Rogue-1 recall scores for 5000 summaries (around 20000 sentences) in the CNN-Dailymail corpus. Y-axis is the ROGUE score and X-axis is the cumulative percentage of sentence with the corresponding score",
+   "n_tokens": 55
+  },
+  {
+   "caption_id": "1706.01678::fig002",
+   "paper_id": "1706.01678",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Results of various algorithms after step 2 (AMR extraction)",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1706.01678::fig003",
+   "paper_id": "1706.01678",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Results of various algorithms after step 3 - summary generation using JAMR)",
+   "n_tokens": 20
+  },
+  {
+   "caption_id": "1706.01678::fig004",
+   "paper_id": "1706.01678",
+   "file": "5-Table3-1.png",
+   "caption": "Table 3: Comparison of rogue scores on the original best sentences with the sentences after generations with there gold-standard AMR",
+   "n_tokens": 24
+  },
+  {
+   "caption_id": "1706.01678::fig005",
+   "paper_id": "1706.01678",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: Results on the CNN/Dailymail corpus",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1706.01678::fig006",
+   "paper_id": "1706.01678",
+   "file": "9-Figure3-1.png",
+   "caption": "Figure 3: The graphical representation of the AMR graph of the sentence : ’Absurd as it might seem to me , a thousand miles from any human habitation and in danger of death , I took out of my pocket a sheet of paper and my fountain - pen’",
+   "n_tokens": 56
+  },
+  {
+   "caption_id": "1706.01678::fig007",
+   "paper_id": "1706.01678",
+   "file": "10-Figure4-1.png",
+   "caption": "Figure 4: The graphical representation of the truncated AMR graph of the sentence : ’Absurd as it might seem to me , a thousand miles from any human habitation and in danger of death , I took out of my pocket a sheet of paper and my fountain - pen’",
+   "n_tokens": 57
+  }
+ ]
+}

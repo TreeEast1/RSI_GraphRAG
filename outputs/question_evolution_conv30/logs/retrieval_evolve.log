@@ -1,0 +1,27 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.09it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.19it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.20it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.64it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.43it/s]
+Batch Encoding:   0%|          | 0/19 [00:00<?, ?it/s]/group/40150/licochen/Memory/RSI_GraphRAG/cache/hf/modules/transformers_modules/NV-Embed-v2/modeling_nvembed.py:347: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  'input_ids': torch.tensor(batch_dict.get('input_ids').to(batch_dict.get('input_ids')).long()),
+/usr/local/python3/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Batch Encoding:  84%|████████▍ | 16/19 [00:04<00:00,  3.53it/s]/group/40150/licochen/Memory/RSI_GraphRAG/cache/hf/modules/transformers_modules/NV-Embed-v2/modeling_nvembed.py:347: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  'input_ids': torch.tensor(batch_dict.get('input_ids').to(batch_dict.get('input_ids')).long()),
+Batch Encoding: 32it [00:04,  7.00it/s]                        
+retrieval step 10: dev R@5=0.967 Ev=0.933 active=1
+/group/40150/licochen/Memory/RSI_GraphRAG/cache/hf/modules/transformers_modules/NV-Embed-v2/modeling_nvembed.py:347: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  'input_ids': torch.tensor(batch_dict.get('input_ids').to(batch_dict.get('input_ids')).long()),
+/usr/local/python3/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+retrieval step 20: dev R@5=0.967 Ev=0.933 active=1
+retrieval step 30: dev R@5=0.967 Ev=0.933 active=1
+retrieval step 40: dev R@5=0.967 Ev=0.933 active=1
+retrieval step 43: dev R@5=0.967 Ev=0.933 active=1
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/local/python3/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/group/40150/licochen/Memory/RSI_GraphRAG/outputs/question_evolution_conv30/qecode/retrieval_evolve.py", line 481, in <module>
+    main()
+  File "/group/40150/licochen/Memory/RSI_GraphRAG/outputs/question_evolution_conv30/qecode/retrieval_evolve.py", line 464, in main
+    merges = memory.merge_duplicates(embedder, threshold=0.90, feedback_step=len(order))
+AttributeError: 'RetrievalSkillMemory' object has no attribute 'merge_duplicates'

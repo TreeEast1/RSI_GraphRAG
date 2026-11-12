@@ -1,0 +1,594 @@
+{
+ "1909.03135::s00::p000": [
+  [
+   "Deep contextualised representations of linguistic entities",
+   "are used in",
+   "many current state-of-the-art NLP systems"
+  ],
+  [
+   "The most well-known examples of such models",
+   "are",
+   "ELMo BIBREF0 and BERT BIBREF1"
+  ]
+ ],
+ "1909.03135::s00::p001": [
+  [
+   "A long-standing tradition if the field of applying deep learning to NLP tasks",
+   "can be summarised as",
+   "as minimal pre-processing as possible"
+  ],
+  [
+   "lemmatization or other text input normalisation",
+   "is widely believed not necessary",
+   "not necessary"
+  ],
+  [
+   "Advanced neural architectures based on character input (CNNs, BPE, etc)",
+   "are supposed to be able to learn",
+   "how to handle spelling and morphology variations themselves"
+  ],
+  [
+   "Contextualised embedding models",
+   "are trained on",
+   "raw text collections, with minimal linguistic pre-processing"
+  ]
+ ],
+ "1909.03135::s00::p002": [
+  [
+   "lemmatization of the training and testing data",
+   "improves",
+   "their performance"
+  ]
+ ],
+ "1909.03135::s00::p003": [
+  [
+   "evaluation of contextualised models on `static' tasks like lexical semantic similarity or word analogies",
+   "is",
+   "impossible"
+  ]
+ ],
+ "1909.03135::s00::p004": [
+  [
+   "the English and Russian languages",
+   "differ significantly in",
+   "the influence of lemmatization on the WSD performance of ELMo models"
+  ]
+ ],
+ "1909.03135::s00::p006": [
+  [
+   "Linguistic text pre-processing",
+   "still matters in",
+   "some tasks"
+  ]
+ ],
+ "1909.03135::s00::p007": [
+  [
+   "lemmatizing the training and testing data for ELMo representations",
+   "yields",
+   "small but consistent improvements in the WSD task"
+  ],
+  [
+   "differences",
+   "are",
+   "negligible"
+  ]
+ ],
+ "1909.03135::s01::p000": [
+  [
+   "ELMo contextual word representations",
+   "are learned in",
+   "an unsupervised way through language modelling"
+  ],
+  [
+   "The general architecture",
+   "consists of",
+   "a two-layer BiLSTM on top of a convolutional layer"
+  ],
+  [
+   "the convolutional layer",
+   "takes",
+   "character sequences as its input"
+  ]
+ ],
+ "1909.03135::s01::p001": [
+  [
+   "contextualised approaches",
+   "generate",
+   "different representations for homographs depending on the context"
+  ]
+ ],
+ "1909.03135::s02::p000": [
+  [
+   "the training corpus",
+   "consisted of",
+   "the English Wikipedia dump from February 2017"
+  ],
+  [
+   "the Russian training corpus",
+   "was",
+   "a concatenation of the Russian Wikipedia dump from December 2018 and the full Russian National Corpus (RNC)"
+  ],
+  [
+   "The RNC texts",
+   "were added to",
+   "the Russian Wikipedia dump"
+  ],
+  [
+   "the English Wikipedia",
+   "is",
+   "still two times larger"
+  ]
+ ],
+ "1909.03135::s02::p001": [
+  [
+   "The texts",
+   "were tokenized and lemmatized with",
+   "the UDPipe models for the respective languages trained on the Universal Dependencies 2.3 treebanks"
+  ],
+  [
+   "UDPipe",
+   "yields",
+   "lemmatization accuracy about 96% for English and 97% for Russian"
+  ]
+ ],
+ "1909.03135::s02::p002": [
+  [
+   "ELMo models",
+   "were trained on",
+   "these corpora"
+  ],
+  [
+   "ELMo models",
+   "were trained using",
+   "the original TensorFlow implementation"
+  ],
+  [
+   "ELMo models",
+   "were trained for",
+   "3 epochs"
+  ],
+  [
+   "ELMo models",
+   "were trained with",
+   "batch size 192"
+  ],
+  [
+   "the dimensionality of the LSTM layers",
+   "was decreased from",
+   "the default 4096"
+  ]
+ ],
+ "1909.03135::s03::p001": [
+  [
+   "Senseval-3",
+   "was used for",
+   "English"
+  ]
+ ],
+ "1909.03135::s03::p002": [
+  [
+   "RUSSE'18",
+   "was used for",
+   "Russian"
+  ]
+ ],
+ "1909.03135::s03::p003": [
+  [
+   "The Senseval-3 dataset",
+   "consists of",
+   "lexical samples for nouns, verbs and adjectives"
+  ]
+ ],
+ "1909.03135::s03::p025": [
+  [
+   "Postscript",
+   "can be faster than",
+   "the escape sequence type of printer control file"
+  ],
+  [
+   "arguments",
+   "come first",
+   "operators follow"
+  ],
+  [
+   "This",
+   "is basically the same as",
+   "Reverse Polish Notation as used on certain calculators"
+  ]
+ ],
+ "1909.03135::s03::p026": [
+  [
+   "the word `argument'",
+   "is used in the sense of",
+   "a mathematical operator"
+  ]
+ ],
+ "1909.03135::s03::p027": [
+  [
+   "The RUSSE'18 dataset",
+   "was created for",
+   "the shared task in Russian word sense induction"
+  ],
+  [
+   "This dataset",
+   "contains only",
+   "nouns"
+  ]
+ ],
+ "1909.03135::s03::p028": [
+  [
+   "their senses",
+   "are ambiguous only in",
+   "some inflectional forms (not in lemmas)"
+  ]
+ ],
+ "1909.03135::s03::p029": [
+  [
+   "The Russian dataset",
+   "is more homogeneous compared to",
+   "the English one"
+  ],
+  [
+   "the lexical window",
+   "is",
+   "25 words before and after the target word"
+  ],
+  [
+   "the English dataset",
+   "takes into account",
+   "the whole paragraph with the target word"
+  ],
+  [
+   "cropping the examples for English",
+   "did not result in",
+   "any change in the quality of classification"
+  ]
+ ],
+ "1909.03135::s03::p030": [
+  [
+   "the example from the RUSSE'18",
+   "is for",
+   "the ambiguous word russianмандарин `mandarin' in the sense `Chinese official title'"
+  ]
+ ],
+ "1909.03135::s03::p033": [
+  [
+   "both datasets",
+   "were pre-processed in",
+   "the same way as the training corpora for ELMo"
+  ],
+  [
+   "pre-processing",
+   "produced",
+   "a lemmatized and a non-lemmatized versions of each"
+  ]
+ ],
+ "1909.03135::s03::p034": [
+  [
+   "20 target words in English",
+   "have",
+   "24 lemmas"
+  ],
+  [
+   "18 target words in Russian",
+   "have",
+   "36 different lemmas"
+  ],
+  [
+   "These numbers",
+   "are explained by",
+   "occasional errors in the UDPipe lemmatization"
+  ],
+  [
+   "English",
+   "has",
+   "39 distinct forms for 20 target nouns"
+  ],
+  [
+   "`atmosphere'",
+   "is used only in",
+   "the singular form"
+  ],
+  [
+   "inflectional variability of English nouns",
+   "is covered by",
+   "the dataset almost completely"
+  ],
+  [
+   "Russian",
+   "has",
+   "132 distinct forms for 18 target nouns"
+  ],
+  [
+   "132 distinct forms for 18 target nouns",
+   "give",
+   "more than 7 inflectional forms per each word"
+  ],
+  [
+   "this",
+   "covers only",
+   "half of all the inflectional variability of Russian"
+  ],
+  [
+   "this language",
+   "features",
+   "12 distinct forms for each noun (6 cases and 2 numbers)"
+  ]
+ ],
+ "1909.03135::s03::p035": [
+  [
+   "the RUSSE'18 dataset",
+   "is morphologically far more complex than",
+   "the Senseval3"
+  ]
+ ],
+ "1909.03135::s04::p000": [
+  [
+   "The resulting performance score for each target word",
+   "is",
+   "the average of 5 macro-F1 scores produced by these classifiers"
+  ]
+ ],
+ "1909.03135::s04::p001": [
+  [
+   "ELMo models",
+   "can be employed for the WSD task in",
+   "two different ways"
+  ],
+  [
+   "the second (feature extraction) approach",
+   "is",
+   "conceptually and computationally simpler"
+  ]
+ ],
+ "1909.03135::s04::p002": [
+  [
+   "Continuous Skipgram BIBREF2 embedding models",
+   "trained on",
+   "the English or Russian Wikipedia dumps"
+  ],
+  [
+   "averaging representations of words in contexts as a proxy to the sense of one particular word",
+   "is",
+   "a long established tradition in WSD"
+  ],
+  [
+   "SGNS",
+   "is",
+   "a `static' embedding model"
+  ]
+ ],
+ "1909.03135::s04::p003": [
+  [
+   "Simple logistic regression",
+   "was used as",
+   "a classification algorithm"
+  ],
+  [
+   "a multi-layer perceptron (MLP) classifier with 200-neurons hidden layer",
+   "yielded",
+   "essentially the same results"
+  ]
+ ],
+ "1909.03135::s04::p005": [
+  [
+   "ELMo",
+   "outperforms",
+   "SGNS for both languages"
+  ],
+  [
+   "the approach with averaging representations from all words in the sentence",
+   "is not beneficial for",
+   "WSD with ELMo"
+  ],
+  [
+   "the approach with averaging representations from all words in the sentence",
+   "clearly loses to",
+   "a single target word representation for English data"
+  ],
+  [
+   "averaging representations from all words in the sentence",
+   "has no significant differences for",
+   "Russian"
+  ]
+ ],
+ "1909.03135::s04::p006": [
+  [
+   "using tokens or lemmas in the train and test data",
+   "does not significantly change",
+   "the WSD scores for both languages for the `static' SGNS embeddings"
+  ],
+  [
+   "differences",
+   "are negligible and seem to be simple fluctuations for",
+   "English ELMo models"
+  ],
+  [
+   "ELMo (target) on lemmas",
+   "outperforms",
+   "ELMo on tokens for Russian"
+  ],
+  [
+   "the box plots FIGREF33 and FIGREF35",
+   "illustrate",
+   "the scores dispersion across words in the test sets for English and Russian correspondingly"
+  ]
+ ],
+ "1909.03135::s05::p000": [
+  [
+   "this section",
+   "focuses on",
+   "the comparison of scores for the Russian dataset"
+  ],
+  [
+   "The classifier for Russian",
+   "had to choose between",
+   "fewer classes (two or three)"
+  ],
+  [
+   "fewer classes (two or three)",
+   "made",
+   "the scores higher and more consistent than for the English dataset"
+  ],
+  [
+   "improvements in the scores for the majority of words",
+   "proves",
+   "that lemmatization for morphologically rich languages is beneficial"
+  ]
+ ],
+ "1909.03135::s05::p001": [
+  [
+   "`significant'",
+   "means",
+   "that the scores differ by more that one standard deviation"
+  ],
+  [
+   "the largest standard deviation value in the two sets",
+   "was taken",
+   "in the two sets"
+  ]
+ ],
+ "1909.03135::s05::p002": [
+  [
+   "the overall F1 scores for the Russian data",
+   "have shown",
+   "the plausibility of lemmatization"
+  ],
+  [
+   "this improvement",
+   "is mostly driven by",
+   "a few words"
+  ],
+  [
+   "standard deviation values",
+   "were above",
+   "0.1 for other words"
+  ]
+ ],
+ "1909.03135::s05::p003": [
+  [
+   "only one word in the RUSSE'18 dataset",
+   "has strongly decreased when moving to",
+   "lemma-based models: russianдомино `domino (game / costume)'"
+  ],
+  [
+   "the score difference here",
+   "lies on",
+   "the border of one standard deviation"
+  ],
+  [
+   "the score difference here",
+   "is not really significant",
+   "strictly speaking"
+  ],
+  [
+   "the word",
+   "still presents",
+   "an interesting phenomenon"
+  ]
+ ],
+ "1909.03135::s05::p004": [
+  [
+   "russianДомино",
+   "is",
+   "the only target noun in the RUSSE'18 that has no inflected forms"
+  ],
+  [
+   "all tokens of this word",
+   "are",
+   "already identical"
+  ],
+  [
+   "some information about inflected word forms in the context",
+   "is lost during",
+   "lemmatization"
+  ],
+  [
+   "inflected words",
+   "constitute",
+   "the majority of Russian vocabulary"
+  ]
+ ],
+ "1909.03135::s05::p005": [
+  [
+   "these words",
+   "show",
+   "a great improvement with lemma-based models"
+  ],
+  [
+   "the results",
+   "are heavily dependent on",
+   "the quality of lemmatization"
+  ]
+ ],
+ "1909.03135::s06::p000": [
+  [
+   "The models we trained",
+   "are publicly available via",
+   "the NLPL word embeddings repository BIBREF3"
+  ]
+ ],
+ "1909.03135::s06::p001": [
+  [
+   "the majority of research papers on deep learning approaches to NLP",
+   "assume",
+   "that lemmatization is not necessary"
+  ],
+  [
+   "using lemmatized training data",
+   "yields",
+   "small but consistent improvements in the word sense disambiguation task"
+  ],
+  [
+   "These improvements",
+   "are not observed for",
+   "rare words which lack inflected forms"
+  ]
+ ],
+ "1909.03135::s06::p002": [
+  [
+   "lemmatization",
+   "is not",
+   "a silver bullet"
+  ],
+  [
+   "lemmatization",
+   "can hurt",
+   "the performance"
+  ]
+ ],
+ "1909.03135::s06::p003": [
+  [
+   "text pre-processing",
+   "still matters for",
+   "contemporary deep learning algorithms"
+  ],
+  [
+   "Their impressive learning abilities",
+   "do not always allow",
+   "them to infer normalisation rules themselves"
+  ],
+  [
+   "the nature of language at hand",
+   "matters",
+   "as well"
+  ],
+  [
+   "differences in this nature",
+   "can result in",
+   "different decisions being optimal or sub-optimal at the stage of deep learning models training"
+  ],
+  [
+   "The simple truth `English is not representative of all languages on Earth'",
+   "still holds",
+   "here"
+  ]
+ ],
+ "1909.03135::s06::p004": [
+  [
+   "Using Russian and English",
+   "allowed us to hypothesise about",
+   "the importance of morphological character of a language"
+  ]
+ ]
+}

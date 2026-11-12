@@ -1,0 +1,460 @@
+{
+ "kept": [
+  {
+   "insight_id": "1909.01296::g00:i00",
+   "paper_id": "1909.01296",
+   "group_id": "1909.01296::g00",
+   "concise_text": "PolyResponse addresses the manual ontology design and scarce annotated in-domain data challenges by using non-generative response retrieval trained on hundreds of millions of Reddit conversations with implicit semantics.",
+   "triple": {
+    "subject": "PolyResponse conversational search engine",
+    "predicate": "addresses",
+    "object": "manual ontology design and scarce annotated in-domain data challenges"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1909.01296::s00::p001",
+    "1909.01296::s00::p002"
+   ],
+   "supporting_fact_ids": [
+    "1909.01296::g00:b0:f04",
+    "1909.01296::g00:b0:f06",
+    "1909.01296::g00:b0:f07",
+    "1909.01296::g00:b0:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "Passages jointly support that explicit semantics create manual ontology and scarce annotated in-domain data challenges, while PolyResponse uses non-generative retrieval trained on hundreds of millions of Reddit conversations with implicit semantics as an alternative approach."
+   },
+   "unit_id": "1909.01296::u000"
+  },
+  {
+   "insight_id": "1909.01296::g00:i01",
+   "paper_id": "1909.01296",
+   "group_id": "1909.01296::g00",
+   "concise_text": "Because PolyResponse relies on retrieval-based design, it avoids engineering a structured ontology and dedicated decision-making policy modules that explicit-semantics task-oriented dialogue systems require.",
+   "triple": {
+    "subject": "retrieval-based design",
+    "predicate": "avoids",
+    "object": "structured ontology and dedicated decision-making policy modules"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.01296::s00::p000",
+    "1909.01296::s00::p003"
+   ],
+   "supporting_fact_ids": [
+    "1909.01296::g00:b0:f03",
+    "1909.01296::g00:b0:f06",
+    "1909.01296::g00:b0:f12",
+    "1909.01296::g00:b0:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Passage p003 explicitly states that due to retrieval-based design there is no need to engineer a structured ontology and that the design bypasses dedicated decision-making policy modules; p000 explains explicit-semantics systems use manually engineered ontologies."
+   },
+   "unit_id": "1909.01296::u001"
+  },
+  {
+   "insight_id": "1909.01296::g00:i02",
+   "paper_id": "1909.01296",
+   "group_id": "1909.01296::g00",
+   "concise_text": "The PolyResponse ranking model scores conversational replies and images by scaled cosine similarity between context encodings and candidate text or photo encodings.",
+   "triple": {
+    "subject": "PolyResponse ranking model",
+    "predicate": "scores",
+    "object": "conversational replies and images by scaled cosine similarity"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1909.01296::s01::p000",
+    "1909.01296::s02::p001",
+    "1909.01296::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.01296::g00:b0:f20",
+    "1909.01296::g00:b0:f21",
+    "1909.01296::g00:b1:f05",
+    "1909.01296::g00:b1:f13"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Passage s01:p000 states the ranking model scores conversational replies and images and computes scores as scaled cosine similarity between context encodings and text/photo candidate encodings; other passages give encoder details."
+   },
+   "unit_id": "1909.01296::u002"
+  },
+  {
+   "insight_id": "1909.01296::g00:i03",
+   "paper_id": "1909.01296",
+   "group_id": "1909.01296::g00",
+   "concise_text": "The text encoder trained on more than 727M Reddit context-reply pairs produces the 512-dimensional $h_c$ and $h_r$ representations used by the PolyResponse similarity scoring.",
+   "triple": {
+    "subject": "more than 727M Reddit context-reply $(c,r)$ pairs",
+    "predicate": "train",
+    "object": "512-dimensional $h_c$ and $h_r$ representations"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1909.01296::s02::p001",
+    "1909.01296::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.01296::g00:b1:f05",
+    "1909.01296::g00:b1:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Passages jointly support that more than 727M Reddit context-reply pairs are used for training text representations and that the text encoder maps to 512-dimensional h_c and h_r used in similarity scoring."
+   },
+   "unit_id": "1909.01296::u003"
+  },
+  {
+   "insight_id": "1909.01296::g00:i04",
+   "paper_id": "1909.01296",
+   "group_id": "1909.01296::g00",
+   "concise_text": "The photo encoder learned on around 200K Yelp photos and captions enables the system to score photos by whether their captions would be good responses to the current context.",
+   "triple": {
+    "subject": "Yelp Open dataset",
+    "predicate": "enables",
+    "object": "photo scoring by caption-response relevance"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1909.01296::s05::p000",
+    "1909.01296::s07::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.01296::g00:b1:f14",
+    "1909.01296::g00:b1:f15",
+    "1909.01296::g00:b1:f16",
+    "1909.01296::g00:b1:f17",
+    "1909.01296::g00:b2:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Passages support that a photo encoder is learned on around 200K Yelp photos and captions, aligning captions with photo representations, enabling photo scoring by whether captions would be good responses to the context."
+   },
+   "unit_id": "1909.01296::u004"
+  },
+  {
+   "insight_id": "1909.01296::g00:i05",
+   "paper_id": "1909.01296",
+   "group_id": "1909.01296::g00",
+   "concise_text": "At inference, PolyResponse uses the Yelp dataset as the candidate pool and finds relevant text and photo responses by nearest-neighbour search over pre-computed $h_r$ and $h_p$ vectors.",
+   "triple": {
+    "subject": "Yelp dataset",
+    "predicate": "provides",
+    "object": "text and photo candidates for nearest-neighbour search"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1909.01296::s06::p000",
+    "1909.01296::s07::p001"
+   ],
+   "supporting_fact_ids": [
+    "1909.01296::g00:b2:f00",
+    "1909.01296::g00:b2:f02",
+    "1909.01296::g00:b2:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Passage s06:p000 says Yelp dataset provides text and photo candidates at inference; s07:p001 says inference finds nearby pre-computed h_r and h_p vectors via nearest-neighbour search."
+   },
+   "unit_id": "1909.01296::u005"
+  },
+  {
+   "insight_id": "1909.01296::g00:i06",
+   "paper_id": "1909.01296",
+   "group_id": "1909.01296::g00",
+   "concise_text": "The one-shot ranking model is extended into restaurant-browsing dialogue flow by repeatedly ranking responses, aggregating their probability scores per restaurant, and narrowing the relevant restaurant set $R$.",
+   "triple": {
+    "subject": "one-shot ranking model",
+    "predicate": "extends",
+    "object": "restaurant-browsing dialogue flow"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1909.01296::s08::p000",
+    "1909.01296::s08::p002",
+    "1909.01296::s08::p004",
+    "1909.01296::s08::p006",
+    "1909.01296::s08::p008",
+    "1909.01296::s08::p010",
+    "1909.01296::s08::p012"
+   ],
+   "supporting_fact_ids": [
+    "1909.01296::g00:b2:f06",
+    "1909.01296::g00:b2:f07",
+    "1909.01296::g00:b2:f08",
+    "1909.01296::g00:b2:f09",
+    "1909.01296::g00:b3:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.87,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "Passages jointly support extending the one-shot ranking model into a restaurant-browsing dialogue flow by repeated ranking, probability aggregation per restaurant, and updating/narrowing R."
+   },
+   "unit_id": "1909.01296::u006"
+  },
+  {
+   "insight_id": "1909.01296::g00:i07",
+   "paper_id": "1909.01296",
+   "group_id": "1909.01296::g00",
+   "concise_text": "When the narrowing dialogue flow reaches only one relevant restaurant, PolyResponse displays the top $N$ responses and relevant photos, implementing the multi-modal response capability.",
+   "triple": {
+    "subject": "only one relevant restaurant",
+    "predicate": "causes",
+    "object": "display of top $N$ responses and relevant photos"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1909.01296::s00::p004",
+    "1909.01296::s08::p013"
+   ],
+   "supporting_fact_ids": [
+    "1909.01296::g00:b0:f14",
+    "1909.01296::g00:b3:f02",
+    "1909.01296::g00:b3:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Passage s08:p013 states that when only one restaurant is relevant, top N responses and relevant photos are displayed; s00:p004 supports that combining text with photos yields multi-modal responses."
+   },
+   "unit_id": "1909.01296::u007"
+  },
+  {
+   "insight_id": "1909.01296::g00:i08",
+   "paper_id": "1909.01296",
+   "group_id": "1909.01296::g00",
+   "concise_text": "The 8-language PolyResponse restaurant search is enabled by a translate-to-source approach that translates foreign response pools and user utterances into English for the English-trained encodings.",
+   "triple": {
+    "subject": "MT-based translate-to-source approach",
+    "predicate": "enables",
+    "object": "8-language PolyResponse restaurant search"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1909.01296::s00::p004",
+    "1909.01296::s09::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.01296::g00:b0:f17",
+    "1909.01296::g00:b4:f03",
+    "1909.01296::g00:b4:f04",
+    "1909.01296::g00:b4:f05",
+    "1909.01296::g00:b4:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Passages jointly support that the 8-language deployment is enabled by an MT-based translate-to-source approach translating foreign response pools and user utterances into English for English-trained encodings."
+   },
+   "unit_id": "1909.01296::u008"
+  },
+  {
+   "insight_id": "1909.01296::g00:i09",
+   "paper_id": "1909.01296",
+   "group_id": "1909.01296::g00",
+   "concise_text": "The need to reset $R$ and transfer to slot-based table booking is handled by two binary intent classifiers using the already-computed 512-dimensional $h_c$ vector.",
+   "triple": {
+    "subject": "two binary intent classifiers",
+    "predicate": "handle",
+    "object": "resetting $R$ and transferring to slot-based table booking"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1909.01296::s08::p014",
+    "1909.01296::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.01296::g00:b4:f00",
+    "1909.01296::g00:b4:f01",
+    "1909.01296::g00:b4:f02",
+    "1909.01296::g00:b4:f09",
+    "1909.01296::g00:b4:f10",
+    "1909.01296::g00:b4:f11",
+    "1909.01296::g00:b4:f12"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Passages jointly support that two binary intent classifiers handle resetting R and transferring to slot-based table booking, using the already-computed 512-dimensional h_c vector."
+   },
+   "unit_id": "1909.01296::u009"
+  }
+ ],
+ "rejected": [],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1909.01296::g00:i00",
+    "verdict": {
+     "insight_id": "1909.01296::g00:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "Passages jointly support that explicit semantics create manual ontology and scarce annotated in-domain data challenges, while PolyResponse uses non-generative retrieval trained on hundreds of millions of Reddit conversations with implicit semantics as an alternative approach."
+    }
+   },
+   {
+    "insight_id": "1909.01296::g00:i01",
+    "verdict": {
+     "insight_id": "1909.01296::g00:i01",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Passage p003 explicitly states that due to retrieval-based design there is no need to engineer a structured ontology and that the design bypasses dedicated decision-making policy modules; p000 explains explicit-semantics systems use manually engineered ontologies."
+    }
+   },
+   {
+    "insight_id": "1909.01296::g00:i02",
+    "verdict": {
+     "insight_id": "1909.01296::g00:i02",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Passage s01:p000 states the ranking model scores conversational replies and images and computes scores as scaled cosine similarity between context encodings and text/photo candidate encodings; other passages give encoder details."
+    }
+   },
+   {
+    "insight_id": "1909.01296::g00:i03",
+    "verdict": {
+     "insight_id": "1909.01296::g00:i03",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Passages jointly support that more than 727M Reddit context-reply pairs are used for training text representations and that the text encoder maps to 512-dimensional h_c and h_r used in similarity scoring."
+    }
+   },
+   {
+    "insight_id": "1909.01296::g00:i04",
+    "verdict": {
+     "insight_id": "1909.01296::g00:i04",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Passages support that a photo encoder is learned on around 200K Yelp photos and captions, aligning captions with photo representations, enabling photo scoring by whether captions would be good responses to the context."
+    }
+   },
+   {
+    "insight_id": "1909.01296::g00:i05",
+    "verdict": {
+     "insight_id": "1909.01296::g00:i05",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Passage s06:p000 says Yelp dataset provides text and photo candidates at inference; s07:p001 says inference finds nearby pre-computed h_r and h_p vectors via nearest-neighbour search."
+    }
+   },
+   {
+    "insight_id": "1909.01296::g00:i06",
+    "verdict": {
+     "insight_id": "1909.01296::g00:i06",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "Passages jointly support extending the one-shot ranking model into a restaurant-browsing dialogue flow by repeated ranking, probability aggregation per restaurant, and updating/narrowing R."
+    }
+   },
+   {
+    "insight_id": "1909.01296::g00:i07",
+    "verdict": {
+     "insight_id": "1909.01296::g00:i07",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Passage s08:p013 states that when only one restaurant is relevant, top N responses and relevant photos are displayed; s00:p004 supports that combining text with photos yields multi-modal responses."
+    }
+   },
+   {
+    "insight_id": "1909.01296::g00:i08",
+    "verdict": {
+     "insight_id": "1909.01296::g00:i08",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Passages jointly support that the 8-language deployment is enabled by an MT-based translate-to-source approach translating foreign response pools and user utterances into English for English-trained encodings."
+    }
+   },
+   {
+    "insight_id": "1909.01296::g00:i09",
+    "verdict": {
+     "insight_id": "1909.01296::g00:i09",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Passages jointly support that two binary intent classifiers handle resetting R and transferring to slot-based table booking, using the already-computed 512-dimensional h_c vector."
+    }
+   }
+  ],
+  "calls": [
+   {
+    "n": 10,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 5264,
+     "completion_tokens": 821,
+     "total_tokens": 6085,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

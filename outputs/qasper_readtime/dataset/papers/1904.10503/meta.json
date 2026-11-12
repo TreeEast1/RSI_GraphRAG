@@ -1,0 +1,61 @@
+{
+ "paper_id": "1904.10503",
+ "title": "Fine-Grained Named Entity Recognition using ELMo and Wikidata",
+ "abstract": "Fine-grained Named Entity Recognition is a task whereby we detect and classify entity mentions to a large set of types. These types can span diverse domains such as finance, healthcare, and politics. We observe that when the type set spans several domains the accuracy of the entity detection becomes a limitation for supervised learning models. The primary reason being the lack of datasets where entity boundaries are properly annotated, whilst covering a large spectrum of entity types. Furthermore, many named entity systems suffer when considering the categorization of fine grained entity types. Our work attempts to address these issues, in part, by combining state-of-the-art deep learning models (ELMo) with an expansive knowledge base (Wikidata). Using our framework, we cross-validate our model on the 112 fine-grained entity types based on the hierarchy given from the Wiki(gold) dataset.",
+ "sections": [
+  "Introduction",
+  "Datasets",
+  "Evaluation Metrics",
+  "Method",
+  "NER using ELMo",
+  "Entity Linking using Wikidata",
+  "Results",
+  "Conclusion and Future Work"
+ ],
+ "n_paragraphs": 30,
+ "n_tokens": 3017,
+ "figures_and_tables": [
+  {
+   "caption_id": "1904.10503::fig000",
+   "paper_id": "1904.10503",
+   "file": "2-Table1-1.png",
+   "caption": "Table 1: Statistics of the datasets used in this work.",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1904.10503::fig001",
+   "paper_id": "1904.10503",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: The 112 tags used in Wiki(GOLD). The tags in bold are extracted in the step described in Section 2.1. The finer grained tags are extracted as a final step described in Section 2.2.",
+   "n_tokens": 50
+  },
+  {
+   "caption_id": "1904.10503::fig002",
+   "paper_id": "1904.10503",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2: The full model pipeline. The first level involves token embeddings from ELMo which are fed into a residual LSTM module. The final layer involves passing the detected entities into a knowledge base, which in our case is Wikidata.",
+   "n_tokens": 49
+  },
+  {
+   "caption_id": "1904.10503::fig003",
+   "paper_id": "1904.10503",
+   "file": "5-Figure3-1.png",
+   "caption": "Figure 3: Some example outputs from the full model pipeline on the Wiki(GOLD) evaluation set.",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "1904.10503::fig004",
+   "paper_id": "1904.10503",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Performance of our model from the NER classifier evaluated on OntoNotes, and the 112 subclass Wikidata linking step evaluated on Wiki(GOLD). The first column denotes the percentage breakdown per class type. The precision, recall, and F-1 scores are shown for Wiki(GOLD). For OntoNotes the precision and recall are identical for each category, therefore we only quote F-1. All values are quoted as a percentage and rounded to the nearest whole number. Since the table only shows 7 categories, the percentages will not sum to 100.",
+   "n_tokens": 117
+  },
+  {
+   "caption_id": "1904.10503::fig005",
+   "paper_id": "1904.10503",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3: Comparison with existing models.",
+   "n_tokens": 9
+  }
+ ]
+}

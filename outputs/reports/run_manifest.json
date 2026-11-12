@@ -1,0 +1,68 @@
+{
+  "project": "rsi-graph-rag",
+  "index_identity": "rsigraph|hy4-no_think|nvembed-v2|v1",
+  "hipporag_commit": "d5c8329422e0a0b834a15874545cb6a74b4f9b26",
+  "hipporag_version": "2.0.0a5",
+  "dataset": {
+    "name": "LoCoMo",
+    "file": "data/raw/locomo/locomo10.json",
+    "sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "split": {
+      "seed": 20240501,
+      "dev": [
+        "conv-30",
+        "conv-44",
+        "conv-48"
+      ],
+      "test": [
+        "conv-26",
+        "conv-41",
+        "conv-42",
+        "conv-43",
+        "conv-47",
+        "conv-49",
+        "conv-50"
+      ]
+    }
+  },
+  "models": {
+    "llm": {
+      "name": "hy4",
+      "endpoint": null,
+      "reasoning_effort": "no_think"
+    },
+    "embedding": {
+      "name": "nvidia/NV-Embed-v2",
+      "path": "/root/models/NV-Embed-v2",
+      "dim": 4096
+    }
+  },
+  "environment": {
+    "python": "3.10.14",
+    "platform": "Linux-5.4.241-1-tlinux4-0017.7-x86_64-with-glibc2.28",
+    "gpus": [
+      "NVIDIA H20, 97871 MiB",
+      "NVIDIA H20, 97871 MiB",
+      "NVIDIA H20, 97871 MiB",
+      "NVIDIA H20, 97871 MiB"
+    ]
+  },
+  "hy4_usage": {
+    "calls": 61818,
+    "errors": 22159,
+    "prompt_tokens": 149371650,
+    "completion_tokens": 1447612,
+    "cache_hits": 0
+  },
+  "outputs_present": [
+    "COMPREHENSION_AUDIT.md",
+    "DATASET_AUDIT.md",
+    "FINAL_EXPERIMENT_REPORT.md",
+    "FINAL_TABLES.md",
+    "GROUPING_REPORT.md",
+    "JOINT_EVALUATION.md",
+    "QUESTION_TIME_REPORT.md",
+    "READ_TIME_REPORT.md",
+    "START_HERE.md"
+  ]
+}

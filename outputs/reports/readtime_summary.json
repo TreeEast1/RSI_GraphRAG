@@ -1,0 +1,107 @@
+{
+  "timestamp": "2026-11-06T05:00:49",
+  "args": {
+    "convs": "conv-44",
+    "split": "dev",
+    "variants": "full_conv_triple:triple",
+    "budget": 4096,
+    "top_k": 20,
+    "max_questions": null,
+    "max_workers": 3,
+    "out_prefix": "readtime",
+    "force_build": false,
+    "include_relations": "true",
+    "no_qa": false
+  },
+  "summaries": {
+    "full_conv_triple": {
+      "method": "full_conv_triple",
+      "n": 158,
+      "recall@1": 0.5784810126582279,
+      "recall@3": 0.7586045810729355,
+      "recall@5": 0.864300783604581,
+      "recall@10": 0.9239602169981918,
+      "recall@20": 0.9893911995177819,
+      "mrr": 0.7705767184127199,
+      "ndcg@10": 0.7847404166367081,
+      "evidence_full@2048": 0.6518987341772152,
+      "evidence_partial@2048": 0.7376582278481012,
+      "session_full@2048": 0.6518987341772152,
+      "evidence_full@4096": 0.7974683544303798,
+      "evidence_partial@4096": 0.8734177215189873,
+      "session_full@4096": 0.7974683544303798,
+      "evidence_full@8192": 0.879746835443038,
+      "evidence_partial@8192": 0.9398206751054853,
+      "session_full@8192": 0.879746835443038,
+      "em": 0.44936708860759494,
+      "f1": 0.6374257312481293,
+      "em_answerable": 0.2926829268292683,
+      "f1_answerable": 0.5342541913593856,
+      "n_answerable": 123,
+      "refusal_rate": 1.0,
+      "n_adversarial": 35,
+      "by_category": {
+        "1": {
+          "n": 30,
+          "em": 0.16666666666666666,
+          "f1": 0.549365467268693,
+          "recall@5": 0.6214285714285713,
+          "evidence_full@4096": 0.3333333333333333
+        },
+        "2": {
+          "n": 24,
+          "em": 0.0,
+          "f1": 0.11706349206349205,
+          "recall@5": 0.9027777777777777,
+          "evidence_full@4096": 0.875
+        },
+        "3": {
+          "n": 7,
+          "em": 0.0,
+          "f1": 0.020050125313283207,
+          "recall@5": 0.46428571428571425,
+          "evidence_full@4096": 0.2857142857142857
+        },
+        "4": {
+          "n": 62,
+          "em": 0.5,
+          "f1": 0.746490755361723,
+          "recall@5": 0.9838709677419355,
+          "evidence_full@4096": 0.9838709677419355
+        },
+        "5": {
+          "n": 35,
+          "em": 1.0,
+          "f1": 1.0,
+          "recall@5": 0.9142857142857143,
+          "evidence_full@4096": 0.9142857142857143
+        }
+      },
+      "by_conversation": {
+        "conv-44": {
+          "n": 158,
+          "em": 0.44936708860759494,
+          "f1": 0.6374257312481293,
+          "recall@5": 0.864300783604581
+        }
+      }
+    }
+  },
+  "builds": [
+    {
+      "conv_id": "conv-44",
+      "variant": "full_conv_triple",
+      "reused": true,
+      "save_dir": "/group/40150/licochen/Memory/RSI_GraphRAG/outputs/raw_graphs/conv-44/variants/full_conv_triple"
+    }
+  ],
+  "hy4": {
+    "calls": 86,
+    "cache_hits": 121,
+    "errors": 0,
+    "prompt_tokens": 158920,
+    "completion_tokens": 342,
+    "reasoning_tokens": 0,
+    "latency_s": 86.37608289718628
+  }
+}

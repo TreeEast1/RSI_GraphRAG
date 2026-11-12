@@ -1,0 +1,746 @@
+{
+ "1503.00841::s00::p000": [
+  [
+   "words such as NBA, player, and basketball",
+   "are strong indicators of",
+   "the sports category"
+  ],
+  [
+   "words like terrible, boring, and messing",
+   "indicate",
+   "a negative polarity"
+  ],
+  [
+   "words like perfect, exciting, and moving",
+   "suggest",
+   "a positive polarity in sentiment classification"
+  ]
+ ],
+ "1503.00841::s00::p001": [
+  [
+   "Previous studies addressing the problem",
+   "fall into",
+   "several lines"
+  ],
+  [
+   "prior knowledge",
+   "is encoded with",
+   "a prior on parameters"
+  ],
+  [
+   "prior knowledge",
+   "is formalised with",
+   "additional variables and dependencies"
+  ],
+  [
+   "prior knowledge",
+   "is used to control",
+   "the distributions over latent output variables"
+  ]
+ ],
+ "1503.00841::s00::p002": [
+  [
+   "the bias in the prior knowledge that we supply to the learning model",
+   "has rarely been addressed",
+   "a crucial problem"
+  ],
+  [
+   "Such prior knowledge",
+   "may mislead",
+   "the model with heavy bias to baseball"
+  ],
+  [
+   "the performance",
+   "may be",
+   "undesirable"
+  ]
+ ],
+ "1503.00841::s00::p003": [
+  [
+   "supplying neutral feature words",
+   "can boost",
+   "the performance remarkably"
+  ]
+ ],
+ "1503.00841::s00::p005": [
+  [
+   "a regularization term",
+   "is associated with",
+   "neutral features"
+  ],
+  [
+   "the maximum entropy of class distribution regularization term",
+   "is",
+   "one of three regularization terms"
+  ],
+  [
+   "the KL divergence between reference and predicted class distribution",
+   "is",
+   "one of three regularization terms"
+  ],
+  [
+   "the neutral features",
+   "are assumed to be distributed",
+   "uniformly over class labels"
+  ]
+ ],
+ "1503.00841::s01::p000": [
+  [
+   "GE-FL BIBREF0",
+   "is",
+   "a GE method which leverages labeled features as prior knowledge"
+  ],
+  [
+   "A labeled feature",
+   "is",
+   "a strong indicator of a specific class"
+  ],
+  [
+   "A labeled feature",
+   "is manually provided to",
+   "the classifier"
+  ],
+  [
+   "words like amazing, exciting",
+   "can be labeled features for",
+   "class positive in sentiment classification"
+  ]
+ ],
+ "1503.00841::s02::p000": [
+  [
+   "Generalized expectation (GE) criteria BIBREF7",
+   "provides",
+   "a natural way to directly constrain the model in the preferred direction"
+  ],
+  [
+   "the proportion of each class of the dataset",
+   "can guide",
+   "the model to predict out a pre-specified class distribution"
+  ]
+ ],
+ "1503.00841::s02::p001": [
+  [
+   "a GE term",
+   "expresses preferences on",
+   "the value of some constraint functions about the model's expectation"
+  ]
+ ],
+ "1503.00841::s02::p002": [
+  [
+   "a GE term",
+   "can be expressed as",
+   "$$S(E_{\\tilde{p}({\\rm x})}[E_{p_\\theta (y|{\\rm x})}[G({\\rm x}, y)]])$$   (Eq. 4)"
+  ]
+ ],
+ "1503.00841::s03::p000": [
+  [
+   "Druck et al. ge-fl",
+   "proposed",
+   "GE-FL"
+  ],
+  [
+   "GE-FL",
+   "learns from",
+   "labeled features"
+  ],
+  [
+   "GE-FL",
+   "uses",
+   "generalized expectation criteria"
+  ],
+  [
+   "GE-FL",
+   "introduces",
+   "divergence between $\\hat{p}(y| x_k)$ and $p_\\theta (y | x_k)$ as a term of the objective function"
+  ]
+ ],
+ "1503.00841::s03::p004": [
+  [
+   "L-BFGS",
+   "can be used for",
+   "parameter estimation"
+  ]
+ ],
+ "1503.00841::s04::p000": [
+  [
+   "GE-FL",
+   "reduces",
+   "the heavy load of instance annotation"
+  ],
+  [
+   "GE-FL",
+   "performs well when provided",
+   "prior knowledge with no bias"
+  ],
+  [
+   "comparable numbers of labeled features for each class",
+   "have to be supplied",
+   "in our experiments"
+  ],
+  [
+   "GE-FL",
+   "will predict most of the instances as",
+   "baseball"
+  ]
+ ],
+ "1503.00841::s04::p001": [
+  [
+   "Neutral features",
+   "are",
+   "features that are not informative indicator of any classes"
+  ],
+  [
+   "word player",
+   "is an example of neutral feature for",
+   "the baseball-hockey classification task"
+  ],
+  [
+   "Such features",
+   "are usually",
+   "frequent words across all categories"
+  ],
+  [
+   "these neutral features",
+   "will prevent the model from biasing to",
+   "the class that has a dominate number of labeled features"
+  ]
+ ],
+ "1503.00841::s04::p004": [
+  [
+   "manual annotation",
+   "is not needed to provide",
+   "neutral features"
+  ],
+  [
+   "One simple way",
+   "is to take",
+   "the most common features as neutral features"
+  ],
+  [
+   "Experimental results",
+   "show",
+   "that this strategy works successfully"
+  ]
+ ],
+ "1503.00841::s04::p005": [
+  [
+   "Another way to prevent the model from drifting from the desired direction",
+   "is to constrain",
+   "the predicted class distribution on unlabeled data"
+  ],
+  [
+   "one feasible way",
+   "is to take",
+   "maximum entropy principle"
+  ]
+ ],
+ "1503.00841::s04::p008": [
+  [
+   "This maximum entropy term",
+   "can be derived by setting",
+   "the constraint function to $G({\\rm x}, y) = \\vec{I}(y)$"
+  ],
+  [
+   "its expectation with the empirical distribution $\\tilde{p}(\\rm x)$",
+   "is",
+   "the average over input samples, namely $p(y)$"
+  ]
+ ],
+ "1503.00841::s04::p009": [
+  [
+   "the class distribution",
+   "can be estimated roughly without",
+   "labeling instances"
+  ]
+ ],
+ "1503.00841::s05::p000": [
+  [
+   "baseline",
+   "is",
+   "GE-FL BIBREF0"
+  ],
+  [
+   "GE-FL BIBREF0",
+   "is based on",
+   "generalization expectation criteria"
+  ]
+ ],
+ "1503.00841::s06::p000": [
+  [
+   "dataset themes",
+   "range from",
+   "sentiment, web-page, science to medical and healthcare"
+  ],
+  [
+   "preprocess stage",
+   "uses",
+   "bag-of-words feature"
+  ],
+  [
+   "preprocess stage",
+   "removes",
+   "stopwords"
+  ],
+  [
+   "learning process",
+   "uses",
+   "the label of features"
+  ]
+ ],
+ "1503.00841::s06::p001": [
+  [
+   "movie dataset",
+   "is used for testing",
+   "the proposed approaches with unbalanced labeled features, unbalanced datasets or different $\\lambda$ parameters"
+  ],
+  [
+   "movie dataset task",
+   "is to classify",
+   "the movie reviews as positive or negtive"
+  ],
+  [
+   "All unbalanced datasets",
+   "are constructed based on",
+   "the movie dataset"
+  ],
+  [
+   "All unbalanced datasets",
+   "are constructed by",
+   "randomly removing documents of the positive class"
+  ],
+  [
+   "each experiment",
+   "conducts",
+   "10-fold cross validation"
+  ]
+ ],
+ "1503.00841::s06::p002": [
+  [
+   "two ways",
+   "obtain",
+   "labeled features"
+  ],
+  [
+   "The first way",
+   "is to use",
+   "information gain"
+  ],
+  [
+   "top 20",
+   "are selected as",
+   "labeled features for each class as a feature pool"
+  ],
+  [
+   "using information gain",
+   "requires",
+   "the document label"
+  ],
+  [
+   "The second way",
+   "is to use",
+   "LDA BIBREF9 to select features"
+  ],
+  [
+   "selection process",
+   "selects",
+   "the most probable features of each topic (sorted by $P(w_i|t_j)$ , the probability of word $w_i$ given topic $t_j$ )"
+  ]
+ ],
+ "1503.00841::s06::p003": [
+  [
+   "reference distribution of the labeled features",
+   "is estimated using",
+   "a heuristic strategy"
+  ]
+ ],
+ "1503.00841::s06::p004": [
+  [
+   "Neutral features",
+   "are",
+   "the most frequent words after removing stop words"
+  ],
+  [
+   "reference distributions of neutral features",
+   "are",
+   "uniformly distributed"
+  ],
+  [
+   "top 10 frequent words",
+   "are used as",
+   "neutral features in all experiments"
+  ]
+ ],
+ "1503.00841::s07::p000": [
+  [
+   "labeled features",
+   "are obtained through",
+   "information gain"
+  ]
+ ],
+ "1503.00841::s07::p001": [
+  [
+   "setting (a)",
+   "randomly selects",
+   "$t \\in [1, 20]$ features from the feature pool for one class"
+  ],
+  [
+   "setting (a)",
+   "uses",
+   "only one feature for the other"
+  ],
+  [
+   "original balanced movie dataset",
+   "is used with",
+   "positive:negative=1:1"
+  ]
+ ],
+ "1503.00841::s07::p002": [
+  [
+   "dataset in setting (b)",
+   "is obtained by",
+   "randomly removing 75% positive documents"
+  ],
+  [
+   "dataset in setting (b)",
+   "has",
+   "positive:negative=1:4"
+  ]
+ ],
+ "1503.00841::s07::p003": [
+  [
+   "Maximum entropy principle",
+   "shows improvement only on",
+   "the balanced case"
+  ],
+  [
+   "maximum entropy",
+   "only favors",
+   "uniform distribution"
+  ]
+ ],
+ "1503.00841::s07::p004": [
+  [
+   "Incorporating Neutral features",
+   "performs similarly to",
+   "maximum entropy"
+  ],
+  [
+   "Incorporating Neutral features accuracy",
+   "decreases slowly when",
+   "the number of labeled features becomes larger ( $t>4$ )"
+  ]
+ ],
+ "1503.00841::s07::p005": [
+  [
+   "Incorporating the KL divergence of class distribution",
+   "performs much better than",
+   "GE-FL on both balanced and unbalanced datasets"
+  ]
+ ],
+ "1503.00841::s08::p000": [
+  [
+   "the labeled features",
+   "are obtained by",
+   "information gain"
+  ],
+  [
+   "Two settings",
+   "are experimented with",
+   "two settings"
+  ]
+ ],
+ "1503.00841::s08::p001": [
+  [
+   "comparisons",
+   "are conducted on",
+   "the original balanced movie dataset (positive:negtive=1:1)"
+  ]
+ ],
+ "1503.00841::s08::p002": [
+  [
+   "the class distribution",
+   "is unbalanced by",
+   "randomly removing 75% positive documents (positive:negative=1:4)"
+  ]
+ ],
+ "1503.00841::s08::p003": [
+  [
+   "GE-FL and our methods",
+   "have little difference when",
+   "the dataset is balanced (Figure 2 (a))"
+  ],
+  [
+   "incorporating KL divergence",
+   "is much better than",
+   "GE-FL on the unbalanced dataset (Figure 2 (b))"
+  ],
+  [
+   "maximum entropy and neutral features",
+   "are much worse because",
+   "forcing the model to approach the uniform distribution misleads it"
+  ]
+ ],
+ "1503.00841::s09::p000": [
+  [
+   "The original balanced movie dataset",
+   "is used as",
+   "a control group"
+  ]
+ ],
+ "1503.00841::s09::p001": [
+  [
+   "Performance of neutral features and maximum entropy",
+   "decrease",
+   "significantly"
+  ],
+  [
+   "incorporating KL divergence",
+   "increases",
+   "remarkably"
+  ],
+  [
+   "KL divergence",
+   "can guide",
+   "the model to the right direction"
+  ]
+ ],
+ "1503.00841::s09::p002": [
+  [
+   "Incorporating KL divergence",
+   "is robust enough to control",
+   "unbalance both in the dataset and in labeled features"
+  ],
+  [
+   "the other three methods",
+   "are not",
+   "so competitive"
+  ]
+ ],
+ "1503.00841::s10::p000": [
+  [
+   "the newly introduced regularization term",
+   "is disappeared",
+   "when $\\beta = 0$"
+  ]
+ ],
+ "1503.00841::s10::p001": [
+  [
+   "The original balanced movie dataset",
+   "is used",
+   "(positive:negative=1:1)"
+  ]
+ ],
+ "1503.00841::s11::p000": [
+  [
+   "LDA",
+   "does not employ",
+   "any instance labels to find labeled features"
+  ]
+ ],
+ "1503.00841::s11::p001": [
+  [
+   "Incorporating neutral features",
+   "performs better than",
+   "GE-FL on 7 of the 9 datasets"
+  ],
+  [
+   "maximum entropy",
+   "is better on",
+   "8 datasets"
+  ],
+  [
+   "KL divergence",
+   "better on",
+   "7 datasets"
+  ]
+ ],
+ "1503.00841::s11::p002": [
+  [
+   "LDA",
+   "selects out",
+   "the most predictive features as labeled features without considering the balance among classes"
+  ],
+  [
+   "GE-FL",
+   "does not exert",
+   "any control on such an issue"
+  ]
+ ],
+ "1503.00841::s12::p000": [
+  [
+   "One",
+   "is to use",
+   "prior knowledge to label unlabeled instances and then apply a standard learning algorithm"
+  ],
+  [
+   "The other",
+   "is to constrain",
+   "the model directly with prior knowledge"
+  ]
+ ],
+ "1503.00841::s12::p001": [
+  [
+   "Liu et al.text",
+   "manually labeled",
+   "features which are highly predictive to unsupervised clustering assignments"
+  ],
+  [
+   "Chang et al.guiding",
+   "proposed",
+   "constraint driven learning"
+  ],
+  [
+   "Daumé daume2008cross",
+   "proposed",
+   "a self training method"
+  ]
+ ],
+ "1503.00841::s12::p002": [
+  [
+   "MaCallum et al.gec",
+   "proposed",
+   "generalized expectation(GE) criteria"
+  ],
+  [
+   "Graça et al.pr",
+   "proposed",
+   "posterior regularization(PR) framework"
+  ],
+  [
+   "Druck et al.ge-fl",
+   "explored",
+   "constraints of labeled features in the framework of GE"
+  ],
+  [
+   "Andrzejewski et al.andrzejewski2011framework",
+   "proposed",
+   "a framework in which general domain knowledge can be easily incorporated into LDA"
+  ],
+  [
+   "Altendorf et al.altendorf2012learning",
+   "explored",
+   "monotonicity constraints to improve the accuracy while learning from sparse data"
+  ]
+ ],
+ "1503.00841::s12::p003": [
+  [
+   "Mann and McCallum",
+   "incorporated",
+   "not only labeled features but also other knowledge like class distribution into the objective function of GE-FL"
+  ],
+  [
+   "Mann and McCallum",
+   "discussed only from",
+   "the semi-supervised perspective"
+  ],
+  [
+   "Mann and McCallum",
+   "did not investigate into",
+   "the robustness problem"
+  ]
+ ],
+ "1503.00841::s12::p004": [
+  [
+   "some active learning methods",
+   "trying to use",
+   "prior knowledge"
+  ],
+  [
+   "Raghavan et al.",
+   "proposed to use",
+   "feedback on instances and features interlacedly"
+  ],
+  [
+   "Raghavan et al.",
+   "demonstrated that",
+   "feedback on features boosts the model much"
+  ],
+  [
+   "Druck et al.",
+   "proposed",
+   "an active learning method which solicits labels on features rather than on instances"
+  ],
+  [
+   "Druck et al.",
+   "used",
+   "GE-FL to train the model"
+  ]
+ ],
+ "1503.00841::s13::p000": [
+  [
+   "the performance",
+   "can be considerably improved when taking into account",
+   "these factors"
+  ]
+ ],
+ "1503.00841::s13::p001": [
+  [
+   "Incorporating neutral features",
+   "is",
+   "the simplest way of regularization"
+  ],
+  [
+   "Incorporating neutral features",
+   "doesn't require",
+   "any modification of GE-FL"
+  ],
+  [
+   "only using neutral features",
+   "are not strong enough to handle",
+   "extremely unbalanced labeled features"
+  ]
+ ],
+ "1503.00841::s13::p002": [
+  [
+   "The maximum entropy regularization term",
+   "shows",
+   "the strong ability of controlling unbalance"
+  ]
+ ],
+ "1503.00841::s13::p003": [
+  [
+   "This method",
+   "doesn't need",
+   "any extra knowledge"
+  ],
+  [
+   "this method",
+   "assumes",
+   "that the categories are uniformly distributed"
+  ]
+ ],
+ "1503.00841::s13::p004": [
+  [
+   "The KL divergence",
+   "performs much better on",
+   "unbalanced corpora than other methods"
+  ],
+  [
+   "KL divergence",
+   "utilizes",
+   "the reference class distribution"
+  ],
+  [
+   "KL divergence",
+   "doesn't make",
+   "any assumptions"
+  ]
+ ],
+ "1503.00841::s13::p005": [
+  [
+   "the KL divergence term",
+   "requires providing",
+   "the true class distribution"
+  ],
+  [
+   "a rough estimation of the true distribution",
+   "is",
+   "sufficient"
+  ],
+  [
+   "the accuracy",
+   "is",
+   "0.755/0.756/0.760 respectively"
+  ]
+ ]
+}

@@ -1,0 +1,482 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1712.05608::s00::p000",
+   "summary": "Deep neural networks (DNNs), particularly convolutional and recurrent neural networks with huge architectures, have succeeded in tasks including audio processing such as speech to text, emotion recognition, and speech/non-speech classification.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s00::p001",
+   "summary": "Training deep architectures requires large annotated data, limiting low data resource scenarios common in speech-based applications, where annotation is difficult and emotion recognition suffers from annotator disagreement.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s00::p002",
+   "summary": "This work proposes simultaneous two sample learning (s2sL), which trains a classifier using two samples simultaneously for classification in low data resource scenarios and low resource data imbalance.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s01::p000",
+   "summary": "The s2sL approach for low data resource problems is explained using MLP, modified to handle the data representation, as the base classifier for a two-class classification task.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s02::p000",
+   "summary": "For a two-class classification task with INLINEFORM0 class labels and INLINEFORM1 and INLINEFORM2 samples, classifiers are generally trained using input-output pairs as DISPLAYFORM0.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s02::p001",
+   "summary": "INLINEFORM0 is the INLINEFORM1-dimensional feature vector for the INLINEFORM2 sample with INLINEFORM3 class label, and simultaneous two sample (s2s) representation considers two samples as DISPLAYFORM0.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s02::p002",
+   "summary": "INLINEFORM0 and INLINEFORM1 are INLINEFORM2-dimensional feature vectors for the INLINEFORM3 sample in INLINEFORM4 class and INLINEFORM5 sample in INLINEFORM6 class, with INLINEFORM7 and INLINEFORM8 as output labels.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s02::p003",
+   "summary": "In s2s data representation, the input feature vector has length INLINEFORM0, output class labels are INLINEFORM2 or INLINEFORM3, and train samples increase to INLINEFORM5 from INLINEFORM6 samples.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s03::p000",
+   "summary": "MLP is the base classifier used to validate the proposed s2s framework, and modifications to its architecture are made to train on s2s based data representation.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s03::p001",
+   "summary": "The input layer has INLINEFORM0 units instead of INLINEFORM1 units to accept INLINEFORM2 and INLINEFORM3 simultaneously.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s03::p002",
+   "summary": "The hidden layer resembles a regular MLP, with hidden units varied from 2 to INLINEFORM0, a single hidden layer considered, and Rectified linear units (ReLU) used.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s03::p003",
+   "summary": "The output layer has four units for two-class classification, uses sigmoid activation and binary cross-entropy, because s2s output labels have more than one active unit and cannot use softmax.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s03::p004",
+   "summary": "The s2s-MLP output layer has outputs INLINEFORM0 and INLINEFORM1, four units for two-class classification, possible labels INLINEFORM4, INLINEFORM5, INLINEFORM6, INLINEFORM7, and is trained using adam optimizer.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s04::p000",
+   "summary": "Generally, the feature vector corresponding to the test sample is provided as input to the trained MLP in testing, and the class label is decided from the obtained output.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s04::p001",
+   "summary": "In s2sL, the test sample feature vector is converted to s2s data representation by combining it with preselected reference samples whose class labels are known a priori, as DISPLAYFORM0.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s04::p002",
+   "summary": "INLINEFORM0 and INLINEFORM1 are INLINEFORM2-dimensional feature vectors for the test sample and INLINEFORM3 reference sample, INLINEFORM4 is the considered number of reference samples, and reference samples can come from either class.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s04::p003",
+   "summary": "Each test sample INLINEFORM0 is combined with all INLINEFORM2 reference samples to form INLINEFORM4 instances, and outputs INLINEFORM6 are combined by voting-based decision approach to obtain final decision INLINEFORM9.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s05::p000",
+   "summary": "Preliminary results validate s2sL on Speech/Music discrimination and emotion classification, using GTZAN Music-Speech dataset with 120 audio files, 60 speech and 60 music, and 13-dimensional MFCC vectors.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s05::p001",
+   "summary": "The standard Berlin speech emotion database (EMO-DB) has 535 utterances corresponding to 7 different emotions, with 19-dimensional feature vectors from WEKA toolkit on 384-dimensional openSMILE toolkit vectors.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s05::p002",
+   "summary": "All experimental results use 5-fold cross validation with 80% training and 20% testing, 4 training data proportions, Accuracy (in %) for balanced tasks, and INLINEFORM6 for imbalanced Anger/Happy emotion classification.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s05::p003",
+   "summary": "Table TABREF14 shows mean accuracies (in %) from 5-fold cross validation, where s2sL outperforms MLP for Speech/Music and Neutral/Sad classification, especially at low resource conditions.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s05::p004",
+   "summary": "Table TABREF14 shows s2sL outperforms MLP, Eusboost and MWMOTE on imbalanced Anger/Happy classification, with around 3 % absolute improvement in INLINEFORM1 over MWMOTE and 6% ( INLINEFORM3 ) improvement in INLINEFORM4.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s06::p000",
+   "summary": "The paper introduced a novel s2s framework that learns class discriminative characteristics from low data resources, considers two samples simultaneously, generates multiple test instances using preselected reference samples, and handles low resourced data imbalance.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p000",
+   "summary": "[1] Hinton, G., Deng, L., Yu, D., Dahl, G. E., Mohamed, A. R., Jaitly, N., Senior, A., Vanhoucke, V., Nguyen, P., Sainath, T. N. & Kingsbury, B. (2012) published Deep neural networks for acoustic modeling in speech recognition: The shared views of four research groups in IEEE Signal Processing Magazine, pp. 82–97.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p001",
+   "summary": "[2] Vinyals, O., Ravuri, S. V. & Povey, D. (2012) published Revisiting recurrent neural networks for robust ASR in Proc. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 4085–4088.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p002",
+   "summary": "[3] Lu, L., Zhang, X., Cho K. & Renals, S. (2015) published A study of the recurrent neural network encoder-decoder for large vocabulary speech recognition in Proc. INTERSPEECH, pp. 3249–3253.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p003",
+   "summary": "[4] Zhang, Y., Pezeshki, M., Brakel, P., Zhang, S., Bengio, C.L.Y. & Courville, A. (2017) published Towards end-to-end speech recognition with deep convolutional neural networks as arXiv preprint, arXiv:1701.02720.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p004",
+   "summary": "[5] Han, K., Yu, D. & Tashev, I. (2014) published Speech emotion recognition using deep neural network and extreme learning machine in Proc. Interspeech, pp. 223–227.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p005",
+   "summary": "[6] Trigeorgis, G., Ringeval, F., Brueckner, R., Marchi, E., Nicolaou, M. A., Schuller, B., & Zafeiriou, S. (2016) published Adieu features? End-to-end speech emotion recognition using a deep convolutional recurrent network in Proc. ICASSP, pp. 5200–5204).",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p006",
+   "summary": "[7] Huang, Che-Wei, & Shrikanth S. Narayanan. (2016) published Attention Assisted Discovery of Sub-Utterance Structure in Speech Emotion Recognition in Proc. INTERSPEECH, pp. 1387–1391.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p007",
+   "summary": "[8] Zhang, Z., Ringeval, F., Han, J., Deng, J., Marchi, E. & Schuller, B. (2016) published Facing realism in spontaneous emotion recognition from speech: Feature enhancement by autoencoder with LSTM neural networks in Proc. INTERSPEECH, pp. 3593–3597.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p008",
+   "summary": "[9] Scheirer, E. D. & Slaney, M. (2003) published Multi-feature speech/music discrimination system as U.S. Patent 6,570,991.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p009",
+   "summary": "[10] Pikrakis, A. & Theodoridis S. (2014) published Speech-music discrimination: A deep learning perspective in Proc. European Signal Processing Conference (EUSIPCO), pp. 616–620.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p010",
+   "summary": "[11] Choi, K., Fazekas, G. & Sandler, M. (2016) published Automatic tagging using deep convolutional neural networks as arXiv preprint, arXiv:1606.00298.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p011",
+   "summary": "[12] Zazo Candil, R., Sainath, T.N., Simko, G. & Parada, C. (2016) published Feature learning with raw-waveform CLDNNs for Voice Activity Detection in Proc. Interspeech, pp. 3668–3672.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p012",
+   "summary": "[13] Tian, L., Moore, JD. & Lai, C. (2015) published Emotion recognition in spontaneous and acted dialogues in Proc. International Conference on Affective Computing and Intelligent Interaction (ACII), pp. 698–704.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p013",
+   "summary": "[14] Dumpala, S.H., Chakraborty, R. & Kopparapu, S.K. (2017) published k-FFNN: A priori knowledge infused feed-forward neural networks as arXiv preprint, arXiv:1704.07055.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p014",
+   "summary": "[15] Dumpala, S.H., Chakraborty, R. & Kopparapu, S.K. (2018) published Knowledge-driven feed-forward neural network for audio affective content analysis, to appear in AAAI-2018 workshop on Affective Content Analysis.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p015",
+   "summary": "[16] Deng, J., Zhang, Z., Marchi, E. & Schuller, B. (2013) published Sparse autoencoder-based feature transfer learning for speech emotion recognition in Proc. Humaine Association Conference on Affective Computing and Intelligent Interaction (ACII), pp. 511–516.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p016",
+   "summary": "[17] George Tzanetakis, Gtzan musicspeech is available on-line at http://marsyas.info/download/datasets.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p017",
+   "summary": "[18] Burkhardt, F., Paeschke, A., Rolfes, M., Sendlmeier, W.F. & Weiss, B. (2005) published A database of german emotional speech in Proc. Interspeech, pp. 1517–1520.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p018",
+   "summary": "[19] Hall, M., Frank, E., Holmes, G., Pfahringer, B., Reutemann, P. & Witten, I.H. (2009) published The WEKA data mining software: an update in ACM SIGKDD explorations newsletter, 11(1), pp. 10–18.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p019",
+   "summary": "[20] Eyben, F., Weninger, F., Gross, F. & Schuller, B. (2013) published Recent developments in opensmile, the munich open-source multimedia feature extractor in Proc. ACM international conference on Multimedia, pp. 835–838.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p020",
+   "summary": "[21] Maratea, A., Petrosino, A. & Manzo, M. (2014) published Adjusted f-measure and kernel scaling for imbalanced data learning in Information Sciences 257:331–341.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p021",
+   "summary": "[22] Galar, M., Fernandez, A., Barrenechea, E. & Herrera, F. (2013) published Eusboost: Enhancing ensembles for highly imbalanced data-sets by evolutionary undersampling in Pattern Recognition 46(12):3460–3471.",
+   "group_id": "1712.05608::g00"
+  },
+  {
+   "passage_id": "1712.05608::s07::p022",
+   "summary": "[23] Barua, S., Islam, M. M., Yao, X. & Murase, K. (2014) published Mwmote–majority weighted minority oversampling technique for imbalanced data set learning in IEEE Transactions on Knowledge and Data Engineering 26(2):405–425.",
+   "group_id": "1712.05608::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1712.05608::g00",
+   "summaries": [
+    {
+     "passage_id": "1712.05608::s00::p000",
+     "summary": "Deep neural networks (DNNs), particularly convolutional and recurrent neural networks with huge architectures, have succeeded in tasks including audio processing such as speech to text, emotion recognition, and speech/non-speech classification.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s00::p001",
+     "summary": "Training deep architectures requires large annotated data, limiting low data resource scenarios common in speech-based applications, where annotation is difficult and emotion recognition suffers from annotator disagreement.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s00::p002",
+     "summary": "This work proposes simultaneous two sample learning (s2sL), which trains a classifier using two samples simultaneously for classification in low data resource scenarios and low resource data imbalance.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s01::p000",
+     "summary": "The s2sL approach for low data resource problems is explained using MLP, modified to handle the data representation, as the base classifier for a two-class classification task.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s02::p000",
+     "summary": "For a two-class classification task with INLINEFORM0 class labels and INLINEFORM1 and INLINEFORM2 samples, classifiers are generally trained using input-output pairs as DISPLAYFORM0.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s02::p001",
+     "summary": "INLINEFORM0 is the INLINEFORM1-dimensional feature vector for the INLINEFORM2 sample with INLINEFORM3 class label, and simultaneous two sample (s2s) representation considers two samples as DISPLAYFORM0.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s02::p002",
+     "summary": "INLINEFORM0 and INLINEFORM1 are INLINEFORM2-dimensional feature vectors for the INLINEFORM3 sample in INLINEFORM4 class and INLINEFORM5 sample in INLINEFORM6 class, with INLINEFORM7 and INLINEFORM8 as output labels.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s02::p003",
+     "summary": "In s2s data representation, the input feature vector has length INLINEFORM0, output class labels are INLINEFORM2 or INLINEFORM3, and train samples increase to INLINEFORM5 from INLINEFORM6 samples.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s03::p000",
+     "summary": "MLP is the base classifier used to validate the proposed s2s framework, and modifications to its architecture are made to train on s2s based data representation.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s03::p001",
+     "summary": "The input layer has INLINEFORM0 units instead of INLINEFORM1 units to accept INLINEFORM2 and INLINEFORM3 simultaneously.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s03::p002",
+     "summary": "The hidden layer resembles a regular MLP, with hidden units varied from 2 to INLINEFORM0, a single hidden layer considered, and Rectified linear units (ReLU) used.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s03::p003",
+     "summary": "The output layer has four units for two-class classification, uses sigmoid activation and binary cross-entropy, because s2s output labels have more than one active unit and cannot use softmax.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s03::p004",
+     "summary": "The s2s-MLP output layer has outputs INLINEFORM0 and INLINEFORM1, four units for two-class classification, possible labels INLINEFORM4, INLINEFORM5, INLINEFORM6, INLINEFORM7, and is trained using adam optimizer.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s04::p000",
+     "summary": "Generally, the feature vector corresponding to the test sample is provided as input to the trained MLP in testing, and the class label is decided from the obtained output.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s04::p001",
+     "summary": "In s2sL, the test sample feature vector is converted to s2s data representation by combining it with preselected reference samples whose class labels are known a priori, as DISPLAYFORM0.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s04::p002",
+     "summary": "INLINEFORM0 and INLINEFORM1 are INLINEFORM2-dimensional feature vectors for the test sample and INLINEFORM3 reference sample, INLINEFORM4 is the considered number of reference samples, and reference samples can come from either class.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s04::p003",
+     "summary": "Each test sample INLINEFORM0 is combined with all INLINEFORM2 reference samples to form INLINEFORM4 instances, and outputs INLINEFORM6 are combined by voting-based decision approach to obtain final decision INLINEFORM9.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s05::p000",
+     "summary": "Preliminary results validate s2sL on Speech/Music discrimination and emotion classification, using GTZAN Music-Speech dataset with 120 audio files, 60 speech and 60 music, and 13-dimensional MFCC vectors.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s05::p001",
+     "summary": "The standard Berlin speech emotion database (EMO-DB) has 535 utterances corresponding to 7 different emotions, with 19-dimensional feature vectors from WEKA toolkit on 384-dimensional openSMILE toolkit vectors.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s05::p002",
+     "summary": "All experimental results use 5-fold cross validation with 80% training and 20% testing, 4 training data proportions, Accuracy (in %) for balanced tasks, and INLINEFORM6 for imbalanced Anger/Happy emotion classification.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s05::p003",
+     "summary": "Table TABREF14 shows mean accuracies (in %) from 5-fold cross validation, where s2sL outperforms MLP for Speech/Music and Neutral/Sad classification, especially at low resource conditions.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s05::p004",
+     "summary": "Table TABREF14 shows s2sL outperforms MLP, Eusboost and MWMOTE on imbalanced Anger/Happy classification, with around 3 % absolute improvement in INLINEFORM1 over MWMOTE and 6% ( INLINEFORM3 ) improvement in INLINEFORM4.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s06::p000",
+     "summary": "The paper introduced a novel s2s framework that learns class discriminative characteristics from low data resources, considers two samples simultaneously, generates multiple test instances using preselected reference samples, and handles low resourced data imbalance.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p000",
+     "summary": "[1] Hinton, G., Deng, L., Yu, D., Dahl, G. E., Mohamed, A. R., Jaitly, N., Senior, A., Vanhoucke, V., Nguyen, P., Sainath, T. N. & Kingsbury, B. (2012) published Deep neural networks for acoustic modeling in speech recognition: The shared views of four research groups in IEEE Signal Processing Magazine, pp. 82–97.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p001",
+     "summary": "[2] Vinyals, O., Ravuri, S. V. & Povey, D. (2012) published Revisiting recurrent neural networks for robust ASR in Proc. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 4085–4088.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p002",
+     "summary": "[3] Lu, L., Zhang, X., Cho K. & Renals, S. (2015) published A study of the recurrent neural network encoder-decoder for large vocabulary speech recognition in Proc. INTERSPEECH, pp. 3249–3253.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p003",
+     "summary": "[4] Zhang, Y., Pezeshki, M., Brakel, P., Zhang, S., Bengio, C.L.Y. & Courville, A. (2017) published Towards end-to-end speech recognition with deep convolutional neural networks as arXiv preprint, arXiv:1701.02720.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p004",
+     "summary": "[5] Han, K., Yu, D. & Tashev, I. (2014) published Speech emotion recognition using deep neural network and extreme learning machine in Proc. Interspeech, pp. 223–227.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p005",
+     "summary": "[6] Trigeorgis, G., Ringeval, F., Brueckner, R., Marchi, E., Nicolaou, M. A., Schuller, B., & Zafeiriou, S. (2016) published Adieu features? End-to-end speech emotion recognition using a deep convolutional recurrent network in Proc. ICASSP, pp. 5200–5204).",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p006",
+     "summary": "[7] Huang, Che-Wei, & Shrikanth S. Narayanan. (2016) published Attention Assisted Discovery of Sub-Utterance Structure in Speech Emotion Recognition in Proc. INTERSPEECH, pp. 1387–1391.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p007",
+     "summary": "[8] Zhang, Z., Ringeval, F., Han, J., Deng, J., Marchi, E. & Schuller, B. (2016) published Facing realism in spontaneous emotion recognition from speech: Feature enhancement by autoencoder with LSTM neural networks in Proc. INTERSPEECH, pp. 3593–3597.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p008",
+     "summary": "[9] Scheirer, E. D. & Slaney, M. (2003) published Multi-feature speech/music discrimination system as U.S. Patent 6,570,991.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p009",
+     "summary": "[10] Pikrakis, A. & Theodoridis S. (2014) published Speech-music discrimination: A deep learning perspective in Proc. European Signal Processing Conference (EUSIPCO), pp. 616–620.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p010",
+     "summary": "[11] Choi, K., Fazekas, G. & Sandler, M. (2016) published Automatic tagging using deep convolutional neural networks as arXiv preprint, arXiv:1606.00298.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p011",
+     "summary": "[12] Zazo Candil, R., Sainath, T.N., Simko, G. & Parada, C. (2016) published Feature learning with raw-waveform CLDNNs for Voice Activity Detection in Proc. Interspeech, pp. 3668–3672.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p012",
+     "summary": "[13] Tian, L., Moore, JD. & Lai, C. (2015) published Emotion recognition in spontaneous and acted dialogues in Proc. International Conference on Affective Computing and Intelligent Interaction (ACII), pp. 698–704.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p013",
+     "summary": "[14] Dumpala, S.H., Chakraborty, R. & Kopparapu, S.K. (2017) published k-FFNN: A priori knowledge infused feed-forward neural networks as arXiv preprint, arXiv:1704.07055.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p014",
+     "summary": "[15] Dumpala, S.H., Chakraborty, R. & Kopparapu, S.K. (2018) published Knowledge-driven feed-forward neural network for audio affective content analysis, to appear in AAAI-2018 workshop on Affective Content Analysis.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p015",
+     "summary": "[16] Deng, J., Zhang, Z., Marchi, E. & Schuller, B. (2013) published Sparse autoencoder-based feature transfer learning for speech emotion recognition in Proc. Humaine Association Conference on Affective Computing and Intelligent Interaction (ACII), pp. 511–516.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p016",
+     "summary": "[17] George Tzanetakis, Gtzan musicspeech is available on-line at http://marsyas.info/download/datasets.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p017",
+     "summary": "[18] Burkhardt, F., Paeschke, A., Rolfes, M., Sendlmeier, W.F. & Weiss, B. (2005) published A database of german emotional speech in Proc. Interspeech, pp. 1517–1520.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p018",
+     "summary": "[19] Hall, M., Frank, E., Holmes, G., Pfahringer, B., Reutemann, P. & Witten, I.H. (2009) published The WEKA data mining software: an update in ACM SIGKDD explorations newsletter, 11(1), pp. 10–18.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p019",
+     "summary": "[20] Eyben, F., Weninger, F., Gross, F. & Schuller, B. (2013) published Recent developments in opensmile, the munich open-source multimedia feature extractor in Proc. ACM international conference on Multimedia, pp. 835–838.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p020",
+     "summary": "[21] Maratea, A., Petrosino, A. & Manzo, M. (2014) published Adjusted f-measure and kernel scaling for imbalanced data learning in Information Sciences 257:331–341.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p021",
+     "summary": "[22] Galar, M., Fernandez, A., Barrenechea, E. & Herrera, F. (2013) published Eusboost: Enhancing ensembles for highly imbalanced data-sets by evolutionary undersampling in Pattern Recognition 46(12):3460–3471.",
+     "group_id": "1712.05608::g00"
+    },
+    {
+     "passage_id": "1712.05608::s07::p022",
+     "summary": "[23] Barua, S., Islam, M. M., Yao, X. & Murase, K. (2014) published Mwmote–majority weighted minority oversampling technique for imbalanced data set learning in IEEE Transactions on Knowledge and Data Engineering 26(2):405–425.",
+     "group_id": "1712.05608::g00"
+    }
+   ],
+   "n_raw": 46,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5114,
+    "completion_tokens": 3245,
+    "total_tokens": 8359,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

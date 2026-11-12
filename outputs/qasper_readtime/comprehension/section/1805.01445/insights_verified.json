@@ -1,0 +1,460 @@
+{
+ "kept": [
+  {
+   "insight_id": "1805.01445::g00:i01",
+   "paper_id": "1805.01445",
+   "group_id": "1805.01445::g00",
+   "concise_text": "The 50 models with different random seeds were evaluated on 4 test sets of 2000 samples, and all models performed above 99% on Standard while nonstandard deviations reached 20.63.",
+   "triple": {
+    "subject": "50 models with different random seeds",
+    "predicate": "evaluated_on",
+    "object": "4 test sets of 2000 samples"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1805.01445::s03::p001",
+    "1805.01445::s04::p000",
+    "1805.01445::s04::p001"
+   ],
+   "supporting_fact_ids": [
+    "1805.01445::g00:b1:f13",
+    "1805.01445::g00:b1:f16",
+    "1805.01445::g00:b1:f17",
+    "1805.01445::g00:b2:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "All cited passages exist and jointly support the composed method/result: 50 seeds, 4 test sets of 2000 samples, above 99% Standard, nonstandard deviations up to 20.63."
+   },
+   "unit_id": "1805.01445::u001"
+  },
+  {
+   "insight_id": "1805.01445::g00:i08",
+   "paper_id": "1805.01445",
+   "group_id": "1805.01445::g00",
+   "concise_text": "The Standard test set has lengths 5-10 and no repeats, matching training inputs, and all models perform above 99% on it.",
+   "triple": {
+    "subject": "Standard test set",
+    "predicate": "evaluated_on",
+    "object": "above 99% accuracy"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1805.01445::s03::p000",
+    "1805.01445::s03::p001",
+    "1805.01445::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.01445::g00:b1:f11",
+    "1805.01445::g00:b1:f12",
+    "1805.01445::g00:b1:f14",
+    "1805.01445::g00:b1:f16"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "All cited passages exist and jointly support the composed setting/outcome: Standard has lengths 5-10/no repeats matching training, and all models perform above 99% on it."
+   },
+   "unit_id": "1805.01445::u008"
+  },
+  {
+   "insight_id": "1805.01445::g00:i09",
+   "paper_id": "1805.01445",
+   "group_id": "1805.01445::g00",
+   "concise_text": "The Short and Long test sets use strings of length 1-4 and 11-15, and some seeds give performances above 95% for either set.",
+   "triple": {
+    "subject": "Short and Long test sets",
+    "predicate": "evaluated_on",
+    "object": "some seeds with performances above 95%"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1805.01445::s03::p001",
+    "1805.01445::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.01445::g00:b1:f15",
+    "1805.01445::g00:b1:f17"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.79,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "All cited passages exist and jointly support the composed setting/outcome: Short/Long lengths 1-4 and 11-15, and some seeds above 95% for either set."
+   },
+   "unit_id": "1805.01445::u009"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1805.01445::g00:i00",
+   "paper_id": "1805.01445",
+   "group_id": "1805.01445::g00",
+   "concise_text": "Training seq2seq-attention models on 100,000 samples with lengths 5-10 and no repeats yielded above 99% on Standard but deviations of 13.39 on Repeat and 20.63 on Long.",
+   "triple": {
+    "subject": "training on 100,000 samples with lengths 5-10 and no repeats",
+    "predicate": "causes",
+    "object": "above 99% on Standard and deviations of 13.39 on Repeat and 20.63 on Long"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1805.01445::s03::p000",
+    "1805.01445::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.01445::g00:b1:f10",
+    "1805.01445::g00:b1:f11",
+    "1805.01445::g00:b1:f12",
+    "1805.01445::g00:b1:f16",
+    "1805.01445::g00:b1:f17"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.55,
+    "causality_error": true,
+    "reason": "Sources report the training setting and outcomes separately, but do not support a causal 'causes' relation; also concise_text says deviations on Repeat/Long, while passage says deviation on other two sets ranges 13.39 to 20.63."
+   },
+   "unit_id": "1805.01445::u000"
+  },
+  {
+   "insight_id": "1805.01445::g00:i02",
+   "paper_id": "1805.01445",
+   "group_id": "1805.01445::g00",
+   "concise_text": "Because the symbol replacement task requires alignments between input and output alphabets, the Repeat, Short, and Long test sets probe whether models learned that structure without training-distribution dependencies.",
+   "triple": {
+    "subject": "Repeat, Short, and Long test sets",
+    "predicate": "evaluated_on",
+    "object": "alignments between input and output alphabets without training-distribution dependencies"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1805.01445::s01::p001",
+    "1805.01445::s03::p000",
+    "1805.01445::s03::p001"
+   ],
+   "supporting_fact_ids": [
+    "1805.01445::g00:b0:f12",
+    "1805.01445::g00:b0:f13",
+    "1805.01445::g00:b1:f10",
+    "1805.01445::g00:b1:f11",
+    "1805.01445::g00:b1:f12",
+    "1805.01445::g00:b1:f15"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.45,
+    "causality_error": false,
+    "reason": "The triple is semantically wrong: test sets are not 'evaluated_on' alignments; sources say they test generalization to repeats/lengths and that the task requires alignments. The concise_text adds an unsupported 'Because' framing."
+   },
+   "unit_id": "1805.01445::u002"
+  },
+  {
+   "insight_id": "1805.01445::g00:i03",
+   "paper_id": "1805.01445",
+   "group_id": "1805.01445::g00",
+   "concise_text": "The paper defines linguistic generalization as understanding structurally valid utterances regardless of probability, then tests it with uncharacteristic inputs that are not typical in the training distribution but remain solvable.",
+   "triple": {
+    "subject": "uncharacteristic inputs",
+    "predicate": "evaluated_on",
+    "object": "linguistic generalization"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1805.01445::s00::p000",
+    "1805.01445::s00::p003"
+   ],
+   "supporting_fact_ids": [
+    "1805.01445::g00:b0:f01",
+    "1805.01445::g00:b0:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.35,
+    "causality_error": false,
+    "reason": "The concise_text is a close paraphrase of the two cited paragraphs, and the triple's 'uncharacteristic inputs evaluated_on linguistic generalization' is not a supported relation."
+   },
+   "unit_id": "1805.01445::u003"
+  },
+  {
+   "insight_id": "1805.01445::g00:i04",
+   "paper_id": "1805.01445",
+   "group_id": "1805.01445::g00",
+   "concise_text": "Although all models achieve near perfect accuracy on the standard test set, the variability in generalization on uncharacteristic inputs across random seeds is described as alarming.",
+   "triple": {
+    "subject": "near perfect accuracy on the standard test set",
+    "predicate": "limits",
+    "object": "detection of variability in generalization on uncharacteristic inputs across random seeds"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1805.01445::s00::p003",
+    "1805.01445::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.01445::g00:b0:f08",
+    "1805.01445::g00:b2:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.45,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "Sources say standard performance remains mostly the same while variability is alarming, but do not say near-perfect Standard accuracy 'limits detection' of variability; this is an unsupported causal/interpretive relation."
+   },
+   "unit_id": "1805.01445::u004"
+  },
+  {
+   "insight_id": "1805.01445::g00:i05",
+   "paper_id": "1805.01445",
+   "group_id": "1805.01445::g00",
+   "concise_text": "The random seed affects exact initialization and training sample order, while the final model's ability to generalize is highly dependent on the random seed.",
+   "triple": {
+    "subject": "random seed",
+    "predicate": "causes",
+    "object": "high dependence of the final model's ability to generalize"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1805.01445::s05::p002",
+    "1805.01445::s00::p003"
+   ],
+   "supporting_fact_ids": [
+    "1805.01445::g00:b2:f05",
+    "1805.01445::g00:b2:f06",
+    "1805.01445::g00:b0:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.35,
+    "causality_error": true,
+    "reason": "Sources state high dependence on random seed and that seed affects initialization/order, but the triple asserts a causal relation stronger than the text's dependence/effect wording; concise_text is largely a restatement."
+   },
+   "unit_id": "1805.01445::u005"
+  },
+  {
+   "insight_id": "1805.01445::g00:i06",
+   "paper_id": "1805.01445",
+   "group_id": "1805.01445::g00",
+   "concise_text": "Hyperparameters were tuned using 5000 uncharacteristic validation inputs of length 3-12, yet 50 models with different random seeds still showed deviations of 13.39 on Repeat and 20.63 on Long.",
+   "triple": {
+    "subject": "hyperparameter tuning using 5000 uncharacteristic validation inputs",
+    "predicate": "limits",
+    "object": "deviations of 13.39 on Repeat and 20.63 on Long"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1805.01445::s02::p001",
+    "1805.01445::s03::p001",
+    "1805.01445::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.01445::g00:b1:f06",
+    "1805.01445::g00:b1:f07",
+    "1805.01445::g00:b1:f09",
+    "1805.01445::g00:b1:f17",
+    "1805.01445::g00:b2:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.83,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.6,
+    "causality_error": true,
+    "reason": "Sources support the tuning setup and later deviations, but do not support the 'limits' relation that hyperparameter tuning caused or constrained those deviations; this is co-occurrence interpreted causally."
+   },
+   "unit_id": "1805.01445::u006"
+  },
+  {
+   "insight_id": "1805.01445::g00:i07",
+   "paper_id": "1805.01445",
+   "group_id": "1805.01445::g00",
+   "concise_text": "The simple formal task mimics input-output symbol alignments and local syntactic properties of translation, tagging and summarization, while the conclusion proposes future work on natural language tasks.",
+   "triple": {
+    "subject": "simple formal task",
+    "predicate": "extends",
+    "object": "future work on natural language tasks"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1805.01445::s01::p000",
+    "1805.01445::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1805.01445::g00:b0:f10",
+    "1805.01445::g00:b2:f08",
+    "1805.01445::g00:b2:f09"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.76,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.45,
+    "novelty": 0.45,
+    "causality_error": false,
+    "reason": "The cited paragraphs support the two facts separately, but the triple's 'simple formal task extends future work on natural language tasks' is not supported; future work is proposed by the authors, not an extension relation of the task."
+   },
+   "unit_id": "1805.01445::u007"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1805.01445::g00:i00",
+    "verdict": {
+     "insight_id": "1805.01445::g00:i00",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.55,
+     "causality_error": true,
+     "reason": "Sources report the training setting and outcomes separately, but do not support a causal 'causes' relation; also concise_text says deviations on Repeat/Long, while passage says deviation on other two sets ranges 13.39 to 20.63."
+    },
+    "reason": "Sources report the training setting and outcomes separately, but do not support a causal 'causes' relation; also concise_text says deviations on Repeat/Long, while passage says deviation on other two sets ranges 13.39 to 20.63."
+   },
+   {
+    "insight_id": "1805.01445::g00:i01",
+    "verdict": {
+     "insight_id": "1805.01445::g00:i01",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "All cited passages exist and jointly support the composed method/result: 50 seeds, 4 test sets of 2000 samples, above 99% Standard, nonstandard deviations up to 20.63."
+    }
+   },
+   {
+    "insight_id": "1805.01445::g00:i02",
+    "verdict": {
+     "insight_id": "1805.01445::g00:i02",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.45,
+     "causality_error": false,
+     "reason": "The triple is semantically wrong: test sets are not 'evaluated_on' alignments; sources say they test generalization to repeats/lengths and that the task requires alignments. The concise_text adds an unsupported 'Because' framing."
+    },
+    "reason": "The triple is semantically wrong: test sets are not 'evaluated_on' alignments; sources say they test generalization to repeats/lengths and that the task requires alignments. The concise_text adds an unsupported 'Because' framing."
+   },
+   {
+    "insight_id": "1805.01445::g00:i03",
+    "verdict": {
+     "insight_id": "1805.01445::g00:i03",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.35,
+     "causality_error": false,
+     "reason": "The concise_text is a close paraphrase of the two cited paragraphs, and the triple's 'uncharacteristic inputs evaluated_on linguistic generalization' is not a supported relation."
+    },
+    "reason": "The concise_text is a close paraphrase of the two cited paragraphs, and the triple's 'uncharacteristic inputs evaluated_on linguistic generalization' is not a supported relation."
+   },
+   {
+    "insight_id": "1805.01445::g00:i04",
+    "verdict": {
+     "insight_id": "1805.01445::g00:i04",
+     "keep": false,
+     "support": 0.45,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "Sources say standard performance remains mostly the same while variability is alarming, but do not say near-perfect Standard accuracy 'limits detection' of variability; this is an unsupported causal/interpretive relation."
+    },
+    "reason": "Sources say standard performance remains mostly the same while variability is alarming, but do not say near-perfect Standard accuracy 'limits detection' of variability; this is an unsupported causal/interpretive relation."
+   },
+   {
+    "insight_id": "1805.01445::g00:i05",
+    "verdict": {
+     "insight_id": "1805.01445::g00:i05",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.35,
+     "causality_error": true,
+     "reason": "Sources state high dependence on random seed and that seed affects initialization/order, but the triple asserts a causal relation stronger than the text's dependence/effect wording; concise_text is largely a restatement."
+    },
+    "reason": "Sources state high dependence on random seed and that seed affects initialization/order, but the triple asserts a causal relation stronger than the text's dependence/effect wording; concise_text is largely a restatement."
+   },
+   {
+    "insight_id": "1805.01445::g00:i06",
+    "verdict": {
+     "insight_id": "1805.01445::g00:i06",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.6,
+     "causality_error": true,
+     "reason": "Sources support the tuning setup and later deviations, but do not support the 'limits' relation that hyperparameter tuning caused or constrained those deviations; this is co-occurrence interpreted causally."
+    },
+    "reason": "Sources support the tuning setup and later deviations, but do not support the 'limits' relation that hyperparameter tuning caused or constrained those deviations; this is co-occurrence interpreted causally."
+   },
+   {
+    "insight_id": "1805.01445::g00:i07",
+    "verdict": {
+     "insight_id": "1805.01445::g00:i07",
+     "keep": false,
+     "support": 0.45,
+     "novelty": 0.45,
+     "causality_error": false,
+     "reason": "The cited paragraphs support the two facts separately, but the triple's 'simple formal task extends future work on natural language tasks' is not supported; future work is proposed by the authors, not an extension relation of the task."
+    },
+    "reason": "The cited paragraphs support the two facts separately, but the triple's 'simple formal task extends future work on natural language tasks' is not supported; future work is proposed by the authors, not an extension relation of the task."
+   },
+   {
+    "insight_id": "1805.01445::g00:i08",
+    "verdict": {
+     "insight_id": "1805.01445::g00:i08",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "All cited passages exist and jointly support the composed setting/outcome: Standard has lengths 5-10/no repeats matching training, and all models perform above 99% on it."
+    }
+   },
+   {
+    "insight_id": "1805.01445::g00:i09",
+    "verdict": {
+     "insight_id": "1805.01445::g00:i09",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "All cited passages exist and jointly support the composed setting/outcome: Short/Long lengths 1-4 and 11-15, and some seeds above 95% for either set."
+    }
+   }
+  ],
+  "calls": [
+   {
+    "n": 10,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 5396,
+     "completion_tokens": 836,
+     "total_tokens": 6232,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "paper_id": "2002.11910",
+ "title": "Integrating Boundary Assembling into a DNN Framework for Named Entity Recognition in Chinese Social Media Text",
+ "abstract": "Named entity recognition is a challenging task in Natural Language Processing, especially for informal and noisy social media text. Chinese word boundaries are also entity boundaries, therefore, named entity recognition for Chinese text can benefit from word boundary detection, outputted by Chinese word segmentation. Yet Chinese word segmentation poses its own difficulty because it is influenced by several factors, e.g., segmentation criteria, employed algorithm, etc. Dealt improperly, it may generate a cascading failure to the quality of named entity recognition followed. In this paper we integrate a boundary assembling method with the state-of-the-art deep neural network model, and incorporate the updated word boundary information into a conditional random field model for named entity recognition. Our method shows a 2% absolute improvement over previous state-of-the-art results.",
+ "sections": [
+  "Introduction",
+  "Model",
+  "Model ::: LSTM for Word Segmentation",
+  "Model ::: Boundary Assembling Method",
+  "Model ::: CRF for Named Entity Recognition",
+  "Experiments ::: Datasets",
+  "Experiments ::: Training Settings",
+  "Experiments ::: Results and Discussion",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 20,
+ "n_tokens": 2241,
+ "figures_and_tables": [
+  {
+   "caption_id": "2002.11910::fig000",
+   "paper_id": "2002.11910",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: The model for named entity recognition. The LSTM module is trained twice, with inputs first for CWS then for NER. Boundary assembling method is added in between LSTM and CRF for CWS, so that a better representation of segmentation can be obtained. Dashed-line arrows indicate parameter adjustment based on CRF’s loss function between each training epoch. CRF for NER takes directly the hidden vectors in LSTM as dynamic features. Abbreviations: CRF: conditional random field; CWS: Chinese word segmentation; NER: named entity recognition; LSTM: long short-term memory.",
+   "n_tokens": 122
+  },
+  {
+   "caption_id": "2002.11910::fig001",
+   "paper_id": "2002.11910",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1: The results of two previous models, and results of this study, in which we apply a boundary assembling method. Precision, recall, and F1 scores are shown for both named entity and nominal mention. For both tasks and their overall performance, we outperform the other two models.",
+   "n_tokens": 60
+  }
+ ]
+}

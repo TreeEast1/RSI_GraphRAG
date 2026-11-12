@@ -1,0 +1,119 @@
+[
+  {
+    "operation": "ADD",
+    "candidate_id": "c1",
+    "comprehension_text": "Krasnovishersky District is located in Russia.",
+    "new_semantic_relation": "located in Russia",
+    "operator": "EXPLICIT_GAP",
+    "chain": [
+      {
+        "passage_id": "chunk-b4e9123d254190f7bf4c900b7037ac74",
+        "span": "Krasnovishersky District () is an administrative district (raion) of Perm Krai, Russia"
+      }
+    ],
+    "linked_entity_ids": [
+      "entity-8fe939f3ee44e42f92d671ec749bfaaa",
+      "entity-1c625cc86f824660a320d185916e3c55"
+    ],
+    "source_triple_ids": [
+      "triple-93d8e02b0c6c8263da9b8d163836ffb3",
+      "triple-27aa0013a882095c9c5f2e701a283d6d"
+    ],
+    "source_passage_ids": [
+      "chunk-b4e9123d254190f7bf4c900b7037ac74"
+    ],
+    "evidence_spans": [
+      {
+        "passage_id": "chunk-b4e9123d254190f7bf4c900b7037ac74",
+        "span": "Krasnovishersky District () is an administrative district (raion) of Perm Krai, Russia"
+      }
+    ],
+    "derivation_type": "explicit_restatement",
+    "novel_part": "The district's location in Russia is not directly stored.",
+    "reasoning_summary": "The passage identifies the district as belonging to Perm Krai, Russia.",
+    "novelty_justification": "No stored triple directly links Krasnovishersky District to Russia.",
+    "uncertainty_note": ""
+  },
+  {
+    "operation": "ADD",
+    "candidate_id": "c2",
+    "comprehension_text": "Utva River is an indirect tributary of the Kama River.",
+    "new_semantic_relation": "indirect tributary of Kama River",
+    "operator": "COMPOSITIONAL_SHORTCUT",
+    "chain": [
+      {
+        "passage_id": "chunk-c0eb2d588ced2105b38e9094111c65dd",
+        "span": "Utva () is a river in Perm Krai, Russia, a right tributary of the Veslyana River, which in turn is a tributary of the Kama River."
+      }
+    ],
+    "linked_entity_ids": [
+      "entity-8067e422ab807d78d16d9b6ddf1dd27e",
+      "entity-64ba2e1054565b99cf315643ea96328f",
+      "entity-b9705c72e03890fb26770bee24487c4f"
+    ],
+    "source_triple_ids": [
+      "triple-96a7a81eaa2204d486247f8acfea767a",
+      "triple-017da233bfccfd831500aef023c88890"
+    ],
+    "source_passage_ids": [
+      "chunk-c0eb2d588ced2105b38e9094111c65dd"
+    ],
+    "evidence_spans": [
+      {
+        "passage_id": "chunk-c0eb2d588ced2105b38e9094111c65dd",
+        "span": "a right tributary of the Veslyana River, which in turn is a tributary of the Kama River"
+      }
+    ],
+    "derivation_type": "derived",
+    "novel_part": "Utva's indirect tributary relationship to Kama is not stored.",
+    "reasoning_summary": "Utva flows into Veslyana, which flows into Kama.",
+    "novelty_justification": "Stored triples stop at Utva's relationship with Veslyana.",
+    "uncertainty_note": ""
+  },
+  {
+    "operation": "ADD",
+    "candidate_id": "c3",
+    "comprehension_text": "Chugrum River is an indirect tributary of the Kama River.",
+    "new_semantic_relation": "indirect tributary of Kama River",
+    "operator": "COMPOSITIONAL_SHORTCUT",
+    "chain": [
+      {
+        "passage_id": "chunk-c0eb2d588ced2105b38e9094111c65dd",
+        "span": "The main tributaries are the Chugrum River (right) and the Yuzhnaya Anva River (left)."
+      },
+      {
+        "passage_id": "chunk-c0eb2d588ced2105b38e9094111c65dd",
+        "span": "Utva () is a river in Perm Krai, Russia, a right tributary of the Veslyana River, which in turn is a tributary of the Kama River."
+      }
+    ],
+    "linked_entity_ids": [
+      "entity-c02e0262bcc900ed5ca0a7d5f99d0f3f",
+      "entity-8067e422ab807d78d16d9b6ddf1dd27e",
+      "entity-64ba2e1054565b99cf315643ea96328f",
+      "entity-b9705c72e03890fb26770bee24487c4f"
+    ],
+    "source_triple_ids": [
+      "triple-11649be016d6f6813b1452db18f39f15",
+      "triple-96a7a81eaa2204d486247f8acfea767a",
+      "triple-017da233bfccfd831500aef023c88890"
+    ],
+    "source_passage_ids": [
+      "chunk-c0eb2d588ced2105b38e9094111c65dd"
+    ],
+    "evidence_spans": [
+      {
+        "passage_id": "chunk-c0eb2d588ced2105b38e9094111c65dd",
+        "span": "The main tributaries are the Chugrum River (right) and the Yuzhnaya Anva River (left)."
+      },
+      {
+        "passage_id": "chunk-c0eb2d588ced2105b38e9094111c65dd",
+        "span": "a right tributary of the Veslyana River, which in turn is a tributary of the Kama River"
+      }
+    ],
+    "derivation_type": "derived",
+    "novel_part": "Chugrum's indirect tributary relationship to Kama is not stored.",
+    "reasoning_summary": "Chugrum joins Utva, which joins Veslyana, which joins Kama.",
+    "novelty_justification": "No stored triple connects Chugrum to Kama through the tributary chain.",
+    "uncertainty_note": ""
+  }
+]

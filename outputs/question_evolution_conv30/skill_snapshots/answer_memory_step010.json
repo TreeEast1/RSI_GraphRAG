@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "created": "2026-11-10T01:43:50",
+    "n_updates": 0,
+    "n_merges": 0,
+    "n_disabled": 0,
+    "n_rollbacks": 0
+  },
+  "step": 10,
+  "label": "after_10_feedback",
+  "n_active": 3,
+  "skills": [
+    {
+      "skill_id": "ans_use_explicit_caused_state_wording",
+      "title": "Use explicit caused-state wording",
+      "trigger_conditions": "When a question asks what an activity or experience makes someone feel/become, and evidence contains an explicit causative statement naming that state.",
+      "applicable_question_patterns": [
+        "What does an activity make someone?",
+        "How does an activity make someone feel?",
+        "What state does an activity cause for someone?"
+      ],
+      "categories": [
+        4
+      ],
+      "action_instructions": "Prefer the exact adjective or state in an explicit causative phrase over nearby metaphors, summaries, or paraphrases. Quote or minimally return that stated state, and avoid substituting broader interpretations.",
+      "expected_output_format": "A short phrase or single word naming the stated state.",
+      "evidence_requirements": "Use evidence that directly links the activity to the resulting state with causative wording.",
+      "failure_modes": [
+        "Using a metaphorical paraphrase",
+        "Choosing a related but unstated state",
+        "Answering from a different session or nearby context"
+      ],
+      "source_training_qids": [
+        60
+      ],
+      "success_count": 0,
+      "failure_count": 0,
+      "confidence": 0.55,
+      "version": 1,
+      "status": "active",
+      "created_at_feedback": 3,
+      "last_updated_feedback": 3,
+      "history": [
+        {
+          "version": 1,
+          "feedback_step": 3,
+          "qid": 60,
+          "event": "created"
+        }
+      ]
+    },
+    {
+      "skill_id": "ans_return_concise_explicit_purpose_for_why_",
+      "title": "Return concise explicit purpose for why-questions",
+      "trigger_conditions": "When a why-question asks for a reason and the evidence contains an explicit purpose phrase plus later elaboration.",
+      "applicable_question_patterns": [
+        "Why did someone do an action?",
+        "What was the reason for an action?",
+        "For what purpose was something done?"
+      ],
+      "categories": [
+        4
+      ],
+      "action_instructions": "Use the shortest explicit purpose phrase tied directly to the asked action. Omit later explanations, expected benefits, pronouns, and paraphrases unless needed to preserve meaning.",
+      "expected_output_format": "A minimal phrase, typically starting with a purpose marker, with no extra clauses.",
+      "evidence_requirements": "Prefer the sentence that directly states the reason for the target action over subsequent elaborations.",
+      "failure_modes": [
+        "Adding later explanatory clauses",
+        "Using first-person wording from dialogue",
+        "Substituting a broader inferred motive"
+      ],
+      "source_training_qids": [
+        58
+      ],
+      "success_count": 0,
+      "failure_count": 0,
+      "confidence": 0.55,
+      "version": 1,
+      "status": "active",
+      "created_at_feedback": 8,
+      "last_updated_feedback": 8,
+      "history": [
+        {
+          "version": 1,
+          "feedback_step": 8,
+          "qid": 58,
+          "event": "created"
+        }
+      ]
+    },
+    {
+      "skill_id": "ans_preserve_temporal_granularity_for_relati",
+      "title": "Preserve temporal granularity for relative expressions",
+      "trigger_conditions": "When evidence states an event using a coarse relative time expression such as next month, this month, or last month.",
+      "applicable_question_patterns": [
+        "When is an event scheduled?",
+        "When did an event happen?",
+        "What month is an activity planned for?"
+      ],
+      "categories": [
+        2
+      ],
+      "action_instructions": "Resolve relative time expressions from the evidence timestamp, but answer only at the granularity explicitly supported. Do not convert month-level expressions into exact calendar days or add unsupported precision.",
+      "expected_output_format": "Use the coarsest supported temporal unit, typically month and year when inferable.",
+      "evidence_requirements": "Use the timestamp of the statement containing the relative expression and the relative phrase itself; avoid later retrospective mentions unless needed.",
+      "failure_modes": [
+        "Using the statement date as the event date",
+        "Adding an exact day not stated",
+        "Over-specifying a coarse temporal answer"
+      ],
+      "source_training_qids": [
+        6
+      ],
+      "success_count": 0,
+      "failure_count": 0,
+      "confidence": 0.55,
+      "version": 1,
+      "status": "active",
+      "created_at_feedback": 10,
+      "last_updated_feedback": 10,
+      "history": [
+        {
+          "version": 1,
+          "feedback_step": 10,
+          "qid": 6,
+          "event": "created"
+        }
+      ]
+    }
+  ]
+}

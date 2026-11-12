@@ -1,0 +1,178 @@
+{
+  "timestamp": "2026-11-08T01:01:16",
+  "args": {
+    "convs": "conv-30,conv-44,conv-48",
+    "split": "dev",
+    "variants": "cluster_hybrid_0.5_b8192_comp:comp",
+    "budget": 4096,
+    "top_k": 20,
+    "max_questions": null,
+    "max_workers": 2,
+    "out_prefix": "readtime_ablation",
+    "force_build": false,
+    "include_relations": "true",
+    "no_qa": false,
+    "variant_suffix": "_inferred",
+    "relation_filter": "Inferred"
+  },
+  "summaries": {
+    "cluster_hybrid_0.5_b8192_comp_inferred": {
+      "method": "cluster_hybrid_0.5_b8192_comp_inferred",
+      "n": 502,
+      "recall@1": 0.582256687535572,
+      "recall@3": 0.7758537279453613,
+      "recall@5": 0.8745257066970213,
+      "recall@10": 0.9486719787516601,
+      "recall@20": 0.9900161259723013,
+      "mrr": 0.749185916972125,
+      "ndcg@10": 0.7866291552430855,
+      "evidence_full@2048": 0.701195219123506,
+      "evidence_partial@2048": 0.7471447543160691,
+      "session_full@2048": 0.701195219123506,
+      "evidence_full@4096": 0.8406374501992032,
+      "evidence_partial@4096": 0.8842629482071712,
+      "session_full@4096": 0.8406374501992032,
+      "evidence_full@8192": 0.9223107569721115,
+      "evidence_partial@8192": 0.9548638778220452,
+      "session_full@8192": 0.9223107569721115,
+      "em": 0.4043824701195219,
+      "f1": 0.5935659995527557,
+      "em_answerable": 0.25316455696202533,
+      "f1_answerable": 0.4935952703176794,
+      "n_answerable": 395,
+      "refusal_rate": 0.9626168224299065,
+      "n_adversarial": 107,
+      "by_category": {
+        "1": {
+          "n": 62,
+          "em": 0.16129032258064516,
+          "f1": 0.47376281674064047,
+          "recall@5": 0.6299923195084486,
+          "evidence_full@4096": 0.3548387096774194
+        },
+        "2": {
+          "n": 92,
+          "em": 0.11956521739130435,
+          "f1": 0.23975155279503105,
+          "recall@5": 0.9257246376811594,
+          "evidence_full@4096": 0.9130434782608695
+        },
+        "3": {
+          "n": 17,
+          "em": 0.11764705882352941,
+          "f1": 0.25159154570919273,
+          "recall@5": 0.5756302521008403,
+          "evidence_full@4096": 0.47058823529411764
+        },
+        "4": {
+          "n": 224,
+          "em": 0.34375,
+          "f1": 0.6217082053721631,
+          "recall@5": 0.9285714285714286,
+          "evidence_full@4096": 0.9375
+        },
+        "5": {
+          "n": 107,
+          "em": 0.9626168224299065,
+          "f1": 0.9626168224299065,
+          "recall@5": 0.9065420560747663,
+          "evidence_full@4096": 0.9158878504672897
+        }
+      },
+      "by_conversation": {
+        "conv-30": {
+          "n": 105,
+          "em": 0.3523809523809524,
+          "f1": 0.49356748052612714,
+          "recall@5": 0.9079365079365079
+        },
+        "conv-44": {
+          "n": 158,
+          "em": 0.4177215189873418,
+          "f1": 0.6188336973978582,
+          "recall@5": 0.8410940325497287
+        },
+        "conv-48": {
+          "n": 239,
+          "em": 0.41841004184100417,
+          "f1": 0.6207942348593242,
+          "recall@5": 0.8819485953377166
+        }
+      }
+    }
+  },
+  "builds": [
+    {
+      "conv_id": "conv-30",
+      "variant": "cluster_hybrid_0.5_b8192_comp_inferred",
+      "reused": false,
+      "save_dir": "/group/40150/licochen/Memory/RSI_GraphRAG/outputs/raw_graphs/conv-30/variants/cluster_hybrid_0.5_b8192_comp_inferred",
+      "injection": {
+        "added": 230,
+        "chunks_touched": 19,
+        "skipped_duplicate": 24
+      },
+      "graph_info": {
+        "num_phrase_nodes": 556,
+        "num_passage_nodes": 19,
+        "num_total_nodes": 575,
+        "num_extracted_triples": 793,
+        "num_triples_with_passage_node": 698,
+        "num_synonymy_triples": 1095,
+        "num_total_triples": 2362
+      },
+      "build_seconds": 5.3
+    },
+    {
+      "conv_id": "conv-44",
+      "variant": "cluster_hybrid_0.5_b8192_comp_inferred",
+      "reused": false,
+      "save_dir": "/group/40150/licochen/Memory/RSI_GraphRAG/outputs/raw_graphs/conv-44/variants/cluster_hybrid_0.5_b8192_comp_inferred",
+      "injection": {
+        "added": 363,
+        "chunks_touched": 28,
+        "skipped_duplicate": 42
+      },
+      "graph_info": {
+        "num_phrase_nodes": 748,
+        "num_passage_nodes": 28,
+        "num_total_nodes": 776,
+        "num_extracted_triples": 1201,
+        "num_triples_with_passage_node": 934,
+        "num_synonymy_triples": 1798,
+        "num_total_triples": 3544
+      },
+      "build_seconds": 6.1
+    },
+    {
+      "conv_id": "conv-48",
+      "variant": "cluster_hybrid_0.5_b8192_comp_inferred",
+      "reused": false,
+      "save_dir": "/group/40150/licochen/Memory/RSI_GraphRAG/outputs/raw_graphs/conv-48/variants/cluster_hybrid_0.5_b8192_comp_inferred",
+      "injection": {
+        "added": 506,
+        "chunks_touched": 30,
+        "skipped_duplicate": 54
+      },
+      "graph_info": {
+        "num_phrase_nodes": 965,
+        "num_passage_nodes": 30,
+        "num_total_nodes": 995,
+        "num_extracted_triples": 1403,
+        "num_triples_with_passage_node": 1293,
+        "num_synonymy_triples": 2932,
+        "num_total_triples": 5210
+      },
+      "build_seconds": 7.1
+    }
+  ],
+  "hy4": {
+    "calls": 783,
+    "cache_hits": 12,
+    "errors": 0,
+    "prompt_tokens": 2100929,
+    "completion_tokens": 4075,
+    "reasoning_tokens": 0,
+    "latency_s": 1095.1815521717072
+  }
+}

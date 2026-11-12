@@ -1,0 +1,712 @@
+{
+ "1710.03348::s00::p000": [
+  [
+   "Neural machine translation (NMT)",
+   "has gained",
+   "a lot of attention recently"
+  ],
+  [
+   "Neural machine translation (NMT)",
+   "achieves",
+   "state-of-the-art performance for several languages"
+  ],
+  [
+   "The core architecture of neural machine translation models",
+   "is based on",
+   "the general encoder-decoder approach"
+  ],
+  [
+   "Neural machine translation",
+   "is",
+   "an end-to-end approach"
+  ],
+  [
+   "attentional NMT",
+   "has become popular due to",
+   "its capability to use the most relevant parts of the source sentence at each translation step"
+  ]
+ ],
+ "1710.03348::s00::p001": [
+  [
+   "attention",
+   "is `smeared out' over",
+   "multiple source words"
+  ]
+ ],
+ "1710.03348::s00::p002": [
+  [
+   "various modifications",
+   "have been proposed",
+   "since the introduction of attention models in neural machine translation"
+  ],
+  [
+   "no study",
+   "provides",
+   "an analysis of what kind of phenomena is being captured by attention"
+  ],
+  [
+   "Some works",
+   "have looked to attention as being similar to",
+   "traditional word alignment"
+  ],
+  [
+   "Some of these approaches",
+   "experimented with training",
+   "the attention model using traditional alignments"
+  ],
+  [
+   "liu-EtAl:2016:COLING",
+   "have shown",
+   "that attention could be seen as a reordering model as well as an alignment model"
+  ]
+ ],
+ "1710.03348::s00::p003": [
+  [
+   "The questions",
+   "include",
+   "Is the attention model only capable of modelling alignment?"
+  ],
+  [
+   "The questions",
+   "include",
+   "how similar is attention to alignment in different syntactic phenomena?"
+  ]
+ ],
+ "1710.03348::s00::p004": [
+  [
+   "attention",
+   "agrees with",
+   "traditional alignments to a high degree in the case of nouns"
+  ],
+  [
+   "attention",
+   "captures",
+   "other information rather than only the translational equivalent in the case of verbs"
+  ]
+ ],
+ "1710.03348::s00::p005": [
+  [
+   "different attention mechanisms",
+   "can lead to",
+   "different degrees of compliance with respect to word alignments"
+  ],
+  [
+   "global compliance",
+   "is not always helpful for",
+   "word prediction"
+  ],
+  [
+   "attention",
+   "follows",
+   "different patterns depending on the type of the word being generated"
+  ],
+  [
+   "attention",
+   "does not always comply with",
+   "alignment"
+  ]
+ ],
+ "1710.03348::s01::p000": [
+  [
+   "liu-EtAl:2016:COLING",
+   "investigate",
+   "how training the attention model in a supervised manner can benefit machine translation quality"
+  ],
+  [
+   "alkhouli-EtAl:2016:WMT",
+   "use",
+   "a feed-forward neural network as their alignment model"
+  ]
+ ],
+ "1710.03348::s01::p001": [
+  [
+   "shi-padhi-knight:2016:EMNLP2016",
+   "show",
+   "that various kinds of syntactic information are being learned and encoded in the output hidden states of the encoder"
+  ],
+  [
+   "a neural machine translation system that has an attention model",
+   "can learn",
+   "the POS tags of the source side more efficiently than a system without attention"
+  ]
+ ],
+ "1710.03348::s01::p002": [
+  [
+   "koehn2017six",
+   "carried out",
+   "a brief analysis of how much attention and alignment match in different languages"
+  ],
+  [
+   "koehn2017six",
+   "report",
+   "differences based on the most attended words"
+  ]
+ ],
+ "1710.03348::s02::p000": [
+  [
+   "This section",
+   "discusses",
+   "two most popular attention models which are also used in this paper"
+  ],
+  [
+   "The second attention model that we use in our investigation",
+   "is",
+   "an input-feeding model similar to the attention model first proposed by bahdanau-EtAl:2015:ICLR"
+  ]
+ ],
+ "1710.03348::s02::p001": [
+  [
+   "Both non-recurrent and input-feeding models",
+   "compute",
+   "a context vector INLINEFORM0 at each time step"
+  ],
+  [
+   "Both non-recurrent and input-feeding models",
+   "concatenate",
+   "the context vector to the hidden state of decoder"
+  ]
+ ],
+ "1710.03348::s02::p002": [
+  [
+   "the two models",
+   "differ in",
+   "the way they compute the context vector"
+  ],
+  [
+   "the hidden state of the decoder",
+   "is compared to",
+   "each hidden state of the encoder"
+  ],
+  [
+   "this comparison",
+   "is realized as",
+   "the dot product of vectors"
+  ],
+  [
+   "the comparison result",
+   "is fed to",
+   "a softmax layer"
+  ]
+ ],
+ "1710.03348::s02::p003": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the hidden state of the decoder at time INLINEFORM1"
+  ],
+  [
+   "INLINEFORM2",
+   "is",
+   "INLINEFORM3 th hidden state of the encoder"
+  ],
+  [
+   "INLINEFORM4",
+   "is",
+   "the length of the source sentence"
+  ],
+  [
+   "the computed alignment weights",
+   "are used to compute",
+   "a weighted sum over the encoder hidden states"
+  ]
+ ],
+ "1710.03348::s02::p004": [
+  [
+   "the input-feeding model",
+   "changes",
+   "the context vector computation"
+  ],
+  [
+   "the context vector",
+   "is aware of",
+   "the previously computed context INLINEFORM1"
+  ],
+  [
+   "the input-feeding model",
+   "feeds back",
+   "its own INLINEFORM2 to the network"
+  ],
+  [
+   "the input-feeding model",
+   "uses",
+   "the resulting hidden state instead of the context-independent INLINEFORM3"
+  ]
+ ],
+ "1710.03348::s02::p005": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the function that the stacked LSTM applies to the input"
+  ],
+  [
+   "INLINEFORM1",
+   "is",
+   "the last generated target word"
+  ],
+  [
+   "INLINEFORM2",
+   "is",
+   "the output of previous time step of the input-feeding network itself"
+  ]
+ ],
+ "1710.03348::s03::p000": [
+  [
+   "attention corresponds to word alignments",
+   "is",
+   "a commonly held assumption"
+  ]
+ ],
+ "1710.03348::s04::p000": [
+  [
+   "unaligned words",
+   "are first assumed to have been aligned to",
+   "all the words in the source side"
+  ]
+ ],
+ "1710.03348::s04::p001": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the set of source words aligned to target word INLINEFORM1"
+  ],
+  [
+   "INLINEFORM2",
+   "is",
+   "the number of source words in the set"
+  ]
+ ],
+ "1710.03348::s04::p003": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the source sentence"
+  ],
+  [
+   "INLINEFORM1",
+   "is",
+   "the weight of the alignment link between source word INLINEFORM2 and the target word"
+  ],
+  [
+   "INLINEFORM3",
+   "is",
+   "the attention weight INLINEFORM4 (see Equation EQREF4 ) of the source word INLINEFORM5"
+  ]
+ ],
+ "1710.03348::s04::p004": [
+  [
+   "the loss between the output of our NMT system and the reference translation at each translation step",
+   "is called",
+   "word prediction loss"
+  ],
+  [
+   "The word prediction loss for word INLINEFORM0",
+   "is",
+   "logarithm of the probability given in Equation EQREF12"
+  ]
+ ],
+ "1710.03348::s04::p005": [
+  [
+   "INLINEFORM1",
+   "is",
+   "target word at time step INLINEFORM2"
+  ],
+  [
+   "INLINEFORM3",
+   "is",
+   "the target history given by the reference translation"
+  ]
+ ],
+ "1710.03348::s04::p006": [
+  [
+   "Spearman's rank correlation",
+   "is used to compute",
+   "the correlation between attention loss and word prediction loss"
+  ]
+ ],
+ "1710.03348::s04::p007": [
+  [
+   "INLINEFORM0 and INLINEFORM1",
+   "are",
+   "the ranks of the attention losses and word prediction losses, respectively"
+  ],
+  [
+   "INLINEFORM2",
+   "is",
+   "the covariance between two input variables"
+  ],
+  [
+   "INLINEFORM3 and INLINEFORM4",
+   "are",
+   "the standard deviations of INLINEFORM5 and INLINEFORM6"
+  ]
+ ],
+ "1710.03348::s04::p008": [
+  [
+   "close relationship between word prediction quality and consistency of attention versus alignment",
+   "implies",
+   "high correlation between word prediction loss and attention loss"
+  ],
+  [
+   "attention for the target words “will\" and “come\"",
+   "is not focused on",
+   "the manually aligned word"
+  ],
+  [
+   "focus of this paper",
+   "is examining",
+   "cases where attention does not follow alignment"
+  ]
+ ],
+ "1710.03348::s05::p000": [
+  [
+   "attention concentration",
+   "is",
+   "another informative variable in our analysis"
+  ],
+  [
+   "most word alignments",
+   "involve",
+   "one or a few words"
+  ],
+  [
+   "attention",
+   "can be distributed",
+   "more freely"
+  ],
+  [
+   "concentration of attention",
+   "is measured by computing",
+   "the entropy of the attention distribution"
+  ]
+ ],
+ "1710.03348::s06::p000": [
+  [
+   "The second model",
+   "is",
+   "the input-feeding model BIBREF5"
+  ],
+  [
+   "the input-feeding model BIBREF5",
+   "uses",
+   "recurrent attention"
+  ]
+ ],
+ "1710.03348::s06::p001": [
+  [
+   "the systems",
+   "were trained with",
+   "dimension size of 1,000 and batch size of 80 for 20 epochs"
+  ],
+  [
+   "The vocabulary for both source and target side",
+   "is set to be",
+   "the 30K most common words"
+  ],
+  [
+   "a maximum gradient norm of 5",
+   "has been used",
+   "in training"
+  ],
+  [
+   "a dropout rate of 0.3",
+   "is used to avoid",
+   "overfitting"
+  ]
+ ],
+ "1710.03348::s07::p000": [
+  [
+   "both of the systems",
+   "are trained on",
+   "the WMT15 German-to-English training data"
+  ]
+ ],
+ "1710.03348::s07::p001": [
+  [
+   "POS tags and dependency roles",
+   "are based on",
+   "words"
+  ],
+  [
+   "BPE BIBREF13",
+   "operates at",
+   "the sub-word level"
+  ]
+ ],
+ "1710.03348::s07::p002": [
+  [
+   "alignment error rate (AER) BIBREF14",
+   "is commonly used to measure",
+   "alignment quality"
+  ],
+  [
+   "RWTH German-English dataset",
+   "provides",
+   "human alignments"
+  ],
+  [
+   "hard alignments",
+   "are produced from attentions by",
+   "choosing the most attended source word for each target word"
+  ],
+  [
+   "GIZA++ BIBREF10",
+   "is used to produce",
+   "automatic alignments over the data set"
+  ],
+  [
+   "GIZA++",
+   "is run in",
+   "both directions"
+  ],
+  [
+   "alignments",
+   "are symmetrized using",
+   "the grow-diag-final-and refined alignment heuristic"
+  ]
+ ],
+ "1710.03348::s07::p003": [
+  [
+   "the input-feeding system",
+   "achieves",
+   "a higher BLEU score"
+  ],
+  [
+   "the input-feeding system",
+   "uses",
+   "attentions that are closer to the human alignments"
+  ]
+ ],
+ "1710.03348::s07::p004": [
+  [
+   "the difference in attention losses",
+   "are in line with",
+   "AER"
+  ]
+ ],
+ "1710.03348::s07::p005": [
+  [
+   "AER",
+   "only takes into account",
+   "the most attended word"
+  ],
+  [
+   "attention loss",
+   "considers",
+   "the entire attention distribution"
+  ]
+ ],
+ "1710.03348::s08::p000": [
+  [
+   "chen2016guided, liu-EtAl:2016:COLING, alkhouli-EtAl:2016:WMT",
+   "report",
+   "mixed results"
+  ],
+  [
+   "These findings",
+   "warrant",
+   "a more fine-grained analysis of attention"
+  ],
+  [
+   "POS tags",
+   "exhibit",
+   "some simple syntactic characteristics"
+  ]
+ ],
+ "1710.03348::s08::p001": [
+  [
+   "attention loss",
+   "varies substantially across",
+   "different POS tags"
+  ],
+  [
+   "NOUN and VERB",
+   "are",
+   "the most frequent POS tags in the dataset"
+  ],
+  [
+   "the attention of NOUN",
+   "is the closest to",
+   "alignments on average"
+  ],
+  [
+   "the average attention loss for VERB",
+   "is almost two times larger than",
+   "the loss for NOUN"
+  ]
+ ],
+ "1710.03348::s08::p002": [
+  [
+   "the average word prediction loss for verbs",
+   "is actually smaller compared to",
+   "the loss for nouns"
+  ],
+  [
+   "the attention for verbs",
+   "is substantially more inconsistent with",
+   "the word alignments than for nouns"
+  ],
+  [
+   "the NMT system",
+   "translates",
+   "verbs more accurately than nouns on average"
+  ]
+ ],
+ "1710.03348::s08::p003": [
+  [
+   "Spearman's rank correlation",
+   "is based on",
+   "the POS tags of the target side"
+  ],
+  [
+   "Spearman's rank correlation",
+   "is for",
+   "the input-feeding model"
+  ]
+ ],
+ "1710.03348::s08::p004": [
+  [
+   "The low correlation for verbs",
+   "confirms",
+   "that attention to other parts of source sentence rather than the aligned word is necessary for translating verbs"
+  ],
+  [
+   "The low correlation for verbs",
+   "confirms",
+   "that attention does not necessarily have to follow alignments"
+  ],
+  [
+   "the higher correlation for nouns",
+   "means",
+   "that consistency of attention with alignments is more desirable"
+  ],
+  [
+   "large improvements",
+   "are achieved for",
+   "the e-commerce domain"
+  ]
+ ],
+ "1710.03348::s09::p000": [
+  [
+   "most target words",
+   "are aligned to",
+   "one source word"
+  ],
+  [
+   "The average number of source words aligned to nouns and verbs",
+   "is",
+   "1.1 and 1.2 respectively"
+  ],
+  [
+   "the attention concentration",
+   "is measured by computing",
+   "the entropy of the attention distribution"
+  ]
+ ],
+ "1710.03348::s09::p001": [
+  [
+   "nouns",
+   "have",
+   "one of the lowest entropies"
+  ],
+  [
+   "the attention for nouns",
+   "tends to be",
+   "concentrated"
+  ],
+  [
+   "the correlation between attention entropy and attention loss in case of nouns",
+   "is",
+   "high"
+  ],
+  [
+   "attention entropy",
+   "can be used as",
+   "a measure of closeness of attention to alignment in the case of nouns"
+  ]
+ ],
+ "1710.03348::s09::p002": [
+  [
+   "higher attention entropy for verbs",
+   "shows",
+   "attention is more distributed compared to nouns"
+  ],
+  [
+   "low correlation between attention entropy and word prediction loss",
+   "shows",
+   "attention concentration is not required when translating into verbs"
+  ],
+  [
+   "correct translation of verbs",
+   "requires",
+   "the systems to pay attention to different parts of the source sentence"
+  ]
+ ],
+ "1710.03348::s09::p003": [
+  [
+   "pronouns (PRON) and particles (PRT)",
+   "have",
+   "low correlation"
+  ],
+  [
+   "these tags",
+   "have",
+   "more distributed attention comparing to nouns"
+  ],
+  [
+   "relatively low word prediction losses",
+   "support",
+   "the latter"
+  ]
+ ],
+ "1710.03348::s10::p001": [
+  [
+   "less than half of the attention",
+   "is paid to",
+   "alignment points for most of the POS tags"
+  ],
+  [
+   "the most attended roles when translating to nouns",
+   "include",
+   "adjectives and determiners"
+  ],
+  [
+   "the most attended roles when translating to verbs",
+   "include",
+   "auxiliary verbs, adverbs (including negation), subjects, and objects"
+  ]
+ ],
+ "1710.03348::s11::p000": [
+  [
+   "attention",
+   "agrees with",
+   "traditional alignment to a certain extent"
+  ],
+  [
+   "attention",
+   "has",
+   "different patterns based on the POS tag of the target word"
+  ],
+  [
+   "the concentrated pattern of attention and the relatively high correlations for nouns",
+   "show",
+   "training the attention with explicit alignment labels is useful for generating nouns"
+  ],
+  [
+   "the large portion of attention being paid to words other than alignment points",
+   "is already capturing",
+   "other relevant information"
+  ],
+  [
+   "Training attention with alignments",
+   "will force",
+   "the attention model to forget these useful information"
+  ]
+ ],
+ "1710.03348::s12::p000": [
+  [
+   "This research",
+   "was funded in part by",
+   "the Netherlands Organization for Scientific Research (NWO) under project numbers 639.022.213 and 612.001.218"
+  ]
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "paper_id": "1604.00727",
+ "title": "Character-Level Question Answering with Attention",
+ "abstract": "We show that a character-level encoder-decoder framework can be successfully applied to question answering with a structured knowledge base. We use our model for single-relation question answering and demonstrate the effectiveness of our approach on the SimpleQuestions dataset (Bordes et al., 2015), where we improve state-of-the-art accuracy from 63.9% to 70.9%, without use of ensembles. Importantly, our character-level model has 16x fewer parameters than an equivalent word-level model, can be learned with significantly less data compared to previous work, which relies on data augmentation, and is robust to new entities in testing.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Model",
+  "Encoding the Question",
+  "Encoding Entities and Predicates in the KB",
+  "Decoding the KB Query",
+  "Inference",
+  "Learning",
+  "Dataset and Experimental Settings",
+  "End-to-end Results on SimpleQuestions",
+  "Ablation and Embedding Experiments",
+  "Attention Mechanisms",
+  "Error Analysis",
+  "Conclusion"
+ ],
+ "n_paragraphs": 56,
+ "n_tokens": 5164,
+ "figures_and_tables": [
+  {
+   "caption_id": "1604.00727::fig000",
+   "paper_id": "1604.00727",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Our encoder-decoder architecture that generates a query against a structured knowledge base. We encode our question via a long short-term memory (LSTM) network and an attention mechanism to produce our context vector. During decoding, at each time step, we feed the current context vector and an embedding of the English alias of the previously generated knowledge base entry into an attention-based decoding LSTM to generate the new candidate entity or predicate.",
+   "n_tokens": 87
+  },
+  {
+   "caption_id": "1604.00727::fig001",
+   "paper_id": "1604.00727",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Experimental results on the SimpleQuestions dataset. MemNN results are from Bordes et al. (2015). WQ, SIQ and PRP stand for WebQuestions, SimpleQuestions and paraphrases from WikiAnswers.",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "1604.00727::fig002",
+   "paper_id": "1604.00727",
+   "file": "7-Table2-1.png",
+   "caption": "Table 2: Results for a random sampling experiment where we varied the number of layers used for convolutions and the question-encoding LSTM. We terminated training models after 14 epochs and 3 days on a GPU.",
+   "n_tokens": 44
+  },
+  {
+   "caption_id": "1604.00727::fig003",
+   "paper_id": "1604.00727",
+   "file": "7-Table3-1.png",
+   "caption": "Table 3: Results for a random sampling experiment where we varied the embedding type (word vs. character-level). We used 2 layered-LSTMs and CNNs for all our experiments. Our models were trained for 14 epochs and 3 days.",
+   "n_tokens": 52
+  },
+  {
+   "caption_id": "1604.00727::fig004",
+   "paper_id": "1604.00727",
+   "file": "8-Figure2-1.png",
+   "caption": "Figure 2: Attention distribution over outputs of a left-to-right LSTM on question characters.",
+   "n_tokens": 18
+  }
+ ]
+}

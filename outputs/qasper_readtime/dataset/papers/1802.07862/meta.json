@@ -1,0 +1,63 @@
+{
+ "paper_id": "1802.07862",
+ "title": "Multimodal Named Entity Recognition for Short Social Media Posts",
+ "abstract": "We introduce a new task called Multimodal Named Entity Recognition (MNER) for noisy user-generated data such as tweets or Snapchat captions, which comprise short text with accompanying images. These social media posts often come in inconsistent or incomplete syntax and lexical notations with very limited surrounding textual contexts, bringing significant challenges for NER. To this end, we create a new dataset for MNER called SnapCaptions (Snapchat image-caption pairs submitted to public and crowd-sourced stories with fully annotated named entities). We then build upon the state-of-the-art Bi-LSTM word/character based NER models with 1) a deep image network which incorporates relevant visual context to augment textual information, and 2) a generic modality-attention module which learns to attenuate irrelevant modalities while amplifying the most informative ones to extract contexts from, adaptive to each sample and token. The proposed MNER model with modality attention significantly outperforms the state-of-the-art text-only NER models by successfully leveraging provided visual contexts, opening up potential applications of MNER on myriads of social media platforms.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Proposed Methods",
+  "Features",
+  "Bi-LSTM + CRF for Multimodal NER",
+  "Modality Attention",
+  "SnapCaptions Dataset",
+  "Baselines",
+  "Results: SnapCaptions Dataset",
+  "Conclusions"
+ ],
+ "n_paragraphs": 62,
+ "n_tokens": 5283,
+ "figures_and_tables": [
+  {
+   "caption_id": "1802.07862::fig000",
+   "paper_id": "1802.07862",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: Multimodal NER + modality attention. (a) Visual contexts help recognizing polysemous entity names (‘Monopoly’ as in a board game versus an economics term). (b) Modality attention successfully suppresses word embeddings of a unknown token (‘Marshmelloooo’ with erroneously trailing ‘o’s), and focuses on character-based context (e.g. capitalized first letter, and lexical similarity to a known named entity (‘Marshmello’, a music producer)) for correct prediction.",
+   "n_tokens": 107
+  },
+  {
+   "caption_id": "1802.07862::fig001",
+   "paper_id": "1802.07862",
+   "file": "3-Figure2-1.png",
+   "caption": "Figure 2: The main architecture for our multimodal NER (MNER) network with modality attention. At each decoding step, word embeddings, character embeddings, and visual features are merged with modality attention. Bi-LSTM/CRF takes as input each token and produces an entity label.",
+   "n_tokens": 61
+  },
+  {
+   "caption_id": "1802.07862::fig002",
+   "paper_id": "1802.07862",
+   "file": "6-Table1-1.png",
+   "caption": "Table 1: NER performance on the SnapCaptions dataset with varying modalities (W: word, C: char, V: visual). We report precision, recall, and F1 score for both entity types recognition (PER, LOC, ORG, MISC) and entity segmentation (untyped recognition - named entity or not) tasks.",
+   "n_tokens": 71
+  },
+  {
+   "caption_id": "1802.07862::fig003",
+   "paper_id": "1802.07862",
+   "file": "7-Table2-1.png",
+   "caption": "Table 2: Error analysis: when do images help NER? Ground-truth labels (GT) and predictions of our model with vision input (W+C+V) and the one without (W+C) for the underlined named entities (or false positives) are shown. For interpretability, visual tags (label output of InceptionNet) are presented instead of actual feature vectors used.",
+   "n_tokens": 80
+  },
+  {
+   "caption_id": "1802.07862::fig004",
+   "paper_id": "1802.07862",
+   "file": "8-Figure3-1.png",
+   "caption": "Figure 3: Visualization of modality attention (a) successful cases and (b) unsuccessful ones from SnapCaptions test data. For each decoding step of a token (column), the modality attention module amplifies the most relevant modality (darker) while attenuating irrelevant modalities (lighter). The model makes final predictions based on weighted signals from all modalities. For interpretability, visual tags (label output of InceptionNet) are presented instead of actual feature vectors used. GT: ground-truth, Pred: prediction by our model. Modalities- W: words, C: characters, V: visual.",
+   "n_tokens": 128
+  },
+  {
+   "caption_id": "1802.07862::fig005",
+   "paper_id": "1802.07862",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: NER performance (F1) on SnapCaptions with varying word embeddings vocabulary size. Models being compared: (W+C) Bi-LSTM/CRF + BiCharLSTM w/ and w/o modality attention (M.A.)",
+   "n_tokens": 53
+  }
+ ]
+}

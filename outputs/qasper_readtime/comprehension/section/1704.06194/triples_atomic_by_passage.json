@@ -1,0 +1,727 @@
+{
+ "1704.06194::s00::p000": [
+  [
+   "Knowledge Base Question Answering (KBQA) systems",
+   "answer questions by obtaining information from",
+   "KB tuples"
+  ],
+  [
+   "these systems",
+   "typically generate",
+   "a KB query"
+  ],
+  [
+   "The KBQA system in the figure",
+   "performs",
+   "two key tasks"
+  ],
+  [
+   "relation detection",
+   "identifies",
+   "the KB relation(s) a question refers to"
+  ]
+ ],
+ "1704.06194::s00::p001": [
+  [
+   "The main focus of this work",
+   "is to improve",
+   "the relation detection subtask"
+  ],
+  [
+   "Freebase2M",
+   "contains",
+   "more than 6,000 relation types"
+  ],
+  [
+   "the SimpleQuestions BIBREF2 data set",
+   "has",
+   "14% of the golden test relations not observed in golden training tuples"
+  ]
+ ],
+ "1704.06194::s00::p003": [
+  [
+   "This step",
+   "is important to deal with",
+   "the ambiguities normally present in entity linking results"
+  ],
+  [
+   "the highest scored query from the above steps",
+   "is used to query",
+   "the KB for answers"
+  ]
+ ],
+ "1704.06194::s01::p000": [
+  [
+   "Previous research BIBREF4 , BIBREF20",
+   "formulates",
+   "KB relation detection as a sequence matching problem"
+  ],
+  [
+   "the questions",
+   "are",
+   "natural word sequences"
+  ],
+  [
+   "how to represent relations as sequences",
+   "remains",
+   "a challenging problem"
+  ]
+ ],
+ "1704.06194::s01::p001": [
+  [
+   "each relation name",
+   "is treated as",
+   "a unique token"
+  ],
+  [
+   "this approach",
+   "suffers from",
+   "the low relation coverage due to limited amount of training data"
+  ],
+  [
+   "this approach",
+   "cannot generalize well to",
+   "large number of open-domain relations"
+  ],
+  [
+   "their relation embeddings $\\mathbf {h}^r$ s",
+   "will be",
+   "random vectors"
+  ]
+ ],
+ "1704.06194::s01::p002": [
+  [
+   "the relation",
+   "is treated as",
+   "a sequence of words from the tokenized relation name"
+  ],
+  [
+   "word-level",
+   "has",
+   "better generalization"
+  ],
+  [
+   "word-level",
+   "suffers from",
+   "the lack of global information from the original relation names"
+  ],
+  [
+   "the incorrect relation",
+   "contains",
+   "word “plays”"
+  ]
+ ],
+ "1704.06194::s01::p003": [
+  [
+   "the word-level",
+   "focuses more on",
+   "local information (words and short phrases)"
+  ],
+  [
+   "the relation-level",
+   "focus more on",
+   "global information (long phrases and skip-grams)"
+  ],
+  [
+   "the relation-level",
+   "suffer from",
+   "data sparsity"
+  ]
+ ],
+ "1704.06194::s03::p000": [
+  [
+   "the first $M_1$ tokens",
+   "are",
+   "words (e.g. {episode, written})"
+  ],
+  [
+   "the last $M_2$ tokens",
+   "are",
+   "relation names"
+  ]
+ ],
+ "1704.06194::s04::p000": [
+  [
+   "different parts of a relation",
+   "could match",
+   "different contexts of question texts"
+  ],
+  [
+   "relation names",
+   "could match",
+   "longer phrases in the question"
+  ],
+  [
+   "relation words",
+   "could match",
+   "short phrases"
+  ],
+  [
+   "different words",
+   "might match",
+   "phrases of different lengths"
+  ]
+ ],
+ "1704.06194::s04::p001": [
+  [
+   "The first-layer of BiLSTM",
+   "works on",
+   "the word embeddings of question words $\\mathbf {q}=\\lbrace q_1,\\cdots ,q_N\\rbrace $"
+  ],
+  [
+   "the second BiLSTM",
+   "starts with",
+   "the hidden vectors from the first layer"
+  ]
+ ],
+ "1704.06194::s04::p002": [
+  [
+   "the first(second)-layer of question representations",
+   "does not necessarily correspond to",
+   "the word(relation)-level relation representations"
+  ],
+  [
+   "either layer of question representations",
+   "could potentially match to",
+   "either level of relation representations"
+  ]
+ ],
+ "1704.06194::s05::p000": [
+  [
+   "two layers of question representations",
+   "should be compared to",
+   "the relation representation space (Hierarchical Matching)"
+  ],
+  [
+   "each relation token",
+   "can correspond to",
+   "phrases of different lengths"
+  ],
+  [
+   "the relation word written",
+   "could be matched to",
+   "either the same single word in the question or a much longer phrase be the writer of"
+  ]
+ ],
+ "1704.06194::s05::p001": [
+  [
+   "the above hierarchical matching",
+   "could be performed by computing",
+   "the similarity between each layer of $\\mathbf {\\Gamma }$ and $\\mathbf {h}^r$ separately"
+  ],
+  [
+   "this",
+   "does not give",
+   "significant improvement (see Table 2 )"
+  ],
+  [
+   "this naive method",
+   "suffers from",
+   "the training difficulty"
+  ],
+  [
+   "the converged training loss of this model",
+   "is much higher than",
+   "that of a single-layer baseline model"
+  ],
+  [
+   "Deep BiLSTMs",
+   "do not guarantee that",
+   "the two-levels of question hidden representations are comparable"
+  ],
+  [
+   "The training of deeper architectures itself",
+   "is",
+   "more difficult"
+  ]
+ ],
+ "1704.06194::s05::p002": [
+  [
+   "Connecting each $\\mathbf {\\gamma }^{(1)}_i$ and $\\mathbf {\\gamma }^{(2)}_i$",
+   "results in",
+   "a $\\mathbf {\\gamma }^{^{\\prime }}_i=\\mathbf {\\gamma }^{(1)}_i + \\mathbf {\\gamma }^{(2)}_i$ for each position $i$"
+  ],
+  [
+   "the final question representation $\\mathbf {h}^q$",
+   "becomes",
+   "a max-pooling over all $\\mathbf {\\gamma }^{^{\\prime }}_i$ s, 1 $\\le $ i $\\le $ $N$"
+  ]
+ ],
+ "1704.06194::s05::p003": [
+  [
+   "the second layer",
+   "is fitting",
+   "the residues from the first layer of matching"
+  ],
+  [
+   "the two layers of representations",
+   "are more likely to be",
+   "complementary to each other"
+  ],
+  [
+   "This",
+   "ensures",
+   "the vector spaces of two layers are comparable"
+  ]
+ ],
+ "1704.06194::s05::p004": [
+  [
+   "training",
+   "adopts",
+   "a ranking loss"
+  ],
+  [
+   "a ranking loss",
+   "maximizes",
+   "the margin between the gold relation $\\mathbf {r}^+$ and other relations $\\mathbf {r}^-$ in the candidate pool $R$"
+  ]
+ ],
+ "1704.06194::s05::p006": [
+  [
+   "Fig 2",
+   "summarizes",
+   "the above Hierarchical Residual BiLSTM (HR-BiLSTM) model"
+  ]
+ ],
+ "1704.06194::s05::p007": [
+  [
+   "Another way of hierarchical matching",
+   "consists in relying on",
+   "attention mechanism"
+  ],
+  [
+   "attention mechanism",
+   "finds",
+   "the correspondence between different levels of representations"
+  ],
+  [
+   "attention mechanism",
+   "performs below",
+   "the HR-BiLSTM"
+  ]
+ ],
+ "1704.06194::s06::p000": [
+  [
+   "minimal efforts beyond the training of the relation detection model",
+   "make",
+   "the whole system easy to build"
+  ]
+ ],
+ "1704.06194::s06::p001": [
+  [
+   "an existing entity linker",
+   "produces",
+   "the top- $K$ linked entities, $EL_K(q)$ , for a question $q$"
+  ],
+  [
+   "the four steps",
+   "are illustrated in",
+   "Algorithm \"KBQA Enhanced by Relation Detection\""
+  ]
+ ],
+ "1704.06194::s06::p002": [
+  [
+   "Entity Re-Ranking",
+   "uses",
+   "the raw question text as input for a relation detector"
+  ],
+  [
+   "Entity Re-Ranking",
+   "uses",
+   "the relation scores to re-rank $EL_K(q)$"
+  ],
+  [
+   "Relation Detection",
+   "uses",
+   "the reformatted question text in which the topic entity is replaced by a special token $<$ e $>$"
+  ],
+  [
+   "Query Generation",
+   "combines",
+   "the scores from step 1 and 2"
+  ]
+ ],
+ "1704.06194::s06::p003": [
+  [
+   "main difference",
+   "is",
+   "an additional entity re-ranking step after the initial entity linking"
+  ],
+  [
+   "entity linking",
+   "sometimes becomes",
+   "a bottleneck in KBQA systems"
+  ],
+  [
+   "the best reported linker on SimpleQuestions",
+   "could only get",
+   "72.7% top-1 accuracy on identifying topic entities"
+  ],
+  [
+   "ambiguities of entity names",
+   "include",
+   "TV writer and baseball player “Mike Kelley”"
+  ]
+ ],
+ "1704.06194::s06::p004": [
+  [
+   "different entity candidates",
+   "usually connect to",
+   "different relations"
+  ]
+ ],
+ "1704.06194::s06::p005": [
+  [
+   "relation detection",
+   "help to re-rank",
+   "entities in the initial entity linking"
+  ],
+  [
+   "re-ranked entities",
+   "enable",
+   "more accurate relation detection"
+  ],
+  [
+   "The KBQA end task",
+   "benefits from",
+   "this process"
+  ]
+ ],
+ "1704.06194::s07::p000": [
+  [
+   "this step",
+   "uses",
+   "the raw question text as input for a relation detector"
+  ],
+  [
+   "this step",
+   "is called",
+   "relation detection on entity set"
+  ]
+ ],
+ "1704.06194::s07::p002": [
+  [
+   "top $K^{\\prime }$ $<$ $K$ entities",
+   "are selected according to",
+   "score $s_{rerank}$"
+  ],
+  [
+   "top $K^{\\prime }$ $<$ $K$ entities",
+   "form",
+   "the re-ranked list $EL_{K^{\\prime }}^{^{\\prime }}(q)$"
+  ]
+ ],
+ "1704.06194::s07::p003": [
+  [
+   "a relation detector",
+   "is very likely to assign high scores to",
+   "relations such as “episodes_written”, “author_of” and “profession”"
+  ],
+  [
+   "the TV writer “Mike Kelley”",
+   "will be scored higher than",
+   "the baseball player “Mike Kelley”"
+  ],
+  [
+   "the former",
+   "has",
+   "the relations “episodes_written” and “profession”"
+  ],
+  [
+   "This method",
+   "can be viewed as exploiting",
+   "entity-relation collocation for entity linking"
+  ]
+ ],
+ "1704.06194::s08::p000": [
+  [
+   "the question text",
+   "is used as",
+   "the input to a relation detector"
+  ],
+  [
+   "a relation detector",
+   "scores",
+   "all the relations $r \\in R_e$"
+  ],
+  [
+   "the candidate $e$ 's entity mention in $q$",
+   "is replaced with",
+   "a token “ $<$ e $>$ ”"
+  ],
+  [
+   "This",
+   "helps the model better distinguish",
+   "the relative position of each word compared to the entity"
+  ],
+  [
+   "the HR-BiLSTM model",
+   "predicts",
+   "the score of each relation $r \\in R_e$ : $s_{rel} (r;e,q)$"
+  ]
+ ],
+ "1704.06194::s09::p000": [
+  [
+   "the system",
+   "outputs",
+   "the < entity, relation (or core-chain) > pair (ê, r̂)"
+  ]
+ ],
+ "1704.06194::s12::p000": [
+  [
+   "Each question in these datasets",
+   "is labeled with",
+   "the gold semantic parse"
+  ]
+ ],
+ "1704.06194::s12::p001": [
+  [
+   "SimpleQuestions (SQ)",
+   "is",
+   "a single-relation KBQA task"
+  ],
+  [
+   "The KB we use",
+   "consists of",
+   "a Freebase subset with 2M entities (FB2M) BIBREF2"
+  ],
+  [
+   "yin2016simple",
+   "evaluated",
+   "their relation extractor on this data set"
+  ]
+ ],
+ "1704.06194::s12::p002": [
+  [
+   "WebQSP (WQ)",
+   "is",
+   "a multi-relation KBQA task"
+  ]
+ ],
+ "1704.06194::s12::p003": [
+  [
+   "the size of hidden states for LSTMs",
+   "is tuned on",
+   "development sets"
+  ],
+  [
+   "learning rate",
+   "is tuned on",
+   "development sets"
+  ],
+  [
+   "the number of training epochs",
+   "is tuned on",
+   "development sets"
+  ]
+ ],
+ "1704.06194::s12::p004": [
+  [
+   "All word vectors",
+   "are initialized with",
+   "300- $d$ pretrained word embeddings BIBREF27"
+  ],
+  [
+   "The embeddings of relation names",
+   "are",
+   "randomly initialized"
+  ],
+  [
+   "existing pre-trained relation embeddings (e.g. TransE)",
+   "usually support",
+   "limited sets of relation names"
+  ]
+ ],
+ "1704.06194::s13::p000": [
+  [
+   "The baseline BiLSTM with relation word sequence",
+   "appears to be",
+   "the best baseline on WebQSP"
+  ]
+ ],
+ "1704.06194::s13::p001": [
+  [
+   "using only relation names instead of words",
+   "results in",
+   "a weaker baseline BiLSTM model"
+  ],
+  [
+   "the drop",
+   "is",
+   "much smaller on WebQSP"
+  ]
+ ],
+ "1704.06194::s13::p002": [
+  [
+   "The bottom of Table 2",
+   "shows",
+   "ablation results of the proposed HR-BiLSTM"
+  ],
+  [
+   "hierarchical matching between questions and both relation names and relation words",
+   "yields",
+   "improvement on both datasets, especially for SimpleQuestions (93.3% vs. 91.2/88.8%)"
+  ],
+  [
+   "residual learning",
+   "helps",
+   "hierarchical matching compared to weighted-sum and attention-based baselines"
+  ],
+  [
+   "the one-way model",
+   "gives",
+   "better results"
+  ],
+  [
+   "residual learning",
+   "significantly helps on",
+   "WebQSP (80.65% to 82.53%)"
+  ],
+  [
+   "removing the deep layers",
+   "only causes",
+   "a small drop in performance on SimpleQuestions"
+  ],
+  [
+   "WebQSP",
+   "benefits more from",
+   "residual and deeper architecture"
+  ]
+ ],
+ "1704.06194::s13::p003": [
+  [
+   "replacing BiLSTM with CNN in our hierarchical matching framework",
+   "results in",
+   "a large performance drop on WebQSP"
+  ],
+  [
+   "the gap",
+   "is",
+   "much smaller on SimpleQuestions"
+  ],
+  [
+   "the LSTM relation encoder",
+   "can better learn",
+   "the composition of chains of relations in WebQSP"
+  ],
+  [
+   "the LSTM relation encoder",
+   "is better at dealing with",
+   "longer dependencies"
+  ]
+ ],
+ "1704.06194::s13::p004": [
+  [
+   "training of the weighted-sum model",
+   "usually falls to",
+   "local optima"
+  ],
+  [
+   "one run",
+   "gives",
+   "weights of -75.39/0.14 for the two layers"
+  ],
+  [
+   "one run",
+   "gives",
+   "much lower training accuracy (91.94%) compared to HR-BiLSTM (95.67%)"
+  ]
+ ],
+ "1704.06194::s13::p005": [
+  [
+   "training deep BiLSTMs",
+   "is",
+   "more difficult without shortcut connections"
+  ],
+  [
+   "deeper BiLSTM",
+   "does not always result in",
+   "lower training accuracy"
+  ]
+ ],
+ "1704.06194::s13::p006": [
+  [
+   "HR-BiLSTM",
+   "is more than",
+   "combination of two BiLSTMs with residual connections"
+  ],
+  [
+   "HR-BiLSTM",
+   "encourages",
+   "the hierarchical architecture to learn different levels of abstraction"
+  ],
+  [
+   "the residual and deep structures",
+   "contribute to",
+   "the good performance of HR-BiLSTM"
+  ]
+ ],
+ "1704.06194::s14::p000": [
+  [
+   "STAGG BIBREF4",
+   "is",
+   "the state-of-the-art on WebQSP"
+  ],
+  [
+   "AMPCNN BIBREF20",
+   "is",
+   "the state-of-the-art on SimpleQuestions"
+  ],
+  [
+   "these two baselines",
+   "do not generalize well when applied to",
+   "the other dataset"
+  ]
+ ],
+ "1704.06194::s14::p002": [
+  [
+   "The third block of the table",
+   "details",
+   "two ablation tests for the proposed components in our KBQA systems"
+  ],
+  [
+   "Removing the entity re-ranking step",
+   "significantly decreases",
+   "the scores"
+  ],
+  [
+   "the re-ranking step",
+   "relies on",
+   "the relation detection models"
+  ]
+ ],
+ "1704.06194::s14::p003": [
+  [
+   "STAGG",
+   "uses",
+   "multiple relation detectors"
+  ],
+  [
+   "the top-3 relation detectors",
+   "gives",
+   "a significant performance boost"
+  ],
+  [
+   "the top-3 relation detectors",
+   "resulting in",
+   "a new state-of-the-art result on SimpleQuestions and a result comparable to the state-of-the-art on WebQSP"
+  ]
+ ],
+ "1704.06194::s15::p000": [
+  [
+   "KB relation detection",
+   "is",
+   "a key step in KBQA"
+  ],
+  [
+   "KB relation detection",
+   "is significantly different from",
+   "general relation extraction tasks"
+  ],
+  [
+   "HR-BiLSTM",
+   "performs",
+   "hierarchical matching between questions and KB relations"
+  ]
+ ]
+}

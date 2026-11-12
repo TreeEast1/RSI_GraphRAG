@@ -1,0 +1,79 @@
+{
+ "paper_id": "1809.00540",
+ "title": "Multilingual Clustering of Streaming News",
+ "abstract": "Clustering news across languages enables efficient media monitoring by aggregating articles from multilingual sources into coherent stories. Doing so in an online setting allows scalable processing of massive news streams. To this end, we describe a novel method for clustering an incoming stream of multilingual documents into monolingual and crosslingual story clusters. Unlike typical clustering approaches that consider a small and known number of labels, we tackle the problem of discovering an ever growing number of cluster labels in an online fashion, using real news datasets in multiple languages. Our method is simple to implement, computationally efficient and produces state-of-the-art results on datasets in German, English and Spanish.",
+ "sections": [
+  "Introduction",
+  "Problem Formulation",
+  "The Clustering Algorithm",
+  "Document Representation",
+  "Similarity Metrics",
+  "Learning to Rank Candidates",
+  "Experiments",
+  "Monolingual Results",
+  "Crosslingual Results",
+  "Related Work",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 41,
+ "n_tokens": 4090,
+ "figures_and_tables": [
+  {
+   "caption_id": "1809.00540::fig000",
+   "paper_id": "1809.00540",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1: A pictorial description of the algorithm and the state it maintains. The algorithm maintains a monolingual cluster space, in which each cluster is a set of documents in a specific language. The algorithm also maintains a crosslingual cluster space, in which a cluster is a set of monolingual clusters in different languages. Documents are denoted by di, monolingual clusters by ci (circles) and crosslingual clusters by ai.",
+   "n_tokens": 93
+  },
+  {
+   "caption_id": "1809.00540::fig001",
+   "paper_id": "1809.00540",
+   "file": "5-Figure2-1.png",
+   "caption": "Figure 2: Crosslingual “domino-toppling”. aj is the jth crosslingual cluster (out of total N clusters) and Γ1 is the similarity between them as in §4. L(c) is the language for cluster c. M(a, `) returns the monolingual cluster for language ` ∈ L in crosslingual cluster a. See text for details.",
+   "n_tokens": 80
+  },
+  {
+   "caption_id": "1809.00540::fig002",
+   "paper_id": "1809.00540",
+   "file": "7-Table1-1.png",
+   "caption": "Table 1: Statistics for the development and evaluation datasets, constructed from the dataset in Rupnik et al. (2016), as explained in §5. “Size” denotes the number of documents in the collection, “Avg. L.” is the average number of words in a document, “C” denotes the number of clusters in the collection and “Avg. S.” is the average number of documents in each cluster.",
+   "n_tokens": 87
+  },
+  {
+   "caption_id": "1809.00540::fig003",
+   "paper_id": "1809.00540",
+   "file": "7-Table2-1.png",
+   "caption": "Table 2: Clustering results on the labeled dataset. We compare our algorithm (with and without timestamps) with the online micro-clustering routine of Aggarwal and Yu (2006) (denoted by CluStream). The F1 values are for the precision (P) and recall (R) in the following columns. See Table 3 for a legend of the different models. Best result for each language is in bold.",
+   "n_tokens": 89
+  },
+  {
+   "caption_id": "1809.00540::fig004",
+   "paper_id": "1809.00540",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: Accuracy of the SVM ranker on the English training set. TOKENS are the word token features, LEMMAS are the lemma features for title and body, ENTS are named entity features and TS are timestamp features. All features are described in detail in §4, and are listed for both the title and the body.",
+   "n_tokens": 69
+  },
+  {
+   "caption_id": "1809.00540::fig005",
+   "paper_id": "1809.00540",
+   "file": "8-Figure3-1.png",
+   "caption": "Figure 3: The F1 score of the different language development sets as a function of the threshold τ . The first point for each language is identified using binary search.",
+   "n_tokens": 34
+  },
+  {
+   "caption_id": "1809.00540::fig006",
+   "paper_id": "1809.00540",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: Comparison of two different cluster decision techniques for the English SVM model with all features (see Table 2). The first method, τsearch, corresponds to executing grid-search to find the optimal clustering τ parameter (see §3). SVM-merge is an alternative method in which we train an SVM binary classifier to decide if a new cluster should be created or not, where we use as features the maximal value of each coordinate for each document in a cluster.",
+   "n_tokens": 94
+  },
+  {
+   "caption_id": "1809.00540::fig007",
+   "paper_id": "1809.00540",
+   "file": "9-Table5-1.png",
+   "caption": "Table 5: Crosslingual clustering results when considering two different approaches to compute distances across crosslingual clusters on the test set for Spanish, German and English. See text for details.",
+   "n_tokens": 38
+  }
+ ]
+}

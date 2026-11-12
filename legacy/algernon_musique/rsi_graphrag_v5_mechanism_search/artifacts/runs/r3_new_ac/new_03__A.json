@@ -1,0 +1,77 @@
+{
+  "role": "new_03",
+  "cluster_id": "cc-00000-stable-0026",
+  "unit_id": "cc-00000-stable-0026-u000",
+  "method": "A",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 7799,
+    "completion_tokens": 601,
+    "reasoning_tokens": 330,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r3_new_ac_new_03_A",
+    "cache_key": "f0a3b34cda22c88f61783b828ea5a827d75e24d22e0eef71e8dcc9c07b29195d"
+  },
+  "n_updates": 1,
+  "n_add": 1,
+  "n_accept": 0,
+  "n_reject": 1,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "INCOMPLETE_CITATION": 1
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "candidate-001",
+      "comprehension_text": "Wang Shen'ai and Emperor Xiaowu had no children.",
+      "new_semantic_relation": "had no children with",
+      "linked_entity_ids": [
+        "entity-c440928664a051f56150fbc2f4a614d9",
+        "entity-ae2c3543b046d56adbace2ce8757e475"
+      ],
+      "source_triple_ids": [
+        "triple-c8d3556b407afd78d8fe8179aa12ebcc"
+      ],
+      "source_passage_ids": [
+        "chunk-24f9ea36a93177e89a6822e3fe9a317f"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-24f9ea36a93177e89a6822e3fe9a317f",
+          "span": "in any case, they had no children."
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "reasoning_summary": "The existing triples state that Wang Shen'ai married Emperor Xiaowu but omit that they had no children; the passage explicitly supplies this fact.",
+      "novelty_justification": "The absence of children is not stated by the existing marriage or empress-status triples.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "candidate-001",
+      "decision": "REJECT",
+      "failure_stage": "V2",
+      "faithfulness": "incomplete_citation",
+      "novelty": "unclear",
+      "audit_type": "INCOMPLETE_CITATION",
+      "reason": "The cited sentences do not contain Wang Shen'ai. Those names occur elsewhere in the cited passage, but no token of the name is in the cited sentence.",
+      "missing_names": [
+        "Wang Shen'ai"
+      ],
+      "recoverable_in_passage": [
+        "Wang Shen'ai"
+      ],
+      "evidence_sentences": [
+        "As he was described to be so developmentally disabled that he could not speak or dress himself, or express whether he was full or hungry, it was unlikely that their marriage was consummated; in any case, they had no children. Later that year, after Emperor Xiaowu was killed by his concubine Honoured Lady Zhang after humiliating her, Emperor An became emperor."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "timestamp": "2026-11-06T02:46:13",
+  "args": {
+    "convs": "conv-30",
+    "split": "dev",
+    "variants": "cluster_hybrid_0.5_b8192_comp:comp",
+    "budget": 4096,
+    "top_k": 20,
+    "max_questions": 5,
+    "max_workers": 16,
+    "out_prefix": "rt_smoke",
+    "force_build": true,
+    "include_relations": "true"
+  },
+  "summaries": {
+    "cluster_hybrid_0.5_b8192_comp": {
+      "method": "cluster_hybrid_0.5_b8192_comp",
+      "n": 5,
+      "recall@1": 0.4,
+      "recall@3": 0.4,
+      "recall@5": 0.8,
+      "recall@10": 0.9,
+      "recall@20": 1.0,
+      "mrr": 0.5122222222222222,
+      "ndcg@10": 0.6004210124175005,
+      "evidence_full@2048": 0.6,
+      "evidence_partial@2048": 0.6,
+      "session_full@2048": 0.6,
+      "evidence_full@4096": 0.8,
+      "evidence_partial@4096": 0.8,
+      "session_full@4096": 0.8,
+      "evidence_full@8192": 1.0,
+      "evidence_partial@8192": 1.0,
+      "session_full@8192": 1.0,
+      "em": 0.2,
+      "f1": 0.24285714285714283,
+      "em_answerable": 0.2,
+      "f1_answerable": 0.24285714285714283,
+      "n_answerable": 5,
+      "refusal_rate": null,
+      "n_adversarial": 0,
+      "by_category": {
+        "1": {
+          "n": 1,
+          "em": 0.0,
+          "f1": 0.0,
+          "recall@5": 0.0,
+          "evidence_full@4096": 0.0
+        },
+        "2": {
+          "n": 2,
+          "em": 0.5,
+          "f1": 0.5,
+          "recall@5": 1.0,
+          "evidence_full@4096": 1.0
+        },
+        "4": {
+          "n": 2,
+          "em": 0.0,
+          "f1": 0.10714285714285714,
+          "recall@5": 1.0,
+          "evidence_full@4096": 1.0
+        }
+      },
+      "by_conversation": {
+        "conv-30": {
+          "n": 5,
+          "em": 0.2,
+          "f1": 0.24285714285714283,
+          "recall@5": 0.8
+        }
+      }
+    }
+  },
+  "builds": [
+    {
+      "conv_id": "conv-30",
+      "variant": "cluster_hybrid_0.5_b8192_comp",
+      "reused": false,
+      "save_dir": "/group/40150/licochen/Memory/RSI_GraphRAG/outputs/raw_graphs/conv-30/variants/cluster_hybrid_0.5_b8192_comp",
+      "injection": {
+        "added": 273,
+        "chunks_touched": 19,
+        "skipped_duplicate": 24
+      },
+      "graph_info": {
+        "num_phrase_nodes": 570,
+        "num_passage_nodes": 19,
+        "num_total_nodes": 589,
+        "num_extracted_triples": 813,
+        "num_triples_with_passage_node": 742,
+        "num_synonymy_triples": 1108,
+        "num_total_triples": 2434
+      },
+      "build_seconds": 5.7
+    }
+  ],
+  "hy4": {
+    "calls": 5,
+    "cache_hits": 0,
+    "errors": 0,
+    "prompt_tokens": 21532,
+    "completion_tokens": 45,
+    "reasoning_tokens": 0,
+    "latency_s": 8.844982385635376
+  }
+}

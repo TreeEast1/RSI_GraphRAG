@@ -1,0 +1,168 @@
+{
+  "role": "v53_01",
+  "cluster_id": "cc-00203",
+  "unit_id": "cc-00203-u000",
+  "method": "Ccompact",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 1771,
+    "completion_tokens": 1977,
+    "reasoning_tokens": 1212,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r53_chain_v53_01_Ccompact",
+    "cache_key": "037832104199c9c3b2b068e1711de13242b0c3d30a200fb86d351e4c4a2569c2"
+  },
+  "n_updates": 2,
+  "n_add": 2,
+  "n_accept": 1,
+  "n_reject": 0,
+  "n_mismatch": 1,
+  "n_uncertain": 0,
+  "types": {
+    "UNLOCATED": 1,
+    "EXTRACTION_REPAIR": 1
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "c1",
+      "comprehension_text": "Federation occurred before the Australian Capital Territory was transferred.",
+      "new_semantic_relation": "federation precedes ACT transfer",
+      "operator": "TEMPORAL_COMPARE",
+      "chain": [
+        {
+          "passage_id": "chunk-9d7d1d0ba6e55fc44634c8b002385912",
+          "span": "following Federation in 1901, land would be ceded freely to the new Federal Government. The territory was transferred to the Commonwealth in 1911"
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-b153f2b8e34c0a72595c3da74b08067c",
+        "entity-e2bc55c40c8e335d87f6fefebe16f21b"
+      ],
+      "source_triple_ids": [
+        "triple-4c1362dddc33035835c534af60aa7d64",
+        "triple-2b80bf84d24ca62a0d04a313a4047c59"
+      ],
+      "source_passage_ids": [
+        "chunk-9d7d1d0ba6e55fc44634c8b002385912"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-9d7d1d0ba6e55fc44634c8b002385912",
+          "span": "following Federation in 1901, land would be ceded freely to the new Federal Government. The territory was transferred to the Commonwealth in 1911"
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "Federation precedes the territory transfer.",
+      "reasoning_summary": "The dated events place Federation in 1901 and transfer in 1911.",
+      "novelty_justification": "No stored triple compares these event dates.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "c2",
+      "comprehension_text": "The Australian Capital Territory transfer preceded Canberra's naming as national capital.",
+      "new_semantic_relation": "ACT transfer precedes capital naming",
+      "operator": "EXPLICIT_SUCCESSION",
+      "chain": [
+        {
+          "passage_id": "chunk-9d7d1d0ba6e55fc44634c8b002385912",
+          "span": "transferred to the Commonwealth by the state of New South Wales in 1911, two years prior to the naming of Canberra as the national capital in 1913"
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-e2bc55c40c8e335d87f6fefebe16f21b",
+        "entity-b36459faf50ee2374b4fa8e37d3a76b6"
+      ],
+      "source_triple_ids": [
+        "triple-2b80bf84d24ca62a0d04a313a4047c59",
+        "triple-1e04f97b2064002b3019a6ef3c6cc467"
+      ],
+      "source_passage_ids": [
+        "chunk-9d7d1d0ba6e55fc44634c8b002385912"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-9d7d1d0ba6e55fc44634c8b002385912",
+          "span": "transferred to the Commonwealth by the state of New South Wales in 1911, two years prior to the naming of Canberra as the national capital in 1913"
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The transfer preceded Canberra's capital designation.",
+      "reasoning_summary": "The passage explicitly states the transfer was two years prior.",
+      "novelty_justification": "No stored triple states this succession.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "c1",
+      "decision": "EVIDENCE_MISMATCH",
+      "failure_stage": "V1",
+      "faithfulness": "unlocated",
+      "novelty": "unclear",
+      "audit_type": "UNLOCATED",
+      "reason": "A cited span is not a verbatim substring of the named passage.",
+      "missing_spans": [
+        {
+          "passage_id": "chunk-9d7d1d0ba6e55fc44634c8b002385912",
+          "span": "following Federation in 1901, land would be ceded freely to the new Federal Government. The territory was transferred to the Commonwealth in 1911",
+          "problem": "span_not_in_passage"
+        }
+      ],
+      "located": []
+    },
+    {
+      "candidate_id": "c2",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: transfer, preceded, s, naming",
+      "residue": [
+        "transfer",
+        "preceded",
+        "s",
+        "naming"
+      ],
+      "evidence_sentences": [
+        "The territory was transferred to the Commonwealth by the state of New South Wales in 1911, two years prior to the naming of Canberra as the national capital in 1913."
+      ],
+      "warning": "partial_name_anchored:The Australian Capital Territory",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [
+            "The Australian Capital Territory"
+          ],
+          "missing_names": [],
+          "evidence_sentences": [
+            "The territory was transferred to the Commonwealth by the state of New South Wales in 1911, two years prior to the naming of Canberra as the national capital in 1913."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "transfer",
+            "preceded",
+            "s",
+            "naming"
+          ],
+          "n_passage_triples": 10,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,595 @@
+{
+ "1910.07601::s00::p000": [
+  [
+   "word embeddings",
+   "have been successfully used in",
+   "natural language processing (NLP)"
+  ],
+  [
+   "Word2Vec BIBREF0 and GloveBIBREF1",
+   "are",
+   "the most commonly known models"
+  ],
+  [
+   "word embedding models",
+   "take into account",
+   "context information of words"
+  ],
+  [
+   "The embeddings",
+   "are widely applied in",
+   "many downstream NLP tasks such as neural machine translation, dialogue system or text summarisation"
+  ]
+ ],
+ "1910.07601::s00::p001": [
+  [
+   "The objective",
+   "is to represent",
+   "audio sequence information in compact form"
+  ],
+  [
+   "Acoustic embeddings",
+   "have been explored for",
+   "a variety of speech tasks such as speech recognitionBIBREF10, speaker verificationBIBREF11 or voice conversionBIBREF12"
+  ],
+  [
+   "attributes mentioned above, e.g. speaker properties and phonemes",
+   "operate at",
+   "different levels of abstraction"
+  ]
+ ],
+ "1910.07601::s00::p003": [
+  [
+   "Both methods",
+   "make use of",
+   "the variational auto-encoder framework as proposed inBIBREF16"
+  ],
+  [
+   "both approaches",
+   "aim to find",
+   "joint latent variables between the target acoustic segments and its surrounding frames"
+  ],
+  [
+   "The encoder element of the associated auto-encoder",
+   "is further referred to as",
+   "Contextual Joint Factor Synthesis (CJFS) encoder"
+  ]
+ ],
+ "1910.07601::s02::p000": [
+  [
+   "Most interest in acoustic embeddings",
+   "can be observed on",
+   "acoustic word embeddings"
+  ],
+  [
+   "acoustic word embeddings",
+   "are",
+   "projections that map word acoustics into a fixed size vector space"
+  ],
+  [
+   "Objective functions",
+   "are chosen to project",
+   "different word realisations to close proximity in the embedding space"
+  ],
+  [
+   "a CNN",
+   "is used to predict",
+   "a word from the corresponding acoustic signal"
+  ],
+  [
+   "the output of the bottleneck layer before the final softmax layer",
+   "is taken to be",
+   "the embedding for the corresponding word"
+  ]
+ ],
+ "1910.07601::s02::p001": [
+  [
+   "word similarity Siamese CNNs",
+   "are used to minimise",
+   "a distance function between representations of two instances of the same word type"
+  ],
+  [
+   "word similarity Siamese CNNs",
+   "are used to maximise",
+   "the distance between two instances of different words"
+  ]
+ ],
+ "1910.07601::s02::p002": [
+  [
+   "The work",
+   "introduces",
+   "the concepts of global and local latent factors"
+  ]
+ ],
+ "1910.07601::s03::p000": [
+  [
+   "Context information",
+   "plays",
+   "a fundamental role in speech processing"
+  ],
+  [
+   "Phonemes",
+   "could be influenced by",
+   "surrounding frames through coarticulationBIBREF19"
+  ],
+  [
+   "directly neighbouring phonemes",
+   "have",
+   "important impact on the sound realisation"
+  ],
+  [
+   "surrounding phonemes",
+   "provide",
+   "strong constraints on the phoneme that can be chosen at any given point"
+  ]
+ ],
+ "1910.07601::s03::p001": [
+  [
+   "Word2VecBIBREF0 model",
+   "directly predicts",
+   "the neighbouring words from target words or inversely"
+  ],
+  [
+   "Their model",
+   "is trained to generate",
+   "the contents of an image region from its surroundings"
+  ]
+ ],
+ "1910.07601::s04::p000": [
+  [
+   "variational auto-encoders (VAE)BIBREF8",
+   "can yield",
+   "good representations in the latent space"
+  ],
+  [
+   "the models",
+   "allow to work with",
+   "the latent distributionsBIBREF23, BIBREF8, BIBREF24"
+  ],
+  [
+   "VAE",
+   "is used to model",
+   "the joint latent factors between the target segments and its surroundings"
+  ]
+ ],
+ "1910.07601::s04::p001": [
+  [
+   "the variational auto-encoder model",
+   "defines",
+   "a probabilistic generative process between the observation $x$ and the latent variable $z$"
+  ],
+  [
+   "the encoder",
+   "provides",
+   "an estimation of the latent variable $z$ given observation $x$ as $p(z|x)$"
+  ],
+  [
+   "The decoder",
+   "finds",
+   "the most likely reconstruction $\\hat{x}$ subject to $p(\\hat{x}|z)$"
+  ],
+  [
+   "The latent variable estimation $p(z|x)$",
+   "has",
+   "many interpretations"
+  ]
+ ],
+ "1910.07601::s04::p002": [
+  [
+   "Computing $p(z|x)$",
+   "requires",
+   "an estimate of the marginal likelihood $p(x)$"
+  ],
+  [
+   "KL divergence between $p(z|x)$ and $q(z|x)$",
+   "is minimised",
+   "as shown in Eq DISPLAY_FORM4"
+  ]
+ ],
+ "1910.07601::s04::p003": [
+  [
+   "the objective function for VAE training",
+   "is derived shown in",
+   "Eq DISPLAY_FORM5"
+  ]
+ ],
+ "1910.07601::s05::p000": [
+  [
+   "An audio signal",
+   "is represented",
+   "sequence of feature vectors $S=\\lbrace S_1,S_2,...S_T\\rbrace $"
+  ],
+  [
+   "A target window $X_t$",
+   "is",
+   "a segment of speech representing features from $S_t$ to $S_{t+C-1}$"
+  ],
+  [
+   "The left neighbour window of the target window",
+   "is defined as",
+   "the segment between $S_{t-N}$ and $S_{t-1}$"
+  ],
+  [
+   "the segment between $S_{t+C}$ and $S_{t+C+N-1}$",
+   "represents",
+   "the right neighbour window of the target window"
+  ]
+ ],
+ "1910.07601::s05::p001": [
+  [
+   "The audio signal",
+   "is split into",
+   "a sequence of left neighbour segment, target segment and right neighbour segment"
+  ],
+  [
+   "the concatenation of the left neighbour segment and right neighbour segment ($Y$)",
+   "is input to",
+   "a VAE modelBIBREF16"
+  ],
+  [
+   "the target window ($X$)",
+   "is the input to",
+   "a VAE model"
+  ]
+ ],
+ "1910.07601::s05::p002": [
+  [
+   "The first approach",
+   "is referred to as",
+   "the contextual joint factor synthesis encoder"
+  ]
+ ],
+ "1910.07601::s05::p003": [
+  [
+   "The first term",
+   "represents",
+   "the reconstruction likelihood between predicted target window segments and the neighbour window segments"
+  ],
+  [
+   "the second term",
+   "denotes",
+   "how similar the learned distribution $q(z|Y)$ is to the prior distribution of $z$, $p(z)$"
+  ]
+ ],
+ "1910.07601::s05::p004": [
+  [
+   "the reconstruction term",
+   "can be based on",
+   "the mean squared error (MSE) between the true target segment and the predicted target segment"
+  ],
+  [
+   "samples for $p(z)$",
+   "are obtained from",
+   "Gaussian distribution with zero mean and a variance of one ($p(z) \\sim \\mathcal {N} (0,1)$)"
+  ]
+ ],
+ "1910.07601::s05::p005": [
+  [
+   "The second approach",
+   "is",
+   "the contextual joint factor analysis encoder"
+  ],
+  [
+   "The objective",
+   "is to predict",
+   "the temporal context $Y$ based on input from a single centre segment $X$"
+  ],
+  [
+   "joint factors between the three windows",
+   "are obtained",
+   "encoded in an embedding"
+  ],
+  [
+   "the training objective function of CJFA",
+   "is represented by",
+   "change of variables"
+  ]
+ ],
+ "1910.07601::s07::p000": [
+  [
+   "TIMIT",
+   "contains",
+   "studio recordings from a large number of speakers with detailed phoneme segment information"
+  ],
+  [
+   "the official training and test sets",
+   "cover",
+   "in total 630 speakers with 8 utterances each"
+  ],
+  [
+   "training and test set",
+   "comprise of",
+   "462 and 168 speakers, respectively"
+  ],
+  [
+   "All work presented here",
+   "use of",
+   "80 dimensional Mel-scale filter bank coefficients"
+  ]
+ ],
+ "1910.07601::s08::p000": [
+  [
+   "Work on VAE in BIBREF17 to learn acoustic embeddings",
+   "conducted experiments using",
+   "the TIMIT data set"
+  ],
+  [
+   "the tasks of phone classification and speaker recognition",
+   "where chosen",
+   "in particular"
+  ],
+  [
+   "This implementation",
+   "was used as the basis for",
+   "CJFS and CJFA"
+  ]
+ ],
+ "1910.07601::s08::p001": [
+  [
+   "Classification",
+   "uses",
+   "phone boundaries which are assumed to be known"
+  ],
+  [
+   "The baseline performance for VAE based phone classification experiments in BIBREF17",
+   "report",
+   "an accuracy of 72.2%"
+  ],
+  [
+   "The re-implementation forming the basis for our work",
+   "gave",
+   "an accuracy of 72.0%"
+  ]
+ ],
+ "1910.07601::s08::p002": [
+  [
+   "three different task configurations",
+   "are considered",
+   "for the purpose of speaker recognition"
+  ],
+  [
+   "VAE baseline",
+   "is further referred as",
+   "Their baseline"
+  ]
+ ],
+ "1910.07601::s09::p000": [
+  [
+   "phone classification implementation",
+   "operates on",
+   "segment level"
+  ],
+  [
+   "phone class with the highest segment posterior",
+   "is chosen as",
+   "output"
+  ],
+  [
+   "both embedding and classification models",
+   "are trained on",
+   "the official TIMIT training set"
+  ]
+ ],
+ "1910.07601::s09::p001": [
+  [
+   "overlap speaker between any of the datasets",
+   "will cause",
+   "a bias"
+  ],
+  [
+   "Three different configurations (Tasks a,b,c)",
+   "are used to assess",
+   "this bias"
+  ],
+  [
+   "Task a",
+   "reflects",
+   "the situation where both classifier and embedding are trained on the same data"
+  ],
+  [
+   "Task c",
+   "represents",
+   "complete independence in training data sets and no speaker overlap"
+  ]
+ ],
+ "1910.07601::s09::p002": [
+  [
+   "TIMIT data",
+   "was split",
+   "to achieve these configuration"
+  ],
+  [
+   "TIMIT dataset",
+   "contains",
+   "speech from 462 speakers in training and 168 speakers in the test set, with 8 utterances for each speaker"
+  ],
+  [
+   "TIMIT training and test set",
+   "are split into",
+   "8 blocks"
+  ],
+  [
+   "each block A,B,C,D",
+   "contains",
+   "data from 462 speakers with 924 utterances taken from the training sets"
+  ]
+ ],
+ "1910.07601::s09::p003": [
+  [
+   "Task a training of embeddings and the classifier",
+   "consists of",
+   "data from blocks (A+B+C+E+F+G)"
+  ],
+  [
+   "Task a test data",
+   "is",
+   "blocks (D+H)"
+  ],
+  [
+   "Task b training of embeddings and classifiers",
+   "uses",
+   "(A+B+E+F) and (C+G) respectively"
+  ]
+ ],
+ "1910.07601::s10::p000": [
+  [
+   "Both VAE encoder and decoder",
+   "contain",
+   "three convolutional layers and one fully-connected layer with 512 nodes"
+  ],
+  [
+   "first layer of encoder",
+   "applies",
+   "1-by-80 filters"
+  ],
+  [
+   "decoder",
+   "has",
+   "the symmetric architecture to the encoder"
+  ],
+  [
+   "Adam optimiser",
+   "is used in",
+   "training"
+  ]
+ ],
+ "1910.07601::s11::p000": [
+  [
+   "the window size",
+   "was set to",
+   "30 frames"
+  ],
+  [
+   "the CJFA encoder",
+   "obtains",
+   "significantly better phone classification accuracy than the VAE baseline and also than the CJFS encoder"
+  ]
+ ],
+ "1910.07601::s11::p001": [
+  [
+   "the target window size",
+   "remains",
+   "10 frames"
+  ],
+  [
+   "Better speaker recognition results",
+   "are consistently obtained with",
+   "the CJFA encoder for any configuration with competitive performance"
+  ],
+  [
+   "CJFS settings",
+   "mostly outperform",
+   "the baseline"
+  ]
+ ],
+ "1910.07601::s11::p002": [
+  [
+   "A variation of the window sizes to larger windows",
+   "seems detrimental in",
+   "almost all cases, aside from the more difficult Task b"
+  ],
+  [
+   "contextual models",
+   "outperform",
+   "the baseline VAE model configuration, generally"
+  ],
+  [
+   "the decline or variation as a function of window size",
+   "is less pronounced for",
+   "the CJFA case"
+  ]
+ ],
+ "1910.07601::s11::p003": [
+  [
+   "increasing the embedding $K$",
+   "is helpful for",
+   "phone classification"
+  ],
+  [
+   "the embedding dimension",
+   "is set to",
+   "150 for all of the rest configurations"
+  ],
+  [
+   "the observed variations",
+   "are",
+   "small"
+  ]
+ ],
+ "1910.07601::s11::p004": [
+  [
+   "The RM corpus BIBREF29",
+   "was used to augment",
+   "the TIMIT data for training the embeddings only"
+  ],
+  [
+   "a absolute accuracy improvement of 7.9%",
+   "is observed for",
+   "speaker recognition Task b"
+  ],
+  [
+   "The classification tasks",
+   "benefits from",
+   "the additional data"
+  ]
+ ],
+ "1910.07601::s12::p001": [
+  [
+   "each phoneme symbol",
+   "represents",
+   "the mean vector of all of the embeddings belonging to the same phone classBIBREF31"
+  ],
+  [
+   "the CJFA encoder",
+   "appears to generate",
+   "more meaningful embeddings than the other two approaches"
+  ],
+  [
+   "phonemes belonging to the same sound classesBIBREF32",
+   "are grouped together in",
+   "closer regions"
+  ],
+  [
+   "CJFS",
+   "shows",
+   "more confusion"
+  ]
+ ],
+ "1910.07601::s13::p000": [
+  [
+   "two unsupervised acoustic embedding approaches",
+   "were proposed to model",
+   "the joint latent factors between the target window and neighbouring audio segments"
+  ],
+  [
+   "Models",
+   "are based on",
+   "variational auto-encoders"
+  ],
+  [
+   "models",
+   "are assessed using",
+   "phone classification and speaker recognition tasks, on TIMIT, and with additional RM data"
+  ],
+  [
+   "CJFA (contextual joint factor analysis) encoder",
+   "performs significantly better in",
+   "both phone classification and speaker recognition tasks compared with other two approaches"
+  ],
+  [
+   "CJFS (contextual joint factor synthesis) encoder",
+   "performs close to",
+   "CJFA in speaker recognition task"
+  ],
+  [
+   "a gain of up to 3% relative",
+   "is observed on",
+   "phone classification accuracy"
+  ],
+  [
+   "relative improvements on speaker recognition",
+   "show",
+   "3–6% gain"
+  ]
+ ]
+}

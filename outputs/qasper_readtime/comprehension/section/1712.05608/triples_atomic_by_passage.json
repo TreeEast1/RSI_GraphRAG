@@ -1,0 +1,331 @@
+{
+ "1712.05608::s00::p000": [
+  [
+   "Deep neural networks (DNNs), in particular convolutional and recurrent neural networks, with huge architectures",
+   "have been proven successful in",
+   "wide range of tasks including audio processing"
+  ]
+ ],
+ "1712.05608::s00::p001": [
+  [
+   "Training these deep architectures",
+   "require",
+   "large amount of annotated data"
+  ],
+  [
+   "annotation of speech for tasks like emotion recognition",
+   "suffer from",
+   "lack of agreement among the annotators"
+  ]
+ ],
+ "1712.05608::s00::p002": [
+  [
+   "The proposed approach",
+   "is applicable to",
+   "low resource data suffering with data imbalance"
+  ]
+ ],
+ "1712.05608::s01::p000": [
+  [
+   "The s2sL approach",
+   "proposed to address",
+   "low data resource problem"
+  ]
+ ],
+ "1712.05608::s02::p000": [
+  [
+   "the samples in the train set",
+   "are provided as",
+   "input-output pairs"
+  ]
+ ],
+ "1712.05608::s02::p001": [
+  [
+   "The proposed data representation format",
+   "called",
+   "simultaneous two sample (s2s) representation"
+  ]
+ ],
+ "1712.05608::s02::p003": [
+  [
+   "s2s data representation",
+   "will have",
+   "an input feature vector of length INLINEFORM0 i.e., INLINEFORM1"
+  ],
+  [
+   "s2s data representation",
+   "will have",
+   "output class labels as either INLINEFORM2 or INLINEFORM3"
+  ],
+  [
+   "Each sample",
+   "can be combined with",
+   "all the samples (i.e., with ( INLINEFORM4 ) samples) in the dataset"
+  ],
+  [
+   "the number of samples in the train set",
+   "increases to",
+   "INLINEFORM5 from INLINEFORM6 samples"
+  ]
+ ],
+ "1712.05608::s03::p000": [
+  [
+   "MLP",
+   "is considered as",
+   "the base classifier to validate our proposed s2s framework"
+  ],
+  [
+   "MLPs",
+   "are trained using",
+   "the data format given by eq. INLINEFORM0"
+  ]
+ ],
+ "1712.05608::s03::p001": [
+  [
+   "the input layer",
+   "has",
+   "INLINEFORM0 units (instead of INLINEFORM1 units)"
+  ],
+  [
+   "the input layer",
+   "accepts",
+   "the two samples i.e., INLINEFORM2 and INLINEFORM3 , simultaneously"
+  ]
+ ],
+ "1712.05608::s03::p002": [
+  [
+   "The structure of the hidden layer in this approach",
+   "is similar to",
+   "that of a regular MLP"
+  ],
+  [
+   "The number of hidden layers and hidden units",
+   "can be varied depending upon",
+   "the complexity of the problem"
+  ],
+  [
+   "The number of units in the hidden layer",
+   "is selected empirically by varying",
+   "the number of hidden units from 2 to twice the length of the input layer (i.e., 2 to INLINEFORM0 )"
+  ],
+  [
+   "Rectified linear units (ReLU)",
+   "are used for",
+   "hidden layer"
+  ]
+ ],
+ "1712.05608::s03::p003": [
+  [
+   "The output layer",
+   "will consist of",
+   "units equal to twice the considered number of classes in the classification task"
+  ],
+  [
+   "the output layer",
+   "will have",
+   "four units for two-class classification task"
+  ],
+  [
+   "The sigmoid activation function (not softmax)",
+   "is used on",
+   "the output layer units"
+  ],
+  [
+   "the output labels in the proposed s2s based data representation",
+   "will have",
+   "more than one unit active at a time (not one-hot encoded output)"
+  ],
+  [
+   "this condition",
+   "cannot be handled using",
+   "softmax function"
+  ]
+ ],
+ "1712.05608::s03::p004": [
+  [
+   "output layer in our proposed method",
+   "has",
+   "outputs INLINEFORM0 and INLINEFORM1"
+  ],
+  [
+   "two-class classification problem",
+   "has",
+   "four units in the output layer"
+  ],
+  [
+   "This architecture",
+   "is referred to as",
+   "s2s-MLP"
+  ],
+  [
+   "s2s-MLP",
+   "is trained using",
+   "adam optimizer"
+  ]
+ ],
+ "1712.05608::s04::p000": [
+  [
+   "feature vector corresponding to the test sample",
+   "is provided as input to",
+   "the trained MLP"
+  ],
+  [
+   "class label",
+   "is decided based on",
+   "the obtained output"
+  ]
+ ],
+ "1712.05608::s04::p001": [
+  [
+   "feature vector corresponding to the test sample",
+   "should also be converted to",
+   "the s2s data representation format"
+  ],
+  [
+   "given test sample",
+   "is combined with",
+   "a set of preselected reference samples"
+  ]
+ ],
+ "1712.05608::s04::p002": [
+  [
+   "reference samples",
+   "can be selected from",
+   "any of the two classes"
+  ]
+ ],
+ "1712.05608::s04::p003": [
+  [
+   "each test sample INLINEFORM0",
+   "is combined with",
+   "all the INLINEFORM2 reference samples ( INLINEFORM3 )"
+  ],
+  [
+   "corresponding outputs ( INLINEFORM6 )",
+   "are combined by",
+   "voting-based decision approach"
+  ],
+  [
+   "class label that gets maximum votes",
+   "is considered as",
+   "the predicted output label"
+  ]
+ ],
+ "1712.05608::s05::p000": [
+  [
+   "proposed s2sL",
+   "is validated on",
+   "two different tasks namely, Speech/Music discrimination and emotion classification"
+  ],
+  [
+   "GTZAN Music-Speech dataset",
+   "consists of",
+   "120 audio files (60 speech and 60 music)"
+  ],
+  [
+   "Each audio file",
+   "is represented using",
+   "a 13-dimensional mel-frequency cepstral coefficient (MFCC) vector"
+  ],
+  [
+   "each MFCC vector",
+   "is",
+   "the average of all the frame level (frame size of 30 msec and an overlap of 10 msec) MFCC vectors"
+  ]
+ ],
+ "1712.05608::s05::p001": [
+  [
+   "Berlin speech emotion database (EMO-DB)",
+   "consists of",
+   "535 utterances corresponding to 7 different emotions"
+  ],
+  [
+   "Each utterance",
+   "is represented by",
+   "a 19-dimensional feature vector"
+  ],
+  [
+   "19-dimensional feature vector",
+   "is obtained by using",
+   "the feature selection algorithm from WEKA toolkit [19]"
+  ],
+  [
+   "384-dimensional utterance level feature vector",
+   "is obtained using",
+   "openSMILE toolkit [20]"
+  ]
+ ],
+ "1712.05608::s05::p002": [
+  [
+   "All experimental results",
+   "are validated using",
+   "5-fold cross validation (80% of data for training and 20% for testing in each fold)"
+  ],
+  [
+   "different proportions of training data",
+   "are considered to train",
+   "the system"
+  ],
+  [
+   "4 different proportions",
+   "are considered to train",
+   "the classifier"
+  ],
+  [
+   "Accuracy (in %)",
+   "is used as",
+   "a performance measure for balanced data classification tasks"
+  ]
+ ],
+ "1712.05608::s05::p003": [
+  [
+   "The values in Table TABREF14",
+   "are",
+   "mean accuracies (in %) obtained by 5-fold cross validation"
+  ],
+  [
+   "s2sL method",
+   "outperforms",
+   "MLP"
+  ],
+  [
+   "s2sL",
+   "shows",
+   "an absolute improvement in accuracy of INLINEFORM0 % and INLINEFORM1 % over MLP"
+  ]
+ ],
+ "1712.05608::s05::p004": [
+  [
+   "state-of-the-art methods",
+   "are considered for comparison",
+   "Eusboost [22] and MWMOTE [23]"
+  ],
+  [
+   "s2sL method",
+   "shows",
+   "an absolute improvement of 6% ( INLINEFORM3 ) in INLINEFORM4 value over the second best ( INLINEFORM5 for MWMOTE)"
+  ]
+ ],
+ "1712.05608::s06::p000": [
+  [
+   "more than one sample (here, two samples)",
+   "are simultaneously considered to train",
+   "the classifier"
+  ],
+  [
+   "this framework",
+   "allows to generate",
+   "multiple instances of the same test sample"
+  ],
+  [
+   "experimental results",
+   "are provided for",
+   "two different tasks namely, speech/music discrimination and emotion classification"
+  ],
+  [
+   "the s2s framework",
+   "can handle",
+   "the low resourced data imbalance problem"
+  ]
+ ]
+}

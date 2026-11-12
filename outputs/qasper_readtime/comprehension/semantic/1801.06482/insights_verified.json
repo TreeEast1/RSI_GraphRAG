@@ -1,0 +1,452 @@
+{
+ "kept": [
+  {
+   "insight_id": "1801.06482::s00:i00",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::s00",
+   "concise_text": "The paper addresses Bottleneck B1, Bottleneck B2, and Bottleneck B3 by evaluating Formspring, Twitter, and Wikipedia datasets for personal attack, racism, and sexism without explicit feature engineering.",
+   "triple": {
+    "subject": "deep learning based models along with transfer learning",
+    "predicate": "addresses",
+    "object": "Bottleneck B1, Bottleneck B2, and Bottleneck B3"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1801.06482::s00::p002",
+    "1801.06482::s01::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::s00:b0:f08",
+    "1801.06482::s00:b0:f09",
+    "1801.06482::s00:b0:f10",
+    "1801.06482::s00:b0:f11",
+    "1801.06482::s00:b0:f12"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Cited passages exist and jointly support that deep learning models with transfer learning address B1-B3 by covering three platforms/topics without explicit feature engineering; concise_text matches."
+   },
+   "unit_id": "1801.06482::u000"
+  },
+  {
+   "insight_id": "1801.06482::s00:i01",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::s00",
+   "concise_text": "Swear word list based filtering is unsuitable for cyberbullying detection because 78% of Formspring swearing posts are non-bullying and 82% of Twitter bullying posts use no swear words.",
+   "triple": {
+    "subject": "swear word list based filtering",
+    "predicate": "limits",
+    "object": "cyberbullying detection"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1801.06482::s00::p002",
+    "1801.06482::s02::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::s00:b0:f10",
+    "1801.06482::s00:b1:f08",
+    "1801.06482::s00:b1:f09"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.94,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Passages exist; p2 says handcrafted swear-word features are not robust, and s02 gives the 78%/82% evidence that swear-word filtering yields low precision/recall. Insight is an evidence-based inference, not mere restatement."
+   },
+   "unit_id": "1801.06482::u001"
+  },
+  {
+   "insight_id": "1801.06482::s00:i02",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::s00",
+   "concise_text": "Class imbalance in Formspring, Twitter, and Wikipedia datasets caused non-bullying bias, so oversampling bullying posts thrice significantly improved all DNN models.",
+   "triple": {
+    "subject": "oversampling bullying posts thrice",
+    "predicate": "improves_on",
+    "object": "all DNN models under class imbalance"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1801.06482::s01::p000",
+    "1801.06482::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::s00:b2:f08",
+    "1801.06482::s00:b2:f09",
+    "1801.06482::s00:b2:f10",
+    "1801.06482::s00:b2:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.95,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Passages exist and jointly support class imbalance causing non-bullying bias and oversampling bullying posts thrice significantly improving all DNN models; concise_text matches."
+   },
+   "unit_id": "1801.06482::u002"
+  },
+  {
+   "insight_id": "1801.06482::s00:i06",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::s00",
+   "concise_text": "Wikipedia dataset contains personal attack, and its learned embeddings do not show the Twitter dataset bias for word slave toward targets of racism and sexism.",
+   "triple": {
+    "subject": "Wikipedia dataset",
+    "predicate": "limits",
+    "object": "word slave bias toward targets of racism and sexism"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1801.06482::s01::p000",
+    "1801.06482::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::s00:b0:f12",
+    "1801.06482::s00:b3:f04",
+    "1801.06482::s00:b3:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Passages exist and jointly support that Wikipedia is about personal attacks and does not show the Twitter 'slave' bias; 'limits' is a loose but acceptable paraphrase of absence of bias."
+   },
+   "unit_id": "1801.06482::u006"
+  },
+  {
+   "insight_id": "1801.06482::s00:i07",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::s00",
+   "concise_text": "TL1 low recall and TL2 dramatic recall improvement jointly indicate that learned word embeddings, not direct model reuse, are essential for cross-dataset cyberbullying detection.",
+   "triple": {
+    "subject": "Feature Level Transfer Learning (TL2)",
+    "predicate": "improves_on",
+    "object": "Complete Transfer Learning (TL1) recall"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1801.06482::s09::p001",
+    "1801.06482::s09::p002"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::s00:b3:f06",
+    "1801.06482::s00:b3:f07",
+    "1801.06482::s00:b3:f10",
+    "1801.06482::s00:b3:f11",
+    "1801.06482::s00:b3:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.93,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Passages exist and jointly support that TL2 dramatically improves recall over TL1 and that learned embeddings are essential; concise_text is consistent, with 'not direct model reuse' implied by TL1 definition."
+   },
+   "unit_id": "1801.06482::u007"
+  },
+  {
+   "insight_id": "1801.06482::s00:i08",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::s00",
+   "concise_text": "TL3 transfers learned word embeddings and network weights but does not significantly improve over TL2, supporting that network weights are not essential for cyberbullying detection.",
+   "triple": {
+    "subject": "Model Level Transfer Learning (TL3)",
+    "predicate": "does not improve_on",
+    "object": "Feature Level Transfer Learning (TL2)"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1801.06482::s09::p002",
+    "1801.06482::s09::p003"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::s00:b3:f10",
+    "1801.06482::s00:b3:f14",
+    "1801.06482::s00:b3:f15",
+    "1801.06482::s00:b3:f16",
+    "1801.06482::s00:b3:f17"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.96,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Passages exist and jointly support that TL3 transfers embeddings and weights but has no significant improvement over TL2, indicating weights are not essential; concise_text matches."
+   },
+   "unit_id": "1801.06482::u008"
+  },
+  {
+   "insight_id": "1801.06482::s00:i09",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::s00",
+   "concise_text": "BLSTM with attention and feature level transfer learning achieves F1 scores of 0.94 for Wikipedia and Twitter, beating previous best F1 scores of 0.68 and 0.93.",
+   "triple": {
+    "subject": "BLSTM with attention and feature level transfer learning",
+    "predicate": "outperforms",
+    "object": "previous best F1 scores for Wikipedia and Twitter"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1801.06482::s09::p002",
+    "1801.06482::s09::p004"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::s00:b3:f10",
+    "1801.06482::s00:b4:f00",
+    "1801.06482::s00:b4:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Passages exist and jointly support the method, F1 scores, and beating previous best results for Wikipedia and Twitter; concise_text matches."
+   },
+   "unit_id": "1801.06482::u009"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1801.06482::s00:i03",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::s00",
+   "concise_text": "Because Formspring has only 825 bullying instances, oversampling particularly helps the smallest dataset compared with Twitter and Wikipedia bullying classes of about 5K and 13K.",
+   "triple": {
+    "subject": "oversampling",
+    "predicate": "improves_on",
+    "object": "Formspring with 825 bullying instances"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1801.06482::s01::p001",
+    "1801.06482::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::s00:b0:f15",
+    "1801.06482::s00:b2:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Supported by cited passages, but it is essentially a restatement/paraphrase of s06::p000 plus a number from s01::p001; reject as low novelty."
+   },
+   "unit_id": "1801.06482::u003"
+  },
+  {
+   "insight_id": "1801.06482::s00:i04",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::s00",
+   "concise_text": "Task specific word embeddings capture SMP specific and topic specific cyberbullying style, and learned embeddings across multiple datasets show differences across cyberbullying topics and SMPs.",
+   "triple": {
+    "subject": "task specific word embeddings",
+    "predicate": "causes",
+    "object": "learned embeddings to show differences across cyberbullying topics and SMPs"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1801.06482::s04::p001",
+    "1801.06482::s08::p000"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::s00:b1:f18",
+    "1801.06482::s00:b3:f00",
+    "1801.06482::s00:b3:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "Passages support co-occurrence/observation that task-specific embeddings capture style and learned embeddings show differences, but the triple asserts a causal relation not stated."
+   },
+   "unit_id": "1801.06482::u004"
+  },
+  {
+   "insight_id": "1801.06482::s00:i05",
+   "paper_id": "1801.06482",
+   "group_id": "1801.06482::s00",
+   "concise_text": "Twitter dataset contains racism and sexism, and its learned embeddings consider word slave as similar to targets of racism and sexism.",
+   "triple": {
+    "subject": "Twitter dataset",
+    "predicate": "causes",
+    "object": "word slave to be similar to targets of racism and sexism"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1801.06482::s01::p000",
+    "1801.06482::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1801.06482::s00:b0:f11",
+    "1801.06482::s00:b3:f02",
+    "1801.06482::s00:b3:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "Passages support that Twitter contains racism/sexism and that its learned embeddings consider 'slave' similar to targets, but the triple's causal claim that the dataset causes this similarity is not supported."
+   },
+   "unit_id": "1801.06482::u005"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1801.06482::s00:i00",
+    "verdict": {
+     "insight_id": "1801.06482::s00:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Cited passages exist and jointly support that deep learning models with transfer learning address B1-B3 by covering three platforms/topics without explicit feature engineering; concise_text matches."
+    }
+   },
+   {
+    "insight_id": "1801.06482::s00:i01",
+    "verdict": {
+     "insight_id": "1801.06482::s00:i01",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Passages exist; p2 says handcrafted swear-word features are not robust, and s02 gives the 78%/82% evidence that swear-word filtering yields low precision/recall. Insight is an evidence-based inference, not mere restatement."
+    }
+   },
+   {
+    "insight_id": "1801.06482::s00:i02",
+    "verdict": {
+     "insight_id": "1801.06482::s00:i02",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Passages exist and jointly support class imbalance causing non-bullying bias and oversampling bullying posts thrice significantly improving all DNN models; concise_text matches."
+    }
+   },
+   {
+    "insight_id": "1801.06482::s00:i03",
+    "verdict": {
+     "insight_id": "1801.06482::s00:i03",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Supported by cited passages, but it is essentially a restatement/paraphrase of s06::p000 plus a number from s01::p001; reject as low novelty."
+    },
+    "reason": "Supported by cited passages, but it is essentially a restatement/paraphrase of s06::p000 plus a number from s01::p001; reject as low novelty."
+   },
+   {
+    "insight_id": "1801.06482::s00:i04",
+    "verdict": {
+     "insight_id": "1801.06482::s00:i04",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "Passages support co-occurrence/observation that task-specific embeddings capture style and learned embeddings show differences, but the triple asserts a causal relation not stated."
+    },
+    "reason": "Passages support co-occurrence/observation that task-specific embeddings capture style and learned embeddings show differences, but the triple asserts a causal relation not stated."
+   },
+   {
+    "insight_id": "1801.06482::s00:i05",
+    "verdict": {
+     "insight_id": "1801.06482::s00:i05",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "Passages support that Twitter contains racism/sexism and that its learned embeddings consider 'slave' similar to targets, but the triple's causal claim that the dataset causes this similarity is not supported."
+    },
+    "reason": "Passages support that Twitter contains racism/sexism and that its learned embeddings consider 'slave' similar to targets, but the triple's causal claim that the dataset causes this similarity is not supported."
+   },
+   {
+    "insight_id": "1801.06482::s00:i06",
+    "verdict": {
+     "insight_id": "1801.06482::s00:i06",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Passages exist and jointly support that Wikipedia is about personal attacks and does not show the Twitter 'slave' bias; 'limits' is a loose but acceptable paraphrase of absence of bias."
+    }
+   },
+   {
+    "insight_id": "1801.06482::s00:i07",
+    "verdict": {
+     "insight_id": "1801.06482::s00:i07",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Passages exist and jointly support that TL2 dramatically improves recall over TL1 and that learned embeddings are essential; concise_text is consistent, with 'not direct model reuse' implied by TL1 definition."
+    }
+   },
+   {
+    "insight_id": "1801.06482::s00:i08",
+    "verdict": {
+     "insight_id": "1801.06482::s00:i08",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Passages exist and jointly support that TL3 transfers embeddings and weights but has no significant improvement over TL2, indicating weights are not essential; concise_text matches."
+    }
+   },
+   {
+    "insight_id": "1801.06482::s00:i09",
+    "verdict": {
+     "insight_id": "1801.06482::s00:i09",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Passages exist and jointly support the method, F1 scores, and beating previous best results for Wikipedia and Twitter; concise_text matches."
+    }
+   }
+  ],
+  "calls": [
+   {
+    "n": 10,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 5479,
+     "completion_tokens": 786,
+     "total_tokens": 6265,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

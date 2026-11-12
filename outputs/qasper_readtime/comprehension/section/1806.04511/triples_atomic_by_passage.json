@@ -1,0 +1,412 @@
+{
+ "1806.04511::s00::p000": [
+  [
+   "access to users' reviews",
+   "have become",
+   "easier"
+  ],
+  [
+   "commercial companies' interests for sentiment analysis",
+   "increased",
+   "as the amount of data that can be mined for opinion increased"
+  ],
+  [
+   "Sentiment analysis",
+   "is",
+   "an important part of understanding user behavior and opinions on products, places, or services"
+  ]
+ ],
+ "1806.04511::s00::p001": [
+  [
+   "sentiment dictionaries",
+   "can be used as",
+   "features for machine learning models"
+  ],
+  [
+   "These resources",
+   "help increase",
+   "sentiment analysis accuracies"
+  ],
+  [
+   "These resources",
+   "are highly dependent on",
+   "language"
+  ],
+  [
+   "These resources",
+   "require researchers to build",
+   "such resources for every language to process"
+  ]
+ ],
+ "1806.04511::s00::p002": [
+  [
+   "Feature engineering",
+   "is",
+   "a large part of the model building phase for most sentiment analysis and emotion detection models"
+  ],
+  [
+   "Determining the correct set of features",
+   "requires",
+   "thorough investigation"
+  ],
+  [
+   "these features",
+   "are mostly",
+   "language and dataset dependent"
+  ],
+  [
+   "the sentiment and emotion lexicons, as well as pre-trained word embeddings",
+   "are not completely transferable to",
+   "other languages"
+  ],
+  [
+   "the machine learning models' parameters",
+   "need to be tuned separately for",
+   "each language"
+  ]
+ ],
+ "1806.04511::s00::p004": [
+  [
+   "a robust approach",
+   "utilizes",
+   "machine translation to reuse a model trained on one language in other languages"
+  ],
+  [
+   "an RNN-based approach",
+   "eliminates",
+   "feature extraction as well as resource requirements for sentiment analysis"
+  ],
+  [
+   "a technique",
+   "statistically significantly outperforms",
+   "baselines for multilingual sentiment analysis task when data is limited"
+  ]
+ ],
+ "1806.04511::s01::p000": [
+  [
+   "features that are specific to sentiment analysis",
+   "are extracted and used in",
+   "different machine learning models"
+  ],
+  [
+   "extracting them",
+   "requires",
+   "language-dependent data"
+  ]
+ ],
+ "1806.04511::s01::p001": [
+  [
+   "English word embeddings",
+   "are trained on",
+   "any data"
+  ]
+ ],
+ "1806.04511::s01::p002": [
+  [
+   "Hiroshi et al. BIBREF13",
+   "translated",
+   "only sentiment units with a pattern-based approach"
+  ],
+  [
+   "Balahur and Turchi BIBREF14",
+   "used",
+   "uni-grams, bi-grams and tf-idf features"
+  ],
+  [
+   "Boyd-Graber and Resnik BIBREF15",
+   "built",
+   "Latent Dirichlet Allocation models"
+  ],
+  [
+   "Mohammed et al. BIBREF16",
+   "translate",
+   "Twitter posts to English as well as the English sentiment lexicons"
+  ]
+ ],
+ "1806.04511::s02::p000": [
+  [
+   "a single model",
+   "is built in",
+   "the language where the largest resources are available"
+  ],
+  [
+   "In this paper we",
+   "focus on",
+   "English"
+  ],
+  [
+   "test sets",
+   "are first translated to",
+   "English via machine translation"
+  ]
+ ],
+ "1806.04511::s02::p001": [
+  [
+   "Recurrent neural network (RNN)",
+   "includes",
+   "Long Short Term Memory (LSTM) and Gated Recurrent Units (GRU)"
+  ],
+  [
+   "These models",
+   "can also be used with",
+   "variable length input vectors"
+  ],
+  [
+   "RNN",
+   "can also utilize",
+   "pre-trained word embeddings"
+  ]
+ ],
+ "1806.04511::s02::p002": [
+  [
+   "The sentiment analysis model",
+   "has",
+   "two bidirectional layers"
+  ],
+  [
+   "each",
+   "has",
+   "40 neurons"
+  ],
+  [
+   "The training phase",
+   "predicts",
+   "the polarity of the reviews"
+  ]
+ ],
+ "1806.04511::s03::p001": [
+  [
+   "Google translation API",
+   "is used for",
+   "machine translation"
+  ]
+ ],
+ "1806.04511::s04::p000": [
+  [
+   "The first set",
+   "consists of",
+   "English reviews"
+  ],
+  [
+   "the second set",
+   "contains",
+   "restaurant reviews from four different languages (Spanish, Turkish, Dutch, Russian)"
+  ],
+  [
+   "all datasets in this study",
+   "have",
+   "two class values (positive, negative)"
+  ]
+ ],
+ "1806.04511::s04::p001": [
+  [
+   "In this paper we",
+   "focus on",
+   "restaurant reviews as our domain"
+  ]
+ ],
+ "1806.04511::s04::p002": [
+  [
+   "evaluation of the multilingual approach",
+   "uses",
+   "four languages"
+  ],
+  [
+   "These datasets",
+   "are part of",
+   "SemEval-2016 Challenge Task 5 BIBREF27 , BIBREF28"
+  ]
+ ],
+ "1806.04511::s05::p000": [
+  [
+   "the majority baseline",
+   "corresponds to",
+   "a model's accuracy if it always predicts the majority class in the dataset"
+  ],
+  [
+   "a model that always predicts “positive”",
+   "will be",
+   "60% accurate"
+  ],
+  [
+   "a model that always predicts “positive”",
+   "will make mistakes",
+   "40% of the time"
+  ]
+ ],
+ "1806.04511::s05::p001": [
+  [
+   "SentiWordNet BIBREF29",
+   "is used to obtain",
+   "a positive and a negative sentiment score for each token in a review"
+  ],
+  [
+   "sum of positive sentiment scores and negative sentiment scores for each review",
+   "is obtained by",
+   "summing up the scores for each token"
+  ],
+  [
+   "a given review",
+   "is accepted as",
+   "a positive review"
+  ],
+  [
+   "the review",
+   "is labeled as",
+   "a negative review"
+  ]
+ ],
+ "1806.04511::s05::p002": [
+  [
+   "RNN",
+   "outperforms",
+   "both baselines in all four datasets"
+  ],
+  [
+   "the lexicon-based baseline",
+   "is below",
+   "the majority baseline"
+  ],
+  [
+   "solely translating data and using lexicons",
+   "is not sufficient to achieve",
+   "good results in multilingual sentiment analysis"
+  ]
+ ],
+ "1806.04511::s05::p003": [
+  [
+   "the number of false negatives",
+   "are more than",
+   "the number of false positives"
+  ],
+  [
+   "the unbalanced training dataset",
+   "has",
+   "the number of positive reviews more than the number of negative reviews (59,577 vs 17,132)"
+  ]
+ ],
+ "1806.04511::s05::p004": [
+  [
+   "each method's results",
+   "were taken as",
+   "a group (4 values: one for each language)"
+  ],
+  [
+   "Post hoc comparisons using the Tukey HSD test",
+   "indicated",
+   "that the mean accuracies for baselines (majority and lexicon-based) are significantly different than RNN accuracies"
+  ],
+  [
+   "the null hypothesis",
+   "can be rejected",
+   "meaning that each test is significant"
+  ]
+ ],
+ "1806.04511::s05::p005": [
+  [
+   "RNN",
+   "significantly outperforms",
+   "both baselines for the sentiment classification task"
+  ]
+ ],
+ "1806.04511::s06::p000": [
+  [
+   "highly accurate translations",
+   "is",
+   "one of the crucial elements while using machine translation"
+  ],
+  [
+   "non-English words",
+   "would not have",
+   "word embeddings"
+  ],
+  [
+   "all wrong predictions from the test set",
+   "were extracted",
+   "to compute the ratio of misclassifications that have non-English words in them"
+  ],
+  [
+   "this ratio",
+   "was used to investigate",
+   "the effect of machine translation errors"
+  ]
+ ],
+ "1806.04511::s06::p001": [
+  [
+   "25.84% of Dutch reviews that were misclassified",
+   "had",
+   "non-English words in them"
+  ],
+  [
+   "21.76% of Turkish reviews that were misclassified",
+   "had",
+   "non-English words in them"
+  ],
+  [
+   "24.46% Spanish reviews that were misclassified",
+   "had",
+   "non-English words in them"
+  ],
+  [
+   "10.71% of Russian reviews that were misclassified",
+   "had",
+   "non-English words in them"
+  ]
+ ],
+ "1806.04511::s06::p003": [
+  [
+   "the RNN model",
+   "achieved",
+   "on the average 22.76% relative improvement"
+  ],
+  [
+   "the RNN model",
+   "achieved",
+   "15.82% relative improvement on Spanish, 72.71% vs. 84.21%"
+  ],
+  [
+   "the RNN model",
+   "achieved",
+   "30.53% relative improvement on Turkish, 56.97% vs. 74.36%"
+  ],
+  [
+   "the RNN model",
+   "achieved",
+   "37.13% relative improvement on Dutch, 59.63% vs. 81.77%"
+  ]
+ ],
+ "1806.04511::s07::p000": [
+  [
+   "Building effective machine learning models for text",
+   "requires",
+   "data and different resources such as pre-trained word embeddings and reusable lexicons"
+  ],
+  [
+   "most of these resources",
+   "are not entirely transferable to",
+   "different domains, tasks or languages"
+  ],
+  [
+   "Sentiment analysis",
+   "requires",
+   "additional effort to transfer knowledge between languages"
+  ]
+ ],
+ "1806.04511::s07::p001": [
+  [
+   "the larger corpus that had reviews from different domains",
+   "was first used to train",
+   "the RNN model"
+  ],
+  [
+   "a smaller single-domain corpus of sentiment reviews",
+   "was used to specialize",
+   "the model on the given domain"
+  ],
+  [
+   "the proposed multilingual approach",
+   "outperforms",
+   "both the majority baseline and the lexicon-based baseline"
+  ]
+ ]
+}

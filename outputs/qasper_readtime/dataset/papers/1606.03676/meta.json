@@ -1,0 +1,67 @@
+{
+ "paper_id": "1606.03676",
+ "title": "External Lexical Information for Multilingual Part-of-Speech Tagging",
+ "abstract": "Morphosyntactic lexicons and word vector representations have both proven useful for improving the accuracy of statistical part-of-speech taggers. Here we compare the performances of four systems on datasets covering 16 languages, two of these systems being feature-based (MEMMs and CRFs) and two of them being neural-based (bi-LSTMs). We show that, on average, all four approaches perform similarly and reach state-of-the-art results. Yet better performances are obtained with our feature-based models on lexically richer datasets (e.g. for morphologically rich languages), whereas neural-based results are higher on datasets with less lexical variability (e.g. for English). These conclusions hold in particular for the MEMM models relying on our system MElt, which benefited from newly designed features. This shows that, under certain conditions, feature-based approaches enriched with morphosyntactic lexicons are competitive with respect to neural methods.",
+ "sections": [
+  "Introduction",
+  "MElt",
+  "Corpora",
+  "Lexicons",
+  "Baseline models",
+  "Models enriched with external lexical information",
+  "Conclusion"
+ ],
+ "n_paragraphs": 25,
+ "n_tokens": 3642,
+ "figures_and_tables": [
+  {
+   "caption_id": "1606.03676::fig000",
+   "paper_id": "1606.03676",
+   "file": "7-Table1-1.png",
+   "caption": "Table 1: Feature set used by our MElt models. The current word is wi = w1i . . . w ni i . Previously assigned tags for the two previous words are ti−2 and ti−1. The tag to be predicted for the current word is ti, which can be assigned any tag T in the tagset. The lex function applied to a word returns the set of all tags known to the lexicon for this word, or the singleton {_unk_} if the word is unknown to the lexicon. Boolean functions used by the local standard features have self-explanatory names.",
+   "n_tokens": 124
+  },
+  {
+   "caption_id": "1606.03676::fig001",
+   "paper_id": "1606.03676",
+   "file": "8-Table2-1.png",
+   "caption": "Table 2: Information about the morphosyntactic lexicons used as external sources of lexical information in our MElt and MarMoT models. The number of entries and tagset sizes refers to the morphosyntactic lexicons we extracted and used in our models, not to the original resources.",
+   "n_tokens": 63
+  },
+  {
+   "caption_id": "1606.03676::fig002",
+   "paper_id": "1606.03676",
+   "file": "10-Table3-1.png",
+   "caption": "Table 3: Overall accuracy (in %) of baseline systems, i.e. MElt and MarMoT models trained without external lexicons, and Plank et al.’s (2016) ~c + ~w models, which do not make use of Polyglot embeddings. Best scores are highlighted for each corpus.",
+   "n_tokens": 67
+  },
+  {
+   "caption_id": "1606.03676::fig003",
+   "paper_id": "1606.03676",
+   "file": "11-Table4-1.png",
+   "caption": "Table 4: Accuracy (in %) of the feature-based systems MElt and MarMoT as well as the two best LSTM-based systems by Plank et al. (2016) on UD1.2 datasets, which all use the 17 “universal PoS tags”. MElt and MarMoT models integrate the external lexicons listed in Table 2, whereas bidirectional LSTM-based systems rely on Polyglot word embeddings. Best scores overall and on OOV words are highlighted for each corpus.",
+   "n_tokens": 104
+  },
+  {
+   "caption_id": "1606.03676::fig004",
+   "paper_id": "1606.03676",
+   "file": "11-Figure1-1.png",
+   "caption": "Figure 1: Graphical visualisation of the overall tagging accuracies for all four types of enriched models. Detailed results are given in Table 4. Languages are sorted by increasing MElt’s overall tagging scores.",
+   "n_tokens": 43
+  },
+  {
+   "caption_id": "1606.03676::fig005",
+   "paper_id": "1606.03676",
+   "file": "12-Figure2-1.png",
+   "caption": "Figure 2: Graphical visualisation of the OOV tagging accuracies for all types of models enriched with external lexicons. Detailed results are given in Table 4. Languages are sorted by increasing MElt’s OOV tagging scores.",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "1606.03676::fig006",
+   "paper_id": "1606.03676",
+   "file": "12-Figure3-1.png",
+   "caption": "Figure 3: Difference between the tagging accuracy of lexicon-enhanced MElt models and each of the two types of Polyglot-enhanced neural bi-LSTM models plotted against training sets’ normalised token/type ratio.",
+   "n_tokens": 45
+  }
+ ]
+}

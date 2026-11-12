@@ -1,0 +1,322 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1806.04511::s00::p000",
+   "summary": "Growing commercial websites and social media reviews increased data for opinion mining, commercial interest in sentiment analysis, and its importance for understanding user behavior and opinions.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s00::p001",
+   "summary": "Research produced sentiment-related resources such as sentiment dictionaries that improve accuracies but are language-dependent and require building resources for every language.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s00::p002",
+   "summary": "Feature engineering is central to sentiment analysis and emotion detection, but language- and dataset-dependent features, limited data, and separate parameter tuning challenge multilingual model building.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s00::p003",
+   "summary": "The paper builds a reusable lexicon-free RNN sentiment model trained on English reviews, specialized by domain, and applied to translated non-English test sets.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s00::p004",
+   "summary": "Contributions include machine translation model reuse, an RNN-based approach eliminating feature extraction and resource requirements, and statistically significant improvements over baselines with limited data.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s01::p000",
+   "summary": "Sentiment analysis work often extracts sentiment-specific features such as SentiWordNet, linguistic features, polarity dictionaries, word vectors, and emographics, requiring language-dependent data.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s01::p001",
+   "summary": "This work streamlines feature engineering by relying only on English word embeddings and using off-the-shelf machine translation for inference.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s01::p002",
+   "summary": "Prior machine translation approaches for multilingual sentiment analysis used sentiment units, n-grams, tf-idf, Latent Dirichlet Allocation, SVMs, lexicons, and dictionaries, often requiring feature extraction or resources in multiple languages.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s01::p003",
+   "summary": "The paper addresses the resource bottleneck of translation-based approaches with a deep learning approach requiring no dictionaries.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s02::p000",
+   "summary": "The multilingual approach builds one English model from large generic product reviews, specializes it with domain-specific English reviews, and scores machine-translated test sets.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s02::p001",
+   "summary": "RNN, LSTM, and GRU models handle token dependencies, variable-length text, sequence memory, and pre-trained word embeddings without hand-crafted features, motivating the paper's RNN architecture.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s02::p002",
+   "summary": "The English sentiment model uses two bidirectional layers with 40 neurons each, dropout of 0.2, embedding length of 100, and pre-trained global vectors.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s03::p000",
+   "summary": "Experiments evaluate the proposed multilingual sentiment analysis approach, with this section presenting corpora followed by experimental results.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s03::p001",
+   "summary": "Experiments use SAS Deep Learning Toolkit and Google translation API for machine translation.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s04::p000",
+   "summary": "Two publicly available corpora sets include English reviews and restaurant reviews in Spanish, Turkish, Dutch, Russian, all with positive and negative classes.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s04::p001",
+   "summary": "Three training sets include larger Amazon reviews across categories and Yelp restaurant reviews and Kaggle restaurant reviews for domain specialization.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s04::p002",
+   "summary": "Multilingual evaluation uses four languages from SemEval-2016 Challenge Task 5, with Table TABREF7 showing test corpus observations.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s05::p000",
+   "summary": "Experimental results report a majority baseline for each language, illustrated by 60% positive and 40% negative reviews yielding 60% accuracy.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s05::p001",
+   "summary": "The lexicon-based baseline uses SentiWordNet token scores, summing positive and negative scores per review to label polarity.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s05::p002",
+   "summary": "RNN outperforms both baselines in all four datasets, while the Spanish lexicon-based baseline is below the majority baseline.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s05::p003",
+   "summary": "False negatives exceed false positives in all four classes, explained by unbalanced training data with 59,577 positive reviews versus 17,132 negative reviews.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s05::p004",
+   "summary": "Tukey HSD test with family-wise error rate=0.06 shows RNN accuracies significantly differ from baselines, and Cohen's d shows very large effect sizes versus baselines.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s05::p005",
+   "summary": "Figure FIGREF11 shows minimum and maximum values, with RNN significantly outperforming both baselines for sentiment classification.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s06::p000",
+   "summary": "The discussion analyzes machine translation errors by measuring misclassifications containing non-English words, since missing word embeddings could affect effectiveness.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s06::p001",
+   "summary": "Misclassified reviews with non-English words were 25.84% Dutch, 21.76% Turkish, 24.46% Spanish, and 10.71% Russian, indicating limited translation-error effects.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s06::p002",
+   "summary": "On an English corpus without machine translation errors, the model achieved 87.06% accuracy, versus 68.37% majority baseline and 60.10% lexicon-based baseline.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s06::p003",
+   "summary": "RNN improvements over majority baseline averaged 22.76% relative improvement on non-English test sets and 27.34% on English, supporting robustness and reduced data requirements.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s07::p000",
+   "summary": "Effective text machine learning requires data and resources such as pre-trained word embeddings and reusable lexicons, which often do not transfer across domains, tasks, or languages.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s07::p001",
+   "summary": "The paper studied reusable sentiment analysis models by training an RNN on the largest-data language, specializing it from general to specific, translating corpora to English, and outperforming both baselines.",
+   "group_id": "1806.04511::g00"
+  },
+  {
+   "passage_id": "1806.04511::s07::p002",
+   "summary": "The model was specific to a single domain, with future work planned on hotel reviews and detecting stance.",
+   "group_id": "1806.04511::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1806.04511::g00",
+   "summaries": [
+    {
+     "passage_id": "1806.04511::s00::p000",
+     "summary": "Growing commercial websites and social media reviews increased data for opinion mining, commercial interest in sentiment analysis, and its importance for understanding user behavior and opinions.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s00::p001",
+     "summary": "Research produced sentiment-related resources such as sentiment dictionaries that improve accuracies but are language-dependent and require building resources for every language.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s00::p002",
+     "summary": "Feature engineering is central to sentiment analysis and emotion detection, but language- and dataset-dependent features, limited data, and separate parameter tuning challenge multilingual model building.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s00::p003",
+     "summary": "The paper builds a reusable lexicon-free RNN sentiment model trained on English reviews, specialized by domain, and applied to translated non-English test sets.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s00::p004",
+     "summary": "Contributions include machine translation model reuse, an RNN-based approach eliminating feature extraction and resource requirements, and statistically significant improvements over baselines with limited data.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s01::p000",
+     "summary": "Sentiment analysis work often extracts sentiment-specific features such as SentiWordNet, linguistic features, polarity dictionaries, word vectors, and emographics, requiring language-dependent data.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s01::p001",
+     "summary": "This work streamlines feature engineering by relying only on English word embeddings and using off-the-shelf machine translation for inference.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s01::p002",
+     "summary": "Prior machine translation approaches for multilingual sentiment analysis used sentiment units, n-grams, tf-idf, Latent Dirichlet Allocation, SVMs, lexicons, and dictionaries, often requiring feature extraction or resources in multiple languages.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s01::p003",
+     "summary": "The paper addresses the resource bottleneck of translation-based approaches with a deep learning approach requiring no dictionaries.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s02::p000",
+     "summary": "The multilingual approach builds one English model from large generic product reviews, specializes it with domain-specific English reviews, and scores machine-translated test sets.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s02::p001",
+     "summary": "RNN, LSTM, and GRU models handle token dependencies, variable-length text, sequence memory, and pre-trained word embeddings without hand-crafted features, motivating the paper's RNN architecture.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s02::p002",
+     "summary": "The English sentiment model uses two bidirectional layers with 40 neurons each, dropout of 0.2, embedding length of 100, and pre-trained global vectors.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s03::p000",
+     "summary": "Experiments evaluate the proposed multilingual sentiment analysis approach, with this section presenting corpora followed by experimental results.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s03::p001",
+     "summary": "Experiments use SAS Deep Learning Toolkit and Google translation API for machine translation.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s04::p000",
+     "summary": "Two publicly available corpora sets include English reviews and restaurant reviews in Spanish, Turkish, Dutch, Russian, all with positive and negative classes.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s04::p001",
+     "summary": "Three training sets include larger Amazon reviews across categories and Yelp restaurant reviews and Kaggle restaurant reviews for domain specialization.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s04::p002",
+     "summary": "Multilingual evaluation uses four languages from SemEval-2016 Challenge Task 5, with Table TABREF7 showing test corpus observations.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s05::p000",
+     "summary": "Experimental results report a majority baseline for each language, illustrated by 60% positive and 40% negative reviews yielding 60% accuracy.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s05::p001",
+     "summary": "The lexicon-based baseline uses SentiWordNet token scores, summing positive and negative scores per review to label polarity.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s05::p002",
+     "summary": "RNN outperforms both baselines in all four datasets, while the Spanish lexicon-based baseline is below the majority baseline.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s05::p003",
+     "summary": "False negatives exceed false positives in all four classes, explained by unbalanced training data with 59,577 positive reviews versus 17,132 negative reviews.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s05::p004",
+     "summary": "Tukey HSD test with family-wise error rate=0.06 shows RNN accuracies significantly differ from baselines, and Cohen's d shows very large effect sizes versus baselines.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s05::p005",
+     "summary": "Figure FIGREF11 shows minimum and maximum values, with RNN significantly outperforming both baselines for sentiment classification.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s06::p000",
+     "summary": "The discussion analyzes machine translation errors by measuring misclassifications containing non-English words, since missing word embeddings could affect effectiveness.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s06::p001",
+     "summary": "Misclassified reviews with non-English words were 25.84% Dutch, 21.76% Turkish, 24.46% Spanish, and 10.71% Russian, indicating limited translation-error effects.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s06::p002",
+     "summary": "On an English corpus without machine translation errors, the model achieved 87.06% accuracy, versus 68.37% majority baseline and 60.10% lexicon-based baseline.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s06::p003",
+     "summary": "RNN improvements over majority baseline averaged 22.76% relative improvement on non-English test sets and 27.34% on English, supporting robustness and reduced data requirements.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s07::p000",
+     "summary": "Effective text machine learning requires data and resources such as pre-trained word embeddings and reusable lexicons, which often do not transfer across domains, tasks, or languages.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s07::p001",
+     "summary": "The paper studied reusable sentiment analysis models by training an RNN on the largest-data language, specializing it from general to specific, translating corpora to English, and outperforming both baselines.",
+     "group_id": "1806.04511::g00"
+    },
+    {
+     "passage_id": "1806.04511::s07::p002",
+     "summary": "The model was specific to a single domain, with future work planned on hotel reviews and detecting stance.",
+     "group_id": "1806.04511::g00"
+    }
+   ],
+   "n_raw": 30,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4171,
+    "completion_tokens": 1459,
+    "total_tokens": 5630,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

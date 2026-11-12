@@ -1,0 +1,428 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1809.01202::s00::p000",
+   "summary": "Causal explanations are important across social, psychological, economic, and behavioral sciences, with psychologists linking explanatory style to depression, passivity, hostility, life satisfaction, quality of life, and length of life.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s00::p001",
+   "summary": "Causal explanations help measure optimism and pessimism, illustrated by parser-failure examples where pervasive causes indicate pessimistic personality and short-lived causes indicate optimistic personality.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s00::p002",
+   "summary": "Language-based models detecting causal explanations in everyday social media language could support optimism detection, tracking causal beliefs, extracting process knowledge, and detecting blame or praise in reviews.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s00::p003",
+   "summary": "The paper introduces causal explanation analysis, causality prediction, and causal explanation identification, noting challenges from ungrammatical social media, implicit causal relations, and varied discourse connectives.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s00::p004",
+   "summary": "Traditional linear models or bag of words models seem inappropriate because they cannot segment meaningful discourse units, and parsers may fail on social media unlike newswire.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s00::p005",
+   "summary": "The authors minimize syntactic parsing, investigate an RNN, compare against discourse relation parsers and traditional models, and find SVM and random forest better for causality detection while LSTM outperforms for identifying causal explanation.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s00::p006",
+   "summary": "Contributions include models for causality prediction and causal explanation identification, extensive evaluation, architectural performance analysis, downstream applications, and release of an anonymized causality Facebook dataset with models.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s01::p000",
+   "summary": "Identifying causal explanations can be viewed as discourse relation parsing, with PDTB and RST cause relations and parsers developed in-domain on well-organized Wall Street Journal corpora.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s01::p001",
+   "summary": "Few works parsed discourse relations out-of-domain on social media, and this paper differs by using social-media-specific features from pretrained tweet models and avoiding hand-crafted rules.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s01::p002",
+   "summary": "Automated discourse relation parsing involves segmenting discourse arguments and classifying relations, with varying models and features yielding different performance across subtasks.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s01::p003",
+   "summary": "The authors build an RNN-based model for structural effectiveness while also building simpler SVMs and logistic regression models for each stage of the full parser pipeline.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s02::p000",
+   "summary": "The model uses PDTB-style discourse relation parsing, finding connectives and arguments for explicit relations and treating adjacent sentences as candidate arguments for implicit relations.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s03::p000",
+   "summary": "The authors created a causal explanation dataset from 3,268 random Facebook status update messages, labeling 1,598 causality messages with $\\kappa =0.61$ and identifying causal explanation spans.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s03::p001",
+   "summary": "For each task, 80% of the dataset was used for training, 10% for tuning hyperparameters, and the remaining 10% for evaluation, with gold-standard discourse arguments selected for causal explanation detection.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s04::p000",
+   "summary": "The authors build feature-based models and a recursive neural network model using distributed discourse argument representations, specifically selecting bidirectional LSTM for its performance in similar NLP downstream tasks.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s04::p001",
+   "summary": "The pipeline uses Tweebo parser, punctuation and periods, PDTB connectives, Tweet POS tags, dependency parsing, and emojis as separate discourse arguments while minimizing syntactic parsing effects.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s04::p002",
+   "summary": "Linear SVM, rbf SVM, and random forest use N-gram, charater N-gram, tweet POS tags, sentiment tags, average word lengths, word counts, First-Last, First3 features, and Word Pairs.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s04::p003",
+   "summary": "The RNN loads GLOVE word embedding trained in Twitter, runs Word-level LSTM over discourse arguments, feeds representations to DA-level LSTM, and adds dropout to prevent overfitting.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s04::p004",
+   "summary": "The authors explore RNN variants removing one of two LSTM layers: Word LSTM and DA AVG LSTM, with CP ending in many-to-one classification and CEI in sequence classifications.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s05::p000",
+   "summary": "The authors explored RBF SVM, Linear SVM, and Random Forest Classifier, filtered low frequency Word Pairs features, used univariate feature selection with $\\alpha = 60$, and conducted feature ablation.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s05::p001",
+   "summary": "Bidirectional LSTMs were used for causality classification and causal explanation identification, with dropout (p=0.3) added between Word-level LSTM and DA-level LSTM to reduce overfitting.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s05::p002",
+   "summary": "Model tuning explored word vector and LSTM hidden state dimensions of 25, 50, 100, and 200, using Stochastic Gradient Descent (SGD) and Adam with learning rates 0.01 and 0.001.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s05::p003",
+   "summary": "Missing word embeddings are ignored, but embeddings extracted as separate discourse arguments use the average of all vectors of all discourse arguments in that message.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s05::p004",
+   "summary": "State-of-the-art PDTB taggers serve as baselines for causality prediction, models are compared and disassembled, and McNemar's test determines statistical significance at $p < .05$.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s06::p000",
+   "summary": "The authors investigated models for causality detection and explanation identification, analyzed model-task relationships, scrutinized best performing models, and reported weighted F1 of classes.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s07::p000",
+   "summary": "For causality prediction, off-the-shelf PDTB parsers achieved lowest accuracies, while SVM and random forest outperformed LSTM, with more complex models generally performing worse.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s07::p001",
+   "summary": "Feature ablation on linear SVM showed POS tags caused the largest F1 drop, N-gram features caused 0.022 F1 drop, sentiment tags had no effect, and First-Last, First3 and Word pairs did not affect performance.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s08::p000",
+   "summary": "For causal explanation identification, Linear SVM obtained lowest F1 while LSTM made the best identification performance, showing benefits from relations across discourse arguments and implicit distributional representation.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s09::p000",
+   "summary": "For causality prediction, Word LSTM dropped F1 by 0.064 and averaging word embeddings for DA-level LSTM caused F1 drop of 0.073, suggesting both word and argument interactions help.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s09::p001",
+   "summary": "For causal explanation identification, removing DA-level LSTM caused 0.061 F1 drop, while DA-level LSTM on average vectors decreased F1 to 0.818, supporting higher-complexity interaction models.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s09::p002",
+   "summary": "For CEI, DA AVG LSTM outperformed Word LSTM, and in both subtasks Full LSTM models using both Word-level and DA-Level obtained the highest performance.",
+   "group_id": "1809.01202::g00"
+  },
+  {
+   "passage_id": "1809.01202::s10::p000",
+   "summary": "The complete CP and CEI pipeline is evaluated from all test data to assess final CEI accuracy without prior knowledge of causal explanations.",
+   "group_id": "1809.01202::g01"
+  },
+  {
+   "passage_id": "1809.01202::s10::p001",
+   "summary": "Approaches include CEI Only or CP + CEI, with CEI trained on causal documents or all training documents including noncausal ones.",
+   "group_id": "1809.01202::g01"
+  },
+  {
+   "passage_id": "1809.01202::s10::p002",
+   "summary": "Table 7 shows all setups achieved $F1 > 0.81$, with CP + CEI $_{causal}$ strongest and approximately 2/3 of documents avoiding CEI.",
+   "group_id": "1809.01202::g01"
+  },
+  {
+   "passage_id": "1809.01202::s10::p003",
+   "summary": "Dataset size was limited by the lack of another social media causality dataset and intensive iterative annotation, though the linear and RNN-based pipeline achieved high performance and efficiency.",
+   "group_id": "1809.01202::g01"
+  },
+  {
+   "passage_id": "1809.01202::s11::p000",
+   "summary": "The exploration examines causal explanation analysis for demographics, age and gender, and sentiment analysis, with human subjects approval from the University of Pennsylvania Institutional Review Board.",
+   "group_id": "1809.01202::g01"
+  },
+  {
+   "passage_id": "1809.01202::s12::p000",
+   "summary": "The causal explanation analysis pipeline used an SVM for causality prediction and hierarchical BiLSTMs for CEI, achieving $F1=0.868$ at identifying causal explanation discourse arguments.",
+   "group_id": "1809.01202::g01"
+  },
+  {
+   "passage_id": "1809.01202::s12::p001",
+   "summary": "Applications found associations between demographics and causal explanation rates and differences in top words predictive of negative ratings in Yelp reviews.",
+   "group_id": "1809.01202::g01"
+  },
+  {
+   "passage_id": "1809.01202::s13::p000",
+   "summary": "The work was supported in part by Templeton Religion Trust grant ID #TRT0048, and Laura Smith, Yiyi Chen, Greta Jawel and Vanessa Hernandez were thanked.",
+   "group_id": "1809.01202::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1809.01202::g00",
+   "summaries": [
+    {
+     "passage_id": "1809.01202::s00::p000",
+     "summary": "Causal explanations are important across social, psychological, economic, and behavioral sciences, with psychologists linking explanatory style to depression, passivity, hostility, life satisfaction, quality of life, and length of life.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s00::p001",
+     "summary": "Causal explanations help measure optimism and pessimism, illustrated by parser-failure examples where pervasive causes indicate pessimistic personality and short-lived causes indicate optimistic personality.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s00::p002",
+     "summary": "Language-based models detecting causal explanations in everyday social media language could support optimism detection, tracking causal beliefs, extracting process knowledge, and detecting blame or praise in reviews.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s00::p003",
+     "summary": "The paper introduces causal explanation analysis, causality prediction, and causal explanation identification, noting challenges from ungrammatical social media, implicit causal relations, and varied discourse connectives.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s00::p004",
+     "summary": "Traditional linear models or bag of words models seem inappropriate because they cannot segment meaningful discourse units, and parsers may fail on social media unlike newswire.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s00::p005",
+     "summary": "The authors minimize syntactic parsing, investigate an RNN, compare against discourse relation parsers and traditional models, and find SVM and random forest better for causality detection while LSTM outperforms for identifying causal explanation.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s00::p006",
+     "summary": "Contributions include models for causality prediction and causal explanation identification, extensive evaluation, architectural performance analysis, downstream applications, and release of an anonymized causality Facebook dataset with models.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s01::p000",
+     "summary": "Identifying causal explanations can be viewed as discourse relation parsing, with PDTB and RST cause relations and parsers developed in-domain on well-organized Wall Street Journal corpora.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s01::p001",
+     "summary": "Few works parsed discourse relations out-of-domain on social media, and this paper differs by using social-media-specific features from pretrained tweet models and avoiding hand-crafted rules.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s01::p002",
+     "summary": "Automated discourse relation parsing involves segmenting discourse arguments and classifying relations, with varying models and features yielding different performance across subtasks.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s01::p003",
+     "summary": "The authors build an RNN-based model for structural effectiveness while also building simpler SVMs and logistic regression models for each stage of the full parser pipeline.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s02::p000",
+     "summary": "The model uses PDTB-style discourse relation parsing, finding connectives and arguments for explicit relations and treating adjacent sentences as candidate arguments for implicit relations.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s03::p000",
+     "summary": "The authors created a causal explanation dataset from 3,268 random Facebook status update messages, labeling 1,598 causality messages with $\\kappa =0.61$ and identifying causal explanation spans.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s03::p001",
+     "summary": "For each task, 80% of the dataset was used for training, 10% for tuning hyperparameters, and the remaining 10% for evaluation, with gold-standard discourse arguments selected for causal explanation detection.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s04::p000",
+     "summary": "The authors build feature-based models and a recursive neural network model using distributed discourse argument representations, specifically selecting bidirectional LSTM for its performance in similar NLP downstream tasks.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s04::p001",
+     "summary": "The pipeline uses Tweebo parser, punctuation and periods, PDTB connectives, Tweet POS tags, dependency parsing, and emojis as separate discourse arguments while minimizing syntactic parsing effects.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s04::p002",
+     "summary": "Linear SVM, rbf SVM, and random forest use N-gram, charater N-gram, tweet POS tags, sentiment tags, average word lengths, word counts, First-Last, First3 features, and Word Pairs.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s04::p003",
+     "summary": "The RNN loads GLOVE word embedding trained in Twitter, runs Word-level LSTM over discourse arguments, feeds representations to DA-level LSTM, and adds dropout to prevent overfitting.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s04::p004",
+     "summary": "The authors explore RNN variants removing one of two LSTM layers: Word LSTM and DA AVG LSTM, with CP ending in many-to-one classification and CEI in sequence classifications.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s05::p000",
+     "summary": "The authors explored RBF SVM, Linear SVM, and Random Forest Classifier, filtered low frequency Word Pairs features, used univariate feature selection with $\\alpha = 60$, and conducted feature ablation.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s05::p001",
+     "summary": "Bidirectional LSTMs were used for causality classification and causal explanation identification, with dropout (p=0.3) added between Word-level LSTM and DA-level LSTM to reduce overfitting.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s05::p002",
+     "summary": "Model tuning explored word vector and LSTM hidden state dimensions of 25, 50, 100, and 200, using Stochastic Gradient Descent (SGD) and Adam with learning rates 0.01 and 0.001.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s05::p003",
+     "summary": "Missing word embeddings are ignored, but embeddings extracted as separate discourse arguments use the average of all vectors of all discourse arguments in that message.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s05::p004",
+     "summary": "State-of-the-art PDTB taggers serve as baselines for causality prediction, models are compared and disassembled, and McNemar's test determines statistical significance at $p < .05$.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s06::p000",
+     "summary": "The authors investigated models for causality detection and explanation identification, analyzed model-task relationships, scrutinized best performing models, and reported weighted F1 of classes.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s07::p000",
+     "summary": "For causality prediction, off-the-shelf PDTB parsers achieved lowest accuracies, while SVM and random forest outperformed LSTM, with more complex models generally performing worse.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s07::p001",
+     "summary": "Feature ablation on linear SVM showed POS tags caused the largest F1 drop, N-gram features caused 0.022 F1 drop, sentiment tags had no effect, and First-Last, First3 and Word pairs did not affect performance.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s08::p000",
+     "summary": "For causal explanation identification, Linear SVM obtained lowest F1 while LSTM made the best identification performance, showing benefits from relations across discourse arguments and implicit distributional representation.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s09::p000",
+     "summary": "For causality prediction, Word LSTM dropped F1 by 0.064 and averaging word embeddings for DA-level LSTM caused F1 drop of 0.073, suggesting both word and argument interactions help.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s09::p001",
+     "summary": "For causal explanation identification, removing DA-level LSTM caused 0.061 F1 drop, while DA-level LSTM on average vectors decreased F1 to 0.818, supporting higher-complexity interaction models.",
+     "group_id": "1809.01202::g00"
+    },
+    {
+     "passage_id": "1809.01202::s09::p002",
+     "summary": "For CEI, DA AVG LSTM outperformed Word LSTM, and in both subtasks Full LSTM models using both Word-level and DA-Level obtained the highest performance.",
+     "group_id": "1809.01202::g00"
+    }
+   ],
+   "n_raw": 31,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4981,
+    "completion_tokens": 1712,
+    "total_tokens": 6693,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1809.01202::g01",
+   "summaries": [
+    {
+     "passage_id": "1809.01202::s10::p000",
+     "summary": "The complete CP and CEI pipeline is evaluated from all test data to assess final CEI accuracy without prior knowledge of causal explanations.",
+     "group_id": "1809.01202::g01"
+    },
+    {
+     "passage_id": "1809.01202::s10::p001",
+     "summary": "Approaches include CEI Only or CP + CEI, with CEI trained on causal documents or all training documents including noncausal ones.",
+     "group_id": "1809.01202::g01"
+    },
+    {
+     "passage_id": "1809.01202::s10::p002",
+     "summary": "Table 7 shows all setups achieved $F1 > 0.81$, with CP + CEI $_{causal}$ strongest and approximately 2/3 of documents avoiding CEI.",
+     "group_id": "1809.01202::g01"
+    },
+    {
+     "passage_id": "1809.01202::s10::p003",
+     "summary": "Dataset size was limited by the lack of another social media causality dataset and intensive iterative annotation, though the linear and RNN-based pipeline achieved high performance and efficiency.",
+     "group_id": "1809.01202::g01"
+    },
+    {
+     "passage_id": "1809.01202::s11::p000",
+     "summary": "The exploration examines causal explanation analysis for demographics, age and gender, and sentiment analysis, with human subjects approval from the University of Pennsylvania Institutional Review Board.",
+     "group_id": "1809.01202::g01"
+    },
+    {
+     "passage_id": "1809.01202::s12::p000",
+     "summary": "The causal explanation analysis pipeline used an SVM for causality prediction and hierarchical BiLSTMs for CEI, achieving $F1=0.868$ at identifying causal explanation discourse arguments.",
+     "group_id": "1809.01202::g01"
+    },
+    {
+     "passage_id": "1809.01202::s12::p001",
+     "summary": "Applications found associations between demographics and causal explanation rates and differences in top words predictive of negative ratings in Yelp reviews.",
+     "group_id": "1809.01202::g01"
+    },
+    {
+     "passage_id": "1809.01202::s13::p000",
+     "summary": "The work was supported in part by Templeton Religion Trust grant ID #TRT0048, and Laura Smith, Yiyi Chen, Greta Jawel and Vanessa Hernandez were thanked.",
+     "group_id": "1809.01202::g01"
+    }
+   ],
+   "n_raw": 8,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1160,
+    "completion_tokens": 416,
+    "total_tokens": 1576,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

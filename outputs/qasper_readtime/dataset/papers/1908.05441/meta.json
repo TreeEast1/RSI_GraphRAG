@@ -1,0 +1,115 @@
+{
+ "paper_id": "1908.05441",
+ "title": "Multi-class Hierarchical Question Classification for Multiple Choice Science Exams",
+ "abstract": "Prior work has demonstrated that question classification (QC), recognizing the problem domain of a question, can help answer it more accurately. However, developing strong QC algorithms has been hindered by the limited size and complexity of annotated data available. To address this, we present the largest challenge dataset for QC, containing 7,787 science exam questions paired with detailed classification labels from a fine-grained hierarchical taxonomy of 406 problem domains. We then show that a BERT-based model trained on this dataset achieves a large (+0.12 MAP) gain compared with previous methods, while also achieving state-of-the-art performance on benchmark open-domain and biomedical QC datasets. Finally, we show that using this model's predictions of question topic significantly improves the accuracy of a question answering system by +1.7% P@1, with substantial future gains possible as QC performance improves.",
+ "sections": [
+  "Introduction",
+  "Related work",
+  "Questions and Classification Taxonomy",
+  "Question Classification on Science Exams",
+  "Comparison with Benchmark Datasets",
+  "Error Analysis",
+  "Question Answering with QC Labels",
+  "Automating Error Analyses with QC",
+  "Conclusion",
+  "Resources",
+  "Acknowledgements",
+  "Annotation",
+  "Question Classification"
+ ],
+ "n_paragraphs": 57,
+ "n_tokens": 7726,
+ "figures_and_tables": [
+  {
+   "caption_id": "1908.05441::fig000",
+   "paper_id": "1908.05441",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: Identifying the detailed problem domain of a question (QC label) can provide an important contextual signal to guide a QA system to the correct answer (A’). Here, knowing the problem domain of Gravitational Pull allows the model to recognize that some properties (such as weight) change when objects move between celestial bodies, while others (including density) are unaffected by such a change.",
+   "n_tokens": 81
+  },
+  {
+   "caption_id": "1908.05441::fig001",
+   "paper_id": "1908.05441",
+   "file": "2-Table1-1.png",
+   "caption": "Table 1: Summary statistics comparing the surface and syntactic complexity of the TREC, GARD, and ARC datasets. ARC questions are complex, syntactically-diverse, and paired with a detailed classification scheme developed in this work.",
+   "n_tokens": 49
+  },
+  {
+   "caption_id": "1908.05441::fig002",
+   "paper_id": "1908.05441",
+   "file": "3-Table2-1.png",
+   "caption": "Table 2: A subset (approximately 10%) of our question classification taxonomy for science exams, with top-level categories in bold. The full taxonomy contains 462 categories, with 406 of these having non-zero counts in the ARC corpus. “Prop.” represents the proportion of questions in ARC belonging to a given category. One branch of the taxonomy (Life Science → ... → Seed Dispersal) has been expanded to full depth.",
+   "n_tokens": 88
+  },
+  {
+   "caption_id": "1908.05441::fig003",
+   "paper_id": "1908.05441",
+   "file": "4-Table3-1.png",
+   "caption": "Table 3: Results of the empirical evaluation on each of the question classification models on the ARC science question dataset, broken down by classification granularity (coarse (L1) to fine (L6)). Performance reflects mean average precision (MAP), where a duplicate table showing P@1 is included in the appendix. The best model at each level of granularity is shown in bold. * signifies that a given model is significantly better than baseline performance at full granularity (p < 0.01).",
+   "n_tokens": 99
+  },
+  {
+   "caption_id": "1908.05441::fig004",
+   "paper_id": "1908.05441",
+   "file": "4-Table4-1.png",
+   "caption": "Table 4: Performance of BERT-QC on the TREC-6 (6 coarse categories) and TREC-50 (50 fine-grained categories) question classification task, in context with recent learned or rule-based models. Bold values represent top reported learned model performance. BERT-QC achieves performance similar to or exceeding the top reported non-rule-based models.",
+   "n_tokens": 74
+  },
+  {
+   "caption_id": "1908.05441::fig005",
+   "paper_id": "1908.05441",
+   "file": "5-Table5-1.png",
+   "caption": "Table 5: Performance of BERT-QC on the GARD consumer health question dataset, which contains 2,937 questions labeled with 13 medical question classification categories. Following Roberts et al. (2014), this dataset was evaluated using 5-fold crossvalidation.",
+   "n_tokens": 55
+  },
+  {
+   "caption_id": "1908.05441::fig006",
+   "paper_id": "1908.05441",
+   "file": "5-Table6-1.png",
+   "caption": "Table 6: Performance of BERT-QC on the MLBioMedLAT biomedical question dataset, which contains 780 questions labeled with 88 medical question classification categories. Following Wasim et al. (2019), this dataset was evaluated using 10-fold crossvalidation. Micro-F1 (µF1) and Accuracy follow Wasim et al.’s definitions for multi-label tasks.",
+   "n_tokens": 78
+  },
+  {
+   "caption_id": "1908.05441::fig007",
+   "paper_id": "1908.05441",
+   "file": "6-Figure2-1.png",
+   "caption": "Figure 2: Question answering performance (the proportion of questions answered correctly) for models that include question classification labels using query expansion, compared to a nolabel baseline model. While BERT-QC trained using question and answer text achieves higher QC performance, it leads to unstable QA performance due to it’s errors being highly correlated with incorrect answers. Predicted labels using BERT-QC (question text only) show a significant increase of +1.7% P@1 at L6 (p < 0.01). Models with gold labels show the ceiling performance of this approach with perfect question classification performance. Each point represents the average of 10 runs.",
+   "n_tokens": 133
+  },
+  {
+   "caption_id": "1908.05441::fig008",
+   "paper_id": "1908.05441",
+   "file": "6-Table8-1.png",
+   "caption": "Table 8: An example of the query expansion technique for question classification labels, where the definition text for the QC label is appended to the question. Here, the gold label for this question is “MAT COS BOILING” (Matter → Changes of State → Boiling).",
+   "n_tokens": 56
+  },
+  {
+   "caption_id": "1908.05441::fig009",
+   "paper_id": "1908.05441",
+   "file": "7-Table9-1.png",
+   "caption": "Table 9: Analysis of question answering performance on specific question classes on the BERT-QA model (L6). Question classes in this table are at the L2 level of specificity. Performance is reported on the development set, where N represents the total number of questions within a given question class.",
+   "n_tokens": 60
+  },
+  {
+   "caption_id": "1908.05441::fig010",
+   "paper_id": "1908.05441",
+   "file": "8-Table10-1.png",
+   "caption": "Table 10: Interannotator Agreement at L6 (the native level the annotation was completed at), as well as agreement for truncated levels of the heirarchy from coarse to fine classification.",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "1908.05441::fig011",
+   "paper_id": "1908.05441",
+   "file": "9-Table11-1.png",
+   "caption": "Table 11: Performance of each question classification model, expressed in Precision@1 (P@1). * signifies a given model is significantly different from the baseline model (p < 0.01).",
+   "n_tokens": 41
+  },
+  {
+   "caption_id": "1908.05441::fig012",
+   "paper_id": "1908.05441",
+   "file": "10-Figure3-1.png",
+   "caption": "Figure 3: Analysis of noisy question classification labels on overall QA performance. Here, the X axis represents the proportion of gold QA labels that have been randomly switched to another of the 406 possible labels at the finest level of granularity in the classification taxonomy (L6). QA performance decreases approximately linearly as the proportion of noisy QC labels increases. Each point represents the average of 20 experimental runs, with different questions and random labels for each run. QA performance reported is on the development set. Note that due to the runtime associated with this analysis, the results reported are using the BERT-Base model.",
+   "n_tokens": 122
+  }
+ ]
+}

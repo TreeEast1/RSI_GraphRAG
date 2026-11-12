@@ -1,0 +1,72 @@
+{
+ "paper_id": "1905.11268",
+ "title": "Combating Adversarial Misspellings with Robust Word Recognition",
+ "abstract": "To combat adversarial spelling mistakes, we propose placing a word recognition model in front of the downstream classifier. Our word recognition models build upon the RNN semicharacter architecture, introducing several new backoff strategies for handling rare and unseen words. Trained to recognize words corrupted by random adds, drops, swaps, and keyboard mistakes, our method achieves 32% relative (and 3.3% absolute) error reduction over the vanilla semi-character model. Notably, our pipeline confers robustness on the downstream classifier, outperforming both adversarial training and off-the-shelf spell checkers. Against a BERT model fine-tuned for sentiment analysis, a single adversarially-chosen character attack lowers accuracy from 90.3% to 45.8%. Our defense restores accuracy to 75%\n1 . Surprisingly, better word recognition does not always entail greater robustness. Our analysis reveals that robustness also depends upon a quantity that we denote the sensitivity.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Robust Word Recognition",
+  "ScRNN with Backoff",
+  "Model Sensitivity",
+  "Synthesizing Adversarial Attacks",
+  "Experiments and Results",
+  "Word Error Correction",
+  "Robustness to adversarial attacks",
+  "Understanding Model Sensitivity",
+  "Conclusion",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 54,
+ "n_tokens": 5747,
+ "figures_and_tables": [
+  {
+   "caption_id": "1905.11268::fig000",
+   "paper_id": "1905.11268",
+   "file": "1-Table1-1.png",
+   "caption": "Table 1: Adversarial spelling mistakes inducing sentiment misclassification and word-recognition defenses.",
+   "n_tokens": 19
+  },
+  {
+   "caption_id": "1905.11268::fig001",
+   "paper_id": "1905.11268",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1: A schematic sketch of our proposed word recognition system, consisting of a foreground and a background model. We train the foreground model on the smaller, domain-specific dataset, and the background model on a larger dataset (e.g., the IMDB movie corpus). We train both models to reconstruct the correct word from the orthography and context of the individual words, using synthetically corrupted inputs during training. Subse-",
+   "n_tokens": 85
+  },
+  {
+   "caption_id": "1905.11268::fig002",
+   "paper_id": "1905.11268",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Word Error Rates (WER) of ScRNN with each backoff strategy, plus ATD and an ScRNN trained only on the background corpus (78K vocabulary) The error rates include 5.25% OOV words.",
+   "n_tokens": 52
+  },
+  {
+   "caption_id": "1905.11268::fig003",
+   "paper_id": "1905.11268",
+   "file": "7-Table3-1.png",
+   "caption": "Table 3: Accuracy of various classification models, with and without defenses, under adversarial attacks. Even 1-character attacks significantly degrade classifier performance. Our defenses confer robustness, recovering over 76% of the original accuracy, under the ‘all’ setting for all four model classes.",
+   "n_tokens": 58
+  },
+  {
+   "caption_id": "1905.11268::fig004",
+   "paper_id": "1905.11268",
+   "file": "7-Table4-1.png",
+   "caption": "Table 4: Accuracy of BERT, with and without defenses, on MRPC when attacked under the ‘all’ attack setting.",
+   "n_tokens": 27
+  },
+  {
+   "caption_id": "1905.11268::fig005",
+   "paper_id": "1905.11268",
+   "file": "8-Figure2-1.png",
+   "caption": "Figure 2: Effect of sensitivity and word error rate on robustness (depicted by the bubble sizes) in word-only models (left) and char-only models (right).",
+   "n_tokens": 36
+  },
+  {
+   "caption_id": "1905.11268::fig006",
+   "paper_id": "1905.11268",
+   "file": "8-Table5-1.png",
+   "caption": "Table 5: Sensitivity values for word recognizers. Neutral backoff shows lowest sensitivity.",
+   "n_tokens": 19
+  }
+ ]
+}

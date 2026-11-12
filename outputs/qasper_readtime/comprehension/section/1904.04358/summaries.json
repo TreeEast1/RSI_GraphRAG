@@ -1,0 +1,212 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1904.04358::s00::p000",
+   "summary": "Speech-related BCI technologies decode brain signals for communication, neuro-prosthetic help, rehabilitation, clinical neurology, entertainment, preventive treatments, personal communication, games, and silent communication.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s00::p001",
+   "summary": "EEG is promising for BCI but challenging, and prior speech intent recognition mostly classified discrete vowels, phonemes, and words using traditional processing, while deep learning improved accuracy by 23.45%.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s00::p002",
+   "summary": "Articulatory speech production complicates understanding the discriminative EEG manifold, and few works relate brain signals to articulation, with EEG-only imagined speech classification accuracy unsatisfactory.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s01::p000",
+   "summary": "The proposed mixed neural network has three supervised steps and one unsupervised step, formulating EEG speech imagery categorization as a non-linear mapping from multivariate time-series input to fixed output.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s02::p000",
+   "summary": "Raw EEG preprocessing follows BIBREF17 with ocular artifact removal, bandpass filtering, and mean subtraction, but omits Laplacian filtering to avoid decreasing information content.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s03::p000",
+   "summary": "The authors reduce multichannel EEG dimensionality using channel cross-covariance matrices, reject low cross-covariance channels, and argue these matrices encode discriminative connectivity features beyond raw signals.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s04::p000",
+   "summary": "A four-layered 2D CNN decodes spatial electrode connections from channel covariance matrices, while a parallel four-layered LSTM explores hidden temporal features, both trained with cross-entropy.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s05::p000",
+   "summary": "The CNN and LSTM penultimate fully connected layers are concatenated into a single feature vector forming a joint spatio-temporal encoding of the cross-covariance matrix.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s05::p001",
+   "summary": "An unsupervised deep autoenoder with 3 encoding and 3 decoding layers and MSE cost reduces dimensionality and cancels background noise effects in fused CNN and LSTM features.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s06::p000",
+   "summary": "At the third hierarchy level, an Extreme Gradient Boost classifier receives deep autoencoder latent vectors and is supervised to output final predicted speech imagery classes.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s07::p000",
+   "summary": "The model is evaluated on KARA ONE, using only imagined speech EEG from 14 participants and targeting five binary phonological classification problems from BIBREF17 and BIBREF18.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s08::p000",
+   "summary": "PHASE-ONE splits 1913 signals from 14 individuals into 80% train, 10% development, and 10% test, while PHASE-TWO uses leave-one-subject out cross-validation for fair comparison.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s08::p001",
+   "summary": "Grid-search on the PHASE-ONE validation set selected architectures and hyperparameters, with gradient boosting fixed at maximum depth 10, 5000 estimators, learning rate 0.1, regularization coefficient 0.3, subsample ratio 0.8, and column-sample/iteration 0.4.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s09::p000",
+   "summary": "PHASE-ONE experiments show the mixed network outperforms individual blocks, while LSTM alone often performs no better than chance and CNN is biased toward the class with more training data.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s09::p001",
+   "summary": "The combined network improves accuracy by a mean margin of 14.45% over CNN-LSTM, with maximum above-chance accuracy 75.92% for presence/absence of the vowel task and minimum 49.14% for INLINEFORM0.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s09::p002",
+   "summary": "tSNE visualizations for INLINEFORM0 and V/C classification tasks show the second feature set is more easily separable, providing a rationale for model performance.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s09::p003",
+   "summary": "In PHASE-TWO, the network improves over BIBREF17 by 18.91, 9.95, 67.15, 2.83 and 13.70 %, and reduces standard deviation from 22.59% BIBREF17 and 17.52% BIBREF18 to 5.41%.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s10::p000",
+   "summary": "The mixed deep neural network investigates subject-invariant EEG mapping to phonological categories and outperforms BIBREF17 and BIBREF18 across five binary classification tasks by an average margin of 22.51%.",
+   "group_id": "1904.04358::g00"
+  },
+  {
+   "passage_id": "1904.04358::s11::p000",
+   "summary": "This work was funded by the Natural Sciences and Engineering Research Council (NSERC) of Canada and Canadian Institutes for Health Research (CIHR).",
+   "group_id": "1904.04358::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1904.04358::g00",
+   "summaries": [
+    {
+     "passage_id": "1904.04358::s00::p000",
+     "summary": "Speech-related BCI technologies decode brain signals for communication, neuro-prosthetic help, rehabilitation, clinical neurology, entertainment, preventive treatments, personal communication, games, and silent communication.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s00::p001",
+     "summary": "EEG is promising for BCI but challenging, and prior speech intent recognition mostly classified discrete vowels, phonemes, and words using traditional processing, while deep learning improved accuracy by 23.45%.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s00::p002",
+     "summary": "Articulatory speech production complicates understanding the discriminative EEG manifold, and few works relate brain signals to articulation, with EEG-only imagined speech classification accuracy unsatisfactory.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s01::p000",
+     "summary": "The proposed mixed neural network has three supervised steps and one unsupervised step, formulating EEG speech imagery categorization as a non-linear mapping from multivariate time-series input to fixed output.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s02::p000",
+     "summary": "Raw EEG preprocessing follows BIBREF17 with ocular artifact removal, bandpass filtering, and mean subtraction, but omits Laplacian filtering to avoid decreasing information content.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s03::p000",
+     "summary": "The authors reduce multichannel EEG dimensionality using channel cross-covariance matrices, reject low cross-covariance channels, and argue these matrices encode discriminative connectivity features beyond raw signals.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s04::p000",
+     "summary": "A four-layered 2D CNN decodes spatial electrode connections from channel covariance matrices, while a parallel four-layered LSTM explores hidden temporal features, both trained with cross-entropy.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s05::p000",
+     "summary": "The CNN and LSTM penultimate fully connected layers are concatenated into a single feature vector forming a joint spatio-temporal encoding of the cross-covariance matrix.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s05::p001",
+     "summary": "An unsupervised deep autoenoder with 3 encoding and 3 decoding layers and MSE cost reduces dimensionality and cancels background noise effects in fused CNN and LSTM features.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s06::p000",
+     "summary": "At the third hierarchy level, an Extreme Gradient Boost classifier receives deep autoencoder latent vectors and is supervised to output final predicted speech imagery classes.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s07::p000",
+     "summary": "The model is evaluated on KARA ONE, using only imagined speech EEG from 14 participants and targeting five binary phonological classification problems from BIBREF17 and BIBREF18.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s08::p000",
+     "summary": "PHASE-ONE splits 1913 signals from 14 individuals into 80% train, 10% development, and 10% test, while PHASE-TWO uses leave-one-subject out cross-validation for fair comparison.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s08::p001",
+     "summary": "Grid-search on the PHASE-ONE validation set selected architectures and hyperparameters, with gradient boosting fixed at maximum depth 10, 5000 estimators, learning rate 0.1, regularization coefficient 0.3, subsample ratio 0.8, and column-sample/iteration 0.4.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s09::p000",
+     "summary": "PHASE-ONE experiments show the mixed network outperforms individual blocks, while LSTM alone often performs no better than chance and CNN is biased toward the class with more training data.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s09::p001",
+     "summary": "The combined network improves accuracy by a mean margin of 14.45% over CNN-LSTM, with maximum above-chance accuracy 75.92% for presence/absence of the vowel task and minimum 49.14% for INLINEFORM0.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s09::p002",
+     "summary": "tSNE visualizations for INLINEFORM0 and V/C classification tasks show the second feature set is more easily separable, providing a rationale for model performance.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s09::p003",
+     "summary": "In PHASE-TWO, the network improves over BIBREF17 by 18.91, 9.95, 67.15, 2.83 and 13.70 %, and reduces standard deviation from 22.59% BIBREF17 and 17.52% BIBREF18 to 5.41%.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s10::p000",
+     "summary": "The mixed deep neural network investigates subject-invariant EEG mapping to phonological categories and outperforms BIBREF17 and BIBREF18 across five binary classification tasks by an average margin of 22.51%.",
+     "group_id": "1904.04358::g00"
+    },
+    {
+     "passage_id": "1904.04358::s11::p000",
+     "summary": "This work was funded by the Natural Sciences and Engineering Research Council (NSERC) of Canada and Canadian Institutes for Health Research (CIHR).",
+     "group_id": "1904.04358::g00"
+    }
+   ],
+   "n_raw": 19,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3708,
+    "completion_tokens": 1118,
+    "total_tokens": 4826,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

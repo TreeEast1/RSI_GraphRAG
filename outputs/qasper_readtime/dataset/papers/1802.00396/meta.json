@@ -1,0 +1,126 @@
+{
+ "paper_id": "1802.00396",
+ "title": "Disunited Nations? A Multiplex Network Approach to Detecting Preference Affinity Blocs using Texts and Votes",
+ "abstract": "This paper contributes to an emerging literature that models votes and text in tandem to better understand polarization of expressed preferences. It introduces a new approach to estimate preference polarization in multidimensional settings, such as international relations, based on developments in the natural language processing and network science literatures -- namely word embeddings, which retain valuable syntactical qualities of human language, and community detection in multilayer networks, which locates densely connected actors across multiple, complex networks. We find that the employment of these tools in tandem helps to better estimate states' foreign policy preferences expressed in UN votes and speeches beyond that permitted by votes alone. The utility of these located affinity blocs is demonstrated through an application to conflict onset in International Relations, though these tools will be of interest to all scholars faced with the measurement of preferences and polarization in multidimensional settings.",
+ "sections": [
+  "Introduction",
+  "Political Polarization: Measurements and Models",
+  "UN votes and speeches",
+  "Word embeddings",
+  "Multiplex networks and community detection",
+  "Empirical Application: Affinity Blocs and Conflict Onset",
+  "Conclusion",
+  "Supplementary Materials",
+  "Data and Measurements",
+  "Network Analysis"
+ ],
+ "n_paragraphs": 74,
+ "n_tokens": 10672,
+ "figures_and_tables": [
+  {
+   "caption_id": "1802.00396::fig000",
+   "paper_id": "1802.00396",
+   "file": "8-Figure1-1.png",
+   "caption": "Figure 1: NATO-Warsaw intra-bloc differences in votes and speeches.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1802.00396::fig001",
+   "paper_id": "1802.00396",
+   "file": "10-Figure2-1.png",
+   "caption": "Figure 2: Multiplex Affinity Bloc Detection. In (a), roll call similarity (top) is calculated based on the Euclidean distances between state ideal points and represented as an n×n adjacency matrix with states populating both axes. Speech similarity (bottom) is represented by the RWMDs described above, with both matrix diagonals set to zero. In (b) clustering is performed on the individual roll call (top) and speech similarity (bottom) matrices for each year to find single-layer clusters, which represent candidates for affinity blocs. Finally, in (c), the Multilayer Extraction algorithm locates particularly cohesive multiplex blocs of states based on the speech and vote layers from (b). See Pauls and Cranmer (2017) for more on the vote clusters and Wilson et al. (2016) for more on the Multilayer Extraction procedure.",
+   "n_tokens": 180
+  },
+  {
+   "caption_id": "1802.00396::fig002",
+   "paper_id": "1802.00396",
+   "file": "11-Table1-1.png",
+   "caption": "Table 1: TERGM Replication and Extension Results, 1970-2000",
+   "n_tokens": 18
+  },
+  {
+   "caption_id": "1802.00396::fig003",
+   "paper_id": "1802.00396",
+   "file": "18-Figure3-1.png",
+   "caption": "Figure 3: Wordscore dissimilarities by bloc and key countries.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1802.00396::fig004",
+   "paper_id": "1802.00396",
+   "file": "19-Figure4-1.png",
+   "caption": "Figure 4: Distances by core countries. Plot of Euclidian distances between US and Russia (gray), and US and China (maroon).",
+   "n_tokens": 31
+  },
+  {
+   "caption_id": "1802.00396::fig005",
+   "paper_id": "1802.00396",
+   "file": "21-Figure5-1.png",
+   "caption": "Figure 5: UNGA combined ideal points and speeches modularity. Comparison plot of modularity in the UNGA from speeches (blue) vs. ideal points (gray).",
+   "n_tokens": 37
+  },
+  {
+   "caption_id": "1802.00396::fig006",
+   "paper_id": "1802.00396",
+   "file": "22-Figure6-1.png",
+   "caption": "Figure 6: Modularity using speeches (blue) and ideal points (gray) by key groups.",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "1802.00396::fig007",
+   "paper_id": "1802.00396",
+   "file": "29-Figure7-1.png",
+   "caption": "Figure 7: Multilayer Network Illustration. A two-layer network graph with heterogeneous community structure. In our analysis, one layer is votes and the second layer is speeches.",
+   "n_tokens": 36
+  },
+  {
+   "caption_id": "1802.00396::fig008",
+   "paper_id": "1802.00396",
+   "file": "30-Figure8-1.png",
+   "caption": "Figure 8: Graphical illustration of heterogeneity between vote and speech cluster layers with application of the Multilayer Extraction algorithm for the year 1974. States populate the matrix rows and columns with i j ties (in blue) representing membership in clusters of high voting, speech, or vote-speech similarity, respectively. The procedure identifies two tightly knit blocs of vote-speech similarity in (c) based on the four voting clusters in (a) and many smaller speech clusters in (b). See Wilson et al. (2016) for more details.",
+   "n_tokens": 114
+  },
+  {
+   "caption_id": "1802.00396::fig009",
+   "paper_id": "1802.00396",
+   "file": "33-Figure9-1.png",
+   "caption": "Figure 9: Areas under the ROC Curve.",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "1802.00396::fig010",
+   "paper_id": "1802.00396",
+   "file": "34-Figure10-1.png",
+   "caption": "Figure 10: Areas under the PR Curve.",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "1802.00396::fig011",
+   "paper_id": "1802.00396",
+   "file": "35-Figure11-1.png",
+   "caption": "Figure 11: GOF for Original Models.",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "1802.00396::fig012",
+   "paper_id": "1802.00396",
+   "file": "36-Figure12-1.png",
+   "caption": "Figure 12: GOF for Extension Models.",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "1802.00396::fig013",
+   "paper_id": "1802.00396",
+   "file": "37-Figure13-1.png",
+   "caption": "Figure 13: Precision Recall Frequencies. Areas under the PR curve for candidate multiplex models at various tie thresholds and at each simulated time step. These are compared to the areas under the PR curve at each time step for the baseline model with only voting clusters. Although the multiplex models perform relatively consistently across threshold levels, the .58 threshold appears to be the most consistent, as evidenced by its relatively low variance.",
+   "n_tokens": 84
+  },
+  {
+   "caption_id": "1802.00396::fig014",
+   "paper_id": "1802.00396",
+   "file": "37-Figure14-1.png",
+   "caption": "Figure 14: Precision Recall Sums. Areas under the PR curves for candidate (significant) multiplex models at various thresholds summed over each time step in the simulation. These are compared to the sum of the area under the PR curve for the baseline model with only voting clusters.",
+   "n_tokens": 56
+  }
+ ]
+}

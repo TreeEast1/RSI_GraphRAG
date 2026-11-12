@@ -1,0 +1,211 @@
+{
+ "2002.04181::s00::p000": [
+  [
+   "natural language processing of political tweets",
+   "has the potential to help with",
+   "nowcasting and forecasting of election results as well as identifying the main issues with a candidate"
+  ]
+ ],
+ "2002.04181::s00::p001": [
+  [
+   "existing NLP tools",
+   "would provide",
+   "a baseline performance that any new machine learning system for political tweet analysis would compete against"
+  ]
+ ],
+ "2002.04181::s01::p000": [
+  [
+   "NLP toolkits",
+   "typically have",
+   "tokenization, part-of-speech (PoS) tagging, chunking, named entity recognition and sentiment analysis"
+  ],
+  [
+   "NLTK BIBREF4, Stanford CoreNLP BIBREF5, and TwitterNLP BIBREF6",
+   "have",
+   "tokenization, PoS tagging and NER modules in their pipelines"
+  ],
+  [
+   "two main approaches for NER",
+   "are",
+   "(1) rule-based and (2) statistical or machine learning based"
+  ],
+  [
+   "The most ubiquitous algorithms for sequence tagging",
+   "use",
+   "Hidden Markov Models BIBREF7, Maximum Entropy Markov Models BIBREF7, BIBREF8, or Conditional Random Fields BIBREF9"
+  ]
+ ],
+ "2002.04181::s01::p001": [
+  [
+   "Sentiment detection tools like SentiStrength BIBREF12 and TensiStrength BIBREF13",
+   "are",
+   "rule-based tools"
+  ],
+  [
+   "Sentiment detection tools like SentiStrength BIBREF12 and TensiStrength BIBREF13",
+   "rely on",
+   "various dictionaries of emoticons, slangs, idioms, and ironic phrases, and set of rules"
+  ],
+  [
+   "TensiStrength",
+   "reports",
+   "the sentiment towards selected entities in a sentence, based on five levels of relaxation and five levels of stress"
+  ]
+ ],
+ "2002.04181::s02::p000": [
+  [
+   "experts in political communication labels",
+   "are considered",
+   "groundtruth"
+  ],
+  [
+   "crowdworkers",
+   "were located in",
+   "the US"
+  ],
+  [
+   "entity-level sentiment analysis",
+   "used",
+   "a 3-scale rating of \"negative,\" \"neutral,\" and \"positive\""
+  ]
+ ],
+ "2002.04181::s02::p001": [
+  [
+   "Tweets",
+   "are labeled by",
+   "2, 3, 5, or 7 workers"
+  ],
+  [
+   "Sarcasm",
+   "causes",
+   "disagreement between the crowdworkers"
+  ]
+ ],
+ "2002.04181::s02::p003": [
+  [
+   "experiments with TwitterNLP for named-entity recognition",
+   "worked with",
+   "the default values of the model"
+  ],
+  [
+   "3-class Stanford NER model",
+   "uses",
+   "the classes “person,” “organization,” and “location”"
+  ],
+  [
+   "3-class Stanford NER model",
+   "resulted in",
+   "higher accuracy compared to the 7-class model"
+  ],
+  [
+   "CogComp-NLP NER",
+   "used",
+   "Ontonotes 5.0 NER model BIBREF27"
+  ],
+  [
+   "spaCy NER",
+   "used",
+   "the `en_core_web_lg' model"
+  ]
+ ],
+ "2002.04181::s02::p004": [
+  [
+   "experimental results for our two tasks",
+   "are reported in terms of",
+   "the correct classification rate (CCR)"
+  ],
+  [
+   "sentiment analysis",
+   "has",
+   "a three-class problem (positive, negative, and neutral)"
+  ],
+  [
+   "CCR, averaged for a set of tweets",
+   "is defined to be",
+   "the number of correctly-predicted sentiments over the number of groundtruth sentiments in these tweets"
+  ],
+  [
+   "NER",
+   "considers",
+   "that each tweet may reference up to four candidates, i.e., targeted entities"
+  ]
+ ],
+ "2002.04181::s03::p000": [
+  [
+   "dataset of 1,000 randomly selected tweets",
+   "contains",
+   "more than twice as many tweets about Trump than about the other candidates"
+  ],
+  [
+   "CCR of the automated systems",
+   "ranged from",
+   "77.2% to 96.7%"
+  ],
+  [
+   "spaCy",
+   "had",
+   "72.7% for the entity Trump vs. above 91% for the other entities"
+  ]
+ ],
+ "2002.04181::s03::p001": [
+  [
+   "a tweet",
+   "may contain",
+   "multiple sentiments"
+  ],
+  [
+   "The groundtruth labels",
+   "contain",
+   "210 positive sentiments, 521 neutral sentiments, and 305 negative sentiments to the candidates"
+  ],
+  [
+   "the CCR",
+   "was measured to be",
+   "31.7% for Rosette Text Analytics, 43.2% for Google Cloud, 44.2% for TensiStrength, and 74.7% for the crowdworkers"
+  ],
+  [
+   "the difference between the performance of the tools and the crowdworkers",
+   "is",
+   "more than 30 percent points"
+  ]
+ ],
+ "2002.04181::s03::p002": [
+  [
+   "Crowdworkers",
+   "correctly identified",
+   "62% of the neutral, 85% of the positive, and 92% of the negative sentiments"
+  ],
+  [
+   "Google Cloud",
+   "correctly identified",
+   "88% of the neutral sentiments, but only 3% of the positive, and 19% of the negative sentiments"
+  ],
+  [
+   "TensiStrength",
+   "correctly identified",
+   "87.2% of the neutral sentiments, but 10.5% of the positive, and 8.1% of the negative sentiments"
+  ],
+  [
+   "Rosette Text Analytics",
+   "correctly identified",
+   "22.7% of neutral sentiments, 38.1% of negative sentiments and 40.9% of positive sentiments"
+  ]
+ ],
+ "2002.04181::s04::p000": [
+  [
+   "existing NLP systems",
+   "cannot accurately perform",
+   "sentiment analysis of political tweets in the dataset we experimented with"
+  ],
+  [
+   "Labeling by humans, even non-expert crowdworkers",
+   "yields",
+   "accuracy results that are well above the results of existing automated NLP systems"
+  ],
+  [
+   "future work",
+   "will use",
+   "a crowdworker-labeled dataset to train a new machine-learning based NLP system for tweet analysis"
+  ]
+ ]
+}

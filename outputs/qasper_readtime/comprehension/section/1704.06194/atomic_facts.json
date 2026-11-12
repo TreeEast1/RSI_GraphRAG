@@ -1,0 +1,3732 @@
+{
+ "facts": [
+  {
+   "fact_id": "1704.06194::g00:b0:f00",
+   "subject": "Knowledge Base Question Answering (KBQA) systems",
+   "predicate": "answer questions by obtaining information from",
+   "object": "KB tuples",
+   "source_passage_ids": [
+    "1704.06194::s00::p000"
+   ],
+   "source_section": "Introduction",
+   "evidence": "Knowledge Base Question Answering (KBQA) systems answer questions by obtaining information from KB tuples",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b0:f01",
+   "subject": "these systems",
+   "predicate": "typically generate",
+   "object": "a KB query",
+   "source_passage_ids": [
+    "1704.06194::s00::p000"
+   ],
+   "source_section": "Introduction",
+   "evidence": "these systems typically generate a KB query, which can be executed to retrieve the answers from a KB",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b0:f02",
+   "subject": "The KBQA system in the figure",
+   "predicate": "performs",
+   "object": "two key tasks",
+   "source_passage_ids": [
+    "1704.06194::s00::p000"
+   ],
+   "source_section": "Introduction",
+   "evidence": "The KBQA system in the figure performs two key tasks",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b0:f03",
+   "subject": "relation detection",
+   "predicate": "identifies",
+   "object": "the KB relation(s) a question refers to",
+   "source_passage_ids": [
+    "1704.06194::s00::p000"
+   ],
+   "source_section": "Introduction",
+   "evidence": "relation detection, which identifies the KB relation(s) a question refers to",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b0:f04",
+   "subject": "The main focus of this work",
+   "predicate": "is to improve",
+   "object": "the relation detection subtask",
+   "source_passage_ids": [
+    "1704.06194::s00::p001"
+   ],
+   "source_section": "Introduction",
+   "evidence": "The main focus of this work is to improve the relation detection subtask",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b0:f05",
+   "subject": "Freebase2M",
+   "predicate": "contains",
+   "object": "more than 6,000 relation types",
+   "source_passage_ids": [
+    "1704.06194::s00::p001"
+   ],
+   "source_section": "Introduction",
+   "evidence": "even a small KB, like Freebase2M BIBREF2 , contains more than 6,000 relation types",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b0:f06",
+   "subject": "the SimpleQuestions BIBREF2 data set",
+   "predicate": "has",
+   "object": "14% of the golden test relations not observed in golden training tuples",
+   "source_passage_ids": [
+    "1704.06194::s00::p001"
+   ],
+   "source_section": "Introduction",
+   "evidence": "the SimpleQuestions BIBREF2 data set has 14% of the golden test relations not observed in golden training tuples",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b0:f07",
+   "subject": "This step",
+   "predicate": "is important to deal with",
+   "object": "the ambiguities normally present in entity linking results",
+   "source_passage_ids": [
+    "1704.06194::s00::p003"
+   ],
+   "source_section": "Introduction",
+   "evidence": "This step is important to deal with the ambiguities normally present in entity linking results",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b0:f08",
+   "subject": "the highest scored query from the above steps",
+   "predicate": "is used to query",
+   "object": "the KB for answers",
+   "source_passage_ids": [
+    "1704.06194::s00::p003"
+   ],
+   "source_section": "Introduction",
+   "evidence": "Finally the highest scored query from the above steps is used to query the KB for answers",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b0:f09",
+   "subject": "Previous research BIBREF4 , BIBREF20",
+   "predicate": "formulates",
+   "object": "KB relation detection as a sequence matching problem",
+   "source_passage_ids": [
+    "1704.06194::s01::p000"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "Previous research BIBREF4 , BIBREF20 formulates KB relation detection as a sequence matching problem",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b0:f10",
+   "subject": "the questions",
+   "predicate": "are",
+   "object": "natural word sequences",
+   "source_passage_ids": [
+    "1704.06194::s01::p000"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "while the questions are natural word sequences",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b0:f11",
+   "subject": "how to represent relations as sequences",
+   "predicate": "remains",
+   "object": "a challenging problem",
+   "source_passage_ids": [
+    "1704.06194::s01::p000"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "how to represent relations as sequences remains a challenging problem",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f00",
+   "subject": "each relation name",
+   "predicate": "is treated as",
+   "object": "a unique token",
+   "source_passage_ids": [
+    "1704.06194::s01::p001"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "In this case, each relation name is treated as a unique token.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f01",
+   "subject": "this approach",
+   "predicate": "suffers from",
+   "object": "the low relation coverage due to limited amount of training data",
+   "source_passage_ids": [
+    "1704.06194::s01::p001"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "The problem with this approach is that it suffers from the low relation coverage due to limited amount of training data",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f02",
+   "subject": "this approach",
+   "predicate": "cannot generalize well to",
+   "object": "large number of open-domain relations",
+   "source_passage_ids": [
+    "1704.06194::s01::p001"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "thus cannot generalize well to large number of open-domain relations.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f03",
+   "subject": "their relation embeddings $\\mathbf {h}^r$ s",
+   "predicate": "will be",
+   "object": "random vectors",
+   "source_passage_ids": [
+    "1704.06194::s01::p001"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "their relation embeddings $\\mathbf {h}^r$ s will be random vectors thus are not comparable to question embeddings $\\mathbf {h}^q$ s.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f04",
+   "subject": "the relation",
+   "predicate": "is treated as",
+   "object": "a sequence of words from the tokenized relation name",
+   "source_passage_ids": [
+    "1704.06194::s01::p002"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "In this case, the relation is treated as a sequence of words from the tokenized relation name.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f05",
+   "subject": "word-level",
+   "predicate": "has",
+   "object": "better generalization",
+   "source_passage_ids": [
+    "1704.06194::s01::p002"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "It has better generalization, but suffers from the lack of global information from the original relation names.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f06",
+   "subject": "word-level",
+   "predicate": "suffers from",
+   "object": "the lack of global information from the original relation names",
+   "source_passage_ids": [
+    "1704.06194::s01::p002"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "It has better generalization, but suffers from the lack of global information from the original relation names.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f07",
+   "subject": "the incorrect relation",
+   "predicate": "contains",
+   "object": "word “plays”",
+   "source_passage_ids": [
+    "1704.06194::s01::p002"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "This is because the incorrect relation contains word “plays”, which is more similar to the question",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f08",
+   "subject": "the word-level",
+   "predicate": "focuses more on",
+   "object": "local information (words and short phrases)",
+   "source_passage_ids": [
+    "1704.06194::s01::p003"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "the word-level focuses more on local information (words and short phrases)",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f09",
+   "subject": "the relation-level",
+   "predicate": "focus more on",
+   "object": "global information (long phrases and skip-grams)",
+   "source_passage_ids": [
+    "1704.06194::s01::p003"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "the relation-level focus more on global information (long phrases and skip-grams) but suffer from data sparsity.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f10",
+   "subject": "the relation-level",
+   "predicate": "suffer from",
+   "object": "data sparsity",
+   "source_passage_ids": [
+    "1704.06194::s01::p003"
+   ],
+   "source_section": "Background: Different Granularity in KB Relations",
+   "evidence": "the relation-level focus more on global information (long phrases and skip-grams) but suffer from data sparsity.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f11",
+   "subject": "the first $M_1$ tokens",
+   "predicate": "are",
+   "object": "words (e.g. {episode, written})",
+   "source_passage_ids": [
+    "1704.06194::s03::p000"
+   ],
+   "source_section": "Relation Representations from Different Granularity",
+   "evidence": "where the first $M_1$ tokens are words (e.g. {episode, written})",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f12",
+   "subject": "the last $M_2$ tokens",
+   "predicate": "are",
+   "object": "relation names",
+   "source_passage_ids": [
+    "1704.06194::s03::p000"
+   ],
+   "source_section": "Relation Representations from Different Granularity",
+   "evidence": "and the last $M_2$ tokens are relation names, e.g., {episode_written} or {starring_roles, series}",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f13",
+   "subject": "different parts of a relation",
+   "predicate": "could match",
+   "object": "different contexts of question texts",
+   "source_passage_ids": [
+    "1704.06194::s04::p000"
+   ],
+   "source_section": "Different Abstractions of Questions Representations",
+   "evidence": "different parts of a relation could match different contexts of question texts.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f14",
+   "subject": "relation names",
+   "predicate": "could match",
+   "object": "longer phrases in the question",
+   "source_passage_ids": [
+    "1704.06194::s04::p000"
+   ],
+   "source_section": "Different Abstractions of Questions Representations",
+   "evidence": "Usually relation names could match longer phrases in the question",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f15",
+   "subject": "relation words",
+   "predicate": "could match",
+   "object": "short phrases",
+   "source_passage_ids": [
+    "1704.06194::s04::p000"
+   ],
+   "source_section": "Different Abstractions of Questions Representations",
+   "evidence": "and relation words could match short phrases.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b1:f16",
+   "subject": "different words",
+   "predicate": "might match",
+   "object": "phrases of different lengths",
+   "source_passage_ids": [
+    "1704.06194::s04::p000"
+   ],
+   "source_section": "Different Abstractions of Questions Representations",
+   "evidence": "Yet different words might match phrases of different lengths.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f00",
+   "subject": "The first-layer of BiLSTM",
+   "predicate": "works on",
+   "object": "the word embeddings of question words $\\mathbf {q}=\\lbrace q_1,\\cdots ,q_N\\rbrace $",
+   "source_passage_ids": [
+    "1704.06194::s04::p001"
+   ],
+   "source_section": "Different Abstractions of Questions Representations",
+   "evidence": "The first-layer of BiLSTM works on the word embeddings of question words $\\mathbf {q}=\\lbrace q_1,\\cdots ,q_N\\rbrace $",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f01",
+   "subject": "the second BiLSTM",
+   "predicate": "starts with",
+   "object": "the hidden vectors from the first layer",
+   "source_passage_ids": [
+    "1704.06194::s04::p001"
+   ],
+   "source_section": "Different Abstractions of Questions Representations",
+   "evidence": "Since the second BiLSTM starts with the hidden vectors from the first layer",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f02",
+   "subject": "the first(second)-layer of question representations",
+   "predicate": "does not necessarily correspond to",
+   "object": "the word(relation)-level relation representations",
+   "source_passage_ids": [
+    "1704.06194::s04::p002"
+   ],
+   "source_section": "Different Abstractions of Questions Representations",
+   "evidence": "the first(second)-layer of question representations does not necessarily correspond to the word(relation)-level relation representations",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f03",
+   "subject": "either layer of question representations",
+   "predicate": "could potentially match to",
+   "object": "either level of relation representations",
+   "source_passage_ids": [
+    "1704.06194::s04::p002"
+   ],
+   "source_section": "Different Abstractions of Questions Representations",
+   "evidence": "either layer of question representations could potentially match to either level of relation representations",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f04",
+   "subject": "two layers of question representations",
+   "predicate": "should be compared to",
+   "object": "the relation representation space (Hierarchical Matching)",
+   "source_passage_ids": [
+    "1704.06194::s05::p000"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "two layers of question representations can be complementary to each other and both should be compared to the relation representation space (Hierarchical Matching)",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f05",
+   "subject": "each relation token",
+   "predicate": "can correspond to",
+   "object": "phrases of different lengths",
+   "source_passage_ids": [
+    "1704.06194::s05::p000"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "each relation token can correspond to phrases of different lengths, mainly because of syntactic variations",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f06",
+   "subject": "the relation word written",
+   "predicate": "could be matched to",
+   "object": "either the same single word in the question or a much longer phrase be the writer of",
+   "source_passage_ids": [
+    "1704.06194::s05::p000"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "the relation word written could be matched to either the same single word in the question or a much longer phrase be the writer of.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f07",
+   "subject": "the above hierarchical matching",
+   "predicate": "could be performed by computing",
+   "object": "the similarity between each layer of $\\mathbf {\\Gamma }$ and $\\mathbf {h}^r$ separately",
+   "source_passage_ids": [
+    "1704.06194::s05::p001"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "We could perform the above hierarchical matching by computing the similarity between each layer of $\\mathbf {\\Gamma }$ and $\\mathbf {h}^r$ separately",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f08",
+   "subject": "this",
+   "predicate": "does not give",
+   "object": "significant improvement (see Table 2 )",
+   "source_passage_ids": [
+    "1704.06194::s05::p001"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "However this does not give significant improvement (see Table 2 ).",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f09",
+   "subject": "this naive method",
+   "predicate": "suffers from",
+   "object": "the training difficulty",
+   "source_passage_ids": [
+    "1704.06194::s05::p001"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "this naive method suffers from the training difficulty",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f10",
+   "subject": "the converged training loss of this model",
+   "predicate": "is much higher than",
+   "object": "that of a single-layer baseline model",
+   "source_passage_ids": [
+    "1704.06194::s05::p001"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "the converged training loss of this model is much higher than that of a single-layer baseline model",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f11",
+   "subject": "Deep BiLSTMs",
+   "predicate": "do not guarantee that",
+   "object": "the two-levels of question hidden representations are comparable",
+   "source_passage_ids": [
+    "1704.06194::s05::p001"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "Deep BiLSTMs do not guarantee that the two-levels of question hidden representations are comparable",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f12",
+   "subject": "The training of deeper architectures itself",
+   "predicate": "is",
+   "object": "more difficult",
+   "source_passage_ids": [
+    "1704.06194::s05::p001"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "The training of deeper architectures itself is more difficult.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f13",
+   "subject": "Connecting each $\\mathbf {\\gamma }^{(1)}_i$ and $\\mathbf {\\gamma }^{(2)}_i$",
+   "predicate": "results in",
+   "object": "a $\\mathbf {\\gamma }^{^{\\prime }}_i=\\mathbf {\\gamma }^{(1)}_i + \\mathbf {\\gamma }^{(2)}_i$ for each position $i$",
+   "source_passage_ids": [
+    "1704.06194::s05::p002"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "Connecting each $\\mathbf {\\gamma }^{(1)}_i$ and $\\mathbf {\\gamma }^{(2)}_i$ , resulting in a $\\mathbf {\\gamma }^{^{\\prime }}_i=\\mathbf {\\gamma }^{(1)}_i + \\mathbf {\\gamma }^{(2)}_i$ for each position $i$",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f14",
+   "subject": "the final question representation $\\mathbf {h}^q$",
+   "predicate": "becomes",
+   "object": "a max-pooling over all $\\mathbf {\\gamma }^{^{\\prime }}_i$ s, 1 $\\le $ i $\\le $ $N$",
+   "source_passage_ids": [
+    "1704.06194::s05::p002"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "Then the final question representation $\\mathbf {h}^q$ becomes a max-pooling over all $\\mathbf {\\gamma }^{^{\\prime }}_i$ s, 1 $\\le $ i $\\le $ $N$ .",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f15",
+   "subject": "the second layer",
+   "predicate": "is fitting",
+   "object": "the residues from the first layer of matching",
+   "source_passage_ids": [
+    "1704.06194::s05::p003"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "since the second layer is fitting the residues from the first layer of matching",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f16",
+   "subject": "the two layers of representations",
+   "predicate": "are more likely to be",
+   "object": "complementary to each other",
+   "source_passage_ids": [
+    "1704.06194::s05::p003"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "so the two layers of representations are more likely to be complementary to each other",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b2:f17",
+   "subject": "This",
+   "predicate": "ensures",
+   "object": "the vector spaces of two layers are comparable",
+   "source_passage_ids": [
+    "1704.06194::s05::p003"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "This also ensures the vector spaces of two layers are comparable and makes the second-layer training easier.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b3:f00",
+   "subject": "training",
+   "predicate": "adopts",
+   "object": "a ranking loss",
+   "source_passage_ids": [
+    "1704.06194::s05::p004"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "During training we adopt a ranking loss to maximizing the margin between the gold relation $\\mathbf {r}^+$ and other relations $\\mathbf {r}^-$ in the candidate pool $R$ .",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b3:f01",
+   "subject": "a ranking loss",
+   "predicate": "maximizes",
+   "object": "the margin between the gold relation $\\mathbf {r}^+$ and other relations $\\mathbf {r}^-$ in the candidate pool $R$",
+   "source_passage_ids": [
+    "1704.06194::s05::p004"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "During training we adopt a ranking loss to maximizing the margin between the gold relation $\\mathbf {r}^+$ and other relations $\\mathbf {r}^-$ in the candidate pool $R$ .",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b3:f02",
+   "subject": "Fig 2",
+   "predicate": "summarizes",
+   "object": "the above Hierarchical Residual BiLSTM (HR-BiLSTM) model",
+   "source_passage_ids": [
+    "1704.06194::s05::p006"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "Fig 2 summarizes the above Hierarchical Residual BiLSTM (HR-BiLSTM) model.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b3:f03",
+   "subject": "Another way of hierarchical matching",
+   "predicate": "consists in relying on",
+   "object": "attention mechanism",
+   "source_passage_ids": [
+    "1704.06194::s05::p007"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "Another way of hierarchical matching consists in relying on attention mechanism, e.g. BIBREF24 , to find the correspondence between different levels of representations.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b3:f04",
+   "subject": "attention mechanism",
+   "predicate": "finds",
+   "object": "the correspondence between different levels of representations",
+   "source_passage_ids": [
+    "1704.06194::s05::p007"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "Another way of hierarchical matching consists in relying on attention mechanism, e.g. BIBREF24 , to find the correspondence between different levels of representations.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b3:f05",
+   "subject": "attention mechanism",
+   "predicate": "performs below",
+   "object": "the HR-BiLSTM",
+   "source_passage_ids": [
+    "1704.06194::s05::p007"
+   ],
+   "source_section": "Hierarchical Matching between Relation and Question",
+   "evidence": "This performs below the HR-BiLSTM (see Table 2 ).",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b3:f06",
+   "subject": "minimal efforts beyond the training of the relation detection model",
+   "predicate": "make",
+   "object": "the whole system easy to build",
+   "source_passage_ids": [
+    "1704.06194::s06::p000"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "We make minimal efforts beyond the training of the relation detection model, making the whole system easy to build.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b3:f07",
+   "subject": "an existing entity linker",
+   "predicate": "produces",
+   "object": "the top- $K$ linked entities, $EL_K(q)$ , for a question $q$",
+   "source_passage_ids": [
+    "1704.06194::s06::p001"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "Following previous work BIBREF4 , BIBREF5 , our KBQA system takes an existing entity linker to produce the top- $K$ linked entities, $EL_K(q)$ , for a question $q$ (“initial entity linking”).",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b3:f08",
+   "subject": "the four steps",
+   "predicate": "are illustrated in",
+   "object": "Algorithm \"KBQA Enhanced by Relation Detection\"",
+   "source_passage_ids": [
+    "1704.06194::s06::p001"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "Then we generate the KB queries for $q$ following the four steps illustrated in Algorithm \"KBQA Enhanced by Relation Detection\" .",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f00",
+   "subject": "Entity Re-Ranking",
+   "predicate": "uses",
+   "object": "the raw question text as input for a relation detector",
+   "source_passage_ids": [
+    "1704.06194::s06::p002"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "Use the raw question text as input for a relation detector to score all relations in the KB",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f01",
+   "subject": "Entity Re-Ranking",
+   "predicate": "uses",
+   "object": "the relation scores to re-rank $EL_K(q)$",
+   "source_passage_ids": [
+    "1704.06194::s06::p002"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "use the relation scores to re-rank $EL_K(q)$ and generate a shorter list",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f02",
+   "subject": "Relation Detection",
+   "predicate": "uses",
+   "object": "the reformatted question text in which the topic entity is replaced by a special token $<$ e $>$",
+   "source_passage_ids": [
+    "1704.06194::s06::p002"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "Detect relation(s) using the reformatted question text in which the topic entity is replaced by a special token $<$ e $>$",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f03",
+   "subject": "Query Generation",
+   "predicate": "combines",
+   "object": "the scores from step 1 and 2",
+   "source_passage_ids": [
+    "1704.06194::s06::p002"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "Combine the scores from step 1 and 2, and select the top pair $(\\hat{e},\\hat{r})$",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f04",
+   "subject": "main difference",
+   "predicate": "is",
+   "object": "an additional entity re-ranking step after the initial entity linking",
+   "source_passage_ids": [
+    "1704.06194::s06::p003"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "the main difference is that we have an additional entity re-ranking step after the initial entity linking",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f05",
+   "subject": "entity linking",
+   "predicate": "sometimes becomes",
+   "object": "a bottleneck in KBQA systems",
+   "source_passage_ids": [
+    "1704.06194::s06::p003"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "we have observed that entity linking sometimes becomes a bottleneck in KBQA systems",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f06",
+   "subject": "the best reported linker on SimpleQuestions",
+   "predicate": "could only get",
+   "object": "72.7% top-1 accuracy on identifying topic entities",
+   "source_passage_ids": [
+    "1704.06194::s06::p003"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "on SimpleQuestions the best reported linker could only get 72.7% top-1 accuracy on identifying topic entities",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f07",
+   "subject": "ambiguities of entity names",
+   "predicate": "include",
+   "object": "TV writer and baseball player “Mike Kelley”",
+   "source_passage_ids": [
+    "1704.06194::s06::p003"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "there are TV writer and baseball player “Mike Kelley”, which is impossible to distinguish with only entity name matching",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f08",
+   "subject": "different entity candidates",
+   "predicate": "usually connect to",
+   "object": "different relations",
+   "source_passage_ids": [
+    "1704.06194::s06::p004"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "different entity candidates usually connect to different relations",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f09",
+   "subject": "relation detection",
+   "predicate": "help to re-rank",
+   "object": "entities in the initial entity linking",
+   "source_passage_ids": [
+    "1704.06194::s06::p005"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "elaborate how our relation detection help to re-rank entities in the initial entity linking",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f10",
+   "subject": "re-ranked entities",
+   "predicate": "enable",
+   "object": "more accurate relation detection",
+   "source_passage_ids": [
+    "1704.06194::s06::p005"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "then those re-ranked entities enable more accurate relation detection",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f11",
+   "subject": "The KBQA end task",
+   "predicate": "benefits from",
+   "object": "this process",
+   "source_passage_ids": [
+    "1704.06194::s06::p005"
+   ],
+   "source_section": "KBQA Enhanced by Relation Detection",
+   "evidence": "The KBQA end task, as a result, benefits from this process.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f12",
+   "subject": "this step",
+   "predicate": "uses",
+   "object": "the raw question text as input for a relation detector",
+   "source_passage_ids": [
+    "1704.06194::s07::p000"
+   ],
+   "source_section": "Entity Re-Ranking",
+   "evidence": "we use the raw question text as input for a relation detector to score all relations in the KB",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b4:f13",
+   "subject": "this step",
+   "predicate": "is called",
+   "object": "relation detection on entity set",
+   "source_passage_ids": [
+    "1704.06194::s07::p000"
+   ],
+   "source_section": "Entity Re-Ranking",
+   "evidence": "We call this step relation detection on entity set since it does not work on a single topic entity",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b5:f00",
+   "subject": "top $K^{\\prime }$ $<$ $K$ entities",
+   "predicate": "are selected according to",
+   "object": "score $s_{rerank}$",
+   "source_passage_ids": [
+    "1704.06194::s07::p002"
+   ],
+   "source_section": "Entity Re-Ranking",
+   "evidence": "Finally, we select top $K^{\\prime }$ $<$ $K$ entities according to score $s_{rerank}$",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b5:f01",
+   "subject": "top $K^{\\prime }$ $<$ $K$ entities",
+   "predicate": "form",
+   "object": "the re-ranked list $EL_{K^{\\prime }}^{^{\\prime }}(q)$",
+   "source_passage_ids": [
+    "1704.06194::s07::p002"
+   ],
+   "source_section": "Entity Re-Ranking",
+   "evidence": "to form the re-ranked list $EL_{K^{\\prime }}^{^{\\prime }}(q)$ .",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b5:f02",
+   "subject": "a relation detector",
+   "predicate": "is very likely to assign high scores to",
+   "object": "relations such as “episodes_written”, “author_of” and “profession”",
+   "source_passage_ids": [
+    "1704.06194::s07::p003"
+   ],
+   "source_section": "Entity Re-Ranking",
+   "evidence": "a relation detector is very likely to assign high scores to relations such as “episodes_written”, “author_of” and “profession”",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b5:f03",
+   "subject": "the TV writer “Mike Kelley”",
+   "predicate": "will be scored higher than",
+   "object": "the baseball player “Mike Kelley”",
+   "source_passage_ids": [
+    "1704.06194::s07::p003"
+   ],
+   "source_section": "Entity Re-Ranking",
+   "evidence": "the TV writer “Mike Kelley” will be scored higher than the baseball player “Mike Kelley”",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b5:f04",
+   "subject": "the former",
+   "predicate": "has",
+   "object": "the relations “episodes_written” and “profession”",
+   "source_passage_ids": [
+    "1704.06194::s07::p003"
+   ],
+   "source_section": "Entity Re-Ranking",
+   "evidence": "because the former has the relations “episodes_written” and “profession”",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b5:f05",
+   "subject": "This method",
+   "predicate": "can be viewed as exploiting",
+   "object": "entity-relation collocation for entity linking",
+   "source_passage_ids": [
+    "1704.06194::s07::p003"
+   ],
+   "source_section": "Entity Re-Ranking",
+   "evidence": "This method can be viewed as exploiting entity-relation collocation for entity linking.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b5:f06",
+   "subject": "the question text",
+   "predicate": "is used as",
+   "object": "the input to a relation detector",
+   "source_passage_ids": [
+    "1704.06194::s08::p000"
+   ],
+   "source_section": "Relation Detection",
+   "evidence": "we use the question text as the input to a relation detector",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b5:f07",
+   "subject": "a relation detector",
+   "predicate": "scores",
+   "object": "all the relations $r \\in R_e$",
+   "source_passage_ids": [
+    "1704.06194::s08::p000"
+   ],
+   "source_section": "Relation Detection",
+   "evidence": "to score all the relations $r \\in R_e$ that are associated to the entity $e$ in the KB",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b5:f08",
+   "subject": "the candidate $e$ 's entity mention in $q$",
+   "predicate": "is replaced with",
+   "object": "a token “ $<$ e $>$ ”",
+   "source_passage_ids": [
+    "1704.06194::s08::p000"
+   ],
+   "source_section": "Relation Detection",
+   "evidence": "we replace the the candidate $e$ 's entity mention in $q$ with a token “ $<$ e $>$ ”",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b5:f09",
+   "subject": "This",
+   "predicate": "helps the model better distinguish",
+   "object": "the relative position of each word compared to the entity",
+   "source_passage_ids": [
+    "1704.06194::s08::p000"
+   ],
+   "source_section": "Relation Detection",
+   "evidence": "This helps the model better distinguish the relative position of each word compared to the entity.",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g00:b5:f10",
+   "subject": "the HR-BiLSTM model",
+   "predicate": "predicts",
+   "object": "the score of each relation $r \\in R_e$ : $s_{rel} (r;e,q)$",
+   "source_passage_ids": [
+    "1704.06194::s08::p000"
+   ],
+   "source_section": "Relation Detection",
+   "evidence": "We use the HR-BiLSTM model to predict the score of each relation $r \\in R_e$ : $s_{rel} (r;e,q)$ .",
+   "group_id": "1704.06194::g00"
+  },
+  {
+   "fact_id": "1704.06194::g01:b0:f00",
+   "subject": "the system",
+   "predicate": "outputs",
+   "object": "the < entity, relation (or core-chain) > pair (ê, r̂)",
+   "source_passage_ids": [
+    "1704.06194::s09::p000"
+   ],
+   "source_section": "Query Generation",
+   "evidence": "Finally, the system outputs the $<$ entity, relation (or core-chain) $>$ pair $(\\hat{e}, \\hat{r})$ according to:",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b0:f01",
+   "subject": "Each question in these datasets",
+   "predicate": "is labeled with",
+   "object": "the gold semantic parse",
+   "source_passage_ids": [
+    "1704.06194::s12::p000"
+   ],
+   "source_section": "Task Introduction & Settings",
+   "evidence": "Each question in these datasets is labeled with the gold semantic parse.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b0:f02",
+   "subject": "SimpleQuestions (SQ)",
+   "predicate": "is",
+   "object": "a single-relation KBQA task",
+   "source_passage_ids": [
+    "1704.06194::s12::p001"
+   ],
+   "source_section": "Task Introduction & Settings",
+   "evidence": "SimpleQuestions (SQ): It is a single-relation KBQA task.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b0:f03",
+   "subject": "The KB we use",
+   "predicate": "consists of",
+   "object": "a Freebase subset with 2M entities (FB2M) BIBREF2",
+   "source_passage_ids": [
+    "1704.06194::s12::p001"
+   ],
+   "source_section": "Task Introduction & Settings",
+   "evidence": "The KB we use consists of a Freebase subset with 2M entities (FB2M) BIBREF2 , in order to compare with previous research.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b0:f04",
+   "subject": "yin2016simple",
+   "predicate": "evaluated",
+   "object": "their relation extractor on this data set",
+   "source_passage_ids": [
+    "1704.06194::s12::p001"
+   ],
+   "source_section": "Task Introduction & Settings",
+   "evidence": "yin2016simple also evaluated their relation extractor on this data set and released their proposed question-relation pairs",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f00",
+   "subject": "WebQSP (WQ)",
+   "predicate": "is",
+   "object": "a multi-relation KBQA task",
+   "source_passage_ids": [
+    "1704.06194::s12::p002"
+   ],
+   "source_section": "Task Introduction & Settings",
+   "evidence": "WebQSP (WQ): A multi-relation KBQA task.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f01",
+   "subject": "the size of hidden states for LSTMs",
+   "predicate": "is tuned on",
+   "object": "development sets",
+   "source_passage_ids": [
+    "1704.06194::s12::p003"
+   ],
+   "source_section": "Task Introduction & Settings",
+   "evidence": "We tune the following hyper-parameters on development sets: (1) the size of hidden states for LSTMs ({50, 100, 200, 400});",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f02",
+   "subject": "learning rate",
+   "predicate": "is tuned on",
+   "object": "development sets",
+   "source_passage_ids": [
+    "1704.06194::s12::p003"
+   ],
+   "source_section": "Task Introduction & Settings",
+   "evidence": "(2) learning rate ({0.1, 0.5, 1.0, 2.0});",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f03",
+   "subject": "the number of training epochs",
+   "predicate": "is tuned on",
+   "object": "development sets",
+   "source_passage_ids": [
+    "1704.06194::s12::p003"
+   ],
+   "source_section": "Task Introduction & Settings",
+   "evidence": "and (4) the number of training epochs.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f04",
+   "subject": "All word vectors",
+   "predicate": "are initialized with",
+   "object": "300- $d$ pretrained word embeddings BIBREF27",
+   "source_passage_ids": [
+    "1704.06194::s12::p004"
+   ],
+   "source_section": "Task Introduction & Settings",
+   "evidence": "All word vectors are initialized with 300- $d$ pretrained word embeddings BIBREF27 .",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f05",
+   "subject": "The embeddings of relation names",
+   "predicate": "are",
+   "object": "randomly initialized",
+   "source_passage_ids": [
+    "1704.06194::s12::p004"
+   ],
+   "source_section": "Task Introduction & Settings",
+   "evidence": "The embeddings of relation names are randomly initialized, since existing pre-trained relation embeddings (e.g. TransE) usually support limited sets of relation names.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f06",
+   "subject": "existing pre-trained relation embeddings (e.g. TransE)",
+   "predicate": "usually support",
+   "object": "limited sets of relation names",
+   "source_passage_ids": [
+    "1704.06194::s12::p004"
+   ],
+   "source_section": "Task Introduction & Settings",
+   "evidence": "since existing pre-trained relation embeddings (e.g. TransE) usually support limited sets of relation names.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f07",
+   "subject": "The baseline BiLSTM with relation word sequence",
+   "predicate": "appears to be",
+   "object": "the best baseline on WebQSP",
+   "source_passage_ids": [
+    "1704.06194::s13::p000"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "The baseline BiLSTM with relation word sequence appears to be the best baseline on WebQSP and is close to the previous best result of AMPCNN on SimpleQuestions.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f08",
+   "subject": "using only relation names instead of words",
+   "predicate": "results in",
+   "object": "a weaker baseline BiLSTM model",
+   "source_passage_ids": [
+    "1704.06194::s13::p001"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "Note that using only relation names instead of words results in a weaker baseline BiLSTM model.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f09",
+   "subject": "the drop",
+   "predicate": "is",
+   "object": "much smaller on WebQSP",
+   "source_passage_ids": [
+    "1704.06194::s13::p001"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "However, the drop is much smaller on WebQSP, and it suggests that unseen relations have a much bigger impact on SimpleQuestions.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f10",
+   "subject": "The bottom of Table 2",
+   "predicate": "shows",
+   "object": "ablation results of the proposed HR-BiLSTM",
+   "source_passage_ids": [
+    "1704.06194::s13::p002"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "The bottom of Table 2 shows ablation results of the proposed HR-BiLSTM.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f11",
+   "subject": "hierarchical matching between questions and both relation names and relation words",
+   "predicate": "yields",
+   "object": "improvement on both datasets, especially for SimpleQuestions (93.3% vs. 91.2/88.8%)",
+   "source_passage_ids": [
+    "1704.06194::s13::p002"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "First, hierarchical matching between questions and both relation names and relation words yields improvement on both datasets, especially for SimpleQuestions (93.3% vs. 91.2/88.8%).",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f12",
+   "subject": "residual learning",
+   "predicate": "helps",
+   "object": "hierarchical matching compared to weighted-sum and attention-based baselines",
+   "source_passage_ids": [
+    "1704.06194::s13::p002"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "Second, residual learning helps hierarchical matching compared to weighted-sum and attention-based baselines (see Section \"Hierarchical Matching between Relation and Question\" ).",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f13",
+   "subject": "the one-way model",
+   "predicate": "gives",
+   "object": "better results",
+   "source_passage_ids": [
+    "1704.06194::s13::p002"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "For the attention-based baseline, we tried the model from BIBREF24 and its one-way variations, where the one-way model gives better results.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f14",
+   "subject": "residual learning",
+   "predicate": "significantly helps on",
+   "object": "WebQSP (80.65% to 82.53%)",
+   "source_passage_ids": [
+    "1704.06194::s13::p002"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "Note that residual learning significantly helps on WebQSP (80.65% to 82.53%), while it does not help as much on SimpleQuestions.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f15",
+   "subject": "removing the deep layers",
+   "predicate": "only causes",
+   "object": "a small drop in performance on SimpleQuestions",
+   "source_passage_ids": [
+    "1704.06194::s13::p002"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "On SimpleQuestions, even removing the deep layers only causes a small drop in performance.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b1:f16",
+   "subject": "WebQSP",
+   "predicate": "benefits more from",
+   "object": "residual and deeper architecture",
+   "source_passage_ids": [
+    "1704.06194::s13::p002"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "WebQSP benefits more from residual and deeper architecture, possibly because in this dataset it is more important to handle larger scope of context matching.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f00",
+   "subject": "replacing BiLSTM with CNN in our hierarchical matching framework",
+   "predicate": "results in",
+   "object": "a large performance drop on WebQSP",
+   "source_passage_ids": [
+    "1704.06194::s13::p003"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "replacing BiLSTM with CNN in our hierarchical matching framework results in a large performance drop",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f01",
+   "subject": "the gap",
+   "predicate": "is",
+   "object": "much smaller on SimpleQuestions",
+   "source_passage_ids": [
+    "1704.06194::s13::p003"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "Yet on SimpleQuestions the gap is much smaller.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f02",
+   "subject": "the LSTM relation encoder",
+   "predicate": "can better learn",
+   "object": "the composition of chains of relations in WebQSP",
+   "source_passage_ids": [
+    "1704.06194::s13::p003"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "the LSTM relation encoder can better learn the composition of chains of relations in WebQSP",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f03",
+   "subject": "the LSTM relation encoder",
+   "predicate": "is better at dealing with",
+   "object": "longer dependencies",
+   "source_passage_ids": [
+    "1704.06194::s13::p003"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "as it is better at dealing with longer dependencies",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f04",
+   "subject": "training of the weighted-sum model",
+   "predicate": "usually falls to",
+   "object": "local optima",
+   "source_passage_ids": [
+    "1704.06194::s13::p004"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "training of the weighted-sum model usually falls to local optima",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f05",
+   "subject": "one run",
+   "predicate": "gives",
+   "object": "weights of -75.39/0.14 for the two layers",
+   "source_passage_ids": [
+    "1704.06194::s13::p004"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "one run gives us weights of -75.39/0.14 for the two layers",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f06",
+   "subject": "one run",
+   "predicate": "gives",
+   "object": "much lower training accuracy (91.94%) compared to HR-BiLSTM (95.67%)",
+   "source_passage_ids": [
+    "1704.06194::s13::p004"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "It also gives much lower training accuracy (91.94%) compared to HR-BiLSTM (95.67%)",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f07",
+   "subject": "training deep BiLSTMs",
+   "predicate": "is",
+   "object": "more difficult without shortcut connections",
+   "source_passage_ids": [
+    "1704.06194::s13::p005"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "training deep BiLSTMs is more difficult without shortcut connections",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f08",
+   "subject": "deeper BiLSTM",
+   "predicate": "does not always result in",
+   "object": "lower training accuracy",
+   "source_passage_ids": [
+    "1704.06194::s13::p005"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "deeper BiLSTM does not always result in lower training accuracy",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f09",
+   "subject": "HR-BiLSTM",
+   "predicate": "is more than",
+   "object": "combination of two BiLSTMs with residual connections",
+   "source_passage_ids": [
+    "1704.06194::s13::p006"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "HR-BiLSTM is more than combination of two BiLSTMs with residual connections",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f10",
+   "subject": "HR-BiLSTM",
+   "predicate": "encourages",
+   "object": "the hierarchical architecture to learn different levels of abstraction",
+   "source_passage_ids": [
+    "1704.06194::s13::p006"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "it encourages the hierarchical architecture to learn different levels of abstraction",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f11",
+   "subject": "the residual and deep structures",
+   "predicate": "contribute to",
+   "object": "the good performance of HR-BiLSTM",
+   "source_passage_ids": [
+    "1704.06194::s13::p006"
+   ],
+   "source_section": "Relation Detection Results",
+   "evidence": "This proves that the residual and deep structures both contribute to the good performance of HR-BiLSTM.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f12",
+   "subject": "STAGG BIBREF4",
+   "predicate": "is",
+   "object": "the state-of-the-art on WebQSP",
+   "source_passage_ids": [
+    "1704.06194::s14::p000"
+   ],
+   "source_section": "KBQA End-Task Results",
+   "evidence": "STAGG BIBREF4 , the state-of-the-art on WebQSP",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f13",
+   "subject": "AMPCNN BIBREF20",
+   "predicate": "is",
+   "object": "the state-of-the-art on SimpleQuestions",
+   "source_passage_ids": [
+    "1704.06194::s14::p000"
+   ],
+   "source_section": "KBQA End-Task Results",
+   "evidence": "AMPCNN BIBREF20 , the state-of-the-art on SimpleQuestions",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b2:f14",
+   "subject": "these two baselines",
+   "predicate": "do not generalize well when applied to",
+   "object": "the other dataset",
+   "source_passage_ids": [
+    "1704.06194::s14::p000"
+   ],
+   "source_section": "KBQA End-Task Results",
+   "evidence": "they do not generalize well when applied to the other dataset",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b3:f00",
+   "subject": "The third block of the table",
+   "predicate": "details",
+   "object": "two ablation tests for the proposed components in our KBQA systems",
+   "source_passage_ids": [
+    "1704.06194::s14::p002"
+   ],
+   "source_section": "KBQA End-Task Results",
+   "evidence": "The third block of the table details two ablation tests for the proposed components in our KBQA systems",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b3:f01",
+   "subject": "Removing the entity re-ranking step",
+   "predicate": "significantly decreases",
+   "object": "the scores",
+   "source_passage_ids": [
+    "1704.06194::s14::p002"
+   ],
+   "source_section": "KBQA End-Task Results",
+   "evidence": "Removing the entity re-ranking step significantly decreases the scores.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b3:f02",
+   "subject": "the re-ranking step",
+   "predicate": "relies on",
+   "object": "the relation detection models",
+   "source_passage_ids": [
+    "1704.06194::s14::p002"
+   ],
+   "source_section": "KBQA End-Task Results",
+   "evidence": "Since the re-ranking step relies on the relation detection models",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b3:f03",
+   "subject": "STAGG",
+   "predicate": "uses",
+   "object": "multiple relation detectors",
+   "source_passage_ids": [
+    "1704.06194::s14::p003"
+   ],
+   "source_section": "KBQA End-Task Results",
+   "evidence": "like STAGG, which uses multiple relation detectors",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b3:f04",
+   "subject": "the top-3 relation detectors",
+   "predicate": "gives",
+   "object": "a significant performance boost",
+   "source_passage_ids": [
+    "1704.06194::s14::p003"
+   ],
+   "source_section": "KBQA End-Task Results",
+   "evidence": "this gives a significant performance boost",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b3:f05",
+   "subject": "the top-3 relation detectors",
+   "predicate": "resulting in",
+   "object": "a new state-of-the-art result on SimpleQuestions and a result comparable to the state-of-the-art on WebQSP",
+   "source_passage_ids": [
+    "1704.06194::s14::p003"
+   ],
+   "source_section": "KBQA End-Task Results",
+   "evidence": "resulting in a new state-of-the-art result on SimpleQuestions and a result comparable to the state-of-the-art on WebQSP.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b3:f06",
+   "subject": "KB relation detection",
+   "predicate": "is",
+   "object": "a key step in KBQA",
+   "source_passage_ids": [
+    "1704.06194::s15::p000"
+   ],
+   "source_section": "Conclusion",
+   "evidence": "KB relation detection is a key step in KBQA",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b3:f07",
+   "subject": "KB relation detection",
+   "predicate": "is significantly different from",
+   "object": "general relation extraction tasks",
+   "source_passage_ids": [
+    "1704.06194::s15::p000"
+   ],
+   "source_section": "Conclusion",
+   "evidence": "is significantly different from general relation extraction tasks.",
+   "group_id": "1704.06194::g01"
+  },
+  {
+   "fact_id": "1704.06194::g01:b3:f08",
+   "subject": "HR-BiLSTM",
+   "predicate": "performs",
+   "object": "hierarchical matching between questions and KB relations",
+   "source_passage_ids": [
+    "1704.06194::s15::p000"
+   ],
+   "source_section": "Conclusion",
+   "evidence": "HR-BiLSTM, that performs hierarchical matching between questions and KB relations.",
+   "group_id": "1704.06194::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1704.06194::g00",
+   "facts": [
+    {
+     "fact_id": "1704.06194::g00:b0:f00",
+     "subject": "Knowledge Base Question Answering (KBQA) systems",
+     "predicate": "answer questions by obtaining information from",
+     "object": "KB tuples",
+     "source_passage_ids": [
+      "1704.06194::s00::p000"
+     ],
+     "source_section": "Introduction",
+     "evidence": "Knowledge Base Question Answering (KBQA) systems answer questions by obtaining information from KB tuples",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b0:f01",
+     "subject": "these systems",
+     "predicate": "typically generate",
+     "object": "a KB query",
+     "source_passage_ids": [
+      "1704.06194::s00::p000"
+     ],
+     "source_section": "Introduction",
+     "evidence": "these systems typically generate a KB query, which can be executed to retrieve the answers from a KB",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b0:f02",
+     "subject": "The KBQA system in the figure",
+     "predicate": "performs",
+     "object": "two key tasks",
+     "source_passage_ids": [
+      "1704.06194::s00::p000"
+     ],
+     "source_section": "Introduction",
+     "evidence": "The KBQA system in the figure performs two key tasks",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b0:f03",
+     "subject": "relation detection",
+     "predicate": "identifies",
+     "object": "the KB relation(s) a question refers to",
+     "source_passage_ids": [
+      "1704.06194::s00::p000"
+     ],
+     "source_section": "Introduction",
+     "evidence": "relation detection, which identifies the KB relation(s) a question refers to",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b0:f04",
+     "subject": "The main focus of this work",
+     "predicate": "is to improve",
+     "object": "the relation detection subtask",
+     "source_passage_ids": [
+      "1704.06194::s00::p001"
+     ],
+     "source_section": "Introduction",
+     "evidence": "The main focus of this work is to improve the relation detection subtask",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b0:f05",
+     "subject": "Freebase2M",
+     "predicate": "contains",
+     "object": "more than 6,000 relation types",
+     "source_passage_ids": [
+      "1704.06194::s00::p001"
+     ],
+     "source_section": "Introduction",
+     "evidence": "even a small KB, like Freebase2M BIBREF2 , contains more than 6,000 relation types",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b0:f06",
+     "subject": "the SimpleQuestions BIBREF2 data set",
+     "predicate": "has",
+     "object": "14% of the golden test relations not observed in golden training tuples",
+     "source_passage_ids": [
+      "1704.06194::s00::p001"
+     ],
+     "source_section": "Introduction",
+     "evidence": "the SimpleQuestions BIBREF2 data set has 14% of the golden test relations not observed in golden training tuples",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b0:f07",
+     "subject": "This step",
+     "predicate": "is important to deal with",
+     "object": "the ambiguities normally present in entity linking results",
+     "source_passage_ids": [
+      "1704.06194::s00::p003"
+     ],
+     "source_section": "Introduction",
+     "evidence": "This step is important to deal with the ambiguities normally present in entity linking results",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b0:f08",
+     "subject": "the highest scored query from the above steps",
+     "predicate": "is used to query",
+     "object": "the KB for answers",
+     "source_passage_ids": [
+      "1704.06194::s00::p003"
+     ],
+     "source_section": "Introduction",
+     "evidence": "Finally the highest scored query from the above steps is used to query the KB for answers",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b0:f09",
+     "subject": "Previous research BIBREF4 , BIBREF20",
+     "predicate": "formulates",
+     "object": "KB relation detection as a sequence matching problem",
+     "source_passage_ids": [
+      "1704.06194::s01::p000"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "Previous research BIBREF4 , BIBREF20 formulates KB relation detection as a sequence matching problem",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b0:f10",
+     "subject": "the questions",
+     "predicate": "are",
+     "object": "natural word sequences",
+     "source_passage_ids": [
+      "1704.06194::s01::p000"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "while the questions are natural word sequences",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b0:f11",
+     "subject": "how to represent relations as sequences",
+     "predicate": "remains",
+     "object": "a challenging problem",
+     "source_passage_ids": [
+      "1704.06194::s01::p000"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "how to represent relations as sequences remains a challenging problem",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f00",
+     "subject": "each relation name",
+     "predicate": "is treated as",
+     "object": "a unique token",
+     "source_passage_ids": [
+      "1704.06194::s01::p001"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "In this case, each relation name is treated as a unique token.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f01",
+     "subject": "this approach",
+     "predicate": "suffers from",
+     "object": "the low relation coverage due to limited amount of training data",
+     "source_passage_ids": [
+      "1704.06194::s01::p001"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "The problem with this approach is that it suffers from the low relation coverage due to limited amount of training data",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f02",
+     "subject": "this approach",
+     "predicate": "cannot generalize well to",
+     "object": "large number of open-domain relations",
+     "source_passage_ids": [
+      "1704.06194::s01::p001"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "thus cannot generalize well to large number of open-domain relations.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f03",
+     "subject": "their relation embeddings $\\mathbf {h}^r$ s",
+     "predicate": "will be",
+     "object": "random vectors",
+     "source_passage_ids": [
+      "1704.06194::s01::p001"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "their relation embeddings $\\mathbf {h}^r$ s will be random vectors thus are not comparable to question embeddings $\\mathbf {h}^q$ s.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f04",
+     "subject": "the relation",
+     "predicate": "is treated as",
+     "object": "a sequence of words from the tokenized relation name",
+     "source_passage_ids": [
+      "1704.06194::s01::p002"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "In this case, the relation is treated as a sequence of words from the tokenized relation name.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f05",
+     "subject": "word-level",
+     "predicate": "has",
+     "object": "better generalization",
+     "source_passage_ids": [
+      "1704.06194::s01::p002"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "It has better generalization, but suffers from the lack of global information from the original relation names.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f06",
+     "subject": "word-level",
+     "predicate": "suffers from",
+     "object": "the lack of global information from the original relation names",
+     "source_passage_ids": [
+      "1704.06194::s01::p002"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "It has better generalization, but suffers from the lack of global information from the original relation names.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f07",
+     "subject": "the incorrect relation",
+     "predicate": "contains",
+     "object": "word “plays”",
+     "source_passage_ids": [
+      "1704.06194::s01::p002"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "This is because the incorrect relation contains word “plays”, which is more similar to the question",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f08",
+     "subject": "the word-level",
+     "predicate": "focuses more on",
+     "object": "local information (words and short phrases)",
+     "source_passage_ids": [
+      "1704.06194::s01::p003"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "the word-level focuses more on local information (words and short phrases)",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f09",
+     "subject": "the relation-level",
+     "predicate": "focus more on",
+     "object": "global information (long phrases and skip-grams)",
+     "source_passage_ids": [
+      "1704.06194::s01::p003"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "the relation-level focus more on global information (long phrases and skip-grams) but suffer from data sparsity.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f10",
+     "subject": "the relation-level",
+     "predicate": "suffer from",
+     "object": "data sparsity",
+     "source_passage_ids": [
+      "1704.06194::s01::p003"
+     ],
+     "source_section": "Background: Different Granularity in KB Relations",
+     "evidence": "the relation-level focus more on global information (long phrases and skip-grams) but suffer from data sparsity.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f11",
+     "subject": "the first $M_1$ tokens",
+     "predicate": "are",
+     "object": "words (e.g. {episode, written})",
+     "source_passage_ids": [
+      "1704.06194::s03::p000"
+     ],
+     "source_section": "Relation Representations from Different Granularity",
+     "evidence": "where the first $M_1$ tokens are words (e.g. {episode, written})",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f12",
+     "subject": "the last $M_2$ tokens",
+     "predicate": "are",
+     "object": "relation names",
+     "source_passage_ids": [
+      "1704.06194::s03::p000"
+     ],
+     "source_section": "Relation Representations from Different Granularity",
+     "evidence": "and the last $M_2$ tokens are relation names, e.g., {episode_written} or {starring_roles, series}",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f13",
+     "subject": "different parts of a relation",
+     "predicate": "could match",
+     "object": "different contexts of question texts",
+     "source_passage_ids": [
+      "1704.06194::s04::p000"
+     ],
+     "source_section": "Different Abstractions of Questions Representations",
+     "evidence": "different parts of a relation could match different contexts of question texts.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f14",
+     "subject": "relation names",
+     "predicate": "could match",
+     "object": "longer phrases in the question",
+     "source_passage_ids": [
+      "1704.06194::s04::p000"
+     ],
+     "source_section": "Different Abstractions of Questions Representations",
+     "evidence": "Usually relation names could match longer phrases in the question",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f15",
+     "subject": "relation words",
+     "predicate": "could match",
+     "object": "short phrases",
+     "source_passage_ids": [
+      "1704.06194::s04::p000"
+     ],
+     "source_section": "Different Abstractions of Questions Representations",
+     "evidence": "and relation words could match short phrases.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b1:f16",
+     "subject": "different words",
+     "predicate": "might match",
+     "object": "phrases of different lengths",
+     "source_passage_ids": [
+      "1704.06194::s04::p000"
+     ],
+     "source_section": "Different Abstractions of Questions Representations",
+     "evidence": "Yet different words might match phrases of different lengths.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f00",
+     "subject": "The first-layer of BiLSTM",
+     "predicate": "works on",
+     "object": "the word embeddings of question words $\\mathbf {q}=\\lbrace q_1,\\cdots ,q_N\\rbrace $",
+     "source_passage_ids": [
+      "1704.06194::s04::p001"
+     ],
+     "source_section": "Different Abstractions of Questions Representations",
+     "evidence": "The first-layer of BiLSTM works on the word embeddings of question words $\\mathbf {q}=\\lbrace q_1,\\cdots ,q_N\\rbrace $",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f01",
+     "subject": "the second BiLSTM",
+     "predicate": "starts with",
+     "object": "the hidden vectors from the first layer",
+     "source_passage_ids": [
+      "1704.06194::s04::p001"
+     ],
+     "source_section": "Different Abstractions of Questions Representations",
+     "evidence": "Since the second BiLSTM starts with the hidden vectors from the first layer",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f02",
+     "subject": "the first(second)-layer of question representations",
+     "predicate": "does not necessarily correspond to",
+     "object": "the word(relation)-level relation representations",
+     "source_passage_ids": [
+      "1704.06194::s04::p002"
+     ],
+     "source_section": "Different Abstractions of Questions Representations",
+     "evidence": "the first(second)-layer of question representations does not necessarily correspond to the word(relation)-level relation representations",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f03",
+     "subject": "either layer of question representations",
+     "predicate": "could potentially match to",
+     "object": "either level of relation representations",
+     "source_passage_ids": [
+      "1704.06194::s04::p002"
+     ],
+     "source_section": "Different Abstractions of Questions Representations",
+     "evidence": "either layer of question representations could potentially match to either level of relation representations",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f04",
+     "subject": "two layers of question representations",
+     "predicate": "should be compared to",
+     "object": "the relation representation space (Hierarchical Matching)",
+     "source_passage_ids": [
+      "1704.06194::s05::p000"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "two layers of question representations can be complementary to each other and both should be compared to the relation representation space (Hierarchical Matching)",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f05",
+     "subject": "each relation token",
+     "predicate": "can correspond to",
+     "object": "phrases of different lengths",
+     "source_passage_ids": [
+      "1704.06194::s05::p000"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "each relation token can correspond to phrases of different lengths, mainly because of syntactic variations",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f06",
+     "subject": "the relation word written",
+     "predicate": "could be matched to",
+     "object": "either the same single word in the question or a much longer phrase be the writer of",
+     "source_passage_ids": [
+      "1704.06194::s05::p000"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "the relation word written could be matched to either the same single word in the question or a much longer phrase be the writer of.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f07",
+     "subject": "the above hierarchical matching",
+     "predicate": "could be performed by computing",
+     "object": "the similarity between each layer of $\\mathbf {\\Gamma }$ and $\\mathbf {h}^r$ separately",
+     "source_passage_ids": [
+      "1704.06194::s05::p001"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "We could perform the above hierarchical matching by computing the similarity between each layer of $\\mathbf {\\Gamma }$ and $\\mathbf {h}^r$ separately",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f08",
+     "subject": "this",
+     "predicate": "does not give",
+     "object": "significant improvement (see Table 2 )",
+     "source_passage_ids": [
+      "1704.06194::s05::p001"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "However this does not give significant improvement (see Table 2 ).",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f09",
+     "subject": "this naive method",
+     "predicate": "suffers from",
+     "object": "the training difficulty",
+     "source_passage_ids": [
+      "1704.06194::s05::p001"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "this naive method suffers from the training difficulty",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f10",
+     "subject": "the converged training loss of this model",
+     "predicate": "is much higher than",
+     "object": "that of a single-layer baseline model",
+     "source_passage_ids": [
+      "1704.06194::s05::p001"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "the converged training loss of this model is much higher than that of a single-layer baseline model",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f11",
+     "subject": "Deep BiLSTMs",
+     "predicate": "do not guarantee that",
+     "object": "the two-levels of question hidden representations are comparable",
+     "source_passage_ids": [
+      "1704.06194::s05::p001"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "Deep BiLSTMs do not guarantee that the two-levels of question hidden representations are comparable",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f12",
+     "subject": "The training of deeper architectures itself",
+     "predicate": "is",
+     "object": "more difficult",
+     "source_passage_ids": [
+      "1704.06194::s05::p001"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "The training of deeper architectures itself is more difficult.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f13",
+     "subject": "Connecting each $\\mathbf {\\gamma }^{(1)}_i$ and $\\mathbf {\\gamma }^{(2)}_i$",
+     "predicate": "results in",
+     "object": "a $\\mathbf {\\gamma }^{^{\\prime }}_i=\\mathbf {\\gamma }^{(1)}_i + \\mathbf {\\gamma }^{(2)}_i$ for each position $i$",
+     "source_passage_ids": [
+      "1704.06194::s05::p002"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "Connecting each $\\mathbf {\\gamma }^{(1)}_i$ and $\\mathbf {\\gamma }^{(2)}_i$ , resulting in a $\\mathbf {\\gamma }^{^{\\prime }}_i=\\mathbf {\\gamma }^{(1)}_i + \\mathbf {\\gamma }^{(2)}_i$ for each position $i$",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f14",
+     "subject": "the final question representation $\\mathbf {h}^q$",
+     "predicate": "becomes",
+     "object": "a max-pooling over all $\\mathbf {\\gamma }^{^{\\prime }}_i$ s, 1 $\\le $ i $\\le $ $N$",
+     "source_passage_ids": [
+      "1704.06194::s05::p002"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "Then the final question representation $\\mathbf {h}^q$ becomes a max-pooling over all $\\mathbf {\\gamma }^{^{\\prime }}_i$ s, 1 $\\le $ i $\\le $ $N$ .",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f15",
+     "subject": "the second layer",
+     "predicate": "is fitting",
+     "object": "the residues from the first layer of matching",
+     "source_passage_ids": [
+      "1704.06194::s05::p003"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "since the second layer is fitting the residues from the first layer of matching",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f16",
+     "subject": "the two layers of representations",
+     "predicate": "are more likely to be",
+     "object": "complementary to each other",
+     "source_passage_ids": [
+      "1704.06194::s05::p003"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "so the two layers of representations are more likely to be complementary to each other",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b2:f17",
+     "subject": "This",
+     "predicate": "ensures",
+     "object": "the vector spaces of two layers are comparable",
+     "source_passage_ids": [
+      "1704.06194::s05::p003"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "This also ensures the vector spaces of two layers are comparable and makes the second-layer training easier.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b3:f00",
+     "subject": "training",
+     "predicate": "adopts",
+     "object": "a ranking loss",
+     "source_passage_ids": [
+      "1704.06194::s05::p004"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "During training we adopt a ranking loss to maximizing the margin between the gold relation $\\mathbf {r}^+$ and other relations $\\mathbf {r}^-$ in the candidate pool $R$ .",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b3:f01",
+     "subject": "a ranking loss",
+     "predicate": "maximizes",
+     "object": "the margin between the gold relation $\\mathbf {r}^+$ and other relations $\\mathbf {r}^-$ in the candidate pool $R$",
+     "source_passage_ids": [
+      "1704.06194::s05::p004"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "During training we adopt a ranking loss to maximizing the margin between the gold relation $\\mathbf {r}^+$ and other relations $\\mathbf {r}^-$ in the candidate pool $R$ .",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b3:f02",
+     "subject": "Fig 2",
+     "predicate": "summarizes",
+     "object": "the above Hierarchical Residual BiLSTM (HR-BiLSTM) model",
+     "source_passage_ids": [
+      "1704.06194::s05::p006"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "Fig 2 summarizes the above Hierarchical Residual BiLSTM (HR-BiLSTM) model.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b3:f03",
+     "subject": "Another way of hierarchical matching",
+     "predicate": "consists in relying on",
+     "object": "attention mechanism",
+     "source_passage_ids": [
+      "1704.06194::s05::p007"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "Another way of hierarchical matching consists in relying on attention mechanism, e.g. BIBREF24 , to find the correspondence between different levels of representations.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b3:f04",
+     "subject": "attention mechanism",
+     "predicate": "finds",
+     "object": "the correspondence between different levels of representations",
+     "source_passage_ids": [
+      "1704.06194::s05::p007"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "Another way of hierarchical matching consists in relying on attention mechanism, e.g. BIBREF24 , to find the correspondence between different levels of representations.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b3:f05",
+     "subject": "attention mechanism",
+     "predicate": "performs below",
+     "object": "the HR-BiLSTM",
+     "source_passage_ids": [
+      "1704.06194::s05::p007"
+     ],
+     "source_section": "Hierarchical Matching between Relation and Question",
+     "evidence": "This performs below the HR-BiLSTM (see Table 2 ).",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b3:f06",
+     "subject": "minimal efforts beyond the training of the relation detection model",
+     "predicate": "make",
+     "object": "the whole system easy to build",
+     "source_passage_ids": [
+      "1704.06194::s06::p000"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "We make minimal efforts beyond the training of the relation detection model, making the whole system easy to build.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b3:f07",
+     "subject": "an existing entity linker",
+     "predicate": "produces",
+     "object": "the top- $K$ linked entities, $EL_K(q)$ , for a question $q$",
+     "source_passage_ids": [
+      "1704.06194::s06::p001"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "Following previous work BIBREF4 , BIBREF5 , our KBQA system takes an existing entity linker to produce the top- $K$ linked entities, $EL_K(q)$ , for a question $q$ (“initial entity linking”).",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b3:f08",
+     "subject": "the four steps",
+     "predicate": "are illustrated in",
+     "object": "Algorithm \"KBQA Enhanced by Relation Detection\"",
+     "source_passage_ids": [
+      "1704.06194::s06::p001"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "Then we generate the KB queries for $q$ following the four steps illustrated in Algorithm \"KBQA Enhanced by Relation Detection\" .",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f00",
+     "subject": "Entity Re-Ranking",
+     "predicate": "uses",
+     "object": "the raw question text as input for a relation detector",
+     "source_passage_ids": [
+      "1704.06194::s06::p002"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "Use the raw question text as input for a relation detector to score all relations in the KB",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f01",
+     "subject": "Entity Re-Ranking",
+     "predicate": "uses",
+     "object": "the relation scores to re-rank $EL_K(q)$",
+     "source_passage_ids": [
+      "1704.06194::s06::p002"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "use the relation scores to re-rank $EL_K(q)$ and generate a shorter list",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f02",
+     "subject": "Relation Detection",
+     "predicate": "uses",
+     "object": "the reformatted question text in which the topic entity is replaced by a special token $<$ e $>$",
+     "source_passage_ids": [
+      "1704.06194::s06::p002"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "Detect relation(s) using the reformatted question text in which the topic entity is replaced by a special token $<$ e $>$",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f03",
+     "subject": "Query Generation",
+     "predicate": "combines",
+     "object": "the scores from step 1 and 2",
+     "source_passage_ids": [
+      "1704.06194::s06::p002"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "Combine the scores from step 1 and 2, and select the top pair $(\\hat{e},\\hat{r})$",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f04",
+     "subject": "main difference",
+     "predicate": "is",
+     "object": "an additional entity re-ranking step after the initial entity linking",
+     "source_passage_ids": [
+      "1704.06194::s06::p003"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "the main difference is that we have an additional entity re-ranking step after the initial entity linking",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f05",
+     "subject": "entity linking",
+     "predicate": "sometimes becomes",
+     "object": "a bottleneck in KBQA systems",
+     "source_passage_ids": [
+      "1704.06194::s06::p003"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "we have observed that entity linking sometimes becomes a bottleneck in KBQA systems",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f06",
+     "subject": "the best reported linker on SimpleQuestions",
+     "predicate": "could only get",
+     "object": "72.7% top-1 accuracy on identifying topic entities",
+     "source_passage_ids": [
+      "1704.06194::s06::p003"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "on SimpleQuestions the best reported linker could only get 72.7% top-1 accuracy on identifying topic entities",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f07",
+     "subject": "ambiguities of entity names",
+     "predicate": "include",
+     "object": "TV writer and baseball player “Mike Kelley”",
+     "source_passage_ids": [
+      "1704.06194::s06::p003"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "there are TV writer and baseball player “Mike Kelley”, which is impossible to distinguish with only entity name matching",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f08",
+     "subject": "different entity candidates",
+     "predicate": "usually connect to",
+     "object": "different relations",
+     "source_passage_ids": [
+      "1704.06194::s06::p004"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "different entity candidates usually connect to different relations",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f09",
+     "subject": "relation detection",
+     "predicate": "help to re-rank",
+     "object": "entities in the initial entity linking",
+     "source_passage_ids": [
+      "1704.06194::s06::p005"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "elaborate how our relation detection help to re-rank entities in the initial entity linking",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f10",
+     "subject": "re-ranked entities",
+     "predicate": "enable",
+     "object": "more accurate relation detection",
+     "source_passage_ids": [
+      "1704.06194::s06::p005"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "then those re-ranked entities enable more accurate relation detection",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f11",
+     "subject": "The KBQA end task",
+     "predicate": "benefits from",
+     "object": "this process",
+     "source_passage_ids": [
+      "1704.06194::s06::p005"
+     ],
+     "source_section": "KBQA Enhanced by Relation Detection",
+     "evidence": "The KBQA end task, as a result, benefits from this process.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f12",
+     "subject": "this step",
+     "predicate": "uses",
+     "object": "the raw question text as input for a relation detector",
+     "source_passage_ids": [
+      "1704.06194::s07::p000"
+     ],
+     "source_section": "Entity Re-Ranking",
+     "evidence": "we use the raw question text as input for a relation detector to score all relations in the KB",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b4:f13",
+     "subject": "this step",
+     "predicate": "is called",
+     "object": "relation detection on entity set",
+     "source_passage_ids": [
+      "1704.06194::s07::p000"
+     ],
+     "source_section": "Entity Re-Ranking",
+     "evidence": "We call this step relation detection on entity set since it does not work on a single topic entity",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b5:f00",
+     "subject": "top $K^{\\prime }$ $<$ $K$ entities",
+     "predicate": "are selected according to",
+     "object": "score $s_{rerank}$",
+     "source_passage_ids": [
+      "1704.06194::s07::p002"
+     ],
+     "source_section": "Entity Re-Ranking",
+     "evidence": "Finally, we select top $K^{\\prime }$ $<$ $K$ entities according to score $s_{rerank}$",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b5:f01",
+     "subject": "top $K^{\\prime }$ $<$ $K$ entities",
+     "predicate": "form",
+     "object": "the re-ranked list $EL_{K^{\\prime }}^{^{\\prime }}(q)$",
+     "source_passage_ids": [
+      "1704.06194::s07::p002"
+     ],
+     "source_section": "Entity Re-Ranking",
+     "evidence": "to form the re-ranked list $EL_{K^{\\prime }}^{^{\\prime }}(q)$ .",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b5:f02",
+     "subject": "a relation detector",
+     "predicate": "is very likely to assign high scores to",
+     "object": "relations such as “episodes_written”, “author_of” and “profession”",
+     "source_passage_ids": [
+      "1704.06194::s07::p003"
+     ],
+     "source_section": "Entity Re-Ranking",
+     "evidence": "a relation detector is very likely to assign high scores to relations such as “episodes_written”, “author_of” and “profession”",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b5:f03",
+     "subject": "the TV writer “Mike Kelley”",
+     "predicate": "will be scored higher than",
+     "object": "the baseball player “Mike Kelley”",
+     "source_passage_ids": [
+      "1704.06194::s07::p003"
+     ],
+     "source_section": "Entity Re-Ranking",
+     "evidence": "the TV writer “Mike Kelley” will be scored higher than the baseball player “Mike Kelley”",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b5:f04",
+     "subject": "the former",
+     "predicate": "has",
+     "object": "the relations “episodes_written” and “profession”",
+     "source_passage_ids": [
+      "1704.06194::s07::p003"
+     ],
+     "source_section": "Entity Re-Ranking",
+     "evidence": "because the former has the relations “episodes_written” and “profession”",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b5:f05",
+     "subject": "This method",
+     "predicate": "can be viewed as exploiting",
+     "object": "entity-relation collocation for entity linking",
+     "source_passage_ids": [
+      "1704.06194::s07::p003"
+     ],
+     "source_section": "Entity Re-Ranking",
+     "evidence": "This method can be viewed as exploiting entity-relation collocation for entity linking.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b5:f06",
+     "subject": "the question text",
+     "predicate": "is used as",
+     "object": "the input to a relation detector",
+     "source_passage_ids": [
+      "1704.06194::s08::p000"
+     ],
+     "source_section": "Relation Detection",
+     "evidence": "we use the question text as the input to a relation detector",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b5:f07",
+     "subject": "a relation detector",
+     "predicate": "scores",
+     "object": "all the relations $r \\in R_e$",
+     "source_passage_ids": [
+      "1704.06194::s08::p000"
+     ],
+     "source_section": "Relation Detection",
+     "evidence": "to score all the relations $r \\in R_e$ that are associated to the entity $e$ in the KB",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b5:f08",
+     "subject": "the candidate $e$ 's entity mention in $q$",
+     "predicate": "is replaced with",
+     "object": "a token “ $<$ e $>$ ”",
+     "source_passage_ids": [
+      "1704.06194::s08::p000"
+     ],
+     "source_section": "Relation Detection",
+     "evidence": "we replace the the candidate $e$ 's entity mention in $q$ with a token “ $<$ e $>$ ”",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b5:f09",
+     "subject": "This",
+     "predicate": "helps the model better distinguish",
+     "object": "the relative position of each word compared to the entity",
+     "source_passage_ids": [
+      "1704.06194::s08::p000"
+     ],
+     "source_section": "Relation Detection",
+     "evidence": "This helps the model better distinguish the relative position of each word compared to the entity.",
+     "group_id": "1704.06194::g00"
+    },
+    {
+     "fact_id": "1704.06194::g00:b5:f10",
+     "subject": "the HR-BiLSTM model",
+     "predicate": "predicts",
+     "object": "the score of each relation $r \\in R_e$ : $s_{rel} (r;e,q)$",
+     "source_passage_ids": [
+      "1704.06194::s08::p000"
+     ],
+     "source_section": "Relation Detection",
+     "evidence": "We use the HR-BiLSTM model to predict the score of each relation $r \\in R_e$ : $s_{rel} (r;e,q)$ .",
+     "group_id": "1704.06194::g00"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "the number of target relations",
+      "is limited, normally smaller than",
+      "100"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "This paper",
+      "improves",
+      "KB relation detection"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "propose to break",
+      "the relation names into word sequences for question-relation matching"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "propose to build",
+      "both relation-level and word-level relation representations"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "deep bidirectional LSTMs (BiLSTMs)"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "also propose",
+      "a simple KBQA implementation composed of two-step relation detection"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our proposed relation detection model",
+      "plays",
+      "a key role in the KBQA process"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Our main contributions",
+      "include",
+      "An improved relation detection model by hierarchical matching between questions and relations with residual learning"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "the improved relation detector",
+      "enables",
+      "our simple KBQA system to achieve state-of-the-art results on both single-relation and multi-relation KBQA tasks"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our approach",
+      "matches",
+      "the input question to both word-level and relation-level representations"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "this section",
+      "describes",
+      "our hierarchical sequence matching with residual learning approach for relation detection"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "deal with",
+      "three problems"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "provide our model with",
+      "both types of relation representation: word-level and relation-level"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "use",
+      "two BiLSTMs (with shared parameters)"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "initialize",
+      "the relation sequence LSTMs with the final state representations of the word sequence"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "apply",
+      "one max-pooling on these two sets of vectors"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "deal with this problem by applying",
+      "deep BiLSTMs on questions"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "The second-layer BiLSTM",
+      "works on",
+      "$\\mathbf {\\Gamma }^{(1)}_{1:N}$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "question contexts of different lengths",
+      "are encoded in",
+      "$\\mathbf {\\Gamma }^{(1)}_{1:N}$ and $\\mathbf {\\Gamma }^{(2)}_{1:N}$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "adopt",
+      "the idea from Residual Networks BIBREF23 for hierarchical matching"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "proposed",
+      "two ways of such Hierarchical Residual Matching"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "the proposed method",
+      "should benefit from",
+      "hierarchical training"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$l_{\\mathrm {rel}}$",
+      "equals",
+      "$\\max \\lbrace 0, \\gamma - s_{\\mathrm {rel}}(\\mathbf {r}^+; \\mathbf {q}) + s_{\\mathrm {rel}}(\\mathbf {r}^-; \\mathbf {q})\\rbrace$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\gamma $",
+      "is",
+      "a constant parameter"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "This section",
+      "describes",
+      "our KBQA pipeline system"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "make",
+      "minimal efforts beyond the training of the relation detection model"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our KBQA system",
+      "takes",
+      "an existing entity linker"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "generate",
+      "the KB queries for $q$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "propose to help",
+      "entity disambiguation in the initial entity linking with relations detected in questions"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "the HR-BiLSTM as described in Sec. \"Improved KB Relation Detection\""
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "the top $l$ best scoring relations ( $R^{l}_q$ ) to re-rank the original entity candidates"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$s_{\\mathrm {rerank}}(e;q)$",
+      "equals",
+      "$\\alpha \\cdot s_{\\mathrm {linker}}(e;q) + (1-\\alpha ) \\cdot \\max _{r \\in R_q^{l} \\cap R_e} s_{\\mathrm {rel}}(r;q)$"
+     ]
+    }
+   ],
+   "n_raw": 113,
+   "error": null,
+   "calls": [
+    {
+     "block": 0,
+     "n_passages": 6,
+     "n_raw": 21,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1388,
+      "completion_tokens": 1469,
+      "total_tokens": 2857,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 926
+    },
+    {
+     "block": 1,
+     "n_passages": 6,
+     "n_raw": 24,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1302,
+      "completion_tokens": 1663,
+      "total_tokens": 2965,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 819
+    },
+    {
+     "block": 2,
+     "n_passages": 6,
+     "n_raw": 24,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1379,
+      "completion_tokens": 1985,
+      "total_tokens": 3364,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 973
+    },
+    {
+     "block": 3,
+     "n_passages": 6,
+     "n_raw": 15,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 776,
+      "completion_tokens": 1308,
+      "total_tokens": 2084,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 301
+    },
+    {
+     "block": 4,
+     "n_passages": 6,
+     "n_raw": 18,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1227,
+      "completion_tokens": 1411,
+      "total_tokens": 2638,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 772
+    },
+    {
+     "block": 5,
+     "n_passages": 3,
+     "n_raw": 11,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 727,
+      "completion_tokens": 912,
+      "total_tokens": 1639,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 326
+    }
+   ]
+  },
+  {
+   "group_id": "1704.06194::g01",
+   "facts": [
+    {
+     "fact_id": "1704.06194::g01:b0:f00",
+     "subject": "the system",
+     "predicate": "outputs",
+     "object": "the < entity, relation (or core-chain) > pair (ê, r̂)",
+     "source_passage_ids": [
+      "1704.06194::s09::p000"
+     ],
+     "source_section": "Query Generation",
+     "evidence": "Finally, the system outputs the $<$ entity, relation (or core-chain) $>$ pair $(\\hat{e}, \\hat{r})$ according to:",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b0:f01",
+     "subject": "Each question in these datasets",
+     "predicate": "is labeled with",
+     "object": "the gold semantic parse",
+     "source_passage_ids": [
+      "1704.06194::s12::p000"
+     ],
+     "source_section": "Task Introduction & Settings",
+     "evidence": "Each question in these datasets is labeled with the gold semantic parse.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b0:f02",
+     "subject": "SimpleQuestions (SQ)",
+     "predicate": "is",
+     "object": "a single-relation KBQA task",
+     "source_passage_ids": [
+      "1704.06194::s12::p001"
+     ],
+     "source_section": "Task Introduction & Settings",
+     "evidence": "SimpleQuestions (SQ): It is a single-relation KBQA task.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b0:f03",
+     "subject": "The KB we use",
+     "predicate": "consists of",
+     "object": "a Freebase subset with 2M entities (FB2M) BIBREF2",
+     "source_passage_ids": [
+      "1704.06194::s12::p001"
+     ],
+     "source_section": "Task Introduction & Settings",
+     "evidence": "The KB we use consists of a Freebase subset with 2M entities (FB2M) BIBREF2 , in order to compare with previous research.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b0:f04",
+     "subject": "yin2016simple",
+     "predicate": "evaluated",
+     "object": "their relation extractor on this data set",
+     "source_passage_ids": [
+      "1704.06194::s12::p001"
+     ],
+     "source_section": "Task Introduction & Settings",
+     "evidence": "yin2016simple also evaluated their relation extractor on this data set and released their proposed question-relation pairs",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f00",
+     "subject": "WebQSP (WQ)",
+     "predicate": "is",
+     "object": "a multi-relation KBQA task",
+     "source_passage_ids": [
+      "1704.06194::s12::p002"
+     ],
+     "source_section": "Task Introduction & Settings",
+     "evidence": "WebQSP (WQ): A multi-relation KBQA task.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f01",
+     "subject": "the size of hidden states for LSTMs",
+     "predicate": "is tuned on",
+     "object": "development sets",
+     "source_passage_ids": [
+      "1704.06194::s12::p003"
+     ],
+     "source_section": "Task Introduction & Settings",
+     "evidence": "We tune the following hyper-parameters on development sets: (1) the size of hidden states for LSTMs ({50, 100, 200, 400});",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f02",
+     "subject": "learning rate",
+     "predicate": "is tuned on",
+     "object": "development sets",
+     "source_passage_ids": [
+      "1704.06194::s12::p003"
+     ],
+     "source_section": "Task Introduction & Settings",
+     "evidence": "(2) learning rate ({0.1, 0.5, 1.0, 2.0});",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f03",
+     "subject": "the number of training epochs",
+     "predicate": "is tuned on",
+     "object": "development sets",
+     "source_passage_ids": [
+      "1704.06194::s12::p003"
+     ],
+     "source_section": "Task Introduction & Settings",
+     "evidence": "and (4) the number of training epochs.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f04",
+     "subject": "All word vectors",
+     "predicate": "are initialized with",
+     "object": "300- $d$ pretrained word embeddings BIBREF27",
+     "source_passage_ids": [
+      "1704.06194::s12::p004"
+     ],
+     "source_section": "Task Introduction & Settings",
+     "evidence": "All word vectors are initialized with 300- $d$ pretrained word embeddings BIBREF27 .",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f05",
+     "subject": "The embeddings of relation names",
+     "predicate": "are",
+     "object": "randomly initialized",
+     "source_passage_ids": [
+      "1704.06194::s12::p004"
+     ],
+     "source_section": "Task Introduction & Settings",
+     "evidence": "The embeddings of relation names are randomly initialized, since existing pre-trained relation embeddings (e.g. TransE) usually support limited sets of relation names.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f06",
+     "subject": "existing pre-trained relation embeddings (e.g. TransE)",
+     "predicate": "usually support",
+     "object": "limited sets of relation names",
+     "source_passage_ids": [
+      "1704.06194::s12::p004"
+     ],
+     "source_section": "Task Introduction & Settings",
+     "evidence": "since existing pre-trained relation embeddings (e.g. TransE) usually support limited sets of relation names.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f07",
+     "subject": "The baseline BiLSTM with relation word sequence",
+     "predicate": "appears to be",
+     "object": "the best baseline on WebQSP",
+     "source_passage_ids": [
+      "1704.06194::s13::p000"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "The baseline BiLSTM with relation word sequence appears to be the best baseline on WebQSP and is close to the previous best result of AMPCNN on SimpleQuestions.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f08",
+     "subject": "using only relation names instead of words",
+     "predicate": "results in",
+     "object": "a weaker baseline BiLSTM model",
+     "source_passage_ids": [
+      "1704.06194::s13::p001"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "Note that using only relation names instead of words results in a weaker baseline BiLSTM model.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f09",
+     "subject": "the drop",
+     "predicate": "is",
+     "object": "much smaller on WebQSP",
+     "source_passage_ids": [
+      "1704.06194::s13::p001"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "However, the drop is much smaller on WebQSP, and it suggests that unseen relations have a much bigger impact on SimpleQuestions.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f10",
+     "subject": "The bottom of Table 2",
+     "predicate": "shows",
+     "object": "ablation results of the proposed HR-BiLSTM",
+     "source_passage_ids": [
+      "1704.06194::s13::p002"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "The bottom of Table 2 shows ablation results of the proposed HR-BiLSTM.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f11",
+     "subject": "hierarchical matching between questions and both relation names and relation words",
+     "predicate": "yields",
+     "object": "improvement on both datasets, especially for SimpleQuestions (93.3% vs. 91.2/88.8%)",
+     "source_passage_ids": [
+      "1704.06194::s13::p002"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "First, hierarchical matching between questions and both relation names and relation words yields improvement on both datasets, especially for SimpleQuestions (93.3% vs. 91.2/88.8%).",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f12",
+     "subject": "residual learning",
+     "predicate": "helps",
+     "object": "hierarchical matching compared to weighted-sum and attention-based baselines",
+     "source_passage_ids": [
+      "1704.06194::s13::p002"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "Second, residual learning helps hierarchical matching compared to weighted-sum and attention-based baselines (see Section \"Hierarchical Matching between Relation and Question\" ).",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f13",
+     "subject": "the one-way model",
+     "predicate": "gives",
+     "object": "better results",
+     "source_passage_ids": [
+      "1704.06194::s13::p002"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "For the attention-based baseline, we tried the model from BIBREF24 and its one-way variations, where the one-way model gives better results.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f14",
+     "subject": "residual learning",
+     "predicate": "significantly helps on",
+     "object": "WebQSP (80.65% to 82.53%)",
+     "source_passage_ids": [
+      "1704.06194::s13::p002"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "Note that residual learning significantly helps on WebQSP (80.65% to 82.53%), while it does not help as much on SimpleQuestions.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f15",
+     "subject": "removing the deep layers",
+     "predicate": "only causes",
+     "object": "a small drop in performance on SimpleQuestions",
+     "source_passage_ids": [
+      "1704.06194::s13::p002"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "On SimpleQuestions, even removing the deep layers only causes a small drop in performance.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b1:f16",
+     "subject": "WebQSP",
+     "predicate": "benefits more from",
+     "object": "residual and deeper architecture",
+     "source_passage_ids": [
+      "1704.06194::s13::p002"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "WebQSP benefits more from residual and deeper architecture, possibly because in this dataset it is more important to handle larger scope of context matching.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f00",
+     "subject": "replacing BiLSTM with CNN in our hierarchical matching framework",
+     "predicate": "results in",
+     "object": "a large performance drop on WebQSP",
+     "source_passage_ids": [
+      "1704.06194::s13::p003"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "replacing BiLSTM with CNN in our hierarchical matching framework results in a large performance drop",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f01",
+     "subject": "the gap",
+     "predicate": "is",
+     "object": "much smaller on SimpleQuestions",
+     "source_passage_ids": [
+      "1704.06194::s13::p003"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "Yet on SimpleQuestions the gap is much smaller.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f02",
+     "subject": "the LSTM relation encoder",
+     "predicate": "can better learn",
+     "object": "the composition of chains of relations in WebQSP",
+     "source_passage_ids": [
+      "1704.06194::s13::p003"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "the LSTM relation encoder can better learn the composition of chains of relations in WebQSP",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f03",
+     "subject": "the LSTM relation encoder",
+     "predicate": "is better at dealing with",
+     "object": "longer dependencies",
+     "source_passage_ids": [
+      "1704.06194::s13::p003"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "as it is better at dealing with longer dependencies",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f04",
+     "subject": "training of the weighted-sum model",
+     "predicate": "usually falls to",
+     "object": "local optima",
+     "source_passage_ids": [
+      "1704.06194::s13::p004"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "training of the weighted-sum model usually falls to local optima",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f05",
+     "subject": "one run",
+     "predicate": "gives",
+     "object": "weights of -75.39/0.14 for the two layers",
+     "source_passage_ids": [
+      "1704.06194::s13::p004"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "one run gives us weights of -75.39/0.14 for the two layers",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f06",
+     "subject": "one run",
+     "predicate": "gives",
+     "object": "much lower training accuracy (91.94%) compared to HR-BiLSTM (95.67%)",
+     "source_passage_ids": [
+      "1704.06194::s13::p004"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "It also gives much lower training accuracy (91.94%) compared to HR-BiLSTM (95.67%)",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f07",
+     "subject": "training deep BiLSTMs",
+     "predicate": "is",
+     "object": "more difficult without shortcut connections",
+     "source_passage_ids": [
+      "1704.06194::s13::p005"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "training deep BiLSTMs is more difficult without shortcut connections",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f08",
+     "subject": "deeper BiLSTM",
+     "predicate": "does not always result in",
+     "object": "lower training accuracy",
+     "source_passage_ids": [
+      "1704.06194::s13::p005"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "deeper BiLSTM does not always result in lower training accuracy",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f09",
+     "subject": "HR-BiLSTM",
+     "predicate": "is more than",
+     "object": "combination of two BiLSTMs with residual connections",
+     "source_passage_ids": [
+      "1704.06194::s13::p006"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "HR-BiLSTM is more than combination of two BiLSTMs with residual connections",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f10",
+     "subject": "HR-BiLSTM",
+     "predicate": "encourages",
+     "object": "the hierarchical architecture to learn different levels of abstraction",
+     "source_passage_ids": [
+      "1704.06194::s13::p006"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "it encourages the hierarchical architecture to learn different levels of abstraction",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f11",
+     "subject": "the residual and deep structures",
+     "predicate": "contribute to",
+     "object": "the good performance of HR-BiLSTM",
+     "source_passage_ids": [
+      "1704.06194::s13::p006"
+     ],
+     "source_section": "Relation Detection Results",
+     "evidence": "This proves that the residual and deep structures both contribute to the good performance of HR-BiLSTM.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f12",
+     "subject": "STAGG BIBREF4",
+     "predicate": "is",
+     "object": "the state-of-the-art on WebQSP",
+     "source_passage_ids": [
+      "1704.06194::s14::p000"
+     ],
+     "source_section": "KBQA End-Task Results",
+     "evidence": "STAGG BIBREF4 , the state-of-the-art on WebQSP",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f13",
+     "subject": "AMPCNN BIBREF20",
+     "predicate": "is",
+     "object": "the state-of-the-art on SimpleQuestions",
+     "source_passage_ids": [
+      "1704.06194::s14::p000"
+     ],
+     "source_section": "KBQA End-Task Results",
+     "evidence": "AMPCNN BIBREF20 , the state-of-the-art on SimpleQuestions",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b2:f14",
+     "subject": "these two baselines",
+     "predicate": "do not generalize well when applied to",
+     "object": "the other dataset",
+     "source_passage_ids": [
+      "1704.06194::s14::p000"
+     ],
+     "source_section": "KBQA End-Task Results",
+     "evidence": "they do not generalize well when applied to the other dataset",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b3:f00",
+     "subject": "The third block of the table",
+     "predicate": "details",
+     "object": "two ablation tests for the proposed components in our KBQA systems",
+     "source_passage_ids": [
+      "1704.06194::s14::p002"
+     ],
+     "source_section": "KBQA End-Task Results",
+     "evidence": "The third block of the table details two ablation tests for the proposed components in our KBQA systems",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b3:f01",
+     "subject": "Removing the entity re-ranking step",
+     "predicate": "significantly decreases",
+     "object": "the scores",
+     "source_passage_ids": [
+      "1704.06194::s14::p002"
+     ],
+     "source_section": "KBQA End-Task Results",
+     "evidence": "Removing the entity re-ranking step significantly decreases the scores.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b3:f02",
+     "subject": "the re-ranking step",
+     "predicate": "relies on",
+     "object": "the relation detection models",
+     "source_passage_ids": [
+      "1704.06194::s14::p002"
+     ],
+     "source_section": "KBQA End-Task Results",
+     "evidence": "Since the re-ranking step relies on the relation detection models",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b3:f03",
+     "subject": "STAGG",
+     "predicate": "uses",
+     "object": "multiple relation detectors",
+     "source_passage_ids": [
+      "1704.06194::s14::p003"
+     ],
+     "source_section": "KBQA End-Task Results",
+     "evidence": "like STAGG, which uses multiple relation detectors",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b3:f04",
+     "subject": "the top-3 relation detectors",
+     "predicate": "gives",
+     "object": "a significant performance boost",
+     "source_passage_ids": [
+      "1704.06194::s14::p003"
+     ],
+     "source_section": "KBQA End-Task Results",
+     "evidence": "this gives a significant performance boost",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b3:f05",
+     "subject": "the top-3 relation detectors",
+     "predicate": "resulting in",
+     "object": "a new state-of-the-art result on SimpleQuestions and a result comparable to the state-of-the-art on WebQSP",
+     "source_passage_ids": [
+      "1704.06194::s14::p003"
+     ],
+     "source_section": "KBQA End-Task Results",
+     "evidence": "resulting in a new state-of-the-art result on SimpleQuestions and a result comparable to the state-of-the-art on WebQSP.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b3:f06",
+     "subject": "KB relation detection",
+     "predicate": "is",
+     "object": "a key step in KBQA",
+     "source_passage_ids": [
+      "1704.06194::s15::p000"
+     ],
+     "source_section": "Conclusion",
+     "evidence": "KB relation detection is a key step in KBQA",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b3:f07",
+     "subject": "KB relation detection",
+     "predicate": "is significantly different from",
+     "object": "general relation extraction tasks",
+     "source_passage_ids": [
+      "1704.06194::s15::p000"
+     ],
+     "source_section": "Conclusion",
+     "evidence": "is significantly different from general relation extraction tasks.",
+     "group_id": "1704.06194::g01"
+    },
+    {
+     "fact_id": "1704.06194::g01:b3:f08",
+     "subject": "HR-BiLSTM",
+     "predicate": "performs",
+     "object": "hierarchical matching between questions and KB relations",
+     "source_passage_ids": [
+      "1704.06194::s15::p000"
+     ],
+     "source_section": "Conclusion",
+     "evidence": "HR-BiLSTM, that performs hierarchical matching between questions and KB relations.",
+     "group_id": "1704.06194::g01"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "s(ê, r̂; q)",
+      "is defined as",
+      "max _{e ∈ EL_{K′}^{′}(q), r ∈ R_e} ( β · s_rerank(e;q) + (1−β) · s_rel (r;e,q) )"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "β",
+      "is",
+      "a hyperparameter to be tuned"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "adopt",
+      "an additional constraint detection step based on text matching"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Our method",
+      "can be viewed as",
+      "entity-linking on a KB sub-graph"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "It",
+      "contains",
+      "two steps"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "compute",
+      "a matching score between each n -gram in the input question (without overlapping the topic entity) and entity name of c"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "will add",
+      "the constraint entity c (and r_c ) to the query"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "use",
+      "the SimpleQuestions BIBREF2 and WebQSP BIBREF25 datasets"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "can directly evaluate",
+      "relation detection performance independently as well as evaluate on the KBQA end task"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "run",
+      "our relation detection model on their data set"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "start with",
+      "their entity linking results"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "use",
+      "the entire Freebase KB for evaluation purposes"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "use",
+      "S-MART BIBREF26 entity-linking outputs"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "create",
+      "a new relation detection task from the WebQSP data set"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Table 2",
+      "shows",
+      "the results on two relation detection tasks"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "The AMPCNN result",
+      "is from",
+      "BIBREF20"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Our proposed HR-BiLSTM",
+      "outperformed",
+      "the best baselines on both tasks by margins of 2-3%"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "The model",
+      "yields",
+      "a significant performance drop on SimpleQuestions (91.2% to 88.9%)"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our HR-BiLSTM model",
+      "achieves",
+      "the best scores"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "a two-layer BiLSTM",
+      "converges to",
+      "94.99%"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "a single-layer BiLSTM",
+      "achieved",
+      "95.25%"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "replacing the deep BiLSTM question encoder with two single-layer BiLSTMs (both on words) with shortcut connections between their hidden states",
+      "decreases",
+      "test accuracy to 76.11%"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Table 3",
+      "compares",
+      "our system with two published baselines"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "another baseline",
+      "uses",
+      "our KBQA system but replaces HR-BiLSTM with our implementation of AMPCNN (for SimpleQuestions) or the char-3-gram BiCNN (for WebQSP) relation detectors"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our method",
+      "includes",
+      "an improved relation detector (HR-BiLSTM)"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our method",
+      "improves",
+      "the KBQA end task by 2-3% (4th row)"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our system",
+      "does not use",
+      "joint-inference or feature-based re-ranking step"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our joint performance on topic entity and core-chain detection",
+      "is",
+      "77.5% top-1 accuracy"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "try to use",
+      "the top-3 relation detectors from Section \"Relation Detection Results\""
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Our model",
+      "outperforms",
+      "the previous methods on KB relation detection tasks"
+     ]
+    }
+   ],
+   "n_raw": 76,
+   "error": null,
+   "calls": [
+    {
+     "block": 0,
+     "n_passages": 6,
+     "n_raw": 16,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1025,
+      "completion_tokens": 1263,
+      "total_tokens": 2288,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 570
+    },
+    {
+     "block": 1,
+     "n_passages": 6,
+     "n_raw": 24,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1232,
+      "completion_tokens": 1898,
+      "total_tokens": 3130,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 769
+    },
+    {
+     "block": 2,
+     "n_passages": 6,
+     "n_raw": 24,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1173,
+      "completion_tokens": 1713,
+      "total_tokens": 2886,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 721
+    },
+    {
+     "block": 3,
+     "n_passages": 3,
+     "n_raw": 12,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 787,
+      "completion_tokens": 821,
+      "total_tokens": 1608,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 386
+    }
+   ]
+  }
+ ]
+}

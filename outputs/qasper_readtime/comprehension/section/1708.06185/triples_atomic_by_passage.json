@@ -1,0 +1,306 @@
+{
+ "1708.06185::s00::p000": [
+  [
+   "Twitter",
+   "has emerged as",
+   "a platform where people express themselves and react to events in real-time"
+  ],
+  [
+   "nearly 500 million tweets",
+   "are sent",
+   "per day"
+  ],
+  [
+   "each tweet",
+   "has",
+   "meta data like location and language used by the sender"
+  ],
+  [
+   "tweets",
+   "might not be",
+   "grammatically correct"
+  ]
+ ],
+ "1708.06185::s00::p001": [
+  [
+   "The Task 1 of WASSA-2017",
+   "poses",
+   "a problem of finding emotion intensity of four emotions namely anger, fear, joy, sadness from tweets"
+  ]
+ ],
+ "1708.06185::s01::p000": [
+  [
+   "The preprocessing step",
+   "modifies",
+   "the raw tweets before they are passed to feature extraction"
+  ],
+  [
+   "Tweets",
+   "are processed using",
+   "tweetokenize tool"
+  ],
+  [
+   "username handles",
+   "are replaced with",
+   "USERNAME"
+  ],
+  [
+   "A continuous sequence of emojis",
+   "is broken into",
+   "individual tokens"
+  ]
+ ],
+ "1708.06185::s02::p000": [
+  [
+   "Many tasks related to sentiment or emotion analysis",
+   "depend upon",
+   "affect, opinion, sentiment, sense and emotion lexicons"
+  ],
+  [
+   "These lexicons",
+   "associate",
+   "words to corresponding sentiment or emotion metrics"
+  ],
+  [
+   "the semantic meaning of words, sentences, and documents",
+   "are preserved and compactly represented using",
+   "low dimensional vectors"
+  ],
+  [
+   "one hot encoding vectors",
+   "are",
+   "sparse and high dimensional"
+  ],
+  [
+   "traditional NLP features like word N-grams, character N-grams, Part-Of-Speech N-grams and word clusters",
+   "are known to perform well on",
+   "various tasks"
+  ]
+ ],
+ "1708.06185::s02::p001": [
+  [
+   "EmoInt",
+   "comprises of",
+   "all features available in the baseline model BIBREF2 along with additional feature extractors and bi-gram support"
+  ],
+  [
+   "Fourteen such feature extractors",
+   "have been implemented",
+   "which can be clubbed into 3 major categories"
+  ]
+ ],
+ "1708.06185::s02::p006": [
+  [
+   "AFINN BIBREF3 word list",
+   "are manually rated for",
+   "valence with an integer between -5 (Negative Sentiment) and +5 (Positive Sentiment)"
+  ],
+  [
+   "NRC Affect Intensity BIBREF6 lexicons",
+   "provide",
+   "real valued affect intensity"
+  ],
+  [
+   "SentiWordNet BIBREF11",
+   "assigns to each synset of WordNet",
+   "three sentiment scores: positivity, negativity, objectivity"
+  ]
+ ],
+ "1708.06185::s02::p007": [
+  [
+   "GloVe BIBREF13",
+   "is",
+   "an unsupervised learning algorithm for obtaining vector representations for words"
+  ],
+  [
+   "200-dimensional GloVe embeddings trained on 2 Billion tweets",
+   "are integrated",
+   "into the system"
+  ],
+  [
+   "Edinburgh embeddings BIBREF14",
+   "are obtained by",
+   "training skip-gram model on Edinburgh corpus BIBREF15"
+  ],
+  [
+   "Embeddings for each tweet",
+   "are obtained by",
+   "summing up individual word vectors and then dividing by the number of tokens in the tweet"
+  ]
+ ],
+ "1708.06185::s02::p008": [
+  [
+   "Word N-grams, Part-Of-Speech N-grams BIBREF17 , Brown Cluster N-grams BIBREF18 obtained using TweetNLP project",
+   "have been integrated into",
+   "the system"
+  ]
+ ],
+ "1708.06185::s02::p009": [
+  [
+   "The final feature vector",
+   "is",
+   "the concatenation of all the individual features"
+  ],
+  [
+   "The scaling of final features",
+   "is not required",
+   "when used with gradient boosted trees"
+  ],
+  [
+   "standard scaling (zero mean and unit normal)",
+   "may be beneficial for",
+   "neural networks"
+  ]
+ ],
+ "1708.06185::s02::p010": [
+  [
+   "A total of fourteen different feature extractors",
+   "have been implemented",
+   "all of which can be enabled or disabled individually to extract features from a given tweet"
+  ]
+ ],
+ "1708.06185::s03::p000": [
+  [
+   "the train and dev sets",
+   "were merged to perform",
+   "10-fold cross validation"
+  ],
+  [
+   "The predictions",
+   "are averaged across",
+   "all the folds"
+  ],
+  [
+   "the data",
+   "was then passed to",
+   "various regressors Support Vector Regression, AdaBoost, RandomForestRegressor, and, BaggingRegressor of sklearn BIBREF20"
+  ],
+  [
+   "the chosen top performing models",
+   "had",
+   "the least error on evaluation metrics namely Pearson's Correlation Coefficient and Spearman's rank-order correlation"
+  ]
+ ],
+ "1708.06185::s04::p000": [
+  [
+   "an extensive grid search",
+   "was performed through",
+   "the scikit-Learn framework"
+  ],
+  [
+   "an extensive grid search",
+   "used",
+   "stratified 10-fold cross validation"
+  ],
+  [
+   "an extensive grid search",
+   "optimized",
+   "the Pearson's Correlation score"
+  ],
+  [
+   "Best cross-validation results",
+   "were obtained using",
+   "AdaBoost meta regressor with base regressor as XGBoost BIBREF21 with 1000 estimators and 0.1 learning rate"
+  ]
+ ],
+ "1708.06185::s05::p000": [
+  [
+   "various syntax features",
+   "were used namely",
+   "Part-of-Speech tags, brown clusters of TweetNLP project"
+  ],
+  [
+   "various syntax features",
+   "were dropped from",
+   "the final system"
+  ],
+  [
+   "Emoji embeddings BIBREF16",
+   "give better results than",
+   "using plain GloVe and Edinburgh embeddings"
+  ],
+  [
+   "Edinburgh embeddings",
+   "outperform",
+   "GloVe embeddings in Joy and Sadness category"
+  ],
+  [
+   "This system",
+   "ranked",
+   "3 for the entire test dataset"
+  ],
+  [
+   "An ensemble obtained by averaging the results of the top 2 performing models",
+   "outperforms",
+   "all the individual models"
+  ]
+ ],
+ "1708.06185::s06::p000": [
+  [
+   "The relative feature importance",
+   "can be assessed by",
+   "the relative depth of the feature used as a decision node in the tree"
+  ],
+  [
+   "Features used at the top of the tree",
+   "contribute to",
+   "the final prediction decision of a larger fraction of the input samples"
+  ],
+  [
+   "the variance of the estimate",
+   "can be reduced by",
+   "averaging the measure over several randomized trees"
+  ],
+  [
+   "feature importance graphs",
+   "are plotted for",
+   "each emotion"
+  ]
+ ],
+ "1708.06185::s07::p000": [
+  [
+   "the features used",
+   "are mostly",
+   "lexicon based"
+  ],
+  [
+   "the system",
+   "has difficulties in understanding",
+   "sarcastic tweets"
+  ],
+  [
+   "The performance",
+   "is poor with",
+   "very short sentences"
+  ]
+ ],
+ "1708.06185::s08::p000": [
+  [
+   "A light-weight easy to use affect computing framework (EmoInt)",
+   "is open-sourced",
+   "to facilitate ease of experimenting with various lexicon features for text tasks"
+  ],
+  [
+   "EmoInt",
+   "provides",
+   "plug and play access to various feature extractors and handy scripts for creating ensembles"
+  ]
+ ],
+ "1708.06185::s08::p001": [
+  [
+   "Few problems explained in the analysis section",
+   "can be resolved with",
+   "the help of sentence embeddings which take the context information into consideration"
+  ],
+  [
+   "The features used in the system",
+   "are generic enough to use in",
+   "other affective computing tasks on social media text, not just tweet data"
+  ],
+  [
+   "lexicon-based systems",
+   "have",
+   "their good run-time performance during prediction"
+  ]
+ ]
+}

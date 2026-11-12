@@ -1,0 +1,324 @@
+{
+ "kept": [
+  {
+   "insight_id": "2002.04181::g00:i00",
+   "paper_id": "2002.04181",
+   "group_id": "2002.04181::g00",
+   "concise_text": "On the 1,000-tweet dataset, crowdworkers reached 74.7% CCR for entity-level sentiment analysis, while Rosette Text Analytics, Google Cloud, and TensiStrength reached 31.7%, 43.2%, and 44.2%.",
+   "triple": {
+    "subject": "crowdworkers",
+    "predicate": "outperforms",
+    "object": "Rosette Text Analytics, Google Cloud, and TensiStrength on entity-level sentiment analysis CCR"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "2002.04181::s02::p000",
+    "2002.04181::s03::p001"
+   ],
+   "supporting_fact_ids": [
+    "2002.04181::g00:b1:f00",
+    "2002.04181::g00:b1:f02",
+    "2002.04181::g00:b2:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.95,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Cited paragraphs jointly support the 1,000-tweet dataset and CCR values; the comparison that crowdworkers outperform the three tools is directly inferable from 74.7% vs 31.7%, 43.2%, and 44.2%."
+   },
+   "unit_id": "2002.04181::u000"
+  },
+  {
+   "insight_id": "2002.04181::g00:i03",
+   "paper_id": "2002.04181",
+   "group_id": "2002.04181::g00",
+   "concise_text": "The baseline performance that any new machine learning system for political tweet analysis would compete against was measured as 31.7% for Rosette Text Analytics, 43.2% for Google Cloud, and 44.2% for TensiStrength.",
+   "triple": {
+    "subject": "existing NLP tools",
+    "predicate": "evaluated_on",
+    "object": "baseline performance of 31.7%, 43.2%, and 44.2% CCR"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "2002.04181::s00::p001",
+    "2002.04181::s03::p001"
+   ],
+   "supporting_fact_ids": [
+    "2002.04181::g00:b0:f01",
+    "2002.04181::g00:b2:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "s00::p001 states existing NLP tools provide baseline performance for new ML systems, and s03::p001 gives the CCR values for Rosette, Google Cloud, and TensiStrength; jointly supports the composed insight."
+   },
+   "unit_id": "2002.04181::u003"
+  },
+  {
+   "insight_id": "2002.04181::g00:i04",
+   "paper_id": "2002.04181",
+   "group_id": "2002.04181::g00",
+   "concise_text": "The 3-scale rating of \"negative,\" \"neutral,\" and \"positive\" corresponds to the three-class sentiment analysis problem whose CCR was 74.7% for crowdworkers.",
+   "triple": {
+    "subject": "3-scale rating of \"negative,\" \"neutral,\" and \"positive\"",
+    "predicate": "extends",
+    "object": "three-class sentiment analysis problem with 74.7% CCR for crowdworkers"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "2002.04181::s02::p000",
+    "2002.04181::s02::p004",
+    "2002.04181::s03::p001"
+   ],
+   "supporting_fact_ids": [
+    "2002.04181::g00:b1:f02",
+    "2002.04181::g00:b1:f11",
+    "2002.04181::g00:b2:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "The 3-scale rating, three-class sentiment problem, and 74.7% crowdworker CCR are all present across cited paragraphs; 'corresponds to' is a reasonable entity-resolution link, though 'extends' in the triple is awkward."
+   },
+   "unit_id": "2002.04181::u004"
+  },
+  {
+   "insight_id": "2002.04181::g00:i05",
+   "paper_id": "2002.04181",
+   "group_id": "2002.04181::g00",
+   "concise_text": "The groundtruth labels considered from experts in political communication contain 210 positive sentiments, 521 neutral sentiments, and 305 negative sentiments to the candidates.",
+   "triple": {
+    "subject": "experts in political communication labels",
+    "predicate": "evaluated_on",
+    "object": "210 positive sentiments, 521 neutral sentiments, and 305 negative sentiments"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "2002.04181::s02::p000",
+    "2002.04181::s03::p001"
+   ],
+   "supporting_fact_ids": [
+    "2002.04181::g00:b1:f00",
+    "2002.04181::g00:b2:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "s02::p000 identifies expert labels as groundtruth, and s03::p001 gives the groundtruth sentiment counts; jointly supports the composed insight."
+   },
+   "unit_id": "2002.04181::u005"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "2002.04181::g00:i01",
+   "paper_id": "2002.04181",
+   "group_id": "2002.04181::g00",
+   "concise_text": "The experiments using correct classification rate (CCR) found entity-level sentiment analysis difficult for existing tools, while recognition of the politician entity was easier.",
+   "triple": {
+    "subject": "correct classification rate (CCR) experiments",
+    "predicate": "show",
+    "object": "entity-level sentiment analysis difficult and politician entity recognition easier"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "2002.04181::s00::p002",
+    "2002.04181::s02::p004",
+    "2002.04181::s03::p000",
+    "2002.04181::s03::p001"
+   ],
+   "supporting_fact_ids": [
+    "2002.04181::g00:b1:f10",
+    "2002.04181::g00:b1:f12",
+    "2002.04181::g00:b1:f14",
+    "2002.04181::g00:b1:f15",
+    "2002.04181::g00:b2:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "The insight is essentially a restatement/paraphrase of s00::p002 combined with the CCR definition; it does not add a sufficiently novel composed finding."
+   },
+   "unit_id": "2002.04181::u001"
+  },
+  {
+   "insight_id": "2002.04181::g00:i02",
+   "paper_id": "2002.04181",
+   "group_id": "2002.04181::g00",
+   "concise_text": "Because existing NLP systems cannot accurately perform sentiment analysis of political tweets and crowdworkers yield well above automated results, future work will use a crowdworker-labeled dataset to train a new machine-learning based NLP system.",
+   "triple": {
+    "subject": "existing NLP systems' inaccurate sentiment analysis and crowdworkers' higher accuracy",
+    "predicate": "causes",
+    "object": "future work using a crowdworker-labeled dataset to train a new machine-learning based NLP system"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "2002.04181::s03::p001",
+    "2002.04181::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "2002.04181::g00:b2:f02",
+    "2002.04181::g00:b2:f08",
+    "2002.04181::g00:b2:f09",
+    "2002.04181::g00:b2:f10"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "The text says 'therefore' in future work, but the candidate frames the performance results as causing the future work; this overstates a problem-solution rationale as a causal relation."
+   },
+   "unit_id": "2002.04181::u002"
+  },
+  {
+   "insight_id": "2002.04181::g00:i06",
+   "paper_id": "2002.04181",
+   "group_id": "2002.04181::g00",
+   "concise_text": "The named-entity recognition experiment on the 1,000-tweet dataset found crowdworkers at 98.6% average CCR and automated systems ranging from 77.2% to 96.7%.",
+   "triple": {
+    "subject": "named-entity recognition experiment on the 1,000-tweet dataset",
+    "predicate": "shows",
+    "object": "crowdworkers at 98.6% average CCR and automated systems from 77.2% to 96.7%"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "2002.04181::s02::p000",
+    "2002.04181::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "2002.04181::g00:b1:f00",
+    "2002.04181::g00:b1:f14",
+    "2002.04181::g00:b1:f15"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "The NER CCR values and dataset are directly stated in s03::p000; the insight is a restatement/paraphrase of a single paragraph."
+   },
+   "unit_id": "2002.04181::u006"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "2002.04181::g00:i00",
+    "verdict": {
+     "insight_id": "2002.04181::g00:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Cited paragraphs jointly support the 1,000-tweet dataset and CCR values; the comparison that crowdworkers outperform the three tools is directly inferable from 74.7% vs 31.7%, 43.2%, and 44.2%."
+    }
+   },
+   {
+    "insight_id": "2002.04181::g00:i01",
+    "verdict": {
+     "insight_id": "2002.04181::g00:i01",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "The insight is essentially a restatement/paraphrase of s00::p002 combined with the CCR definition; it does not add a sufficiently novel composed finding."
+    },
+    "reason": "The insight is essentially a restatement/paraphrase of s00::p002 combined with the CCR definition; it does not add a sufficiently novel composed finding."
+   },
+   {
+    "insight_id": "2002.04181::g00:i02",
+    "verdict": {
+     "insight_id": "2002.04181::g00:i02",
+     "keep": false,
+     "support": 0.85,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "The text says 'therefore' in future work, but the candidate frames the performance results as causing the future work; this overstates a problem-solution rationale as a causal relation."
+    },
+    "reason": "The text says 'therefore' in future work, but the candidate frames the performance results as causing the future work; this overstates a problem-solution rationale as a causal relation."
+   },
+   {
+    "insight_id": "2002.04181::g00:i03",
+    "verdict": {
+     "insight_id": "2002.04181::g00:i03",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "s00::p001 states existing NLP tools provide baseline performance for new ML systems, and s03::p001 gives the CCR values for Rosette, Google Cloud, and TensiStrength; jointly supports the composed insight."
+    }
+   },
+   {
+    "insight_id": "2002.04181::g00:i04",
+    "verdict": {
+     "insight_id": "2002.04181::g00:i04",
+     "keep": true,
+     "support": 0.85,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "The 3-scale rating, three-class sentiment problem, and 74.7% crowdworker CCR are all present across cited paragraphs; 'corresponds to' is a reasonable entity-resolution link, though 'extends' in the triple is awkward."
+    }
+   },
+   {
+    "insight_id": "2002.04181::g00:i05",
+    "verdict": {
+     "insight_id": "2002.04181::g00:i05",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "s02::p000 identifies expert labels as groundtruth, and s03::p001 gives the groundtruth sentiment counts; jointly supports the composed insight."
+    }
+   },
+   {
+    "insight_id": "2002.04181::g00:i06",
+    "verdict": {
+     "insight_id": "2002.04181::g00:i06",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "The NER CCR values and dataset are directly stated in s03::p000; the insight is a restatement/paraphrase of a single paragraph."
+    },
+    "reason": "The NER CCR values and dataset are directly stated in s03::p000; the insight is a restatement/paraphrase of a single paragraph."
+   }
+  ],
+  "calls": [
+   {
+    "n": 7,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 3457,
+     "completion_tokens": 583,
+     "total_tokens": 4040,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

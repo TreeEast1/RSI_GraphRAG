@@ -1,0 +1,388 @@
+{
+ "1707.05236::s00::p000": [
+  [
+   "Writing errors",
+   "can occur in",
+   "many different forms"
+  ],
+  [
+   "Automatically identifying all of these errors",
+   "is",
+   "a challenging task"
+  ],
+  [
+   "the amount of available annotated data",
+   "is",
+   "very limited"
+  ],
+  [
+   "additional training data",
+   "has",
+   "the biggest impact on improving performance"
+  ]
+ ],
+ "1707.05236::s00::p001": [
+  [
+   "realistic artificial data",
+   "would allow",
+   "any grammatically correct text to be transformed into annotated examples containing writing errors"
+  ],
+  [
+   "Supervised error generation systems",
+   "would provide",
+   "an efficient method for anonymising the source corpus"
+  ],
+  [
+   "error statistics from a private corpus",
+   "can be aggregated and applied to",
+   "a different target text"
+  ],
+  [
+   "naive methods for error generation",
+   "can create",
+   "data that does not resemble natural errors"
+  ]
+ ],
+ "1707.05236::s00::p002": [
+  [
+   "Previous work on artificial error generation (AEG)",
+   "has focused on",
+   "specific error types"
+  ],
+  [
+   "Felice2014a",
+   "investigated",
+   "the use of linguistic information when generating artificial data for error correction"
+  ],
+  [
+   "Felice2014a",
+   "restricted",
+   "the approach to only five error types"
+  ],
+  [
+   "the error types investigated by Felice2014a",
+   "cover",
+   "only 35.74% of all errors present in the CoNLL 2014 training dataset"
+  ]
+ ],
+ "1707.05236::s00::p003": [
+  [
+   "a framework for generating errors based on statistical machine translation (SMT)",
+   "trains",
+   "a model to translate from correct into incorrect sentences"
+  ],
+  [
+   "a method for learning error patterns from an annotated corpus",
+   "transplants",
+   "them into error-free text"
+  ],
+  [
+   "each method",
+   "provides",
+   "significant improvements over using only the available training set"
+  ],
+  [
+   "a combination of both",
+   "gives",
+   "an absolute improvement of 4.3% in INLINEFORM0"
+  ]
+ ],
+ "1707.05236::s01::p000": [
+  [
+   "The models",
+   "receive",
+   "grammatically correct text as input"
+  ],
+  [
+   "The models",
+   "modify",
+   "certain tokens to produce incorrect sequences"
+  ],
+  [
+   "The alternative versions of each sentence",
+   "are aligned using",
+   "Levenshtein distance"
+  ],
+  [
+   "these alignments",
+   "are not always",
+   "perfect"
+  ],
+  [
+   "alternative alignments of similar sentences",
+   "often result in",
+   "the same binary labeling"
+  ]
+ ],
+ "1707.05236::s01::p001": [
+  [
+   "this automatically labeled data",
+   "is used for",
+   "training error detection models"
+  ]
+ ],
+ "1707.05236::s02::p000": [
+  [
+   "AEG",
+   "is treated as",
+   "a translation task"
+  ],
+  [
+   "Existing SMT approaches",
+   "are optimised for",
+   "identifying context patterns that correspond to specific output sequences"
+  ],
+  [
+   "round-trip translation",
+   "has been shown to be promising for",
+   "correcting grammatical errors"
+  ]
+ ],
+ "1707.05236::s02::p001": [
+  [
+   "error-corrected sentences in the training data",
+   "are treated as",
+   "the source"
+  ],
+  [
+   "the original sentences written by language learners",
+   "are treated as",
+   "the target"
+  ],
+  [
+   "Pialign",
+   "is used to create",
+   "a phrase translation table directly from model probabilities"
+  ],
+  [
+   "Decoding",
+   "is performed using",
+   "Moses"
+  ],
+  [
+   "the language model used during decoding",
+   "is built from",
+   "the original erroneous sentences in the learner corpus"
+  ],
+  [
+   "The IRSTLM Toolkit",
+   "is used for building",
+   "a 5-gram language model with modified Kneser-Ney smoothing"
+  ]
+ ],
+ "1707.05236::s03::p000": [
+  [
+   "This approach",
+   "is based on",
+   "the best method identified by Felice2014a"
+  ]
+ ],
+ "1707.05236::s03::p001": [
+  [
+   "The original and corrected sentences in the corpus",
+   "are aligned and used to identify",
+   "short transformation patterns in the form of (incorrect phrase, correct phrase)"
+  ],
+  [
+   "The length of each pattern",
+   "is",
+   "the affected phrase, plus up to one token of context on both sides"
+  ],
+  [
+   "a word form changes between the incorrect and correct text",
+   "is fully saved in",
+   "the pattern"
+  ],
+  [
+   "the POS tags",
+   "are used for",
+   "matching"
+  ]
+ ],
+ "1707.05236::s03::p002": [
+  [
+   "the original sentence `We went shop on Saturday' and the corrected version `We went shopping on Saturday'",
+   "would produce",
+   "the following pattern"
+  ]
+ ],
+ "1707.05236::s03::p003": [
+  [
+   "(VVD shop_VV0 II, VVD shopping_VVG II)",
+   "is",
+   "the following pattern"
+  ]
+ ],
+ "1707.05236::s03::p004": [
+  [
+   "learned patterns",
+   "are reversed",
+   "looking for the correct side of the tuple in the input sentence"
+  ],
+  [
+   "patterns with frequency INLINEFORM0",
+   "yields",
+   "a total of 35,625 patterns from our training data"
+  ],
+  [
+   "generation process",
+   "is repeated until",
+   "all the required errors have been generated or the sentence is exhausted"
+  ],
+  [
+   "required POS tags",
+   "were generated with",
+   "RASP BIBREF11 , using the CLAWS2 tagset"
+  ]
+ ],
+ "1707.05236::s04::p000": [
+  [
+   "model",
+   "receives",
+   "a sequence of tokens as input"
+  ],
+  [
+   "tokens",
+   "are first mapped to",
+   "a distributed vector space"
+  ],
+  [
+   "model",
+   "is optimised by minimising",
+   "categorical cross-entropy with respect to the correct labels"
+  ]
+ ],
+ "1707.05236::s05::p000": [
+  [
+   "corrected version of the same FCE training set",
+   "has",
+   "450K tokens"
+  ],
+  [
+   "example sentences extracted from the English Vocabulary Profile",
+   "have",
+   "270K tokens"
+  ]
+ ],
+ "1707.05236::s05::p001": [
+  [
+   "FCE test data",
+   "has",
+   "41K tokens"
+  ],
+  [
+   "two alternative annotations of the CoNLL 2014 Shared Task dataset",
+   "have",
+   "30K tokens"
+  ],
+  [
+   "Each artificial error generation system",
+   "was used to generate",
+   "3 different versions of the artificial data"
+  ]
+ ],
+ "1707.05236::s05::p002": [
+  [
+   "INLINEFORM1",
+   "calculates",
+   "a weighted harmonic mean of precision and recall"
+  ]
+ ],
+ "1707.05236::s05::p003": [
+  [
+   "error detection performance",
+   "is substantially improved by",
+   "making use of artificially generated data, created by any of the described methods"
+  ],
+  [
+   "pattern-based (PAT) and machine translation (MT) approaches",
+   "cover",
+   "all error types"
+  ],
+  [
+   "Combining the pattern-based approach with the machine translation system (Ann+PAT+MT)",
+   "gave",
+   "the best overall performance on all datasets"
+  ],
+  [
+   "two frameworks",
+   "learn to generate",
+   "different types of errors"
+  ]
+ ],
+ "1707.05236::s05::p004": [
+  [
+   "the improvement for each of the systems using artificial data",
+   "was significant over",
+   "using only manual annotation"
+  ],
+  [
+   "the final combination system",
+   "is significantly better compared to",
+   "the Felice2014a system, on all three datasets"
+  ]
+ ],
+ "1707.05236::s05::p005": [
+  [
+   "The error generation methods",
+   "can generate",
+   "alternative versions of the same input text"
+  ],
+  [
+   "the pattern-based method",
+   "randomly samples",
+   "the error locations"
+  ],
+  [
+   "the SMT system",
+   "can provide",
+   "an n-best list of alternative translations"
+  ]
+ ],
+ "1707.05236::s06::p000": [
+  [
+   "Brockett2006",
+   "constructed",
+   "regular expressions for transforming correct sentences to contain noun number errors"
+  ],
+  [
+   "Rozovskaya2010a",
+   "learned",
+   "confusion sets from an annotated corpus in order to generate preposition errors"
+  ],
+  [
+   "Foster2009",
+   "devised",
+   "a tool for generating errors for different types"
+  ],
+  [
+   "Felice2014a",
+   "learned",
+   "error type distributions for generating five types of errors"
+  ]
+ ],
+ "1707.05236::s07::p000": [
+  [
+   "textual patterns learned from an annotated corpus",
+   "are used for",
+   "inserting errors into correct input text"
+  ]
+ ],
+ "1707.05236::s07::p001": [
+  [
+   "The addition of artificial data to the training process",
+   "was evaluated on",
+   "three error detection annotations, using the FCE and CoNLL 2014 datasets"
+  ],
+  [
+   "Making use of artificial data",
+   "provided",
+   "improvements for all data generation methods"
+  ],
+  [
+   "The combination of the pattern-based method with the machine translation approach",
+   "gave",
+   "further substantial improvements and the best performance on all datasets"
+  ]
+ ]
+}

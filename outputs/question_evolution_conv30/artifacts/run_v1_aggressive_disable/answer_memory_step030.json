@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "created": "2026-11-10T00:44:34",
+    "n_updates": 0,
+    "n_merges": 0,
+    "n_disabled": 4,
+    "n_rollbacks": 0
+  },
+  "step": 30,
+  "label": "after_30_feedback",
+  "n_active": 2,
+  "skills": [
+    {
+      "skill_id": "ans_use_explicit_caused_state_wording",
+      "title": "Use explicit caused-state wording",
+      "trigger_conditions": "When a question asks what an activity or experience makes someone feel/become, and evidence contains an explicit causative statement naming that state.",
+      "applicable_question_patterns": [
+        "What does an activity make someone?",
+        "How does an activity make someone feel?",
+        "What state does an activity cause for someone?"
+      ],
+      "categories": [
+        4
+      ],
+      "action_instructions": "Prefer the exact adjective or state in an explicit causative phrase over nearby metaphors, summaries, or paraphrases. Quote or minimally return that stated state, and avoid substituting broader interpretations.",
+      "expected_output_format": "A short phrase or single word naming the stated state.",
+      "evidence_requirements": "Use evidence that directly links the activity to the resulting state with causative wording.",
+      "failure_modes": [
+        "Using a metaphorical paraphrase",
+        "Choosing a related but unstated state",
+        "Answering from a different session or nearby context"
+      ],
+      "source_training_qids": [
+        60
+      ],
+      "success_count": 0,
+      "failure_count": 3,
+      "confidence": 0.2,
+      "version": 1,
+      "status": "disabled",
+      "created_at_feedback": 3,
+      "last_updated_feedback": 3,
+      "history": [
+        {
+          "version": 1,
+          "feedback_step": 3,
+          "qid": 60,
+          "event": "created"
+        },
+        {
+          "feedback_step": -1,
+          "event": "disabled",
+          "reason": "negative_transfer:3f/0s"
+        }
+      ],
+      "disabled_reason": "negative_transfer:3f/0s"
+    },
+    {
+      "skill_id": "ans_return_concise_explicit_purpose_for_why_",
+      "title": "Return concise explicit purpose for why-questions",
+      "trigger_conditions": "When a why-question asks for a reason and the evidence contains an explicit purpose phrase plus later elaboration.",
+      "applicable_question_patterns": [
+        "Why did someone do an action?",
+        "What was the reason for an action?",
+        "For what purpose was something done?"
+      ],
+      "categories": [
+        4
+      ],
+      "action_instructions": "Use the shortest explicit purpose phrase tied directly to the asked action. Omit later explanations, expected benefits, pronouns, and paraphrases unless needed to preserve meaning.",
+      "expected_output_format": "A minimal phrase, typically starting with a purpose marker, with no extra clauses.",
+      "evidence_requirements": "Prefer the sentence that directly states the reason for the target action over subsequent elaborations.",
+      "failure_modes": [
+        "Adding later explanatory clauses",
+        "Using first-person wording from dialogue",
+        "Substituting a broader inferred motive"
+      ],
+      "source_training_qids": [
+        58
+      ],
+      "success_count": 0,
+      "failure_count": 3,
+      "confidence": 0.2,
+      "version": 1,
+      "status": "disabled",
+      "created_at_feedback": 8,
+      "last_updated_feedback": 8,
+      "history": [
+        {
+          "version": 1,
+          "feedback_step": 8,
+          "qid": 58,
+          "event": "created"
+        },
+        {
+          "feedback_step": -1,
+          "event": "disabled",
+          "reason": "negative_transfer:3f/0s"
+        }
+      ],
+      "disabled_reason": "negative_transfer:3f/0s"
+    },
+    {
+      "skill_id": "ans_preserve_temporal_granularity_for_relati",
+      "title": "Preserve temporal granularity for relative expressions",
+      "trigger_conditions": "When evidence states an event using a coarse relative time expression such as next month, this month, or last month.",
+      "applicable_question_patterns": [
+        "When is an event scheduled?",
+        "When did an event happen?",
+        "What month is an activity planned for?"
+      ],
+      "categories": [
+        2
+      ],
+      "action_instructions": "Resolve relative time expressions from the evidence timestamp, but answer only at the granularity explicitly supported. Do not convert month-level expressions into exact calendar days or add unsupported precision.",
+      "expected_output_format": "Use the coarsest supported temporal unit, typically month and year when inferable.",
+      "evidence_requirements": "Use the timestamp of the statement containing the relative expression and the relative phrase itself; avoid later retrospective mentions unless needed.",
+      "failure_modes": [
+        "Using the statement date as the event date",
+        "Adding an exact day not stated",
+        "Over-specifying a coarse temporal answer"
+      ],
+      "source_training_qids": [
+        6
+      ],
+      "success_count": 1,
+      "failure_count": 2,
+      "confidence": 0.4,
+      "version": 1,
+      "status": "active",
+      "created_at_feedback": 10,
+      "last_updated_feedback": 10,
+      "history": [
+        {
+          "version": 1,
+          "feedback_step": 10,
+          "qid": 6,
+          "event": "created"
+        }
+      ]
+    },
+    {
+      "skill_id": "ans_normalize_answer_perspective_to_the_ques",
+      "title": "Normalize answer perspective to the question",
+      "trigger_conditions": "When forming a concise answer from evidence that contains deictic or second-person wording, and the question asks about a third party or entity.",
+      "applicable_question_patterns": [
+        "What did [entity] find/obtain/do?",
+        "What was [entity]'s [thing]?",
+        "What happened to [entity]?"
+      ],
+      "categories": [
+        4
+      ],
+      "action_instructions": "Rewrite pronouns and possessives to match the question's perspective. Use third-person forms for questions about someone or something else; do not copy second-person wording from evidence or conversational replies.",
+      "expected_output_format": "A short noun phrase or clause with perspective aligned to the question.",
+      "evidence_requirements": "Use the retrieved evidence that directly states the target fact; preserve its core meaning while normalizing perspective.",
+      "failure_modes": [
+        "Copying 'your' from evidence",
+        "Using first- or second-person possessives for third-party questions",
+        "Changing the underlying fact while fixing perspective"
+      ],
+      "source_training_qids": [
+        47
+      ],
+      "success_count": 0,
+      "failure_count": 3,
+      "confidence": 0.2,
+      "version": 1,
+      "status": "disabled",
+      "created_at_feedback": 12,
+      "last_updated_feedback": 12,
+      "history": [
+        {
+          "version": 1,
+          "feedback_step": 12,
+          "qid": 47,
+          "event": "created"
+        },
+        {
+          "feedback_step": -1,
+          "event": "disabled",
+          "reason": "negative_transfer:3f/0s"
+        }
+      ],
+      "disabled_reason": "negative_transfer:3f/0s"
+    },
+    {
+      "skill_id": "ans_answer_emotion_questions_with_a_minimal_",
+      "title": "Answer emotion questions with a minimal label",
+      "trigger_conditions": "When a question asks how someone feels about a situation, event, or prospect.",
+      "applicable_question_patterns": [
+        "How does someone feel about X?",
+        "What is someone's feeling toward X?",
+        "How is someone feeling about X?"
+      ],
+      "categories": [
+        4
+      ],
+      "action_instructions": "Identify the explicit emotion word in the most relevant evidence and answer with only that concise emotion label. Do not quote surrounding text, add paraphrases, or include extra clauses.",
+      "expected_output_format": "A single short emotion word or brief adjective phrase.",
+      "evidence_requirements": "Use the utterance that directly states the feeling about the queried situation; prefer explicit self-reported emotion terms over inferred or adjacent commentary.",
+      "failure_modes": [
+        "Quoting full evidence sentences",
+        "Adding multiple related phrases",
+        "Including enthusiasm markers or elaboration"
+      ],
+      "source_training_qids": [
+        72
+      ],
+      "success_count": 1,
+      "failure_count": 3,
+      "confidence": 0.3333333333333333,
+      "version": 1,
+      "status": "disabled",
+      "created_at_feedback": 18,
+      "last_updated_feedback": 18,
+      "history": [
+        {
+          "version": 1,
+          "feedback_step": 18,
+          "qid": 72,
+          "event": "created"
+        },
+        {
+          "feedback_step": -1,
+          "event": "disabled",
+          "reason": "negative_transfer:3f/1s"
+        }
+      ],
+      "disabled_reason": "negative_transfer:3f/1s"
+    },
+    {
+      "skill_id": "ans_extract_implied_descriptive_attributes_f",
+      "title": "Extract implied descriptive attributes from relevant evidence",
+      "trigger_conditions": "When a question asks what someone says about an entity's appearance, quality, or impression, and the relevant evidence contains a descriptive attribute rather than a direct quoted comment.",
+      "applicable_question_patterns": [
+        "What does [speaker] say about [entity]?",
+        "How does [speaker] describe [entity]?",
+        "What impression is given about [entity]?"
+      ],
+      "categories": [
+        4
+      ],
+      "action_instructions": "Find the evidence tied to the target entity and extract the concise descriptive attribute or quality expressed there. Convert related nouns or adverbs into the natural predicate form. Do not add reactions, predictions, generic praise, or details from other turns.",
+      "expected_output_format": "A short phrase or sentence stating only the evidenced description.",
+      "evidence_requirements": "Use the most directly relevant evidence about the target entity; allow minimal paraphrase when the description is implied by a quality noun or modifier.",
+      "failure_modes": [
+        "Using generic enthusiasm instead of the specific attribute",
+        "Adding unsupported future commentary",
+        "Ignoring descriptive nouns or modifiers in the relevant evidence",
+        "Using unrelated later discussion"
+      ],
+      "source_training_qids": [
+        44
+      ],
+      "success_count": 0,
+      "failure_count": 0,
+      "confidence": 0.55,
+      "version": 1,
+      "status": "active",
+      "created_at_feedback": 29,
+      "last_updated_feedback": 29,
+      "history": [
+        {
+          "version": 1,
+          "feedback_step": 29,
+          "qid": 44,
+          "event": "created"
+        }
+      ]
+    }
+  ]
+}

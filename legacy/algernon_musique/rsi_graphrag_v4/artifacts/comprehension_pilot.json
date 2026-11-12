@@ -1,0 +1,365 @@
+{
+  "raw_hash_unchanged": true,
+  "raw_hash": "7cf3ea5138959b6eb303480d5c19b46f5850c254b245bf01971d11d0e9ed20c6",
+  "n_active_nodes": 7,
+  "n_edges": 12,
+  "results": [
+    {
+      "unit_id": "cc-00001-u000",
+      "audit_core_complete": true,
+      "outcome": {
+        "unit_id": "cc-00001-u000",
+        "status": "completed",
+        "mode": "comprehension",
+        "accepted": [
+          {
+            "op": "ADD",
+            "node_type": "implicit_relation",
+            "semantic_content": "Edward Jr. was Edward Haight's son, and they worked together after 1870 in Haight & Company, a brokerage firm on Wall Street.",
+            "source_entity_ids": [
+              "entity-52b6e2ed807fcbb2998674a499108e63",
+              "entity-1c0f0c7885464017cb8bb3a8a29c4fef",
+              "entity-219fcc50fdeb1fa1484a59215abdc35c",
+              "entity-1f1dc53c5ae2dc441bde1861359c5952"
+            ],
+            "source_triple_ids": [
+              "triple-788bad7974d5eb6d9c604a18e62390f1",
+              "triple-d8f45f9b85ea2e03d41f2c62d53ff4a0",
+              "triple-ee53dcf7bfcf4f8c4fba0739c437ed5f",
+              "triple-cf39d4c295f0ac319ce683ea60e2a841",
+              "triple-bc9948f3d2bc092f5b7f10c317d42dfa"
+            ],
+            "source_passage_ids": [
+              "chunk-053724505e6b444dccb8a780a7007a7a"
+            ],
+            "evidence_spans": [
+              {
+                "passage_id": "chunk-053724505e6b444dccb8a780a7007a7a",
+                "span": "After 1870, he was in business with his son Edward Jr. in the brokerage firm of Haight & Company on Wall Street."
+              }
+            ],
+            "reasoning_description": "The existing triples record that Edward Haight and Edward Jr. were in business together and associated with Haight Company, but they do not express the parent-child relationship or identify the firm's business type and timing as a single connected fact.",
+            "why_retrieval_useful": "This connects Edward Jr. to Edward Haight's family and business history, enabling retrieval across genealogical, corporate, and Wall Street contexts.",
+            "confidence": 0.99,
+            "links": [
+              {
+                "target_id": "entity-1c0f0c7885464017cb8bb3a8a29c4fef",
+                "relation": "son of"
+              },
+              {
+                "target_id": "entity-219fcc50fdeb1fa1484a59215abdc35c",
+                "relation": "worked at"
+              },
+              {
+                "target_id": "entity-1f1dc53c5ae2dc441bde1861359c5952",
+                "relation": "located on"
+              }
+            ],
+            "primary_unit_id": "cc-00001-u000",
+            "created_by": "read_time_comprehension"
+          },
+          {
+            "op": "ADD",
+            "node_type": "implicit_relation",
+            "semantic_content": "George Elliott Casey died at the age of 53 in Ottawa.",
+            "source_entity_ids": [
+              "entity-2229850363826e8b8a9e9ab0376bc92e",
+              "entity-a1ac06771fcb7f4378d9ad3a13030b4b"
+            ],
+            "source_triple_ids": [
+              "triple-91f7d883e34c8115ea6957b8b779979b",
+              "triple-7da0c9d7838e6eaea4cb98ed52d4c070"
+            ],
+            "source_passage_ids": [
+              "chunk-25b144b80e91dbb34bcc8cd4d21e6ad9"
+            ],
+            "evidence_spans": [
+              {
+                "passage_id": "chunk-25b144b80e91dbb34bcc8cd4d21e6ad9",
+                "span": "He died in Ottawa at the age of 53."
+              }
+            ],
+            "reasoning_description": "The existing graph records Casey's death in Ottawa and his birth in 1850, but it omits the explicitly stated age at death.",
+            "why_retrieval_useful": "The age-at-death attribute can support biographical timelines and distinguish Casey from other people with similar names.",
+            "confidence": 0.99,
+            "links": [
+              {
+                "target_id": "entity-a1ac06771fcb7f4378d9ad3a13030b4b",
+                "relation": "died in"
+              }
+            ],
+            "primary_unit_id": "cc-00001-u000",
+            "created_by": "read_time_comprehension"
+          }
+        ],
+        "rejected": [
+          {
+            "op": "ADD",
+            "node_type": "implicit_relation",
+            "semantic_content": "Lilian Turner and Ethel Turner adopted their stepfather Henry Turner's surname for their professional writing careers.",
+            "source_entity_ids": [
+              "entity-2987316093673d343ecf208d69465398",
+              "entity-0ed5f4263309ead543e0f0f2d125a1fc",
+              "entity-01bfaa54c75f1f2a27a5475e6b1328f5"
+            ],
+            "source_triple_ids": [
+              "triple-2579a345174a068437554dc4b93ce148",
+              "triple-4ee637179b8580dce2345f64316abe2",
+              "triple-ce19a161aa17255db8548955a7df8f44",
+              "triple-a040667ed3c6d3181fdf8418aa49bc7e"
+            ],
+            "source_passage_ids": [
+              "chunk-ea4f5987e78961afb5a65c4545ba0b76"
+            ],
+            "evidence_spans": [
+              {
+                "passage_id": "chunk-ea4f5987e78961afb5a65c4545ba0b76",
+                "span": "Both Lilian and Ethel would later take their step-father's name for their professional writing careers."
+              }
+            ],
+            "reasoning_description": "The existing triples establish Henry as stepfather and identify Lilian and Ethel as sisters, but they do not state that both women adopted his surname professionally or connect that adoption to their writing careers.",
+            "why_retrieval_useful": "This links the Turner family relationships to the women's professional identities and can support searches about authorship, pseudonyms, and name changes.",
+            "confidence": 0.99,
+            "links": [
+              {
+                "target_id": "entity-01bfaa54c75f1f2a27a5475e6b1328f5",
+                "relation": "took surname from"
+              },
+              {
+                "target_id": "entity-2987316093673d343ecf208d69465398",
+                "relation": "professional writing"
+              },
+              {
+                "target_id": "entity-0ed5f4263309ead543e0f0f2d125a1fc",
+                "relation": "professional writing"
+              }
+            ],
+            "primary_unit_id": "cc-00001-u000",
+            "reason": "unknown triple triple-4ee637179b8580dce2345f64316abe2",
+            "created_by": "read_time_comprehension"
+          }
+        ],
+        "response_model": "gpt-5.6-luna-2026-07-09",
+        "prompt_tokens": 4599,
+        "completion_tokens": 1827
+      }
+    },
+    {
+      "unit_id": "cc-00006-u000",
+      "audit_core_complete": true,
+      "outcome": {
+        "unit_id": "cc-00006-u000",
+        "status": "completed",
+        "mode": "comprehension",
+        "accepted": [
+          {
+            "op": "ADD",
+            "node_type": "implicit_relation",
+            "semantic_content": "Bethuel was an Aramean, in addition to being from Paddan Aram and the father of Rebecca.",
+            "source_entity_ids": [
+              "entity-f728acc3fb3e0b9ef8272c84f3fc9b63",
+              "entity-eae99819918861a485b94dbcefdc321f",
+              "entity-e358bf645a205cf15efa983b5517d945",
+              "entity-433815fe26dd540bc019f2091b5b4977"
+            ],
+            "source_triple_ids": [
+              "triple-b709b4bb9abdbb8574c07ca79a2b3ae8",
+              "triple-8183729f54523a80500c74d2fce7194d"
+            ],
+            "source_passage_ids": [
+              "chunk-6168419a600403fccedc88ff6a0c2b39"
+            ],
+            "evidence_spans": [
+              {
+                "passage_id": "chunk-6168419a600403fccedc88ff6a0c2b39",
+                "span": "Bethuel the Aramean from Paddan Aram"
+              }
+            ],
+            "reasoning_description": "The existing triples identify Bethuel as Rebecca's father and as being from Paddan Aram, but omit his ethnic description. The passage explicitly calls him the Aramean.",
+            "why_retrieval_useful": "This connects Rebecca's genealogy to Aramean identity and can support retrieval about her family and regional origins.",
+            "confidence": 0.98,
+            "links": [
+              {
+                "target_id": "entity-eae99819918861a485b94dbcefdc321f",
+                "relation": "is Aramean"
+              },
+              {
+                "target_id": "entity-e358bf645a205cf15efa983b5517d945",
+                "relation": "father of"
+              }
+            ],
+            "primary_unit_id": "cc-00006-u000",
+            "created_by": "read_time_comprehension"
+          },
+          {
+            "op": "ADD",
+            "node_type": "implicit_relation",
+            "semantic_content": "Radhia Nasraoui is the mother of Hamma Hammami's daughters Nadia, Oussaïma, and Sarah.",
+            "source_entity_ids": [
+              "entity-57750f8227d6157a7939419d6c8fa44d",
+              "entity-1e414ced1bec9dc2af6242c0fb5fa1ee",
+              "entity-a2e8cea3392da09d1d31be3fca68efed",
+              "entity-30ab0cd174839d30ef73dd0d1c8daa55",
+              "entity-5bd537fc3789b5482e4936968f0fde95"
+            ],
+            "source_triple_ids": [
+              "triple-4b8356fa3d1f333ca0a30c5d850ac65c",
+              "triple-ef2c63fe6327ce64c17ad01c7194d2fe",
+              "triple-b469baff0b458496caf036dd94dd2b01",
+              "triple-5274189bc6af7e9048f111fca845b50f"
+            ],
+            "source_passage_ids": [
+              "chunk-6e1f60253eab73a16b0a0f251f450f6a"
+            ],
+            "evidence_spans": [
+              {
+                "passage_id": "chunk-6e1f60253eab73a16b0a0f251f450f6a",
+                "span": "Together they have three daughters, Nadia, Oussaïma and Sarah."
+              }
+            ],
+            "reasoning_description": "The graph records Hamma's marriage to Radhia and Hamma's parentage of the three girls, but does not express Radhia's corresponding motherhood. The phrase 'Together they have' establishes joint parentage.",
+            "why_retrieval_useful": "This links Radhia to the family children and enables retrieval of the couple's shared family relationships.",
+            "confidence": 0.97,
+            "links": [
+              {
+                "target_id": "entity-57750f8227d6157a7939419d6c8fa44d",
+                "relation": "mother of"
+              },
+              {
+                "target_id": "entity-1e414ced1bec9dc2af6242c0fb5fa1ee",
+                "relation": "spouse of"
+              }
+            ],
+            "primary_unit_id": "cc-00006-u000",
+            "created_by": "read_time_comprehension"
+          },
+          {
+            "op": "ADD",
+            "node_type": "implicit_relation",
+            "semantic_content": "Piers Haggard's children Sarah, Claire, Rachel, and Philip are from his first marriage, while Daisy and William are his children with Anna Sklovsky.",
+            "source_entity_ids": [
+              "entity-3a92c84448b667ba544a54d1fcf7633c",
+              "entity-5bd537fc3789b5482e4936968f0fde95",
+              "entity-182e500f562c7b95a2ae0b4dd9f47bb2",
+              "entity-8e73b27568cb3be29e2da74d42eab6dd",
+              "entity-7b40760b8ebbfb7da8ebe42af07de0e5",
+              "entity-41cb6737d2a3c8d4014ce411478d31d3",
+              "entity-a0c02a7eb313a7fe94e650c5238d4fcc",
+              "entity-b8061a89c65b62622b2ca52e2927c5b1"
+            ],
+            "source_triple_ids": [
+              "triple-0b1409a648a872abd2b040e613963c8f",
+              "triple-147bc22d319babedf635ac636a3f8ee5",
+              "triple-479846d445f3c2e4f599cc70c120eb67",
+              "triple-a5c13ab5dc5d40fc473f12f12be88bdd",
+              "triple-d451963b9fe7dd171d7d9c11b6dfa790",
+              "triple-b48de31eb6fa5d50f76eee7087cd1205",
+              "triple-f6ab09fc5ef8a89fb884bbc2254a9add",
+              "triple-a416ee38a64c577a0f0a333131d77d7e",
+              "triple-a7c05db2d7baf0829a2a60152a4c639f"
+            ],
+            "source_passage_ids": [
+              "chunk-2cc5a450094e06e0b054d57a58a2111b"
+            ],
+            "evidence_spans": [
+              {
+                "passage_id": "chunk-2cc5a450094e06e0b054d57a58a2111b",
+                "span": "He has four children by his first marriage, Sarah, Claire, Rachel and Philip."
+              },
+              {
+                "passage_id": "chunk-2cc5a450094e06e0b054d57a58a2111b",
+                "span": "with whom he has two children, the actress Daisy Haggard, and William Haggard"
+              }
+            ],
+            "reasoning_description": "The existing triples list Piers as parent of all six children and married to Anna, but do not distinguish the children of his first marriage from the two children he has with Anna. The passage explicitly supplies that family-structure distinction.",
+            "why_retrieval_useful": "This supports retrieval about Piers Haggard's marriages, blended family, and the maternal grouping of his children.",
+            "confidence": 0.99,
+            "links": [
+              {
+                "target_id": "entity-5bd537fc3789b5482e4936968f0fde95",
+                "relation": "child from first marriage"
+              },
+              {
+                "target_id": "entity-b8061a89c65b62622b2ca52e2927c5b1",
+                "relation": "children with"
+              }
+            ],
+            "primary_unit_id": "cc-00006-u000",
+            "created_by": "read_time_comprehension"
+          },
+          {
+            "op": "ADD",
+            "node_type": "implicit_relation",
+            "semantic_content": "Sarah's descriptions as Abraham's sister and half-sister occur as separate accounts in contexts where Abraham fears a ruler will take her.",
+            "source_entity_ids": [
+              "entity-9e9d7a08e048e9d604b79460b54969c3",
+              "entity-248706c023957db08d14f39749879207"
+            ],
+            "source_triple_ids": [
+              "triple-0f7e1b471aba213ed67f65078f7b168d",
+              "triple-adef52373f438c09574d749ffdfdffe7",
+              "triple-f26a07bddf8b442b1b5cc467d5f80bd7"
+            ],
+            "source_passage_ids": [
+              "chunk-6f6c70d8ead671c4ccd37008731fff08"
+            ],
+            "evidence_spans": [
+              {
+                "passage_id": "chunk-6f6c70d8ead671c4ccd37008731fff08",
+                "span": "She is described once as Abraham's sister, and another time as his half -- sister, each in a context where Abraham is dealing with a ruler"
+              }
+            ],
+            "reasoning_description": "The graph contains both sibling relations but does not explain that they are separate descriptions tied to ruler-related episodes. The passage provides the contextual qualification, helping reconcile the apparently conflicting relations without deleting either.",
+            "why_retrieval_useful": "This can connect searches about Sarah's kinship, variant biblical accounts, and the episodes involving rulers who might take her.",
+            "confidence": 0.98,
+            "links": [
+              {
+                "target_id": "entity-248706c023957db08d14f39749879207",
+                "relation": "has context-dependent sibling descriptions"
+              }
+            ],
+            "primary_unit_id": "cc-00006-u000",
+            "created_by": "read_time_comprehension"
+          },
+          {
+            "op": "ADD",
+            "node_type": "implicit_relation",
+            "semantic_content": "Stephen Haggard was an actor, poet, and novelist as well as Piers Haggard's father.",
+            "source_entity_ids": [
+              "entity-194a21bb93e1875fa2be609aa84453a9",
+              "entity-3a92c84448b667ba544a54d1fcf7633c"
+            ],
+            "source_triple_ids": [
+              "triple-66f508587758636038093b489a30766c",
+              "triple-fdc53310d191c67a4fe0a90bfd3c725e"
+            ],
+            "source_passage_ids": [
+              "chunk-2cc5a450094e06e0b054d57a58a2111b"
+            ],
+            "evidence_spans": [
+              {
+                "passage_id": "chunk-2cc5a450094e06e0b054d57a58a2111b",
+                "span": "the actor, poet and novelist Stephen Haggard"
+              }
+            ],
+            "reasoning_description": "The existing graph records Stephen Haggard as Piers's father and his death in 1943, but omits Stephen's occupations. The passage explicitly identifies him as an actor, poet, and novelist.",
+            "why_retrieval_useful": "This adds occupational context for linking Piers Haggard's family genealogy to literary and theatrical biographies.",
+            "confidence": 0.99,
+            "links": [
+              {
+                "target_id": "entity-3a92c84448b667ba544a54d1fcf7633c",
+                "relation": "father of"
+              }
+            ],
+            "primary_unit_id": "cc-00006-u000",
+            "created_by": "read_time_comprehension"
+          }
+        ],
+        "rejected": [],
+        "response_model": "gpt-5.6-luna-2026-07-09",
+        "prompt_tokens": 4630,
+        "completion_tokens": 3531
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+Write a short neutral summary of the passages in this reading unit. Quote one verbatim evidence span from a provided passage. Do not add a cross-document inference.
+
+Return JSON with one operation:
+{"operations": [
+  {
+    "op": "ADD",
+    "node_type": "summary_control",
+    "semantic_content": "summary sentence",
+    "source_entity_ids": [],
+    "source_triple_ids": [],
+    "source_passage_ids": ["chunk-..."],
+    "evidence_spans": [{"passage_id": "chunk-...", "span": "verbatim span"}],
+    "reasoning_description": "this is a summary control, not a new relation",
+    "why_retrieval_useful": "control condition",
+    "confidence": 0.5,
+    "links": []
+  }
+]}

@@ -1,0 +1,488 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1810.12091::s00::p000",
+   "summary": "Flickr tags and GPS coordinates make georeferenced photos a source of environmental information, though Flickr's usefulness for characterizing the natural environment is less understood.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s00::p001",
+   "summary": "Flickr tags capture valuable ecological information, but ecologists have mostly used social media manually, with BIBREF7 finding promising bag-of-words prediction results.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s00::p002",
+   "summary": "The paper hypothesizes that vector space embeddings better utilize ecological information in Flickr tags and naturally integrate structured numerical and categorical environmental data.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s00::p003",
+   "summary": "Off-the-shelf GloVe performed poorly, requiring spatial smoothing and term selection, while embeddings with structured scientific information substantially improved predictions.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s00::p004",
+   "summary": "The paper is organized with existing work, the embedding model, experimental results, and conclusions in subsequent sections.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s01::p000",
+   "summary": "Low-dimensional vector space embeddings are effective across applications, and the paper builds on GloVe, which captures linear regularities of word-word co-occurrence.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s01::p001",
+   "summary": "GloVe's objective uses co-occurrence counts, vocabulary size, biases, and a weighting function, with INLINEFORM9 usually fixed to 100 and INLINEFORM10 to 0.75.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s01::p002",
+   "summary": "Prior work learns vector space representations from structured data and combines word embeddings with knowledge graphs, lexicons, and semantic categories.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s02::p000",
+   "summary": "BIBREF31 used principal component analysis and stacked autoencoders to learn low-dimensional city neighbourhood representations from census data for predicting attributes such as crime.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s02::p001",
+   "summary": "BIBREF32 learns word embeddings from shared geographic locations, whereas this paper uses textual descriptions to learn vectors representing geographic locations.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s02::p002",
+   "summary": "Several methods use word embedding models to learn Points-of-Interest representations for predicting user visits, often without considering textual information.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s02::p003",
+   "summary": "This work focuses on representing locations from Flickr tags plus numerical and categorical features from scientific datasets.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s03::p000",
+   "summary": "BIBREF7 found georeferenced Flickr tags supplement scientific environmental data, but concatenating bag-of-words and structured feature vectors is far from optimal.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s03::p001",
+   "summary": "BIBREF44 is the only work generating embeddings for Flickr tags, focusing on word meaning rather than representing locations.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s04::p000",
+   "summary": "The section introduces an embedding model combining Flickr tags and structured scientific information to represent a set of locations INLINEFORM0.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s04::p001",
+   "summary": "Parameters INLINEFORM0 and INLINEFORM1 control components constraining locations by Flickr tags, numerical features, and shared categories.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s05::p000",
+   "summary": "The authors collected tags and meta-data of 70 million Flickr photos with coordinates in Europe, uploaded before the end of September 2015.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s05::p001",
+   "summary": "Tag weighting follows BIBREF7, combining a Gaussian kernel for spatial proximity with Positive Pointwise Mutual Information (PPMI).",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s05::p002",
+   "summary": "A Gaussian kernel weights tag occurrences by distance from a location rather than simply counting occurrences within a fixed radius.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s05::p003",
+   "summary": "The weighting uses a fixed threshold INLINEFORM0, Haversine distance, bandwidth INLINEFORM4, user-level counting, and PPMI from INLINEFORM12 values.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s05::p004",
+   "summary": "The paragraph presents an equation labeled INLINEFORM0.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s05::p005",
+   "summary": "INLINEFORM0 is the set of all tags, and INLINEFORM1 is the set of locations.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s05::p006",
+   "summary": "Tag selection uses Kullback-Leibler (KL) divergence to focus on important tags and reduce individual or group-specific tag effects.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s05::p007",
+   "summary": "The KL score uses probabilities INLINEFORM0 and INLINEFORM3, with INLINEFORM5 estimated using Bayesian smoothing.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s05::p008",
+   "summary": "INLINEFORM0 controls smoothing and is tuned in experiments, while INLINEFORM1 uses maximum likelihood estimation.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s05::p009",
+   "summary": "Location embedding uses a close GloVe variant where tag occurrences are context words and locations have vectors INLINEFORM3.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s05::p010",
+   "summary": "The objective uses INLINEFORM0 scores and negative examples, sampling tags near location INLINEFORM5 plus negative examples for computational feasibility.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s06::p000",
+   "summary": "The work uses nine numerical features and 180 categorical features, including CORINE land cover classes and 116 SoilGrids soil types.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s06::p001",
+   "summary": "Numerical features are predicted from location vectors using a linear mapping with vector INLINEFORM1 and bias term INLINEFORM2.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s06::p002",
+   "summary": "INLINEFORM0 is the set of all numerical features, and INLINEFORM1 is the z-score normalized value of feature INLINEFORM2 for location INLINEFORM3.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s06::p003",
+   "summary": "Categorical features constrain locations in the same category to be close, with each category type INLINEFORM0 represented as vector INLINEFORM1.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "passage_id": "1810.12091::s07::p000",
+   "summary": "The method from BIBREF7 is the main baseline, enabling direct evaluation with the same structured datasets, tag weighting scheme, and three evaluation tasks.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "passage_id": "1810.12091::s07::p001",
+   "summary": "The first task predicts the distribution of 100 species across Europe using Natura 2000 as ground truth, with binary classification over 26,425 distinct sites INLINEFORM0.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "passage_id": "1810.12091::s07::p002",
+   "summary": "The second task predicts soil type as binary classification using the same locations INLINEFORM0, without using soil type features to generate embeddings.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "passage_id": "1810.12091::s07::p003",
+   "summary": "The third task predicts CORINE land cover classes at levels 1, 2 and level 3 as binary classification using INLINEFORM0, without CORINE features in embeddings.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "passage_id": "1810.12091::s07::p004",
+   "summary": "The authors additionally consider the following regression tasks.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "passage_id": "1810.12091::s07::p005",
+   "summary": "One regression task predicts 5 climate related features using INLINEFORM0, without climate features in embeddings: average precipitation, temperature, solar radiation, water vapor pressure, and wind speed.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "passage_id": "1810.12091::s07::p006",
+   "summary": "Another regression task predicts landscape beauty opinions in Britain using ScenicOrNot, with INLINEFORM0 comprising 191 605 rated locations having a georeferenced Flickr photo within 1 km.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "passage_id": "1810.12091::s08::p000",
+   "summary": "Experiments use SVMs and SVR with BIBREF53, two-thirds training, one-sixth testing, one-sixth tuning, Adagrad with 30 iterations, tuned dimensions, parameters, discretization cut-offs, top 100 000 tags, 1km radius, capped negative examples, F1 score, and Spearman INLINEFORM9.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "passage_id": "1810.12091::s09::p000",
+   "summary": "The authors define EGEL variants EGEL-Tags, EGEL-Tags+NS, EGEL-KL(Tags+NS), and EGEL-All, plus baselines BOW-Tags, BOW-KL(Tags), BOW-All, and GloVe.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "passage_id": "1810.12091::s10::p000",
+   "summary": "Binary classification results use average precision, average recall and macro average F1 score, while regression results use mean absolute error and Spearman INLINEFORM0 correlation; EGEL-All outperforms baselines for all tasks.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "passage_id": "1810.12091::s10::p001",
+   "summary": "Embeddings are consistently useful only with tags and structured datasets, while BOW-Tags sometimes performs best and term selection may lose information from highly specific rare tags.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "passage_id": "1810.12091::s10::p002",
+   "summary": "Figure TABREF29 shows GloVe outperforms bag-of-words for large corpora and underperforms for smaller corpora, an issue alleviated by negative examples.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "passage_id": "1810.12091::s11::p000",
+   "summary": "The paper proposes geographic location embeddings from Flickr tags, numerical environmental features, and categorical information, with substantial improvements over baselines on natural environment prediction tasks.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "passage_id": "1810.12091::s12::p000",
+   "summary": "Shelan Jeawak was sponsored by HCED Iraq, and Steven Schockaert was supported by ERC Starting Grant 637277.",
+   "group_id": "1810.12091::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1810.12091::g00",
+   "summaries": [
+    {
+     "passage_id": "1810.12091::s00::p000",
+     "summary": "Flickr tags and GPS coordinates make georeferenced photos a source of environmental information, though Flickr's usefulness for characterizing the natural environment is less understood.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s00::p001",
+     "summary": "Flickr tags capture valuable ecological information, but ecologists have mostly used social media manually, with BIBREF7 finding promising bag-of-words prediction results.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s00::p002",
+     "summary": "The paper hypothesizes that vector space embeddings better utilize ecological information in Flickr tags and naturally integrate structured numerical and categorical environmental data.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s00::p003",
+     "summary": "Off-the-shelf GloVe performed poorly, requiring spatial smoothing and term selection, while embeddings with structured scientific information substantially improved predictions.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s00::p004",
+     "summary": "The paper is organized with existing work, the embedding model, experimental results, and conclusions in subsequent sections.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s01::p000",
+     "summary": "Low-dimensional vector space embeddings are effective across applications, and the paper builds on GloVe, which captures linear regularities of word-word co-occurrence.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s01::p001",
+     "summary": "GloVe's objective uses co-occurrence counts, vocabulary size, biases, and a weighting function, with INLINEFORM9 usually fixed to 100 and INLINEFORM10 to 0.75.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s01::p002",
+     "summary": "Prior work learns vector space representations from structured data and combines word embeddings with knowledge graphs, lexicons, and semantic categories.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s02::p000",
+     "summary": "BIBREF31 used principal component analysis and stacked autoencoders to learn low-dimensional city neighbourhood representations from census data for predicting attributes such as crime.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s02::p001",
+     "summary": "BIBREF32 learns word embeddings from shared geographic locations, whereas this paper uses textual descriptions to learn vectors representing geographic locations.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s02::p002",
+     "summary": "Several methods use word embedding models to learn Points-of-Interest representations for predicting user visits, often without considering textual information.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s02::p003",
+     "summary": "This work focuses on representing locations from Flickr tags plus numerical and categorical features from scientific datasets.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s03::p000",
+     "summary": "BIBREF7 found georeferenced Flickr tags supplement scientific environmental data, but concatenating bag-of-words and structured feature vectors is far from optimal.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s03::p001",
+     "summary": "BIBREF44 is the only work generating embeddings for Flickr tags, focusing on word meaning rather than representing locations.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s04::p000",
+     "summary": "The section introduces an embedding model combining Flickr tags and structured scientific information to represent a set of locations INLINEFORM0.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s04::p001",
+     "summary": "Parameters INLINEFORM0 and INLINEFORM1 control components constraining locations by Flickr tags, numerical features, and shared categories.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s05::p000",
+     "summary": "The authors collected tags and meta-data of 70 million Flickr photos with coordinates in Europe, uploaded before the end of September 2015.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s05::p001",
+     "summary": "Tag weighting follows BIBREF7, combining a Gaussian kernel for spatial proximity with Positive Pointwise Mutual Information (PPMI).",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s05::p002",
+     "summary": "A Gaussian kernel weights tag occurrences by distance from a location rather than simply counting occurrences within a fixed radius.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s05::p003",
+     "summary": "The weighting uses a fixed threshold INLINEFORM0, Haversine distance, bandwidth INLINEFORM4, user-level counting, and PPMI from INLINEFORM12 values.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s05::p004",
+     "summary": "The paragraph presents an equation labeled INLINEFORM0.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s05::p005",
+     "summary": "INLINEFORM0 is the set of all tags, and INLINEFORM1 is the set of locations.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s05::p006",
+     "summary": "Tag selection uses Kullback-Leibler (KL) divergence to focus on important tags and reduce individual or group-specific tag effects.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s05::p007",
+     "summary": "The KL score uses probabilities INLINEFORM0 and INLINEFORM3, with INLINEFORM5 estimated using Bayesian smoothing.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s05::p008",
+     "summary": "INLINEFORM0 controls smoothing and is tuned in experiments, while INLINEFORM1 uses maximum likelihood estimation.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s05::p009",
+     "summary": "Location embedding uses a close GloVe variant where tag occurrences are context words and locations have vectors INLINEFORM3.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s05::p010",
+     "summary": "The objective uses INLINEFORM0 scores and negative examples, sampling tags near location INLINEFORM5 plus negative examples for computational feasibility.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s06::p000",
+     "summary": "The work uses nine numerical features and 180 categorical features, including CORINE land cover classes and 116 SoilGrids soil types.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s06::p001",
+     "summary": "Numerical features are predicted from location vectors using a linear mapping with vector INLINEFORM1 and bias term INLINEFORM2.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s06::p002",
+     "summary": "INLINEFORM0 is the set of all numerical features, and INLINEFORM1 is the z-score normalized value of feature INLINEFORM2 for location INLINEFORM3.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "passage_id": "1810.12091::s06::p003",
+     "summary": "Categorical features constrain locations in the same category to be close, with each category type INLINEFORM0 represented as vector INLINEFORM1.",
+     "group_id": "1810.12091::g00"
+    }
+   ],
+   "n_raw": 31,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5263,
+    "completion_tokens": 1426,
+    "total_tokens": 6689,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1810.12091::g01",
+   "summaries": [
+    {
+     "passage_id": "1810.12091::s07::p000",
+     "summary": "The method from BIBREF7 is the main baseline, enabling direct evaluation with the same structured datasets, tag weighting scheme, and three evaluation tasks.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "passage_id": "1810.12091::s07::p001",
+     "summary": "The first task predicts the distribution of 100 species across Europe using Natura 2000 as ground truth, with binary classification over 26,425 distinct sites INLINEFORM0.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "passage_id": "1810.12091::s07::p002",
+     "summary": "The second task predicts soil type as binary classification using the same locations INLINEFORM0, without using soil type features to generate embeddings.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "passage_id": "1810.12091::s07::p003",
+     "summary": "The third task predicts CORINE land cover classes at levels 1, 2 and level 3 as binary classification using INLINEFORM0, without CORINE features in embeddings.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "passage_id": "1810.12091::s07::p004",
+     "summary": "The authors additionally consider the following regression tasks.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "passage_id": "1810.12091::s07::p005",
+     "summary": "One regression task predicts 5 climate related features using INLINEFORM0, without climate features in embeddings: average precipitation, temperature, solar radiation, water vapor pressure, and wind speed.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "passage_id": "1810.12091::s07::p006",
+     "summary": "Another regression task predicts landscape beauty opinions in Britain using ScenicOrNot, with INLINEFORM0 comprising 191 605 rated locations having a georeferenced Flickr photo within 1 km.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "passage_id": "1810.12091::s08::p000",
+     "summary": "Experiments use SVMs and SVR with BIBREF53, two-thirds training, one-sixth testing, one-sixth tuning, Adagrad with 30 iterations, tuned dimensions, parameters, discretization cut-offs, top 100 000 tags, 1km radius, capped negative examples, F1 score, and Spearman INLINEFORM9.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "passage_id": "1810.12091::s09::p000",
+     "summary": "The authors define EGEL variants EGEL-Tags, EGEL-Tags+NS, EGEL-KL(Tags+NS), and EGEL-All, plus baselines BOW-Tags, BOW-KL(Tags), BOW-All, and GloVe.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "passage_id": "1810.12091::s10::p000",
+     "summary": "Binary classification results use average precision, average recall and macro average F1 score, while regression results use mean absolute error and Spearman INLINEFORM0 correlation; EGEL-All outperforms baselines for all tasks.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "passage_id": "1810.12091::s10::p001",
+     "summary": "Embeddings are consistently useful only with tags and structured datasets, while BOW-Tags sometimes performs best and term selection may lose information from highly specific rare tags.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "passage_id": "1810.12091::s10::p002",
+     "summary": "Figure TABREF29 shows GloVe outperforms bag-of-words for large corpora and underperforms for smaller corpora, an issue alleviated by negative examples.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "passage_id": "1810.12091::s11::p000",
+     "summary": "The paper proposes geographic location embeddings from Flickr tags, numerical environmental features, and categorical information, with substantial improvements over baselines on natural environment prediction tasks.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "passage_id": "1810.12091::s12::p000",
+     "summary": "Shelan Jeawak was sponsored by HCED Iraq, and Steven Schockaert was supported by ERC Starting Grant 637277.",
+     "group_id": "1810.12091::g01"
+    }
+   ],
+   "n_raw": 14,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 2197,
+    "completion_tokens": 793,
+    "total_tokens": 2990,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

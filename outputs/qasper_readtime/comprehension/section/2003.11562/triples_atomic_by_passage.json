@@ -1,0 +1,364 @@
+{
+ "2003.11562::s00::p000": [
+  [
+   "Language modeling",
+   "is",
+   "a probabilistic description of language phenomenon"
+  ],
+  [
+   "Language modeling",
+   "provides",
+   "essential context to distinguish words which sound similar"
+  ],
+  [
+   "Recurrent Neural Networks (RNN) especially Long Short Term Memory (LSTM) networks",
+   "have been",
+   "the typical solution to language modeling"
+  ],
+  [
+   "Transformers",
+   "relies completely on",
+   "an attention mechanism to form global dependencies between input and output"
+  ]
+ ],
+ "2003.11562::s00::p001": [
+  [
+   "Bidirectional Encoder Representations from Transformers (BERT) model",
+   "uses",
+   "a deep bidirectional transformer architecture"
+  ]
+ ],
+ "2003.11562::s00::p002": [
+  [
+   "Transformer-XL",
+   "introduces",
+   "the notion of recurrence in a self-attention model"
+  ]
+ ],
+ "2003.11562::s00::p003": [
+  [
+   "The primary research focus",
+   "has been mostly on",
+   "English language"
+  ],
+  [
+   "Finnish",
+   "is",
+   "morphologically richer than English"
+  ]
+ ],
+ "2003.11562::s00::p004": [
+  [
+   "this project",
+   "explores",
+   "the implementation of Transformer-based models (BERT and Transformer-XL) in language modeling for Finnish"
+  ],
+  [
+   "the BERT model",
+   "is",
+   "a bi-directional transformer"
+  ]
+ ],
+ "2003.11562::s00::p005": [
+  [
+   "Approximation of perplexity using a BERT architecture",
+   "is listed as",
+   "a first work with the Finnish language"
+  ]
+ ],
+ "2003.11562::s00::p006": [
+  [
+   "Transformer-XL architecture",
+   "is used with",
+   "sub-word units"
+  ]
+ ],
+ "2003.11562::s00::p007": [
+  [
+   "Transformer and LSTM models",
+   "are compared as",
+   "language models in the same comparable settings with an agglutinative language"
+  ]
+ ],
+ "2003.11562::s01::p000": [
+  [
+   "goal of an language model",
+   "is to assign",
+   "meaningful probabilities to a sequence of words"
+  ],
+  [
+   "task",
+   "is to estimate",
+   "the joint conditional probability $P(\\mathbf {X})$"
+  ]
+ ],
+ "2003.11562::s01::p001": [
+  [
+   "Intrinsic evaluation of the performance of Language Models",
+   "is",
+   "perplexity (PPL)"
+  ],
+  [
+   "perplexity (PPL)",
+   "is defined as",
+   "the inverse probability of the set of the tokens and taking the $T^{th}$ root"
+  ]
+ ],
+ "2003.11562::s01::p002": [
+  [
+   "Calculating the auto-regressive $P(\\mathbf {X})$ for the transformer-XL",
+   "is",
+   "quite straight-forward"
+  ]
+ ],
+ "2003.11562::s01::p003": [
+  [
+   "BERT's bi-directional context",
+   "poses",
+   "a problem for us to calculate an auto-regressive joint probability"
+  ]
+ ],
+ "2003.11562::s01::p004": [
+  [
+   "This type of approximations",
+   "has been previously explored with",
+   "Bi-directional RNN LM's"
+  ],
+  [
+   "This type of approximations",
+   "has not been explored for",
+   "deep transformer models"
+  ]
+ ],
+ "2003.11562::s01::p005": [
+  [
+   "The original BERT",
+   "has",
+   "two training objectives"
+  ],
+  [
+   "the original BERT",
+   "used",
+   "Byte Pair Encoding (BPE)"
+  ]
+ ],
+ "2003.11562::s01::p006": [
+  [
+   "The Next Sentence Prediction (NSP)",
+   "is",
+   "a binary classification task"
+  ],
+  [
+   "removing the NSP loss",
+   "matches or slightly improves",
+   "the downstream task performance"
+  ]
+ ],
+ "2003.11562::s01::p007": [
+  [
+   "Transformer-XL",
+   "introduced",
+   "the notion of recurrence in self-attention"
+  ],
+  [
+   "Transformer-XL",
+   "introduces",
+   "a novel relative positional embedding scheme"
+  ],
+  [
+   "both of them combined",
+   "address",
+   "the issue of fixed context lengths"
+  ],
+  [
+   "Transformer-XL",
+   "is",
+   "a unidirectional deep transformer architecture"
+  ]
+ ],
+ "2003.11562::s02::p000": [
+  [
+   "The dataset",
+   "consists mainly of",
+   "newspapers and books of around 144 million word tokens and 4.2 million unique tokens"
+  ],
+  [
+   "The test dataset",
+   "consists of",
+   "2850 Finnish news articles obtained from the Finnish national broadcaster YLE"
+  ]
+ ],
+ "2003.11562::s03::p000": [
+  [
+   "All BERT experiments",
+   "were trained for",
+   "500K steps"
+  ],
+  [
+   "The code",
+   "was written in",
+   "Python"
+  ],
+  [
+   "The experiments",
+   "were trained on",
+   "a single NVIDIA Tesla V100 32 GB graphic card"
+  ],
+  [
+   "The data",
+   "was first processed into",
+   "Tensorflow records as the input to the model"
+  ]
+ ],
+ "2003.11562::s03::p001": [
+  [
+   "This set of parameters",
+   "were chosen as",
+   "training performances were better than smaller models on modelling the long sequences of sub-words"
+  ],
+  [
+   "A maximum sequence length of 300",
+   "encompasses",
+   "98 percent of the training data"
+  ],
+  [
+   "these models",
+   "take",
+   "around 15 days to train given the resources"
+  ]
+ ],
+ "2003.11562::s03::p002": [
+  [
+   "Masked LM",
+   "is known as",
+   "mask some percentage of the input tokens at random, and then predict those masked tokens"
+  ],
+  [
+   "The masked LM loss",
+   "refers specifically to",
+   "the loss when the masked language model predicts on the masked tokens"
+  ],
+  [
+   "The masked LM accuracy",
+   "refers specifically to",
+   "the accuracy with which the model predicts on the masked tokens"
+  ],
+  [
+   "the left-marked model",
+   "has",
+   "a better training performance than left+right-marked model"
+  ]
+ ],
+ "2003.11562::s03::p003": [
+  [
+   "The test dataset",
+   "is of",
+   "a different context when compared to the training data"
+  ],
+  [
+   "both the models",
+   "are",
+   "quite confident when it comes to the test dataset"
+  ],
+  [
+   "The pseudo-perplexity values of left-marked",
+   "are lower when compared to",
+   "left-right-marked"
+  ]
+ ],
+ "2003.11562::s04::p000": [
+  [
+   "All Transformer-XL experiments",
+   "are also trained equally for",
+   "500K steps"
+  ],
+  [
+   "The code",
+   "was written in",
+   "Python"
+  ],
+  [
+   "The experiments",
+   "were trained on",
+   "a single NVIDIA Tesla V100 32 GB graphic card"
+  ],
+  [
+   "Two sets of hyperparameters",
+   "were chosen to be compared after",
+   "some initial optimization"
+  ]
+ ],
+ "2003.11562::s04::p001": [
+  [
+   "These parameters",
+   "where chosen after",
+   "some hyperparameter optimization"
+  ]
+ ],
+ "2003.11562::s04::p002": [
+  [
+   "left+right-marked models",
+   "have",
+   "a better training performance than their counterpart"
+  ],
+  [
+   "the larger model",
+   "trains",
+   "much better when compared to providing larger contexts"
+  ],
+  [
+   "150-150 model",
+   "takes",
+   "a lot of space on the GPU card"
+  ],
+  [
+   "Transformer-XL model",
+   "has outperformed",
+   "the previous best BIBREF19 by 27%"
+  ]
+ ],
+ "2003.11562::s05::p000": [
+  [
+   "Transformer-XL and BERT",
+   "have",
+   "low perplexity and pseudo-perplexity scores"
+  ],
+  [
+   "Transformer-XL and BERT",
+   "cannot be directly compared",
+   "as they are calculated quite differently (Eq.DISPLAY_FORM4, Eq.DISPLAY_FORM6)"
+  ],
+  [
+   "The dramatically low scores of BERT",
+   "indicate",
+   "that per word predicted probability is higher than that of a uni-directional model"
+  ],
+  [
+   "the predicted word probability distribution",
+   "is",
+   "much sharper when compared to the XL model probability distribution"
+  ]
+ ],
+ "2003.11562::s06::p000": [
+  [
+   "Transformer-XL",
+   "obtains",
+   "strong perplexity results"
+  ],
+  [
+   "BERT model",
+   "obtains",
+   "very low pseudo-perplexity scores"
+  ],
+  [
+   "BERT model",
+   "is inequitable to",
+   "the unidirectional models"
+  ],
+  [
+   "Further comparisons between the transformer architectures",
+   "can be made by",
+   "downstreaming it to an ASR task"
+  ]
+ ]
+}

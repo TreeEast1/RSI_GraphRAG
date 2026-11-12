@@ -1,0 +1,61 @@
+{
+ "paper_id": "1909.02027",
+ "title": "An Evaluation Dataset for Intent Classification and Out-of-Scope Prediction",
+ "abstract": "Task-oriented dialog systems need to know when a query falls outside their range of supported intents, but current text classification corpora only define label sets that cover every example. We introduce a new dataset that includes queries that are out-of-scope---i.e., queries that do not fall into any of the system's supported intents. This poses a new challenge because models cannot assume that every query at inference time belongs to a system-supported intent class. Our dataset also covers 150 intent classes over 10 domains, capturing the breadth that a production task-oriented agent must handle. We evaluate a range of benchmark classifiers on our dataset along with several different out-of-scope identification schemes. We find that while the classifiers perform well on in-scope intent classification, they struggle to identify out-of-scope queries. Our dataset and evaluation fill an important gap in the field, offering a way of more rigorously and realistically benchmarking text classification in task-driven dialog systems.",
+ "sections": [
+  "Introduction",
+  "Dataset",
+  "Dataset ::: In-Scope Data Collection",
+  "Dataset ::: Out-of-Scope Data Collection",
+  "Dataset ::: Data Preprocessing and Partitioning",
+  "Dataset ::: Dataset Variants",
+  "Benchmark Evaluation",
+  "Benchmark Evaluation ::: Classifier Models",
+  "Benchmark Evaluation ::: Out-of-Scope Prediction",
+  "Benchmark Evaluation ::: Metrics",
+  "Results ::: Results with oos-train",
+  "Results ::: Results with oos-threshold",
+  "Results ::: Results with oos-binary",
+  "Prior Work",
+  "Conclusion"
+ ],
+ "n_paragraphs": 33,
+ "n_tokens": 2956,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.02027::fig000",
+   "paper_id": "1909.02027",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: Example exchanges between a user (blue, right side) and a task-driven dialog system for personal finance (grey, left side). The system correctly identi-",
+   "n_tokens": 36
+  },
+  {
+   "caption_id": "1909.02027::fig001",
+   "paper_id": "1909.02027",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Sample queries from our dataset. The out-of-scope queries are similar in style to the in-scope queries.",
+   "n_tokens": 27
+  },
+  {
+   "caption_id": "1909.02027::fig002",
+   "paper_id": "1909.02027",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Benchmark classifier results under each data condition using the oos-train (top half) and oos-threshold (bottom half) prediction methods.",
+   "n_tokens": 33
+  },
+  {
+   "caption_id": "1909.02027::fig003",
+   "paper_id": "1909.02027",
+   "file": "4-Table3-1.png",
+   "caption": "Table 3: Results of oos-binary experiments on OOS+, where we compare performance of undersampling (under) and augmentation using sentences from Wikipedia (wiki aug). The wiki aug approach was too large for the DialogFlow and Rasa classifiers.",
+   "n_tokens": 50
+  },
+  {
+   "caption_id": "1909.02027::fig004",
+   "paper_id": "1909.02027",
+   "file": "5-Table4-1.png",
+   "caption": "Table 4: Classification dataset properties. Ours has the broadest range of intents and specially collected out-ofscope queries. We consider “chatbot style” queries to be short, possibly unstructured questions and commands.",
+   "n_tokens": 44
+  }
+ ]
+}

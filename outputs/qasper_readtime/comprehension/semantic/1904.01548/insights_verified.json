@@ -1,0 +1,444 @@
+{
+ "kept": [
+  {
+   "insight_id": "1904.01548::s00:i01",
+   "paper_id": "1904.01548",
+   "group_id": "1904.01548::s00",
+   "concise_text": "Because prior work used a linking function such as surprisal, its interpretable approach may have lost information that the direct-prediction model uses to predict all six ERP components.",
+   "triple": {
+    "subject": "linking function such as surprisal",
+    "predicate": "limits",
+    "object": "information available for predicting all six ERP components"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1904.01548::s02::p000",
+    "1904.01548::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1904.01548::s00:b0:f10",
+    "1904.01548::s00:b0:f12",
+    "1904.01548::s00:b0:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.82,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Jointly supported: s02 says no linking function is used and all components' variance can be predicted; s03 speculates a priori interpretable functions may lose information. The concise_text preserves this as a speculative limitation, not a definite causal claim."
+   },
+   "unit_id": "1904.01548::u001"
+  },
+  {
+   "insight_id": "1904.01548::s00:i04",
+   "paper_id": "1904.01548",
+   "group_id": "1904.01548::s00",
+   "concise_text": "Multitask learning benefits ERP prediction and suggests component relationships, but these joint-training benefit relationships remain only suggestive until verified across multiple datasets and neural network architectures.",
+   "triple": {
+    "subject": "verification across multiple datasets and neural network architectures",
+    "predicate": "limits",
+    "object": "interpretation of joint-training benefit relationships"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1904.01548::s03::p001",
+    "1904.01548::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1904.01548::s00:b0:f15",
+    "1904.01548::s00:b1:f01",
+    "1904.01548::s00:b1:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.92,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "Supported by s03::p001 and s04::p000: multitask learning benefits/suggests relationships, and relationships are only suggestive/cautioned until verified across multiple datasets and more varied architectures."
+   },
+   "unit_id": "1904.01548::u004"
+  },
+  {
+   "insight_id": "1904.01548::s00:i06",
+   "paper_id": "1904.01548",
+   "group_id": "1904.01548::s00",
+   "concise_text": "The six ERP components analyzed from BIBREF0 include semantic markers N400, EPNP, and PNP and syntactic markers P600, ELAN, and LAN, all predicted above chance by the fine-tuned model.",
+   "triple": {
+    "subject": "fine-tuned model",
+    "predicate": "evaluated_on",
+    "object": "six ERP components from BIBREF0"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1904.01548::s00::p002",
+    "1904.01548::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1904.01548::s00:b0:f03",
+    "1904.01548::s00:b0:f04",
+    "1904.01548::s00:b0:f12"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Supported jointly by s00::p002 listing the six components and their semantic/syntactic associations, and s03::p000 stating all six from BIBREF0 are predicted above chance by the pretrained and directly trained model."
+   },
+   "unit_id": "1904.01548::u006"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1904.01548::s00:i00",
+   "paper_id": "1904.01548",
+   "group_id": "1904.01548::s00",
+   "concise_text": "Directly fine-tuning neural networks pretrained as language models to predict ERP components overcomes prior work's limitation of linking language models only to the N400 and P600.",
+   "triple": {
+    "subject": "neural networks pretrained as language models and fine-tuned to directly predict ERP components",
+    "predicate": "extends",
+    "object": "prior work linking language models to the N400 and P600"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1904.01548::s03::p000",
+    "1904.01548::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1904.01548::s00:b0:f12",
+    "1904.01548::s00:b1:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "Cited paragraphs support the contrast, but the insight is essentially a paraphrase of the single paragraph s03::p000 plus s04::p000; not sufficiently novel."
+   },
+   "unit_id": "1904.01548::u000"
+  },
+  {
+   "insight_id": "1904.01548::s00:i02",
+   "paper_id": "1904.01548",
+   "group_id": "1904.01548::s00",
+   "concise_text": "The direct-prediction approach predicts a significant proportion of variance for all ERP components but loses the interpretability provided by a linking function.",
+   "triple": {
+    "subject": "direct-prediction approach",
+    "predicate": "requires",
+    "object": "loss of interpretability provided by a linking function"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1904.01548::s02::p000",
+    "1904.01548::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1904.01548::s00:b0:f12",
+    "1904.01548::s00:b0:f13"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.15,
+    "causality_error": false,
+    "reason": "Direct restatement of s02::p000: losing interpretability and predicting significant variance for all ERP components. Also 'requires' overstates the source's 'we thus lose'."
+   },
+   "unit_id": "1904.01548::u002"
+  },
+  {
+   "insight_id": "1904.01548::s00:i03",
+   "paper_id": "1904.01548",
+   "group_id": "1904.01548::s00",
+   "concise_text": "The finding that an LSTM can predict the P600 contrasts with BIBREF7, where LSTM surprisal was not significant in a mixed effects regression predicting the P600.",
+   "triple": {
+    "subject": "an LSTM predicting the P600",
+    "predicate": "outperforms",
+    "object": "LSTM surprisal in BIBREF7 mixed effects regression"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1904.01548::s02::p000",
+    "1904.01548::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1904.01548::s00:b0:f11",
+    "1904.01548::s00:b0:f14"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.35,
+    "causality_error": false,
+    "reason": "Sources support a contrast between LSTM containing information to predict P600 and LSTM surprisal not being significant in BIBREF7, but not that one 'outperforms' the other; no comparative performance claim is made."
+   },
+   "unit_id": "1904.01548::u003"
+  },
+  {
+   "insight_id": "1904.01548::s00:i05",
+   "paper_id": "1904.01548",
+   "group_id": "1904.01548::s00",
+   "concise_text": "Using heterogeneous data in multitask learning is a potentially major advantage because human language processing datasets are small and information can be shared between behavioral and neural data.",
+   "triple": {
+    "subject": "small datasets associated with human language processing",
+    "predicate": "causes",
+    "object": "heterogeneous data to be a potentially major advantage of a multitask approach"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1904.01548::s03::p001",
+    "1904.01548::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1904.01548::s00:b0:f15",
+    "1904.01548::s00:b1:f01"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.78,
+    "novelty": 0.25,
+    "causality_error": true,
+    "reason": "The source says 'Given the small datasets... using heterogeneous data is a potentially major advantage' and that information can be shared, but the triple asserts a causal relation ('causes') stronger than the text's contextual justification."
+   },
+   "unit_id": "1904.01548::u005"
+  },
+  {
+   "insight_id": "1904.01548::s00:i07",
+   "paper_id": "1904.01548",
+   "group_id": "1904.01548::s00",
+   "concise_text": "Because EEG has temporal resolution for meaning integration and ERPs are identified with comprehension processes, predicting ERP components can probe features mediating human language comprehension.",
+   "triple": {
+    "subject": "predicting ERP components",
+    "predicate": "extends",
+    "object": "EEG study of meaning integration to probing human language comprehension"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1904.01548::s00::p000",
+    "1904.01548::s00::p002"
+   ],
+   "supporting_fact_ids": [
+    "1904.01548::s00:b0:f01",
+    "1904.01548::s00:b0:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.76,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.45,
+    "causality_error": true,
+    "reason": "Sources say EEG has temporal resolution for meaning integration, ERPs are identified with comprehension processes, and the authors propose using a neural network to probe features driving ERPs and comprehension. They do not support the causal 'Because' framing or the triple's 'extends EEG study' relation."
+   },
+   "unit_id": "1904.01548::u007"
+  },
+  {
+   "insight_id": "1904.01548::s00:i08",
+   "paper_id": "1904.01548",
+   "group_id": "1904.01548::s00",
+   "concise_text": "The caution about varying neural network architectures is supported by appendix variants using only the forward-encoder or only word embeddings, which produced clearly worse results than a bi-LSTM encoder.",
+   "triple": {
+    "subject": "forward-encoder and word-embeddings variants",
+    "predicate": "causes",
+    "object": "clearly worse results than using a bi-LSTM encoder"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1904.01548::s03::p001",
+    "1904.01548::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1904.01548::s00:b0:f15",
+    "1904.01548::s00:b1:f03",
+    "1904.01548::s00:b1:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.69,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.45,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "s06::p000 reports worse results for forward-encoder and word-embedding variants than bi-LSTM, but does not say these variants support the caution about varying architectures; the causal 'causes' relation is unsupported."
+   },
+   "unit_id": "1904.01548::u008"
+  },
+  {
+   "insight_id": "1904.01548::s00:i09",
+   "paper_id": "1904.01548",
+   "group_id": "1904.01548::s00",
+   "concise_text": "ERP components can cancel and mask each other, which complicates interpreting the shared information between ERP components found through multitask learning.",
+   "triple": {
+    "subject": "ERP components canceling and masking each other",
+    "predicate": "limits",
+    "object": "interpretation of shared information between ERP components"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1904.01548::s01::p000",
+    "1904.01548::s03::p001"
+   ],
+   "supporting_fact_ids": [
+    "1904.01548::s00:b0:f09",
+    "1904.01548::s00:b0:f15"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.66,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.45,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "s01::p000 says ERP components can cancel/mask each other and localization is difficult; s03::p001 says shared-information relationships must be viewed with caution for other reasons. The claimed limitation on interpreting multitask shared information is not stated or jointly supported."
+   },
+   "unit_id": "1904.01548::u009"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1904.01548::s00:i00",
+    "verdict": {
+     "insight_id": "1904.01548::s00:i00",
+     "keep": false,
+     "support": 0.85,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "Cited paragraphs support the contrast, but the insight is essentially a paraphrase of the single paragraph s03::p000 plus s04::p000; not sufficiently novel."
+    },
+    "reason": "Cited paragraphs support the contrast, but the insight is essentially a paraphrase of the single paragraph s03::p000 plus s04::p000; not sufficiently novel."
+   },
+   {
+    "insight_id": "1904.01548::s00:i01",
+    "verdict": {
+     "insight_id": "1904.01548::s00:i01",
+     "keep": true,
+     "support": 0.82,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Jointly supported: s02 says no linking function is used and all components' variance can be predicted; s03 speculates a priori interpretable functions may lose information. The concise_text preserves this as a speculative limitation, not a definite causal claim."
+    }
+   },
+   {
+    "insight_id": "1904.01548::s00:i02",
+    "verdict": {
+     "insight_id": "1904.01548::s00:i02",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.15,
+     "causality_error": false,
+     "reason": "Direct restatement of s02::p000: losing interpretability and predicting significant variance for all ERP components. Also 'requires' overstates the source's 'we thus lose'."
+    },
+    "reason": "Direct restatement of s02::p000: losing interpretability and predicting significant variance for all ERP components. Also 'requires' overstates the source's 'we thus lose'."
+   },
+   {
+    "insight_id": "1904.01548::s00:i03",
+    "verdict": {
+     "insight_id": "1904.01548::s00:i03",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.35,
+     "causality_error": false,
+     "reason": "Sources support a contrast between LSTM containing information to predict P600 and LSTM surprisal not being significant in BIBREF7, but not that one 'outperforms' the other; no comparative performance claim is made."
+    },
+    "reason": "Sources support a contrast between LSTM containing information to predict P600 and LSTM surprisal not being significant in BIBREF7, but not that one 'outperforms' the other; no comparative performance claim is made."
+   },
+   {
+    "insight_id": "1904.01548::s00:i04",
+    "verdict": {
+     "insight_id": "1904.01548::s00:i04",
+     "keep": true,
+     "support": 0.92,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "Supported by s03::p001 and s04::p000: multitask learning benefits/suggests relationships, and relationships are only suggestive/cautioned until verified across multiple datasets and more varied architectures."
+    }
+   },
+   {
+    "insight_id": "1904.01548::s00:i05",
+    "verdict": {
+     "insight_id": "1904.01548::s00:i05",
+     "keep": false,
+     "support": 0.78,
+     "novelty": 0.25,
+     "causality_error": true,
+     "reason": "The source says 'Given the small datasets... using heterogeneous data is a potentially major advantage' and that information can be shared, but the triple asserts a causal relation ('causes') stronger than the text's contextual justification."
+    },
+    "reason": "The source says 'Given the small datasets... using heterogeneous data is a potentially major advantage' and that information can be shared, but the triple asserts a causal relation ('causes') stronger than the text's contextual justification."
+   },
+   {
+    "insight_id": "1904.01548::s00:i06",
+    "verdict": {
+     "insight_id": "1904.01548::s00:i06",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Supported jointly by s00::p002 listing the six components and their semantic/syntactic associations, and s03::p000 stating all six from BIBREF0 are predicted above chance by the pretrained and directly trained model."
+    }
+   },
+   {
+    "insight_id": "1904.01548::s00:i07",
+    "verdict": {
+     "insight_id": "1904.01548::s00:i07",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.45,
+     "causality_error": true,
+     "reason": "Sources say EEG has temporal resolution for meaning integration, ERPs are identified with comprehension processes, and the authors propose using a neural network to probe features driving ERPs and comprehension. They do not support the causal 'Because' framing or the triple's 'extends EEG study' relation."
+    },
+    "reason": "Sources say EEG has temporal resolution for meaning integration, ERPs are identified with comprehension processes, and the authors propose using a neural network to probe features driving ERPs and comprehension. They do not support the causal 'Because' framing or the triple's 'extends EEG study' relation."
+   },
+   {
+    "insight_id": "1904.01548::s00:i08",
+    "verdict": {
+     "insight_id": "1904.01548::s00:i08",
+     "keep": false,
+     "support": 0.45,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "s06::p000 reports worse results for forward-encoder and word-embedding variants than bi-LSTM, but does not say these variants support the caution about varying architectures; the causal 'causes' relation is unsupported."
+    },
+    "reason": "s06::p000 reports worse results for forward-encoder and word-embedding variants than bi-LSTM, but does not say these variants support the caution about varying architectures; the causal 'causes' relation is unsupported."
+   },
+   {
+    "insight_id": "1904.01548::s00:i09",
+    "verdict": {
+     "insight_id": "1904.01548::s00:i09",
+     "keep": false,
+     "support": 0.45,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "s01::p000 says ERP components can cancel/mask each other and localization is difficult; s03::p001 says shared-information relationships must be viewed with caution for other reasons. The claimed limitation on interpreting multitask shared information is not stated or jointly supported."
+    },
+    "reason": "s01::p000 says ERP components can cancel/mask each other and localization is difficult; s03::p001 says shared-information relationships must be viewed with caution for other reasons. The claimed limitation on interpreting multitask shared information is not stated or jointly supported."
+   }
+  ],
+  "calls": [
+   {
+    "n": 10,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 6850,
+     "completion_tokens": 883,
+     "total_tokens": 7733,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,692 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1909.03135::s00::p000",
+   "summary": "Deep contextualised representations of linguistic entities are used in many current state-of-the-art NLP systems, with ELMo BIBREF0 and BERT BIBREF1 as well-known examples.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s00::p001",
+   "summary": "A deep learning NLP tradition favors minimal pre-processing, assuming character-based architectures and contextualised embedding models can handle spelling and morphology variations themselves, but the authors show this is not entirely true.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s00::p002",
+   "summary": "For previous static word embedding models like word2vec BIBREF2, lemmatization of training and testing data improves performance, as BIBREF3 showed for semantic similarity and analogy tasks.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s00::p003",
+   "summary": "The paper tests whether lemmatization helps modern contextualised embeddings using ELMo models trained on the same corpus before and after lemmatization, evaluated on word sense disambiguation in context (WSD).",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s00::p004",
+   "summary": "The authors use top-layer ELMo representations of ambiguous words to train word sense classifiers, testing lemmas versus tokens in English and Russian, which differ significantly in lemmatization's influence on WSD performance.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s00::p005",
+   "summary": "The paper states its findings and contributions.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s00::p006",
+   "summary": "Linguistic text pre-processing still matters in some tasks, even for contemporary deep representation learning algorithms.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s00::p007",
+   "summary": "For Russian, lemmatizing training and testing data for ELMo representations yields small but consistent WSD improvements, unlike English, where differences are negligible.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s01::p000",
+   "summary": "ELMo contextual word representations are learned unsupervised through language modelling BIBREF0 with a two-layer BiLSTM over character sequences, avoiding out-of-vocabulary words and prompting recommendations against normalisation except tokenization, though lemmas can improve WSD for non-English languages.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s01::p001",
+   "summary": "Word sense disambiguation or WSD BIBREF4 chooses a word sense from a pre-defined sense inventory given context, fitting intrinsic ELMo evaluation because contextualised embeddings address polysemy and homonymy; two lexical sample WSD test sets are used.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s02::p000",
+   "summary": "The authors trained ELMo models from scratch on the English Wikipedia dump from February 2017 and, for Russian, Russian Wikipedia from December 2018 plus the full Russian National Corpus (RNC), with English Wikipedia still two times larger.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s02::p001",
+   "summary": "Texts were tokenized and lemmatized with UDPipe models trained on Universal Dependencies 2.3 treebanks BIBREF5, with lemmatization accuracy about 96% for English and 97% for Russian, treated as gold.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s02::p002",
+   "summary": "ELMo models were trained using the original TensorFlow implementation for 3 epochs with batch size 192 on two GPUs, with LSTM dimensionality decreased from 4096 to 2048.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p000",
+   "summary": "Two WSD datasets were used for evaluation.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p001",
+   "summary": "Senseval-3 for English BIBREF6 was used.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p002",
+   "summary": "RUSSE'18 for Russian BIBREF7 was used.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p003",
+   "summary": "The Senseval-3 dataset consists of lexical samples for nouns, verbs and adjectives, and only noun target words were used.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p004",
+   "summary": "argument is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p005",
+   "summary": "arm is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p006",
+   "summary": "atmosphere is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p007",
+   "summary": "audience is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p008",
+   "summary": "bank is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p009",
+   "summary": "degree is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p010",
+   "summary": "difference is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p011",
+   "summary": "difficulty is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p012",
+   "summary": "disc is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p013",
+   "summary": "image is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p014",
+   "summary": "interest is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p015",
+   "summary": "judgement is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p016",
+   "summary": "organization is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p017",
+   "summary": "paper is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p018",
+   "summary": "party is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p019",
+   "summary": "performance is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p020",
+   "summary": "plan is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p021",
+   "summary": "shelter is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p022",
+   "summary": "sort is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p023",
+   "summary": "source is listed as a noun target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p024",
+   "summary": "An example for the ambiguous word argument is given below.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p025",
+   "summary": "The example describes Postscript using post fix notation, where arguments come first and operators follow, similar to Reverse Polish Notation and a stack based approach.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p026",
+   "summary": "In this sentence, the word `argument' is used in the sense of a mathematical operator.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p027",
+   "summary": "The RUSSE'18 dataset was created in 2018 for the shared task in Russian word sense induction, contains only nouns, and lists words with English translations in Table TABREF30.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p028",
+   "summary": "Originally, RUSSE'18 included russianбайка `tale/fleece' and russianгвоздика 'clove/small nail', but they were excluded because their senses are ambiguous only in some inflectional forms, not in lemmas.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p029",
+   "summary": "The Russian dataset is more homogeneous, using a lexical window of 25 words before and after the target word, while English uses whole paragraphs; cropping English examples did not change classification quality.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p030",
+   "summary": "An example from RUSSE'18 is given for russianмандарин `mandarin' in the sense `Chinese official title'.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p031",
+   "summary": "The Russian example mentions thousands of mandarins and other high-ranking officials placed on three marble terraces.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p032",
+   "summary": "The English translation mentions thousands of mandarins and other dignitaries placed on three marble terraces leading to something.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p033",
+   "summary": "Table TABREF31 compares both datasets, which were pre-processed like the ELMo training corpora to produce lemmatized and non-lemmatized versions of each.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p034",
+   "summary": "Table TABREF31 shows 20 English target words with 24 lemmas and 18 Russian target words with 36 lemmas due to UDPipe errors, plus 39 English distinct forms and 132 Russian distinct forms for 18 nouns.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s03::p035",
+   "summary": "RUSSE'18 is morphologically far more complex than Senseval3, reflecting the respective languages and leading to substantial differences between token-based and lemma-based ELMo models.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s04::p000",
+   "summary": "Following BIBREF8, the authors avoid standard train-test splits, using per-word random splits and 5-fold cross-validation, averaging 5 macro-F1 scores for each target word.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s04::p001",
+   "summary": "The authors use feature extraction rather than fine-tuning, extracting either the single target word vector from the ELMo top layer or averaged ELMo top layer vectors of all context sentence words.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s04::p002",
+   "summary": "For comparison, the authors report averaged vectors with Continuous Skipgram BIBREF2 SGNS models trained on English or Russian Wikipedia dumps, noting SGNS cannot use only target word vectors as features.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s04::p003",
+   "summary": "Simple logistic regression was used, while an MLP classifier with 200-neurons hidden layer yielded essentially the same results, suggesting findings are not classifier-dependent.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s04::p004",
+   "summary": "Table TABREF32 shows results with random and most frequent sense (MFS) baselines for each dataset.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s04::p005",
+   "summary": "ELMo outperforms SGNS for both languages, and averaging all sentence words is not beneficial for WSD with ELMo, so only single target word usage is discussed.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s04::p006",
+   "summary": "Tokens versus lemmas do not significantly change SGNS WSD scores or English ELMo scores, but Russian ELMo (target) on lemmas outperforms ELMo on tokens with small but significant improvement.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s05::p000",
+   "summary": "The qualitative analysis focuses on Russian scores, where fewer classes made scores higher and more consistent, and improvements for most words show lemmatization benefits morphologically rich languages.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s05::p001",
+   "summary": "The authors analyse words with statistically significant score differences, defined as differing by more than one standard deviation, listed in Table TABREF36.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s05::p002",
+   "summary": "Among 18 words, only 3 show significant improvement from tokens to lemmas, with low standard deviations, including russianакция `stock, share / event', russianкрона `crown (tree / coin)' and russianкруп `croup (horse body part / illness)'.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s05::p003",
+   "summary": "Only russianдомино `domino (game / costume)' strongly decreased with lemma-based models, though the difference lies on the border of one standard deviation and is not really significant.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s05::p004",
+   "summary": "russianДомино is the only RUSSE'18 target noun with no inflected forms, so lemmatization offers no improvement and loses useful contextual inflection information, showing lemmatization has both advantages and disadvantages.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s05::p005",
+   "summary": "Excluded words russianбайка `tale / fleece' and russianгвоздика 'clove / small nail' show great improvement with lemma-based models because different senses have different lemmas, making results dependent on lemmatization quality.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s06::p000",
+   "summary": "The authors evaluated how ELMo contextualised word embedding models' word sense disambiguation depends on training data, comparing raw tokenized corpora with corpora where tokens were replaced by lemmas, with models available via the NLPL word embeddings repository BIBREF3.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s06::p001",
+   "summary": "Experiments show lemmatization is unnecessary for simple-morphology languages like English, but yields small but consistent WSD improvements for rich-morphology languages like Russian, except rare words lacking inflected forms.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s06::p002",
+   "summary": "Lemmatization is not a silver bullet and can hurt tasks where inflectional properties of words are important, as in any NLP systems.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s06::p003",
+   "summary": "The take-home message is that text pre-processing still matters for contemporary deep learning algorithms and the nature of the language affects optimal training decisions.",
+   "group_id": "1909.03135::g00"
+  },
+  {
+   "passage_id": "1909.03135::s06::p004",
+   "summary": "Future work will include more languages, especially more strongly inflected languages like Russian and weakly inflected analytical languages similar to English, to test whether inflection differences matter generally.",
+   "group_id": "1909.03135::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1909.03135::g00",
+   "summaries": [
+    {
+     "passage_id": "1909.03135::s00::p000",
+     "summary": "Deep contextualised representations of linguistic entities are used in many current state-of-the-art NLP systems, with ELMo BIBREF0 and BERT BIBREF1 as well-known examples.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s00::p001",
+     "summary": "A deep learning NLP tradition favors minimal pre-processing, assuming character-based architectures and contextualised embedding models can handle spelling and morphology variations themselves, but the authors show this is not entirely true.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s00::p002",
+     "summary": "For previous static word embedding models like word2vec BIBREF2, lemmatization of training and testing data improves performance, as BIBREF3 showed for semantic similarity and analogy tasks.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s00::p003",
+     "summary": "The paper tests whether lemmatization helps modern contextualised embeddings using ELMo models trained on the same corpus before and after lemmatization, evaluated on word sense disambiguation in context (WSD).",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s00::p004",
+     "summary": "The authors use top-layer ELMo representations of ambiguous words to train word sense classifiers, testing lemmas versus tokens in English and Russian, which differ significantly in lemmatization's influence on WSD performance.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s00::p005",
+     "summary": "The paper states its findings and contributions.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s00::p006",
+     "summary": "Linguistic text pre-processing still matters in some tasks, even for contemporary deep representation learning algorithms.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s00::p007",
+     "summary": "For Russian, lemmatizing training and testing data for ELMo representations yields small but consistent WSD improvements, unlike English, where differences are negligible.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s01::p000",
+     "summary": "ELMo contextual word representations are learned unsupervised through language modelling BIBREF0 with a two-layer BiLSTM over character sequences, avoiding out-of-vocabulary words and prompting recommendations against normalisation except tokenization, though lemmas can improve WSD for non-English languages.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s01::p001",
+     "summary": "Word sense disambiguation or WSD BIBREF4 chooses a word sense from a pre-defined sense inventory given context, fitting intrinsic ELMo evaluation because contextualised embeddings address polysemy and homonymy; two lexical sample WSD test sets are used.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s02::p000",
+     "summary": "The authors trained ELMo models from scratch on the English Wikipedia dump from February 2017 and, for Russian, Russian Wikipedia from December 2018 plus the full Russian National Corpus (RNC), with English Wikipedia still two times larger.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s02::p001",
+     "summary": "Texts were tokenized and lemmatized with UDPipe models trained on Universal Dependencies 2.3 treebanks BIBREF5, with lemmatization accuracy about 96% for English and 97% for Russian, treated as gold.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s02::p002",
+     "summary": "ELMo models were trained using the original TensorFlow implementation for 3 epochs with batch size 192 on two GPUs, with LSTM dimensionality decreased from 4096 to 2048.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p000",
+     "summary": "Two WSD datasets were used for evaluation.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p001",
+     "summary": "Senseval-3 for English BIBREF6 was used.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p002",
+     "summary": "RUSSE'18 for Russian BIBREF7 was used.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p003",
+     "summary": "The Senseval-3 dataset consists of lexical samples for nouns, verbs and adjectives, and only noun target words were used.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p004",
+     "summary": "argument is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p005",
+     "summary": "arm is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p006",
+     "summary": "atmosphere is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p007",
+     "summary": "audience is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p008",
+     "summary": "bank is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p009",
+     "summary": "degree is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p010",
+     "summary": "difference is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p011",
+     "summary": "difficulty is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p012",
+     "summary": "disc is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p013",
+     "summary": "image is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p014",
+     "summary": "interest is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p015",
+     "summary": "judgement is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p016",
+     "summary": "organization is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p017",
+     "summary": "paper is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p018",
+     "summary": "party is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p019",
+     "summary": "performance is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p020",
+     "summary": "plan is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p021",
+     "summary": "shelter is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p022",
+     "summary": "sort is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p023",
+     "summary": "source is listed as a noun target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p024",
+     "summary": "An example for the ambiguous word argument is given below.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p025",
+     "summary": "The example describes Postscript using post fix notation, where arguments come first and operators follow, similar to Reverse Polish Notation and a stack based approach.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p026",
+     "summary": "In this sentence, the word `argument' is used in the sense of a mathematical operator.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p027",
+     "summary": "The RUSSE'18 dataset was created in 2018 for the shared task in Russian word sense induction, contains only nouns, and lists words with English translations in Table TABREF30.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p028",
+     "summary": "Originally, RUSSE'18 included russianбайка `tale/fleece' and russianгвоздика 'clove/small nail', but they were excluded because their senses are ambiguous only in some inflectional forms, not in lemmas.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p029",
+     "summary": "The Russian dataset is more homogeneous, using a lexical window of 25 words before and after the target word, while English uses whole paragraphs; cropping English examples did not change classification quality.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p030",
+     "summary": "An example from RUSSE'18 is given for russianмандарин `mandarin' in the sense `Chinese official title'.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p031",
+     "summary": "The Russian example mentions thousands of mandarins and other high-ranking officials placed on three marble terraces.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p032",
+     "summary": "The English translation mentions thousands of mandarins and other dignitaries placed on three marble terraces leading to something.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p033",
+     "summary": "Table TABREF31 compares both datasets, which were pre-processed like the ELMo training corpora to produce lemmatized and non-lemmatized versions of each.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p034",
+     "summary": "Table TABREF31 shows 20 English target words with 24 lemmas and 18 Russian target words with 36 lemmas due to UDPipe errors, plus 39 English distinct forms and 132 Russian distinct forms for 18 nouns.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s03::p035",
+     "summary": "RUSSE'18 is morphologically far more complex than Senseval3, reflecting the respective languages and leading to substantial differences between token-based and lemma-based ELMo models.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s04::p000",
+     "summary": "Following BIBREF8, the authors avoid standard train-test splits, using per-word random splits and 5-fold cross-validation, averaging 5 macro-F1 scores for each target word.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s04::p001",
+     "summary": "The authors use feature extraction rather than fine-tuning, extracting either the single target word vector from the ELMo top layer or averaged ELMo top layer vectors of all context sentence words.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s04::p002",
+     "summary": "For comparison, the authors report averaged vectors with Continuous Skipgram BIBREF2 SGNS models trained on English or Russian Wikipedia dumps, noting SGNS cannot use only target word vectors as features.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s04::p003",
+     "summary": "Simple logistic regression was used, while an MLP classifier with 200-neurons hidden layer yielded essentially the same results, suggesting findings are not classifier-dependent.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s04::p004",
+     "summary": "Table TABREF32 shows results with random and most frequent sense (MFS) baselines for each dataset.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s04::p005",
+     "summary": "ELMo outperforms SGNS for both languages, and averaging all sentence words is not beneficial for WSD with ELMo, so only single target word usage is discussed.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s04::p006",
+     "summary": "Tokens versus lemmas do not significantly change SGNS WSD scores or English ELMo scores, but Russian ELMo (target) on lemmas outperforms ELMo on tokens with small but significant improvement.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s05::p000",
+     "summary": "The qualitative analysis focuses on Russian scores, where fewer classes made scores higher and more consistent, and improvements for most words show lemmatization benefits morphologically rich languages.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s05::p001",
+     "summary": "The authors analyse words with statistically significant score differences, defined as differing by more than one standard deviation, listed in Table TABREF36.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s05::p002",
+     "summary": "Among 18 words, only 3 show significant improvement from tokens to lemmas, with low standard deviations, including russianакция `stock, share / event', russianкрона `crown (tree / coin)' and russianкруп `croup (horse body part / illness)'.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s05::p003",
+     "summary": "Only russianдомино `domino (game / costume)' strongly decreased with lemma-based models, though the difference lies on the border of one standard deviation and is not really significant.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s05::p004",
+     "summary": "russianДомино is the only RUSSE'18 target noun with no inflected forms, so lemmatization offers no improvement and loses useful contextual inflection information, showing lemmatization has both advantages and disadvantages.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s05::p005",
+     "summary": "Excluded words russianбайка `tale / fleece' and russianгвоздика 'clove / small nail' show great improvement with lemma-based models because different senses have different lemmas, making results dependent on lemmatization quality.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s06::p000",
+     "summary": "The authors evaluated how ELMo contextualised word embedding models' word sense disambiguation depends on training data, comparing raw tokenized corpora with corpora where tokens were replaced by lemmas, with models available via the NLPL word embeddings repository BIBREF3.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s06::p001",
+     "summary": "Experiments show lemmatization is unnecessary for simple-morphology languages like English, but yields small but consistent WSD improvements for rich-morphology languages like Russian, except rare words lacking inflected forms.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s06::p002",
+     "summary": "Lemmatization is not a silver bullet and can hurt tasks where inflectional properties of words are important, as in any NLP systems.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s06::p003",
+     "summary": "The take-home message is that text pre-processing still matters for contemporary deep learning algorithms and the nature of the language affects optimal training decisions.",
+     "group_id": "1909.03135::g00"
+    },
+    {
+     "passage_id": "1909.03135::s06::p004",
+     "summary": "Future work will include more languages, especially more strongly inflected languages like Russian and weakly inflected analytical languages similar to English, to test whether inflection differences matter generally.",
+     "group_id": "1909.03135::g00"
+    }
+   ],
+   "n_raw": 67,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5686,
+    "completion_tokens": 3110,
+    "total_tokens": 8796,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

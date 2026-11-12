@@ -1,0 +1,542 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1908.05828::s00::p000",
+   "summary": "NER labels sentence elements into categories like \"PERSON\", \"LOCATION\", \"ORGANIZATION\" and others, with extensive research on several languages but no neural NER study for Nepali; the paper proposes grapheme-level neural Nepali NER without hand-crafted features or data pre-processing.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s00::p001",
+   "summary": "Recent neural architectures reduce hand-crafted features and POS-tag needs but have not been applied to low-resource Nepali; the authors created a named entity annotated dataset partly with Dataturk using Nepali daily news texts from around 2015-2016.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s00::p002",
+   "summary": "Following are our contributions:",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s00::p003",
+   "summary": "The authors present a novel Named Entity Recognizer (NER) for Nepali language and claim to be the first to propose neural based Nepali NER.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s00::p004",
+   "summary": "Because there are not good quality dataset to train NER, the authors release a dataset to support future research.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s00::p005",
+   "summary": "The authors empirically evaluate their model with state-of-the-art models with relative improvement of upto 10%.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s00::p006",
+   "summary": "The paper presents similar works in Section SECREF2, approach and dataset statistics in Section SECREF3 and SECREF4, experiments, evaluation and discussion in Section SECREF5, SECREF6, and SECREF7, and observations in Section SECREF8.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s00::p007",
+   "summary": "To facilitate further research, the code and dataset will be made available at github.com/link-yet-to-be-updated.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s01::p000",
+   "summary": "There has been a handful of research on Nepali NER task based on approaches like Support Vector Machine and gazetteer list and Hidden Markov Model and gazetteer list.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s01::p001",
+   "summary": "BIBREF11 uses SVM with features like first word, word length, digit features and gazetteer but does not take context word into account, while BIBREF9 and BIBREF10 use Hidden Markov Model with n-gram POS-tags and gazetteer list look-up.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s01::p002",
+   "summary": "Researchers have shown that neural networks like CNN, RNN, LSTM, GRU can capture semantic knowledge better with pre-trained embbeddings like word2vec, glove or fasttext.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s01::p003",
+   "summary": "The paper presents a neural network architecture for Nepali NER without manual feature engineering or data pre-processing, compares BiLSTM, BiLSTM+CNN, BiLSTM+CRF, BiLSTM+CNN+CRF, CNN model and Stanford CRF model, compares embeddings and POS one-hot encoding on the created dataset and ILPRL lab dataset, and finds augmented representations better than general word embedding alone.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s02::p000",
+   "summary": "This section describes the approach in building the model, which is partly inspired from multiple models BIBREF20, BIBREF1, and BIBREF2.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s03::p000",
+   "summary": "Bi-directional LSTM captures word representation in forward and reverse sentence directions, concatenating hidden states to produce $h_t$=[$\\overrightarrow{h_t}$;$\\overleftarrow{h_t}$].",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s04::p000",
+   "summary": "Word2Vec, GloVe and FastText word vectors of 300 dimensions were trained on a pre-lemmatized Nepali National Corpus of 14 million words mixed with dataset texts, yielding vectors for 72782 unique words.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s04::p001",
+   "summary": "Light pre-processing removed invalid or non-Devanagari characters but kept punctuation and numbers, set window context at 10, dropped rare words below 5, and did not freeze word embeddings during training.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s04::p002",
+   "summary": "fasttext embeddings were used for sub-word representation in highly inflectional Nepali, with sub-word size between 1 and 4 because single letters can be words and graphemes or sub-words can form from dependent vowel signs with consonants.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s04::p003",
+   "summary": "A two-dimensional visualization of npAl used Principal Component Analysis (PCA), with 84 and 104 nearest neighbors observed using word2vec and fasttext embedding respectively on the same corpus.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s05::p000",
+   "summary": "Character-level embeddings extracted using CNN and combined with word embeddings enhance NER performance by capturing morphological features; grapheme-level CNN uses graphemes, character-level CNN uses characters, and embeddings are randomly initialized from [0,1] with dimension 30.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s06::p000",
+   "summary": "Grapheme is an atomic meaningful unit, and the authors compare grapheme-level with character-level representation in highly inflectional Nepali, finding grapheme-level scores on par with character-level and creating grapheme clusters using uniseg package.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s07::p000",
+   "summary": "The authors created one-hot encoded vector of POS tags and concatenated it with pre-trained word embeddings before passing it to BiLSTM network.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s08::p000",
+   "summary": "With no publicly available standard Nepali NER dataset, the authors created OurNepali dataset from daily newspaper sentences of 2015-2016 with Person (PER), Location (LOC) and Organization (ORG) classes in standard CoNLL-2003 IO format.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s08::p001",
+   "summary": "The authors lemmatized post-positions like Ek, kO, l, mA, m, my, jF, sg, aEG among 299 post positions, obtained from sanjaalcorps, and found lemmatizing post-positions boosted the F1 score by almost 10%.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s08::p002",
+   "summary": "To label the dataset with POS-tags, the authors created a POS annotated dataset of 6946 sentences and 16225 unique words and trained a BiLSTM model with 95.14% accuracy.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s08::p003",
+   "summary": "The released github repository dataset contains each word in newline with space separated POS-tags and Entity-tags, with sentences separated by empty newline.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s09::p000",
+   "summary": "The authors received the ILPRL dataset from Bal Krishna Bal, ILPRL, KU, which follows standard CoNLL-2003 IOB format with POS tags, was prepared by ILPRL Lab, KU and KEIV Technologies, and required NER tag corrections.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s09::p001",
+   "summary": "Table TABREF24 presents total entities (PER, LOC, ORG and MISC) from both datasets, divided into 64%, 16% and 20% for training set, development set and test set respectively.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s10::p000",
+   "summary": "Neural network architectures were implemented using PyTorch framework on a single Nvidia Tesla P100 SXM2, with BiLSTM, BiLSTM-CNN, BiLSTM-CRF and BiLSTM-CNN-CRF experiments, sentence-level training and evaluation, and RNN variants initialized randomly from $(-\\sqrt{k},\\sqrt{k})$ where $k=\\frac{1}{hidden\\_size}$.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s10::p001",
+   "summary": "The authors loaded the dataset and built vocabulary using torchtext library's SequenceTaggingDataset class, trained with shuffled training set using Adam optimizer, used single layer LSTM networks, found Adam better than Stochastic Gradient Descent (SGD), and applied dropout of 0.5 after LSTM layer.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s10::p002",
+   "summary": "For CNN, 30 different filters of sizes 3, 4 and 5 passed character or grapheme embeddings through Convolution, Rectified Linear Unit and Max-Pooling, with concatenated vectors, dropout of 0.5, embedding size of 30, and concatenation with word embeddings and one-hot POS vector.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s11::p000",
+   "summary": "For the experiments, the model was trained on IO (Inside, Outside) format for both datasets, so the dataset contains no B-type annotation unlike BIO (Beginning, Inside, Outside) scheme.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s12::p000",
+   "summary": "Simple early stopping stopped training if validation loss did not decrease after 10 epochs, otherwise training ran upto 100 epochs, usually stopping around 30-50 epochs.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s13::p000",
+   "summary": "Hyper-parameter tuning changed learning rate from (0,1, 0.01, 0.001, 0.0001), weight decay from [$10^{-1}$, $10^{-2}$, $10^{-3}$, $10^{-4}$, $10^{-5}$, $10^{-6}$, $10^{-7}$], batch size from [1, 2, 4, 8, 16, 32, 64, 128], and hidden size from [8, 16, 32, 64, 128, 256, 512 1024].",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s14::p000",
+   "summary": "Figure FIGREF31 shows choosing 0.5 as dropout rate because F1 score is lowest without dropout, gradually increases with dropout, and starts falling after dropout rate = 0.5.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s15::p000",
+   "summary": "This section presents details regarding evaluation and comparison of the models with other baselines.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s15::p001",
+   "summary": "Table TABREF25 studies embeddings on OurNepali dataset, showing pre-trained embeddings improve over randomly initialized embedding, Skip Gram models perform better than CBOW models for word2vec and fasttext, and fastText_Skip Gram embeddings outperform all other models.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s15::p002",
+   "summary": "Table TABREF35 compares model architectures, with Stanford CRF classifier using words, letter n-grams of upto length 6, previous word and next word, trained till current function value is less than $1\\mathrm {e}{-2}$, and random character-level and grapheme-level word embeddings yielding near scores.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s15::p003",
+   "summary": "All models are evaluated using CoNLL-2003 evaluation script to calculate entity-wise precision, recall and f1 score.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s16::p000",
+   "summary": "The paper shows neural networks can train downstream NLP tasks like Named Entity Recognition in Nepali, with fasttext skip gram word vectors performing better due to sub-word representation important for highly inflectional Nepali and potentially other Devanagari languages.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s16::p001",
+   "summary": "Stemming post-positions helps improve model performance in inflectional Nepali by separating inflections or morphemes, minimizing variations of the same word and giving root words stronger word vector representations.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s16::p002",
+   "summary": "Tables TABREF23, TABREF24, and TABREF35 imply more data is needed for better results because OurNepali dataset volume is almost ten times bigger compared to ILPRL dataset in terms of entities.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s17::p000",
+   "summary": "The paper proposed a novel NER for Nepali language, achieved relative improvement of upto 10%, and studied different factors effecting the performance of the NER for Nepali language.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s17::p001",
+   "summary": "BiLSTM+CNN(grapheme-level) performs on par with BiLSTM+CNN(character-level) under the same configuration, and BiLSTM+CNN(grapheme-level) and BiLSTM+CNN(G)+POS outperform all other model experimented in OurNepali and ILPRL dataset respectively.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s17::p002",
+   "summary": "As the first named entity recognition research in Nepal language using neural network, the work has room for improvement, including initializing grapheme-level embedding with fasttext embeddings, applying BERT, ELMo and FLAIR, and using cross-lingual or multi-lingual parameter sharing with Devanagari languages like Hindi and Bengali.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s17::p003",
+   "summary": "The authors contribute their dataset to Nepali NLP community and believe a special committee should create and maintain such dataset for Nepali NLP and organize competitions to elevate NLP research in Nepal.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s17::p004",
+   "summary": "Some of the future works are listed below:",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s17::p005",
+   "summary": "Proper initialization of grapheme level embedding from fasttext embeddings.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s17::p006",
+   "summary": "Apply robust POS-tagger for Nepali dataset.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s17::p007",
+   "summary": "Lemmatize the OurNepali dataset with robust and efficient lemmatizer.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s17::p008",
+   "summary": "Improve Nepali language score with cross-lingual learning techniques.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s17::p009",
+   "summary": "Create more dataset using Wikipedia/Wikidata framework.",
+   "group_id": "1908.05828::g00"
+  },
+  {
+   "passage_id": "1908.05828::s18::p000",
+   "summary": "The authors thank Bal Krishna Bal, Kathmandu University Professor, for providing the POS-tagged Nepali NER data.",
+   "group_id": "1908.05828::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1908.05828::g00",
+   "summaries": [
+    {
+     "passage_id": "1908.05828::s00::p000",
+     "summary": "NER labels sentence elements into categories like \"PERSON\", \"LOCATION\", \"ORGANIZATION\" and others, with extensive research on several languages but no neural NER study for Nepali; the paper proposes grapheme-level neural Nepali NER without hand-crafted features or data pre-processing.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s00::p001",
+     "summary": "Recent neural architectures reduce hand-crafted features and POS-tag needs but have not been applied to low-resource Nepali; the authors created a named entity annotated dataset partly with Dataturk using Nepali daily news texts from around 2015-2016.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s00::p002",
+     "summary": "Following are our contributions:",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s00::p003",
+     "summary": "The authors present a novel Named Entity Recognizer (NER) for Nepali language and claim to be the first to propose neural based Nepali NER.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s00::p004",
+     "summary": "Because there are not good quality dataset to train NER, the authors release a dataset to support future research.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s00::p005",
+     "summary": "The authors empirically evaluate their model with state-of-the-art models with relative improvement of upto 10%.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s00::p006",
+     "summary": "The paper presents similar works in Section SECREF2, approach and dataset statistics in Section SECREF3 and SECREF4, experiments, evaluation and discussion in Section SECREF5, SECREF6, and SECREF7, and observations in Section SECREF8.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s00::p007",
+     "summary": "To facilitate further research, the code and dataset will be made available at github.com/link-yet-to-be-updated.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s01::p000",
+     "summary": "There has been a handful of research on Nepali NER task based on approaches like Support Vector Machine and gazetteer list and Hidden Markov Model and gazetteer list.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s01::p001",
+     "summary": "BIBREF11 uses SVM with features like first word, word length, digit features and gazetteer but does not take context word into account, while BIBREF9 and BIBREF10 use Hidden Markov Model with n-gram POS-tags and gazetteer list look-up.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s01::p002",
+     "summary": "Researchers have shown that neural networks like CNN, RNN, LSTM, GRU can capture semantic knowledge better with pre-trained embbeddings like word2vec, glove or fasttext.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s01::p003",
+     "summary": "The paper presents a neural network architecture for Nepali NER without manual feature engineering or data pre-processing, compares BiLSTM, BiLSTM+CNN, BiLSTM+CRF, BiLSTM+CNN+CRF, CNN model and Stanford CRF model, compares embeddings and POS one-hot encoding on the created dataset and ILPRL lab dataset, and finds augmented representations better than general word embedding alone.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s02::p000",
+     "summary": "This section describes the approach in building the model, which is partly inspired from multiple models BIBREF20, BIBREF1, and BIBREF2.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s03::p000",
+     "summary": "Bi-directional LSTM captures word representation in forward and reverse sentence directions, concatenating hidden states to produce $h_t$=[$\\overrightarrow{h_t}$;$\\overleftarrow{h_t}$].",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s04::p000",
+     "summary": "Word2Vec, GloVe and FastText word vectors of 300 dimensions were trained on a pre-lemmatized Nepali National Corpus of 14 million words mixed with dataset texts, yielding vectors for 72782 unique words.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s04::p001",
+     "summary": "Light pre-processing removed invalid or non-Devanagari characters but kept punctuation and numbers, set window context at 10, dropped rare words below 5, and did not freeze word embeddings during training.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s04::p002",
+     "summary": "fasttext embeddings were used for sub-word representation in highly inflectional Nepali, with sub-word size between 1 and 4 because single letters can be words and graphemes or sub-words can form from dependent vowel signs with consonants.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s04::p003",
+     "summary": "A two-dimensional visualization of npAl used Principal Component Analysis (PCA), with 84 and 104 nearest neighbors observed using word2vec and fasttext embedding respectively on the same corpus.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s05::p000",
+     "summary": "Character-level embeddings extracted using CNN and combined with word embeddings enhance NER performance by capturing morphological features; grapheme-level CNN uses graphemes, character-level CNN uses characters, and embeddings are randomly initialized from [0,1] with dimension 30.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s06::p000",
+     "summary": "Grapheme is an atomic meaningful unit, and the authors compare grapheme-level with character-level representation in highly inflectional Nepali, finding grapheme-level scores on par with character-level and creating grapheme clusters using uniseg package.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s07::p000",
+     "summary": "The authors created one-hot encoded vector of POS tags and concatenated it with pre-trained word embeddings before passing it to BiLSTM network.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s08::p000",
+     "summary": "With no publicly available standard Nepali NER dataset, the authors created OurNepali dataset from daily newspaper sentences of 2015-2016 with Person (PER), Location (LOC) and Organization (ORG) classes in standard CoNLL-2003 IO format.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s08::p001",
+     "summary": "The authors lemmatized post-positions like Ek, kO, l, mA, m, my, jF, sg, aEG among 299 post positions, obtained from sanjaalcorps, and found lemmatizing post-positions boosted the F1 score by almost 10%.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s08::p002",
+     "summary": "To label the dataset with POS-tags, the authors created a POS annotated dataset of 6946 sentences and 16225 unique words and trained a BiLSTM model with 95.14% accuracy.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s08::p003",
+     "summary": "The released github repository dataset contains each word in newline with space separated POS-tags and Entity-tags, with sentences separated by empty newline.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s09::p000",
+     "summary": "The authors received the ILPRL dataset from Bal Krishna Bal, ILPRL, KU, which follows standard CoNLL-2003 IOB format with POS tags, was prepared by ILPRL Lab, KU and KEIV Technologies, and required NER tag corrections.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s09::p001",
+     "summary": "Table TABREF24 presents total entities (PER, LOC, ORG and MISC) from both datasets, divided into 64%, 16% and 20% for training set, development set and test set respectively.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s10::p000",
+     "summary": "Neural network architectures were implemented using PyTorch framework on a single Nvidia Tesla P100 SXM2, with BiLSTM, BiLSTM-CNN, BiLSTM-CRF and BiLSTM-CNN-CRF experiments, sentence-level training and evaluation, and RNN variants initialized randomly from $(-\\sqrt{k},\\sqrt{k})$ where $k=\\frac{1}{hidden\\_size}$.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s10::p001",
+     "summary": "The authors loaded the dataset and built vocabulary using torchtext library's SequenceTaggingDataset class, trained with shuffled training set using Adam optimizer, used single layer LSTM networks, found Adam better than Stochastic Gradient Descent (SGD), and applied dropout of 0.5 after LSTM layer.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s10::p002",
+     "summary": "For CNN, 30 different filters of sizes 3, 4 and 5 passed character or grapheme embeddings through Convolution, Rectified Linear Unit and Max-Pooling, with concatenated vectors, dropout of 0.5, embedding size of 30, and concatenation with word embeddings and one-hot POS vector.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s11::p000",
+     "summary": "For the experiments, the model was trained on IO (Inside, Outside) format for both datasets, so the dataset contains no B-type annotation unlike BIO (Beginning, Inside, Outside) scheme.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s12::p000",
+     "summary": "Simple early stopping stopped training if validation loss did not decrease after 10 epochs, otherwise training ran upto 100 epochs, usually stopping around 30-50 epochs.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s13::p000",
+     "summary": "Hyper-parameter tuning changed learning rate from (0,1, 0.01, 0.001, 0.0001), weight decay from [$10^{-1}$, $10^{-2}$, $10^{-3}$, $10^{-4}$, $10^{-5}$, $10^{-6}$, $10^{-7}$], batch size from [1, 2, 4, 8, 16, 32, 64, 128], and hidden size from [8, 16, 32, 64, 128, 256, 512 1024].",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s14::p000",
+     "summary": "Figure FIGREF31 shows choosing 0.5 as dropout rate because F1 score is lowest without dropout, gradually increases with dropout, and starts falling after dropout rate = 0.5.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s15::p000",
+     "summary": "This section presents details regarding evaluation and comparison of the models with other baselines.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s15::p001",
+     "summary": "Table TABREF25 studies embeddings on OurNepali dataset, showing pre-trained embeddings improve over randomly initialized embedding, Skip Gram models perform better than CBOW models for word2vec and fasttext, and fastText_Skip Gram embeddings outperform all other models.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s15::p002",
+     "summary": "Table TABREF35 compares model architectures, with Stanford CRF classifier using words, letter n-grams of upto length 6, previous word and next word, trained till current function value is less than $1\\mathrm {e}{-2}$, and random character-level and grapheme-level word embeddings yielding near scores.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s15::p003",
+     "summary": "All models are evaluated using CoNLL-2003 evaluation script to calculate entity-wise precision, recall and f1 score.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s16::p000",
+     "summary": "The paper shows neural networks can train downstream NLP tasks like Named Entity Recognition in Nepali, with fasttext skip gram word vectors performing better due to sub-word representation important for highly inflectional Nepali and potentially other Devanagari languages.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s16::p001",
+     "summary": "Stemming post-positions helps improve model performance in inflectional Nepali by separating inflections or morphemes, minimizing variations of the same word and giving root words stronger word vector representations.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s16::p002",
+     "summary": "Tables TABREF23, TABREF24, and TABREF35 imply more data is needed for better results because OurNepali dataset volume is almost ten times bigger compared to ILPRL dataset in terms of entities.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s17::p000",
+     "summary": "The paper proposed a novel NER for Nepali language, achieved relative improvement of upto 10%, and studied different factors effecting the performance of the NER for Nepali language.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s17::p001",
+     "summary": "BiLSTM+CNN(grapheme-level) performs on par with BiLSTM+CNN(character-level) under the same configuration, and BiLSTM+CNN(grapheme-level) and BiLSTM+CNN(G)+POS outperform all other model experimented in OurNepali and ILPRL dataset respectively.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s17::p002",
+     "summary": "As the first named entity recognition research in Nepal language using neural network, the work has room for improvement, including initializing grapheme-level embedding with fasttext embeddings, applying BERT, ELMo and FLAIR, and using cross-lingual or multi-lingual parameter sharing with Devanagari languages like Hindi and Bengali.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s17::p003",
+     "summary": "The authors contribute their dataset to Nepali NLP community and believe a special committee should create and maintain such dataset for Nepali NLP and organize competitions to elevate NLP research in Nepal.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s17::p004",
+     "summary": "Some of the future works are listed below:",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s17::p005",
+     "summary": "Proper initialization of grapheme level embedding from fasttext embeddings.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s17::p006",
+     "summary": "Apply robust POS-tagger for Nepali dataset.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s17::p007",
+     "summary": "Lemmatize the OurNepali dataset with robust and efficient lemmatizer.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s17::p008",
+     "summary": "Improve Nepali language score with cross-lingual learning techniques.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s17::p009",
+     "summary": "Create more dataset using Wikipedia/Wikidata framework.",
+     "group_id": "1908.05828::g00"
+    },
+    {
+     "passage_id": "1908.05828::s18::p000",
+     "summary": "The authors thank Bal Krishna Bal, Kathmandu University Professor, for providing the POS-tagged Nepali NER data.",
+     "group_id": "1908.05828::g00"
+    }
+   ],
+   "n_raw": 52,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5422,
+    "completion_tokens": 3193,
+    "total_tokens": 8615,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

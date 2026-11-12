@@ -1,0 +1,202 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1805.01445::s00::p000",
+   "summary": "Language structure enables linguistic generalization beyond training distribution probability, allowing understanding of structurally valid utterances such as length 100 sentences.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s00::p001",
+   "summary": "Seq2seq-attention models perform well on standard datasets and capture some linguistic structure but remain brittle on uncharacteristic inputs.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s00::p002",
+   "summary": "High-capacity models may learn structure, but linguistic generalization requires avoiding overfitting to training-specific patterns and may be difficult to find.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s00::p003",
+   "summary": "The work trains seq2seq-attention models on a symbol replacement task and finds linguistic generalization highly sensitive to random seed changes.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s01::p000",
+   "summary": "A simple formal task eases analysis by mimicking input-output symbol alignments and local syntactic properties in translation, tagging and summarization.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s01::p001",
+   "summary": "The task rewrites each input symbol as k symbols from its associated output alphabet, requiring alignments and local syntactic conditions.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s01::p002",
+   "summary": "An example defines X, Y_A, Y_B, k=3, 48 possible permutations, random valid outputs, and output alphabets of size 16.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s02::p000",
+   "summary": "Models are single layer unidirectional seq2seq LSTMs with bilinear attention, vanilla SGD, a 2000-sample validation set, and hidden and embedding size 32.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s02::p001",
+   "summary": "A 5000-sample uncharacteristic validation set tuned learning rate and dropout to 0.125 and 0.1, with all other hyperparameters also decided using it.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s03::p000",
+   "summary": "Models were trained on 100,000 samples with lengths 5-10 and no repeated symbols to test generalization to repeats and different lengths.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s03::p001",
+   "summary": "Evaluation trained 50 models with different random seeds and created 4 test sets of 2000 samples: Standard, Repeat, Short, and Long.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s04::p000",
+   "summary": "Across 50 seeds, standard accuracy exceeded 99%, while deviations reached 13.39 for Repeat and 20.63 for Long, with highest nonstandard average 79.52%.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s04::p001",
+   "summary": "Table 4 gives summary statistics across all 50 runs, and Table 3 shows performances for individual random seeds.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s05::p000",
+   "summary": "Related work investigates RNNs capturing language generalization properties, context free and context sensitive languages, and hierarchical natural language syntax.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s05::p001",
+   "summary": "Prior work questions systematicity, notes difficulty generalizing to longer strings, and finds small amounts of longer training strings can help.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s05::p002",
+   "summary": "Generalization depends on random seed, which affects network initialization and training sample order, with BIBREF18 emphasizing presentation order.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s06::p000",
+   "summary": "Random seed variability in generalization despite stable standard test performance may motivate a new NLP evaluation paradigm emphasizing uncharacteristic structurally sound inputs.",
+   "group_id": "1805.01445::g00"
+  },
+  {
+   "passage_id": "1805.01445::s07::p000",
+   "summary": "This work is supported in part by the National Science Foundation under Grant IIS-1617969.",
+   "group_id": "1805.01445::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1805.01445::g00",
+   "summaries": [
+    {
+     "passage_id": "1805.01445::s00::p000",
+     "summary": "Language structure enables linguistic generalization beyond training distribution probability, allowing understanding of structurally valid utterances such as length 100 sentences.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s00::p001",
+     "summary": "Seq2seq-attention models perform well on standard datasets and capture some linguistic structure but remain brittle on uncharacteristic inputs.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s00::p002",
+     "summary": "High-capacity models may learn structure, but linguistic generalization requires avoiding overfitting to training-specific patterns and may be difficult to find.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s00::p003",
+     "summary": "The work trains seq2seq-attention models on a symbol replacement task and finds linguistic generalization highly sensitive to random seed changes.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s01::p000",
+     "summary": "A simple formal task eases analysis by mimicking input-output symbol alignments and local syntactic properties in translation, tagging and summarization.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s01::p001",
+     "summary": "The task rewrites each input symbol as k symbols from its associated output alphabet, requiring alignments and local syntactic conditions.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s01::p002",
+     "summary": "An example defines X, Y_A, Y_B, k=3, 48 possible permutations, random valid outputs, and output alphabets of size 16.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s02::p000",
+     "summary": "Models are single layer unidirectional seq2seq LSTMs with bilinear attention, vanilla SGD, a 2000-sample validation set, and hidden and embedding size 32.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s02::p001",
+     "summary": "A 5000-sample uncharacteristic validation set tuned learning rate and dropout to 0.125 and 0.1, with all other hyperparameters also decided using it.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s03::p000",
+     "summary": "Models were trained on 100,000 samples with lengths 5-10 and no repeated symbols to test generalization to repeats and different lengths.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s03::p001",
+     "summary": "Evaluation trained 50 models with different random seeds and created 4 test sets of 2000 samples: Standard, Repeat, Short, and Long.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s04::p000",
+     "summary": "Across 50 seeds, standard accuracy exceeded 99%, while deviations reached 13.39 for Repeat and 20.63 for Long, with highest nonstandard average 79.52%.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s04::p001",
+     "summary": "Table 4 gives summary statistics across all 50 runs, and Table 3 shows performances for individual random seeds.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s05::p000",
+     "summary": "Related work investigates RNNs capturing language generalization properties, context free and context sensitive languages, and hierarchical natural language syntax.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s05::p001",
+     "summary": "Prior work questions systematicity, notes difficulty generalizing to longer strings, and finds small amounts of longer training strings can help.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s05::p002",
+     "summary": "Generalization depends on random seed, which affects network initialization and training sample order, with BIBREF18 emphasizing presentation order.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s06::p000",
+     "summary": "Random seed variability in generalization despite stable standard test performance may motivate a new NLP evaluation paradigm emphasizing uncharacteristic structurally sound inputs.",
+     "group_id": "1805.01445::g00"
+    },
+    {
+     "passage_id": "1805.01445::s07::p000",
+     "summary": "This work is supported in part by the National Science Foundation under Grant IIS-1617969.",
+     "group_id": "1805.01445::g00"
+    }
+   ],
+   "n_raw": 18,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3005,
+    "completion_tokens": 842,
+    "total_tokens": 3847,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "paper_id": "1909.07575",
+ "title": "Bridging the Gap between Pre-Training and Fine-Tuning for End-to-End Speech Translation",
+ "abstract": "End-to-end speech translation, a hot topic in recent years, aims to translate a segment of audio into a specific language with an end-to-end model. Conventional approaches employ multi-task learning and pre-training methods for this task, but they suffer from the huge gap between pre-training and fine-tuning. To address these issues, we propose a Tandem Connectionist Encoding Network (TCEN) which bridges the gap by reusing all subnets in fine-tuning, keeping the roles of subnets consistent, and pre-training the attention module. Furthermore, we propose two simple but effective methods to guarantee the speech encoder outputs and the MT encoder inputs are consistent in terms of semantic representation and sequence length. Experimental results show that our model outperforms baselines 2.2 BLEU on a large benchmark dataset.",
+ "sections": [
+  "Introduction",
+  "Background ::: Problem Formulation",
+  "Background ::: Multi-Task Learning and Pre-training for ST",
+  "Our method",
+  "Our method ::: TCEN Architecture",
+  "Our method ::: Training Procedure",
+  "Our method ::: Training Procedure ::: Pre-training",
+  "Our method ::: Training Procedure ::: Fine-tune",
+  "Our method ::: Subnet-Consistency",
+  "Our method ::: Subnet-Consistency ::: Semantic Consistency",
+  "Our method ::: Subnet-Consistency ::: Length Consistency",
+  "Experiments",
+  "Experiments ::: Dataset ::: Speech translation data:",
+  "Experiments ::: Baseline Models and Implementation",
+  "Experiments ::: Experimental Results",
+  "Experiments ::: Discussion ::: Ablation Study",
+  "Experiments ::: Discussion ::: Learning Curve",
+  "Experiments ::: Discussion ::: Compared with a Cascaded System",
+  "Related Work",
+  "Conclusion"
+ ],
+ "n_paragraphs": 63,
+ "n_tokens": 7212,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.07575::fig000",
+   "paper_id": "1909.07575",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: An illustration of multi-task learning for speech translation. Networks inherited from pre-trained models are labeled by rectangles.",
+   "n_tokens": 25
+  },
+  {
+   "caption_id": "1909.07575::fig001",
+   "paper_id": "1909.07575",
+   "file": "3-Figure2-1.png",
+   "caption": "Figure 2: The architecture of our model. The linear projection matrix in ASR is shared with the word embedding matrix in MT.",
+   "n_tokens": 27
+  },
+  {
+   "caption_id": "1909.07575::fig002",
+   "paper_id": "1909.07575",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1: An example of the comparison between the golden transcript and the predicted CTC paths given the corresponding speech. ‘-’ denotes the blank token and the following number represents repeat times.",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1909.07575::fig003",
+   "paper_id": "1909.07575",
+   "file": "4-Figure3-1.png",
+   "caption": "Figure 3: The architecture of seq2seq model. It predicts the next token and its number of repetition at the same time.",
+   "n_tokens": 27
+  },
+  {
+   "caption_id": "1909.07575::fig004",
+   "paper_id": "1909.07575",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: The CTC path π1 and corresponding unique tokens u and repetition times l, where S(π) = (u, l).",
+   "n_tokens": 31
+  },
+  {
+   "caption_id": "1909.07575::fig005",
+   "paper_id": "1909.07575",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3: BLEU score results on IWSLT-18. “Average” denotes it averages the results of the tst2010, tst2013, tst2014 and tst2015. We copy the numbers of vanilla model from https://github.com/espnet/espnet/blob/master/egs/iwslt18/st1/RESULTS. Since pre-training data is different, we run ESPnet code to obtain the numbers of pre-training and multi-task learning method, which are slightly higher than numbers in their report.",
+   "n_tokens": 108
+  },
+  {
+   "caption_id": "1909.07575::fig006",
+   "paper_id": "1909.07575",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: Ablation study for subword-level experiments.",
+   "n_tokens": 14
+  },
+  {
+   "caption_id": "1909.07575::fig007",
+   "paper_id": "1909.07575",
+   "file": "7-Table5-1.png",
+   "caption": "Table 5: BLEU comparison of cascaded results and our best end-to-end results. re-seg denotes the ASR outputs are resegmented before fed into the MT model.",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "1909.07575::fig008",
+   "paper_id": "1909.07575",
+   "file": "7-Figure4-1.png",
+   "caption": "Figure 4: Model learning curves in fine-tuning.",
+   "n_tokens": 12
+  }
+ ]
+}

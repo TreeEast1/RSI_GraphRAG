@@ -1,0 +1,335 @@
+{
+ "1806.05513::s00::p000": [
+  [
+   "Automatic Humor Recognition",
+   "is the task of",
+   "determining whether a text contains some level of humorous content or not"
+  ],
+  [
+   "kao2016computational",
+   "does",
+   "pun detection in one-liners"
+  ],
+  [
+   "dehumor",
+   "detects",
+   "humor in Yelp reviews"
+  ]
+ ],
+ "1806.05513::s00::p001": [
+  [
+   "Hindi",
+   "is the most spoken language",
+   "spoken by 41% of the population"
+  ],
+  [
+   "English",
+   "is",
+   "the official language of the country"
+  ],
+  [
+   "Twitter",
+   "has",
+   "around 23.2 million monthly active users in India"
+  ],
+  [
+   "Code-mixing",
+   "refers to",
+   "the insertion of words, phrases, and morphemes of one language into a statement or an expression of another language"
+  ]
+ ],
+ "1806.05513::s00::p002": [
+  [
+   "Tweets",
+   "are manually classified into",
+   "humorous and non-humorous classes"
+  ],
+  [
+   "each token in the tweets",
+   "is given",
+   "a language tag"
+  ],
+  [
+   "a language tag",
+   "determines",
+   "the source or origin language of the token (English or Hindi)"
+  ]
+ ],
+ "1806.05513::s02::p000": [
+  [
+   "Python package twitterscraper",
+   "is used to",
+   "scrap tweets from twitter"
+  ],
+  [
+   "10,478 tweets",
+   "were extracted from",
+   "the past two years from domains like `sports', `politics', `entertainment'"
+  ],
+  [
+   "4161 tweets",
+   "were written in",
+   "English"
+  ],
+  [
+   "2774 tweets",
+   "were written in",
+   "Hindi"
+  ],
+  [
+   "a total of 3543 English-Hindi code-mixed tweets",
+   "were collected",
+   "finally"
+  ]
+ ],
+ "1806.05513::s02::p001": [
+  [
+   "the corpus",
+   "was tried to make",
+   "balanced i.e. uniform distribution of tweets in each category"
+  ]
+ ],
+ "1806.05513::s03::p000": [
+  [
+   "The final code-mixed tweets",
+   "were forwarded to",
+   "a group of three annotators"
+  ],
+  [
+   "three annotators",
+   "were",
+   "university students and fluent in both English and Hindi"
+  ],
+  [
+   "Approximately 60 hours",
+   "were spent in",
+   "tagging tweets for the presence of humor"
+  ],
+  [
+   "Tweets which consisted of any anecdotes, fantasy, irony, jokes, insults",
+   "were annotated as",
+   "humorous"
+  ],
+  [
+   "tweets stating any facts, dialogues or speech which did not contain amusement",
+   "were put in",
+   "non-humorous class"
+  ]
+ ],
+ "1806.05513::s03::p011": [
+  [
+   "Annotators",
+   "were given",
+   "certain guidelines to decide whether a tweet was humorous or not"
+  ],
+  [
+   "Example (1)",
+   "uses",
+   "a hashtag `#WontGiveItBack'"
+  ],
+  [
+   "Searching it on Google",
+   "gave",
+   "435k results"
+  ],
+  [
+   "Fleiss' Kappa",
+   "obtained",
+   "an agreement of 0.821"
+  ]
+ ],
+ "1806.05513::s04::p000": [
+  [
+   "Code-mixing",
+   "provides",
+   "some challenges for language identification like spelling variations and non-grammatical structures in a sentence"
+  ],
+  [
+   "Three types of tags",
+   "were assigned to",
+   "the tokens"
+  ],
+  [
+   "En",
+   "is assigned to",
+   "the tokens present in English vocabulary like “family”, “Children” etc."
+  ]
+ ],
+ "1806.05513::s05::p000": [
+  [
+   "First line in every annotation",
+   "consists of",
+   "tweet id"
+  ],
+  [
+   "Each tweet",
+   "is enclosed within",
+   "<tweet></tweet> tags"
+  ],
+  [
+   "each word",
+   "is enclosed within",
+   "<word lang=“ ”></word> containing the language annotation for each word"
+  ],
+  [
+   "Last line",
+   "determines",
+   "the category in which the tweet belongs i.e. humorous or non-humorous, enclosed by <class></class> tags"
+  ]
+ ],
+ "1806.05513::s06::p000": [
+  [
+   "Some examples of spelling variations",
+   "are",
+   "`pese' for `paisa' (unit of curreny), `h' for `hai' (is), `ad' for `add' (addition)"
+  ]
+ ],
+ "1806.05513::s08::p000": [
+  [
+   "Preprocessing",
+   "starts with",
+   "tokenization"
+  ],
+  [
+   "tokenization",
+   "involves",
+   "separation of words using space as the delimiter and then converting the words to lower cases"
+  ],
+  [
+   "All the hashtags, mentions and urls",
+   "are stored and converted to",
+   "`hashtag', `mention' and `url' respectively"
+  ],
+  [
+   "#AadabArzHai",
+   "can be decomposed into",
+   "3 words, `Aadab', `Arz' and `Hai'"
+  ],
+  [
+   "the tokenized tweets",
+   "are stored along with",
+   "the presence of humor as the target class"
+  ]
+ ],
+ "1806.05513::s09::p000": [
+  [
+   "The features used to build attribute vectors for training our classification model",
+   "are described below",
+   "below"
+  ]
+ ],
+ "1806.05513::s09::p001": [
+  [
+   "letter n-grams",
+   "are very efficient for",
+   "classifying text"
+  ],
+  [
+   "letter n-grams",
+   "are",
+   "language independent"
+  ],
+  [
+   "letter n-grams",
+   "does not require",
+   "expensive text pre-processing techniques like tokenization, stemming and stop words removal"
+  ]
+ ],
+ "1806.05513::s09::p002": [
+  [
+   "a three word window",
+   "incorporates",
+   "the contextual information"
+  ]
+ ],
+ "1806.05513::s09::p003": [
+  [
+   "Many jokes and idioms",
+   "have",
+   "common words"
+  ],
+  [
+   "common words in the hashtags",
+   "were included in",
+   "the feature vector"
+  ]
+ ],
+ "1806.05513::s10::p000": [
+  [
+   "Chi square feature selection algorithm",
+   "is applied to reduces",
+   "the size of our feature vector"
+  ]
+ ],
+ "1806.05513::s10::p001": [
+  [
+   "10-fold cross validation",
+   "was carried out on",
+   "3543 code-mixed tweets"
+  ],
+  [
+   "the corpus",
+   "was divided into",
+   "10 equal parts"
+  ],
+  [
+   "Support vector machine with radial basis function kernel",
+   "yields",
+   "69.3% accuracy"
+  ],
+  [
+   "extra tree classifier",
+   "yields",
+   "67.8% accuracy"
+  ],
+  [
+   "N-grams",
+   "proved to be",
+   "the most efficient in all classification models"
+  ],
+  [
+   "Bag-of-words feature",
+   "performed",
+   "the worst in SVM, random forest and extra tree classifier"
+  ],
+  [
+   "Accuracies mentioned in table 2",
+   "were calculated using",
+   "fine tuning of model parameters using grid search"
+  ]
+ ],
+ "1806.05513::s11::p000": [
+  [
+   "The tweets",
+   "are annotated with",
+   "humorous(H) and non-humorous(N) tags along with the language tags at the word level"
+  ],
+  [
+   "The features used in our classification system",
+   "are",
+   "n-grams, bag-of-words, common words and hashtags"
+  ],
+  [
+   "N-grams when trained with support vector machines with radial basis function kernel",
+   "yielded",
+   "an accuracy of 68.5%"
+  ]
+ ],
+ "1806.05513::s11::p001": [
+  [
+   "Corpus",
+   "can be annotated with",
+   "part-of-speech tags at the word level"
+  ],
+  [
+   "the dataset",
+   "can be further extended to include",
+   "tweets from other domains"
+  ],
+  [
+   "Code-mixing",
+   "is prevalent mostly in",
+   "multilingual regions"
+  ]
+ ]
+}

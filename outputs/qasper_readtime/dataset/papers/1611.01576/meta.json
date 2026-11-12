@@ -1,0 +1,70 @@
+{
+ "paper_id": "1611.01576",
+ "title": "Quasi-Recurrent Neural Networks",
+ "abstract": "Recurrent neural networks are a powerful tool for modeling sequential data, but the dependence of each timestep's computation on the previous timestep's output limits parallelism and makes RNNs unwieldy for very long sequences. We introduce quasi-recurrent neural networks (QRNNs), an approach to neural sequence modeling that alternates convolutional layers, which apply in parallel across timesteps, and a minimalist recurrent pooling function that applies in parallel across channels. Despite lacking trainable recurrent layers, stacked QRNNs have better predictive accuracy than stacked LSTMs of the same hidden size. Due to their increased parallelism, they are up to 16 times faster at train and test time. Experiments on language modeling, sentiment classification, and character-level neural machine translation demonstrate these advantages and underline the viability of QRNNs as a basic building block for a variety of sequence tasks.",
+ "sections": [
+  "Introduction",
+  "Model",
+  "Variants",
+  "Experiments",
+  "Sentiment Classification",
+  "Language Modeling",
+  "Character-level Neural Machine Translation",
+  "Related Work",
+  "Conclusion",
+  "Beam search ranking criterion"
+ ],
+ "n_paragraphs": 48,
+ "n_tokens": 4553,
+ "figures_and_tables": [
+  {
+   "caption_id": "1611.01576::fig000",
+   "paper_id": "1611.01576",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Block diagrams showing the computation structure of the QRNN compared with typical LSTM and CNN architectures. Red signifies convolutions or matrix multiplications; a continuous block means that those computations can proceed in parallel. Blue signifies parameterless functions that operate in parallel along the channel/feature dimension. LSTMs can be factored into (red) linear blocks and (blue) elementwise blocks, but computation at each timestep still depends on the results from the previous timestep.",
+   "n_tokens": 95
+  },
+  {
+   "caption_id": "1611.01576::fig001",
+   "paper_id": "1611.01576",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2: The QRNN encoder–decoder architecture used for machine translation experiments.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1611.01576::fig002",
+   "paper_id": "1611.01576",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Accuracy comparison on the IMDb binary sentiment classification task. All of our models use 256 units per layer; all layers other than the first layer, whose filter width may vary, use filter width k = 2. Train times are reported on a single NVIDIA K40 GPU. We exclude semi-supervised models that conduct additional training on the unlabeled portion of the dataset.",
+   "n_tokens": 78
+  },
+  {
+   "caption_id": "1611.01576::fig003",
+   "paper_id": "1611.01576",
+   "file": "6-Figure3-1.png",
+   "caption": "Figure 3: Visualization of the final QRNN layer’s hidden state vectors cLt in the IMDb task, with timesteps along the vertical axis. Colors denote neuron activations. After an initial positive statement “This movie is simply gorgeous” (off graph at timestep 9), timestep 117 triggers a reset of most hidden states due to the phrase “not exactly a bad story” (soon after “main weakness is its story”). Only at timestep 158, after “I recommend this movie to everyone, even if you’ve never played the game”, do the hidden units recover.",
+   "n_tokens": 116
+  },
+  {
+   "caption_id": "1611.01576::fig004",
+   "paper_id": "1611.01576",
+   "file": "6-Table2-1.png",
+   "caption": "Table 2: Single model perplexity on validation and test sets for the Penn Treebank language modeling task. Lower is better. “Medium” refers to a two-layer network with 640 or 650 hidden units per layer. All QRNN models include dropout of 0.5 on embeddings and between layers. MC refers to Monte Carlo dropout averaging at test time.",
+   "n_tokens": 74
+  },
+  {
+   "caption_id": "1611.01576::fig005",
+   "paper_id": "1611.01576",
+   "file": "7-Figure4-1.png",
+   "caption": "Figure 4: Left: Training speed for two-layer 640-unit PTB LM on a batch of 20 examples of 105 timesteps. “RNN” and “softmax” include the forward and backward times, while “optimization overhead” includes gradient clipping, L2 regularization, and SGD computations. Right: Inference speed advantage of a 320-unit QRNN layer alone over an equal-sized cuDNN LSTM layer for data with the given batch size and sequence length. Training results are similar.",
+   "n_tokens": 103
+  },
+  {
+   "caption_id": "1611.01576::fig006",
+   "paper_id": "1611.01576",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: Translation performance, measured by BLEU, and train speed in hours per epoch, for the IWSLT German-English spoken language translation task. All models were trained on in-domain data only, and use negative log-likelihood as the training criterion. Our models were trained for 10 epochs. The QRNN model uses k = 2 for all layers other than the first encoder layer.",
+   "n_tokens": 82
+  }
+ ]
+}

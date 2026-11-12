@@ -1,0 +1,68 @@
+{
+ "paper_id": "1912.00667",
+ "title": "A Human-AI Loop Approach for Joint Keyword Discovery and Expectation Estimation in Micropost Event Detection",
+ "abstract": "Microblogging platforms such as Twitter are increasingly being used in event detection. Existing approaches mainly use machine learning models and rely on event-related keywords to collect the data for model training. These approaches make strong assumptions on the distribution of the relevant micro-posts containing the keyword -- referred to as the expectation of the distribution -- and use it as a posterior regularization parameter during model training. Such approaches are, however, limited as they fail to reliably estimate the informativeness of a keyword and its expectation for model training. This paper introduces a Human-AI loop approach to jointly discover informative keywords for model training while estimating their expectation. Our approach iteratively leverages the crowd to estimate both keyword specific expectation and the disagreement between the crowd and the model in order to discover new keywords that are most beneficial for model training. These keywords and their expectation not only improve the resulting performance but also make the model training process more transparent. We empirically demonstrate the merits of our approach, both in terms of accuracy and interpretability, on multiple real-world datasets and show that our approach improves the state of the art by 24.3%.",
+ "sections": [
+  "Introduction",
+  "The Human-AI Loop Approach",
+  "Unified Probabilistic Model",
+  "Unified Probabilistic Model ::: Expectation as Model Posterior",
+  "Unified Probabilistic Model ::: Expectation as Class Prior",
+  "Unified Probabilistic Model ::: Unified Probabilistic Model",
+  "Experiments and Results",
+  "Experiments and Results ::: Experimental Setup",
+  "Experiments and Results ::: Results of our Human-AI Loop (Q1)",
+  "Experiments and Results ::: Comparative Results on Keyword Discovery (Q2)",
+  "Experiments and Results ::: Cost-Effectiveness Results (Q3)",
+  "Experiments and Results ::: Expectation Inference Results (Q4)",
+  "Related Work",
+  "Conclusion",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 62,
+ "n_tokens": 6407,
+ "figures_and_tables": [
+  {
+   "caption_id": "1912.00667::fig000",
+   "paper_id": "1912.00667",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: An overview of our proposed human-AI loop approach. Starting from a (set of) new keyword(s), our approach is based on the following processes: 1) Micropost Classification, which samples a subset of the unlabeled microposts containing the keyword and asks crowd workers to label these microposts; 2) Expectation Inference & Model Training, which generates a keyword-specific expectation and a micropost classification model for event detection; 3) Keyword Discovery, which applies the trained model and calculates the disagreement between model prediction and the keyword-specific expectation for discovering new keywords, again by leveraging crowdsourcing.",
+   "n_tokens": 132
+  },
+  {
+   "caption_id": "1912.00667::fig001",
+   "paper_id": "1912.00667",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2: Our proposed probabilistic model contains the target model (on the left) and the generative model for crowdcontributed labels (on the right), connected by keywordspecific expectation.",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1912.00667::fig002",
+   "paper_id": "1912.00667",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Statistics of the datasets in our experiments.",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1912.00667::fig003",
+   "paper_id": "1912.00667",
+   "file": "6-Table2-1.png",
+   "caption": "Table 2: Performance of the target models trained by our proposed human-AI loop approach on the experimental datasets at different iterations. Results are given in percentage.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1912.00667::fig004",
+   "paper_id": "1912.00667",
+   "file": "6-Figure3-1.png",
+   "caption": "Figure 3: Comparison between our keyword discovery method and query expansion method for MLP (similar results for LR).",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "1912.00667::fig005",
+   "paper_id": "1912.00667",
+   "file": "7-Figure4-1.png",
+   "caption": "Figure 4: Comparison between our expectation inference method and majority voting for MLP (similar results for LR).",
+   "n_tokens": 21
+  }
+ ]
+}

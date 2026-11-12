@@ -1,0 +1,855 @@
+{
+ "1905.07791::s00::p000": [
+  [
+   "Assembling training corpora of annotated natural language examples in specialized domains such as biomedicine",
+   "poses",
+   "considerable challenges"
+  ],
+  [
+   "Experts with the requisite domain knowledge to perform high-quality annotation",
+   "tend to be",
+   "expensive"
+  ],
+  [
+   "lay annotators",
+   "may not have",
+   "the necessary knowledge to provide high-quality annotations"
+  ],
+  [
+   "crowd workers in general",
+   "are likely to provide",
+   "noisy annotations"
+  ]
+ ],
+ "1905.07791::s00::p001": [
+  [
+   "the EBM-NLP corpus",
+   "comprises",
+   "crowdsourced annotations of medical literature"
+  ],
+  [
+   "expert annotations",
+   "are obtained for",
+   "the abstracts predicted to be most difficult"
+  ]
+ ],
+ "1905.07791::s00::p002": [
+  [
+   "a training instance",
+   "is defined as difficult if",
+   "a lay annotator or an automated model disagree on its labeling"
+  ],
+  [
+   "difficulty",
+   "is distinct from",
+   "inter-annotator agreement"
+  ],
+  [
+   "such predictions",
+   "can be used during training to improve",
+   "information extraction models"
+  ]
+ ],
+ "1905.07791::s00::p003": [
+  [
+   "agreement between lay workers",
+   "is decidedly lower compared to",
+   "domain experts"
+  ],
+  [
+   "Lay annotations",
+   "have",
+   "high precision but low recall with respect to expert annotations in the new data that we collected"
+  ],
+  [
+   "Reasonable models",
+   "can be trained using",
+   "lay annotations alone"
+  ],
+  [
+   "similar performance",
+   "can be achieved using",
+   "markedly less expert data"
+  ],
+  [
+   "a combination of expert and lay annotations",
+   "is better than",
+   "using lay data alone"
+  ]
+ ],
+ "1905.07791::s00::p004": [
+  [
+   "a system trained on combined data",
+   "achieves",
+   "better predictive performance when experts annotate difficult examples rather than instances selected at i.i.d. random"
+  ]
+ ],
+ "1905.07791::s00::p005": [
+  [
+   "a task difficulty prediction task",
+   "is related to, but distinct from",
+   "inter-worker agreement"
+  ],
+  [
+   "predicting annotation difficulty",
+   "can be used to improve",
+   "the task routing and model performance for a biomedical information extraction task"
+  ]
+ ],
+ "1905.07791::s01::p000": [
+  [
+   "Crowdsourcing annotation",
+   "is",
+   "a well-studied problem"
+  ],
+  [
+   "aggregation models",
+   "minimize",
+   "noise"
+  ]
+ ],
+ "1905.07791::s01::p001": [
+  [
+   "Dumitrache et al.",
+   "concluded",
+   "performance is similar under these supervision types"
+  ],
+  [
+   "Dumitrache et al.",
+   "found",
+   "no clear advantage from using expert annotators"
+  ],
+  [
+   "The experts we used",
+   "already hold",
+   "advanced medical degrees"
+  ],
+  [
+   "a classifier trained on 300 examples",
+   "can achieve",
+   "very high accuracy"
+  ]
+ ],
+ "1905.07791::s01::p002": [
+  [
+   "prior work",
+   "has investigated",
+   "methods for `task routing' in active learning scenarios"
+  ],
+  [
+   "the work here",
+   "focuses on",
+   "providing an operational definition of instance difficulty"
+  ]
+ ],
+ "1905.07791::s02::p000": [
+  [
+   "the EBM-NLP BIBREF5 corpus",
+   "includes",
+   "a reasonably large training dataset annotated via crowdsourcing"
+  ],
+  [
+   "the EBM-NLP BIBREF5 corpus",
+   "includes",
+   "a modest test set labeled by individuals with advanced medical training"
+  ],
+  [
+   "the training set",
+   "comprises",
+   "4,741 medical article abstracts"
+  ],
+  [
+   "the test set",
+   "is composed of",
+   "191 abstracts"
+  ]
+ ],
+ "1905.07791::s02::p001": [
+  [
+   "The underlined text",
+   "demarcates",
+   "the (consensus) reference label provided by domain experts"
+  ],
+  [
+   "crowd workers",
+   "marked",
+   "text distinct from these reference annotations"
+  ],
+  [
+   "The difficult sentences",
+   "usually exhibit",
+   "complicated structure and feature jargon"
+  ]
+ ],
+ "1905.07791::s02::p002": [
+  [
+   "An abstract",
+   "may contain",
+   "some `easy' and some `difficult' sentences"
+  ],
+  [
+   "this",
+   "resulted in",
+   "57,505 and 2,428 sentences in the train and test set abstracts, respectively"
+  ]
+ ],
+ "1905.07791::s03::p000": [
+  [
+   "The test set",
+   "includes",
+   "annotations from both crowd workers and domain experts"
+  ],
+  [
+   "domain experts",
+   "are treated as",
+   "ground truth"
+  ],
+  [
+   "the difficulty of sentences",
+   "is defined in terms of",
+   "the observed agreement between expert and lay annotators"
+  ]
+ ],
+ "1905.07791::s03::p002": [
+  [
+   "The difficulty score of sentence $i$",
+   "is taken as",
+   "an average over the scores for all $n$ layworkers"
+  ],
+  [
+   "Sentences with no labels",
+   "are treated as",
+   "maximally easy"
+  ]
+ ],
+ "1905.07791::s03::p003": [
+  [
+   "The training set",
+   "contains",
+   "only crowdsourced annotations"
+  ],
+  [
+   "predicted spans",
+   "are used as",
+   "proxy `ground truth' annotations"
+  ],
+  [
+   "the Pearson's correlation coefficients",
+   "are",
+   "0.57 for Population, 0.71 for Intervention and 0.68 for Outcome"
+  ]
+ ],
+ "1905.07791::s03::p004": [
+  [
+   "sentences that contain neither manual nor predicted annotations",
+   "are treated as",
+   "maximally easy sentences (with difficulty scores of 0)"
+  ],
+  [
+   "Such sentences",
+   "comprise",
+   "51%, 42% and 36% for Population, Interventions and Outcomes data respectively"
+  ],
+  [
+   "descriptions of the latter two",
+   "tend to be",
+   "more technical and dense with medical jargon"
+  ]
+ ],
+ "1905.07791::s03::p005": [
+  [
+   "The mean of the Population (p) sentence scores",
+   "is significantly lower than",
+   "that for other types of sentences (i and o)"
+  ],
+  [
+   "This",
+   "aligns with",
+   "a previous finding that annotating Interventions and Outcomes is more difficult than annotating Participants BIBREF5"
+  ]
+ ],
+ "1905.07791::s03::p006": [
+  [
+   "spans tagged by the LSTM-CRF-Pattern model",
+   "are missed by",
+   "all crowd workers"
+  ],
+  [
+   "missed spans",
+   "result in",
+   "a maximally difficult score (1)"
+  ],
+  [
+   "Inspection of such sentences",
+   "revealed",
+   "some are truly difficult examples, but others are tagging model errors"
+  ],
+  [
+   "such sentences",
+   "are retained as",
+   "`difficult' sentences"
+  ]
+ ],
+ "1905.07791::s03::p007": [
+  [
+   "Content describing the p, i and o, respectively",
+   "is",
+   "quite different"
+  ],
+  [
+   "one sentence",
+   "usually contains",
+   "(at most) only one of these three content types"
+  ],
+  [
+   "difficulty prediction for the respective label types",
+   "is treated as",
+   "separate tasks"
+  ]
+ ],
+ "1905.07791::s04::p001": [
+  [
+   "inter-worker agreement between crowd and expert annotators",
+   "is calculated using",
+   "Spearman's correlation coefficient"
+  ],
+  [
+   "average agreement between domain experts",
+   "are considerably higher than",
+   "agreements between crowd workers for all three label types"
+  ],
+  [
+   "the crowd annotations",
+   "are",
+   "noisier"
+  ]
+ ],
+ "1905.07791::s04::p002": [
+  [
+   "the majority of sentences",
+   "do not contain",
+   "a PICO span"
+  ],
+  [
+   "these calculations",
+   "only include",
+   "those that contain a reference label"
+  ],
+  [
+   "Pearson's r",
+   "are",
+   "0.34, 0.30 and 0.31 for p, i and o, respectively"
+  ],
+  [
+   "inter-worker agreement and our proposed difficulty score",
+   "are",
+   "quite distinct"
+  ]
+ ],
+ "1905.07791::s05::p000": [
+  [
+   "difficulty prediction",
+   "is treated as",
+   "a regression problem"
+  ],
+  [
+   "neural model variants",
+   "are proposed and evaluated for",
+   "the task"
+  ]
+ ],
+ "1905.07791::s05::p001": [
+  [
+   "universal sentence encoder (USE)",
+   "induces",
+   "sentence representations"
+  ],
+  [
+   "ensemble model",
+   "combines",
+   "the `universal' and task-specific representations"
+  ],
+  [
+   "Sentences",
+   "are fed into",
+   "both the universal sentence encoder and, separately, a task specific neural encoder"
+  ],
+  [
+   "combined vector",
+   "is passed to",
+   "the regression layer"
+  ]
+ ],
+ "1905.07791::s06::p000": [
+  [
+   "models",
+   "were trained for",
+   "each label type separately"
+  ],
+  [
+   "Word embeddings",
+   "were initialized to",
+   "300d GloVe vectors BIBREF21 trained on common crawl data"
+  ],
+  [
+   "Word embeddings",
+   "are fine-tuned during",
+   "training"
+  ],
+  [
+   "Adam optimizer BIBREF22",
+   "was used with",
+   "learning rate and decay set to 0.001 and 0.99, respectively"
+  ]
+ ],
+ "1905.07791::s06::p001": [
+  [
+   "pretrained sentence encoder parameters",
+   "were not updated during",
+   "training"
+  ],
+  [
+   "All hyperparamaters for all models",
+   "were tuned using",
+   "Vizier BIBREF24 via 10-fold cross validation on the training set maximizing for F1"
+  ]
+ ],
+ "1905.07791::s06::p002": [
+  [
+   "linear Support-Vector Regression BIBREF25 model",
+   "was trained on",
+   "$n$ -gram features ( $n$ ranges from 1 to 3)"
+  ]
+ ],
+ "1905.07791::s06::p003": [
+  [
+   "Rows 1-4",
+   "correspond to",
+   "individual models"
+  ],
+  [
+   "row 5",
+   "reports",
+   "the ensemble performance"
+  ],
+  [
+   "Results from all models",
+   "outperform",
+   "the baseline SVR model"
+  ],
+  [
+   "Pearson's correlation coefficients",
+   "range from",
+   "0.550 to 0.622"
+  ],
+  [
+   "The regression correlations",
+   "are",
+   "the lowest"
+  ]
+ ],
+ "1905.07791::s06::p004": [
+  [
+   "The RNN model",
+   "realizes",
+   "the strongest performance among the stand-alone (non-ensemble) models"
+  ],
+  [
+   "The RNN model",
+   "outperforms",
+   "variants that exploit CNN and USE representations"
+  ],
+  [
+   "complementary sentence information",
+   "is encoded in",
+   "universal representations"
+  ]
+ ],
+ "1905.07791::s06::p005": [
+  [
+   "correlations for Intervention and Outcomes",
+   "are higher than",
+   "correlations for Population"
+  ],
+  [
+   "Population",
+   "has",
+   "a greater number of easy sentences and considerably fewer difficult sentences"
+  ],
+  [
+   "difficulty ranking task",
+   "is",
+   "particularly challenging"
+  ]
+ ],
+ "1905.07791::s07::p000": [
+  [
+   "two uses",
+   "include",
+   "simply removing the most difficult sentences from the training set"
+  ],
+  [
+   "two uses",
+   "include",
+   "re-weighting the most difficult sentences"
+  ]
+ ],
+ "1905.07791::s07::p001": [
+  [
+   "LSTM-CRF-Pattern",
+   "is",
+   "the base model"
+  ],
+  [
+   "Adam optimizer",
+   "has",
+   "learning rate of 0.001, decay 0.9, batch size 20 and dropout 0.5"
+  ],
+  [
+   "pretrained 200d GloVe vectors BIBREF21",
+   "initialize",
+   "word embeddings"
+  ],
+  [
+   "Each word",
+   "is represented with",
+   "300 dimensions in total"
+  ],
+  [
+   "hidden size",
+   "is",
+   "100 for the LSTM in the character representation component, and 200 for the LSTM in the information extraction component"
+  ],
+  [
+   "training",
+   "runs for",
+   "15 epochs"
+  ],
+  [
+   "parameters",
+   "achieve",
+   "the best F1 score on a nested development set"
+  ]
+ ],
+ "1905.07791::s08::p000": [
+  [
+   "difficult instances",
+   "are likely to introduce",
+   "more noise than signal"
+  ],
+  [
+   "cross-fold approach",
+   "trains on",
+   "9/10ths of the data"
+  ],
+  [
+   "cross-fold approach",
+   "scores",
+   "the remaining 1/10th at a time"
+  ],
+  [
+   "sentences",
+   "are sorted by",
+   "predicted difficulty scores"
+  ]
+ ],
+ "1905.07791::s08::p001": [
+  [
+   "F1 scores",
+   "improve (marginally) up until",
+   "4% of the data for Population and Interventions, and 6% for Outcomes"
+  ],
+  [
+   "Removing training points at i.i.d. random",
+   "degrades",
+   "performance"
+  ],
+  [
+   "sentences predicted to be difficult",
+   "are",
+   "indeed noisy"
+  ]
+ ],
+ "1905.07791::s09::p000": [
+  [
+   "removing a small number of the most difficult sentences",
+   "does not harm",
+   "medical IE model performance"
+  ],
+  [
+   "available data",
+   "are unable to test",
+   "if this will be useful in practice"
+  ]
+ ],
+ "1905.07791::s09::p002": [
+  [
+   "Re-weighting",
+   "improves",
+   "all metrics modestly but consistently"
+  ],
+  [
+   "All F1 differences",
+   "are statistically significant under",
+   "a sign test ( $p<0.01$ )"
+  ],
+  [
+   "re-weighting by difficulty",
+   "does consistently yield",
+   "the best recall for all three extraction types"
+  ],
+  [
+   "recall",
+   "improved by",
+   "10 percentage points"
+  ]
+ ],
+ "1905.07791::s10::p000": [
+  [
+   "re-weighting difficult sentences annotated by the crowd",
+   "generally improves",
+   "the extraction models"
+  ],
+  [
+   "the performance",
+   "is influenced by",
+   "the annotation quality"
+  ]
+ ],
+ "1905.07791::s10::p001": [
+  [
+   "the higher quality and more consistent annotations of domain experts on the difficult instances",
+   "will benefit",
+   "the extraction model"
+  ],
+  [
+   "This",
+   "simulates",
+   "an annotation strategy in which we route difficult instances to domain experts and easier ones to crowd annotators"
+  ]
+ ],
+ "1905.07791::s11::p001": [
+  [
+   "The expert annotator",
+   "were asked to highlight",
+   "all spans describing medical Interventions"
+  ],
+  [
+   "Each abstract",
+   "is only annotated by",
+   "one expert"
+  ]
+ ],
+ "1905.07791::s11::p002": [
+  [
+   "The first two rows",
+   "show",
+   "the results for models trained with expert annotations"
+  ],
+  [
+   "The model trained on random data",
+   "has",
+   "a slightly better F1 than that trained on the same amount of difficult data"
+  ],
+  [
+   "The model trained on random data",
+   "has",
+   "higher precision but lower recall"
+  ]
+ ],
+ "1905.07791::s11::p003": [
+  [
+   "Rows 3 and 4",
+   "list",
+   "the results for models trained on the same data but with crowd annotation"
+  ],
+  [
+   "Models trained with expert-annotated data",
+   "are clearly superior to",
+   "those trained with crowd labels with respect to F1"
+  ],
+  [
+   "training the model with data sampled at i.i.d. random",
+   "achieves",
+   "2% higher F1 than when difficult instances are used"
+  ],
+  [
+   "this difference",
+   "is",
+   "less than 1%"
+  ]
+ ],
+ "1905.07791::s11::p004": [
+  [
+   "The last row",
+   "is",
+   "the model trained on all 5k abstracts with crowd annotations"
+  ],
+  [
+   "Its F1 score",
+   "is lower than",
+   "either expert model trained on only 20% of data"
+  ],
+  [
+   "the crowd model on complete data",
+   "has",
+   "higher precision than expert models but its recall is much lower"
+  ]
+ ],
+ "1905.07791::s12::p000": [
+  [
+   "a system",
+   "was trained on",
+   "one type of data"
+  ],
+  [
+   "the system",
+   "was trained on",
+   "data that was routed to either experts or crowd annotators depending on their predicted difficult"
+  ],
+  [
+   "the annotations from experts",
+   "are used for",
+   "an abstract if it exists"
+  ],
+  [
+   "crowd annotations",
+   "are used otherwise",
+   "an abstract"
+  ]
+ ],
+ "1905.07791::s12::p001": [
+  [
+   "Rows 1 and 2",
+   "repeat",
+   "the performance of the models trained on difficult subset and random subset with expert annotations only respectively"
+  ],
+  [
+   "The third row",
+   "is",
+   "the model trained by combining difficult and random subsets with expert annotations"
+  ],
+  [
+   "the overlap of these two sets",
+   "has",
+   "around 250 abstracts"
+  ],
+  [
+   "the D+R model",
+   "uses",
+   "total 1.75k abstracts for training"
+  ],
+  [
+   "Rows 4 to 6",
+   "are",
+   "the models trained on all 5k abstracts with mixed annotations"
+  ],
+  [
+   "Other",
+   "means",
+   "the rest of the abstracts with crowd annotation only"
+  ]
+ ],
+ "1905.07791::s12::p002": [
+  [
+   "adding more training data with crowd annotation",
+   "improves",
+   "at least 1 point F1 score in all three extraction tasks"
+  ],
+  [
+   "The improvement when the difficult subset with expert annotations is mixed with the remaining crowd annotation",
+   "is",
+   "3.5 F1 score"
+  ],
+  [
+   "The model trained with re-annotating the difficult subset (D+Other)",
+   "outperforms",
+   "the model with re-annotating the random subset (R+Other) by 2 points in F1"
+  ],
+  [
+   "The model trained with re-annotating both of difficult and random subsets (D+R+Other)",
+   "achieves",
+   "only marginally higher F1 than the model trained with the re-annotated difficult subset (D+Other)"
+  ]
+ ],
+ "1905.07791::s13::p000": [
+  [
+   "crowd annotation",
+   "are still useful in supplementing",
+   "expert annotations for medical IE"
+  ],
+  [
+   "Obtaining expert annotations for the one thousand most difficult instances",
+   "greatly improved",
+   "the model performance"
+  ],
+  [
+   "the choice of how many difficult instances to annotate",
+   "was",
+   "an uninformed choice"
+  ],
+  [
+   "Future work",
+   "will need to address",
+   "how best to choose this parameter for a routing system"
+  ]
+ ],
+ "1905.07791::s13::p001": [
+  [
+   "adding expert annotations for difficult articles",
+   "consistently increases",
+   "F1 scores"
+  ],
+  [
+   "The performance gain",
+   "is mostly from",
+   "increased recall"
+  ]
+ ],
+ "1905.07791::s13::p002": [
+  [
+   "The F1 score achieved after re-annotating the 600 most-difficult articles",
+   "is close to",
+   "the performance when re-annotating 1000 random articles"
+  ]
+ ],
+ "1905.07791::s14::p000": [
+  [
+   "neural models",
+   "were trained using",
+   "different learned representations"
+  ],
+  [
+   "Pearson’s correlation coefficients",
+   "were higher than",
+   "0.45 in almost all evaluations"
+  ],
+  [
+   "An ensemble model combining universal and task specific feature sentence vectors",
+   "yielded",
+   "the best results"
+  ]
+ ],
+ "1905.07791::s14::p001": [
+  [
+   "removing up to $\\sim $ 10% of the sentences predicted to be most difficult",
+   "did not decrease",
+   "model performance"
+  ],
+  [
+   "re-weighting sentences inversely to their difficulty score during training",
+   "improves",
+   "predictive performance"
+  ],
+  [
+   "Simulations in which difficult examples are routed to experts and other instances to crowd annotators",
+   "yields",
+   "the best results"
+  ],
+  [
+   "Simulations in which difficult examples are routed to experts and other instances to crowd annotators",
+   "outperforming",
+   "the strategy of randomly selecting data for expert annotation"
+  ]
+ ]
+}

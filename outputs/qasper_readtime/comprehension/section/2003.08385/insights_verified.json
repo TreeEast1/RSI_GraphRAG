@@ -1,0 +1,889 @@
+{
+ "kept": [
+  {
+   "insight_id": "2003.08385::g00:i00",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g00",
+   "concise_text": "x-stance addresses the small single-target multilingual datasets by combining more than 150 questions, more than 67k answers, and multilinguality with many topics and targets.",
+   "triple": {
+    "subject": "x-stance",
+    "predicate": "extends",
+    "object": "small single-target multilingual datasets"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "2003.08385::s00::p001",
+    "2003.08385::s00::p002"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g00:b0:f03",
+    "2003.08385::g00:b0:f04",
+    "2003.08385::g00:b0:f07",
+    "2003.08385::g00:b0:f08",
+    "2003.08385::g00:b0:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "All cited ids exist; p001 identifies small single-target multilingual datasets as a limitation and p002 says x-stance is much larger and combines multilinguality with many topics/targets, supporting the composed problem-solution insight."
+   },
+   "unit_id": "2003.08385::u000"
+  },
+  {
+   "insight_id": "2003.08385::g00:i03",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g00",
+   "concise_text": "The multiple test sets for zero-shot cross-lingual and cross-target transfer include Italian as a test-only language and held-out topics “Healthcare” and “Political System”.",
+   "triple": {
+    "subject": "multiple test sets",
+    "predicate": "evaluated_on",
+    "object": "Italian test-only language and held-out topics “Healthcare” and “Political System”"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "2003.08385::s00::p006",
+    "2003.08385::s11::p000",
+    "2003.08385::s11::p002"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g00:b1:f00",
+    "2003.08385::g00:b1:f01",
+    "2003.08385::g00:b6:f00",
+    "2003.08385::g00:b6:f01",
+    "2003.08385::g00:b6:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "All cited ids exist; p006 says multiple test sets evaluate zero-shot cross-lingual and cross-target transfer, while p011 paragraphs specify Italian as test-only and held-out topics Healthcare and Political System."
+   },
+   "unit_id": "2003.08385::u003"
+  },
+  {
+   "insight_id": "2003.08385::g00:i04",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g00",
+   "concise_text": "M-Bert's zero-shot performance in Italian is much better than the target-wise majority class baseline, supporting the claim that multilingual Bert can generalize cross-lingually.",
+   "triple": {
+    "subject": "zero-shot performance in Italian",
+    "predicate": "claim_evidence",
+    "object": "multilingual Bert can generalize cross-lingually"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "2003.08385::s00::p006",
+    "2003.08385::s21::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g00:b1:f02",
+    "2003.08385::g00:b9:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "p006 claims multilingual Bert can generalize cross-lingually, and p021 says zero-shot Italian performance is much better than the target-wise majority baseline, jointly supporting the evidence relation."
+   },
+   "unit_id": "2003.08385::u004"
+  },
+  {
+   "insight_id": "2003.08385::g00:i05",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g00",
+   "concise_text": "M-Bert performs worse in a cross-target setting but easily surpasses the majority class baselines, supporting the claim that multilingual Bert can generalize in a cross-target setting.",
+   "triple": {
+    "subject": "M-Bert cross-target results",
+    "predicate": "claim_evidence",
+    "object": "multilingual Bert can generalize in a cross-target setting"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "2003.08385::s00::p006",
+    "2003.08385::s21::p001"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g00:b1:f02",
+    "2003.08385::g00:b9:f05",
+    "2003.08385::g00:b9:f06"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.89,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "p006 claims multilingual Bert can generalize in a cross-target setting, and p021 says M-Bert performs worse cross-target but easily surpasses majority baselines, supporting the evidence relation."
+   },
+   "unit_id": "2003.08385::u005"
+  },
+  {
+   "insight_id": "2003.08385::g00:i07",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g00",
+   "concise_text": "Because the API does not provide the language of comments, the authors used langdetect and then restricted its output to English, French, German and Italian.",
+   "triple": {
+    "subject": "missing comment language in the API",
+    "predicate": "requires",
+    "object": "langdetect restricted to English, French, German and Italian"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "2003.08385::s07::p000",
+    "2003.08385::s07::p002"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g00:b3:f06",
+    "2003.08385::g00:b4:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "p007 says the API lacks comment language, so a language identifier/langdetect was used; p007 second run says its output was restricted to English, French, German and Italian. The composed limitation-method relation is supported."
+   },
+   "unit_id": "2003.08385::u007"
+  },
+  {
+   "insight_id": "2003.08385::g00:i08",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g00",
+   "concise_text": "The first langdetect run found no Romansh comments and only misclassifications of German, French or Italian comments, which led to restricting the second run to English, French, German and Italian.",
+   "triple": {
+    "subject": "first langdetect run conclusions",
+    "predicate": "causes",
+    "object": "second run restricted to English, French, German and Italian"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "2003.08385::s07::p001",
+    "2003.08385::s07::p002"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g00:b3:f08",
+    "2003.08385::g00:b4:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "p007 first run reports no Romansh and unexpected outputs as misclassifications of German, French or Italian; p007 second run explicitly says 'drawing from these conclusions' the output was restricted to English, French, German and Italian, supporting the causal wording."
+   },
+   "unit_id": "2003.08385::u008"
+  },
+  {
+   "insight_id": "2003.08385::g01:i00",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g01",
+   "concise_text": "The x-stance dataset's multilingual approach is grounded in training questions and answers in Swiss Standard German and Swiss French and test questions and answers in Swiss Italian.",
+   "triple": {
+    "subject": "x-stance",
+    "predicate": "evaluated_on",
+    "object": "Swiss Standard German, Swiss French and Swiss Italian questions and answers"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "2003.08385::s26::p000",
+    "2003.08385::s29::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g01:b0:f03",
+    "2003.08385::g01:b0:f10",
+    "2003.08385::g01:b0:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "p026 says x-stance promotes a multilingual approach by being partly Swiss Standard German, French and Italian; p029 specifies training in Swiss Standard German/Swiss French and test sets also in Swiss Italian, supporting the composed evaluation/data fact."
+   },
+   "unit_id": "2003.08385::u010"
+  },
+  {
+   "insight_id": "2003.08385::g01:i07",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g01",
+   "concise_text": "The x-stance dataset's multilingual approach includes questions translated into English in addition to Swiss Standard German, Swiss French and Swiss Italian.",
+   "triple": {
+    "subject": "multilingual approach to stance detection",
+    "predicate": "extends",
+    "object": "English-translated questions"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "2003.08385::s26::p000",
+    "2003.08385::s29::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g01:b0:f03",
+    "2003.08385::g01:b0:f10",
+    "2003.08385::g01:b0:f11",
+    "2003.08385::g01:b0:f12"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.68,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Passages exist and jointly support a composed inference: the dataset promotes multilingual stance detection via Swiss German/French/Italian, and questions were additionally translated into English."
+   },
+   "unit_id": "2003.08385::u017"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "2003.08385::g00:i01",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g00",
+   "concise_text": "The Smartvote categorical answers yes / rather yes / rather no / no are transformed into x-stance's binary favor or against labels by merging the two labels on each pole.",
+   "triple": {
+    "subject": "Smartvote categorical answers",
+    "predicate": "causes",
+    "object": "x-stance binary favor or against labels"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "2003.08385::s00::p004",
+    "2003.08385::s04::p001",
+    "2003.08385::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g00:b0:f12",
+    "2003.08385::g00:b2:f03",
+    "2003.08385::g00:b2:f06",
+    "2003.08385::g00:b3:f03",
+    "2003.08385::g00:b3:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.94,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "The passages support that Smartvote categorical answers were merged into binary favor/against labels, but the triple's 'causes' relation is too strong; this is a transformation, not a causal relation."
+   },
+   "unit_id": "2003.08385::u001"
+  },
+  {
+   "insight_id": "2003.08385::g00:i02",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g00",
+   "concise_text": "Because x-stance interprets the question as the target and the commentary as the input, M-Bert uses the question as segment A and the comment as segment B.",
+   "triple": {
+    "subject": "x-stance task interpretation",
+    "predicate": "requires",
+    "object": "M-Bert sequence pair with question as segment A and comment as segment B"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "2003.08385::s00::p005",
+    "2003.08385::s19::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g00:b0:f14",
+    "2003.08385::g00:b0:f15",
+    "2003.08385::g00:b8:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "p005 gives the task interpretation and p019 gives M-Bert sequence-pair setup, but the text does not say the interpretation requires or causes that exact M-Bert setup; 'requires' is unsupported."
+   },
+   "unit_id": "2003.08385::u002"
+  },
+  {
+   "insight_id": "2003.08385::g00:i06",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g00",
+   "concise_text": "The concern that cross-target performance is often considerably lower than fully supervised performance is reflected in M-Bert's mean score dropping by 6–8 percentage points in cross-lingual and cross-target settings.",
+   "triple": {
+    "subject": "cross-target performance concern",
+    "predicate": "claim_evidence",
+    "object": "6–8 percentage points mean score drop"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "2003.08385::s00::p001",
+    "2003.08385::s25::p002"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g00:b0:f06",
+    "2003.08385::g00:b12:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.6,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "p001 states a concern about cross-target performance and p025 states a 6–8 point mean score drop in cross-lingual and cross-target settings, but the text does not explicitly connect the drop as evidence for that specific concern; also the drop covers both settings, not just cross-target."
+   },
+   "unit_id": "2003.08385::u006"
+  },
+  {
+   "insight_id": "2003.08385::g00:i09",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g00",
+   "concise_text": "The sequence-pair classification approach is justified by additional experiments where missing questions, missing comments, random questions, and random comments all decreased M-Bert performance.",
+   "triple": {
+    "subject": "additional experiments (Table TABREF39)",
+    "predicate": "claim_evidence",
+    "object": "sequence-pair classification approach to stance detection is justified"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "2003.08385::s23::p003",
+    "2003.08385::s23::p008",
+    "2003.08385::s25::p003"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g00:b10:f04",
+    "2003.08385::g00:b11:f06",
+    "2003.08385::g00:b12:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.5,
+    "causality_error": false,
+    "reason": "p025 says additional experiments validate the sequence-pair approach, but the cited paragraphs do not enumerate missing questions, missing comments, random questions, and random comments; those experimental conditions are absent from the provided sources."
+   },
+   "unit_id": "2003.08385::u009"
+  },
+  {
+   "insight_id": "2003.08385::g01:i01",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g01",
+   "concise_text": "The x-stance dataset's opportunity for multi-target learning is supported by its broad range of topics and issues regarding national Swiss politics and mainly national-level issues.",
+   "triple": {
+    "subject": "x-stance",
+    "predicate": "requires",
+    "object": "a broad range of topics and issues regarding national Swiss politics for multi-target learning"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "2003.08385::s26::p000",
+    "2003.08385::s28::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g01:b0:f01",
+    "2003.08385::g01:b0:f02",
+    "2003.08385::g01:b0:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "p026 says broad topic diversity opens an opportunity for multi-target learning, not that x-stance requires such a range; p028's 'mainly national-level issues' is about reducing variability and does not support the 'requires' relation."
+   },
+   "unit_id": "2003.08385::u011"
+  },
+  {
+   "insight_id": "2003.08385::g01:i02",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g01",
+   "concise_text": "The question–answer format that conditions stance detection models on a target naturally uses questions and candidate responses downloaded from smartvote.ch.",
+   "triple": {
+    "subject": "question–answer format",
+    "predicate": "requires",
+    "object": "questions and candidate responses on smartvote.ch"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "2003.08385::s26::p001",
+    "2003.08385::s28::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g01:b0:f05",
+    "2003.08385::g01:b0:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.6,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "p026 describes a question–answer format and p028 says questions and candidate responses were downloaded from smartvote.ch, but the text does not say the format requires those specific downloaded items; relation is unsupported."
+   },
+   "unit_id": "2003.08385::u012"
+  },
+  {
+   "insight_id": "2003.08385::g01:i03",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g01",
+   "concise_text": "The formal commentary that adds a new text genre to stance detection consists of answers written between 2011 and 2020 by users of the website.",
+   "triple": {
+    "subject": "formal commentary that politicians have written on political questions",
+    "predicate": "extends",
+    "object": "answers written between 2011 and 2020 by the users of the website"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "2003.08385::s26::p001",
+    "2003.08385::s31::p001"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g01:b0:f04",
+    "2003.08385::g01:b2:f03",
+    "2003.08385::g01:b2:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.74,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.6,
+    "novelty": 0.5,
+    "causality_error": false,
+    "reason": "p026 identifies formal commentary by politicians on political questions as a new text genre; p031 says answers were written between 2011 and 2020 by website users. The sources do not explicitly equate the formal commentary with those answers/users, so the entity-resolution claim is not fully supported."
+   },
+   "unit_id": "2003.08385::u013"
+  },
+  {
+   "insight_id": "2003.08385::g01:i04",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g01",
+   "concise_text": "The x-stance dataset's political stance detection data came from candidates for communal, cantonal or national elections in Switzerland who filled out an online questionnaire.",
+   "triple": {
+    "subject": "x-stance",
+    "predicate": "requires",
+    "object": "an online questionnaire filled out by candidates for communal, cantonal or national elections in Switzerland"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "2003.08385::s26::p000",
+    "2003.08385::s28::p000",
+    "2003.08385::s30::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g01:b0:f00",
+    "2003.08385::g01:b0:f08",
+    "2003.08385::g01:b1:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.76,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "The passages support that x-stance is political stance detection data from smartvote.ch and that candidates filled out an online questionnaire, but the triple's 'requires' relation is unsupported; this is a data-source description, not a requirement."
+   },
+   "unit_id": "2003.08385::u014"
+  },
+  {
+   "insight_id": "2003.08385::g01:i05",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g01",
+   "concise_text": "The questions translated into English were edited and translated by political scientists for a public voting advice website.",
+   "triple": {
+    "subject": "questions translated into English",
+    "predicate": "requires",
+    "object": "editing and translation by political scientists for a public voting advice website"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "2003.08385::s29::p000",
+    "2003.08385::s31::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g01:b0:f12",
+    "2003.08385::g01:b2:f01",
+    "2003.08385::g01:b2:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "Cited passages exist, but the insight adds a 'requires' relation not stated; it is essentially a composed restatement of the two facts and not supported as a requirement."
+   },
+   "unit_id": "2003.08385::u015"
+  },
+  {
+   "insight_id": "2003.08385::g01:i06",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g01",
+   "concise_text": "The x-stance dataset's new text genre includes questions, answers, arguments and comments regarding political issues.",
+   "triple": {
+    "subject": "new text genre to the field of stance detection",
+    "predicate": "extends",
+    "object": "Questions, answers, arguments and comments regarding political issues"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "2003.08385::s26::p001",
+    "2003.08385::s32::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g01:b0:f04",
+    "2003.08385::g01:b2:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.7,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.3,
+    "causality_error": false,
+    "reason": "Passages exist, but they do not jointly support that the new text genre includes all listed items; s26 says formal commentary by politicians adds a new genre, while s32 is only a list."
+   },
+   "unit_id": "2003.08385::u016"
+  },
+  {
+   "insight_id": "2003.08385::g01:i08",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g01",
+   "concise_text": "The x-stance dataset's political questions were downloaded from smartvote.ch and edited and translated by political scientists for a public voting advice website.",
+   "triple": {
+    "subject": "questions on smartvote.ch",
+    "predicate": "requires",
+    "object": "editing and translation by political scientists for a public voting advice website"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "2003.08385::s28::p000",
+    "2003.08385::s31::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g01:b0:f08",
+    "2003.08385::g01:b2:f01",
+    "2003.08385::g01:b2:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.73,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "Passages exist, but the 'requires' relation is unsupported; the text only co-occurs smartvote.ch questions with editing/translation by political scientists."
+   },
+   "unit_id": "2003.08385::u018"
+  },
+  {
+   "insight_id": "2003.08385::g01:i09",
+   "paper_id": "2003.08385",
+   "group_id": "2003.08385::g01",
+   "concise_text": "The x-stance dataset's 7581 different speakers are candidates for communal, cantonal or national elections in Switzerland who filled out an online questionnaire.",
+   "triple": {
+    "subject": "7581 different speakers",
+    "predicate": "requires",
+    "object": "candidates for communal, cantonal or national elections in Switzerland who filled out an online questionnaire"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "2003.08385::s30::p000",
+    "2003.08385::s30::p006"
+   ],
+   "supporting_fact_ids": [
+    "2003.08385::g01:b1:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.69,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "Passages exist and contain both facts, but the insight asserts a 'requires' relation not stated; it is a combined restatement rather than a supported inference."
+   },
+   "unit_id": "2003.08385::u019"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "2003.08385::g00:i00",
+    "verdict": {
+     "insight_id": "2003.08385::g00:i00",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "All cited ids exist; p001 identifies small single-target multilingual datasets as a limitation and p002 says x-stance is much larger and combines multilinguality with many topics/targets, supporting the composed problem-solution insight."
+    }
+   },
+   {
+    "insight_id": "2003.08385::g00:i01",
+    "verdict": {
+     "insight_id": "2003.08385::g00:i01",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "The passages support that Smartvote categorical answers were merged into binary favor/against labels, but the triple's 'causes' relation is too strong; this is a transformation, not a causal relation."
+    },
+    "reason": "The passages support that Smartvote categorical answers were merged into binary favor/against labels, but the triple's 'causes' relation is too strong; this is a transformation, not a causal relation."
+   },
+   {
+    "insight_id": "2003.08385::g00:i02",
+    "verdict": {
+     "insight_id": "2003.08385::g00:i02",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "p005 gives the task interpretation and p019 gives M-Bert sequence-pair setup, but the text does not say the interpretation requires or causes that exact M-Bert setup; 'requires' is unsupported."
+    },
+    "reason": "p005 gives the task interpretation and p019 gives M-Bert sequence-pair setup, but the text does not say the interpretation requires or causes that exact M-Bert setup; 'requires' is unsupported."
+   },
+   {
+    "insight_id": "2003.08385::g00:i03",
+    "verdict": {
+     "insight_id": "2003.08385::g00:i03",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "All cited ids exist; p006 says multiple test sets evaluate zero-shot cross-lingual and cross-target transfer, while p011 paragraphs specify Italian as test-only and held-out topics Healthcare and Political System."
+    }
+   },
+   {
+    "insight_id": "2003.08385::g00:i04",
+    "verdict": {
+     "insight_id": "2003.08385::g00:i04",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "p006 claims multilingual Bert can generalize cross-lingually, and p021 says zero-shot Italian performance is much better than the target-wise majority baseline, jointly supporting the evidence relation."
+    }
+   },
+   {
+    "insight_id": "2003.08385::g00:i05",
+    "verdict": {
+     "insight_id": "2003.08385::g00:i05",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "p006 claims multilingual Bert can generalize in a cross-target setting, and p021 says M-Bert performs worse cross-target but easily surpasses majority baselines, supporting the evidence relation."
+    }
+   },
+   {
+    "insight_id": "2003.08385::g00:i06",
+    "verdict": {
+     "insight_id": "2003.08385::g00:i06",
+     "keep": false,
+     "support": 0.6,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "p001 states a concern about cross-target performance and p025 states a 6–8 point mean score drop in cross-lingual and cross-target settings, but the text does not explicitly connect the drop as evidence for that specific concern; also the drop covers both settings, not just cross-target."
+    },
+    "reason": "p001 states a concern about cross-target performance and p025 states a 6–8 point mean score drop in cross-lingual and cross-target settings, but the text does not explicitly connect the drop as evidence for that specific concern; also the drop covers both settings, not just cross-target."
+   },
+   {
+    "insight_id": "2003.08385::g00:i07",
+    "verdict": {
+     "insight_id": "2003.08385::g00:i07",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "p007 says the API lacks comment language, so a language identifier/langdetect was used; p007 second run says its output was restricted to English, French, German and Italian. The composed limitation-method relation is supported."
+    }
+   },
+   {
+    "insight_id": "2003.08385::g00:i08",
+    "verdict": {
+     "insight_id": "2003.08385::g00:i08",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "p007 first run reports no Romansh and unexpected outputs as misclassifications of German, French or Italian; p007 second run explicitly says 'drawing from these conclusions' the output was restricted to English, French, German and Italian, supporting the causal wording."
+    }
+   },
+   {
+    "insight_id": "2003.08385::g00:i09",
+    "verdict": {
+     "insight_id": "2003.08385::g00:i09",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.5,
+     "causality_error": false,
+     "reason": "p025 says additional experiments validate the sequence-pair approach, but the cited paragraphs do not enumerate missing questions, missing comments, random questions, and random comments; those experimental conditions are absent from the provided sources."
+    },
+    "reason": "p025 says additional experiments validate the sequence-pair approach, but the cited paragraphs do not enumerate missing questions, missing comments, random questions, and random comments; those experimental conditions are absent from the provided sources."
+   },
+   {
+    "insight_id": "2003.08385::g01:i00",
+    "verdict": {
+     "insight_id": "2003.08385::g01:i00",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "p026 says x-stance promotes a multilingual approach by being partly Swiss Standard German, French and Italian; p029 specifies training in Swiss Standard German/Swiss French and test sets also in Swiss Italian, supporting the composed evaluation/data fact."
+    }
+   },
+   {
+    "insight_id": "2003.08385::g01:i01",
+    "verdict": {
+     "insight_id": "2003.08385::g01:i01",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "p026 says broad topic diversity opens an opportunity for multi-target learning, not that x-stance requires such a range; p028's 'mainly national-level issues' is about reducing variability and does not support the 'requires' relation."
+    },
+    "reason": "p026 says broad topic diversity opens an opportunity for multi-target learning, not that x-stance requires such a range; p028's 'mainly national-level issues' is about reducing variability and does not support the 'requires' relation."
+   },
+   {
+    "insight_id": "2003.08385::g01:i02",
+    "verdict": {
+     "insight_id": "2003.08385::g01:i02",
+     "keep": false,
+     "support": 0.6,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "p026 describes a question–answer format and p028 says questions and candidate responses were downloaded from smartvote.ch, but the text does not say the format requires those specific downloaded items; relation is unsupported."
+    },
+    "reason": "p026 describes a question–answer format and p028 says questions and candidate responses were downloaded from smartvote.ch, but the text does not say the format requires those specific downloaded items; relation is unsupported."
+   },
+   {
+    "insight_id": "2003.08385::g01:i03",
+    "verdict": {
+     "insight_id": "2003.08385::g01:i03",
+     "keep": false,
+     "support": 0.6,
+     "novelty": 0.5,
+     "causality_error": false,
+     "reason": "p026 identifies formal commentary by politicians on political questions as a new text genre; p031 says answers were written between 2011 and 2020 by website users. The sources do not explicitly equate the formal commentary with those answers/users, so the entity-resolution claim is not fully supported."
+    },
+    "reason": "p026 identifies formal commentary by politicians on political questions as a new text genre; p031 says answers were written between 2011 and 2020 by website users. The sources do not explicitly equate the formal commentary with those answers/users, so the entity-resolution claim is not fully supported."
+   },
+   {
+    "insight_id": "2003.08385::g01:i04",
+    "verdict": {
+     "insight_id": "2003.08385::g01:i04",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "The passages support that x-stance is political stance detection data from smartvote.ch and that candidates filled out an online questionnaire, but the triple's 'requires' relation is unsupported; this is a data-source description, not a requirement."
+    },
+    "reason": "The passages support that x-stance is political stance detection data from smartvote.ch and that candidates filled out an online questionnaire, but the triple's 'requires' relation is unsupported; this is a data-source description, not a requirement."
+   },
+   {
+    "insight_id": "2003.08385::g01:i05",
+    "verdict": {
+     "insight_id": "2003.08385::g01:i05",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "Cited passages exist, but the insight adds a 'requires' relation not stated; it is essentially a composed restatement of the two facts and not supported as a requirement."
+    },
+    "reason": "Cited passages exist, but the insight adds a 'requires' relation not stated; it is essentially a composed restatement of the two facts and not supported as a requirement."
+   },
+   {
+    "insight_id": "2003.08385::g01:i06",
+    "verdict": {
+     "insight_id": "2003.08385::g01:i06",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.3,
+     "causality_error": false,
+     "reason": "Passages exist, but they do not jointly support that the new text genre includes all listed items; s26 says formal commentary by politicians adds a new genre, while s32 is only a list."
+    },
+    "reason": "Passages exist, but they do not jointly support that the new text genre includes all listed items; s26 says formal commentary by politicians adds a new genre, while s32 is only a list."
+   },
+   {
+    "insight_id": "2003.08385::g01:i07",
+    "verdict": {
+     "insight_id": "2003.08385::g01:i07",
+     "keep": true,
+     "support": 0.85,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Passages exist and jointly support a composed inference: the dataset promotes multilingual stance detection via Swiss German/French/Italian, and questions were additionally translated into English."
+    }
+   },
+   {
+    "insight_id": "2003.08385::g01:i08",
+    "verdict": {
+     "insight_id": "2003.08385::g01:i08",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "Passages exist, but the 'requires' relation is unsupported; the text only co-occurs smartvote.ch questions with editing/translation by political scientists."
+    },
+    "reason": "Passages exist, but the 'requires' relation is unsupported; the text only co-occurs smartvote.ch questions with editing/translation by political scientists."
+   },
+   {
+    "insight_id": "2003.08385::g01:i09",
+    "verdict": {
+     "insight_id": "2003.08385::g01:i09",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "Passages exist and contain both facts, but the insight asserts a 'requires' relation not stated; it is a combined restatement rather than a supported inference."
+    },
+    "reason": "Passages exist and contain both facts, but the insight asserts a 'requires' relation not stated; it is a combined restatement rather than a supported inference."
+   }
+  ],
+  "calls": [
+   {
+    "n": 15,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 4372,
+     "completion_tokens": 1316,
+     "total_tokens": 5688,
+     "reasoning_tokens": null
+    }
+   },
+   {
+    "n": 5,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 1301,
+     "completion_tokens": 389,
+     "total_tokens": 1690,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

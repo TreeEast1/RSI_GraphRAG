@@ -1,0 +1,83 @@
+{
+ "paper_id": "1709.05036",
+ "title": "Query-based Attention CNN for Text Similarity Map",
+ "abstract": "In this paper, we introduce Query-based Attention CNN(QACNN) for Text Similarity Map, an end-to-end neural network for question answering. This network is composed of compare mechanism, two-staged CNN architecture with attention mechanism, and a prediction layer. First, the compare mechanism compares between the given passage, query, and multiple answer choices to build similarity maps. Then, the two-staged CNN architecture extracts features through word-level and sentence-level. At the same time, attention mechanism helps CNN focus more on the important part of the passage based on the query information. Finally, the prediction layer find out the most possible answer choice. We conduct this model on the MovieQA dataset using Plot Synopses only, and achieve 79.99% accuracy which is the state of the art on the dataset.",
+ "sections": [
+  "Introduction",
+  "QACNN",
+  "Similarity Mapping Layer",
+  "QACNN Layer",
+  "Prediction Layer",
+  "Implementation details",
+  "Experimental Result",
+  "Discussion",
+  "Conclusion"
+ ],
+ "n_paragraphs": 36,
+ "n_tokens": 3158,
+ "figures_and_tables": [
+  {
+   "caption_id": "1709.05036::fig000",
+   "paper_id": "1709.05036",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: QACNN overview, P denotes paragraph, Q denotes query, C denotes one of choices",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "1709.05036::fig001",
+   "paper_id": "1709.05036",
+   "file": "2-Figure2-1.png",
+   "caption": "Figure 2: Similarity map between paragraph P and query Q. I denotes the length of each sentence Pn, J denotes the length of query Q",
+   "n_tokens": 31
+  },
+  {
+   "caption_id": "1709.05036::fig002",
+   "paper_id": "1709.05036",
+   "file": "2-Figure3-1.png",
+   "caption": "Figure 3: Similarity map between paragraph P and choice C. I denotes the length of each sentence Pn, K denotes the length of choice C",
+   "n_tokens": 31
+  },
+  {
+   "caption_id": "1709.05036::fig003",
+   "paper_id": "1709.05036",
+   "file": "2-Figure4-1.png",
+   "caption": "Figure 4: First stage CNN attention part.",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "1709.05036::fig004",
+   "paper_id": "1709.05036",
+   "file": "3-Figure5-1.png",
+   "caption": "Figure 5: First stage CNN representation part. an is the wordlevel attention from First stage CNN attention.",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "1709.05036::fig005",
+   "paper_id": "1709.05036",
+   "file": "4-Figure6-1.png",
+   "caption": "Figure 6: Second stage CNN attention part.",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "1709.05036::fig006",
+   "paper_id": "1709.05036",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1: MovieQA result [1], [4]",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1709.05036::fig007",
+   "paper_id": "1709.05036",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Experiment result",
+   "n_tokens": 6
+  },
+  {
+   "caption_id": "1709.05036::fig008",
+   "paper_id": "1709.05036",
+   "file": "5-Figure8-1.png",
+   "caption": "Figure 8: Visualization of the attention map. â is the sentence-level attention from Second stage CNN attention. an is the word-level attention from First stage CNN attention.",
+   "n_tokens": 36
+  }
+ ]
+}

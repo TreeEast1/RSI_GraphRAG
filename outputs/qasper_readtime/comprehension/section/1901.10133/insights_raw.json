@@ -1,0 +1,448 @@
+{
+ "insights": [
+  {
+   "insight_id": "1901.10133::g00:i00",
+   "paper_id": "1901.10133",
+   "group_id": "1901.10133::g00",
+   "concise_text": "The proposed model combines $S_1(x,y)$ and $S_2(x,y)$ in Equation 1 with $t$ fixed to $0.25$, and experiments show better results than the baseline using only sentence-keyword similarity.",
+   "triple": {
+    "subject": "considering both $S_1(x,y)$ and $S_2(x,y)$",
+    "predicate": "improves_on",
+    "object": "the baseline using only similarity between sentences and keywords"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1901.10133::s02::p002",
+    "1901.10133::s02::p003",
+    "1901.10133::s02::p004",
+    "1901.10133::s04::p001"
+   ],
+   "supporting_fact_ids": [
+    "1901.10133::g00:b2:f03",
+    "1901.10133::g00:b2:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1901.10133::u000"
+  },
+  {
+   "insight_id": "1901.10133::g00:i01",
+   "paper_id": "1901.10133",
+   "group_id": "1901.10133::g00",
+   "concise_text": "The baseline is implemented by setting $t$ to 1 in Equation 1, which removes the contribution of $S_2(x,y)$ and leaves only $S_1(x,y)$.",
+   "triple": {
+    "subject": "$t$ value as 1 in Equation 1",
+    "predicate": "causes",
+    "object": "only $S_1(x,y)$ to be considered"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1901.10133::s02::p003",
+    "1901.10133::s04::p001"
+   ],
+   "supporting_fact_ids": [
+    "1901.10133::g00:b2:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1901.10133::u001"
+  },
+  {
+   "insight_id": "1901.10133::g00:i02",
+   "paper_id": "1901.10133",
+   "group_id": "1901.10133::g00",
+   "concise_text": "The model evaluated on five sets of 100 wiki documents uses TextRank-extracted keywords stored in $K$ as centroids for the clusters.",
+   "triple": {
+    "subject": "TextRank-extracted keywords stored in $K$",
+    "predicate": "evaluated_on",
+    "object": "five sets of 100 wiki documents"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1901.10133::s02::p000",
+    "1901.10133::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1901.10133::g00:b1:f01",
+    "1901.10133::g00:b1:f02",
+    "1901.10133::g00:b2:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1901.10133::u002"
+  },
+  {
+   "insight_id": "1901.10133::g00:i03",
+   "paper_id": "1901.10133",
+   "group_id": "1901.10133::g00",
+   "concise_text": "The experimental input is created by randomly rearranging sentences, matching the paper's task of segmenting an unordered text document into different sections.",
+   "triple": {
+    "subject": "randomly rearranging sentences",
+    "predicate": "creates",
+    "object": "the unordered text document input for segmenting into different sections"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1901.10133::s00::p000",
+    "1901.10133::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1901.10133::g00:b2:f01",
+    "1901.10133::g00:b2:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1901.10133::u003"
+  },
+  {
+   "insight_id": "1901.10133::g00:i04",
+   "paper_id": "1901.10133",
+   "group_id": "1901.10133::g00",
+   "concise_text": "The significant improvement over the baseline supports the observation that initial sentences associated with a keyword/topic play a significant role while ordering an unordered document.",
+   "triple": {
+    "subject": "significant improvement over the baseline",
+    "predicate": "supports",
+    "object": "the significant role of initial sentences associated with a keyword/topic"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1901.10133::s04::p001",
+    "1901.10133::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "1901.10133::g00:b2:f05",
+    "1901.10133::g00:b2:f06"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1901.10133::u004"
+  },
+  {
+   "insight_id": "1901.10133::g00:i05",
+   "paper_id": "1901.10133",
+   "group_id": "1901.10133::g00",
+   "concise_text": "The clusters/sections whose quality improves when sentence-keyword and sentence-section similarities are both considered are the clusters generated for every TextRank-extracted keyword.",
+   "triple": {
+    "subject": "clusters generated for every TextRank-extracted keyword",
+    "predicate": "improves_on",
+    "object": "considering only sentence-keyword similarity"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1901.10133::s00::p001",
+    "1901.10133::s00::p002",
+    "1901.10133::s04::p001"
+   ],
+   "supporting_fact_ids": [
+    "1901.10133::g00:b0:f04",
+    "1901.10133::g00:b0:f05",
+    "1901.10133::g00:b2:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1901.10133::u005"
+  },
+  {
+   "insight_id": "1901.10133::g00:i06",
+   "paper_id": "1901.10133",
+   "group_id": "1901.10133::g00",
+   "concise_text": "The most relevant sentence mapped to each keyword in $K$ is selected using cosine similarity of Google's USE embeddings, the same similarity used for $S_1(x,y)$.",
+   "triple": {
+    "subject": "the most relevant sentence for each keyword in $K$",
+    "predicate": "requires",
+    "object": "cosine similarity of embeddings generated from Google's USE"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1901.10133::s02::p001",
+    "1901.10133::s02::p002"
+   ],
+   "supporting_fact_ids": [
+    "1901.10133::g00:b1:f03",
+    "1901.10133::g00:b1:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1901.10133::u006"
+  },
+  {
+   "insight_id": "1901.10133::g00:i07",
+   "paper_id": "1901.10133",
+   "group_id": "1901.10133::g00",
+   "concise_text": "Because the keywords stored in $K$ act as centroids and their quality has a bearing on final results, replacing TextRank with a better keyword extraction algorithm could affect final results.",
+   "triple": {
+    "subject": "quality of keywords extracted",
+    "predicate": "limits",
+    "object": "final results"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1901.10133::s02::p000",
+    "1901.10133::s04::p001"
+   ],
+   "supporting_fact_ids": [
+    "1901.10133::g00:b1:f02",
+    "1901.10133::g00:b2:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1901.10133::u007"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1901.10133::g00",
+   "insights": [
+    {
+     "insight_id": "1901.10133::g00:i00",
+     "paper_id": "1901.10133",
+     "group_id": "1901.10133::g00",
+     "concise_text": "The proposed model combines $S_1(x,y)$ and $S_2(x,y)$ in Equation 1 with $t$ fixed to $0.25$, and experiments show better results than the baseline using only sentence-keyword similarity.",
+     "triple": {
+      "subject": "considering both $S_1(x,y)$ and $S_2(x,y)$",
+      "predicate": "improves_on",
+      "object": "the baseline using only similarity between sentences and keywords"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1901.10133::s02::p002",
+      "1901.10133::s02::p003",
+      "1901.10133::s02::p004",
+      "1901.10133::s04::p001"
+     ],
+     "supporting_fact_ids": [
+      "1901.10133::g00:b2:f03",
+      "1901.10133::g00:b2:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.93,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1901.10133::u000"
+    },
+    {
+     "insight_id": "1901.10133::g00:i01",
+     "paper_id": "1901.10133",
+     "group_id": "1901.10133::g00",
+     "concise_text": "The baseline is implemented by setting $t$ to 1 in Equation 1, which removes the contribution of $S_2(x,y)$ and leaves only $S_1(x,y)$.",
+     "triple": {
+      "subject": "$t$ value as 1 in Equation 1",
+      "predicate": "causes",
+      "object": "only $S_1(x,y)$ to be considered"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1901.10133::s02::p003",
+      "1901.10133::s04::p001"
+     ],
+     "supporting_fact_ids": [
+      "1901.10133::g00:b2:f03"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1901.10133::u001"
+    },
+    {
+     "insight_id": "1901.10133::g00:i02",
+     "paper_id": "1901.10133",
+     "group_id": "1901.10133::g00",
+     "concise_text": "The model evaluated on five sets of 100 wiki documents uses TextRank-extracted keywords stored in $K$ as centroids for the clusters.",
+     "triple": {
+      "subject": "TextRank-extracted keywords stored in $K$",
+      "predicate": "evaluated_on",
+      "object": "five sets of 100 wiki documents"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1901.10133::s02::p000",
+      "1901.10133::s04::p000"
+     ],
+     "supporting_fact_ids": [
+      "1901.10133::g00:b1:f01",
+      "1901.10133::g00:b1:f02",
+      "1901.10133::g00:b2:f00"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1901.10133::u002"
+    },
+    {
+     "insight_id": "1901.10133::g00:i03",
+     "paper_id": "1901.10133",
+     "group_id": "1901.10133::g00",
+     "concise_text": "The experimental input is created by randomly rearranging sentences, matching the paper's task of segmenting an unordered text document into different sections.",
+     "triple": {
+      "subject": "randomly rearranging sentences",
+      "predicate": "creates",
+      "object": "the unordered text document input for segmenting into different sections"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1901.10133::s00::p000",
+      "1901.10133::s04::p000"
+     ],
+     "supporting_fact_ids": [
+      "1901.10133::g00:b2:f01",
+      "1901.10133::g00:b2:f02"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1901.10133::u003"
+    },
+    {
+     "insight_id": "1901.10133::g00:i04",
+     "paper_id": "1901.10133",
+     "group_id": "1901.10133::g00",
+     "concise_text": "The significant improvement over the baseline supports the observation that initial sentences associated with a keyword/topic play a significant role while ordering an unordered document.",
+     "triple": {
+      "subject": "significant improvement over the baseline",
+      "predicate": "supports",
+      "object": "the significant role of initial sentences associated with a keyword/topic"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1901.10133::s04::p001",
+      "1901.10133::s05::p000"
+     ],
+     "supporting_fact_ids": [
+      "1901.10133::g00:b2:f05",
+      "1901.10133::g00:b2:f06"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.78,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1901.10133::u004"
+    },
+    {
+     "insight_id": "1901.10133::g00:i05",
+     "paper_id": "1901.10133",
+     "group_id": "1901.10133::g00",
+     "concise_text": "The clusters/sections whose quality improves when sentence-keyword and sentence-section similarities are both considered are the clusters generated for every TextRank-extracted keyword.",
+     "triple": {
+      "subject": "clusters generated for every TextRank-extracted keyword",
+      "predicate": "improves_on",
+      "object": "considering only sentence-keyword similarity"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1901.10133::s00::p001",
+      "1901.10133::s00::p002",
+      "1901.10133::s04::p001"
+     ],
+     "supporting_fact_ids": [
+      "1901.10133::g00:b0:f04",
+      "1901.10133::g00:b0:f05",
+      "1901.10133::g00:b2:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1901.10133::u005"
+    },
+    {
+     "insight_id": "1901.10133::g00:i06",
+     "paper_id": "1901.10133",
+     "group_id": "1901.10133::g00",
+     "concise_text": "The most relevant sentence mapped to each keyword in $K$ is selected using cosine similarity of Google's USE embeddings, the same similarity used for $S_1(x,y)$.",
+     "triple": {
+      "subject": "the most relevant sentence for each keyword in $K$",
+      "predicate": "requires",
+      "object": "cosine similarity of embeddings generated from Google's USE"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1901.10133::s02::p001",
+      "1901.10133::s02::p002"
+     ],
+     "supporting_fact_ids": [
+      "1901.10133::g00:b1:f03",
+      "1901.10133::g00:b1:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1901.10133::u006"
+    },
+    {
+     "insight_id": "1901.10133::g00:i07",
+     "paper_id": "1901.10133",
+     "group_id": "1901.10133::g00",
+     "concise_text": "Because the keywords stored in $K$ act as centroids and their quality has a bearing on final results, replacing TextRank with a better keyword extraction algorithm could affect final results.",
+     "triple": {
+      "subject": "quality of keywords extracted",
+      "predicate": "limits",
+      "object": "final results"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1901.10133::s02::p000",
+      "1901.10133::s04::p001"
+     ],
+     "supporting_fact_ids": [
+      "1901.10133::g00:b1:f02",
+      "1901.10133::g00:b2:f05"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.72,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1901.10133::u007"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "invalid_entity",
+     "item": {
+      "text": "The output document compared against the original input document is evaluated using $Sim1$ and $Sim2$, which assign each original section its maximum similarity over output sections/clusters.",
+      "triple": [
+       "$Sim1$ and $Sim2$",
+       "evaluated_on",
+       "the output document compared against the original input document"
+      ],
+      "source_passage_ids": [
+       "1901.10133::s03::p000",
+       "1901.10133::s04::p000"
+      ]
+     }
+    }
+   ],
+   "n_raw": 9,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4267,
+    "completion_tokens": 1542,
+    "total_tokens": 5809,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

@@ -1,0 +1,1137 @@
+{
+ "insights": [
+  {
+   "insight_id": "1909.01362::g00:i00",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g00",
+   "concise_text": "CRAFT addresses the unknown-horizon limitation of fixed-length windows by processing comments online, and outperforms all baselines in accuracy and F1 on both datasets.",
+   "triple": {
+    "subject": "CRAFT",
+    "predicate": "outperforms",
+    "object": "all baselines in accuracy and F1 on both datasets"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1909.01362::s00::p007",
+    "1909.01362::s00::p008",
+    "1909.01362::s04::p009"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g00:b1:f03",
+    "1909.01362::g00:b1:f04",
+    "1909.01362::g00:b8:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u000"
+  },
+  {
+   "insight_id": "1909.01362::g00:i01",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g00",
+   "concise_text": "Because sequential neural models need massive unlabeled conversational data while forecasting tasks have at most a few thousands labeled examples, CRAFT uses pre-training on unlabeled data before fine-tuning.",
+   "triple": {
+    "subject": "relative scarcity of labeled data",
+    "predicate": "requires",
+    "object": "pre-training on unlabeled data before fine-tuning"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1909.01362::s00::p009",
+    "1909.01362::s00::p010",
+    "1909.01362::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g00:b1:f07",
+    "1909.01362::g00:b1:f08",
+    "1909.01362::g00:b1:f09",
+    "1909.01362::g00:b1:f10",
+    "1909.01362::g00:b1:f11",
+    "1909.01362::g00:b1:f12",
+    "1909.01362::g00:b4:f13",
+    "1909.01362::g00:b4:f14"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u001"
+  },
+  {
+   "insight_id": "1909.01362::g00:i02",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g00",
+   "concise_text": "The ablation trained without pre-training performs at random guessing, supporting the claim that pre-training is needed because labeled forecasting data are relatively small.",
+   "triple": {
+    "subject": "ablation without pre-training",
+    "predicate": "causes",
+    "object": "performance at the level of random guessing"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.01362::s00::p009",
+    "1909.01362::s04::p007"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g00:b1:f08",
+    "1909.01362::g00:b1:f09",
+    "1909.01362::g00:b1:f10",
+    "1909.01362::g00:b7:f14",
+    "1909.01362::g00:b7:f15",
+    "1909.01362::g00:b7:f16",
+    "1909.01362::g00:b7:f17"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u002"
+  },
+  {
+   "insight_id": "1909.01362::g00:i03",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g00",
+   "concise_text": "CRAFT's HRED context encoder supplies the context encoding used by the predictor, enabling the model to capture relations between comments that Cumulative BoW fails to account for.",
+   "triple": {
+    "subject": "HRED context encoder",
+    "predicate": "extends",
+    "object": "the predictor with inter-comment context"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1909.01362::s00::p006",
+    "1909.01362::s03::p006",
+    "1909.01362::s03::p008",
+    "1909.01362::s04::p004"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g00:b0:f16",
+    "1909.01362::g00:b5:f14",
+    "1909.01362::g00:b6:f02",
+    "1909.01362::g00:b7:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u003"
+  },
+  {
+   "insight_id": "1909.01362::g00:i04",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g00",
+   "concise_text": "The expanded `Conversations Gone Awry' dataset reaches 4,188 conversations and supplies 1 million WikiConv conversations for unsupervised pre-training of CRAFT's generative component.",
+   "triple": {
+    "subject": "expanded `Conversations Gone Awry' dataset",
+    "predicate": "requires",
+    "object": "1 million WikiConv conversations for unsupervised pre-training"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1909.01362::s02::p004",
+    "1909.01362::s02::p005",
+    "1909.01362::s04::p001"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g00:b4:f06",
+    "1909.01362::g00:b4:f08",
+    "1909.01362::g00:b6:f13"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u004"
+  },
+  {
+   "insight_id": "1909.01362::g00:i05",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g00",
+   "concise_text": "The CMV dataset's lack of post-hoc annotation limits controls, yet its 6,842 conversations are used to evaluate CRAFT against fixed-window and online baselines.",
+   "triple": {
+    "subject": "lack of post-hoc annotation",
+    "predicate": "limits",
+    "object": "controls on the 6,842 CMV conversations used for evaluation"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1909.01362::s02::p007",
+    "1909.01362::s04::p001",
+    "1909.01362::s04::p009"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g00:b4:f10",
+    "1909.01362::g00:b4:f12",
+    "1909.01362::g00:b6:f13",
+    "1909.01362::g00:b8:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u005"
+  },
+  {
+   "insight_id": "1909.01362::g00:i06",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g00",
+   "concise_text": "CRAFT $-$ CE removes the context encoder memory, so it cannot capture inter-comment dependencies and predicts only from the latest comment, unlike CRAFT's full conversational context.",
+   "triple": {
+    "subject": "CRAFT $-$ CE",
+    "predicate": "limits",
+    "object": "prediction to the latest comment"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1909.01362::s03::p006",
+    "1909.01362::s04::p008"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g00:b5:f14",
+    "1909.01362::g00:b8:f00",
+    "1909.01362::g00:b8:f02",
+    "1909.01362::g00:b8:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u006"
+  },
+  {
+   "insight_id": "1909.01362::g00:i07",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g00",
+   "concise_text": "The evaluation counts a forecast as a true positive only if triggered before derailment, which operationalizes the goal of giving moderators time to intervene before harm.",
+   "triple": {
+    "subject": "true-positive rule",
+    "predicate": "evaluates",
+    "object": "early warning before derailment"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.01362::s00::p005",
+    "1909.01362::s04::p002"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g00:b0:f09",
+    "1909.01362::g00:b7:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u007"
+  },
+  {
+   "insight_id": "1909.01362::g00:i08",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g00",
+   "concise_text": "Prior forecasting work's hand-crafted features from fixed-length windows leave the unknown-horizon problem unaddressed, while CRAFT processes comments and their relations online.",
+   "triple": {
+    "subject": "hand-crafted fixed-length window features",
+    "predicate": "limits",
+    "object": "forecasting under unknown horizon"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1909.01362::s00::p007",
+    "1909.01362::s00::p008",
+    "1909.01362::s01::p005"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g00:b1:f00",
+    "1909.01362::g00:b1:f01",
+    "1909.01362::g00:b1:f03",
+    "1909.01362::g00:b1:f04",
+    "1909.01362::g00:b3:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u008"
+  },
+  {
+   "insight_id": "1909.01362::g00:i09",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g00",
+   "concise_text": "The Wikipedia dataset's civil comments before personal attacks force models to capture conversational dynamics, aligning with CRAFT's need to model relations between comments.",
+   "triple": {
+    "subject": "Wikipedia dataset controls",
+    "predicate": "requires",
+    "object": "models to capture conversational dynamics"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1909.01362::s00::p006",
+    "1909.01362::s02::p003"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g00:b0:f16",
+    "1909.01362::g00:b4:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.83,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u009"
+  },
+  {
+   "insight_id": "1909.01362::g01:i00",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g01",
+   "concise_text": "CRAFT's substantial prior notice of derailment is quantified as over 50% of conversations getting at least 3 hours of advance warning and 39% getting at least 12 hours.",
+   "triple": {
+    "subject": "CRAFT's substantial prior notice of derailment",
+    "predicate": "evaluated_on",
+    "object": "over 50% of conversations getting at least 3 hours of advance warning and 39% getting at least 12 hours"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.01362::s05::p002",
+    "1909.01362::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g01:b0:f00",
+    "1909.01362::g01:b0:f01",
+    "1909.01362::g01:b1:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u010"
+  },
+  {
+   "insight_id": "1909.01362::g01:i01",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g01",
+   "concise_text": "The prefix-shuffling experiment supports the conclusion that CRAFT uses its capacity to model conversational context in an order-sensitive fashion.",
+   "triple": {
+    "subject": "the prefix-shuffling experiment",
+    "predicate": "provides evidence for",
+    "object": "CRAFT using its capacity to model conversational context in an order-sensitive fashion"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.01362::s05::p004",
+    "1909.01362::s05::p006"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g01:b0:f03",
+    "1909.01362::g01:b0:f04",
+    "1909.01362::g01:b1:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u011"
+  },
+  {
+   "insight_id": "1909.01362::g01:i02",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g01",
+   "concise_text": "Shuffling comment order in pre-training, fine-tuning and testing inhibits meaningful order-sensitive dynamics and hurts performance to 65% accuracy for Wikipedia and 59.5% for CMV.",
+   "triple": {
+    "subject": "shuffling comment order in pre-training, fine-tuning and testing",
+    "predicate": "causes",
+    "object": "65% accuracy for Wikipedia and 59.5% for CMV"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1909.01362::s05::p005",
+    "1909.01362::s05::p006"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g01:b0:f05",
+    "1909.01362::g01:b0:f07",
+    "1909.01362::g01:b0:f08",
+    "1909.01362::g01:b0:f09",
+    "1909.01362::g01:b0:f10",
+    "1909.01362::g01:b1:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u012"
+  },
+  {
+   "insight_id": "1909.01362::g01:i03",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g01",
+   "concise_text": "The two shuffling experiments jointly support the conclusion that CRAFT makes effective use of the dynamics within conversational context.",
+   "triple": {
+    "subject": "the two shuffling experiments",
+    "predicate": "provide evidence for",
+    "object": "CRAFT making effective use of the dynamics within conversational context"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.01362::s05::p004",
+    "1909.01362::s05::p005",
+    "1909.01362::s05::p006"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g01:b0:f03",
+    "1909.01362::g01:b0:f04",
+    "1909.01362::g01:b0:f05",
+    "1909.01362::g01:b0:f08",
+    "1909.01362::g01:b1:f00",
+    "1909.01362::g01:b1:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u013"
+  },
+  {
+   "insight_id": "1909.01362::g01:i04",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g01",
+   "concise_text": "CRAFT's design capacity to learn an order-sensitive representation of conversational context is empirically supported by the prefix-shuffling experiment.",
+   "triple": {
+    "subject": "the prefix-shuffling experiment",
+    "predicate": "provides evidence for",
+    "object": "CRAFT's capacity to learn an order-sensitive representation of conversational context"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.01362::s05::p003",
+    "1909.01362::s05::p004"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g01:b0:f02",
+    "1909.01362::g01:b0:f03",
+    "1909.01362::g01:b0:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u014"
+  },
+  {
+   "insight_id": "1909.01362::g01:i05",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g01",
+   "concise_text": "The model that processes comments as they happen and takes the full conversational context into account is CRAFT, whose architecture follow-up work could adapt.",
+   "triple": {
+    "subject": "a model for forecasting conversational events",
+    "predicate": "entity_resolution",
+    "object": "the CRAFT architecture"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1909.01362::s06::p000",
+    "1909.01362::s06::p001"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g01:b1:f03",
+    "1909.01362::g01:b1:f04",
+    "1909.01362::g01:b1:f06"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u015"
+  },
+  {
+   "insight_id": "1909.01362::g01:i06",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g01",
+   "concise_text": "Open questions about what human moderators actually desire from an early-warning system motivate a user study of a prototype system with actual moderators.",
+   "triple": {
+    "subject": "open questions about what human moderators actually desire from an early-warning system",
+    "predicate": "problem_solution",
+    "object": "a user study of a prototype system with actual moderators"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1909.01362::s06::p002",
+    "1909.01362::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g01:b1:f08",
+    "1909.01362::g01:b1:f09",
+    "1909.01362::g01:b1:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u016"
+  },
+  {
+   "insight_id": "1909.01362::g01:i07",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g01",
+   "concise_text": "Because the current analysis relies on balanced datasets while derailment is a relatively rare event, a more restrictive trigger threshold would be appropriate.",
+   "triple": {
+    "subject": "balanced datasets with relatively rare derailment",
+    "predicate": "requires",
+    "object": "a more restrictive trigger threshold"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1909.01362::s06::p003",
+    "1909.01362::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g01:b1:f10",
+    "1909.01362::g01:b1:f11",
+    "1909.01362::g01:b1:f12",
+    "1909.01362::g01:b1:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u017"
+  },
+  {
+   "insight_id": "1909.01362::g01:i08",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g01",
+   "concise_text": "The single-label limitation of the present work conflicts with the possibility that a conversation could get back on track or suffer a repeat occurrence of antisocial behavior.",
+   "triple": {
+    "subject": "a single label to each conversation",
+    "predicate": "limits",
+    "object": "forecasting repeat occurrence of antisocial behavior"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1909.01362::s06::p004",
+    "1909.01362::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g01:b1:f14",
+    "1909.01362::g01:b1:f15",
+    "1909.01362::g01:b1:f16",
+    "1909.01362::g01:b1:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.76,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u018"
+  },
+  {
+   "insight_id": "1909.01362::g01:i09",
+   "paper_id": "1909.01362",
+   "group_id": "1909.01362::g01",
+   "concise_text": "CRAFT's state-of-the-art forecasting on two different datasets is complemented by analysis showing substantial prior notice of derailment for potential preemptive interventions by human moderators.",
+   "triple": {
+    "subject": "CRAFT's state-of-the-art forecasting on two different datasets",
+    "predicate": "extends",
+    "object": "substantial prior notice of derailment for potential preemptive interventions by human moderators"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1909.01362::s05::p002",
+    "1909.01362::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1909.01362::g01:b0:f00",
+    "1909.01362::g01:b0:f01",
+    "1909.01362::g01:b1:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.8,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.01362::u019"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1909.01362::g00",
+   "insights": [
+    {
+     "insight_id": "1909.01362::g00:i00",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g00",
+     "concise_text": "CRAFT addresses the unknown-horizon limitation of fixed-length windows by processing comments online, and outperforms all baselines in accuracy and F1 on both datasets.",
+     "triple": {
+      "subject": "CRAFT",
+      "predicate": "outperforms",
+      "object": "all baselines in accuracy and F1 on both datasets"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1909.01362::s00::p007",
+      "1909.01362::s00::p008",
+      "1909.01362::s04::p009"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g00:b1:f03",
+      "1909.01362::g00:b1:f04",
+      "1909.01362::g00:b8:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u000"
+    },
+    {
+     "insight_id": "1909.01362::g00:i01",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g00",
+     "concise_text": "Because sequential neural models need massive unlabeled conversational data while forecasting tasks have at most a few thousands labeled examples, CRAFT uses pre-training on unlabeled data before fine-tuning.",
+     "triple": {
+      "subject": "relative scarcity of labeled data",
+      "predicate": "requires",
+      "object": "pre-training on unlabeled data before fine-tuning"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1909.01362::s00::p009",
+      "1909.01362::s00::p010",
+      "1909.01362::s03::p000"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g00:b1:f07",
+      "1909.01362::g00:b1:f08",
+      "1909.01362::g00:b1:f09",
+      "1909.01362::g00:b1:f10",
+      "1909.01362::g00:b1:f11",
+      "1909.01362::g00:b1:f12",
+      "1909.01362::g00:b4:f13",
+      "1909.01362::g00:b4:f14"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u001"
+    },
+    {
+     "insight_id": "1909.01362::g00:i02",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g00",
+     "concise_text": "The ablation trained without pre-training performs at random guessing, supporting the claim that pre-training is needed because labeled forecasting data are relatively small.",
+     "triple": {
+      "subject": "ablation without pre-training",
+      "predicate": "causes",
+      "object": "performance at the level of random guessing"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1909.01362::s00::p009",
+      "1909.01362::s04::p007"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g00:b1:f08",
+      "1909.01362::g00:b1:f09",
+      "1909.01362::g00:b1:f10",
+      "1909.01362::g00:b7:f14",
+      "1909.01362::g00:b7:f15",
+      "1909.01362::g00:b7:f16",
+      "1909.01362::g00:b7:f17"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.93,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u002"
+    },
+    {
+     "insight_id": "1909.01362::g00:i03",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g00",
+     "concise_text": "CRAFT's HRED context encoder supplies the context encoding used by the predictor, enabling the model to capture relations between comments that Cumulative BoW fails to account for.",
+     "triple": {
+      "subject": "HRED context encoder",
+      "predicate": "extends",
+      "object": "the predictor with inter-comment context"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1909.01362::s00::p006",
+      "1909.01362::s03::p006",
+      "1909.01362::s03::p008",
+      "1909.01362::s04::p004"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g00:b0:f16",
+      "1909.01362::g00:b5:f14",
+      "1909.01362::g00:b6:f02",
+      "1909.01362::g00:b7:f08"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u003"
+    },
+    {
+     "insight_id": "1909.01362::g00:i04",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g00",
+     "concise_text": "The expanded `Conversations Gone Awry' dataset reaches 4,188 conversations and supplies 1 million WikiConv conversations for unsupervised pre-training of CRAFT's generative component.",
+     "triple": {
+      "subject": "expanded `Conversations Gone Awry' dataset",
+      "predicate": "requires",
+      "object": "1 million WikiConv conversations for unsupervised pre-training"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1909.01362::s02::p004",
+      "1909.01362::s02::p005",
+      "1909.01362::s04::p001"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g00:b4:f06",
+      "1909.01362::g00:b4:f08",
+      "1909.01362::g00:b6:f13"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u004"
+    },
+    {
+     "insight_id": "1909.01362::g00:i05",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g00",
+     "concise_text": "The CMV dataset's lack of post-hoc annotation limits controls, yet its 6,842 conversations are used to evaluate CRAFT against fixed-window and online baselines.",
+     "triple": {
+      "subject": "lack of post-hoc annotation",
+      "predicate": "limits",
+      "object": "controls on the 6,842 CMV conversations used for evaluation"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1909.01362::s02::p007",
+      "1909.01362::s04::p001",
+      "1909.01362::s04::p009"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g00:b4:f10",
+      "1909.01362::g00:b4:f12",
+      "1909.01362::g00:b6:f13",
+      "1909.01362::g00:b8:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u005"
+    },
+    {
+     "insight_id": "1909.01362::g00:i06",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g00",
+     "concise_text": "CRAFT $-$ CE removes the context encoder memory, so it cannot capture inter-comment dependencies and predicts only from the latest comment, unlike CRAFT's full conversational context.",
+     "triple": {
+      "subject": "CRAFT $-$ CE",
+      "predicate": "limits",
+      "object": "prediction to the latest comment"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1909.01362::s03::p006",
+      "1909.01362::s04::p008"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g00:b5:f14",
+      "1909.01362::g00:b8:f00",
+      "1909.01362::g00:b8:f02",
+      "1909.01362::g00:b8:f03"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.89,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u006"
+    },
+    {
+     "insight_id": "1909.01362::g00:i07",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g00",
+     "concise_text": "The evaluation counts a forecast as a true positive only if triggered before derailment, which operationalizes the goal of giving moderators time to intervene before harm.",
+     "triple": {
+      "subject": "true-positive rule",
+      "predicate": "evaluates",
+      "object": "early warning before derailment"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1909.01362::s00::p005",
+      "1909.01362::s04::p002"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g00:b0:f09",
+      "1909.01362::g00:b7:f02"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u007"
+    },
+    {
+     "insight_id": "1909.01362::g00:i08",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g00",
+     "concise_text": "Prior forecasting work's hand-crafted features from fixed-length windows leave the unknown-horizon problem unaddressed, while CRAFT processes comments and their relations online.",
+     "triple": {
+      "subject": "hand-crafted fixed-length window features",
+      "predicate": "limits",
+      "object": "forecasting under unknown horizon"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1909.01362::s00::p007",
+      "1909.01362::s00::p008",
+      "1909.01362::s01::p005"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g00:b1:f00",
+      "1909.01362::g00:b1:f01",
+      "1909.01362::g00:b1:f03",
+      "1909.01362::g00:b1:f04",
+      "1909.01362::g00:b3:f02"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u008"
+    },
+    {
+     "insight_id": "1909.01362::g00:i09",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g00",
+     "concise_text": "The Wikipedia dataset's civil comments before personal attacks force models to capture conversational dynamics, aligning with CRAFT's need to model relations between comments.",
+     "triple": {
+      "subject": "Wikipedia dataset controls",
+      "predicate": "requires",
+      "object": "models to capture conversational dynamics"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1909.01362::s00::p006",
+      "1909.01362::s02::p003"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g00:b0:f16",
+      "1909.01362::g00:b4:f03"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.83,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u009"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 16571,
+    "completion_tokens": 1969,
+    "total_tokens": 18540,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1909.01362::g01",
+   "insights": [
+    {
+     "insight_id": "1909.01362::g01:i00",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g01",
+     "concise_text": "CRAFT's substantial prior notice of derailment is quantified as over 50% of conversations getting at least 3 hours of advance warning and 39% getting at least 12 hours.",
+     "triple": {
+      "subject": "CRAFT's substantial prior notice of derailment",
+      "predicate": "evaluated_on",
+      "object": "over 50% of conversations getting at least 3 hours of advance warning and 39% getting at least 12 hours"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1909.01362::s05::p002",
+      "1909.01362::s06::p000"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g01:b0:f00",
+      "1909.01362::g01:b0:f01",
+      "1909.01362::g01:b1:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.93,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u010"
+    },
+    {
+     "insight_id": "1909.01362::g01:i01",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g01",
+     "concise_text": "The prefix-shuffling experiment supports the conclusion that CRAFT uses its capacity to model conversational context in an order-sensitive fashion.",
+     "triple": {
+      "subject": "the prefix-shuffling experiment",
+      "predicate": "provides evidence for",
+      "object": "CRAFT using its capacity to model conversational context in an order-sensitive fashion"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1909.01362::s05::p004",
+      "1909.01362::s05::p006"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g01:b0:f03",
+      "1909.01362::g01:b0:f04",
+      "1909.01362::g01:b1:f00"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u011"
+    },
+    {
+     "insight_id": "1909.01362::g01:i02",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g01",
+     "concise_text": "Shuffling comment order in pre-training, fine-tuning and testing inhibits meaningful order-sensitive dynamics and hurts performance to 65% accuracy for Wikipedia and 59.5% for CMV.",
+     "triple": {
+      "subject": "shuffling comment order in pre-training, fine-tuning and testing",
+      "predicate": "causes",
+      "object": "65% accuracy for Wikipedia and 59.5% for CMV"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1909.01362::s05::p005",
+      "1909.01362::s05::p006"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g01:b0:f05",
+      "1909.01362::g01:b0:f07",
+      "1909.01362::g01:b0:f08",
+      "1909.01362::g01:b0:f09",
+      "1909.01362::g01:b0:f10",
+      "1909.01362::g01:b1:f00"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u012"
+    },
+    {
+     "insight_id": "1909.01362::g01:i03",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g01",
+     "concise_text": "The two shuffling experiments jointly support the conclusion that CRAFT makes effective use of the dynamics within conversational context.",
+     "triple": {
+      "subject": "the two shuffling experiments",
+      "predicate": "provide evidence for",
+      "object": "CRAFT making effective use of the dynamics within conversational context"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1909.01362::s05::p004",
+      "1909.01362::s05::p005",
+      "1909.01362::s05::p006"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g01:b0:f03",
+      "1909.01362::g01:b0:f04",
+      "1909.01362::g01:b0:f05",
+      "1909.01362::g01:b0:f08",
+      "1909.01362::g01:b1:f00",
+      "1909.01362::g01:b1:f01"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u013"
+    },
+    {
+     "insight_id": "1909.01362::g01:i04",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g01",
+     "concise_text": "CRAFT's design capacity to learn an order-sensitive representation of conversational context is empirically supported by the prefix-shuffling experiment.",
+     "triple": {
+      "subject": "the prefix-shuffling experiment",
+      "predicate": "provides evidence for",
+      "object": "CRAFT's capacity to learn an order-sensitive representation of conversational context"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1909.01362::s05::p003",
+      "1909.01362::s05::p004"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g01:b0:f02",
+      "1909.01362::g01:b0:f03",
+      "1909.01362::g01:b0:f04"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u014"
+    },
+    {
+     "insight_id": "1909.01362::g01:i05",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g01",
+     "concise_text": "The model that processes comments as they happen and takes the full conversational context into account is CRAFT, whose architecture follow-up work could adapt.",
+     "triple": {
+      "subject": "a model for forecasting conversational events",
+      "predicate": "entity_resolution",
+      "object": "the CRAFT architecture"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1909.01362::s06::p000",
+      "1909.01362::s06::p001"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g01:b1:f03",
+      "1909.01362::g01:b1:f04",
+      "1909.01362::g01:b1:f06"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.78,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u015"
+    },
+    {
+     "insight_id": "1909.01362::g01:i06",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g01",
+     "concise_text": "Open questions about what human moderators actually desire from an early-warning system motivate a user study of a prototype system with actual moderators.",
+     "triple": {
+      "subject": "open questions about what human moderators actually desire from an early-warning system",
+      "predicate": "problem_solution",
+      "object": "a user study of a prototype system with actual moderators"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1909.01362::s06::p002",
+      "1909.01362::s06::p000"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g01:b1:f08",
+      "1909.01362::g01:b1:f09",
+      "1909.01362::g01:b1:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u016"
+    },
+    {
+     "insight_id": "1909.01362::g01:i07",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g01",
+     "concise_text": "Because the current analysis relies on balanced datasets while derailment is a relatively rare event, a more restrictive trigger threshold would be appropriate.",
+     "triple": {
+      "subject": "balanced datasets with relatively rare derailment",
+      "predicate": "requires",
+      "object": "a more restrictive trigger threshold"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1909.01362::s06::p003",
+      "1909.01362::s06::p000"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g01:b1:f10",
+      "1909.01362::g01:b1:f11",
+      "1909.01362::g01:b1:f12",
+      "1909.01362::g01:b1:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u017"
+    },
+    {
+     "insight_id": "1909.01362::g01:i08",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g01",
+     "concise_text": "The single-label limitation of the present work conflicts with the possibility that a conversation could get back on track or suffer a repeat occurrence of antisocial behavior.",
+     "triple": {
+      "subject": "a single label to each conversation",
+      "predicate": "limits",
+      "object": "forecasting repeat occurrence of antisocial behavior"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1909.01362::s06::p004",
+      "1909.01362::s06::p000"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g01:b1:f14",
+      "1909.01362::g01:b1:f15",
+      "1909.01362::g01:b1:f16",
+      "1909.01362::g01:b1:f03"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.76,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u018"
+    },
+    {
+     "insight_id": "1909.01362::g01:i09",
+     "paper_id": "1909.01362",
+     "group_id": "1909.01362::g01",
+     "concise_text": "CRAFT's state-of-the-art forecasting on two different datasets is complemented by analysis showing substantial prior notice of derailment for potential preemptive interventions by human moderators.",
+     "triple": {
+      "subject": "CRAFT's state-of-the-art forecasting on two different datasets",
+      "predicate": "extends",
+      "object": "substantial prior notice of derailment for potential preemptive interventions by human moderators"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1909.01362::s05::p002",
+      "1909.01362::s06::p000"
+     ],
+     "supporting_fact_ids": [
+      "1909.01362::g01:b0:f00",
+      "1909.01362::g01:b0:f01",
+      "1909.01362::g01:b1:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.8,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.01362::u019"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4356,
+    "completion_tokens": 1909,
+    "total_tokens": 6265,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

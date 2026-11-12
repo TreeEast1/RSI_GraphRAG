@@ -1,0 +1,502 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1611.01576::s00::p000",
+   "summary": "RNNs, including LSTM, are standard for sequence modeling but cannot parallelize feature or state computation across very long sequences.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s00::p001",
+   "summary": "CNNs parallelize sequence encoding and scale to long sequences, but traditional pooling cannot fully use large-scale sequence order information.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s00::p002",
+   "summary": "QRNNs combine CNN-like parallelism with RNN-like sequence order dependence, outperforming strong LSTM baselines on three natural language tasks while reducing computation time.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s01::p000",
+   "summary": "Each QRNN layer has convolutional and pooling subcomponents, with parallelism across minibatches, sequence dimensions, and feature dimensions.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s01::p001",
+   "summary": "The QRNN convolutional subcomponent uses masked convolutions in the timestep dimension so each timestep cannot access future timesteps.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s01::p002",
+   "summary": "Additional convolutions with separate filter banks produce elementwise gate vectors, with candidate vectors using INLINEFORM0 and gates using an elementwise sigmoid.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s01::p003",
+   "summary": "INLINEFORM0, INLINEFORM1, and INLINEFORM2 are convolutional filter banks, and filter width 2 reduces the equations to LSTM-like DISPLAYFORM0.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s01::p004",
+   "summary": "Larger convolution filter widths compute higher INLINEFORM0-gram features at each timestep and are especially important for character-level tasks.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s01::p005",
+   "summary": "QRNN pooling functions use familiar LSTM elementwise gates, with dynamic average pooling as the simplest forget-gate-only option.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s01::p006",
+   "summary": "f-pooling, fo-pooling, and ifo-pooling initialize INLINEFORM0 or INLINEFORM1 to zero and require negligible computation time despite sequential recurrence.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s01::p007",
+   "summary": "A single QRNN layer performs input-dependent pooling and a gated linear combination, while two or more layers should be stacked for complex functions.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s02::p000",
+   "summary": "Several extensions to the stacked QRNN are introduced because many recurrent and convolutional model extensions apply directly to QRNNs.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s02::p001",
+   "summary": "A robust regularization scheme inspired by recent work in regularizing LSTMs is an important stacked QRNN extension.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s02::p002",
+   "summary": "Recurrent dropout schemes, including variational inference–based dropout BIBREF13 and zoneout BIBREF14, provide more powerful and less destructive LSTM regularization.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s02::p003",
+   "summary": "Variational inference–based dropout locks recurrent dropout masks across timesteps, while zoneout copies selected channels between timesteps without modification.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s02::p004",
+   "summary": "Because QRNNs lack recurrent weights, zoneout was extended by keeping previous pooling states for stochastic channels, equivalent to modifying INLINEFORM0 or applying dropout on INLINEFORM1.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s02::p005",
+   "summary": "The pooling function need not be modified, but off-the-shelf dropout rescaling should be removed, and ordinary dropout is also applied between layers.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s02::p006",
+   "summary": "Densely-connected QRNN layers use skip-connections between every layer, improving gradient flow and convergence but requiring quadratic parameter count.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s02::p007",
+   "summary": "Dense QRNN connections include input embeddings and every QRNN layer, concatenating each layer's input to its output and using only the last layer's output.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s02::p008",
+   "summary": "QRNN encoder–decoder models use a QRNN encoder and attention-enhanced modified QRNN decoder because feeding only the last encoder hidden state would limit decoder power.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s02::p009",
+   "summary": "Each decoder QRNN layer's convolution outputs are supplemented at every timestep with a linearly projected copy of the corresponding last encoder state.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s02::p010",
+   "summary": "Soft attention computes an attentional sum of encoder hidden states using dot products with decoder un-gated hidden states and INLINEFORM1 over encoder timesteps.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s02::p011",
+   "summary": "INLINEFORM0 is the last layer.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s02::p012",
+   "summary": "The attention procedure's first step is quadratic in sequence length but takes significantly less time than linear and convolutional layers.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s03::p000",
+   "summary": "QRNNs are evaluated on document-level sentiment classification, language modeling, and character-based neural machine translation, outperforming equal-hidden-size LSTM models while improving speed.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s04::p000",
+   "summary": "The IMDb movie review dataset has 25,000 positive and 25,000 negative reviews, equal train and test sets, and average document length of 231 words.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s04::p001",
+   "summary": "The best IMDb development performance used a four-layer densely-connected QRNN with 256 units per layer, 300-dimensional cased GloVe embeddings, dropout of 0.3, and RMSprop.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s04::p002",
+   "summary": "On IMDb, QRNN train time per epoch was 3.2x faster than cuDNN LSTM, with a 16x speed gain possible for specific batch sizes and sequence lengths.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s04::p003",
+   "summary": "Visualized final QRNN hidden states on an IMDb example show interpretable changes due to elementwise recurrent pooling and delayed channel interaction.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s05::p000",
+   "summary": "The language modeling experiment replicates BIBREF2 and BIBREF13 using a standard preprocessed version of the Penn Treebank (PTB) by BIBREF25.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s05::p001",
+   "summary": "A gated QRNN with 2 layers and 640 units used filter width INLINEFORM0 of two timesteps, with zoneout applied to the recurrent pooling layer.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s05::p002",
+   "summary": "PTB training used SGD without momentum, learning rate 1 for six epochs then decayed by 0.95 for 72 epochs, gradient norm rescaling above 10, and zoneout dropout ratio 0.1.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s05::p003",
+   "summary": "The gated QRNN with zoneout is highly competitive, and QRNN without zoneout strongly outperforms medium LSTMs without recurrent dropout.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s05::p004",
+   "summary": "Without zoneout, QRNN required early stopping, while small zoneout removed that need and achieved competitive perplexity to the variational LSTM of BIBREF13.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s05::p005",
+   "summary": "On PTB with an NVIDIA K40 GPU, QRNN was substantially faster than standard and cuDNN LSTMs, with softmax and optimization overhead becoming comparable bottlenecks.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s05::p006",
+   "summary": "cuDNN RNN primitives do not natively support recurrent dropout, so state-of-the-art regularized LSTMs at cuDNN-like speeds would likely require a custom kernel.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s06::p000",
+   "summary": "IWSLT German–English spoken-domain translation uses 209,772 sentence pairs, mean lengths of 103 German and 93 English characters, a 300-character cutoff, and 187 Unicode code points.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s06::p001",
+   "summary": "The best TED.tst2013 development performance used a four-layer encoder–decoder QRNN with 320 units per layer, 10 epochs, minibatches of 16 examples, Adam, and beam width 8.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s06::p002",
+   "summary": "The QRNN outperformed an equal-sized four-layer encoder–decoder LSTM with attention and dropout of 0.2, almost matching a word-level attentional baseline.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s07::p000",
+   "summary": "QRNNs relate to strongly-typed recurrent neural networks, including T-RNN, T-GRU, and T-LSTM, though some QRNN models with attention or skip-connections are not strongly typed.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s07::p001",
+   "summary": "Hybrid convolutional–recurrent models apply CNNs before LSTMs or GRUs for text classification and character-level machine translation, enabling parallelism and reduced sequence length.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s07::p002",
+   "summary": "The QRNN encoder–decoder shares parallelism and path-length properties with ByteNet BIBREF33, which targets parallelism, linear-time complexity, and short paths between words.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s08::p000",
+   "summary": "QRNNs exploit both parallelism and context, giving better predictive accuracy than equal-hidden-size LSTM-based models with fewer parameters and substantially faster running.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s08::p001",
+   "summary": "Extensions to CNNs and RNNs often apply directly to QRNNs, whose hidden states are more interpretable and may serve as building blocks for long-sequence tasks.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s09::p000",
+   "summary": "The modified log-probability ranking criterion used in beam search for translation experiments is DISPLAYFORM0.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s09::p001",
+   "summary": "INLINEFORM0 is a length normalization parameter BIBREF34, INLINEFORM1 is the INLINEFORM2 th output character, and INLINEFORM3 is source sentence length plus five characters.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s09::p002",
+   "summary": "At INLINEFORM0, the criterion becomes beam search with probabilities normalized by length up to the target length.",
+   "group_id": "1611.01576::g00"
+  },
+  {
+   "passage_id": "1611.01576::s09::p003",
+   "summary": "The ranking criterion can be computed at intermediate beam-search timesteps, avoiding separate reranking of complete hypotheses.",
+   "group_id": "1611.01576::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1611.01576::g00",
+   "summaries": [
+    {
+     "passage_id": "1611.01576::s00::p000",
+     "summary": "RNNs, including LSTM, are standard for sequence modeling but cannot parallelize feature or state computation across very long sequences.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s00::p001",
+     "summary": "CNNs parallelize sequence encoding and scale to long sequences, but traditional pooling cannot fully use large-scale sequence order information.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s00::p002",
+     "summary": "QRNNs combine CNN-like parallelism with RNN-like sequence order dependence, outperforming strong LSTM baselines on three natural language tasks while reducing computation time.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s01::p000",
+     "summary": "Each QRNN layer has convolutional and pooling subcomponents, with parallelism across minibatches, sequence dimensions, and feature dimensions.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s01::p001",
+     "summary": "The QRNN convolutional subcomponent uses masked convolutions in the timestep dimension so each timestep cannot access future timesteps.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s01::p002",
+     "summary": "Additional convolutions with separate filter banks produce elementwise gate vectors, with candidate vectors using INLINEFORM0 and gates using an elementwise sigmoid.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s01::p003",
+     "summary": "INLINEFORM0, INLINEFORM1, and INLINEFORM2 are convolutional filter banks, and filter width 2 reduces the equations to LSTM-like DISPLAYFORM0.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s01::p004",
+     "summary": "Larger convolution filter widths compute higher INLINEFORM0-gram features at each timestep and are especially important for character-level tasks.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s01::p005",
+     "summary": "QRNN pooling functions use familiar LSTM elementwise gates, with dynamic average pooling as the simplest forget-gate-only option.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s01::p006",
+     "summary": "f-pooling, fo-pooling, and ifo-pooling initialize INLINEFORM0 or INLINEFORM1 to zero and require negligible computation time despite sequential recurrence.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s01::p007",
+     "summary": "A single QRNN layer performs input-dependent pooling and a gated linear combination, while two or more layers should be stacked for complex functions.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s02::p000",
+     "summary": "Several extensions to the stacked QRNN are introduced because many recurrent and convolutional model extensions apply directly to QRNNs.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s02::p001",
+     "summary": "A robust regularization scheme inspired by recent work in regularizing LSTMs is an important stacked QRNN extension.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s02::p002",
+     "summary": "Recurrent dropout schemes, including variational inference–based dropout BIBREF13 and zoneout BIBREF14, provide more powerful and less destructive LSTM regularization.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s02::p003",
+     "summary": "Variational inference–based dropout locks recurrent dropout masks across timesteps, while zoneout copies selected channels between timesteps without modification.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s02::p004",
+     "summary": "Because QRNNs lack recurrent weights, zoneout was extended by keeping previous pooling states for stochastic channels, equivalent to modifying INLINEFORM0 or applying dropout on INLINEFORM1.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s02::p005",
+     "summary": "The pooling function need not be modified, but off-the-shelf dropout rescaling should be removed, and ordinary dropout is also applied between layers.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s02::p006",
+     "summary": "Densely-connected QRNN layers use skip-connections between every layer, improving gradient flow and convergence but requiring quadratic parameter count.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s02::p007",
+     "summary": "Dense QRNN connections include input embeddings and every QRNN layer, concatenating each layer's input to its output and using only the last layer's output.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s02::p008",
+     "summary": "QRNN encoder–decoder models use a QRNN encoder and attention-enhanced modified QRNN decoder because feeding only the last encoder hidden state would limit decoder power.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s02::p009",
+     "summary": "Each decoder QRNN layer's convolution outputs are supplemented at every timestep with a linearly projected copy of the corresponding last encoder state.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s02::p010",
+     "summary": "Soft attention computes an attentional sum of encoder hidden states using dot products with decoder un-gated hidden states and INLINEFORM1 over encoder timesteps.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s02::p011",
+     "summary": "INLINEFORM0 is the last layer.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s02::p012",
+     "summary": "The attention procedure's first step is quadratic in sequence length but takes significantly less time than linear and convolutional layers.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s03::p000",
+     "summary": "QRNNs are evaluated on document-level sentiment classification, language modeling, and character-based neural machine translation, outperforming equal-hidden-size LSTM models while improving speed.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s04::p000",
+     "summary": "The IMDb movie review dataset has 25,000 positive and 25,000 negative reviews, equal train and test sets, and average document length of 231 words.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s04::p001",
+     "summary": "The best IMDb development performance used a four-layer densely-connected QRNN with 256 units per layer, 300-dimensional cased GloVe embeddings, dropout of 0.3, and RMSprop.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s04::p002",
+     "summary": "On IMDb, QRNN train time per epoch was 3.2x faster than cuDNN LSTM, with a 16x speed gain possible for specific batch sizes and sequence lengths.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s04::p003",
+     "summary": "Visualized final QRNN hidden states on an IMDb example show interpretable changes due to elementwise recurrent pooling and delayed channel interaction.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s05::p000",
+     "summary": "The language modeling experiment replicates BIBREF2 and BIBREF13 using a standard preprocessed version of the Penn Treebank (PTB) by BIBREF25.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s05::p001",
+     "summary": "A gated QRNN with 2 layers and 640 units used filter width INLINEFORM0 of two timesteps, with zoneout applied to the recurrent pooling layer.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s05::p002",
+     "summary": "PTB training used SGD without momentum, learning rate 1 for six epochs then decayed by 0.95 for 72 epochs, gradient norm rescaling above 10, and zoneout dropout ratio 0.1.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s05::p003",
+     "summary": "The gated QRNN with zoneout is highly competitive, and QRNN without zoneout strongly outperforms medium LSTMs without recurrent dropout.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s05::p004",
+     "summary": "Without zoneout, QRNN required early stopping, while small zoneout removed that need and achieved competitive perplexity to the variational LSTM of BIBREF13.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s05::p005",
+     "summary": "On PTB with an NVIDIA K40 GPU, QRNN was substantially faster than standard and cuDNN LSTMs, with softmax and optimization overhead becoming comparable bottlenecks.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s05::p006",
+     "summary": "cuDNN RNN primitives do not natively support recurrent dropout, so state-of-the-art regularized LSTMs at cuDNN-like speeds would likely require a custom kernel.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s06::p000",
+     "summary": "IWSLT German–English spoken-domain translation uses 209,772 sentence pairs, mean lengths of 103 German and 93 English characters, a 300-character cutoff, and 187 Unicode code points.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s06::p001",
+     "summary": "The best TED.tst2013 development performance used a four-layer encoder–decoder QRNN with 320 units per layer, 10 epochs, minibatches of 16 examples, Adam, and beam width 8.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s06::p002",
+     "summary": "The QRNN outperformed an equal-sized four-layer encoder–decoder LSTM with attention and dropout of 0.2, almost matching a word-level attentional baseline.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s07::p000",
+     "summary": "QRNNs relate to strongly-typed recurrent neural networks, including T-RNN, T-GRU, and T-LSTM, though some QRNN models with attention or skip-connections are not strongly typed.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s07::p001",
+     "summary": "Hybrid convolutional–recurrent models apply CNNs before LSTMs or GRUs for text classification and character-level machine translation, enabling parallelism and reduced sequence length.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s07::p002",
+     "summary": "The QRNN encoder–decoder shares parallelism and path-length properties with ByteNet BIBREF33, which targets parallelism, linear-time complexity, and short paths between words.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s08::p000",
+     "summary": "QRNNs exploit both parallelism and context, giving better predictive accuracy than equal-hidden-size LSTM-based models with fewer parameters and substantially faster running.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s08::p001",
+     "summary": "Extensions to CNNs and RNNs often apply directly to QRNNs, whose hidden states are more interpretable and may serve as building blocks for long-sequence tasks.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s09::p000",
+     "summary": "The modified log-probability ranking criterion used in beam search for translation experiments is DISPLAYFORM0.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s09::p001",
+     "summary": "INLINEFORM0 is a length normalization parameter BIBREF34, INLINEFORM1 is the INLINEFORM2 th output character, and INLINEFORM3 is source sentence length plus five characters.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s09::p002",
+     "summary": "At INLINEFORM0, the criterion becomes beam search with probabilities normalized by length up to the target length.",
+     "group_id": "1611.01576::g00"
+    },
+    {
+     "passage_id": "1611.01576::s09::p003",
+     "summary": "The ranking criterion can be computed at intermediate beam-search timesteps, avoiding separate reranking of complete hypotheses.",
+     "group_id": "1611.01576::g00"
+    }
+   ],
+   "n_raw": 48,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5822,
+    "completion_tokens": 2401,
+    "total_tokens": 8223,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

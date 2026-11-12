@@ -1,0 +1,448 @@
+{
+ "kept": [
+  {
+   "insight_id": "1608.06757::g00:i03",
+   "paper_id": "1608.06757",
+   "group_id": "1608.06757::g00",
+   "concise_text": "The GENIA data set has 27% unseen words (dictionary misses) in the pretrained word2vec model, supporting why EMB cannot adapt to the medical domain without retraining.",
+   "triple": {
+    "subject": "27% unseen words (dictionary misses) in the pretrained word2vec model",
+    "predicate": "limits",
+    "object": "EMB in the medical domain without retraining"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1608.06757::s02::p001",
+    "1608.06757::s08::p003"
+   ],
+   "supporting_fact_ids": [
+    "1608.06757::g00:b0:f07",
+    "1608.06757::g00:b5:f01"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "All cited passages exist. s02:p001 gives the 27% dictionary misses in GENIA and s08:p003 states EMB cannot adapt to the medical domain without retraining because of many unseen words; the evidence relation is explicitly supported."
+   },
+   "unit_id": "1608.06757::u003"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1608.06757::g00:i00",
+   "paper_id": "1608.06757",
+   "group_id": "1608.06757::g00",
+   "concise_text": "TRI implements letter-trigram word hashing, and its combination with bidirectional LSTM yields the best results and outperforms sequence learners based on dictionaries or word2vec.",
+   "triple": {
+    "subject": "TRI+BLSTM",
+    "predicate": "outperforms",
+    "object": "sequence learners based on dictionaries or word2vec"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1608.06757::s04::p004",
+    "1608.06757::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "1608.06757::g00:b2:f02",
+    "1608.06757::g00:b3:f00",
+    "1608.06757::g00:b3:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "All cited passages exist, but the triple is a direct restatement of s05:p000; concise_text also merely paraphrases the cited facts."
+   },
+   "unit_id": "1608.06757::u000"
+  },
+  {
+   "insight_id": "1608.06757::g00:i01",
+   "paper_id": "1608.06757",
+   "group_id": "1608.06757::g00",
+   "concise_text": "The BLSTM configuration uses one bidirectional LSTM layer with 20 cells, and bidirectional LSTMs can further improve label classification in both precision and recall.",
+   "triple": {
+    "subject": "BLSTM",
+    "predicate": "improves_on",
+    "object": "label classification in both precision and recall"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1608.06757::s04::p009",
+    "1608.06757::s08::p004"
+   ],
+   "supporting_fact_ids": [
+    "1608.06757::g00:b2:f13",
+    "1608.06757::g00:b5:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "All cited passages exist and support the concise_text, but the triple is a direct paraphrase of s08:p004; no composed insight beyond a single paragraph."
+   },
+   "unit_id": "1608.06757::u001"
+  },
+  {
+   "insight_id": "1608.06757::g00:i02",
+   "paper_id": "1608.06757",
+   "group_id": "1608.06757::g00",
+   "concise_text": "The FF baseline is a non-sequential feed-forward model and shows a maximum of 75%, while the contextual LSTM model achieves scores throughout in the 85%–94% range.",
+   "triple": {
+    "subject": "contextual LSTM model",
+    "predicate": "outperforms",
+    "object": "feed-forward (FF) baseline"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1608.06757::s04::p007",
+    "1608.06757::s08::p004"
+   ],
+   "supporting_fact_ids": [
+    "1608.06757::g00:b2:f04",
+    "1608.06757::g00:b5:f02",
+    "1608.06757::g00:b5:f03",
+    "1608.06757::g00:b5:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "All cited passages exist and support the concise_text, but the triple is directly stated in s08:p004; s04:p007 only defines FF and does not add novelty."
+   },
+   "unit_id": "1608.06757::u002"
+  },
+  {
+   "insight_id": "1608.06757::g00:i04",
+   "paper_id": "1608.06757",
+   "group_id": "1608.06757::g00",
+   "concise_text": "DICT generates the input vector using 1-hot encoding for each word, and dictionary based configurations observe false negative predictions caused by dictionary misses for words that do not exist in the training data.",
+   "triple": {
+    "subject": "DICT",
+    "predicate": "causes",
+    "object": "false negative predictions caused by dictionary misses"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1608.06757::s04::p002",
+    "1608.06757::s09::p001"
+   ],
+   "supporting_fact_ids": [
+    "1608.06757::g00:b1:f06",
+    "1608.06757::g00:b5:f06",
+    "1608.06757::g00:b5:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.2,
+    "causality_error": true,
+    "reason": "All cited passages exist, but the triple misattributes causation: s09:p001 says dictionary-based configurations observe false negatives caused by dictionary misses, not that DICT itself causes them; concise_text is supported but triple is not."
+   },
+   "unit_id": "1608.06757::u004"
+  },
+  {
+   "insight_id": "1608.06757::g00:i05",
+   "paper_id": "1608.06757",
+   "group_id": "1608.06757::g00",
+   "concise_text": "Mixed-case word encodings implicitly include capitalization features, but case-sensitive word vectorization methods yield a large amount of false positive predictions caused by incorrect capitalization in the input data.",
+   "triple": {
+    "subject": "Mixed-case word encodings",
+    "predicate": "causes",
+    "object": "false positive predictions caused by incorrect capitalization in the input data"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1608.06757::s02::p002",
+    "1608.06757::s09::p002"
+   ],
+   "supporting_fact_ids": [
+    "1608.06757::g00:b0:f08",
+    "1608.06757::g00:b5:f10",
+    "1608.06757::g00:b5:f11"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.2,
+    "causality_error": true,
+    "reason": "All cited passages exist, but the triple incorrectly makes mixed-case word encodings the cause of false positives; s09:p002 attributes false positives to case-sensitive word vectorization methods and incorrect capitalization."
+   },
+   "unit_id": "1608.06757::u005"
+  },
+  {
+   "insight_id": "1608.06757::g00:i06",
+   "paper_id": "1608.06757",
+   "group_id": "1608.06757::g00",
+   "concise_text": "The hidden layer of the LSTM represents context from long range dependencies over the entire sentence from left to right, supporting why correct boundaries in syntagmatic groups can effectively be identified only with contextual models such as LSTMs.",
+   "triple": {
+    "subject": "LSTMs",
+    "predicate": "requires",
+    "object": "correct boundaries in syntagmatic groups"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1608.06757::s03::p001",
+    "1608.06757::s09::p003"
+   ],
+   "supporting_fact_ids": [
+    "1608.06757::g00:b1:f00",
+    "1608.06757::g00:b5:f12",
+    "1608.06757::g00:b5:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.2,
+    "causality_error": true,
+    "reason": "All cited passages exist, but the triple reverses the relation: s09:p003 says correct boundaries can be identified only with contextual models such as LSTMs, not that LSTMs require correct boundaries."
+   },
+   "unit_id": "1608.06757::u006"
+  },
+  {
+   "insight_id": "1608.06757::g00:i07",
+   "paper_id": "1608.06757",
+   "group_id": "1608.06757::g00",
+   "concise_text": "The proposed DATEXIS-NER model is restricted to recognize boundaries of generic mentions in text, while systems specialized on word-sense disambiguation (Babelfy, DBpedia Spotlight) don't perform well on “raw” untyped entity recognition tasks.",
+   "triple": {
+    "subject": "DATEXIS-NER",
+    "predicate": "evaluated_on",
+    "object": "“raw” untyped entity recognition tasks"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1608.06757::s08::p001",
+    "1608.06757::s09::p006"
+   ],
+   "supporting_fact_ids": [
+    "1608.06757::g00:b4:f04",
+    "1608.06757::g00:b6:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "All cited passages exist, but the triple is unsupported: s09:p006 says DATEXIS-NER is restricted to generic mention boundaries and does not approach typing; s08:p001 says word-sense disambiguation systems perform poorly on raw untyped tasks, not that DATEXIS-NER is evaluated on those tasks."
+   },
+   "unit_id": "1608.06757::u007"
+  },
+  {
+   "insight_id": "1608.06757::g00:i08",
+   "paper_id": "1608.06757",
+   "group_id": "1608.06757::g00",
+   "concise_text": "“Personalizing” and adapting such annotators should happen with very limited human labeling effort, and F1 scores between 84–94% are reported on only few hundred training examples.",
+   "triple": {
+    "subject": "bidirectional multi-layered LSTMs, letter-trigram word hashing and surface form features",
+    "predicate": "extends",
+    "object": "personalizing annotators with very limited human labeling effort"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1608.06757::s10::p000",
+    "1608.06757::s10::p001"
+   ],
+   "supporting_fact_ids": [
+    "1608.06757::g00:b6:f11",
+    "1608.06757::g00:b6:f12",
+    "1608.06757::g00:b6:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.8,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.6,
+    "novelty": 0.2,
+    "causality_error": true,
+    "reason": "All cited passages exist, but the triple asserts an unsupported solution relation: s10:p001 reports F1 scores using the listed components, while s10:p000 states personalizing should require limited labeling effort; the text does not say the components extend personalizing annotators."
+   },
+   "unit_id": "1608.06757::u008"
+  },
+  {
+   "insight_id": "1608.06757::g00:i09",
+   "paper_id": "1608.06757",
+   "group_id": "1608.06757::g00",
+   "concise_text": "NER recall is critical because candidates that are never generated can not be recovered later, and DATEXIS-NER achieves the highest recall scores of all tested annotators, with 95%–98% on all measured data sets.",
+   "triple": {
+    "subject": "DATEXIS-NER",
+    "predicate": "improves_on",
+    "object": "NER recall criticality"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1608.06757::s00::p000",
+    "1608.06757::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1608.06757::g00:b0:f02",
+    "1608.06757::g00:b4:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.83,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.2,
+    "causality_error": true,
+    "reason": "All cited passages exist, but the triple is semantically invalid: DATEXIS-NER achieves high recall, while s00:p000 says recall is critical; it does not improve on 'NER recall criticality'."
+   },
+   "unit_id": "1608.06757::u009"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1608.06757::g00:i00",
+    "verdict": {
+     "insight_id": "1608.06757::g00:i00",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "All cited passages exist, but the triple is a direct restatement of s05:p000; concise_text also merely paraphrases the cited facts."
+    },
+    "reason": "All cited passages exist, but the triple is a direct restatement of s05:p000; concise_text also merely paraphrases the cited facts."
+   },
+   {
+    "insight_id": "1608.06757::g00:i01",
+    "verdict": {
+     "insight_id": "1608.06757::g00:i01",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "All cited passages exist and support the concise_text, but the triple is a direct paraphrase of s08:p004; no composed insight beyond a single paragraph."
+    },
+    "reason": "All cited passages exist and support the concise_text, but the triple is a direct paraphrase of s08:p004; no composed insight beyond a single paragraph."
+   },
+   {
+    "insight_id": "1608.06757::g00:i02",
+    "verdict": {
+     "insight_id": "1608.06757::g00:i02",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "All cited passages exist and support the concise_text, but the triple is directly stated in s08:p004; s04:p007 only defines FF and does not add novelty."
+    },
+    "reason": "All cited passages exist and support the concise_text, but the triple is directly stated in s08:p004; s04:p007 only defines FF and does not add novelty."
+   },
+   {
+    "insight_id": "1608.06757::g00:i03",
+    "verdict": {
+     "insight_id": "1608.06757::g00:i03",
+     "keep": true,
+     "support": 0.85,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "All cited passages exist. s02:p001 gives the 27% dictionary misses in GENIA and s08:p003 states EMB cannot adapt to the medical domain without retraining because of many unseen words; the evidence relation is explicitly supported."
+    }
+   },
+   {
+    "insight_id": "1608.06757::g00:i04",
+    "verdict": {
+     "insight_id": "1608.06757::g00:i04",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.2,
+     "causality_error": true,
+     "reason": "All cited passages exist, but the triple misattributes causation: s09:p001 says dictionary-based configurations observe false negatives caused by dictionary misses, not that DICT itself causes them; concise_text is supported but triple is not."
+    },
+    "reason": "All cited passages exist, but the triple misattributes causation: s09:p001 says dictionary-based configurations observe false negatives caused by dictionary misses, not that DICT itself causes them; concise_text is supported but triple is not."
+   },
+   {
+    "insight_id": "1608.06757::g00:i05",
+    "verdict": {
+     "insight_id": "1608.06757::g00:i05",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.2,
+     "causality_error": true,
+     "reason": "All cited passages exist, but the triple incorrectly makes mixed-case word encodings the cause of false positives; s09:p002 attributes false positives to case-sensitive word vectorization methods and incorrect capitalization."
+    },
+    "reason": "All cited passages exist, but the triple incorrectly makes mixed-case word encodings the cause of false positives; s09:p002 attributes false positives to case-sensitive word vectorization methods and incorrect capitalization."
+   },
+   {
+    "insight_id": "1608.06757::g00:i06",
+    "verdict": {
+     "insight_id": "1608.06757::g00:i06",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.2,
+     "causality_error": true,
+     "reason": "All cited passages exist, but the triple reverses the relation: s09:p003 says correct boundaries can be identified only with contextual models such as LSTMs, not that LSTMs require correct boundaries."
+    },
+    "reason": "All cited passages exist, but the triple reverses the relation: s09:p003 says correct boundaries can be identified only with contextual models such as LSTMs, not that LSTMs require correct boundaries."
+   },
+   {
+    "insight_id": "1608.06757::g00:i07",
+    "verdict": {
+     "insight_id": "1608.06757::g00:i07",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "All cited passages exist, but the triple is unsupported: s09:p006 says DATEXIS-NER is restricted to generic mention boundaries and does not approach typing; s08:p001 says word-sense disambiguation systems perform poorly on raw untyped tasks, not that DATEXIS-NER is evaluated on those tasks."
+    },
+    "reason": "All cited passages exist, but the triple is unsupported: s09:p006 says DATEXIS-NER is restricted to generic mention boundaries and does not approach typing; s08:p001 says word-sense disambiguation systems perform poorly on raw untyped tasks, not that DATEXIS-NER is evaluated on those tasks."
+   },
+   {
+    "insight_id": "1608.06757::g00:i08",
+    "verdict": {
+     "insight_id": "1608.06757::g00:i08",
+     "keep": false,
+     "support": 0.6,
+     "novelty": 0.2,
+     "causality_error": true,
+     "reason": "All cited passages exist, but the triple asserts an unsupported solution relation: s10:p001 reports F1 scores using the listed components, while s10:p000 states personalizing should require limited labeling effort; the text does not say the components extend personalizing annotators."
+    },
+    "reason": "All cited passages exist, but the triple asserts an unsupported solution relation: s10:p001 reports F1 scores using the listed components, while s10:p000 states personalizing should require limited labeling effort; the text does not say the components extend personalizing annotators."
+   },
+   {
+    "insight_id": "1608.06757::g00:i09",
+    "verdict": {
+     "insight_id": "1608.06757::g00:i09",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.2,
+     "causality_error": true,
+     "reason": "All cited passages exist, but the triple is semantically invalid: DATEXIS-NER achieves high recall, while s00:p000 says recall is critical; it does not improve on 'NER recall criticality'."
+    },
+    "reason": "All cited passages exist, but the triple is semantically invalid: DATEXIS-NER achieves high recall, while s00:p000 says recall is critical; it does not improve on 'NER recall criticality'."
+   }
+  ],
+  "calls": [
+   {
+    "n": 10,
+    "parsed": true,
+    "usage": {
+     "prompt_tokens": 3953,
+     "completion_tokens": 859,
+     "total_tokens": 4812,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

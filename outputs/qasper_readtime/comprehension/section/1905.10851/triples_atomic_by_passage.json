@@ -1,0 +1,483 @@
+{
+ "1905.10851::s00::p000": [
+  [
+   "Massive Open Online Courses (MOOCs)",
+   "have strived to bridge",
+   "the social gap in higher education"
+  ],
+  [
+   "massive scaling through online classrooms",
+   "disrupt",
+   "co-located, synchronous two-way communication between the students and the instructor"
+  ]
+ ],
+ "1905.10851::s00::p001": [
+  [
+   "MOOC platforms",
+   "provide",
+   "discussion forums"
+  ],
+  [
+   "Instructors",
+   "monitor",
+   "the discussion forum"
+  ],
+  [
+   "the student–instructor ratio in MOOCs",
+   "is",
+   "very high"
+  ],
+  [
+   "instructors",
+   "are not able to monitor and participate in",
+   "all student discussions"
+  ]
+ ],
+ "1905.10851::s00::p002": [
+  [
+   "modelling the thread structure and the sequence of posts explicitly",
+   "improves",
+   "performance"
+  ],
+  [
+   "Instructors in different MOOCs from different subject areas",
+   "intervene",
+   "differently"
+  ],
+  [
+   "Earlier studies on MOOC forum intervention",
+   "model",
+   "the entire context"
+  ]
+ ],
+ "1905.10851::s01::p000": [
+  [
+   "A thread INLINEFORM0",
+   "consists of",
+   "a series of posts INLINEFORM1 through INLINEFORM2"
+  ],
+  [
+   "INLINEFORM5",
+   "is considered intervened if",
+   "an instructor had posted at least once"
+  ],
+  [
+   "The problem of predicting instructor intervention",
+   "is cast as",
+   "a binary classification problem"
+  ]
+ ],
+ "1905.10851::s01::p001": [
+  [
+   "The primary problem",
+   "leads to",
+   "a secondary problem of inferring the appropriate amount of context to intervene"
+  ],
+  [
+   "a context INLINEFORM0 of a post INLINEFORM1",
+   "is defined as",
+   "a series of linear contiguous posts INLINEFORM2 through INLINEFORM3"
+  ],
+  [
+   "The problem of inferring context",
+   "is to identify",
+   "context INLINEFORM5 from a set of candidate contexts INLINEFORM6"
+  ]
+ ],
+ "1905.10851::s02::p001": [
+  [
+   "Coursera forums",
+   "do not provide",
+   "one"
+  ]
+ ],
+ "1905.10851::s03::p001": [
+  [
+   "all works since BIBREF0",
+   "have not investigated",
+   "the role of structure and sequence in the threaded discussion in predicting instructor interventions"
+  ],
+  [
+   "Their model",
+   "requires",
+   "a hyperparameter for the number of latent states"
+  ],
+  [
+   "All our proposed models",
+   "generalise over",
+   "modelling assumptions made by BIBREF0"
+  ]
+ ],
+ "1905.10851::s04::p000": [
+  [
+   "Threads on general discussion, meet and greet and other custom sub-forums for social chitchat",
+   "are omitted",
+   "as our focus is to aid instructors on intervening on discussion on the subject matter"
+  ]
+ ],
+ "1905.10851::s05::p000": [
+  [
+   "The key innovation of our work",
+   "is to decompose",
+   "the intervention prediction problem into a two-stage model"
+  ],
+  [
+   "This model",
+   "implicitly assesses",
+   "the importance (or urgency) of the existing thread's context to decide whether an intervention is necessary"
+  ],
+  [
+   "the ultimate post (Post #6) by Student 2",
+   "already acknowledged",
+   "the OP's gratitude for his answer"
+  ],
+  [
+   "the instructor's reply",
+   "takes",
+   "the entire thread (Posts #1–6) as the context for her reply"
+  ]
+ ],
+ "1905.10851::s05::p001": [
+  [
+   "the instructor's reply",
+   "is not yet available",
+   "at the prediction that a instruction intervention is now necessary on a thread"
+  ],
+  [
+   "only Posts #1–6",
+   "are available",
+   "in the problem setting"
+  ]
+ ],
+ "1905.10851::s05::p002": [
+  [
+   "the actual instructor intervention",
+   "is not (yet) available",
+   "at the decision timing"
+  ],
+  [
+   "a surrogate text",
+   "must be employed as",
+   "the query to train our prediction model"
+  ]
+ ],
+ "1905.10851::s05::p003": [
+  [
+   "all our proposed models",
+   "encode",
+   "the discussion thread hierarchically"
+  ],
+  [
+   "representations for each post",
+   "are built by passing",
+   "pre-trained word vector representations from GloVe BIBREF9 for each word through an LSTM BIBREF10 , INLINEFORM0"
+  ],
+  [
+   "the last layer output of the LSTM",
+   "is used as",
+   "a representation of the post"
+  ],
+  [
+   "the post vector INLINEFORM1",
+   "refers to",
+   "the last layer output of the LSTM as a representation of the post"
+  ]
+ ],
+ "1905.10851::s05::p004": [
+  [
+   "each post INLINEFORM0",
+   "is passed through",
+   "another LSTM, INLINEFORM1"
+  ],
+  [
+   "the last layer output of another LSTM, INLINEFORM1",
+   "forms",
+   "the encoding of the entire thread"
+  ],
+  [
+   "Hidden unit outputs of INLINEFORM2",
+   "represent",
+   "the contexts INLINEFORM3"
+  ],
+  [
+   "the contexts INLINEFORM3",
+   "are",
+   "snapshots of the threads after each post"
+  ]
+ ],
+ "1905.10851::s05::p005": [
+  [
+   "The INLINEFORM0 and INLINEFORM1",
+   "constitute",
+   "the hierarchical LSTM (hLSTM) model"
+  ],
+  [
+   "This general hLSTM model",
+   "serves as",
+   "the basis for our model exploration in the rest of this section"
+  ]
+ ],
+ "1905.10851::s06::p000": [
+  [
+   "instructors",
+   "pay attention to",
+   "a specific post or a series of posts"
+  ],
+  [
+   "a specific post or a series of posts",
+   "trigger",
+   "their reply"
+  ],
+  [
+   "instructors",
+   "rarely explicitly indicate",
+   "to which post(s) their intervention is in relation to"
+  ],
+  [
+   "Coursera's user interface",
+   "only allows for",
+   "single level comments"
+  ]
+ ],
+ "1905.10851::s06::p001": [
+  [
+   "MOOC forum posts",
+   "always reply to",
+   "the original post or to a subsequent post"
+  ],
+  [
+   "forums such as Reddit",
+   "have",
+   "a tree or graph-like structure"
+  ]
+ ],
+ "1905.10851::s06::p002": [
+  [
+   "three neural attention BIBREF11 variants",
+   "are based on",
+   "how an instructor might attend and reply to a context in a thread"
+  ],
+  [
+   "three neural attention BIBREF11 variants",
+   "include",
+   "the ultimate, penultimate and any post attention models"
+  ]
+ ],
+ "1905.10851::s06::p003": [
+  [
+   "UPA Model",
+   "attends to",
+   "the context represented by hidden state of the INLINEFORM0"
+  ],
+  [
+   "attention weights INLINEFORM2",
+   "are used to compute",
+   "the attended context representation INLINEFORM3"
+  ],
+  [
+   "UPA",
+   "uses",
+   "the most recent content in the thread as the attentional query for context"
+  ]
+ ],
+ "1905.10851::s06::p004": [
+  [
+   "post INLINEFORM1",
+   "will query over",
+   "the contexts INLINEFORM2 and INLINEFORM3"
+  ]
+ ],
+ "1905.10851::s06::p005": [
+  [
+   "The attended context representations",
+   "are computed as",
+   "DISPLAYFORM0"
+  ]
+ ],
+ "1905.10851::s06::p006": [
+  [
+   "The INLINEFORM0 representation",
+   "is passed through",
+   "a fully connected softmax layer"
+  ],
+  [
+   "a fully connected softmax layer",
+   "yields",
+   "the binary prediction"
+  ]
+ ],
+ "1905.10851::s06::p007": [
+  [
+   "Penultimate Post Attention (PPA) variant",
+   "uses",
+   "any of its prior posts as potential context"
+  ],
+  [
+   "the schematic and the equations for the PPA model",
+   "are obtained by",
+   "summing over contexts INLINEFORM0 in Equation EQREF10 and Figure FIGREF12"
+  ],
+  [
+   "the penultimate post",
+   "makes available",
+   "the most information to the model for the context inference"
+  ]
+ ],
+ "1905.10851::s06::p009": [
+  [
+   "APA",
+   "further relaxes",
+   "both UPA and PPA"
+  ],
+  [
+   "APA",
+   "hypothesizes that",
+   "the prospective instructor intervention is based on the context that any previous post INLINEFORM0 replied to"
+  ],
+  [
+   "each post INLINEFORM1",
+   "is set as",
+   "a query to attend to its previous context INLINEFORM2"
+  ],
+  [
+   "APA attention weights INLINEFORM5",
+   "are obtained by",
+   "normalising interaction matrix over the different queries"
+  ]
+ ],
+ "1905.10851::s06::p010": [
+  [
+   "the attention context INLINEFORM0",
+   "is computed via",
+   "DISPLAYFORM0"
+  ]
+ ],
+ "1905.10851::s07::p000": [
+  [
+   "The baseline and the models",
+   "are evaluated on",
+   "a corpus of 12 MOOC discussion forums"
+  ]
+ ],
+ "1905.10851::s07::p001": [
+  [
+   "All proposed and baseline neural models",
+   "are trained using",
+   "Adam optimizer with a learning rate of 0.001"
+  ],
+  [
+   "Models",
+   "were trained for",
+   "a single epoch"
+  ],
+  [
+   "The hidden dimension size of both INLINEFORM0 and INLINEFORM1",
+   "are set to",
+   "128 for all the models"
+  ]
+ ],
+ "1905.10851::s08::p000": [
+  [
+   "UPA",
+   "performs the best on INLINEFORM2 on",
+   "5 out of 12 courses"
+  ],
+  [
+   "PPA",
+   "performs the best on recall on",
+   "7 out of the 12 courses"
+  ]
+ ],
+ "1905.10851::s08::p001": [
+  [
+   "The best performance of UPA",
+   "indicates that",
+   "the reply context of the instructor's post INLINEFORM0 correlates strongly with that of the previous post INLINEFORM1"
+  ]
+ ],
+ "1905.10851::s09::p002": [
+  [
+   "Row 3 of Table TABREF17",
+   "shows",
+   "the macro averaged result from this experiment"
+  ],
+  [
+   "The UPA and PPA attention models",
+   "better the vanilla hLSTM by",
+   "5% and 2% on average in INLINEFORM0 respectively"
+  ],
+  [
+   "The vanilla hLSTM",
+   "has access to",
+   "a context consisting of all posts (from INLINEFORM1 through INLINEFORM2 )"
+  ],
+  [
+   "The UPA and PPA models",
+   "selectively infers a context for",
+   "INLINEFORM3 and INLINEFORM4 posts, respectively"
+  ]
+ ],
+ "1905.10851::s09::p003": [
+  [
+   "The UPA model",
+   "performs much better on",
+   "shorter threads than on longer threads"
+  ],
+  [
+   "PPA and APA",
+   "works better on",
+   "longer threads"
+  ],
+  [
+   "UPA's overall best performance",
+   "is because",
+   "most of the interventions in the corpus happen after one post"
+  ],
+  [
+   "an example from smac-1 in Figure FIGREF22",
+   "was predicted correctly as intervened by",
+   "APA but not by other models"
+  ]
+ ],
+ "1905.10851::s09::p006": [
+  [
+   "context length",
+   "has a regularising effect on",
+   "the model's performance at test time"
+  ],
+  [
+   "models trained with threads of single context length",
+   "will not generalise to infer",
+   "different context lengths"
+  ],
+  [
+   "intervened threads in all the courses",
+   "had",
+   "a median length between 3 and 4"
+  ]
+ ],
+ "1905.10851::s10::p000": [
+  [
+   "a structured representation of the complete thread as the context",
+   "is better than",
+   "a bag-of-words, feature-rich representation"
+  ],
+  [
+   "attention-based models",
+   "infer and select",
+   "a context – defined as a contiguous subsequence of student posts"
+  ],
+  [
+   "APA",
+   "predicts intervention on",
+   "longer threads, which possesses more candidate contexts, better"
+  ]
+ ],
+ "1905.10851::s10::p001": [
+  [
+   "Models",
+   "perform differently between",
+   "shorter and longer length"
+  ]
+ ]
+}

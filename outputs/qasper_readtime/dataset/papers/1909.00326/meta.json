@@ -1,0 +1,107 @@
+{
+ "paper_id": "1909.00326",
+ "title": "Towards Understanding Neural Machine Translation with Word Importance",
+ "abstract": "Although neural machine translation (NMT) has advanced the state-of-the-art on various language pairs, the interpretability of NMT remains unsatisfactory. In this work, we propose to address this gap by focusing on understanding the input-output behavior of NMT models. Specifically, we measure the word importance by attributing the NMT output to every input word through a gradient-based method. We validate the approach on a couple of perturbation operations, language pairs, and model architectures, demonstrating its superiority on identifying input words with higher influence on translation performance. Encouragingly, the calculated importance can serve as indicators of input words that are under-translated by NMT models. Furthermore, our analysis reveals that words of certain syntactic categories have higher importance while the categories vary across language pairs, which can inspire better design principles of NMT architectures for multi-lingual translation.",
+ "sections": [
+  "Introduction",
+  "Introduction ::: Contributions",
+  "Related Work ::: Interpreting Seq2Seq Models",
+  "Related Work ::: Exploiting Gradients for Model Interpretation",
+  "Approach ::: Neural Machine Translation",
+  "Approach ::: Word Importance",
+  "Approach ::: Integrated Gradients",
+  "Experiment ::: Data",
+  "Experiment ::: Implementation",
+  "Experiment ::: Evaluation",
+  "Experiment ::: Results on Different Perturbations",
+  "Experiment ::: Results on Different Perturbations ::: Important words are more influential on translation performance than the others.",
+  "Experiment ::: Results on Different Perturbations ::: The gradient-based method is superior to comparative methods (e.g., Attention) in estimating word importance.",
+  "Experiment ::: Results on Different NMT Architecture and Language Pairs ::: Different NMT Architecture",
+  "Experiment ::: Results on Different NMT Architecture and Language Pairs ::: Different Language Pairs and Directions",
+  "Experiment ::: Comparison with Supervised Erasure",
+  "Analysis",
+  "Analysis ::: Effect on Detecting Translation Errors",
+  "Analysis ::: Analysis on Linguistic Properties",
+  "Analysis ::: Analysis on Linguistic Properties ::: Certain syntactic categories have higher importance while the categories vary across language pairs.",
+  "Analysis ::: Analysis on Linguistic Properties ::: Words of high fertility are always important.",
+  "Discussion and Conclusion",
+  "Acknowledgement",
+  "Analyses on Reverse Directions",
+  "Analyses on Reverse Directions ::: Syntactic Categories",
+  "Analyses on Reverse Directions ::: Word Fertility"
+ ],
+ "n_paragraphs": 65,
+ "n_tokens": 5450,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.00326::fig000",
+   "paper_id": "1909.00326",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: An example of (a) word importance and (b) contribution matrix calculated by Attribution (integrated gradients) on English⇒French translation task. Input in English: “It has always taken place .” Output in French: “Elle a toujours eu lieu .”",
+   "n_tokens": 60
+  },
+  {
+   "caption_id": "1909.00326::fig001",
+   "paper_id": "1909.00326",
+   "file": "5-Figure2-1.png",
+   "caption": "Figure 2: Effect of three types of synthetic perturbations on Chinese⇒English translation using the Transformer.",
+   "n_tokens": 24
+  },
+  {
+   "caption_id": "1909.00326::fig002",
+   "paper_id": "1909.00326",
+   "file": "6-Figure3-1.png",
+   "caption": "Figure 3: Effect of the Mask perturbation on (a) Chinese⇒English translation using the RNN-Search model, (b, c, d, e, f) other language pairs and directions using Transformer model.",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "1909.00326::fig003",
+   "paper_id": "1909.00326",
+   "file": "6-Figure4-1.png",
+   "caption": "Figure 4: Effect of Attribution and Erasure methods on Chinese⇒English translation with Mask perturbation.",
+   "n_tokens": 23
+  },
+  {
+   "caption_id": "1909.00326::fig004",
+   "paper_id": "1909.00326",
+   "file": "7-Table1-1.png",
+   "caption": "Table 1: F1 accuracy of detecting under-translation errors with the estimated word importance.",
+   "n_tokens": 19
+  },
+  {
+   "caption_id": "1909.00326::fig005",
+   "paper_id": "1909.00326",
+   "file": "7-Table2-1.png",
+   "caption": "Table 2: Correlation between Attribution word importance with POS tags, Fertility, and Syntactic Depth. Fertility can be categorized into 4 types: one-to-many (“≥ 2”), one-to-one (“1”), many-to-one (“(0, 1)”), and null-aligned (“0”). Syntactic depth shows the depth of a word in the dependency tree. A lower tree depth indicates closer to the root node in the dependency tree, which might indicate a more important word.",
+   "n_tokens": 103
+  },
+  {
+   "caption_id": "1909.00326::fig006",
+   "paper_id": "1909.00326",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: Distribution of syntactic categories (e.g. content words vs. content-free words) based on word count (“Count”) and Attribution importance (“Attri.”). “4” denotes relative change over the count-based distribution.",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "1909.00326::fig007",
+   "paper_id": "1909.00326",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: Distributions of word fertility and their relative change based on Attribution importance and word count.",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "1909.00326::fig008",
+   "paper_id": "1909.00326",
+   "file": "11-Table5-1.png",
+   "caption": "Table 5: Distribution of syntactic categories with reverse directions based on word count (“Count”) and Attribution importance (“Attri.”). “4” denotes relative change over the count-based distribution.",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1909.00326::fig009",
+   "paper_id": "1909.00326",
+   "file": "11-Table6-1.png",
+   "caption": "Table 6: Distributions of word fertility and relative changes with reverse directions.",
+   "n_tokens": 16
+  }
+ ]
+}

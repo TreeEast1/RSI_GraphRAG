@@ -1,0 +1,269 @@
+{
+  "methods": {
+    "E0": {
+      "ret": "base",
+      "ans": "p7",
+      "label": "no skills + P7"
+    },
+    "E1": {
+      "ret": "base",
+      "ans": "static_retrieved",
+      "label": "static Answer Skills"
+    },
+    "E2": {
+      "ret": "base",
+      "ans": "evolved",
+      "label": "evolved Answer Skills"
+    },
+    "EB": {
+      "ret": "base",
+      "ans": "static_all",
+      "label": "equal-budget long static prompt"
+    }
+  },
+  "summaries": {
+    "evaluation|E0": {
+      "n": 43,
+      "n_answerable": 33,
+      "n_adversarial": 10,
+      "project_em": 0.30303030303030304,
+      "project_f1": 0.5633503811622205,
+      "official_f1": 0.6055724034333659,
+      "official_em": 0.30303030303030304,
+      "adversarial_refusal": 0.9,
+      "adversarial_refusal_official_strict": 0.0,
+      "adversarial_refusal_official_adapted": 0.9,
+      "refusal_rate_answerable": 0.09090909090909091,
+      "mean_calls": 1.0,
+      "mean_prompt_tokens": 4461.6511627906975,
+      "mean_completion_tokens": 10.86046511627907,
+      "mean_latency_s": 1.7607906976744185,
+      "by_category": {
+        "1": {
+          "name": "multi-hop",
+          "n": 5,
+          "em": 0.4,
+          "f1": 0.5674242424242424,
+          "official_f1": 0.5431457431457432,
+          "refused": 0.2
+        },
+        "2": {
+          "name": "temporal",
+          "n": 10,
+          "em": 0.7,
+          "f1": 0.9400000000000001,
+          "official_f1": 0.9400000000000001,
+          "refused": 0.0
+        },
+        "4": {
+          "name": "single-hop",
+          "n": 18,
+          "em": 0.05555555555555555,
+          "f1": 0.3529689647906702,
+          "official_f1": 0.4371200331984646,
+          "refused": 0.1111111111111111
+        },
+        "5": {
+          "name": "adversarial",
+          "n": 10,
+          "em": 0.9,
+          "f1": 0.9,
+          "official_f1": 0.9,
+          "refused": 0.9
+        }
+      },
+      "answer_support": 0.9767441860465116,
+      "retrieval_recall@5": 0.9318181818181818,
+      "retrieval_recall@3": 0.8106060606060606,
+      "evidence_full@4096": 0.9090909090909091,
+      "multi_evidence_complete": 0.7142857142857143,
+      "retrieval_query_calls": 0.0,
+      "split": "evaluation",
+      "method": "E0",
+      "label": "no skills + P7"
+    },
+    "evaluation|E1": {
+      "n": 43,
+      "n_answerable": 33,
+      "n_adversarial": 10,
+      "project_em": 0.2727272727272727,
+      "project_f1": 0.42279765688856596,
+      "official_f1": 0.43559639766614233,
+      "official_em": 0.2727272727272727,
+      "adversarial_refusal": 0.9,
+      "adversarial_refusal_official_strict": 0.0,
+      "adversarial_refusal_official_adapted": 0.9,
+      "refusal_rate_answerable": 0.21212121212121213,
+      "mean_calls": 1.0,
+      "mean_prompt_tokens": 4583.697674418605,
+      "mean_completion_tokens": 9.418604651162791,
+      "mean_latency_s": 2.398325581395349,
+      "by_category": {
+        "1": {
+          "name": "multi-hop",
+          "n": 5,
+          "em": 0.4,
+          "f1": 0.5674242424242424,
+          "official_f1": 0.5431457431457432,
+          "refused": 0.2
+        },
+        "2": {
+          "name": "temporal",
+          "n": 10,
+          "em": 0.6,
+          "f1": 0.6,
+          "official_f1": 0.6,
+          "refused": 0.1
+        },
+        "4": {
+          "name": "single-hop",
+          "n": 18,
+          "em": 0.05555555555555555,
+          "f1": 0.2841778591778592,
+          "official_f1": 0.3143862448474435,
+          "refused": 0.2777777777777778
+        },
+        "5": {
+          "name": "adversarial",
+          "n": 10,
+          "em": 0.9,
+          "f1": 0.9,
+          "official_f1": 0.9,
+          "refused": 0.9
+        }
+      },
+      "answer_support": 0.9767441860465116,
+      "retrieval_recall@5": 0.9318181818181818,
+      "retrieval_recall@3": 0.8106060606060606,
+      "evidence_full@4096": 0.9090909090909091,
+      "multi_evidence_complete": 0.7142857142857143,
+      "retrieval_query_calls": 0.0,
+      "split": "evaluation",
+      "method": "E1",
+      "label": "static Answer Skills"
+    },
+    "evaluation|E2": {
+      "n": 43,
+      "n_answerable": 33,
+      "n_adversarial": 10,
+      "project_em": 0.2727272727272727,
+      "project_f1": 0.5078027322412351,
+      "official_f1": 0.5740346311933678,
+      "official_em": 0.2727272727272727,
+      "adversarial_refusal": 0.9,
+      "adversarial_refusal_official_strict": 0.0,
+      "adversarial_refusal_official_adapted": 0.9,
+      "refusal_rate_answerable": 0.06060606060606061,
+      "mean_calls": 1.0,
+      "mean_prompt_tokens": 4530.581395348837,
+      "mean_completion_tokens": 10.813953488372093,
+      "mean_latency_s": 2.4863488372093028,
+      "by_category": {
+        "1": {
+          "name": "multi-hop",
+          "n": 5,
+          "em": 0.2,
+          "f1": 0.3818360071301248,
+          "official_f1": 0.5431457431457432,
+          "refused": 0.2
+        },
+        "2": {
+          "name": "temporal",
+          "n": 10,
+          "em": 0.6,
+          "f1": 0.6799999999999999,
+          "official_f1": 0.6799999999999999,
+          "refused": 0.0
+        },
+        "4": {
+          "name": "single-hop",
+          "n": 18,
+          "em": 0.1111111111111111,
+          "f1": 0.44712834046167377,
+          "official_f1": 0.5237452285362455,
+          "refused": 0.05555555555555555
+        },
+        "5": {
+          "name": "adversarial",
+          "n": 10,
+          "em": 0.9,
+          "f1": 0.9,
+          "official_f1": 0.9,
+          "refused": 0.9
+        }
+      },
+      "answer_support": 0.9991694352159469,
+      "retrieval_recall@5": 0.9318181818181818,
+      "retrieval_recall@3": 0.8106060606060606,
+      "evidence_full@4096": 0.9090909090909091,
+      "multi_evidence_complete": 0.7142857142857143,
+      "retrieval_query_calls": 0.0,
+      "split": "evaluation",
+      "method": "E2",
+      "label": "evolved Answer Skills"
+    },
+    "evaluation|EB": {
+      "n": 43,
+      "n_answerable": 33,
+      "n_adversarial": 10,
+      "project_em": 0.30303030303030304,
+      "project_f1": 0.48787934403921873,
+      "official_f1": 0.522512147456163,
+      "official_em": 0.30303030303030304,
+      "adversarial_refusal": 0.9,
+      "adversarial_refusal_official_strict": 0.0,
+      "adversarial_refusal_official_adapted": 0.9,
+      "refusal_rate_answerable": 0.12121212121212122,
+      "mean_calls": 1.0,
+      "mean_prompt_tokens": 4864.6511627906975,
+      "mean_completion_tokens": 9.046511627906977,
+      "mean_latency_s": 2.4310232558139533,
+      "by_category": {
+        "1": {
+          "name": "multi-hop",
+          "n": 5,
+          "em": 0.4,
+          "f1": 0.5674242424242424,
+          "official_f1": 0.5431457431457432,
+          "refused": 0.2
+        },
+        "2": {
+          "name": "temporal",
+          "n": 10,
+          "em": 0.6,
+          "f1": 0.6,
+          "official_f1": 0.6,
+          "refused": 0.1
+        },
+        "4": {
+          "name": "single-hop",
+          "n": 18,
+          "em": 0.1111111111111111,
+          "f1": 0.40349428562072237,
+          "official_f1": 0.47373178612914785,
+          "refused": 0.1111111111111111
+        },
+        "5": {
+          "name": "adversarial",
+          "n": 10,
+          "em": 0.9,
+          "f1": 0.9,
+          "official_f1": 0.9,
+          "refused": 0.9
+        }
+      },
+      "answer_support": 0.9534883720930233,
+      "retrieval_recall@5": 0.9318181818181818,
+      "retrieval_recall@3": 0.8106060606060606,
+      "evidence_full@4096": 0.9090909090909091,
+      "multi_evidence_complete": 0.7142857142857143,
+      "retrieval_query_calls": 0.0,
+      "split": "evaluation",
+      "method": "EB",
+      "label": "equal-budget long static prompt"
+    }
+  },
+  "answer_memory_step": 43,
+  "n_evolved_answer_skills": 3,
+  "n_evolved_retrieval_skills": 0
+}

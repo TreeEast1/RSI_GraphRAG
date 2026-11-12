@@ -1,0 +1,642 @@
+{
+ "1808.09029::s00::p000": [
+  [
+   "Long short term memory (LSTM) units",
+   "are popular for",
+   "many sequence modeling tasks"
+  ],
+  [
+   "Long short term memory (LSTM) units",
+   "are used extensively in",
+   "language modeling"
+  ],
+  [
+   "articulated gating structure",
+   "allows for",
+   "more control over the information passed along the recurrence"
+  ],
+  [
+   "input and context vectors",
+   "are treated with",
+   "simple linear transformations prior to gating"
+  ],
+  [
+   "Non-linear transformations such as convolutions BIBREF2",
+   "have not achieved",
+   "the performance of well regularized LSTMs for language modeling BIBREF3"
+  ]
+ ],
+ "1808.09029::s00::p001": [
+  [
+   "increasing the number of dimensions of the input and context vectors",
+   "comes with",
+   "a significant increase in the number of parameters"
+  ],
+  [
+   "LSTMs performance",
+   "decreases with",
+   "the increase in dimensions of the input and context vectors"
+  ],
+  [
+   "semantics of the input and context vectors",
+   "are",
+   "different"
+  ]
+ ],
+ "1808.09029::s00::p002": [
+  [
+   "Pyramidal Recurrent Unit (PRU)",
+   "is based on",
+   "the LSTM gating structure"
+  ],
+  [
+   "pyramidal transformation (PT)",
+   "uses",
+   "subsampling to effect multiple views of the input vector"
+  ],
+  [
+   "subsampled representations",
+   "are combined in",
+   "a pyramidal fusion structure"
+  ],
+  [
+   "Context vectors",
+   "are modified with",
+   "a grouped linear transformation (GLT)"
+  ],
+  [
+   "grouped linear transformation (GLT)",
+   "allows",
+   "the network to learn latent representations in high dimensional space with fewer parameters and better generalizability"
+  ]
+ ],
+ "1808.09029::s00::p003": [
+  [
+   "PRUs",
+   "can better model",
+   "contextual information"
+  ],
+  [
+   "PRU",
+   "improves",
+   "the perplexity of the current state-of-the-art language model BIBREF0 by up to 1.3 points"
+  ],
+  [
+   "PRU",
+   "reaches",
+   "perplexities of 56.56 and 64.53 on the Penn Treebank and WikiText2 datasets"
+  ],
+  [
+   "PRU",
+   "learns",
+   "15-20% fewer parameters"
+  ],
+  [
+   "Replacing an LSTM with a PRU",
+   "results in",
+   "improvements in perplexity across a variety of experimental settings"
+  ]
+ ],
+ "1808.09029::s01::p000": [
+  [
+   "Multiple methods",
+   "have been proposed to improve",
+   "the performance of recurrent neural networks (RNNs)"
+  ]
+ ],
+ "1808.09029::s02::p000": [
+  [
+   "Pyramidal Recurrent Units (PRUs)",
+   "are",
+   "a new RNN architecture"
+  ],
+  [
+   "Pyramidal Recurrent Units (PRUs)",
+   "improve",
+   "modeling of context"
+  ],
+  [
+   "Pyramidal Recurrent Units (PRUs)",
+   "allow for",
+   "higher dimensional vector representations"
+  ]
+ ],
+ "1808.09029::s03::p000": [
+  [
+   "The basic transformation in many recurrent units",
+   "is",
+   "a linear transformation INLINEFORM0"
+  ]
+ ],
+ "1808.09029::s03::p001": [
+  [
+   "INLINEFORM0",
+   "are",
+   "learned weights"
+  ],
+  [
+   "INLINEFORM0",
+   "linearly map",
+   "INLINEFORM1 to INLINEFORM2"
+  ]
+ ],
+ "1808.09029::s03::p002": [
+  [
+   "This sub-sampling operation",
+   "produces",
+   "INLINEFORM2 vectors"
+  ],
+  [
+   "INLINEFORM4",
+   "is",
+   "the sampling rate"
+  ],
+  [
+   "The transformed subsamples",
+   "are concatenated to produce",
+   "the pyramidal analog to INLINEFORM8"
+  ]
+ ],
+ "1808.09029::s03::p003": [
+  [
+   "INLINEFORM0",
+   "indicates",
+   "concatenation"
+  ],
+  [
+   "pyramidal transformation with INLINEFORM1",
+   "is the same as",
+   "the linear transformation"
+  ]
+ ],
+ "1808.09029::s03::p005": [
+  [
+   "the input vector INLINEFORM4",
+   "can be sub-sampled as",
+   "DISPLAYFORM0"
+  ]
+ ],
+ "1808.09029::s03::p007": [
+  [
+   "pyramidal transformation",
+   "reduces the parameters of",
+   "a linear transformation by a factor of INLINEFORM5"
+  ],
+  [
+   "the pyramidal transformation (with INLINEFORM6 and INLINEFORM7 )",
+   "learns",
+   "INLINEFORM8 fewer parameters than the linear transformation"
+  ]
+ ],
+ "1808.09029::s04::p000": [
+  [
+   "Many RNN architectures",
+   "apply linear transformations to",
+   "both the input and context vector"
+  ],
+  [
+   "the input vector",
+   "is",
+   "a dense word embedding which is shared across all contexts for a given word in a dataset"
+  ],
+  [
+   "the context vector",
+   "is",
+   "highly contextualized by the current sequence"
+  ],
+  [
+   "The differences between the input and context vector",
+   "motivate",
+   "their separate treatment in the PRU architecture"
+  ]
+ ],
+ "1808.09029::s04::p001": [
+  [
+   "The weights learned using the linear transformation (Eq. EQREF9 )",
+   "are reused over",
+   "multiple time steps"
+  ],
+  [
+   "variational dropout BIBREF26 and weight dropout BIBREF0",
+   "have been proposed to regularize",
+   "these recurrent connections"
+  ]
+ ],
+ "1808.09029::s04::p002": [
+  [
+   "The linear transformation INLINEFORM0",
+   "maps",
+   "INLINEFORM1 linearly to INLINEFORM2"
+  ],
+  [
+   "Grouped linear transformations",
+   "break",
+   "the linear interactions by factoring the linear transformation into two steps"
+  ],
+  [
+   "a GLT",
+   "splits",
+   "the input vector INLINEFORM3 into INLINEFORM4 smaller groups such that INLINEFORM5"
+  ],
+  [
+   "The INLINEFORM10 resultant output vectors INLINEFORM11",
+   "are concatenated to produce",
+   "the final output vector INLINEFORM12"
+  ]
+ ],
+ "1808.09029::s04::p003": [
+  [
+   "GLTs",
+   "learn representations at",
+   "low dimensionality"
+  ],
+  [
+   "a GLT",
+   "requires",
+   "INLINEFORM0 fewer parameters than the linear transformation"
+  ],
+  [
+   "GLTs",
+   "are",
+   "subset of linear transformations"
+  ],
+  [
+   "GLT",
+   "is the same as",
+   "a linear transformation when INLINEFORM1"
+  ]
+ ],
+ "1808.09029::s05::p000": [
+  [
+   "the pyramidal and grouped linear transformations",
+   "produce",
+   "the Pyramidal Recurrent Unit (PRU)"
+  ]
+ ],
+ "1808.09029::s05::p001": [
+  [
+   "the PRU",
+   "combines",
+   "the input vector INLINEFORM1 and the previous context vector (or previous hidden state vector) INLINEFORM2"
+  ]
+ ],
+ "1808.09029::s05::p002": [
+  [
+   "INLINEFORM0",
+   "indexes",
+   "the various gates in the LSTM model"
+  ],
+  [
+   "INLINEFORM1 and INLINEFORM2",
+   "represents",
+   "the pyramidal and grouped linear transformations defined in Eqns. EQREF10 and EQREF15 , respectively"
+  ]
+ ],
+ "1808.09029::s05::p003": [
+  [
+   "a PRU cell",
+   "takes",
+   "INLINEFORM2 , INLINEFORM3 , and INLINEFORM4 as inputs"
+  ],
+  [
+   "The inputs",
+   "are combined with",
+   "these gate signals"
+  ]
+ ],
+ "1808.09029::s05::p004": [
+  [
+   "INLINEFORM0",
+   "represents",
+   "the element-wise multiplication operation"
+  ],
+  [
+   "INLINEFORM1 and INLINEFORM2",
+   "are",
+   "the sigmoid and hyperbolic tangent activation functions"
+  ],
+  [
+   "LSTM",
+   "is a special case of",
+   "PRU when INLINEFORM3 = INLINEFORM4 =1"
+  ]
+ ],
+ "1808.09029::s07::p001": [
+  [
+   "The number of parameters learned by state-of-the-art methods",
+   "vary from",
+   "18M to 66M"
+  ]
+ ],
+ "1808.09029::s07::p002": [
+  [
+   "Standard dropout",
+   "uses",
+   "a standard dropout BIBREF12 with probability of 0.5"
+  ],
+  [
+   "Advanced dropout",
+   "uses",
+   "the same dropout techniques with the same dropout values as in BIBREF0"
+  ]
+ ],
+ "1808.09029::s08::p000": [
+  [
+   "the PRU",
+   "achieves",
+   "the best performance with fewer parameters"
+  ]
+ ],
+ "1808.09029::s08::p001": [
+  [
+   "PRUs",
+   "achieve",
+   "either the same or better performance than LSTMs"
+  ],
+  [
+   "the performance of PRUs",
+   "improves with",
+   "the increasing value of INLINEFORM0"
+  ],
+  [
+   "PRUs",
+   "outperform",
+   "LSTMs by about 4 points on the PTB dataset and by about 3 points on the WT-2 dataset"
+  ],
+  [
+   "PRUs",
+   "learn",
+   "rich representations at very high dimensional space while learning fewer parameters"
+  ]
+ ],
+ "1808.09029::s08::p002": [
+  [
+   "the performance of PRUs",
+   "improves by",
+   "about 4 points on the PTB dataset and 7 points on the WT-2 dataset"
+  ],
+  [
+   "This",
+   "further improves with",
+   "finetuning on the PTB (about 2 points) and WT-2 (about 1 point) datasets"
+  ]
+ ],
+ "1808.09029::s08::p003": [
+  [
+   "the PRU with standard dropout",
+   "outperforms",
+   "most of the state-of-the-art methods by large margin on the PTB dataset"
+  ],
+  [
+   "the PRU with standard dropout",
+   "outperforms",
+   "RAN BIBREF7 by 16 points with 4M less parameters"
+  ],
+  [
+   "the PRU with standard dropout",
+   "outperforms",
+   "QRNN BIBREF33 by 16 points with 1M more parameters"
+  ],
+  [
+   "the PRU with standard dropout",
+   "outperforms",
+   "NAS BIBREF31 by 1.58 points with 6M less parameters"
+  ],
+  [
+   "the PRU",
+   "improves",
+   "the perplexity by about 1 point while learning 15-20% fewer parameters"
+  ]
+ ],
+ "1808.09029::s08::p004": [
+  [
+   "PRU",
+   "is",
+   "a drop-in replacement for LSTM"
+  ],
+  [
+   "the perplexity of PRU ( INLINEFORM0 )",
+   "improves from",
+   "62.42 to 55.23"
+  ],
+  [
+   "the perplexity of an LSTM ( INLINEFORM1 ) with similar settings",
+   "improves from",
+   "66.29 to 58.79"
+  ]
+ ],
+ "1808.09029::s09::p000": [
+  [
+   "the PRU",
+   "can learn",
+   "representations at higher dimensionality with more generalization power"
+  ]
+ ],
+ "1808.09029::s09::p001": [
+  [
+   "the PRU",
+   "tends toward",
+   "more confident decisions"
+  ],
+  [
+   "bins of size 0.23",
+   "are used to effect",
+   "categories"
+  ]
+ ],
+ "1808.09029::s09::p002": [
+  [
+   "The PRU",
+   "has",
+   "the ability to model individual words at different resolutions through the pyramidal transform"
+  ],
+  [
+   "the pyramidal transform",
+   "provides",
+   "multiple paths for the gradient to the embedding layer"
+  ],
+  [
+   "pyramid level 1 embeddings",
+   "exhibit",
+   "higher variance than the LSTM across all POS categories"
+  ],
+  [
+   "pyramid level 2 embeddings",
+   "show",
+   "extremely low variance"
+  ]
+ ],
+ "1808.09029::s09::p003": [
+  [
+   "Saliency analysis using gradients",
+   "help identify",
+   "relevant words in a test sequence that contribute to the prediction"
+  ],
+  [
+   "These approaches",
+   "compute",
+   "the relevance as the squared norm of the gradients obtained through back-propagation"
+  ],
+  [
+   "PRUs",
+   "give",
+   "more relevance to contextual words than LSTMs"
+  ],
+  [
+   "PRUs",
+   "have",
+   "better gradient coverage than LSTMs"
+  ],
+  [
+   "Language model in BIBREF0",
+   "takes",
+   "500 and 750 epochs to converge with PRU and LSTM as a recurrent unit, respectively"
+  ]
+ ],
+ "1808.09029::s10::p000": [
+  [
+   "language model",
+   "uses",
+   "a single layer of PRU"
+  ],
+  [
+   "word-level perplexities",
+   "are reported on",
+   "the validation sets of the PTB and the WT-2 datasets"
+  ]
+ ],
+ "1808.09029::s10::p001": [
+  [
+   "two hyper-parameters",
+   "control",
+   "the trade-off between performance and number of parameters in PRUs"
+  ],
+  [
+   "two hyper-parameters",
+   "are",
+   "the number of pyramidal levels INLINEFORM0 and groups INLINEFORM1"
+  ]
+ ],
+ "1808.09029::s10::p002": [
+  [
+   "performance of the PRU",
+   "drops by",
+   "about 1 to 4 points"
+  ],
+  [
+   "total number of recurrent unit parameters",
+   "reduces by",
+   "up to 15%"
+  ],
+  [
+   "PRU with INLINEFORM4 at INLINEFORM5",
+   "delivers",
+   "similar performance as the LSTM"
+  ],
+  [
+   "PRU with INLINEFORM4 at INLINEFORM5",
+   "learns",
+   "about 15% fewer recurrent unit parameters"
+  ]
+ ],
+ "1808.09029::s10::p003": [
+  [
+   "total number of recurrent unit parameters",
+   "decreases significantly with",
+   "a minimal impact on the perplexity"
+  ],
+  [
+   "PRUs with INLINEFORM4 and INLINEFORM5",
+   "learns",
+   "77% fewer recurrent unit parameters"
+  ],
+  [
+   "perplexity (lower is better)",
+   "increases by",
+   "about 12% in comparison to LSTMs"
+  ],
+  [
+   "decrease in number of parameters at higher value of INLINEFORM6",
+   "enables",
+   "PRUs to learn the representations in high dimensional space with better generalizability"
+  ]
+ ],
+ "1808.09029::s10::p004": [
+  [
+   "Using the pyramidal transformation for the input vectors",
+   "improves",
+   "the perplexity by about 1 point on both the PTB and WT-2 datasets"
+  ],
+  [
+   "Using the pyramidal transformation for the input vectors",
+   "reduces",
+   "the number of recurrent unit parameters by about 14%"
+  ],
+  [
+   "performance of the PRU",
+   "drops by",
+   "up to 1 point when residual connections are not used"
+  ],
+  [
+   "Using the grouped linear transformation for context vectors",
+   "reduces",
+   "the total number of recurrent unit parameters by about 75%"
+  ],
+  [
+   "Using the grouped linear transformation for context vectors",
+   "drops performance by",
+   "about 11%"
+  ]
+ ],
+ "1808.09029::s10::p005": [
+  [
+   "sub-sampling kernel INLINEFORM0 (Eq. EQREF12 )",
+   "is set with",
+   "stride INLINEFORM1 and size of 3 ( INLINEFORM2 )"
+  ],
+  [
+   "Skip",
+   "skips",
+   "every other element in the input vector"
+  ],
+  [
+   "Max pool",
+   "selects",
+   "the maximum value in the kernel window INLINEFORM7"
+  ]
+ ],
+ "1808.09029::s10::p006": [
+  [
+   "Average pooling",
+   "performs",
+   "the best"
+  ],
+  [
+   "skipping",
+   "give",
+   "comparable performance"
+  ],
+  [
+   "a convolution-based sub-sampling method",
+   "does not perform as well as",
+   "the averaging method"
+  ]
+ ],
+ "1808.09029::s11::p000": [
+  [
+   "the Pyramidal Recurrent Unit",
+   "better model",
+   "contextual information"
+  ],
+  [
+   "PRUs",
+   "improve",
+   "perplexity across several settings, including recent state-of-the-art systems"
+  ],
+  [
+   "the PRU",
+   "improves",
+   "the flow of gradient"
+  ]
+ ]
+}

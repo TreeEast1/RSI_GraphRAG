@@ -1,0 +1,668 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1909.01362::s00::p000",
+   "summary": "The introduction opens with the Italian quotation “Ché saetta previsa vien più lenta.”",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p002",
+   "summary": "The quotation is attributed to Dante Alighieri, Divina Commedia, Paradiso.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p003",
+   "summary": "Antisocial behavior is widespread and potentially damaging online, motivating computational approaches to assist human moderators.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p004",
+   "summary": "Prior work has focused on post-hoc identification of hate speech, harassment, personal attacks, and general toxicity, limiting pre-emptive moderation.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p005",
+   "summary": "Forecasting future derailment from early warning signs could enable intervention and belongs to broader conversational forecasting tasks.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p006",
+   "summary": "Conversational forecasting must model dynamic interactions between comments, beyond individual content, using relations or neural attention architectures.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p007",
+   "summary": "Unknown conversation horizons complicate forecast timing, while prior fixed-window or event-time assumptions create practical limitations.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p008",
+   "summary": "The authors introduce an online model processing comments and relations as they happen, inspired by context-aware dialog generation systems.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p009",
+   "summary": "Adapting generative dialog models to supervised forecasting is difficult because labeled data are scarce, often at most a few thousands examples.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p010",
+   "summary": "The authors decouple unsupervised pre-training of conversational dynamics from fine-tuned prediction, applying pre-train-then-fine-tune to conversational forecasting.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p011",
+   "summary": "Two new datasets are developed: an expanded `Conversations Gone Awry' dataset and a ChangeMyView dataset, where the model outperforms baselines and triggers on average 3 comments (or 3 hours) before overt toxicity.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p012",
+   "summary": "The authors state that they summarize their work.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p013",
+   "summary": "They introduce the first model for forecasting conversational events that captures dynamics as a conversation develops.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p014",
+   "summary": "They build two diverse datasets, one entirely new and one extending prior work, for forecasting derailment of online conversations.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p015",
+   "summary": "They compare their model against the current state-of-the-art and evaluate its ability to provide early warning signs.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s00::p016",
+   "summary": "The work aims to assist human moderators but cautions that automated systems may encode or amplify training-data biases.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s01::p001",
+   "summary": "Antisocial behavior online includes harassment, cyberbullying, and general aggression, with prior work studying community effects, actors, and outside-world connections.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s01::p002",
+   "summary": "Prior post-hoc conversation classification includes debate winners, successful negotiations, deception, and disagreement detection.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s01::p003",
+   "summary": "The authors instead forecast conversational events before they happen during ongoing conversations, potentially allowing interventions.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s01::p004",
+   "summary": "Prior conversational forecasting relies on hand-crafted features, whereas the authors aim to learn neural representations through pre-training.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s01::p005",
+   "summary": "Hand-crafted features typically use fixed-length windows, leaving unknown horizons unaddressed; the authors implement a simple sliding windows baseline.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s01::p006",
+   "summary": "NLP pre-training commonly uses language modeling objectives, while the authors' conversation-level generative objective is framed as conversational modeling.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s02::p001",
+   "summary": "Two datasets are considered: an expanded annotated Wikipedia conversations dataset and a secondary ChangeMyView dataset based on future moderator action.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s02::p002",
+   "summary": "BIBREF9's `Conversations Gone Awry' dataset contains 1,270 Wikipedia Talk Page conversations labeled for personal attacks or civility.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s02::p003",
+   "summary": "Controls pair attack-containing and clean conversations from the same talk page and ensure comments preceding personal attacks are civil.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s02::p004",
+   "summary": "The `Conversations Gone Awry' dataset is expanded to 4,188 conversations, focusing on longer conversations with 4 or more comments preceding the attack, and released in ConvoKit.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s02::p005",
+   "summary": "An 80-20-20 train/dev/test split preserves paired conversations, and another 1 million WikiConv conversations are sampled for unsupervised pre-training.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s02::p006",
+   "summary": "The CMV dataset uses Reddit API conversations and labels whether a comment was removed for violating Rule 2: “Don't be rude or hostile to other users”.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s02::p007",
+   "summary": "CMV controls reproduce topic pairing and prior user involvement, yielding 6,842 conversations, an 80-20-20 split, and over 600,000 unlabeled conversations.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s03::p000",
+   "summary": "CRAFT integrates an unsupervised generative dialog model and a supervised component that fine-tunes the representation to forecast future events.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s03::p001",
+   "summary": "A conversation is modeled as a sequence of $N$ comments, each represented as a variable-length sequence of $M_n$ tokens.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s03::p002",
+   "summary": "The generative component uses HRED, a hierarchical recurrent encoder-decoder designed to account for dependencies between consecutive inputs.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s03::p003",
+   "summary": "An HRED dialog model has an utterance encoder, a context encoder, and a decoder, with the utterance encoder generating semantic comment representations.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s03::p004",
+   "summary": "The nonlinear gating function uses GRU, and the final hidden state $h^{\\text{enc}}_M$ encodes the entire comment.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s03::p005",
+   "summary": "Running the encoder on each comment produces $N$ vector encodings, over which a second context encoder is run.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s03::p006",
+   "summary": "Each context hidden state encodes the full conversational context up to comment $n$ and initializes the decoder hidden state for response generation.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s03::p007",
+   "summary": "The decoder outputs word probabilities, is augmented with attention over context encoder states, and can be pre-trained using unlabeled conversational data.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s03::p008",
+   "summary": "The predictor is a 3-layer MLP with leaky ReLU and sigmoid output that maps each context encoding to $p_{\\text{event}}(c_{n+1})$.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s03::p009",
+   "summary": "Training initializes encoders from pre-training and computes cross-entropy loss using pre-event contexts for positive samples and full negative contexts.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s03::p010",
+   "summary": "Fine-tuning allows backpropagation through encoder layers, reshaping the pre-trained representation for prediction.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s03::p011",
+   "summary": "The model and training code use PyTorch and are publicly released with trained models and data as part of ConvoKit.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s04::p001",
+   "summary": "CRAFT is evaluated on Wikipedia and CMV derailment forecasting by pre-training on unlabeled data and fine-tuning on labeled training splits.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s04::p002",
+   "summary": "Comment-level predictions are aggregated using a development-split threshold, with true positives requiring forecasts before actual derailment.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s04::p003",
+   "summary": "Fixed-length window baselines are Awry, based on pragmatic features in the first comment-reply pair, and BoW using TF-IDF weighted bag-of-words features.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s04::p004",
+   "summary": "Cumulative BoW recomputes bag-of-words features on all comments seen so far but fails to account for relationships between comments.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s04::p005",
+   "summary": "Sliding Awry applies Awry features to a window of $W$ comments upon each new comment, with comment-level predictions aggregated as in the main model.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s04::p006",
+   "summary": "Two CRAFT ablations evaluate the impact of pre-training and hierarchical memory for capturing inter-comment dependencies.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s04::p007",
+   "summary": "Training CRAFT without pre-training on only labeled data performs at random guessing, underscoring the need for unlabeled-data pre-training.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s04::p008",
+   "summary": "CRAFT $-$ CE sets context encoder memory size to zero, acting like vanilla seq2seq and predicting only from the latest comment.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s04::p009",
+   "summary": "Table TABREF17 shows CRAFT outperforms baselines in accuracy and F1 on both datasets, with superior precision-recall balance and larger AUPR on Wikipedia data.",
+   "group_id": "1909.01362::g00"
+  },
+  {
+   "passage_id": "1909.01362::s05::p000",
+   "summary": "The analysis examines CRAFT’s benefits and limitations, specifically early warning and whether it learns an order-sensitive representation of conversational context.",
+   "group_id": "1909.01362::g01"
+  },
+  {
+   "passage_id": "1909.01362::s05::p001",
+   "summary": "The analysis asks whether the model triggers early enough to provide pre-emptive, actionable warning to moderators for practical goals.",
+   "group_id": "1909.01362::g01"
+  },
+  {
+   "passage_id": "1909.01362::s05::p002",
+   "summary": "For correctly forecasted personal attacks, the model warns 3 comments before the attack, 4 comments for CMV, with over 50% of conversations getting at least 3 hours of advance warning, 2 hours for CMV, and 39% getting at least 12 hours.",
+   "group_id": "1909.01362::g01"
+  },
+  {
+   "passage_id": "1909.01362::s05::p003",
+   "summary": "The analysis asks whether CRAFT uses its capacity for order-sensitive conversational context or computes an order-insensitive “bag-of-features”, using two exploratory experiments despite neural network opacity.",
+   "group_id": "1909.01362::g01"
+  },
+  {
+   "passage_id": "1909.01362::s05::p004",
+   "summary": "In the prefix-shuffling experiment visualized in Figure FIGREF23, shuffling the first $t-1$ comments changes CRAFT’s prediction in roughly one fifth of cases, 12% for CMV, unlike the Cumulative BoW baseline.",
+   "group_id": "1909.01362::g01"
+  },
+  {
+   "passage_id": "1909.01362::s05::p005",
+   "summary": "Shuffling comment order in pre-training, fine-tuning and testing hurts performance to 65% accuracy for Wikipedia and 59.5% for CMV, similar to disabling the context encoder.",
+   "group_id": "1909.01362::g01"
+  },
+  {
+   "passage_id": "1909.01362::s05::p006",
+   "summary": "The experiments provide evidence that CRAFT models conversational context order-sensitively and effectively uses its dynamics, while future work should develop more transparent models.",
+   "group_id": "1909.01362::g01"
+  },
+  {
+   "passage_id": "1909.01362::s06::p000",
+   "summary": "The work introduced a model for forecasting conversational events that updates predictions at each step, achieves state-of-the-art performance on two publicly released datasets, and can provide substantial prior notice of derailment.",
+   "group_id": "1909.01362::g01"
+  },
+  {
+   "passage_id": "1909.01362::s06::p001",
+   "summary": "The authors view the work as a step toward real-time forecasting of other emergent conversation properties, with follow-up work adapting CRAFT to other tasks and adding supervised fine-tuning.",
+   "group_id": "1909.01362::g01"
+  },
+  {
+   "passage_id": "1909.01362::s06::p002",
+   "summary": "Open questions for derailment forecasting concern moderators’ desired warning timing, the optimal balance between precision, recall, and false positive rate, ethical implications, and user studies with actual moderators.",
+   "group_id": "1909.01362::g01"
+  },
+  {
+   "passage_id": "1909.01362::s06::p003",
+   "summary": "A practical limitation is reliance on balanced datasets, although derailment is rare and $AUPR=0.7$ suggests robustness across thresholds, with more work needed on the recall tradeoff.",
+   "group_id": "1909.01362::g01"
+  },
+  {
+   "passage_id": "1909.01362::s06::p004",
+   "summary": "A major limitation is assigning a single derailment label to each conversation, while finer-grained forecasting could account for trajectories such as recovery, repeat antisocial behavior, or other paths.",
+   "group_id": "1909.01362::g01"
+  },
+  {
+   "passage_id": "1909.01362::s06::p006",
+   "summary": "The acknowledgements thank named collaborators and anonymous reviewers, and state support from NSF CAREER award IIS-1750615 and NSF Grant SES-1741441.",
+   "group_id": "1909.01362::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1909.01362::g00",
+   "summaries": [
+    {
+     "passage_id": "1909.01362::s00::p000",
+     "summary": "The introduction opens with the Italian quotation “Ché saetta previsa vien più lenta.”",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p002",
+     "summary": "The quotation is attributed to Dante Alighieri, Divina Commedia, Paradiso.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p003",
+     "summary": "Antisocial behavior is widespread and potentially damaging online, motivating computational approaches to assist human moderators.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p004",
+     "summary": "Prior work has focused on post-hoc identification of hate speech, harassment, personal attacks, and general toxicity, limiting pre-emptive moderation.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p005",
+     "summary": "Forecasting future derailment from early warning signs could enable intervention and belongs to broader conversational forecasting tasks.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p006",
+     "summary": "Conversational forecasting must model dynamic interactions between comments, beyond individual content, using relations or neural attention architectures.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p007",
+     "summary": "Unknown conversation horizons complicate forecast timing, while prior fixed-window or event-time assumptions create practical limitations.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p008",
+     "summary": "The authors introduce an online model processing comments and relations as they happen, inspired by context-aware dialog generation systems.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p009",
+     "summary": "Adapting generative dialog models to supervised forecasting is difficult because labeled data are scarce, often at most a few thousands examples.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p010",
+     "summary": "The authors decouple unsupervised pre-training of conversational dynamics from fine-tuned prediction, applying pre-train-then-fine-tune to conversational forecasting.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p011",
+     "summary": "Two new datasets are developed: an expanded `Conversations Gone Awry' dataset and a ChangeMyView dataset, where the model outperforms baselines and triggers on average 3 comments (or 3 hours) before overt toxicity.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p012",
+     "summary": "The authors state that they summarize their work.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p013",
+     "summary": "They introduce the first model for forecasting conversational events that captures dynamics as a conversation develops.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p014",
+     "summary": "They build two diverse datasets, one entirely new and one extending prior work, for forecasting derailment of online conversations.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p015",
+     "summary": "They compare their model against the current state-of-the-art and evaluate its ability to provide early warning signs.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s00::p016",
+     "summary": "The work aims to assist human moderators but cautions that automated systems may encode or amplify training-data biases.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s01::p001",
+     "summary": "Antisocial behavior online includes harassment, cyberbullying, and general aggression, with prior work studying community effects, actors, and outside-world connections.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s01::p002",
+     "summary": "Prior post-hoc conversation classification includes debate winners, successful negotiations, deception, and disagreement detection.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s01::p003",
+     "summary": "The authors instead forecast conversational events before they happen during ongoing conversations, potentially allowing interventions.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s01::p004",
+     "summary": "Prior conversational forecasting relies on hand-crafted features, whereas the authors aim to learn neural representations through pre-training.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s01::p005",
+     "summary": "Hand-crafted features typically use fixed-length windows, leaving unknown horizons unaddressed; the authors implement a simple sliding windows baseline.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s01::p006",
+     "summary": "NLP pre-training commonly uses language modeling objectives, while the authors' conversation-level generative objective is framed as conversational modeling.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s02::p001",
+     "summary": "Two datasets are considered: an expanded annotated Wikipedia conversations dataset and a secondary ChangeMyView dataset based on future moderator action.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s02::p002",
+     "summary": "BIBREF9's `Conversations Gone Awry' dataset contains 1,270 Wikipedia Talk Page conversations labeled for personal attacks or civility.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s02::p003",
+     "summary": "Controls pair attack-containing and clean conversations from the same talk page and ensure comments preceding personal attacks are civil.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s02::p004",
+     "summary": "The `Conversations Gone Awry' dataset is expanded to 4,188 conversations, focusing on longer conversations with 4 or more comments preceding the attack, and released in ConvoKit.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s02::p005",
+     "summary": "An 80-20-20 train/dev/test split preserves paired conversations, and another 1 million WikiConv conversations are sampled for unsupervised pre-training.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s02::p006",
+     "summary": "The CMV dataset uses Reddit API conversations and labels whether a comment was removed for violating Rule 2: “Don't be rude or hostile to other users”.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s02::p007",
+     "summary": "CMV controls reproduce topic pairing and prior user involvement, yielding 6,842 conversations, an 80-20-20 split, and over 600,000 unlabeled conversations.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s03::p000",
+     "summary": "CRAFT integrates an unsupervised generative dialog model and a supervised component that fine-tunes the representation to forecast future events.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s03::p001",
+     "summary": "A conversation is modeled as a sequence of $N$ comments, each represented as a variable-length sequence of $M_n$ tokens.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s03::p002",
+     "summary": "The generative component uses HRED, a hierarchical recurrent encoder-decoder designed to account for dependencies between consecutive inputs.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s03::p003",
+     "summary": "An HRED dialog model has an utterance encoder, a context encoder, and a decoder, with the utterance encoder generating semantic comment representations.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s03::p004",
+     "summary": "The nonlinear gating function uses GRU, and the final hidden state $h^{\\text{enc}}_M$ encodes the entire comment.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s03::p005",
+     "summary": "Running the encoder on each comment produces $N$ vector encodings, over which a second context encoder is run.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s03::p006",
+     "summary": "Each context hidden state encodes the full conversational context up to comment $n$ and initializes the decoder hidden state for response generation.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s03::p007",
+     "summary": "The decoder outputs word probabilities, is augmented with attention over context encoder states, and can be pre-trained using unlabeled conversational data.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s03::p008",
+     "summary": "The predictor is a 3-layer MLP with leaky ReLU and sigmoid output that maps each context encoding to $p_{\\text{event}}(c_{n+1})$.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s03::p009",
+     "summary": "Training initializes encoders from pre-training and computes cross-entropy loss using pre-event contexts for positive samples and full negative contexts.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s03::p010",
+     "summary": "Fine-tuning allows backpropagation through encoder layers, reshaping the pre-trained representation for prediction.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s03::p011",
+     "summary": "The model and training code use PyTorch and are publicly released with trained models and data as part of ConvoKit.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s04::p001",
+     "summary": "CRAFT is evaluated on Wikipedia and CMV derailment forecasting by pre-training on unlabeled data and fine-tuning on labeled training splits.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s04::p002",
+     "summary": "Comment-level predictions are aggregated using a development-split threshold, with true positives requiring forecasts before actual derailment.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s04::p003",
+     "summary": "Fixed-length window baselines are Awry, based on pragmatic features in the first comment-reply pair, and BoW using TF-IDF weighted bag-of-words features.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s04::p004",
+     "summary": "Cumulative BoW recomputes bag-of-words features on all comments seen so far but fails to account for relationships between comments.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s04::p005",
+     "summary": "Sliding Awry applies Awry features to a window of $W$ comments upon each new comment, with comment-level predictions aggregated as in the main model.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s04::p006",
+     "summary": "Two CRAFT ablations evaluate the impact of pre-training and hierarchical memory for capturing inter-comment dependencies.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s04::p007",
+     "summary": "Training CRAFT without pre-training on only labeled data performs at random guessing, underscoring the need for unlabeled-data pre-training.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s04::p008",
+     "summary": "CRAFT $-$ CE sets context encoder memory size to zero, acting like vanilla seq2seq and predicting only from the latest comment.",
+     "group_id": "1909.01362::g00"
+    },
+    {
+     "passage_id": "1909.01362::s04::p009",
+     "summary": "Table TABREF17 shows CRAFT outperforms baselines in accuracy and F1 on both datasets, with superior precision-recall balance and larger AUPR on Wikipedia data.",
+     "group_id": "1909.01362::g00"
+    }
+   ],
+   "n_raw": 50,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 6182,
+    "completion_tokens": 2241,
+    "total_tokens": 8423,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1909.01362::g01",
+   "summaries": [
+    {
+     "passage_id": "1909.01362::s05::p000",
+     "summary": "The analysis examines CRAFT’s benefits and limitations, specifically early warning and whether it learns an order-sensitive representation of conversational context.",
+     "group_id": "1909.01362::g01"
+    },
+    {
+     "passage_id": "1909.01362::s05::p001",
+     "summary": "The analysis asks whether the model triggers early enough to provide pre-emptive, actionable warning to moderators for practical goals.",
+     "group_id": "1909.01362::g01"
+    },
+    {
+     "passage_id": "1909.01362::s05::p002",
+     "summary": "For correctly forecasted personal attacks, the model warns 3 comments before the attack, 4 comments for CMV, with over 50% of conversations getting at least 3 hours of advance warning, 2 hours for CMV, and 39% getting at least 12 hours.",
+     "group_id": "1909.01362::g01"
+    },
+    {
+     "passage_id": "1909.01362::s05::p003",
+     "summary": "The analysis asks whether CRAFT uses its capacity for order-sensitive conversational context or computes an order-insensitive “bag-of-features”, using two exploratory experiments despite neural network opacity.",
+     "group_id": "1909.01362::g01"
+    },
+    {
+     "passage_id": "1909.01362::s05::p004",
+     "summary": "In the prefix-shuffling experiment visualized in Figure FIGREF23, shuffling the first $t-1$ comments changes CRAFT’s prediction in roughly one fifth of cases, 12% for CMV, unlike the Cumulative BoW baseline.",
+     "group_id": "1909.01362::g01"
+    },
+    {
+     "passage_id": "1909.01362::s05::p005",
+     "summary": "Shuffling comment order in pre-training, fine-tuning and testing hurts performance to 65% accuracy for Wikipedia and 59.5% for CMV, similar to disabling the context encoder.",
+     "group_id": "1909.01362::g01"
+    },
+    {
+     "passage_id": "1909.01362::s05::p006",
+     "summary": "The experiments provide evidence that CRAFT models conversational context order-sensitively and effectively uses its dynamics, while future work should develop more transparent models.",
+     "group_id": "1909.01362::g01"
+    },
+    {
+     "passage_id": "1909.01362::s06::p000",
+     "summary": "The work introduced a model for forecasting conversational events that updates predictions at each step, achieves state-of-the-art performance on two publicly released datasets, and can provide substantial prior notice of derailment.",
+     "group_id": "1909.01362::g01"
+    },
+    {
+     "passage_id": "1909.01362::s06::p001",
+     "summary": "The authors view the work as a step toward real-time forecasting of other emergent conversation properties, with follow-up work adapting CRAFT to other tasks and adding supervised fine-tuning.",
+     "group_id": "1909.01362::g01"
+    },
+    {
+     "passage_id": "1909.01362::s06::p002",
+     "summary": "Open questions for derailment forecasting concern moderators’ desired warning timing, the optimal balance between precision, recall, and false positive rate, ethical implications, and user studies with actual moderators.",
+     "group_id": "1909.01362::g01"
+    },
+    {
+     "passage_id": "1909.01362::s06::p003",
+     "summary": "A practical limitation is reliance on balanced datasets, although derailment is rare and $AUPR=0.7$ suggests robustness across thresholds, with more work needed on the recall tradeoff.",
+     "group_id": "1909.01362::g01"
+    },
+    {
+     "passage_id": "1909.01362::s06::p004",
+     "summary": "A major limitation is assigning a single derailment label to each conversation, while finer-grained forecasting could account for trajectories such as recovery, repeat antisocial behavior, or other paths.",
+     "group_id": "1909.01362::g01"
+    },
+    {
+     "passage_id": "1909.01362::s06::p006",
+     "summary": "The acknowledgements thank named collaborators and anonymous reviewers, and state support from NSF CAREER award IIS-1750615 and NSF Grant SES-1741441.",
+     "group_id": "1909.01362::g01"
+    }
+   ],
+   "n_raw": 13,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1955,
+    "completion_tokens": 746,
+    "total_tokens": 2701,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

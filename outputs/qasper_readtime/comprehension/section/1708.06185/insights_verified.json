@@ -1,0 +1,360 @@
+{
+ "kept": [
+  {
+   "insight_id": "1708.06185::g00:i05",
+   "paper_id": "1708.06185",
+   "group_id": "1708.06185::g00",
+   "concise_text": "Emoji embeddings BIBREF16, learned from emoji descriptions, give better results than using plain GloVe and Edinburgh embeddings in word-vector combination experiments.",
+   "triple": {
+    "subject": "Emoji embeddings BIBREF16",
+    "predicate": "outperforms",
+    "object": "plain GloVe and Edinburgh embeddings"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1708.06185::s02::p007",
+    "1708.06185::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "1708.06185::g00:b2:f14"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Jointly supported: s02:p007 identifies Emoji embeddings as learned from emoji descriptions, and s05:p000 states they give better results than plain GloVe and Edinburgh embeddings in word-vector combination experiments."
+   },
+   "unit_id": "1708.06185::u005"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1708.06185::g00:i00",
+   "paper_id": "1708.06185",
+   "group_id": "1708.06185::g00",
+   "concise_text": "The EmoInt system addresses Task 1 of WASSA-2017 by preprocessing raw tweets before extracting features for emotion intensity estimation.",
+   "triple": {
+    "subject": "EmoInt",
+    "predicate": "addresses",
+    "object": "Task 1 of WASSA-2017"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1708.06185::s00::p001",
+    "1708.06185::s01::p000",
+    "1708.06185::s02::p001"
+   ],
+   "supporting_fact_ids": [
+    "1708.06185::g00:b0:f04",
+    "1708.06185::g00:b0:f05",
+    "1708.06185::g00:b0:f14"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "Cited paragraphs support the system solving Task 1 and preprocessing before feature extraction, but the concise_text adds a composed restatement; the triple itself is directly stated in s00:p001 and is not novel."
+   },
+   "unit_id": "1708.06185::u000"
+  },
+  {
+   "insight_id": "1708.06185::g00:i01",
+   "paper_id": "1708.06185",
+   "group_id": "1708.06185::g00",
+   "concise_text": "The fourteen feature extractors in EmoInt can be individually enabled or disabled, enabling the different combinations of feature extractors used in 10-fold cross validation.",
+   "triple": {
+    "subject": "fourteen feature extractors",
+    "predicate": "requires",
+    "object": "different combinations of feature extractors"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1708.06185::s02::p010",
+    "1708.06185::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1708.06185::g00:b2:f03",
+    "1708.06185::g00:b2:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.6,
+    "novelty": 0.3,
+    "causality_error": false,
+    "reason": "Sources state fourteen extractors can be individually enabled/disabled and that different combinations were used in 10-fold cross validation, but do not support the 'requires' relation or that individual toggling enables those combinations as written."
+   },
+   "unit_id": "1708.06185::u001"
+  },
+  {
+   "insight_id": "1708.06185::g00:i02",
+   "paper_id": "1708.06185",
+   "group_id": "1708.06185::g00",
+   "concise_text": "The final feature vector concatenates individual features, and the data was then passed to Support Vector Regression, AdaBoost, RandomForestRegressor, and BaggingRegressor of sklearn BIBREF20.",
+   "triple": {
+    "subject": "final feature vector",
+    "predicate": "requires",
+    "object": "various regressors Support Vector Regression, AdaBoost, RandomForestRegressor, and, BaggingRegressor of sklearn BIBREF20"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1708.06185::s02::p009",
+    "1708.06185::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1708.06185::g00:b2:f00",
+    "1708.06185::g00:b2:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.3,
+    "causality_error": false,
+    "reason": "Sources state the final feature vector concatenates individual features and that after feature extraction data was passed to regressors, but do not support that the final feature vector 'requires' those regressors; relation is unsupported."
+   },
+   "unit_id": "1708.06185::u002"
+  },
+  {
+   "insight_id": "1708.06185::g00:i03",
+   "paper_id": "1708.06185",
+   "group_id": "1708.06185::g00",
+   "concise_text": "The grid search optimized Pearson's Correlation score, and the chosen top performing models had the least error on Pearson's Correlation Coefficient and Spearman's rank-order correlation.",
+   "triple": {
+    "subject": "grid search",
+    "predicate": "evaluated_on",
+    "object": "Pearson's Correlation Coefficient and Spearman's rank-order correlation"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1708.06185::s03::p000",
+    "1708.06185::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1708.06185::g00:b2:f07",
+    "1708.06185::g00:b2:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.4,
+    "causality_error": false,
+    "reason": "Grid search optimized Pearson's Correlation score, while top performing models had least error on Pearson and Spearman metrics; the triple incorrectly says grid search was evaluated on both metrics."
+   },
+   "unit_id": "1708.06185::u003"
+  },
+  {
+   "insight_id": "1708.06185::g00:i04",
+   "paper_id": "1708.06185",
+   "group_id": "1708.06185::g00",
+   "concise_text": "Part-of-Speech tags and brown clusters of TweetNLP project were integrated into the system but were dropped from the final system after poor cross validation.",
+   "triple": {
+    "subject": "Part-of-Speech tags, brown clusters of TweetNLP project",
+    "predicate": "causes",
+    "object": "dropped from the final system"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1708.06185::s02::p008",
+    "1708.06185::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "1708.06185::g00:b1:f07",
+    "1708.06185::g00:b2:f12",
+    "1708.06185::g00:b2:f13"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "Sources say these syntax features did not perform well in cross validation and hence were dropped; the triple's 'causes' relation attributes dropping to the features themselves rather than poor cross-validation performance."
+   },
+   "unit_id": "1708.06185::u004"
+  },
+  {
+   "insight_id": "1708.06185::g00:i06",
+   "paper_id": "1708.06185",
+   "group_id": "1708.06185::g00",
+   "concise_text": "Because the features used are mostly lexicon based, the system has difficulties in understanding sarcastic tweets, which sentence embeddings taking context information into consideration can help resolve.",
+   "triple": {
+    "subject": "mostly lexicon based features",
+    "predicate": "limits",
+    "object": "understanding sarcastic tweets"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1708.06185::s07::p000",
+    "1708.06185::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1708.06185::g00:b3:f00",
+    "1708.06185::g00:b3:f01",
+    "1708.06185::g00:b3:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.79,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "The source says mostly lexicon-based features cause difficulties in capturing overall sentiment and separately notes difficulty understanding sarcastic tweets; it does not explicitly support the causal claim that lexicon-based features limit sarcasm understanding."
+   },
+   "unit_id": "1708.06185::u006"
+  },
+  {
+   "insight_id": "1708.06185::g00:i07",
+   "paper_id": "1708.06185",
+   "group_id": "1708.06185::g00",
+   "concise_text": "EmoInt provides plug and play access to various feature extractors and handy scripts for creating ensembles, while an ensemble averaging the top 2 performing models outperforms all individual models.",
+   "triple": {
+    "subject": "EmoInt",
+    "predicate": "extends",
+    "object": "ensembles"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1708.06185::s05::p000",
+    "1708.06185::s08::p000"
+   ],
+   "supporting_fact_ids": [
+    "1708.06185::g00:b2:f17",
+    "1708.06185::g00:b3:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.85,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.5,
+    "causality_error": false,
+    "reason": "Sources support EmoInt providing plug-and-play feature extractors and ensemble scripts, and that an averaged top-2 ensemble outperforms individual models, but the triple 'EmoInt extends ensembles' is not supported by the cited text."
+   },
+   "unit_id": "1708.06185::u007"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1708.06185::g00:i00",
+    "verdict": {
+     "insight_id": "1708.06185::g00:i00",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "Cited paragraphs support the system solving Task 1 and preprocessing before feature extraction, but the concise_text adds a composed restatement; the triple itself is directly stated in s00:p001 and is not novel."
+    },
+    "reason": "Cited paragraphs support the system solving Task 1 and preprocessing before feature extraction, but the concise_text adds a composed restatement; the triple itself is directly stated in s00:p001 and is not novel."
+   },
+   {
+    "insight_id": "1708.06185::g00:i01",
+    "verdict": {
+     "insight_id": "1708.06185::g00:i01",
+     "keep": false,
+     "support": 0.6,
+     "novelty": 0.3,
+     "causality_error": false,
+     "reason": "Sources state fourteen extractors can be individually enabled/disabled and that different combinations were used in 10-fold cross validation, but do not support the 'requires' relation or that individual toggling enables those combinations as written."
+    },
+    "reason": "Sources state fourteen extractors can be individually enabled/disabled and that different combinations were used in 10-fold cross validation, but do not support the 'requires' relation or that individual toggling enables those combinations as written."
+   },
+   {
+    "insight_id": "1708.06185::g00:i02",
+    "verdict": {
+     "insight_id": "1708.06185::g00:i02",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.3,
+     "causality_error": false,
+     "reason": "Sources state the final feature vector concatenates individual features and that after feature extraction data was passed to regressors, but do not support that the final feature vector 'requires' those regressors; relation is unsupported."
+    },
+    "reason": "Sources state the final feature vector concatenates individual features and that after feature extraction data was passed to regressors, but do not support that the final feature vector 'requires' those regressors; relation is unsupported."
+   },
+   {
+    "insight_id": "1708.06185::g00:i03",
+    "verdict": {
+     "insight_id": "1708.06185::g00:i03",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.4,
+     "causality_error": false,
+     "reason": "Grid search optimized Pearson's Correlation score, while top performing models had least error on Pearson and Spearman metrics; the triple incorrectly says grid search was evaluated on both metrics."
+    },
+    "reason": "Grid search optimized Pearson's Correlation score, while top performing models had least error on Pearson and Spearman metrics; the triple incorrectly says grid search was evaluated on both metrics."
+   },
+   {
+    "insight_id": "1708.06185::g00:i04",
+    "verdict": {
+     "insight_id": "1708.06185::g00:i04",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "Sources say these syntax features did not perform well in cross validation and hence were dropped; the triple's 'causes' relation attributes dropping to the features themselves rather than poor cross-validation performance."
+    },
+    "reason": "Sources say these syntax features did not perform well in cross validation and hence were dropped; the triple's 'causes' relation attributes dropping to the features themselves rather than poor cross-validation performance."
+   },
+   {
+    "insight_id": "1708.06185::g00:i05",
+    "verdict": {
+     "insight_id": "1708.06185::g00:i05",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Jointly supported: s02:p007 identifies Emoji embeddings as learned from emoji descriptions, and s05:p000 states they give better results than plain GloVe and Edinburgh embeddings in word-vector combination experiments."
+    }
+   },
+   {
+    "insight_id": "1708.06185::g00:i06",
+    "verdict": {
+     "insight_id": "1708.06185::g00:i06",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "The source says mostly lexicon-based features cause difficulties in capturing overall sentiment and separately notes difficulty understanding sarcastic tweets; it does not explicitly support the causal claim that lexicon-based features limit sarcasm understanding."
+    },
+    "reason": "The source says mostly lexicon-based features cause difficulties in capturing overall sentiment and separately notes difficulty understanding sarcastic tweets; it does not explicitly support the causal claim that lexicon-based features limit sarcasm understanding."
+   },
+   {
+    "insight_id": "1708.06185::g00:i07",
+    "verdict": {
+     "insight_id": "1708.06185::g00:i07",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.5,
+     "causality_error": false,
+     "reason": "Sources support EmoInt providing plug-and-play feature extractors and ensemble scripts, and that an averaged top-2 ensemble outperforms individual models, but the triple 'EmoInt extends ensembles' is not supported by the cited text."
+    },
+    "reason": "Sources support EmoInt providing plug-and-play feature extractors and ensemble scripts, and that an averaged top-2 ensemble outperforms individual models, but the triple 'EmoInt extends ensembles' is not supported by the cited text."
+   }
+  ],
+  "calls": [
+   {
+    "n": 8,
+    "parsed": true,
+    "usage": {
+     "prompt_tokens": 3626,
+     "completion_tokens": 673,
+     "total_tokens": 4299,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

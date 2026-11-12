@@ -1,0 +1,112 @@
+{
+ "paper_id": "1906.01081",
+ "title": "Handling Divergent Reference Texts when Evaluating Table-to-Text Generation",
+ "abstract": "Automatically constructed datasets for generating text from semi-structured data (tables), such as WikiBio, often contain reference texts that diverge from the information in the corresponding semi-structured data. We show that metrics which rely solely on the reference texts, such as BLEU and ROUGE, show poor correlation with human judgments when those references diverge. We propose a new metric, PARENT, which aligns n-grams from the reference and generated texts to the semi-structured data before computing their precision and recall. Through a large scale human evaluation study of table-to-text models for WikiBio, we show that PARENT correlates with human judgments better than existing text generation metrics. We also adapt and evaluate the information extraction based evaluation proposed by Wiseman et al (2017), and show that PARENT has comparable correlation to it, while being easier to use. We show that PARENT is also applicable when the reference texts are elicited from humans using the data from the WebNLG challenge.",
+ "sections": [
+  "Introduction",
+  "Table-to-Text Generation",
+  "PARENT",
+  "Evaluation via Information Extraction",
+  "Experiments & Results",
+  "Data & Models",
+  "Human Evaluation",
+  "Compared Metrics",
+  "Correlation Comparison",
+  "Analysis",
+  "WebNLG Dataset",
+  "Related Work",
+  "Conclusions",
+  "Acknowledgements",
+  "Information Extraction System",
+  "Hyperparameters",
+  "Sample Outputs"
+ ],
+ "n_paragraphs": 40,
+ "n_tokens": 4902,
+ "figures_and_tables": [
+  {
+   "caption_id": "1906.01081::fig000",
+   "paper_id": "1906.01081",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: A table from the WikiBio dataset (right), its reference description and three hypothetical generated texts with scores assigned to them by automatic evaluation metrics. Text which cannot be inferred from the table is in red, and text which can be inferred but isn’t present in the reference is in green. PARENT is our proposed metric.",
+   "n_tokens": 68
+  },
+  {
+   "caption_id": "1906.01081::fig001",
+   "paper_id": "1906.01081",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Models used for WikiBio, with the human evaluation scores for these model outputs and the reference texts. PG-Net: Pointer-Generator network. Human scores computed using Thurstone’s method (Tsukida and Gupta, 2011).",
+   "n_tokens": 52
+  },
+  {
+   "caption_id": "1906.01081::fig002",
+   "paper_id": "1906.01081",
+   "file": "6-Figure2-1.png",
+   "caption": "Figure 2: Instructions to crowd-workers for comparing two generated texts.",
+   "n_tokens": 14
+  },
+  {
+   "caption_id": "1906.01081::fig003",
+   "paper_id": "1906.01081",
+   "file": "6-Table2-1.png",
+   "caption": "Table 2: Correlation of metrics with human judgments on WikiBio. A superscript of C/W indicates that the correlation is significantly lower than that of PARENTC/W using a bootstrap confidence test for α = 0.1.",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "1906.01081::fig004",
+   "paper_id": "1906.01081",
+   "file": "7-Figure3-1.png",
+   "caption": "Figure 3: Distribution of metric correlations across 500 bootstrap samples. PRT = PARENT.",
+   "n_tokens": 20
+  },
+  {
+   "caption_id": "1906.01081::fig005",
+   "paper_id": "1906.01081",
+   "file": "7-Figure4-1.png",
+   "caption": "Figure 4: Correlation of the metrics to human judgment as the percentage of entailed examples in WikiBio is varied.",
+   "n_tokens": 25
+  },
+  {
+   "caption_id": "1906.01081::fig006",
+   "paper_id": "1906.01081",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: Accuracy on making the same judgments as humans between pairs of generated texts. p < 0.01∗/0.05†/0.10‡: accuracy is significantly higher than the next best accuracy to the left using a paired McNemar’s test.",
+   "n_tokens": 59
+  },
+  {
+   "caption_id": "1906.01081::fig007",
+   "paper_id": "1906.01081",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: Average pearson correlation across 500 bootstrap samples of each metric to human ratings for each aspect of the generations from the WebNLG challenge.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1906.01081::fig008",
+   "paper_id": "1906.01081",
+   "file": "9-Figure5-1.png",
+   "caption": "Figure 5: Histogram of the recall of the references against the table (Eq. 6), which is used to set 1 − λ. Lower values indicate that the metric relies more on the table and less on the reference.",
+   "n_tokens": 47
+  },
+  {
+   "caption_id": "1906.01081::fig009",
+   "paper_id": "1906.01081",
+   "file": "11-Figure6-1.png",
+   "caption": "Figure 6: An input-output pair for the information extraction system. <R> and <C> are special symbols used to separate (attribute, value) pairs and attributes from values, respectively.",
+   "n_tokens": 40
+  },
+  {
+   "caption_id": "1906.01081::fig010",
+   "paper_id": "1906.01081",
+   "file": "11-Table5-1.png",
+   "caption": "Table 5: Performance of the Information Extraction system.",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "1906.01081::fig011",
+   "paper_id": "1906.01081",
+   "file": "12-Table6-1.png",
+   "caption": "Table 6: Sample references and predictions from PG-Net with beam size 8. Information which is absent from the reference, but can be inferred from the table is in bold. Information which is present in the reference, but cannot be inferred from the table is in italics.",
+   "n_tokens": 58
+  }
+ ]
+}

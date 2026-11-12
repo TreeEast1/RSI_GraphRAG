@@ -1,0 +1,573 @@
+{
+ "1810.12091::s00::p000": [
+  [
+   "Users of photo-sharing websites such as Flickr",
+   "often provide",
+   "short textual descriptions in the form of tags"
+  ],
+  [
+   "latitude and longitude coordinates",
+   "are nowadays commonly made available",
+   "as well"
+  ],
+  [
+   "Flickr",
+   "can thus be regarded as",
+   "a source of environmental information"
+  ],
+  [
+   "the usefulness of Flickr for characterizing the natural environment",
+   "is",
+   "less well-understood"
+  ]
+ ],
+ "1810.12091::s00::p001": [
+  [
+   "Flickr tags",
+   "capture",
+   "valuable ecological information"
+  ],
+  [
+   "ecologists",
+   "have mostly used",
+   "social media to conduct manual evaluations of image content"
+  ],
+  [
+   "bag-of-words representations derived from Flickr tags",
+   "were found to give",
+   "promising result for predicting a range of different environemental phenomena"
+  ]
+ ],
+ "1810.12091::s00::p002": [
+  [
+   "Vector space embeddings",
+   "are",
+   "representations in which the objects from a given domain are encoded using relatively low-dimensional vectors"
+  ],
+  [
+   "the representation of a location in our model",
+   "is determined by",
+   "the tags of the photos that have been taken near that location"
+  ]
+ ],
+ "1810.12091::s00::p003": [
+  [
+   "the off-the-shelf GloVe model",
+   "performed",
+   "surprisingly poorly"
+  ],
+  [
+   "the number of tags associated with a given location",
+   "can be",
+   "quite small"
+  ],
+  [
+   "term selection",
+   "is in some cases critical to obtain",
+   "vector spaces that capture the relevant aspects of geographic locations"
+  ],
+  [
+   "vector space embeddings learned from Flickr tags alone",
+   "are sometimes outperformed by",
+   "bag-of-words representations"
+  ]
+ ],
+ "1810.12091::s01::p000": [
+  [
+   "word embeddings",
+   "represent",
+   "word meaning using vectors of typically around 300 dimensions"
+  ],
+  [
+   "different methods for learning such word embeddings",
+   "include",
+   "Skip-gram and the Continuous Bag-of-Words (CBOW) model, GloVe, and fastText"
+  ],
+  [
+   "The model we consider in this paper",
+   "builds on",
+   "GloVe"
+  ],
+  [
+   "GloVe",
+   "was designed to capture",
+   "linear regularities of word-word co-occurrence"
+  ],
+  [
+   "In GloVe",
+   "there are",
+   "two word vectors INLINEFORM0 and INLINEFORM1 for each word in the vocabulary"
+  ]
+ ],
+ "1810.12091::s01::p001": [
+  [
+   "The weighting function INLINEFORM6",
+   "is used to limit",
+   "the impact of rare terms"
+  ],
+  [
+   "the target word vectors INLINEFORM11",
+   "correspond to",
+   "the actual word representations which we would like to find"
+  ]
+ ],
+ "1810.12091::s01::p002": [
+  [
+   "various lexicons",
+   "have been used to obtain",
+   "word embeddings that are better suited at modelling sentiment BIBREF15 and antonymy BIBREF29"
+  ]
+ ],
+ "1810.12091::s02::p000": [
+  [
+   "the low-dimensional vector representations",
+   "lead to",
+   "more faithful predictions than the original high-dimensional census data"
+  ]
+ ],
+ "1810.12091::s02::p002": [
+  [
+   "Several methods",
+   "use word embedding models to learn",
+   "representations of Points-of-Interest (POIs) that can be used for predicting user visits BIBREF33 , BIBREF34 , BIBREF35"
+  ],
+  [
+   "many of these approaches",
+   "do not actually consider",
+   "any textual information"
+  ],
+  [
+   "the Skip-gram model",
+   "is utilized to create",
+   "a global pattern of users' POIs"
+  ],
+  [
+   "Each location",
+   "was treated as",
+   "a word"
+  ],
+  [
+   "the other locations visited before or after",
+   "were treated as",
+   "context words"
+  ]
+ ],
+ "1810.12091::s03::p000": [
+  [
+   "tags of georeferenced Flickr photos",
+   "can effectively supplement",
+   "traditional scientific environmental data"
+  ],
+  [
+   "combining both types of information",
+   "leads to",
+   "significantly better results than using either of them alone"
+  ],
+  [
+   "their straightforward way of combining both information sources",
+   "is",
+   "far from optimal"
+  ]
+ ],
+ "1810.12091::s03::p001": [
+  [
+   "the problem of embedding Flickr tags",
+   "has so far received",
+   "very limited attention"
+  ],
+  [
+   "their focus",
+   "was on",
+   "learning embeddings that capture word meaning"
+  ]
+ ],
+ "1810.12091::s04::p001": [
+  [
+   "INLINEFORM0 and INLINEFORM1",
+   "are",
+   "parameters to control the importance of each component in the model"
+  ],
+  [
+   "Component INLINEFORM2",
+   "will be used to constrain",
+   "the representation of the locations based on their textual description (i.e. Flickr tags)"
+  ],
+  [
+   "INLINEFORM3",
+   "will be used to constrain",
+   "the representation of the locations based on their numerical features"
+  ],
+  [
+   "INLINEFORM4",
+   "will impose",
+   "the constraint that locations belonging to the same category should be close together in the space"
+  ]
+ ],
+ "1810.12091::s05::p000": [
+  [
+   "Many of the tags associated with Flickr photos",
+   "describe",
+   "characteristics of the places where these photos were taken"
+  ],
+  [
+   "tags",
+   "may correspond to",
+   "place names (e.g. Brussels, England, Scandinavia)"
+  ],
+  [
+   "all of which",
+   "were uploaded to Flickr before",
+   "the end of September 2015"
+  ]
+ ],
+ "1810.12091::s05::p001": [
+  [
+   "INLINEFORM0",
+   "is",
+   "a set of geographic locations, each characterized by latitude and longitude coordinates"
+  ],
+  [
+   "the weighting scheme from BIBREF7",
+   "combines",
+   "a Gaussian kernel (to model spatial proximity) with Positive Pointwise Mutual Information (PPMI)"
+  ]
+ ],
+ "1810.12091::s05::p002": [
+  [
+   "the number of times INLINEFORM5 occurs in photos near INLINEFORM6",
+   "is",
+   "an important criterion"
+  ]
+ ],
+ "1810.12091::s05::p003": [
+  [
+   "the threshold INLINEFORM0",
+   "is assumed to be",
+   "fixed"
+  ],
+  [
+   "INLINEFORM2",
+   "is",
+   "the Haversine distance"
+  ],
+  [
+   "A tag occurrence",
+   "is counted only once for",
+   "all photos by the same user at the same location"
+  ]
+ ],
+ "1810.12091::s05::p005": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the set of all tags"
+  ],
+  [
+   "INLINEFORM1",
+   "is",
+   "the set of locations"
+  ]
+ ],
+ "1810.12091::s05::p006": [
+  [
+   "INLINEFORM0",
+   "is",
+   "a set of (mutually exclusive) properties of locations in which we are interested"
+  ]
+ ],
+ "1810.12091::s05::p007": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the probability that a photo with tag INLINEFORM1 has a location near INLINEFORM2"
+  ],
+  [
+   "INLINEFORM3",
+   "is",
+   "the probability that an arbitrary tag occurrence is assigned to a photo near a location in INLINEFORM4"
+  ],
+  [
+   "INLINEFORM5",
+   "is estimated using",
+   "Bayesian smoothing"
+  ]
+ ],
+ "1810.12091::s05::p008": [
+  [
+   "INLINEFORM0",
+   "controls",
+   "the amount of smoothing"
+  ],
+  [
+   "INLINEFORM0",
+   "will be tuned in",
+   "the experiments"
+  ],
+  [
+   "maximum likelihood estimation",
+   "can be used for",
+   "INLINEFORM1"
+  ]
+ ],
+ "1810.12091::s05::p009": [
+  [
+   "Location embedding",
+   "finds",
+   "a vector INLINEFORM0 for each location INLINEFORM1"
+  ],
+  [
+   "similar locations",
+   "are represented using",
+   "similar vectors"
+  ],
+  [
+   "tag occurrences",
+   "are treated as",
+   "context words of geographic locations"
+  ]
+ ],
+ "1810.12091::s05::p010": [
+  [
+   "tags",
+   "play the role of",
+   "the context words in the GloVe model"
+  ],
+  [
+   "evaluating the full objective above",
+   "would not be",
+   "computationally feasible"
+  ]
+ ],
+ "1810.12091::s06::p000": [
+  [
+   "These",
+   "include",
+   "nine (real-valued) numerical features"
+  ],
+  [
+   "five climate related features",
+   "are",
+   "avg. temperature, avg. precipitation, avg. solar radiation, avg. wind speed, and avg. water vapor pressure"
+  ],
+  [
+   "each location",
+   "should belong to",
+   "exactly 4 categories"
+  ]
+ ],
+ "1810.12091::s06::p001": [
+  [
+   "Numerical features",
+   "can be treated similarly to",
+   "the tag occurrences"
+  ],
+  [
+   "the value of a given numerical feature",
+   "can be predicted from",
+   "the location vectors using a linear mapping"
+  ]
+ ],
+ "1810.12091::s06::p002": [
+  [
+   "INLINEFORM0",
+   "denotes",
+   "set of all numerical features"
+  ],
+  [
+   "INLINEFORM1",
+   "is",
+   "the value of feature INLINEFORM2 for location INLINEFORM3 , after z-score normalization"
+  ]
+ ],
+ "1810.12091::s06::p003": [
+  [
+   "categorical features",
+   "are taken into account by",
+   "the constraint that locations belonging to the same category should be close together in the space"
+  ],
+  [
+   "locations belonging to the same category",
+   "should be",
+   "close together in the space"
+  ],
+  [
+   "each category type INLINEFORM0",
+   "is represented as",
+   "a vector INLINEFORM1"
+  ]
+ ],
+ "1810.12091::s07::p001": [
+  [
+   "the European network of nature protected sites Natura 2000 dataset",
+   "is used as",
+   "ground truth"
+  ],
+  [
+   "the distribution of 100 species across Europe",
+   "is predicted using",
+   "the European network of nature protected sites Natura 2000 dataset"
+  ],
+  [
+   "each of these species",
+   "is considered as",
+   "a binary classification problem"
+  ],
+  [
+   "the set of locations INLINEFORM0",
+   "is defined as",
+   "the 26,425 distinct sites occurring in the dataset"
+  ]
+ ],
+ "1810.12091::s07::p002": [
+  [
+   "Predicting soil type",
+   "is treated as",
+   "a binary classification problem"
+  ],
+  [
+   "the soil type experiments",
+   "use",
+   "the same set of locations INLINEFORM0 as in the species distribution experiments"
+  ],
+  [
+   "none of the soil type features",
+   "are used for",
+   "generating the embeddings"
+  ]
+ ],
+ "1810.12091::s07::p003": [
+  [
+   "CORINE land cover classes at levels 1, 2 and level 3",
+   "are predicted using",
+   "the same set of locations INLINEFORM0 as in the species distribution experiments"
+  ],
+  [
+   "Predicting CORINE land cover classes at levels 1, 2 and level 3",
+   "is treated as",
+   "a binary classification problem"
+  ],
+  [
+   "none of the CORINE features",
+   "are used for",
+   "generating the embeddings"
+  ]
+ ],
+ "1810.12091::s07::p005": [
+  [
+   "5 climate related features",
+   "are",
+   "the average precipitation, temperature, solar radiation, water vapor pressure, and wind speed"
+  ],
+  [
+   "this experiment",
+   "uses",
+   "the same set of locations INLINEFORM0 as for species distribution"
+  ],
+  [
+   "None of the climate features",
+   "is used for",
+   "constructing the embeddings for this experiment"
+  ]
+ ],
+ "1810.12091::s07::p006": [
+  [
+   "the crowdsourced dataset from the ScenicOrNot website",
+   "is used as",
+   "ground truth"
+  ]
+ ],
+ "1810.12091::s08::p000": [
+  [
+   "all experiments",
+   "use",
+   "Support Vector Machines (SVMs) for classification problems and Support Vector Regression (SVR) for regression problems"
+  ],
+  [
+   "the set of locations INLINEFORM1",
+   "was split into",
+   "two-thirds for training, one-sixth for testing, and one-sixth for tuning the parameters"
+  ],
+  [
+   "All embedding models",
+   "are learned with",
+   "Adagrad using 30 iterations"
+  ],
+  [
+   "the scenicness experiments",
+   "considered",
+   "scores 3 and 7 as cut-off points, leading to three classes"
+  ]
+ ],
+ "1810.12091::s09::p000": [
+  [
+   "EGEL-Tags",
+   "only uses",
+   "the information from the Flickr tags"
+  ],
+  [
+   "EGEL-Tags+NS",
+   "is similar to",
+   "EGEL-Tags but with the addition of negative examples"
+  ]
+ ],
+ "1810.12091::s10::p000": [
+  [
+   "binary classification tasks",
+   "are presented in terms of",
+   "average precision, average recall and macro average F1 score"
+  ],
+  [
+   "EGEL-All",
+   "outperforms",
+   "the baselines for all the considered tasks"
+  ]
+ ],
+ "1810.12091::s10::p001": [
+  [
+   "the usefulness of embeddings for predicting environmental features",
+   "is only consistently the case for",
+   "the variants that use both the tags and the structured datasets"
+  ],
+  [
+   "BOW-Tags",
+   "sometimes achieves",
+   "the best results"
+  ],
+  [
+   "BOW-KL(Tags)",
+   "performs worse than",
+   "BOW-Tags"
+  ]
+ ],
+ "1810.12091::s10::p002": [
+  [
+   "GloVe",
+   "performs better than",
+   "the bag-of-words model for large corpora"
+  ],
+  [
+   "GloVe",
+   "performs worse for",
+   "smaller corpora"
+  ]
+ ],
+ "1810.12091::s11::p000": [
+  [
+   "The experimental results",
+   "show",
+   "that our model can integrate Flickr tags with structured information in a more effective way than existing methods"
+  ]
+ ],
+ "1810.12091::s12::p000": [
+  [
+   "Shelan Jeawak",
+   "has been sponsored by",
+   "HCED Iraq"
+  ],
+  [
+   "Steven Schockaert",
+   "has been supported by",
+   "ERC Starting Grant 637277"
+  ]
+ ]
+}

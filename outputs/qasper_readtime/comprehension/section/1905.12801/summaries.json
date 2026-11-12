@@ -1,0 +1,402 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1905.12801::s00::p000",
+   "summary": "NLP models capture unwanted biases and stereotypes from training data, raising concerns about socioeconomic, ethnic and gender discrimination in public deployment.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s00::p001",
+   "summary": "Studies identify algorithmic bias in NLP applications, including Google autocomplete suggestions, advertisement delivery systems, and coreference resolution systems.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s00::p002",
+   "summary": "Language modelling has downstream applications such as text generation, is vulnerable to gender bias, and this study introduces a loss function equalizing gendered word pair probabilities.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s00::p003",
+   "summary": "Contributions include loss-function bias alleviation, equalizing male and female word probabilities, end-to-end debiasing, interpretation, and best results combined with counterfactual data augmentation.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s01::p000",
+   "summary": "Bias research in NLP applications has increased, with relevant work divided into word embedding debiasing and data debiasing by preprocessing.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s02::p000",
+   "summary": "Training data uses Daily Mail news articles with 219,506 articles, randomly subsampled to 5% of text and around 8.25 million tokens.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s03::p000",
+   "summary": "The LSTM language model uses pre-trained 300-dimensional GloVe, 2 hidden layers with 300 units, sequence length 35, learning rate 20, dropout rate 0.25, gradient clip 0.25, 150 epochs, batch size 48, and early stopping patience 5.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s04::p000",
+   "summary": "Language models are usually trained using cross-entropy loss, with cross-entropy loss at time step INLINEFORM0 given as INLINEFORM1.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s04::p001",
+   "summary": "INLINEFORM0 is the vocabulary, INLINEFORM1 is the one hot vector of ground truth, and INLINEFORM2 indicates the output softmax probability.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s04::p002",
+   "summary": "A loss term INLINEFORM0 is introduced to equalize predicted probabilities of gender pairs such as woman and man, with INLINEFORM1.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s04::p003",
+   "summary": "INLINEFORM0 and INLINEFORM1 are corresponding gender pairs, INLINEFORM2 is the set size, INLINEFORM3 is output softmax probability, and gender pairs from BIBREF7 neutralize only gender information.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s04::p004",
+   "summary": "INLINEFORM0 is a hyperparameter, INLINEFORM1 is corpus size, and INLINEFORM2 encourages convergence toward a minimum with the lowest gender bias.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p000",
+   "summary": "Language models are evaluated using perplexity and an array of bias metrics, with gender pairs from BIBREF7 containing 223 pairs and all other words considered gender-neutral.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p001",
+   "summary": "Co-occurrence bias compares occurrences of gender-neutral words with female and male words in model-generated texts, defining gender bias as INLINEFORM0.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p002",
+   "summary": "INLINEFORM0 is a set of gender-neutral words, INLINEFORM1 is occurrences with gender INLINEFORM3, co-occurrences use a sliding window of size 10, and words occurring more than 20 times are considered.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p003",
+   "summary": "A normalized version of INLINEFORM0 is evaluated as conditional co-occurrence bias, INLINEFORM1, defined as INLINEFORM2.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p004",
+   "summary": "The paragraph states where INLINEFORM0.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p005",
+   "summary": "INLINEFORM0 is less affected by disparity in male and female word distribution, and the ratio of occurrence of male and female words, INLINEFORM1, is reported as INLINEFORM2.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p006",
+   "summary": "Causal testing exposes models to paired samples differing only in one attribute, with output disparity interpreted as bias related to that attribute.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p007",
+   "summary": "Causal occupation bias evaluation is limited to gender-neutral occupations using two template sets, with the first measuring occupation word probabilities depending on gender information in the seed.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p008",
+   "summary": "The vertical bar separates the seed sequence from the target occupation, and causal occupation bias conditioned on gender is measured as INLINEFORM0.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p009",
+   "summary": "INLINEFORM0 is a set of gender-neutral occupations, INLINEFORM1 is the gender pairs set size, and the second template set captures gendered word probabilities depending on occupation words in the seed.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p010",
+   "summary": "Causal occupation bias conditioned on occupation is represented as INLINEFORM0.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p011",
+   "summary": "INLINEFORM0 is a set of gender-neutral occupations, INLINEFORM1 is the gender pairs set size, and INLINEFORM2 is the softmax probability of man for the seed sequence The doctor is a.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p012",
+   "summary": "Both INLINEFORM0 and INLINEFORM1 contribute to gender bias in model-generated texts, while INLINEFORM2 is more easily influenced by general disparity in male and female word probabilities.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p013",
+   "summary": "Gender-neutral occupations measure embedding bias, defined as the difference between Euclidean distances of occupation words to male words and female counterparts, with INLINEFORM1 defined as INLINEFORM2.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s05::p014",
+   "summary": "INLINEFORM0 is a set of gender-neutral occupations, INLINEFORM1 is the gender pairs set size, and INLINEFORM2 is the word-to-vector dictionary.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s06::p000",
+   "summary": "CDA swaps all gendered words using a bidirectional dictionary of gender pairs, creating a dataset twice the original size with identical contextual distributions for both genders.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s06::p001",
+   "summary": "The bias regularization method of BIBREF5 debiases word embeddings during language model training, uses hyperparameter tuning for the best regularization coefficient, and is later called REG.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s07::p000",
+   "summary": "Experiments measure training data co-occurrence bias, tune INLINEFORM0 and INLINEFORM1, test CDA, REG, and their combination, and evaluate bias using template datasets and 10,000 documents of 500 words each.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s08::p000",
+   "summary": "Table TABREF12 shows the baseline amplifies training data bias, while the method at INLINEFORM2 value of 1 reduces INLINEFORM3 by 58.95%, INLINEFORM4 by 45.74%, INLINEFORM5 by 100%, INLINEFORM6 by 98.52%, and INLINEFORM7 by 98.98%.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s08::p001",
+   "summary": "REG is not very effective in mitigating bias, achieves the best perplexity, has a slight regularization effect, and the loss function outperforms REG in INLINEFORM0 and produces the most debiased embedding.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s08::p002",
+   "summary": "The method outperforms CDA in INLINEFORM0, INLINEFORM1, and INLINEFORM2, while CDA achieves slightly better co-occurrence biases INLINEFORM3 and INLINEFORM4 and better perplexity.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s08::p003",
+   "summary": "The combination of CDA and the loss function outperforms all methods in all measures of biases without compromising perplexity.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s09::p000",
+   "summary": "The research proposes a new approach for mitigating gender bias in neural language models and emphasizes loss function based debiasing as effective, powerful, and generalizable.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s09::p001",
+   "summary": "All experimented debiasing techniques rely on a predefined set of gender pairs, which is a limitation and leaves gender associated words without pairs, like pregnant, improperly treated.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s09::p002",
+   "summary": "Future work includes a context-aware loss function distinguishing unbiased and biased gendered word mentions and exploring application of the method to mitigating racial bias.",
+   "group_id": "1905.12801::g00"
+  },
+  {
+   "passage_id": "1905.12801::s10::p000",
+   "summary": "The authors thank Sam Bowman, Shikha Bordia, Cuiying Yang, Gang Qian, Xiyu Miao, Qianyi Fan, Tian Liu, Stanislav Sobolevsky, and reviewers.",
+   "group_id": "1905.12801::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1905.12801::g00",
+   "summaries": [
+    {
+     "passage_id": "1905.12801::s00::p000",
+     "summary": "NLP models capture unwanted biases and stereotypes from training data, raising concerns about socioeconomic, ethnic and gender discrimination in public deployment.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s00::p001",
+     "summary": "Studies identify algorithmic bias in NLP applications, including Google autocomplete suggestions, advertisement delivery systems, and coreference resolution systems.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s00::p002",
+     "summary": "Language modelling has downstream applications such as text generation, is vulnerable to gender bias, and this study introduces a loss function equalizing gendered word pair probabilities.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s00::p003",
+     "summary": "Contributions include loss-function bias alleviation, equalizing male and female word probabilities, end-to-end debiasing, interpretation, and best results combined with counterfactual data augmentation.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s01::p000",
+     "summary": "Bias research in NLP applications has increased, with relevant work divided into word embedding debiasing and data debiasing by preprocessing.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s02::p000",
+     "summary": "Training data uses Daily Mail news articles with 219,506 articles, randomly subsampled to 5% of text and around 8.25 million tokens.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s03::p000",
+     "summary": "The LSTM language model uses pre-trained 300-dimensional GloVe, 2 hidden layers with 300 units, sequence length 35, learning rate 20, dropout rate 0.25, gradient clip 0.25, 150 epochs, batch size 48, and early stopping patience 5.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s04::p000",
+     "summary": "Language models are usually trained using cross-entropy loss, with cross-entropy loss at time step INLINEFORM0 given as INLINEFORM1.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s04::p001",
+     "summary": "INLINEFORM0 is the vocabulary, INLINEFORM1 is the one hot vector of ground truth, and INLINEFORM2 indicates the output softmax probability.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s04::p002",
+     "summary": "A loss term INLINEFORM0 is introduced to equalize predicted probabilities of gender pairs such as woman and man, with INLINEFORM1.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s04::p003",
+     "summary": "INLINEFORM0 and INLINEFORM1 are corresponding gender pairs, INLINEFORM2 is the set size, INLINEFORM3 is output softmax probability, and gender pairs from BIBREF7 neutralize only gender information.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s04::p004",
+     "summary": "INLINEFORM0 is a hyperparameter, INLINEFORM1 is corpus size, and INLINEFORM2 encourages convergence toward a minimum with the lowest gender bias.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p000",
+     "summary": "Language models are evaluated using perplexity and an array of bias metrics, with gender pairs from BIBREF7 containing 223 pairs and all other words considered gender-neutral.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p001",
+     "summary": "Co-occurrence bias compares occurrences of gender-neutral words with female and male words in model-generated texts, defining gender bias as INLINEFORM0.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p002",
+     "summary": "INLINEFORM0 is a set of gender-neutral words, INLINEFORM1 is occurrences with gender INLINEFORM3, co-occurrences use a sliding window of size 10, and words occurring more than 20 times are considered.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p003",
+     "summary": "A normalized version of INLINEFORM0 is evaluated as conditional co-occurrence bias, INLINEFORM1, defined as INLINEFORM2.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p004",
+     "summary": "The paragraph states where INLINEFORM0.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p005",
+     "summary": "INLINEFORM0 is less affected by disparity in male and female word distribution, and the ratio of occurrence of male and female words, INLINEFORM1, is reported as INLINEFORM2.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p006",
+     "summary": "Causal testing exposes models to paired samples differing only in one attribute, with output disparity interpreted as bias related to that attribute.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p007",
+     "summary": "Causal occupation bias evaluation is limited to gender-neutral occupations using two template sets, with the first measuring occupation word probabilities depending on gender information in the seed.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p008",
+     "summary": "The vertical bar separates the seed sequence from the target occupation, and causal occupation bias conditioned on gender is measured as INLINEFORM0.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p009",
+     "summary": "INLINEFORM0 is a set of gender-neutral occupations, INLINEFORM1 is the gender pairs set size, and the second template set captures gendered word probabilities depending on occupation words in the seed.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p010",
+     "summary": "Causal occupation bias conditioned on occupation is represented as INLINEFORM0.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p011",
+     "summary": "INLINEFORM0 is a set of gender-neutral occupations, INLINEFORM1 is the gender pairs set size, and INLINEFORM2 is the softmax probability of man for the seed sequence The doctor is a.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p012",
+     "summary": "Both INLINEFORM0 and INLINEFORM1 contribute to gender bias in model-generated texts, while INLINEFORM2 is more easily influenced by general disparity in male and female word probabilities.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p013",
+     "summary": "Gender-neutral occupations measure embedding bias, defined as the difference between Euclidean distances of occupation words to male words and female counterparts, with INLINEFORM1 defined as INLINEFORM2.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s05::p014",
+     "summary": "INLINEFORM0 is a set of gender-neutral occupations, INLINEFORM1 is the gender pairs set size, and INLINEFORM2 is the word-to-vector dictionary.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s06::p000",
+     "summary": "CDA swaps all gendered words using a bidirectional dictionary of gender pairs, creating a dataset twice the original size with identical contextual distributions for both genders.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s06::p001",
+     "summary": "The bias regularization method of BIBREF5 debiases word embeddings during language model training, uses hyperparameter tuning for the best regularization coefficient, and is later called REG.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s07::p000",
+     "summary": "Experiments measure training data co-occurrence bias, tune INLINEFORM0 and INLINEFORM1, test CDA, REG, and their combination, and evaluate bias using template datasets and 10,000 documents of 500 words each.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s08::p000",
+     "summary": "Table TABREF12 shows the baseline amplifies training data bias, while the method at INLINEFORM2 value of 1 reduces INLINEFORM3 by 58.95%, INLINEFORM4 by 45.74%, INLINEFORM5 by 100%, INLINEFORM6 by 98.52%, and INLINEFORM7 by 98.98%.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s08::p001",
+     "summary": "REG is not very effective in mitigating bias, achieves the best perplexity, has a slight regularization effect, and the loss function outperforms REG in INLINEFORM0 and produces the most debiased embedding.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s08::p002",
+     "summary": "The method outperforms CDA in INLINEFORM0, INLINEFORM1, and INLINEFORM2, while CDA achieves slightly better co-occurrence biases INLINEFORM3 and INLINEFORM4 and better perplexity.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s08::p003",
+     "summary": "The combination of CDA and the loss function outperforms all methods in all measures of biases without compromising perplexity.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s09::p000",
+     "summary": "The research proposes a new approach for mitigating gender bias in neural language models and emphasizes loss function based debiasing as effective, powerful, and generalizable.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s09::p001",
+     "summary": "All experimented debiasing techniques rely on a predefined set of gender pairs, which is a limitation and leaves gender associated words without pairs, like pregnant, improperly treated.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s09::p002",
+     "summary": "Future work includes a context-aware loss function distinguishing unbiased and biased gendered word mentions and exploring application of the method to mitigating racial bias.",
+     "group_id": "1905.12801::g00"
+    },
+    {
+     "passage_id": "1905.12801::s10::p000",
+     "summary": "The authors thank Sam Bowman, Shikha Bordia, Cuiying Yang, Gang Qian, Xiyu Miao, Qianyi Fan, Tian Liu, Stanislav Sobolevsky, and reviewers.",
+     "group_id": "1905.12801::g00"
+    }
+   ],
+   "n_raw": 38,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4147,
+    "completion_tokens": 2053,
+    "total_tokens": 6200,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "paper_id": "1807.07279",
+ "title": "Imparting Interpretability to Word Embeddings while Preserving Semantic Structure",
+ "abstract": "As an ubiquitous method in natural language processing, word embeddings are extensively employed to map semantic properties of words into a dense vector representation. They capture semantic and syntactic relations among words but the vector corresponding to the words are only meaningful relative to each other. Neither the vector nor its dimensions have any absolute, interpretable meaning. We introduce an additive modification to the objective function of the embedding learning algorithm that encourages the embedding vectors of words that are semantically related to a predefined concept to take larger values along a specified dimension, while leaving the original semantic learning mechanism mostly unaffected. In other words, we align words that are already determined to be related, along predefined concepts. Therefore, we impart interpretability to the word embedding by assigning meaning to its vector dimensions. The predefined concepts are derived from an external lexical resource, which in this paper is chosen as Roget's Thesaurus. We observe that alignment along the chosen concepts is not limited to words in the Thesaurus and extends to other related words as well. We quantify the extent of interpretability and assignment of meaning from our experimental results. We also demonstrate the preservation of semantic coherence of the resulting vector space by using word-analogy and word-similarity tests. These tests show that the interpretability-imparted word embeddings that are obtained by the proposed framework do not sacrifice performances in common benchmark tests.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Problem Description",
+  "Imparting Interpretability",
+  "Experiments and Results",
+  "Qualitative Evaluation for Interpretability",
+  "Quantitative Evaluation for Interpretability",
+  "Intrinsic Evaluation of the Embeddings",
+  "Conclusion"
+ ],
+ "n_paragraphs": 40,
+ "n_tokens": 7827,
+ "figures_and_tables": [
+  {
+   "caption_id": "1807.07279::fig000",
+   "paper_id": "1807.07279",
+   "file": "4-Figure1-1.png",
+   "caption": "Fig. 1. Function g in the additional cost term.",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1807.07279::fig001",
+   "paper_id": "1807.07279",
+   "file": "5-TableI-1.png",
+   "caption": "TABLE I SAMPLE CONCEPTS AND THEIR ASSOCIATED WORD-GROUPS FROM ROGET’S THESAURUS",
+   "n_tokens": 23
+  },
+  {
+   "caption_id": "1807.07279::fig002",
+   "paper_id": "1807.07279",
+   "file": "5-TableII-1.png",
+   "caption": "TABLE II GLOVE PARAMETERS",
+   "n_tokens": 6
+  },
+  {
+   "caption_id": "1807.07279::fig003",
+   "paper_id": "1807.07279",
+   "file": "6-TableIII-1.png",
+   "caption": "TABLE III WORDS WITH LARGEST DIMENSION VALUES FOR THE PROPOSED ALGORITHM",
+   "n_tokens": 18
+  },
+  {
+   "caption_id": "1807.07279::fig004",
+   "paper_id": "1807.07279",
+   "file": "7-Figure2-1.png",
+   "caption": "Fig. 2. Most frequent 1000 words sorted according to their values in the 32nd dimension of the original GloVe embedding are shown with blue markers. Red and green markers show the values of the same words for the 32nd dimension of the embedding obtained with the proposed method where the dimension is aligned with the concept JUDGMENT. Words with green markers are contained in the concept JUDGMENT while words with red markers are not contained.",
+   "n_tokens": 94
+  },
+  {
+   "caption_id": "1807.07279::fig005",
+   "paper_id": "1807.07279",
+   "file": "8-Figure3-1.png",
+   "caption": "Fig. 3. Interpretability scores averaged over 300 dimensions for the original GloVe method, the proposed method, and four alternative methods along with a randomly generated baseline embedding for λ = 5. Please note that Parsimax method yields identical results with the GloVe baseline so that their plots coincide with each other (light blue).",
+   "n_tokens": 67
+  },
+  {
+   "caption_id": "1807.07279::fig006",
+   "paper_id": "1807.07279",
+   "file": "8-TableIV-1.png",
+   "caption": "TABLE IV WORDS WITH LARGEST DIMENSION VALUES FOR THE PROPOSED ALGORITHM - LESS SATISFACTORY EXAMPLES",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "1807.07279::fig007",
+   "paper_id": "1807.07279",
+   "file": "8-TableV-1.png",
+   "caption": "TABLE V CORRELATIONS FOR WORD SIMILARITY TESTS",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1807.07279::fig008",
+   "paper_id": "1807.07279",
+   "file": "9-TableVI-1.png",
+   "caption": "TABLE VI PRECISION SCORES FOR THE ANALOGY TEST",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1807.07279::fig009",
+   "paper_id": "1807.07279",
+   "file": "9-TableVII-1.png",
+   "caption": "TABLE VII PRECISION SCORES FOR THE SEMANTIC ANALOGY TEST",
+   "n_tokens": 15
+  }
+ ]
+}

@@ -1,0 +1,436 @@
+{
+ "1712.00991::s00::p000": [
+  [
+   "Performance appraisal (PA)",
+   "is",
+   "an important HR process"
+  ],
+  [
+   "The PA process",
+   "enables",
+   "an organization to periodically measure and evaluate every employee's performance"
+  ],
+  [
+   "Design and analysis of PA processes",
+   "is",
+   "a lively area of research within the HR community"
+  ]
+ ],
+ "1712.00991::s00::p001": [
+  [
+   "The PA process in any modern organization",
+   "is implemented and tracked through",
+   "an IT system (the PA system)"
+  ],
+  [
+   "the PA system",
+   "records",
+   "the interactions that happen in various steps"
+  ],
+  [
+   "Availability of this data in a computer-readable database",
+   "opens up",
+   "opportunities to analyze it using automated statistical, data-mining and text-mining techniques"
+  ]
+ ],
+ "1712.00991::s00::p002": [
+  [
+   "A typical PA process",
+   "involves",
+   "purposeful multi-step multi-modal communication between employees, their supervisors and their peers"
+  ],
+  [
+   "self-appraisal",
+   "records",
+   "his/her achievements, activities, tasks handled etc."
+  ],
+  [
+   "the supervisor",
+   "provides",
+   "the criticism, evaluation and suggestions for improvement of performance etc."
+  ],
+  [
+   "the peers of the employee",
+   "provide",
+   "their feedback"
+  ]
+ ],
+ "1712.00991::s00::p003": [
+  [
+   "text mining techniques",
+   "can automatically produce",
+   "answers to these questions"
+  ],
+  [
+   "the intended users",
+   "are",
+   "HR executives"
+  ],
+  [
+   "These techniques",
+   "have been implemented and are being used in",
+   "a PA system in a large multi-national IT company"
+  ]
+ ],
+ "1712.00991::s01::p000": [
+  [
+   "Semantically classifying sentences (based on the sentence's purpose)",
+   "is",
+   "a much harder task"
+  ],
+  [
+   "Qadir and Riloff BIBREF12",
+   "proposes",
+   "several filters and classifiers to classify sentences on message boards (community QA systems) into 4 speech acts"
+  ],
+  [
+   "Deshpande et al. BIBREF15",
+   "proposes",
+   "unsupervised linguistic patterns to classify sentences into classes SUGGESTION, COMPLAINT"
+  ]
+ ],
+ "1712.00991::s01::p002": [
+  [
+   "Ramrakhiyani et al. BIBREF5",
+   "proposes",
+   "label propagation algorithms to discover aspects in supervisor assessments in performance appraisals"
+  ]
+ ],
+ "1712.00991::s02::p000": [
+  [
+   "The corpus of supervisor assessment",
+   "has",
+   "26972 sentences"
+  ],
+  [
+   "The summary statistics about the number of words in a sentence",
+   "is",
+   "min:4 max:217 average:15.5 STDEV:9.2 Q1:9 Q2:14 Q3:19"
+  ]
+ ],
+ "1712.00991::s03::p000": [
+  [
+   "The PA corpus",
+   "contains",
+   "several classes of sentences that are of interest"
+  ],
+  [
+   "The classes WEAKNESS and SUGGESTION",
+   "are",
+   "somewhat overlapping"
+  ]
+ ],
+ "1712.00991::s03::p004": [
+  [
+   "The subject",
+   "is implicit in",
+   "many sentences"
+  ],
+  [
+   "Suggestions",
+   "often have",
+   "an imperative mood"
+  ]
+ ],
+ "1712.00991::s03::p005": [
+  [
+   "This labelled dataset",
+   "contained",
+   "705, 103, 822 and 370 sentences having the class labels STRENGTH, WEAKNESS, SUGGESTION or OTHER respectively"
+  ],
+  [
+   "The features used for these classifiers",
+   "were",
+   "simply the sentence words along with their frequencies"
+  ]
+ ],
+ "1712.00991::s04::p000": [
+  [
+   "distribution of positive and negative sentiments",
+   "is almost similar in",
+   "STRENGTH as well as SUGGESTION sentences"
+  ]
+ ],
+ "1712.00991::s05::p000": [
+  [
+   "a simple clustering algorithm",
+   "uses",
+   "the cosine similarity between word embeddings of these nouns"
+  ],
+  [
+   "Carrot2 Lingo",
+   "discovered",
+   "167 clusters"
+  ],
+  [
+   "CLUTO",
+   "does not generate",
+   "cluster labels automatically"
+  ]
+ ],
+ "1712.00991::s06::p000": [
+  [
+   "PA",
+   "is done from",
+   "a predefined set of perspectives, which we call attributes"
+  ],
+  [
+   "Each attribute",
+   "covers",
+   "one specific aspect of the work done by the employees"
+  ],
+  [
+   "The HR managers in the organization considered in this paper",
+   "have defined",
+   "15 attributes (Table TABREF20 )"
+  ]
+ ],
+ "1712.00991::s06::p001": [
+  [
+   "the first sentence",
+   "has class",
+   "STRENGTH"
+  ],
+  [
+   "the first sentence",
+   "can be mapped to",
+   "FUNCTIONAL_EXCELLENCE and BUILDING_EFFECTIVE_TEAMS"
+  ],
+  [
+   "the third sentence",
+   "has class",
+   "WEAKNESS"
+  ],
+  [
+   "the third sentence",
+   "can be mapped to",
+   "INTERPERSONAL_EFFECTIVENESS"
+  ],
+  [
+   "mapping each sentence in each of the 3 classes to zero, one, two or more attributes",
+   "is",
+   "a multi-class multi-label classification problem"
+  ]
+ ],
+ "1712.00991::s06::p002": [
+  [
+   "the same 2000 sentences in Dataset D1",
+   "were manually tagged with",
+   "attributes"
+  ],
+  [
+   "each sentence",
+   "may get",
+   "0, 1, 2, etc. up to 15 class labels"
+  ],
+  [
+   "This labelled dataset",
+   "contained",
+   "749, 206, 289, 207, 91, 223, 191, 144, 103, 80, 82, 42, 29, 15, 24 sentences"
+  ],
+  [
+   "The number of sentences having 0, 1, 2, or more than 2 attributes",
+   "are",
+   "321, 1070, 470 and 139 respectively"
+  ]
+ ],
+ "1712.00991::s06::p003": [
+  [
+   "Precision, Recall and F-measure for this multi-label classification",
+   "are computed using",
+   "a strategy similar to the one described in BIBREF21"
+  ],
+  [
+   "INLINEFORM0",
+   "is",
+   "the set of predicted labels"
+  ],
+  [
+   "INLINEFORM1",
+   "is",
+   "the set of actual labels for the INLINEFORM2 instance"
+  ]
+ ],
+ "1712.00991::s06::p004": [
+  [
+   "INLINEFORM0",
+   "would be undefined if",
+   "INLINEFORM1 is empty"
+  ],
+  [
+   "INLINEFORM2",
+   "would be undefined when",
+   "INLINEFORM3 is empty"
+  ],
+  [
+   "overall precision and recall",
+   "are computed by",
+   "averaging over all the instances except where they are undefined"
+  ],
+  [
+   "Instance-level F-measure",
+   "can not be computed for",
+   "instances where either precision or recall are undefined"
+  ],
+  [
+   "overall F-measure",
+   "is computed using",
+   "the overall precision and recall"
+  ]
+ ],
+ "1712.00991::s07::p000": [
+  [
+   "The PA system",
+   "includes",
+   "a set of peer feedback comments for each employee"
+  ],
+  [
+   "following",
+   "are",
+   "the feedback comments from 5 peers of an employee"
+  ]
+ ],
+ "1712.00991::s07::p001": [
+  [
+   "POS tags",
+   "are assigned to",
+   "each sentence"
+  ],
+  [
+   "a subset of these candidate phrases",
+   "is chosen as",
+   "the final summary, using Integer Linear Programming (ILP)"
+  ]
+ ],
+ "1712.00991::s07::p005": [
+  [
+   "Various parameters",
+   "are used to evaluate",
+   "a candidate phrase for its importance"
+  ]
+ ],
+ "1712.00991::s07::p007": [
+  [
+   "a trivial constraint INLINEFORM0",
+   "makes sure that",
+   "only INLINEFORM1 out of INLINEFORM2 candidate phrases are chosen"
+  ],
+  [
+   "A suitable value of INLINEFORM3",
+   "is used for",
+   "each employee depending on number of candidate phrases identified across all peers"
+  ]
+ ],
+ "1712.00991::s07::p008": [
+  [
+   "The objective function",
+   "maximizes",
+   "the total importance score of the selected candidate phrases"
+  ],
+  [
+   "The objective function",
+   "minimizes",
+   "the sum of all slack variables"
+  ]
+ ],
+ "1712.00991::s07::p009": [
+  [
+   "INLINEFORM0",
+   "denotes",
+   "No. of candidate phrases"
+  ],
+  [
+   "INLINEFORM1",
+   "denotes",
+   "No. of phrases to select as part of summary"
+  ]
+ ],
+ "1712.00991::s07::p012": [
+  [
+   "INLINEFORM0",
+   "is for",
+   "determining number of phrases to select to include in summary"
+  ]
+ ],
+ "1712.00991::s08::p000": [
+  [
+   "dataset",
+   "considered",
+   "100 employees"
+  ],
+  [
+   "manual summary",
+   "was generated by",
+   "an HR personnel"
+  ],
+  [
+   "summaries generated by our ILP-based approach",
+   "were compared with",
+   "the corresponding manual summaries using the ROUGE BIBREF22 unigram score"
+  ],
+  [
+   "ILP-based summarization",
+   "requires",
+   "a similar parameter K"
+  ],
+  [
+   "number of sentences parameter",
+   "was set to",
+   "the ceiling of K/3"
+  ],
+  [
+   "performance of ILP-based summarization",
+   "is comparable with",
+   "the other algorithms"
+  ],
+  [
+   "human evaluators",
+   "preferred",
+   "phrase-based summary generated by our approach to the other sentence-based summaries"
+  ]
+ ],
+ "1712.00991::s09::p000": [
+  [
+   "sentence classification",
+   "was performed to identify",
+   "strengths, weaknesses and suggestions for improvements found in the supervisor assessments"
+  ],
+  [
+   "clustering",
+   "was used to discover",
+   "broad categories among them"
+  ],
+  [
+   "SVM with ADWS kernel BIBREF18",
+   "produced",
+   "the best results"
+  ],
+  [
+   "Logistic Regression classifier",
+   "was observed to produce",
+   "the best results for this topical classification"
+  ],
+  [
+   "ILP-based summarization technique",
+   "was proposed to produce",
+   "a summary of peer feedback comments for a given employee"
+  ]
+ ],
+ "1712.00991::s09::p001": [
+  [
+   "The PA process",
+   "generates",
+   "much structured data, such as supervisor ratings"
+  ],
+  [
+   "compare and combine the insights from discovered from structured data and unstructured text",
+   "is",
+   "an interesting problem"
+  ],
+  [
+   "the list of 15 attributes",
+   "is currently used by",
+   "HR"
+  ]
+ ]
+}

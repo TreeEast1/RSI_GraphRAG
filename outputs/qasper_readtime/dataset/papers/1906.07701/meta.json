@@ -1,0 +1,90 @@
+{
+ "paper_id": "1906.07701",
+ "title": "Distilling Translations with Visual Awareness",
+ "abstract": "Previous work on multimodal machine translation has shown that visual information is only needed in very specific cases, for example in the presence of ambiguous words where the textual context is not sufficient. As a consequence, models tend to learn to ignore this information. We propose a translate-and-refine approach to this problem where images are only used by a second stage decoder. This approach is trained jointly to generate a good first draft translation and to improve over this draft by (i) making better use of the target language textual context (both left and right-side contexts) and (ii) making use of visual context. This approach leads to the state of the art results. Additionally, we show that it has the ability to recover from erroneous or missing words in the source language.",
+ "sections": [
+  "Data",
+  "Degradation of source",
+  "Models",
+  "Training",
+  "Results",
+  "Standard setup",
+  "Source degradation setup",
+  "Conclusions",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 26,
+ "n_tokens": 2372,
+ "figures_and_tables": [
+  {
+   "caption_id": "1906.07701::fig000",
+   "paper_id": "1906.07701",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Examples of lexical and gender ambiguity, and inaccurate English description where post-edits (PE) required the image to correct human translation from English (EN) to German (DE).",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1906.07701::fig001",
+   "paper_id": "1906.07701",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2: Our deliberation architecture: The secondpass decoder is conditioned on the source and samples output from the first-pass decoder. The second-pass decoder has access to (a) the object based features represented by embeddings, or (b) spacial image features.",
+   "n_tokens": 54
+  },
+  {
+   "caption_id": "1906.07701::fig002",
+   "paper_id": "1906.07701",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Statistics of datasets after applying source degradation strategies",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1906.07701::fig003",
+   "paper_id": "1906.07701",
+   "file": "6-Table2-1.png",
+   "caption": "Table 2: Results for the test sets 2016 and 2018. M denotes METEOR, B – BLEU; * marks statistically significant changes for METEOR (p-value≤ 0.05) as compared to base, † – as compared to del. Bold highlights statistically significant improvements. We report previous state of the art results for multimodal models from (Helcl et al., 2018).",
+   "n_tokens": 89
+  },
+  {
+   "caption_id": "1906.07701::fig004",
+   "paper_id": "1906.07701",
+   "file": "7-Table3-1.png",
+   "caption": "Table 3: Human ranking results: normalised rank (micro-averaged). Bold highlights best results.",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "1906.07701::fig005",
+   "paper_id": "1906.07701",
+   "file": "7-Figure3-1.png",
+   "caption": "Figure 3: Examples of improvements of del and del+obj over base+att for test set 2016 for French and German. Underlined words represent some of the improvements.",
+   "n_tokens": 37
+  },
+  {
+   "caption_id": "1906.07701::fig006",
+   "paper_id": "1906.07701",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: Results for the test sets 2016 and 2018 for the three degradation configurations: RND, AMB and PERS. M denotes METEOR, B – BLEU; * marks statistically significant changes as computed for METEOR (p-value ≤ 0.05) as compared to base, † – as compared to del. Bold highlights statistically significant improvements over base.",
+   "n_tokens": 83
+  },
+  {
+   "caption_id": "1906.07701::fig007",
+   "paper_id": "1906.07701",
+   "file": "8-Table5-1.png",
+   "caption": "Table 5: Results of human annotation of blanked translations (English-German). We report counts of blanks resolved by each system, as well as total source blank count for each selection (50 sentences selected randomly).",
+   "n_tokens": 43
+  },
+  {
+   "caption_id": "1906.07701::fig008",
+   "paper_id": "1906.07701",
+   "file": "9-Figure4-1.png",
+   "caption": "Figure 4: Examples of resolved blanks for test set 2016. Underlined text denotes blanked words and their translations. Object field indicates the detected objects.",
+   "n_tokens": 33
+  },
+  {
+   "caption_id": "1906.07701::fig009",
+   "paper_id": "1906.07701",
+   "file": "14-Figure7-1.png",
+   "caption": "Figure 7: Examples of unresolved blanks. The underlined words denote blanked words and their translations.",
+   "n_tokens": 21
+  }
+ ]
+}

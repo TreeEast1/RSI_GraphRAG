@@ -1,0 +1,1097 @@
+{
+ "insights": [
+  {
+   "insight_id": "1905.07791::g00:i00",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "On EBM-NLP, re-weighting sentences with predicted difficulty above 0.8 using LSTM-CRF-Pattern improves F1 significantly under a sign test (p<0.01).",
+   "triple": {
+    "subject": "re-weighting by difficulty",
+    "predicate": "improves",
+    "object": "LSTM-CRF-Pattern F1 on EBM-NLP"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1905.07791::s07::p001",
+    "1905.07791::s09::p001",
+    "1905.07791::s09::p002"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b5:f05",
+    "1905.07791::g00:b6:f00",
+    "1905.07791::g00:b6:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u000"
+  },
+  {
+   "insight_id": "1905.07791::g00:i01",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "The ensemble combining universal sentence encoder and task-specific representations outperforms the baseline SVR model on difficulty prediction, with Pearson's correlation coefficients ranging from 0.550 to 0.622.",
+   "triple": {
+    "subject": "ensemble model",
+    "predicate": "outperforms",
+    "object": "baseline SVR model"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1905.07791::s05::p001",
+    "1905.07791::s06::p002",
+    "1905.07791::s06::p003"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b4:f01",
+    "1905.07791::g00:b4:f10",
+    "1905.07791::g00:b4:f12",
+    "1905.07791::g00:b4:f13",
+    "1905.07791::g00:b4:f14"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u001"
+  },
+  {
+   "insight_id": "1905.07791::g00:i02",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "Because the training set contains only crowdsourced annotations, predicted spans from LSTM-CRF-Pattern serve as proxy ground truth for difficulty scores validated against expert test-set scores.",
+   "triple": {
+    "subject": "crowdsourced-only training set",
+    "predicate": "requires",
+    "object": "predicted spans as proxy ground truth"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1905.07791::s03::p000",
+    "1905.07791::s03::p003"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b2:f00",
+    "1905.07791::g00:b2:f01",
+    "1905.07791::g00:b2:f05",
+    "1905.07791::g00:b2:f06",
+    "1905.07791::g00:b2:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u002"
+  },
+  {
+   "insight_id": "1905.07791::g00:i03",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "The claim that difficulty is distinct from inter-annotator agreement is supported by Pearson's r of 0.34, 0.30 and 0.31 for p, i and o.",
+   "triple": {
+    "subject": "Pearson's r of 0.34, 0.30 and 0.31",
+    "predicate": "supports",
+    "object": "difficulty distinct from inter-annotator agreement"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s00::p002",
+    "1905.07791::s04::p002"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b0:f07",
+    "1905.07791::g00:b3:f12",
+    "1905.07791::g00:b3:f13"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u003"
+  },
+  {
+   "insight_id": "1905.07791::g00:i04",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "The strategy of routing difficult instances to domain experts and easier ones to crowd annotators is evaluated by expert re-annotation of 1000 top-ranked difficult abstracts and 1000 randomly sampled abstracts.",
+   "triple": {
+    "subject": "task routing strategy",
+    "predicate": "evaluated_on",
+    "object": "1000 top-ranked difficult abstracts and 1000 randomly sampled abstracts"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1905.07791::s10::p001",
+    "1905.07791::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b6:f07",
+    "1905.07791::g00:b6:f08"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u004"
+  },
+  {
+   "insight_id": "1905.07791::g00:i05",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "Models trained with expert-annotated data are superior in F1 to crowd labels, supporting the claim that expert annotations should be collected whenever possible.",
+   "triple": {
+    "subject": "expert-annotated data F1 superiority",
+    "predicate": "supports",
+    "object": "expert annotations should be collected whenever possible"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s00::p003",
+    "1905.07791::s11::p003",
+    "1905.07791::s11::p004"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b0:f13",
+    "1905.07791::g00:b7:f04",
+    "1905.07791::g00:b7:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u005"
+  },
+  {
+   "insight_id": "1905.07791::g00:i06",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "Removing sentences predicted to be difficult marginally improves F1 up to 4% for Population and Interventions and 6% for Outcomes, supporting the hypothesis that difficult instances introduce more noise than signal.",
+   "triple": {
+    "subject": "removing predicted difficult sentences",
+    "predicate": "supports",
+    "object": "difficult instances introduce more noise than signal"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s08::p000",
+    "1905.07791::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b5:f12",
+    "1905.07791::g00:b5:f16",
+    "1905.07791::g00:b5:f18"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u006"
+  },
+  {
+   "insight_id": "1905.07791::g00:i07",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "Population has more easy sentences and fewer difficult sentences, which explains why correlations for Intervention and Outcomes are higher than for Population.",
+   "triple": {
+    "subject": "Population difficulty distribution",
+    "predicate": "causes",
+    "object": "lower correlations for Population"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1905.07791::s06::p005",
+    "1905.07791::s03::p005"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b5:f00",
+    "1905.07791::g00:b5:f01",
+    "1905.07791::g00:b5:f02",
+    "1905.07791::g00:b2:f11"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u007"
+  },
+  {
+   "insight_id": "1905.07791::g00:i08",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "The paper's focus on an operational definition of instance difficulty extends prior task routing work by using predicted difficulty to inform routing.",
+   "triple": {
+    "subject": "operational definition of instance difficulty",
+    "predicate": "extends",
+    "object": "prior task routing work"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1905.07791::s01::p002",
+    "1905.07791::s00::p005"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b1:f06",
+    "1905.07791::g00:b1:f07",
+    "1905.07791::g00:b0:f16"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.8,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u008"
+  },
+  {
+   "insight_id": "1905.07791::g00:i09",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g00",
+   "concise_text": "The EBM-NLP corpus's 4,741 crowdsourced training abstracts and 191 expert-labeled test abstracts enable treating domain experts as ground truth for sentence difficulty.",
+   "triple": {
+    "subject": "EBM-NLP corpus",
+    "predicate": "requires",
+    "object": "domain experts as ground truth for sentence difficulty"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1905.07791::s02::p000",
+    "1905.07791::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g00:b1:f08",
+    "1905.07791::g00:b1:f09",
+    "1905.07791::g00:b1:f10",
+    "1905.07791::g00:b1:f11",
+    "1905.07791::g00:b2:f00",
+    "1905.07791::g00:b2:f01",
+    "1905.07791::g00:b2:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.83,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u009"
+  },
+  {
+   "insight_id": "1905.07791::g01:i00",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "Routing difficult examples to experts and other instances to crowd annotators is supported by D+Other outperforming R+Other by 2 points in F1.",
+   "triple": {
+    "subject": "Simulations in which difficult examples are routed to experts and other instances to crowd annotators",
+    "predicate": "outperforms",
+    "object": "the strategy of randomly selecting data for expert annotation"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s12::p002",
+    "1905.07791::s14::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f12",
+    "1905.07791::g01:b1:f05",
+    "1905.07791::g01:b1:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u010"
+  },
+  {
+   "insight_id": "1905.07791::g01:i01",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The mixed-annotation models in Rows 4 to 6 used all 5k abstracts, and adding crowd annotation improved at least 1 point F1 score in all three extraction tasks.",
+   "triple": {
+    "subject": "Rows 4 to 6",
+    "predicate": "evaluated_on",
+    "object": "all 5k abstracts with mixed annotations"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1905.07791::s12::p001",
+    "1905.07791::s12::p002"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f08",
+    "1905.07791::g01:b0:f09",
+    "1905.07791::g01:b0:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u011"
+  },
+  {
+   "insight_id": "1905.07791::g01:i02",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "Because Other means the rest of the abstracts with crowd annotation only, D+Other mixes the difficult subset with expert annotations and the remaining crowd annotation.",
+   "triple": {
+    "subject": "D+Other",
+    "predicate": "extends",
+    "object": "the difficult subset with expert annotations with the remaining crowd annotation"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1905.07791::s12::p001",
+    "1905.07791::s12::p002"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f09",
+    "1905.07791::g01:b0:f11",
+    "1905.07791::g01:b0:f12"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u012"
+  },
+  {
+   "insight_id": "1905.07791::g01:i03",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The uninformed choice of how many difficult instances to annotate is checked by simulating consecutive batches of the most difficult examples sent to domain experts.",
+   "triple": {
+    "subject": "the choice of how many difficult instances to annotate",
+    "predicate": "requires",
+    "object": "a routing system parameter choice"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1905.07791::s13::p000",
+    "1905.07791::s13::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f16",
+    "1905.07791::g01:b0:f17",
+    "1905.07791::g01:b0:f18"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u013"
+  },
+  {
+   "insight_id": "1905.07791::g01:i04",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "Adding expert annotations for difficult articles consistently increases F1 scores, and the F1 score after re-annotating the 600 most-difficult articles reaches 68.1%.",
+   "triple": {
+    "subject": "adding expert annotations for difficult articles",
+    "predicate": "causes",
+    "object": "F1 scores to increase"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1905.07791::s13::p001",
+    "1905.07791::s13::p002"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f18",
+    "1905.07791::g01:b0:f20"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u014"
+  },
+  {
+   "insight_id": "1905.07791::g01:i05",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The conclusion that crowd annotation supplements expert annotations for medical IE is evidenced by mixed annotations improving at least 1 point F1 score in all three extraction tasks.",
+   "triple": {
+    "subject": "crowd annotation",
+    "predicate": "improves_on",
+    "object": "expert annotations for medical IE"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s12::p002",
+    "1905.07791::s13::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f10",
+    "1905.07791::g01:b0:f14"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u015"
+  },
+  {
+   "insight_id": "1905.07791::g01:i06",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The feasibility of predicting annotation difficulty, shown by Pearson’s correlation coefficients higher than 0.45, underpins routing difficult examples to experts and other instances to crowd annotators.",
+   "triple": {
+    "subject": "predicting annotation difficulty",
+    "predicate": "requires",
+    "object": "routing difficult examples to experts and other instances to crowd annotators"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1905.07791::s14::p000",
+    "1905.07791::s14::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b1:f01",
+    "1905.07791::g01:b1:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u016"
+  },
+  {
+   "insight_id": "1905.07791::g01:i07",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The greater gain from routing according to difficulty is supported by D+Other outperforming R+Other by 2 points in F1 and by the 3.5 F1 score improvement.",
+   "triple": {
+    "subject": "routing according to difficulty",
+    "predicate": "outperforms",
+    "object": "randomly selecting the data for expert annotators"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s12::p002",
+    "1905.07791::s14::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f11",
+    "1905.07791::g01:b0:f12",
+    "1905.07791::g01:b1:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u017"
+  },
+  {
+   "insight_id": "1905.07791::g01:i08",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The system that uses expert annotations for an abstract if it exists otherwise crowd annotations corresponds to simulations routing difficult examples to experts and other instances to crowd annotators.",
+   "triple": {
+    "subject": "the system trained on data that was routed to either experts or crowd annotators depending on their predicted difficult",
+    "predicate": "extends",
+    "object": "Simulations in which difficult examples are routed to experts and other instances to crowd annotators"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1905.07791::s12::p000",
+    "1905.07791::s14::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f01",
+    "1905.07791::g01:b0:f02",
+    "1905.07791::g01:b0:f03",
+    "1905.07791::g01:b1:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u018"
+  },
+  {
+   "insight_id": "1905.07791::g01:i09",
+   "paper_id": "1905.07791",
+   "group_id": "1905.07791::g01",
+   "concise_text": "The conclusion that difficult-example routing yields the best results is evidenced by D+R+Other achieving only marginally higher F1 than D+Other.",
+   "triple": {
+    "subject": "Simulations in which difficult examples are routed to experts and other instances to crowd annotators",
+    "predicate": "evaluated_on",
+    "object": "D+R+Other and D+Other"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.07791::s12::p002",
+    "1905.07791::s14::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.07791::g01:b0:f13",
+    "1905.07791::g01:b1:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.69,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1905.07791::u019"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1905.07791::g00",
+   "insights": [
+    {
+     "insight_id": "1905.07791::g00:i00",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g00",
+     "concise_text": "On EBM-NLP, re-weighting sentences with predicted difficulty above 0.8 using LSTM-CRF-Pattern improves F1 significantly under a sign test (p<0.01).",
+     "triple": {
+      "subject": "re-weighting by difficulty",
+      "predicate": "improves",
+      "object": "LSTM-CRF-Pattern F1 on EBM-NLP"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1905.07791::s07::p001",
+      "1905.07791::s09::p001",
+      "1905.07791::s09::p002"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g00:b5:f05",
+      "1905.07791::g00:b6:f00",
+      "1905.07791::g00:b6:f01"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u000"
+    },
+    {
+     "insight_id": "1905.07791::g00:i01",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g00",
+     "concise_text": "The ensemble combining universal sentence encoder and task-specific representations outperforms the baseline SVR model on difficulty prediction, with Pearson's correlation coefficients ranging from 0.550 to 0.622.",
+     "triple": {
+      "subject": "ensemble model",
+      "predicate": "outperforms",
+      "object": "baseline SVR model"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1905.07791::s05::p001",
+      "1905.07791::s06::p002",
+      "1905.07791::s06::p003"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g00:b4:f01",
+      "1905.07791::g00:b4:f10",
+      "1905.07791::g00:b4:f12",
+      "1905.07791::g00:b4:f13",
+      "1905.07791::g00:b4:f14"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u001"
+    },
+    {
+     "insight_id": "1905.07791::g00:i02",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g00",
+     "concise_text": "Because the training set contains only crowdsourced annotations, predicted spans from LSTM-CRF-Pattern serve as proxy ground truth for difficulty scores validated against expert test-set scores.",
+     "triple": {
+      "subject": "crowdsourced-only training set",
+      "predicate": "requires",
+      "object": "predicted spans as proxy ground truth"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1905.07791::s03::p000",
+      "1905.07791::s03::p003"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g00:b2:f00",
+      "1905.07791::g00:b2:f01",
+      "1905.07791::g00:b2:f05",
+      "1905.07791::g00:b2:f06",
+      "1905.07791::g00:b2:f07"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u002"
+    },
+    {
+     "insight_id": "1905.07791::g00:i03",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g00",
+     "concise_text": "The claim that difficulty is distinct from inter-annotator agreement is supported by Pearson's r of 0.34, 0.30 and 0.31 for p, i and o.",
+     "triple": {
+      "subject": "Pearson's r of 0.34, 0.30 and 0.31",
+      "predicate": "supports",
+      "object": "difficulty distinct from inter-annotator agreement"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1905.07791::s00::p002",
+      "1905.07791::s04::p002"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g00:b0:f07",
+      "1905.07791::g00:b3:f12",
+      "1905.07791::g00:b3:f13"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.93,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u003"
+    },
+    {
+     "insight_id": "1905.07791::g00:i04",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g00",
+     "concise_text": "The strategy of routing difficult instances to domain experts and easier ones to crowd annotators is evaluated by expert re-annotation of 1000 top-ranked difficult abstracts and 1000 randomly sampled abstracts.",
+     "triple": {
+      "subject": "task routing strategy",
+      "predicate": "evaluated_on",
+      "object": "1000 top-ranked difficult abstracts and 1000 randomly sampled abstracts"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1905.07791::s10::p001",
+      "1905.07791::s11::p000"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g00:b6:f07",
+      "1905.07791::g00:b6:f08"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u004"
+    },
+    {
+     "insight_id": "1905.07791::g00:i05",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g00",
+     "concise_text": "Models trained with expert-annotated data are superior in F1 to crowd labels, supporting the claim that expert annotations should be collected whenever possible.",
+     "triple": {
+      "subject": "expert-annotated data F1 superiority",
+      "predicate": "supports",
+      "object": "expert annotations should be collected whenever possible"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1905.07791::s00::p003",
+      "1905.07791::s11::p003",
+      "1905.07791::s11::p004"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g00:b0:f13",
+      "1905.07791::g00:b7:f04",
+      "1905.07791::g00:b7:f08"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u005"
+    },
+    {
+     "insight_id": "1905.07791::g00:i06",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g00",
+     "concise_text": "Removing sentences predicted to be difficult marginally improves F1 up to 4% for Population and Interventions and 6% for Outcomes, supporting the hypothesis that difficult instances introduce more noise than signal.",
+     "triple": {
+      "subject": "removing predicted difficult sentences",
+      "predicate": "supports",
+      "object": "difficult instances introduce more noise than signal"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1905.07791::s08::p000",
+      "1905.07791::s08::p001"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g00:b5:f12",
+      "1905.07791::g00:b5:f16",
+      "1905.07791::g00:b5:f18"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u006"
+    },
+    {
+     "insight_id": "1905.07791::g00:i07",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g00",
+     "concise_text": "Population has more easy sentences and fewer difficult sentences, which explains why correlations for Intervention and Outcomes are higher than for Population.",
+     "triple": {
+      "subject": "Population difficulty distribution",
+      "predicate": "causes",
+      "object": "lower correlations for Population"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1905.07791::s06::p005",
+      "1905.07791::s03::p005"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g00:b5:f00",
+      "1905.07791::g00:b5:f01",
+      "1905.07791::g00:b5:f02",
+      "1905.07791::g00:b2:f11"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.78,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u007"
+    },
+    {
+     "insight_id": "1905.07791::g00:i08",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g00",
+     "concise_text": "The paper's focus on an operational definition of instance difficulty extends prior task routing work by using predicted difficulty to inform routing.",
+     "triple": {
+      "subject": "operational definition of instance difficulty",
+      "predicate": "extends",
+      "object": "prior task routing work"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1905.07791::s01::p002",
+      "1905.07791::s00::p005"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g00:b1:f06",
+      "1905.07791::g00:b1:f07",
+      "1905.07791::g00:b0:f16"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.8,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u008"
+    },
+    {
+     "insight_id": "1905.07791::g00:i09",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g00",
+     "concise_text": "The EBM-NLP corpus's 4,741 crowdsourced training abstracts and 191 expert-labeled test abstracts enable treating domain experts as ground truth for sentence difficulty.",
+     "triple": {
+      "subject": "EBM-NLP corpus",
+      "predicate": "requires",
+      "object": "domain experts as ground truth for sentence difficulty"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1905.07791::s02::p000",
+      "1905.07791::s03::p000"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g00:b1:f08",
+      "1905.07791::g00:b1:f09",
+      "1905.07791::g00:b1:f10",
+      "1905.07791::g00:b1:f11",
+      "1905.07791::g00:b2:f00",
+      "1905.07791::g00:b2:f01",
+      "1905.07791::g00:b2:f02"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.83,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u009"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 14693,
+    "completion_tokens": 1884,
+    "total_tokens": 16577,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1905.07791::g01",
+   "insights": [
+    {
+     "insight_id": "1905.07791::g01:i00",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g01",
+     "concise_text": "Routing difficult examples to experts and other instances to crowd annotators is supported by D+Other outperforming R+Other by 2 points in F1.",
+     "triple": {
+      "subject": "Simulations in which difficult examples are routed to experts and other instances to crowd annotators",
+      "predicate": "outperforms",
+      "object": "the strategy of randomly selecting data for expert annotation"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1905.07791::s12::p002",
+      "1905.07791::s14::p001"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g01:b0:f12",
+      "1905.07791::g01:b1:f05",
+      "1905.07791::g01:b1:f06"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.93,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u010"
+    },
+    {
+     "insight_id": "1905.07791::g01:i01",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g01",
+     "concise_text": "The mixed-annotation models in Rows 4 to 6 used all 5k abstracts, and adding crowd annotation improved at least 1 point F1 score in all three extraction tasks.",
+     "triple": {
+      "subject": "Rows 4 to 6",
+      "predicate": "evaluated_on",
+      "object": "all 5k abstracts with mixed annotations"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1905.07791::s12::p001",
+      "1905.07791::s12::p002"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g01:b0:f08",
+      "1905.07791::g01:b0:f09",
+      "1905.07791::g01:b0:f10"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u011"
+    },
+    {
+     "insight_id": "1905.07791::g01:i02",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g01",
+     "concise_text": "Because Other means the rest of the abstracts with crowd annotation only, D+Other mixes the difficult subset with expert annotations and the remaining crowd annotation.",
+     "triple": {
+      "subject": "D+Other",
+      "predicate": "extends",
+      "object": "the difficult subset with expert annotations with the remaining crowd annotation"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1905.07791::s12::p001",
+      "1905.07791::s12::p002"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g01:b0:f09",
+      "1905.07791::g01:b0:f11",
+      "1905.07791::g01:b0:f12"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u012"
+    },
+    {
+     "insight_id": "1905.07791::g01:i03",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g01",
+     "concise_text": "The uninformed choice of how many difficult instances to annotate is checked by simulating consecutive batches of the most difficult examples sent to domain experts.",
+     "triple": {
+      "subject": "the choice of how many difficult instances to annotate",
+      "predicate": "requires",
+      "object": "a routing system parameter choice"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1905.07791::s13::p000",
+      "1905.07791::s13::p001"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g01:b0:f16",
+      "1905.07791::g01:b0:f17",
+      "1905.07791::g01:b0:f18"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u013"
+    },
+    {
+     "insight_id": "1905.07791::g01:i04",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g01",
+     "concise_text": "Adding expert annotations for difficult articles consistently increases F1 scores, and the F1 score after re-annotating the 600 most-difficult articles reaches 68.1%.",
+     "triple": {
+      "subject": "adding expert annotations for difficult articles",
+      "predicate": "causes",
+      "object": "F1 scores to increase"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1905.07791::s13::p001",
+      "1905.07791::s13::p002"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g01:b0:f18",
+      "1905.07791::g01:b0:f20"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u014"
+    },
+    {
+     "insight_id": "1905.07791::g01:i05",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g01",
+     "concise_text": "The conclusion that crowd annotation supplements expert annotations for medical IE is evidenced by mixed annotations improving at least 1 point F1 score in all three extraction tasks.",
+     "triple": {
+      "subject": "crowd annotation",
+      "predicate": "improves_on",
+      "object": "expert annotations for medical IE"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1905.07791::s12::p002",
+      "1905.07791::s13::p000"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g01:b0:f10",
+      "1905.07791::g01:b0:f14"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u015"
+    },
+    {
+     "insight_id": "1905.07791::g01:i06",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g01",
+     "concise_text": "The feasibility of predicting annotation difficulty, shown by Pearson’s correlation coefficients higher than 0.45, underpins routing difficult examples to experts and other instances to crowd annotators.",
+     "triple": {
+      "subject": "predicting annotation difficulty",
+      "predicate": "requires",
+      "object": "routing difficult examples to experts and other instances to crowd annotators"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1905.07791::s14::p000",
+      "1905.07791::s14::p001"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g01:b1:f01",
+      "1905.07791::g01:b1:f05"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.72,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u016"
+    },
+    {
+     "insight_id": "1905.07791::g01:i07",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g01",
+     "concise_text": "The greater gain from routing according to difficulty is supported by D+Other outperforming R+Other by 2 points in F1 and by the 3.5 F1 score improvement.",
+     "triple": {
+      "subject": "routing according to difficulty",
+      "predicate": "outperforms",
+      "object": "randomly selecting the data for expert annotators"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1905.07791::s12::p002",
+      "1905.07791::s14::p001"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g01:b0:f11",
+      "1905.07791::g01:b0:f12",
+      "1905.07791::g01:b1:f06"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u017"
+    },
+    {
+     "insight_id": "1905.07791::g01:i08",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g01",
+     "concise_text": "The system that uses expert annotations for an abstract if it exists otherwise crowd annotations corresponds to simulations routing difficult examples to experts and other instances to crowd annotators.",
+     "triple": {
+      "subject": "the system trained on data that was routed to either experts or crowd annotators depending on their predicted difficult",
+      "predicate": "extends",
+      "object": "Simulations in which difficult examples are routed to experts and other instances to crowd annotators"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1905.07791::s12::p000",
+      "1905.07791::s14::p001"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g01:b0:f01",
+      "1905.07791::g01:b0:f02",
+      "1905.07791::g01:b0:f03",
+      "1905.07791::g01:b1:f05"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.78,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u018"
+    },
+    {
+     "insight_id": "1905.07791::g01:i09",
+     "paper_id": "1905.07791",
+     "group_id": "1905.07791::g01",
+     "concise_text": "The conclusion that difficult-example routing yields the best results is evidenced by D+R+Other achieving only marginally higher F1 than D+Other.",
+     "triple": {
+      "subject": "Simulations in which difficult examples are routed to experts and other instances to crowd annotators",
+      "predicate": "evaluated_on",
+      "object": "D+R+Other and D+Other"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1905.07791::s12::p002",
+      "1905.07791::s14::p001"
+     ],
+     "supporting_fact_ids": [
+      "1905.07791::g01:b0:f13",
+      "1905.07791::g01:b1:f05"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.69,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1905.07791::u019"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3918,
+    "completion_tokens": 1733,
+    "total_tokens": 5651,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

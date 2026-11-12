@@ -1,0 +1,392 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1810.08699::s00::p000",
+   "summary": "Named entity recognition is important, deep learning improved models, but Armenian lacks annotated corpora, so this work creates training and gold-standard test corpora and evaluates established approaches.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s00::p001",
+   "summary": "Because manual named entity corpora are costly, projection-based transfer was considered effective, but it was unsuitable for Armenian due to lack of a sufficiently large parallel corpus.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s00::p002",
+   "summary": "Wikipedia-based approaches include Albanian gazetteers and a German rule-based system, but the latter's reliance on external tools made it nonviable for Armenian.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s00::p003",
+   "summary": "Nothman et al. generated a silver-standard corpus for 9 languages, Sysoev and Andrianov used a similar Russian approach, and the authors chose this model for Armenian.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s00::p004",
+   "summary": "The authors propose a gold-standard Armenian benchmark corpus manually annotated with CoNLL person, location, and organization categories for evaluating future named entity recognition models.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s00::p005",
+   "summary": "Popular entity recognition models were applied to the data for baseline results, and GloVe word embeddings were developed to train and evaluate deep learning models.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s00::p006",
+   "summary": "Contributions are the silver-standard training corpus, gold-standard test corpus, GloVe word embeddings, and baseline results for 3 models, all available on GitHub.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s01::p000",
+   "summary": "The authors used Sysoev and Andrianov's modification of the Nothman et al. approach, which uses Wikipedia article links to generate named-entity annotated token sequences.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s02::p000",
+   "summary": "The main steps of the dataset extraction system are described in Figure FIGREF3.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s02::p001",
+   "summary": "Wikipedia articles are assigned named entity classes using only an article's Wikidata entry's first instance of label's parent subclass of labels, avoiding manual classification and inter-language links.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s02::p002",
+   "summary": "Outgoing links receive target article types, restrictive sentence selection is relaxed by inferring aliases, and aliases are compiled for all PER, ORG, LOC articles.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s02::p003",
+   "summary": "Link boundaries are adjusted by removing parenthetical labels and text after commas, sometimes splitting linked text containing commas into separate named entities.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s03::p000",
+   "summary": "Instead of manually classifying Wikipedia articles, the authors developed a rule-based classifier using Wikidata instance of and subclass of attributes to find named entity types.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s03::p001",
+   "summary": "Articles were classified by their first instance of attribute's subclass of values because instance of labels were too specific and higher-level subclass of values too general.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s04::p000",
+   "summary": "The algorithm generated 7455 annotated sentences with 163247 tokens based on the 20 February 2018 dump of Armenian Wikipedia.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s04::p001",
+   "summary": "Generated data is smaller than CoNLL 2002 and 2003 corpora, with English CoNLL 2003 containing 203621 tokens, German 206931, Spanish 273037 lines, and Dutch 218737 lines.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s04::p002",
+   "summary": "Annotation accuracy depends on Wikipedia link quality, with errors from unlinked first mentions, wrong link boundaries, and named entities inside links not targeting LOC, ORG, or PER articles.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s05::p000",
+   "summary": "A manually annotated test dataset comprises 53453 tokens and 2566 sentences from over 250 ilur.am news texts, with PER, ORG, and LOC annotations in CoNLL03 IOB format.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s05::p001",
+   "summary": "Annotation generally followed BBN Technologies guidelines for TREC 2002, with PER, ORG, and LOC rules, except adjectival organization forms were not marked.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s05::p002",
+   "summary": "Entities of other categories were ignored, including ORG, LOC, or PER entities inside extraneous entity types.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s05::p003",
+   "summary": "Quotation marks around named entities were not annotated unless they were part of the entity's full official name.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s05::p004",
+   "summary": "Depending on context, metonyms and country or city names were annotated as ORG when referring to government agencies or sports teams.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s06::p000",
+   "summary": "GloVe word embeddings were trained on 79 million Armenian tokens from Wikipedia, The Armenian Soviet Encyclopedia, Eastern Armenian National Corpus BIBREF12, news websites, and blogs.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s06::p001",
+   "summary": "The authors release 50-, 100-, 200- and 300-dimensional Armenian word vectors with vocabulary size 400000, lowercased words, 15 window size, and 20 training epochs.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s07::p000",
+   "summary": "Experiments compared Stanford NER, spaCy 2.0, and a recurrent model with bidirectional LSTM character-based feature extraction and CRF on the data.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s08::p000",
+   "summary": "Stanford NER is a CRF classifier using lexical and contextual features including current word, character n-grams up to length 6, neighboring words, word shape, and sequence features.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s08::p001",
+   "summary": "spaCy 2.0 uses a CNN-based transition system with Bloom embeddings and residual CNNs, reportedly performs within 1% of English state-of-the-art, and was tested with 50-, 100-, 200- and 300-dimensional GloVe embeddings.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s08::p002",
+   "summary": "The main recurrent model with a CRF top layer combines character-based bidirectional LSTM representations with GloVe vectors, uses another bidirectional LSTM, and had biLSTM sizes 100 and 300.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s09::p000",
+   "summary": "Experiments used IOB tagging with 7 class tags: O, B-PER, I-PER, B-LOC, I-LOC, B-ORG, I-ORG.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s09::p001",
+   "summary": "The authors randomly selected 80% of generated annotated sentences for training and 20% for development, then tested models with best development F1 score on the gold dataset.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s10::p000",
+   "summary": "The highest F1 score came from the recurrent model with batch size 8, Adam optimizer, initial learning rate 0.001, updated embeddings, and 50-dimensional GloVe vectors.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s10::p001",
+   "summary": "For spaCy 2.0, 200-dimensional embeddings performed highest, and both deep learning models exceeded Stanford NER in recall while Stanford NER showed higher precision.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s10::p002",
+   "summary": "The automatically generated development set was not an ideal indicator of gold-standard test performance, with errors caused by incomplete annotations and incorrectly labeled non-entities.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s10::p003",
+   "summary": "Tested models had high precision for tokens starting named entities but failed on organization descriptor words and some location descriptors, partly due to generated data quality.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s11::p000",
+   "summary": "The authors release silver-standard training and gold-standard testing datasets for Armenian, emphasize the benchmark corpus, and publish GloVe word vector models trained on Armenian texts.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s11::p001",
+   "summary": "Evaluation results for 3 named entity recognition systems support Wikipedia-based approaches, deep learning recall, and character-extracted embeddings alongside conventional word embeddings.",
+   "group_id": "1810.08699::g00"
+  },
+  {
+   "passage_id": "1810.08699::s11::p002",
+   "summary": "Future work includes WiNER BIBREF19 to improve training corpus quantity and quality, and enriching the benchmark test set with MISC or fine-grained types such as CITY, COUNTRY, REGION.",
+   "group_id": "1810.08699::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1810.08699::g00",
+   "summaries": [
+    {
+     "passage_id": "1810.08699::s00::p000",
+     "summary": "Named entity recognition is important, deep learning improved models, but Armenian lacks annotated corpora, so this work creates training and gold-standard test corpora and evaluates established approaches.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s00::p001",
+     "summary": "Because manual named entity corpora are costly, projection-based transfer was considered effective, but it was unsuitable for Armenian due to lack of a sufficiently large parallel corpus.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s00::p002",
+     "summary": "Wikipedia-based approaches include Albanian gazetteers and a German rule-based system, but the latter's reliance on external tools made it nonviable for Armenian.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s00::p003",
+     "summary": "Nothman et al. generated a silver-standard corpus for 9 languages, Sysoev and Andrianov used a similar Russian approach, and the authors chose this model for Armenian.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s00::p004",
+     "summary": "The authors propose a gold-standard Armenian benchmark corpus manually annotated with CoNLL person, location, and organization categories for evaluating future named entity recognition models.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s00::p005",
+     "summary": "Popular entity recognition models were applied to the data for baseline results, and GloVe word embeddings were developed to train and evaluate deep learning models.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s00::p006",
+     "summary": "Contributions are the silver-standard training corpus, gold-standard test corpus, GloVe word embeddings, and baseline results for 3 models, all available on GitHub.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s01::p000",
+     "summary": "The authors used Sysoev and Andrianov's modification of the Nothman et al. approach, which uses Wikipedia article links to generate named-entity annotated token sequences.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s02::p000",
+     "summary": "The main steps of the dataset extraction system are described in Figure FIGREF3.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s02::p001",
+     "summary": "Wikipedia articles are assigned named entity classes using only an article's Wikidata entry's first instance of label's parent subclass of labels, avoiding manual classification and inter-language links.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s02::p002",
+     "summary": "Outgoing links receive target article types, restrictive sentence selection is relaxed by inferring aliases, and aliases are compiled for all PER, ORG, LOC articles.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s02::p003",
+     "summary": "Link boundaries are adjusted by removing parenthetical labels and text after commas, sometimes splitting linked text containing commas into separate named entities.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s03::p000",
+     "summary": "Instead of manually classifying Wikipedia articles, the authors developed a rule-based classifier using Wikidata instance of and subclass of attributes to find named entity types.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s03::p001",
+     "summary": "Articles were classified by their first instance of attribute's subclass of values because instance of labels were too specific and higher-level subclass of values too general.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s04::p000",
+     "summary": "The algorithm generated 7455 annotated sentences with 163247 tokens based on the 20 February 2018 dump of Armenian Wikipedia.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s04::p001",
+     "summary": "Generated data is smaller than CoNLL 2002 and 2003 corpora, with English CoNLL 2003 containing 203621 tokens, German 206931, Spanish 273037 lines, and Dutch 218737 lines.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s04::p002",
+     "summary": "Annotation accuracy depends on Wikipedia link quality, with errors from unlinked first mentions, wrong link boundaries, and named entities inside links not targeting LOC, ORG, or PER articles.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s05::p000",
+     "summary": "A manually annotated test dataset comprises 53453 tokens and 2566 sentences from over 250 ilur.am news texts, with PER, ORG, and LOC annotations in CoNLL03 IOB format.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s05::p001",
+     "summary": "Annotation generally followed BBN Technologies guidelines for TREC 2002, with PER, ORG, and LOC rules, except adjectival organization forms were not marked.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s05::p002",
+     "summary": "Entities of other categories were ignored, including ORG, LOC, or PER entities inside extraneous entity types.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s05::p003",
+     "summary": "Quotation marks around named entities were not annotated unless they were part of the entity's full official name.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s05::p004",
+     "summary": "Depending on context, metonyms and country or city names were annotated as ORG when referring to government agencies or sports teams.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s06::p000",
+     "summary": "GloVe word embeddings were trained on 79 million Armenian tokens from Wikipedia, The Armenian Soviet Encyclopedia, Eastern Armenian National Corpus BIBREF12, news websites, and blogs.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s06::p001",
+     "summary": "The authors release 50-, 100-, 200- and 300-dimensional Armenian word vectors with vocabulary size 400000, lowercased words, 15 window size, and 20 training epochs.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s07::p000",
+     "summary": "Experiments compared Stanford NER, spaCy 2.0, and a recurrent model with bidirectional LSTM character-based feature extraction and CRF on the data.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s08::p000",
+     "summary": "Stanford NER is a CRF classifier using lexical and contextual features including current word, character n-grams up to length 6, neighboring words, word shape, and sequence features.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s08::p001",
+     "summary": "spaCy 2.0 uses a CNN-based transition system with Bloom embeddings and residual CNNs, reportedly performs within 1% of English state-of-the-art, and was tested with 50-, 100-, 200- and 300-dimensional GloVe embeddings.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s08::p002",
+     "summary": "The main recurrent model with a CRF top layer combines character-based bidirectional LSTM representations with GloVe vectors, uses another bidirectional LSTM, and had biLSTM sizes 100 and 300.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s09::p000",
+     "summary": "Experiments used IOB tagging with 7 class tags: O, B-PER, I-PER, B-LOC, I-LOC, B-ORG, I-ORG.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s09::p001",
+     "summary": "The authors randomly selected 80% of generated annotated sentences for training and 20% for development, then tested models with best development F1 score on the gold dataset.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s10::p000",
+     "summary": "The highest F1 score came from the recurrent model with batch size 8, Adam optimizer, initial learning rate 0.001, updated embeddings, and 50-dimensional GloVe vectors.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s10::p001",
+     "summary": "For spaCy 2.0, 200-dimensional embeddings performed highest, and both deep learning models exceeded Stanford NER in recall while Stanford NER showed higher precision.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s10::p002",
+     "summary": "The automatically generated development set was not an ideal indicator of gold-standard test performance, with errors caused by incomplete annotations and incorrectly labeled non-entities.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s10::p003",
+     "summary": "Tested models had high precision for tokens starting named entities but failed on organization descriptor words and some location descriptors, partly due to generated data quality.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s11::p000",
+     "summary": "The authors release silver-standard training and gold-standard testing datasets for Armenian, emphasize the benchmark corpus, and publish GloVe word vector models trained on Armenian texts.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s11::p001",
+     "summary": "Evaluation results for 3 named entity recognition systems support Wikipedia-based approaches, deep learning recall, and character-extracted embeddings alongside conventional word embeddings.",
+     "group_id": "1810.08699::g00"
+    },
+    {
+     "passage_id": "1810.08699::s11::p002",
+     "summary": "Future work includes WiNER BIBREF19 to improve training corpus quantity and quality, and enriching the benchmark test set with MISC or fine-grained types such as CITY, COUNTRY, REGION.",
+     "group_id": "1810.08699::g00"
+    }
+   ],
+   "n_raw": 37,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4868,
+    "completion_tokens": 1958,
+    "total_tokens": 6826,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

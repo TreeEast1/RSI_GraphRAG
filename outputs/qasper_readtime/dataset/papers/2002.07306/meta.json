@@ -1,0 +1,87 @@
+{
+ "paper_id": "2002.07306",
+ "title": "From English To Foreign Languages: Transferring Pre-trained Language Models",
+ "abstract": "Pre-trained models have demonstrated their effectiveness in many downstream natural language processing (NLP) tasks. The availability of multilingual pre-trained models enables zero-shot transfer of NLP tasks from high resource languages to low resource ones. However, recent research in improving pre-trained models focuses heavily on English. While it is possible to train the latest neural architectures for other languages from scratch, it is undesirable due to the required amount of compute. In this work, we tackle the problem of transferring an existing pre-trained model from English to other languages under a limited computational budget. With a single GPU, our approach can obtain a foreign BERT base model within a day and a foreign BERT large within two days. Furthermore, evaluating our models on six languages, we demonstrate that our models are better than multilingual BERT on two zero-shot tasks: natural language inference and dependency parsing.",
+ "sections": [
+  "Introduction",
+  "Bilingual Pre-trained LMs",
+  "Bilingual Pre-trained LMs ::: Initializing Target Embeddings",
+  "Bilingual Pre-trained LMs ::: Initializing Target Embeddings ::: Learning from Parallel Corpus",
+  "Bilingual Pre-trained LMs ::: Initializing Target Embeddings ::: Learning from Monolingual Corpus",
+  "Bilingual Pre-trained LMs ::: Fine-tuning Target Embeddings",
+  "Bilingual Pre-trained LMs ::: Fine-tuning Bilingual LM",
+  "Zero-shot Experiments",
+  "Zero-shot Experiments ::: Data",
+  "Zero-shot Experiments ::: Data ::: Remark on BPE",
+  "Zero-shot Experiments ::: Estimating translation probabilities",
+  "Zero-shot Experiments ::: Hyper-parameters",
+  "Results",
+  "Results ::: Cross-lingual Natural Language Inference",
+  "Results ::: Universal Dependency Parsing",
+  "Analysis ::: Impact of initialization",
+  "Analysis ::: Are contextual representations from RAMEN also good for supervised parsing?",
+  "Analysis ::: How does linguistic knowledge transfer happen through each training stages?",
+  "Limitations",
+  "Conclusions"
+ ],
+ "n_paragraphs": 46,
+ "n_tokens": 4985,
+ "figures_and_tables": [
+  {
+   "caption_id": "2002.07306::fig000",
+   "paper_id": "2002.07306",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Pictorial illustration of our approach. Left: fine-tune language specific parameters while keeping transformer encoder fixed. Right: jointly train a bilingual LM and update all the parameters.",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "2002.07306::fig001",
+   "paper_id": "2002.07306",
+   "file": "6-Table1-1.png",
+   "caption": "Table 1: Zero-shot classification results on XNLI. ì indicates parallel data is used. RAMEN only uses parallel data for initialization. The best results are marked in bold.",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "2002.07306::fig002",
+   "paper_id": "2002.07306",
+   "file": "7-Table2-1.png",
+   "caption": "Table 2: LAS scores for zero-shot dependency parsing. ì indicates parallel data is used for initialization. Punctuation are removed during the evaluation. The best results are marked in bold.",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "2002.07306::fig003",
+   "paper_id": "2002.07306",
+   "file": "7-Table3-1.png",
+   "caption": "Table 3: Comparison between random initialization (rnd) of language specific parameters and initialization using aligned fastText vectors (vec).",
+   "n_tokens": 25
+  },
+  {
+   "caption_id": "2002.07306::fig004",
+   "paper_id": "2002.07306",
+   "file": "7-Table4-1.png",
+   "caption": "Table 4: Evaluation in supervised UD parsing. The scores are LAS.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "2002.07306::fig005",
+   "paper_id": "2002.07306",
+   "file": "8-Figure2-1.png",
+   "caption": "Figure 2: Accuracy and LAS evaluated at each checkpoints.",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "2002.07306::fig006",
+   "paper_id": "2002.07306",
+   "file": "11-Table5-1.png",
+   "caption": "Table 5: UAS/LAS scores for zero-shot dependency parsing. ì indicates parallel data is used for initialization. Punctuation are removed during the evaluation.",
+   "n_tokens": 33
+  },
+  {
+   "caption_id": "2002.07306::fig007",
+   "paper_id": "2002.07306",
+   "file": "11-Table6-1.png",
+   "caption": "Table 6: Comparison between b-BERT trained from scratch for 1,000,000 updates and RAMEN trained for 175,000 updates.",
+   "n_tokens": 31
+  }
+ ]
+}

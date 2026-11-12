@@ -1,0 +1,624 @@
+{
+ "1908.05828::s00::p000": [
+  [
+   "Named Entity Recognition (NER)",
+   "is",
+   "a foremost NLP task"
+  ],
+  [
+   "NER research",
+   "has been extensive on",
+   "English, German, Dutch and Spanish language"
+  ],
+  [
+   "study on developing neural NER for Nepali language",
+   "has been",
+   "no study"
+  ],
+  [
+   "neural based Nepali NER",
+   "doesn't require",
+   "any hand-crafted features and no data pre-processing"
+  ]
+ ],
+ "1908.05828::s00::p001": [
+  [
+   "Recent neural architecture like BIBREF1",
+   "is used to relax",
+   "the need to hand-craft the features and need to use part-of-speech tag"
+  ],
+  [
+   "this architecture",
+   "have been studied for",
+   "languages like English, and German"
+  ],
+  [
+   "Nepali",
+   "is",
+   "a low resource language i.e limited data set to train the model"
+  ],
+  [
+   "research in Nepali NER using neural network",
+   "has been",
+   "no research"
+  ],
+  [
+   "The texts used for this dataset",
+   "are collected from",
+   "various daily news sources from Nepal around the year 2015-2016"
+  ]
+ ],
+ "1908.05828::s00::p004": [
+  [
+   "good quality dataset to train NER",
+   "are not",
+   "good quality dataset to train NER"
+  ]
+ ],
+ "1908.05828::s00::p007": [
+  [
+   "code and dataset",
+   "will be made available at",
+   "github.com/link-yet-to-be-updated"
+  ]
+ ],
+ "1908.05828::s01::p000": [
+  [
+   "research on Nepali NER task",
+   "has been based on approaches like",
+   "Support Vector Machine and gazetteer list"
+  ],
+  [
+   "research on Nepali NER task",
+   "has been based on approaches like",
+   "Hidden Markov Model and gazetteer list"
+  ]
+ ],
+ "1908.05828::s01::p002": [
+  [
+   "neural networks like CNN, RNN, LSTM, GRU",
+   "can capture",
+   "the semantic knowledge of language better"
+  ],
+  [
+   "neural networks like CNN, RNN, LSTM, GRU",
+   "can capture semantic knowledge with help of",
+   "pre-trained embbeddings like word2vec, glove or fasttext"
+  ]
+ ],
+ "1908.05828::s01::p003": [
+  [
+   "the neural network architecture for NER task in Nepali language",
+   "doesn't require",
+   "any manual feature engineering"
+  ],
+  [
+   "the neural network architecture for NER task in Nepali language",
+   "doesn't require",
+   "any data pre-processing during training"
+  ],
+  [
+   "The experiments",
+   "were performed on",
+   "the dataset that we created and on the dataset received from ILPRL lab"
+  ]
+ ],
+ "1908.05828::s03::p000": [
+  [
+   "Bi-directional LSTM",
+   "was used to capture",
+   "the word representation in forward as well as reverse direction of a sentence"
+  ],
+  [
+   "LSTMs",
+   "take inputs from",
+   "left (past) of the sentence"
+  ],
+  [
+   "both of these hidden states",
+   "are concatenated to produce",
+   "the final output as $h_t$=[$\\overrightarrow{h_t}$;$\\overleftarrow{h_t}$]"
+  ]
+ ],
+ "1908.05828::s04::p000": [
+  [
+   "Word2Vec BIBREF16, GloVe BIBREF17 and FastText BIBREF18 word vectors",
+   "have",
+   "300 dimensions"
+  ],
+  [
+   "These vectors",
+   "were trained on",
+   "the corpus obtained from Nepali National Corpus"
+  ],
+  [
+   "This pre-lemmatized corpus",
+   "consists of",
+   "14 million words from books, web-texts and news papers"
+  ],
+  [
+   "This trained model",
+   "consists of",
+   "vectors for 72782 unique words"
+  ]
+ ],
+ "1908.05828::s04::p001": [
+  [
+   "Light pre-processing",
+   "was performed on",
+   "the corpus before training it"
+  ],
+  [
+   "invalid characters or characters other than Devanagari",
+   "were removed",
+   "but punctuation and numbers were not removed"
+  ],
+  [
+   "These word embeddings",
+   "were not frozen during",
+   "the training session"
+  ]
+ ],
+ "1908.05828::s04::p002": [
+  [
+   "fasttext embeddings",
+   "were used because of",
+   "its sub-word representation ability"
+  ],
+  [
+   "the sub-word size",
+   "remains between",
+   "1 and 4"
+  ],
+  [
+   "a single letter",
+   "can also be",
+   "a word"
+  ]
+ ],
+ "1908.05828::s04::p003": [
+  [
+   "Principal Component Analysis (PCA) technique",
+   "was used to generate",
+   "this visualization"
+  ],
+  [
+   "84 and 104 nearest neighbors",
+   "were observed using",
+   "word2vec and fasttext embedding respectively on the same corpus"
+  ]
+ ],
+ "1908.05828::s05::p000": [
+  [
+   "character-level embeddings extracted using CNN",
+   "enhances",
+   "NER model performance significantly"
+  ],
+  [
+   "character-level embeddings",
+   "capture",
+   "morphological features of a word"
+  ],
+  [
+   "inputs to CNN",
+   "are",
+   "graphemes"
+  ],
+  [
+   "Grapheme or Character -level embeddings",
+   "are randomly initialized from",
+   "[0,1] with real values with uniform distribution of dimension 30"
+  ]
+ ],
+ "1908.05828::s06::p000": [
+  [
+   "Grapheme",
+   "is",
+   "atomic meaningful unit in writing system of any languages"
+  ],
+  [
+   "Nepali language",
+   "is",
+   "highly morphologically inflectional"
+  ],
+  [
+   "grapheme-level embedding",
+   "results",
+   "good scores on par with character-level embedding in highly inflectional languages like Nepali"
+  ],
+  [
+   "grapheme clusters",
+   "were created using",
+   "uniseg package"
+  ]
+ ],
+ "1908.05828::s07::p000": [
+  [
+   "one-hot encoded vector of POS tags",
+   "was concatenated with",
+   "pre-trained word embeddings"
+  ],
+  [
+   "one-hot encoded vector of POS tags",
+   "was passed to",
+   "BiLSTM network"
+  ]
+ ],
+ "1908.05828::s08::p000": [
+  [
+   "OurNepali dataset",
+   "contains",
+   "sentences collected from daily newspaper of the year 2015-2016"
+  ],
+  [
+   "OurNepali dataset",
+   "has",
+   "three major classes Person (PER), Location (LOC) and Organization (ORG)"
+  ],
+  [
+   "all punctuations and numbers besides ',', '-', '|' and '.'",
+   "were removed",
+   "from the text"
+  ],
+  [
+   "the dataset",
+   "is in",
+   "standard CoNLL-2003 IO formatBIBREF25"
+  ]
+ ],
+ "1908.05828::s08::p001": [
+  [
+   "this dataset",
+   "is not",
+   "lemmatized originally"
+  ],
+  [
+   "post-positions",
+   "were lemmatized",
+   "Ek, kO, l, mA, m, my, jF, sg, aEG"
+  ],
+  [
+   "299 post positions",
+   "are in",
+   "Nepali language"
+  ],
+  [
+   "these post-positions",
+   "were obtained from",
+   "sanjaalcorps"
+  ],
+  [
+   "lemmatizing the post-positions",
+   "boosted",
+   "the F1 score by almost 10%"
+  ]
+ ],
+ "1908.05828::s08::p002": [
+  [
+   "POS annotated dataset",
+   "has",
+   "6946 sentences and 16225 unique words"
+  ],
+  [
+   "POS annotated dataset",
+   "was extracted from",
+   "POS-tagged Nepali National Corpus"
+  ],
+  [
+   "BiLSTM model",
+   "was trained with",
+   "95.14% accuracy"
+  ],
+  [
+   "BiLSTM model",
+   "was used to create",
+   "POS-tags for our dataset"
+  ]
+ ],
+ "1908.05828::s08::p003": [
+  [
+   "The dataset released in our github repository",
+   "contains",
+   "each word in newline with space separated POS-tags and Entity-tags"
+  ],
+  [
+   "The sentences",
+   "are separated by",
+   "empty newline"
+  ]
+ ],
+ "1908.05828::s09::p000": [
+  [
+   "This dataset",
+   "follows",
+   "standard CoNLL-2003 IOB formatBIBREF25 with POS tags"
+  ],
+  [
+   "This dataset",
+   "is prepared by",
+   "ILPRL Lab, KU and KEIV Technologies"
+  ],
+  [
+   "Few corrections like correcting the NER tags",
+   "had to be made on",
+   "the dataset"
+  ]
+ ],
+ "1908.05828::s09::p001": [
+  [
+   "The dataset",
+   "is divided into",
+   "three parts with 64%, 16% and 20% of the total dataset into training set, development set and test set respectively"
+  ]
+ ],
+ "1908.05828::s10::p000": [
+  [
+   "The neural network architecture",
+   "are implemented using",
+   "PyTorch framework BIBREF26"
+  ],
+  [
+   "The training",
+   "is performed on",
+   "a single Nvidia Tesla P100 SXM2"
+  ],
+  [
+   "The training and evaluation",
+   "was done on",
+   "sentence-level"
+  ]
+ ],
+ "1908.05828::s10::p001": [
+  [
+   "All our models",
+   "were trained on",
+   "single layer of LSTM network"
+  ],
+  [
+   "Adam",
+   "was giving",
+   "better performance and faster convergence compared to Stochastic Gradient Descent (SGD)"
+  ],
+  [
+   "The dropout of 0.5",
+   "is applied after",
+   "LSTM layer"
+  ]
+ ],
+ "1908.05828::s10::p002": [
+  [
+   "For CNN, we",
+   "used",
+   "30 different filters of sizes 3, 4 and 5"
+  ],
+  [
+   "The embeddings of each character or grapheme involved in a given word",
+   "were passed through",
+   "the pipeline of Convolution, Rectified Linear Unit and Max-Pooling"
+  ],
+  [
+   "The resulting vectors",
+   "were concatenated and applied",
+   "dropout of 0.5 before passing into linear layer to obtain the embedding size of 30 for the given word"
+  ],
+  [
+   "This resulting embedding",
+   "is concatenated with",
+   "word embeddings, which is again concatenated with one-hot POS vector"
+  ]
+ ],
+ "1908.05828::s11::p000": [
+  [
+   "the dataset",
+   "does not contain",
+   "any B-type annotation"
+  ]
+ ],
+ "1908.05828::s12::p000": [
+  [
+   "simple early stopping technique",
+   "stops training if",
+   "the validation loss does not decrease after 10 epochs"
+  ],
+  [
+   "the training",
+   "will run upto",
+   "100 epochs"
+  ],
+  [
+   "training",
+   "usually stops around",
+   "30-50 epochs"
+  ]
+ ],
+ "1908.05828::s14::p000": [
+  [
+   "the F1 score",
+   "are at the lowest when",
+   "the dropout layer was not used"
+  ],
+  [
+   "the F1 score",
+   "starts falling down after",
+   "dropout rate = 0.5"
+  ]
+ ],
+ "1908.05828::s15::p001": [
+  [
+   "raw dataset",
+   "represents",
+   "such dataset where post-positions are not lemmatized"
+  ],
+  [
+   "pre-trained embeddings",
+   "significantly improves",
+   "the score compared to randomly initialized embedding"
+  ],
+  [
+   "Skip Gram models",
+   "perform better compared",
+   "CBOW models for word2vec and fasttext"
+  ],
+  [
+   "fastText_Pretrained",
+   "represents",
+   "the embedding readily available in fastText website"
+  ],
+  [
+   "other embeddings",
+   "are trained on",
+   "the Nepali National Corpus"
+  ],
+  [
+   "model using fastText_Skip Gram embeddings",
+   "outperforms",
+   "all other models"
+  ]
+ ],
+ "1908.05828::s15::p002": [
+  [
+   "The features used for Stanford CRF classifier",
+   "are",
+   "words, letter n-grams of upto length 6, previous word and next word"
+  ],
+  [
+   "This model",
+   "is trained till",
+   "the current function value is less than $1\\mathrm {e}{-2}$"
+  ],
+  [
+   "word embedding of character-level and grapheme-level",
+   "is",
+   "random"
+  ]
+ ],
+ "1908.05828::s15::p003": [
+  [
+   "All models",
+   "are evaluated using",
+   "CoNLL-2003 evaluation scriptBIBREF25"
+  ],
+  [
+   "CoNLL-2003 evaluation scriptBIBREF25",
+   "calculates",
+   "entity-wise precision, recall and f1 score"
+  ]
+ ],
+ "1908.05828::s16::p000": [
+  [
+   "the word vectors learned through fasttext skip gram model",
+   "performs better than",
+   "other word embedding"
+  ],
+  [
+   "fasttext skip gram model",
+   "has capability to represent",
+   "sub-word"
+  ],
+  [
+   "This concept",
+   "can come handy in",
+   "other Devanagari languages"
+  ]
+ ],
+ "1908.05828::s16::p001": [
+  [
+   "stemming post-positions",
+   "can help a lot in improving",
+   "model performance"
+  ],
+  [
+   "separating out its inflections or morphemes",
+   "can minimize",
+   "the variations of same word"
+  ],
+  [
+   "minimizing the variations of same word",
+   "gives",
+   "its root word a stronger word vector representations compared to its inflected versions"
+  ]
+ ],
+ "1908.05828::s16::p002": [
+  [
+   "OurNepali dataset volume",
+   "is almost ten times bigger compared to",
+   "ILPRL dataset in terms of entities"
+  ]
+ ],
+ "1908.05828::s17::p001": [
+  [
+   "BiLSTM+CNN(grapheme-level)",
+   "performs on par with",
+   "BiLSTM+CNN(character-level)"
+  ],
+  [
+   "BiLSTM+CNN(grapheme-level)",
+   "outperforms all other model experimented in",
+   "OurNepali"
+  ],
+  [
+   "BiLSTM+CNN(G)+POS",
+   "outperforms all other model experimented in",
+   "ILPRL dataset"
+  ]
+ ],
+ "1908.05828::s17::p002": [
+  [
+   "this",
+   "is",
+   "the first named entity recognition research in Nepal language using neural network"
+  ],
+  [
+   "initializing the grapheme-level embedding with fasttext embeddings",
+   "might help boosting",
+   "the performance"
+  ]
+ ],
+ "1908.05828::s17::p003": [
+  [
+   "special committee",
+   "should create and maintain",
+   "such dataset for Nepali NLP"
+  ],
+  [
+   "special committee",
+   "should organize",
+   "various competitions"
+  ]
+ ],
+ "1908.05828::s17::p005": [
+  [
+   "Proper initialization of grapheme level embedding",
+   "is from",
+   "fasttext embeddings"
+  ]
+ ],
+ "1908.05828::s17::p006": [
+  [
+   "robust POS-tagger",
+   "is applied for",
+   "Nepali dataset"
+  ]
+ ],
+ "1908.05828::s17::p007": [
+  [
+   "OurNepali dataset",
+   "be lemmatized with",
+   "robust and efficient lemmatizer"
+  ]
+ ],
+ "1908.05828::s17::p008": [
+  [
+   "Nepali language score",
+   "be improved with",
+   "cross-lingual learning techniques"
+  ]
+ ],
+ "1908.05828::s17::p009": [
+  [
+   "more dataset",
+   "be created using",
+   "Wikipedia/Wikidata framework"
+  ]
+ ]
+}

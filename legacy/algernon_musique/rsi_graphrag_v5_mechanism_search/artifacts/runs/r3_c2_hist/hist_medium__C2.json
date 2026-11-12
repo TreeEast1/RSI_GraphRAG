@@ -1,0 +1,133 @@
+{
+  "role": "hist_medium",
+  "cluster_id": "cc-00000-stable-0059",
+  "unit_id": "cc-00000-stable-0059-u012",
+  "method": "C2",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 3181,
+    "completion_tokens": 966,
+    "reasoning_tokens": 390,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r3_c2_hist_hist_medium_C2",
+    "cache_key": "cda4e48f982fd86bd40921cac1489970868e86f7391ad5c35e7bb639011ece95"
+  },
+  "n_updates": 1,
+  "n_add": 1,
+  "n_accept": 1,
+  "n_reject": 0,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "COMPOSITIONAL_REASONING": 1
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "candidate-1",
+      "comprehension_text": "19 June 2011 was earlier than 19 August 2011.",
+      "new_semantic_relation": "19 June 2011 was earlier than 19 August 2011",
+      "operator": "TEMPORAL_COMPARE",
+      "chain": [
+        {
+          "fact": "Aidan Foster's casting was announced on 19 June 2011.",
+          "passage_id": "chunk-56664711c1c4de235b820a051107fb2f",
+          "span": "Both the character and Morley's casting was announced on 19 June 2011.",
+          "triple_id": "triple-5b9054667c84d055aa4d696e204ec674"
+        },
+        {
+          "fact": "Aidan Foster made his first screen appearance on 19 August 2011.",
+          "passage_id": "chunk-56664711c1c4de235b820a051107fb2f",
+          "span": "He made his first screen appearance as Aidan during the episode broadcast on 19 August 2011.",
+          "triple_id": "triple-43b9e42c4390ba2499fbef2fd2b76916"
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-f5c5de3ce09831eb326bde60582450a7",
+        "entity-fe83455d02a54411651cd8d70d4ade78",
+        "entity-4c36c820d1780fd4bf862f986e8bfb72"
+      ],
+      "source_triple_ids": [
+        "triple-5b9054667c84d055aa4d696e204ec674",
+        "triple-43b9e42c4390ba2499fbef2fd2b76916"
+      ],
+      "source_passage_ids": [
+        "chunk-56664711c1c4de235b820a051107fb2f"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-56664711c1c4de235b820a051107fb2f",
+          "span": "Both the character and Morley's casting was announced on 19 June 2011."
+        },
+        {
+          "passage_id": "chunk-56664711c1c4de235b820a051107fb2f",
+          "span": "He made his first screen appearance as Aidan during the episode broadcast on 19 August 2011."
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The earlier-than relation between 19 June 2011 and 19 August 2011.",
+      "reasoning_summary": "TEMPORAL_COMPARE fired after checking the two date triples; neither supplied triple compares the dates.",
+      "novelty_justification": "The supplied triples state each date separately but do not state which date is earlier.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "candidate-1",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "COMPOSITIONAL_REASONING",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: earlier",
+      "residue": [
+        "earlier"
+      ],
+      "evidence_sentences": [
+        "Both the character and Morley's casting was announced on 19 June 2011. The actor began filming his first scenes that same week.",
+        "He made his first screen appearance as Aidan during the episode broadcast on 19 August 2011. Morley took a ten-week break from \"Neighbours\" in April 2012 to appear in the feature film, \"Blinder\"."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Both the character and Morley's casting was announced on 19 June 2011. The actor began filming his first scenes that same week.",
+            "He made his first screen appearance as Aidan during the episode broadcast on 19 August 2011. Morley took a ten-week break from \"Neighbours\" in April 2012 to appear in the feature film, \"Blinder\"."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": [
+            [
+              2011,
+              6,
+              19
+            ],
+            [
+              2011,
+              8,
+              19
+            ]
+          ]
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "earlier"
+          ],
+          "n_passage_triples": 13,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

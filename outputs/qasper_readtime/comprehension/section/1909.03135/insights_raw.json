@@ -1,0 +1,562 @@
+{
+ "insights": [
+  {
+   "insight_id": "1909.03135::g00:i00",
+   "paper_id": "1909.03135",
+   "group_id": "1909.03135::g00",
+   "concise_text": "Because contextualised models cannot be evaluated on static tasks, the authors used WSD with Senseval-3 for English and RUSSE'18 for Russian to compare ELMo trained before and after lemmatization.",
+   "triple": {
+    "subject": "word sense disambiguation in context (WSD)",
+    "predicate": "evaluated_on",
+    "object": "Senseval-3 and RUSSE'18"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1909.03135::s00::p003",
+    "1909.03135::s03::p001",
+    "1909.03135::s03::p002"
+   ],
+   "supporting_fact_ids": [
+    "1909.03135::g00:b0:f07",
+    "1909.03135::g00:b2:f05",
+    "1909.03135::g00:b2:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.03135::u000"
+  },
+  {
+   "insight_id": "1909.03135::g00:i01",
+   "paper_id": "1909.03135",
+   "group_id": "1909.03135::g00",
+   "concise_text": "The RUSSE'18 dataset's 132 distinct forms for 18 target nouns versus Senseval-3's 39 distinct forms for 20 target nouns supports the observed Russian-specific ELMo lemma advantage.",
+   "triple": {
+    "subject": "RUSSE'18 morphological complexity",
+    "predicate": "causes",
+    "object": "ELMo (target) on lemmas outperforming ELMo on tokens for Russian"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.03135::s03::p034",
+    "1909.03135::s03::p035",
+    "1909.03135::s04::p006"
+   ],
+   "supporting_fact_ids": [
+    "1909.03135::g00:b7:f10",
+    "1909.03135::g00:b7:f13",
+    "1909.03135::g00:b8:f00",
+    "1909.03135::g00:b9:f06"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.03135::u001"
+  },
+  {
+   "insight_id": "1909.03135::g00:i02",
+   "paper_id": "1909.03135",
+   "group_id": "1909.03135::g00",
+   "concise_text": "The authors' ELMo models trained on corpora tokenized and lemmatized with UDPipe were evaluated on WSD datasets pre-processed the same way, producing lemmatized and non-lemmatized versions.",
+   "triple": {
+    "subject": "UDPipe pre-processing",
+    "predicate": "extends",
+    "object": "both ELMo training corpora and WSD datasets"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1909.03135::s02::p001",
+    "1909.03135::s03::p033"
+   ],
+   "supporting_fact_ids": [
+    "1909.03135::g00:b1:f11",
+    "1909.03135::g00:b7:f05",
+    "1909.03135::g00:b7:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.03135::u002"
+  },
+  {
+   "insight_id": "1909.03135::g00:i03",
+   "paper_id": "1909.03135",
+   "group_id": "1909.03135::g00",
+   "concise_text": "The widely believed assumption that lemmatization is unnecessary is contradicted for Russian by ELMo (target) on lemmas outperforming ELMo on tokens in WSD.",
+   "triple": {
+    "subject": "Russian ELMo WSD results",
+    "predicate": "limits",
+    "object": "the assumption that lemmatization is not necessary"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1909.03135::s00::p001",
+    "1909.03135::s04::p006",
+    "1909.03135::s06::p001"
+   ],
+   "supporting_fact_ids": [
+    "1909.03135::g00:b0:f03",
+    "1909.03135::g00:b9:f06",
+    "1909.03135::g00:b10:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.03135::u003"
+  },
+  {
+   "insight_id": "1909.03135::g00:i04",
+   "paper_id": "1909.03135",
+   "group_id": "1909.03135::g00",
+   "concise_text": "The negligible English ELMo differences and small but significant Russian improvement jointly support the conclusion that language morphology changes whether lemmatized training data helps WSD.",
+   "triple": {
+    "subject": "English and Russian ELMo WSD comparisons",
+    "predicate": "causes",
+    "object": "different decisions being optimal or sub-optimal at the stage of deep learning models training"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.03135::s04::p006",
+    "1909.03135::s06::p003"
+   ],
+   "supporting_fact_ids": [
+    "1909.03135::g00:b9:f05",
+    "1909.03135::g00:b9:f06",
+    "1909.03135::g00:b10:f15"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.03135::u004"
+  },
+  {
+   "insight_id": "1909.03135::g00:i05",
+   "paper_id": "1909.03135",
+   "group_id": "1909.03135::g00",
+   "concise_text": "The Russian lemma-based improvement is mostly driven by 3 of 18 words, qualifying the claim that lemmatization yields small but consistent improvements in the WSD task.",
+   "triple": {
+    "subject": "3 of 18 Russian words",
+    "predicate": "limits",
+    "object": "small but consistent improvements in the WSD task"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.03135::s00::p007",
+    "1909.03135::s05::p002"
+   ],
+   "supporting_fact_ids": [
+    "1909.03135::g00:b1:f01",
+    "1909.03135::g00:b9:f14",
+    "1909.03135::g00:b9:f15"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.03135::u005"
+  },
+  {
+   "insight_id": "1909.03135::g00:i06",
+   "paper_id": "1909.03135",
+   "group_id": "1909.03135::g00",
+   "concise_text": "russianДомино lacks inflected forms and all its tokens are already identical, explaining why improvements are not observed for rare words which lack inflected forms.",
+   "triple": {
+    "subject": "russianДомино",
+    "predicate": "causes",
+    "object": "improvements not being observed for rare words which lack inflected forms"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.03135::s05::p004",
+    "1909.03135::s06::p001"
+   ],
+   "supporting_fact_ids": [
+    "1909.03135::g00:b10:f00",
+    "1909.03135::g00:b10:f01",
+    "1909.03135::g00:b10:f09"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.03135::u006"
+  },
+  {
+   "insight_id": "1909.03135::g00:i07",
+   "paper_id": "1909.03135",
+   "group_id": "1909.03135::g00",
+   "concise_text": "Because UDPipe lemmatization accuracy is about 96% for English and 97% for Russian, the 24 English lemmas and 36 Russian lemmas from target words indicate results depend on lemmatization quality.",
+   "triple": {
+    "subject": "UDPipe lemmatization errors",
+    "predicate": "causes",
+    "object": "the results being heavily dependent on the quality of lemmatization"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.03135::s02::p001",
+    "1909.03135::s03::p034",
+    "1909.03135::s05::p005"
+   ],
+   "supporting_fact_ids": [
+    "1909.03135::g00:b1:f12",
+    "1909.03135::g00:b7:f07",
+    "1909.03135::g00:b7:f08",
+    "1909.03135::g00:b7:f09",
+    "1909.03135::g00:b10:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.8,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.03135::u007"
+  },
+  {
+   "insight_id": "1909.03135::g00:i08",
+   "paper_id": "1909.03135",
+   "group_id": "1909.03135::g00",
+   "concise_text": "The feature-extraction setup using single target word vectors from the ELMo top layer led the authors to discuss only that mode after averaging was not beneficial for WSD with ELMo.",
+   "triple": {
+    "subject": "averaging not beneficial for WSD with ELMo",
+    "predicate": "causes",
+    "object": "discussion of only the single target word usage mode of ELMo"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1909.03135::s04::p001",
+    "1909.03135::s04::p005"
+   ],
+   "supporting_fact_ids": [
+    "1909.03135::g00:b8:f03",
+    "1909.03135::g00:b9:f01",
+    "1909.03135::g00:b9:f02",
+    "1909.03135::g00:b9:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.03135::u008"
+  },
+  {
+   "insight_id": "1909.03135::g00:i09",
+   "paper_id": "1909.03135",
+   "group_id": "1909.03135::g00",
+   "concise_text": "The MLP classifier with 200-neurons hidden layer yielding essentially the same results as simple logistic regression supports the claim that the findings are not classifier-dependent.",
+   "triple": {
+    "subject": "MLP and logistic regression same results",
+    "predicate": "causes",
+    "object": "findings not classifier-dependent"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1909.03135::s04::p003",
+    "1909.03135::s04::p006"
+   ],
+   "supporting_fact_ids": [
+    "1909.03135::g00:b8:f07",
+    "1909.03135::g00:b8:f08",
+    "1909.03135::g00:b9:f05",
+    "1909.03135::g00:b9:f06"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.79,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1909.03135::u009"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1909.03135::g00",
+   "insights": [
+    {
+     "insight_id": "1909.03135::g00:i00",
+     "paper_id": "1909.03135",
+     "group_id": "1909.03135::g00",
+     "concise_text": "Because contextualised models cannot be evaluated on static tasks, the authors used WSD with Senseval-3 for English and RUSSE'18 for Russian to compare ELMo trained before and after lemmatization.",
+     "triple": {
+      "subject": "word sense disambiguation in context (WSD)",
+      "predicate": "evaluated_on",
+      "object": "Senseval-3 and RUSSE'18"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1909.03135::s00::p003",
+      "1909.03135::s03::p001",
+      "1909.03135::s03::p002"
+     ],
+     "supporting_fact_ids": [
+      "1909.03135::g00:b0:f07",
+      "1909.03135::g00:b2:f05",
+      "1909.03135::g00:b2:f06"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.03135::u000"
+    },
+    {
+     "insight_id": "1909.03135::g00:i01",
+     "paper_id": "1909.03135",
+     "group_id": "1909.03135::g00",
+     "concise_text": "The RUSSE'18 dataset's 132 distinct forms for 18 target nouns versus Senseval-3's 39 distinct forms for 20 target nouns supports the observed Russian-specific ELMo lemma advantage.",
+     "triple": {
+      "subject": "RUSSE'18 morphological complexity",
+      "predicate": "causes",
+      "object": "ELMo (target) on lemmas outperforming ELMo on tokens for Russian"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1909.03135::s03::p034",
+      "1909.03135::s03::p035",
+      "1909.03135::s04::p006"
+     ],
+     "supporting_fact_ids": [
+      "1909.03135::g00:b7:f10",
+      "1909.03135::g00:b7:f13",
+      "1909.03135::g00:b8:f00",
+      "1909.03135::g00:b9:f06"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.03135::u001"
+    },
+    {
+     "insight_id": "1909.03135::g00:i02",
+     "paper_id": "1909.03135",
+     "group_id": "1909.03135::g00",
+     "concise_text": "The authors' ELMo models trained on corpora tokenized and lemmatized with UDPipe were evaluated on WSD datasets pre-processed the same way, producing lemmatized and non-lemmatized versions.",
+     "triple": {
+      "subject": "UDPipe pre-processing",
+      "predicate": "extends",
+      "object": "both ELMo training corpora and WSD datasets"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1909.03135::s02::p001",
+      "1909.03135::s03::p033"
+     ],
+     "supporting_fact_ids": [
+      "1909.03135::g00:b1:f11",
+      "1909.03135::g00:b7:f05",
+      "1909.03135::g00:b7:f06"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.93,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.03135::u002"
+    },
+    {
+     "insight_id": "1909.03135::g00:i03",
+     "paper_id": "1909.03135",
+     "group_id": "1909.03135::g00",
+     "concise_text": "The widely believed assumption that lemmatization is unnecessary is contradicted for Russian by ELMo (target) on lemmas outperforming ELMo on tokens in WSD.",
+     "triple": {
+      "subject": "Russian ELMo WSD results",
+      "predicate": "limits",
+      "object": "the assumption that lemmatization is not necessary"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1909.03135::s00::p001",
+      "1909.03135::s04::p006",
+      "1909.03135::s06::p001"
+     ],
+     "supporting_fact_ids": [
+      "1909.03135::g00:b0:f03",
+      "1909.03135::g00:b9:f06",
+      "1909.03135::g00:b10:f07"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.03135::u003"
+    },
+    {
+     "insight_id": "1909.03135::g00:i04",
+     "paper_id": "1909.03135",
+     "group_id": "1909.03135::g00",
+     "concise_text": "The negligible English ELMo differences and small but significant Russian improvement jointly support the conclusion that language morphology changes whether lemmatized training data helps WSD.",
+     "triple": {
+      "subject": "English and Russian ELMo WSD comparisons",
+      "predicate": "causes",
+      "object": "different decisions being optimal or sub-optimal at the stage of deep learning models training"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1909.03135::s04::p006",
+      "1909.03135::s06::p003"
+     ],
+     "supporting_fact_ids": [
+      "1909.03135::g00:b9:f05",
+      "1909.03135::g00:b9:f06",
+      "1909.03135::g00:b10:f15"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.03135::u004"
+    },
+    {
+     "insight_id": "1909.03135::g00:i05",
+     "paper_id": "1909.03135",
+     "group_id": "1909.03135::g00",
+     "concise_text": "The Russian lemma-based improvement is mostly driven by 3 of 18 words, qualifying the claim that lemmatization yields small but consistent improvements in the WSD task.",
+     "triple": {
+      "subject": "3 of 18 Russian words",
+      "predicate": "limits",
+      "object": "small but consistent improvements in the WSD task"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1909.03135::s00::p007",
+      "1909.03135::s05::p002"
+     ],
+     "supporting_fact_ids": [
+      "1909.03135::g00:b1:f01",
+      "1909.03135::g00:b9:f14",
+      "1909.03135::g00:b9:f15"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.03135::u005"
+    },
+    {
+     "insight_id": "1909.03135::g00:i06",
+     "paper_id": "1909.03135",
+     "group_id": "1909.03135::g00",
+     "concise_text": "russianДомино lacks inflected forms and all its tokens are already identical, explaining why improvements are not observed for rare words which lack inflected forms.",
+     "triple": {
+      "subject": "russianДомино",
+      "predicate": "causes",
+      "object": "improvements not being observed for rare words which lack inflected forms"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1909.03135::s05::p004",
+      "1909.03135::s06::p001"
+     ],
+     "supporting_fact_ids": [
+      "1909.03135::g00:b10:f00",
+      "1909.03135::g00:b10:f01",
+      "1909.03135::g00:b10:f09"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.03135::u006"
+    },
+    {
+     "insight_id": "1909.03135::g00:i07",
+     "paper_id": "1909.03135",
+     "group_id": "1909.03135::g00",
+     "concise_text": "Because UDPipe lemmatization accuracy is about 96% for English and 97% for Russian, the 24 English lemmas and 36 Russian lemmas from target words indicate results depend on lemmatization quality.",
+     "triple": {
+      "subject": "UDPipe lemmatization errors",
+      "predicate": "causes",
+      "object": "the results being heavily dependent on the quality of lemmatization"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1909.03135::s02::p001",
+      "1909.03135::s03::p034",
+      "1909.03135::s05::p005"
+     ],
+     "supporting_fact_ids": [
+      "1909.03135::g00:b1:f12",
+      "1909.03135::g00:b7:f07",
+      "1909.03135::g00:b7:f08",
+      "1909.03135::g00:b7:f09",
+      "1909.03135::g00:b10:f05"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.8,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.03135::u007"
+    },
+    {
+     "insight_id": "1909.03135::g00:i08",
+     "paper_id": "1909.03135",
+     "group_id": "1909.03135::g00",
+     "concise_text": "The feature-extraction setup using single target word vectors from the ELMo top layer led the authors to discuss only that mode after averaging was not beneficial for WSD with ELMo.",
+     "triple": {
+      "subject": "averaging not beneficial for WSD with ELMo",
+      "predicate": "causes",
+      "object": "discussion of only the single target word usage mode of ELMo"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1909.03135::s04::p001",
+      "1909.03135::s04::p005"
+     ],
+     "supporting_fact_ids": [
+      "1909.03135::g00:b8:f03",
+      "1909.03135::g00:b9:f01",
+      "1909.03135::g00:b9:f02",
+      "1909.03135::g00:b9:f03"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.03135::u008"
+    },
+    {
+     "insight_id": "1909.03135::g00:i09",
+     "paper_id": "1909.03135",
+     "group_id": "1909.03135::g00",
+     "concise_text": "The MLP classifier with 200-neurons hidden layer yielding essentially the same results as simple logistic regression supports the claim that the findings are not classifier-dependent.",
+     "triple": {
+      "subject": "MLP and logistic regression same results",
+      "predicate": "causes",
+      "object": "findings not classifier-dependent"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1909.03135::s04::p003",
+      "1909.03135::s04::p006"
+     ],
+     "supporting_fact_ids": [
+      "1909.03135::g00:b8:f07",
+      "1909.03135::g00:b8:f08",
+      "1909.03135::g00:b9:f05",
+      "1909.03135::g00:b9:f06"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.79,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1909.03135::u009"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 13297,
+    "completion_tokens": 1951,
+    "total_tokens": 15248,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

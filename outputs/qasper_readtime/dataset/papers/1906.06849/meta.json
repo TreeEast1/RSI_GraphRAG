@@ -1,0 +1,90 @@
+{
+ "paper_id": "1906.06849",
+ "title": "A Multi-Task Architecture on Relevance-based Neural Query Translation",
+ "abstract": "We describe a multi-task learning approach to train a Neural Machine Translation (NMT) model with a Relevance-based Auxiliary Task (RAT) for search query translation. The translation process for Cross-lingual Information Retrieval (CLIR) task is usually treated as a black box and it is performed as an independent step. However, an NMT model trained on sentence-level parallel data is not aware of the vocabulary distribution of the retrieval corpus. We address this problem with our multi-task learning architecture that achieves 16% improvement over a strong NMT baseline on Italian-English query-document dataset. We show using both quantitative and qualitative analysis that our model generates balanced and precise translations with the regularization effect it achieves from multi-task learning paradigm.",
+ "sections": [
+  "Introduction",
+  "Balanced Translation Approach",
+  "NMT and Transformer",
+  "Relevance-based Auxiliary Task (RAT)",
+  "Multi-task NMT Architecture",
+  "Results and Analysis",
+  "Conclusion",
+  "Acknowledgments",
+  "Loss Function and Validation Performance Analysis"
+ ],
+ "n_paragraphs": 20,
+ "n_tokens": 2767,
+ "figures_and_tables": [
+  {
+   "caption_id": "1906.06849::fig000",
+   "paper_id": "1906.06849",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: The architecture of our multi-task NMT. Note that, rectangles indicate data sources and rectangles with rounded corners indicate functions or layers.",
+   "n_tokens": 30
+  },
+  {
+   "caption_id": "1906.06849::fig001",
+   "paper_id": "1906.06849",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Statistics of resources used for training. |VF | and |VE | are the vocabulary size for the source language and the target English language, respectively.",
+   "n_tokens": 34
+  },
+  {
+   "caption_id": "1906.06849::fig002",
+   "paper_id": "1906.06849",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Results for ranking with query translation models, in terms of MAP.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1906.06849::fig003",
+   "paper_id": "1906.06849",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2: Balance values of a sample of val queries",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1906.06849::fig004",
+   "paper_id": "1906.06849",
+   "file": "4-Figure3-1.png",
+   "caption": "Figure 3: Balance values of a sample of test queries",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1906.06849::fig005",
+   "paper_id": "1906.06849",
+   "file": "5-Table3-1.png",
+   "caption": "Table 3: Average precision and recall of translated queries, respectively reported in tuples.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1906.06849::fig006",
+   "paper_id": "1906.06849",
+   "file": "6-Figure4-1.png",
+   "caption": "Figure 4: RAT loss of our model on Italian-English training data",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1906.06849::fig007",
+   "paper_id": "1906.06849",
+   "file": "6-Figure5-1.png",
+   "caption": "Figure 5: Validation performance of our model on Italian-English validation data",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1906.06849::fig008",
+   "paper_id": "1906.06849",
+   "file": "6-Figure6-1.png",
+   "caption": "Figure 6: NMT loss of our model on Italian-English training data",
+   "n_tokens": 16
+  },
+  {
+   "caption_id": "1906.06849::fig009",
+   "paper_id": "1906.06849",
+   "file": "6-Figure7-1.png",
+   "caption": "Figure 7: Validation set performance of Transformer on Italian-English training data",
+   "n_tokens": 15
+  }
+ ]
+}

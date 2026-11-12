@@ -1,0 +1,219 @@
+{
+ "2003.08380::s00::p000": [
+  [
+   "encoder–decoder style pretrained transformers",
+   "have been proven to be effective in",
+   "text generation tasks as well as comprehension tasks"
+  ]
+ ],
+ "2003.08380::s00::p001": [
+  [
+   "NLP tasks",
+   "are formulated as",
+   "text-to-text problems"
+  ],
+  [
+   "the inputs",
+   "are cast into",
+   "natural language templates that contain the task descriptors"
+  ],
+  [
+   "the goal",
+   "is to predict",
+   "whether a premise implies (“entailment”) or contradicts (“contradiction”) a hypothesis, or neither (“neutral”)"
+  ]
+ ],
+ "2003.08380::s00::p003": [
+  [
+   "“entailment”",
+   "is",
+   "the corresponding ground truth target output"
+  ],
+  [
+   "a token representing each class",
+   "is directly used as",
+   "the prediction target"
+  ]
+ ],
+ "2003.08380::s01::p000": [
+  [
+   "The natural language template approach",
+   "enables",
+   "various options to formulate the WinoGrande commonsense reasoning task as a text-to-text problem with T5"
+  ]
+ ],
+ "2003.08380::s01::p003": [
+  [
+   "the correct replacement for _",
+   "is",
+   "Option1"
+  ],
+  [
+   "the above problem",
+   "is decomposed into",
+   "two source–target training examples"
+  ],
+  [
+   "each example",
+   "is reformulated into",
+   "a commonsense reasoning “template” with two statements"
+  ]
+ ],
+ "2003.08380::s01::p004": [
+  [
+   "the problem",
+   "is decomposed into",
+   "two inputs"
+  ],
+  [
+   "each input",
+   "is formulated in",
+   "exactly the same manner as in Table TABREF2"
+  ],
+  [
+   "there",
+   "are",
+   "four possible outcomes"
+  ]
+ ],
+ "2003.08380::s01::p005": [
+  [
+   "one",
+   "produces",
+   "“entailment”"
+  ],
+  [
+   "the other",
+   "produces",
+   "“contradiction”"
+  ]
+ ],
+ "2003.08380::s01::p006": [
+  [
+   "one",
+   "produces",
+   "“entailment” or “contradiction”"
+  ],
+  [
+   "the other",
+   "produces",
+   "some other token"
+  ]
+ ],
+ "2003.08380::s01::p007": [
+  [
+   "both",
+   "produce",
+   "some other tokens"
+  ]
+ ],
+ "2003.08380::s01::p010": [
+  [
+   "This general problem setup",
+   "allows us to choose",
+   "the target tokens"
+  ]
+ ],
+ "2003.08380::s02::p000": [
+  [
+   "Condition #2",
+   "achieves",
+   "0.7673 AUC on the held-out test set"
+  ]
+ ],
+ "2003.08380::s02::p001": [
+  [
+   "the logit trick",
+   "clearly improves",
+   "performance"
+  ],
+  [
+   "applying this technique in the zero-shot setting",
+   "yields",
+   "performance that is clearly better than random"
+  ],
+  [
+   "the choice of target token",
+   "appears to have an impact on",
+   "performance"
+  ],
+  [
+   "using true/false as the target token (conditions #3 and #4)",
+   "did not improve",
+   "performance much over conditions with entailment/contradiction"
+  ]
+ ],
+ "2003.08380::s02::p002": [
+  [
+   "previous state of the art",
+   "is based on",
+   "RoBERTa"
+  ],
+  [
+   "RoBERTa",
+   "can be characterized as",
+   "an encoder-only transformer architecture"
+  ],
+  [
+   "choice of target tokens",
+   "affects",
+   "prediction accuracy"
+  ]
+ ],
+ "2003.08380::s03::p000": [
+  [
+   "previous models",
+   "perform well on",
+   "benchmark datasets"
+  ],
+  [
+   "previous models",
+   "pick up on",
+   "incidental biases in the dataset"
+  ],
+  [
+   "WinoGrande dataset",
+   "has devoted considerable effort to reducing",
+   "such biases"
+  ],
+  [
+   "datasets",
+   "over-estimate",
+   "the commonsense reasoning capabilities of modern models"
+  ]
+ ],
+ "2003.08380::s03::p001": [
+  [
+   "commonsense reasoning",
+   "is difficult because it comprises",
+   "tacit rather than explicit knowledge"
+  ],
+  [
+   "factual knowledge",
+   "can be modeled in",
+   "a knowledge graph"
+  ],
+  [
+   "data-driven techniques (even neural models)",
+   "will be of limited use due to",
+   "the paucity of relevant corpora"
+  ]
+ ],
+ "2003.08380::s03::p002": [
+  [
+   "previous encoder-only architectures like RoBERTa",
+   "exploit",
+   "a language modeling objective"
+  ],
+  [
+   "previous encoder-only architectures like RoBERTa",
+   "can clearly make headway in",
+   "a commonsense reasoning task"
+  ],
+  [
+   "WinoGrande challenge",
+   "still contains",
+   "incidental biases"
+  ]
+ ]
+}

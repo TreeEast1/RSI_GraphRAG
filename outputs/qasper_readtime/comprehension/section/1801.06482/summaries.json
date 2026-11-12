@@ -1,0 +1,282 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1801.06482::s00::p000",
+   "summary": "Cyberbullying is defined by the National Crime Prevention Council, affects between to 10% to 40% of internet users, can cause effects from temporary anxiety to suicide, and includes Arvida Byström's October 2017 experience.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s00::p001",
+   "summary": "Cyberbullying detection is challenging due to subjective definitions, platform-specific semantics such as `fat' in the Twitter dataset, varying communication styles, evolving words and hashtags, and anonymity.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s00::p002",
+   "summary": "Past works have Bottleneck B1, Bottleneck B2, and Bottleneck B3, while this work targets Formspring, Twitter, and Wikipedia for personal attack, racism, and sexism using deep learning and transfer learning.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s00::p003",
+   "summary": "Experiments used logistic regression, support vector machine, random forest, naive Bayes, CNN, LSTM, BLSTM, BLSTM with Attention, and bag of character n-gram, bag of word unigram, GloVe embeddings, SSWE embeddings.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s01::p000",
+   "summary": "Experiments used large, diverse, manually annotated, publicly available datasets from Formspring, Twitter, and Wikipedia talk pages, with class imbalance, vocabulary size variation, and truncation at the 95 percentile.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s01::p001",
+   "summary": "Formspring was a question and answer website whose dataset includes 12K annotated question and answer pairs, with 825 labeled as containing cyberbullying content by at least two Amazon Mechanical turk workers.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s01::p002",
+   "summary": "The Twitter dataset includes 16K annotated tweets, with 3117 labeled as sexist, 1937 as racist, and the remaining marked as neither sexist nor racist.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s01::p003",
+   "summary": "The Wikipedia dataset includes over 100k labeled discussion comments from English Wikipedia's talk pages, labeled by 10 annotators via Crowdflower, with 13590 comments labeled as personal attack.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s02::p000",
+   "summary": "Swear word usage and anonymity are inadequate cyberbullying clues, with 78% of Formspring swearing posts non-bullying, 82% of Twitter bullying posts lacking swear words, and Twitter disallowing anonymous postings.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s03::p000",
+   "summary": "Cyberbullying has been recognized since 2003, automatic detection since 2009, and existing text classification works rely on single SMP datasets, handcrafted features, F1 score, accuracy, and only recently deep learning.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s04::p000",
+   "summary": "Four DNN based models, CNN, LSTM, BLSTM, and BLSTM with attention, were tested with increasing neural architecture complexity and information use, differing only in the Neural Architecture layer.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s04::p001",
+   "summary": "The embedding layer used random, GloVe BIBREF12, and SSWE BIBREF13 initialization, learned task specific word embeddings, and reported results with dimension size 50 despite testing 30 to 200.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s04::p002",
+   "summary": "Models used dropout rates of 0.25 and 0.5, a fully connected layer, softmax, backpropagation, Adam, categorical cross-entropy, task-specific word embeddings, and code at https://github.com/sweta20/Detecting-Cyberbullying-Across-SMPs.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s05::p000",
+   "summary": "Traditional machine learning models LR, SVM, RF, and NB with character n-gram and word unigram representations performed significantly lower than DNN models across multiple SMPs.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s05::p001",
+   "summary": "All DNN models were implemented using Keras, with preprocessing removing stop words and punctuation marks and lowercasing, and performance reported after five-fold cross-validation.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s06::p000",
+   "summary": "Oversampling bullying posts thrice reduced class imbalance bias, improved all DNN models, especially Formspring with 825 bullying instances, and replication rate of three was good enough.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s07::p000",
+   "summary": "Initial word embeddings had no significant effect with oversampling, while without oversampling a performance gap between CNN and BLSTM with attention reduced as dataset size increased.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s07::p001",
+   "summary": "Table TABREF20 compares four DNN models using SSWE initial word embeddings, showing LSTM usually weaker and no significant performance gap among the other three models.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s08::p000",
+   "summary": "Learned embeddings from BLSTM with attention, visualized using t-SNE BIBREF16, show clusters of words relevant to particular cyberbullying topics in Table TABREF22.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s08::p001",
+   "summary": "Table TABREF23 shows word meanings change across cyberbullying topics, with Twitter treating slave as similar to racism and sexism targets, unlike Wikipedia.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s09::p000",
+   "summary": "Transfer learning was used with BLSTM with attention to test whether knowledge from one dataset improves cyberbullying detection on other datasets, with three flavors.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s09::p001",
+   "summary": "Complete Transfer Learning (TL1) gave significantly low recall, relatively higher precision, and showed Formspring and Wikipedia cyberbullying nature more similar than Twitter, with precision =0.51, recall=0.66, precision=0.38, and recall=0.04.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s09::p002",
+   "summary": "Feature Level Transfer Learning (TL2) transferred learned word embeddings to another dataset, dramatically improving recall and significantly improving precision over TL1.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s09::p003",
+   "summary": "Model Level Transfer Learning (TL3) transferred learned word embeddings and network weights but did not significantly improve over TL2, indicating learned word embeddings are key knowledge.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s09::p004",
+   "summary": "DNN based models with transfer learning beat best-known results, achieving F1 scores of 0.94 for Wikipedia and Twitter, and F1 score of 0.95 with accuracy score of 98% for Formspring.",
+   "group_id": "1801.06482::g00"
+  },
+  {
+   "passage_id": "1801.06482::s10::p000",
+   "summary": "DNN models with transfer learning beat state of the art results for all three datasets and may improve with profile, social graph, and severity information.",
+   "group_id": "1801.06482::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1801.06482::g00",
+   "summaries": [
+    {
+     "passage_id": "1801.06482::s00::p000",
+     "summary": "Cyberbullying is defined by the National Crime Prevention Council, affects between to 10% to 40% of internet users, can cause effects from temporary anxiety to suicide, and includes Arvida Byström's October 2017 experience.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s00::p001",
+     "summary": "Cyberbullying detection is challenging due to subjective definitions, platform-specific semantics such as `fat' in the Twitter dataset, varying communication styles, evolving words and hashtags, and anonymity.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s00::p002",
+     "summary": "Past works have Bottleneck B1, Bottleneck B2, and Bottleneck B3, while this work targets Formspring, Twitter, and Wikipedia for personal attack, racism, and sexism using deep learning and transfer learning.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s00::p003",
+     "summary": "Experiments used logistic regression, support vector machine, random forest, naive Bayes, CNN, LSTM, BLSTM, BLSTM with Attention, and bag of character n-gram, bag of word unigram, GloVe embeddings, SSWE embeddings.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s01::p000",
+     "summary": "Experiments used large, diverse, manually annotated, publicly available datasets from Formspring, Twitter, and Wikipedia talk pages, with class imbalance, vocabulary size variation, and truncation at the 95 percentile.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s01::p001",
+     "summary": "Formspring was a question and answer website whose dataset includes 12K annotated question and answer pairs, with 825 labeled as containing cyberbullying content by at least two Amazon Mechanical turk workers.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s01::p002",
+     "summary": "The Twitter dataset includes 16K annotated tweets, with 3117 labeled as sexist, 1937 as racist, and the remaining marked as neither sexist nor racist.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s01::p003",
+     "summary": "The Wikipedia dataset includes over 100k labeled discussion comments from English Wikipedia's talk pages, labeled by 10 annotators via Crowdflower, with 13590 comments labeled as personal attack.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s02::p000",
+     "summary": "Swear word usage and anonymity are inadequate cyberbullying clues, with 78% of Formspring swearing posts non-bullying, 82% of Twitter bullying posts lacking swear words, and Twitter disallowing anonymous postings.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s03::p000",
+     "summary": "Cyberbullying has been recognized since 2003, automatic detection since 2009, and existing text classification works rely on single SMP datasets, handcrafted features, F1 score, accuracy, and only recently deep learning.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s04::p000",
+     "summary": "Four DNN based models, CNN, LSTM, BLSTM, and BLSTM with attention, were tested with increasing neural architecture complexity and information use, differing only in the Neural Architecture layer.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s04::p001",
+     "summary": "The embedding layer used random, GloVe BIBREF12, and SSWE BIBREF13 initialization, learned task specific word embeddings, and reported results with dimension size 50 despite testing 30 to 200.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s04::p002",
+     "summary": "Models used dropout rates of 0.25 and 0.5, a fully connected layer, softmax, backpropagation, Adam, categorical cross-entropy, task-specific word embeddings, and code at https://github.com/sweta20/Detecting-Cyberbullying-Across-SMPs.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s05::p000",
+     "summary": "Traditional machine learning models LR, SVM, RF, and NB with character n-gram and word unigram representations performed significantly lower than DNN models across multiple SMPs.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s05::p001",
+     "summary": "All DNN models were implemented using Keras, with preprocessing removing stop words and punctuation marks and lowercasing, and performance reported after five-fold cross-validation.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s06::p000",
+     "summary": "Oversampling bullying posts thrice reduced class imbalance bias, improved all DNN models, especially Formspring with 825 bullying instances, and replication rate of three was good enough.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s07::p000",
+     "summary": "Initial word embeddings had no significant effect with oversampling, while without oversampling a performance gap between CNN and BLSTM with attention reduced as dataset size increased.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s07::p001",
+     "summary": "Table TABREF20 compares four DNN models using SSWE initial word embeddings, showing LSTM usually weaker and no significant performance gap among the other three models.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s08::p000",
+     "summary": "Learned embeddings from BLSTM with attention, visualized using t-SNE BIBREF16, show clusters of words relevant to particular cyberbullying topics in Table TABREF22.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s08::p001",
+     "summary": "Table TABREF23 shows word meanings change across cyberbullying topics, with Twitter treating slave as similar to racism and sexism targets, unlike Wikipedia.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s09::p000",
+     "summary": "Transfer learning was used with BLSTM with attention to test whether knowledge from one dataset improves cyberbullying detection on other datasets, with three flavors.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s09::p001",
+     "summary": "Complete Transfer Learning (TL1) gave significantly low recall, relatively higher precision, and showed Formspring and Wikipedia cyberbullying nature more similar than Twitter, with precision =0.51, recall=0.66, precision=0.38, and recall=0.04.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s09::p002",
+     "summary": "Feature Level Transfer Learning (TL2) transferred learned word embeddings to another dataset, dramatically improving recall and significantly improving precision over TL1.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s09::p003",
+     "summary": "Model Level Transfer Learning (TL3) transferred learned word embeddings and network weights but did not significantly improve over TL2, indicating learned word embeddings are key knowledge.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s09::p004",
+     "summary": "DNN based models with transfer learning beat best-known results, achieving F1 scores of 0.94 for Wikipedia and Twitter, and F1 score of 0.95 with accuracy score of 98% for Formspring.",
+     "group_id": "1801.06482::g00"
+    },
+    {
+     "passage_id": "1801.06482::s10::p000",
+     "summary": "DNN models with transfer learning beat state of the art results for all three datasets and may improve with profile, social graph, and severity information.",
+     "group_id": "1801.06482::g00"
+    }
+   ],
+   "n_raw": 26,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4932,
+    "completion_tokens": 1530,
+    "total_tokens": 6462,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "paper_id": "1911.00841",
+ "title": "Question Answering for Privacy Policies: Combining Computational and Legal Perspectives",
+ "abstract": "Privacy policies are long and complex documents that are difficult for users to read and understand, and yet, they have legal effects on how user data is collected, managed and used. Ideally, we would like to empower users to inform themselves about issues that matter to them, and enable them to selectively explore those issues. We present PrivacyQA, a corpus consisting of 1750 questions about the privacy policies of mobile applications, and over 3500 expert annotations of relevant answers. We observe that a strong neural baseline underperforms human performance by almost 0.3 F1 on PrivacyQA, suggesting considerable room for improvement for future systems. Further, we use this dataset to shed light on challenges to question answerability, with domain-general implications for any question answering system. The PrivacyQA corpus offers a challenging corpus for question answering, with genuine real-world utility.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Data Collection",
+  "Data Collection ::: Crowdsourced Question Elicitation",
+  "Data Collection ::: Answer Selection",
+  "Data Collection ::: Analysis",
+  "Data Collection ::: Analysis ::: Categories of Questions",
+  "Data Collection ::: Analysis ::: Answer Validation",
+  "Experimental Setup",
+  "Experimental Setup ::: Answerability Identification Baselines",
+  "Experimental Setup ::: Privacy Question Answering",
+  "Experimental Setup ::: Privacy Question Answering ::: Evaluation Metric",
+  "Experimental Setup ::: Privacy Question Answering ::: Baselines",
+  "Results and Discussion",
+  "Results and Discussion ::: Error Analysis",
+  "Results and Discussion ::: What makes Questions Unanswerable?",
+  "Conclusion",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 51,
+ "n_tokens": 4974,
+ "figures_and_tables": [
+  {
+   "caption_id": "1911.00841::fig000",
+   "paper_id": "1911.00841",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: Examples of privacy-related questions users ask, drawn from two mobile applications: Keep1and Viber.2Policy evidence represents sentences in the privacy policy that are relevant for determining the answer to the user’s question.3",
+   "n_tokens": 47
+  },
+  {
+   "caption_id": "1911.00841::fig001",
+   "paper_id": "1911.00841",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Comparison of the PRIVACYQA dataset to other question answering datasets. Expert annotator indicates domain expertise of the answer provider. Simple evaluation indicates the presence of an automatically calculable evaluation metric. Unanswerable questions indicates if the respective corpus includes unanswerable questions. ‘Asker Cannot See Evidence’ indicates that the asker of the question was not shown evidence from the document at the time of formulating questions.",
+   "n_tokens": 86
+  },
+  {
+   "caption_id": "1911.00841::fig002",
+   "paper_id": "1911.00841",
+   "file": "3-Figure2-1.png",
+   "caption": "Figure 2: User interface for question elicitation.",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "1911.00841::fig003",
+   "paper_id": "1911.00841",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Ten most frequent first words in questions in the PRIVACYQA dataset. We observe high lexical diversity in prefixes with 35 unique first word types and 131 unique combinations of first and second words.",
+   "n_tokens": 43
+  },
+  {
+   "caption_id": "1911.00841::fig004",
+   "paper_id": "1911.00841",
+   "file": "5-Table3-1.png",
+   "caption": "Table 3: OPP-115 categories most relevant to the questions collected from users.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1911.00841::fig005",
+   "paper_id": "1911.00841",
+   "file": "5-Table4-1.png",
+   "caption": "Table 4: Statistics of the PRIVACYQA Dataset, where # denotes number of questions, policies and sentences, and average length of questions, policies and answers in words, for training and test partitions.",
+   "n_tokens": 41
+  },
+  {
+   "caption_id": "1911.00841::fig006",
+   "paper_id": "1911.00841",
+   "file": "6-Table5-1.png",
+   "caption": "Table 5: Classifier Performance (%) for answerability of questions. The Majority Class baseline always predicts that questions are unanswerable.",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "1911.00841::fig007",
+   "paper_id": "1911.00841",
+   "file": "6-Table7-1.png",
+   "caption": "Table 7: Stratification of classifier performance by OPP-115 category of questions.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1911.00841::fig008",
+   "paper_id": "1911.00841",
+   "file": "6-Table6-1.png",
+   "caption": "Table 6: Performance of baselines on PRIVACYQA dataset.",
+   "n_tokens": 14
+  },
+  {
+   "caption_id": "1911.00841::fig009",
+   "paper_id": "1911.00841",
+   "file": "6-Table8-1.png",
+   "caption": "Table 8: Analysis of BERT performance at identifying answerability. The majority of mistakes made by BERT are answerable Questions identified as unanswerable. These answerable questions are further analyzed along the factors of scope, subjectivity, presence of answer and whether the question could be anticipated.",
+   "n_tokens": 59
+  }
+ ]
+}

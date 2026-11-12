@@ -1,0 +1,147 @@
+{
+ "paper_id": "1909.00015",
+ "title": "Adaptively Sparse Transformers",
+ "abstract": "Attention mechanisms have become ubiquitous in NLP. Recent architectures, notably the Transformer, learn powerful context-aware word representations through layered, multi-headed attention. The multiple heads learn diverse types of word relationships. However, with standard softmax attention, all attention heads are dense, assigning a non-zero weight to all context words. In this work, we introduce the adaptively sparse Transformer, wherein attention heads have flexible, context-dependent sparsity patterns. This sparsity is accomplished by replacing softmax with $\\alpha$-entmax: a differentiable generalization of softmax that allows low-scoring words to receive precisely zero weight. Moreover, we derive a method to automatically learn the $\\alpha$ parameter -- which controls the shape and sparsity of $\\alpha$-entmax -- allowing attention heads to choose between focused or spread-out behavior. Our adaptively sparse Transformer improves interpretability and head diversity when compared to softmax Transformers on machine translation datasets. Findings of the quantitative and qualitative analysis of our approach include that heads in different layers learn different sparsity preferences and tend to be more diverse in their attention distributions than softmax Transformers. Furthermore, at no cost in accuracy, sparsity in attention heads helps to uncover different head specializations.",
+ "sections": [
+  "Introduction",
+  "Background ::: The Transformer",
+  "Background ::: Sparse Attention",
+  "Background ::: Sparse Attention ::: Properties of @!START@$\\alpha $@!END@-entmax.",
+  "Adaptively Sparse Transformers with @!START@$\\alpha $@!END@-entmax",
+  "Adaptively Sparse Transformers with @!START@$\\alpha $@!END@-entmax ::: Different @!START@$\\alpha $@!END@ per head.",
+  "Adaptively Sparse Transformers with @!START@$\\alpha $@!END@-entmax ::: Derivatives w.r.t. @!START@$\\alpha $@!END@.",
+  "Experiments",
+  "Experiments ::: Datasets.",
+  "Experiments ::: Training.",
+  "Experiments ::: Results.",
+  "Analysis",
+  "Analysis ::: High-Level Statistics ::: What kind of @!START@$\\alpha $@!END@ values are learned?",
+  "Analysis ::: High-Level Statistics ::: Attention weight density when translating.",
+  "Analysis ::: High-Level Statistics ::: Head diversity.",
+  "Analysis ::: Identifying Head Specializations",
+  "Analysis ::: Identifying Head Specializations ::: Positional heads.",
+  "Analysis ::: Identifying Head Specializations ::: BPE-merging head.",
+  "Analysis ::: Identifying Head Specializations ::: Interrogation head.",
+  "Related Work ::: Sparse attention.",
+  "Related Work ::: Fixed sparsity patterns.",
+  "Related Work ::: Transformer interpretability.",
+  "Conclusion and Future Work",
+  "Acknowledgments",
+  "Background ::: Regularized Fenchel-Young prediction functions",
+  "Background ::: Characterizing the @!START@$\\alpha $@!END@-entmax mapping",
+  "Background ::: Connections to softmax and sparsemax",
+  "Jacobian of @!START@$\\alpha $@!END@-entmax w.r.t. the shape parameter @!START@$\\alpha $@!END@: Proof of Proposition @!START@UID22@!END@",
+  "Jacobian of @!START@$\\alpha $@!END@-entmax w.r.t. the shape parameter @!START@$\\alpha $@!END@: Proof of Proposition @!START@UID22@!END@ ::: General case of @!START@$\\alpha >1$@!END@",
+  "Jacobian of @!START@$\\alpha $@!END@-entmax w.r.t. the shape parameter @!START@$\\alpha $@!END@: Proof of Proposition @!START@UID22@!END@ ::: Solving the indetermination for @!START@$\\alpha =1$@!END@",
+  "Jacobian of @!START@$\\alpha $@!END@-entmax w.r.t. the shape parameter @!START@$\\alpha $@!END@: Proof of Proposition @!START@UID22@!END@ ::: Summary"
+ ],
+ "n_paragraphs": 113,
+ "n_tokens": 7068,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.00015::fig000",
+   "paper_id": "1909.00015",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: Attention distributions of different selfattention heads for the time step of the token “over”, shown to compare our model to other related work. While the sparse Transformer (Child et al., 2019) and the adaptive span Transformer (Sukhbaatar et al., 2019) only attend to words within a contiguous span of the past tokens, our model is not only able to obtain different and not necessarily contiguous sparsity patterns for each attention head, but is also able to tune its support over which tokens to attend adaptively.",
+   "n_tokens": 112
+  },
+  {
+   "caption_id": "1909.00015::fig001",
+   "paper_id": "1909.00015",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Machine translation tokenized BLEU test results on IWSLT 2017 DE EN, KFTT JA EN, WMT 2016 RO EN and WMT 2014 EN DE, respectively.",
+   "n_tokens": 46
+  },
+  {
+   "caption_id": "1909.00015::fig002",
+   "paper_id": "1909.00015",
+   "file": "5-Figure2-1.png",
+   "caption": "Figure 2: Trajectories of α values for a subset of the heads during training. Initialized at random, most heads become denser in the beginning, before converging. This suggests that dense attention may be more beneficial while the network is still uncertain, being replaced by sparse attention afterwards.",
+   "n_tokens": 58
+  },
+  {
+   "caption_id": "1909.00015::fig003",
+   "paper_id": "1909.00015",
+   "file": "6-Figure4-1.png",
+   "caption": "Figure 4: Distribution of attention densities (average number of tokens receiving non-zero attention weight) for all attention heads and all validation sentences. When compared to 1.5-entmax, α-entmax distributes the sparsity in a more uniform manner, with a clear mode at fully dense attentions, corresponding to the heads with low α. In the softmax case, this distribution would lead to a single bar with density 1.",
+   "n_tokens": 89
+  },
+  {
+   "caption_id": "1909.00015::fig004",
+   "paper_id": "1909.00015",
+   "file": "6-Figure3-1.png",
+   "caption": "Figure 3: Distribution of learned α values per attention block. While the encoder self-attention has a bimodal distribution of values of α, the decoder self-attention and context attention have a single mode.",
+   "n_tokens": 43
+  },
+  {
+   "caption_id": "1909.00015::fig005",
+   "paper_id": "1909.00015",
+   "file": "7-Figure5-1.png",
+   "caption": "Figure 5: Head density per layer for fixed and learned α. Each line corresponds to an attention head; lower values mean that that attention head is sparser. Learned α has higher variance.",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1909.00015::fig006",
+   "paper_id": "1909.00015",
+   "file": "7-Figure6-1.png",
+   "caption": "Figure 6: Jensen-Shannon Divergence between heads at each layer. Measures the disagreement between heads: the higher the value, the more the heads are disagreeing with each other in terms of where to attend. Models using sparse entmax have more diverse attention than the softmax baseline.",
+   "n_tokens": 58
+  },
+  {
+   "caption_id": "1909.00015::fig007",
+   "paper_id": "1909.00015",
+   "file": "8-Figure9-1.png",
+   "caption": "Figure 9: Interrogation-detecting heads in the three models. The top sentence is interrogative while the bottom one is declarative but includes the interrogative word “what”. In the top example, these interrogation heads assign a high probability to the question mark in the time step of the interrogative word (with ≥ 97.0% probability), while in the bottom example since there is no question mark, the same head does not assign a high probability to the last token in the sentence during the interrogative word time step. Surprisingly, this head prefers a low α = 1.05, as can be seen from the dense weights. This allows the head to identify the noun phrase “Armani Polo” better.",
+   "n_tokens": 149
+  },
+  {
+   "caption_id": "1909.00015::fig008",
+   "paper_id": "1909.00015",
+   "file": "8-Figure7-1.png",
+   "caption": "Figure 7: Self-attention from the most confidently previous-position head in each model. The learned parameter in the α-entmax model is α = 1.91. Quantitatively more confident, visual inspection confirms that the adaptive head behaves more consistently.",
+   "n_tokens": 53
+  },
+  {
+   "caption_id": "1909.00015::fig009",
+   "paper_id": "1909.00015",
+   "file": "8-Figure8-1.png",
+   "caption": "Figure 8: BPE-merging head (α = 1.91) discovered in the α-entmax model. Found in the first encoder layer, this head learns to discover some subword units and combine their information, leaving most words intact. It places 99.09% of its probability mass within the same BPE cluster as the current token: more than any head in any other model.",
+   "n_tokens": 84
+  },
+  {
+   "caption_id": "1909.00015::fig010",
+   "paper_id": "1909.00015",
+   "file": "9-Figure10-1.png",
+   "caption": "Figure 10: Example of two sentences of similar length where the same head (α = 1.33) exhibits different sparsity. The longer phrase in the example on the right “a sexually transmitted disease” is handled with higher confidence, leading to more sparsity.",
+   "n_tokens": 55
+  },
+  {
+   "caption_id": "1909.00015::fig011",
+   "paper_id": "1909.00015",
+   "file": "12-Figure11-1.png",
+   "caption": "Figure 11: Histograms of α values.",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "1909.00015::fig012",
+   "paper_id": "1909.00015",
+   "file": "13-Figure12-1.png",
+   "caption": "Figure 12: Histograms of head densities.",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "1909.00015::fig013",
+   "paper_id": "1909.00015",
+   "file": "14-Figure13-1.png",
+   "caption": "Figure 13: Jensen-Shannon divergence over layers.",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "1909.00015::fig014",
+   "paper_id": "1909.00015",
+   "file": "15-Figure14-1.png",
+   "caption": "Figure 14: Head densities over layers.",
+   "n_tokens": 9
+  }
+ ]
+}

@@ -1,0 +1,242 @@
+{
+  "role": "new_00",
+  "cluster_id": "cc-00172",
+  "unit_id": "cc-00172-u000",
+  "method": "A",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 1072,
+    "completion_tokens": 1100,
+    "reasoning_tokens": 326,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r3_new_ac_new_00_A",
+    "cache_key": "856d5a8e8a8c321a8dd2643fb2053aad80e264694eb43e0ff8355fc776c9899b"
+  },
+  "n_updates": 3,
+  "n_add": 3,
+  "n_accept": 3,
+  "n_reject": 0,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "EXTRACTION_REPAIR": 3
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "local-1",
+      "comprehension_text": "Primary teeth start to form between the sixth and eighth week of prenatal development.",
+      "new_semantic_relation": "starts to form between",
+      "linked_entity_ids": [
+        "entity-0ba36c82f5a35d6bddef253e97ec7065",
+        "entity-7f598f022ef913548ed11dcc887fb0ad"
+      ],
+      "source_triple_ids": [
+        "triple-31db221d7b14bee31dd090eaa064f34c"
+      ],
+      "source_passage_ids": [
+        "chunk-65b3376c1139530b782d327c5557bda4"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-65b3376c1139530b782d327c5557bda4",
+          "span": "Primary (baby) teeth start to form between the sixth and eighth week of prenatal development"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "reasoning_summary": "The existing triple states only that primary teeth begin forming during prenatal development, while the passage provides the specific sixth-to-eighth-week timeframe.",
+      "novelty_justification": "The week range is more specific than the existing general prenatal-development relation.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "local-2",
+      "comprehension_text": "Permanent teeth begin to form in the twentieth week of prenatal development.",
+      "new_semantic_relation": "begins to form in",
+      "linked_entity_ids": [
+        "entity-10d070f98f2b3ee463c45267f364e201",
+        "entity-7f598f022ef913548ed11dcc887fb0ad"
+      ],
+      "source_triple_ids": [
+        "triple-f83f7f6edf81f99f3af649ce8bd9f930"
+      ],
+      "source_passage_ids": [
+        "chunk-65b3376c1139530b782d327c5557bda4"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-65b3376c1139530b782d327c5557bda4",
+          "span": "permanent teeth begin to form in the twentieth week"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "reasoning_summary": "The existing triple places permanent-tooth formation generally during prenatal development, and the passage specifies the twentieth week.",
+      "novelty_justification": "The twentieth-week timing is not stated in the existing triple.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "local-3",
+      "comprehension_text": "Permanent dentition begins when the last primary tooth is lost.",
+      "new_semantic_relation": "begins when",
+      "linked_entity_ids": [
+        "entity-5d9ede538170da5888208041d21b7054",
+        "entity-0ba36c82f5a35d6bddef253e97ec7065"
+      ],
+      "source_triple_ids": [
+        "triple-5dd300d279db8a8b236346c3faad66f1"
+      ],
+      "source_passage_ids": [
+        "chunk-76a476fa940252dd029afb4e7c5cf94e"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-76a476fa940252dd029afb4e7c5cf94e",
+          "span": "The permanent dentition begins when the last primary tooth is lost"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "reasoning_summary": "The existing triple gives the age at which permanent dentition begins but omits the event that initiates it: loss of the last primary tooth.",
+      "novelty_justification": "The loss-of-the-last-primary-tooth condition is distinct from the existing age-based relation.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "local-1",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: between, sixth, eighth, week",
+      "residue": [
+        "between",
+        "sixth",
+        "eighth",
+        "week"
+      ],
+      "evidence_sentences": [
+        "Primary (baby) teeth start to form between the sixth and eighth week of prenatal development, and permanent teeth begin to form in the twentieth week."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Primary (baby) teeth start to form between the sixth and eighth week of prenatal development, and permanent teeth begin to form in the twentieth week."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "between",
+            "sixth",
+            "eighth",
+            "week"
+          ],
+          "n_passage_triples": 7,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "local-2",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: twentieth, week",
+      "residue": [
+        "twentieth",
+        "week"
+      ],
+      "evidence_sentences": [
+        "Primary (baby) teeth start to form between the sixth and eighth week of prenatal development, and permanent teeth begin to form in the twentieth week."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Primary (baby) teeth start to form between the sixth and eighth week of prenatal development, and permanent teeth begin to form in the twentieth week."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "twentieth",
+            "week"
+          ],
+          "n_passage_triples": 7,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "local-3",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: when, last, primary, lost",
+      "residue": [
+        "when",
+        "last",
+        "primary",
+        "lost"
+      ],
+      "evidence_sentences": [
+        "Human tooth development\nThe permanent dentition begins when the last primary tooth is lost, usually at 11 to 12 years, and lasts for the rest of a person's life or until all of the teeth are lost (edentulism)."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Human tooth development\nThe permanent dentition begins when the last primary tooth is lost, usually at 11 to 12 years, and lasts for the rest of a person's life or until all of the teeth are lost (edentulism)."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "when",
+            "last",
+            "primary",
+            "lost"
+          ],
+          "n_passage_triples": 9,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

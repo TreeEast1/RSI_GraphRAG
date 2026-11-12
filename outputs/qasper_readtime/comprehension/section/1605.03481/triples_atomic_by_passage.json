@@ -1,0 +1,342 @@
+{
+ "1605.03481::s00::p000": [
+  [
+   "Zipf's Law",
+   "states that",
+   "a majority of the vocabulary word types will either be absent or occur in low frequency"
+  ],
+  [
+   "Neural network architectures",
+   "overcome",
+   "this problem"
+  ],
+  [
+   "Neural network architectures",
+   "assign",
+   "non-zero probability even to sequences not seen during training"
+  ]
+ ],
+ "1605.03481::s00::p001": [
+  [
+   "Traditional Neural Network Language Models (NNLMs)",
+   "treat",
+   "words as the basic units of language"
+  ],
+  [
+   "Traditional Neural Network Language Models (NNLMs)",
+   "assign",
+   "independent vectors to each word type"
+  ],
+  [
+   "the vocabulary size",
+   "is fixed",
+   "before-hand"
+  ],
+  [
+   "rare and out-of-vocabulary words",
+   "are grouped together under",
+   "a common type `UNKNOWN'"
+  ]
+ ],
+ "1605.03481::s00::p003": [
+  [
+   "Unsupervised approaches",
+   "attempt to reconstruct",
+   "the original text from its latent representation"
+  ],
+  [
+   "hashtags",
+   "link",
+   "posts about the same topic together"
+  ],
+  [
+   "A natural assumption",
+   "is that",
+   "the posts with the same hashtags should have embeddings which are close to each other"
+  ]
+ ],
+ "1605.03481::s00::p004": [
+  [
+   "the final GRU states",
+   "are linearly combined to get",
+   "the tweet embedding"
+  ],
+  [
+   "Posterior probabilities over hashtags",
+   "are computed by",
+   "projecting this embedding to a softmax output layer"
+  ],
+  [
+   "this model",
+   "shows",
+   "improved performance at predicting hashtags for a held-out set of posts"
+  ]
+ ],
+ "1605.03481::s01::p000": [
+  [
+   "All these methods",
+   "require storing",
+   "an extremely large table of vectors for all word types"
+  ],
+  [
+   "All these methods",
+   "cannot be easily generalized to",
+   "unseen words at test time"
+  ]
+ ],
+ "1605.03481::s01::p001": [
+  [
+   "large word lookup tables",
+   "can be compacted into",
+   "character lookup tables"
+  ],
+  [
+   "the compositional model",
+   "scales to",
+   "large data sets better than other state-of-the-art approaches"
+  ],
+  [
+   "tweet2vec model",
+   "generate",
+   "vector representations of entire tweets from characters"
+  ]
+ ],
+ "1605.03481::s01::p003": [
+  [
+   "their approach",
+   "requires",
+   "a morpheme parser for preprocessing"
+  ],
+  [
+   "the space of all morphemes",
+   "is",
+   "still large enough that modelling all morphemes is impractical"
+  ]
+ ],
+ "1605.03481::s01::p004": [
+  [
+   "the learned embeddings",
+   "can generalize to",
+   "an unrelated task of document recommendation"
+  ]
+ ],
+ "1605.03481::s02::p000": [
+  [
+   "LSTM units",
+   "are replaced with",
+   "GRU units"
+  ]
+ ],
+ "1605.03481::s02::p001": [
+  [
+   "The input to the network",
+   "is defined by",
+   "an alphabet of characters $C$"
+  ],
+  [
+   "The input tweet",
+   "is broken into",
+   "a stream of characters $c_1, c_2, ... c_m$"
+  ],
+  [
+   "These one-hot vectors",
+   "are projected to",
+   "a character space"
+  ],
+  [
+   "The encoder",
+   "consists of",
+   "a forward-GRU and a backward-GRU"
+  ],
+  [
+   "the backward-GRU",
+   "processes",
+   "the sequence in reverse order"
+  ]
+ ],
+ "1605.03481::s02::p004": [
+  [
+   "All parameters",
+   "are learned using",
+   "gradient descent"
+  ]
+ ],
+ "1605.03481::s02::p005": [
+  [
+   "the tweet embedding",
+   "is passed through",
+   "a linear layer"
+  ],
+  [
+   "a linear layer",
+   "has output",
+   "the same size as the number of hashtags $L$ in the data set"
+  ]
+ ],
+ "1605.03481::s03::p000": [
+  [
+   "The input tweet",
+   "is first split into",
+   "tokens along white-spaces"
+  ],
+  [
+   "The encoder",
+   "is essentially the same as",
+   "tweet2vec"
+  ],
+  [
+   "A lookup table",
+   "stores",
+   "word vectors for the $V$ (20K here) most common words"
+  ]
+ ],
+ "1605.03481::s04::p000": [
+  [
+   "The final dataset",
+   "contains",
+   "2 million tweets for training, 10K for validation and 50K for testing, with a total of 2039 distinct hashtags"
+  ]
+ ],
+ "1605.03481::s05::p000": [
+  [
+   "There",
+   "were",
+   "2829 unique characters in the training set"
+  ],
+  [
+   "Training",
+   "is performed using",
+   "mini-batch gradient descent with Nesterov's momentum"
+  ],
+  [
+   "L2-regularization with $\\lambda =0.001$",
+   "was applied to",
+   "all models"
+  ],
+  [
+   "Initial weights",
+   "were drawn from",
+   "0-mean gaussians with $\\sigma =0.1$"
+  ],
+  [
+   "The models",
+   "converge in",
+   "about 20 epochs"
+  ]
+ ],
+ "1605.03481::s06::p001": [
+  [
+   "two test sets",
+   "each contain",
+   "2,000 posts"
+  ],
+  [
+   "vocabulary",
+   "is defined by",
+   "the 20K most frequent words"
+  ],
+  [
+   "tweet2vec",
+   "outperforms",
+   "the word model"
+  ],
+  [
+   "moving from words to characters",
+   "results in",
+   "longer input sequences to the GRU"
+  ]
+ ],
+ "1605.03481::s06::p002": [
+  [
+   "word model vocabulary size $V$",
+   "is set to",
+   "8K, 15K and 20K respectively"
+  ],
+  [
+   "tweet2vec GRU hidden state size",
+   "is set to",
+   "300, 400 and 500 respectively"
+  ],
+  [
+   "tweet2vec",
+   "always outperforms",
+   "the word based model for the same number of parameters"
+  ]
+ ],
+ "1605.03481::s06::p003": [
+  [
+   "3 datasets (small, medium and large)",
+   "were created with",
+   "an increasing number of hashtags to be predicted"
+  ],
+  [
+   "lower threshold of the minimum number of tags per post",
+   "was varied for",
+   "it to be included in the dataset"
+  ],
+  [
+   "tweet2vec",
+   "outperforms",
+   "its word-based counterpart for each of the three settings"
+  ]
+ ],
+ "1605.03481::s06::p004": [
+  [
+   "character based approach",
+   "is robust to",
+   "word segmentation errors and spelling mistakes"
+  ],
+  [
+   "character based approach",
+   "effectively interprets",
+   "emojis and other special characters to make predictions"
+  ],
+  [
+   "character based approach",
+   "performs comparably to",
+   "the word-based approach for in-vocabulary tokens"
+  ]
+ ],
+ "1605.03481::s07::p000": [
+  [
+   "tweet2vec",
+   "is",
+   "a character level encoder for social media posts trained using supervision from associated hashtags"
+  ],
+  [
+   "tweet2vec",
+   "outperforms",
+   "the word based approach"
+  ],
+  [
+   "tweet2vec",
+   "does significantly better when",
+   "the input post contains many rare words"
+  ],
+  [
+   "character model",
+   "requires",
+   "no language specific preprocessing"
+  ],
+  [
+   "character model",
+   "can be extended to",
+   "other languages"
+  ],
+  [
+   "one natural extension",
+   "would be to use",
+   "a character-level decoder for predicting the hashtags"
+  ],
+  [
+   "character-level decoder",
+   "will allow",
+   "generation of hashtags not seen in the training dataset"
+  ],
+  [
+   "off-the-shelf encoder trained on medium dataset described above",
+   "is provided to compute",
+   "vector-space representations of tweets"
+  ]
+ ]
+}

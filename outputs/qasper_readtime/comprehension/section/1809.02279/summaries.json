@@ -1,0 +1,542 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1809.02279::s00::p000",
+   "summary": "RNNs are the prevalent neural approach to sentence representations in NLP and perform well across language modeling, machine translation, text classification, and parsing.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s00::p001",
+   "summary": "LSTM and GRU are de-facto standard RNN choices because gating units address gradient problems, long-term dependencies, and work without complex optimization or careful initialization.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s00::p002",
+   "summary": "Stacked RNNs enhance expressiveness by feeding hidden states from each layer to the next, benefiting from increased depth and hierarchical time series.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s00::p003",
+   "summary": "Conventional RNN stacking limits sophisticated recurrence-based structures, while recent alternatives encourage direct layer interaction through residual, shortcut, or LSTM cell-state connections.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s00::p004",
+   "summary": "The paper proposes multi-layer LSTMs using cell states to control vertical information flow through soft gating, replacing conventional stacked LSTMs with little architectural modification.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s00::p005",
+   "summary": "The proposed Cell-aware Stacked LSTM, or CAS-LSTM, is evaluated on SNLI, MultiNLI, Quora Question Pairs, and SST and consistently outperforms typical stacked LSTMs.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s00::p006",
+   "summary": "The contribution is summarized as follows.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s00::p007",
+   "summary": "The paper describes the proposed method in § SECREF2, experimental results in § SECREF3, related work in § SECREF4, and concludes in § SECREF5.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s01::p000",
+   "summary": "This section gives a detailed formulation of the architectures used in experiments.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s02::p000",
+   "summary": "The paper defines notation for matrices, vectors, scalars, LSTM hidden and cell states, layer and time indices, element-wise multiplication, vector components, and column vectors.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s03::p000",
+   "summary": "The work uses one of the most common LSTM formulations: DISPLAYFORM0 DISPLAYFORM1.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s03::p001",
+   "summary": "The LSTM formulation defines trainable parameters, sigmoid and hyperbolic tangent activations, and assumes INLINEFORM7 where INLINEFORM8 is the INLINEFORM9-th input to the network.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s03::p002",
+   "summary": "Input and forget gates control information from candidate and previous cell states, while the output gate selects the cell-state portion used in the final hidden state.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s03::p003",
+   "summary": "Cell states are crucial for horizontal recurrence, but the formulation ignores the lower-layer cell state and reflects lower context only rudimentarily.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s04::p000",
+   "summary": "Cell-aware Stacked LSTM extends stacked LSTM with an additional forget gate that accepts or ignores signals from the previous layer: DISPLAYFORM0 DISPLAYFORM1.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s04::p001",
+   "summary": "CAS-LSTM non-bottom layers accept hidden and cell states from left and below contexts, with Fig. FIGREF1 and Fig. FIGREF8 comparing and depicting the architecture.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s04::p002",
+   "summary": "Considering INLINEFORM0 is beneficial because it provides unfiltered raw information and shares feature-selection responsibility with INLINEFORM8.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s04::p003",
+   "summary": "Using INLINEFORM0 directly connects INLINEFORM1 and INLINEFORM2, helping and stabilizing training by easing backpropagation, as Fig. FIGREF23 illustrates.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s04::p004",
+   "summary": "Experiments find little difference between constant and trainable INLINEFORM0, set INLINEFORM1 throughout, and find unweighted summation degrades performance and convergence.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s04::p005",
+   "summary": "CAS-LSTM relates to tree-structured RNNs and Tree-LSTMs, with each CAS-LSTM layer resembling a binary Tree-LSTM on fixed right-branching trees.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s04::p006",
+   "summary": "CAS-LSTM is analogous to MDLSTM except for INLINEFORM0 and distinct weights per column, and differs from Grid LSTMs in producing a single hidden and cell state set.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s05::p000",
+   "summary": "The sentence encoder projects INLINEFORM0 one-hot words, feeds INLINEFORM3 to a INLINEFORM4-layer CAS-LSTM, and computes INLINEFORM6 by max-pooling INLINEFORM7 over time.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s05::p001",
+   "summary": "A bidirectional CAS-LSTM concatenates forward and backward representations and max-pools them to yield INLINEFORM2, and is called Bi-CAS-LSTM in experiments.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s06::p000",
+   "summary": "For natural language inference experiments, the heuristic feature-extraction function proposed by BIBREF36 is used: DISPLAYFORM0.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s06::p001",
+   "summary": "INLINEFORM0 means vector concatenation, and INLINEFORM1 and INLINEFORM2 are applied element-wise.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s06::p002",
+   "summary": "The paraphrase identification experiments use the following function: DISPLAYFORM0.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s06::p003",
+   "summary": "The paraphrase identification function is used as in the work of BIBREF37.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s06::p004",
+   "summary": "For sentiment classification, the sentence representation itself is used: DISPLAYFORM0.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s06::p005",
+   "summary": "The extracted feature from INLINEFORM0 is fed to an MLP classifier with ReLU activation and a fully-connected softmax layer: DISPLAYFORM0.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s06::p006",
+   "summary": "INLINEFORM1 is the number of label classes and INLINEFORM2 is the dimension of the MLP output.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s07::p000",
+   "summary": "The method is evaluated on NLI, PI, and sentiment classification, with gate-value analysis, model-variant experiments, and detailed settings in the supplemental material.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s07::p001",
+   "summary": "For NLI and PI, the model uses a shared sentence encoder without inter-sentence interaction to focus on semantic extraction, though CAS-LSTM applicability is broader.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s08::p000",
+   "summary": "NLI evaluation uses SNLI and MultiNLI, which predict entailment, contradiction, or neutral and contain about 570k and 430k premise-hypothesis pairs respectively.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s08::p001",
+   "summary": "NLI experiments use fixed GloVe pretrained word embeddings, 300-dimensional encoder states, a 1024D MLP, dropout, and features from Eq. EQREF28.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s08::p002",
+   "summary": "On SNLI, the best model achieves new state-of-the-art accuracy of 87.0% with relatively fewer parameters, while MultiNLI models match state-of-the-art accuracy on matched and mismatched test sets.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s09::p000",
+   "summary": "PI evaluation uses Quora Question Pairs, containing over 400k question pairs annotated for whether the two sentences are paraphrases.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s09::p001",
+   "summary": "PI experiments use GloVe pretrained vectors, 300D encoders, 1024D MLP, 2 CAS-LSTM layers, Eq. EQREF29 aggregation, and achieve new state of the art.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s10::p000",
+   "summary": "Sentiment classification uses Stanford Sentiment Treebank (SST), about 12,000 binary-parsed sentences with phrase sentiment labels, using all phrases in training and sentence-level data in evaluation.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s10::p001",
+   "summary": "SST-2 uses 98,794/872/1,821 training/validation/test samples for binary classification, while SST-5 uses all 318,582/1,101/2,210 samples for 5-class classification.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s10::p002",
+   "summary": "SST models use 300D GloVe vectors, 2-layer 150D or 300D encoders, a 300D MLP, tuned embeddings, and achieve new state-of-the-art SST-2 accuracy and competitive SST-5 accuracy.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s11::p000",
+   "summary": "Forget gate analysis samples 1,000 random sentences from the SNLI development set and uses a 3-layer CAS-LSTM trained on SNLI to compute gate values.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s11::p001",
+   "summary": "All-zero vertical forget gate values would reduce the model to a plain stacked LSTM, while all-one values would prevent effective information modulation.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s11::p002",
+   "summary": "Histograms from the second and third layers show vertical forget gates are not ignored and are right-skewed, possibly reflecting stronger adjacent-layer interaction.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s11::p003",
+   "summary": "Histograms of the range of values per time step show that a vertical forget gate effectively controls information flow by retaining or discarding signals.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s11::p004",
+   "summary": "The distribution of INLINEFORM0 values shows vertical forget and previous output gates make fairly different decisions, demonstrating that the direct path uses overlooked signals.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s12::p000",
+   "summary": "Model variations on SNLI remove or replace components from the best configuration, considering plain stacked LSTMs, different INLINEFORM0, no INLINEFORM1, and peephole lower-context integration.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s12::p001",
+   "summary": "Variant (iv) integrates lower contexts via the following equations: DISPLAYFORM0 DISPLAYFORM1.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s12::p002",
+   "summary": "Peephole weights take cell states into account, with Eq. EQREF52 and EQREF55 using the lower cell state INLINEFORM1 and making INLINEFORM4 independent of INLINEFORM5.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s12::p003",
+   "summary": "Table TABREF36 shows cell states improve sentence modeling, INLINEFORM0 selection has little effect, INLINEFORM1 is beneficial, and the proposed context combination outperforms BIBREF20.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s13::p000",
+   "summary": "CAS-LSTM stacks LSTM layers using hidden and cell states from the previous layer, achieves new state-of-the-art accuracy on SNLI and Quora Question Pairs, comparable results on MultiNLI and SST, and can replace stacked LSTMs when state sizes match.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s13::p001",
+   "summary": "Future work will apply CAS-LSTM beyond sentence modeling to sequence labeling, sequence generation, language modeling, and aggregating diverse sequential contexts.",
+   "group_id": "1809.02279::g00"
+  },
+  {
+   "passage_id": "1809.02279::s14::p000",
+   "summary": "The authors thank Dan Edmiston for reviewing the manuscript.",
+   "group_id": "1809.02279::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1809.02279::g00",
+   "summaries": [
+    {
+     "passage_id": "1809.02279::s00::p000",
+     "summary": "RNNs are the prevalent neural approach to sentence representations in NLP and perform well across language modeling, machine translation, text classification, and parsing.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s00::p001",
+     "summary": "LSTM and GRU are de-facto standard RNN choices because gating units address gradient problems, long-term dependencies, and work without complex optimization or careful initialization.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s00::p002",
+     "summary": "Stacked RNNs enhance expressiveness by feeding hidden states from each layer to the next, benefiting from increased depth and hierarchical time series.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s00::p003",
+     "summary": "Conventional RNN stacking limits sophisticated recurrence-based structures, while recent alternatives encourage direct layer interaction through residual, shortcut, or LSTM cell-state connections.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s00::p004",
+     "summary": "The paper proposes multi-layer LSTMs using cell states to control vertical information flow through soft gating, replacing conventional stacked LSTMs with little architectural modification.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s00::p005",
+     "summary": "The proposed Cell-aware Stacked LSTM, or CAS-LSTM, is evaluated on SNLI, MultiNLI, Quora Question Pairs, and SST and consistently outperforms typical stacked LSTMs.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s00::p006",
+     "summary": "The contribution is summarized as follows.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s00::p007",
+     "summary": "The paper describes the proposed method in § SECREF2, experimental results in § SECREF3, related work in § SECREF4, and concludes in § SECREF5.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s01::p000",
+     "summary": "This section gives a detailed formulation of the architectures used in experiments.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s02::p000",
+     "summary": "The paper defines notation for matrices, vectors, scalars, LSTM hidden and cell states, layer and time indices, element-wise multiplication, vector components, and column vectors.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s03::p000",
+     "summary": "The work uses one of the most common LSTM formulations: DISPLAYFORM0 DISPLAYFORM1.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s03::p001",
+     "summary": "The LSTM formulation defines trainable parameters, sigmoid and hyperbolic tangent activations, and assumes INLINEFORM7 where INLINEFORM8 is the INLINEFORM9-th input to the network.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s03::p002",
+     "summary": "Input and forget gates control information from candidate and previous cell states, while the output gate selects the cell-state portion used in the final hidden state.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s03::p003",
+     "summary": "Cell states are crucial for horizontal recurrence, but the formulation ignores the lower-layer cell state and reflects lower context only rudimentarily.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s04::p000",
+     "summary": "Cell-aware Stacked LSTM extends stacked LSTM with an additional forget gate that accepts or ignores signals from the previous layer: DISPLAYFORM0 DISPLAYFORM1.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s04::p001",
+     "summary": "CAS-LSTM non-bottom layers accept hidden and cell states from left and below contexts, with Fig. FIGREF1 and Fig. FIGREF8 comparing and depicting the architecture.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s04::p002",
+     "summary": "Considering INLINEFORM0 is beneficial because it provides unfiltered raw information and shares feature-selection responsibility with INLINEFORM8.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s04::p003",
+     "summary": "Using INLINEFORM0 directly connects INLINEFORM1 and INLINEFORM2, helping and stabilizing training by easing backpropagation, as Fig. FIGREF23 illustrates.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s04::p004",
+     "summary": "Experiments find little difference between constant and trainable INLINEFORM0, set INLINEFORM1 throughout, and find unweighted summation degrades performance and convergence.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s04::p005",
+     "summary": "CAS-LSTM relates to tree-structured RNNs and Tree-LSTMs, with each CAS-LSTM layer resembling a binary Tree-LSTM on fixed right-branching trees.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s04::p006",
+     "summary": "CAS-LSTM is analogous to MDLSTM except for INLINEFORM0 and distinct weights per column, and differs from Grid LSTMs in producing a single hidden and cell state set.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s05::p000",
+     "summary": "The sentence encoder projects INLINEFORM0 one-hot words, feeds INLINEFORM3 to a INLINEFORM4-layer CAS-LSTM, and computes INLINEFORM6 by max-pooling INLINEFORM7 over time.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s05::p001",
+     "summary": "A bidirectional CAS-LSTM concatenates forward and backward representations and max-pools them to yield INLINEFORM2, and is called Bi-CAS-LSTM in experiments.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s06::p000",
+     "summary": "For natural language inference experiments, the heuristic feature-extraction function proposed by BIBREF36 is used: DISPLAYFORM0.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s06::p001",
+     "summary": "INLINEFORM0 means vector concatenation, and INLINEFORM1 and INLINEFORM2 are applied element-wise.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s06::p002",
+     "summary": "The paraphrase identification experiments use the following function: DISPLAYFORM0.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s06::p003",
+     "summary": "The paraphrase identification function is used as in the work of BIBREF37.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s06::p004",
+     "summary": "For sentiment classification, the sentence representation itself is used: DISPLAYFORM0.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s06::p005",
+     "summary": "The extracted feature from INLINEFORM0 is fed to an MLP classifier with ReLU activation and a fully-connected softmax layer: DISPLAYFORM0.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s06::p006",
+     "summary": "INLINEFORM1 is the number of label classes and INLINEFORM2 is the dimension of the MLP output.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s07::p000",
+     "summary": "The method is evaluated on NLI, PI, and sentiment classification, with gate-value analysis, model-variant experiments, and detailed settings in the supplemental material.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s07::p001",
+     "summary": "For NLI and PI, the model uses a shared sentence encoder without inter-sentence interaction to focus on semantic extraction, though CAS-LSTM applicability is broader.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s08::p000",
+     "summary": "NLI evaluation uses SNLI and MultiNLI, which predict entailment, contradiction, or neutral and contain about 570k and 430k premise-hypothesis pairs respectively.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s08::p001",
+     "summary": "NLI experiments use fixed GloVe pretrained word embeddings, 300-dimensional encoder states, a 1024D MLP, dropout, and features from Eq. EQREF28.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s08::p002",
+     "summary": "On SNLI, the best model achieves new state-of-the-art accuracy of 87.0% with relatively fewer parameters, while MultiNLI models match state-of-the-art accuracy on matched and mismatched test sets.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s09::p000",
+     "summary": "PI evaluation uses Quora Question Pairs, containing over 400k question pairs annotated for whether the two sentences are paraphrases.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s09::p001",
+     "summary": "PI experiments use GloVe pretrained vectors, 300D encoders, 1024D MLP, 2 CAS-LSTM layers, Eq. EQREF29 aggregation, and achieve new state of the art.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s10::p000",
+     "summary": "Sentiment classification uses Stanford Sentiment Treebank (SST), about 12,000 binary-parsed sentences with phrase sentiment labels, using all phrases in training and sentence-level data in evaluation.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s10::p001",
+     "summary": "SST-2 uses 98,794/872/1,821 training/validation/test samples for binary classification, while SST-5 uses all 318,582/1,101/2,210 samples for 5-class classification.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s10::p002",
+     "summary": "SST models use 300D GloVe vectors, 2-layer 150D or 300D encoders, a 300D MLP, tuned embeddings, and achieve new state-of-the-art SST-2 accuracy and competitive SST-5 accuracy.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s11::p000",
+     "summary": "Forget gate analysis samples 1,000 random sentences from the SNLI development set and uses a 3-layer CAS-LSTM trained on SNLI to compute gate values.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s11::p001",
+     "summary": "All-zero vertical forget gate values would reduce the model to a plain stacked LSTM, while all-one values would prevent effective information modulation.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s11::p002",
+     "summary": "Histograms from the second and third layers show vertical forget gates are not ignored and are right-skewed, possibly reflecting stronger adjacent-layer interaction.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s11::p003",
+     "summary": "Histograms of the range of values per time step show that a vertical forget gate effectively controls information flow by retaining or discarding signals.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s11::p004",
+     "summary": "The distribution of INLINEFORM0 values shows vertical forget and previous output gates make fairly different decisions, demonstrating that the direct path uses overlooked signals.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s12::p000",
+     "summary": "Model variations on SNLI remove or replace components from the best configuration, considering plain stacked LSTMs, different INLINEFORM0, no INLINEFORM1, and peephole lower-context integration.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s12::p001",
+     "summary": "Variant (iv) integrates lower contexts via the following equations: DISPLAYFORM0 DISPLAYFORM1.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s12::p002",
+     "summary": "Peephole weights take cell states into account, with Eq. EQREF52 and EQREF55 using the lower cell state INLINEFORM1 and making INLINEFORM4 independent of INLINEFORM5.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s12::p003",
+     "summary": "Table TABREF36 shows cell states improve sentence modeling, INLINEFORM0 selection has little effect, INLINEFORM1 is beneficial, and the proposed context combination outperforms BIBREF20.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s13::p000",
+     "summary": "CAS-LSTM stacks LSTM layers using hidden and cell states from the previous layer, achieves new state-of-the-art accuracy on SNLI and Quora Question Pairs, comparable results on MultiNLI and SST, and can replace stacked LSTMs when state sizes match.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s13::p001",
+     "summary": "Future work will apply CAS-LSTM beyond sentence modeling to sequence labeling, sequence generation, language modeling, and aggregating diverse sequential contexts.",
+     "group_id": "1809.02279::g00"
+    },
+    {
+     "passage_id": "1809.02279::s14::p000",
+     "summary": "The authors thank Dan Edmiston for reviewing the manuscript.",
+     "group_id": "1809.02279::g00"
+    }
+   ],
+   "n_raw": 52,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5769,
+    "completion_tokens": 2628,
+    "total_tokens": 8397,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

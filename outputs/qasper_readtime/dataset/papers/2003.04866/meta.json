@@ -1,0 +1,191 @@
+{
+ "paper_id": "2003.04866",
+ "title": "Multi-SimLex: A Large-Scale Evaluation of Multilingual and Cross-Lingual Lexical Semantic Similarity",
+ "abstract": "We introduce Multi-SimLex, a large-scale lexical resource and evaluation benchmark covering datasets for 12 typologically diverse languages, including major languages (e.g., Mandarin Chinese, Spanish, Russian) as well as less-resourced ones (e.g., Welsh, Kiswahili). Each language dataset is annotated for the lexical relation of semantic similarity and contains 1,888 semantically aligned concept pairs, providing a representative coverage of word classes (nouns, verbs, adjectives, adverbs), frequency ranks, similarity intervals, lexical fields, and concreteness levels. Additionally, owing to the alignment of concepts across languages, we provide a suite of 66 cross-lingual semantic similarity datasets. Due to its extensive size and language coverage, Multi-SimLex provides entirely novel opportunities for experimental evaluation and analysis. On its monolingual and cross-lingual benchmarks, we evaluate and analyze a wide array of recent state-of-the-art monolingual and cross-lingual representation models, including static and contextualized word embeddings (such as fastText, M-BERT and XLM), externally informed lexical representations, as well as fully unsupervised and (weakly) supervised cross-lingual word embeddings. We also present a step-by-step dataset creation protocol for creating consistent, Multi-Simlex-style resources for additional languages. We make these contributions -- the public release of Multi-SimLex datasets, their creation protocol, strong baseline results, and in-depth analyses which can be be helpful in guiding future developments in multilingual lexical semantics and representation learning -- available via a website which will encourage community effort in further expansion of Multi-Simlex to many more languages. Such a large-scale semantic resource could inspire significant further advances in NLP across languages.",
+ "sections": [
+  "Introduction",
+  "Lexical Semantic Similarity ::: Similarity and Association",
+  "Lexical Semantic Similarity ::: Similarity for NLP: Intrinsic Evaluation and Semantic Specialization",
+  "Lexical Semantic Similarity ::: Similarity and Language Variation: Semantic Typology",
+  "Previous Work and Evaluation Data",
+  "The Base for Multi-SimLex: Extending English SimLex-999",
+  "Multi-SimLex: Translation and Annotation",
+  "Multi-SimLex: Translation and Annotation ::: Word Pair Translation",
+  "Multi-SimLex: Translation and Annotation ::: Guidelines and Word Pair Scoring",
+  "Multi-SimLex: Translation and Annotation ::: Data Analysis",
+  "Multi-SimLex: Translation and Annotation ::: Effect of Language Affinity on Similarity Scores",
+  "Cross-Lingual Multi-SimLex Datasets",
+  "Monolingual Evaluation of Representation Learning Models",
+  "Monolingual Evaluation of Representation Learning Models ::: Models in Comparison",
+  "Monolingual Evaluation of Representation Learning Models ::: Results and Discussion",
+  "Cross-Lingual Evaluation",
+  "Cross-Lingual Evaluation ::: Models in Comparison",
+  "Cross-Lingual Evaluation ::: Results and Discussion",
+  "Conclusion and Future Work"
+ ],
+ "n_paragraphs": 126,
+ "n_tokens": 20902,
+ "figures_and_tables": [
+  {
+   "caption_id": "2003.04866::fig000",
+   "paper_id": "2003.04866",
+   "file": "11-Table1-1.png",
+   "caption": "Table 1: The list of 12 languages in the Multi-SimLex multilingual suite along with their corresponding language family (IE = Indo-European), broad morphological type, and their ISO 639-3 code. The number of speakers is based on the total count of L1 and L2 speakers, according to ethnologue.com.",
+   "n_tokens": 69
+  },
+  {
+   "caption_id": "2003.04866::fig001",
+   "paper_id": "2003.04866",
+   "file": "12-Table2-1.png",
+   "caption": "Table 2: Inter-translator agreement (% of matched translated words) by independent translators using a randomly selected 100-pair English sample from the Multi-SimLex dataset, and the corresponding 100-pair samples from the other datasets.",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "2003.04866::fig002",
+   "paper_id": "2003.04866",
+   "file": "13-Table3-1.png",
+   "caption": "Table 3: Number of human annotators. R1 = Annotation Round 1, R3 = Round 3.",
+   "n_tokens": 25
+  },
+  {
+   "caption_id": "2003.04866::fig003",
+   "paper_id": "2003.04866",
+   "file": "14-Table4-1.png",
+   "caption": "Table 4: Average pairwise inter-annotator agreement (APIAA). A score of 0.6 and above indicates strong agreement.",
+   "n_tokens": 28
+  },
+  {
+   "caption_id": "2003.04866::fig004",
+   "paper_id": "2003.04866",
+   "file": "14-Table5-1.png",
+   "caption": "Table 5: Average mean inter-annotator agreement (AMIAA). A score of 0.6 and above indicates strong agreement.",
+   "n_tokens": 29
+  },
+  {
+   "caption_id": "2003.04866::fig005",
+   "paper_id": "2003.04866",
+   "file": "15-Table6-1.png",
+   "caption": "Table 6: Fine-grained distribution of concept pairs over different rating intervals in each Multi-SimLex language, reported as percentages. The total number of concept pairs in each dataset is 1,888.",
+   "n_tokens": 42
+  },
+  {
+   "caption_id": "2003.04866::fig006",
+   "paper_id": "2003.04866",
+   "file": "15-Figure1-1.png",
+   "caption": "Figure 1: Spearman’s correlation coefficient (ρ) of the similarity scores for all languages in Multi-SimLex.",
+   "n_tokens": 25
+  },
+  {
+   "caption_id": "2003.04866::fig007",
+   "paper_id": "2003.04866",
+   "file": "16-Figure2-1.png",
+   "caption": "Figure 2: A distribution over different frequency ranges for words from Multi-SimLex datasets for selected languages. Multi-word expressions are excluded from the analysis.",
+   "n_tokens": 31
+  },
+  {
+   "caption_id": "2003.04866::fig008",
+   "paper_id": "2003.04866",
+   "file": "16-Table7-1.png",
+   "caption": "Table 7: Examples of concept pairs with their similarity scores from four languages. For brevity, only the original English concept pair is included, but note that the pair is translated to all target languages, see §5.1.",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "2003.04866::fig009",
+   "paper_id": "2003.04866",
+   "file": "18-Table8-1.png",
+   "caption": "Table 8: Examples of concept pairs with their similarity scores from four languages where all participants show strong agreement in their rating.",
+   "n_tokens": 25
+  },
+  {
+   "caption_id": "2003.04866::fig010",
+   "paper_id": "2003.04866",
+   "file": "19-Figure3-1.png",
+   "caption": "Figure 3: PCA of the language vectors resulting from the concatenation of similarity judgments for all pairs.",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "2003.04866::fig011",
+   "paper_id": "2003.04866",
+   "file": "20-Table9-1.png",
+   "caption": "Table 9: Mantel test on the correlation between similarity judgments from Multi-SimLex and linguistic features from typological databases.",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "2003.04866::fig012",
+   "paper_id": "2003.04866",
+   "file": "21-Table10-1.png",
+   "caption": "Table 10: Example concept pairs with their scores from a selection of cross-lingual MultiSimLex datasets.",
+   "n_tokens": 23
+  },
+  {
+   "caption_id": "2003.04866::fig013",
+   "paper_id": "2003.04866",
+   "file": "21-Table11-1.png",
+   "caption": "Table 11: The sizes of all monolingual (main diagonal) and cross-lingual datasets.",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "2003.04866::fig014",
+   "paper_id": "2003.04866",
+   "file": "22-Figure4-1.png",
+   "caption": "Figure 4: (a) Rating distribution and (b) distribution of pairs over the four POS classes in cross-lingual Multi-SimLex datasets averaged across each of the 66 language pairs (y axes plot percentages as the total number of concept pairs varies across different cross-lingual datasets). Minimum and maximum percentages for each rating interval and POS class are also plotted.",
+   "n_tokens": 76
+  },
+  {
+   "caption_id": "2003.04866::fig015",
+   "paper_id": "2003.04866",
+   "file": "26-Table12-1.png",
+   "caption": "Table 12: A summary of results (Spearman’s ρ correlation scores) on the full monolingual Multi-SimLex datasets for 12 languages. We benchmark fastText word embeddings trained on two different corpora (CC+Wiki and only Wiki) as well the multilingual MBERT model (see §7.1). Results with the initial word vectors are reported (i.e., without any unsupervised post-processing), as well as with different unsupervised post-processing methods, described in §7.1. The language codes are provided in Table 1. The numbers in the parentheses (gray rows) refer to the number of OOV concepts excluded from the computation. The highest scores for each language and per model are in bold.",
+   "n_tokens": 153
+  },
+  {
+   "caption_id": "2003.04866::fig016",
+   "paper_id": "2003.04866",
+   "file": "27-Table13-1.png",
+   "caption": "Table 13: Spearman’s ρ correlation scores over the four POS classes represented in MultiSimLex datasets. In addition to the word vectors considered earlier in Table 12, we also report scores for another contextualized model, XLM-100. The numbers in parentheses refer to the total number of POS-class pairs in the original ENG dataset and, consequently, in all other monolingual datasets.",
+   "n_tokens": 81
+  },
+  {
+   "caption_id": "2003.04866::fig017",
+   "paper_id": "2003.04866",
+   "file": "30-Figure5-1.png",
+   "caption": "Figure 5: (a) A performance comparison between monolingual pretrained language encoders and massively multilingual encoders. For four languages (CMN, ENG, FIN, SPA), we report the scores with monolingual uncased BERT-BASE architectures and multilingual uncased M-BERT model, while for FRA we report the results of the multilingual XLM-100 architecture and a monolingual French FlauBERT model (Le et al. 2019), which is based on the same architecture as XLM-100. (b) A comparison of various pretrained encoders available for English. All these models are post-processed via ABTT (-3).",
+   "n_tokens": 139
+  },
+  {
+   "caption_id": "2003.04866::fig018",
+   "paper_id": "2003.04866",
+   "file": "32-Table14-1.png",
+   "caption": "Table 14: The impact of vector space specialization for semantic similarity. The scores are reported using the current state-of-the-art specialization transfer LI-POSTSPEC method of Ponti et al. (2019c), relying on English as a resource-rich source language and the external lexical semantic knowledge from the English WordNet.",
+   "n_tokens": 64
+  },
+  {
+   "caption_id": "2003.04866::fig019",
+   "paper_id": "2003.04866",
+   "file": "33-Table15-1.png",
+   "caption": "Table 15: Spearman’s ρ correlation scores on all 66 cross-lingual datasets. 1) The scores below the main diagonal are computed based on cross-lingual word embeddings (CLWEs) induced by aligning CC+Wiki FT in all languages (except for YUE where we use Wiki FT) in a fully unsupervised way (i.e., without any bilingual supervision). We rely on a standard CLWE mapping-based (i.e., alignment) approach: VECMAP (Artetxe, Labaka, and Agirre 2018b). 2) The scores above the main diagonal are computed by obtaining 768-dimensional word-level vectors from pretrained multilingual BERT (MBERT) following the procedure described in §7.1. For both fully unsupervised VECMAP and M-BERT, we report the results with unsupervised postprocessing enabled: all 2× 66 reported scores are obtained using the +ABBT (-10) variant.",
+   "n_tokens": 205
+  },
+  {
+   "caption_id": "2003.04866::fig020",
+   "paper_id": "2003.04866",
+   "file": "34-Figure6-1.png",
+   "caption": "Figure 6: Further performance analyses of cross-lingual Multi-SimLex datasets. (a) Spearman’s ρ correlation scores averaged over all 66 cross-lingual Multi-SimLex datasets for two pretrained multilingual encoders (M-BERT and XLM). The scores are obtained with different configurations that exclude (INIT) or enable unsupervised post-processing. (b) A comparison of various pretrained encoders available for the English-French language pair, see the main text for a short description of each benchmarked pretrained encoder.",
+   "n_tokens": 111
+  },
+  {
+   "caption_id": "2003.04866::fig021",
+   "paper_id": "2003.04866",
+   "file": "36-Table16-1.png",
+   "caption": "Table 16: Results on a selection of cross-lingual Multi-SimLex datasets where the fully unsupervised (UNSUPER) CLWE variant yields reasonable performance. We also show the results with supervised VECMAP without self-learning (SUPER) and with self-learning (+SL), with two seed dictionary sizes: 1k and 5k pairs; see §8.1 for more detail. Highest scores for each language pair are in bold.",
+   "n_tokens": 92
+  },
+  {
+   "caption_id": "2003.04866::fig022",
+   "paper_id": "2003.04866",
+   "file": "36-Table17-1.png",
+   "caption": "Table 17: Results on a selection of cross-lingual Multi-SimLex datasets where the fully unsupervised (UNSUPER) CLWE variant fails to learn a coherent shared cross-lingual space. See also the caption of Table 16.",
+   "n_tokens": 52
+  }
+ ]
+}

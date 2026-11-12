@@ -1,0 +1,3284 @@
+{
+ "n": 41,
+ "condition_means": {
+  "q_dense": {
+   "recall@10": 0.4182,
+   "recall@20": 0.5148,
+   "all@20": 0.2195,
+   "all@50": 0.4634,
+   "mrr": 0.5444
+  },
+  "q_bm25": {
+   "recall@10": 0.2874,
+   "recall@20": 0.4261,
+   "all@20": 0.122,
+   "all@50": 0.3902,
+   "mrr": 0.4551
+  },
+  "q_graph_f5": {
+   "recall@10": 0.4254,
+   "recall@20": 0.5382,
+   "all@20": 0.2439,
+   "all@50": 0.4634,
+   "mrr": 0.4966
+  },
+  "q_graph_f10": {
+   "recall@10": 0.4199,
+   "recall@20": 0.5402,
+   "all@20": 0.2683,
+   "all@50": 0.4634,
+   "mrr": 0.4624
+  },
+  "q_graph_f20": {
+   "recall@10": 0.4148,
+   "recall@20": 0.5341,
+   "all@20": 0.2439,
+   "all@50": 0.4634,
+   "mrr": 0.4519
+  },
+  "q_graph_f5_nosyn": {
+   "recall@10": 0.4123,
+   "recall@20": 0.5337,
+   "all@20": 0.2195,
+   "all@50": 0.4634,
+   "mrr": 0.5015
+  },
+  "q_rrf_dense_graph": {
+   "recall@10": 0.4294,
+   "recall@20": 0.5229,
+   "all@20": 0.2195,
+   "all@50": 0.4634,
+   "mrr": 0.5158
+  },
+  "q_rrf_dense_bm25": {
+   "recall@10": 0.3913,
+   "recall@20": 0.499,
+   "all@20": 0.1951,
+   "all@50": 0.3902,
+   "mrr": 0.5301
+  },
+  "q_rrf_all": {
+   "recall@10": 0.4023,
+   "recall@20": 0.5079,
+   "all@20": 0.2195,
+   "all@50": 0.4878,
+   "mrr": 0.5407
+  },
+  "qo_dense": {
+   "recall@10": 0.4361,
+   "recall@20": 0.5267,
+   "all@20": 0.2439,
+   "all@50": 0.439,
+   "mrr": 0.6037
+  },
+  "qo_graph_f5": {
+   "recall@10": 0.4075,
+   "recall@20": 0.5366,
+   "all@20": 0.2439,
+   "all@50": 0.4634,
+   "mrr": 0.4864
+  },
+  "qo_rrf_dense_graph": {
+   "recall@10": 0.4363,
+   "recall@20": 0.5355,
+   "all@20": 0.2439,
+   "all@50": 0.4634,
+   "mrr": 0.5631
+  }
+ },
+ "paired": {
+  "q_dense->q_graph_f5:recall@10": {
+   "delta": 0.007162214479287649,
+   "ci_low": -0.034722222222222224,
+   "ci_high": 0.04344729344729344,
+   "wins": 8,
+   "losses": 9,
+   "mcnemar_exact_p": 1.0
+  },
+  "q_dense->q_graph_f5:all@20": {
+   "delta": 0.024390243902439025,
+   "ci_low": 0.0,
+   "ci_high": 0.08108108108108109,
+   "wins": 1,
+   "losses": 0,
+   "mcnemar_exact_p": 1.0
+  },
+  "q_dense->q_graph_f5:mrr": {
+   "delta": -0.047828876672991204,
+   "ci_low": -0.1276021016867699,
+   "ci_high": 0.03199349269583383,
+   "wins": 4,
+   "losses": 16,
+   "mcnemar_exact_p": 0.01181793212890625
+  },
+  "q_dense->q_graph_f10:recall@10": {
+   "delta": 0.001645373596593107,
+   "ci_low": -0.047052154195011346,
+   "ci_high": 0.056267806267806274,
+   "wins": 5,
+   "losses": 7,
+   "mcnemar_exact_p": 0.7744140625
+  },
+  "q_dense->q_graph_f10:all@20": {
+   "delta": 0.04878048780487805,
+   "ci_low": 0.0,
+   "ci_high": 0.1111111111111111,
+   "wins": 2,
+   "losses": 0,
+   "mcnemar_exact_p": 0.5
+  },
+  "q_dense->q_graph_f10:mrr": {
+   "delta": -0.08200928657076123,
+   "ci_low": -0.18717909210236577,
+   "ci_high": 0.031305731305731305,
+   "wins": 4,
+   "losses": 20,
+   "mcnemar_exact_p": 0.001543879508972168
+  },
+  "q_dense->q_graph_f20:recall@10": {
+   "delta": -0.0034359272164150253,
+   "ci_low": -0.05274086378737542,
+   "ci_high": 0.05292792792792793,
+   "wins": 7,
+   "losses": 7,
+   "mcnemar_exact_p": 1.0
+  },
+  "q_dense->q_graph_f20:all@20": {
+   "delta": 0.024390243902439025,
+   "ci_low": -0.05555555555555555,
+   "ci_high": 0.10526315789473684,
+   "wins": 2,
+   "losses": 1,
+   "mcnemar_exact_p": 1.0
+  },
+  "q_dense->q_graph_f20:mrr": {
+   "delta": -0.09257152425544916,
+   "ci_low": -0.20528956980363627,
+   "ci_high": 0.044106010871630165,
+   "wins": 6,
+   "losses": 20,
+   "mcnemar_exact_p": 0.009355306625366211
+  },
+  "q_dense->q_graph_f5_nosyn:recall@10": {
+   "delta": -0.00590398761130469,
+   "ci_low": -0.05180180180180181,
+   "ci_high": 0.03888888888888889,
+   "wins": 7,
+   "losses": 9,
+   "mcnemar_exact_p": 0.803619384765625
+  },
+  "q_dense->q_graph_f5_nosyn:all@20": {
+   "delta": 0.0,
+   "ci_low": 0.0,
+   "ci_high": 0.0,
+   "wins": 0,
+   "losses": 0,
+   "mcnemar_exact_p": 1.0
+  },
+  "q_dense->q_graph_f5_nosyn:mrr": {
+   "delta": -0.042986407423279735,
+   "ci_low": -0.1380630630630631,
+   "ci_high": 0.03923043718596086,
+   "wins": 4,
+   "losses": 14,
+   "mcnemar_exact_p": 0.0308837890625
+  },
+  "q_dense->q_bm25:recall@10": {
+   "delta": -0.13080720092915216,
+   "ci_low": -0.15395833333333334,
+   "ci_high": -0.11474732750242957,
+   "wins": 5,
+   "losses": 19,
+   "mcnemar_exact_p": 0.006610751152038574
+  },
+  "q_dense->q_bm25:all@20": {
+   "delta": -0.0975609756097561,
+   "ci_low": -0.1891891891891892,
+   "ci_high": -0.020833333333333332,
+   "wins": 0,
+   "losses": 4,
+   "mcnemar_exact_p": 0.125
+  },
+  "q_dense->q_bm25:mrr": {
+   "delta": -0.08937057524791096,
+   "ci_low": -0.15003495466857536,
+   "ci_high": -0.0023078655777931064,
+   "wins": 11,
+   "losses": 16,
+   "mcnemar_exact_p": 0.44206833839416504
+  },
+  "q_dense->q_rrf_dense_graph:recall@10": {
+   "delta": 0.011178861788617885,
+   "ci_low": -0.016472868217054265,
+   "ci_high": 0.041666666666666664,
+   "wins": 4,
+   "losses": 3,
+   "mcnemar_exact_p": 1.0
+  },
+  "q_dense->q_rrf_dense_graph:all@20": {
+   "delta": 0.0,
+   "ci_low": -0.06976744186046512,
+   "ci_high": 0.07692307692307693,
+   "wins": 1,
+   "losses": 1,
+   "mcnemar_exact_p": 1.0
+  },
+  "q_dense->q_rrf_dense_graph:mrr": {
+   "delta": -0.028658453061670495,
+   "ci_low": -0.06504097754097754,
+   "ci_high": 0.00180291167658189,
+   "wins": 5,
+   "losses": 8,
+   "mcnemar_exact_p": 0.5810546875
+  },
+  "q_dense->q_rrf_dense_bm25:recall@10": {
+   "delta": -0.02688734030197445,
+   "ci_low": -0.06297619047619049,
+   "ci_high": 0.020720720720720717,
+   "wins": 4,
+   "losses": 7,
+   "mcnemar_exact_p": 0.548828125
+  },
+  "q_dense->q_rrf_dense_bm25:all@20": {
+   "delta": -0.024390243902439025,
+   "ci_low": -0.07692307692307693,
+   "ci_high": 0.0,
+   "wins": 0,
+   "losses": 1,
+   "mcnemar_exact_p": 1.0
+  },
+  "q_dense->q_rrf_dense_bm25:mrr": {
+   "delta": -0.014337407172773027,
+   "ci_low": -0.05069136486819414,
+   "ci_high": 0.026254391743522176,
+   "wins": 10,
+   "losses": 8,
+   "mcnemar_exact_p": 0.8145294189453125
+  },
+  "q_dense->q_rrf_all:recall@10": {
+   "delta": -0.01588269454123113,
+   "ci_low": -0.054821428571428577,
+   "ci_high": 0.03580357142857143,
+   "wins": 4,
+   "losses": 6,
+   "mcnemar_exact_p": 0.75390625
+  },
+  "q_dense->q_rrf_all:all@20": {
+   "delta": 0.0,
+   "ci_low": -0.06976744186046512,
+   "ci_high": 0.07692307692307693,
+   "wins": 1,
+   "losses": 1,
+   "mcnemar_exact_p": 1.0
+  },
+  "q_dense->q_rrf_all:mrr": {
+   "delta": -0.0037865276425270386,
+   "ci_low": -0.047926577493140964,
+   "ci_high": 0.03699959627937468,
+   "wins": 12,
+   "losses": 7,
+   "mcnemar_exact_p": 0.359283447265625
+  },
+  "q_dense->qo_dense:recall@10": {
+   "delta": 0.01793457220286488,
+   "ci_low": -0.04536210317460319,
+   "ci_high": 0.0861842105263158,
+   "wins": 9,
+   "losses": 9,
+   "mcnemar_exact_p": 1.0
+  },
+  "q_graph_f5->qo_graph_f5:recall@10": {
+   "delta": -0.01782810685249709,
+   "ci_low": -0.08495440729483279,
+   "ci_high": 0.044594594594594604,
+   "wins": 4,
+   "losses": 11,
+   "mcnemar_exact_p": 0.11846923828125
+  }
+ },
+ "cases": {
+  "dense_better": [
+   {
+    "qid": "human_anno:27:00",
+    "novel_id": "27",
+    "bucket": "early_lt_70",
+    "cutoff_ratio": 0.64,
+    "n_gold": 4,
+    "dense_rank": 2,
+    "graph_rank": 4,
+    "gold_chunk_ids": [
+     "dq-27-00010",
+     "dq-27-00014",
+     "dq-27-00017",
+     "dq-27-00018"
+    ],
+    "dense_gold_ranks": {
+     "dq-27-00010": 2,
+     "dq-27-00014": 20,
+     "dq-27-00017": 3,
+     "dq-27-00018": 12
+    },
+    "graph_gold_ranks": {
+     "dq-27-00010": 4,
+     "dq-27-00014": 19,
+     "dq-27-00017": 5,
+     "dq-27-00018": 7
+    },
+    "dense_top10": [
+     "dq-27-00015",
+     "dq-27-00010",
+     "dq-27-00017",
+     "dq-27-00160",
+     "dq-27-00120",
+     "dq-27-00184",
+     "dq-27-00171",
+     "dq-27-00186",
+     "dq-27-00133",
+     "dq-27-00155"
+    ],
+    "graph_top10": [
+     "dq-27-00171",
+     "dq-27-00015",
+     "dq-27-00184",
+     "dq-27-00010",
+     "dq-27-00017",
+     "dq-27-00186",
+     "dq-27-00018",
+     "dq-27-00160",
+     "dq-27-00120",
+     "dq-27-00016"
+    ],
+    "graph_facts": [
+     [
+      "andrew",
+      "is not married to",
+      "tom"
+     ],
+     [
+      "andrew van",
+      "is",
+      "well educated man"
+     ],
+     [
+      "andrew van",
+      "was",
+      "victim"
+     ],
+     [
+      "andrew van",
+      "formerly known as",
+      "andrew gaetzel"
+     ],
+     [
+      "andrew van",
+      "is also referred to as",
+      "van"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "andrew",
+       "is not married to",
+       "tom"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-27-00186"
+      ]
+     },
+     {
+      "fact": [
+       "andrew van",
+       "is",
+       "well educated man"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-27-00171"
+      ]
+     },
+     {
+      "fact": [
+       "andrew van",
+       "was",
+       "victim"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-27-00010"
+      ]
+     },
+     {
+      "fact": [
+       "andrew van",
+       "formerly known as",
+       "andrew gaetzel"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-27-00171"
+      ]
+     },
+     {
+      "fact": [
+       "andrew van",
+       "is also referred to as",
+       "van"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-27-00133"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:79:02",
+    "novel_id": "79",
+    "bucket": "middle_70_90",
+    "cutoff_ratio": 0.825,
+    "n_gold": 4,
+    "dense_rank": 1,
+    "graph_rank": 3,
+    "gold_chunk_ids": [
+     "dq-79-00100",
+     "dq-79-00103",
+     "dq-79-00116",
+     "dq-79-00165"
+    ],
+    "dense_gold_ranks": {
+     "dq-79-00100": 3,
+     "dq-79-00103": 18,
+     "dq-79-00116": 41,
+     "dq-79-00165": 1
+    },
+    "graph_gold_ranks": {
+     "dq-79-00100": 7,
+     "dq-79-00103": 18,
+     "dq-79-00116": 37,
+     "dq-79-00165": 3
+    },
+    "dense_top10": [
+     "dq-79-00165",
+     "dq-79-00099",
+     "dq-79-00100",
+     "dq-79-00101",
+     "dq-79-00075",
+     "dq-79-00080",
+     "dq-79-00201",
+     "dq-79-00085",
+     "dq-79-00137",
+     "dq-79-00082"
+    ],
+    "graph_top10": [
+     "dq-79-00075",
+     "dq-79-00137",
+     "dq-79-00165",
+     "dq-79-00082",
+     "dq-79-00099",
+     "dq-79-00101",
+     "dq-79-00100",
+     "dq-79-00143",
+     "dq-79-00080",
+     "dq-79-00201"
+    ],
+    "graph_facts": [
+     [
+      "yuki",
+      "has feelings for",
+      "kyousuke"
+     ],
+     [
+      "xiang yue",
+      "is also called",
+      "mr xiangyue"
+     ],
+     [
+      "jinma",
+      "loves",
+      "yuyan"
+     ],
+     [
+      "miss yuxian",
+      "is associated with",
+      "xiyuan"
+     ],
+     [
+      "muromachi",
+      "said",
+      "jinma loves yuyan"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "yuki",
+       "has feelings for",
+       "kyousuke"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00165"
+      ]
+     },
+     {
+      "fact": [
+       "xiang yue",
+       "is also called",
+       "mr xiangyue"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00075"
+      ]
+     },
+     {
+      "fact": [
+       "jinma",
+       "loves",
+       "yuyan"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00137"
+      ]
+     },
+     {
+      "fact": [
+       "miss yuxian",
+       "is associated with",
+       "xiyuan"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00082"
+      ]
+     },
+     {
+      "fact": [
+       "muromachi",
+       "said",
+       "jinma loves yuyan"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00137"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:79:03",
+    "novel_id": "79",
+    "bucket": "late_ge_90",
+    "cutoff_ratio": 0.931,
+    "n_gold": 4,
+    "dense_rank": 11,
+    "graph_rank": 12,
+    "gold_chunk_ids": [
+     "dq-79-00116",
+     "dq-79-00139",
+     "dq-79-00140",
+     "dq-79-00141"
+    ],
+    "dense_gold_ranks": {
+     "dq-79-00116": 11,
+     "dq-79-00139": 0,
+     "dq-79-00140": 41,
+     "dq-79-00141": 0
+    },
+    "graph_gold_ranks": {
+     "dq-79-00116": 12,
+     "dq-79-00139": 0,
+     "dq-79-00140": 46,
+     "dq-79-00141": 0
+    },
+    "dense_top10": [
+     "dq-79-00114",
+     "dq-79-00199",
+     "dq-79-00195",
+     "dq-79-00213",
+     "dq-79-00200",
+     "dq-79-00134",
+     "dq-79-00121",
+     "dq-79-00186",
+     "dq-79-00071",
+     "dq-79-00196"
+    ],
+    "graph_top10": [
+     "dq-79-00196",
+     "dq-79-00156",
+     "dq-79-00114",
+     "dq-79-00195",
+     "dq-79-00213",
+     "dq-79-00199",
+     "dq-79-00121",
+     "dq-79-00200",
+     "dq-79-00134",
+     "dq-79-00071"
+    ],
+    "graph_facts": [
+     [
+      "kanai san",
+      "would not be suspected in",
+      "arahama case"
+     ],
+     [
+      "kumagai san",
+      "was not suspected as killer by",
+      "shima"
+     ],
+     [
+      "mcarthur",
+      "was listed as",
+      "suspect"
+     ],
+     [
+      "kogen",
+      "was",
+      "the most suspicious suspect"
+     ],
+     [
+      "mutsu",
+      "said he had been suspected of being",
+      "the murderer"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "kanai san",
+       "would not be suspected in",
+       "arahama case"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00196"
+      ]
+     },
+     {
+      "fact": [
+       "kumagai san",
+       "was not suspected as killer by",
+       "shima"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00195"
+      ]
+     },
+     {
+      "fact": [
+       "mcarthur",
+       "was listed as",
+       "suspect"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00213"
+      ]
+     },
+     {
+      "fact": [
+       "kogen",
+       "was",
+       "the most suspicious suspect"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00156"
+      ]
+     },
+     {
+      "fact": [
+       "mutsu",
+       "said he had been suspected of being",
+       "the murderer"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00200"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:79:04",
+    "novel_id": "79",
+    "bucket": "late_ge_90",
+    "cutoff_ratio": 0.939,
+    "n_gold": 5,
+    "dense_rank": 12,
+    "graph_rank": 15,
+    "gold_chunk_ids": [
+     "dq-79-00092",
+     "dq-79-00095",
+     "dq-79-00105",
+     "dq-79-00177",
+     "dq-79-00221"
+    ],
+    "dense_gold_ranks": {
+     "dq-79-00092": 0,
+     "dq-79-00095": 12,
+     "dq-79-00105": 0,
+     "dq-79-00177": 13,
+     "dq-79-00221": 0
+    },
+    "graph_gold_ranks": {
+     "dq-79-00092": 0,
+     "dq-79-00095": 15,
+     "dq-79-00105": 0,
+     "dq-79-00177": 19,
+     "dq-79-00221": 0
+    },
+    "dense_top10": [
+     "dq-79-00153",
+     "dq-79-00195",
+     "dq-79-00233",
+     "dq-79-00191",
+     "dq-79-00149",
+     "dq-79-00059",
+     "dq-79-00225",
+     "dq-79-00062",
+     "dq-79-00217",
+     "dq-79-00154"
+    ],
+    "graph_top10": [
+     "dq-79-00153",
+     "dq-79-00034",
+     "dq-79-00195",
+     "dq-79-00233",
+     "dq-79-00191",
+     "dq-79-00154",
+     "dq-79-00149",
+     "dq-79-00225",
+     "dq-79-00059",
+     "dq-79-00062"
+    ],
+    "graph_facts": [
+     [
+      "daisuke inagaki",
+      "is",
+      "perpetrator of this serial murder case"
+     ],
+     [
+      "mutsu",
+      "concluded",
+      "daisuke inagaki is the perpetrator of this serial murder case"
+     ],
+     [
+      "detective jinguji",
+      "suggested",
+      "killer is fanatical logic enthusiast"
+     ],
+     [
+      "mochizuki",
+      "concluded that murderer was",
+      "kiri"
+     ],
+     [
+      "akatsuki murder",
+      "left as suspect",
+      "mizutani"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "daisuke inagaki",
+       "is",
+       "perpetrator of this serial murder case"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00153"
+      ]
+     },
+     {
+      "fact": [
+       "mutsu",
+       "concluded",
+       "daisuke inagaki is the perpetrator of this serial murder case"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00153"
+      ]
+     },
+     {
+      "fact": [
+       "detective jinguji",
+       "suggested",
+       "killer is fanatical logic enthusiast"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00034"
+      ]
+     },
+     {
+      "fact": [
+       "mochizuki",
+       "concluded that murderer was",
+       "kiri"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00225"
+      ]
+     },
+     {
+      "fact": [
+       "akatsuki murder",
+       "left as suspect",
+       "mizutani"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00233"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:117:149:00",
+    "novel_id": "117",
+    "bucket": "early_lt_70",
+    "cutoff_ratio": 0.229,
+    "n_gold": 7,
+    "dense_rank": 1,
+    "graph_rank": 2,
+    "gold_chunk_ids": [
+     "dq-117-00011",
+     "dq-117-00012",
+     "dq-117-00013",
+     "dq-117-00024",
+     "dq-117-00026",
+     "dq-117-00039",
+     "dq-117-00043"
+    ],
+    "dense_gold_ranks": {
+     "dq-117-00011": 41,
+     "dq-117-00012": 7,
+     "dq-117-00013": 4,
+     "dq-117-00024": 19,
+     "dq-117-00026": 33,
+     "dq-117-00039": 25,
+     "dq-117-00043": 1
+    },
+    "graph_gold_ranks": {
+     "dq-117-00011": 40,
+     "dq-117-00012": 12,
+     "dq-117-00013": 3,
+     "dq-117-00024": 14,
+     "dq-117-00026": 32,
+     "dq-117-00039": 23,
+     "dq-117-00043": 2
+    },
+    "dense_top10": [
+     "dq-117-00043",
+     "dq-117-00029",
+     "dq-117-00022",
+     "dq-117-00013",
+     "dq-117-00027",
+     "dq-117-00019",
+     "dq-117-00012",
+     "dq-117-00040",
+     "dq-117-00036",
+     "dq-117-00037"
+    ],
+    "graph_top10": [
+     "dq-117-00022",
+     "dq-117-00043",
+     "dq-117-00013",
+     "dq-117-00027",
+     "dq-117-00029",
+     "dq-117-00040",
+     "dq-117-00038",
+     "dq-117-00019",
+     "dq-117-00041",
+     "dq-117-00021"
+    ],
+    "graph_facts": [
+     [
+      "eleanor marshall",
+      "asked poirot not to tell anyone",
+      "where eleanor marshall is"
+     ],
+     [
+      "linda",
+      "thinks she can have fun if",
+      "alicia is not there"
+     ],
+     [
+      "christine",
+      "wants to leave",
+      "here"
+     ],
+     [
+      "alicia",
+      "has impact on",
+      "linda s father"
+     ],
+     [
+      "miss bryce",
+      "left",
+      "the group"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "eleanor marshall",
+       "asked poirot not to tell anyone",
+       "where eleanor marshall is"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00043"
+      ]
+     },
+     {
+      "fact": [
+       "linda",
+       "thinks she can have fun if",
+       "alicia is not there"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00022"
+      ]
+     },
+     {
+      "fact": [
+       "christine",
+       "wants to leave",
+       "here"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00027"
+      ]
+     },
+     {
+      "fact": [
+       "alicia",
+       "has impact on",
+       "linda s father"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00022"
+      ]
+     },
+     {
+      "fact": [
+       "miss bryce",
+       "left",
+       "the group"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00013"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:117:02",
+    "novel_id": "117",
+    "bucket": "middle_70_90",
+    "cutoff_ratio": 0.745,
+    "n_gold": 6,
+    "dense_rank": 6,
+    "graph_rank": 9,
+    "gold_chunk_ids": [
+     "dq-117-00029",
+     "dq-117-00030",
+     "dq-117-00061",
+     "dq-117-00063",
+     "dq-117-00067",
+     "dq-117-00112"
+    ],
+    "dense_gold_ranks": {
+     "dq-117-00029": 6,
+     "dq-117-00030": 13,
+     "dq-117-00061": 0,
+     "dq-117-00063": 0,
+     "dq-117-00067": 0,
+     "dq-117-00112": 0
+    },
+    "graph_gold_ranks": {
+     "dq-117-00029": 9,
+     "dq-117-00030": 10,
+     "dq-117-00061": 0,
+     "dq-117-00063": 0,
+     "dq-117-00067": 0,
+     "dq-117-00112": 0
+    },
+    "dense_top10": [
+     "dq-117-00068",
+     "dq-117-00024",
+     "dq-117-00025",
+     "dq-117-00050",
+     "dq-117-00074",
+     "dq-117-00029",
+     "dq-117-00099",
+     "dq-117-00081",
+     "dq-117-00012",
+     "dq-117-00022"
+    ],
+    "graph_top10": [
+     "dq-117-00052",
+     "dq-117-00081",
+     "dq-117-00024",
+     "dq-117-00068",
+     "dq-117-00025",
+     "dq-117-00099",
+     "dq-117-00074",
+     "dq-117-00050",
+     "dq-117-00029",
+     "dq-117-00030"
+    ],
+    "graph_facts": [
+     [
+      "linda",
+      "said she could not think of anyone who would want to kill",
+      "elena"
+     ],
+     [
+      "elena",
+      "is described as",
+      "strong woman"
+     ],
+     [
+      "elena",
+      "was",
+      "dead woman"
+     ],
+     [
+      "elena",
+      "said people are attracted to",
+      "elena"
+     ],
+     [
+      "elena",
+      "is wife of",
+      "kenneth marshall"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "linda",
+       "said she could not think of anyone who would want to kill",
+       "elena"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00074"
+      ]
+     },
+     {
+      "fact": [
+       "elena",
+       "is described as",
+       "strong woman"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00081"
+      ]
+     },
+     {
+      "fact": [
+       "elena",
+       "was",
+       "dead woman"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00052"
+      ]
+     },
+     {
+      "fact": [
+       "elena",
+       "said people are attracted to",
+       "elena"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00025"
+      ]
+     },
+     {
+      "fact": [
+       "elena",
+       "is wife of",
+       "kenneth marshall"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00030"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:117:149:02",
+    "novel_id": "117",
+    "bucket": "middle_70_90",
+    "cutoff_ratio": 0.745,
+    "n_gold": 6,
+    "dense_rank": 6,
+    "graph_rank": 9,
+    "gold_chunk_ids": [
+     "dq-117-00029",
+     "dq-117-00030",
+     "dq-117-00061",
+     "dq-117-00063",
+     "dq-117-00067",
+     "dq-117-00112"
+    ],
+    "dense_gold_ranks": {
+     "dq-117-00029": 6,
+     "dq-117-00030": 13,
+     "dq-117-00061": 0,
+     "dq-117-00063": 0,
+     "dq-117-00067": 0,
+     "dq-117-00112": 0
+    },
+    "graph_gold_ranks": {
+     "dq-117-00029": 9,
+     "dq-117-00030": 10,
+     "dq-117-00061": 0,
+     "dq-117-00063": 0,
+     "dq-117-00067": 0,
+     "dq-117-00112": 0
+    },
+    "dense_top10": [
+     "dq-117-00068",
+     "dq-117-00024",
+     "dq-117-00025",
+     "dq-117-00050",
+     "dq-117-00074",
+     "dq-117-00029",
+     "dq-117-00099",
+     "dq-117-00081",
+     "dq-117-00012",
+     "dq-117-00022"
+    ],
+    "graph_top10": [
+     "dq-117-00052",
+     "dq-117-00081",
+     "dq-117-00024",
+     "dq-117-00068",
+     "dq-117-00025",
+     "dq-117-00099",
+     "dq-117-00074",
+     "dq-117-00050",
+     "dq-117-00029",
+     "dq-117-00030"
+    ],
+    "graph_facts": [
+     [
+      "linda",
+      "said she could not think of anyone who would want to kill",
+      "elena"
+     ],
+     [
+      "elena",
+      "is described as",
+      "strong woman"
+     ],
+     [
+      "elena",
+      "was",
+      "dead woman"
+     ],
+     [
+      "elena",
+      "said people are attracted to",
+      "elena"
+     ],
+     [
+      "elena",
+      "is wife of",
+      "kenneth marshall"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "linda",
+       "said she could not think of anyone who would want to kill",
+       "elena"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00074"
+      ]
+     },
+     {
+      "fact": [
+       "elena",
+       "is described as",
+       "strong woman"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00081"
+      ]
+     },
+     {
+      "fact": [
+       "elena",
+       "was",
+       "dead woman"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00052"
+      ]
+     },
+     {
+      "fact": [
+       "elena",
+       "said people are attracted to",
+       "elena"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00025"
+      ]
+     },
+     {
+      "fact": [
+       "elena",
+       "is wife of",
+       "kenneth marshall"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00030"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:118:00",
+    "novel_id": "118",
+    "bucket": "early_lt_70",
+    "cutoff_ratio": 0.437,
+    "n_gold": 4,
+    "dense_rank": 6,
+    "graph_rank": 8,
+    "gold_chunk_ids": [
+     "dq-118-00053",
+     "dq-118-00069",
+     "dq-118-00071",
+     "dq-118-00085"
+    ],
+    "dense_gold_ranks": {
+     "dq-118-00053": 7,
+     "dq-118-00069": 6,
+     "dq-118-00071": 13,
+     "dq-118-00085": 11
+    },
+    "graph_gold_ranks": {
+     "dq-118-00053": 10,
+     "dq-118-00069": 9,
+     "dq-118-00071": 14,
+     "dq-118-00085": 8
+    },
+    "dense_top10": [
+     "dq-118-00066",
+     "dq-118-00052",
+     "dq-118-00068",
+     "dq-118-00086",
+     "dq-118-00055",
+     "dq-118-00069",
+     "dq-118-00053",
+     "dq-118-00049",
+     "dq-118-00054",
+     "dq-118-00056"
+    ],
+    "graph_top10": [
+     "dq-118-00055",
+     "dq-118-00066",
+     "dq-118-00068",
+     "dq-118-00056",
+     "dq-118-00052",
+     "dq-118-00058",
+     "dq-118-00086",
+     "dq-118-00085",
+     "dq-118-00069",
+     "dq-118-00053"
+    ],
+    "graph_facts": [
+     [
+      "david",
+      "went to see",
+      "rolly"
+     ],
+     [
+      "rolly",
+      "asked",
+      "who enock yadon is"
+     ],
+     [
+      "enoch yate",
+      "asked david to visit",
+      "stagg"
+     ],
+     [
+      "mr rolly",
+      "came to inquire about",
+      "mr yates"
+     ],
+     [
+      "mr rolly",
+      "came over to inquire about someone at",
+      "stag"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "david",
+       "went to see",
+       "rolly"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00040"
+      ]
+     },
+     {
+      "fact": [
+       "rolly",
+       "asked",
+       "who enock yadon is"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00055"
+      ]
+     },
+     {
+      "fact": [
+       "enoch yate",
+       "asked david to visit",
+       "stagg"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00056"
+      ]
+     },
+     {
+      "fact": [
+       "mr rolly",
+       "came to inquire about",
+       "mr yates"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00068"
+      ]
+     },
+     {
+      "fact": [
+       "mr rolly",
+       "came over to inquire about someone at",
+       "stag"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00066"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:118:06",
+    "novel_id": "118",
+    "bucket": "late_ge_90",
+    "cutoff_ratio": 0.966,
+    "n_gold": 9,
+    "dense_rank": 9,
+    "graph_rank": 14,
+    "gold_chunk_ids": [
+     "dq-118-00050",
+     "dq-118-00071",
+     "dq-118-00084",
+     "dq-118-00090",
+     "dq-118-00118",
+     "dq-118-00147",
+     "dq-118-00153",
+     "dq-118-00155",
+     "dq-118-00156"
+    ],
+    "dense_gold_ranks": {
+     "dq-118-00050": 0,
+     "dq-118-00071": 0,
+     "dq-118-00084": 29,
+     "dq-118-00090": 41,
+     "dq-118-00118": 47,
+     "dq-118-00147": 0,
+     "dq-118-00153": 0,
+     "dq-118-00155": 9,
+     "dq-118-00156": 0
+    },
+    "graph_gold_ranks": {
+     "dq-118-00050": 0,
+     "dq-118-00071": 0,
+     "dq-118-00084": 36,
+     "dq-118-00090": 47,
+     "dq-118-00118": 0,
+     "dq-118-00147": 0,
+     "dq-118-00153": 0,
+     "dq-118-00155": 14,
+     "dq-118-00156": 0
+    },
+    "dense_top10": [
+     "dq-118-00159",
+     "dq-118-00120",
+     "dq-118-00094",
+     "dq-118-00113",
+     "dq-118-00110",
+     "dq-118-00180",
+     "dq-118-00065",
+     "dq-118-00176",
+     "dq-118-00155",
+     "dq-118-00124"
+    ],
+    "graph_top10": [
+     "dq-118-00142",
+     "dq-118-00094",
+     "dq-118-00120",
+     "dq-118-00187",
+     "dq-118-00119",
+     "dq-118-00103",
+     "dq-118-00180",
+     "dq-118-00159",
+     "dq-118-00113",
+     "dq-118-00110"
+    ],
+    "graph_facts": [
+     [
+      "inspector",
+      "said the man was murdered at",
+      "stagg inn"
+     ],
+     [
+      "david hunter",
+      "was accused of",
+      "premeditated murder"
+     ],
+     [
+      "david hunter",
+      "may have killed",
+      "andré"
+     ],
+     [
+      "the man",
+      "was murdered",
+      "the day after the incident"
+     ],
+     [
+      "rolly",
+      "is",
+      "the murderer"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "inspector",
+       "said the man was murdered at",
+       "stagg inn"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00094"
+      ]
+     },
+     {
+      "fact": [
+       "david hunter",
+       "was accused of",
+       "premeditated murder"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00120"
+      ]
+     },
+     {
+      "fact": [
+       "david hunter",
+       "may have killed",
+       "andré"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00122"
+      ]
+     },
+     {
+      "fact": [
+       "the man",
+       "was murdered",
+       "the day after the incident"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00142"
+      ]
+     },
+     {
+      "fact": [
+       "rolly",
+       "is",
+       "the murderer"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00187"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:118:05",
+    "novel_id": "118",
+    "bucket": "late_ge_90",
+    "cutoff_ratio": 0.983,
+    "n_gold": 2,
+    "dense_rank": 7,
+    "graph_rank": 9,
+    "gold_chunk_ids": [
+     "dq-118-00128",
+     "dq-118-00198"
+    ],
+    "dense_gold_ranks": {
+     "dq-118-00128": 34,
+     "dq-118-00198": 7
+    },
+    "graph_gold_ranks": {
+     "dq-118-00128": 33,
+     "dq-118-00198": 9
+    },
+    "dense_top10": [
+     "dq-118-00044",
+     "dq-118-00039",
+     "dq-118-00051",
+     "dq-118-00045",
+     "dq-118-00036",
+     "dq-118-00119",
+     "dq-118-00198",
+     "dq-118-00037",
+     "dq-118-00098",
+     "dq-118-00043"
+    ],
+    "graph_top10": [
+     "dq-118-00031",
+     "dq-118-00051",
+     "dq-118-00044",
+     "dq-118-00036",
+     "dq-118-00119",
+     "dq-118-00045",
+     "dq-118-00039",
+     "dq-118-00162",
+     "dq-118-00198",
+     "dq-118-00043"
+    ],
+    "graph_facts": [
+     [
+      "rosaline",
+      "is also referred to as",
+      "rosalind"
+     ],
+     [
+      "rosaline",
+      "is also known as",
+      "mrs claude"
+     ],
+     [
+      "rosaline",
+      "is now",
+      "twenty six"
+     ],
+     [
+      "rosalyn",
+      "is same person as",
+      "rosaline"
+     ],
+     [
+      "rosaline claude",
+      "is referred to as",
+      "rosaline"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "rosaline",
+       "is also referred to as",
+       "rosalind"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00064"
+      ]
+     },
+     {
+      "fact": [
+       "rosaline",
+       "is also known as",
+       "mrs claude"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00119"
+      ]
+     },
+     {
+      "fact": [
+       "rosaline",
+       "is now",
+       "twenty six"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00031"
+      ]
+     },
+     {
+      "fact": [
+       "rosalyn",
+       "is same person as",
+       "rosaline"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00032"
+      ]
+     },
+     {
+      "fact": [
+       "rosaline claude",
+       "is referred to as",
+       "rosaline"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00093"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:121:00",
+    "novel_id": "121",
+    "bucket": "early_lt_70",
+    "cutoff_ratio": 0.195,
+    "n_gold": 6,
+    "dense_rank": 1,
+    "graph_rank": 2,
+    "gold_chunk_ids": [
+     "dq-121-00006",
+     "dq-121-00010",
+     "dq-121-00012",
+     "dq-121-00029",
+     "dq-121-00035",
+     "dq-121-00036"
+    ],
+    "dense_gold_ranks": {
+     "dq-121-00006": 1,
+     "dq-121-00010": 4,
+     "dq-121-00012": 12,
+     "dq-121-00029": 11,
+     "dq-121-00035": 6,
+     "dq-121-00036": 33
+    },
+    "graph_gold_ranks": {
+     "dq-121-00006": 2,
+     "dq-121-00010": 8,
+     "dq-121-00012": 17,
+     "dq-121-00029": 18,
+     "dq-121-00035": 12,
+     "dq-121-00036": 34
+    },
+    "dense_top10": [
+     "dq-121-00006",
+     "dq-121-00008",
+     "dq-121-00009",
+     "dq-121-00010",
+     "dq-121-00020",
+     "dq-121-00035",
+     "dq-121-00018",
+     "dq-121-00016",
+     "dq-121-00022",
+     "dq-121-00021"
+    ],
+    "graph_top10": [
+     "dq-121-00033",
+     "dq-121-00006",
+     "dq-121-00016",
+     "dq-121-00003",
+     "dq-121-00009",
+     "dq-121-00008",
+     "dq-121-00020",
+     "dq-121-00010",
+     "dq-121-00018",
+     "dq-121-00022"
+    ],
+    "graph_facts": [
+     [
+      "mrs habberd",
+      "interjected",
+      "stealing is stealing"
+     ],
+     [
+      "mrs haberdash",
+      "took out",
+      "small notebook"
+     ],
+     [
+      "miss lemon",
+      "confirmed",
+      "things had been stolen"
+     ],
+     [
+      "mrs habberd",
+      "told",
+      "mrs nicolaitis"
+     ],
+     [
+      "mrs habberd",
+      "took advantage of",
+      "lumpson s discounted items on sale"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "mrs habberd",
+       "interjected",
+       "stealing is stealing"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00033"
+      ]
+     },
+     {
+      "fact": [
+       "mrs haberdash",
+       "took out",
+       "small notebook"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00006"
+      ]
+     },
+     {
+      "fact": [
+       "miss lemon",
+       "confirmed",
+       "things had been stolen"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00003"
+      ]
+     },
+     {
+      "fact": [
+       "mrs habberd",
+       "told",
+       "mrs nicolaitis"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00016"
+      ]
+     },
+     {
+      "fact": [
+       "mrs habberd",
+       "took advantage of",
+       "lumpson s discounted items on sale"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00016"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:121:03",
+    "novel_id": "121",
+    "bucket": "late_ge_90",
+    "cutoff_ratio": 0.944,
+    "n_gold": 8,
+    "dense_rank": 1,
+    "graph_rank": 2,
+    "gold_chunk_ids": [
+     "dq-121-00080",
+     "dq-121-00106",
+     "dq-121-00111",
+     "dq-121-00112",
+     "dq-121-00136",
+     "dq-121-00155",
+     "dq-121-00156",
+     "dq-121-00159"
+    ],
+    "dense_gold_ranks": {
+     "dq-121-00080": 11,
+     "dq-121-00106": 43,
+     "dq-121-00111": 0,
+     "dq-121-00112": 0,
+     "dq-121-00136": 0,
+     "dq-121-00155": 1,
+     "dq-121-00156": 3,
+     "dq-121-00159": 5
+    },
+    "graph_gold_ranks": {
+     "dq-121-00080": 2,
+     "dq-121-00106": 0,
+     "dq-121-00111": 0,
+     "dq-121-00112": 0,
+     "dq-121-00136": 0,
+     "dq-121-00155": 5,
+     "dq-121-00156": 8,
+     "dq-121-00159": 12
+    },
+    "dense_top10": [
+     "dq-121-00155",
+     "dq-121-00158",
+     "dq-121-00156",
+     "dq-121-00147",
+     "dq-121-00159",
+     "dq-121-00168",
+     "dq-121-00130",
+     "dq-121-00151",
+     "dq-121-00153",
+     "dq-121-00169"
+    ],
+    "graph_top10": [
+     "dq-121-00158",
+     "dq-121-00080",
+     "dq-121-00083",
+     "dq-121-00149",
+     "dq-121-00155",
+     "dq-121-00115",
+     "dq-121-00129",
+     "dq-121-00156",
+     "dq-121-00147",
+     "dq-121-00044"
+    ],
+    "graph_facts": [
+     [
+      "patricia",
+      "was involved in the discussion about",
+      "murder"
+     ],
+     [
+      "patricia",
+      "discussed",
+      "methods of murder"
+     ],
+     [
+      "patricia lane",
+      "might be resentful enough to kill",
+      "sylvia austin"
+     ],
+     [
+      "patricia",
+      "is also known as",
+      "patrice"
+     ],
+     [
+      "patricia",
+      "told",
+      "he"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "patricia",
+       "was involved in the discussion about",
+       "murder"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00083"
+      ]
+     },
+     {
+      "fact": [
+       "patricia",
+       "discussed",
+       "methods of murder"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00083"
+      ]
+     },
+     {
+      "fact": [
+       "patricia lane",
+       "might be resentful enough to kill",
+       "sylvia austin"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00080"
+      ]
+     },
+     {
+      "fact": [
+       "patricia",
+       "is also known as",
+       "patrice"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00149"
+      ]
+     },
+     {
+      "fact": [
+       "patricia",
+       "told",
+       "he"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00044"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:121:02",
+    "novel_id": "121",
+    "bucket": "late_ge_90",
+    "cutoff_ratio": 0.976,
+    "n_gold": 6,
+    "dense_rank": 8,
+    "graph_rank": 9,
+    "gold_chunk_ids": [
+     "dq-121-00027",
+     "dq-121-00052",
+     "dq-121-00063",
+     "dq-121-00084",
+     "dq-121-00085",
+     "dq-121-00172"
+    ],
+    "dense_gold_ranks": {
+     "dq-121-00027": 0,
+     "dq-121-00052": 8,
+     "dq-121-00063": 0,
+     "dq-121-00084": 0,
+     "dq-121-00085": 0,
+     "dq-121-00172": 0
+    },
+    "graph_gold_ranks": {
+     "dq-121-00027": 0,
+     "dq-121-00052": 9,
+     "dq-121-00063": 0,
+     "dq-121-00084": 0,
+     "dq-121-00085": 0,
+     "dq-121-00172": 0
+    },
+    "dense_top10": [
+     "dq-121-00130",
+     "dq-121-00036",
+     "dq-121-00093",
+     "dq-121-00089",
+     "dq-121-00059",
+     "dq-121-00068",
+     "dq-121-00076",
+     "dq-121-00052",
+     "dq-121-00072",
+     "dq-121-00056"
+    ],
+    "graph_top10": [
+     "dq-121-00068",
+     "dq-121-00168",
+     "dq-121-00130",
+     "dq-121-00152",
+     "dq-121-00089",
+     "dq-121-00093",
+     "dq-121-00059",
+     "dq-121-00036",
+     "dq-121-00052",
+     "dq-121-00076"
+    ],
+    "graph_facts": [
+     [
+      "celia",
+      "was killed by",
+      "unknown person"
+     ],
+     [
+      "valerie",
+      "asked about who killed",
+      "celia"
+     ],
+     [
+      "celia",
+      "was killed",
+      "true"
+     ],
+     [
+      "mrs haberdash",
+      "described killing of celia as",
+      "cold blooded murder"
+     ],
+     [
+      "mrs haberdash",
+      "said valerie hobhouse killed",
+      "celia"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "celia",
+       "was killed by",
+       "unknown person"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00130"
+      ]
+     },
+     {
+      "fact": [
+       "valerie",
+       "asked about who killed",
+       "celia"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00130"
+      ]
+     },
+     {
+      "fact": [
+       "celia",
+       "was killed",
+       "true"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00068"
+      ]
+     },
+     {
+      "fact": [
+       "mrs haberdash",
+       "described killing of celia as",
+       "cold blooded murder"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00168"
+      ]
+     },
+     {
+      "fact": [
+       "mrs haberdash",
+       "said valerie hobhouse killed",
+       "celia"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00168"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:121:05",
+    "novel_id": "121",
+    "bucket": "late_ge_90",
+    "cutoff_ratio": 0.977,
+    "n_gold": 3,
+    "dense_rank": 21,
+    "graph_rank": 23,
+    "gold_chunk_ids": [
+     "dq-121-00132",
+     "dq-121-00138",
+     "dq-121-00140"
+    ],
+    "dense_gold_ranks": {
+     "dq-121-00132": 21,
+     "dq-121-00138": 43,
+     "dq-121-00140": 35
+    },
+    "graph_gold_ranks": {
+     "dq-121-00132": 23,
+     "dq-121-00138": 41,
+     "dq-121-00140": 32
+    },
+    "dense_top10": [
+     "dq-121-00105",
+     "dq-121-00131",
+     "dq-121-00139",
+     "dq-121-00015",
+     "dq-121-00104",
+     "dq-121-00118",
+     "dq-121-00142",
+     "dq-121-00106",
+     "dq-121-00117",
+     "dq-121-00053"
+    ],
+    "graph_top10": [
+     "dq-121-00049",
+     "dq-121-00131",
+     "dq-121-00015",
+     "dq-121-00139",
+     "dq-121-00105",
+     "dq-121-00117",
+     "dq-121-00003",
+     "dq-121-00118",
+     "dq-121-00106",
+     "dq-121-00104"
+    ],
+    "graph_facts": [
+     [
+      "mrs nikoleitis",
+      "is referred to as",
+      "mrs nicolaitis"
+     ],
+     [
+      "mrs nicolaitis",
+      "claimed it was",
+      "suicide"
+     ],
+     [
+      "mrs nicoletti",
+      "is also known as",
+      "mrs nik"
+     ],
+     [
+      "mrs nikoleteis",
+      "ordered",
+      "throw her out on the street"
+     ],
+     [
+      "mrs nicoletta",
+      "is",
+      "dead"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "mrs nikoleitis",
+       "is referred to as",
+       "mrs nicolaitis"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00015"
+      ]
+     },
+     {
+      "fact": [
+       "mrs nicolaitis",
+       "claimed it was",
+       "suicide"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00102"
+      ]
+     },
+     {
+      "fact": [
+       "mrs nicoletti",
+       "is also known as",
+       "mrs nik"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00131"
+      ]
+     },
+     {
+      "fact": [
+       "mrs nikoleteis",
+       "ordered",
+       "throw her out on the street"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00049"
+      ]
+     },
+     {
+      "fact": [
+       "mrs nicoletta",
+       "is",
+       "dead"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-121-00139"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:124:00",
+    "novel_id": "124",
+    "bucket": "early_lt_70",
+    "cutoff_ratio": 0.187,
+    "n_gold": 3,
+    "dense_rank": 1,
+    "graph_rank": 3,
+    "gold_chunk_ids": [
+     "dq-124-00011",
+     "dq-124-00037",
+     "dq-124-00038"
+    ],
+    "dense_gold_ranks": {
+     "dq-124-00011": 5,
+     "dq-124-00037": 4,
+     "dq-124-00038": 1
+    },
+    "graph_gold_ranks": {
+     "dq-124-00011": 5,
+     "dq-124-00037": 3,
+     "dq-124-00038": 6
+    },
+    "dense_top10": [
+     "dq-124-00038",
+     "dq-124-00012",
+     "dq-124-00013",
+     "dq-124-00037",
+     "dq-124-00011",
+     "dq-124-00016",
+     "dq-124-00018",
+     "dq-124-00031",
+     "dq-124-00017",
+     "dq-124-00032"
+    ],
+    "graph_top10": [
+     "dq-124-00012",
+     "dq-124-00013",
+     "dq-124-00037",
+     "dq-124-00031",
+     "dq-124-00011",
+     "dq-124-00038",
+     "dq-124-00018",
+     "dq-124-00016",
+     "dq-124-00017",
+     "dq-124-00032"
+    ],
+    "graph_facts": [
+     [
+      "hakaste",
+      "reported missing",
+      "leather travel clock"
+     ],
+     [
+      "miss pemshaw",
+      "said small travel clock was not in room when",
+      "miss pemshaw left at half past one"
+     ],
+     [
+      "detective hakast",
+      "placed small travel clock in hand of",
+      "miss pemshaw"
+     ],
+     [
+      "fingerprint technician",
+      "said",
+      "the leather travel clock has no fingerprints"
+     ],
+     [
+      "small travel clock",
+      "had",
+      "leather covering"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "hakaste",
+       "reported missing",
+       "leather travel clock"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-124-00037"
+      ]
+     },
+     {
+      "fact": [
+       "miss pemshaw",
+       "said small travel clock was not in room when",
+       "miss pemshaw left at half past one"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-124-00012"
+      ]
+     },
+     {
+      "fact": [
+       "detective hakast",
+       "placed small travel clock in hand of",
+       "miss pemshaw"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-124-00012"
+      ]
+     },
+     {
+      "fact": [
+       "fingerprint technician",
+       "said",
+       "the leather travel clock has no fingerprints"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-124-00013"
+      ]
+     },
+     {
+      "fact": [
+       "small travel clock",
+       "had",
+       "leather covering"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-124-00012"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:124:02",
+    "novel_id": "124",
+    "bucket": "early_lt_70",
+    "cutoff_ratio": 0.404,
+    "n_gold": 2,
+    "dense_rank": 1,
+    "graph_rank": 2,
+    "gold_chunk_ids": [
+     "dq-124-00088",
+     "dq-124-00089"
+    ],
+    "dense_gold_ranks": {
+     "dq-124-00088": 4,
+     "dq-124-00089": 1
+    },
+    "graph_gold_ranks": {
+     "dq-124-00088": 2,
+     "dq-124-00089": 6
+    },
+    "dense_top10": [
+     "dq-124-00089",
+     "dq-124-00090",
+     "dq-124-00083",
+     "dq-124-00088",
+     "dq-124-00085",
+     "dq-124-00086",
+     "dq-124-00082",
+     "dq-124-00064",
+     "dq-124-00044",
+     "dq-124-00087"
+    ],
+    "graph_top10": [
+     "dq-124-00086",
+     "dq-124-00088",
+     "dq-124-00080",
+     "dq-124-00090",
+     "dq-124-00085",
+     "dq-124-00089",
+     "dq-124-00083",
+     "dq-124-00064",
+     "dq-124-00082",
+     "dq-124-00065"
+    ],
+    "graph_facts": [
+     [
+      "mrs rotton",
+      "said miss webber is",
+      "mrs rotton s sister s child"
+     ],
+     [
+      "mrs rotten",
+      "was",
+      "aunt"
+     ],
+     [
+      "mrs routon",
+      "confirmed",
+      "hila webber is her sister s illegitimate child"
+     ],
+     [
+      "mrs ruddle",
+      "is sister of",
+      "an"
+     ],
+     [
+      "mrs routon",
+      "was asked about",
+      "her sister s death"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "mrs rotton",
+       "said miss webber is",
+       "mrs rotton s sister s child"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-124-00086"
+      ]
+     },
+     {
+      "fact": [
+       "mrs rotten",
+       "was",
+       "aunt"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-124-00080"
+      ]
+     },
+     {
+      "fact": [
+       "mrs routon",
+       "confirmed",
+       "hila webber is her sister s illegitimate child"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-124-00088"
+      ]
+     },
+     {
+      "fact": [
+       "mrs ruddle",
+       "is sister of",
+       "an"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-124-00090"
+      ]
+     },
+     {
+      "fact": [
+       "mrs routon",
+       "was asked about",
+       "her sister s death"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-124-00088"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   }
+  ],
+  "graph_better": [
+   {
+    "qid": "human_anno:27:06",
+    "novel_id": "27",
+    "bucket": "middle_70_90",
+    "cutoff_ratio": 0.881,
+    "n_gold": 15,
+    "dense_rank": 15,
+    "graph_rank": 13,
+    "gold_chunk_ids": [
+     "dq-27-00003",
+     "dq-27-00023",
+     "dq-27-00024",
+     "dq-27-00027",
+     "dq-27-00028",
+     "dq-27-00040",
+     "dq-27-00044",
+     "dq-27-00046",
+     "dq-27-00066",
+     "dq-27-00094",
+     "dq-27-00101",
+     "dq-27-00123",
+     "dq-27-00158",
+     "dq-27-00184",
+     "dq-27-00185"
+    ],
+    "dense_gold_ranks": {
+     "dq-27-00003": 0,
+     "dq-27-00023": 27,
+     "dq-27-00024": 0,
+     "dq-27-00027": 0,
+     "dq-27-00028": 0,
+     "dq-27-00040": 0,
+     "dq-27-00044": 15,
+     "dq-27-00046": 0,
+     "dq-27-00066": 50,
+     "dq-27-00094": 0,
+     "dq-27-00101": 46,
+     "dq-27-00123": 0,
+     "dq-27-00158": 0,
+     "dq-27-00184": 0,
+     "dq-27-00185": 0
+    },
+    "graph_gold_ranks": {
+     "dq-27-00003": 0,
+     "dq-27-00023": 37,
+     "dq-27-00024": 0,
+     "dq-27-00027": 0,
+     "dq-27-00028": 0,
+     "dq-27-00040": 0,
+     "dq-27-00044": 13,
+     "dq-27-00046": 0,
+     "dq-27-00066": 34,
+     "dq-27-00094": 0,
+     "dq-27-00101": 26,
+     "dq-27-00123": 0,
+     "dq-27-00158": 0,
+     "dq-27-00184": 0,
+     "dq-27-00185": 39
+    },
+    "dense_top10": [
+     "dq-27-00248",
+     "dq-27-00120",
+     "dq-27-00258",
+     "dq-27-00020",
+     "dq-27-00251",
+     "dq-27-00156",
+     "dq-27-00034",
+     "dq-27-00191",
+     "dq-27-00049",
+     "dq-27-00153"
+    ],
+    "graph_top10": [
+     "dq-27-00248",
+     "dq-27-00120",
+     "dq-27-00156",
+     "dq-27-00048",
+     "dq-27-00030",
+     "dq-27-00147",
+     "dq-27-00049",
+     "dq-27-00034",
+     "dq-27-00258",
+     "dq-27-00020"
+    ],
+    "graph_facts": [
+     [
+      "ellery",
+      "referred to",
+      "the killer"
+     ],
+     [
+      "crosett",
+      "realized he had killed the wrong man",
+      "true"
+     ],
+     [
+      "ellery",
+      "identified killer as",
+      "vilga crocetta"
+     ],
+     [
+      "crosetti",
+      "is likely killer of",
+      "vane"
+     ],
+     [
+      "crosett",
+      "thought he killed",
+      "andrew van"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "ellery",
+       "referred to",
+       "the killer"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-27-00030"
+      ]
+     },
+     {
+      "fact": [
+       "crosett",
+       "realized he had killed the wrong man",
+       "true"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-27-00156"
+      ]
+     },
+     {
+      "fact": [
+       "ellery",
+       "identified killer as",
+       "vilga crocetta"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-27-00248"
+      ]
+     },
+     {
+      "fact": [
+       "crosetti",
+       "is likely killer of",
+       "vane"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-27-00120"
+      ]
+     },
+     {
+      "fact": [
+       "crosett",
+       "thought he killed",
+       "andrew van"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-27-00156"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:79:01",
+    "novel_id": "79",
+    "bucket": "early_lt_70",
+    "cutoff_ratio": 0.246,
+    "n_gold": 3,
+    "dense_rank": 4,
+    "graph_rank": 1,
+    "gold_chunk_ids": [
+     "dq-79-00028",
+     "dq-79-00052",
+     "dq-79-00068"
+    ],
+    "dense_gold_ranks": {
+     "dq-79-00028": 8,
+     "dq-79-00052": 0,
+     "dq-79-00068": 4
+    },
+    "graph_gold_ranks": {
+     "dq-79-00028": 1,
+     "dq-79-00052": 0,
+     "dq-79-00068": 6
+    },
+    "dense_top10": [
+     "dq-79-00069",
+     "dq-79-00015",
+     "dq-79-00004",
+     "dq-79-00068",
+     "dq-79-00070",
+     "dq-79-00039",
+     "dq-79-00001",
+     "dq-79-00028",
+     "dq-79-00038",
+     "dq-79-00042"
+    ],
+    "graph_top10": [
+     "dq-79-00028",
+     "dq-79-00018",
+     "dq-79-00069",
+     "dq-79-00004",
+     "dq-79-00015",
+     "dq-79-00068",
+     "dq-79-00070",
+     "dq-79-00039",
+     "dq-79-00001",
+     "dq-79-00038"
+    ],
+    "graph_facts": [
+     [
+      "mukayama seisakusho",
+      "had chairman",
+      "mukayama tadashi"
+     ],
+     [
+      "mukayama tadashi",
+      "was",
+      "second generation president and chairman of mukayama seisakusho"
+     ],
+     [
+      "mukizuki",
+      "thought asking",
+      "inaba would help understand where the head is"
+     ],
+     [
+      "mukizuki",
+      "looked intently at",
+      "inaba"
+     ],
+     [
+      "inari shrine",
+      "visited by",
+      "mutsuji"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "mukayama seisakusho",
+       "had chairman",
+       "mukayama tadashi"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00028"
+      ]
+     },
+     {
+      "fact": [
+       "mukayama tadashi",
+       "was",
+       "second generation president and chairman of mukayama seisakusho"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00028"
+      ]
+     },
+     {
+      "fact": [
+       "mukizuki",
+       "thought asking",
+       "inaba would help understand where the head is"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00018"
+      ]
+     },
+     {
+      "fact": [
+       "mukizuki",
+       "looked intently at",
+       "inaba"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00018"
+      ]
+     },
+     {
+      "fact": [
+       "inari shrine",
+       "visited by",
+       "mutsuji"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-79-00000"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:117:149:01",
+    "novel_id": "117",
+    "bucket": "late_ge_90",
+    "cutoff_ratio": 0.979,
+    "n_gold": 4,
+    "dense_rank": 0,
+    "graph_rank": 5,
+    "gold_chunk_ids": [
+     "dq-117-00007",
+     "dq-117-00008",
+     "dq-117-00020",
+     "dq-117-00156"
+    ],
+    "dense_gold_ranks": {
+     "dq-117-00007": 0,
+     "dq-117-00008": 0,
+     "dq-117-00020": 0,
+     "dq-117-00156": 0
+    },
+    "graph_gold_ranks": {
+     "dq-117-00007": 5,
+     "dq-117-00008": 0,
+     "dq-117-00020": 0,
+     "dq-117-00156": 0
+    },
+    "dense_top10": [
+     "dq-117-00180",
+     "dq-117-00159",
+     "dq-117-00173",
+     "dq-117-00174",
+     "dq-117-00081",
+     "dq-117-00133",
+     "dq-117-00179",
+     "dq-117-00158",
+     "dq-117-00150",
+     "dq-117-00160"
+    ],
+    "graph_top10": [
+     "dq-117-00159",
+     "dq-117-00038",
+     "dq-117-00180",
+     "dq-117-00081",
+     "dq-117-00007",
+     "dq-117-00066",
+     "dq-117-00174",
+     "dq-117-00173",
+     "dq-117-00160",
+     "dq-117-00133"
+    ],
+    "graph_facts": [
+     [
+      "christine",
+      "has",
+      "alibi"
+     ],
+     [
+      "christine",
+      "lied about",
+      "acrophobia"
+     ],
+     [
+      "christine",
+      "laughed at",
+      "poirot s statement"
+     ],
+     [
+      "christine",
+      "said to",
+      "poirot"
+     ],
+     [
+      "poirot",
+      "said",
+      "christine redfern s testimony gives linda marshall an alibi"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "christine",
+       "has",
+       "alibi"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00081"
+      ]
+     },
+     {
+      "fact": [
+       "christine",
+       "lied about",
+       "acrophobia"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00180"
+      ]
+     },
+     {
+      "fact": [
+       "christine",
+       "laughed at",
+       "poirot s statement"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00038"
+      ]
+     },
+     {
+      "fact": [
+       "christine",
+       "said to",
+       "poirot"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00160"
+      ]
+     },
+     {
+      "fact": [
+       "poirot",
+       "said",
+       "christine redfern s testimony gives linda marshall an alibi"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-117-00159"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   },
+   {
+    "qid": "human_anno:118:04",
+    "novel_id": "118",
+    "bucket": "late_ge_90",
+    "cutoff_ratio": 0.972,
+    "n_gold": 4,
+    "dense_rank": 14,
+    "graph_rank": 1,
+    "gold_chunk_ids": [
+     "dq-118-00076",
+     "dq-118-00142",
+     "dq-118-00144",
+     "dq-118-00146"
+    ],
+    "dense_gold_ranks": {
+     "dq-118-00076": 28,
+     "dq-118-00142": 0,
+     "dq-118-00144": 14,
+     "dq-118-00146": 0
+    },
+    "graph_gold_ranks": {
+     "dq-118-00076": 26,
+     "dq-118-00142": 0,
+     "dq-118-00144": 1,
+     "dq-118-00146": 0
+    },
+    "dense_top10": [
+     "dq-118-00110",
+     "dq-118-00111",
+     "dq-118-00193",
+     "dq-118-00112",
+     "dq-118-00145",
+     "dq-118-00123",
+     "dq-118-00157",
+     "dq-118-00097",
+     "dq-118-00095",
+     "dq-118-00169"
+    ],
+    "graph_top10": [
+     "dq-118-00144",
+     "dq-118-00063",
+     "dq-118-00178",
+     "dq-118-00110",
+     "dq-118-00145",
+     "dq-118-00112",
+     "dq-118-00111",
+     "dq-118-00193",
+     "dq-118-00123",
+     "dq-118-00097"
+    ],
+    "graph_facts": [
+     [
+      "david",
+      "devised plan to divert suspicion from",
+      "david"
+     ],
+     [
+      "david hunter",
+      "gave account of",
+      "his whereabouts"
+     ],
+     [
+      "david",
+      "had motive to kill",
+      "jard"
+     ],
+     [
+      "david",
+      "said",
+      "alright"
+     ],
+     [
+      "david",
+      "said things to",
+      "rosalyn"
+     ]
+    ],
+    "graph_fact_provenance": [
+     {
+      "fact": [
+       "david",
+       "devised plan to divert suspicion from",
+       "david"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00193"
+      ]
+     },
+     {
+      "fact": [
+       "david hunter",
+       "gave account of",
+       "his whereabouts"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00144"
+      ]
+     },
+     {
+      "fact": [
+       "david",
+       "had motive to kill",
+       "jard"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00178"
+      ]
+     },
+     {
+      "fact": [
+       "david",
+       "said",
+       "alright"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00063"
+      ]
+     },
+     {
+      "fact": [
+       "david",
+       "said things to",
+       "rosalyn"
+      ],
+      "visible_source_chunk_ids": [
+       "dq-118-00045"
+      ]
+     }
+    ],
+    "graph_mode": "prefix_ppr"
+   }
+  ],
+  "counts": {
+   "dense_better": 16,
+   "graph_better": 4
+  },
+  "dense_better_by_bucket": {
+   "early_lt_70": 6,
+   "middle_70_90": 3,
+   "late_ge_90": 7
+  },
+  "dense_better_by_novel": {
+   "27": 1,
+   "79": 3,
+   "117": 3,
+   "118": 3,
+   "121": 4,
+   "124": 2
+  },
+  "graph_better_by_bucket": {
+   "middle_70_90": 1,
+   "early_lt_70": 1,
+   "late_ge_90": 2
+  },
+  "graph_better_by_novel": {
+   "27": 1,
+   "79": 1,
+   "117": 1,
+   "118": 1
+  }
+ },
+ "by_bucket": {
+  "early_lt_70": {
+   "n": 18,
+   "q_dense": {
+    "recall@10": 0.5777,
+    "all@20": 0.3889,
+    "mrr": 0.6667
+   },
+   "q_bm25": {
+    "recall@10": 0.4365,
+    "all@20": 0.2222,
+    "mrr": 0.5679
+   },
+   "q_graph_f5": {
+    "recall@10": 0.5883,
+    "all@20": 0.4444,
+    "mrr": 0.5718
+   },
+   "q_graph_f20": {
+    "recall@10": 0.6147,
+    "all@20": 0.4444,
+    "mrr": 0.558
+   },
+   "q_rrf_dense_graph": {
+    "recall@10": 0.5916,
+    "all@20": 0.3889,
+    "mrr": 0.6237
+   }
+  },
+  "late_ge_90": {
+   "n": 15,
+   "q_dense": {
+    "recall@10": 0.2388,
+    "all@20": 0.0,
+    "mrr": 0.3948
+   },
+   "q_bm25": {
+    "recall@10": 0.1418,
+    "all@20": 0.0,
+    "mrr": 0.3365
+   },
+   "q_graph_f5": {
+    "recall@10": 0.2123,
+    "all@20": 0.0,
+    "mrr": 0.4291
+   },
+   "q_graph_f20": {
+    "recall@10": 0.1738,
+    "all@20": 0.0,
+    "mrr": 0.369
+   },
+   "q_rrf_dense_graph": {
+    "recall@10": 0.2526,
+    "all@20": 0.0,
+    "mrr": 0.3748
+   }
+  },
+  "middle_70_90": {
+   "n": 8,
+   "q_dense": {
+    "recall@10": 0.3958,
+    "all@20": 0.25,
+    "mrr": 0.55
+   },
+   "q_bm25": {
+    "recall@10": 0.225,
+    "all@20": 0.125,
+    "mrr": 0.4234
+   },
+   "q_graph_f5": {
+    "recall@10": 0.4583,
+    "all@20": 0.25,
+    "mrr": 0.4541
+   },
+   "q_graph_f20": {
+    "recall@10": 0.4167,
+    "all@20": 0.25,
+    "mrr": 0.3685
+   },
+   "q_rrf_dense_graph": {
+    "recall@10": 0.3958,
+    "all@20": 0.25,
+    "mrr": 0.5374
+   }
+  }
+ },
+ "by_novel": {
+  "27": {
+   "n": 7,
+   "q_dense": {
+    "recall@10": 0.3274,
+    "all@20": 0.2857,
+    "mrr": 0.4381
+   },
+   "q_bm25": {
+    "recall@10": 0.1976,
+    "all@20": 0.0,
+    "mrr": 0.2749
+   },
+   "q_graph_f5": {
+    "recall@10": 0.3869,
+    "all@20": 0.2857,
+    "mrr": 0.4038
+   },
+   "q_graph_f20": {
+    "recall@10": 0.4226,
+    "all@20": 0.2857,
+    "mrr": 0.3241
+   },
+   "q_rrf_dense_graph": {
+    "recall@10": 0.3631,
+    "all@20": 0.1429,
+    "mrr": 0.4396
+   }
+  },
+  "79": {
+   "n": 5,
+   "q_dense": {
+    "recall@10": 0.2333,
+    "all@20": 0.0,
+    "mrr": 0.2848
+   },
+   "q_bm25": {
+    "recall@10": 0.1067,
+    "all@20": 0.0,
+    "mrr": 0.2587
+   },
+   "q_graph_f5": {
+    "recall@10": 0.2333,
+    "all@20": 0.0,
+    "mrr": 0.2967
+   },
+   "q_graph_f20": {
+    "recall@10": 0.2333,
+    "all@20": 0.0,
+    "mrr": 0.2967
+   },
+   "q_rrf_dense_graph": {
+    "recall@10": 0.2333,
+    "all@20": 0.0,
+    "mrr": 0.2825
+   }
+  },
+  "117": {
+   "n": 10,
+   "q_dense": {
+    "recall@10": 0.3119,
+    "all@20": 0.0,
+    "mrr": 0.6333
+   },
+   "q_bm25": {
+    "recall@10": 0.2048,
+    "all@20": 0.0,
+    "mrr": 0.4701
+   },
+   "q_graph_f5": {
+    "recall@10": 0.3107,
+    "all@20": 0.0,
+    "mrr": 0.5922
+   },
+   "q_graph_f20": {
+    "recall@10": 0.2548,
+    "all@20": 0.0,
+    "mrr": 0.4722
+   },
+   "q_rrf_dense_graph": {
+    "recall@10": 0.2952,
+    "all@20": 0.0,
+    "mrr": 0.6243
+   }
+  },
+  "118": {
+   "n": 7,
+   "q_dense": {
+    "recall@10": 0.373,
+    "all@20": 0.2857,
+    "mrr": 0.3917
+   },
+   "q_bm25": {
+    "recall@10": 0.1944,
+    "all@20": 0.1429,
+    "mrr": 0.4954
+   },
+   "q_graph_f5": {
+    "recall@10": 0.4286,
+    "all@20": 0.2857,
+    "mrr": 0.5082
+   },
+   "q_graph_f20": {
+    "recall@10": 0.4048,
+    "all@20": 0.4286,
+    "mrr": 0.5917
+   },
+   "q_rrf_dense_graph": {
+    "recall@10": 0.4444,
+    "all@20": 0.2857,
+    "mrr": 0.4039
+   }
+  },
+  "121": {
+   "n": 6,
+   "q_dense": {
+    "recall@10": 0.4653,
+    "all@20": 0.1667,
+    "mrr": 0.5843
+   },
+   "q_bm25": {
+    "recall@10": 0.3403,
+    "all@20": 0.1667,
+    "mrr": 0.4769
+   },
+   "q_graph_f5": {
+    "recall@10": 0.4792,
+    "all@20": 0.3333,
+    "mrr": 0.4147
+   },
+   "q_graph_f20": {
+    "recall@10": 0.5,
+    "all@20": 0.3333,
+    "mrr": 0.4517
+   },
+   "q_rrf_dense_graph": {
+    "recall@10": 0.4861,
+    "all@20": 0.3333,
+    "mrr": 0.4867
+   }
+  },
+  "124": {
+   "n": 6,
+   "q_dense": {
+    "recall@10": 0.8611,
+    "all@20": 0.6667,
+    "mrr": 0.875
+   },
+   "q_bm25": {
+    "recall@10": 0.7361,
+    "all@20": 0.5,
+    "mrr": 0.735
+   },
+   "q_graph_f5": {
+    "recall@10": 0.7639,
+    "all@20": 0.6667,
+    "mrr": 0.6806
+   },
+   "q_graph_f20": {
+    "recall@10": 0.75,
+    "all@20": 0.5,
+    "mrr": 0.5333
+   },
+   "q_rrf_dense_graph": {
+    "recall@10": 0.8194,
+    "all@20": 0.6667,
+    "mrr": 0.7778
+   }
+  }
+ }
+}

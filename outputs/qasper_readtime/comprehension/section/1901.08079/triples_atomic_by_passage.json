@@ -1,0 +1,1607 @@
+{
+ "1901.08079::s00::p000": [
+  [
+   "personalization",
+   "has become",
+   "the leading trend in large-scale information retrieval"
+  ],
+  [
+   "efficiency through personalization",
+   "is not yet",
+   "the most suitable model when tackling domain-specific searches"
+  ],
+  [
+   "domain-specific data",
+   "often include",
+   "advanced argumentation and complex contextual information"
+  ]
+ ],
+ "1901.08079::s00::p001": [
+  [
+   "healthcare information professionals",
+   "spend",
+   "an average of 60 minutes per collection or database"
+  ],
+  [
+   "healthcare information professionals",
+   "spend",
+   "3 minutes to examine the relevance of each document"
+  ],
+  [
+   "healthcare information professionals",
+   "spend",
+   "4 hours of total search time"
+  ],
+  [
+   "their search strategy",
+   "spans over",
+   "15 lines"
+  ]
+ ],
+ "1901.08079::s00::p002": [
+  [
+   "consumers",
+   "are faced with",
+   "a similar challenge"
+  ],
+  [
+   "dedicated solutions",
+   "can adapt to",
+   "the heterogeneity and specifics of health-related information"
+  ]
+ ],
+ "1901.08079::s00::p003": [
+  [
+   "Dedicated Question Answering (QA) systems",
+   "are",
+   "one of the viable solutions to this problem"
+  ],
+  [
+   "Dedicated Question Answering (QA) systems",
+   "are designed to understand",
+   "natural language questions"
+  ],
+  [
+   "Dedicated Question Answering (QA) systems",
+   "do not rely on",
+   "external information on the users"
+  ]
+ ],
+ "1901.08079::s00::p004": [
+  [
+   "Recognizing Question Entailment (RQE)",
+   "has the goal to retrieve",
+   "answers to a premise question ( INLINEFORM0 )"
+  ],
+  [
+   "Recognizing Question Entailment (RQE)",
+   "retrieves",
+   "inferred or entailed questions, called hypothesis questions ( INLINEFORM1 )"
+  ],
+  [
+   "hypothesis questions ( INLINEFORM1 )",
+   "already have",
+   "associated answers"
+  ],
+  [
+   "a question INLINEFORM2",
+   "entails",
+   "a question INLINEFORM3 if every answer to INLINEFORM4 is also a correct answer to INLINEFORM5"
+  ]
+ ],
+ "1901.08079::s00::p005": [
+  [
+   "RQE",
+   "is particularly relevant due to",
+   "the increasing numbers of similar questions posted online"
+  ],
+  [
+   "RQE",
+   "has ability to solve differently",
+   "the challenging issues of question understanding and answer extraction"
+  ],
+  [
+   "these resources",
+   "can be used to find",
+   "relevant answers"
+  ],
+  [
+   "these resources",
+   "can be used in training",
+   "models able to recognize inference relations and similarity between questions"
+  ]
+ ],
+ "1901.08079::s00::p006": [
+  [
+   "Question similarity",
+   "has recently attracted",
+   "international challenges"
+  ],
+  [
+   "research efforts",
+   "propose",
+   "a wide range of approaches"
+  ]
+ ],
+ "1901.08079::s00::p007": [
+  [
+   "the effectiveness of the end-to-end RQE-based QA approach",
+   "is evaluated by",
+   "evaluating the relevance of the retrieved answers"
+  ]
+ ],
+ "1901.08079::s02::p000": [
+  [
+   "The definition of Recognizing Question Entailment (RQE)",
+   "can have",
+   "a significant impact on QA results"
+  ],
+  [
+   "the meaning associated with Natural Language Inference (NLI)",
+   "varies among",
+   "different tasks and events"
+  ],
+  [
+   "Recognizing Textual Entailment (RTE)",
+   "was addressed by",
+   "the PASCAL challenge"
+  ],
+  [
+   "the Stanford Natural Language Inference corpus SNLI",
+   "used",
+   "three classification labels for the relations between two sentences: entailment, neutral and contradiction"
+  ]
+ ],
+ "1901.08079::s02::p001": [
+  [
+   "the multiNLI corpus",
+   "was shared in",
+   "the scope of the RepEval 2017 shared task"
+  ],
+  [
+   "annotators",
+   "were presented with",
+   "a premise text"
+  ],
+  [
+   "annotators",
+   "were asked to write",
+   "three sentences"
+  ],
+  [
+   "One novel sentence",
+   "is",
+   "“necessarily true or appropriate in the same situations as the premise,”"
+  ]
+ ],
+ "1901.08079::s02::p002": [
+  [
+   "NLI definitions",
+   "might be suitable for",
+   "the broad topic of text understanding"
+  ],
+  [
+   "their relation to practical information retrieval or question answering systems",
+   "is not",
+   "straightforward"
+  ]
+ ],
+ "1901.08079::s02::p003": [
+  [
+   "RQE",
+   "has to be tailored to",
+   "the question answering task"
+  ],
+  [
+   "a RQE approach",
+   "should be able to consider",
+   "the more general (less restricted) question \"looking for cold medications\" as relevant"
+  ],
+  [
+   "\"looking for medications for a 30 yo woman\"",
+   "is",
+   "a useless contextualization"
+  ],
+  [
+   "The entailment relation we are seeking in the QA context",
+   "should include",
+   "relevant and meaningful relaxations of contextual and semantic constraints"
+  ]
+ ],
+ "1901.08079::s03::p000": [
+  [
+   "Classical QA systems",
+   "face",
+   "two main challenges related to question analysis and answer extraction"
+  ],
+  [
+   "Several QA approaches",
+   "were proposed for",
+   "the open domain BIBREF16 , BIBREF17 and the medical domain BIBREF18 , BIBREF19 , BIBREF20"
+  ],
+  [
+   "A variety of methods",
+   "were developed for",
+   "question analysis, focus (topic) recognition and question type identification BIBREF21 , BIBREF22 , BIBREF23 , BIBREF24"
+  ],
+  [
+   "many different approaches",
+   "tackled",
+   "document or passage retrieval and answer selection and (re)ranking BIBREF25 , BIBREF26 , BIBREF27"
+  ]
+ ],
+ "1901.08079::s03::p001": [
+  [
+   "An alternative approach",
+   "consists in",
+   "finding similar questions or FAQs that are already answered BIBREF28 , BIBREF29"
+  ],
+  [
+   "FAQ FINDER BIBREF30",
+   "was",
+   "One of the earliest question answering systems based on finding similar questions and re-using the existing answers"
+  ],
+  [
+   "SimQ BIBREF2",
+   "allows",
+   "retrieval of similar web-based consumer health questions"
+  ],
+  [
+   "The system",
+   "achieves",
+   "72.2% precision, 78.0% recall and 75.0% F-score on NetWellness questions"
+  ],
+  [
+   "the method",
+   "was evaluated only on",
+   "one question similarity dataset"
+  ]
+ ],
+ "1901.08079::s03::p002": [
+  [
+   "The aim of the medical task at TREC 2017 LiveQA",
+   "was to develop",
+   "techniques for answering complex questions such as consumer health questions"
+  ],
+  [
+   "The aim of the medical task at TREC 2017 LiveQA",
+   "was to identify",
+   "relevant answer sources that can comply with the sensitivity of medical information retrieval"
+  ]
+ ],
+ "1901.08079::s03::p003": [
+  [
+   "The CMU-OAQA system BIBREF32",
+   "achieved",
+   "the best performance of 0.637 average score on the medical task"
+  ],
+  [
+   "The CMU-OAQA system BIBREF32",
+   "used",
+   "an attentional encoder-decoder model for paraphrase identification and answer ranking"
+  ],
+  [
+   "The Quora question-similarity dataset",
+   "was used for",
+   "training"
+  ],
+  [
+   "The PRNA system BIBREF33",
+   "achieved",
+   "the second best performance in the medical task with 0.49 average score"
+  ],
+  [
+   "a bi-directional attention model trained on the SQUAD dataset",
+   "was used to extract",
+   "the answer from the selected text passage"
+  ]
+ ],
+ "1901.08079::s03::p004": [
+  [
+   "Deep neural network models",
+   "have been pushing",
+   "the limits of performance achieved in QA related tasks using large training datasets"
+  ],
+  [
+   "The results obtained by CMU-OAQA and PRNA",
+   "showed",
+   "that large open-domain datasets were beneficial for the medical domain"
+  ],
+  [
+   "the best system (CMU-OAQA)",
+   "obtained",
+   "a score of 1.139 on the LiveQA open-domain task"
+  ]
+ ],
+ "1901.08079::s03::p005": [
+  [
+   "this gap in performance",
+   "highlights",
+   "the need for larger medical datasets to support deep learning approaches"
+  ]
+ ],
+ "1901.08079::s03::p006": [
+  [
+   "ECNU-ICA team",
+   "used",
+   "learning question similarity via two long short-term memory (LSTM) networks"
+  ],
+  [
+   "two long short-term memory (LSTM) networks",
+   "were applied to obtain",
+   "the semantic representations of the questions"
+  ],
+  [
+   "the ECNU-ICA system",
+   "achieved",
+   "the best performance of 1.895 in the open-domain task but an average score of only 0.402 in the medical task"
+  ]
+ ],
+ "1901.08079::s03::p007": [
+  [
+   "The CMU-LiveMedQA team",
+   "designed",
+   "a specific system for the medical task"
+  ],
+  [
+   "the CMU-LiveMedQA system",
+   "obtained",
+   "an average score of 0.353"
+  ]
+ ],
+ "1901.08079::s04::p000": [
+  [
+   "a retrieval model based on translation probabilities learned from a question and answer archive",
+   "can recognize",
+   "semantically similar questions"
+  ],
+  [
+   "Duan et al.",
+   "proposed",
+   "a dedicated language modeling approach for question search"
+  ]
+ ],
+ "1901.08079::s04::p001": [
+  [
+   "a task on Question-Question similarity",
+   "was introduced in",
+   "the community QA challenge at SemEval (task 3B)"
+  ],
+  [
+   "the task",
+   "focused on",
+   "reranking all similar questions retrieved by a search engine"
+  ],
+  [
+   "The best performing system in 2017",
+   "achieved",
+   "a MAP of 47.22% using supervised Logistic Regression"
+  ],
+  [
+   "The second best system",
+   "achieved",
+   "46.93% MAP with a learning-to-rank method using Logistic Regression"
+  ],
+  [
+   "a dataset",
+   "was collected from",
+   "Qatar Living forum for training"
+  ]
+ ],
+ "1901.08079::s04::p002": [
+  [
+   "a feature-based method",
+   "provided",
+   "an Accuracy of 75% on consumer health questions"
+  ],
+  [
+   "this dataset",
+   "will be called",
+   "Clinical-QE"
+  ],
+  [
+   "Dos Santos et al.",
+   "proposed",
+   "a new approach to retrieve semantically equivalent questions"
+  ],
+  [
+   "Lei et al.",
+   "proposed",
+   "a recurrent and convolutional model (gated convolution)"
+  ],
+  [
+   "The models",
+   "were pre-trained within",
+   "an encoder-decoder framework"
+  ]
+ ],
+ "1901.08079::s05::p000": [
+  [
+   "The choice of two methods for our empirical study",
+   "is motivated by",
+   "the best performance achieved by Logistic Regression in question-question similarity at SemEval 2017"
+  ],
+  [
+   "neural networks",
+   "achieved high performance on",
+   "larger datasets such as SNLI"
+  ]
+ ],
+ "1901.08079::s06::p000": [
+  [
+   "the goal of RQE",
+   "is to retrieve",
+   "answers to a new question by retrieving entailed questions with associated answers"
+  ]
+ ],
+ "1901.08079::s06::p001": [
+  [
+   "a question INLINEFORM0",
+   "entails",
+   "a question INLINEFORM1 if every answer to INLINEFORM2 is also a complete or partial answer to INLINEFORM3"
+  ]
+ ],
+ "1901.08079::s06::p003": [
+  [
+   "each answer to the entailed question B1",
+   "is",
+   "a complete answer to A1"
+  ]
+ ],
+ "1901.08079::s06::p006": [
+  [
+   "each answer to the entailed question B2",
+   "is",
+   "a partial answer to A2"
+  ]
+ ],
+ "1901.08079::s06::p009": [
+  [
+   "The inclusion of partial answers in the definition of question entailment",
+   "allows",
+   "efficient relaxation of the contextual constraints of the original question INLINEFORM0"
+  ],
+  [
+   "efficient relaxation of the contextual constraints of the original question INLINEFORM0",
+   "retrieves",
+   "relevant answers from entailed, but less restricted, questions"
+  ]
+ ],
+ "1901.08079::s07::p000": [
+  [
+   "a bottom layer",
+   "takes as input",
+   "the concatenated sentence representations"
+  ],
+  [
+   "a top layer",
+   "feeds",
+   "a softmax classifier"
+  ],
+  [
+   "The sentence embedding model",
+   "sums",
+   "the Recurrent neural network (RNN) embeddings of its words"
+  ]
+ ],
+ "1901.08079::s07::p001": [
+  [
+   "GloVe",
+   "is",
+   "an unsupervised learning algorithm to generate vector representations for words"
+  ],
+  [
+   "Training",
+   "is performed on",
+   "aggregated word co-occurrence statistics from a large corpus"
+  ],
+  [
+   "the resulting representations",
+   "show",
+   "interesting linear substructures of the word vector space"
+  ]
+ ],
+ "1901.08079::s08::p000": [
+  [
+   "Logistic Regression",
+   "is used to classify",
+   "question pairs into entailment or no-entailment"
+  ],
+  [
+   "Logistic Regression",
+   "achieved",
+   "good results on this specific task"
+  ],
+  [
+   "Logistic Regression",
+   "outperformed",
+   "other statistical learning algorithms such as SVM and Naive Bayes"
+  ]
+ ],
+ "1901.08079::s08::p002": [
+  [
+   "For RQE, we",
+   "add",
+   "an additional feature specific to the question type"
+  ],
+  [
+   "Triggers",
+   "are identified based on",
+   "a manual annotation of a set of medical questions"
+  ]
+ ],
+ "1901.08079::s09::p000": [
+  [
+   "two datasets of sentence pairs",
+   "are",
+   "SNLI and multiNLI"
+  ],
+  [
+   "three datasets of question pairs",
+   "are",
+   "Quora, Clinical-QE, and SemEval-cQA"
+  ]
+ ],
+ "1901.08079::s09::p001": [
+  [
+   "The Stanford Natural Language Inference corpus (SNLI)",
+   "contains",
+   "569,037 sentence pairs written by humans based on image captioning"
+  ],
+  [
+   "The training set of the MultiNLI corpus",
+   "consists of",
+   "393,000 pairs of sentences from five genres of written and spoken English"
+  ],
+  [
+   "Two other \"matched\" and \"mismatched\" sets",
+   "are available for development",
+   "20,000 pairs"
+  ],
+  [
+   "Both SNLI and multiNLI",
+   "consider",
+   "three types of relationships between sentences: entailment, neutral and contradiction"
+  ]
+ ],
+ "1901.08079::s09::p002": [
+  [
+   "The QUORA dataset of similar questions",
+   "was recently published with",
+   "404,279 question pairs"
+  ],
+  [
+   "three distinct subsets (80%/10%/10%)",
+   "were randomly selected for",
+   "training (323,423 pairs), development (40,428 pairs) and test (40,428 pairs)"
+  ]
+ ],
+ "1901.08079::s09::p003": [
+  [
+   "The clinical-QE dataset",
+   "contains",
+   "8,588 question pairs"
+  ],
+  [
+   "The clinical-QE dataset",
+   "was constructed using",
+   "4,655 clinical questions asked by family doctors"
+  ],
+  [
+   "three distinct subsets (80%/10%/10%)",
+   "were randomly selected for",
+   "training (6,870 pairs), development (859 pairs) and test (859 pairs)"
+  ]
+ ],
+ "1901.08079::s09::p004": [
+  [
+   "The question similarity dataset of SemEval 2016 Task 3B (SemEval-cQA)",
+   "contains",
+   "3,869 question pairs"
+  ],
+  [
+   "The question similarity dataset of SemEval 2016 Task 3B (SemEval-cQA)",
+   "aims to",
+   "re-rank a list of related questions according to their similarity to the original question"
+  ],
+  [
+   "The same dataset",
+   "was used for",
+   "SemEval 2017 Task 3"
+  ]
+ ],
+ "1901.08079::s09::p005": [
+  [
+   "a publicly shared set of Consumer Health Questions (CHQs)",
+   "was received by",
+   "the U.S. National Library of Medicine (NLM)"
+  ],
+  [
+   "a publicly shared set of Consumer Health Questions (CHQs)",
+   "was annotated with",
+   "named entities, question types, and focus"
+  ],
+  [
+   "The CHQ dataset",
+   "consists of",
+   "1,721 consumer information requests manually annotated with subquestions, each identified by a question type and a focus"
+  ]
+ ],
+ "1901.08079::s09::p006": [
+  [
+   "automatically harvested FAQs",
+   "were selected from",
+   "U.S. National Institutes of Health (NIH) websites"
+  ],
+  [
+   "automatically harvested FAQs",
+   "share",
+   "both the same focus and the same question type with the CHQs"
+  ],
+  [
+   "The final RQE dataset",
+   "contains",
+   "850 CHQ-FAQ pairs with 405 positive and 445 negative pairs"
+  ]
+ ],
+ "1901.08079::s10::p000": [
+  [
+   "the first experiment",
+   "evaluated the DL and ML methods on",
+   "SNLI, multi-NLI, Quora, and Clinical-QE"
+  ],
+  [
+   "two sets",
+   "amounted to",
+   "10% of the data"
+  ],
+  [
+   "the remaining 80%",
+   "was used for",
+   "training"
+  ],
+  [
+   "MultiNLI",
+   "used the dev1-matched set for",
+   "validation"
+  ]
+ ],
+ "1901.08079::s10::p001": [
+  [
+   "The DL model with GloVe word embeddings",
+   "achieved",
+   "82.80% Accuracy on SNLI"
+  ],
+  [
+   "The DL model with GloVe word embeddings",
+   "achieved",
+   "78.52% Accuracy on MultiNLI"
+  ],
+  [
+   "The DL model with GloVe word embeddings",
+   "achieved",
+   "83.62% Accuracy on Quora"
+  ],
+  [
+   "Logistic Regression",
+   "achieved the best Accuracy of",
+   "98.60% on Clinical-RQE"
+  ],
+  [
+   "a 10-fold cross-validation on the full Clinical-QE data of 8,588 question pairs",
+   "gave",
+   "98.61% Accuracy"
+  ]
+ ],
+ "1901.08079::s10::p002": [
+  [
+   "the second experiment",
+   "used these datasets for",
+   "training only"
+  ],
+  [
+   "Logistic Regression trained on the clinical-RQE data",
+   "outperformed",
+   "DL models trained on all datasets"
+  ],
+  [
+   "Logistic Regression trained on the clinical-RQE data",
+   "achieved",
+   "73.18% Accuracy"
+  ]
+ ],
+ "1901.08079::s10::p003": [
+  [
+   "the LR method",
+   "was evaluated on",
+   "question similarity detection"
+  ],
+  [
+   "A typical approach to this task",
+   "uses an IR method to find",
+   "similar question candidates"
+  ],
+  [
+   "The hybrid method",
+   "combines",
+   "the score provided by the Logistic Regression model and the reciprocal rank from the IR baseline"
+  ]
+ ],
+ "1901.08079::s10::p005": [
+  [
+   "The weight INLINEFORM0",
+   "was set empirically through several tests on",
+   "the cQA-2016 development set ( INLINEFORM1 )"
+  ],
+  [
+   "The hybrid method (LR+IR)",
+   "provided the best results on",
+   "both datasets"
+  ],
+  [
+   "the LR+IR method",
+   "outperformed the best system in all measures on the 2016 test data with",
+   "80.57% Accuracy and 77.47% MAP (official system ranking measure in SemEval-cQA)"
+  ],
+  [
+   "the LR+IR method",
+   "obtained",
+   "44.66% MAP"
+  ]
+ ],
+ "1901.08079::s11::p000": [
+  [
+   "the DL model with GloVe embeddings",
+   "gave the best results on",
+   "three datasets (SNLI, MultiNLI and Quora)"
+  ],
+  [
+   "Logistic Regression",
+   "gave the best Accuracy on",
+   "the Clinical-RQE dataset with 98.60%"
+  ],
+  [
+   "Logistic Regression trained on Clinical-QE",
+   "gave the best performance with",
+   "73.18% Accuracy"
+  ]
+ ],
+ "1901.08079::s11::p001": [
+  [
+   "The SNLI and multi-NLI models",
+   "did not perform well when tested on",
+   "medical RQE data"
+  ],
+  [
+   "additional evaluations",
+   "used",
+   "the RTE-1, RTE-2 and RTE-3 open-domain datasets provided by the PASCAL challenge"
+  ],
+  [
+   "the SemEval-cQA-2016 model",
+   "had a similar drop in performance on",
+   "RQE data"
+  ],
+  [
+   "the definition of RQE for question answering",
+   "relies on",
+   "the relationship between the sets of answers of the compared questions"
+  ]
+ ],
+ "1901.08079::s12::p000": [
+  [
+   "A RQE-based QA system",
+   "requires",
+   "a collection of question-answer pairs"
+  ]
+ ],
+ "1901.08079::s13::p000": [
+  [
+   "websites from the National Institutes of Health",
+   "were crawled to construct",
+   "trusted medical question-answer pairs"
+  ],
+  [
+   "Each web page",
+   "describes",
+   "a specific topic (e.g. name of a disease or a drug)"
+  ],
+  [
+   "synonyms of the main topic",
+   "were extracted during",
+   "the crawl"
+  ]
+ ],
+ "1901.08079::s13::p001": [
+  [
+   "hand-crafted patterns",
+   "were constructed for",
+   "each website"
+  ],
+  [
+   "hand-crafted patterns",
+   "automatically generate",
+   "the question-answer pairs"
+  ],
+  [
+   "each question",
+   "was annotated with",
+   "the associated focus (topic of the web page)"
+  ],
+  [
+   "each question",
+   "was annotated with",
+   "the question type identified with the designed patterns"
+  ]
+ ],
+ "1901.08079::s13::p002": [
+  [
+   "the questions",
+   "were automatically annotated with",
+   "the focus, its UMLS Concept Unique Identifier (CUI) and Semantic Type"
+  ],
+  [
+   "two methods",
+   "were combined to recognize",
+   "named entities from the titles of the crawled articles and their associated UMLS CUIs"
+  ],
+  [
+   "two methods",
+   "include",
+   "(i) exact string matching to the UMLS Metathesaurus, and (ii) MetaMap Lite BIBREF49"
+  ],
+  [
+   "the UMLS Semantic Network",
+   "was used to retrieve",
+   "the associated semantic types and groups"
+  ]
+ ],
+ "1901.08079::s14::p000": [
+  [
+   "The question types",
+   "were derived after",
+   "the manual evaluation of 1,721 consumer health questions"
+  ]
+ ],
+ "1901.08079::s14::p003": [
+  [
+   "Examples",
+   "include",
+   "What research (or clinical trial) is being done for DISEASE?"
+  ]
+ ],
+ "1901.08079::s14::p004": [
+  [
+   "Examples",
+   "include",
+   "What is the outlook for DISEASE?"
+  ]
+ ],
+ "1901.08079::s14::p005": [
+  [
+   "Examples",
+   "include",
+   "How many people are affected by DISEASE?"
+  ]
+ ],
+ "1901.08079::s14::p009": [
+  [
+   "Question Types About Drugs",
+   "include",
+   "Interaction with herbs and supplements"
+  ],
+  [
+   "Question Types About Drugs",
+   "include",
+   "Important warning"
+  ],
+  [
+   "Question Types About Drugs",
+   "include",
+   "Dose"
+  ]
+ ],
+ "1901.08079::s14::p017": [
+  [
+   "Question Type for other medical entities (e.g. Procedure, Exam, Treatment)",
+   "is",
+   "Information"
+  ]
+ ],
+ "1901.08079::s15::p002": [
+  [
+   "Genetic and Rare Diseases Information Center (GARD)",
+   "contains",
+   "information about various aspects of genetic/rare diseases"
+  ]
+ ],
+ "1901.08079::s15::p003": [
+  [
+   "Genetics Home Reference (GHR)",
+   "contains",
+   "consumer-oriented information about the effects of genetic variation on human health"
+  ]
+ ],
+ "1901.08079::s15::p004": [
+  [
+   "MedlinePlus Health Topics",
+   "contains",
+   "information on symptoms, causes, treatment and prevention for diseases, health conditions and wellness issues"
+  ]
+ ],
+ "1901.08079::s15::p005": [
+  [
+   "National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)",
+   "extracted text from",
+   "174 health information pages on diseases studied by this institute"
+  ],
+  [
+   "National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)",
+   "yielded",
+   "1,192 QA pairs"
+  ]
+ ],
+ "1901.08079::s15::p006": [
+  [
+   "National Institute of Neurological Disorders and Stroke (NINDS)",
+   "extracted free text from",
+   "277 information pages on neurological and stroke-related diseases"
+  ],
+  [
+   "National Institute of Neurological Disorders and Stroke (NINDS)",
+   "yielded",
+   "1,104 QA pairs"
+  ]
+ ],
+ "1901.08079::s15::p007": [
+  [
+   "NIHSeniorHealth",
+   "contains",
+   "health and wellness information for older adults"
+  ],
+  [
+   "NIHSeniorHealth",
+   "extracted",
+   "71 articles"
+  ],
+  [
+   "NIHSeniorHealth",
+   "yielded",
+   "769 QA pairs"
+  ]
+ ],
+ "1901.08079::s15::p008": [
+  [
+   "National Heart, Lung, and Blood Institute (NHLBI)",
+   "extracted text from",
+   "135 articles on diseases, tests, procedures, and other relevant topics on disorders of heart, lung, blood, and sleep"
+  ],
+  [
+   "National Heart, Lung, and Blood Institute (NHLBI)",
+   "yielded",
+   "559 QA pairs"
+  ]
+ ],
+ "1901.08079::s15::p009": [
+  [
+   "Centers for Disease Control and Prevention (CDC)",
+   "extracted text from",
+   "152 articles on diseases and conditions"
+  ],
+  [
+   "Centers for Disease Control and Prevention (CDC)",
+   "yielded",
+   "270 QA pairs"
+  ]
+ ],
+ "1901.08079::s15::p010": [
+  [
+   "MedlinePlus A.D.A.M. Medical Encyclopedia",
+   "contains",
+   "4,366 articles about conditions, tests, and procedures"
+  ],
+  [
+   "MedlinePlus A.D.A.M. Medical Encyclopedia",
+   "yielded",
+   "17,348 QA pairs"
+  ]
+ ],
+ "1901.08079::s15::p013": [
+  [
+   "The final collection",
+   "contains",
+   "47,457 annotated question-answer pairs"
+  ],
+  [
+   "47,457 annotated question-answer pairs",
+   "are about",
+   "Diseases, Drugs and other named entities (e.g. Tests)"
+  ],
+  [
+   "47,457 annotated question-answer pairs",
+   "are extracted from",
+   "these 12 trusted resources"
+  ]
+ ],
+ "1901.08079::s16::p000": [
+  [
+   "Logistic Regression trained on the clinical-RQE dataset",
+   "recognizes",
+   "entailed questions"
+  ],
+  [
+   "Logistic Regression trained on the clinical-RQE dataset",
+   "ranks",
+   "entailed questions with their classification scores"
+  ]
+ ],
+ "1901.08079::s17::p000": [
+  [
+   "Classifying the full QA collection for each test question",
+   "is not feasible for",
+   "real-time applications"
+  ],
+  [
+   "an IR method",
+   "retrieves",
+   "candidate questions"
+  ],
+  [
+   "a combination method",
+   "merges",
+   "the results obtained by the search engine and the RQE scores"
+  ],
+  [
+   "The answers",
+   "are combined from",
+   "both methods"
+  ],
+  [
+   "The answers",
+   "are ranked using",
+   "an aggregate score"
+  ]
+ ],
+ "1901.08079::s18::p000": [
+  [
+   "the Terrier search engine",
+   "retrieves",
+   "INLINEFORM1 relevant question candidates INLINEFORM2"
+  ]
+ ],
+ "1901.08079::s18::p001": [
+  [
+   "the questions of our QA collection",
+   "were indexed without",
+   "the associated answers"
+  ],
+  [
+   "the synonyms of the question focus and the triggers of the question type",
+   "were indexed with",
+   "each question"
+  ],
+  [
+   "This choice",
+   "allowed us to avoid",
+   "the shortcomings of query expansion"
+  ],
+  [
+   "The synonyms of the question focus (topic)",
+   "were extracted automatically from",
+   "the QA collection"
+  ],
+  [
+   "The triggers of each question type",
+   "were defined manually in",
+   "the question types taxonomy"
+  ]
+ ],
+ "1901.08079::s18::p003": [
+  [
+   "Focus",
+   "is",
+   "Torticollis"
+  ],
+  [
+   "Question type",
+   "is",
+   "Treatment"
+  ]
+ ],
+ "1901.08079::s18::p004": [
+  [
+   "Added focus synonyms",
+   "are",
+   "\"Spasmodic torticollis, Wry neck, Loxia, Cervical dystonia\""
+  ],
+  [
+   "Added question type triggers",
+   "are",
+   "\"relieve, manage, cure, remedy, therapy\""
+  ]
+ ],
+ "1901.08079::s18::p006": [
+  [
+   "Focus",
+   "is",
+   "Legionnaire disease"
+  ],
+  [
+   "Question Type",
+   "is",
+   "Prognosis"
+  ]
+ ],
+ "1901.08079::s18::p007": [
+  [
+   "Added focus synonyms",
+   "are",
+   "\"Legionella pneumonia, Pontiac fever, Legionellosis\""
+  ],
+  [
+   "Added question type triggers",
+   "are",
+   "\"prognosis, life expectancy\""
+  ]
+ ],
+ "1901.08079::s18::p008": [
+  [
+   "The IR task",
+   "consists of",
+   "retrieving hypothesis questions INLINEFORM0 relevant to the submitted question INLINEFORM1"
+  ],
+  [
+   "fusion of IR result",
+   "has shown",
+   "good performance in different tracks in TREC"
+  ]
+ ],
+ "1901.08079::s18::p009": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the set of INLINEFORM4 questions retrieved by the first IR model INLINEFORM5"
+  ],
+  [
+   "INLINEFORM6",
+   "is",
+   "the set of INLINEFORM10 questions retrieved by the second IR model INLINEFORM11"
+  ]
+ ],
+ "1901.08079::s19::p000": [
+  [
+   "The IR models and the RQE Logistic Regression model",
+   "bring",
+   "different perspectives to the search for relevant candidate questions"
+  ],
+  [
+   "question entailment",
+   "allows",
+   "understanding the relations between the important terms"
+  ],
+  [
+   "the traditional IR methods",
+   "identify",
+   "the important terms"
+  ],
+  [
+   "the traditional IR methods",
+   "will not notice",
+   "if the relations are opposite"
+  ]
+ ],
+ "1901.08079::s19::p001": [
+  [
+   "candidate questions",
+   "are fetched using",
+   "the IR models"
+  ],
+  [
+   "the RQE classifier",
+   "is applied to",
+   "filter out the non-entailed questions and re-rank the remaining candidates"
+  ]
+ ],
+ "1901.08079::s19::p002": [
+  [
+   "INLINEFORM0",
+   "denotes",
+   "the list of question candidates INLINEFORM1 returned by the IR system"
+  ],
+  [
+   "The premise question INLINEFORM2",
+   "is used to construct",
+   "N question pairs INLINEFORM3"
+  ],
+  [
+   "The RQE classifier",
+   "is applied to",
+   "filter out the question pairs that are not entailed and re-rank the remaining pairs"
+  ]
+ ],
+ "1901.08079::s19::p003": [
+  [
+   "selected candidate questions",
+   "have",
+   "a positive entailment relation with a given premise question INLINEFORM3"
+  ],
+  [
+   "INLINEFORM4",
+   "is ranked by computing",
+   "a hybrid score INLINEFORM5"
+  ],
+  [
+   "hybrid score INLINEFORM5",
+   "takes into account",
+   "the score of the IR system INLINEFORM7 and the score of the RQE system INLINEFORM8"
+  ]
+ ],
+ "1901.08079::s19::p004": [
+  [
+   "associated score",
+   "is normalized by dividing it by",
+   "the maximum score among the INLINEFORM2 candidate questions retrieved by INLINEFORM3 for INLINEFORM4"
+  ]
+ ],
+ "1901.08079::s19::p007": [
+  [
+   "threshold value",
+   "was selected as",
+   "a safe value for this task"
+  ]
+ ],
+ "1901.08079::s19::p009": [
+  [
+   "Each question",
+   "was indexed with",
+   "additional annotations for the question focus, its synonyms and the question type synonyms"
+  ]
+ ],
+ "1901.08079::s20::p000": [
+  [
+   "this evaluation",
+   "studies",
+   "the effectiveness of RQE for Medical Question Answering"
+  ]
+ ],
+ "1901.08079::s21::p001": [
+  [
+   "These questions",
+   "are randomly selected from",
+   "the consumer health questions that the NLM receives daily from all over the world"
+  ],
+  [
+   "The test questions",
+   "cover",
+   "different medical entities"
+  ],
+  [
+   "The test questions",
+   "have",
+   "a wide list of question types such as Comparison, Diagnosis, Ingredient, Side effects and Tapering"
+  ]
+ ],
+ "1901.08079::s21::p007": [
+  [
+   "the answers returned by the IR-based method and the hybrid QA method (IR+RQE)",
+   "were evaluated according to",
+   "the same reference answers used in LiveQA-Med"
+  ],
+  [
+   "The answers",
+   "were presented to",
+   "3 assessors"
+  ],
+  [
+   "Assessors B and C",
+   "evaluated",
+   "1,000 answers retrieved by each of the methods (IR and IR+RQE)"
+  ],
+  [
+   "Assessor A",
+   "evaluated",
+   "2,000 answers from both methods"
+  ]
+ ],
+ "1901.08079::s21::p008": [
+  [
+   "The average agreement on distinguishing the Correct and Incorrect answers",
+   "is",
+   "94.33% F1 score"
+  ]
+ ],
+ "1901.08079::s22::p001": [
+  [
+   "avgScore(0-3)",
+   "is",
+   "the average score over all questions, transferring 1-4 level grades to 0-3 scores"
+  ],
+  [
+   "This",
+   "is",
+   "the main score used to rank LiveQA runs"
+  ]
+ ],
+ "1901.08079::s22::p002": [
+  [
+   "succ@i+",
+   "is",
+   "the number of questions with score i or above (i INLINEFORM0 {2..4}) divided by the total number of questions"
+  ]
+ ],
+ "1901.08079::s22::p004": [
+  [
+   "The hybrid IR+RQE QA system",
+   "achieved",
+   "better results than the IR-based system with 0.827 average score"
+  ],
+  [
+   "The hybrid IR+RQE QA system",
+   "achieved",
+   "a higher score than the best results achieved in the medical challenge at LiveQA'17"
+  ],
+  [
+   "applying RQE on the full collection for each user question",
+   "is not feasible for",
+   "a real-time system"
+  ]
+ ],
+ "1901.08079::s23::p000": [
+  [
+   "this evaluation",
+   "used",
+   "Mean Average Precision (MAP) and Mean Reciprocal Rank (MRR)"
+  ],
+  [
+   "Mean Average Precision (MAP) and Mean Reciprocal Rank (MRR)",
+   "evaluate",
+   "the top-10 answers for each question"
+  ],
+  [
+   "answers rated as “Correct and Complete Answer” or “Correct but Incomplete”",
+   "are considered as",
+   "correct answers"
+  ],
+  [
+   "the test questions",
+   "contain",
+   "multiple subquestions"
+  ],
+  [
+   "each answer in our QA collection",
+   "can cover",
+   "only one subquestion"
+  ]
+ ],
+ "1901.08079::s23::p001": [
+  [
+   "MAP",
+   "is",
+   "the mean of the Average Precision (AvgP) scores over all questions"
+  ]
+ ],
+ "1901.08079::s23::p003": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the AvgP of the INLINEFORM1 question"
+  ]
+ ],
+ "1901.08079::s23::p005": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the rank of INLINEFORM1 correct answer"
+  ]
+ ],
+ "1901.08079::s23::p006": [
+  [
+   "MRR",
+   "is",
+   "the average of the reciprocal ranks for each question"
+  ],
+  [
+   "The reciprocal rank of a question",
+   "is",
+   "the multiplicative inverse of the rank of the first correct answer"
+  ]
+ ],
+ "1901.08079::s23::p008": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the rank of the first correct answer for the INLINEFORM1 question"
+  ]
+ ],
+ "1901.08079::s23::p009": [
+  [
+   "The IR+RQE system",
+   "outperforms",
+   "the IR-based QA system with 0.311 MAP@10 and 0.333 MRR@10"
+  ]
+ ],
+ "1901.08079::s24::p000": [
+  [
+   "NIST assessors",
+   "provided",
+   "the paraphrases of the test questions that they used to judge the answers"
+  ],
+  [
+   "RQE",
+   "improves",
+   "the overall performance"
+  ],
+  [
+   "RQE",
+   "exceeds",
+   "the best results in the medical LiveQA'17 challenge by a factor of 29.8%"
+  ]
+ ],
+ "1901.08079::s24::p001": [
+  [
+   "LiveQA participating systems",
+   "relied on",
+   "much larger collections, including the World Wide Web"
+  ]
+ ],
+ "1901.08079::s24::p002": [
+  [
+   "many LiveQA test questions",
+   "had",
+   "several subquestions"
+  ]
+ ],
+ "1901.08079::s24::p003": [
+  [
+   "The latter observation, (b)",
+   "makes",
+   "the hybrid IR+RQE approach even more promising"
+  ],
+  [
+   "the hybrid IR+RQE approach",
+   "has",
+   "a large potential for the improvement of answer completeness"
+  ]
+ ],
+ "1901.08079::s24::p004": [
+  [
+   "restricting the answer source to only reliable collections",
+   "can improve",
+   "the QA performance without losing coverage"
+  ]
+ ],
+ "1901.08079::s24::p005": [
+  [
+   "the assessors",
+   "reported",
+   "that many of the returned answers had a correct question type but a wrong focus"
+  ],
+  [
+   "including a focus recognition module to filter such wrong answers",
+   "can improve",
+   "further the QA performance in terms of precision"
+  ],
+  [
+   "the repetition of the same (or similar) answer from different websites",
+   "could be addressed by",
+   "improving answer selection with inter-answer comparisons and removal of near-duplicates"
+  ],
+  [
+   "half of the LiveQA test questions",
+   "are about",
+   "Drugs"
+  ],
+  [
+   "only two of our resources",
+   "are specialized in",
+   "Drugs"
+  ],
+  [
+   "the assessors",
+   "noticed",
+   "that the performance of the QA systems was better on questions about diseases than on questions about drugs"
+  ],
+  [
+   "the performance of the QA systems",
+   "was better on",
+   "questions about diseases than on questions about drugs"
+  ],
+  [
+   "the assessors' observation",
+   "suggests",
+   "a need for extending our medical QA collection with more information about drugs and associated question types"
+  ]
+ ],
+ "1901.08079::s24::p006": [
+  [
+   "the ConsumerLab website",
+   "was useful to answer",
+   "a question about the ingredients of a Drug (COENZYME Q10)"
+  ],
+  [
+   "the eHealthMe website",
+   "was used to answer",
+   "a test question asking about interactions between two drugs (Phentermine and Dicyclomine)"
+  ],
+  [
+   "eHealthMe",
+   "provides",
+   "healthcare big data analysis and private research and studies including self-reported adverse drug effects by patients"
+  ]
+ ],
+ "1901.08079::s24::p007": [
+  [
+   "patients",
+   "do not necessarily have",
+   "the knowledge and tools to validate such information"
+  ],
+  [
+   "An alternative approach",
+   "could be to put",
+   "limitations on medical QA systems in terms of the questions that can be answered"
+  ]
+ ],
+ "1901.08079::s24::p008": [
+  [
+   "medical QA systems",
+   "should follow",
+   "some strict guidelines regarding the goal and background knowledge and resources of each system"
+  ],
+  [
+   "Such guidelines",
+   "could be based on",
+   "the source of the information"
+  ],
+  [
+   "the code of conduct of the HON Foundation (HONcode)",
+   "addresses",
+   "the reliability and usefulness of medical information on the Internet"
+  ]
+ ],
+ "1901.08079::s25::p000": [
+  [
+   "The proposed approach",
+   "can be applied and adapted to",
+   "open-domain as well as specific-domain QA"
+  ],
+  [
+   "Deep learning models",
+   "achieved",
+   "interesting results on open-domain and clinical datasets"
+  ],
+  [
+   "Deep learning models",
+   "obtained",
+   "a lower performance on consumer health questions"
+  ],
+  [
+   "Future work",
+   "includes exploring",
+   "integration of a Question Focus Recognition module to enhance candidate question retrieval"
+  ]
+ ],
+ "1901.08079::s26::p001": [
+  [
+   "question number 36",
+   "is in",
+   "TREC-2017 LiveQA medical test dataset"
+  ]
+ ],
+ "1901.08079::s26::p003": [
+  [
+   "question number 36",
+   "was answered by",
+   "5 participating runs"
+  ],
+  [
+   "other questions",
+   "had",
+   "8 runs"
+  ],
+  [
+   "all submitted answers",
+   "were wrong",
+   "scores of 1 or 2"
+  ]
+ ]
+}

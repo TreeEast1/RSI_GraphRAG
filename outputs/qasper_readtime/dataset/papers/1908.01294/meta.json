@@ -1,0 +1,108 @@
+{
+ "paper_id": "1908.01294",
+ "title": "Semi-supervised Thai Sentence Segmentation Using Local and Distant Word Representations",
+ "abstract": "A sentence is typically treated as the minimal syntactic unit used for extracting valuable information from a longer piece of text. However, in written Thai, there are no explicit sentence markers. We proposed a deep learning model for the task of sentence segmentation that includes three main contributions. First, we integrate n-gram embedding as a local representation to capture word groups near sentence boundaries. Second, to focus on the keywords of dependent clauses, we combine the model with a distant representation obtained from self-attention modules. Finally, due to the scarcity of labeled data, for which annotation is difficult and time-consuming, we also investigate and adapt Cross-View Training (CVT) as a semi-supervised learning technique, allowing us to utilize unlabeled data to improve the model representations. In the Thai sentence segmentation experiments, our model reduced the relative error by 7.4% and 10.5% compared with the baseline models on the Orchid and UGWC datasets, respectively. We also applied our model to the task of pronunciation recovery on the IWSLT English dataset. Our model outperformed the prior sequence tagging models, achieving a relative error reduction of 2.5%. Ablation studies revealed that utilizing n-gram presentations was the main contributing factor for Thai, while the semi-supervised training helped the most for English.",
+ "sections": [
+  "Introduction",
+  "Related Works",
+  "Thai sentence segmentation",
+  "English punctuation restoration",
+  "Cross-View Training",
+  "Proposed method",
+  "Model architecture",
+  "Datasets",
+  "Implementation Detail",
+  "Evaluation",
+  "Results and discussions",
+  "Effect of local representation",
+  "Effect of distant representation",
+  "Effect of Cross-View Training (CVT)",
+  "Comparison with baseline models",
+  "Conclusions",
+  "Acknowledgment",
+  "Hyperparameters",
+  "Comparison of CNN and n-gram models for local representation",
+  "Statistical Tests for Thai sentence segmentation"
+ ],
+ "n_paragraphs": 84,
+ "n_tokens": 9061,
+ "figures_and_tables": [
+  {
+   "caption_id": "1908.01294::fig000",
+   "paper_id": "1908.01294",
+   "file": "5-Figure1-1.png",
+   "caption": "Figure 1: Model architecture that integrates local and distant representation. This model is composed of three main modules: a low-level module, a high-level module and a prediction module. In the low-level module, two structures (local and distant) are responsible for extracting different features.",
+   "n_tokens": 56
+  },
+  {
+   "caption_id": "1908.01294::fig001",
+   "paper_id": "1908.01294",
+   "file": "7-Figure2-1.png",
+   "caption": "Figure 2: The architecture of a self-attention module. This module mainly contains Scaled-Dot Product Attention, which requires three inputs: Key, Query and Value. Those inputs are generated from the same input sequence but projected by different linear transformations.",
+   "n_tokens": 51
+  },
+  {
+   "caption_id": "1908.01294::fig002",
+   "paper_id": "1908.01294",
+   "file": "8-Figure3-1.png",
+   "caption": "Figure 3: Two auxiliary predictions (~pt,local and ~pt,distant) are obtained from the local and global structures in the low-level module. The primary prediction ~pt,primary is obtained from the virtual logit vector ~gt",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "1908.01294::fig003",
+   "paper_id": "1908.01294",
+   "file": "9-Figure4-1.png",
+   "caption": "Figure 4: Words are dropped (denoted as 〈REMOV ED〉) randomly. Those positions are used to calculate LossCV T and update the auxiliary prediction modules to improve the model.",
+   "n_tokens": 42
+  },
+  {
+   "caption_id": "1908.01294::fig004",
+   "paper_id": "1908.01294",
+   "file": "10-Table1-1.png",
+   "caption": "Table 1: The number of passages and vocabulary words in each dataset. The labeled and unlabeled data are separately counted and shown in the rows.",
+   "n_tokens": 30
+  },
+  {
+   "caption_id": "1908.01294::fig005",
+   "paper_id": "1908.01294",
+   "file": "13-Table3-1.png",
+   "caption": "Table 3: The result of Thai sentence segmentation for each model. For the Orchid dataset, we report the average of each metric on 10-fold cross-validation. Meanwhile, average metrics from 5-fold cross-validation are shown for the UGWC dataset.",
+   "n_tokens": 53
+  },
+  {
+   "caption_id": "1908.01294::fig006",
+   "paper_id": "1908.01294",
+   "file": "13-Figure5-1.png",
+   "caption": "Figure 5: An example of sentence boundary prediction by a normal Bi-LSTM-CRF and by the model with local representation (+local). Here, sb indicates that the word is predicted as the sentence boundary.",
+   "n_tokens": 42
+  },
+  {
+   "caption_id": "1908.01294::fig007",
+   "paper_id": "1908.01294",
+   "file": "14-Table4-1.png",
+   "caption": "Table 4: The result of English punctuation restoration by each model. Each model is evaluated by the F1 score of each class of punctuation, the overall F1 score and the 2-class F1 score.",
+   "n_tokens": 43
+  },
+  {
+   "caption_id": "1908.01294::fig008",
+   "paper_id": "1908.01294",
+   "file": "14-Figure6-1.png",
+   "caption": "Figure 6: An example of punctuation prediction of the model with distant representation (+ local + distant) and without distant representation (+ local). The \"COMMA\" indicates that the word is followed by a comma (,) and \"PERIOD\" indicates that a period (.) is restored at that position.",
+   "n_tokens": 60
+  },
+  {
+   "caption_id": "1908.01294::fig009",
+   "paper_id": "1908.01294",
+   "file": "18-Table5-1.png",
+   "caption": "Table 5: Model hyperparameters for each dataset",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "1908.01294::fig010",
+   "paper_id": "1908.01294",
+   "file": "19-Table8-1.png",
+   "caption": "Table 8: The improvement of each contribution on the UGWC dataset results shown as p-values from paired t-tests",
+   "n_tokens": 24
+  }
+ ]
+}

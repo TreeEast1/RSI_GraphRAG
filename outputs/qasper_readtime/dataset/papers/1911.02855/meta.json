@@ -1,0 +1,100 @@
+{
+ "paper_id": "1911.02855",
+ "title": "Dice Loss for Data-imbalanced NLP Tasks",
+ "abstract": "Many NLP tasks such as tagging and machine reading comprehension are faced with the severe data imbalance issue: negative examples significantly outnumber positive examples, and the huge number of background examples (or easy-negative examples) overwhelms the training. The most commonly used cross entropy (CE) criteria is actually an accuracy-oriented objective, and thus creates a discrepancy between training and test: at training time, each training instance contributes equally to the objective function, while at test time F1 score concerns more about positive examples. In this paper, we propose to use dice loss in replacement of the standard cross-entropy objective for data-imbalanced NLP tasks. Dice loss is based on the Sorensen-Dice coefficient or Tversky index, which attaches similar importance to false positives and false negatives, and is more immune to the data-imbalance issue. To further alleviate the dominating influence from easy-negative examples in training, we propose to associate training examples with dynamically adjusted weights to deemphasize easy-negative examples.Theoretical analysis shows that this strategy narrows down the gap between the F1 score in evaluation and the dice loss in training. With the proposed training objective, we observe significant performance boost on a wide range of data imbalanced NLP tasks. Notably, we are able to achieve SOTA results on CTB5, CTB6 and UD1.4 for the part of speech tagging task; SOTA results on CoNLL03, OntoNotes5.0, MSRA and OntoNotes4.0 for the named entity recognition task; along with competitive results on the tasks of machine reading comprehension and paraphrase identification.",
+ "sections": [
+  "Introduction",
+  "Related Work ::: Data Resample",
+  "Related Work ::: Data Imbalance Issue in Object Detection",
+  "Losses ::: Notation",
+  "Losses ::: Cross Entropy Loss",
+  "Losses ::: Dice coefficient and Tversky index",
+  "Losses ::: Self-adusting Dice Loss",
+  "Experiments",
+  "Experiments ::: Part-of-Speech Tagging",
+  "Experiments ::: Part-of-Speech Tagging ::: Datasets",
+  "Experiments ::: Part-of-Speech Tagging ::: Baselines",
+  "Experiments ::: Part-of-Speech Tagging ::: Results",
+  "Experiments ::: Named Entity Recognition",
+  "Experiments ::: Named Entity Recognition ::: Datasets",
+  "Experiments ::: Named Entity Recognition ::: Baselines",
+  "Experiments ::: Named Entity Recognition ::: Results",
+  "Experiments ::: Machine Reading Comprehension",
+  "Experiments ::: Machine Reading Comprehension ::: Datasets",
+  "Experiments ::: Machine Reading Comprehension ::: Baselines",
+  "Experiments ::: Machine Reading Comprehension ::: Results",
+  "Experiments ::: Paraphrase Identification",
+  "Experiments ::: Paraphrase Identification ::: Datasets",
+  "Experiments ::: Paraphrase Identification ::: Results",
+  "Ablation Studies ::: The Effect of Dice Loss on Accuracy-oriented Tasks",
+  "Ablation Studies ::: The Effect of Hyperparameters in Tversky index",
+  "Conclusion"
+ ],
+ "n_paragraphs": 67,
+ "n_tokens": 5167,
+ "figures_and_tables": [
+  {
+   "caption_id": "1911.02855::fig000",
+   "paper_id": "1911.02855",
+   "file": "1-Table1-1.png",
+   "caption": "Table 1: Number of positive and negative examples and their ratios for different data-imbalanced NLP tasks.",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "1911.02855::fig001",
+   "paper_id": "1911.02855",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Different losses and their formulas.",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "1911.02855::fig002",
+   "paper_id": "1911.02855",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1: An illustration of the derivative of f1 = p1+p and f2 = (1−p)p",
+   "n_tokens": 25
+  },
+  {
+   "caption_id": "1911.02855::fig003",
+   "paper_id": "1911.02855",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3: Experimental results for POS datasets. WeightCE denotes weighted cross-entropy, FL denotes focal loss, DL denotes dice loss and DSC denotes adjusted dice coefficient.",
+   "n_tokens": 35
+  },
+  {
+   "caption_id": "1911.02855::fig004",
+   "paper_id": "1911.02855",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: Experimental results for NER task. WeightCE denotes weighted cross-entropy, FL denotes focal loss, DL denotes dice loss and DSC denotes adjusted dice coefficient.",
+   "n_tokens": 36
+  },
+  {
+   "caption_id": "1911.02855::fig005",
+   "paper_id": "1911.02855",
+   "file": "7-Table5-1.png",
+   "caption": "Table 5: Experimental results for MRC task. FL denotes focal loss, DL denotes dice loss and DSC denotes adjusted dice coefficient.",
+   "n_tokens": 28
+  },
+  {
+   "caption_id": "1911.02855::fig006",
+   "paper_id": "1911.02855",
+   "file": "7-Table6-1.png",
+   "caption": "Table 6: Experimental results for PI task. FL denotes focal loss, DL denotes dice loss and DSC denotes adjusted dice coefficient.",
+   "n_tokens": 27
+  },
+  {
+   "caption_id": "1911.02855::fig007",
+   "paper_id": "1911.02855",
+   "file": "8-Table7-1.png",
+   "caption": "Table 7: The effect of dice loss on sentiment classification. BERT+CE refers to fine-tune BERT model and set cross-entropy as the training objective.",
+   "n_tokens": 35
+  },
+  {
+   "caption_id": "1911.02855::fig008",
+   "paper_id": "1911.02855",
+   "file": "9-Table8-1.png",
+   "caption": "Table 8: The effect of α in Tversky Index.",
+   "n_tokens": 14
+  }
+ ]
+}

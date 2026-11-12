@@ -1,0 +1,942 @@
+{
+ "insights": [
+  {
+   "insight_id": "2001.08868::g00:i00",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g00",
+   "concise_text": "The proposed methodology addresses the extremely large action space by using Go-Explore to extract high reward trajectories and then training a Seq2Seq model on them.",
+   "triple": {
+    "subject": "the proposed methodology",
+    "predicate": "addresses",
+    "object": "the extremely large action space"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "2001.08868::s00::p001",
+    "2001.08868::s00::p002"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g00:b0:f04",
+    "2001.08868::g00:b0:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u000"
+  },
+  {
+   "insight_id": "2001.08868::g00:i01",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g00",
+   "concise_text": "Go-Explore is suitable for the paper's experiments because it explores sparse-reward environments sample efficiently and the experiments focus on final policy performance.",
+   "triple": {
+    "subject": "Go-Explore",
+    "predicate": "requires",
+    "object": "focus on final performance of our policy"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "2001.08868::s03::p000",
+    "2001.08868::s02::p000"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g00:b0:f15",
+    "2001.08868::g00:b0:f17",
+    "2001.08868::g00:b0:f18"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u001"
+  },
+  {
+   "insight_id": "2001.08868::g00:i02",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g00",
+   "concise_text": "Phase 2 trains a Seq2Seq model on trajectories found in phase 1, where those trajectories consist of observation, action, and reward tuples.",
+   "triple": {
+    "subject": "Phase 2",
+    "predicate": "extends",
+    "object": "trajectories found in phase 1"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "2001.08868::s04::p001",
+    "2001.08868::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g00:b1:f07",
+    "2001.08868::g00:b1:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u002"
+  },
+  {
+   "insight_id": "2001.08868::g00:i03",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g00",
+   "concise_text": "The Seq2Seq policy maps observations to actions by encoding observation tokens and decoding action tokens, matching the POMDP definitions of observations and actions as token sequences.",
+   "triple": {
+    "subject": "the Seq2Seq policy",
+    "predicate": "requires",
+    "object": "observations and actions as token sequences"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "2001.08868::s03::p002",
+    "2001.08868::s05::p000",
+    "2001.08868::s05::p001"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g00:b1:f01",
+    "2001.08868::g00:b1:f02",
+    "2001.08868::g00:b1:f09",
+    "2001.08868::g00:b1:f12"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u003"
+  },
+  {
+   "insight_id": "2001.08868::g00:i04",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g00",
+   "concise_text": "CoinCollector's +1 reward only after collecting the coin and its need for at least 30 actions on hard games make it suitable for testing exploration capabilities.",
+   "triple": {
+    "subject": "CoinCollector",
+    "predicate": "causes",
+    "object": "suitability for testing exploration capabilities"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "2001.08868::s06::p002",
+    "2001.08868::s06::p004"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g00:b2:f04",
+    "2001.08868::g00:b2:f05",
+    "2001.08868::g00:b3:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u004"
+  },
+  {
+   "insight_id": "2001.08868::g00:i05",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g00",
+   "concise_text": "CookingWorld is used to evaluate generalization because CoinCollector has a very limited action space while CookingWorld has 4,440 games with 222 different levels of difficulty.",
+   "triple": {
+    "subject": "CookingWorld",
+    "predicate": "evaluated_on",
+    "object": "generalization capabilities of our proposed approach"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "2001.08868::s06::p003",
+    "2001.08868::s06::p004"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g00:b2:f07",
+    "2001.08868::g00:b3:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u005"
+  },
+  {
+   "insight_id": "2001.08868::g00:i06",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g00",
+   "concise_text": "The Zero-Shot setting tests the stronger generalization claimed for training a Seq2Seq model on Go-Explore trajectories by evaluating on unseen test games.",
+   "triple": {
+    "subject": "Zero-Shot",
+    "predicate": "evaluated_on",
+    "object": "unseen test games"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "2001.08868::s00::p002",
+    "2001.08868::s06::p004"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g00:b0:f07",
+    "2001.08868::g00:b0:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u006"
+  },
+  {
+   "insight_id": "2001.08868::g00:i07",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g00",
+   "concise_text": "The paper's more challenging environments contrast with standard benchmarks by requiring multiple words at each step, while standard benchmarks require no more than two words.",
+   "triple": {
+    "subject": "more challenging environments",
+    "predicate": "extends",
+    "object": "standard benchmarks requiring no more than two words"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "2001.08868::s06::p000",
+    "2001.08868::s06::p003"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g00:b2:f00",
+    "2001.08868::g00:b2:f02",
+    "2001.08868::g00:b2:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.83,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u007"
+  },
+  {
+   "insight_id": "2001.08868::g00:i08",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g00",
+   "concise_text": "The episodic discovery bonus is limited to very small action and state spaces, so CoinCollector's five admissible commands make it a compatible exploration baseline.",
+   "triple": {
+    "subject": "the episodic discovery bonus",
+    "predicate": "limits",
+    "object": "games with very small action and state spaces"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "2001.08868::s02::p000",
+    "2001.08868::s06::p002",
+    "2001.08868::s07::p000"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g00:b0:f16",
+    "2001.08868::g00:b2:f06",
+    "2001.08868::g00:b3:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.8,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u008"
+  },
+  {
+   "insight_id": "2001.08868::g00:i09",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g00",
+   "concise_text": "DRRN corresponds to the second reinforcement learning approach because it learns one Q-function that scores admissible actions rather than generating actions token by token.",
+   "triple": {
+    "subject": "DRRN",
+    "predicate": "extends",
+    "object": "one $Q$-function that scores all possible actions"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "2001.08868::s01::p000",
+    "2001.08868::s07::p006"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g00:b0:f12",
+    "2001.08868::g00:b4:f02",
+    "2001.08868::g00:b4:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.79,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u009"
+  },
+  {
+   "insight_id": "2001.08868::g01:i00",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g01",
+   "concise_text": "Phase 1 of Go-Explore extracts high-performing trajectories that train a simple Seq2Seq model, which achieves the highest score among all methods in the single CookingWorld setting.",
+   "triple": {
+    "subject": "phase 1 of Go-Explore trajectories",
+    "predicate": "improves_on",
+    "object": "Seq2Seq model score among all methods in single CookingWorld"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "2001.08868::s10::p000",
+    "2001.08868::s11::p000",
+    "2001.08868::s17::p000"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g01:b0:f08",
+    "2001.08868::g01:b0:f09",
+    "2001.08868::g01:b0:f12",
+    "2001.08868::g01:b1:f14",
+    "2001.08868::g01:b1:f15"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u010"
+  },
+  {
+   "insight_id": "2001.08868::g01:i01",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g01",
+   "concise_text": "The Seq2Seq model trained on phase 1 of Go-Explore trajectories achieves the highest score among all methods but scores 9.4% lower than phase 1 of Go-Explore.",
+   "triple": {
+    "subject": "Seq2Seq model trained on phase 1 of Go-Explore trajectories",
+    "predicate": "limits",
+    "object": "total score to 9.4% lower than phase 1 of Go-Explore"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "2001.08868::s10::p000",
+    "2001.08868::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g01:b0:f08",
+    "2001.08868::g01:b0:f12",
+    "2001.08868::g01:b0:f13"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u011"
+  },
+  {
+   "insight_id": "2001.08868::g01:i02",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g01",
+   "concise_text": "In CoinCollector hard games where level 30 indicates the shortest path, phase 1 of Go-Explore finds an always optimal 30-step trajectory.",
+   "triple": {
+    "subject": "phase 1 of Go-Explore",
+    "predicate": "evaluated_on",
+    "object": "CoinCollector hard games with level 30 shortest path"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "2001.08868::s09::p000",
+    "2001.08868::s18::p000"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g01:b0:f04",
+    "2001.08868::g01:b0:f05",
+    "2001.08868::g01:b1:f17"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u012"
+  },
+  {
+   "insight_id": "2001.08868::g01:i03",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g01",
+   "concise_text": "The joint CookingWorld setting trains a single model on all games at once, and all evaluated models achieved lower performance than in the single game setting.",
+   "triple": {
+    "subject": "joint CookingWorld setting",
+    "predicate": "causes",
+    "object": "lower performance compared to the single game setting for all evaluated models"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "2001.08868::s11::p000",
+    "2001.08868::s12::p000"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g01:b0:f10",
+    "2001.08868::g01:b0:f14",
+    "2001.08868::g01:b0:f15"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u013"
+  },
+  {
+   "insight_id": "2001.08868::g01:i04",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g01",
+   "concise_text": "The state representation limitation is especially visible in joint CookingWorld, where 222 games are repeated 20 times with different entities and room maps.",
+   "triple": {
+    "subject": "joint CookingWorld repeated games",
+    "predicate": "causes",
+    "object": "state representation limitation through overlapping descriptions"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "2001.08868::s12::p000",
+    "2001.08868::s15::p000"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g01:b0:f14",
+    "2001.08868::g01:b1:f02",
+    "2001.08868::g01:b1:f03",
+    "2001.08868::g01:b1:f04",
+    "2001.08868::g01:b1:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u014"
+  },
+  {
+   "insight_id": "2001.08868::g01:i05",
+   "paper_id": "2001.08868",
+   "group_id": "2001.08868::g01",
+   "concise_text": "The hardest CookingWorld games require a very long sequence of actions, and most lost games for Go-Explore Seq2Seq are in the hardest set.",
+   "triple": {
+    "subject": "very long action sequences in hardest CookingWorld games",
+    "predicate": "limits",
+    "object": "Go-Explore Seq2Seq zero-shot performance"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "2001.08868::s13::p000",
+    "2001.08868::s19::p008"
+   ],
+   "supporting_fact_ids": [
+    "2001.08868::g01:b0:f20",
+    "2001.08868::g01:b3:f02",
+    "2001.08868::g01:b3:f03",
+    "2001.08868::g01:b3:f04",
+    "2001.08868::g01:b3:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "2001.08868::u015"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "2001.08868::g00",
+   "insights": [
+    {
+     "insight_id": "2001.08868::g00:i00",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g00",
+     "concise_text": "The proposed methodology addresses the extremely large action space by using Go-Explore to extract high reward trajectories and then training a Seq2Seq model on them.",
+     "triple": {
+      "subject": "the proposed methodology",
+      "predicate": "addresses",
+      "object": "the extremely large action space"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "2001.08868::s00::p001",
+      "2001.08868::s00::p002"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g00:b0:f04",
+      "2001.08868::g00:b0:f07"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u000"
+    },
+    {
+     "insight_id": "2001.08868::g00:i01",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g00",
+     "concise_text": "Go-Explore is suitable for the paper's experiments because it explores sparse-reward environments sample efficiently and the experiments focus on final policy performance.",
+     "triple": {
+      "subject": "Go-Explore",
+      "predicate": "requires",
+      "object": "focus on final performance of our policy"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "2001.08868::s03::p000",
+      "2001.08868::s02::p000"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g00:b0:f15",
+      "2001.08868::g00:b0:f17",
+      "2001.08868::g00:b0:f18"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u001"
+    },
+    {
+     "insight_id": "2001.08868::g00:i02",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g00",
+     "concise_text": "Phase 2 trains a Seq2Seq model on trajectories found in phase 1, where those trajectories consist of observation, action, and reward tuples.",
+     "triple": {
+      "subject": "Phase 2",
+      "predicate": "extends",
+      "object": "trajectories found in phase 1"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "2001.08868::s04::p001",
+      "2001.08868::s05::p000"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g00:b1:f07",
+      "2001.08868::g00:b1:f09"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u002"
+    },
+    {
+     "insight_id": "2001.08868::g00:i03",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g00",
+     "concise_text": "The Seq2Seq policy maps observations to actions by encoding observation tokens and decoding action tokens, matching the POMDP definitions of observations and actions as token sequences.",
+     "triple": {
+      "subject": "the Seq2Seq policy",
+      "predicate": "requires",
+      "object": "observations and actions as token sequences"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "2001.08868::s03::p002",
+      "2001.08868::s05::p000",
+      "2001.08868::s05::p001"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g00:b1:f01",
+      "2001.08868::g00:b1:f02",
+      "2001.08868::g00:b1:f09",
+      "2001.08868::g00:b1:f12"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u003"
+    },
+    {
+     "insight_id": "2001.08868::g00:i04",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g00",
+     "concise_text": "CoinCollector's +1 reward only after collecting the coin and its need for at least 30 actions on hard games make it suitable for testing exploration capabilities.",
+     "triple": {
+      "subject": "CoinCollector",
+      "predicate": "causes",
+      "object": "suitability for testing exploration capabilities"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "2001.08868::s06::p002",
+      "2001.08868::s06::p004"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g00:b2:f04",
+      "2001.08868::g00:b2:f05",
+      "2001.08868::g00:b3:f00"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u004"
+    },
+    {
+     "insight_id": "2001.08868::g00:i05",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g00",
+     "concise_text": "CookingWorld is used to evaluate generalization because CoinCollector has a very limited action space while CookingWorld has 4,440 games with 222 different levels of difficulty.",
+     "triple": {
+      "subject": "CookingWorld",
+      "predicate": "evaluated_on",
+      "object": "generalization capabilities of our proposed approach"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "2001.08868::s06::p003",
+      "2001.08868::s06::p004"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g00:b2:f07",
+      "2001.08868::g00:b3:f01"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u005"
+    },
+    {
+     "insight_id": "2001.08868::g00:i06",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g00",
+     "concise_text": "The Zero-Shot setting tests the stronger generalization claimed for training a Seq2Seq model on Go-Explore trajectories by evaluating on unseen test games.",
+     "triple": {
+      "subject": "Zero-Shot",
+      "predicate": "evaluated_on",
+      "object": "unseen test games"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "2001.08868::s00::p002",
+      "2001.08868::s06::p004"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g00:b0:f07",
+      "2001.08868::g00:b0:f08"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.78,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u006"
+    },
+    {
+     "insight_id": "2001.08868::g00:i07",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g00",
+     "concise_text": "The paper's more challenging environments contrast with standard benchmarks by requiring multiple words at each step, while standard benchmarks require no more than two words.",
+     "triple": {
+      "subject": "more challenging environments",
+      "predicate": "extends",
+      "object": "standard benchmarks requiring no more than two words"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "2001.08868::s06::p000",
+      "2001.08868::s06::p003"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g00:b2:f00",
+      "2001.08868::g00:b2:f02",
+      "2001.08868::g00:b2:f09"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.83,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u007"
+    },
+    {
+     "insight_id": "2001.08868::g00:i08",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g00",
+     "concise_text": "The episodic discovery bonus is limited to very small action and state spaces, so CoinCollector's five admissible commands make it a compatible exploration baseline.",
+     "triple": {
+      "subject": "the episodic discovery bonus",
+      "predicate": "limits",
+      "object": "games with very small action and state spaces"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "2001.08868::s02::p000",
+      "2001.08868::s06::p002",
+      "2001.08868::s07::p000"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g00:b0:f16",
+      "2001.08868::g00:b2:f06",
+      "2001.08868::g00:b3:f02"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.8,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u008"
+    },
+    {
+     "insight_id": "2001.08868::g00:i09",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g00",
+     "concise_text": "DRRN corresponds to the second reinforcement learning approach because it learns one Q-function that scores admissible actions rather than generating actions token by token.",
+     "triple": {
+      "subject": "DRRN",
+      "predicate": "extends",
+      "object": "one $Q$-function that scores all possible actions"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "2001.08868::s01::p000",
+      "2001.08868::s07::p006"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g00:b0:f12",
+      "2001.08868::g00:b4:f02",
+      "2001.08868::g00:b4:f05"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.79,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u009"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 9895,
+    "completion_tokens": 1652,
+    "total_tokens": 11547,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "2001.08868::g01",
+   "insights": [
+    {
+     "insight_id": "2001.08868::g01:i00",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g01",
+     "concise_text": "Phase 1 of Go-Explore extracts high-performing trajectories that train a simple Seq2Seq model, which achieves the highest score among all methods in the single CookingWorld setting.",
+     "triple": {
+      "subject": "phase 1 of Go-Explore trajectories",
+      "predicate": "improves_on",
+      "object": "Seq2Seq model score among all methods in single CookingWorld"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "2001.08868::s10::p000",
+      "2001.08868::s11::p000",
+      "2001.08868::s17::p000"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g01:b0:f08",
+      "2001.08868::g01:b0:f09",
+      "2001.08868::g01:b0:f12",
+      "2001.08868::g01:b1:f14",
+      "2001.08868::g01:b1:f15"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u010"
+    },
+    {
+     "insight_id": "2001.08868::g01:i01",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g01",
+     "concise_text": "The Seq2Seq model trained on phase 1 of Go-Explore trajectories achieves the highest score among all methods but scores 9.4% lower than phase 1 of Go-Explore.",
+     "triple": {
+      "subject": "Seq2Seq model trained on phase 1 of Go-Explore trajectories",
+      "predicate": "limits",
+      "object": "total score to 9.4% lower than phase 1 of Go-Explore"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "2001.08868::s10::p000",
+      "2001.08868::s11::p000"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g01:b0:f08",
+      "2001.08868::g01:b0:f12",
+      "2001.08868::g01:b0:f13"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u011"
+    },
+    {
+     "insight_id": "2001.08868::g01:i02",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g01",
+     "concise_text": "In CoinCollector hard games where level 30 indicates the shortest path, phase 1 of Go-Explore finds an always optimal 30-step trajectory.",
+     "triple": {
+      "subject": "phase 1 of Go-Explore",
+      "predicate": "evaluated_on",
+      "object": "CoinCollector hard games with level 30 shortest path"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "2001.08868::s09::p000",
+      "2001.08868::s18::p000"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g01:b0:f04",
+      "2001.08868::g01:b0:f05",
+      "2001.08868::g01:b1:f17"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u012"
+    },
+    {
+     "insight_id": "2001.08868::g01:i03",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g01",
+     "concise_text": "The joint CookingWorld setting trains a single model on all games at once, and all evaluated models achieved lower performance than in the single game setting.",
+     "triple": {
+      "subject": "joint CookingWorld setting",
+      "predicate": "causes",
+      "object": "lower performance compared to the single game setting for all evaluated models"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "2001.08868::s11::p000",
+      "2001.08868::s12::p000"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g01:b0:f10",
+      "2001.08868::g01:b0:f14",
+      "2001.08868::g01:b0:f15"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u013"
+    },
+    {
+     "insight_id": "2001.08868::g01:i04",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g01",
+     "concise_text": "The state representation limitation is especially visible in joint CookingWorld, where 222 games are repeated 20 times with different entities and room maps.",
+     "triple": {
+      "subject": "joint CookingWorld repeated games",
+      "predicate": "causes",
+      "object": "state representation limitation through overlapping descriptions"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "2001.08868::s12::p000",
+      "2001.08868::s15::p000"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g01:b0:f14",
+      "2001.08868::g01:b1:f02",
+      "2001.08868::g01:b1:f03",
+      "2001.08868::g01:b1:f04",
+      "2001.08868::g01:b1:f05"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u014"
+    },
+    {
+     "insight_id": "2001.08868::g01:i05",
+     "paper_id": "2001.08868",
+     "group_id": "2001.08868::g01",
+     "concise_text": "The hardest CookingWorld games require a very long sequence of actions, and most lost games for Go-Explore Seq2Seq are in the hardest set.",
+     "triple": {
+      "subject": "very long action sequences in hardest CookingWorld games",
+      "predicate": "limits",
+      "object": "Go-Explore Seq2Seq zero-shot performance"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "2001.08868::s13::p000",
+      "2001.08868::s19::p008"
+     ],
+     "supporting_fact_ids": [
+      "2001.08868::g01:b0:f20",
+      "2001.08868::g01:b3:f02",
+      "2001.08868::g01:b3:f03",
+      "2001.08868::g01:b3:f04",
+      "2001.08868::g01:b3:f05"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.78,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "2001.08868::u015"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "needs_two_passages",
+     "item": {
+      "text": "Counting restoration actions lets Go-Explore be compared one-to-one with count-based reward algorithms, and phase 1 of Go-Explore uses approximately half the interactions to find an optimal trajectory",
+      "triple": [
+       "counting restoration actions",
+       "enables",
+       "one-to-one exploration-efficiency comparison showing phase 1 of Go-Explore uses approximately half the interactions"
+      ],
+      "source_passage_ids": [
+       "2001.08868::s09::p000"
+      ]
+     }
+    },
+    {
+     "reason": "needs_two_passages",
+     "item": {
+      "text": "Go-Explore uses given admissible actions during random exploration, but Zork I and Z-Machine games do not provide them, so Go-Explore would have a hard time finding good trajectories.",
+      "triple": [
+       "absence of admissible actions in Zork I and Z-Machine games",
+       "limits",
+       "Go-Explore trajectory finding"
+      ],
+      "source_passage_ids": [
+       "2001.08868::s16::p000"
+      ]
+     }
+    },
+    {
+     "reason": "needs_two_passages",
+     "item": {
+      "text": "The zero-shot split stratifies recipes 1, 2 and 3 equally, and Go-Explore Seq2Seq solves almost half of the unseen games.",
+      "triple": [
+       "stratified zero-shot split by recipes 1, 2 and 3",
+       "evaluated_on",
+       "Go-Explore Seq2Seq solving almost half of the unseen games"
+      ],
+      "source_passage_ids": [
+       "2001.08868::s13::p000"
+      ]
+     }
+    },
+    {
+     "reason": "needs_two_passages",
+     "item": {
+      "text": "The hand-tailored CookingWorld solution obtained up to 91.9% of the maximum possible score across 514 test games but relies on entity extraction and template filling, which limits generalization.",
+      "triple": [
+       "entity extraction and template filling",
+       "limits",
+       "generalization of the hand-tailored CookingWorld solution despite 91.9% of maximum possible score"
+      ],
+      "source_passage_ids": [
+       "2001.08868::s16::p001"
+      ]
+     }
+    }
+   ],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 8042,
+    "completion_tokens": 1876,
+    "total_tokens": 9918,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

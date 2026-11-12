@@ -1,0 +1,137 @@
+{
+ "paper_id": "1812.10479",
+ "title": "Multimodal deep learning for short-term stock volatility prediction",
+ "abstract": "Stock market volatility forecasting is a task relevant to assessing market risk. We investigate the interaction between news and prices for the one-day-ahead volatility prediction using state-of-the-art deep learning approaches. The proposed models are trained either end-to-end or using sentence encoders transfered from other tasks. We evaluate a broad range of stock market sectors, namely Consumer Staples, Energy, Utilities, Heathcare, and Financials. Our experimental results show that adding news improves the volatility forecasting as compared to the mainstream models that rely only on price data. In particular, our model outperforms the widely-recognized GARCH(1,1) model for all sectors in terms of coefficient of determination $R^2$, $MSE$ and $MAE$, achieving the best performance when training from both news and price data.",
+ "sections": [
+  "Introduction",
+  "Related work",
+  "Our dataset",
+  "Sectors and stocks",
+  "Stock specific data",
+  "Stock headlines",
+  "Background",
+  "GARCH model",
+  "Transfer Learning from other source domains",
+  "Sequence Models",
+  "Methodology",
+  "Problem statement",
+  "Global features and stock embedding",
+  "Our multimodal hierarchical network",
+  "Multimodal learning with missing modes",
+  "Experimental results and discussions",
+  "Auxiliary transfer learning tasks",
+  "Training setup",
+  "Stocks universe result",
+  "Sector-level results",
+  "Conclusion"
+ ],
+ "n_paragraphs": 206,
+ "n_tokens": 15188,
+ "figures_and_tables": [
+  {
+   "caption_id": "1812.10479::fig000",
+   "paper_id": "1812.10479",
+   "file": "13-Figure1-1.png",
+   "caption": "Figure 1: RCV1 text categorization architecture. The sentence encoder Se maps word emebddings wi to a sentence vector S and the last FC layer has a sigmoid activation function.",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1812.10479::fig001",
+   "paper_id": "1812.10479",
+   "file": "14-Figure2-1.png",
+   "caption": "Figure 2: Natural Language Inference task architecture. Note that the sentence encoder Se is shared between the premise and hypothesis pair. The FC layer learns the representation of the sentence pair and the final Softmax layer asserts the output of the 3 possible labels, i.e. [entailment, contradiction, neutral ], sums to one.",
+   "n_tokens": 68
+  },
+  {
+   "caption_id": "1812.10479::fig002",
+   "paper_id": "1812.10479",
+   "file": "16-Figure3-1.png",
+   "caption": "Figure 3: Schematic view of a LSTM cell. The observed state xt is combined with previous memory and hidden states to output a hidden state ht. The memory state Ct is an internal state; therefore, not part of the output representation. An LSTM network is trained by looping its shared cell across all sequence length.",
+   "n_tokens": 64
+  },
+  {
+   "caption_id": "1812.10479::fig003",
+   "paper_id": "1812.10479",
+   "file": "17-Figure4-1.png",
+   "caption": "Figure 4: BiLSTM max-pooling. The network performs a polling operation on top of each word hidden state.",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "1812.10479::fig004",
+   "paper_id": "1812.10479",
+   "file": "18-Figure5-1.png",
+   "caption": "Figure 5: BiLSTM attention. The specific example encodes a headline from our corpus.",
+   "n_tokens": 20
+  },
+  {
+   "caption_id": "1812.10479::fig005",
+   "paper_id": "1812.10479",
+   "file": "22-Figure6-1.png",
+   "caption": "Figure 6: Daily news relevance attention. The figure illustrates a day where three news were released for the Walmart company. After the headlines are encoded into a fixed-size representation S, the daily news relevance attention AR converts all sentences into single vector representation of all Daily News DN by attending each headline based on its content.",
+   "n_tokens": 63
+  },
+  {
+   "caption_id": "1812.10479::fig006",
+   "paper_id": "1812.10479",
+   "file": "23-Figure7-1.png",
+   "caption": "Figure 7: Hierarchical Neural Network architecture.",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "1812.10479::fig007",
+   "paper_id": "1812.10479",
+   "file": "36-Table1-1.png",
+   "caption": "Table 1: Corpus sectors and respective constituent stocks. For each sector we selected the top 10 stock holdings (as in January 2018). Stock codes in parentheses.",
+   "n_tokens": 35
+  },
+  {
+   "caption_id": "1812.10479::fig008",
+   "paper_id": "1812.10479",
+   "file": "37-Table2-1.png",
+   "caption": "Table 2: Distribution of headlines per sector according to market hours. The majority of the 146,783 headlines are released before 9:30AM (before market). The category after market includes news released after 4:00PM EDT. We count the categories holiday and weekend as before market since they impact the following working day.",
+   "n_tokens": 68
+  },
+  {
+   "caption_id": "1812.10479::fig009",
+   "paper_id": "1812.10479",
+   "file": "37-Table3-1.png",
+   "caption": "Table 3: Random samples from our dataset. Note the factual/objective characteristic of our corpus, where typical news do not carry any sentiment connotation.",
+   "n_tokens": 31
+  },
+  {
+   "caption_id": "1812.10479::fig010",
+   "paper_id": "1812.10479",
+   "file": "38-Table4-1.png",
+   "caption": "Table 4: Stanford NLI (SNLI) dataset examples. Natural language sentence pairs are labelled with entailment (e), contradiction (c), or neutral (n).",
+   "n_tokens": 35
+  },
+  {
+   "caption_id": "1812.10479::fig011",
+   "paper_id": "1812.10479",
+   "file": "38-Table5-1.png",
+   "caption": "Table 5: TL auxiliary tasks – Sentence Encoders comparison. Test scores are accuracy and F1 scores for the SNLI subsubsection 4.2.2 and RCV1 subsubsection 4.2.1 datasets, respectively. † indicates model trained with both headlines and body content and using the original 103 classes of the RCV1 dataset, rather than our models that are trained using headlines only and a total of 55 classes (see subsubsection 4.2.1 for a complete description). As a consequence, the reported benchmarks for the RCV1 dataset are not directly comparable and where reported for the sake of a better benchmark.",
+   "n_tokens": 134
+  },
+  {
+   "caption_id": "1812.10479::fig012",
+   "paper_id": "1812.10479",
+   "file": "39-Table6-1.png",
+   "caption": "Table 6: Model architecture ablations and sentence encoders comparisons. The minus sign means that the component of our network architecture described in subsection 5.3 was ablated (i.e. removed) and the plus sign that it is added. The second and third row report results replacing the news relevance attention (NRA) with a News Averaging component as in [27, 28]. † indicates our model was trained using only the price mode. †† highlights that the sentence encoder Word-Level Attention (W-L Attention) does not take into consideration the headline words order. Best result in bold.",
+   "n_tokens": 125
+  },
+  {
+   "caption_id": "1812.10479::fig013",
+   "paper_id": "1812.10479",
+   "file": "39-Table7-1.png",
+   "caption": "Table 7: Our volatility model performance compared with GARCH(1,1). Best performance in bold. Our model has superior performance across the three evaluation metrics and taking into consideration the state-of-the-art volatility proxies, namely Garman-Klass (σ̂PK) and Parkinson (σ̂PK).",
+   "n_tokens": 63
+  },
+  {
+   "caption_id": "1812.10479::fig014",
+   "paper_id": "1812.10479",
+   "file": "40-Table8-1.png",
+   "caption": "Table 8: Sector-level performance comparison.",
+   "n_tokens": 9
+  }
+ ]
+}

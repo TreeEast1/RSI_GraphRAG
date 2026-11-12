@@ -1,0 +1,708 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1911.02855::s00::p000",
+   "summary": "Data imbalance affects NLP tagging and MRC tasks, with class O ratios of 5 on CoNLL03, 8 on OntoNotes5.0, and negative-positive ratios of 50-200.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s00::p001",
+   "summary": "Data imbalance causes training-test discrepancy and easy-negative overwhelming, while CE or MLE objectives handle neither issue.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s00::p002",
+   "summary": "The authors propose replacing CE or MLE with Sørensen–Dice coefficient or Tversky index losses to address the first issue.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s00::p003",
+   "summary": "A dynamic weight adjusting strategy using weights proportional to (1-p) deemphasizes confident examples and alleviates easy-negative domination.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s00::p004",
+   "summary": "Combined strategies yield SOTA POS results on CTB5 (97.92, +1.86), CTB6 (96.57, +1.80), UD1.4 (96.98, +2.19), and SOTA NER results on CoNLL03 (93.33, +0.29), OntoNotes5.0 (92.07, +0.96)), MSRA 96.72(+0.97), and OntoNotes4.0 (84.47,+2.36).",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s00::p005",
+   "summary": "The paper presents related work in Section 2, training objectives in Section 3, experiments in Section 4, ablation studies in Section 5, and conclusion in Section 6.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s01::p000",
+   "summary": "Prior weighting and resampling methods include importance sampling, AdaBoost, hard example mining, oversampling, focal loss, self-paced learning, loss-based adjustment, and learned sample weights.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s02::p000",
+   "summary": "Object detection work on background-object imbalance, including HNM, OHEM, 3:1 negative-positive sampling, IoU-balanced sampling, and average-precision loss, inspired the NLP approach.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s03::p000",
+   "summary": "Binary classification illustrates how different losses work, with the mechanism easily extended to multi-class classification.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s03::p001",
+   "summary": "Instances x_i have golden label vectors y_i = [y_{i0},y_{i1}] and probability vectors p_i = [p_{i0},p_{i1}] for negative and positive labels.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s04::p000",
+   "summary": "The vanilla cross entropy (CE) loss is given.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s04::p001",
+   "summary": "In CE, each x_i contributes equally, while class weighting factor α or dataset resampling can treat examples unequally.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s04::p002",
+   "summary": "The coefficient α is calculated using lg((n-n_t)/n_t+K), with K tuned, while weighting and resampling are equivalent but rarely used due to tricky α selection.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s05::p000",
+   "summary": "Sørensen–Dice coefficient, dice coefficient (DSC), is an F1-oriented statistic measuring similarity of two sets A and B.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s05::p001",
+   "summary": "A contains all positive examples predicted by a model, B contains all golden positive examples, and DSC is written using TP, FP, and FN.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s05::p002",
+   "summary": "For an individual example x_i, its corresponding DSC loss is given.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s05::p003",
+   "summary": "A negative example with y_{i1}=0 does not contribute, so a γ factor is commonly added to numerator and denominator for smoothing.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s05::p004",
+   "summary": "With γ, negative examples contribute with DSC γ/(p_{i1}+γ), and milletari2016v proposed a squared denominator for faster convergence, yielding dice loss (DL).",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s05::p005",
+   "summary": "Another DL version computes set-level dice coefficient, but the authors choose the sum of individual dice coefficient for ease of optimization.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s05::p006",
+   "summary": "Tversky index (TI), an approximation of the F_{β} score, extends dice coefficient to a more general case for sets A and B.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s05::p007",
+   "summary": "Tversky index controls false-negative and false-positive tradeoff, degenerates to DSC if α=β=0.5, and defines Tversky loss (TL) for {x_i,y_i}.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s06::p000",
+   "summary": "For one example x_i classified positive when p_{i1} exceeds 0.5, the F1 score computation is shown.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s06::p001",
+   "summary": "Eq.DISPLAY_FORM14 is a soft F1 using continuous p rather than binary I(p_{i1}>0.5), which is detrimental with many easy-negative examples.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s06::p002",
+   "summary": "The authors multiply soft probability p by decaying factor (1-p), changing Eq.DISPLAY_FORM22.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s06::p003",
+   "summary": "The weight (1-p_{i1}) changes during training, and (1-p_{i1})p_{i1} reduces focus on easy examples as probabilities approach 0 or 1.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s06::p004",
+   "summary": "Eq.DISPLAY_FORM14 mimics focal loss (FL), which down-weights well-classified examples using (1-p)^{β} and yields (1-p)^{β}log p.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s06::p005",
+   "summary": "Table TABREF18 shows the losses used in the experiments described in the next section.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s07::p000",
+   "summary": "The method is evaluated on part-of-speech tagging, named entity recognition, machine reading comprehension, and paraphrase identification, with baselines optimized by standard cross-entropy.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s08::p000",
+   "summary": "POS assigns labels to words; the paper uses BERT on three Chinese POS datasets and reports span-level micro-averaged precision, recall, and F1.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s09::p000",
+   "summary": "Experiments use Chinese Treebank 5.0, 6.0, and UD1.4.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s09::p001",
+   "summary": "CTB5 is a Chinese tagging and parsing dataset with 507,222 words, 824,983 characters, and 18,782 sentences from newswire sources.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s09::p002",
+   "summary": "CTB6 extends CTB5 and contains 781,351 words, 1,285,149 characters, and 28,295 sentences.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s09::p003",
+   "summary": "UD abbreviates Universal Dependencies, a framework for consistent grammar annotation, and this work uses UD1.4 for Chinese POS tagging.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s10::p000",
+   "summary": "The following baselines are used.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s10::p001",
+   "summary": "Joint-POS from shao2017character jointly learns Chinese word segmentation and POS.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s10::p002",
+   "summary": "Lattice-LSTM from lattice2018zhang constructs a word-character lattice.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s10::p003",
+   "summary": "Bert-Tagger from devlin2018bert treats part-of-speech as a tagging task.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s11::p000",
+   "summary": "DSC loss outperforms BERT-tagger by +1.86 F1 on CTB5, +1.80 on CTB6, and +2.19 on UD1.4, achieving SOTA robustly.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s12::p000",
+   "summary": "NER detects entity spans and categories; the implementation uses BERT-MRC, BERT_Large English checkpoints, official Chinese checkpoints, and reports span-level micro-averaged precision, recall, and F1-score.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s13::p000",
+   "summary": "NER datasets include Chinese OntoNotes4.0 and MSRA and English CoNLL2003 and OntoNotes5.0.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s13::p001",
+   "summary": "CoNLL2003 is an English dataset with 4 entity types: Location, Organization, Person, and Miscellaneous, following BIBREF14 processing protocols.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s13::p002",
+   "summary": "English OntoNotes5.0 contains texts from varied sources and 18 entity types, using the standard CoNLL2012 shared task train/dev/test split.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s13::p003",
+   "summary": "Chinese MSRA is a news-domain benchmark with 3 entity types, uses a 9:1 training-development split, and uses the official test set.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s13::p004",
+   "summary": "Chinese OntoNotes4.0 is a Chinese news-domain dataset with 18 entity types, using the same data split as wu2019glyce.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s14::p001",
+   "summary": "ELMo is a tagging model from peters2018deep.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s14::p002",
+   "summary": "Lattice-LSTM from lattice2018zhang constructs a word-character lattice and is only used in Chinese datasets.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s14::p003",
+   "summary": "CVT from kevin2018cross uses Cross-View Training(CVT) to improve representations of a Bi-LSTM encoder.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s14::p004",
+   "summary": "Bert-Tagger from devlin2018bert treats NER as a tagging task.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s14::p005",
+   "summary": "Glyce-BERT from wu2019glyce combines glyph information with BERT pretraining.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s14::p006",
+   "summary": "BERT-MRC from xiaoya2019ner is the current SOTA model for Chinese and English NER datasets and formulates NER as machine reading comprehension.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s15::p000",
+   "summary": "The proposed method outperforms BERT-MRCBIBREF38 by +0.29 on CoNLL2003 and +0.96 on OntoNotes5.0, and improves F1 by +0.97 on MSRA and +2.36 on OntoNotes4.0.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s16::p000",
+   "summary": "MRC is central to natural language understanding; the paper uses SQuAD-style answer span prediction and reports Extract Match (EM) and F1 score on validation set.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s17::p000",
+   "summary": "Five MRC datasets are used: SQuAD v1.1, SQuAD v2.0 BIBREF4, BIBREF6, and Quoref BIBREF8.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s17::p001",
+   "summary": "SQuAD v1.1 and SQuAD v2.0 are widely used QA benchmarks; SQuAD1.1 has 100K crowdsourced question-answer pairs, and SQuAD2.0 allows no short answer.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s17::p002",
+   "summary": "Quoref tests coreferential reasoning in reading comprehension systems and contains 24K questions over 4.7K paragraphs from Wikipedia.",
+   "group_id": "1911.02855::g00"
+  },
+  {
+   "passage_id": "1911.02855::s18::p001",
+   "summary": "QANet builds a model based on convolutions and self-attention, with convolution modeling local interactions and self-attention modeling global interactions.",
+   "group_id": "1911.02855::g01"
+  },
+  {
+   "passage_id": "1911.02855::s18::p002",
+   "summary": "BERT treats NER as a tagging task.",
+   "group_id": "1911.02855::g01"
+  },
+  {
+   "passage_id": "1911.02855::s18::p003",
+   "summary": "XLNet proposes a generalized autoregressive pretraining method that enables learning bidirectional contexts.",
+   "group_id": "1911.02855::g01"
+  },
+  {
+   "passage_id": "1911.02855::s19::p000",
+   "summary": "DSC loss significantly boosts EM and F1 with BERT or XLNet on MRC tasks, outperforming XLNet on SQuADv1.1, SQuAD v2.0, and QuoRef.",
+   "group_id": "1911.02855::g01"
+  },
+  {
+   "passage_id": "1911.02855::s20::p000",
+   "summary": "Paraphrase identification identifies whether two sentences have the same meaning, using BERT and XLNet backbones and reporting F1 score.",
+   "group_id": "1911.02855::g01"
+  },
+  {
+   "passage_id": "1911.02855::s21::p000",
+   "summary": "Experiments for PI task are conducted on two widely used datasets: MRPC and QQP.",
+   "group_id": "1911.02855::g01"
+  },
+  {
+   "passage_id": "1911.02855::s21::p001",
+   "summary": "MRPC contains automatically extracted online news sentence pairs with human semantic-equivalence annotations and imbalanced classes of 68% positive and 32% negative.",
+   "group_id": "1911.02855::g01"
+  },
+  {
+   "passage_id": "1911.02855::s21::p002",
+   "summary": "QQP is a collection of Quora question pairs with an unbalanced class distribution of 37% positive and 63% negative.",
+   "group_id": "1911.02855::g01"
+  },
+  {
+   "passage_id": "1911.02855::s22::p000",
+   "summary": "Replacing the training objective with DSC boosts BERT and XLNet, improving F1 by +0.58 for MRPC and +0.73 for QQP.",
+   "group_id": "1911.02855::g01"
+  },
+  {
+   "passage_id": "1911.02855::s23::p000",
+   "summary": "Experiments on SST-2 and SST-5 show DL and DSC slightly reduce accuracy compared with CE, indicating dice loss works well for F1 but not accuracy.",
+   "group_id": "1911.02855::g01"
+  },
+  {
+   "passage_id": "1911.02855::s24::p000",
+   "summary": "Tversky index hyperparameters α and β affect precision-recall tradeoff, with highest F1 of 84.67 on Chinese OntoNotes4.0 at α 0.6 and 68.44 on QuoRef at α 0.4.",
+   "group_id": "1911.02855::g01"
+  },
+  {
+   "passage_id": "1911.02855::s25::p000",
+   "summary": "The paper proposes dice loss to replace cross-entropy for data-imbalanced NLP tasks, narrowing objective-metric gaps and boosting part-of-speech, NER, MRC, and PI tasks.",
+   "group_id": "1911.02855::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1911.02855::g00",
+   "summaries": [
+    {
+     "passage_id": "1911.02855::s00::p000",
+     "summary": "Data imbalance affects NLP tagging and MRC tasks, with class O ratios of 5 on CoNLL03, 8 on OntoNotes5.0, and negative-positive ratios of 50-200.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s00::p001",
+     "summary": "Data imbalance causes training-test discrepancy and easy-negative overwhelming, while CE or MLE objectives handle neither issue.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s00::p002",
+     "summary": "The authors propose replacing CE or MLE with Sørensen–Dice coefficient or Tversky index losses to address the first issue.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s00::p003",
+     "summary": "A dynamic weight adjusting strategy using weights proportional to (1-p) deemphasizes confident examples and alleviates easy-negative domination.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s00::p004",
+     "summary": "Combined strategies yield SOTA POS results on CTB5 (97.92, +1.86), CTB6 (96.57, +1.80), UD1.4 (96.98, +2.19), and SOTA NER results on CoNLL03 (93.33, +0.29), OntoNotes5.0 (92.07, +0.96)), MSRA 96.72(+0.97), and OntoNotes4.0 (84.47,+2.36).",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s00::p005",
+     "summary": "The paper presents related work in Section 2, training objectives in Section 3, experiments in Section 4, ablation studies in Section 5, and conclusion in Section 6.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s01::p000",
+     "summary": "Prior weighting and resampling methods include importance sampling, AdaBoost, hard example mining, oversampling, focal loss, self-paced learning, loss-based adjustment, and learned sample weights.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s02::p000",
+     "summary": "Object detection work on background-object imbalance, including HNM, OHEM, 3:1 negative-positive sampling, IoU-balanced sampling, and average-precision loss, inspired the NLP approach.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s03::p000",
+     "summary": "Binary classification illustrates how different losses work, with the mechanism easily extended to multi-class classification.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s03::p001",
+     "summary": "Instances x_i have golden label vectors y_i = [y_{i0},y_{i1}] and probability vectors p_i = [p_{i0},p_{i1}] for negative and positive labels.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s04::p000",
+     "summary": "The vanilla cross entropy (CE) loss is given.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s04::p001",
+     "summary": "In CE, each x_i contributes equally, while class weighting factor α or dataset resampling can treat examples unequally.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s04::p002",
+     "summary": "The coefficient α is calculated using lg((n-n_t)/n_t+K), with K tuned, while weighting and resampling are equivalent but rarely used due to tricky α selection.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s05::p000",
+     "summary": "Sørensen–Dice coefficient, dice coefficient (DSC), is an F1-oriented statistic measuring similarity of two sets A and B.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s05::p001",
+     "summary": "A contains all positive examples predicted by a model, B contains all golden positive examples, and DSC is written using TP, FP, and FN.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s05::p002",
+     "summary": "For an individual example x_i, its corresponding DSC loss is given.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s05::p003",
+     "summary": "A negative example with y_{i1}=0 does not contribute, so a γ factor is commonly added to numerator and denominator for smoothing.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s05::p004",
+     "summary": "With γ, negative examples contribute with DSC γ/(p_{i1}+γ), and milletari2016v proposed a squared denominator for faster convergence, yielding dice loss (DL).",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s05::p005",
+     "summary": "Another DL version computes set-level dice coefficient, but the authors choose the sum of individual dice coefficient for ease of optimization.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s05::p006",
+     "summary": "Tversky index (TI), an approximation of the F_{β} score, extends dice coefficient to a more general case for sets A and B.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s05::p007",
+     "summary": "Tversky index controls false-negative and false-positive tradeoff, degenerates to DSC if α=β=0.5, and defines Tversky loss (TL) for {x_i,y_i}.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s06::p000",
+     "summary": "For one example x_i classified positive when p_{i1} exceeds 0.5, the F1 score computation is shown.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s06::p001",
+     "summary": "Eq.DISPLAY_FORM14 is a soft F1 using continuous p rather than binary I(p_{i1}>0.5), which is detrimental with many easy-negative examples.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s06::p002",
+     "summary": "The authors multiply soft probability p by decaying factor (1-p), changing Eq.DISPLAY_FORM22.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s06::p003",
+     "summary": "The weight (1-p_{i1}) changes during training, and (1-p_{i1})p_{i1} reduces focus on easy examples as probabilities approach 0 or 1.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s06::p004",
+     "summary": "Eq.DISPLAY_FORM14 mimics focal loss (FL), which down-weights well-classified examples using (1-p)^{β} and yields (1-p)^{β}log p.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s06::p005",
+     "summary": "Table TABREF18 shows the losses used in the experiments described in the next section.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s07::p000",
+     "summary": "The method is evaluated on part-of-speech tagging, named entity recognition, machine reading comprehension, and paraphrase identification, with baselines optimized by standard cross-entropy.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s08::p000",
+     "summary": "POS assigns labels to words; the paper uses BERT on three Chinese POS datasets and reports span-level micro-averaged precision, recall, and F1.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s09::p000",
+     "summary": "Experiments use Chinese Treebank 5.0, 6.0, and UD1.4.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s09::p001",
+     "summary": "CTB5 is a Chinese tagging and parsing dataset with 507,222 words, 824,983 characters, and 18,782 sentences from newswire sources.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s09::p002",
+     "summary": "CTB6 extends CTB5 and contains 781,351 words, 1,285,149 characters, and 28,295 sentences.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s09::p003",
+     "summary": "UD abbreviates Universal Dependencies, a framework for consistent grammar annotation, and this work uses UD1.4 for Chinese POS tagging.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s10::p000",
+     "summary": "The following baselines are used.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s10::p001",
+     "summary": "Joint-POS from shao2017character jointly learns Chinese word segmentation and POS.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s10::p002",
+     "summary": "Lattice-LSTM from lattice2018zhang constructs a word-character lattice.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s10::p003",
+     "summary": "Bert-Tagger from devlin2018bert treats part-of-speech as a tagging task.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s11::p000",
+     "summary": "DSC loss outperforms BERT-tagger by +1.86 F1 on CTB5, +1.80 on CTB6, and +2.19 on UD1.4, achieving SOTA robustly.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s12::p000",
+     "summary": "NER detects entity spans and categories; the implementation uses BERT-MRC, BERT_Large English checkpoints, official Chinese checkpoints, and reports span-level micro-averaged precision, recall, and F1-score.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s13::p000",
+     "summary": "NER datasets include Chinese OntoNotes4.0 and MSRA and English CoNLL2003 and OntoNotes5.0.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s13::p001",
+     "summary": "CoNLL2003 is an English dataset with 4 entity types: Location, Organization, Person, and Miscellaneous, following BIBREF14 processing protocols.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s13::p002",
+     "summary": "English OntoNotes5.0 contains texts from varied sources and 18 entity types, using the standard CoNLL2012 shared task train/dev/test split.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s13::p003",
+     "summary": "Chinese MSRA is a news-domain benchmark with 3 entity types, uses a 9:1 training-development split, and uses the official test set.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s13::p004",
+     "summary": "Chinese OntoNotes4.0 is a Chinese news-domain dataset with 18 entity types, using the same data split as wu2019glyce.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s14::p001",
+     "summary": "ELMo is a tagging model from peters2018deep.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s14::p002",
+     "summary": "Lattice-LSTM from lattice2018zhang constructs a word-character lattice and is only used in Chinese datasets.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s14::p003",
+     "summary": "CVT from kevin2018cross uses Cross-View Training(CVT) to improve representations of a Bi-LSTM encoder.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s14::p004",
+     "summary": "Bert-Tagger from devlin2018bert treats NER as a tagging task.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s14::p005",
+     "summary": "Glyce-BERT from wu2019glyce combines glyph information with BERT pretraining.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s14::p006",
+     "summary": "BERT-MRC from xiaoya2019ner is the current SOTA model for Chinese and English NER datasets and formulates NER as machine reading comprehension.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s15::p000",
+     "summary": "The proposed method outperforms BERT-MRCBIBREF38 by +0.29 on CoNLL2003 and +0.96 on OntoNotes5.0, and improves F1 by +0.97 on MSRA and +2.36 on OntoNotes4.0.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s16::p000",
+     "summary": "MRC is central to natural language understanding; the paper uses SQuAD-style answer span prediction and reports Extract Match (EM) and F1 score on validation set.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s17::p000",
+     "summary": "Five MRC datasets are used: SQuAD v1.1, SQuAD v2.0 BIBREF4, BIBREF6, and Quoref BIBREF8.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s17::p001",
+     "summary": "SQuAD v1.1 and SQuAD v2.0 are widely used QA benchmarks; SQuAD1.1 has 100K crowdsourced question-answer pairs, and SQuAD2.0 allows no short answer.",
+     "group_id": "1911.02855::g00"
+    },
+    {
+     "passage_id": "1911.02855::s17::p002",
+     "summary": "Quoref tests coreferential reasoning in reading comprehension systems and contains 24K questions over 4.7K paragraphs from Wikipedia.",
+     "group_id": "1911.02855::g00"
+    }
+   ],
+   "n_raw": 55,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5897,
+    "completion_tokens": 2786,
+    "total_tokens": 8683,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1911.02855::g01",
+   "summaries": [
+    {
+     "passage_id": "1911.02855::s18::p001",
+     "summary": "QANet builds a model based on convolutions and self-attention, with convolution modeling local interactions and self-attention modeling global interactions.",
+     "group_id": "1911.02855::g01"
+    },
+    {
+     "passage_id": "1911.02855::s18::p002",
+     "summary": "BERT treats NER as a tagging task.",
+     "group_id": "1911.02855::g01"
+    },
+    {
+     "passage_id": "1911.02855::s18::p003",
+     "summary": "XLNet proposes a generalized autoregressive pretraining method that enables learning bidirectional contexts.",
+     "group_id": "1911.02855::g01"
+    },
+    {
+     "passage_id": "1911.02855::s19::p000",
+     "summary": "DSC loss significantly boosts EM and F1 with BERT or XLNet on MRC tasks, outperforming XLNet on SQuADv1.1, SQuAD v2.0, and QuoRef.",
+     "group_id": "1911.02855::g01"
+    },
+    {
+     "passage_id": "1911.02855::s20::p000",
+     "summary": "Paraphrase identification identifies whether two sentences have the same meaning, using BERT and XLNet backbones and reporting F1 score.",
+     "group_id": "1911.02855::g01"
+    },
+    {
+     "passage_id": "1911.02855::s21::p000",
+     "summary": "Experiments for PI task are conducted on two widely used datasets: MRPC and QQP.",
+     "group_id": "1911.02855::g01"
+    },
+    {
+     "passage_id": "1911.02855::s21::p001",
+     "summary": "MRPC contains automatically extracted online news sentence pairs with human semantic-equivalence annotations and imbalanced classes of 68% positive and 32% negative.",
+     "group_id": "1911.02855::g01"
+    },
+    {
+     "passage_id": "1911.02855::s21::p002",
+     "summary": "QQP is a collection of Quora question pairs with an unbalanced class distribution of 37% positive and 63% negative.",
+     "group_id": "1911.02855::g01"
+    },
+    {
+     "passage_id": "1911.02855::s22::p000",
+     "summary": "Replacing the training objective with DSC boosts BERT and XLNet, improving F1 by +0.58 for MRPC and +0.73 for QQP.",
+     "group_id": "1911.02855::g01"
+    },
+    {
+     "passage_id": "1911.02855::s23::p000",
+     "summary": "Experiments on SST-2 and SST-5 show DL and DSC slightly reduce accuracy compared with CE, indicating dice loss works well for F1 but not accuracy.",
+     "group_id": "1911.02855::g01"
+    },
+    {
+     "passage_id": "1911.02855::s24::p000",
+     "summary": "Tversky index hyperparameters α and β affect precision-recall tradeoff, with highest F1 of 84.67 on Chinese OntoNotes4.0 at α 0.6 and 68.44 on QuoRef at α 0.4.",
+     "group_id": "1911.02855::g01"
+    },
+    {
+     "passage_id": "1911.02855::s25::p000",
+     "summary": "The paper proposes dice loss to replace cross-entropy for data-imbalanced NLP tasks, narrowing objective-metric gaps and boosting part-of-speech, NER, MRC, and PI tasks.",
+     "group_id": "1911.02855::g01"
+    }
+   ],
+   "n_raw": 12,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1494,
+    "completion_tokens": 597,
+    "total_tokens": 2091,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

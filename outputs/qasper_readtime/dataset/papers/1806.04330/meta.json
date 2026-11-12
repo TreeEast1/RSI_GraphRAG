@@ -1,0 +1,104 @@
+{
+ "paper_id": "1806.04330",
+ "title": "Neural Network Models for Paraphrase Identification, Semantic Textual Similarity, Natural Language Inference, and Question Answering",
+ "abstract": "In this paper, we analyze several neural network designs (and their variations) for sentence pair modeling and compare their performance extensively across eight datasets, including paraphrase identification, semantic textual similarity, natural language inference, and question answering tasks. Although most of these models have claimed state-of-the-art performance, the original papers often reported on only one or two selected datasets. We provide a systematic study and show that (i) encoding contextual information by LSTM and inter-sentence interactions are critical, (ii) Tree-LSTM does not help as much as previously claimed but surprisingly improves performance on Twitter datasets, (iii) the Enhanced Sequential Inference Model is the best so far for larger datasets, while the Pairwise Word Interaction Model achieves the best performance when less data is available. We release our implementations as an open-source toolkit.",
+ "sections": [
+  "Introduction",
+  "General Framework for Sentence Pair Modeling",
+  "Representative Models for Sentence Pair Modeling",
+  "The Bi-LSTM Max-pooling Network (InferSent)",
+  "The Shortcut-Stacked Sentence Encoder Model (SSE)",
+  "The Pairwise Word Interaction Model (PWIM)",
+  "The Decomposable Attention Model (DecAtt)",
+  "The Enhanced Sequential Inference Model (ESIM)",
+  "Datasets",
+  "Implementation Details",
+  "Analysis",
+  "Conclusion",
+  "Acknowledgements",
+  "Pretrained Word Embeddings",
+  "Hyper-parameter Settings",
+  "Fine-tuning the Models"
+ ],
+ "n_paragraphs": 54,
+ "n_tokens": 5526,
+ "figures_and_tables": [
+  {
+   "caption_id": "1806.04330::fig000",
+   "paper_id": "1806.04330",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Summary of representative neural models for sentence pair modeling. The upper half contains sentence encoding models, and the lower half contains sentence pair interaction models.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1806.04330::fig001",
+   "paper_id": "1806.04330",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: Sentence encoding models focus on learning vector representations of individual sentences and then calculate the semantic relationship between sentences based on vector distance.",
+   "n_tokens": 28
+  },
+  {
+   "caption_id": "1806.04330::fig002",
+   "paper_id": "1806.04330",
+   "file": "5-Figure2-1.png",
+   "caption": "Figure 2: Sentence pair interaction models use different word alignment mechanisms before aggregation.",
+   "n_tokens": 16
+  },
+  {
+   "caption_id": "1806.04330::fig003",
+   "paper_id": "1806.04330",
+   "file": "6-Table2-1.png",
+   "caption": "Table 2: Basic statistics and examples of different datasets for sentence pair modeling tasks.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1806.04330::fig004",
+   "paper_id": "1806.04330",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: Reported results from original papers, which are mostly limited to a few datasets. For the Multi-NLI dataset, Acc m represents testing accuracy for the matched genre and Acc um for the unmatched genre.",
+   "n_tokens": 43
+  },
+  {
+   "caption_id": "1806.04330::fig005",
+   "paper_id": "1806.04330",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: Replicated results with our reimplementation in PyTorch across multiple tasks and datasets. The best result in each dataset is denoted by a bold typeface, and the second best is denoted by an underline.",
+   "n_tokens": 47
+  },
+  {
+   "caption_id": "1806.04330::fig006",
+   "paper_id": "1806.04330",
+   "file": "9-Figure3-1.png",
+   "caption": "Figure 3: Training curves of ESIM, DecAtt, PWIM, SSE and InferSent models on eight datasets.",
+   "n_tokens": 25
+  },
+  {
+   "caption_id": "1806.04330::fig007",
+   "paper_id": "1806.04330",
+   "file": "9-Table5-1.png",
+   "caption": "Table 5: Average training time per sentence pair in the Twitter-URL dataset (similar time for other datasets).",
+   "n_tokens": 23
+  },
+  {
+   "caption_id": "1806.04330::fig008",
+   "paper_id": "1806.04330",
+   "file": "10-Figure4-1.png",
+   "caption": "Figure 4: Performance vs. training size (log scale in x-axis) on SNLI dataset.",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "1806.04330::fig009",
+   "paper_id": "1806.04330",
+   "file": "10-Table6-1.png",
+   "caption": "Table 6: Transfer learning experiments for paraphrase identification task.",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1806.04330::fig010",
+   "paper_id": "1806.04330",
+   "file": "10-Table7-1.png",
+   "caption": "Table 7: Categorical performance (accuracy) on Multi-NLI dataset. Overlap is the percentage of shared tokens between two sentences. Length is calculated based on the number of tokens of the longer sentence.",
+   "n_tokens": 42
+  }
+ ]
+}

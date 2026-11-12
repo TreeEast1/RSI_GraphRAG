@@ -1,0 +1,53 @@
+{
+ "paper_id": "2001.01269",
+ "title": "Generating Word and Document Embeddings for Sentiment Analysis",
+ "abstract": "Sentiments of words differ from one corpus to another. Inducing general sentiment lexicons for languages and using them cannot, in general, produce meaningful results for different domains. In this paper, we combine contextual and supervised information with the general semantic representations of words occurring in the dictionary. Contexts of words help us capture the domain-specific information and supervised scores of words are indicative of the polarities of those words. When we combine supervised features of words with the features extracted from their dictionary definitions, we observe an increase in the success rates. We try out the combinations of contextual, supervised, and dictionary-based approaches, and generate original vectors. We also combine the word2vec approach with hand-crafted features. We induce domain-specific sentimental vectors for two corpora, which are the movie domain and the Twitter datasets in Turkish. When we thereafter generate document vectors and employ the support vector machines method utilising those vectors, our approaches perform better than the baseline studies for Turkish with a significant margin. We evaluated our models on two English corpora as well and these also outperformed the word2vec approach. It shows that our approaches are cross-lingual and cross-domain.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Methodology",
+  "Methodology ::: Corpus-based Approach",
+  "Methodology ::: Dictionary-based Approach",
+  "Methodology ::: Supervised Contextual 4-scores",
+  "Methodology ::: Combination of the Word Embeddings",
+  "Methodology ::: Generating Document Vectors",
+  "Datasets",
+  "Experiments ::: Preprocessing",
+  "Experiments ::: Hyperparameters",
+  "Experiments ::: Results",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 48,
+ "n_tokens": 4835,
+ "figures_and_tables": [
+  {
+   "caption_id": "2001.01269::fig000",
+   "paper_id": "2001.01269",
+   "file": "5-Figure1-1.png",
+   "caption": "Fig. 1. The effect of using the supervised scores of words in the dictionary algorithm. It shows how sentimentally similar word vectors get closer to each other in the VSM.",
+   "n_tokens": 37
+  },
+  {
+   "caption_id": "2001.01269::fig001",
+   "paper_id": "2001.01269",
+   "file": "7-Figure2-1.png",
+   "caption": "Fig. 2. The flowchart of our system.",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "2001.01269::fig002",
+   "paper_id": "2001.01269",
+   "file": "9-Table1-1.png",
+   "caption": "Table 1. Accuracies for different feature sets fed as input into the SVM classifier in predicting the labels of reviews. The word2vec algorithm is the baseline method.",
+   "n_tokens": 35
+  },
+  {
+   "caption_id": "2001.01269::fig003",
+   "paper_id": "2001.01269",
+   "file": "11-Table2-1.png",
+   "caption": "Table 2. Most similar words to given queries according to our corpus-based approach and the baseline word2vec algorithm.",
+   "n_tokens": 24
+  }
+ ]
+}

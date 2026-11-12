@@ -1,0 +1,407 @@
+{
+ "kept": [
+  {
+   "insight_id": "2003.08380::g00:i00",
+   "paper_id": "2003.08380",
+   "group_id": "2003.08380::g00",
+   "concise_text": "The paper's T5 submission formulates WinoGrande as a text-to-text problem using MNLI-like natural language templates and achieves 0.7673 AUC on the held-out test set in Condition #2.",
+   "triple": {
+    "subject": "T5 submission to the AI2 WinoGrande Challenge",
+    "predicate": "achieves",
+    "object": "0.7673 AUC on the held-out test set"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "2003.08380::s00::p000",
+    "2003.08380::s00::p001",
+    "2003.08380::s01::p000",
+    "2003.08380::s02::p000"
+   ],
+   "supporting_fact_ids": [
+    "2003.08380::g00:b0:f01",
+    "2003.08380::g00:b0:f02",
+    "2003.08380::g00:b0:f06",
+    "2003.08380::g00:b2:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Cited passages jointly support that the T5 submission uses MNLI-like text-to-text templates and Condition #2 achieved 0.7673 AUC on held-out test set."
+   },
+   "unit_id": "2003.08380::u000"
+  },
+  {
+   "insight_id": "2003.08380::g00:i02",
+   "paper_id": "2003.08380",
+   "group_id": "2003.08380::g00",
+   "concise_text": "Because the general problem setup allows choosing target tokens, the authors tried “true” vs. ”false” in addition to “entailment” vs. “contradiction”, and true/false did not improve performance much.",
+   "triple": {
+    "subject": "“true” vs. ”false”",
+    "predicate": "evaluated_on",
+    "object": "WinoGrande performance"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "2003.08380::s01::p010",
+    "2003.08380::s02::p001"
+   ],
+   "supporting_fact_ids": [
+    "2003.08380::g00:b2:f00",
+    "2003.08380::g00:b2:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "Cited passages jointly support that target tokens can be chosen, true/false was tried, and true/false did not improve performance much; triple is consistent as an evaluated setting/outcome."
+   },
+   "unit_id": "2003.08380::u002"
+  },
+  {
+   "insight_id": "2003.08380::g00:i03",
+   "paper_id": "2003.08380",
+   "group_id": "2003.08380::g00",
+   "concise_text": "The choice of target token appears to have an impact on performance, supporting the claim that T5's “generative capability” seems to play an important role.",
+   "triple": {
+    "subject": "choice of target tokens",
+    "predicate": "supports",
+    "object": "T5's “generative capability” seems to play an important role"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "2003.08380::s02::p001",
+    "2003.08380::s02::p002"
+   ],
+   "supporting_fact_ids": [
+    "2003.08380::g00:b2:f04",
+    "2003.08380::g00:b3:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Passage s02:p002 explicitly says the fact that target-token choice affects prediction accuracy is consistent with the observation that T5's generative capability seems important; supports the claim-evidence relation."
+   },
+   "unit_id": "2003.08380::u003"
+  },
+  {
+   "insight_id": "2003.08380::g00:i05",
+   "paper_id": "2003.08380",
+   "group_id": "2003.08380::g00",
+   "concise_text": "The WinoGrande dataset has devoted considerable effort to reducing incidental biases, but the WinoGrande challenge still contains incidental biases as one possible explanation for model headway.",
+   "triple": {
+    "subject": "WinoGrande dataset",
+    "predicate": "limits",
+    "object": "incidental biases"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "2003.08380::s03::p000",
+    "2003.08380::s03::p002"
+   ],
+   "supporting_fact_ids": [
+    "2003.08380::g00:b3:f05",
+    "2003.08380::g00:b3:f12"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.79,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Cited passages jointly support that WinoGrande devoted effort to reducing incidental biases and that residual incidental biases remain one possible explanation for model headway; triple concisely captures this combined fact."
+   },
+   "unit_id": "2003.08380::u005"
+  },
+  {
+   "insight_id": "2003.08380::g00:i06",
+   "paper_id": "2003.08380",
+   "group_id": "2003.08380::g00",
+   "concise_text": "The MNLI example uses “entailment” as a ground truth target output, and the WinoGrande formulation adopts a similar template with “entailment” and “contradiction” as predefined target tokens.",
+   "triple": {
+    "subject": "WinoGrande formulation",
+    "predicate": "extends",
+    "object": "MNLI template"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "2003.08380::s00::p001",
+    "2003.08380::s00::p003",
+    "2003.08380::s01::p000",
+    "2003.08380::s01::p009"
+   ],
+   "supporting_fact_ids": [
+    "2003.08380::g00:b0:f03",
+    "2003.08380::g00:b0:f04",
+    "2003.08380::g00:b0:f05",
+    "2003.08380::g00:b0:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.83,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Cited passages jointly support that MNLI uses entailment as a target output and WinoGrande adopts a similar template with entailment/contradiction predefined target tokens; 'extends' is acceptable as entity-resolution/composed relation."
+   },
+   "unit_id": "2003.08380::u006"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "2003.08380::g00:i01",
+   "paper_id": "2003.08380",
+   "group_id": "2003.08380::g00",
+   "concise_text": "The softmax over logits of predefined target tokens addresses cases (2) to (4) where T5 does not produce contrastive tokens, and the logit trick clearly improves performance.",
+   "triple": {
+    "subject": "softmax over logits of predefined target tokens",
+    "predicate": "improves_on",
+    "object": "cases (2) to (4) where T5 does not produce contrastive tokens"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "2003.08380::s01::p009",
+    "2003.08380::s02::p001"
+   ],
+   "supporting_fact_ids": [
+    "2003.08380::g00:b1:f05",
+    "2003.08380::g00:b1:f08",
+    "2003.08380::g00:b1:f09",
+    "2003.08380::g00:b1:f10",
+    "2003.08380::g00:b2:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.4,
+    "causality_error": false,
+    "reason": "Sources support that softmax over predefined target-token logits handles cases (2)-(4) and that the logit trick improves performance, but the triple says it 'improves_on' those cases, which is not the stated relation; concise_text is mostly a paraphrase of the two paragraphs."
+   },
+   "unit_id": "2003.08380::u001"
+  },
+  {
+   "insight_id": "2003.08380::g00:i04",
+   "paper_id": "2003.08380",
+   "group_id": "2003.08380::g00",
+   "concise_text": "The assumption that commonsense reasoning comprises tacit rather than explicit knowledge predicts limited use for data-driven techniques, yet RoBERTa can clearly make headway in a commonsense reasoning task.",
+   "triple": {
+    "subject": "commonsense reasoning comprises tacit rather than explicit knowledge",
+    "predicate": "limits",
+    "object": "data-driven techniques (even neural models)"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "2003.08380::s03::p001",
+    "2003.08380::s03::p002"
+   ],
+   "supporting_fact_ids": [
+    "2003.08380::g00:b3:f07",
+    "2003.08380::g00:b3:f09",
+    "2003.08380::g00:b3:f11"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.45,
+    "causality_error": false,
+    "reason": "The cited text states the assumption and the reasoning that data-driven techniques will be of limited use, but the concise_text adds that RoBERTa can make headway; the triple itself is a direct restatement of the assumption-limitation in s03:p001."
+   },
+   "unit_id": "2003.08380::u004"
+  },
+  {
+   "insight_id": "2003.08380::g00:i07",
+   "paper_id": "2003.08380",
+   "group_id": "2003.08380::g00",
+   "concise_text": "At inference time, the problem is decomposed into two inputs fed into T5, and the logit trick yields performance clearly better than random in the zero-shot setting.",
+   "triple": {
+    "subject": "two inputs fed into T5",
+    "predicate": "evaluated_on",
+    "object": "zero-shot setting"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "2003.08380::s01::p004",
+    "2003.08380::s02::p001"
+   ],
+   "supporting_fact_ids": [
+    "2003.08380::g00:b1:f03",
+    "2003.08380::g00:b2:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.8,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.35,
+    "causality_error": false,
+    "reason": "Sources separately state inference decomposes into two inputs fed into T5 and that the logit trick is better than random in zero-shot, but they do not jointly support that the two-input setup itself was evaluated on the zero-shot setting; concise_text is largely a conjunction of paraphrases."
+   },
+   "unit_id": "2003.08380::u007"
+  },
+  {
+   "insight_id": "2003.08380::g00:i08",
+   "paper_id": "2003.08380",
+   "group_id": "2003.08380::g00",
+   "concise_text": "The authors did not run all data size conditions for true/false because true/false did not improve performance much and computational resources were limited.",
+   "triple": {
+    "subject": "limited computational resources",
+    "predicate": "causes",
+    "object": "not running all data size conditions for true/false"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "2003.08380::s01::p011",
+    "2003.08380::s02::p001"
+   ],
+   "supporting_fact_ids": [
+    "2003.08380::g00:b2:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.35,
+    "causality_error": true,
+    "reason": "The passage says they did not run all data size conditions because true/false did not improve much, given limited computational resources; the triple isolates limited resources as the cause and omits the primary stated reason, overstating causality."
+   },
+   "unit_id": "2003.08380::u008"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "2003.08380::g00:i00",
+    "verdict": {
+     "insight_id": "2003.08380::g00:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Cited passages jointly support that the T5 submission uses MNLI-like text-to-text templates and Condition #2 achieved 0.7673 AUC on held-out test set."
+    }
+   },
+   {
+    "insight_id": "2003.08380::g00:i01",
+    "verdict": {
+     "insight_id": "2003.08380::g00:i01",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.4,
+     "causality_error": false,
+     "reason": "Sources support that softmax over predefined target-token logits handles cases (2)-(4) and that the logit trick improves performance, but the triple says it 'improves_on' those cases, which is not the stated relation; concise_text is mostly a paraphrase of the two paragraphs."
+    },
+    "reason": "Sources support that softmax over predefined target-token logits handles cases (2)-(4) and that the logit trick improves performance, but the triple says it 'improves_on' those cases, which is not the stated relation; concise_text is mostly a paraphrase of the two paragraphs."
+   },
+   {
+    "insight_id": "2003.08380::g00:i02",
+    "verdict": {
+     "insight_id": "2003.08380::g00:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "Cited passages jointly support that target tokens can be chosen, true/false was tried, and true/false did not improve performance much; triple is consistent as an evaluated setting/outcome."
+    }
+   },
+   {
+    "insight_id": "2003.08380::g00:i03",
+    "verdict": {
+     "insight_id": "2003.08380::g00:i03",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Passage s02:p002 explicitly says the fact that target-token choice affects prediction accuracy is consistent with the observation that T5's generative capability seems important; supports the claim-evidence relation."
+    }
+   },
+   {
+    "insight_id": "2003.08380::g00:i04",
+    "verdict": {
+     "insight_id": "2003.08380::g00:i04",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.45,
+     "causality_error": false,
+     "reason": "The cited text states the assumption and the reasoning that data-driven techniques will be of limited use, but the concise_text adds that RoBERTa can make headway; the triple itself is a direct restatement of the assumption-limitation in s03:p001."
+    },
+    "reason": "The cited text states the assumption and the reasoning that data-driven techniques will be of limited use, but the concise_text adds that RoBERTa can make headway; the triple itself is a direct restatement of the assumption-limitation in s03:p001."
+   },
+   {
+    "insight_id": "2003.08380::g00:i05",
+    "verdict": {
+     "insight_id": "2003.08380::g00:i05",
+     "keep": true,
+     "support": 0.85,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Cited passages jointly support that WinoGrande devoted effort to reducing incidental biases and that residual incidental biases remain one possible explanation for model headway; triple concisely captures this combined fact."
+    }
+   },
+   {
+    "insight_id": "2003.08380::g00:i06",
+    "verdict": {
+     "insight_id": "2003.08380::g00:i06",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Cited passages jointly support that MNLI uses entailment as a target output and WinoGrande adopts a similar template with entailment/contradiction predefined target tokens; 'extends' is acceptable as entity-resolution/composed relation."
+    }
+   },
+   {
+    "insight_id": "2003.08380::g00:i07",
+    "verdict": {
+     "insight_id": "2003.08380::g00:i07",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.35,
+     "causality_error": false,
+     "reason": "Sources separately state inference decomposes into two inputs fed into T5 and that the logit trick is better than random in zero-shot, but they do not jointly support that the two-input setup itself was evaluated on the zero-shot setting; concise_text is largely a conjunction of paraphrases."
+    },
+    "reason": "Sources separately state inference decomposes into two inputs fed into T5 and that the logit trick is better than random in zero-shot, but they do not jointly support that the two-input setup itself was evaluated on the zero-shot setting; concise_text is largely a conjunction of paraphrases."
+   },
+   {
+    "insight_id": "2003.08380::g00:i08",
+    "verdict": {
+     "insight_id": "2003.08380::g00:i08",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.35,
+     "causality_error": true,
+     "reason": "The passage says they did not run all data size conditions because true/false did not improve much, given limited computational resources; the triple isolates limited resources as the cause and omits the primary stated reason, overstating causality."
+    },
+    "reason": "The passage says they did not run all data size conditions because true/false did not improve much, given limited computational resources; the triple isolates limited resources as the cause and omits the primary stated reason, overstating causality."
+   }
+  ],
+  "calls": [
+   {
+    "n": 9,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 4066,
+     "completion_tokens": 797,
+     "total_tokens": 4863,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

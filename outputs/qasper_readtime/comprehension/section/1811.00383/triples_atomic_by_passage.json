@@ -1,0 +1,347 @@
+{
+ "1811.00383::s00::p000": [
+  [
+   "Deep Learning approaches",
+   "have achieved",
+   "impressive results on various NLP tasks"
+  ],
+  [
+   "Deep Learning approaches",
+   "have become",
+   "the de facto approach for any NLP task"
+  ],
+  [
+   "these deep learning techniques",
+   "have found to be less effective for",
+   "low-resource languages when the available training data is very less"
+  ],
+  [
+   "Transfer learning",
+   "trains",
+   "a model for a parent task"
+  ]
+ ],
+ "1811.00383::s00::p001": [
+  [
+   "Transfer learning",
+   "has also been explored in",
+   "the multilingual Neural Machine Translation"
+  ],
+  [
+   "The goal",
+   "is to improve",
+   "the NMT performance on the source to target language pair (child task)"
+  ],
+  [
+   "the parent model",
+   "is trained on",
+   "the assisting and target language parallel corpus"
+  ],
+  [
+   "the trained weights",
+   "are used to initialize",
+   "the child model"
+  ],
+  [
+   "The divergence between the source and the assisting language",
+   "can adversely impact",
+   "the benefits obtained from transfer learning"
+  ],
+  [
+   "transfer learning",
+   "works best when",
+   "the languages are related"
+  ]
+ ],
+ "1811.00383::s00::p002": [
+  [
+   "The encoder",
+   "generates",
+   "contextual representations (annotation vectors) for each source word"
+  ],
+  [
+   "the attention network",
+   "uses",
+   "contextual representations (annotation vectors)"
+  ],
+  [
+   "The contextual representation",
+   "is",
+   "word-order dependent"
+  ],
+  [
+   "The attention network (and hence the decoder)",
+   "sees",
+   "different contextual representations for similar words in parallel sentences across different languages"
+  ]
+ ],
+ "1811.00383::s00::p003": [
+  [
+   "The attention network and the decoder",
+   "now have to work with",
+   "very different representations"
+  ]
+ ],
+ "1811.00383::s01::p000": [
+  [
+   "choosing similar languages for training the parent and child model",
+   "leads to",
+   "better improvements from transfer learning"
+  ]
+ ],
+ "1811.00383::s02::p000": [
+  [
+   "no work",
+   "has addressed",
+   "word order divergence in transfer learning for multilingual NMT"
+  ],
+  [
+   "The approach",
+   "does not show",
+   "any significant improvements over multiple languages"
+  ]
+ ],
+ "1811.00383::s03::p000": [
+  [
+   "Pre-ordering the source language sentences to match the target language word order",
+   "has been useful in addressing",
+   "word-order divergence for Phrase-Based SMT"
+  ],
+  [
+   "reducing the anisomorphism between the source and target languages",
+   "obtained",
+   "consistent improvements in NMT performance"
+  ],
+  [
+   "The NMT system",
+   "used",
+   "additional features like word forms, POS tags and dependency relations in addition to parallel corpora"
+  ]
+ ],
+ "1811.00383::s04::p000": [
+  [
+   "The parallel corpus between the two languages",
+   "may be too small to train",
+   "a NMT model"
+  ],
+  [
+   "The NMT model (parent model)",
+   "is trained on",
+   "the assisting language and target language pairs"
+  ],
+  [
+   "the source language sentence",
+   "is translated using",
+   "the parent model after performing a word-by-word translation into the assisting language"
+  ]
+ ],
+ "1811.00383::s04::p001": [
+  [
+   "the source language and the assisting language (English)",
+   "have",
+   "different word order"
+  ],
+  [
+   "the assisting language",
+   "has",
+   "SVO word order"
+  ]
+ ],
+ "1811.00383::s04::p002": [
+  [
+   "One of the pre-ordering rule",
+   "swaps",
+   "the position of the noun phrase followed by a transitive verb with the transitive verb"
+  ],
+  [
+   "Applying this reordering rule to the above sentence Anurag will meet Thakur",
+   "will yield",
+   "the reordered sentence Anurag Thakur will meet"
+  ],
+  [
+   "the Table TABREF5",
+   "shows",
+   "the parse trees for the above sentence with and without pre-ordering"
+  ]
+ ],
+ "1811.00383::s04::p003": [
+  [
+   "Pre-ordering",
+   "should also be beneficial for",
+   "other word order divergence scenarios (e.g., SOV to SVO)"
+  ]
+ ],
+ "1811.00383::s06::p000": [
+  [
+   "English INLINEFORM0 Hindi translation",
+   "is",
+   "the parent task"
+  ],
+  [
+   "English",
+   "is",
+   "the assisting source language"
+  ],
+  [
+   "Bengali, Gujarati, Marathi, Malayalam and Tamil",
+   "are",
+   "the primary source languages"
+  ],
+  [
+   "Hindi, Bengali, Gujarati and Marathi",
+   "are",
+   "Indo-Aryan languages"
+  ]
+ ],
+ "1811.00383::s07::p000": [
+  [
+   "IITB English-Hindi parallel corpus",
+   "is used for",
+   "training English-Hindi NMT systems"
+  ],
+  [
+   "ILCI English-Hindi parallel corpus",
+   "contains",
+   "INLINEFORM1 sentences"
+  ],
+  [
+   "ILCI (Indian Language Corpora Initiative) multilingual parallel corpus",
+   "spans",
+   "multiple Indian languages from the health and tourism domains"
+  ],
+  [
+   "520-sentence dev-set of the IITB parallel corpus",
+   "is used for",
+   "validation"
+  ]
+ ],
+ "1811.00383::s08::p000": [
+  [
+   "OpenNMT-Torch",
+   "is used to train",
+   "the NMT system"
+  ],
+  [
+   "encoder",
+   "contains",
+   "two layers of bidirectional LSTMs with 500 neurons each"
+  ],
+  [
+   "decoder",
+   "contains",
+   "two LSTM layers with 500 neurons each"
+  ],
+  [
+   "training",
+   "is stopped when",
+   "the learning rate falls below INLINEFORM2 or number of epochs=22"
+  ],
+  [
+   "English input",
+   "is initialized with",
+   "pre-trained embeddings trained using fastText BIBREF25"
+  ]
+ ],
+ "1811.00383::s08::p001": [
+  [
+   "English vocabulary",
+   "consists of",
+   "INLINEFORM0 tokens appearing at least 2 times in the English training corpus"
+  ],
+  [
+   "Hindi vocabulary",
+   "resulted in",
+   "a vocabulary size of INLINEFORM1 tokens"
+  ],
+  [
+   "each word in the source language",
+   "is translated into",
+   "English using a bilingual dictionary (Google Translate word translation in our case)"
+  ],
+  [
+   "quality of publicly available bilingual embeddings for English-Indian languages",
+   "is",
+   "very low for obtaining good-quality, bilingual representations"
+  ],
+  [
+   "these embeddings",
+   "were not useful for",
+   "transfer learning"
+  ]
+ ],
+ "1811.00383::s08::p002": [
+  [
+   "CFILT-preorder system",
+   "is used for",
+   "reordering English sentences to match the Indian language word order"
+  ],
+  [
+   "CFILT-preorder system",
+   "contains",
+   "two re-ordering systems"
+  ],
+  [
+   "generic rules",
+   "apply to",
+   "all Indian languages"
+  ],
+  [
+   "Hindi-tuned rules",
+   "have been found to improve",
+   "reordering for many English to Indian language pairs"
+  ]
+ ],
+ "1811.00383::s09::p000": [
+  [
+   "both the pre-ordering configurations",
+   "significantly improve",
+   "the BLEU scores over the baseline scores"
+  ]
+ ],
+ "1811.00383::s09::p001": [
+  [
+   "word-order divergence",
+   "can limit",
+   "the benefits of multilingual translation"
+  ],
+  [
+   "Reducing the word order divergence",
+   "can improve",
+   "translation in extremely low-resource scenarios"
+  ]
+ ],
+ "1811.00383::s09::p002": [
+  [
+   "UNK tokens",
+   "are",
+   "placeholder for unknown words"
+  ],
+  [
+   "word order divergence between English and Indian languages",
+   "leads to",
+   "the encoder representation generated is not consistent leading to decoder generating unknown words"
+  ],
+  [
+   "the pre-ordered models",
+   "generate",
+   "better contextual representations leading to less number of unknown tokens and better translation"
+  ]
+ ],
+ "1811.00383::s10::p000": [
+  [
+   "handling word-order divergence between source and assisting languages",
+   "is crucial for",
+   "the success of multilingual NMT in an extremely low-resource setting"
+  ],
+  [
+   "pre-ordering the assisting language to match the word order of the source language",
+   "significantly improves",
+   "translation quality in an extremely low-resource setting"
+  ],
+  [
+   "the current work",
+   "focused on",
+   "Indian languages"
+  ]
+ ]
+}

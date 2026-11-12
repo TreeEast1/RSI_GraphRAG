@@ -1,0 +1,964 @@
+{
+ "1909.01362::s00::p003": [
+  [
+   "Antisocial behavior",
+   "is",
+   "a persistent problem plaguing online conversation platforms"
+  ],
+  [
+   "Antisocial behavior",
+   "is",
+   "widespread"
+  ],
+  [
+   "Antisocial behavior",
+   "is",
+   "potentially damaging to mental and emotional health"
+  ],
+  [
+   "The strain this phenomenon puts on community maintainers",
+   "has sparked",
+   "recent interest in computational approaches for assisting human moderators"
+  ]
+ ],
+ "1909.01362::s00::p004": [
+  [
+   "Prior work in this direction",
+   "has largely focused on",
+   "post-hoc identification of various kinds of antisocial behavior"
+  ],
+  [
+   "various kinds of antisocial behavior",
+   "include",
+   "hate speech, harassment, personal attacks, and general toxicity"
+  ],
+  [
+   "these approaches",
+   "only identify",
+   "antisocial content after the fact"
+  ],
+  [
+   "The fact that these approaches only identify antisocial content after the fact",
+   "limits",
+   "their practicality as tools for assisting pre-emptive moderation in conversational domains"
+  ]
+ ],
+ "1909.01362::s00::p005": [
+  [
+   "Addressing this limitation",
+   "requires",
+   "forecasting the future derailment of a conversation based on early warning signs"
+  ],
+  [
+   "forecasting the future derailment of a conversation based on early warning signs",
+   "gives",
+   "the moderators time to potentially intervene before any harm is done"
+  ],
+  [
+   "Such a goal",
+   "recognizes",
+   "derailment as emerging from the development of the conversation"
+  ],
+  [
+   "Such a goal",
+   "belongs to",
+   "the broader area of conversational forecasting"
+  ],
+  [
+   "conversational forecasting",
+   "includes",
+   "future-prediction tasks"
+  ]
+ ],
+ "1909.01362::s00::p006": [
+  [
+   "Approaching such conversational forecasting problems",
+   "requires",
+   "overcoming several inherent modeling challenges"
+  ],
+  [
+   "conversations",
+   "are",
+   "dynamic"
+  ],
+  [
+   "their outcome",
+   "might depend on",
+   "how subsequent comments interact with each other"
+  ],
+  [
+   "a forecasting model",
+   "needs to capture",
+   "not only the content of each individual comment, but also the relations between comments"
+  ],
+  [
+   "Previous work",
+   "has largely relied on",
+   "hand-crafted features to capture such relations"
+  ],
+  [
+   "hand-crafted features",
+   "include",
+   "similarity between comments or conversation structure"
+  ],
+  [
+   "neural attention architectures",
+   "have also recently shown",
+   "promise"
+  ]
+ ],
+ "1909.01362::s00::p007": [
+  [
+   "conversations",
+   "have",
+   "an unknown horizon"
+  ],
+  [
+   "the to-be-forecasted event",
+   "can occur at",
+   "any time"
+  ],
+  [
+   "One solution",
+   "assumes",
+   "(unrealistic) prior knowledge of when the to-be-forecasted event takes place"
+  ],
+  [
+   "Another compromising solution",
+   "extracts features from",
+   "a fixed-length window"
+  ]
+ ],
+ "1909.01362::s00::p008": [
+  [
+   "a model for forecasting conversational events",
+   "overcomes",
+   "both these inherent challenges"
+  ],
+  [
+   "recent work in context-aware dialog generation",
+   "has proposed",
+   "sequential neural models"
+  ],
+  [
+   "sequential neural models",
+   "make effective use of",
+   "the intra-conversational dynamics"
+  ]
+ ],
+ "1909.01362::s00::p009": [
+  [
+   "these systems",
+   "need to be trained on",
+   "massive amounts of (unlabeled) conversational data"
+  ],
+  [
+   "The main difficulty in directly adapting these models to the supervised domain of conversational forecasting",
+   "is",
+   "the relative scarcity of labeled data"
+  ],
+  [
+   "most forecasting tasks",
+   "have available",
+   "at most a few thousands labeled examples"
+  ],
+  [
+   "at most a few thousands labeled examples",
+   "are insufficient for",
+   "the notoriously data-hungry sequential neural models"
+  ]
+ ],
+ "1909.01362::s00::p010": [
+  [
+   "The former",
+   "can be pre-trained on",
+   "large amounts of unsupervised data"
+  ],
+  [
+   "The latter",
+   "can piggy-back on",
+   "the resulting representation"
+  ],
+  [
+   "similar pre-train-then-fine-tune approaches",
+   "have recently achieved",
+   "state-of-the-art performance in a number of NLP tasks"
+  ],
+  [
+   "this",
+   "is",
+   "the first attempt at applying this paradigm to conversational forecasting"
+  ]
+ ],
+ "1909.01362::s00::p011": [
+  [
+   "The first",
+   "triples in size",
+   "the highly curated `Conversations Gone Awry' dataset"
+  ],
+  [
+   "civil-starting Wikipedia Talk Page conversations",
+   "are crowd-labeled according to",
+   "whether they eventually lead to personal attacks"
+  ],
+  [
+   "the second",
+   "relies on",
+   "in-the-wild moderation of the popular subreddit ChangeMyView"
+  ],
+  [
+   "the aim",
+   "is to forecast",
+   "whether a discussion will later be subject to moderator action due to “rude or hostile” behavior"
+  ]
+ ],
+ "1909.01362::s00::p013": [
+  [
+   "the first model for forecasting conversational events",
+   "can capture",
+   "the dynamics of a conversation as it develops"
+  ]
+ ],
+ "1909.01362::s00::p014": [
+  [
+   "two diverse datasets",
+   "are built for",
+   "the task of forecasting derailment of online conversations"
+  ],
+  [
+   "one dataset",
+   "is",
+   "entirely new"
+  ],
+  [
+   "one dataset",
+   "extends",
+   "prior work"
+  ]
+ ],
+ "1909.01362::s00::p016": [
+  [
+   "any automated systems",
+   "might encode or even amplify",
+   "the biases existing in the training data"
+  ],
+  [
+   "a public-facing implementation",
+   "would need",
+   "to be exhaustively scrutinized for such biases"
+  ]
+ ],
+ "1909.01362::s01::p001": [
+  [
+   "Antisocial behavior online",
+   "comes in",
+   "many forms"
+  ],
+  [
+   "Antisocial behavior online",
+   "includes",
+   "harassment"
+  ],
+  [
+   "Antisocial behavior online",
+   "includes",
+   "cyberbullying"
+  ],
+  [
+   "Antisocial behavior online",
+   "includes",
+   "general aggression"
+  ],
+  [
+   "Prior work",
+   "has sought to understand",
+   "different aspects of such behavior"
+  ]
+ ],
+ "1909.01362::s01::p002": [
+  [
+   "Post-hoc classification of conversations",
+   "has",
+   "a rich body of prior work"
+  ],
+  [
+   "prior work",
+   "classifies",
+   "the outcome of a conversation after it has concluded"
+  ],
+  [
+   "prior work",
+   "classifies",
+   "conversational events after they happened"
+  ],
+  [
+   "some more closely related work",
+   "includes",
+   "identifying the winner of a debate"
+  ],
+  [
+   "some more closely related work",
+   "includes",
+   "identifying successful negotiations"
+  ],
+  [
+   "some more closely related work",
+   "includes",
+   "detecting whether deception has occurred"
+  ],
+  [
+   "some more closely related work",
+   "includes",
+   "detecting whether disagreement has occurred"
+  ]
+ ],
+ "1909.01362::s01::p003": [
+  [
+   "some post-hoc tasks",
+   "can be re-framed as",
+   "forecasting tasks"
+  ]
+ ],
+ "1909.01362::s01::p004": [
+  [
+   "prior work on forecasting conversational outcomes and events",
+   "has largely relied on",
+   "hand-crafted features"
+  ]
+ ],
+ "1909.01362::s01::p005": [
+  [
+   "Such hand-crafted features",
+   "are typically extracted from",
+   "fixed-length windows of the conversation"
+  ],
+  [
+   "some work",
+   "has trained",
+   "multiple models for different window-lengths"
+  ]
+ ],
+ "1909.01362::s01::p006": [
+  [
+   "The use of pre-training for natural language tasks",
+   "has been growing in popularity after",
+   "recent breakthroughs demonstrating improved performance on a wide array of benchmark tasks"
+  ],
+  [
+   "Existing work",
+   "has generally used",
+   "a language modeling objective as the pre-training objective"
+  ],
+  [
+   "examples",
+   "include",
+   "next-word prediction, sentence autoencoding, and machine translation"
+  ],
+  [
+   "BERT",
+   "introduces",
+   "a variation on this in which the goal is to predict the next sentence in a document given the current sentence"
+  ]
+ ],
+ "1909.01362::s02::p001": [
+  [
+   "The first dataset",
+   "is",
+   "an expanded version of the annotated Wikipedia conversations dataset from BIBREF9"
+  ],
+  [
+   "the prediction task",
+   "is to forecast",
+   "whether the conversation will be subject to moderator action in the future"
+  ]
+ ],
+ "1909.01362::s02::p002": [
+  [
+   "The conversations",
+   "took place between",
+   "Wikipedia editors on publicly accessible talk pages"
+  ],
+  [
+   "The conversations",
+   "are sourced from",
+   "the WikiConv dataset BIBREF59"
+  ],
+  [
+   "The conversations",
+   "are labeled by",
+   "crowdworkers"
+  ],
+  [
+   "crowdworkers",
+   "label conversations as",
+   "either containing a personal attack from within or remaining civil throughout"
+  ]
+ ],
+ "1909.01362::s02::p003": [
+  [
+   "A series of controls",
+   "are implemented to prevent",
+   "models from picking up on trivial correlations"
+  ],
+  [
+   "each attack-containing conversation",
+   "is paired with",
+   "a clean conversation from the same talk page"
+  ],
+  [
+   "the talk page",
+   "serves as",
+   "a proxy for topic"
+  ],
+  [
+   "human annotations",
+   "are used to ensure",
+   "that all comments preceding a personal attack are civil"
+  ]
+ ],
+ "1909.01362::s02::p004": [
+  [
+   "the original data",
+   "skewed towards",
+   "shorter conversations"
+  ],
+  [
+   "this crowdsourcing run",
+   "focused on",
+   "longer conversations: ones with 4 or more comments preceding the attack"
+  ],
+  [
+   "This additional crowdsourcing",
+   "expands the dataset to",
+   "4,188 conversations"
+  ]
+ ],
+ "1909.01362::s02::p005": [
+  [
+   "paired conversations",
+   "end up in",
+   "the same split"
+  ],
+  [
+   "another 1 million conversations from WikiConv",
+   "are used for",
+   "the unsupervised pre-training of the generative component"
+  ]
+ ],
+ "1909.01362::s02::p006": [
+  [
+   "The CMV dataset",
+   "is constructed from",
+   "conversations collected via the Reddit API"
+  ]
+ ],
+ "1909.01362::s02::p007": [
+  [
+   "The lack of post-hoc annotation",
+   "limits",
+   "the degree to which we can impose controls on the data"
+  ],
+  [
+   "the removed comment",
+   "was made by",
+   "a user who was previously involved in the conversation"
+  ],
+  [
+   "This process",
+   "results in",
+   "6,842 conversations"
+  ]
+ ],
+ "1909.01362::s03::p000": [
+  [
+   "a generative dialog model",
+   "learns to represent",
+   "conversational dynamics in an unsupervised fashion"
+  ],
+  [
+   "a supervised component",
+   "fine-tunes",
+   "this representation to forecast future events"
+  ]
+ ],
+ "1909.01362::s03::p001": [
+  [
+   "a conversation",
+   "is treated as",
+   "a sequence of $N$ comments $C = \\lbrace c_1,\\dots ,c_N\\rbrace $"
+  ],
+  [
+   "Each comment",
+   "is",
+   "a sequence of tokens"
+  ],
+  [
+   "the number of tokens",
+   "may vary from",
+   "comment to comment"
+  ]
+ ],
+ "1909.01362::s03::p002": [
+  [
+   "the generative component of our model",
+   "uses",
+   "a hierarchical recurrent encoder-decoder (HRED) architecture"
+  ],
+  [
+   "a hierarchical recurrent encoder-decoder (HRED) architecture",
+   "is",
+   "a modified version of the popular sequence-to-sequence (seq2seq) architecture"
+  ],
+  [
+   "the popular sequence-to-sequence (seq2seq) architecture",
+   "is designed to account for",
+   "dependencies between consecutive inputs"
+  ],
+  [
+   "HRED",
+   "can successfully model",
+   "conversational context"
+  ]
+ ],
+ "1909.01362::s03::p003": [
+  [
+   "An HRED dialog model",
+   "consists of",
+   "three components: an utterance encoder, a context encoder, and a decoder"
+  ],
+  [
+   "The utterance encoder",
+   "is responsible for generating",
+   "semantic vector representations of comments"
+  ],
+  [
+   "The utterance encoder",
+   "consists of",
+   "a recurrent neural network (RNN)"
+  ],
+  [
+   "a recurrent neural network (RNN)",
+   "reads",
+   "a comment token-by-token"
+  ]
+ ],
+ "1909.01362::s03::p004": [
+  [
+   "The final hidden state $h^{\\text{enc}}_M$",
+   "can be viewed as",
+   "a vector encoding of the entire comment"
+  ]
+ ],
+ "1909.01362::s03::p005": [
+  [
+   "Running the encoder on each comment $c_n$",
+   "results in",
+   "a sequence of $N$ vector encodings"
+  ],
+  [
+   "the context encoder",
+   "is run over",
+   "this sequence"
+  ]
+ ],
+ "1909.01362::s03::p006": [
+  [
+   "Each hidden state $h^{\\text{con}}_n$",
+   "can be viewed as",
+   "an encoding of the full conversational context up to and including the $n$-th comment"
+  ],
+  [
+   "the context encoding $h^{\\text{con}}_n$",
+   "is used to initialize",
+   "the hidden state $h^{\\text{dec}}_{0}$ of a decoder RNN"
+  ],
+  [
+   "The decoder",
+   "produces",
+   "a response token by token"
+  ]
+ ],
+ "1909.01362::s03::p007": [
+  [
+   "the decoder",
+   "is augmented with",
+   "attention BIBREF63, BIBREF64 over context encoder states"
+  ],
+  [
+   "This generative component",
+   "can be pre-trained using",
+   "unlabeled conversational data"
+  ]
+ ],
+ "1909.01362::s03::p008": [
+  [
+   "the predictor",
+   "takes as input",
+   "the context encoding $h^{\\text{con}}_n$"
+  ],
+  [
+   "the predictor",
+   "results in",
+   "an output score that is interpreted as a probability $p_{\\text{event}}(c_{n+1})$"
+  ]
+ ],
+ "1909.01362::s03::p009": [
+  [
+   "Training the predictive component",
+   "starts by initializing",
+   "the weights of the encoders to the values learned in pre-training"
+  ],
+  [
+   "each positive sample",
+   "is",
+   "a conversation containing an instance of the to-be-forecasted event (e.g., derailment) at comment $c_e$"
+  ],
+  [
+   "each positive sample",
+   "computes",
+   "cross-entropy loss between the classifier output and expected output of 1"
+  ],
+  [
+   "each negative sample",
+   "computes loss against",
+   "an expected output of 0"
+  ]
+ ],
+ "1909.01362::s03::p010": [
+  [
+   "the parameters of the generative component",
+   "are not held fixed during",
+   "this process"
+  ],
+  [
+   "backpropagation",
+   "is allowed to go all the way through",
+   "the encoder layers"
+  ],
+  [
+   "This process",
+   "is known as",
+   "fine-tuning"
+  ],
+  [
+   "fine-tuning",
+   "reshapes",
+   "the representation learned during pre-training to be more directly useful to prediction BIBREF55"
+  ]
+ ],
+ "1909.01362::s03::p011": [
+  [
+   "the model and training code",
+   "are implemented using",
+   "PyTorch"
+  ]
+ ],
+ "1909.01362::s04::p001": [
+  [
+   "the generative component",
+   "is pre-trained on",
+   "the unlabeled portion of the data"
+  ],
+  [
+   "the generative component",
+   "is fine-tuned on",
+   "the labeled training split"
+  ]
+ ],
+ "1909.01362::s04::p002": [
+  [
+   "sequential system",
+   "needs to aggregate",
+   "comment level predictions"
+  ],
+  [
+   "conversation",
+   "is predicted to derail if",
+   "any comment in the conversation triggers a positive prediction"
+  ],
+  [
+   "forecast triggered before derailment in a conversation that actually derails",
+   "is counted as",
+   "a true positive"
+  ],
+  [
+   "no positive predictions triggered for a conversation that actually derails",
+   "counts as",
+   "a false negative"
+  ]
+ ],
+ "1909.01362::s04::p003": [
+  [
+   "Awry",
+   "is",
+   "the state-of-the-art method proposed in BIBREF9 based on pragmatic features in the first comment-reply pair"
+  ],
+  [
+   "BoW",
+   "makes a prediction using",
+   "TF-IDF weighted bag-of-words features extracted from the first comment-reply pair"
+  ]
+ ],
+ "1909.01362::s04::p004": [
+  [
+   "Cumulative BoW",
+   "recomputes",
+   "bag-of-words features on all comments seen thus far every time a new comment arrives"
+  ],
+  [
+   "Cumulative BoW",
+   "produces",
+   "updated predictions for each new comment"
+  ],
+  [
+   "Cumulative BoW",
+   "fails to account for",
+   "relationships between comments"
+  ]
+ ],
+ "1909.01362::s04::p005": [
+  [
+   "simple cumulative approach",
+   "cannot be directly extended to",
+   "models whose features are strictly based on a fixed number of comments, like Awry"
+  ],
+  [
+   "sliding window",
+   "extracts features from",
+   "a window containing that comment and the $W-1$ comments preceding it"
+  ],
+  [
+   "Sliding Awry",
+   "is",
+   "the Awry method with sliding window applied"
+  ],
+  [
+   "both these baselines",
+   "aggregate",
+   "comment-level predictions in the same way as in our main model"
+  ]
+ ],
+ "1909.01362::s04::p006": [
+  [
+   "two modified versions of the CRAFT model",
+   "evaluate the impact of",
+   "the pre-training step and its ability to capture inter-comment dependencies through its hierarchical memory"
+  ]
+ ],
+ "1909.01362::s04::p007": [
+  [
+   "prediction component of CRAFT",
+   "is trained on",
+   "only the labeled training data"
+  ],
+  [
+   "this baseline",
+   "fails to successfully learn",
+   "given the relatively small size of labeled data"
+  ],
+  [
+   "this baseline",
+   "ends up performing at",
+   "the level of random guessing"
+  ],
+  [
+   "pre-training step",
+   "can make use of",
+   "unlabeled data"
+  ]
+ ],
+ "1909.01362::s04::p008": [
+  [
+   "CRAFT $-$ CE",
+   "has memory size of the context encoder",
+   "zero"
+  ],
+  [
+   "CRAFT $-$ CE",
+   "acts as if the pre-training component is",
+   "a vanilla seq2seq model"
+  ],
+  [
+   "CRAFT $-$ CE",
+   "cannot capture",
+   "inter-comment dependencies"
+  ],
+  [
+   "CRAFT $-$ CE",
+   "makes a prediction based only on",
+   "the utterance encoding of the latest comment"
+  ]
+ ],
+ "1909.01362::s04::p009": [
+  [
+   "simple online baselines",
+   "outperform",
+   "the fixed-window baselines"
+  ],
+  [
+   "CRAFT",
+   "outperforms all baselines in terms of",
+   "accuracy and F1"
+  ]
+ ],
+ "1909.01362::s05::p002": [
+  [
+   "Over 50% of conversations",
+   "get",
+   "at least 3 hours of advance warning"
+  ],
+  [
+   "39% of conversations",
+   "get",
+   "at least 12 hours of early warning before they derail"
+  ]
+ ],
+ "1909.01362::s05::p003": [
+  [
+   "CRAFT",
+   "has the capacity to learn",
+   "an order-sensitive representation of conversational context"
+  ]
+ ],
+ "1909.01362::s05::p004": [
+  [
+   "the first experiment",
+   "is",
+   "a prefix-shuffling experiment"
+  ],
+  [
+   "CRAFT",
+   "learns",
+   "an order-sensitive representation of context"
+  ]
+ ],
+ "1909.01362::s05::p005": [
+  [
+   "another type of shuffling experiment",
+   "shuffles",
+   "the comment order in the conversations used for pre-training, fine-tuning and testing"
+  ],
+  [
+   "This procedure",
+   "preserves",
+   "the model's ability to capture signals present within the individual comments processed so far"
+  ],
+  [
+   "This procedure",
+   "inhibits",
+   "capturing any meaningful order-sensitive dynamics"
+  ],
+  [
+   "this",
+   "hurts",
+   "the model's performance"
+  ],
+  [
+   "the model's performance",
+   "is",
+   "65% accuracy for Wikipedia"
+  ],
+  [
+   "the model's performance",
+   "is",
+   "59.5% for CMV"
+  ]
+ ],
+ "1909.01362::s05::p006": [
+  [
+   "these experiments",
+   "provide evidence that",
+   "CRAFT uses its capacity to model conversational context in an order-sensitive fashion"
+  ],
+  [
+   "CRAFT",
+   "makes effective use of",
+   "the dynamics within"
+  ],
+  [
+   "An important avenue for future work",
+   "would be",
+   "developing more transparent models"
+  ]
+ ],
+ "1909.01362::s06::p000": [
+  [
+   "a model for forecasting conversational events",
+   "processes",
+   "comments as they happen"
+  ],
+  [
+   "a model for forecasting conversational events",
+   "takes into account",
+   "the full conversational context"
+  ],
+  [
+   "the resulting system",
+   "can provide",
+   "substantial prior notice of derailment"
+  ]
+ ],
+ "1909.01362::s06::p001": [
+  [
+   "Follow-up work",
+   "could adapt",
+   "the CRAFT architecture"
+  ],
+  [
+   "further architecture extensions",
+   "could add",
+   "additional supervised fine-tuning"
+  ]
+ ],
+ "1909.01362::s06::p002": [
+  [
+   "open questions",
+   "remain regarding",
+   "what human moderators actually desire from an early-warning system"
+  ],
+  [
+   "Follow-up work",
+   "could run",
+   "a user study of a prototype system with actual moderators"
+  ]
+ ],
+ "1909.01362::s06::p003": [
+  [
+   "A practical limitation of the current analysis",
+   "relies on",
+   "balanced datasets"
+  ],
+  [
+   "derailment",
+   "is",
+   "a relatively rare event"
+  ],
+  [
+   "a more restrictive trigger threshold",
+   "would be appropriate for",
+   "derailment"
+  ],
+  [
+   "additional work",
+   "is needed to establish",
+   "whether the recall tradeoff would be acceptable in practice"
+  ]
+ ],
+ "1909.01362::s06::p004": [
+  [
+   "one major limitation of the present work",
+   "assigns",
+   "a single label to each conversation"
+  ],
+  [
+   "derailment",
+   "need not spell",
+   "the end of a conversation"
+  ],
+  [
+   "a conversation",
+   "could suffer",
+   "a repeat occurrence of antisocial behavior"
+  ]
+ ]
+}

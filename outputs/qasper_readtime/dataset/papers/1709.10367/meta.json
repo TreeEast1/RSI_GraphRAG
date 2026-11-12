@@ -1,0 +1,44 @@
+{
+ "paper_id": "1709.10367",
+ "title": "Structured Embedding Models for Grouped Data",
+ "abstract": "Word embeddings are a powerful approach for analyzing language, and exponential family embeddings (EFE) extend them to other types of data. Here we develop structured exponential family embeddings (S-EFE), a method for discovering embeddings that vary across related groups of data. We study how the word usage of U.S. Congressional speeches varies across states and party affiliation, how words are used differently across sections of the ArXiv, and how the co-purchase patterns of groceries can vary across seasons. Key to the success of our method is that the groups share statistical information. We develop two sharing strategies: hierarchical modeling and amortization. We demonstrate the benefits of this approach in empirical studies of speeches, abstracts, and shopping baskets. We show how S-EFE enables group-specific interpretation of word usage, and outperforms EFE in predicting held-out data.",
+ "sections": [
+  "Introduction",
+  "Model Description",
+  "Background: Exponential Family Embeddings",
+  "Structured Exponential Family Embeddings",
+  "Empirical Study"
+ ],
+ "n_paragraphs": 46,
+ "n_tokens": 4177,
+ "figures_and_tables": [
+  {
+   "caption_id": "1709.10367::fig000",
+   "paper_id": "1709.10367",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: (a) INTELLIGENCE is used differently across the ArXiv sections. Words with the closest embedding to the query are listed for 5 sections. (The embeddings were obtained by fitting an amortized S-EFE.) The method automatically orders the sections along the horizontal axis by their similarity in the usage of INTELLIGENCE. See Section 3 additional for details. (b) Graphical representation of S-EFE for data in S categories. The embedding vectors ρ(s)v are specific to each group, and the context vectors αv are shared across all categories.",
+   "n_tokens": 121
+  },
+  {
+   "caption_id": "1709.10367::fig001",
+   "paper_id": "1709.10367",
+   "file": "6-Table1-1.png",
+   "caption": "Table 1: Group structure and size of the three corpora analyzed in Section 3.",
+   "n_tokens": 19
+  },
+  {
+   "caption_id": "1709.10367::fig002",
+   "paper_id": "1709.10367",
+   "file": "8-Table2-1.png",
+   "caption": "Table 2: Test log-likelihood on the three considered datasets. S-EFE consistently achieves the highest held-out likelihood. The competing methods are the global EFE, which can not capture group variations, and the separate EFE, which cannot share information across groups.",
+   "n_tokens": 54
+  },
+  {
+   "caption_id": "1709.10367::fig003",
+   "paper_id": "1709.10367",
+   "file": "9-Table3-1.png",
+   "caption": "Table 3: List of the three most different words for different groups for the Congressional speeches. S-EFE uncovers which words are used most differently by Republican Senators (red) and Democratic Senators (blue) from different states. The complete table is in the Appendix.",
+   "n_tokens": 54
+  }
+ ]
+}

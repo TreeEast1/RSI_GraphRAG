@@ -1,0 +1,88 @@
+{
+ "paper_id": "1908.10084",
+ "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+ "abstract": "BERT (Devlin et al., 2018) and RoBERTa (Liu et al., 2019) has set a new state-of-the-art performance on sentence-pair regression tasks like semantic textual similarity (STS). However, it requires that both sentences are fed into the network, which causes a massive computational overhead: Finding the most similar pair in a collection of 10,000 sentences requires about 50 million inference computations (~65 hours) with BERT. The construction of BERT makes it unsuitable for semantic similarity search as well as for unsupervised tasks like clustering.  ::: In this publication, we present Sentence-BERT (SBERT), a modification of the pretrained BERT network that use siamese and triplet network structures to derive semantically meaningful sentence embeddings that can be compared using cosine-similarity. This reduces the effort for finding the most similar pair from 65 hours with BERT / RoBERTa to about 5 seconds with SBERT, while maintaining the accuracy from BERT.  ::: We evaluate SBERT and SRoBERTa on common STS tasks and transfer learning tasks, where it outperforms other state-of-the-art sentence embeddings methods.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Model",
+  "Model ::: Training Details",
+  "Evaluation - Semantic Textual Similarity",
+  "Evaluation - Semantic Textual Similarity ::: Unsupervised STS",
+  "Evaluation - Semantic Textual Similarity ::: Supervised STS",
+  "Evaluation - Semantic Textual Similarity ::: Argument Facet Similarity",
+  "Evaluation - Semantic Textual Similarity ::: Wikipedia Sections Distinction",
+  "Evaluation - SentEval",
+  "Ablation Study",
+  "Computational Efficiency",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 67,
+ "n_tokens": 5363,
+ "figures_and_tables": [
+  {
+   "caption_id": "1908.10084::fig000",
+   "paper_id": "1908.10084",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: SBERT architecture with classification objective function, e.g., for fine-tuning on SNLI dataset. The two BERT networks have tied weights (siamese network structure).",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1908.10084::fig001",
+   "paper_id": "1908.10084",
+   "file": "3-Figure2-1.png",
+   "caption": "Figure 2: SBERT architecture at inference, for example, to compute similarity scores. This architecture is also used with the regression objective function.",
+   "n_tokens": 29
+  },
+  {
+   "caption_id": "1908.10084::fig002",
+   "paper_id": "1908.10084",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1: Spearman rank correlation ρ between the cosine similarity of sentence representations and the gold labels for various Textual Similarity (STS) tasks. Performance is reported by convention as ρ × 100. STS12-STS16: SemEval 2012-2016, STSb: STSbenchmark, SICK-R: SICK relatedness dataset.",
+   "n_tokens": 78
+  },
+  {
+   "caption_id": "1908.10084::fig003",
+   "paper_id": "1908.10084",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Evaluation on the STS benchmark test set. BERT systems were trained with 10 random seeds and 4 epochs. SBERT was fine-tuned on the STSb dataset, SBERT-NLI was pretrained on the NLI datasets, then fine-tuned on the STSb dataset.",
+   "n_tokens": 64
+  },
+  {
+   "caption_id": "1908.10084::fig004",
+   "paper_id": "1908.10084",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: Evaluation on the Wikipedia section triplets dataset (Dor et al., 2018). SBERT trained with triplet loss for one epoch.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1908.10084::fig005",
+   "paper_id": "1908.10084",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3: Average Pearson correlation r and average Spearman’s rank correlation ρ on the Argument Facet Similarity (AFS) corpus (Misra et al., 2016). Misra et al. proposes 10-fold cross-validation. We additionally evaluate in a cross-topic scenario: Methods are trained on two topics, and are evaluated on the third topic.",
+   "n_tokens": 75
+  },
+  {
+   "caption_id": "1908.10084::fig006",
+   "paper_id": "1908.10084",
+   "file": "7-Table5-1.png",
+   "caption": "Table 5: Evaluation of SBERT sentence embeddings using the SentEval toolkit. SentEval evaluates sentence embeddings on different sentence classification tasks by training a logistic regression classifier using the sentence embeddings as features. Scores are based on a 10-fold cross-validation.",
+   "n_tokens": 50
+  },
+  {
+   "caption_id": "1908.10084::fig007",
+   "paper_id": "1908.10084",
+   "file": "7-Table6-1.png",
+   "caption": "Table 6: SBERT trained on NLI data with the classification objective function, on the STS benchmark (STSb) with the regression objective function. Configurations are evaluated on the development set of the STSb using cosine-similarity and Spearman’s rank correlation. For the concatenation methods, we only report scores with MEAN pooling strategy.",
+   "n_tokens": 73
+  },
+  {
+   "caption_id": "1908.10084::fig008",
+   "paper_id": "1908.10084",
+   "file": "8-Table7-1.png",
+   "caption": "Table 7: Computation speed (sentences per second) of sentence embedding methods. Higher is better.",
+   "n_tokens": 22
+  }
+ ]
+}

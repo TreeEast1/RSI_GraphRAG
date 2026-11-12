@@ -1,0 +1,92 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.24it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.32s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:01,  1.16s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.18it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.04it/s]
+Batch Encoding:   0%|          | 0/19 [00:00<?, ?it/s]/root/.cache/huggingface/modules/transformers_modules/NV-Embed-v2/modeling_nvembed.py:347: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  'input_ids': torch.tensor(batch_dict.get('input_ids').to(batch_dict.get('input_ids')).long()),
+/usr/local/python3/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Batch Encoding:  84%|████████▍ | 16/19 [00:02<00:00,  5.84it/s]/root/.cache/huggingface/modules/transformers_modules/NV-Embed-v2/modeling_nvembed.py:347: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  'input_ids': torch.tensor(batch_dict.get('input_ids').to(batch_dict.get('input_ids')).long()),
+Batch Encoding: 32it [00:02, 12.97it/s]                        Batch Encoding: 32it [00:02, 10.96it/s]
+conv-30: embeddings (19, 4096) in 3.4s
+  random           b=4096 s=0 groups= 3 full=0.914 partial=0.963 cross=0.182 cost=1.00
+  random           b=4096 s=1 groups= 3 full=0.943 partial=0.971 cross=0.455 cost=1.00
+  random           b=4096 s=2 groups= 3 full=0.895 partial=0.950 cross=0.000 cost=1.00
+  random           b=4096 s=3 groups= 3 full=0.914 partial=0.957 cross=0.182 cost=1.00
+  random           b=4096 s=4 groups= 3 full=0.905 partial=0.956 cross=0.091 cost=1.00
+  temporal         b=4096 s=0 groups= 3 full=0.933 partial=0.967 cross=0.364 cost=1.00
+  entity_jaccard   b=4096 s=0 groups= 3 full=0.914 partial=0.960 cross=0.182 cost=1.00
+  entity_idf       b=4096 s=0 groups= 4 full=0.933 partial=0.967 cross=0.364 cost=1.00
+  embedding        b=4096 s=0 groups= 3 full=0.924 partial=0.962 cross=0.273 cost=1.00
+  hybrid_0.25      b=4096 s=0 groups= 3 full=0.924 partial=0.962 cross=0.273 cost=1.00
+  hybrid_0.5       b=4096 s=0 groups= 3 full=0.924 partial=0.962 cross=0.273 cost=1.00
+  hybrid_0.75      b=4096 s=0 groups= 3 full=0.924 partial=0.962 cross=0.273 cost=1.00
+  community        b=4096 s=0 groups=10 full=0.914 partial=0.955 cross=0.182 cost=1.00
+  random           b=8192 s=0 groups= 2 full=0.933 partial=0.972 cross=0.364 cost=1.00
+  random           b=8192 s=1 groups= 2 full=0.962 partial=0.984 cross=0.636 cost=1.00
+  random           b=8192 s=2 groups= 2 full=0.952 partial=0.978 cross=0.545 cost=1.00
+  random           b=8192 s=3 groups= 2 full=0.943 partial=0.973 cross=0.455 cost=1.00
+  random           b=8192 s=4 groups= 2 full=0.981 partial=0.992 cross=0.818 cost=1.00
+  temporal         b=8192 s=0 groups= 2 full=0.943 partial=0.977 cross=0.455 cost=1.00
+  entity_jaccard   b=8192 s=0 groups= 2 full=0.914 partial=0.960 cross=0.182 cost=1.00
+  entity_idf       b=8192 s=0 groups= 2 full=0.971 partial=0.987 cross=0.727 cost=1.00
+  embedding        b=8192 s=0 groups= 2 full=0.914 partial=0.960 cross=0.182 cost=1.00
+  hybrid_0.25      b=8192 s=0 groups= 2 full=0.914 partial=0.960 cross=0.182 cost=1.00
+  hybrid_0.5       b=8192 s=0 groups= 2 full=0.914 partial=0.960 cross=0.182 cost=1.00
+  hybrid_0.75      b=8192 s=0 groups= 2 full=0.914 partial=0.960 cross=0.182 cost=1.00
+  community        b=8192 s=0 groups=10 full=0.914 partial=0.955 cross=0.182 cost=1.00
+Batch Encoding:   0%|          | 0/28 [00:00<?, ?it/s]Batch Encoding:  57%|█████▋    | 16/28 [00:01<00:00, 13.17it/s]Batch Encoding: 32it [00:03,  8.00it/s]                        Batch Encoding: 32it [00:03,  8.50it/s]
+conv-44: embeddings (28, 4096) in 5.2s
+  random           b=4096 s=0 groups= 6 full=0.766 partial=0.874 cross=0.075 cost=1.00
+  random           b=4096 s=1 groups= 6 full=0.772 partial=0.883 cross=0.100 cost=1.00
+  random           b=4096 s=2 groups= 6 full=0.759 partial=0.875 cross=0.050 cost=1.00
+  random           b=4096 s=3 groups= 6 full=0.772 partial=0.887 cross=0.100 cost=1.00
+  random           b=4096 s=4 groups= 6 full=0.766 partial=0.877 cross=0.075 cost=1.00
+  temporal         b=4096 s=0 groups= 6 full=0.772 partial=0.874 cross=0.100 cost=1.00
+  entity_jaccard   b=4096 s=0 groups= 6 full=0.797 partial=0.901 cross=0.200 cost=1.00
+  entity_idf       b=4096 s=0 groups= 6 full=0.785 partial=0.896 cross=0.150 cost=1.00
+  embedding        b=4096 s=0 groups= 6 full=0.778 partial=0.886 cross=0.125 cost=1.00
+  hybrid_0.25      b=4096 s=0 groups= 6 full=0.778 partial=0.886 cross=0.125 cost=1.00
+  hybrid_0.5       b=4096 s=0 groups= 6 full=0.778 partial=0.886 cross=0.125 cost=1.00
+  hybrid_0.75      b=4096 s=0 groups= 6 full=0.778 partial=0.886 cross=0.125 cost=1.00
+  community        b=4096 s=0 groups=13 full=0.759 partial=0.865 cross=0.050 cost=1.00
+  random           b=8192 s=0 groups= 3 full=0.785 partial=0.905 cross=0.150 cost=1.00
+  random           b=8192 s=1 groups= 3 full=0.835 partial=0.926 cross=0.350 cost=1.00
+  random           b=8192 s=2 groups= 3 full=0.772 partial=0.896 cross=0.100 cost=1.00
+  random           b=8192 s=3 groups= 3 full=0.804 partial=0.917 cross=0.225 cost=1.00
+  random           b=8192 s=4 groups= 3 full=0.778 partial=0.897 cross=0.125 cost=1.00
+  temporal         b=8192 s=0 groups= 3 full=0.791 partial=0.903 cross=0.175 cost=1.00
+  entity_jaccard   b=8192 s=0 groups= 3 full=0.835 partial=0.927 cross=0.350 cost=1.00
+  entity_idf       b=8192 s=0 groups= 3 full=0.835 partial=0.929 cross=0.350 cost=1.00
+  embedding        b=8192 s=0 groups= 3 full=0.816 partial=0.913 cross=0.275 cost=1.00
+  hybrid_0.25      b=8192 s=0 groups= 3 full=0.816 partial=0.913 cross=0.275 cost=1.00
+  hybrid_0.5       b=8192 s=0 groups= 3 full=0.816 partial=0.913 cross=0.275 cost=1.00
+  hybrid_0.75      b=8192 s=0 groups= 3 full=0.816 partial=0.913 cross=0.275 cost=1.00
+  community        b=8192 s=0 groups=13 full=0.759 partial=0.865 cross=0.050 cost=1.00
+Batch Encoding:   0%|          | 0/30 [00:00<?, ?it/s]Batch Encoding:  53%|█████▎    | 16/30 [00:01<00:01,  9.95it/s]Batch Encoding: 32it [00:04,  6.55it/s]                        Batch Encoding: 32it [00:04,  6.90it/s]
+conv-48: embeddings (30, 4096) in 6.2s
+  random           b=4096 s=0 groups= 6 full=0.895 partial=0.944 cross=0.107 cost=1.00
+  random           b=4096 s=1 groups= 6 full=0.900 partial=0.946 cross=0.143 cost=1.00
+  random           b=4096 s=2 groups= 6 full=0.891 partial=0.946 cross=0.071 cost=1.00
+  random           b=4096 s=3 groups= 6 full=0.891 partial=0.944 cross=0.071 cost=1.00
+  random           b=4096 s=4 groups= 6 full=0.883 partial=0.939 cross=0.000 cost=1.00
+  temporal         b=4096 s=0 groups= 6 full=0.908 partial=0.956 cross=0.214 cost=1.00
+  entity_jaccard   b=4096 s=0 groups= 6 full=0.895 partial=0.947 cross=0.107 cost=1.00
+  entity_idf       b=4096 s=0 groups= 6 full=0.891 partial=0.942 cross=0.071 cost=1.00
+  embedding        b=4096 s=0 groups= 6 full=0.900 partial=0.952 cross=0.143 cost=1.00
+  hybrid_0.25      b=4096 s=0 groups= 6 full=0.900 partial=0.952 cross=0.143 cost=1.00
+  hybrid_0.5       b=4096 s=0 groups= 6 full=0.900 partial=0.952 cross=0.143 cost=1.00
+  hybrid_0.75      b=4096 s=0 groups= 6 full=0.900 partial=0.952 cross=0.143 cost=1.00
+  community        b=4096 s=0 groups=13 full=0.883 partial=0.935 cross=0.000 cost=1.00
+  random           b=8192 s=0 groups= 3 full=0.891 partial=0.949 cross=0.071 cost=1.00
+  random           b=8192 s=1 groups= 3 full=0.912 partial=0.956 cross=0.250 cost=1.00
+  random           b=8192 s=2 groups= 3 full=0.895 partial=0.950 cross=0.107 cost=1.00
+  random           b=8192 s=3 groups= 3 full=0.904 partial=0.953 cross=0.179 cost=1.00
+  random           b=8192 s=4 groups= 3 full=0.904 partial=0.954 cross=0.179 cost=1.00
+  temporal         b=8192 s=0 groups= 3 full=0.916 partial=0.963 cross=0.286 cost=1.00
+  entity_jaccard   b=8192 s=0 groups= 3 full=0.908 partial=0.958 cross=0.214 cost=1.00
+  entity_idf       b=8192 s=0 groups= 3 full=0.908 partial=0.959 cross=0.214 cost=1.00
+  embedding        b=8192 s=0 groups= 3 full=0.921 partial=0.965 cross=0.321 cost=1.00
+  hybrid_0.25      b=8192 s=0 groups= 3 full=0.921 partial=0.965 cross=0.321 cost=1.00
+  hybrid_0.5       b=8192 s=0 groups= 3 full=0.921 partial=0.965 cross=0.321 cost=1.00
+  hybrid_0.75      b=8192 s=0 groups= 3 full=0.921 partial=0.965 cross=0.321 cost=1.00
+  community        b=8192 s=0 groups=13 full=0.883 partial=0.935 cross=0.000 cost=1.00
+wrote /group/40150/licochen/Memory/RSI_GraphRAG/outputs/reports/grouping_runs.json

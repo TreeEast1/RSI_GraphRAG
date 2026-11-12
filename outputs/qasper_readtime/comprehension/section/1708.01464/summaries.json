@@ -1,0 +1,542 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1708.01464::s00::p000",
+   "summary": "Accurate g2p matters for text-to-speech and automatic speech recognition, but most languages lack extensive pronunciation data, so high resource data may enable low resource g2p.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s00::p001",
+   "summary": "The authors treat g2p as multisource NMT from standard orthography to IPA, with a shared encoder–decoder exploiting orthographic and phonemic similarities.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s01::p000",
+   "summary": "deri2016grapheme adapted high resource wFST models to low resource languages using language and phoneme distance metrics computed from Phoible and URIEL.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s01::p001",
+   "summary": "Other low resource g2p systems combined multiple models, including phoneme-level voting and recurrent neural networks combined with wFST-based Phonetisaurus.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s01::p002",
+   "summary": "kim2012universal used supervised learning with an undirected graphical model, naïve grapheme-to-IPA mappings, and phonotactic features that outperformed WALS features.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s02::p000",
+   "summary": "Google's zero-shot neural machine translation system shares an encoder and decoder, uses target-language tokens, and inspires the g2p system's source-language tokens and single IPA target.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s02::p001",
+   "summary": "Other multilingually-trained neural networks include phoneme-level polyglot language models and ostling2017continuous, but neither was applied to g2p.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s03::p000",
+   "summary": "g2p converts a word's orthographic representation into a phonemic representation, where phonemes are abstract sound units with context-dependent realizations.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s03::p001",
+   "summary": "Writing systems usually do not distinguish allophones, and English writes both sounds as INLINEFORM0 p INLINEFORM1, unlike Hindi and Eastern Armenian.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s03::p002",
+   "summary": "Most writing systems are glottographic, but graphemes rarely correspond one-to-one with phonemes, as multiple graphemes can represent one phoneme.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s03::p004",
+   "summary": "A single grapheme can represent multiple phonemes, such as in syllabaries where each symbol represents a syllable.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s03::p005",
+   "summary": "Many languages have silent letters, as in the word hora in Spanish.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s03::p007",
+   "summary": "More complicated correspondences include silent e in English affecting the previous vowel, as in cape and cap.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s03::p008",
+   "summary": "Orthographic systems can have these phenomena while remaining unambiguous, but some contain ambiguities, including English spelling and Arabic and Hebrew abjads.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s03::p009",
+   "summary": "Consequently, g2p is harder than replacing each grapheme symbol with a corresponding phoneme symbol and replaces a grapheme sequence INLINEFORM0.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s03::p010",
+   "summary": "g2p replaces a grapheme sequence with a phoneme sequence INLINEFORM0.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s03::p011",
+   "summary": "Data-driven g2p finds the phoneme sequence maximizing the likelihood of the grapheme sequence, where sequences are not necessarily the same length.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s03::p012",
+   "summary": "Data-driven approaches suit complex rules, ambiguous orthographies, and multilingual g2p, making a data-driven sequence-to-sequence model a natural choice.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s04::p000",
+   "summary": "The authors use a neural encoder–decoder model with attention, where the encoder compresses a source grapheme sequence and the decoder generates a phoneme sequence.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s04::p001",
+   "summary": "The encoder and decoder are recurrent neural networks trained jointly, with a bidirectional encoder, long short-term memory units, and luong2015effective general global attention.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s04::p002",
+   "summary": "All models were implemented with OpenNMT, and hyperparameters determined by experimentation are listed in Table TABREF8.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s05::p000",
+   "summary": "To handle different pronunciation patterns, each grapheme sequence is prepended with an artificial token containing the language's ISO 639-3 code in angle brackets.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s05::p001",
+   "summary": "The English word `real' is presented as INLINEFORM0 eng INLINEFORM1 r e a l.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s05::p002",
+   "summary": "The artificial token is treated as a grapheme sequence element, unlike johnson2016google's target-language tokens and ostling2017continuous's language embeddings.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s06::p000",
+   "summary": "The authors use deri2016grapheme's multilingual Wiktionary pronunciation corpus, partitioned into training and test sets, instead of the monolingual Carnegie Mellon Pronouncing Dictionary.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s06::p001",
+   "summary": "The corpus provides automatically cleaned IPA transcriptions aligned with Phoible inventories, but cleaning can harm data quality and remove suprasegmentals.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s07::p000",
+   "summary": "Experiments compare LangID, which prepends language-identifying artificial tokens, with NoLangID, using a beam width of 100 to compute error metrics.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s08::p000",
+   "summary": "The authors use three evaluation metrics.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s08::p001",
+   "summary": "Phoneme Error Rate (PER) is Levenshtein distance between predicted and gold phoneme sequences divided by gold sequence length.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s08::p002",
+   "summary": "Word Error Rate (WER) is the percentage of words whose predicted phoneme sequence does not exactly match the gold standard.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s08::p003",
+   "summary": "Word Error Rate 100 (WER 100) is the percentage of test words whose correct guess is not among the system's first 100 guesses.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s08::p004",
+   "summary": "For multiple languages, WER, WER 100, and PER numbers are averaged with each language weighted equally.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s08::p005",
+   "summary": "Phoneme-similarity error metrics would be interesting for multilingual g2p, but are omitted because they have not been widely reported for other g2p systems.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s09::p000",
+   "summary": "LangID and NoLangID results are compared to deri2016grapheme's system, identified as wFST, whose results have two parts.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s09::p001",
+   "summary": "High resource results used wFSTs trained on Wiktionary pronunciation data and Wikipedia IPA Help page rules for 85 languages.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s09::p002",
+   "summary": "Adapted results used mapping strategies for 229 languages, omitting 23 high resource languages with unique scripts or unavailable language distance metrics.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s10::p000",
+   "summary": "LangID and NoLangID models are each trained on three subsets of the Wiktionary data.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s10::p001",
+   "summary": "LangID-High and NoLangID-High are trained on data from the 85 languages for which BIBREF13 used non-adapted wFST models.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s10::p002",
+   "summary": "LangID-Adapted and NoLangID-Adapted are trained on data from 229 languages but actually only 157 languages, omitting 23 High test set languages.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s10::p003",
+   "summary": "LangID-All and NoLangID-All are trained on data in all 311 languages in the Wiktionary training corpus.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s10::p004",
+   "summary": "Training was limited to 10,000 words per language, with 10 percent set aside for validation and a maximum of 9000 training words per language.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s11::p000",
+   "summary": "On 229 languages, LangID outperforms the baseline widely, best with all available languages, while even NoLangID beats the baseline in WER and WER 100.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s12::p000",
+   "summary": "High resource comparisons use purely monolingual wFST models, and Adapted-trained models are omitted because they performed poorly on unique writing systems like Georgian and Greek.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s12::p001",
+   "summary": "In High Resource experiments, no sequence-to-sequence approach equals wFST in WER and PER, though LangID models beat wFST in WER 100.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s12::p002",
+   "summary": "LangID-High is more compact at 15.4 MB, while the combined wFST high resource models are 197.5 MB.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s13::p000",
+   "summary": "On unseen languages, LangID models have a slight WER and PER advantage, although NoLangID models sometimes do better on WER 100.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s14::p000",
+   "summary": "Adding a language ID token always improves results when its embedding has been learned, including when the source sequence uses the wrong script, as for Arabic.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s15::p000",
+   "summary": "Language ID token embeddings are mostly uninterpretable, making unseen-language estimation difficult, so externally constructed typological representations may be more promising.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s16::p000",
+   "summary": "Phoneme embeddings show many regularities, suggesting the multilingual model learns similar embeddings for phonetically similar phonemes written with the same grapheme.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s16::p001",
+   "summary": "Phoneme embedding structure may explain strong WER 100 performance, and filtering or reranking system output might improve performance.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s17::p000",
+   "summary": "Future work could extend language ID token benefits to unseen languages using typological feature tokens from Phoible and WALS to predict orthographic rules.",
+   "group_id": "1708.01464::g00"
+  },
+  {
+   "passage_id": "1708.01464::s17::p001",
+   "summary": "The artificial token approach could also apply to monolingual English g2p by tagging loanword etymology analogously to language ID in multilingual g2p.",
+   "group_id": "1708.01464::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1708.01464::g00",
+   "summaries": [
+    {
+     "passage_id": "1708.01464::s00::p000",
+     "summary": "Accurate g2p matters for text-to-speech and automatic speech recognition, but most languages lack extensive pronunciation data, so high resource data may enable low resource g2p.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s00::p001",
+     "summary": "The authors treat g2p as multisource NMT from standard orthography to IPA, with a shared encoder–decoder exploiting orthographic and phonemic similarities.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s01::p000",
+     "summary": "deri2016grapheme adapted high resource wFST models to low resource languages using language and phoneme distance metrics computed from Phoible and URIEL.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s01::p001",
+     "summary": "Other low resource g2p systems combined multiple models, including phoneme-level voting and recurrent neural networks combined with wFST-based Phonetisaurus.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s01::p002",
+     "summary": "kim2012universal used supervised learning with an undirected graphical model, naïve grapheme-to-IPA mappings, and phonotactic features that outperformed WALS features.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s02::p000",
+     "summary": "Google's zero-shot neural machine translation system shares an encoder and decoder, uses target-language tokens, and inspires the g2p system's source-language tokens and single IPA target.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s02::p001",
+     "summary": "Other multilingually-trained neural networks include phoneme-level polyglot language models and ostling2017continuous, but neither was applied to g2p.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s03::p000",
+     "summary": "g2p converts a word's orthographic representation into a phonemic representation, where phonemes are abstract sound units with context-dependent realizations.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s03::p001",
+     "summary": "Writing systems usually do not distinguish allophones, and English writes both sounds as INLINEFORM0 p INLINEFORM1, unlike Hindi and Eastern Armenian.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s03::p002",
+     "summary": "Most writing systems are glottographic, but graphemes rarely correspond one-to-one with phonemes, as multiple graphemes can represent one phoneme.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s03::p004",
+     "summary": "A single grapheme can represent multiple phonemes, such as in syllabaries where each symbol represents a syllable.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s03::p005",
+     "summary": "Many languages have silent letters, as in the word hora in Spanish.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s03::p007",
+     "summary": "More complicated correspondences include silent e in English affecting the previous vowel, as in cape and cap.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s03::p008",
+     "summary": "Orthographic systems can have these phenomena while remaining unambiguous, but some contain ambiguities, including English spelling and Arabic and Hebrew abjads.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s03::p009",
+     "summary": "Consequently, g2p is harder than replacing each grapheme symbol with a corresponding phoneme symbol and replaces a grapheme sequence INLINEFORM0.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s03::p010",
+     "summary": "g2p replaces a grapheme sequence with a phoneme sequence INLINEFORM0.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s03::p011",
+     "summary": "Data-driven g2p finds the phoneme sequence maximizing the likelihood of the grapheme sequence, where sequences are not necessarily the same length.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s03::p012",
+     "summary": "Data-driven approaches suit complex rules, ambiguous orthographies, and multilingual g2p, making a data-driven sequence-to-sequence model a natural choice.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s04::p000",
+     "summary": "The authors use a neural encoder–decoder model with attention, where the encoder compresses a source grapheme sequence and the decoder generates a phoneme sequence.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s04::p001",
+     "summary": "The encoder and decoder are recurrent neural networks trained jointly, with a bidirectional encoder, long short-term memory units, and luong2015effective general global attention.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s04::p002",
+     "summary": "All models were implemented with OpenNMT, and hyperparameters determined by experimentation are listed in Table TABREF8.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s05::p000",
+     "summary": "To handle different pronunciation patterns, each grapheme sequence is prepended with an artificial token containing the language's ISO 639-3 code in angle brackets.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s05::p001",
+     "summary": "The English word `real' is presented as INLINEFORM0 eng INLINEFORM1 r e a l.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s05::p002",
+     "summary": "The artificial token is treated as a grapheme sequence element, unlike johnson2016google's target-language tokens and ostling2017continuous's language embeddings.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s06::p000",
+     "summary": "The authors use deri2016grapheme's multilingual Wiktionary pronunciation corpus, partitioned into training and test sets, instead of the monolingual Carnegie Mellon Pronouncing Dictionary.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s06::p001",
+     "summary": "The corpus provides automatically cleaned IPA transcriptions aligned with Phoible inventories, but cleaning can harm data quality and remove suprasegmentals.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s07::p000",
+     "summary": "Experiments compare LangID, which prepends language-identifying artificial tokens, with NoLangID, using a beam width of 100 to compute error metrics.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s08::p000",
+     "summary": "The authors use three evaluation metrics.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s08::p001",
+     "summary": "Phoneme Error Rate (PER) is Levenshtein distance between predicted and gold phoneme sequences divided by gold sequence length.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s08::p002",
+     "summary": "Word Error Rate (WER) is the percentage of words whose predicted phoneme sequence does not exactly match the gold standard.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s08::p003",
+     "summary": "Word Error Rate 100 (WER 100) is the percentage of test words whose correct guess is not among the system's first 100 guesses.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s08::p004",
+     "summary": "For multiple languages, WER, WER 100, and PER numbers are averaged with each language weighted equally.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s08::p005",
+     "summary": "Phoneme-similarity error metrics would be interesting for multilingual g2p, but are omitted because they have not been widely reported for other g2p systems.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s09::p000",
+     "summary": "LangID and NoLangID results are compared to deri2016grapheme's system, identified as wFST, whose results have two parts.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s09::p001",
+     "summary": "High resource results used wFSTs trained on Wiktionary pronunciation data and Wikipedia IPA Help page rules for 85 languages.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s09::p002",
+     "summary": "Adapted results used mapping strategies for 229 languages, omitting 23 high resource languages with unique scripts or unavailable language distance metrics.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s10::p000",
+     "summary": "LangID and NoLangID models are each trained on three subsets of the Wiktionary data.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s10::p001",
+     "summary": "LangID-High and NoLangID-High are trained on data from the 85 languages for which BIBREF13 used non-adapted wFST models.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s10::p002",
+     "summary": "LangID-Adapted and NoLangID-Adapted are trained on data from 229 languages but actually only 157 languages, omitting 23 High test set languages.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s10::p003",
+     "summary": "LangID-All and NoLangID-All are trained on data in all 311 languages in the Wiktionary training corpus.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s10::p004",
+     "summary": "Training was limited to 10,000 words per language, with 10 percent set aside for validation and a maximum of 9000 training words per language.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s11::p000",
+     "summary": "On 229 languages, LangID outperforms the baseline widely, best with all available languages, while even NoLangID beats the baseline in WER and WER 100.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s12::p000",
+     "summary": "High resource comparisons use purely monolingual wFST models, and Adapted-trained models are omitted because they performed poorly on unique writing systems like Georgian and Greek.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s12::p001",
+     "summary": "In High Resource experiments, no sequence-to-sequence approach equals wFST in WER and PER, though LangID models beat wFST in WER 100.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s12::p002",
+     "summary": "LangID-High is more compact at 15.4 MB, while the combined wFST high resource models are 197.5 MB.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s13::p000",
+     "summary": "On unseen languages, LangID models have a slight WER and PER advantage, although NoLangID models sometimes do better on WER 100.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s14::p000",
+     "summary": "Adding a language ID token always improves results when its embedding has been learned, including when the source sequence uses the wrong script, as for Arabic.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s15::p000",
+     "summary": "Language ID token embeddings are mostly uninterpretable, making unseen-language estimation difficult, so externally constructed typological representations may be more promising.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s16::p000",
+     "summary": "Phoneme embeddings show many regularities, suggesting the multilingual model learns similar embeddings for phonetically similar phonemes written with the same grapheme.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s16::p001",
+     "summary": "Phoneme embedding structure may explain strong WER 100 performance, and filtering or reranking system output might improve performance.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s17::p000",
+     "summary": "Future work could extend language ID token benefits to unseen languages using typological feature tokens from Phoible and WALS to predict orthographic rules.",
+     "group_id": "1708.01464::g00"
+    },
+    {
+     "passage_id": "1708.01464::s17::p001",
+     "summary": "The artificial token approach could also apply to monolingual English g2p by tagging loanword etymology analogously to language ID in multilingual g2p.",
+     "group_id": "1708.01464::g00"
+    }
+   ],
+   "n_raw": 52,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5530,
+    "completion_tokens": 2516,
+    "total_tokens": 8046,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

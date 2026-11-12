@@ -1,0 +1,122 @@
+{
+ "paper_id": "1803.09123",
+ "title": "Equation Embeddings",
+ "abstract": "We present an unsupervised approach for discovering semantic representations of mathematical equations. Equations are challenging to analyze because each is unique, or nearly unique. Our method, which we call equation embeddings, finds good representations of equations by using the representations of their surrounding words. We used equation embeddings to analyze four collections of scientific articles from the arXiv, covering four computer science domains (NLP, IR, AI, and ML) and $\\sim$98.5k equations. Quantitatively, we found that equation embeddings provide better models when compared to existing word embedding approaches. Qualitatively, we found that equation embeddings provide coherent semantic representations of equations and can capture semantic similarity to other equations and to words.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Equation Embeddings Models",
+  "Equation Embeddings",
+  "Equation Unit Embeddings",
+  "Computation",
+  "Empirical Study",
+  "Datasets",
+  "Experimental Setup",
+  "Results",
+  "Word Representation of Equations",
+  "Discovering Semantically Similar Equations",
+  "Conclusion"
+ ],
+ "n_paragraphs": 51,
+ "n_tokens": 3673,
+ "figures_and_tables": [
+  {
+   "caption_id": "1803.09123::fig000",
+   "paper_id": "1803.09123",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1. Top left: arXiv article snippet (Li et al., 2015) that contains an equation of a neural network layer along with its surrounding context. Highlighted in green are words whose word-equation context window contains the equation. Top right: Extracted equation (top) and its 5 nearest equations (blue rectangle) and words (green rectangle) discovered using our approach. Discovered equations relate to neural network layers while nearest words bear semantic relatedness with the equation definition. Bottom: Word-equation context window example. Highlighted in green is an example word whose word-equation context window contain the original context words (red) from the effective vocabulary that appear in a context window of size 4 along with the equation.",
+   "n_tokens": 152
+  },
+  {
+   "caption_id": "1803.09123::fig001",
+   "paper_id": "1803.09123",
+   "file": "3-Figure2-1.png",
+   "caption": "Figure 2. Examples of Syntax Layout Tree (SLT) representation of equations using a symbol window of size one. Each tuple represents the special relationship between two symbols (n-to the right; a-above; u-under; o-over; w-within).",
+   "n_tokens": 53
+  },
+  {
+   "caption_id": "1803.09123::fig002",
+   "paper_id": "1803.09123",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1. Collections statistics across arXiv articles that we use in our analysis.",
+   "n_tokens": 18
+  },
+  {
+   "caption_id": "1803.09123::fig003",
+   "paper_id": "1803.09123",
+   "file": "6-Table2-1.png",
+   "caption": "Table 2. EqEmb outperform previous embedding models; EqEmb-U further improves performance. Performance comparisons between CBOW, GloVe, PV-DM, b-emb, EqEmb and EqEmb-U using log-likelihood computed on test and validation datasets. Comparisons were done over 4 different collections of scientific articles (NLP, IR, AI and ML) and across different latent dimensions (K=25, 50, 75 and 100).",
+   "n_tokens": 94
+  },
+  {
+   "caption_id": "1803.09123::fig004",
+   "paper_id": "1803.09123",
+   "file": "7-Table3-1.png",
+   "caption": "Table 3. Example query equation (top row) and its 5 nearest equations discovered using EqEmb-U.",
+   "n_tokens": 23
+  },
+  {
+   "caption_id": "1803.09123::fig005",
+   "paper_id": "1803.09123",
+   "file": "7-Table4-1.png",
+   "caption": "Table 4. Example query equation (top row) and its 5 nearest equations (left) and words (right) discovered using EqEmb. All similar equations relate to the LDA model.",
+   "n_tokens": 40
+  },
+  {
+   "caption_id": "1803.09123::fig006",
+   "paper_id": "1803.09123",
+   "file": "7-Table5-1.png",
+   "caption": "Table 5. Example query equation (top row) and its 5 nearest equations (left column) and words (right column) discovered using EqEmb. All similar equations relate to classification performance measures such as F-measure.",
+   "n_tokens": 46
+  },
+  {
+   "caption_id": "1803.09123::fig007",
+   "paper_id": "1803.09123",
+   "file": "8-Table6-1.png",
+   "caption": "Table 6. Example query equation (top row) and its five most similar words obtained using CBOW, PV-DM, GloVe and EqEmb.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1803.09123::fig008",
+   "paper_id": "1803.09123",
+   "file": "8-Table7-1.png",
+   "caption": "Table 7. Example query which consists of 3 words (”similarity”, ”distance” and ”cosine”) and its 5 nearest equations discovered using EqEmb. For a given word query, EqEmb are able to retrieve query relevant equations.",
+   "n_tokens": 52
+  },
+  {
+   "caption_id": "1803.09123::fig009",
+   "paper_id": "1803.09123",
+   "file": "10-Table8-1.png",
+   "caption": "Table 8. CBOW: Example query equation (top row) and its top 5 nearest equations discovered with this model.",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "1803.09123::fig010",
+   "paper_id": "1803.09123",
+   "file": "10-Table9-1.png",
+   "caption": "Table 9. PV-DM: Example query equation (top row) and its top 5 nearest equations discovered model.",
+   "n_tokens": 25
+  },
+  {
+   "caption_id": "1803.09123::fig011",
+   "paper_id": "1803.09123",
+   "file": "10-Table10-1.png",
+   "caption": "Table 10. GloVe: Example query equation (top row) and its 5 nearest equations discovered with this model.",
+   "n_tokens": 25
+  },
+  {
+   "caption_id": "1803.09123::fig012",
+   "paper_id": "1803.09123",
+   "file": "11-Table11-1.png",
+   "caption": "Table 11. EqEmb: Example query equation (top row) and its 5 nearest equations discovered with this model.",
+   "n_tokens": 25
+  },
+  {
+   "caption_id": "1803.09123::fig013",
+   "paper_id": "1803.09123",
+   "file": "12-Table12-1.png",
+   "caption": "Table 12. Example query equation (top row) and its 5 nearest equations (left) and words (right) discovered using EqEmb. All similar equations relate to neural network layers such as the query equation.",
+   "n_tokens": 44
+  }
+ ]
+}

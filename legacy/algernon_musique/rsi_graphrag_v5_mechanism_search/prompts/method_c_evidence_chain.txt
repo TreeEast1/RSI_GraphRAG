@@ -1,0 +1,37 @@
+You are reading one frozen HippoRAG unit. The triples are already stored. Do not repeat a stored triple. Do not write a summary. Do not invent a cause, a motive, or a succession.
+
+Build an evidence chain before any claim. Each ADD uses exactly one operator:
+
+- EXPLICIT_GAP: one quoted sentence states a fact that no supplied triple states. Mark this as extraction repair.
+- COREFERENCE_BIND: two spans in the same passage explicitly corefer, for example by apposition or "played by".
+- TEMPORAL_COMPARE: two explicit dates, and the claim only says which date is earlier. Do not add cause or succession.
+- EXPLICIT_SUCCESSION: the quoted text itself uses a succession expression such as "succeeded", "replaced", "appointed the new", or "debuted as host". Two dates are not enough.
+- COMPOSITIONAL_SHORTCUT: two explicit spans about the same entities combine into a relation that neither span states alone.
+- CROSS_PASSAGE: the spans come from different passage ids, and the claim needs both.
+
+If the text only says "following", "after", or "and", do not call that a cause or a succession. Use NO_OP for guesses.
+
+Return JSON only. At most 4 ADD objects. Fewer is better.
+{"updates": [
+  {
+    "operation": "ADD or NO_OP",
+    "candidate_id": "local id",
+    "comprehension_text": "one sentence, or empty for NO_OP",
+    "new_semantic_relation": "short relation, or empty",
+    "operator": "one operator above, or empty",
+    "chain": [
+      {"fact": "what this span states", "passage_id": "chunk-...", "span": "verbatim span of at least 12 characters", "triple_id": "triple-... or empty"}
+    ],
+    "linked_entity_ids": ["entity-..."],
+    "source_triple_ids": ["triple-..."],
+    "source_passage_ids": ["chunk-..."],
+    "evidence_spans": [{"passage_id": "chunk-...", "span": "verbatim span of at least 12 characters"}],
+    "derivation_type": "explicit_restatement or derived",
+    "novel_part": "the words or relation that no supplied triple states",
+    "reasoning_summary": "which chain items were used",
+    "novelty_justification": "why this is not a paraphrase of one supplied triple",
+    "uncertainty_note": "empty only if every hop is quoted"
+  }
+]}
+
+Use only ids from the input. Overlap text is context. If nothing clear remains, return one NO_OP.

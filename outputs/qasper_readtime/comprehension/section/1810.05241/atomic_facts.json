@@ -1,0 +1,4740 @@
+{
+ "facts": [
+  {
+   "fact_id": "1810.05241::g00:b0:f00",
+   "subject": "Keyphrase generation",
+   "predicate": "is",
+   "object": "the task of automatically predicting keyphrases given a source text",
+   "source_passage_ids": [
+    "1810.05241::s00::p000"
+   ],
+   "source_section": "Introduction",
+   "evidence": "Keyphrase generation is the task of automatically predicting keyphrases given a source text.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b0:f01",
+   "subject": "a keyphrase",
+   "predicate": "may or may not be",
+   "object": "a substring of the source text",
+   "source_passage_ids": [
+    "1810.05241::s00::p001"
+   ],
+   "source_section": "Introduction",
+   "evidence": "a keyphrase may or may not be a substring of the source text",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b0:f02",
+   "subject": "keyphrase generation",
+   "predicate": "is",
+   "object": "an instance of the set generation problem",
+   "source_passage_ids": [
+    "1810.05241::s00::p001"
+   ],
+   "source_section": "Introduction",
+   "evidence": "Thus, keyphrase generation is an instance of the set generation problem",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b0:f03",
+   "subject": "keyphrase generation",
+   "predicate": "is often formulated as",
+   "object": "a sequence-to-sequence (Seq2Seq) generation task in most prior studies",
+   "source_passage_ids": [
+    "1810.05241::s00::p002"
+   ],
+   "source_section": "Introduction",
+   "evidence": "keyphrase generation is often formulated as a sequence-to-sequence (Seq2Seq) generation task in most prior studies",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b0:f04",
+   "subject": "Seq2Seq models",
+   "predicate": "generate",
+   "object": "phrases individually or as a longer sequence jointed by delimiting tokens",
+   "source_passage_ids": [
+    "1810.05241::s00::p002"
+   ],
+   "source_section": "Introduction",
+   "evidence": "Seq2Seq models generate phrases individually or as a longer sequence jointed by delimiting tokens.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b0:f05",
+   "subject": "standard Seq2Seq models",
+   "predicate": "generate",
+   "object": "only one sequence at a time",
+   "source_passage_ids": [
+    "1810.05241::s00::p002"
+   ],
+   "source_section": "Introduction",
+   "evidence": "Since standard Seq2Seq models generate only one sequence at a time",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b0:f06",
+   "subject": "Models",
+   "predicate": "are evaluated by taking",
+   "object": "a fixed number of top predicted phrases (typically 5 or 10)",
+   "source_passage_ids": [
+    "1810.05241::s00::p002"
+   ],
+   "source_section": "Introduction",
+   "evidence": "Models are then evaluated by taking a fixed number of top predicted phrases (typically 5 or 10)",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b0:f07",
+   "subject": "this approach",
+   "predicate": "has achieved",
+   "object": "good empirical results",
+   "source_passage_ids": [
+    "1810.05241::s00::p003"
+   ],
+   "source_section": "Introduction",
+   "evidence": "Though this approach has achieved good empirical results",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b0:f08",
+   "subject": "models that use beam search to generate multiple keyphrases",
+   "predicate": "generally lack",
+   "object": "the ability to determine the dynamic number of keyphrases needed for different source texts",
+   "source_passage_ids": [
+    "1810.05241::s00::p003"
+   ],
+   "source_section": "Introduction",
+   "evidence": "models that use beam search to generate multiple keyphrases generally lack the ability to determine the dynamic number of keyphrases needed for different source texts.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b0:f09",
+   "subject": "the parallelism in beam search",
+   "predicate": "fails to model",
+   "object": "the inter-relation among the generated phrases",
+   "source_passage_ids": [
+    "1810.05241::s00::p003"
+   ],
+   "source_section": "Introduction",
+   "evidence": "the parallelism in beam search also fails to model the inter-relation among the generated phrases",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b0:f10",
+   "subject": "existing studies",
+   "predicate": "attempt to match",
+   "object": "a fixed number of outputs against a variable number of ground truth keyphrases",
+   "source_passage_ids": [
+    "1810.05241::s00::p004"
+   ],
+   "source_section": "Introduction",
+   "evidence": "existing studies attempt to match a fixed number of outputs against a variable number of ground truth keyphrases.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b0:f11",
+   "subject": "the number of keyphrases",
+   "predicate": "can vary drastically for",
+   "object": "different source texts",
+   "source_passage_ids": [
+    "1810.05241::s00::p004"
+   ],
+   "source_section": "Introduction",
+   "evidence": "Empirically, the number of keyphrases can vary drastically for different source texts",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b0:f12",
+   "subject": "the average number of keyphrases per data point",
+   "predicate": "can range from",
+   "object": "5.3 to 15.7",
+   "source_passage_ids": [
+    "1810.05241::s00::p004"
+   ],
+   "source_section": "Introduction",
+   "evidence": "the average number of keyphrases per data point can range from 5.3 to 15.7",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b0:f13",
+   "subject": "the F1 score for the oracle model on the KP20k dataset",
+   "predicate": "is",
+   "object": "0.858 for INLINEFORM1 and 0.626 for INLINEFORM2",
+   "source_passage_ids": [
+    "1810.05241::s00::p004"
+   ],
+   "source_section": "Introduction",
+   "evidence": "the F1 score for the oracle model on the KP20k dataset is 0.858 for INLINEFORM1 and 0.626 for INLINEFORM2",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b1:f00",
+   "subject": "keyphrase extraction",
+   "predicate": "has been formulated as",
+   "object": "a two-step process",
+   "source_passage_ids": [
+    "1810.05241::s01::p000"
+   ],
+   "source_section": "Keyphrase Extraction and Generation",
+   "evidence": "In most existing literature, keyphrase extraction has been formulated as a two-step process.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b1:f01",
+   "subject": "lexical features such as part-of-speech tags",
+   "predicate": "are used to determine",
+   "object": "a list of phrase candidates by heuristic methods",
+   "source_passage_ids": [
+    "1810.05241::s01::p000"
+   ],
+   "source_section": "Keyphrase Extraction and Generation",
+   "evidence": "First, lexical features such as part-of-speech tags are used to determine a list of phrase candidates by heuristic methods",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b1:f02",
+   "subject": "a ranking algorithm",
+   "predicate": "is adopted to rank",
+   "object": "the candidate list",
+   "source_passage_ids": [
+    "1810.05241::s01::p000"
+   ],
+   "source_section": "Keyphrase Extraction and Generation",
+   "evidence": "Second, a ranking algorithm is adopted to rank the candidate list",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b1:f03",
+   "subject": "the top ranked candidates",
+   "predicate": "are selected as",
+   "object": "keyphrases",
+   "source_passage_ids": [
+    "1810.05241::s01::p000"
+   ],
+   "source_section": "Keyphrase Extraction and Generation",
+   "evidence": "the top ranked candidates are selected as keyphrases.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b1:f04",
+   "subject": "The main drawback of keyphrase extraction",
+   "predicate": "is that",
+   "object": "sometimes keyphrases are absent from the source text",
+   "source_passage_ids": [
+    "1810.05241::s01::p001"
+   ],
+   "source_section": "Keyphrase Extraction and Generation",
+   "evidence": "The main drawback of keyphrase extraction is that sometimes keyphrases are absent from the source text",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b1:f05",
+   "subject": "an extractive model",
+   "predicate": "will fail predicting",
+   "object": "those keyphrases",
+   "source_passage_ids": [
+    "1810.05241::s01::p001"
+   ],
+   "source_section": "Keyphrase Extraction and Generation",
+   "evidence": "thus an extractive model will fail predicting those keyphrases.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b1:f06",
+   "subject": "the CopyRNN",
+   "predicate": "is",
+   "object": "a neural generative model that both generates words from vocabulary and points to words from the source text",
+   "source_passage_ids": [
+    "1810.05241::s01::p001"
+   ],
+   "source_section": "Keyphrase Extraction and Generation",
+   "evidence": "BIBREF0 first proposed the CopyRNN, a neural generative model that both generates words from vocabulary and points to words from the source text.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b1:f07",
+   "subject": "none of the above works",
+   "predicate": "are able to generate",
+   "object": "variable number of phrases",
+   "source_passage_ids": [
+    "1810.05241::s01::p001"
+   ],
+   "source_section": "Keyphrase Extraction and Generation",
+   "evidence": "Note that none of the above works are able to generate variable number of phrases",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b1:f08",
+   "subject": "Seq2Seq",
+   "predicate": "has been widely used in",
+   "object": "natural language generation tasks",
+   "source_passage_ids": [
+    "1810.05241::s02::p000"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "together with the soft attention mechanism of BIBREF18 , it has been widely used in natural language generation tasks.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b1:f09",
+   "subject": "Seq2Seq",
+   "predicate": "was also applied on",
+   "object": "neural sentence simplification BIBREF25 and paraphrase generation tasks BIBREF26",
+   "source_passage_ids": [
+    "1810.05241::s02::p000"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "Seq2Seq was also applied on neural sentence simplification BIBREF25 and paraphrase generation tasks BIBREF26 .",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b1:f10",
+   "subject": "Dropout BIBREF28",
+   "predicate": "is applied to",
+   "object": "both INLINEFORM0 and INLINEFORM1 for regularization",
+   "source_passage_ids": [
+    "1810.05241::s02::p002"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "Dropout BIBREF28 is applied to both INLINEFORM0 and INLINEFORM1 for regularization.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b1:f11",
+   "subject": "The decoder",
+   "predicate": "is",
+   "object": "a uni-directional GRU",
+   "source_passage_ids": [
+    "1810.05241::s02::p003"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "The decoder is a uni-directional GRU",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b2:f00",
+   "subject": "The initial state INLINEFORM0",
+   "predicate": "is derived from",
+   "object": "the final encoder state INLINEFORM1",
+   "source_passage_ids": [
+    "1810.05241::s02::p004"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "The initial state INLINEFORM0 is derived from the final encoder state INLINEFORM1 by applying a single-layer feed-forward neural net (FNN)",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b2:f01",
+   "subject": "Dropout",
+   "predicate": "is applied to",
+   "object": "both the embeddings INLINEFORM3 and the GRU states INLINEFORM4",
+   "source_passage_ids": [
+    "1810.05241::s02::p004"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "Dropout is applied to both the embeddings INLINEFORM3 and the GRU states INLINEFORM4 .",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b2:f02",
+   "subject": "an attention mechanism BIBREF18",
+   "predicate": "is employed to infer",
+   "object": "the importance INLINEFORM1 of each source word INLINEFORM2",
+   "source_passage_ids": [
+    "1810.05241::s02::p005"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "an attention mechanism BIBREF18 is employed to infer the importance INLINEFORM1 of each source word INLINEFORM2",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b2:f03",
+   "subject": "This importance",
+   "predicate": "is measured by",
+   "object": "an energy function with a 2-layer FNN",
+   "source_passage_ids": [
+    "1810.05241::s02::p005"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "This importance is measured by an energy function with a 2-layer FNN: DISPLAYFORM0",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b2:f04",
+   "subject": "The output over all decoding steps INLINEFORM0",
+   "predicate": "define",
+   "object": "a distribution over the source sequence",
+   "source_passage_ids": [
+    "1810.05241::s02::p006"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "The output over all decoding steps INLINEFORM0 thus define a distribution over the source sequence: DISPLAYFORM0",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b2:f05",
+   "subject": "These attention scores",
+   "predicate": "are used as",
+   "object": "weights for a refined representation of the source encodings",
+   "source_passage_ids": [
+    "1810.05241::s02::p007"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "These attention scores are then used as weights for a refined representation of the source encodings",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b2:f06",
+   "subject": "a refined representation of the source encodings",
+   "predicate": "is concatenated to",
+   "object": "the decoder state INLINEFORM0",
+   "source_passage_ids": [
+    "1810.05241::s02::p007"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "which is then concatenated to the decoder state INLINEFORM0 to derive a generative distribution INLINEFORM1",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b2:f07",
+   "subject": "the output size of INLINEFORM0",
+   "predicate": "equals to",
+   "object": "the target vocabulary size",
+   "source_passage_ids": [
+    "1810.05241::s02::p008"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "where the output size of INLINEFORM0 equals to the target vocabulary size.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b2:f08",
+   "subject": "Subscript INLINEFORM1",
+   "predicate": "indicates",
+   "object": "the abstractive nature of INLINEFORM2",
+   "source_passage_ids": [
+    "1810.05241::s02::p008"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "Subscript INLINEFORM1 indicates the abstractive nature of INLINEFORM2 since it is a distribution over a prescribed vocabulary.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b2:f09",
+   "subject": "the pointer softmax BIBREF19 mechanism",
+   "predicate": "switches between",
+   "object": "generating a token INLINEFORM0 (from a vocabulary) and pointing (to a token in the source text)",
+   "source_passage_ids": [
+    "1810.05241::s02::p009"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "to switch between generating a token INLINEFORM0 (from a vocabulary) and pointing (to a token in the source text)",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b2:f10",
+   "subject": "the pointer softmax module",
+   "predicate": "computes",
+   "object": "a scalar switch INLINEFORM1 at each generation time-step",
+   "source_passage_ids": [
+    "1810.05241::s02::p009"
+   ],
+   "source_section": "Sequence to Sequence Generation",
+   "evidence": "the pointer softmax module computes a scalar switch INLINEFORM1 at each generation time-step",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f00",
+   "subject": "each data example",
+   "predicate": "contains",
+   "object": "one source text sequence and multiple target phrase sequences",
+   "source_passage_ids": [
+    "1810.05241::s03::p001"
+   ],
+   "source_section": "Model Architecture",
+   "evidence": "Since each data example contains one source text sequence and multiple target phrase sequences",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f01",
+   "subject": "each sequence",
+   "predicate": "can be of",
+   "object": "multi-word",
+   "source_passage_ids": [
+    "1810.05241::s03::p001"
+   ],
+   "source_section": "Model Architecture",
+   "evidence": "and each sequence can be of multi-word",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f02",
+   "subject": "two paradigms",
+   "predicate": "can be adopted for",
+   "object": "training Seq2Seq models",
+   "source_passage_ids": [
+    "1810.05241::s03::p001"
+   ],
+   "source_section": "Model Architecture",
+   "evidence": "two paradigms can be adopted for training Seq2Seq models.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f03",
+   "subject": "the first one",
+   "predicate": "is to divide",
+   "object": "each One2Many data example into multiple One2One examples",
+   "source_passage_ids": [
+    "1810.05241::s03::p001"
+   ],
+   "source_section": "Model Architecture",
+   "evidence": "The first one BIBREF0 is to divide each One2Many data example into multiple One2One examples",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f04",
+   "subject": "the resulting models (e.g. CopyRNN)",
+   "predicate": "can generate",
+   "object": "one phrase at once",
+   "source_passage_ids": [
+    "1810.05241::s03::p001"
+   ],
+   "source_section": "Model Architecture",
+   "evidence": "the resulting models (e.g. CopyRNN) can generate one phrase at once",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f05",
+   "subject": "the resulting models (e.g. CopyRNN)",
+   "predicate": "must rely on",
+   "object": "beam search technique to produce more unique phrases",
+   "source_passage_ids": [
+    "1810.05241::s03::p001"
+   ],
+   "source_section": "Model Architecture",
+   "evidence": "must rely on beam search technique to produce more unique phrases.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f06",
+   "subject": "One2Seq",
+   "predicate": "concatenates",
+   "object": "multiple phrases into a single sequence with a delimiter INLINEFORM0 SEP INLINEFORM1",
+   "source_passage_ids": [
+    "1810.05241::s03::p002"
+   ],
+   "source_section": "Model Architecture",
+   "evidence": "in which we concatenate multiple phrases into a single sequence with a delimiter INLINEFORM0 SEP INLINEFORM1",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f07",
+   "subject": "this concatenated sequence",
+   "predicate": "is used as",
+   "object": "the target for sequence generation during training",
+   "source_passage_ids": [
+    "1810.05241::s03::p002"
+   ],
+   "source_section": "Model Architecture",
+   "evidence": "and this concatenated sequence is then used as the target for sequence generation during training.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f08",
+   "subject": "INLINEFORM0",
+   "predicate": "denotes",
+   "object": "input text tokens",
+   "source_passage_ids": [
+    "1810.05241::s04::p000"
+   ],
+   "source_section": "Notations",
+   "evidence": "we use INLINEFORM0 to denote input text tokens",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f09",
+   "subject": "INLINEFORM1",
+   "predicate": "denotes",
+   "object": "token embeddings",
+   "source_passage_ids": [
+    "1810.05241::s04::p000"
+   ],
+   "source_section": "Notations",
+   "evidence": "INLINEFORM1 to denote token embeddings",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f10",
+   "subject": "INLINEFORM2",
+   "predicate": "denotes",
+   "object": "hidden states",
+   "source_passage_ids": [
+    "1810.05241::s04::p000"
+   ],
+   "source_section": "Notations",
+   "evidence": "INLINEFORM2 to denote hidden states",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f11",
+   "subject": "INLINEFORM3",
+   "predicate": "denotes",
+   "object": "output text tokens",
+   "source_passage_ids": [
+    "1810.05241::s04::p000"
+   ],
+   "source_section": "Notations",
+   "evidence": "INLINEFORM3 to denote output text tokens.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f12",
+   "subject": "Superscripts",
+   "predicate": "denote",
+   "object": "time-steps in a sequence",
+   "source_passage_ids": [
+    "1810.05241::s04::p000"
+   ],
+   "source_section": "Notations",
+   "evidence": "Superscripts denote time-steps in a sequence",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f13",
+   "subject": "subscripts INLINEFORM4 and INLINEFORM5",
+   "predicate": "indicate",
+   "object": "whether a variable resides in the encoder or the decoder of the model, respectively",
+   "source_passage_ids": [
+    "1810.05241::s04::p000"
+   ],
+   "source_section": "Notations",
+   "evidence": "subscripts INLINEFORM4 and INLINEFORM5 indicate whether a variable resides in the encoder or the decoder of the model, respectively.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f14",
+   "subject": "The absence of a superscript",
+   "predicate": "indicates",
+   "object": "multiplicity in the time dimension",
+   "source_passage_ids": [
+    "1810.05241::s04::p000"
+   ],
+   "source_section": "Notations",
+   "evidence": "The absence of a superscript indicates multiplicity in the time dimension.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f15",
+   "subject": "INLINEFORM6",
+   "predicate": "refers to",
+   "object": "a linear transformation",
+   "source_passage_ids": [
+    "1810.05241::s04::p000"
+   ],
+   "source_section": "Notations",
+   "evidence": "INLINEFORM6 refers to a linear transformation",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f16",
+   "subject": "INLINEFORM7",
+   "predicate": "refers to",
+   "object": "it followed by a non-linear activation function INLINEFORM8",
+   "source_passage_ids": [
+    "1810.05241::s04::p000"
+   ],
+   "source_section": "Notations",
+   "evidence": "INLINEFORM7 refers to it followed by a non-linear activation function INLINEFORM8 .",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f17",
+   "subject": "Angled brackets, INLINEFORM9",
+   "predicate": "denote",
+   "object": "concatenation",
+   "source_passage_ids": [
+    "1810.05241::s04::p000"
+   ],
+   "source_section": "Notations",
+   "evidence": "Angled brackets, INLINEFORM9 , denote concatenation.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b3:f18",
+   "subject": "Most previous keyphrase generation models",
+   "predicate": "generate",
+   "object": "multiple phrases by over-generation",
+   "source_passage_ids": [
+    "1810.05241::s05::p000"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "Most previous keyphrase generation models generate multiple phrases by over-generation",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f00",
+   "subject": "variable numbers of keyphrases",
+   "predicate": "are represented as",
+   "object": "delimiter-separated sequences",
+   "source_passage_ids": [
+    "1810.05241::s05::p001"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "Recall that we represent variable numbers of keyphrases as delimiter-separated sequences.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f01",
+   "subject": "semantic coverage",
+   "predicate": "focuses on",
+   "object": "the semantic representations of generated phrases",
+   "source_passage_ids": [
+    "1810.05241::s05::p002"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "We propose a mechanism called semantic coverage that focuses on the semantic representations of generated phrases.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f02",
+   "subject": "another uni-directional recurrent model INLINEFORM0",
+   "predicate": "is dubbed",
+   "object": "target encoder",
+   "source_passage_ids": [
+    "1810.05241::s05::p002"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "Specifically, we introduce another uni-directional recurrent model INLINEFORM0 (dubbed target encoder)",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f03",
+   "subject": "target encoder",
+   "predicate": "encodes",
+   "object": "decoder-generated tokens INLINEFORM1",
+   "source_passage_ids": [
+    "1810.05241::s05::p002"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "which encodes decoder-generated tokens INLINEFORM1 , where INLINEFORM2 , into hidden states INLINEFORM3",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f04",
+   "subject": "This state",
+   "predicate": "is taken as",
+   "object": "an extra input to the decoder GRU",
+   "source_passage_ids": [
+    "1810.05241::s05::p002"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "This state is then taken as an extra input to the decoder GRU",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f05",
+   "subject": "the resulting decoder",
+   "predicate": "is essentially",
+   "object": "a 2-layer GRU with residual connections",
+   "source_passage_ids": [
+    "1810.05241::s05::p003"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "the resulting decoder is essentially a 2-layer GRU with residual connections.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f06",
+   "subject": "target encoder's final hidden state vector INLINEFORM0",
+   "predicate": "is used as",
+   "object": "a general representation of the target phrases",
+   "source_passage_ids": [
+    "1810.05241::s05::p003"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "and use it as a general representation of the target phrases.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f07",
+   "subject": "the remaining INLINEFORM7",
+   "predicate": "are",
+   "object": "negative samples (sampled at random) from the training data",
+   "source_passage_ids": [
+    "1810.05241::s05::p003"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "and the remaining INLINEFORM7 are negative samples (sampled at random) from the training data.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f08",
+   "subject": "The target encoder",
+   "predicate": "is trained to minimize",
+   "object": "the classification loss: DISPLAYFORM0",
+   "source_passage_ids": [
+    "1810.05241::s05::p003"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "The target encoder is trained to minimize the classification loss: DISPLAYFORM0",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f09",
+   "subject": "INLINEFORM0",
+   "predicate": "is",
+   "object": "bi-linear transformation",
+   "source_passage_ids": [
+    "1810.05241::s05::p004"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "where INLINEFORM0 is bi-linear transformation.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f10",
+   "subject": "The motivation here",
+   "predicate": "is to constrain",
+   "object": "the overall representation of generated keyphrase to be semantically close to the overall meaning of the source text",
+   "source_passage_ids": [
+    "1810.05241::s05::p005"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "The motivation here is to constrain the overall representation of generated keyphrase to be semantically close to the overall meaning of the source text.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f11",
+   "subject": "the semantic coverage mechanism",
+   "predicate": "can potentially help to provide",
+   "object": "useful keyphrase information",
+   "source_passage_ids": [
+    "1810.05241::s05::p005"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "the semantic coverage mechanism can potentially help to provide useful keyphrase information and guide generation.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f12",
+   "subject": "the semantic coverage mechanism",
+   "predicate": "can potentially help to guide",
+   "object": "generation",
+   "source_passage_ids": [
+    "1810.05241::s05::p005"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "the semantic coverage mechanism can potentially help to provide useful keyphrase information and guide generation.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b4:f13",
+   "subject": "orthogonal regularization",
+   "predicate": "explicitly encourages",
+   "object": "the delimiter-generating decoder states to be different from each other",
+   "source_passage_ids": [
+    "1810.05241::s05::p006"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "which explicitly encourages the delimiter-generating decoder states to be different from each other.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f00",
+   "subject": "INLINEFORM0",
+   "predicate": "is the matrix transpose of",
+   "object": "INLINEFORM1",
+   "source_passage_ids": [
+    "1810.05241::s05::p007"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "where INLINEFORM0 is the matrix transpose of INLINEFORM1",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f01",
+   "subject": "INLINEFORM2",
+   "predicate": "is the identity matrix of rank",
+   "object": "INLINEFORM3",
+   "source_passage_ids": [
+    "1810.05241::s05::p007"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "INLINEFORM2 is the identity matrix of rank INLINEFORM3",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f02",
+   "subject": "INLINEFORM4",
+   "predicate": "indicates",
+   "object": "element wise multiplication",
+   "source_passage_ids": [
+    "1810.05241::s05::p007"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "INLINEFORM4 indicates element wise multiplication",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f03",
+   "subject": "This loss function",
+   "predicate": "improves diversity in",
+   "object": "the tokens following the delimiters",
+   "source_passage_ids": [
+    "1810.05241::s05::p007"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "and thus improves diversity in the tokens following the delimiters.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f04",
+   "subject": "the widely used negative log-likelihood loss",
+   "predicate": "is denoted as",
+   "object": "INLINEFORM0",
+   "source_passage_ids": [
+    "1810.05241::s05::p008"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "denoted as INLINEFORM0",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f05",
+   "subject": "INLINEFORM0 and INLINEFORM1",
+   "predicate": "are",
+   "object": "hyper-parameters",
+   "source_passage_ids": [
+    "1810.05241::s05::p009"
+   ],
+   "source_section": "Mechanisms for Diverse Generation",
+   "evidence": "where INLINEFORM0 and INLINEFORM1 are hyper-parameters.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f06",
+   "subject": "various decoding methods",
+   "predicate": "can be applied to generate",
+   "object": "the target sequence INLINEFORM0",
+   "source_passage_ids": [
+    "1810.05241::s06::p000"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "various decoding methods can be applied to generate the target sequence INLINEFORM0",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f07",
+   "subject": "Prior studies BIBREF0 , BIBREF7",
+   "predicate": "focus more on generating",
+   "object": "excessive number of phrases",
+   "source_passage_ids": [
+    "1810.05241::s06::p000"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "Prior studies BIBREF0 , BIBREF7 focus more on generating excessive number of phrases",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f08",
+   "subject": "models trained under One2Seq paradigm",
+   "predicate": "are capable of determining",
+   "object": "the proper number of phrases to output",
+   "source_passage_ids": [
+    "1810.05241::s06::p000"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "models trained under One2Seq paradigm are capable of determining the proper number of phrases to output",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f09",
+   "subject": "the major difference",
+   "predicate": "lies in",
+   "object": "whether a model is capable of controlling the number of phrases to output",
+   "source_passage_ids": [
+    "1810.05241::s06::p000"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "the major difference lies in whether a model is capable of controlling the number of phrases to output",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f10",
+   "subject": "traditional keyphrase tasks",
+   "predicate": "evaluate models with",
+   "object": "a fixed number of top-ranked predictions (say F-score @5 and @10)",
+   "source_passage_ids": [
+    "1810.05241::s06::p001"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "traditional keyphrase tasks evaluate models with a fixed number of top-ranked predictions (say F-score @5 and @10)",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f11",
+   "subject": "existing keyphrase generation studies",
+   "predicate": "have to over-generate phrases by means of",
+   "object": "beam search",
+   "source_passage_ids": [
+    "1810.05241::s06::p001"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "existing keyphrase generation studies have to over-generate phrases by means of beam search",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f12",
+   "subject": "beam search",
+   "predicate": "is",
+   "object": "a heuristic search algorithm that returns INLINEFORM0 approximate optimal sequences",
+   "source_passage_ids": [
+    "1810.05241::s06::p001"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "a heuristic search algorithm that returns INLINEFORM0 approximate optimal sequences",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f13",
+   "subject": "each returned sequence",
+   "predicate": "is",
+   "object": "a unique phrase itself",
+   "source_passage_ids": [
+    "1810.05241::s06::p001"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "For the One2One setting, each returned sequence is a unique phrase itself.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f14",
+   "subject": "each produced sequence",
+   "predicate": "contains",
+   "object": "several phrases",
+   "source_passage_ids": [
+    "1810.05241::s06::p001"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "But for One2Seq, each produced sequence contains several phrases",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f15",
+   "subject": "the time complexity of beam search",
+   "predicate": "is",
+   "object": "INLINEFORM0",
+   "source_passage_ids": [
+    "1810.05241::s06::p002"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "the time complexity of beam search is INLINEFORM0",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f16",
+   "subject": "INLINEFORM1",
+   "predicate": "is",
+   "object": "the beam width",
+   "source_passage_ids": [
+    "1810.05241::s06::p002"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "where INLINEFORM1 is the beam width",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f17",
+   "subject": "INLINEFORM2",
+   "predicate": "is",
+   "object": "the maximum length of generated sequences",
+   "source_passage_ids": [
+    "1810.05241::s06::p002"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "INLINEFORM2 is the maximum length of generated sequences",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f18",
+   "subject": "the exhaustive decoding",
+   "predicate": "is generally",
+   "object": "very computationally expensive",
+   "source_passage_ids": [
+    "1810.05241::s06::p002"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "Therefore the exhaustive decoding is generally very computationally expensive",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b5:f19",
+   "subject": "less than 5% of phrases generated by One2Seq models",
+   "predicate": "are",
+   "object": "unique",
+   "source_passage_ids": [
+    "1810.05241::s06::p002"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "we observe that less than 5% of phrases generated by One2Seq models are unique",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b6:f00",
+   "subject": "the number of keyphrases",
+   "predicate": "varies depending on",
+   "object": "the document and dataset genre",
+   "source_passage_ids": [
+    "1810.05241::s06::p003"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "An innate characteristic of keyphrase tasks is that the number of keyphrases varies depending on the document and dataset genre",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b6:f01",
+   "subject": "dynamically outputting a variable number of phrases",
+   "predicate": "is",
+   "object": "a desirable property for keyphrase generation models",
+   "source_passage_ids": [
+    "1810.05241::s06::p003"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "therefore dynamically outputting a variable number of phrases is a desirable property for keyphrase generation models",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b6:f02",
+   "subject": "the resulting model",
+   "predicate": "implicitly performs",
+   "object": "the additional task of dynamically estimating the proper size of the target phrase set",
+   "source_passage_ids": [
+    "1810.05241::s06::p003"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "The resulting model thus implicitly performs the additional task of dynamically estimating the proper size of the target phrase set",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b6:f03",
+   "subject": "the self-terminating decoding strategy",
+   "predicate": "generates",
+   "object": "a set of phrases in a single sequence",
+   "source_passage_ids": [
+    "1810.05241::s06::p004"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "One notable attribute of the self-terminating decoding strategy is that, by generating a set of phrases in a single sequence",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b6:f04",
+   "subject": "decoding",
+   "predicate": "can be performed more efficiently than",
+   "object": "exhaustive decoding",
+   "source_passage_ids": [
+    "1810.05241::s06::p004"
+   ],
+   "source_section": "Decoding Strategies",
+   "evidence": "decoding can be performed more efficiently than exhaustive decoding by conducting greedy search or beam search on only the top-scored sequence",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b6:f05",
+   "subject": "a model",
+   "predicate": "predicts",
+   "object": "a list of unique keyphrases INLINEFORM0 ordered by the quality of the predictions INLINEFORM1",
+   "source_passage_ids": [
+    "1810.05241::s07::p000"
+   ],
+   "source_section": "Evaluating Keyphrase Generation",
+   "evidence": "suppose that a model predicts a list of unique keyphrases INLINEFORM0 ordered by the quality of the predictions INLINEFORM1",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b6:f06",
+   "subject": "the ground truth keyphrases for the given source text",
+   "predicate": "is",
+   "object": "the oracle set INLINEFORM2",
+   "source_passage_ids": [
+    "1810.05241::s07::p000"
+   ],
+   "source_section": "Evaluating Keyphrase Generation",
+   "evidence": "and that the ground truth keyphrases for the given source text is the oracle set INLINEFORM2",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b6:f07",
+   "subject": "precision, recall, and F INLINEFORM5 score",
+   "predicate": "are conditioned on",
+   "object": "INLINEFORM6",
+   "source_passage_ids": [
+    "1810.05241::s07::p000"
+   ],
+   "source_section": "Evaluating Keyphrase Generation",
+   "evidence": "precision, recall, and F INLINEFORM5 score are consequently conditioned on INLINEFORM6 and defined as: DISPLAYFORM0",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b6:f08",
+   "subject": "the number of generated keyphrases used for evaluation",
+   "predicate": "can have",
+   "object": "a critical impact on the quality of the resulting evaluation metrics",
+   "source_passage_ids": [
+    "1810.05241::s07::p001"
+   ],
+   "source_section": "Evaluating Keyphrase Generation",
+   "evidence": "the number of generated keyphrases used for evaluation can have a critical impact on the quality of the resulting evaluation metrics",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b6:f09",
+   "subject": "A simple remedy",
+   "predicate": "is to set",
+   "object": "INLINEFORM0 as a variable number which is specific to each data example",
+   "source_passage_ids": [
+    "1810.05241::s07::p002"
+   ],
+   "source_section": "Evaluating Keyphrase Generation",
+   "evidence": "A simple remedy is to set INLINEFORM0 as a variable number which is specific to each data example",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b6:f10",
+   "subject": "both F INLINEFORM1 @ INLINEFORM2 and F INLINEFORM3 @ INLINEFORM4",
+   "predicate": "are capable of reflecting",
+   "object": "the nature of variable number of phrases for each document",
+   "source_passage_ids": [
+    "1810.05241::s07::p003"
+   ],
+   "source_section": "Evaluating Keyphrase Generation",
+   "evidence": "both F INLINEFORM1 @ INLINEFORM2 and F INLINEFORM3 @ INLINEFORM4 are capable of reflecting the nature of variable number of phrases for each document",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b6:f11",
+   "subject": "a model",
+   "predicate": "can achieve",
+   "object": "the maximum INLINEFORM5 score of INLINEFORM6",
+   "source_passage_ids": [
+    "1810.05241::s07::p003"
+   ],
+   "source_section": "Evaluating Keyphrase Generation",
+   "evidence": "a model can achieve the maximum INLINEFORM5 score of INLINEFORM6 if and only if it predicts the exact same phrases as the ground truth",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b6:f12",
+   "subject": "F INLINEFORM7 @ INLINEFORM8",
+   "predicate": "is independent from",
+   "object": "model outputs",
+   "source_passage_ids": [
+    "1810.05241::s07::p003"
+   ],
+   "source_section": "Evaluating Keyphrase Generation",
+   "evidence": "Another merit of F INLINEFORM7 @ INLINEFORM8 is that it is independent from model outputs",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f00",
+   "subject": "INLINEFORM0",
+   "predicate": "refers to",
+   "object": "the delimiter-concatenated sequence-to-sequences model described in Section SECREF3",
+   "source_passage_ids": [
+    "1810.05241::s08::p000"
+   ],
+   "source_section": "Datasets and Experiments",
+   "evidence": "We use INLINEFORM0 to refer to the delimiter-concatenated sequence-to-sequences model described in Section SECREF3",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f01",
+   "subject": "INLINEFORM1",
+   "predicate": "refers to",
+   "object": "the model augmented with orthogonal regularization and semantic coverage mechanism",
+   "source_passage_ids": [
+    "1810.05241::s08::p000"
+   ],
+   "source_section": "Datasets and Experiments",
+   "evidence": "INLINEFORM1 refers to the model augmented with orthogonal regularization and semantic coverage mechanism.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f02",
+   "subject": "ground truth keyphrases",
+   "predicate": "are sorted by",
+   "object": "their order of first occurrence in the source text",
+   "source_passage_ids": [
+    "1810.05241::s08::p001"
+   ],
+   "source_section": "Datasets and Experiments",
+   "evidence": "ground truth keyphrases are sorted by their order of first occurrence in the source text.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f03",
+   "subject": "Keyphrases that do not appear in the source text",
+   "predicate": "are appended to",
+   "object": "the end",
+   "source_passage_ids": [
+    "1810.05241::s08::p001"
+   ],
+   "source_section": "Datasets and Experiments",
+   "evidence": "Keyphrases that do not appear in the source text are appended to the end.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f04",
+   "subject": "CopyRNN",
+   "predicate": "denotes",
+   "object": "the model reported by BIBREF0",
+   "source_passage_ids": [
+    "1810.05241::s08::p002"
+   ],
+   "source_section": "Datasets and Experiments",
+   "evidence": "We use CopyRNN to denote the model reported by BIBREF0",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f05",
+   "subject": "KEA BIBREF4 and Maui BIBREF8",
+   "predicate": "are trained on",
+   "object": "a subset of 50,000 documents from either KP20k (Table TABREF35 ) or StackEx (Table TABREF37 )",
+   "source_passage_ids": [
+    "1810.05241::s08::p002"
+   ],
+   "source_section": "Datasets and Experiments",
+   "evidence": "KEA BIBREF4 and Maui BIBREF8 are trained on a subset of 50,000 documents from either KP20k (Table TABREF35 ) or StackEx (Table TABREF37 )",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f06",
+   "subject": "no existing model",
+   "predicate": "supports",
+   "object": "such decoding strategy",
+   "source_passage_ids": [
+    "1810.05241::s08::p003"
+   ],
+   "source_section": "Datasets and Experiments",
+   "evidence": "Since no existing model supports such decoding strategy, we only report results from our proposed models.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f07",
+   "subject": "KP20k",
+   "predicate": "comprises",
+   "object": "more than half a million scientific publications",
+   "source_passage_ids": [
+    "1810.05241::s09::p000"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "KP20k, for example, was introduced by BIBREF0 and comprises more than half a million scientific publications.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f08",
+   "subject": "the abstract and title",
+   "predicate": "are used as",
+   "object": "the source text",
+   "source_passage_ids": [
+    "1810.05241::s09::p000"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "For each article, the abstract and title are used as the source text",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f09",
+   "subject": "the author keywords",
+   "predicate": "are used as",
+   "object": "target",
+   "source_passage_ids": [
+    "1810.05241::s09::p000"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "while the author keywords are used as target.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f10",
+   "subject": "The other four datasets",
+   "predicate": "are used to test",
+   "object": "transferability of our model (without fine-tuning)",
+   "source_passage_ids": [
+    "1810.05241::s09::p000"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "The other four datasets contain much fewer articles, and thus used to test transferability of our model (without fine-tuning).",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f11",
+   "subject": "The new proposed F INLINEFORM2 @ INLINEFORM3 metric",
+   "predicate": "indicates",
+   "object": "consistent ranking with INLINEFORM4 for most cases",
+   "source_passage_ids": [
+    "1810.05241::s09::p001"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "The new proposed F INLINEFORM2 @ INLINEFORM3 metric indicates consistent ranking with INLINEFORM4 for most cases.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f12",
+   "subject": "its value",
+   "predicate": "is closer to",
+   "object": "INLINEFORM5 for KP20k and Krapivin",
+   "source_passage_ids": [
+    "1810.05241::s09::p001"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "we find that its value is closer to INLINEFORM5 for KP20k and Krapivin",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b7:f13",
+   "subject": "its value",
+   "predicate": "is closer to",
+   "object": "INLINEFORM6 for the other three datasets",
+   "source_passage_ids": [
+    "1810.05241::s09::p001"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "closer to INLINEFORM6 for the other three datasets.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b8:f00",
+   "subject": "neural-based models",
+   "predicate": "outperform",
+   "object": "non-neural models by large margins",
+   "source_passage_ids": [
+    "1810.05241::s09::p002"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "the neural-based models outperform non-neural models by large margins",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b8:f01",
+   "subject": "the advantage",
+   "predicate": "is more salient on",
+   "object": "NUS and SemEval",
+   "source_passage_ids": [
+    "1810.05241::s09::p002"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "on NUS and SemEval the advantage is more salient",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b8:f02",
+   "subject": "both INLINEFORM0 and INLINEFORM1",
+   "predicate": "yield",
+   "object": "comparable results to CopyRNN",
+   "source_passage_ids": [
+    "1810.05241::s09::p003"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "both INLINEFORM0 and INLINEFORM1 yield comparable results to CopyRNN",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b8:f03",
+   "subject": "One2Seq paradigm",
+   "predicate": "can work well as",
+   "object": "an alternative option for the keyphrase generation",
+   "source_passage_ids": [
+    "1810.05241::s09::p003"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "One2Seq paradigm can work well as an alternative option for the keyphrase generation",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b8:f04",
+   "subject": "INLINEFORM2",
+   "predicate": "outperforms",
+   "object": "INLINEFORM3 on all metrics",
+   "source_passage_ids": [
+    "1810.05241::s09::p003"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "INLINEFORM2 outperforms INLINEFORM3 on all metrics",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b8:f05",
+   "subject": "semantic coverage and orthogonal regularization",
+   "predicate": "help",
+   "object": "the model to generate higher quality keyphrases and achieve better generalizability",
+   "source_passage_ids": [
+    "1810.05241::s09::p003"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "the semantic coverage and orthogonal regularization help the model to generate higher quality keyphrases and achieve better generalizability",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g00:b8:f06",
+   "subject": "INLINEFORM5",
+   "predicate": "is still able to outperform",
+   "object": "One2One baselines",
+   "source_passage_ids": [
+    "1810.05241::s09::p003"
+   ],
+   "source_section": "Experiments on Scientific Publications",
+   "evidence": "INLINEFORM5 is still able to outperform One2One baselines",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "fact_id": "1810.05241::g01:b0:f00",
+   "subject": "questions on StackExchange",
+   "predicate": "contain",
+   "object": "less information than in scientific publications",
+   "source_passage_ids": [
+    "1810.05241::s10::p001"
+   ],
+   "source_section": "Experiments on The StackEx Dataset",
+   "evidence": "the questions on StackExchange contain less information than in scientific publications",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b0:f01",
+   "subject": "StackEx",
+   "predicate": "has",
+   "object": "fewer keyphrases per data point",
+   "source_passage_ids": [
+    "1810.05241::s10::p001"
+   ],
+   "source_section": "Experiments on The StackEx Dataset",
+   "evidence": "there are fewer keyphrases per data point in StackEx",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b0:f02",
+   "subject": "StackExchange",
+   "predicate": "uses",
+   "object": "a tag recommendation system",
+   "source_passage_ids": [
+    "1810.05241::s10::p001"
+   ],
+   "source_section": "Experiments on The StackEx Dataset",
+   "evidence": "StackExchange uses a tag recommendation system",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b0:f03",
+   "subject": "a tag recommendation system",
+   "predicate": "suggests",
+   "object": "topic-relevant tags to users while submitting questions",
+   "source_passage_ids": [
+    "1810.05241::s10::p001"
+   ],
+   "source_section": "Experiments on The StackEx Dataset",
+   "evidence": "suggests topic-relevant tags to users while submitting questions",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b0:f04",
+   "subject": "INLINEFORM0",
+   "predicate": "performs",
+   "object": "the best",
+   "source_passage_ids": [
+    "1810.05241::s10::p002"
+   ],
+   "source_section": "Experiments on The StackEx Dataset",
+   "evidence": "Results show INLINEFORM0 performs the best",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b0:f05",
+   "subject": "INLINEFORM0",
+   "predicate": "outperforms",
+   "object": "INLINEFORM1 by a large margin",
+   "source_passage_ids": [
+    "1810.05241::s10::p002"
+   ],
+   "source_section": "Experiments on The StackEx Dataset",
+   "evidence": "on the absent-keyphrase generation tasks, it outperforms INLINEFORM1 by a large margin",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b0:f06",
+   "subject": "beam search",
+   "predicate": "uses",
+   "object": "only the top ranked prediction sequence as output",
+   "source_passage_ids": [
+    "1810.05241::s11::p001"
+   ],
+   "source_section": "Generating Variable Number Keyphrases",
+   "evidence": "i.e., only use the top ranked prediction sequence as output",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b0:f07",
+   "subject": "no existing model",
+   "predicate": "is capable of",
+   "object": "generating variable number of keyphrases",
+   "source_passage_ids": [
+    "1810.05241::s11::p001"
+   ],
+   "source_section": "Generating Variable Number Keyphrases",
+   "evidence": "Since no existing model is capable of generating variable number of keyphrases",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b0:f08",
+   "subject": "greedy search",
+   "predicate": "outperforms",
+   "object": "beam search consistently",
+   "source_passage_ids": [
+    "1810.05241::s11::p002"
+   ],
+   "source_section": "Generating Variable Number Keyphrases",
+   "evidence": "in the variable number generation setting, greedy search outperforms beam search consistently",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b0:f09",
+   "subject": "beam search",
+   "predicate": "tends to generate",
+   "object": "short and similar sequences",
+   "source_passage_ids": [
+    "1810.05241::s11::p002"
+   ],
+   "source_section": "Generating Variable Number Keyphrases",
+   "evidence": "This may because beam search tends to generate short and similar sequences",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b0:f10",
+   "subject": "the resulting F INLINEFORM0 @ INLINEFORM1 scores",
+   "predicate": "are",
+   "object": "generally lower than results reported in previous subsections",
+   "source_passage_ids": [
+    "1810.05241::s11::p002"
+   ],
+   "source_section": "Generating Variable Number Keyphrases",
+   "evidence": "the resulting F INLINEFORM0 @ INLINEFORM1 scores are generally lower than results reported in previous subsections",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b0:f11",
+   "subject": "an over-generation decoding strategy",
+   "predicate": "may still benefit from",
+   "object": "achieving higher recall",
+   "source_passage_ids": [
+    "1810.05241::s11::p002"
+   ],
+   "source_section": "Generating Variable Number Keyphrases",
+   "evidence": "an over-generation decoding strategy may still benefit from achieving higher recall",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f00",
+   "subject": "semantic coverage",
+   "predicate": "provides significant boost to",
+   "object": "INLINEFORM1 's performance on all datasets",
+   "source_passage_ids": [
+    "1810.05241::s12::p000"
+   ],
+   "source_section": "Ablation Study",
+   "evidence": "semantic coverage provides significant boost to INLINEFORM1 's performance on all datasets",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f01",
+   "subject": "Orthogonal regularization",
+   "predicate": "hurts",
+   "object": "performance when is solely applied to INLINEFORM2 model",
+   "source_passage_ids": [
+    "1810.05241::s12::p000"
+   ],
+   "source_section": "Ablation Study",
+   "evidence": "Orthogonal regularization hurts performance when is solely applied to INLINEFORM2 model",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f02",
+   "subject": "INLINEFORM3",
+   "predicate": "outperforms",
+   "object": "INLINEFORM4 by a noticeable margin on all datasets",
+   "source_passage_ids": [
+    "1810.05241::s12::p000"
+   ],
+   "source_section": "Ablation Study",
+   "evidence": "when both components are enabled ( INLINEFORM3 ), the model outperforms INLINEFORM4 by a noticeable margin on all datasets",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f03",
+   "subject": "The resulting numbers",
+   "predicate": "are",
+   "object": "20.38 and 89.70 for INLINEFORM2 and INLINEFORM3 respectively",
+   "source_passage_ids": [
+    "1810.05241::s13::p001"
+   ],
+   "source_section": "Visualizing Diversified Generation",
+   "evidence": "The resulting numbers are 20.38 and 89.70 for INLINEFORM2 and INLINEFORM3 respectively",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f04",
+   "subject": "hidden states sampled from INLINEFORM6",
+   "predicate": "are easier to cluster",
+   "object": "hidden states sampled from INLINEFORM6",
+   "source_passage_ids": [
+    "1810.05241::s13::p001"
+   ],
+   "source_section": "Visualizing Diversified Generation",
+   "evidence": "hidden states sampled from INLINEFORM6 are easier to cluster",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f05",
+   "subject": "hidden states sampled from INLINEFORM7",
+   "predicate": "yield",
+   "object": "one mass of vectors with no obvious distinct clusters",
+   "source_passage_ids": [
+    "1810.05241::s13::p001"
+   ],
+   "source_section": "Visualizing Diversified Generation",
+   "evidence": "hidden states sampled from INLINEFORM7 yield one mass of vectors with no obvious distinct clusters",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f06",
+   "subject": "this example",
+   "predicate": "has",
+   "object": "29 ground truth phrases",
+   "source_passage_ids": [
+    "1810.05241::s14::p000"
+   ],
+   "source_section": "Qualitative Analysis",
+   "evidence": "In this example there are 29 ground truth phrases",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f07",
+   "subject": "Neither of the models",
+   "predicate": "is able to generate",
+   "object": "all of the keyphrases",
+   "source_passage_ids": [
+    "1810.05241::s14::p000"
+   ],
+   "source_section": "Qualitative Analysis",
+   "evidence": "Neither of the models is able to generate all of the keyphrases",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f08",
+   "subject": "predictions from INLINEFORM0",
+   "predicate": "all start with",
+   "object": "“test”",
+   "source_passage_ids": [
+    "1810.05241::s14::p000"
+   ],
+   "source_section": "Qualitative Analysis",
+   "evidence": "the predictions from INLINEFORM0 all start with “test”",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f09",
+   "subject": "predictions from INLINEFORM1",
+   "predicate": "are",
+   "object": "diverse",
+   "source_passage_ids": [
+    "1810.05241::s14::p000"
+   ],
+   "source_section": "Qualitative Analysis",
+   "evidence": "while predictions from INLINEFORM1 are diverse",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f10",
+   "subject": "two extra modules",
+   "predicate": "enhance",
+   "object": "generation diversity",
+   "source_passage_ids": [
+    "1810.05241::s15::p000"
+   ],
+   "source_section": "Conclusion and Future Work",
+   "evidence": "with two extra modules that enhance generation diversity",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f11",
+   "subject": "Generating absent keyphrases on scientific publication datasets",
+   "predicate": "is",
+   "object": "a rather challenging problem",
+   "source_passage_ids": [
+    "1810.05241::s16::p000"
+   ],
+   "source_section": "Experiment Results on KP20k Absent Subset",
+   "evidence": "Generating absent keyphrases on scientific publication datasets is a rather challenging problem",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f12",
+   "subject": "Existing studies",
+   "predicate": "often achieve",
+   "object": "seemingly good performance",
+   "source_passage_ids": [
+    "1810.05241::s16::p000"
+   ],
+   "source_section": "Experiment Results on KP20k Absent Subset",
+   "evidence": "Existing studies often achieve seemingly good performance by measuring recall",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f13",
+   "subject": "Existing studies",
+   "predicate": "measure",
+   "object": "recall on tens and sometimes hundreds of keyphrases",
+   "source_passage_ids": [
+    "1810.05241::s16::p000"
+   ],
+   "source_section": "Experiment Results on KP20k Absent Subset",
+   "evidence": "by measuring recall on tens and sometimes hundreds of keyphrases",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b1:f14",
+   "subject": "exhaustive decoding with a large beam size",
+   "predicate": "completely ignores",
+   "object": "precision",
+   "source_passage_ids": [
+    "1810.05241::s16::p000"
+   ],
+   "source_section": "Experiment Results on KP20k Absent Subset",
+   "evidence": "exhaustive decoding with a large beam size — thus completely ignoring precision",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b2:f00",
+   "subject": "models' R@10/50 scores",
+   "predicate": "are reported on",
+   "object": "the absent portion of five scientific paper datasets",
+   "source_passage_ids": [
+    "1810.05241::s16::p001"
+   ],
+   "source_section": "Experiment Results on KP20k Absent Subset",
+   "evidence": "We report the models' R@10/50 scores on the absent portion of five scientific paper datasets",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b2:f01",
+   "subject": "absent keyphrase prediction",
+   "predicate": "highly prefers",
+   "object": "recall-oriented models",
+   "source_passage_ids": [
+    "1810.05241::s16::p002"
+   ],
+   "source_section": "Experiment Results on KP20k Absent Subset",
+   "evidence": "The absent keyphrase prediction highly prefers recall-oriented models",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b2:f02",
+   "subject": "CopyRNN with beam size of 200",
+   "predicate": "is innately proper for",
+   "object": "this task setting",
+   "source_passage_ids": [
+    "1810.05241::s16::p002"
+   ],
+   "source_section": "Experiment Results on KP20k Absent Subset",
+   "evidence": "CopyRNN with beam size of 200 is innately proper for this task setting",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b2:f03",
+   "subject": "StackEx",
+   "predicate": "is argued to be",
+   "object": "better testbeds for absent keyphrase generation",
+   "source_passage_ids": [
+    "1810.05241::s16::p002"
+   ],
+   "source_section": "Experiment Results on KP20k Absent Subset",
+   "evidence": "We argue that StackEx is better testbeds for absent keyphrase generation.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b2:f04",
+   "subject": "word embeddings",
+   "predicate": "are initialized with",
+   "object": "100-dimensional random matrices",
+   "source_passage_ids": [
+    "1810.05241::s17::p000"
+   ],
+   "source_section": "Implementation Details",
+   "evidence": "the word embeddings are initialized with 100-dimensional random matrices",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b2:f05",
+   "subject": "negative sampling",
+   "predicate": "randomly samples",
+   "object": "16 samples from the same batch",
+   "source_passage_ids": [
+    "1810.05241::s17::p001"
+   ],
+   "source_section": "Implementation Details",
+   "evidence": "During negative sampling, we randomly sample 16 samples from the same batch",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b2:f06",
+   "subject": "target encoding loss in Equation EQREF23",
+   "predicate": "is",
+   "object": "a 17-way classification loss",
+   "source_passage_ids": [
+    "1810.05241::s17::p001"
+   ],
+   "source_section": "Implementation Details",
+   "evidence": "target encoding loss in Equation EQREF23 is a 17-way classification loss",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b2:f07",
+   "subject": "all experiments",
+   "predicate": "use",
+   "object": "a dropout rate of 0.1",
+   "source_passage_ids": [
+    "1810.05241::s17::p001"
+   ],
+   "source_section": "Implementation Details",
+   "evidence": "In all experiments, we use a dropout rate of 0.1.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b2:f08",
+   "subject": "Adam BIBREF36",
+   "predicate": "is used as",
+   "object": "the step rule for optimization",
+   "source_passage_ids": [
+    "1810.05241::s17::p002"
+   ],
+   "source_section": "Implementation Details",
+   "evidence": "We use Adam BIBREF36 as the step rule for optimization.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b2:f09",
+   "subject": "model",
+   "predicate": "is implemented using",
+   "object": "PyTorch BIBREF38 and OpenNMT BIBREF37",
+   "source_passage_ids": [
+    "1810.05241::s17::p002"
+   ],
+   "source_section": "Implementation Details",
+   "evidence": "The model is implemented using PyTorch BIBREF38 and OpenNMT BIBREF37 .",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b2:f10",
+   "subject": "exhaustive decoding",
+   "predicate": "uses",
+   "object": "a beam size of 50",
+   "source_passage_ids": [
+    "1810.05241::s17::p003"
+   ],
+   "source_section": "Implementation Details",
+   "evidence": "For exhaustive decoding, we use a beam size of 50",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b2:f11",
+   "subject": "exhaustive decoding",
+   "predicate": "uses",
+   "object": "a maximum sequence length of 40",
+   "source_passage_ids": [
+    "1810.05241::s17::p003"
+   ],
+   "source_section": "Implementation Details",
+   "evidence": "For exhaustive decoding, we use a beam size of 50 and a maximum sequence length of 40.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b3:f00",
+   "subject": "lowercase and stemming",
+   "predicate": "are performed on",
+   "object": "both the ground truth and generated keyphrases during evaluation",
+   "source_passage_ids": [
+    "1810.05241::s17::p004"
+   ],
+   "source_section": "Implementation Details",
+   "evidence": "lowercase and stemming are performed on both the ground truth and generated keyphrases during evaluation.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b3:f01",
+   "subject": "2,000 data examples",
+   "predicate": "are left out as",
+   "object": "validation set for both KP20k and StackEx",
+   "source_passage_ids": [
+    "1810.05241::s17::p005"
+   ],
+   "source_section": "Implementation Details",
+   "evidence": "We leave out 2,000 data examples as validation set for both KP20k and StackEx",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b3:f02",
+   "subject": "2,000 data examples",
+   "predicate": "are used to identify",
+   "object": "optimal checkpoints for testing",
+   "source_passage_ids": [
+    "1810.05241::s17::p005"
+   ],
+   "source_section": "Implementation Details",
+   "evidence": "use them to identify optimal checkpoints for testing.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "fact_id": "1810.05241::g01:b3:f03",
+   "subject": "all the scores reported in this paper",
+   "predicate": "are from",
+   "object": "checkpoints with best performances (F INLINEFORM0 @ INLINEFORM1 ) on validation set",
+   "source_passage_ids": [
+    "1810.05241::s17::p005"
+   ],
+   "source_section": "Implementation Details",
+   "evidence": "all the scores reported in this paper are from checkpoints with best performances (F INLINEFORM0 @ INLINEFORM1 ) on validation set.",
+   "group_id": "1810.05241::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1810.05241::g00",
+   "facts": [
+    {
+     "fact_id": "1810.05241::g00:b0:f00",
+     "subject": "Keyphrase generation",
+     "predicate": "is",
+     "object": "the task of automatically predicting keyphrases given a source text",
+     "source_passage_ids": [
+      "1810.05241::s00::p000"
+     ],
+     "source_section": "Introduction",
+     "evidence": "Keyphrase generation is the task of automatically predicting keyphrases given a source text.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b0:f01",
+     "subject": "a keyphrase",
+     "predicate": "may or may not be",
+     "object": "a substring of the source text",
+     "source_passage_ids": [
+      "1810.05241::s00::p001"
+     ],
+     "source_section": "Introduction",
+     "evidence": "a keyphrase may or may not be a substring of the source text",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b0:f02",
+     "subject": "keyphrase generation",
+     "predicate": "is",
+     "object": "an instance of the set generation problem",
+     "source_passage_ids": [
+      "1810.05241::s00::p001"
+     ],
+     "source_section": "Introduction",
+     "evidence": "Thus, keyphrase generation is an instance of the set generation problem",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b0:f03",
+     "subject": "keyphrase generation",
+     "predicate": "is often formulated as",
+     "object": "a sequence-to-sequence (Seq2Seq) generation task in most prior studies",
+     "source_passage_ids": [
+      "1810.05241::s00::p002"
+     ],
+     "source_section": "Introduction",
+     "evidence": "keyphrase generation is often formulated as a sequence-to-sequence (Seq2Seq) generation task in most prior studies",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b0:f04",
+     "subject": "Seq2Seq models",
+     "predicate": "generate",
+     "object": "phrases individually or as a longer sequence jointed by delimiting tokens",
+     "source_passage_ids": [
+      "1810.05241::s00::p002"
+     ],
+     "source_section": "Introduction",
+     "evidence": "Seq2Seq models generate phrases individually or as a longer sequence jointed by delimiting tokens.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b0:f05",
+     "subject": "standard Seq2Seq models",
+     "predicate": "generate",
+     "object": "only one sequence at a time",
+     "source_passage_ids": [
+      "1810.05241::s00::p002"
+     ],
+     "source_section": "Introduction",
+     "evidence": "Since standard Seq2Seq models generate only one sequence at a time",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b0:f06",
+     "subject": "Models",
+     "predicate": "are evaluated by taking",
+     "object": "a fixed number of top predicted phrases (typically 5 or 10)",
+     "source_passage_ids": [
+      "1810.05241::s00::p002"
+     ],
+     "source_section": "Introduction",
+     "evidence": "Models are then evaluated by taking a fixed number of top predicted phrases (typically 5 or 10)",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b0:f07",
+     "subject": "this approach",
+     "predicate": "has achieved",
+     "object": "good empirical results",
+     "source_passage_ids": [
+      "1810.05241::s00::p003"
+     ],
+     "source_section": "Introduction",
+     "evidence": "Though this approach has achieved good empirical results",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b0:f08",
+     "subject": "models that use beam search to generate multiple keyphrases",
+     "predicate": "generally lack",
+     "object": "the ability to determine the dynamic number of keyphrases needed for different source texts",
+     "source_passage_ids": [
+      "1810.05241::s00::p003"
+     ],
+     "source_section": "Introduction",
+     "evidence": "models that use beam search to generate multiple keyphrases generally lack the ability to determine the dynamic number of keyphrases needed for different source texts.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b0:f09",
+     "subject": "the parallelism in beam search",
+     "predicate": "fails to model",
+     "object": "the inter-relation among the generated phrases",
+     "source_passage_ids": [
+      "1810.05241::s00::p003"
+     ],
+     "source_section": "Introduction",
+     "evidence": "the parallelism in beam search also fails to model the inter-relation among the generated phrases",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b0:f10",
+     "subject": "existing studies",
+     "predicate": "attempt to match",
+     "object": "a fixed number of outputs against a variable number of ground truth keyphrases",
+     "source_passage_ids": [
+      "1810.05241::s00::p004"
+     ],
+     "source_section": "Introduction",
+     "evidence": "existing studies attempt to match a fixed number of outputs against a variable number of ground truth keyphrases.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b0:f11",
+     "subject": "the number of keyphrases",
+     "predicate": "can vary drastically for",
+     "object": "different source texts",
+     "source_passage_ids": [
+      "1810.05241::s00::p004"
+     ],
+     "source_section": "Introduction",
+     "evidence": "Empirically, the number of keyphrases can vary drastically for different source texts",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b0:f12",
+     "subject": "the average number of keyphrases per data point",
+     "predicate": "can range from",
+     "object": "5.3 to 15.7",
+     "source_passage_ids": [
+      "1810.05241::s00::p004"
+     ],
+     "source_section": "Introduction",
+     "evidence": "the average number of keyphrases per data point can range from 5.3 to 15.7",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b0:f13",
+     "subject": "the F1 score for the oracle model on the KP20k dataset",
+     "predicate": "is",
+     "object": "0.858 for INLINEFORM1 and 0.626 for INLINEFORM2",
+     "source_passage_ids": [
+      "1810.05241::s00::p004"
+     ],
+     "source_section": "Introduction",
+     "evidence": "the F1 score for the oracle model on the KP20k dataset is 0.858 for INLINEFORM1 and 0.626 for INLINEFORM2",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b1:f00",
+     "subject": "keyphrase extraction",
+     "predicate": "has been formulated as",
+     "object": "a two-step process",
+     "source_passage_ids": [
+      "1810.05241::s01::p000"
+     ],
+     "source_section": "Keyphrase Extraction and Generation",
+     "evidence": "In most existing literature, keyphrase extraction has been formulated as a two-step process.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b1:f01",
+     "subject": "lexical features such as part-of-speech tags",
+     "predicate": "are used to determine",
+     "object": "a list of phrase candidates by heuristic methods",
+     "source_passage_ids": [
+      "1810.05241::s01::p000"
+     ],
+     "source_section": "Keyphrase Extraction and Generation",
+     "evidence": "First, lexical features such as part-of-speech tags are used to determine a list of phrase candidates by heuristic methods",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b1:f02",
+     "subject": "a ranking algorithm",
+     "predicate": "is adopted to rank",
+     "object": "the candidate list",
+     "source_passage_ids": [
+      "1810.05241::s01::p000"
+     ],
+     "source_section": "Keyphrase Extraction and Generation",
+     "evidence": "Second, a ranking algorithm is adopted to rank the candidate list",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b1:f03",
+     "subject": "the top ranked candidates",
+     "predicate": "are selected as",
+     "object": "keyphrases",
+     "source_passage_ids": [
+      "1810.05241::s01::p000"
+     ],
+     "source_section": "Keyphrase Extraction and Generation",
+     "evidence": "the top ranked candidates are selected as keyphrases.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b1:f04",
+     "subject": "The main drawback of keyphrase extraction",
+     "predicate": "is that",
+     "object": "sometimes keyphrases are absent from the source text",
+     "source_passage_ids": [
+      "1810.05241::s01::p001"
+     ],
+     "source_section": "Keyphrase Extraction and Generation",
+     "evidence": "The main drawback of keyphrase extraction is that sometimes keyphrases are absent from the source text",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b1:f05",
+     "subject": "an extractive model",
+     "predicate": "will fail predicting",
+     "object": "those keyphrases",
+     "source_passage_ids": [
+      "1810.05241::s01::p001"
+     ],
+     "source_section": "Keyphrase Extraction and Generation",
+     "evidence": "thus an extractive model will fail predicting those keyphrases.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b1:f06",
+     "subject": "the CopyRNN",
+     "predicate": "is",
+     "object": "a neural generative model that both generates words from vocabulary and points to words from the source text",
+     "source_passage_ids": [
+      "1810.05241::s01::p001"
+     ],
+     "source_section": "Keyphrase Extraction and Generation",
+     "evidence": "BIBREF0 first proposed the CopyRNN, a neural generative model that both generates words from vocabulary and points to words from the source text.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b1:f07",
+     "subject": "none of the above works",
+     "predicate": "are able to generate",
+     "object": "variable number of phrases",
+     "source_passage_ids": [
+      "1810.05241::s01::p001"
+     ],
+     "source_section": "Keyphrase Extraction and Generation",
+     "evidence": "Note that none of the above works are able to generate variable number of phrases",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b1:f08",
+     "subject": "Seq2Seq",
+     "predicate": "has been widely used in",
+     "object": "natural language generation tasks",
+     "source_passage_ids": [
+      "1810.05241::s02::p000"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "together with the soft attention mechanism of BIBREF18 , it has been widely used in natural language generation tasks.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b1:f09",
+     "subject": "Seq2Seq",
+     "predicate": "was also applied on",
+     "object": "neural sentence simplification BIBREF25 and paraphrase generation tasks BIBREF26",
+     "source_passage_ids": [
+      "1810.05241::s02::p000"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "Seq2Seq was also applied on neural sentence simplification BIBREF25 and paraphrase generation tasks BIBREF26 .",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b1:f10",
+     "subject": "Dropout BIBREF28",
+     "predicate": "is applied to",
+     "object": "both INLINEFORM0 and INLINEFORM1 for regularization",
+     "source_passage_ids": [
+      "1810.05241::s02::p002"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "Dropout BIBREF28 is applied to both INLINEFORM0 and INLINEFORM1 for regularization.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b1:f11",
+     "subject": "The decoder",
+     "predicate": "is",
+     "object": "a uni-directional GRU",
+     "source_passage_ids": [
+      "1810.05241::s02::p003"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "The decoder is a uni-directional GRU",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b2:f00",
+     "subject": "The initial state INLINEFORM0",
+     "predicate": "is derived from",
+     "object": "the final encoder state INLINEFORM1",
+     "source_passage_ids": [
+      "1810.05241::s02::p004"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "The initial state INLINEFORM0 is derived from the final encoder state INLINEFORM1 by applying a single-layer feed-forward neural net (FNN)",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b2:f01",
+     "subject": "Dropout",
+     "predicate": "is applied to",
+     "object": "both the embeddings INLINEFORM3 and the GRU states INLINEFORM4",
+     "source_passage_ids": [
+      "1810.05241::s02::p004"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "Dropout is applied to both the embeddings INLINEFORM3 and the GRU states INLINEFORM4 .",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b2:f02",
+     "subject": "an attention mechanism BIBREF18",
+     "predicate": "is employed to infer",
+     "object": "the importance INLINEFORM1 of each source word INLINEFORM2",
+     "source_passage_ids": [
+      "1810.05241::s02::p005"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "an attention mechanism BIBREF18 is employed to infer the importance INLINEFORM1 of each source word INLINEFORM2",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b2:f03",
+     "subject": "This importance",
+     "predicate": "is measured by",
+     "object": "an energy function with a 2-layer FNN",
+     "source_passage_ids": [
+      "1810.05241::s02::p005"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "This importance is measured by an energy function with a 2-layer FNN: DISPLAYFORM0",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b2:f04",
+     "subject": "The output over all decoding steps INLINEFORM0",
+     "predicate": "define",
+     "object": "a distribution over the source sequence",
+     "source_passage_ids": [
+      "1810.05241::s02::p006"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "The output over all decoding steps INLINEFORM0 thus define a distribution over the source sequence: DISPLAYFORM0",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b2:f05",
+     "subject": "These attention scores",
+     "predicate": "are used as",
+     "object": "weights for a refined representation of the source encodings",
+     "source_passage_ids": [
+      "1810.05241::s02::p007"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "These attention scores are then used as weights for a refined representation of the source encodings",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b2:f06",
+     "subject": "a refined representation of the source encodings",
+     "predicate": "is concatenated to",
+     "object": "the decoder state INLINEFORM0",
+     "source_passage_ids": [
+      "1810.05241::s02::p007"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "which is then concatenated to the decoder state INLINEFORM0 to derive a generative distribution INLINEFORM1",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b2:f07",
+     "subject": "the output size of INLINEFORM0",
+     "predicate": "equals to",
+     "object": "the target vocabulary size",
+     "source_passage_ids": [
+      "1810.05241::s02::p008"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "where the output size of INLINEFORM0 equals to the target vocabulary size.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b2:f08",
+     "subject": "Subscript INLINEFORM1",
+     "predicate": "indicates",
+     "object": "the abstractive nature of INLINEFORM2",
+     "source_passage_ids": [
+      "1810.05241::s02::p008"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "Subscript INLINEFORM1 indicates the abstractive nature of INLINEFORM2 since it is a distribution over a prescribed vocabulary.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b2:f09",
+     "subject": "the pointer softmax BIBREF19 mechanism",
+     "predicate": "switches between",
+     "object": "generating a token INLINEFORM0 (from a vocabulary) and pointing (to a token in the source text)",
+     "source_passage_ids": [
+      "1810.05241::s02::p009"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "to switch between generating a token INLINEFORM0 (from a vocabulary) and pointing (to a token in the source text)",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b2:f10",
+     "subject": "the pointer softmax module",
+     "predicate": "computes",
+     "object": "a scalar switch INLINEFORM1 at each generation time-step",
+     "source_passage_ids": [
+      "1810.05241::s02::p009"
+     ],
+     "source_section": "Sequence to Sequence Generation",
+     "evidence": "the pointer softmax module computes a scalar switch INLINEFORM1 at each generation time-step",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f00",
+     "subject": "each data example",
+     "predicate": "contains",
+     "object": "one source text sequence and multiple target phrase sequences",
+     "source_passage_ids": [
+      "1810.05241::s03::p001"
+     ],
+     "source_section": "Model Architecture",
+     "evidence": "Since each data example contains one source text sequence and multiple target phrase sequences",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f01",
+     "subject": "each sequence",
+     "predicate": "can be of",
+     "object": "multi-word",
+     "source_passage_ids": [
+      "1810.05241::s03::p001"
+     ],
+     "source_section": "Model Architecture",
+     "evidence": "and each sequence can be of multi-word",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f02",
+     "subject": "two paradigms",
+     "predicate": "can be adopted for",
+     "object": "training Seq2Seq models",
+     "source_passage_ids": [
+      "1810.05241::s03::p001"
+     ],
+     "source_section": "Model Architecture",
+     "evidence": "two paradigms can be adopted for training Seq2Seq models.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f03",
+     "subject": "the first one",
+     "predicate": "is to divide",
+     "object": "each One2Many data example into multiple One2One examples",
+     "source_passage_ids": [
+      "1810.05241::s03::p001"
+     ],
+     "source_section": "Model Architecture",
+     "evidence": "The first one BIBREF0 is to divide each One2Many data example into multiple One2One examples",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f04",
+     "subject": "the resulting models (e.g. CopyRNN)",
+     "predicate": "can generate",
+     "object": "one phrase at once",
+     "source_passage_ids": [
+      "1810.05241::s03::p001"
+     ],
+     "source_section": "Model Architecture",
+     "evidence": "the resulting models (e.g. CopyRNN) can generate one phrase at once",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f05",
+     "subject": "the resulting models (e.g. CopyRNN)",
+     "predicate": "must rely on",
+     "object": "beam search technique to produce more unique phrases",
+     "source_passage_ids": [
+      "1810.05241::s03::p001"
+     ],
+     "source_section": "Model Architecture",
+     "evidence": "must rely on beam search technique to produce more unique phrases.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f06",
+     "subject": "One2Seq",
+     "predicate": "concatenates",
+     "object": "multiple phrases into a single sequence with a delimiter INLINEFORM0 SEP INLINEFORM1",
+     "source_passage_ids": [
+      "1810.05241::s03::p002"
+     ],
+     "source_section": "Model Architecture",
+     "evidence": "in which we concatenate multiple phrases into a single sequence with a delimiter INLINEFORM0 SEP INLINEFORM1",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f07",
+     "subject": "this concatenated sequence",
+     "predicate": "is used as",
+     "object": "the target for sequence generation during training",
+     "source_passage_ids": [
+      "1810.05241::s03::p002"
+     ],
+     "source_section": "Model Architecture",
+     "evidence": "and this concatenated sequence is then used as the target for sequence generation during training.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f08",
+     "subject": "INLINEFORM0",
+     "predicate": "denotes",
+     "object": "input text tokens",
+     "source_passage_ids": [
+      "1810.05241::s04::p000"
+     ],
+     "source_section": "Notations",
+     "evidence": "we use INLINEFORM0 to denote input text tokens",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f09",
+     "subject": "INLINEFORM1",
+     "predicate": "denotes",
+     "object": "token embeddings",
+     "source_passage_ids": [
+      "1810.05241::s04::p000"
+     ],
+     "source_section": "Notations",
+     "evidence": "INLINEFORM1 to denote token embeddings",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f10",
+     "subject": "INLINEFORM2",
+     "predicate": "denotes",
+     "object": "hidden states",
+     "source_passage_ids": [
+      "1810.05241::s04::p000"
+     ],
+     "source_section": "Notations",
+     "evidence": "INLINEFORM2 to denote hidden states",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f11",
+     "subject": "INLINEFORM3",
+     "predicate": "denotes",
+     "object": "output text tokens",
+     "source_passage_ids": [
+      "1810.05241::s04::p000"
+     ],
+     "source_section": "Notations",
+     "evidence": "INLINEFORM3 to denote output text tokens.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f12",
+     "subject": "Superscripts",
+     "predicate": "denote",
+     "object": "time-steps in a sequence",
+     "source_passage_ids": [
+      "1810.05241::s04::p000"
+     ],
+     "source_section": "Notations",
+     "evidence": "Superscripts denote time-steps in a sequence",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f13",
+     "subject": "subscripts INLINEFORM4 and INLINEFORM5",
+     "predicate": "indicate",
+     "object": "whether a variable resides in the encoder or the decoder of the model, respectively",
+     "source_passage_ids": [
+      "1810.05241::s04::p000"
+     ],
+     "source_section": "Notations",
+     "evidence": "subscripts INLINEFORM4 and INLINEFORM5 indicate whether a variable resides in the encoder or the decoder of the model, respectively.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f14",
+     "subject": "The absence of a superscript",
+     "predicate": "indicates",
+     "object": "multiplicity in the time dimension",
+     "source_passage_ids": [
+      "1810.05241::s04::p000"
+     ],
+     "source_section": "Notations",
+     "evidence": "The absence of a superscript indicates multiplicity in the time dimension.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f15",
+     "subject": "INLINEFORM6",
+     "predicate": "refers to",
+     "object": "a linear transformation",
+     "source_passage_ids": [
+      "1810.05241::s04::p000"
+     ],
+     "source_section": "Notations",
+     "evidence": "INLINEFORM6 refers to a linear transformation",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f16",
+     "subject": "INLINEFORM7",
+     "predicate": "refers to",
+     "object": "it followed by a non-linear activation function INLINEFORM8",
+     "source_passage_ids": [
+      "1810.05241::s04::p000"
+     ],
+     "source_section": "Notations",
+     "evidence": "INLINEFORM7 refers to it followed by a non-linear activation function INLINEFORM8 .",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f17",
+     "subject": "Angled brackets, INLINEFORM9",
+     "predicate": "denote",
+     "object": "concatenation",
+     "source_passage_ids": [
+      "1810.05241::s04::p000"
+     ],
+     "source_section": "Notations",
+     "evidence": "Angled brackets, INLINEFORM9 , denote concatenation.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b3:f18",
+     "subject": "Most previous keyphrase generation models",
+     "predicate": "generate",
+     "object": "multiple phrases by over-generation",
+     "source_passage_ids": [
+      "1810.05241::s05::p000"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "Most previous keyphrase generation models generate multiple phrases by over-generation",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f00",
+     "subject": "variable numbers of keyphrases",
+     "predicate": "are represented as",
+     "object": "delimiter-separated sequences",
+     "source_passage_ids": [
+      "1810.05241::s05::p001"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "Recall that we represent variable numbers of keyphrases as delimiter-separated sequences.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f01",
+     "subject": "semantic coverage",
+     "predicate": "focuses on",
+     "object": "the semantic representations of generated phrases",
+     "source_passage_ids": [
+      "1810.05241::s05::p002"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "We propose a mechanism called semantic coverage that focuses on the semantic representations of generated phrases.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f02",
+     "subject": "another uni-directional recurrent model INLINEFORM0",
+     "predicate": "is dubbed",
+     "object": "target encoder",
+     "source_passage_ids": [
+      "1810.05241::s05::p002"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "Specifically, we introduce another uni-directional recurrent model INLINEFORM0 (dubbed target encoder)",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f03",
+     "subject": "target encoder",
+     "predicate": "encodes",
+     "object": "decoder-generated tokens INLINEFORM1",
+     "source_passage_ids": [
+      "1810.05241::s05::p002"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "which encodes decoder-generated tokens INLINEFORM1 , where INLINEFORM2 , into hidden states INLINEFORM3",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f04",
+     "subject": "This state",
+     "predicate": "is taken as",
+     "object": "an extra input to the decoder GRU",
+     "source_passage_ids": [
+      "1810.05241::s05::p002"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "This state is then taken as an extra input to the decoder GRU",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f05",
+     "subject": "the resulting decoder",
+     "predicate": "is essentially",
+     "object": "a 2-layer GRU with residual connections",
+     "source_passage_ids": [
+      "1810.05241::s05::p003"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "the resulting decoder is essentially a 2-layer GRU with residual connections.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f06",
+     "subject": "target encoder's final hidden state vector INLINEFORM0",
+     "predicate": "is used as",
+     "object": "a general representation of the target phrases",
+     "source_passage_ids": [
+      "1810.05241::s05::p003"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "and use it as a general representation of the target phrases.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f07",
+     "subject": "the remaining INLINEFORM7",
+     "predicate": "are",
+     "object": "negative samples (sampled at random) from the training data",
+     "source_passage_ids": [
+      "1810.05241::s05::p003"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "and the remaining INLINEFORM7 are negative samples (sampled at random) from the training data.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f08",
+     "subject": "The target encoder",
+     "predicate": "is trained to minimize",
+     "object": "the classification loss: DISPLAYFORM0",
+     "source_passage_ids": [
+      "1810.05241::s05::p003"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "The target encoder is trained to minimize the classification loss: DISPLAYFORM0",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f09",
+     "subject": "INLINEFORM0",
+     "predicate": "is",
+     "object": "bi-linear transformation",
+     "source_passage_ids": [
+      "1810.05241::s05::p004"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "where INLINEFORM0 is bi-linear transformation.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f10",
+     "subject": "The motivation here",
+     "predicate": "is to constrain",
+     "object": "the overall representation of generated keyphrase to be semantically close to the overall meaning of the source text",
+     "source_passage_ids": [
+      "1810.05241::s05::p005"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "The motivation here is to constrain the overall representation of generated keyphrase to be semantically close to the overall meaning of the source text.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f11",
+     "subject": "the semantic coverage mechanism",
+     "predicate": "can potentially help to provide",
+     "object": "useful keyphrase information",
+     "source_passage_ids": [
+      "1810.05241::s05::p005"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "the semantic coverage mechanism can potentially help to provide useful keyphrase information and guide generation.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f12",
+     "subject": "the semantic coverage mechanism",
+     "predicate": "can potentially help to guide",
+     "object": "generation",
+     "source_passage_ids": [
+      "1810.05241::s05::p005"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "the semantic coverage mechanism can potentially help to provide useful keyphrase information and guide generation.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b4:f13",
+     "subject": "orthogonal regularization",
+     "predicate": "explicitly encourages",
+     "object": "the delimiter-generating decoder states to be different from each other",
+     "source_passage_ids": [
+      "1810.05241::s05::p006"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "which explicitly encourages the delimiter-generating decoder states to be different from each other.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f00",
+     "subject": "INLINEFORM0",
+     "predicate": "is the matrix transpose of",
+     "object": "INLINEFORM1",
+     "source_passage_ids": [
+      "1810.05241::s05::p007"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "where INLINEFORM0 is the matrix transpose of INLINEFORM1",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f01",
+     "subject": "INLINEFORM2",
+     "predicate": "is the identity matrix of rank",
+     "object": "INLINEFORM3",
+     "source_passage_ids": [
+      "1810.05241::s05::p007"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "INLINEFORM2 is the identity matrix of rank INLINEFORM3",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f02",
+     "subject": "INLINEFORM4",
+     "predicate": "indicates",
+     "object": "element wise multiplication",
+     "source_passage_ids": [
+      "1810.05241::s05::p007"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "INLINEFORM4 indicates element wise multiplication",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f03",
+     "subject": "This loss function",
+     "predicate": "improves diversity in",
+     "object": "the tokens following the delimiters",
+     "source_passage_ids": [
+      "1810.05241::s05::p007"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "and thus improves diversity in the tokens following the delimiters.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f04",
+     "subject": "the widely used negative log-likelihood loss",
+     "predicate": "is denoted as",
+     "object": "INLINEFORM0",
+     "source_passage_ids": [
+      "1810.05241::s05::p008"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "denoted as INLINEFORM0",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f05",
+     "subject": "INLINEFORM0 and INLINEFORM1",
+     "predicate": "are",
+     "object": "hyper-parameters",
+     "source_passage_ids": [
+      "1810.05241::s05::p009"
+     ],
+     "source_section": "Mechanisms for Diverse Generation",
+     "evidence": "where INLINEFORM0 and INLINEFORM1 are hyper-parameters.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f06",
+     "subject": "various decoding methods",
+     "predicate": "can be applied to generate",
+     "object": "the target sequence INLINEFORM0",
+     "source_passage_ids": [
+      "1810.05241::s06::p000"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "various decoding methods can be applied to generate the target sequence INLINEFORM0",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f07",
+     "subject": "Prior studies BIBREF0 , BIBREF7",
+     "predicate": "focus more on generating",
+     "object": "excessive number of phrases",
+     "source_passage_ids": [
+      "1810.05241::s06::p000"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "Prior studies BIBREF0 , BIBREF7 focus more on generating excessive number of phrases",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f08",
+     "subject": "models trained under One2Seq paradigm",
+     "predicate": "are capable of determining",
+     "object": "the proper number of phrases to output",
+     "source_passage_ids": [
+      "1810.05241::s06::p000"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "models trained under One2Seq paradigm are capable of determining the proper number of phrases to output",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f09",
+     "subject": "the major difference",
+     "predicate": "lies in",
+     "object": "whether a model is capable of controlling the number of phrases to output",
+     "source_passage_ids": [
+      "1810.05241::s06::p000"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "the major difference lies in whether a model is capable of controlling the number of phrases to output",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f10",
+     "subject": "traditional keyphrase tasks",
+     "predicate": "evaluate models with",
+     "object": "a fixed number of top-ranked predictions (say F-score @5 and @10)",
+     "source_passage_ids": [
+      "1810.05241::s06::p001"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "traditional keyphrase tasks evaluate models with a fixed number of top-ranked predictions (say F-score @5 and @10)",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f11",
+     "subject": "existing keyphrase generation studies",
+     "predicate": "have to over-generate phrases by means of",
+     "object": "beam search",
+     "source_passage_ids": [
+      "1810.05241::s06::p001"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "existing keyphrase generation studies have to over-generate phrases by means of beam search",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f12",
+     "subject": "beam search",
+     "predicate": "is",
+     "object": "a heuristic search algorithm that returns INLINEFORM0 approximate optimal sequences",
+     "source_passage_ids": [
+      "1810.05241::s06::p001"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "a heuristic search algorithm that returns INLINEFORM0 approximate optimal sequences",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f13",
+     "subject": "each returned sequence",
+     "predicate": "is",
+     "object": "a unique phrase itself",
+     "source_passage_ids": [
+      "1810.05241::s06::p001"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "For the One2One setting, each returned sequence is a unique phrase itself.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f14",
+     "subject": "each produced sequence",
+     "predicate": "contains",
+     "object": "several phrases",
+     "source_passage_ids": [
+      "1810.05241::s06::p001"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "But for One2Seq, each produced sequence contains several phrases",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f15",
+     "subject": "the time complexity of beam search",
+     "predicate": "is",
+     "object": "INLINEFORM0",
+     "source_passage_ids": [
+      "1810.05241::s06::p002"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "the time complexity of beam search is INLINEFORM0",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f16",
+     "subject": "INLINEFORM1",
+     "predicate": "is",
+     "object": "the beam width",
+     "source_passage_ids": [
+      "1810.05241::s06::p002"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "where INLINEFORM1 is the beam width",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f17",
+     "subject": "INLINEFORM2",
+     "predicate": "is",
+     "object": "the maximum length of generated sequences",
+     "source_passage_ids": [
+      "1810.05241::s06::p002"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "INLINEFORM2 is the maximum length of generated sequences",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f18",
+     "subject": "the exhaustive decoding",
+     "predicate": "is generally",
+     "object": "very computationally expensive",
+     "source_passage_ids": [
+      "1810.05241::s06::p002"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "Therefore the exhaustive decoding is generally very computationally expensive",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b5:f19",
+     "subject": "less than 5% of phrases generated by One2Seq models",
+     "predicate": "are",
+     "object": "unique",
+     "source_passage_ids": [
+      "1810.05241::s06::p002"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "we observe that less than 5% of phrases generated by One2Seq models are unique",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b6:f00",
+     "subject": "the number of keyphrases",
+     "predicate": "varies depending on",
+     "object": "the document and dataset genre",
+     "source_passage_ids": [
+      "1810.05241::s06::p003"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "An innate characteristic of keyphrase tasks is that the number of keyphrases varies depending on the document and dataset genre",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b6:f01",
+     "subject": "dynamically outputting a variable number of phrases",
+     "predicate": "is",
+     "object": "a desirable property for keyphrase generation models",
+     "source_passage_ids": [
+      "1810.05241::s06::p003"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "therefore dynamically outputting a variable number of phrases is a desirable property for keyphrase generation models",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b6:f02",
+     "subject": "the resulting model",
+     "predicate": "implicitly performs",
+     "object": "the additional task of dynamically estimating the proper size of the target phrase set",
+     "source_passage_ids": [
+      "1810.05241::s06::p003"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "The resulting model thus implicitly performs the additional task of dynamically estimating the proper size of the target phrase set",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b6:f03",
+     "subject": "the self-terminating decoding strategy",
+     "predicate": "generates",
+     "object": "a set of phrases in a single sequence",
+     "source_passage_ids": [
+      "1810.05241::s06::p004"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "One notable attribute of the self-terminating decoding strategy is that, by generating a set of phrases in a single sequence",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b6:f04",
+     "subject": "decoding",
+     "predicate": "can be performed more efficiently than",
+     "object": "exhaustive decoding",
+     "source_passage_ids": [
+      "1810.05241::s06::p004"
+     ],
+     "source_section": "Decoding Strategies",
+     "evidence": "decoding can be performed more efficiently than exhaustive decoding by conducting greedy search or beam search on only the top-scored sequence",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b6:f05",
+     "subject": "a model",
+     "predicate": "predicts",
+     "object": "a list of unique keyphrases INLINEFORM0 ordered by the quality of the predictions INLINEFORM1",
+     "source_passage_ids": [
+      "1810.05241::s07::p000"
+     ],
+     "source_section": "Evaluating Keyphrase Generation",
+     "evidence": "suppose that a model predicts a list of unique keyphrases INLINEFORM0 ordered by the quality of the predictions INLINEFORM1",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b6:f06",
+     "subject": "the ground truth keyphrases for the given source text",
+     "predicate": "is",
+     "object": "the oracle set INLINEFORM2",
+     "source_passage_ids": [
+      "1810.05241::s07::p000"
+     ],
+     "source_section": "Evaluating Keyphrase Generation",
+     "evidence": "and that the ground truth keyphrases for the given source text is the oracle set INLINEFORM2",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b6:f07",
+     "subject": "precision, recall, and F INLINEFORM5 score",
+     "predicate": "are conditioned on",
+     "object": "INLINEFORM6",
+     "source_passage_ids": [
+      "1810.05241::s07::p000"
+     ],
+     "source_section": "Evaluating Keyphrase Generation",
+     "evidence": "precision, recall, and F INLINEFORM5 score are consequently conditioned on INLINEFORM6 and defined as: DISPLAYFORM0",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b6:f08",
+     "subject": "the number of generated keyphrases used for evaluation",
+     "predicate": "can have",
+     "object": "a critical impact on the quality of the resulting evaluation metrics",
+     "source_passage_ids": [
+      "1810.05241::s07::p001"
+     ],
+     "source_section": "Evaluating Keyphrase Generation",
+     "evidence": "the number of generated keyphrases used for evaluation can have a critical impact on the quality of the resulting evaluation metrics",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b6:f09",
+     "subject": "A simple remedy",
+     "predicate": "is to set",
+     "object": "INLINEFORM0 as a variable number which is specific to each data example",
+     "source_passage_ids": [
+      "1810.05241::s07::p002"
+     ],
+     "source_section": "Evaluating Keyphrase Generation",
+     "evidence": "A simple remedy is to set INLINEFORM0 as a variable number which is specific to each data example",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b6:f10",
+     "subject": "both F INLINEFORM1 @ INLINEFORM2 and F INLINEFORM3 @ INLINEFORM4",
+     "predicate": "are capable of reflecting",
+     "object": "the nature of variable number of phrases for each document",
+     "source_passage_ids": [
+      "1810.05241::s07::p003"
+     ],
+     "source_section": "Evaluating Keyphrase Generation",
+     "evidence": "both F INLINEFORM1 @ INLINEFORM2 and F INLINEFORM3 @ INLINEFORM4 are capable of reflecting the nature of variable number of phrases for each document",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b6:f11",
+     "subject": "a model",
+     "predicate": "can achieve",
+     "object": "the maximum INLINEFORM5 score of INLINEFORM6",
+     "source_passage_ids": [
+      "1810.05241::s07::p003"
+     ],
+     "source_section": "Evaluating Keyphrase Generation",
+     "evidence": "a model can achieve the maximum INLINEFORM5 score of INLINEFORM6 if and only if it predicts the exact same phrases as the ground truth",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b6:f12",
+     "subject": "F INLINEFORM7 @ INLINEFORM8",
+     "predicate": "is independent from",
+     "object": "model outputs",
+     "source_passage_ids": [
+      "1810.05241::s07::p003"
+     ],
+     "source_section": "Evaluating Keyphrase Generation",
+     "evidence": "Another merit of F INLINEFORM7 @ INLINEFORM8 is that it is independent from model outputs",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f00",
+     "subject": "INLINEFORM0",
+     "predicate": "refers to",
+     "object": "the delimiter-concatenated sequence-to-sequences model described in Section SECREF3",
+     "source_passage_ids": [
+      "1810.05241::s08::p000"
+     ],
+     "source_section": "Datasets and Experiments",
+     "evidence": "We use INLINEFORM0 to refer to the delimiter-concatenated sequence-to-sequences model described in Section SECREF3",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f01",
+     "subject": "INLINEFORM1",
+     "predicate": "refers to",
+     "object": "the model augmented with orthogonal regularization and semantic coverage mechanism",
+     "source_passage_ids": [
+      "1810.05241::s08::p000"
+     ],
+     "source_section": "Datasets and Experiments",
+     "evidence": "INLINEFORM1 refers to the model augmented with orthogonal regularization and semantic coverage mechanism.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f02",
+     "subject": "ground truth keyphrases",
+     "predicate": "are sorted by",
+     "object": "their order of first occurrence in the source text",
+     "source_passage_ids": [
+      "1810.05241::s08::p001"
+     ],
+     "source_section": "Datasets and Experiments",
+     "evidence": "ground truth keyphrases are sorted by their order of first occurrence in the source text.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f03",
+     "subject": "Keyphrases that do not appear in the source text",
+     "predicate": "are appended to",
+     "object": "the end",
+     "source_passage_ids": [
+      "1810.05241::s08::p001"
+     ],
+     "source_section": "Datasets and Experiments",
+     "evidence": "Keyphrases that do not appear in the source text are appended to the end.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f04",
+     "subject": "CopyRNN",
+     "predicate": "denotes",
+     "object": "the model reported by BIBREF0",
+     "source_passage_ids": [
+      "1810.05241::s08::p002"
+     ],
+     "source_section": "Datasets and Experiments",
+     "evidence": "We use CopyRNN to denote the model reported by BIBREF0",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f05",
+     "subject": "KEA BIBREF4 and Maui BIBREF8",
+     "predicate": "are trained on",
+     "object": "a subset of 50,000 documents from either KP20k (Table TABREF35 ) or StackEx (Table TABREF37 )",
+     "source_passage_ids": [
+      "1810.05241::s08::p002"
+     ],
+     "source_section": "Datasets and Experiments",
+     "evidence": "KEA BIBREF4 and Maui BIBREF8 are trained on a subset of 50,000 documents from either KP20k (Table TABREF35 ) or StackEx (Table TABREF37 )",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f06",
+     "subject": "no existing model",
+     "predicate": "supports",
+     "object": "such decoding strategy",
+     "source_passage_ids": [
+      "1810.05241::s08::p003"
+     ],
+     "source_section": "Datasets and Experiments",
+     "evidence": "Since no existing model supports such decoding strategy, we only report results from our proposed models.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f07",
+     "subject": "KP20k",
+     "predicate": "comprises",
+     "object": "more than half a million scientific publications",
+     "source_passage_ids": [
+      "1810.05241::s09::p000"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "KP20k, for example, was introduced by BIBREF0 and comprises more than half a million scientific publications.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f08",
+     "subject": "the abstract and title",
+     "predicate": "are used as",
+     "object": "the source text",
+     "source_passage_ids": [
+      "1810.05241::s09::p000"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "For each article, the abstract and title are used as the source text",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f09",
+     "subject": "the author keywords",
+     "predicate": "are used as",
+     "object": "target",
+     "source_passage_ids": [
+      "1810.05241::s09::p000"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "while the author keywords are used as target.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f10",
+     "subject": "The other four datasets",
+     "predicate": "are used to test",
+     "object": "transferability of our model (without fine-tuning)",
+     "source_passage_ids": [
+      "1810.05241::s09::p000"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "The other four datasets contain much fewer articles, and thus used to test transferability of our model (without fine-tuning).",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f11",
+     "subject": "The new proposed F INLINEFORM2 @ INLINEFORM3 metric",
+     "predicate": "indicates",
+     "object": "consistent ranking with INLINEFORM4 for most cases",
+     "source_passage_ids": [
+      "1810.05241::s09::p001"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "The new proposed F INLINEFORM2 @ INLINEFORM3 metric indicates consistent ranking with INLINEFORM4 for most cases.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f12",
+     "subject": "its value",
+     "predicate": "is closer to",
+     "object": "INLINEFORM5 for KP20k and Krapivin",
+     "source_passage_ids": [
+      "1810.05241::s09::p001"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "we find that its value is closer to INLINEFORM5 for KP20k and Krapivin",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b7:f13",
+     "subject": "its value",
+     "predicate": "is closer to",
+     "object": "INLINEFORM6 for the other three datasets",
+     "source_passage_ids": [
+      "1810.05241::s09::p001"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "closer to INLINEFORM6 for the other three datasets.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b8:f00",
+     "subject": "neural-based models",
+     "predicate": "outperform",
+     "object": "non-neural models by large margins",
+     "source_passage_ids": [
+      "1810.05241::s09::p002"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "the neural-based models outperform non-neural models by large margins",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b8:f01",
+     "subject": "the advantage",
+     "predicate": "is more salient on",
+     "object": "NUS and SemEval",
+     "source_passage_ids": [
+      "1810.05241::s09::p002"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "on NUS and SemEval the advantage is more salient",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b8:f02",
+     "subject": "both INLINEFORM0 and INLINEFORM1",
+     "predicate": "yield",
+     "object": "comparable results to CopyRNN",
+     "source_passage_ids": [
+      "1810.05241::s09::p003"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "both INLINEFORM0 and INLINEFORM1 yield comparable results to CopyRNN",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b8:f03",
+     "subject": "One2Seq paradigm",
+     "predicate": "can work well as",
+     "object": "an alternative option for the keyphrase generation",
+     "source_passage_ids": [
+      "1810.05241::s09::p003"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "One2Seq paradigm can work well as an alternative option for the keyphrase generation",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b8:f04",
+     "subject": "INLINEFORM2",
+     "predicate": "outperforms",
+     "object": "INLINEFORM3 on all metrics",
+     "source_passage_ids": [
+      "1810.05241::s09::p003"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "INLINEFORM2 outperforms INLINEFORM3 on all metrics",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b8:f05",
+     "subject": "semantic coverage and orthogonal regularization",
+     "predicate": "help",
+     "object": "the model to generate higher quality keyphrases and achieve better generalizability",
+     "source_passage_ids": [
+      "1810.05241::s09::p003"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "the semantic coverage and orthogonal regularization help the model to generate higher quality keyphrases and achieve better generalizability",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "fact_id": "1810.05241::g00:b8:f06",
+     "subject": "INLINEFORM5",
+     "predicate": "is still able to outperform",
+     "object": "One2One baselines",
+     "source_passage_ids": [
+      "1810.05241::s09::p003"
+     ],
+     "source_section": "Experiments on Scientific Publications",
+     "evidence": "INLINEFORM5 is still able to outperform One2One baselines",
+     "group_id": "1810.05241::g00"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Desired keyphrases",
+      "are",
+      "often multi-word units that summarize the high-level meaning and highlight certain important topics or information of the source text"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "variances",
+      "are sometimes as large as",
+      "64.6"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "propose",
+      "novel decoding strategies and evaluation metrics for the keyphrase generation task"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Sequence to Sequence (Seq2Seq) learning",
+      "was first introduced by",
+      "BIBREF17"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF19 , BIBREF20",
+      "used",
+      "a mixture of generation and pointing to overcome the problem of large vocabulary size"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "the encoder",
+      "converts",
+      "their corresponding embeddings INLINEFORM2 into a set of INLINEFORM3 real-valued vectors INLINEFORM4 with a bidirectional GRU BIBREF27"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "a uni-directional GRU",
+      "generates",
+      "a new state INLINEFORM0 at each time-step INLINEFORM1 from the word embedding INLINEFORM2 and the recurrent state INLINEFORM3"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "employ",
+      "the pointer softmax BIBREF19 mechanism"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "the pointer softmax module",
+      "uses",
+      "it to interpolate the abstractive distribution INLINEFORM2 over the vocabulary (see Equation EQREF16 ) and the extractive distribution INLINEFORM3 over the source text tokens"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our objective",
+      "is to generate",
+      "a variable number of multi-word phrases"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our model",
+      "opts for",
+      "the sequence-to-sequence framework (Seq2Seq)"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our model",
+      "is combined with",
+      "attention and pointer softmax mechanisms in the decoder"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "propose",
+      "the second training paradigm One2Seq"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "An overview of the model's structure",
+      "is shown in",
+      "Figure FIGREF8"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "the model",
+      "tends to produce",
+      "identical tokens following the delimiter token"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "the model",
+      "is rewarded for generating",
+      "the same delimiter token at these time-steps"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "propose",
+      "two plug-in components for the sequential generation model"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "train",
+      "the target encoder in an self-supervised fashion"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "extract",
+      "target encoder's final hidden state vector INLINEFORM0"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "train by maximizing",
+      "the mutual information between these phrase representations and the final state of the source encoder INLINEFORM2"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "also propose",
+      "orthogonal regularization"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF32",
+      "use",
+      "orthogonal regularization to encourage representations across domains to be as distinct as possible"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "stack",
+      "the decoder hidden states corresponding to delimiters together to form matrix INLINEFORM0"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "the following equation as the orthogonal regularization loss: DISPLAYFORM0"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "adopt",
+      "the widely used negative log-likelihood loss"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our proposed model",
+      "is trained to generate",
+      "a variable number of phrases as a single sequence joined by delimiters"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "the model",
+      "outputs",
+      "a special token INLINEFORM0 EOS INLINEFORM1 to terminate the decoding process"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "the model",
+      "conditions",
+      "its current generation on all previously generated phrases"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our model",
+      "can model",
+      "the dependency among its output in a more explicit fashion"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "compare",
+      "three choices of INLINEFORM0 and the implications on keyphrase evaluation for each choice"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "define",
+      "two new metrics"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "can use",
+      "it to compare existing models"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "include",
+      "four non-neural extractive models and CopyRNN BIBREF0 as baselines"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "CopyRNN*",
+      "denotes",
+      "our implementation of CopyRNN based on their open sourced code"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our first dataset",
+      "consists of",
+      "a collection of scientific publication datasets, namely KP20k, Inspec, Krapivin, NUS, and SemEval"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "report",
+      "our model's performance on the present-keyphrase portion of the KP20k dataset in Table TABREF35"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Our implemented CopyRNN",
+      "achieves",
+      "better or comparable performance against the original model"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "average number of keyphrases",
+      "is only",
+      "5"
+     ]
+    }
+   ],
+   "n_raw": 162,
+   "error": null,
+   "calls": [
+    {
+     "block": 0,
+     "n_passages": 6,
+     "n_raw": 17,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1129,
+      "completion_tokens": 1297,
+      "total_tokens": 2426,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 671
+    },
+    {
+     "block": 1,
+     "n_passages": 6,
+     "n_raw": 16,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1125,
+      "completion_tokens": 1251,
+      "total_tokens": 2376,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 635
+    },
+    {
+     "block": 2,
+     "n_passages": 6,
+     "n_raw": 13,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 818,
+      "completion_tokens": 1068,
+      "total_tokens": 1886,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 317
+    },
+    {
+     "block": 3,
+     "n_passages": 6,
+     "n_raw": 24,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 962,
+      "completion_tokens": 1601,
+      "total_tokens": 2563,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 482
+    },
+    {
+     "block": 4,
+     "n_passages": 6,
+     "n_raw": 24,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1102,
+      "completion_tokens": 1719,
+      "total_tokens": 2821,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 599
+    },
+    {
+     "block": 5,
+     "n_passages": 6,
+     "n_raw": 21,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1007,
+      "completion_tokens": 1403,
+      "total_tokens": 2410,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 512
+    },
+    {
+     "block": 6,
+     "n_passages": 6,
+     "n_raw": 20,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1019,
+      "completion_tokens": 1567,
+      "total_tokens": 2586,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 524
+    },
+    {
+     "block": 7,
+     "n_passages": 6,
+     "n_raw": 18,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1064,
+      "completion_tokens": 1424,
+      "total_tokens": 2488,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 573
+    },
+    {
+     "block": 8,
+     "n_passages": 2,
+     "n_raw": 9,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 580,
+      "completion_tokens": 615,
+      "total_tokens": 1195,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 201
+    }
+   ]
+  },
+  {
+   "group_id": "1810.05241::g01",
+   "facts": [
+    {
+     "fact_id": "1810.05241::g01:b0:f00",
+     "subject": "questions on StackExchange",
+     "predicate": "contain",
+     "object": "less information than in scientific publications",
+     "source_passage_ids": [
+      "1810.05241::s10::p001"
+     ],
+     "source_section": "Experiments on The StackEx Dataset",
+     "evidence": "the questions on StackExchange contain less information than in scientific publications",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b0:f01",
+     "subject": "StackEx",
+     "predicate": "has",
+     "object": "fewer keyphrases per data point",
+     "source_passage_ids": [
+      "1810.05241::s10::p001"
+     ],
+     "source_section": "Experiments on The StackEx Dataset",
+     "evidence": "there are fewer keyphrases per data point in StackEx",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b0:f02",
+     "subject": "StackExchange",
+     "predicate": "uses",
+     "object": "a tag recommendation system",
+     "source_passage_ids": [
+      "1810.05241::s10::p001"
+     ],
+     "source_section": "Experiments on The StackEx Dataset",
+     "evidence": "StackExchange uses a tag recommendation system",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b0:f03",
+     "subject": "a tag recommendation system",
+     "predicate": "suggests",
+     "object": "topic-relevant tags to users while submitting questions",
+     "source_passage_ids": [
+      "1810.05241::s10::p001"
+     ],
+     "source_section": "Experiments on The StackEx Dataset",
+     "evidence": "suggests topic-relevant tags to users while submitting questions",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b0:f04",
+     "subject": "INLINEFORM0",
+     "predicate": "performs",
+     "object": "the best",
+     "source_passage_ids": [
+      "1810.05241::s10::p002"
+     ],
+     "source_section": "Experiments on The StackEx Dataset",
+     "evidence": "Results show INLINEFORM0 performs the best",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b0:f05",
+     "subject": "INLINEFORM0",
+     "predicate": "outperforms",
+     "object": "INLINEFORM1 by a large margin",
+     "source_passage_ids": [
+      "1810.05241::s10::p002"
+     ],
+     "source_section": "Experiments on The StackEx Dataset",
+     "evidence": "on the absent-keyphrase generation tasks, it outperforms INLINEFORM1 by a large margin",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b0:f06",
+     "subject": "beam search",
+     "predicate": "uses",
+     "object": "only the top ranked prediction sequence as output",
+     "source_passage_ids": [
+      "1810.05241::s11::p001"
+     ],
+     "source_section": "Generating Variable Number Keyphrases",
+     "evidence": "i.e., only use the top ranked prediction sequence as output",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b0:f07",
+     "subject": "no existing model",
+     "predicate": "is capable of",
+     "object": "generating variable number of keyphrases",
+     "source_passage_ids": [
+      "1810.05241::s11::p001"
+     ],
+     "source_section": "Generating Variable Number Keyphrases",
+     "evidence": "Since no existing model is capable of generating variable number of keyphrases",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b0:f08",
+     "subject": "greedy search",
+     "predicate": "outperforms",
+     "object": "beam search consistently",
+     "source_passage_ids": [
+      "1810.05241::s11::p002"
+     ],
+     "source_section": "Generating Variable Number Keyphrases",
+     "evidence": "in the variable number generation setting, greedy search outperforms beam search consistently",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b0:f09",
+     "subject": "beam search",
+     "predicate": "tends to generate",
+     "object": "short and similar sequences",
+     "source_passage_ids": [
+      "1810.05241::s11::p002"
+     ],
+     "source_section": "Generating Variable Number Keyphrases",
+     "evidence": "This may because beam search tends to generate short and similar sequences",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b0:f10",
+     "subject": "the resulting F INLINEFORM0 @ INLINEFORM1 scores",
+     "predicate": "are",
+     "object": "generally lower than results reported in previous subsections",
+     "source_passage_ids": [
+      "1810.05241::s11::p002"
+     ],
+     "source_section": "Generating Variable Number Keyphrases",
+     "evidence": "the resulting F INLINEFORM0 @ INLINEFORM1 scores are generally lower than results reported in previous subsections",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b0:f11",
+     "subject": "an over-generation decoding strategy",
+     "predicate": "may still benefit from",
+     "object": "achieving higher recall",
+     "source_passage_ids": [
+      "1810.05241::s11::p002"
+     ],
+     "source_section": "Generating Variable Number Keyphrases",
+     "evidence": "an over-generation decoding strategy may still benefit from achieving higher recall",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f00",
+     "subject": "semantic coverage",
+     "predicate": "provides significant boost to",
+     "object": "INLINEFORM1 's performance on all datasets",
+     "source_passage_ids": [
+      "1810.05241::s12::p000"
+     ],
+     "source_section": "Ablation Study",
+     "evidence": "semantic coverage provides significant boost to INLINEFORM1 's performance on all datasets",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f01",
+     "subject": "Orthogonal regularization",
+     "predicate": "hurts",
+     "object": "performance when is solely applied to INLINEFORM2 model",
+     "source_passage_ids": [
+      "1810.05241::s12::p000"
+     ],
+     "source_section": "Ablation Study",
+     "evidence": "Orthogonal regularization hurts performance when is solely applied to INLINEFORM2 model",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f02",
+     "subject": "INLINEFORM3",
+     "predicate": "outperforms",
+     "object": "INLINEFORM4 by a noticeable margin on all datasets",
+     "source_passage_ids": [
+      "1810.05241::s12::p000"
+     ],
+     "source_section": "Ablation Study",
+     "evidence": "when both components are enabled ( INLINEFORM3 ), the model outperforms INLINEFORM4 by a noticeable margin on all datasets",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f03",
+     "subject": "The resulting numbers",
+     "predicate": "are",
+     "object": "20.38 and 89.70 for INLINEFORM2 and INLINEFORM3 respectively",
+     "source_passage_ids": [
+      "1810.05241::s13::p001"
+     ],
+     "source_section": "Visualizing Diversified Generation",
+     "evidence": "The resulting numbers are 20.38 and 89.70 for INLINEFORM2 and INLINEFORM3 respectively",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f04",
+     "subject": "hidden states sampled from INLINEFORM6",
+     "predicate": "are easier to cluster",
+     "object": "hidden states sampled from INLINEFORM6",
+     "source_passage_ids": [
+      "1810.05241::s13::p001"
+     ],
+     "source_section": "Visualizing Diversified Generation",
+     "evidence": "hidden states sampled from INLINEFORM6 are easier to cluster",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f05",
+     "subject": "hidden states sampled from INLINEFORM7",
+     "predicate": "yield",
+     "object": "one mass of vectors with no obvious distinct clusters",
+     "source_passage_ids": [
+      "1810.05241::s13::p001"
+     ],
+     "source_section": "Visualizing Diversified Generation",
+     "evidence": "hidden states sampled from INLINEFORM7 yield one mass of vectors with no obvious distinct clusters",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f06",
+     "subject": "this example",
+     "predicate": "has",
+     "object": "29 ground truth phrases",
+     "source_passage_ids": [
+      "1810.05241::s14::p000"
+     ],
+     "source_section": "Qualitative Analysis",
+     "evidence": "In this example there are 29 ground truth phrases",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f07",
+     "subject": "Neither of the models",
+     "predicate": "is able to generate",
+     "object": "all of the keyphrases",
+     "source_passage_ids": [
+      "1810.05241::s14::p000"
+     ],
+     "source_section": "Qualitative Analysis",
+     "evidence": "Neither of the models is able to generate all of the keyphrases",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f08",
+     "subject": "predictions from INLINEFORM0",
+     "predicate": "all start with",
+     "object": "“test”",
+     "source_passage_ids": [
+      "1810.05241::s14::p000"
+     ],
+     "source_section": "Qualitative Analysis",
+     "evidence": "the predictions from INLINEFORM0 all start with “test”",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f09",
+     "subject": "predictions from INLINEFORM1",
+     "predicate": "are",
+     "object": "diverse",
+     "source_passage_ids": [
+      "1810.05241::s14::p000"
+     ],
+     "source_section": "Qualitative Analysis",
+     "evidence": "while predictions from INLINEFORM1 are diverse",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f10",
+     "subject": "two extra modules",
+     "predicate": "enhance",
+     "object": "generation diversity",
+     "source_passage_ids": [
+      "1810.05241::s15::p000"
+     ],
+     "source_section": "Conclusion and Future Work",
+     "evidence": "with two extra modules that enhance generation diversity",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f11",
+     "subject": "Generating absent keyphrases on scientific publication datasets",
+     "predicate": "is",
+     "object": "a rather challenging problem",
+     "source_passage_ids": [
+      "1810.05241::s16::p000"
+     ],
+     "source_section": "Experiment Results on KP20k Absent Subset",
+     "evidence": "Generating absent keyphrases on scientific publication datasets is a rather challenging problem",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f12",
+     "subject": "Existing studies",
+     "predicate": "often achieve",
+     "object": "seemingly good performance",
+     "source_passage_ids": [
+      "1810.05241::s16::p000"
+     ],
+     "source_section": "Experiment Results on KP20k Absent Subset",
+     "evidence": "Existing studies often achieve seemingly good performance by measuring recall",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f13",
+     "subject": "Existing studies",
+     "predicate": "measure",
+     "object": "recall on tens and sometimes hundreds of keyphrases",
+     "source_passage_ids": [
+      "1810.05241::s16::p000"
+     ],
+     "source_section": "Experiment Results on KP20k Absent Subset",
+     "evidence": "by measuring recall on tens and sometimes hundreds of keyphrases",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b1:f14",
+     "subject": "exhaustive decoding with a large beam size",
+     "predicate": "completely ignores",
+     "object": "precision",
+     "source_passage_ids": [
+      "1810.05241::s16::p000"
+     ],
+     "source_section": "Experiment Results on KP20k Absent Subset",
+     "evidence": "exhaustive decoding with a large beam size — thus completely ignoring precision",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b2:f00",
+     "subject": "models' R@10/50 scores",
+     "predicate": "are reported on",
+     "object": "the absent portion of five scientific paper datasets",
+     "source_passage_ids": [
+      "1810.05241::s16::p001"
+     ],
+     "source_section": "Experiment Results on KP20k Absent Subset",
+     "evidence": "We report the models' R@10/50 scores on the absent portion of five scientific paper datasets",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b2:f01",
+     "subject": "absent keyphrase prediction",
+     "predicate": "highly prefers",
+     "object": "recall-oriented models",
+     "source_passage_ids": [
+      "1810.05241::s16::p002"
+     ],
+     "source_section": "Experiment Results on KP20k Absent Subset",
+     "evidence": "The absent keyphrase prediction highly prefers recall-oriented models",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b2:f02",
+     "subject": "CopyRNN with beam size of 200",
+     "predicate": "is innately proper for",
+     "object": "this task setting",
+     "source_passage_ids": [
+      "1810.05241::s16::p002"
+     ],
+     "source_section": "Experiment Results on KP20k Absent Subset",
+     "evidence": "CopyRNN with beam size of 200 is innately proper for this task setting",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b2:f03",
+     "subject": "StackEx",
+     "predicate": "is argued to be",
+     "object": "better testbeds for absent keyphrase generation",
+     "source_passage_ids": [
+      "1810.05241::s16::p002"
+     ],
+     "source_section": "Experiment Results on KP20k Absent Subset",
+     "evidence": "We argue that StackEx is better testbeds for absent keyphrase generation.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b2:f04",
+     "subject": "word embeddings",
+     "predicate": "are initialized with",
+     "object": "100-dimensional random matrices",
+     "source_passage_ids": [
+      "1810.05241::s17::p000"
+     ],
+     "source_section": "Implementation Details",
+     "evidence": "the word embeddings are initialized with 100-dimensional random matrices",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b2:f05",
+     "subject": "negative sampling",
+     "predicate": "randomly samples",
+     "object": "16 samples from the same batch",
+     "source_passage_ids": [
+      "1810.05241::s17::p001"
+     ],
+     "source_section": "Implementation Details",
+     "evidence": "During negative sampling, we randomly sample 16 samples from the same batch",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b2:f06",
+     "subject": "target encoding loss in Equation EQREF23",
+     "predicate": "is",
+     "object": "a 17-way classification loss",
+     "source_passage_ids": [
+      "1810.05241::s17::p001"
+     ],
+     "source_section": "Implementation Details",
+     "evidence": "target encoding loss in Equation EQREF23 is a 17-way classification loss",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b2:f07",
+     "subject": "all experiments",
+     "predicate": "use",
+     "object": "a dropout rate of 0.1",
+     "source_passage_ids": [
+      "1810.05241::s17::p001"
+     ],
+     "source_section": "Implementation Details",
+     "evidence": "In all experiments, we use a dropout rate of 0.1.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b2:f08",
+     "subject": "Adam BIBREF36",
+     "predicate": "is used as",
+     "object": "the step rule for optimization",
+     "source_passage_ids": [
+      "1810.05241::s17::p002"
+     ],
+     "source_section": "Implementation Details",
+     "evidence": "We use Adam BIBREF36 as the step rule for optimization.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b2:f09",
+     "subject": "model",
+     "predicate": "is implemented using",
+     "object": "PyTorch BIBREF38 and OpenNMT BIBREF37",
+     "source_passage_ids": [
+      "1810.05241::s17::p002"
+     ],
+     "source_section": "Implementation Details",
+     "evidence": "The model is implemented using PyTorch BIBREF38 and OpenNMT BIBREF37 .",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b2:f10",
+     "subject": "exhaustive decoding",
+     "predicate": "uses",
+     "object": "a beam size of 50",
+     "source_passage_ids": [
+      "1810.05241::s17::p003"
+     ],
+     "source_section": "Implementation Details",
+     "evidence": "For exhaustive decoding, we use a beam size of 50",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b2:f11",
+     "subject": "exhaustive decoding",
+     "predicate": "uses",
+     "object": "a maximum sequence length of 40",
+     "source_passage_ids": [
+      "1810.05241::s17::p003"
+     ],
+     "source_section": "Implementation Details",
+     "evidence": "For exhaustive decoding, we use a beam size of 50 and a maximum sequence length of 40.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b3:f00",
+     "subject": "lowercase and stemming",
+     "predicate": "are performed on",
+     "object": "both the ground truth and generated keyphrases during evaluation",
+     "source_passage_ids": [
+      "1810.05241::s17::p004"
+     ],
+     "source_section": "Implementation Details",
+     "evidence": "lowercase and stemming are performed on both the ground truth and generated keyphrases during evaluation.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b3:f01",
+     "subject": "2,000 data examples",
+     "predicate": "are left out as",
+     "object": "validation set for both KP20k and StackEx",
+     "source_passage_ids": [
+      "1810.05241::s17::p005"
+     ],
+     "source_section": "Implementation Details",
+     "evidence": "We leave out 2,000 data examples as validation set for both KP20k and StackEx",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b3:f02",
+     "subject": "2,000 data examples",
+     "predicate": "are used to identify",
+     "object": "optimal checkpoints for testing",
+     "source_passage_ids": [
+      "1810.05241::s17::p005"
+     ],
+     "source_section": "Implementation Details",
+     "evidence": "use them to identify optimal checkpoints for testing.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "fact_id": "1810.05241::g01:b3:f03",
+     "subject": "all the scores reported in this paper",
+     "predicate": "are from",
+     "object": "checkpoints with best performances (F INLINEFORM0 @ INLINEFORM1 ) on validation set",
+     "source_passage_ids": [
+      "1810.05241::s17::p005"
+     ],
+     "source_section": "Implementation Details",
+     "evidence": "all the scores reported in this paper are from checkpoints with best performances (F INLINEFORM0 @ INLINEFORM1 ) on validation set.",
+     "group_id": "1810.05241::g01"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "build",
+      "a new benchmark based on the public StackExchange data"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "questions with titles as source"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "user-assigned tags as target keyphrases"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "report",
+      "our models' performance on StackEx in Table TABREF37"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our proposed model",
+      "has capability of",
+      "predicting the number of keyphrases conditioned on the given source text"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "conduct",
+      "a set of experiments on KP20k and StackEx present keyphrase generation tasks"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "adopt",
+      "the self-terminating decoding strategy"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "both F INLINEFORM0 @ INLINEFORM1 and F INLINEFORM2 @ INLINEFORM3 to evaluate"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "beam search as in most Natural Language Generation (NLG) tasks"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "compare",
+      "the results with greedy search"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "report",
+      "performance on such setting from INLINEFORM0 and INLINEFORM1"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "conduct",
+      "an ablation experiment"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "two metrics, one quantitative and one qualitative"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "randomly sample",
+      "2000 decoder hidden states at INLINEFORM4 steps following a delimiter ( INLINEFORM5 )"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "apply",
+      "an unsupervised clustering method (t-SNE BIBREF35 )"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "show",
+      "an example chosen from the KP20k validation set"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "propose",
+      "a recurrent generative model that sequentially generates multiple keyphrases"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "propose",
+      "new metrics to evaluate keyphrase generation"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Our model",
+      "shows",
+      "competitive performance on a set of keyphrase generation datasets"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "plan to investigate",
+      "how target phrase order affects the generation behavior"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "number of hidden units in both the encoder and decoder GRU",
+      "is",
+      "150"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "number of hidden units in target encoder GRU",
+      "is",
+      "150"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "size of vocabulary",
+      "is",
+      "50,000"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "INLINEFORM1 and INLINEFORM2 in Equation EQREF27",
+      "are set to",
+      "0.3"
+     ]
+    }
+   ],
+   "n_raw": 67,
+   "error": null,
+   "calls": [
+    {
+     "block": 0,
+     "n_passages": 6,
+     "n_raw": 23,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 934,
+      "completion_tokens": 1524,
+      "total_tokens": 2458,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 436
+    },
+    {
+     "block": 1,
+     "n_passages": 6,
+     "n_raw": 24,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1077,
+      "completion_tokens": 1620,
+      "total_tokens": 2697,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 583
+    },
+    {
+     "block": 2,
+     "n_passages": 6,
+     "n_raw": 16,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 870,
+      "completion_tokens": 1087,
+      "total_tokens": 1957,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 384
+    },
+    {
+     "block": 3,
+     "n_passages": 3,
+     "n_raw": 4,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 491,
+      "completion_tokens": 320,
+      "total_tokens": 811,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 88
+    }
+   ]
+  }
+ ]
+}

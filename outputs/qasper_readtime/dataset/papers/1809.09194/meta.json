@@ -1,0 +1,46 @@
+{
+ "paper_id": "1809.09194",
+ "title": "Stochastic Answer Networks for SQuAD 2.0",
+ "abstract": "This paper presents an extension of the Stochastic Answer Network (SAN), one of the state-of-the-art machine reading comprehension models, to be able to judge whether a question is unanswerable or not. The extended SAN contains two components: a span detector and a binary classifier for judging whether the question is unanswerable, and both components are jointly optimized. Experiments show that SAN achieves the results competitive to the state-of-the-art on Stanford Question Answering Dataset (SQuAD) 2.0. To facilitate the research on this field, we release our code: https://github.com/kevinduh/san_mrc.",
+ "sections": [
+  "Background",
+  "Model",
+  "Setup",
+  "Implementation details",
+  "Results",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 27,
+ "n_tokens": 2347,
+ "figures_and_tables": [
+  {
+   "caption_id": "1809.09194::fig000",
+   "paper_id": "1809.09194",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: Examples from SQuAD v2.0. The first question is answerable which indicates its answer highlighted in blue can be found in the paragraph; while the second question is unanswerable and its plausible answer is highlighted in red.",
+   "n_tokens": 51
+  },
+  {
+   "caption_id": "1809.09194::fig001",
+   "paper_id": "1809.09194",
+   "file": "2-Figure2-1.png",
+   "caption": "Figure 2: Architecture of the proposed model for Reading Comprehension: It includes two components: a span detector (the upper left SAN answer module) and an unanswerable classifier (the upper right module). It contains two sets of layers: the shared layers including a lexicon encoding layer, contextual encoding layer and memory generation layer; and the task specific layers including the SAN answer module for span detection, and a binary classifier determining whether the question is unanswerable. The model is learned jointly.",
+   "n_tokens": 101
+  },
+  {
+   "caption_id": "1809.09194::fig002",
+   "paper_id": "1809.09194",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1: Performance on the SQuAD 2.0 development dataset.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1809.09194::fig003",
+   "paper_id": "1809.09194",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Comparison with published results in literature. 1: results are extracted from (Rajpurkar et al., 2018); 2: results are extracted from (Hu et al., 2018). ∗: it is unclear which model is used. #: we only evaluate the Joint SAN in the submission.",
+   "n_tokens": 68
+  }
+ ]
+}

@@ -1,0 +1,251 @@
+{
+ "1805.01445::s00::p000": [
+  [
+   "language",
+   "has",
+   "certain structural properties"
+  ],
+  [
+   "This structure",
+   "allows",
+   "us to generalize beyond the typical machine learning definition of generalization"
+  ],
+  [
+   "sentences of length 100",
+   "typically do not appear in",
+   "natural text or speech"
+  ]
+ ],
+ "1805.01445::s00::p001": [
+  [
+   "Many problems in NLP",
+   "are treated as",
+   "sequence to sequence tasks"
+  ],
+  [
+   "seq2seq-attention based models",
+   "perform very well on",
+   "standard datasets"
+  ],
+  [
+   "seq2seq-attention based models",
+   "can be",
+   "quite brittle"
+  ]
+ ],
+ "1805.01445::s00::p002": [
+  [
+   "learning structure",
+   "is not",
+   "a sufficient condition to achieving linguistic generalization"
+  ],
+  [
+   "this solution",
+   "exists in",
+   "theory"
+  ]
+ ],
+ "1805.01445::s00::p003": [
+  [
+   "all models",
+   "achieve",
+   "near perfect accuracy on the standard test set"
+  ]
+ ],
+ "1805.01445::s01::p000": [
+  [
+   "Real world NLP tasks",
+   "are",
+   "complex"
+  ],
+  [
+   "The task",
+   "is set up to mimic",
+   "the input-output symbol alignments and local syntactic properties"
+  ]
+ ],
+ "1805.01445::s01::p001": [
+  [
+   "The task",
+   "is defined over",
+   "sequences of symbols, $\\lbrace x_1,...x_n | x_i \\in X\\rbrace $"
+  ],
+  [
+   "Each symbol $x \\in X$",
+   "is uniquely associated with",
+   "its own output alphabet $Y_x$"
+  ],
+  [
+   "Output",
+   "is created by",
+   "taking each individual symbol $x_i$ in the sequence and rewriting it as any sequence of $k$ symbols from $Y_{x_i}$"
+  ],
+  [
+   "every group of $k$ symbols",
+   "must come from",
+   "the same input alphabet $Y_x$"
+  ]
+ ],
+ "1805.01445::s01::p002": [
+  [
+   "Each $a_i$ and $b_i$",
+   "has",
+   "2 possible values"
+  ],
+  [
+   "valid strings",
+   "are selected at random when generating",
+   "the dataset"
+  ]
+ ],
+ "1805.01445::s02::p000": [
+  [
+   "The models we use",
+   "are",
+   "single layer, unidirectional, seq2seq LSTMs BIBREF10 with bilinear attention BIBREF11"
+  ],
+  [
+   "The models we use",
+   "are trained with",
+   "vanilla SGD"
+  ],
+  [
+   "a validation set",
+   "has",
+   "2000 samples"
+  ],
+  [
+   "The size of the hidden state and embeddings",
+   "giving",
+   "a size of 32"
+  ]
+ ],
+ "1805.01445::s02::p001": [
+  [
+   "another validation set",
+   "consists of",
+   "5000 samples of \"uncharacteristic\" inputs"
+  ],
+  [
+   "\"uncharacteristic\" inputs",
+   "vary from",
+   "length 3-12"
+  ],
+  [
+   "These two hyperparameter values",
+   "were set to",
+   "0.125 and 0.1, respectively"
+  ],
+  [
+   "All other hyperparameters",
+   "were decided using",
+   "this validation set"
+  ]
+ ],
+ "1805.01445::s03::p000": [
+  [
+   "seq2seq-attention models",
+   "are trained with",
+   "100,000 randomly generated samples"
+  ],
+  [
+   "inputs",
+   "are uniformly generated with",
+   "lengths 5-10"
+  ],
+  [
+   "no input symbol",
+   "appears",
+   "more than once in a single sample"
+  ]
+ ],
+ "1805.01445::s03::p001": [
+  [
+   "each test set",
+   "has",
+   "2000 randomly generated samples"
+  ],
+  [
+   "The first test set",
+   "has",
+   "lengths 5-10 and no repeats (Standard)"
+  ],
+  [
+   "The third and fourth sets",
+   "test",
+   "strings of length 1-4 (Short) and 11-15 (Long) respectively"
+  ]
+ ],
+ "1805.01445::s04::p000": [
+  [
+   "All models",
+   "perform",
+   "above 99% on the standard set"
+  ],
+  [
+   "the deviation on the other two sets",
+   "ranges from",
+   "13.39 for the repeat set to 20.63 for the long set"
+  ]
+ ],
+ "1805.01445::s04::p001": [
+  [
+   "summary statistics",
+   "are provided across",
+   "all 50 runs (50 different random seeds)"
+  ]
+ ],
+ "1805.01445::s05::p000": [
+  [
+   "Further work",
+   "explored",
+   "how RNNs can learn context free languages BIBREF13 , BIBREF9 as well some context sensitive languages BIBREF14"
+  ],
+  [
+   "Recent work",
+   "has moved outside",
+   "the formal language space"
+  ]
+ ],
+ "1805.01445::s05::p001": [
+  [
+   "these models",
+   "appear to capture",
+   "systematic structure necessary for generalization"
+  ],
+  [
+   "The same work",
+   "makes",
+   "similar observations about the difficulty of generalizing to longer length strings"
+  ]
+ ],
+ "1805.01445::s05::p002": [
+  [
+   "the random seed",
+   "has an effect on",
+   "several components of the training process"
+  ],
+  [
+   "the exact initialization of the network",
+   "is",
+   "most notably affected by the random seed"
+  ]
+ ],
+ "1805.01445::s06::p000": [
+  [
+   "the standard test set performance",
+   "remains",
+   "mostly the same regardless"
+  ],
+  [
+   "The task presented here",
+   "was",
+   "easy and simple to analyze"
+  ],
+  [
+   "future work",
+   "may be done on",
+   "natural language tasks"
+  ]
+ ]
+}

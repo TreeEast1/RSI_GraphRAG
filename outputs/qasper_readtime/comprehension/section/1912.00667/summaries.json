@@ -1,0 +1,658 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1912.00667::s00::p000",
+   "summary": "Micropost event detection uses weak supervision with positive labels, unlabeled examples, keyword filtering, and expectation regularization, but faces two key problems.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s00::p001",
+   "summary": "Estimating the expectation associated with a keyword is challenging even for domain experts due to unpredictable events and changing posting frequency.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s00::p002",
+   "summary": "Event detection performance depends on keyword informativeness, and no principled method exists for discovering new keywords and improving performance.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s00::p003",
+   "summary": "A human-AI loop uses crowd workers, model-crowd disagreement, and a unified probabilistic model to discover keywords, estimate expectations, and train models.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s00::p004",
+   "summary": "The authors claim to be the first to propose a human-AI loop approach that iteratively improves event detection models.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s00::p005",
+   "summary": "One contribution is a novel human-AI loop approach for micropost event detection that jointly discovers informative keywords and estimates their expectation.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s00::p006",
+   "summary": "One contribution is a unified probabilistic model that infers keyword expectation and simultaneously performs model training.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s00::p007",
+   "summary": "An extensive empirical evaluation on multiple real-world datasets shows the approach improves the state of the art by an average of 24.3% AUC.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s00::p008",
+   "summary": "The paper presents the human-AI loop approach, probabilistic model, experimental setup and results, related work, and conclusion in subsequent sections.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p000",
+   "summary": "The goal is to extract informative keywords and estimate expectations using two crowdsourcing tasks and a unified probabilistic model for training.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p001",
+   "summary": "The approach collects unlabeled microposts $\\mathcal {U}$ and positively labeled microposts $\\mathcal {L}$, trains $p_\\theta (y|x)$, and iterates from keyword $w^{(t)}$.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p002",
+   "summary": "Micropost classification asks crowd workers to label selected microposts as event-related or non event-related using instructions and examples.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p003",
+   "summary": "An example micropost reports that Equifax says 143m Americans' social security numbers were exposed in hack.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p004",
+   "summary": "The Equifax micropost describes a cyber attack event instance and is an event-instance related positive example.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p005",
+   "summary": "An example micropost says companies need to step their cyber security up.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p006",
+   "summary": "The cyber security micropost is general event-category related, not event-instance related, and should be considered a negative example.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p007",
+   "summary": "Each selected micropost is labeled by multiple crowd workers, and annotations are passed to the probabilistic model for expectation inference and training.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p008",
+   "summary": "The probabilistic model takes crowd labels and the previous model as input, producing keyword-specific expectation $e^{(t)}$ and improved model $p_{\\theta ^{(t)}}(y|x)$.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p009",
+   "summary": "Keyword discovery applies $p_{\\theta ^{(t)}}(y|x)$ to $\\mathcal {U}$ and calculates disagreement between predictions and $e^{(t)}$ for microposts containing $w^{(t)}$.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p010",
+   "summary": "Microposts with the highest disagreement are selected for keyword discovery because they may explain disagreement and provide information different from existing keywords.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p011",
+   "summary": "The expectation for `hack' is 0.20, meaning 20% of initially retrieved microposts are event-related, while a highest-disagreement micropost has $99.9\\%$ predicted likelihood.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p012",
+   "summary": "An example selected micropost reports Hong Kong securities brokers hit by cyber attacks, may face more: regulator #cyber #security #hacking https://t.co/rC1s9CB.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p013",
+   "summary": "The example micropost contains `securities', `hit', and `attack', which better indicate relevance to a cyber security event than `hack'.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p014",
+   "summary": "When $e^{(t)}$ is high, selected microposts contain keywords indicating irrelevance, which also help the model identify irrelevant microposts.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s01::p015",
+   "summary": "Crowd workers identify correct-prediction microposts and keywords indicating predicted classes; the most frequent keyword initializes the next iteration, with top-$N$ keywords requiring $N$ tasks.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s02::p000",
+   "summary": "This section introduces the probabilistic model that infers keyword expectation and trains the target model simultaneously, then describes model learning.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s02::p001",
+   "summary": "At iteration $t$, $\\mathcal {U}^{(t)}$, $\\mathcal {M}^{(t)}= \\lbrace x_{m}\\rbrace _{m=1}^M$, $N$ workers, and annotation matrix $\\mathbf {A}\\in \\mathbb {R}^{M\\times N}$ support inferring $e^{(t)}$, learning $\\theta ^{(t)}$, and modeling worker reliability $\\pi ^{(n)}$.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s03::p000",
+   "summary": "Expectation regularization is introduced for weakly supervised learning of $p_{\\theta ^{(t)}}(y|x)$, with an objective covering $\\mathcal {L}$ and $\\mathcal {U}$.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s03::p001",
+   "summary": "The labeled-micropost part of the objective aims at maximizing the likelihood of the labeled microposts.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s03::p002",
+   "summary": "The model assumes $\\theta $ is generated from a prior distribution parameterized by $\\sigma $, such as Laplacian or Gaussian.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s03::p003",
+   "summary": "Existing keyword expectations {($w^{(1)}$, $e^{(1)}$), ..., ($w^{(t-1)}$, $e^{(t-1)}$), ($w^{(t)}$, $e^{(t)}$)} regularize training, with $e^{(t)}$ inferred.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s03::p004",
+   "summary": "The model's expectation for each keyword $w^{(k)}$ is the empirical expectation of posterior predictions on $\\mathcal {U}^{(k)}$ containing $w^{(k)}$.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s03::p005",
+   "summary": "Expectation regularization uses $D_{KL}[\\cdot \\Vert \\cdot ]$ between $Ber(e^{(k)})$ and $Ber(\\mathbb {E}_{x\\sim \\mathcal {U}^{(k)}}(y))$, with $\\lambda $ controlling strength.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s04::p000",
+   "summary": "To learn $e^{(t)}$ and $\\pi ^{(n)}$, the likelihood of $\\mathbf {A}$ is modeled with expectation as class prior, connecting expectation inference with model training.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s04::p001",
+   "summary": "The likelihood of an arbitrary crowd-contributed label $\\mathbf {A}_{mn}$ is modeled as a mixture of multinomials with prior $e^{(t)}$.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s04::p002",
+   "summary": "Here $e_s^{(t)}$ is the ground truth probability given the class prior, $K$ is possible ground truth labels, and $r=\\mathbf {A}_{mn}$ is the crowd label.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s04::p003",
+   "summary": "The objective function maximizes the likelihood of the entire annotation matrix $\\mathbf {A}$.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s05::p000",
+   "summary": "Integrating model training with expectation inference yields the overall objective function of the proposed model.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s05::p001",
+   "summary": "Figure FIGREF18 depicts the model combining the target model with the generative model for crowd-contributed labels through a keyword-specific expectation.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s05::p002",
+   "summary": "Expectation maximization handles unknown $y_m$: the E-step infers ground truth labels, while the M-step updates $\\pi ^{(n)}$, $e^{(t)}$, and $\\theta ^{(t)}$.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s05::p003",
+   "summary": "The target model parameter is updated by gradient descent, using back-propagation with gradient descent for deep neural network weight matrices.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s06::p000",
+   "summary": "This section presents the experimental setup and results for evaluating the approach, aiming to answer four questions.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s06::p001",
+   "summary": "The paragraph contains the list formatting marker [noitemsep,leftmargin=*].",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s06::p002",
+   "summary": "Q1 asks how effectively the proposed human-AI loop approach enhances state-of-the-art machine learning models for event detection.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s06::p003",
+   "summary": "Q2 asks how well the keyword discovery method works compared to existing keyword expansion methods.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s06::p004",
+   "summary": "Q3 asks how effective crowdsourcing is at obtaining new keywords compared with labelling microposts for model training under the same cost.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s06::p005",
+   "summary": "Q4 asks how much benefit the unified probabilistic model brings compared to methods that do not take crowd reliability into account.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s07::p000",
+   "summary": "Experiments use CyberAttack and PoliticianDeath, with 11 and 8 seed events, `hack' and politician/death keywords, and 500 randomly selected tweets per dataset for evaluation.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s07::p001",
+   "summary": "Logistic Regression (LR) and Multilayer Perceptron (MLP) are target models compared against weakly supervised methods using one initial keyword and an individual expert expectation.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s07::p002",
+   "summary": "Parameters use a held-out validation set with 20% of test data, MLP with 1, 2 and 3 hidden layers, grid search in 32, 64, 128, 256, 512, $\\lambda =10 \\times $ #labeled examples, and Adam BIBREF22.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s07::p003",
+   "summary": "Evaluation uses accuracy and area under the precision-recall curve (AUC), with 20% positive microposts in CyberAttack and 27% in PoliticianDeath.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s07::p004",
+   "summary": "Level 3 workers on Figure-Eight were used, with 50 tweets for keyword discovery and 50 tweets for micropost classification per keyword per iteration.",
+   "group_id": "1912.00667::g00"
+  },
+  {
+   "passage_id": "1912.00667::s08::p000",
+   "summary": "Table TABREF26 reports evaluation on CyberAttack and PoliticianDeath, with each iteration starting with 1 new keyword discovered in the previous iteration.",
+   "group_id": "1912.00667::g01"
+  },
+  {
+   "passage_id": "1912.00667::s08::p001",
+   "summary": "The approach improves LR by 5.17% Accuracy and 18.38% AUC, and MLP by 10.71% Accuracy and 30.27% AUC on average, with convergence between the 7th and 9th iteration by AUC.",
+   "group_id": "1912.00667::g01"
+  },
+  {
+   "passage_id": "1912.00667::s09::p000",
+   "summary": "Figure FIGREF31 evaluates informative keyword discovery against QE using pre-trained word embeddings based on a large Google News dataset and crowd-labeled tweets.",
+   "group_id": "1912.00667::g01"
+  },
+  {
+   "passage_id": "1912.00667::s09::p001",
+   "summary": "The approach outperforms QE by 4.62% and 52.58% AUC on CyberAttack and PoliticianDeath, respectively, by identifying task-related keywords beyond synonyms.",
+   "group_id": "1912.00667::g01"
+  },
+  {
+   "passage_id": "1912.00667::s10::p000",
+   "summary": "At the same cost, additional micropost labeling increases AUC by 0.87% for CyberAttack and 1.06% for PoliticianDeath, while the proposed approach increases AUC by 33.42% and 15.23%.",
+   "group_id": "1912.00667::g01"
+  },
+  {
+   "passage_id": "1912.00667::s11::p000",
+   "summary": "Figure FIGREF36 compares expectation inference with majority voting, showing improvements of 0.4% and 1.19% AUC on CyberAttack and PoliticianDeath, respectively.",
+   "group_id": "1912.00667::g01"
+  },
+  {
+   "passage_id": "1912.00667::s12::p000",
+   "summary": "The work is domain-specific event detection related to weakly supervised learning methods, contrasting with fully-supervised methods limited by training data size.",
+   "group_id": "1912.00667::g01"
+  },
+  {
+   "passage_id": "1912.00667::s12::p001",
+   "summary": "The work extends weakly supervised learning by using crowd workers to label sampled microposts for keyword-specific expectations and directly soliciting informative keywords.",
+   "group_id": "1912.00667::g01"
+  },
+  {
+   "passage_id": "1912.00667::s13::p000",
+   "summary": "The paper presents a human-AI loop approach for keyword discovery and expectation estimation that significantly outperforms the state of the art on real-world datasets.",
+   "group_id": "1912.00667::g01"
+  },
+  {
+   "passage_id": "1912.00667::s14::p000",
+   "summary": "The project received funding from the Swiss National Science Foundation grant #407540_167320 Tighten-it-All and ERC grant agreement 683253/GraphInt.",
+   "group_id": "1912.00667::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1912.00667::g00",
+   "summaries": [
+    {
+     "passage_id": "1912.00667::s00::p000",
+     "summary": "Micropost event detection uses weak supervision with positive labels, unlabeled examples, keyword filtering, and expectation regularization, but faces two key problems.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s00::p001",
+     "summary": "Estimating the expectation associated with a keyword is challenging even for domain experts due to unpredictable events and changing posting frequency.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s00::p002",
+     "summary": "Event detection performance depends on keyword informativeness, and no principled method exists for discovering new keywords and improving performance.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s00::p003",
+     "summary": "A human-AI loop uses crowd workers, model-crowd disagreement, and a unified probabilistic model to discover keywords, estimate expectations, and train models.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s00::p004",
+     "summary": "The authors claim to be the first to propose a human-AI loop approach that iteratively improves event detection models.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s00::p005",
+     "summary": "One contribution is a novel human-AI loop approach for micropost event detection that jointly discovers informative keywords and estimates their expectation.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s00::p006",
+     "summary": "One contribution is a unified probabilistic model that infers keyword expectation and simultaneously performs model training.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s00::p007",
+     "summary": "An extensive empirical evaluation on multiple real-world datasets shows the approach improves the state of the art by an average of 24.3% AUC.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s00::p008",
+     "summary": "The paper presents the human-AI loop approach, probabilistic model, experimental setup and results, related work, and conclusion in subsequent sections.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p000",
+     "summary": "The goal is to extract informative keywords and estimate expectations using two crowdsourcing tasks and a unified probabilistic model for training.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p001",
+     "summary": "The approach collects unlabeled microposts $\\mathcal {U}$ and positively labeled microposts $\\mathcal {L}$, trains $p_\\theta (y|x)$, and iterates from keyword $w^{(t)}$.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p002",
+     "summary": "Micropost classification asks crowd workers to label selected microposts as event-related or non event-related using instructions and examples.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p003",
+     "summary": "An example micropost reports that Equifax says 143m Americans' social security numbers were exposed in hack.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p004",
+     "summary": "The Equifax micropost describes a cyber attack event instance and is an event-instance related positive example.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p005",
+     "summary": "An example micropost says companies need to step their cyber security up.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p006",
+     "summary": "The cyber security micropost is general event-category related, not event-instance related, and should be considered a negative example.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p007",
+     "summary": "Each selected micropost is labeled by multiple crowd workers, and annotations are passed to the probabilistic model for expectation inference and training.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p008",
+     "summary": "The probabilistic model takes crowd labels and the previous model as input, producing keyword-specific expectation $e^{(t)}$ and improved model $p_{\\theta ^{(t)}}(y|x)$.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p009",
+     "summary": "Keyword discovery applies $p_{\\theta ^{(t)}}(y|x)$ to $\\mathcal {U}$ and calculates disagreement between predictions and $e^{(t)}$ for microposts containing $w^{(t)}$.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p010",
+     "summary": "Microposts with the highest disagreement are selected for keyword discovery because they may explain disagreement and provide information different from existing keywords.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p011",
+     "summary": "The expectation for `hack' is 0.20, meaning 20% of initially retrieved microposts are event-related, while a highest-disagreement micropost has $99.9\\%$ predicted likelihood.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p012",
+     "summary": "An example selected micropost reports Hong Kong securities brokers hit by cyber attacks, may face more: regulator #cyber #security #hacking https://t.co/rC1s9CB.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p013",
+     "summary": "The example micropost contains `securities', `hit', and `attack', which better indicate relevance to a cyber security event than `hack'.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p014",
+     "summary": "When $e^{(t)}$ is high, selected microposts contain keywords indicating irrelevance, which also help the model identify irrelevant microposts.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s01::p015",
+     "summary": "Crowd workers identify correct-prediction microposts and keywords indicating predicted classes; the most frequent keyword initializes the next iteration, with top-$N$ keywords requiring $N$ tasks.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s02::p000",
+     "summary": "This section introduces the probabilistic model that infers keyword expectation and trains the target model simultaneously, then describes model learning.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s02::p001",
+     "summary": "At iteration $t$, $\\mathcal {U}^{(t)}$, $\\mathcal {M}^{(t)}= \\lbrace x_{m}\\rbrace _{m=1}^M$, $N$ workers, and annotation matrix $\\mathbf {A}\\in \\mathbb {R}^{M\\times N}$ support inferring $e^{(t)}$, learning $\\theta ^{(t)}$, and modeling worker reliability $\\pi ^{(n)}$.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s03::p000",
+     "summary": "Expectation regularization is introduced for weakly supervised learning of $p_{\\theta ^{(t)}}(y|x)$, with an objective covering $\\mathcal {L}$ and $\\mathcal {U}$.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s03::p001",
+     "summary": "The labeled-micropost part of the objective aims at maximizing the likelihood of the labeled microposts.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s03::p002",
+     "summary": "The model assumes $\\theta $ is generated from a prior distribution parameterized by $\\sigma $, such as Laplacian or Gaussian.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s03::p003",
+     "summary": "Existing keyword expectations {($w^{(1)}$, $e^{(1)}$), ..., ($w^{(t-1)}$, $e^{(t-1)}$), ($w^{(t)}$, $e^{(t)}$)} regularize training, with $e^{(t)}$ inferred.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s03::p004",
+     "summary": "The model's expectation for each keyword $w^{(k)}$ is the empirical expectation of posterior predictions on $\\mathcal {U}^{(k)}$ containing $w^{(k)}$.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s03::p005",
+     "summary": "Expectation regularization uses $D_{KL}[\\cdot \\Vert \\cdot ]$ between $Ber(e^{(k)})$ and $Ber(\\mathbb {E}_{x\\sim \\mathcal {U}^{(k)}}(y))$, with $\\lambda $ controlling strength.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s04::p000",
+     "summary": "To learn $e^{(t)}$ and $\\pi ^{(n)}$, the likelihood of $\\mathbf {A}$ is modeled with expectation as class prior, connecting expectation inference with model training.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s04::p001",
+     "summary": "The likelihood of an arbitrary crowd-contributed label $\\mathbf {A}_{mn}$ is modeled as a mixture of multinomials with prior $e^{(t)}$.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s04::p002",
+     "summary": "Here $e_s^{(t)}$ is the ground truth probability given the class prior, $K$ is possible ground truth labels, and $r=\\mathbf {A}_{mn}$ is the crowd label.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s04::p003",
+     "summary": "The objective function maximizes the likelihood of the entire annotation matrix $\\mathbf {A}$.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s05::p000",
+     "summary": "Integrating model training with expectation inference yields the overall objective function of the proposed model.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s05::p001",
+     "summary": "Figure FIGREF18 depicts the model combining the target model with the generative model for crowd-contributed labels through a keyword-specific expectation.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s05::p002",
+     "summary": "Expectation maximization handles unknown $y_m$: the E-step infers ground truth labels, while the M-step updates $\\pi ^{(n)}$, $e^{(t)}$, and $\\theta ^{(t)}$.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s05::p003",
+     "summary": "The target model parameter is updated by gradient descent, using back-propagation with gradient descent for deep neural network weight matrices.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s06::p000",
+     "summary": "This section presents the experimental setup and results for evaluating the approach, aiming to answer four questions.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s06::p001",
+     "summary": "The paragraph contains the list formatting marker [noitemsep,leftmargin=*].",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s06::p002",
+     "summary": "Q1 asks how effectively the proposed human-AI loop approach enhances state-of-the-art machine learning models for event detection.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s06::p003",
+     "summary": "Q2 asks how well the keyword discovery method works compared to existing keyword expansion methods.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s06::p004",
+     "summary": "Q3 asks how effective crowdsourcing is at obtaining new keywords compared with labelling microposts for model training under the same cost.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s06::p005",
+     "summary": "Q4 asks how much benefit the unified probabilistic model brings compared to methods that do not take crowd reliability into account.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s07::p000",
+     "summary": "Experiments use CyberAttack and PoliticianDeath, with 11 and 8 seed events, `hack' and politician/death keywords, and 500 randomly selected tweets per dataset for evaluation.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s07::p001",
+     "summary": "Logistic Regression (LR) and Multilayer Perceptron (MLP) are target models compared against weakly supervised methods using one initial keyword and an individual expert expectation.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s07::p002",
+     "summary": "Parameters use a held-out validation set with 20% of test data, MLP with 1, 2 and 3 hidden layers, grid search in 32, 64, 128, 256, 512, $\\lambda =10 \\times $ #labeled examples, and Adam BIBREF22.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s07::p003",
+     "summary": "Evaluation uses accuracy and area under the precision-recall curve (AUC), with 20% positive microposts in CyberAttack and 27% in PoliticianDeath.",
+     "group_id": "1912.00667::g00"
+    },
+    {
+     "passage_id": "1912.00667::s07::p004",
+     "summary": "Level 3 workers on Figure-Eight were used, with 50 tweets for keyword discovery and 50 tweets for micropost classification per keyword per iteration.",
+     "group_id": "1912.00667::g00"
+    }
+   ],
+   "n_raw": 52,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5997,
+    "completion_tokens": 2626,
+    "total_tokens": 8623,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1912.00667::g01",
+   "summaries": [
+    {
+     "passage_id": "1912.00667::s08::p000",
+     "summary": "Table TABREF26 reports evaluation on CyberAttack and PoliticianDeath, with each iteration starting with 1 new keyword discovered in the previous iteration.",
+     "group_id": "1912.00667::g01"
+    },
+    {
+     "passage_id": "1912.00667::s08::p001",
+     "summary": "The approach improves LR by 5.17% Accuracy and 18.38% AUC, and MLP by 10.71% Accuracy and 30.27% AUC on average, with convergence between the 7th and 9th iteration by AUC.",
+     "group_id": "1912.00667::g01"
+    },
+    {
+     "passage_id": "1912.00667::s09::p000",
+     "summary": "Figure FIGREF31 evaluates informative keyword discovery against QE using pre-trained word embeddings based on a large Google News dataset and crowd-labeled tweets.",
+     "group_id": "1912.00667::g01"
+    },
+    {
+     "passage_id": "1912.00667::s09::p001",
+     "summary": "The approach outperforms QE by 4.62% and 52.58% AUC on CyberAttack and PoliticianDeath, respectively, by identifying task-related keywords beyond synonyms.",
+     "group_id": "1912.00667::g01"
+    },
+    {
+     "passage_id": "1912.00667::s10::p000",
+     "summary": "At the same cost, additional micropost labeling increases AUC by 0.87% for CyberAttack and 1.06% for PoliticianDeath, while the proposed approach increases AUC by 33.42% and 15.23%.",
+     "group_id": "1912.00667::g01"
+    },
+    {
+     "passage_id": "1912.00667::s11::p000",
+     "summary": "Figure FIGREF36 compares expectation inference with majority voting, showing improvements of 0.4% and 1.19% AUC on CyberAttack and PoliticianDeath, respectively.",
+     "group_id": "1912.00667::g01"
+    },
+    {
+     "passage_id": "1912.00667::s12::p000",
+     "summary": "The work is domain-specific event detection related to weakly supervised learning methods, contrasting with fully-supervised methods limited by training data size.",
+     "group_id": "1912.00667::g01"
+    },
+    {
+     "passage_id": "1912.00667::s12::p001",
+     "summary": "The work extends weakly supervised learning by using crowd workers to label sampled microposts for keyword-specific expectations and directly soliciting informative keywords.",
+     "group_id": "1912.00667::g01"
+    },
+    {
+     "passage_id": "1912.00667::s13::p000",
+     "summary": "The paper presents a human-AI loop approach for keyword discovery and expectation estimation that significantly outperforms the state of the art on real-world datasets.",
+     "group_id": "1912.00667::g01"
+    },
+    {
+     "passage_id": "1912.00667::s14::p000",
+     "summary": "The project received funding from the Swiss National Science Foundation grant #407540_167320 Tighten-it-All and ERC grant agreement 683253/GraphInt.",
+     "group_id": "1912.00667::g01"
+    }
+   ],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 2095,
+    "completion_tokens": 547,
+    "total_tokens": 2642,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,252 @@
+{
+ "summaries": [
+  {
+   "passage_id": "2003.08380::s00::p000",
+   "summary": "Encoder–decoder pretrained transformers are effective in text generation and comprehension tasks, and this paper describes a state-of-the-art T5 submission to the AI2 WinoGrande Challenge commonsense reasoning leaderboard.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s00::p001",
+   "summary": "In T5, NLP tasks are text-to-text problems using natural language templates with task descriptors, illustrated by an MNLI example predicting “entailment”, “contradiction”, or “neutral”.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s00::p002",
+   "summary": "The MNLI training example is “mnli premise: I hate pigeons. hypothesis: My feelings towards pigeons are filled with animosity.”",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s00::p003",
+   "summary": "The corresponding ground truth target output is “entailment”, with a token representing each class directly used as the prediction target.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s01::p000",
+   "summary": "The natural language template approach enables various options to formulate the WinoGrande commonsense reasoning task as a text-to-text problem with T5, adopting a formulation similar to the MNLI template.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s01::p001",
+   "summary": "The concrete example is “He never comes to my home, but I always go to his house because the _ is smaller.”",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s01::p002",
+   "summary": "The answer options are “Option1: home; Option2: house”.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s01::p003",
+   "summary": "The correct replacement for _ is Option1, and the problem is decomposed into two source–target training examples reformulated into hypothesis and premise statements, with bold and colored fonts only for clarity.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s01::p004",
+   "summary": "At inference time, the problem is decomposed into two inputs formulated as in Table TABREF2 with either answer option, each fed into T5 to predict a target token, yielding four possible outcomes.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s01::p005",
+   "summary": "One possible outcome is that one input produces “entailment” and the other “contradiction”.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s01::p006",
+   "summary": "One possible outcome is that one input produces “entailment” or “contradiction” and the other some other token.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s01::p007",
+   "summary": "One possible outcome is that both inputs produce some other tokens.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s01::p008",
+   "summary": "One possible outcome is that both inputs produce the same token, either “entailment” or “contradiction”.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s01::p009",
+   "summary": "Ideally T5 produces contrastive tokens for each input pair, but for cases (2) to (4) the authors apply softmax over logits of predefined target tokens and select the instance with higher probability.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s01::p010",
+   "summary": "The general problem setup allows choosing target tokens that may affect prediction accuracy, and besides “entailment” vs. “contradiction” the authors tried “true” vs. ”false”.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s01::p011",
+   "summary": "The authors fine-tune T5-3B on Google Colab's TPU v2 with batch size 16, learning rate $2 \\cdot 10^{-4}$, checkpoints every 5000 steps, 130k steps for XL, greedy decoding, and no T5-11B experiments.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s02::p000",
+   "summary": "Table TABREF7 reports WinoGrande development set results for different training data sizes, including logit softmax, zero-shot performance, and Condition #2, the official leaderboard submission achieving 0.7673 AUC on the held-out test set.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s02::p001",
+   "summary": "The logit trick clearly improves performance, including in zero-shot settings, target token choice affects performance, and true/false conditions #3 and #4 did not improve much over entailment/contradiction.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s02::p002",
+   "summary": "The previous WinoGrande leaderboard state of the art appears based on RoBERTa, and although T5-3B is larger, T5's “generative capability” and target token effects suggest an important role for generative pretraining.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s03::p000",
+   "summary": "Large pretrained neural models raise questions for commonsense reasoning because previous models exploited incidental dataset biases, while WinoGrande reduces such biases, though datasets over-estimate capabilities and alternative complementary explanations exist.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s03::p001",
+   "summary": "A fundamental research assumption is that commonsense reasoning is difficult because it comprises tacit rather than explicit knowledge, limiting data-driven techniques due to paucity of relevant corpora.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s03::p002",
+   "summary": "RoBERTa and sequence-to-sequence improvements leave two explanations: WinoGrande still contains incidental biases, or genuine commonsense reasoning progress challenges the notion that commonsense knowledge is mostly tacit.",
+   "group_id": "2003.08380::g00"
+  },
+  {
+   "passage_id": "2003.08380::s04::p000",
+   "summary": "This research was supported in part by the Canada First Research Excellence Fund and NSERC of Canada, with thanks to Google Colab for computational resources.",
+   "group_id": "2003.08380::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "2003.08380::g00",
+   "summaries": [
+    {
+     "passage_id": "2003.08380::s00::p000",
+     "summary": "Encoder–decoder pretrained transformers are effective in text generation and comprehension tasks, and this paper describes a state-of-the-art T5 submission to the AI2 WinoGrande Challenge commonsense reasoning leaderboard.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s00::p001",
+     "summary": "In T5, NLP tasks are text-to-text problems using natural language templates with task descriptors, illustrated by an MNLI example predicting “entailment”, “contradiction”, or “neutral”.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s00::p002",
+     "summary": "The MNLI training example is “mnli premise: I hate pigeons. hypothesis: My feelings towards pigeons are filled with animosity.”",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s00::p003",
+     "summary": "The corresponding ground truth target output is “entailment”, with a token representing each class directly used as the prediction target.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s01::p000",
+     "summary": "The natural language template approach enables various options to formulate the WinoGrande commonsense reasoning task as a text-to-text problem with T5, adopting a formulation similar to the MNLI template.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s01::p001",
+     "summary": "The concrete example is “He never comes to my home, but I always go to his house because the _ is smaller.”",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s01::p002",
+     "summary": "The answer options are “Option1: home; Option2: house”.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s01::p003",
+     "summary": "The correct replacement for _ is Option1, and the problem is decomposed into two source–target training examples reformulated into hypothesis and premise statements, with bold and colored fonts only for clarity.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s01::p004",
+     "summary": "At inference time, the problem is decomposed into two inputs formulated as in Table TABREF2 with either answer option, each fed into T5 to predict a target token, yielding four possible outcomes.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s01::p005",
+     "summary": "One possible outcome is that one input produces “entailment” and the other “contradiction”.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s01::p006",
+     "summary": "One possible outcome is that one input produces “entailment” or “contradiction” and the other some other token.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s01::p007",
+     "summary": "One possible outcome is that both inputs produce some other tokens.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s01::p008",
+     "summary": "One possible outcome is that both inputs produce the same token, either “entailment” or “contradiction”.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s01::p009",
+     "summary": "Ideally T5 produces contrastive tokens for each input pair, but for cases (2) to (4) the authors apply softmax over logits of predefined target tokens and select the instance with higher probability.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s01::p010",
+     "summary": "The general problem setup allows choosing target tokens that may affect prediction accuracy, and besides “entailment” vs. “contradiction” the authors tried “true” vs. ”false”.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s01::p011",
+     "summary": "The authors fine-tune T5-3B on Google Colab's TPU v2 with batch size 16, learning rate $2 \\cdot 10^{-4}$, checkpoints every 5000 steps, 130k steps for XL, greedy decoding, and no T5-11B experiments.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s02::p000",
+     "summary": "Table TABREF7 reports WinoGrande development set results for different training data sizes, including logit softmax, zero-shot performance, and Condition #2, the official leaderboard submission achieving 0.7673 AUC on the held-out test set.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s02::p001",
+     "summary": "The logit trick clearly improves performance, including in zero-shot settings, target token choice affects performance, and true/false conditions #3 and #4 did not improve much over entailment/contradiction.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s02::p002",
+     "summary": "The previous WinoGrande leaderboard state of the art appears based on RoBERTa, and although T5-3B is larger, T5's “generative capability” and target token effects suggest an important role for generative pretraining.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s03::p000",
+     "summary": "Large pretrained neural models raise questions for commonsense reasoning because previous models exploited incidental dataset biases, while WinoGrande reduces such biases, though datasets over-estimate capabilities and alternative complementary explanations exist.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s03::p001",
+     "summary": "A fundamental research assumption is that commonsense reasoning is difficult because it comprises tacit rather than explicit knowledge, limiting data-driven techniques due to paucity of relevant corpora.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s03::p002",
+     "summary": "RoBERTa and sequence-to-sequence improvements leave two explanations: WinoGrande still contains incidental biases, or genuine commonsense reasoning progress challenges the notion that commonsense knowledge is mostly tacit.",
+     "group_id": "2003.08380::g00"
+    },
+    {
+     "passage_id": "2003.08380::s04::p000",
+     "summary": "This research was supported in part by the Canada First Research Excellence Fund and NSERC of Canada, with thanks to Google Colab for computational resources.",
+     "group_id": "2003.08380::g00"
+    }
+   ],
+   "n_raw": 23,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 2414,
+    "completion_tokens": 1258,
+    "total_tokens": 3672,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

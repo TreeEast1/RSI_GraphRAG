@@ -1,0 +1,814 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1811.05711::s00::p000",
+   "summary": "Healthcare data and modern analytics offer opportunities to improve health services, personalised medicine, and NHS databases through advanced analytics.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s00::p001",
+   "summary": "The National Reporting and Learning System (NRLS), set up in 2003, contains more than 13 million patient safety incident reports with structured data and free text.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s00::p002",
+   "summary": "Structured NRLS data are routinely analysed, but free text is largely unused because manual reading is time-consuming and automatic categorisation methodologies are lacking.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s00::p003",
+   "summary": "The proposed unsupervised method combines deep neural-network text embeddings with multiscale Markov Stability (MS) community detection on a sparsified geometric similarity graph.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s00::p004",
+   "summary": "The methodology uses 13 million NRLS records for embedding and analyses 3229 records from St Mary's Hospital, London over three months in 2014.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s01::p000",
+   "summary": "The framework combines text-embedding, geometric graph construction and multi-resolution community detection to identify content-based clusters from free, unstructured text unsupervised.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s01::p001",
+   "summary": "The pipeline preprocesses text, trains Doc2Vec on 13 million records, infers vectors for 3229 documents, builds an MST-kNN graph, and applies Markov Stability.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s02::p000",
+   "summary": "The full dataset includes more than 13 million confidential NRLS reports from 2004 to 2016, with more than 170 features and 15 top-level categories.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s03::p000",
+   "summary": "Text preprocessing on all 13 million records uses NLTK tokenisation, punctuation and digit-only token removal, Porter or Snowball stemming, and stop-word removal.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s04::p000",
+   "summary": "The methodology avoids labelled data at the core of supervised or semi-supervised classification methods and uses vector representations of text documents.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s04::p001",
+   "summary": "Classical bag-of-words (Bow) methods use TF-iDF vectors but ignore word order, proximity, semantic and syntactic relationships, and are high-dimensional and sparse.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s04::p002",
+   "summary": "Distributed Bag of Words (DBOW), a Paragraph Vectors or Doc2Vec method, represents word sequences as d-dimensional vectors, typically d=500, and captures semantic and syntactic characterisations.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s04::p003",
+   "summary": "Gensim trained PV-DBOW models on 13 million, 1 million and 2 million NRLS records and 5 million Wikipedia articles to test corpus size and specificity.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s04::p004",
+   "summary": "Doc2Vec benchmarking used centroids for 15 hand-coded categories, 100 nearest reports per centroid, and counted incident reports out of 1500 correctly assigned.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s04::p005",
+   "summary": "The optimised Doc2Vec model uses 13+ million NRLS records, dbow, 300 dimensions, 10 epochs, window size 15, minimum count 5, 5 negative samples, and 0.001 down-sampling.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s05::p000",
+   "summary": "Doc2Vec infers vectors for N=3229 records, and a normalised cosine similarity matrix is constructed from pairwise cosine similarities and distances.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s05::p001",
+   "summary": "The fully connected weighted graph contains many weak, redundant edges that obscure graph structure in high-dimensional noisy datasets.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s05::p002",
+   "summary": "An MST-kNN graph sparsifies the normalised similarity matrix by combining a Kruskal minimum spanning tree with k nearest neighbours and weighting edges by similarity.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s05::p003",
+   "summary": "Figure 2 shows that the MST-kNN graph with k=13 balances local and global structure, while very small or large k values degrade robustness or coherence.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s05::p004",
+   "summary": "The analysis fixes k=13, after scanning k in [1,50] and finding robustness as long as k is not too small, i.e., k > 13.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s05::p005",
+   "summary": "MST-kNN is simple, robust and balances local and global structure, while alternative sparsification approaches include Graphical Lasso, Planar Maximally Filtered Graph, spectral sparsification and RMST.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s06::p000",
+   "summary": "Community detection finds partitions according to cost functions, and Markov Stability provides dynamics-based, multi-scale community detection using random walks of all lengths.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s06::p001",
+   "summary": "MS applies continuous-time diffusion to similarity graph A to find robust document clusters across Markov time t without a priori community numbers or organisation.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s06::p002",
+   "summary": "For adjacency matrix A, the random walk Laplacian L_RW=I_N-D^{-1}A defines P(t)=e^{-t L_RW}, and a membership matrix H maps N nodes into C clusters.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s06::p003",
+   "summary": "Equation 4 defines R(t,H)=H^T[Pi P(t)-pi pi^T]H as the clustered autocovariance matrix.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s06::p004",
+   "summary": "In R(t,H), pi is the steady-state distribution, Pi=diag(pi), and elements quantify random-walk community transition probabilities minus stationarity chance.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s06::p005",
+   "summary": "The cost function measuring partition goodness over time t is termed the Markov Stability of partition H.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s06::p006",
+   "summary": "Equation 5 defines r(t,H)=trace[R(t,H)] as the Markov Stability of partition H.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s06::p007",
+   "summary": "A partition H maximising r(t,H) has communities preserving flow within themselves over time t, with large diagonal and small off-diagonal elements of R(t,H).",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s06::p008",
+   "summary": "MS uses Louvain 500 times per Markov time, selects the best 50 by r(t,H), and assesses robustness with VI(t) dips and VI(t,t') plateaus.",
+   "group_id": "1811.05711::g00"
+  },
+  {
+   "passage_id": "1811.05711::s07::p000",
+   "summary": "ForceAtlas2 BIBREF30 visualises the graph of 3229 NRLS Patient Incident reports, with colourings by hand-coded categories or multiscale MS communities indicating spatially consistent document clusters.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s07::p001",
+   "summary": "Sankey diagrams visualise node memberships across partitions and hand-coded categories, including two-layer diagrams for MS clusters and a multilayer diagram for multi-resolution MS community detection.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s07::p002",
+   "summary": "Heatmaps of normalised contingency (z-score) tables complement Sankey diagrams, comparing content clusters with external categories across resolution levels, quantified by the $NMI$ score in Eq. ( 8 ).",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s07::p003",
+   "summary": "The method clusters text documents by intrinsic content as topic detection, and Word Clouds summarise clusters for evaluation, comparison with hand-coded categories, and practitioner monitoring.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s07::p004",
+   "summary": "For comprehensible word clouds, NLTK POS tagging retains adjectives, nouns, and verbs, removes common verbs, lemmatises residual words, and uses Python wordcloud with 2 or 3-gram frequency lists.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s08::p000",
+   "summary": "The hand-coded classification is not used as `ground truth'; cluster quality is quantified by intrinsic topic coherence and similarity to external hand-coded categories.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s08::p001",
+   "summary": "Pointwise mutual information ( $PMI$ ) BIBREF13 , BIBREF14 is an intrinsic information-theoretical score capturing the probability of words being used together in the same group of documents.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s08::p002",
+   "summary": "Eq. 6 defines $PMI(w_1,w_2)=\\log {\\frac{P(w_1 w_2)}{P(w_1)P(w_2)}}$.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s08::p003",
+   "summary": "Word probabilities and co-occurrence come from the corpus, and aggregate $\\widehat{PMI}$ uses median $PMI$ between each cluster's 10 most common words and a weighted average.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s08::p004",
+   "summary": "Eq. 7 defines $\\widehat{PMI} (C)$ as a size-weighted sum over clusters of median $PMI$ among word pairs in $S_i$.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s08::p005",
+   "summary": "In Eq. 7, $c_i$ denotes clusters in partition $C$ with size $n_i$, $N=\\sum _{c_i \\in C} n_i$ is total nodes, and $S_i$ is the top 10 words for cluster $c_i$.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s08::p006",
+   "summary": "The $\\widehat{PMI}$ score evaluates partitions without labelled ground truth and has performed well against human interpretation of topics on different corpora.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s08::p007",
+   "summary": "Normalised mutual information ( $NMI$ ) compares external classification a posteriori by quantifying similarity between clusterings using correct and incorrect assignments.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s08::p008",
+   "summary": "Eq. 8 defines $NMI(C,D)$ as $I(C,D)$ divided by $\\sqrt{H(C)H(D)}$, expanded using joint and marginal probabilities.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s08::p009",
+   "summary": "In Eq. 8, $I(C,D)$ is Mutual Information and $H(C)$ and $H(D)$ are the entropies of the two partitions.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s08::p010",
+   "summary": "$NMI$ is bounded $0 \\le NMI \\le 1$, with $NMI=1$ for perfect agreement, relates to V-measure, and compares MS and other partitions against hand-coded classification.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s09::p000",
+   "summary": "MS was applied over $t \\in [0.01, 100]$ in steps of 0.01 to the MST-kNN graph of $N=3229$ records, with 500 Louvain optimisations and $VI(t)$ and $VI(t,t^{\\prime })$ robustness assessments.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s09::p001",
+   "summary": "Figure 3 plots number of clusters and variation of information metrics, with long $VI(t,t^{\\prime })$ plateaus and $VI(t)$ dips identifying robust partitions from 44 communities to 3 communities at five Markov times.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s09::p002",
+   "summary": "MS reveals rich multi-level partitions with strong quasi-hierarchical organisation, without imposing hierarchy a priori, enabling content-similar clusters at different granularity levels for practitioners.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s10::p000",
+   "summary": "The five resolution levels in Figure 3 were examined with lemmatised word clouds, Sankey diagrams, and contingency tables linking content clusters with hand-coded categories a posteriori.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s10::p001",
+   "summary": "The 44-community partition has well-defined clusters, finer than 15 hand-coded categories, with sub-themes, cross-category communities, and specific topics including blood transfusions, pressure ulcer, consent, mental health, and child protection.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s10::p002",
+   "summary": "The 12-community and 17-community levels near 15 hand-coded categories show aggregation from the 44-way partition, including Accidents, Nursing, Medication, and Homecare medication.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s10::p003",
+   "summary": "Communities 10 and 11 span `Documentation' and `Clinical Assessment', community 9 spans `Admission/Transfer' and `Infrastructure', and other communities separate `Treatment/Procedure' records into medically coherent groups.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s10::p004",
+   "summary": "The 7-way partition preserves Radiotherapy, Pressure ulcer and Labour ward, while the 3-way partition contains accidents, procedural matters, and labour ward.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s10::p005",
+   "summary": "Figure 8 shows word clouds explicitly illustrating agglomeration of content from sub-themes into larger themes for the 17, 12 and 7-way partitions.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s11::p000",
+   "summary": "Robustness was examined for Doc2Vec embeddings instead of BoW vectors, Doc2Vec training corpus size, MST-kNN sparsity, and comparisons with LDA-BoW and other community detection methods.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s11::p001",
+   "summary": "Doc2Vec is integral to the pipeline, producing lower dimensional vectors than BoW with higher semantic and syntactic content and reported advantages in semantic similarity benchmarks.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s11::p002",
+   "summary": "A TF-iDF MST-kNN graph analysed with MS showed in Figure 7 that Doc2Vec outperforms BoW across all resolutions in $NMI$ and $\\widehat{PMI}$ scores.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s11::p003",
+   "summary": "Table 1 tests Doc2Vec training sets of 1 million and 2 million records from $\\sim $ 13 million records, with Figure S3 showing performance only mildly affected by training set size.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s11::p004",
+   "summary": "Figure S4 shows $NMI$ and $\\widehat{PMI}$ scores reach similar quality for $k$ above 13-16, with minor improvement afterward, favouring a relatively small but not too small $k$.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s11::p005",
+   "summary": "Table 2 shows MS and five LDA models give comparably similar partitions to hand-coded categories by $NMI$, while MS has higher $\\widehat{PMI}$ topic coherence across all scales.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s11::p006",
+   "summary": "The method takes approximately 13 hours total, including Doc2Vec on 13 million records (11 hours) and 400 partitions (2 hours), while 5 LDA models require 30 hours.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s11::p007",
+   "summary": "LDA computes topics at a pre-determined resolution, whereas MS obtains partitions at all resolutions in one Markov time sweep and selects relevant partitions by robustness.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s11::p008",
+   "summary": "Figure S5 compares MS with Modularity Optimisation BIBREF44 , InfoMap BIBREF4 , Walktrap BIBREF45 , Label Propagation BIBREF46 , and Multi-resolution Louvain BIBREF35 , showing improved or equal $NMI$ and $\\widehat{PMI}$ across all scales except Infomap above 50 clusters.",
+   "group_id": "1811.05711::g01"
+  },
+  {
+   "passage_id": "1811.05711::s12::p000",
+   "summary": "Markov Stability with paragraph vectors and a similarity graph extracts unsupervised content-based clusters from healthcare safety incident reports at multiple resolutions.",
+   "group_id": "1811.05711::g02"
+  },
+  {
+   "passage_id": "1811.05711::s12::p001",
+   "summary": "A posteriori analysis against hand-coded categories and intrinsic topic coherence showed meaningful clusters, including Labour ward, Pressure ulcer, Chemotherapy, and Radiotherapy.",
+   "group_id": "1811.05711::g02"
+  },
+  {
+   "passage_id": "1811.05711::s12::p002",
+   "summary": "Level 1 categories vary in size, while multi-scale partitioning finds corresponding content groups and medical subcategories, with future work on Level 2, around 100 categories, and WHO ICPS.",
+   "group_id": "1811.05711::g02"
+  },
+  {
+   "passage_id": "1811.05711::s12::p003",
+   "summary": "Free text analysis provides timely intelligible incident report categories from reporters' words, adding rich information and a complementary axis to pre-defined classes.",
+   "group_id": "1811.05711::g02"
+  },
+  {
+   "passage_id": "1811.05711::s12::p004",
+   "summary": "Free text analytical approaches could free risk managers' time from classification and correction, and discover emerging topics using projection, anomaly detection, and innovation detection.",
+   "group_id": "1811.05711::g02"
+  },
+  {
+   "passage_id": "1811.05711::s12::p005",
+   "summary": "Ongoing work examines comparisons across healthcare organisations, change over time, in-class text similarities, dynamic embedding updates, robust graph construction, anomaly detection, and online classification suggestions.",
+   "group_id": "1811.05711::g02"
+  },
+  {
+   "passage_id": "1811.05711::s13::p000",
+   "summary": "The NRLS incident report dataset is managed by BDAU, Imperial College London, analysed in its Secure Environment, and cannot be publicised beyond the manuscript.",
+   "group_id": "1811.05711::g02"
+  },
+  {
+   "passage_id": "1811.05711::s14::p000",
+   "summary": "The authors declare that they have no competing interests.",
+   "group_id": "1811.05711::g02"
+  },
+  {
+   "passage_id": "1811.05711::s15::p000",
+   "summary": "Abbreviations include NHS, NRLS, BoW, LDA, Doc2Vec, MST, kNN, MS, NLTK, TF-iDF, PV, DBOW, VI, NMI, and PMI.",
+   "group_id": "1811.05711::g02"
+  },
+  {
+   "passage_id": "1811.05711::s16::p000",
+   "summary": "MTA conducted computational research; MTA and MB analysed data and designed the framework; MB, EM and SNY conceived the study; all authors wrote the manuscript.",
+   "group_id": "1811.05711::g02"
+  },
+  {
+   "passage_id": "1811.05711::s17::p000",
+   "summary": "The authors thank Joshua Symons, Elias Bamis, Zijing Liu and Michael Schaub, and acknowledge NIHR centres, NHS, NIHR, Department of Health, EPSRC, and EP/N014529/1.",
+   "group_id": "1811.05711::g02"
+  },
+  {
+   "passage_id": "1811.05711::s18::p000",
+   "summary": "MTA, EM, SNY and MB hold specified positions and degrees at Imperial College London, ICHNT, Sabanci University, Bogazici University, and the EPSRC Centre for Mathematics of Precision Healthcare.",
+   "group_id": "1811.05711::g02"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1811.05711::g00",
+   "summaries": [
+    {
+     "passage_id": "1811.05711::s00::p000",
+     "summary": "Healthcare data and modern analytics offer opportunities to improve health services, personalised medicine, and NHS databases through advanced analytics.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s00::p001",
+     "summary": "The National Reporting and Learning System (NRLS), set up in 2003, contains more than 13 million patient safety incident reports with structured data and free text.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s00::p002",
+     "summary": "Structured NRLS data are routinely analysed, but free text is largely unused because manual reading is time-consuming and automatic categorisation methodologies are lacking.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s00::p003",
+     "summary": "The proposed unsupervised method combines deep neural-network text embeddings with multiscale Markov Stability (MS) community detection on a sparsified geometric similarity graph.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s00::p004",
+     "summary": "The methodology uses 13 million NRLS records for embedding and analyses 3229 records from St Mary's Hospital, London over three months in 2014.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s01::p000",
+     "summary": "The framework combines text-embedding, geometric graph construction and multi-resolution community detection to identify content-based clusters from free, unstructured text unsupervised.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s01::p001",
+     "summary": "The pipeline preprocesses text, trains Doc2Vec on 13 million records, infers vectors for 3229 documents, builds an MST-kNN graph, and applies Markov Stability.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s02::p000",
+     "summary": "The full dataset includes more than 13 million confidential NRLS reports from 2004 to 2016, with more than 170 features and 15 top-level categories.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s03::p000",
+     "summary": "Text preprocessing on all 13 million records uses NLTK tokenisation, punctuation and digit-only token removal, Porter or Snowball stemming, and stop-word removal.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s04::p000",
+     "summary": "The methodology avoids labelled data at the core of supervised or semi-supervised classification methods and uses vector representations of text documents.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s04::p001",
+     "summary": "Classical bag-of-words (Bow) methods use TF-iDF vectors but ignore word order, proximity, semantic and syntactic relationships, and are high-dimensional and sparse.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s04::p002",
+     "summary": "Distributed Bag of Words (DBOW), a Paragraph Vectors or Doc2Vec method, represents word sequences as d-dimensional vectors, typically d=500, and captures semantic and syntactic characterisations.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s04::p003",
+     "summary": "Gensim trained PV-DBOW models on 13 million, 1 million and 2 million NRLS records and 5 million Wikipedia articles to test corpus size and specificity.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s04::p004",
+     "summary": "Doc2Vec benchmarking used centroids for 15 hand-coded categories, 100 nearest reports per centroid, and counted incident reports out of 1500 correctly assigned.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s04::p005",
+     "summary": "The optimised Doc2Vec model uses 13+ million NRLS records, dbow, 300 dimensions, 10 epochs, window size 15, minimum count 5, 5 negative samples, and 0.001 down-sampling.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s05::p000",
+     "summary": "Doc2Vec infers vectors for N=3229 records, and a normalised cosine similarity matrix is constructed from pairwise cosine similarities and distances.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s05::p001",
+     "summary": "The fully connected weighted graph contains many weak, redundant edges that obscure graph structure in high-dimensional noisy datasets.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s05::p002",
+     "summary": "An MST-kNN graph sparsifies the normalised similarity matrix by combining a Kruskal minimum spanning tree with k nearest neighbours and weighting edges by similarity.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s05::p003",
+     "summary": "Figure 2 shows that the MST-kNN graph with k=13 balances local and global structure, while very small or large k values degrade robustness or coherence.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s05::p004",
+     "summary": "The analysis fixes k=13, after scanning k in [1,50] and finding robustness as long as k is not too small, i.e., k > 13.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s05::p005",
+     "summary": "MST-kNN is simple, robust and balances local and global structure, while alternative sparsification approaches include Graphical Lasso, Planar Maximally Filtered Graph, spectral sparsification and RMST.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s06::p000",
+     "summary": "Community detection finds partitions according to cost functions, and Markov Stability provides dynamics-based, multi-scale community detection using random walks of all lengths.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s06::p001",
+     "summary": "MS applies continuous-time diffusion to similarity graph A to find robust document clusters across Markov time t without a priori community numbers or organisation.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s06::p002",
+     "summary": "For adjacency matrix A, the random walk Laplacian L_RW=I_N-D^{-1}A defines P(t)=e^{-t L_RW}, and a membership matrix H maps N nodes into C clusters.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s06::p003",
+     "summary": "Equation 4 defines R(t,H)=H^T[Pi P(t)-pi pi^T]H as the clustered autocovariance matrix.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s06::p004",
+     "summary": "In R(t,H), pi is the steady-state distribution, Pi=diag(pi), and elements quantify random-walk community transition probabilities minus stationarity chance.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s06::p005",
+     "summary": "The cost function measuring partition goodness over time t is termed the Markov Stability of partition H.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s06::p006",
+     "summary": "Equation 5 defines r(t,H)=trace[R(t,H)] as the Markov Stability of partition H.",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s06::p007",
+     "summary": "A partition H maximising r(t,H) has communities preserving flow within themselves over time t, with large diagonal and small off-diagonal elements of R(t,H).",
+     "group_id": "1811.05711::g00"
+    },
+    {
+     "passage_id": "1811.05711::s06::p008",
+     "summary": "MS uses Louvain 500 times per Markov time, selects the best 50 by r(t,H), and assesses robustness with VI(t) dips and VI(t,t') plateaus.",
+     "group_id": "1811.05711::g00"
+    }
+   ],
+   "n_raw": 30,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5987,
+    "completion_tokens": 1536,
+    "total_tokens": 7523,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1811.05711::g01",
+   "summaries": [
+    {
+     "passage_id": "1811.05711::s07::p000",
+     "summary": "ForceAtlas2 BIBREF30 visualises the graph of 3229 NRLS Patient Incident reports, with colourings by hand-coded categories or multiscale MS communities indicating spatially consistent document clusters.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s07::p001",
+     "summary": "Sankey diagrams visualise node memberships across partitions and hand-coded categories, including two-layer diagrams for MS clusters and a multilayer diagram for multi-resolution MS community detection.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s07::p002",
+     "summary": "Heatmaps of normalised contingency (z-score) tables complement Sankey diagrams, comparing content clusters with external categories across resolution levels, quantified by the $NMI$ score in Eq. ( 8 ).",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s07::p003",
+     "summary": "The method clusters text documents by intrinsic content as topic detection, and Word Clouds summarise clusters for evaluation, comparison with hand-coded categories, and practitioner monitoring.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s07::p004",
+     "summary": "For comprehensible word clouds, NLTK POS tagging retains adjectives, nouns, and verbs, removes common verbs, lemmatises residual words, and uses Python wordcloud with 2 or 3-gram frequency lists.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s08::p000",
+     "summary": "The hand-coded classification is not used as `ground truth'; cluster quality is quantified by intrinsic topic coherence and similarity to external hand-coded categories.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s08::p001",
+     "summary": "Pointwise mutual information ( $PMI$ ) BIBREF13 , BIBREF14 is an intrinsic information-theoretical score capturing the probability of words being used together in the same group of documents.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s08::p002",
+     "summary": "Eq. 6 defines $PMI(w_1,w_2)=\\log {\\frac{P(w_1 w_2)}{P(w_1)P(w_2)}}$.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s08::p003",
+     "summary": "Word probabilities and co-occurrence come from the corpus, and aggregate $\\widehat{PMI}$ uses median $PMI$ between each cluster's 10 most common words and a weighted average.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s08::p004",
+     "summary": "Eq. 7 defines $\\widehat{PMI} (C)$ as a size-weighted sum over clusters of median $PMI$ among word pairs in $S_i$.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s08::p005",
+     "summary": "In Eq. 7, $c_i$ denotes clusters in partition $C$ with size $n_i$, $N=\\sum _{c_i \\in C} n_i$ is total nodes, and $S_i$ is the top 10 words for cluster $c_i$.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s08::p006",
+     "summary": "The $\\widehat{PMI}$ score evaluates partitions without labelled ground truth and has performed well against human interpretation of topics on different corpora.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s08::p007",
+     "summary": "Normalised mutual information ( $NMI$ ) compares external classification a posteriori by quantifying similarity between clusterings using correct and incorrect assignments.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s08::p008",
+     "summary": "Eq. 8 defines $NMI(C,D)$ as $I(C,D)$ divided by $\\sqrt{H(C)H(D)}$, expanded using joint and marginal probabilities.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s08::p009",
+     "summary": "In Eq. 8, $I(C,D)$ is Mutual Information and $H(C)$ and $H(D)$ are the entropies of the two partitions.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s08::p010",
+     "summary": "$NMI$ is bounded $0 \\le NMI \\le 1$, with $NMI=1$ for perfect agreement, relates to V-measure, and compares MS and other partitions against hand-coded classification.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s09::p000",
+     "summary": "MS was applied over $t \\in [0.01, 100]$ in steps of 0.01 to the MST-kNN graph of $N=3229$ records, with 500 Louvain optimisations and $VI(t)$ and $VI(t,t^{\\prime })$ robustness assessments.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s09::p001",
+     "summary": "Figure 3 plots number of clusters and variation of information metrics, with long $VI(t,t^{\\prime })$ plateaus and $VI(t)$ dips identifying robust partitions from 44 communities to 3 communities at five Markov times.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s09::p002",
+     "summary": "MS reveals rich multi-level partitions with strong quasi-hierarchical organisation, without imposing hierarchy a priori, enabling content-similar clusters at different granularity levels for practitioners.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s10::p000",
+     "summary": "The five resolution levels in Figure 3 were examined with lemmatised word clouds, Sankey diagrams, and contingency tables linking content clusters with hand-coded categories a posteriori.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s10::p001",
+     "summary": "The 44-community partition has well-defined clusters, finer than 15 hand-coded categories, with sub-themes, cross-category communities, and specific topics including blood transfusions, pressure ulcer, consent, mental health, and child protection.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s10::p002",
+     "summary": "The 12-community and 17-community levels near 15 hand-coded categories show aggregation from the 44-way partition, including Accidents, Nursing, Medication, and Homecare medication.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s10::p003",
+     "summary": "Communities 10 and 11 span `Documentation' and `Clinical Assessment', community 9 spans `Admission/Transfer' and `Infrastructure', and other communities separate `Treatment/Procedure' records into medically coherent groups.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s10::p004",
+     "summary": "The 7-way partition preserves Radiotherapy, Pressure ulcer and Labour ward, while the 3-way partition contains accidents, procedural matters, and labour ward.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s10::p005",
+     "summary": "Figure 8 shows word clouds explicitly illustrating agglomeration of content from sub-themes into larger themes for the 17, 12 and 7-way partitions.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s11::p000",
+     "summary": "Robustness was examined for Doc2Vec embeddings instead of BoW vectors, Doc2Vec training corpus size, MST-kNN sparsity, and comparisons with LDA-BoW and other community detection methods.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s11::p001",
+     "summary": "Doc2Vec is integral to the pipeline, producing lower dimensional vectors than BoW with higher semantic and syntactic content and reported advantages in semantic similarity benchmarks.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s11::p002",
+     "summary": "A TF-iDF MST-kNN graph analysed with MS showed in Figure 7 that Doc2Vec outperforms BoW across all resolutions in $NMI$ and $\\widehat{PMI}$ scores.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s11::p003",
+     "summary": "Table 1 tests Doc2Vec training sets of 1 million and 2 million records from $\\sim $ 13 million records, with Figure S3 showing performance only mildly affected by training set size.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s11::p004",
+     "summary": "Figure S4 shows $NMI$ and $\\widehat{PMI}$ scores reach similar quality for $k$ above 13-16, with minor improvement afterward, favouring a relatively small but not too small $k$.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s11::p005",
+     "summary": "Table 2 shows MS and five LDA models give comparably similar partitions to hand-coded categories by $NMI$, while MS has higher $\\widehat{PMI}$ topic coherence across all scales.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s11::p006",
+     "summary": "The method takes approximately 13 hours total, including Doc2Vec on 13 million records (11 hours) and 400 partitions (2 hours), while 5 LDA models require 30 hours.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s11::p007",
+     "summary": "LDA computes topics at a pre-determined resolution, whereas MS obtains partitions at all resolutions in one Markov time sweep and selects relevant partitions by robustness.",
+     "group_id": "1811.05711::g01"
+    },
+    {
+     "passage_id": "1811.05711::s11::p008",
+     "summary": "Figure S5 compares MS with Modularity Optimisation BIBREF44 , InfoMap BIBREF4 , Walktrap BIBREF45 , Label Propagation BIBREF46 , and Multi-resolution Louvain BIBREF35 , showing improved or equal $NMI$ and $\\widehat{PMI}$ across all scales except Infomap above 50 clusters.",
+     "group_id": "1811.05711::g01"
+    }
+   ],
+   "n_raw": 34,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5339,
+    "completion_tokens": 2015,
+    "total_tokens": 7354,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1811.05711::g02",
+   "summaries": [
+    {
+     "passage_id": "1811.05711::s12::p000",
+     "summary": "Markov Stability with paragraph vectors and a similarity graph extracts unsupervised content-based clusters from healthcare safety incident reports at multiple resolutions.",
+     "group_id": "1811.05711::g02"
+    },
+    {
+     "passage_id": "1811.05711::s12::p001",
+     "summary": "A posteriori analysis against hand-coded categories and intrinsic topic coherence showed meaningful clusters, including Labour ward, Pressure ulcer, Chemotherapy, and Radiotherapy.",
+     "group_id": "1811.05711::g02"
+    },
+    {
+     "passage_id": "1811.05711::s12::p002",
+     "summary": "Level 1 categories vary in size, while multi-scale partitioning finds corresponding content groups and medical subcategories, with future work on Level 2, around 100 categories, and WHO ICPS.",
+     "group_id": "1811.05711::g02"
+    },
+    {
+     "passage_id": "1811.05711::s12::p003",
+     "summary": "Free text analysis provides timely intelligible incident report categories from reporters' words, adding rich information and a complementary axis to pre-defined classes.",
+     "group_id": "1811.05711::g02"
+    },
+    {
+     "passage_id": "1811.05711::s12::p004",
+     "summary": "Free text analytical approaches could free risk managers' time from classification and correction, and discover emerging topics using projection, anomaly detection, and innovation detection.",
+     "group_id": "1811.05711::g02"
+    },
+    {
+     "passage_id": "1811.05711::s12::p005",
+     "summary": "Ongoing work examines comparisons across healthcare organisations, change over time, in-class text similarities, dynamic embedding updates, robust graph construction, anomaly detection, and online classification suggestions.",
+     "group_id": "1811.05711::g02"
+    },
+    {
+     "passage_id": "1811.05711::s13::p000",
+     "summary": "The NRLS incident report dataset is managed by BDAU, Imperial College London, analysed in its Secure Environment, and cannot be publicised beyond the manuscript.",
+     "group_id": "1811.05711::g02"
+    },
+    {
+     "passage_id": "1811.05711::s14::p000",
+     "summary": "The authors declare that they have no competing interests.",
+     "group_id": "1811.05711::g02"
+    },
+    {
+     "passage_id": "1811.05711::s15::p000",
+     "summary": "Abbreviations include NHS, NRLS, BoW, LDA, Doc2Vec, MST, kNN, MS, NLTK, TF-iDF, PV, DBOW, VI, NMI, and PMI.",
+     "group_id": "1811.05711::g02"
+    },
+    {
+     "passage_id": "1811.05711::s16::p000",
+     "summary": "MTA conducted computational research; MTA and MB analysed data and designed the framework; MB, EM and SNY conceived the study; all authors wrote the manuscript.",
+     "group_id": "1811.05711::g02"
+    },
+    {
+     "passage_id": "1811.05711::s17::p000",
+     "summary": "The authors thank Joshua Symons, Elias Bamis, Zijing Liu and Michael Schaub, and acknowledge NIHR centres, NHS, NIHR, Department of Health, EPSRC, and EP/N014529/1.",
+     "group_id": "1811.05711::g02"
+    },
+    {
+     "passage_id": "1811.05711::s18::p000",
+     "summary": "MTA, EM, SNY and MB hold specified positions and degrees at Imperial College London, ICHNT, Sabanci University, Bogazici University, and the EPSRC Centre for Mathematics of Precision Healthcare.",
+     "group_id": "1811.05711::g02"
+    }
+   ],
+   "n_raw": 12,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1862,
+    "completion_tokens": 634,
+    "total_tokens": 2496,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,474 @@
+{
+ "1911.10049::s00::p000": [
+  [
+   "Word embeddings",
+   "are representations of",
+   "words in numerical form, as vectors of typically several hundred dimensions"
+  ],
+  [
+   "The vectors",
+   "are used as",
+   "an input to machine learning models"
+  ],
+  [
+   "the embeddings algorithms",
+   "use",
+   "large monolingual corpora"
+  ],
+  [
+   "the embeddings",
+   "shall preserve",
+   "semantic relations between words"
+  ]
+ ],
+ "1911.10049::s00::p001": [
+  [
+   "Probably the best known word embeddings",
+   "are produced by",
+   "the word2vec method BIBREF5"
+  ],
+  [
+   "The problem with word2vec embeddings",
+   "is",
+   "their failure to express polysemous words"
+  ],
+  [
+   "all senses of a given word",
+   "contribute",
+   "relevant information in proportion to their frequency in the training corpus"
+  ],
+  [
+   "none of the 50 closest vectors of the word paper",
+   "is related to",
+   "science"
+  ]
+ ],
+ "1911.10049::s00::p002": [
+  [
+   "The idea of contextual embeddings",
+   "is to generate",
+   "a different vector for each context a word appears in"
+  ],
+  [
+   "the context",
+   "is typically defined",
+   "sentence-wise"
+  ],
+  [
+   "ELMo",
+   "has been shown to outperform",
+   "previous word embeddings BIBREF3 like word2vec and GloVe on many NLP tasks"
+  ]
+ ],
+ "1911.10049::s00::p003": [
+  [
+   "This report",
+   "is split into",
+   "further five sections"
+  ]
+ ],
+ "1911.10049::s01::p000": [
+  [
+   "Typical word embeddings models or representations",
+   "are",
+   "fast to train"
+  ],
+  [
+   "Typical word embeddings models or representations",
+   "have been pre-trained for",
+   "a number of different languages"
+  ],
+  [
+   "ELMo (Embeddings from Language Models) embedding BIBREF3",
+   "is",
+   "one of the state-of-the-art pretrained transfer learning models"
+  ]
+ ],
+ "1911.10049::s01::p001": [
+  [
+   "ELMo model`s architecture",
+   "consists of",
+   "three neural network layers"
+  ],
+  [
+   "The output of the model after each layer",
+   "gives",
+   "one set of embeddings, altogether three sets"
+  ],
+  [
+   "The first layer",
+   "is",
+   "a CNN layer, which operates on a character level"
+  ],
+  [
+   "A biLM layer",
+   "consists of",
+   "two concatenated LSTMs"
+  ]
+ ],
+ "1911.10049::s01::p002": [
+  [
+   "weights of the average",
+   "are learned during",
+   "the training of the model for the specific task"
+  ],
+  [
+   "an entire ELMo model",
+   "can be fine-tuned on",
+   "a specific end task"
+  ]
+ ],
+ "1911.10049::s01::p003": [
+  [
+   "ELMo",
+   "is trained on",
+   "character level"
+  ],
+  [
+   "The original ELMo model",
+   "was trained on",
+   "a one billion word large English corpus"
+  ],
+  [
+   "The original ELMo model",
+   "was trained with",
+   "a given vocabulary file of about 800,000 words"
+  ]
+ ],
+ "1911.10049::s02::p000": [
+  [
+   "ELMoForManyLangs BIBREF6 project",
+   "released",
+   "pre-trained ELMo models for a number of different languages BIBREF7"
+  ],
+  [
+   "a complete (wikidump + common crawl) Latvian corpus",
+   "has",
+   "about 280 million tokens"
+  ]
+ ],
+ "1911.10049::s03::p000": [
+  [
+   "The corpora used in training datasets",
+   "are",
+   "a mix of news articles and general web crawl"
+  ]
+ ],
+ "1911.10049::s03::p001": [
+  [
+   "Croatian dataset",
+   "include",
+   "hrWaC 2.1 corpus BIBREF9, Riznica BIBREF10, and articles of Croatian branch of Styria media house"
+  ],
+  [
+   "hrWaC",
+   "was built by crawling",
+   "the .hr internet domain in 2011 and 2014"
+  ],
+  [
+   "Riznica",
+   "is composed of",
+   "Croatian fiction and non-fiction prose, poetry, drama, textbooks, manuals, etc."
+  ],
+  [
+   "The Styria dataset",
+   "consists of",
+   "570,219 news articles published on the Croatian 24sata news portal and niche portals related to 24sata"
+  ]
+ ],
+ "1911.10049::s03::p002": [
+  [
+   "Ekspress Meedia dataset",
+   "is composed of",
+   "Estonian news articles between years 2009 and 2019"
+  ],
+  [
+   "The CoNLL 2017 corpus",
+   "is composed of",
+   "Estonian Wikipedia and webcrawl"
+  ]
+ ],
+ "1911.10049::s03::p003": [
+  [
+   "Finnish dataset",
+   "contains",
+   "articles by Finnish news agency STT, Finnish part of the CoNLL 2017 dataset, and Ylilauta downloadable version"
+  ],
+  [
+   "STT news articles",
+   "were published between",
+   "years 1992 and 2018"
+  ],
+  [
+   "Ylilauta",
+   "is",
+   "a Finnish online discussion board"
+  ],
+  [
+   "the corpus",
+   "contains",
+   "parts of the discussions from 2012 to 2014"
+  ]
+ ],
+ "1911.10049::s03::p004": [
+  [
+   "Latvian dataset",
+   "consists only of",
+   "the Latvian portion of the ConLL 2017 corpus"
+  ]
+ ],
+ "1911.10049::s03::p005": [
+  [
+   "Lithuanian dataset",
+   "is composed of",
+   "Lithuanian Wikipedia articles from 2018, DGT-UD corpus, and LtTenTen"
+  ],
+  [
+   "DGT-UD",
+   "is",
+   "a parallel corpus of 23 official languages of the EU"
+  ],
+  [
+   "DGT-UD",
+   "is composed of",
+   "JRC DGT translation memory of European law"
+  ],
+  [
+   "LtTenTen",
+   "is",
+   "Lithuanian web corpus made up of texts collected from the internet in April 2014"
+  ]
+ ],
+ "1911.10049::s03::p006": [
+  [
+   "Slovene dataset",
+   "is formed from",
+   "the Gigafida 2.0 corpus"
+  ],
+  [
+   "Gigafida 2.0 corpus",
+   "is",
+   "a general language corpus composed of various sources, mostly newspapers, internet pages, and magazines"
+  ]
+ ],
+ "1911.10049::s03::p007": [
+  [
+   "Swedish dataset",
+   "is composed of",
+   "STT Swedish articles and Swedish part of CoNLL 2017"
+  ],
+  [
+   "The Finnish news agency STT",
+   "publishes",
+   "some of its articles in Swedish language"
+  ],
+  [
+   "The corpus",
+   "contains",
+   "those articles from 1992 to 2017"
+  ]
+ ],
+ "1911.10049::s04::p000": [
+  [
+   "CoNLL 2017, DGT-UD and LtTenTen14 corpora",
+   "were already",
+   "pre-tokenized"
+  ]
+ ],
+ "1911.10049::s04::p001": [
+  [
+   "vocabulary file",
+   "contains",
+   "roughly one million most common tokens"
+  ],
+  [
+   "tokens",
+   "appear at least",
+   "$n$ times in the corpus"
+  ],
+  [
+   "each ELMo model",
+   "was trained using",
+   "default values used to train the original English ELMo (large) model"
+  ]
+ ],
+ "1911.10049::s05::p000": [
+  [
+   "produced ELMo models",
+   "were evaluated using",
+   "two evaluation tasks: a word analogy task and named entity recognition (NER) task"
+  ]
+ ],
+ "1911.10049::s06::p000": [
+  [
+   "word analogy task",
+   "has",
+   "two main groups of categories: 5 semantic and 10 syntactic"
+  ],
+  [
+   "semantic relationship example",
+   "is",
+   "“Finland : Helsinki”"
+  ],
+  [
+   "expected answer",
+   "is",
+   "$y=$ Stockholm"
+  ]
+ ],
+ "1911.10049::s06::p001": [
+  [
+   "analogy task",
+   "is transformed into",
+   "vector arithmetic and search for nearest neighbours"
+  ],
+  [
+   "analogy datasets",
+   "are based on",
+   "the English dataset by BIBREF14"
+  ],
+  [
+   "modified dataset",
+   "was first written in",
+   "Slovene language"
+  ],
+  [
+   "modified dataset",
+   "was translated into",
+   "other languages BIBREF15"
+  ]
+ ],
+ "1911.10049::s06::p002": [
+  [
+   "each instance of analogy",
+   "contains",
+   "only four words"
+  ],
+  [
+   "contextual models (such as ELMo)",
+   "do not have",
+   "enough context to generate sensible embeddings"
+  ],
+  [
+   "cosine distance ($d$)",
+   "is measured between",
+   "the last word ($w_4$) and the combination of the first three words ($w_2-w_1+w_3$)"
+  ],
+  [
+   "CSLS metric BIBREF16",
+   "is used to find",
+   "the closest candidate word ($w_4$)"
+  ]
+ ],
+ "1911.10049::s06::p003": [
+  [
+   "Latvian ELMo",
+   "was trained using",
+   "only CoNLL 2017 corpora"
+  ],
+  [
+   "ELMoForManyLangs",
+   "uses",
+   "only 20 million tokens"
+  ]
+ ],
+ "1911.10049::s06::p004": [
+  [
+   "The Latvian ELMo model from ELMoForManyLangs project",
+   "performs significantly worse than",
+   "EMBEDDIA ELMo Latvian model on all categories of word analogy task"
+  ],
+  [
+   "the accuracy score of ELMoForManyLangs",
+   "is always worse than",
+   "either of our models"
+  ],
+  [
+   "a few hundred million tokens",
+   "is",
+   "a sufficiently large corpus to train ELMo models (at least for word analogy task)"
+  ],
+  [
+   "20-million token corpora used in ELMoForManyLangs",
+   "are",
+   "too small"
+  ]
+ ],
+ "1911.10049::s06::p005": [
+  [
+   "The embeddings after the first LSTM layer",
+   "perform best in",
+   "semantic categories"
+  ],
+  [
+   "the non-contextual CNN layer",
+   "performs the best in",
+   "syntactic categories"
+  ],
+  [
+   "The second LSTM layer embeddings",
+   "perform the worst in",
+   "syntactic categories"
+  ]
+ ],
+ "1911.10049::s07::p000": [
+  [
+   "The labels in the used NER datasets",
+   "are simplified to",
+   "a common label set of three labels (person - PER, location - LOC, organization - ORG)"
+  ],
+  [
+   "Each word in the NER dataset",
+   "is labeled with",
+   "one of the three mentioned labels or a label 'O' (other, i.e. not a named entity)"
+  ]
+ ],
+ "1911.10049::s07::p001": [
+  [
+   "The final layer of our model",
+   "was",
+   "a time distributed softmax layer with 4 neurons"
+  ]
+ ],
+ "1911.10049::s07::p003": [
+  [
+   "the differences between the tested languages",
+   "depend more on",
+   "the properties of the NER datasets than on the quality of embeddings"
+  ],
+  [
+   "the input",
+   "uses",
+   "300 dimensional fastText embedding vectors"
+  ]
+ ],
+ "1911.10049::s07::p004": [
+  [
+   "Croatian and Lithuanian",
+   "are",
+   "languages with the smallest NER datasets"
+  ],
+  [
+   "ELMo embeddings",
+   "show",
+   "the largest improvement over fastText embeddings"
+  ]
+ ],
+ "1911.10049::s08::p000": [
+  [
+   "the size of used training sets",
+   "importantly affects",
+   "the quality of produced embeddings"
+  ],
+  [
+   "the existing publicly available ELMo embeddings for the processed languages",
+   "are",
+   "inadequate"
+  ],
+  [
+   "the newly produced contextual embeddings",
+   "produce",
+   "substantially better results compared to the non-contextual fastText baseline"
+  ]
+ ]
+}

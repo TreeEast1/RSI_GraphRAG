@@ -1,0 +1,588 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1612.02482::s00::p000",
+   "summary": "RNN-based neural translation models use about 5% of traditional shallow SMT memory, jointly train modules, but require heavy corpora, harming morphologically rich language translation.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s00::p001",
+   "summary": "MT efficiency depends on parallel corpus availability and size and syntactic divergence, with English-like fusional languages differing from agglutinative morphologically rich languages.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s00::p002",
+   "summary": "Agglutination creates many Tamil inflectional forms, including at least 30,000 verb forms and about 5,000 noun forms, hiding meanings and increasing MT complexity.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s00::p003",
+   "summary": "Tamil translation is difficult because parallel corpus availability is very scarce and most English–Tamil MT corpora were manually created and unavailable online.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s00::p004",
+   "summary": "Tamil pronunciation-based suffix characters, unique for each consonant, degrade MT because words with different suffixes are treated as different words in training.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s00::p005",
+   "summary": "Tamil has written and spoken forms, increasing corpus vocabulary with two versions, as seen between Bible traditional Tamil and movie subtitle spoken Tamil.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s00::p006",
+   "summary": "Building an English–Tamil neural MT system requires a trade-off between domain specificity and size of the corpus.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s01::p000",
+   "summary": "The experiment corpus combined EnTam v2, TDIL tourism data, and AU-KBC Tamil novels and short stories, totaling 197,792 sentences.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s01::p001",
+   "summary": "A self-collected monolingual Tamil corpus of 567,772 sentences supported word2vec embeddings and a phrase-based SMT language model, standardized to UTF-8 and cleaned.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s02::p000",
+   "summary": "Source and target word embeddings initialize model vectors, and the word2vec skip gram model optimizes vectors using average log probability of context words.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s02::p001",
+   "summary": "The formulation defines k, corpus words, training corpus size, hierarchical softmax probability, and omits negative sampling and subsampling of frequent words.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s02::p002",
+   "summary": "A monolingual corpus of 569,772 Tamil sentences was used to create semantically meaningful word embeddings with greater contextual richness.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s02::p003",
+   "summary": "The word2vec model used vector size 100, window size 5, 7 worker threads, batch size 50 words, negative sampling 1, and gensim.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s03::p000",
+   "summary": "The Bahdanau2014 model uses a bidirectional LSTM encoder, context vector, and attention-based decoder with weighted encoder outputs and previous decoded words.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s03::p001",
+   "summary": "Neural Machine Translation computes target sentence probability word by word, with basic and attention-based decoders differing in their log probability calculations.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s03::p002",
+   "summary": "The attention formulation defines target sentence length, target and source sentences, fixed encoder output vector, and weighted encoder hidden outputs as attention vector.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s03::p003",
+   "summary": "The decoder LSTM computes: DISPLAYFORM0.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s03::p004",
+   "summary": "Decoder probability depends on previous output, current hidden layer vector, and attention context vector, which is a weighted sum over the sentence.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s03::p005",
+   "summary": "The context vector uses source tokens, encoder hidden values, and alignment parameters from a feed forward neural network trained jointly with the translation model.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s03::p006",
+   "summary": "Softmax feedforward outputs, decoder hidden states, encoder annotations, and concatenated forward and reverse encoder hidden parameters compute attention weights for overall sentence context.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s03::p007",
+   "summary": "Global attention is preferred over local attention because English–Tamil structural discordance and morphological and structural variations make local lookup inefficient.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s03::p008",
+   "summary": "The No Peepholes (NP) LSTM variant from Greff et al. greff2015lstm uses gated cell and hidden vectors to prevent vanishing gradients.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s03::p009",
+   "summary": "The decoder uses equations 7 through 11, while the encoder uses a bidirectional RNN LSTM with forward and backward hidden layer components.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s04::p000",
+   "summary": "Morphological segmentation uses a semi-supervised extension of a generative probabilistic model maximizing MAP probability of recursive prefix,root,postfix word splits.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s04::p001",
+   "summary": "Each training lexicon word is included, the prior uses the Minimum Description Length(MDL) principle, and the likelihood is estimated separately.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s04::p002",
+   "summary": "Intermediate analyses and the INLINEFORM2 morpheme of word INLINEFORM3 are defined for the likelihood estimation.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s04::p003",
+   "summary": "An extended Viterbi algorithm decodes using exhaustive morpheme mapping, with extra parameters and a cost function addressing over-segmentation and under-segmentation.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s04::p004",
+   "summary": "The cost function includes likelihoods for the cost function, annotated dataset contribution, and labeled data, with parameters controlling segment size and corpus discrepancies.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s04::p005",
+   "summary": "The Python extension to morfessor 2.0 performed segmentation using Tamil annotation data from Anoop Kunchukkutan in the Indic NLP Library.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s05::p000",
+   "summary": "English to Tamil translation used an RNN LSTM Bi-directional encoder attention decoder architecture, with phrase based SMT, Factored SMT reference, and 569,772 monolingual Tamil sentences.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s06::p000",
+   "summary": "Training sentences were bucketed by fixed sizes to minimize PAD tokens, with more buckets around 10–20 words and RNNMorph target buckets increased uniformly by 5.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s07::p000",
+   "summary": "RNNSearch vocabularies were restricted to 60,000 out of 67,768 English and 150,000 out of 340,325 Tamil words, while RNNMorph used 67,768 English and 41,906 Tamil words.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s07::p001",
+   "summary": "The model used SGD, sampled softmax loss of 512 per sample, learning rate 1.0, decay rate 0.5, gradient clipping global norm 5.0, and Tensorflow seq2seq.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s08::p000",
+   "summary": "Evaluation used BLEU modified 1-gram, 2-gram, 3-gram and 4-gram precision values and human metrics of adequacy, fluency and relative ranking values.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s09::p000",
+   "summary": "The BLEU scores obtained using the various models used in the experiment are tabulated in Table TABREF25.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s09::p001",
+   "summary": "BLEU computes micro-averaged unigram, bigram, trigram and BLEU-4 precision values, with phrase-based SMT inferior to RNNSearch and word2vec slightly increasing BLEU scores.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s09::p002",
+   "summary": "Morphological segmentation improved RNNMorph BLEU precision values, but increased tokens from Tamil segmentation may inflate the numeric BLEU increase.",
+   "group_id": "1612.02482::g00"
+  },
+  {
+   "passage_id": "1612.02482::s10::p000",
+   "summary": "Human evaluation used adequacy, precision and ranking values, 50 native annotators, about 100 randomized test sentences, 5-point scales, and intra-annotator values.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s10::p001",
+   "summary": "The human evaluation Kappa co-efficient results are calculated with respect to DISPLAYFORM0.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s10::p002",
+   "summary": "Ranking Kappa co-efficient was 0.573 for RNNMorph and 0.410 for RNNSearch+Word2Vec, implying annotators found RNNMorph produced better results.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s11::p000",
+   "summary": "RNNMorph learning rate decay was manual after specific epochs, with earlier perplexity saturation and target vocabulary reduced from 340,325 words to 41,906 morphs.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s11::p001",
+   "summary": "Sampled SoftMax loss accommodated a large target vocabulary, and Fig. FIGREF35 shows RNNMorph consistently better perplexity values with 4 hidden layers.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s12::p000",
+   "summary": "Attention vectors show reduced vocabulary improved source sentence lookup, while RNNSearch with Word2Vec embeddings attended to INLINEFORM4 EOS INLINEFORM5 and used only 44% Tamil and 74% English vocabulary.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s13::p000",
+   "summary": "Morphological segmentation of Tamil text decreased target vocabulary size from 340,325 to 41,906, reducing unknown tokens and dividing vocabulary into morphological roots and inflections.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s14::p000",
+   "summary": "RNNMorph translations sometimes repeat phrases, possibly due to increased target sequence length, more morphs per sentence, and semi-supervised morphological segmentation errors.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s15::p000",
+   "summary": "RNNSearch + Word2Vec and Morph2Vec outputs show morphological segmentation improves grammatical soundness, with most Morph2Vec translations having no INLINEFORM0 UNK INLINEFORM1 tokens.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s16::p000",
+   "summary": "Related English–Tamil MT work includes MAT, EBMT with 700000 sentences, rule based systems, HMM-based SMT, hybrid approaches, SMT, and morphological pre and post processing techniques.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s16::p001",
+   "summary": "RNN Encoder Decoder models improved translation for similar grammatical structures, with Cho et al SecondOneByCho in 2014 and Sutskever et al. sutskever2014sequence using static context vectors.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s16::p002",
+   "summary": "Bahdanau et al. Bahdanau2014 introduced attention via variable length word vectors, and Luong et al. luong2015effective distinguished global and local attention using AER scores.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s17::p000",
+   "summary": "Morphological segmentation improves translation for morphologically rich languages, and both languages should be individually segmented when their agglutination schemes differ.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s17::p001",
+   "summary": "Morphological segmentation increases average sentence lengths and model complexity, but attention models can help, and Tamil generally has fewer words per sentence than English.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s18::p000",
+   "summary": "The implemented model includes only source-side morphological segmentation, so a morphological generator is essential for end-to-end translation output in words rather than morphemes.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s18::p001",
+   "summary": "A better corpus could generalize beyond domain specific source sentences, and a better GPU could improve hidden layer sizes, batch sizes, scope and accuracy.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s18::p002",
+   "summary": "Rocktaschel et al. rocktaschel2015reasoning's encoder–decoder architecture for Natural Language Inference (NLI) can be used for the same model.",
+   "group_id": "1612.02482::g01"
+  },
+  {
+   "passage_id": "1612.02482::s19::p000",
+   "summary": "The author thanks Dr. M. Anand Kumar and Dr. Arvindan for support, guidance, inputs and suggestions.",
+   "group_id": "1612.02482::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1612.02482::g00",
+   "summaries": [
+    {
+     "passage_id": "1612.02482::s00::p000",
+     "summary": "RNN-based neural translation models use about 5% of traditional shallow SMT memory, jointly train modules, but require heavy corpora, harming morphologically rich language translation.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s00::p001",
+     "summary": "MT efficiency depends on parallel corpus availability and size and syntactic divergence, with English-like fusional languages differing from agglutinative morphologically rich languages.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s00::p002",
+     "summary": "Agglutination creates many Tamil inflectional forms, including at least 30,000 verb forms and about 5,000 noun forms, hiding meanings and increasing MT complexity.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s00::p003",
+     "summary": "Tamil translation is difficult because parallel corpus availability is very scarce and most English–Tamil MT corpora were manually created and unavailable online.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s00::p004",
+     "summary": "Tamil pronunciation-based suffix characters, unique for each consonant, degrade MT because words with different suffixes are treated as different words in training.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s00::p005",
+     "summary": "Tamil has written and spoken forms, increasing corpus vocabulary with two versions, as seen between Bible traditional Tamil and movie subtitle spoken Tamil.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s00::p006",
+     "summary": "Building an English–Tamil neural MT system requires a trade-off between domain specificity and size of the corpus.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s01::p000",
+     "summary": "The experiment corpus combined EnTam v2, TDIL tourism data, and AU-KBC Tamil novels and short stories, totaling 197,792 sentences.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s01::p001",
+     "summary": "A self-collected monolingual Tamil corpus of 567,772 sentences supported word2vec embeddings and a phrase-based SMT language model, standardized to UTF-8 and cleaned.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s02::p000",
+     "summary": "Source and target word embeddings initialize model vectors, and the word2vec skip gram model optimizes vectors using average log probability of context words.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s02::p001",
+     "summary": "The formulation defines k, corpus words, training corpus size, hierarchical softmax probability, and omits negative sampling and subsampling of frequent words.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s02::p002",
+     "summary": "A monolingual corpus of 569,772 Tamil sentences was used to create semantically meaningful word embeddings with greater contextual richness.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s02::p003",
+     "summary": "The word2vec model used vector size 100, window size 5, 7 worker threads, batch size 50 words, negative sampling 1, and gensim.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s03::p000",
+     "summary": "The Bahdanau2014 model uses a bidirectional LSTM encoder, context vector, and attention-based decoder with weighted encoder outputs and previous decoded words.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s03::p001",
+     "summary": "Neural Machine Translation computes target sentence probability word by word, with basic and attention-based decoders differing in their log probability calculations.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s03::p002",
+     "summary": "The attention formulation defines target sentence length, target and source sentences, fixed encoder output vector, and weighted encoder hidden outputs as attention vector.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s03::p003",
+     "summary": "The decoder LSTM computes: DISPLAYFORM0.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s03::p004",
+     "summary": "Decoder probability depends on previous output, current hidden layer vector, and attention context vector, which is a weighted sum over the sentence.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s03::p005",
+     "summary": "The context vector uses source tokens, encoder hidden values, and alignment parameters from a feed forward neural network trained jointly with the translation model.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s03::p006",
+     "summary": "Softmax feedforward outputs, decoder hidden states, encoder annotations, and concatenated forward and reverse encoder hidden parameters compute attention weights for overall sentence context.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s03::p007",
+     "summary": "Global attention is preferred over local attention because English–Tamil structural discordance and morphological and structural variations make local lookup inefficient.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s03::p008",
+     "summary": "The No Peepholes (NP) LSTM variant from Greff et al. greff2015lstm uses gated cell and hidden vectors to prevent vanishing gradients.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s03::p009",
+     "summary": "The decoder uses equations 7 through 11, while the encoder uses a bidirectional RNN LSTM with forward and backward hidden layer components.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s04::p000",
+     "summary": "Morphological segmentation uses a semi-supervised extension of a generative probabilistic model maximizing MAP probability of recursive prefix,root,postfix word splits.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s04::p001",
+     "summary": "Each training lexicon word is included, the prior uses the Minimum Description Length(MDL) principle, and the likelihood is estimated separately.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s04::p002",
+     "summary": "Intermediate analyses and the INLINEFORM2 morpheme of word INLINEFORM3 are defined for the likelihood estimation.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s04::p003",
+     "summary": "An extended Viterbi algorithm decodes using exhaustive morpheme mapping, with extra parameters and a cost function addressing over-segmentation and under-segmentation.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s04::p004",
+     "summary": "The cost function includes likelihoods for the cost function, annotated dataset contribution, and labeled data, with parameters controlling segment size and corpus discrepancies.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s04::p005",
+     "summary": "The Python extension to morfessor 2.0 performed segmentation using Tamil annotation data from Anoop Kunchukkutan in the Indic NLP Library.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s05::p000",
+     "summary": "English to Tamil translation used an RNN LSTM Bi-directional encoder attention decoder architecture, with phrase based SMT, Factored SMT reference, and 569,772 monolingual Tamil sentences.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s06::p000",
+     "summary": "Training sentences were bucketed by fixed sizes to minimize PAD tokens, with more buckets around 10–20 words and RNNMorph target buckets increased uniformly by 5.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s07::p000",
+     "summary": "RNNSearch vocabularies were restricted to 60,000 out of 67,768 English and 150,000 out of 340,325 Tamil words, while RNNMorph used 67,768 English and 41,906 Tamil words.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s07::p001",
+     "summary": "The model used SGD, sampled softmax loss of 512 per sample, learning rate 1.0, decay rate 0.5, gradient clipping global norm 5.0, and Tensorflow seq2seq.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s08::p000",
+     "summary": "Evaluation used BLEU modified 1-gram, 2-gram, 3-gram and 4-gram precision values and human metrics of adequacy, fluency and relative ranking values.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s09::p000",
+     "summary": "The BLEU scores obtained using the various models used in the experiment are tabulated in Table TABREF25.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s09::p001",
+     "summary": "BLEU computes micro-averaged unigram, bigram, trigram and BLEU-4 precision values, with phrase-based SMT inferior to RNNSearch and word2vec slightly increasing BLEU scores.",
+     "group_id": "1612.02482::g00"
+    },
+    {
+     "passage_id": "1612.02482::s09::p002",
+     "summary": "Morphological segmentation improved RNNMorph BLEU precision values, but increased tokens from Tamil segmentation may inflate the numeric BLEU increase.",
+     "group_id": "1612.02482::g00"
+    }
+   ],
+   "n_raw": 37,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5248,
+    "completion_tokens": 1836,
+    "total_tokens": 7084,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1612.02482::g01",
+   "summaries": [
+    {
+     "passage_id": "1612.02482::s10::p000",
+     "summary": "Human evaluation used adequacy, precision and ranking values, 50 native annotators, about 100 randomized test sentences, 5-point scales, and intra-annotator values.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s10::p001",
+     "summary": "The human evaluation Kappa co-efficient results are calculated with respect to DISPLAYFORM0.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s10::p002",
+     "summary": "Ranking Kappa co-efficient was 0.573 for RNNMorph and 0.410 for RNNSearch+Word2Vec, implying annotators found RNNMorph produced better results.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s11::p000",
+     "summary": "RNNMorph learning rate decay was manual after specific epochs, with earlier perplexity saturation and target vocabulary reduced from 340,325 words to 41,906 morphs.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s11::p001",
+     "summary": "Sampled SoftMax loss accommodated a large target vocabulary, and Fig. FIGREF35 shows RNNMorph consistently better perplexity values with 4 hidden layers.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s12::p000",
+     "summary": "Attention vectors show reduced vocabulary improved source sentence lookup, while RNNSearch with Word2Vec embeddings attended to INLINEFORM4 EOS INLINEFORM5 and used only 44% Tamil and 74% English vocabulary.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s13::p000",
+     "summary": "Morphological segmentation of Tamil text decreased target vocabulary size from 340,325 to 41,906, reducing unknown tokens and dividing vocabulary into morphological roots and inflections.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s14::p000",
+     "summary": "RNNMorph translations sometimes repeat phrases, possibly due to increased target sequence length, more morphs per sentence, and semi-supervised morphological segmentation errors.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s15::p000",
+     "summary": "RNNSearch + Word2Vec and Morph2Vec outputs show morphological segmentation improves grammatical soundness, with most Morph2Vec translations having no INLINEFORM0 UNK INLINEFORM1 tokens.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s16::p000",
+     "summary": "Related English–Tamil MT work includes MAT, EBMT with 700000 sentences, rule based systems, HMM-based SMT, hybrid approaches, SMT, and morphological pre and post processing techniques.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s16::p001",
+     "summary": "RNN Encoder Decoder models improved translation for similar grammatical structures, with Cho et al SecondOneByCho in 2014 and Sutskever et al. sutskever2014sequence using static context vectors.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s16::p002",
+     "summary": "Bahdanau et al. Bahdanau2014 introduced attention via variable length word vectors, and Luong et al. luong2015effective distinguished global and local attention using AER scores.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s17::p000",
+     "summary": "Morphological segmentation improves translation for morphologically rich languages, and both languages should be individually segmented when their agglutination schemes differ.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s17::p001",
+     "summary": "Morphological segmentation increases average sentence lengths and model complexity, but attention models can help, and Tamil generally has fewer words per sentence than English.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s18::p000",
+     "summary": "The implemented model includes only source-side morphological segmentation, so a morphological generator is essential for end-to-end translation output in words rather than morphemes.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s18::p001",
+     "summary": "A better corpus could generalize beyond domain specific source sentences, and a better GPU could improve hidden layer sizes, batch sizes, scope and accuracy.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s18::p002",
+     "summary": "Rocktaschel et al. rocktaschel2015reasoning's encoder–decoder architecture for Natural Language Inference (NLI) can be used for the same model.",
+     "group_id": "1612.02482::g01"
+    },
+    {
+     "passage_id": "1612.02482::s19::p000",
+     "summary": "The author thanks Dr. M. Anand Kumar and Dr. Arvindan for support, guidance, inputs and suggestions.",
+     "group_id": "1612.02482::g01"
+    }
+   ],
+   "n_raw": 18,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3063,
+    "completion_tokens": 970,
+    "total_tokens": 4033,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

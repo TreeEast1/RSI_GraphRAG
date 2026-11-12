@@ -1,0 +1,172 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1901.10133::s00::p000",
+   "summary": "The paper addresses segmenting an unordered text document into sections by clustering sentences around identified keywords using keyword and cluster similarity.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s00::p001",
+   "summary": "TextRank algorithm BIBREF0 extracts keywords from a text document using graph-based global information, and a cluster is generated for every keyword.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s00::p002",
+   "summary": "Cluster generation uses cosine similarity of Google's USE (Universal Sentence Encoder) BIBREF1 embeddings, with better cluster quality when keyword and mapped-sentence similarities are combined.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s00::p003",
+   "summary": "The approach is tested by jumbling sentence order, processing the unordered document, and comparing output similarity with the original document.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s01::p000",
+   "summary": "Related work covers topic-based sentence retrieval, query-relevant graph approaches, incremental integrated graphs, master sequences, summary sequencing, and sentence ordering.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s01::p001",
+   "summary": "The paper aims to generate sections/clusters from an unordered document and claims this is the first formal attempt to address the problem.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s02::p000",
+   "summary": "The proposed model takes an unordered document, extracts keywords using TextRank algorithm BIBREF0 into list $K$, and uses them as cluster centroids.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s02::p001",
+   "summary": "The model maps the most relevant sentence to each keyword in $K$ using cosine similarity of Google's USE embeddings, then maps remaining sentences.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s02::p002",
+   "summary": "$S_1(x,y)$ measures current sentence $x$ similarity with keyword $y$, while $S_2(x,y)$ is maximum similarity with sentences already mapped to $y$.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s02::p003",
+   "summary": "Equation 1 defines $S(x,y)= t*S_1(x,y) + (1-t)*S_2(x,y)$.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s02::p004",
+   "summary": "Each sentence $x$ is mapped by $Max_y (S(x,y))$, keywords and sentences are clustered, and $t$ is empirically fixed to $0.25$.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s03::p000",
+   "summary": "The proposed $Sim1$ and $Sim2$ metrics compare original sections with output sections/clusters using maximum similarity and weighted means.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s04::p000",
+   "summary": "Experiments use five sets of 100 randomly chosen wiki documents, each randomly restructured as model input and compared against the original input document.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s04::p001",
+   "summary": "Table 1 compares $Sim1$ and $Sim2$ with baseline results using $t$ value as 1 in Equation 1, showing better results with both $S_1(x,y)$ and $S_2(x,y)$.",
+   "group_id": "1901.10133::g00"
+  },
+  {
+   "passage_id": "1901.10133::s05::p000",
+   "summary": "The proposed efficient model significantly improves over the baseline, and initial sentences associated with a keyword/topic play a significant role.",
+   "group_id": "1901.10133::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1901.10133::g00",
+   "summaries": [
+    {
+     "passage_id": "1901.10133::s00::p000",
+     "summary": "The paper addresses segmenting an unordered text document into sections by clustering sentences around identified keywords using keyword and cluster similarity.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s00::p001",
+     "summary": "TextRank algorithm BIBREF0 extracts keywords from a text document using graph-based global information, and a cluster is generated for every keyword.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s00::p002",
+     "summary": "Cluster generation uses cosine similarity of Google's USE (Universal Sentence Encoder) BIBREF1 embeddings, with better cluster quality when keyword and mapped-sentence similarities are combined.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s00::p003",
+     "summary": "The approach is tested by jumbling sentence order, processing the unordered document, and comparing output similarity with the original document.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s01::p000",
+     "summary": "Related work covers topic-based sentence retrieval, query-relevant graph approaches, incremental integrated graphs, master sequences, summary sequencing, and sentence ordering.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s01::p001",
+     "summary": "The paper aims to generate sections/clusters from an unordered document and claims this is the first formal attempt to address the problem.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s02::p000",
+     "summary": "The proposed model takes an unordered document, extracts keywords using TextRank algorithm BIBREF0 into list $K$, and uses them as cluster centroids.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s02::p001",
+     "summary": "The model maps the most relevant sentence to each keyword in $K$ using cosine similarity of Google's USE embeddings, then maps remaining sentences.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s02::p002",
+     "summary": "$S_1(x,y)$ measures current sentence $x$ similarity with keyword $y$, while $S_2(x,y)$ is maximum similarity with sentences already mapped to $y$.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s02::p003",
+     "summary": "Equation 1 defines $S(x,y)= t*S_1(x,y) + (1-t)*S_2(x,y)$.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s02::p004",
+     "summary": "Each sentence $x$ is mapped by $Max_y (S(x,y))$, keywords and sentences are clustered, and $t$ is empirically fixed to $0.25$.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s03::p000",
+     "summary": "The proposed $Sim1$ and $Sim2$ metrics compare original sections with output sections/clusters using maximum similarity and weighted means.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s04::p000",
+     "summary": "Experiments use five sets of 100 randomly chosen wiki documents, each randomly restructured as model input and compared against the original input document.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s04::p001",
+     "summary": "Table 1 compares $Sim1$ and $Sim2$ with baseline results using $t$ value as 1 in Equation 1, showing better results with both $S_1(x,y)$ and $S_2(x,y)$.",
+     "group_id": "1901.10133::g00"
+    },
+    {
+     "passage_id": "1901.10133::s05::p000",
+     "summary": "The proposed efficient model significantly improves over the baseline, and initial sentences associated with a keyword/topic play a significant role.",
+     "group_id": "1901.10133::g00"
+    }
+   ],
+   "n_raw": 15,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1942,
+    "completion_tokens": 748,
+    "total_tokens": 2690,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

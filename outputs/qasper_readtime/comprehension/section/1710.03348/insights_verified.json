@@ -1,0 +1,451 @@
+{
+ "kept": [
+  {
+   "insight_id": "1710.03348::g00:i02",
+   "paper_id": "1710.03348",
+   "group_id": "1710.03348::g00",
+   "concise_text": "Because AER only takes the most attended word into account while attention loss considers the entire attention distribution, their agreement for the two systems provides complementary evidence about attention-alignment differences.",
+   "triple": {
+    "subject": "AER and attention loss",
+    "predicate": "extends",
+    "object": "attention-alignment comparison from the most attended word to the entire attention distribution"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1710.03348::s07::p004",
+    "1710.03348::s07::p005"
+   ],
+   "supporting_fact_ids": [
+    "1710.03348::g00:b5:f10",
+    "1710.03348::g00:b5:f11",
+    "1710.03348::g00:b5:f12"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Both passages exist and jointly support the composed comparison: AER differences align with attention-loss differences, and the two metrics differ by considering only the most attended word versus the full distribution."
+   },
+   "unit_id": "1710.03348::u002"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1710.03348::g00:i00",
+   "paper_id": "1710.03348",
+   "group_id": "1710.03348::g00",
+   "concise_text": "The commonly held assumption that attention corresponds to word alignments is tested by measuring whether higher consistency between attention and alignment leads to better translations.",
+   "triple": {
+    "subject": "commonly held assumption that attention corresponds to word alignments",
+    "predicate": "evaluated_on",
+    "object": "whether higher consistency between attention and alignment leads to better translations"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1710.03348::s03::p000",
+    "1710.03348::s04::p004",
+    "1710.03348::s04::p006"
+   ],
+   "supporting_fact_ids": [
+    "1710.03348::g00:b2:f15",
+    "1710.03348::g00:b3:f05",
+    "1710.03348::g00:b3:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "All cited passages exist, but the insight is essentially a restatement/paraphrase of s03::p000."
+   },
+   "unit_id": "1710.03348::u000"
+  },
+  {
+   "insight_id": "1710.03348::g00:i01",
+   "paper_id": "1710.03348",
+   "group_id": "1710.03348::g00",
+   "concise_text": "The input-feeding model, which uses recurrent attention, achieves a higher BLEU score and uses attentions closer to the human alignments.",
+   "triple": {
+    "subject": "input-feeding model",
+    "predicate": "outperforms",
+    "object": "non-recurrent attention in BLEU score and closeness to human alignments"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1710.03348::s06::p000",
+    "1710.03348::s07::p003"
+   ],
+   "supporting_fact_ids": [
+    "1710.03348::g00:b4:f10",
+    "1710.03348::g00:b4:f11",
+    "1710.03348::g00:b5:f08",
+    "1710.03348::g00:b5:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Supported by s06::p000 and s07::p003, but it is a direct paraphrase of the result in s07::p003 plus model description."
+   },
+   "unit_id": "1710.03348::u001"
+  },
+  {
+   "insight_id": "1710.03348::g00:i03",
+   "paper_id": "1710.03348",
+   "group_id": "1710.03348::g00",
+   "concise_text": "Although the attention for verbs is substantially more inconsistent with word alignments than for nouns, the NMT system translates verbs more accurately than nouns on average.",
+   "triple": {
+    "subject": "attention inconsistency with word alignments for verbs",
+    "predicate": "limits",
+    "object": "the assumption that alignment consistency improves verb translation"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1710.03348::s08::p001",
+    "1710.03348::s08::p002"
+   ],
+   "supporting_fact_ids": [
+    "1710.03348::g00:b6:f03",
+    "1710.03348::g00:b6:f05",
+    "1710.03348::g00:b6:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.94,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "The concise_text is directly stated in s08::p002; the triple adds an unsupported 'limits' relation not present in the cited text."
+   },
+   "unit_id": "1710.03348::u003"
+  },
+  {
+   "insight_id": "1710.03348::g00:i04",
+   "paper_id": "1710.03348",
+   "group_id": "1710.03348::g00",
+   "concise_text": "The low correlation for verbs confirms that attention to other parts of source sentence rather than the aligned word is necessary for translating verbs, consistent with their smaller average word prediction loss.",
+   "triple": {
+    "subject": "low correlation for verbs",
+    "predicate": "causes",
+    "object": "attention to other parts of source sentence rather than the aligned word to be necessary for translating verbs"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1710.03348::s08::p002",
+    "1710.03348::s08::p004"
+   ],
+   "supporting_fact_ids": [
+    "1710.03348::g00:b6:f04",
+    "1710.03348::g00:b6:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.2,
+    "causality_error": true,
+    "reason": "The text says low correlation 'confirms' necessity, but the triple asserts a causal 'causes' relation; also the insight is largely a restatement of s08::p004."
+   },
+   "unit_id": "1710.03348::u004"
+  },
+  {
+   "insight_id": "1710.03348::g00:i05",
+   "paper_id": "1710.03348",
+   "group_id": "1710.03348::g00",
+   "concise_text": "The higher correlation for nouns means consistency of attention with alignments is more desirable, and the concentrated pattern of attention shows training with explicit alignment labels is useful for generating nouns.",
+   "triple": {
+    "subject": "higher correlation for nouns",
+    "predicate": "requires",
+    "object": "training the attention with explicit alignment labels for generating nouns"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1710.03348::s08::p004",
+    "1710.03348::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1710.03348::g00:b6:f11",
+    "1710.03348::g00:b7:f11"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.87,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.35,
+    "causality_error": true,
+    "reason": "The cited text says higher correlations and concentrated attention show training with explicit alignment labels is useful for nouns, not that higher correlation 'requires' such training; causal/strong modal relation is unsupported."
+   },
+   "unit_id": "1710.03348::u005"
+  },
+  {
+   "insight_id": "1710.03348::g00:i06",
+   "paper_id": "1710.03348",
+   "group_id": "1710.03348::g00",
+   "concise_text": "The large portion of attention paid to words other than alignment points captures other relevant information, so training attention with alignments will force the attention model to forget these useful information.",
+   "triple": {
+    "subject": "training attention with alignments",
+    "predicate": "causes",
+    "object": "the attention model to forget useful information from words other than alignment points"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1710.03348::s10::p001",
+    "1710.03348::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1710.03348::g00:b7:f06",
+    "1710.03348::g00:b7:f12",
+    "1710.03348::g00:b7:f13"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Supported by s11::p000, but it is a direct paraphrase/restatement of a single paragraph's conclusion."
+   },
+   "unit_id": "1710.03348::u006"
+  },
+  {
+   "insight_id": "1710.03348::g00:i07",
+   "paper_id": "1710.03348",
+   "group_id": "1710.03348::g00",
+   "concise_text": "The most attended roles when translating to verbs include auxiliary verbs, adverbs (including negation), subjects, and objects, supporting that correct translation of verbs requires attention to different parts of the source sentence.",
+   "triple": {
+    "subject": "most attended roles when translating to verbs",
+    "predicate": "causes",
+    "object": "correct translation of verbs to require attention to different parts of the source sentence"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1710.03348::s09::p002",
+    "1710.03348::s10::p001"
+   ],
+   "supporting_fact_ids": [
+    "1710.03348::g00:b7:f02",
+    "1710.03348::g00:b7:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "The passages support the listed roles and separately state that correct verb translation requires attention to different source parts, but the triple asserts a causal relation from the roles to that requirement not supported by the text."
+   },
+   "unit_id": "1710.03348::u007"
+  },
+  {
+   "insight_id": "1710.03348::g00:i08",
+   "paper_id": "1710.03348",
+   "group_id": "1710.03348::g00",
+   "concise_text": "Nouns have one of the lowest entropies and the attention of NOUN is closest to alignments on average, explaining why attention entropy can measure closeness of attention to alignment for nouns.",
+   "triple": {
+    "subject": "low entropy for nouns",
+    "predicate": "causes",
+    "object": "attention entropy to measure closeness of attention to alignment in the case of nouns"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1710.03348::s08::p001",
+    "1710.03348::s09::p001"
+   ],
+   "supporting_fact_ids": [
+    "1710.03348::g00:b6:f02",
+    "1710.03348::g00:b6:f16",
+    "1710.03348::g00:b6:f19"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.3,
+    "causality_error": true,
+    "reason": "The text says low entropy explains closeness and that entropy can be used as a measure, but the triple's causal claim that low entropy causes entropy to measure closeness is not supported."
+   },
+   "unit_id": "1710.03348::u008"
+  },
+  {
+   "insight_id": "1710.03348::g00:i09",
+   "paper_id": "1710.03348",
+   "group_id": "1710.03348::g00",
+   "concise_text": "Mixed results from chen2016guided, liu-EtAl:2016:COLING, alkhouli-EtAl:2016:WMT motivate a more fine-grained analysis using POS tags, which exhibit some simple syntactic characteristics.",
+   "triple": {
+    "subject": "mixed results",
+    "predicate": "requires",
+    "object": "a more fine-grained analysis of attention using POS tags"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1710.03348::s08::p000",
+    "1710.03348::s01::p003"
+   ],
+   "supporting_fact_ids": [
+    "1710.03348::g00:b5:f13",
+    "1710.03348::g00:b5:f14",
+    "1710.03348::g00:b5:f15"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.83,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.25,
+    "causality_error": true,
+    "reason": "The passages say mixed results motivate/warrant a more thorough or fine-grained analysis and that POS tags were chosen for simple syntactic characteristics, but the triple's 'requires' relation is stronger than the text."
+   },
+   "unit_id": "1710.03348::u009"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1710.03348::g00:i00",
+    "verdict": {
+     "insight_id": "1710.03348::g00:i00",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "All cited passages exist, but the insight is essentially a restatement/paraphrase of s03::p000."
+    },
+    "reason": "All cited passages exist, but the insight is essentially a restatement/paraphrase of s03::p000."
+   },
+   {
+    "insight_id": "1710.03348::g00:i01",
+    "verdict": {
+     "insight_id": "1710.03348::g00:i01",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Supported by s06::p000 and s07::p003, but it is a direct paraphrase of the result in s07::p003 plus model description."
+    },
+    "reason": "Supported by s06::p000 and s07::p003, but it is a direct paraphrase of the result in s07::p003 plus model description."
+   },
+   {
+    "insight_id": "1710.03348::g00:i02",
+    "verdict": {
+     "insight_id": "1710.03348::g00:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Both passages exist and jointly support the composed comparison: AER differences align with attention-loss differences, and the two metrics differ by considering only the most attended word versus the full distribution."
+    }
+   },
+   {
+    "insight_id": "1710.03348::g00:i03",
+    "verdict": {
+     "insight_id": "1710.03348::g00:i03",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "The concise_text is directly stated in s08::p002; the triple adds an unsupported 'limits' relation not present in the cited text."
+    },
+    "reason": "The concise_text is directly stated in s08::p002; the triple adds an unsupported 'limits' relation not present in the cited text."
+   },
+   {
+    "insight_id": "1710.03348::g00:i04",
+    "verdict": {
+     "insight_id": "1710.03348::g00:i04",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.2,
+     "causality_error": true,
+     "reason": "The text says low correlation 'confirms' necessity, but the triple asserts a causal 'causes' relation; also the insight is largely a restatement of s08::p004."
+    },
+    "reason": "The text says low correlation 'confirms' necessity, but the triple asserts a causal 'causes' relation; also the insight is largely a restatement of s08::p004."
+   },
+   {
+    "insight_id": "1710.03348::g00:i05",
+    "verdict": {
+     "insight_id": "1710.03348::g00:i05",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.35,
+     "causality_error": true,
+     "reason": "The cited text says higher correlations and concentrated attention show training with explicit alignment labels is useful for nouns, not that higher correlation 'requires' such training; causal/strong modal relation is unsupported."
+    },
+    "reason": "The cited text says higher correlations and concentrated attention show training with explicit alignment labels is useful for nouns, not that higher correlation 'requires' such training; causal/strong modal relation is unsupported."
+   },
+   {
+    "insight_id": "1710.03348::g00:i06",
+    "verdict": {
+     "insight_id": "1710.03348::g00:i06",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Supported by s11::p000, but it is a direct paraphrase/restatement of a single paragraph's conclusion."
+    },
+    "reason": "Supported by s11::p000, but it is a direct paraphrase/restatement of a single paragraph's conclusion."
+   },
+   {
+    "insight_id": "1710.03348::g00:i07",
+    "verdict": {
+     "insight_id": "1710.03348::g00:i07",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "The passages support the listed roles and separately state that correct verb translation requires attention to different source parts, but the triple asserts a causal relation from the roles to that requirement not supported by the text."
+    },
+    "reason": "The passages support the listed roles and separately state that correct verb translation requires attention to different source parts, but the triple asserts a causal relation from the roles to that requirement not supported by the text."
+   },
+   {
+    "insight_id": "1710.03348::g00:i08",
+    "verdict": {
+     "insight_id": "1710.03348::g00:i08",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.3,
+     "causality_error": true,
+     "reason": "The text says low entropy explains closeness and that entropy can be used as a measure, but the triple's causal claim that low entropy causes entropy to measure closeness is not supported."
+    },
+    "reason": "The text says low entropy explains closeness and that entropy can be used as a measure, but the triple's causal claim that low entropy causes entropy to measure closeness is not supported."
+   },
+   {
+    "insight_id": "1710.03348::g00:i09",
+    "verdict": {
+     "insight_id": "1710.03348::g00:i09",
+     "keep": false,
+     "support": 0.85,
+     "novelty": 0.25,
+     "causality_error": true,
+     "reason": "The passages say mixed results motivate/warrant a more thorough or fine-grained analysis and that POS tags were chosen for simple syntactic characteristics, but the triple's 'requires' relation is stronger than the text."
+    },
+    "reason": "The passages say mixed results motivate/warrant a more thorough or fine-grained analysis and that POS tags were chosen for simple syntactic characteristics, but the triple's 'requires' relation is stronger than the text."
+   }
+  ],
+  "calls": [
+   {
+    "n": 10,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 3814,
+     "completion_tokens": 766,
+     "total_tokens": 4580,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

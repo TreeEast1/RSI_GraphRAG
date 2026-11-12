@@ -1,0 +1,1062 @@
+{
+ "2003.08385::s00::p000": [
+  [
+   "many datasets",
+   "have been created for",
+   "the task of automated stance detection"
+  ],
+  [
+   "such benchmarks",
+   "are composed of",
+   "short pieces of text commenting on politicians or public issues"
+  ],
+  [
+   "such benchmarks",
+   "are manually annotated with",
+   "their stance towards a target entity"
+  ]
+ ],
+ "2003.08385::s00::p001": [
+  [
+   "the multilingual datasets available today",
+   "are",
+   "relatively small"
+  ],
+  [
+   "the multilingual datasets available today",
+   "are specific to",
+   "a single target"
+  ],
+  [
+   "specific models",
+   "tend to be developed for",
+   "each single target or pair of targets"
+  ],
+  [
+   "cross-target performance",
+   "is often considerably lower than",
+   "fully supervised performance"
+  ]
+ ],
+ "2003.08385::s00::p002": [
+  [
+   "a much larger dataset",
+   "combines",
+   "multilinguality and a multitude of topics and targets"
+  ],
+  [
+   "x-stance",
+   "comprises",
+   "more than 150 questions concerning Swiss politics"
+  ],
+  [
+   "x-stance",
+   "comprises",
+   "more than 67k answers given in the last decade by candidates running for political office in Switzerland"
+  ]
+ ],
+ "2003.08385::s00::p003": [
+  [
+   "Questions",
+   "are available in",
+   "four languages: English, Swiss Standard German, French, and Italian"
+  ],
+  [
+   "The language of a comment",
+   "depends on",
+   "the candidate's region of origin"
+  ]
+ ],
+ "2003.08385::s00::p004": [
+  [
+   "candidates",
+   "respond to",
+   "questions mainly in categorical form (yes / rather yes / rather no / no)"
+  ],
+  [
+   "a free-text comment",
+   "is submitted to",
+   "justify, explain or differentiate their categorical answer"
+  ]
+ ],
+ "2003.08385::s00::p005": [
+  [
+   "the question",
+   "is interpreted as",
+   "a natural-language representation of the target"
+  ],
+  [
+   "the commentary",
+   "is interpreted as",
+   "the input to be classified"
+  ]
+ ],
+ "2003.08385::s00::p006": [
+  [
+   "The dataset",
+   "is split into",
+   "a multilingual training set and into multiple test sets"
+  ],
+  [
+   "multiple test sets",
+   "evaluate",
+   "zero-shot cross-lingual and cross-target transfer"
+  ],
+  [
+   "multilingual Bert",
+   "can generalize to",
+   "a degree both cross-lingually and in a cross-target setting"
+  ]
+ ],
+ "2003.08385::s01::p000": [
+  [
+   "two related multilingual datasets",
+   "have been created in",
+   "the context of the IberEval shared tasks"
+  ],
+  [
+   "Both",
+   "are",
+   "a collection of annotated Spanish and Catalan tweets"
+  ],
+  [
+   "the tweets in both languages",
+   "focus on",
+   "the same issue (Catalan independence)"
+  ]
+ ],
+ "2003.08385::s01::p001": [
+  [
+   "only monolingual datasets",
+   "seem to be available for",
+   "the languages covered by x-stance"
+  ],
+  [
+   "a collection of tweets on French presidential candidates",
+   "has been annotated with",
+   "stance BIBREF6"
+  ],
+  [
+   "an aspect-based sentiment dataset",
+   "has been created for",
+   "a GermEval 2017 shared task BIBREF8"
+  ]
+ ],
+ "2003.08385::s02::p000": [
+  [
+   "The SemEval-2016 task on detecting stance in tweets BIBREF9",
+   "offers",
+   "data concerning multiple targets (Atheism, Climate Change, Feminism, Hillary Clinton, and Abortion)"
+  ],
+  [
+   "participants",
+   "tended to develop",
+   "a target-specific model for each of those targets"
+  ],
+  [
+   "cross-target transfer to the target “Donald Trump”",
+   "was tested in",
+   "subtask B"
+  ],
+  [
+   "no annotated training data",
+   "were provided for",
+   "the target “Donald Trump”"
+  ]
+ ],
+ "2003.08385::s02::p001": [
+  [
+   "a multi-target stance dataset",
+   "provides",
+   "two targets per instance"
+  ],
+  [
+   "a model designed in this framework",
+   "is supposed to simultaneously classify",
+   "a tweet with regard to Clinton and with regard to Trump"
+  ],
+  [
+   "the framework",
+   "allows for",
+   "more than two targets"
+  ],
+  [
+   "the framework",
+   "is restricted to",
+   "a finite and clearly defined set of targets"
+  ]
+ ],
+ "2003.08385::s03::p000": [
+  [
+   "Bert BIBREF5",
+   "consistently outperforms",
+   "previous approaches"
+  ]
+ ],
+ "2003.08385::s03::p001": [
+  [
+   "a single-segment encoding of the input",
+   "prevents",
+   "cross-target transfer of the model"
+  ]
+ ],
+ "2003.08385::s04::p000": [
+  [
+   "The input provided by x-stance",
+   "is",
+   "two-fold"
+  ]
+ ],
+ "2003.08385::s04::p001": [
+  [
+   "The label to be predicted",
+   "is",
+   "either `favor' or `against`"
+  ],
+  [
+   "x-stance",
+   "lacks",
+   "a `neither' class"
+  ],
+  [
+   "all comments",
+   "refer to",
+   "either a `favor' or an `against` position"
+  ],
+  [
+   "The task posed by x-stance",
+   "is",
+   "a binary classification task"
+  ]
+ ],
+ "2003.08385::s05::p000": [
+  [
+   "questions and answers",
+   "were downloaded via",
+   "the Smartvote API"
+  ],
+  [
+   "The downloaded data",
+   "cover",
+   "175 communal, cantonal and national elections between 2011 and 2020"
+  ]
+ ],
+ "2003.08385::s05::p001": [
+  [
+   "All candidates in an election who participate in Smartvote",
+   "are asked",
+   "the same set of questions"
+  ]
+ ],
+ "2003.08385::s05::p002": [
+  [
+   "The questions asked on Smartvote",
+   "have been edited by",
+   "a team of political scientists"
+  ],
+  [
+   "The questions asked on Smartvote",
+   "are intended to cover",
+   "a broad range of political issues relevant at the time of the election"
+  ]
+ ],
+ "2003.08385::s06::p000": [
+  [
+   "`yes' and `rather yes'",
+   "were combined into",
+   "`favor'"
+  ],
+  [
+   "`rather no', or `no'",
+   "were combined into",
+   "`against`"
+  ],
+  [
+   "This",
+   "improves",
+   "the consistency of the data and the comparability to previous stance detection datasets"
+  ]
+ ],
+ "2003.08385::s07::p000": [
+  [
+   "the API",
+   "does not provide",
+   "the language of comments"
+  ]
+ ],
+ "2003.08385::s07::p001": [
+  [
+   "Romansh",
+   "is",
+   "the fourth official language in Switzerland"
+  ],
+  [
+   "all unexpected outputs",
+   "were",
+   "misclassifications of German, French or Italian comments"
+  ]
+ ],
+ "2003.08385::s07::p002": [
+  [
+   "the identifier's output",
+   "was restricted to",
+   "English, French, German and Italian"
+  ]
+ ],
+ "2003.08385::s08::p000": [
+  [
+   "the questions and answers",
+   "were pre-filtered to improve",
+   "the quality of the dataset"
+  ],
+  [
+   "all questions and corresponding answers pertaining to national elections",
+   "were included",
+   "in the dataset"
+  ]
+ ],
+ "2003.08385::s08::p001": [
+  [
+   "candidates",
+   "have answered",
+   "both local questions and a subset of the national questions"
+  ],
+  [
+   "the validation and test sets",
+   "were restricted to",
+   "answers from national elections"
+  ]
+ ],
+ "2003.08385::s08::p002": [
+  [
+   "the less than 20 comments classified as English",
+   "were discarded",
+   "from the dataset"
+  ],
+  [
+   "instances that met any of the following conditions",
+   "were filtered from",
+   "the dataset"
+  ]
+ ],
+ "2003.08385::s08::p003": [
+  [
+   "Question",
+   "is not",
+   "a closed question"
+  ],
+  [
+   "Question",
+   "does not address",
+   "a clearly defined political issue"
+  ]
+ ],
+ "2003.08385::s08::p004": [
+  [
+   "No comment",
+   "was submitted by",
+   "the candidate"
+  ],
+  [
+   "the comment",
+   "is shorter than",
+   "50 characters"
+  ]
+ ],
+ "2003.08385::s08::p005": [
+  [
+   "Comment",
+   "starts with",
+   "“but” or a similar indicator that the comment is not a self-contained statement"
+  ]
+ ],
+ "2003.08385::s08::p006": [
+  [
+   "Comment",
+   "contains",
+   "a URL"
+  ]
+ ],
+ "2003.08385::s08::p007": [
+  [
+   "a fifth of the original comments",
+   "were filtered out",
+   "In total"
+  ]
+ ],
+ "2003.08385::s09::p000": [
+  [
+   "The questions",
+   "have been organized by",
+   "the Smartvote editors into categories (such as “Economy”)"
+  ]
+ ],
+ "2003.08385::s10::p000": [
+  [
+   "The dataset",
+   "is shared under",
+   "a CC BY-NC 4.0 license"
+  ],
+  [
+   "Copyright",
+   "remains with",
+   "www.smartvote.ch"
+  ]
+ ],
+ "2003.08385::s10::p001": [
+  [
+   "No personal attributes of the respondents, such as their party affiliation",
+   "are included in",
+   "the dataset"
+  ]
+ ],
+ "2003.08385::s11::p000": [
+  [
+   "topics “Healthcare” and “Political System”",
+   "were held out from",
+   "the training data"
+  ],
+  [
+   "a separate cross-topic test set",
+   "contains",
+   "the questions and answers related to those topics"
+  ]
+ ],
+ "2003.08385::s11::p001": [
+  [
+   "16 held-out questions",
+   "are distributed over",
+   "the remaining 10 topics"
+  ]
+ ],
+ "2003.08385::s11::p002": [
+  [
+   "Italian",
+   "was designated as",
+   "a test-only language"
+  ],
+  [
+   "relatively few comments",
+   "have been written in",
+   "Italian"
+  ]
+ ],
+ "2003.08385::s11::p003": [
+  [
+   "test sets that are cross-lingual and cross-target at the same time",
+   "would have been",
+   "too small to yield significant results"
+  ]
+ ],
+ "2003.08385::s13::p000": [
+  [
+   "The ratio",
+   "differs between",
+   "questions"
+  ],
+  [
+   "The ratio",
+   "is relatively equally distributed across",
+   "the topics"
+  ],
+  [
+   "the questions belonging to the held-out topics",
+   "have",
+   "a `favor' ratio of 49.4%"
+  ],
+  [
+   "the questions within other topics",
+   "have",
+   "a `favor' ratio of 50.0%"
+  ]
+ ],
+ "2003.08385::s14::p000": [
+  [
+   "some questions",
+   "are paraphrases describing",
+   "the same political issue"
+  ],
+  [
+   "candidates",
+   "were asked in the 2015 election",
+   "“Should the consumption of cannabis as well as its possession for personal use be legalised?”"
+  ],
+  [
+   "candidates",
+   "were asked Four years later",
+   "“Should cannabis use be legalized?”"
+  ],
+  [
+   "duplicates",
+   "contribute to",
+   "the diversity of the training data"
+  ]
+ ],
+ "2003.08385::s14::p001": [
+  [
+   "some questions in the dataset",
+   "are",
+   "quite short"
+  ],
+  [
+   "some questions",
+   "are",
+   "rather convoluted"
+  ]
+ ],
+ "2003.08385::s14::p002": [
+  [
+   "Some 1% of direct payments to Swiss agriculture",
+   "currently go to",
+   "organic farming operations"
+  ]
+ ],
+ "2003.08385::s14::p003": [
+  [
+   "Such longer questions",
+   "might be more challenging to process",
+   "semantically"
+  ]
+ ],
+ "2003.08385::s15::p000": [
+  [
+   "The x-stance dataset",
+   "has more",
+   "German samples than French samples"
+  ],
+  [
+   "The language ratio of about 3:1",
+   "is consistent across",
+   "all training and test sets"
+  ],
+  [
+   "the two languages",
+   "make it possible to train",
+   "two monolingual models"
+  ],
+  [
+   "the two languages",
+   "make it possible to train",
+   "a single model in a multi-source setup"
+  ],
+  [
+   "M-Bert",
+   "is known to benefit from",
+   "multilingual training data"
+  ]
+ ],
+ "2003.08385::s16::p000": [
+  [
+   "two types of baselines",
+   "are evaluated to obtain",
+   "an impression of the difficulty of the task"
+  ]
+ ],
+ "2003.08385::s17::p000": [
+  [
+   "the first pair of baselines",
+   "uses",
+   "the most frequent class in the training set for prediction"
+  ],
+  [
+   "the global majority class baseline",
+   "predicts",
+   "the most frequent class across all training targets"
+  ],
+  [
+   "the target-wise majority class baseline",
+   "predicts",
+   "the class that is most frequent for a given target question"
+  ],
+  [
+   "the target-wise majority class baseline",
+   "can only be applied to",
+   "the supervised test set"
+  ]
+ ],
+ "2003.08385::s18::p000": [
+  [
+   "multilingual Bert (M-Bert)",
+   "has been pretrained jointly in",
+   "104 languages"
+  ],
+  [
+   "multilingual Bert (M-Bert)",
+   "has established itself as",
+   "a state of the art for various multilingual tasks"
+  ],
+  [
+   "Bert",
+   "can outperform",
+   "both feature-based and other neural approaches in a monolingual English setting"
+  ]
+ ],
+ "2003.08385::s19::p000": [
+  [
+   "the two segments",
+   "are separated with",
+   "the special token [SEP]"
+  ],
+  [
+   "the special token [CLS]",
+   "is prepended to",
+   "the sequence"
+  ],
+  [
+   "The final hidden state corresponding to [CLS]",
+   "is classified by",
+   "a linear layer"
+  ]
+ ],
+ "2003.08385::s20::p000": [
+  [
+   "the two classes",
+   "are balanced when summing over",
+   "all questions and topics"
+  ],
+  [
+   "A maximum sequence length of 512 subwords",
+   "was chosen for",
+   "all training runs"
+  ],
+  [
+   "a batch size of 16",
+   "was chosen for",
+   "all training runs"
+  ]
+ ],
+ "2003.08385::s20::p003": [
+  [
+   "The grid search",
+   "was repeated independently for",
+   "every variant that we tested"
+  ],
+  [
+   "standard recommendations for fine-tuning Bert",
+   "used",
+   "Adam with ${\\beta }_1=0.9$ and ${\\beta }_2=0.999$"
+  ],
+  [
+   "A dropout probability of 0.1",
+   "was set on",
+   "all layers"
+  ]
+ ],
+ "2003.08385::s21::p000": [
+  [
+   "M-Bert",
+   "performs consistently better than",
+   "the majority class baselines"
+  ],
+  [
+   "the zero-short performance in Italian",
+   "is much better than",
+   "the target-wise majority class baseline"
+  ]
+ ],
+ "2003.08385::s21::p001": [
+  [
+   "M-Bert",
+   "performs worse in",
+   "a cross-target setting"
+  ],
+  [
+   "M-Bert",
+   "easily surpasses",
+   "the majority class baselines"
+  ],
+  [
+   "the cross-question score of M-Bert",
+   "is slightly lower than",
+   "the cross-topic score"
+  ]
+ ],
+ "2003.08385::s22::p000": [
+  [
+   "The default setup",
+   "preserves",
+   "horizontal language consistency"
+  ],
+  [
+   "the language of the questions",
+   "always matches",
+   "the language of the comments"
+  ],
+  [
+   "the Italian test instances",
+   "are combined with",
+   "the Italian version of the questions"
+  ]
+ ],
+ "2003.08385::s22::p001": [
+  [
+   "vertical language consistency",
+   "presents",
+   "the questions consistently in one language, regardless of the comment"
+  ],
+  [
+   "English",
+   "had",
+   "the largest share of data during the pretraining of M-Bert"
+  ]
+ ],
+ "2003.08385::s22::p002": [
+  [
+   "the effect",
+   "is negligible in",
+   "most settings"
+  ],
+  [
+   "the cross-lingual performance",
+   "clearly increases when",
+   "all questions are given in English"
+  ]
+ ],
+ "2003.08385::s23::p001": [
+  [
+   "a single segment containing the comment",
+   "removes",
+   "the questions from the training and test data (missing questions)"
+  ]
+ ],
+ "2003.08385::s23::p002": [
+  [
+   "the question",
+   "is used with removal of",
+   "the comment (missing comments)"
+  ]
+ ],
+ "2003.08385::s23::p003": [
+  [
+   "the performance",
+   "decreases across",
+   "all evaluation settings (Table TABREF39)"
+  ],
+  [
+   "The loss in performance",
+   "is much higher when",
+   "comments are missing"
+  ],
+  [
+   "the comments",
+   "contain",
+   "the most important information about stance"
+  ],
+  [
+   "the score achieved without comments",
+   "is only slightly different from",
+   "the target-wise majority class baseline"
+  ]
+ ],
+ "2003.08385::s23::p004": [
+  [
+   "there",
+   "is also",
+   "a loss in performance when the questions are missing"
+  ],
+  [
+   "The effect of missing questions",
+   "is especially strong in",
+   "the supervised and cross-lingual settings"
+  ],
+  [
+   "the effect of omitting the questions",
+   "is less pronounced in",
+   "the cross-target settings"
+  ]
+ ],
+ "2003.08385::s23::p005": [
+  [
+   "single-segment experiments",
+   "tell us",
+   "both the comment and the question provide crucial information"
+  ],
+  [
+   "M-Bert model",
+   "is trained on",
+   "both segments"
+  ]
+ ],
+ "2003.08385::s23::p006": [
+  [
+   "random questions",
+   "come from",
+   "the same test set and language as the original questions"
+  ],
+  [
+   "comments",
+   "remain in place",
+   "versions of the test sets where the questions are shuffled randomly"
+  ]
+ ],
+ "2003.08385::s23::p007": [
+  [
+   "random comments",
+   "are shuffled within",
+   "test set boundaries"
+  ],
+  [
+   "questions",
+   "are kept in place",
+   "random comments"
+  ]
+ ],
+ "2003.08385::s23::p008": [
+  [
+   "results in Table TABREF39",
+   "show",
+   "the performance of the model decreases in both cases"
+  ],
+  [
+   "model",
+   "learns to take into account",
+   "both segments"
+  ]
+ ],
+ "2003.08385::s24::p000": [
+  [
+   "alternative",
+   "is to represent",
+   "the target with a trainable embedding instead of a question"
+  ],
+  [
+   "target",
+   "needs to be represented by",
+   "natural language (e.g. “Do you support X?”)"
+  ]
+ ],
+ "2003.08385::s24::p001": [
+  [
+   "each target type",
+   "is represented with",
+   "a different reserved symbol from the M-Bert vocabulary"
+  ],
+  [
+   "Segment A",
+   "is set to",
+   "this symbol instead of a natural language question"
+  ]
+ ],
+ "2003.08385::s24::p002": [
+  [
+   "An M-Bert model that learns target embeddings instead of encoding a question",
+   "performs clearly worse in",
+   "the supervised and cross-lingual settings"
+  ],
+  [
+   "spelled-out natural language questions",
+   "provide",
+   "important linguistic detail that can help in stance detection"
+  ]
+ ],
+ "2003.08385::s25::p000": [
+  [
+   "The baseline experiments",
+   "confirm that",
+   "M-Bert can achieve a reasonable accuracy on x-stance"
+  ]
+ ],
+ "2003.08385::s25::p001": [
+  [
+   "the supervised part of x-stance",
+   "has a similar difficulty as",
+   "the SemEval-2016 BIBREF0 or MPCHI BIBREF22 datasets"
+  ]
+ ],
+ "2003.08385::s25::p002": [
+  [
+   "the mean score",
+   "drops by",
+   "6–8 percentage points compared to the supervised setting"
+  ],
+  [
+   "zero-shot transfer",
+   "is possible to",
+   "a degree"
+  ]
+ ],
+ "2003.08385::s25::p003": [
+  [
+   "The additional experiments (Table TABREF39)",
+   "validate",
+   "the results"
+  ],
+  [
+   "The additional experiments (Table TABREF39)",
+   "show that",
+   "the sequence-pair classification approach to stance detection is justified"
+  ]
+ ],
+ "2003.08385::s25::p004": [
+  [
+   "many comments",
+   "express their stance only on",
+   "a very implicit level"
+  ],
+  [
+   "the label",
+   "is explicitly shown to",
+   "readers in addition to the comments"
+  ],
+  [
+   "Manual annotation",
+   "could eliminate",
+   "very implicit samples in a future version of the dataset"
+  ]
+ ],
+ "2003.08385::s26::p000": [
+  [
+   "x-stance",
+   "is a new dataset for",
+   "political stance detection"
+  ],
+  [
+   "The dataset",
+   "extends over",
+   "a broad range of topics and issues regarding national Swiss politics"
+  ],
+  [
+   "This diversity of topics",
+   "opens up an opportunity to further study",
+   "multi-target learning"
+  ],
+  [
+   "the dataset",
+   "promotes",
+   "a multilingual approach to stance detection"
+  ]
+ ],
+ "2003.08385::s26::p001": [
+  [
+   "formal commentary that politicians have written on political questions",
+   "adds",
+   "a new text genre to the field of stance detection"
+  ],
+  [
+   "a question–answer format",
+   "allows us to condition",
+   "stance detection models on a target naturally"
+  ]
+ ],
+ "2003.08385::s26::p002": [
+  [
+   "some gap in performance",
+   "could be addressed by",
+   "future work"
+  ],
+  [
+   "the x-stance dataset",
+   "could be a valuable resource for",
+   "fields such as argument mining, argument search or topic classification"
+  ]
+ ],
+ "2003.08385::s28::p000": [
+  [
+   "questions and candidate responses on the voting advice application smartvote.ch",
+   "were downloaded",
+   "to study the automatic detection of stances on political issues"
+  ],
+  [
+   "Mainly data pertaining to national-level issues",
+   "were included to reduce",
+   "variability"
+  ]
+ ],
+ "2003.08385::s29::p000": [
+  [
+   "The training set",
+   "consists of",
+   "questions and answers in Swiss Standard German and Swiss French (74.1% de-CH; 25.9% fr-CH)"
+  ],
+  [
+   "The test sets",
+   "also contain",
+   "questions and answers in Swiss Italian (67.1% de-CH; 24.7% fr-CH; 8.2% it-CH)"
+  ],
+  [
+   "The questions",
+   "have also been translated into",
+   "English"
+  ]
+ ],
+ "2003.08385::s30::p000": [
+  [
+   "Candidates for communal, cantonal or national elections in Switzerland",
+   "have filled out",
+   "an online questionnaire"
+  ]
+ ],
+ "2003.08385::s30::p001": [
+  [
+   "Age",
+   "is",
+   "18 or older – mixed"
+  ]
+ ],
+ "2003.08385::s30::p002": [
+  [
+   "Gender",
+   "is",
+   "Unknown – mixed"
+  ]
+ ],
+ "2003.08385::s30::p003": [
+  [
+   "Race/ethnicity",
+   "is",
+   "Unknown – mixed"
+  ]
+ ],
+ "2003.08385::s30::p004": [
+  [
+   "Native language",
+   "is",
+   "Unknown – mixed"
+  ]
+ ],
+ "2003.08385::s30::p005": [
+  [
+   "Socioeconomic status",
+   "is",
+   "Unknown – mixed"
+  ]
+ ],
+ "2003.08385::s30::p007": [
+  [
+   "Presence of disordered speech",
+   "is",
+   "Unknown"
+  ]
+ ],
+ "2003.08385::s31::p000": [
+  [
+   "The questions",
+   "were edited and translated by",
+   "political scientists"
+  ],
+  [
+   "The questions",
+   "were edited and translated for",
+   "a public voting advice website"
+  ]
+ ],
+ "2003.08385::s31::p001": [
+  [
+   "The answers",
+   "were written between",
+   "2011 and 2020"
+  ],
+  [
+   "The answers",
+   "were written by",
+   "the users of the website"
+  ]
+ ],
+ "2003.08385::s32::p000": [
+  [
+   "Text characteristics",
+   "include",
+   "Questions, answers, arguments and comments regarding political issues"
+  ]
+ ]
+}

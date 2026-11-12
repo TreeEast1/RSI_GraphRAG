@@ -1,0 +1,49 @@
+{
+ "paper_id": "2003.02249",
+ "title": "jiant: A Software Toolkit for Research on General-Purpose Text Understanding Models",
+ "abstract": "We introduce jiant, an open source toolkit for conducting multitask and transfer learning experiments on English NLU tasks. jiant enables modular and configuration-driven experimentation with state-of-the-art models and implements a broad set of tasks for probing, transfer learning, and multitask training experiments. jiant implements over 50 NLU tasks, including all GLUE and SuperGLUE benchmark tasks. We demonstrate that jiant reproduces published performance on a variety of tasks and models, including BERT and RoBERTa. jiant is available at https://jiant.info.",
+ "sections": [
+  "Introduction",
+  "Background",
+  "jiant System Overview ::: Requirements",
+  "jiant System Overview ::: jiant Components",
+  "jiant System Overview ::: jiant Pipeline Overview",
+  "jiant System Overview ::: Task and Model resources in jiant",
+  "jiant System Overview ::: User Interface",
+  "jiant System Overview ::: Example jiant Use Cases and Options",
+  "jiant System Overview ::: jiant Deployment Environments",
+  "jiant System Overview ::: Logging and Metric Tracking",
+  "jiant System Overview ::: Optimizations and Other Features",
+  "jiant System Overview ::: Extensibility",
+  "jiant System Overview ::: Limitations",
+  "jiant System Overview ::: jiant Development Roadmap",
+  "Benchmark Experiments",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 63,
+ "n_tokens": 3142,
+ "figures_and_tables": [
+  {
+   "caption_id": "2003.02249::fig000",
+   "paper_id": "2003.02249",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Multi-phase jiant experiment configuration used by Wang et al. (2019a): a BERT sentence encoder is trained with an intermediate task model during jiant’s intermediate training phase, and fine-tuned with various target task models in jiant’s target training phase.",
+   "n_tokens": 58
+  },
+  {
+   "caption_id": "2003.02249::fig001",
+   "paper_id": "2003.02249",
+   "file": "3-Figure2-1.png",
+   "caption": "Figure 2: jiant pipeline stages using RoBERTa as the sentence encoder, ReCoRD and MNLI tasks as intermediate tasks, and MNLI and BoolQ as tasks for target training and evaluation. The diagram highlights that during target training and evaluation phases, copies are made of the sentence encoder model, and fine tuning and evaluation for each task are conducted on separate copies.",
+   "n_tokens": 76
+  },
+  {
+   "caption_id": "2003.02249::fig002",
+   "paper_id": "2003.02249",
+   "file": "4-Figure3-1.png",
+   "caption": "Figure 3: Example jiant experiment config file.",
+   "n_tokens": 11
+  }
+ ]
+}

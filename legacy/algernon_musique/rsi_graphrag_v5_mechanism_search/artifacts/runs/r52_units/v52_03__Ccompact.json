@@ -1,0 +1,180 @@
+{
+  "role": "v52_03",
+  "cluster_id": "cc-00000-stable-0089",
+  "unit_id": "cc-00000-stable-0089-u000",
+  "method": "Ccompact",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 1517,
+    "completion_tokens": 2243,
+    "reasoning_tokens": 960,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r52_units_v52_03_Ccompact",
+    "cache_key": "0c0db66bb2e25b5d925d0013ce2d07866223f175a38c0cd518d816aeafac3621"
+  },
+  "n_updates": 3,
+  "n_add": 3,
+  "n_accept": 0,
+  "n_reject": 3,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "REDUNDANT": 3
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "c1",
+      "comprehension_text": "Premium services may include dedicated check-in counters.",
+      "new_semantic_relation": "premium services | may include | dedicated check in counters",
+      "operator": "COMPOSITIONAL_SHORTCUT",
+      "chain": [
+        {
+          "passage_id": "chunk-2eeb11c203002ae0648610e3e8200c92",
+          "span": "The premium and VIP services may include express check-in and dedicated check-in counters."
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-35e1dc9f6fc08523f21de0cdac84be62",
+        "entity-015832142f0b7b359af7e8ffad725125"
+      ],
+      "source_triple_ids": [
+        "triple-e70163fda487b3467e386d558347ce45",
+        "triple-b1943a5c90aec2446e5d6e7cbeeeb003"
+      ],
+      "source_passage_ids": [
+        "chunk-2eeb11c203002ae0648610e3e8200c92"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-2eeb11c203002ae0648610e3e8200c92",
+          "span": "The premium and VIP services may include express check-in and dedicated check-in counters."
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The passage applies dedicated check-in counters to premium services.",
+      "reasoning_summary": "The coordinated subject and object distribute across both service types.",
+      "novelty_justification": "No stored triple links premium services with dedicated check-in counters.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "c2",
+      "comprehension_text": "VIP services are usually reserved for first class passengers.",
+      "new_semantic_relation": "vip services | are usually reserved for | first class passengers",
+      "operator": "COMPOSITIONAL_SHORTCUT",
+      "chain": [
+        {
+          "passage_id": "chunk-2eeb11c203002ae0648610e3e8200c92",
+          "span": "These services are usually reserved for First and Business class passengers, premium frequent flyers, and members of the airline's clubs."
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-f599d8173b34d9a950bc59286c1e23be",
+        "entity-1166fc30b9a468c82b043eb9efa4efd6"
+      ],
+      "source_triple_ids": [
+        "triple-153188f0ad96d31244743c6d4cc3bbd4",
+        "triple-2eaee2731ed398d648fbcf76da5fba0a"
+      ],
+      "source_passage_ids": [
+        "chunk-2eeb11c203002ae0648610e3e8200c92"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-2eeb11c203002ae0648610e3e8200c92",
+          "span": "These services are usually reserved for First and Business class passengers, premium frequent flyers, and members of the airline's clubs."
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The passage applies first class eligibility to VIP services.",
+      "reasoning_summary": "The phrase these services refers jointly to premium and VIP services.",
+      "novelty_justification": "No stored triple links VIP services with first class passengers.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "c3",
+      "comprehension_text": "Premium services are usually reserved for business class passengers.",
+      "new_semantic_relation": "premium services | are usually reserved for | business class passengers",
+      "operator": "COMPOSITIONAL_SHORTCUT",
+      "chain": [
+        {
+          "passage_id": "chunk-2eeb11c203002ae0648610e3e8200c92",
+          "span": "These services are usually reserved for First and Business class passengers, premium frequent flyers, and members of the airline's clubs."
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-35e1dc9f6fc08523f21de0cdac84be62",
+        "entity-e6700ad2d2455193195feb5394757596"
+      ],
+      "source_triple_ids": [
+        "triple-2eaee2731ed398d648fbcf76da5fba0a",
+        "triple-153188f0ad96d31244743c6d4cc3bbd4"
+      ],
+      "source_passage_ids": [
+        "chunk-2eeb11c203002ae0648610e3e8200c92"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-2eeb11c203002ae0648610e3e8200c92",
+          "span": "These services are usually reserved for First and Business class passengers, premium frequent flyers, and members of the airline's clubs."
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The passage applies business class eligibility to premium services.",
+      "reasoning_summary": "The phrase these services refers jointly to premium and VIP services.",
+      "novelty_justification": "No stored triple links premium services with business class passengers.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "c1",
+      "decision": "REJECT",
+      "failure_stage": "V4",
+      "faithfulness": "supported",
+      "novelty": "duplicate",
+      "audit_type": "REDUNDANT",
+      "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+      "residue": [],
+      "evidence_sentences": [
+        "The premium and VIP services may include express check-in and dedicated check-in counters. These services are usually reserved for First and Business class passengers, premium frequent flyers, and members of the airline's clubs."
+      ],
+      "warning": ""
+    },
+    {
+      "candidate_id": "c2",
+      "decision": "REJECT",
+      "failure_stage": "V4",
+      "faithfulness": "supported",
+      "novelty": "duplicate",
+      "audit_type": "REDUNDANT",
+      "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+      "residue": [],
+      "evidence_sentences": [
+        "These services are usually reserved for First and Business class passengers, premium frequent flyers, and members of the airline's clubs. Premium services may sometimes be open to passengers who are members of a different airline's frequent flyer program."
+      ],
+      "warning": ""
+    },
+    {
+      "candidate_id": "c3",
+      "decision": "REJECT",
+      "failure_stage": "V4",
+      "faithfulness": "supported",
+      "novelty": "duplicate",
+      "audit_type": "REDUNDANT",
+      "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+      "residue": [],
+      "evidence_sentences": [
+        "These services are usually reserved for First and Business class passengers, premium frequent flyers, and members of the airline's clubs. Premium services may sometimes be open to passengers who are members of a different airline's frequent flyer program."
+      ],
+      "warning": ""
+    }
+  ]
+}

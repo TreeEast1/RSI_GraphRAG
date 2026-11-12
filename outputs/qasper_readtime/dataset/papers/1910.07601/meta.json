@@ -1,0 +1,74 @@
+{
+ "paper_id": "1910.07601",
+ "title": "Contextual Joint Factor Acoustic Embeddings",
+ "abstract": "Embedding acoustic information into fixed length representations is of interest for a whole range of applications in speech and audio technology. We propose two novel unsupervised approaches to generate acoustic embeddings by modelling of acoustic context. The first approach is a contextual joint factor synthesis encoder, where the encoder in an encoder/decoder framework is trained to extract joint factors from surrounding audio frames to best generate the target output. The second approach is a contextual joint factor analysis encoder, where the encoder is trained to analyse joint factors from the source signal that correlates best with the neighbouring audio. To evaluate the effectiveness of our approaches compared to prior work, we chose two tasks - phone classification and speaker recognition - and test on different TIMIT data sets. Experimental results show that one of our proposed approaches outperforms phone classification baselines, yielding a classification accuracy of 74.1%. When using additional out-of-domain data for training, an additional 2-3% improvements can be obtained, for both for phone classification and speaker recognition tasks.",
+ "sections": [
+  "Introduction",
+  "Related Works",
+  "Related Works ::: Acoustic Embeddings",
+  "Related Works ::: Context Modelling",
+  "Model Architecture ::: Variational Auto-Encoders",
+  "Model Architecture ::: Proposed Model Architecture",
+  "Experimental Framework",
+  "Experimental Framework ::: Data and Use",
+  "Experimental Framework ::: Baselines",
+  "Experimental Framework ::: Evaluation Tasks",
+  "Experimental Framework ::: Implementation",
+  "Results and Discussion",
+  "Analysis",
+  "Conclusion and Future Work"
+ ],
+ "n_paragraphs": 37,
+ "n_tokens": 5007,
+ "figures_and_tables": [
+  {
+   "caption_id": "1910.07601::fig000",
+   "paper_id": "1910.07601",
+   "file": "3-Figure1-1.png",
+   "caption": "Fig. 1. The architecture of CJFS (Left) and CJFA (Right). Both CJFS and CJFA were built based on variational auto encoder, embeddings were extracted on the bottleneck layer.",
+   "n_tokens": 42
+  },
+  {
+   "caption_id": "1910.07601::fig001",
+   "paper_id": "1910.07601",
+   "file": "4-Figure2-1.png",
+   "caption": "Fig. 2. Data split of the TIMIT corpus for definition of data sets for speaker recognition. Training and test sets are split int 4 parts of 2 utterances each. Different combination of sets for training and test are used of different tasks.",
+   "n_tokens": 52
+  },
+  {
+   "caption_id": "1910.07601::fig002",
+   "paper_id": "1910.07601",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1. Definition of training configurations a, b, and c.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1910.07601::fig003",
+   "paper_id": "1910.07601",
+   "file": "5-Figure3-1.png",
+   "caption": "Fig. 3. Phone classification accuracy, and speaker recognition accuracy for Tasks a,b,and c (as defined at 4.3), when varying the embedding dimension (top row), and window sizes (bottom row).",
+   "n_tokens": 44
+  },
+  {
+   "caption_id": "1910.07601::fig004",
+   "paper_id": "1910.07601",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2. % Phone classification and speaker recognition accuracy with three different model types. Embedding dimension is 150 and target window size is 10 frames, neighbour window sizes are 10 frames each.",
+   "n_tokens": 41
+  },
+  {
+   "caption_id": "1910.07601::fig005",
+   "paper_id": "1910.07601",
+   "file": "6-Figure4-1.png",
+   "caption": "Fig. 4. The t-SNE visualisation of phones in the test set for three models: (a): VAE baseline (b): CJFS encoder and (c): CJFA encoder",
+   "n_tokens": 40
+  },
+  {
+   "caption_id": "1910.07601::fig006",
+   "paper_id": "1910.07601",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3. % Phone classification and speaker recognition accuracy with TIMIT data and RM data.",
+   "n_tokens": 19
+  }
+ ]
+}

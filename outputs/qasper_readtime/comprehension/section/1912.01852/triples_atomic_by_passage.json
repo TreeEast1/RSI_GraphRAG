@@ -1,0 +1,343 @@
+{
+ "1912.01852::s00::p000": [
+  [
+   "Traditional singing synthesize systems",
+   "are based on",
+   "concatenative BIBREF1 or HMM BIBREF2 based approaches"
+  ]
+ ],
+ "1912.01852::s00::p001": [
+  [
+   "singing voice conversion",
+   "extracts",
+   "musical expression within existing singing"
+  ],
+  [
+   "singing voice conversion",
+   "needs to deal with",
+   "a wider range of frequency variations as well as the sharper change of volume and pitch within singing voice"
+  ],
+  [
+   "several singing voice conversion methods",
+   "generally require",
+   "parallel data to train the conversion model"
+  ],
+  [
+   "an unsupervised method BIBREF0",
+   "has been proposed to utilize",
+   "non-parallel data"
+  ],
+  [
+   "A confusion loss BIBREF12",
+   "is introduced to force",
+   "the encoder to learn a singer-invariant representation"
+  ],
+  [
+   "the quality of generated singing",
+   "often suffers due to",
+   "the difficulty on learning joint representation of phonetic and pitch representation"
+  ]
+ ],
+ "1912.01852::s00::p002": [
+  [
+   "adversarially trained pitch regression network",
+   "encourages",
+   "the encoder network to learn not only singer-invariant but also pitch-invariant representation"
+  ]
+ ],
+ "1912.01852::s01::p000": [
+  [
+   "an additional pitch regression network",
+   "separates",
+   "pitch information out of the latent space"
+  ]
+ ],
+ "1912.01852::s01::p001": [
+  [
+   "the input waveform",
+   "is passed through",
+   "the encoder to extract high-level semantic features"
+  ],
+  [
+   "An average pooling of stride 800",
+   "is applied to",
+   "the features, forming a bottleneck to limit the information passing through the encoder"
+  ],
+  [
+   "a singer id",
+   "is used to retrieve",
+   "the target singer's embedding vector from LUT"
+  ],
+  [
+   "The pitch of the input audio",
+   "is fed into",
+   "the decoder after a linear interpolation as a compensation signal together with the condition vector"
+  ]
+ ],
+ "1912.01852::s01::p002": [
+  [
+   "a singer classification network and a pitch regression network",
+   "are employed to force",
+   "the encoder not to encode singer and pitch information"
+  ],
+  [
+   "The singer classification loss and pitch regression loss",
+   "are added adversarially to",
+   "the reconstruction loss"
+  ]
+ ],
+ "1912.01852::s02::p002": [
+  [
+   "only reconstruction loss",
+   "is not enough to train",
+   "the model to learn to convert singing voice between different singers"
+  ],
+  [
+   "a singer classification loss(also named domain confusion loss BIBREF0)",
+   "is applied to make",
+   "the encoder to learn a singer invariant representation"
+  ]
+ ],
+ "1912.01852::s02::p003": [
+  [
+   "a pitch regression loss",
+   "is introduced to force",
+   "the encoder to learn a pitch-independent representation"
+  ],
+  [
+   "a pitch regression loss",
+   "is introduced to make",
+   "the whole model obtain the pitch information from $p(s^j)$ rather than directly from the input audio"
+  ]
+ ],
+ "1912.01852::s02::p005": [
+  [
+   "the adversarial loss",
+   "is used to train",
+   "the singer classifier and pitch regression network"
+  ]
+ ],
+ "1912.01852::s02::p008": [
+  [
+   "the whole model",
+   "is optimized one step using",
+   "$\\mathcal {L}_{total}$ as the objective function"
+  ]
+ ],
+ "1912.01852::s02::p010": [
+  [
+   "backtranslation and mixup techniques BIBREF0",
+   "are also used to improve",
+   "the quality of the converted singing voice"
+  ]
+ ],
+ "1912.01852::s03::p000": [
+  [
+   "The encoder",
+   "is",
+   "a fully convolutional network with three blocks of ten residual-layers"
+  ],
+  [
+   "an average pooling with a kernel size of 800",
+   "is applied to get",
+   "the final output"
+  ],
+  [
+   "The decoder",
+   "is",
+   "a WaveNet BIBREF4 vocoder which consists of four blocks of ten residual layers"
+  ],
+  [
+   "The linear interpolation and nearest-neighbor interpolation",
+   "are applied to",
+   "the input pitch and encoder output respectively"
+  ]
+ ],
+ "1912.01852::s03::p001": [
+  [
+   "the singer classification network and pitch regression network",
+   "have",
+   "the same architecture of a stack of two convolutional neural networks with a kernel size of 3 and channels of 100"
+  ],
+  [
+   "the pitch regression network",
+   "does not average",
+   "the output of the two convolution networks"
+  ],
+  [
+   "A dropout layer",
+   "is employed at",
+   "the beginning of the network"
+  ]
+ ],
+ "1912.01852::s04::p000": [
+  [
+   "USVC(our)",
+   "denotes",
+   "USVC implemented by ourselves"
+  ]
+ ],
+ "1912.01852::s05::p000": [
+  [
+   "NUS-48E BIBREF14 dataset",
+   "was sung by",
+   "6 male singers and 6 female singers"
+  ],
+  [
+   "NUS-48E BIBREF14 dataset",
+   "contains",
+   "48 songs each with length of several minutes"
+  ],
+  [
+   "Every singer",
+   "provided",
+   "4 songs"
+  ],
+  [
+   "The male part of the dataset",
+   "was selected to train",
+   "the models"
+  ],
+  [
+   "the songs",
+   "were converted to",
+   "monophonic audio of 16kHz sample rate and PCM-16 bit format"
+  ],
+  [
+   "8-bit mu-law encoding",
+   "was employed to reduce",
+   "the input space"
+  ],
+  [
+   "Kaldi toolkit BIBREF15",
+   "was used to extract",
+   "pitch from the songs with hop length of 100"
+  ],
+  [
+   "the value of pitch",
+   "was normalized between",
+   "0 and 1"
+  ]
+ ],
+ "1912.01852::s06::p000": [
+  [
+   "USVC and PitchNet",
+   "were implemented using",
+   "PyTorch BIBREF16 framework"
+  ],
+  [
+   "Both models",
+   "were trained on",
+   "two Tesla P40 GPUs for four days"
+  ],
+  [
+   "Adam optimizer BIBREF17",
+   "was used with",
+   "a learning rate of $10^{-3}$ and a decay factor of 0.98 every 1000 steps"
+  ],
+  [
+   "$\\lambda $ and $\\mu $ in the training loss (DISPLAY_FORM8)(DISPLAY_FORM9)",
+   "were set to",
+   "$0.01$ and $0.1$ respectively"
+  ]
+ ],
+ "1912.01852::s06::p001": [
+  [
+   "backtranslation and mixup BIBREF0",
+   "were employed to improve",
+   "the conversion"
+  ],
+  [
+   "96 new audio segments",
+   "were generated every",
+   "2k steps"
+  ]
+ ],
+ "1912.01852::s06::p002": [
+  [
+   "audio time reversal and phase inversion",
+   "were employed to augment",
+   "the training data by 4 times"
+  ]
+ ],
+ "1912.01852::s07::p000": [
+  [
+   "automatic evaluation score and human evaluation score",
+   "were employed to compare",
+   "the conversions between USVC and PitchNet"
+  ]
+ ],
+ "1912.01852::s07::p001": [
+  [
+   "The automatic score",
+   "roughly followed",
+   "the design in BIBREF13"
+  ],
+  [
+   "The pitch tracker of librosa package BIBREF18",
+   "was employed to extract",
+   "pitch information of the input and output audio"
+  ],
+  [
+   "normalized cross correlation (NCC)",
+   "would give",
+   "a score between 0 and 1"
+  ]
+ ],
+ "1912.01852::s07::p002": [
+  [
+   "Mean Opinion Score (MOS)",
+   "was used as",
+   "a subjective metric to evaluate the quality of the converted audio"
+  ],
+  [
+   "A score of 1-5",
+   "would be given to answer",
+   "the questions"
+  ],
+  [
+   "The evaluation",
+   "was conducted on",
+   "USVC (Our) and PitchNet"
+  ],
+  [
+   "the naturalness and similarity of our method",
+   "are both higher than",
+   "the other two ones"
+  ]
+ ],
+ "1912.01852::s07::p003": [
+  [
+   "The input pitch",
+   "was multiplied by",
+   "0.7, 1.0 and 1.3 respectively"
+  ],
+  [
+   "the output pitch",
+   "was also extracted by",
+   "the pitch tracker of the librosa package"
+  ],
+  [
+   "the output pitch",
+   "changes significantly along with",
+   "the input pitch"
+  ]
+ ],
+ "1912.01852::s08::p000": [
+  [
+   "a novel unsupervised singing voice conversion method named PitchNet",
+   "is proposed",
+   "In this paper"
+  ],
+  [
+   "A pitch regression network",
+   "is employed to render",
+   "an adversarial loss separating pitch related information from the latent space in autoencoder"
+  ],
+  [
+   "a singer and pitch invariant representation",
+   "is generated and then fed into",
+   "the WaveNet decoder conditioning on the singer embedding and the extracted pitch"
+  ]
+ ]
+}

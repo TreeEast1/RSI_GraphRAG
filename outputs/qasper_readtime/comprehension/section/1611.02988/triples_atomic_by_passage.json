@@ -1,0 +1,518 @@
+{
+ "1611.02988::s00::p001": [
+  [
+   "Facebook users",
+   "can express",
+   "specific emotions in response to a post"
+  ],
+  [
+   "posts",
+   "normally receive",
+   "more simple “likes” than longer comments"
+  ],
+  [
+   "a post",
+   "can be wordlessly marked with",
+   "an expression of say “joy\" or “surprise\" rather than a generic “like”"
+  ]
+ ],
+ "1611.02988::s00::p002": [
+  [
+   "Creating manually annotated datasets large enough to train supervised models",
+   "is",
+   "costly"
+  ],
+  [
+   "Creating manually annotated datasets large enough to train supervised models",
+   "is",
+   "difficult"
+  ],
+  [
+   "mohammad2015using",
+   "use",
+   "hashtags"
+  ],
+  [
+   "mohammad2015using",
+   "create",
+   "the large Hashtag Emotion Lexicon"
+  ]
+ ],
+ "1611.02988::s01::p000": [
+  [
+   "people",
+   "could leave",
+   "comments to posts"
+  ],
+  [
+   "people",
+   "could “like”",
+   "posts"
+  ],
+  [
+   "a thumbs-up feature",
+   "explicitly express",
+   "a generic, rather underspecified, approval"
+  ]
+ ],
+ "1611.02988::s01::p001": [
+  [
+   "Facebook",
+   "made available world-wide",
+   "a more explicit reaction feature"
+  ],
+  [
+   "a set of six more specific reactions",
+   "was introduced",
+   "Like, Love, Haha, Wow, Sad and Angry"
+  ]
+ ],
+ "1611.02988::s01::p002": [
+  [
+   "the Facebook API",
+   "was accessed via",
+   "the Facebook-sdk python library"
+  ]
+ ],
+ "1611.02988::s01::p003": [
+  [
+   "thankful",
+   "was only available during",
+   "specific time spans related to certain events, as Mother's Day in May 2016"
+  ]
+ ],
+ "1611.02988::s01::p004": [
+  [
+   "The output",
+   "is",
+   "a JSON file containing a list of dictionaries with a timestamp, the post and a reaction vector with frequency values"
+  ],
+  [
+   "frequency values",
+   "indicate",
+   "how many users used that reaction in response to the post"
+  ]
+ ],
+ "1611.02988::s01::p005": [
+  [
+   "the first post in Figure FIGREF3",
+   "would be associated with",
+   "the label sad"
+  ],
+  [
+   "sad",
+   "has",
+   "the highest score (284) among the meaningful emotions we consider"
+  ]
+ ],
+ "1611.02988::s02::p000": [
+  [
+   "Three datasets annotated with emotions",
+   "are commonly used for",
+   "the development and evaluation of emotion detection systems"
+  ],
+  [
+   "Three datasets annotated with emotions",
+   "are",
+   "the Affective Text dataset, the Fairy Tales dataset, and the ISEAR dataset"
+  ]
+ ],
+ "1611.02988::s03::p000": [
+  [
+   "Task 14 at SemEval 2007",
+   "was concerned with",
+   "the classification of emotions and valence in news headlines"
+  ],
+  [
+   "The headlines",
+   "were collected from",
+   "several news websites including Google news, The New York Times, BBC News and CNN"
+  ],
+  [
+   "The used emotion labels",
+   "were",
+   "Anger, Disgust, Fear, Joy, Sadness, Surprise"
+  ],
+  [
+   "Valence",
+   "was to be determined as",
+   "positive or negative"
+  ],
+  [
+   "Classification of emotion and valence",
+   "were treated as",
+   "separate tasks"
+  ],
+  [
+   "each emotion",
+   "was assigned",
+   "a score from 0 to 100"
+  ],
+  [
+   "Training/developing data",
+   "amounted to",
+   "250 annotated headlines (Affective development)"
+  ],
+  [
+   "systems",
+   "were evaluated on",
+   "another 1000 (Affective test)"
+  ]
+ ],
+ "1611.02988::s04::p000": [
+  [
+   "Fairy Tales dataset",
+   "contains",
+   "about 1,000 sentences from fairy tales"
+  ],
+  [
+   "Fairy Tales dataset",
+   "was annotated with",
+   "the same six emotions of the Affective Text dataset"
+  ],
+  [
+   "Fairy Tales dataset emotion names",
+   "are",
+   "Angry, Disgusted, Fearful, Happy, Sad, and Surprised"
+  ],
+  [
+   "most works that use this dataset",
+   "use",
+   "only sentences where all annotators agreed"
+  ]
+ ],
+ "1611.02988::s05::p000": [
+  [
+   "ISEAR",
+   "is",
+   "a dataset created in the context of a psychology project of the 1990s"
+  ],
+  [
+   "main aim of this project",
+   "was to gather",
+   "insights in cross-cultural aspects of emotional reactions"
+  ],
+  [
+   "final dataset",
+   "contains",
+   "reports by approximately 3000 respondents from all over the world"
+  ],
+  [
+   "final dataset",
+   "contains",
+   "a total of 7665 sentences labelled with an emotion"
+  ]
+ ],
+ "1611.02988::s06::p000": [
+  [
+   "final emotions we use in this paper",
+   "are",
+   "anger, joy, sadness, surprise"
+  ],
+  [
+   "All labels in each dataset",
+   "are mapped to",
+   "these final emotions"
+  ],
+  [
+   "these final emotions",
+   "are",
+   "the labels we use for training and testing our models"
+  ]
+ ],
+ "1611.02988::s06::p001": [
+  [
+   "distribution of the emotions for each dataset",
+   "is",
+   "different"
+  ]
+ ],
+ "1611.02988::s06::p002": [
+  [
+   "pages about news",
+   "tend to have",
+   "more sadness and anger posts"
+  ],
+  [
+   "pages about cooking and tv-shows",
+   "have",
+   "a high percentage of joy posts"
+  ]
+ ],
+ "1611.02988::s07::p000": [
+  [
+   "two main decisions",
+   "are",
+   "(i) which Facebook pages to select as training data, and (ii) which features to use to train the model"
+  ],
+  [
+   "Further exploration of the interaction between choice of pages and choice of features",
+   "is left to",
+   "future work"
+  ],
+  [
+   "Affective development",
+   "contains",
+   "250 annotated sentences"
+  ],
+  [
+   "All results reported in this section",
+   "are on",
+   "this dataset"
+  ],
+  [
+   "test set of Task 14 as well as the other two datasets described in Section SECREF3",
+   "will be used to evaluate",
+   "the final models"
+  ]
+ ],
+ "1611.02988::s08::p000": [
+  [
+   "page selection",
+   "is",
+   "a crucial ingredient of this approach"
+  ],
+  [
+   "the pages that would provide training data",
+   "were selected based on",
+   "intuition and availability"
+  ],
+  [
+   "different combinations",
+   "were chosen according to",
+   "results of a basic model run on development data"
+  ],
+  [
+   "feature combinations",
+   "were tested on",
+   "the development set"
+  ]
+ ],
+ "1611.02988::s08::p001": [
+  [
+   "the combined set of Time, The Guardian and Disney",
+   "yields",
+   "the highest results on development data"
+  ],
+  [
+   "Disney",
+   "helps to boost",
+   "the performance for the Joy class"
+  ]
+ ],
+ "1611.02988::s09::p000": [
+  [
+   "all tests",
+   "were done on",
+   "Affective development"
+  ],
+  [
+   "the pages for the best model (B-M)",
+   "were used as",
+   "training data"
+  ],
+  [
+   "Future work",
+   "will further explore",
+   "the simultaneous selection of features and page combinations"
+  ]
+ ],
+ "1611.02988::s09::p001": [
+  [
+   "a set of basic text-based features",
+   "is used to capture",
+   "the emotion class"
+  ],
+  [
+   "basic text-based features",
+   "include",
+   "a tf-idf bag-of-words feature"
+  ],
+  [
+   "basic text-based features",
+   "include",
+   "word (2-3) and character (2-5) ngrams"
+  ],
+  [
+   "basic text-based features",
+   "include",
+   "features related to the presence of negation words, and to the usage of punctuation"
+  ]
+ ],
+ "1611.02988::s09::p002": [
+  [
+   "This feature",
+   "is used in",
+   "all unsupervised models as a source of information"
+  ]
+ ],
+ "1611.02988::s09::p003": [
+  [
+   "the NRC10 Lexicon",
+   "performed best in",
+   "the experiments by BIBREF10"
+  ],
+  [
+   "a boolean value indicating presence or absence",
+   "is associated to",
+   "each emotion"
+  ],
+  [
+   "a global score per emotion",
+   "can be obtained by",
+   "summing the vectors for all content words of that sentence included in the lexicon"
+  ]
+ ],
+ "1611.02988::s09::p004": [
+  [
+   "Word Embeddings",
+   "was included as",
+   "additional feature"
+  ]
+ ],
+ "1611.02988::s09::p005": [
+  [
+   "Google embeddings",
+   "are",
+   "pre-trained embeddings trained on Google News"
+  ],
+  [
+   "Google embeddings",
+   "were obtained with",
+   "the skip-gram architecture"
+  ],
+  [
+   "This model",
+   "contains",
+   "300-dimensional vectors for 3 million words and phrases"
+  ]
+ ],
+ "1611.02988::s09::p006": [
+  [
+   "the embeddings",
+   "were trained with",
+   "window size of 5, learning rate of 0.01 and dimensionality of 100"
+  ],
+  [
+   "words with frequency lower than 2 occurrences",
+   "were filtered out",
+   "words with frequency lower than 2 occurrences"
+  ]
+ ],
+ "1611.02988::s09::p007": [
+  [
+   "general embeddings",
+   "are retrofitted to include",
+   "information about emotions"
+  ],
+  [
+   "Both the Google as well as our Facebook embeddings",
+   "were retrofitted with",
+   "lexical information obtained from the NRC10 Lexicon"
+  ],
+  [
+   "the NRC10 Lexicon",
+   "provides",
+   "emotion-similarity for each token"
+  ],
+  [
+   "the retrofitted ones",
+   "do rely on",
+   "handcrafted information in the form of a lexical resource"
+  ]
+ ],
+ "1611.02988::s10::p000": [
+  [
+   "The average f-score",
+   "is reported as",
+   "micro-average"
+  ]
+ ],
+ "1611.02988::s10::p001": [
+  [
+   "a simple tf-idf bag-of-word mode",
+   "works",
+   "already very well"
+  ],
+  [
+   "the other textual and lexicon-based features",
+   "don't seem to contribute to",
+   "the overall f-score (0.368)"
+  ],
+  [
+   "Google embeddings",
+   "perform",
+   "a lot better than Facebook embeddings"
+  ],
+  [
+   "Retrofitting",
+   "does boost",
+   "the Facebook embeddings"
+  ],
+  [
+   "removing the Lexicon feature",
+   "yields",
+   "even better results"
+  ]
+ ],
+ "1611.02988::s11::p001": [
+  [
+   "The feature set",
+   "is",
+   "all the features plus Google-based embeddings, but excluding the lexicon"
+  ],
+  [
+   "no other existing model",
+   "was re-implemented",
+   "results are those reported in the respective papers"
+  ]
+ ],
+ "1611.02988::s12::p000": [
+  [
+   "An interesting aspect of our approach",
+   "is",
+   "the view to domain adaptation via the selection of Facebook pages to be used as training data"
+  ]
+ ],
+ "1611.02988::s12::p001": [
+  [
+   "Retrofitting FB-embeddings trained on a larger corpus",
+   "might also be",
+   "successful"
+  ],
+  [
+   "Retrofitting FB-embeddings trained on a larger corpus",
+   "would rely on",
+   "an external lexicon"
+  ]
+ ],
+ "1611.02988::s12::p002": [
+  [
+   "The largest room for yielding not only better results but also interesting insights on extensions of this approach",
+   "lies in",
+   "the choice of training instances"
+  ],
+  [
+   "a post about Chile beating Colombia in a football match during the Copa America",
+   "had",
+   "very contradictory reactions"
+  ],
+  [
+   "pages initially selected on availability and intuition",
+   "were further grouped into",
+   "sets to make training data according to performance on development data, and label distribution"
+  ],
+  [
+   "Another criterion to be exploited",
+   "would be",
+   "vocabulary overlap between the pages and the datasets"
+  ]
+ ],
+ "1611.02988::s12::p003": [
+  [
+   "This",
+   "would even better reflect",
+   "the ambiguity and subjectivity intrinsic to assigning emotions to text"
+  ]
+ ]
+}

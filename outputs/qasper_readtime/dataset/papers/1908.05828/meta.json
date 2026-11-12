@@ -1,0 +1,121 @@
+{
+ "paper_id": "1908.05828",
+ "title": "Named Entity Recognition for Nepali Language",
+ "abstract": "Named Entity Recognition (NER) has been studied for many languages like English, German, Spanish, and others but virtually no studies have focused on the Nepali language. One key reason is the lack of an appropriate, annotated dataset. In this paper, we describe a Nepali NER dataset that we created. We discuss and compare the performance of various machine learning models on this dataset. We also propose a novel NER scheme for Nepali and show that this scheme, based on grapheme-level representations, outperforms character-level representations when combined with BiLSTM models. Our best models obtain an overall F1 score of 86.89, which is a significant improvement on previously reported performance in literature.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Approach",
+  "Approach ::: Bidirectional LSTM",
+  "Approach ::: Features ::: Word embeddings",
+  "Approach ::: Features ::: Character-level embeddings",
+  "Approach ::: Features ::: Grapheme-level embeddings",
+  "Approach ::: Features ::: Part-of-speech (POS) one hot encoding",
+  "Dataset Statistics ::: OurNepali dataset",
+  "Dataset Statistics ::: ILPRL dataset",
+  "Experiments",
+  "Experiments ::: Tagging Scheme",
+  "Experiments ::: Early Stopping",
+  "Experiments ::: Hyper-parameters Tuning",
+  "Experiments ::: Effect of Dropout",
+  "Evaluation",
+  "Discussion",
+  "Conclusion and Future work",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 52,
+ "n_tokens": 4010,
+ "figures_and_tables": [
+  {
+   "caption_id": "1908.05828::fig000",
+   "paper_id": "1908.05828",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: The grapheme level convolution neural network to extract grapheme representation. The dropout layer is applied after maxpooling layer.",
+   "n_tokens": 28
+  },
+  {
+   "caption_id": "1908.05828::fig001",
+   "paper_id": "1908.05828",
+   "file": "3-Figure2-1.png",
+   "caption": "Figure 2: End-to-end model architecture of our neural network. W-EMB, GRAPH, POS represents pre-trained word embeddings, grapheme representations and POS one-hot encoding vectors. GRAPH is obtained from CNN as shown in figure 1. The dashed line implies the application of dropout.",
+   "n_tokens": 59
+  },
+  {
+   "caption_id": "1908.05828::fig002",
+   "paper_id": "1908.05828",
+   "file": "4-Figure3-1.png",
+   "caption": "Figure 3: Format of a sample sentence in our dataset.",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1908.05828::fig003",
+   "paper_id": "1908.05828",
+   "file": "5-Figure4-1.png",
+   "caption": "Figure 4: 2D Visualization of nearest neighbor word using PCA for a sample word n pAl",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "1908.05828::fig004",
+   "paper_id": "1908.05828",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Dataset statistics",
+   "n_tokens": 6
+  },
+  {
+   "caption_id": "1908.05828::fig005",
+   "paper_id": "1908.05828",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Dataset division statistics. The number presented are total count of entities token in each set.",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "1908.05828::fig006",
+   "paper_id": "1908.05828",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3: Effect of different embedding with Bi-LSTM.",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1908.05828::fig007",
+   "paper_id": "1908.05828",
+   "file": "6-Figure5-1.png",
+   "caption": "Figure 5: F1 score based on different dropout values using fastText embeddings (Skip Gram). All other hyper-parameter used for this evaluation are presented in table 4.",
+   "n_tokens": 35
+  },
+  {
+   "caption_id": "1908.05828::fig008",
+   "paper_id": "1908.05828",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: Hyper-parameters of our experiments",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "1908.05828::fig009",
+   "paper_id": "1908.05828",
+   "file": "7-Figure6-1.png",
+   "caption": "Figure 6: Sample output of the best model from ILPRL test dataset. First, second and third column indicates word to be predicted, ground truth and predicted truth respectively. We can see that not all the tags are classified correctly.",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "1908.05828::fig010",
+   "paper_id": "1908.05828",
+   "file": "8-Table5-1.png",
+   "caption": "Table 5: Comparison of different variation of our models",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "1908.05828::fig011",
+   "paper_id": "1908.05828",
+   "file": "8-Table6-1.png",
+   "caption": "Table 6: Comparison with previous models based on Test F1 score",
+   "n_tokens": 14
+  },
+  {
+   "caption_id": "1908.05828::fig012",
+   "paper_id": "1908.05828",
+   "file": "8-Table7-1.png",
+   "caption": "Table 7: Entity-wise comparison using best model for respective dataset. MISC-entity is not available for OurNepali dataset.",
+   "n_tokens": 27
+  }
+ ]
+}

@@ -1,0 +1,768 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1611.08661::s00::p000",
+   "summary": "Knowledge graphs benefit artificial intelligence applications, consist of multi-relational triplets, and large-scale examples like WordNet and Freebase often suffer from incompleteness and sparseness.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s00::p001",
+   "summary": "Knowledge graph completion predicts relations from existing triplets, while a recent paradigm encodes entities and relations into low-dimensional vectors for algebraic reasoning.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s00::p002",
+   "summary": "Existing embedding methods struggle with sparse entities, and text-informed joint embeddings still face three problems involving combination, relation-specific text selection, and balancing structure with text.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s00::p003",
+   "summary": "The paper proposes a deep architecture combining structure and text representations with a gating mechanism and attention, outperforming baselines on link prediction and triplet classification.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s00::p004",
+   "summary": "The paper states that its contributions are summarized as follows.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s01::p000",
+   "summary": "This section briefly introduces background knowledge about knowledge graph embedding.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s01::p001",
+   "summary": "Knowledge graph embedding models entities and relations in a continuous low-dimensional vector space using a score function f(h,r,t) to distinguish golden triplets from negative triplets.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s01::p002",
+   "summary": "Existing methods differ between linear and nonlinear score functions in the low-dimensional vector space.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s01::p003",
+   "summary": "TransE is a simple effective approach that learns entity and relationship embeddings by treating relations as translations, with h + r approximately t when (h,r,t) holds.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s01::p004",
+   "summary": "TransE's score function is defined as follows.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s01::p005",
+   "summary": "Equation 5 defines f(h,r,t) as the negative squared L2 norm of h + r - t.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s01::p006",
+   "summary": "The embeddings h, t, and r lie in R^d, satisfy norm constraints on h and t, and are indexed by lookup tables.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s02::p000",
+   "summary": "Most existing knowledge bases provide entity text descriptions with valuable semantic information that can beneficially supplement entity representation.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s02::p001",
+   "summary": "Encoding entity text descriptions requires mapping variable-length sentences to fixed-length vectors using neural models such as NBOW, RNN, and CNN.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s02::p002",
+   "summary": "The paper uses three encoders, NBOW, LSTM and attentive LSTM, to model text descriptions.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s03::p000",
+   "summary": "The neural bag-of-words (NBOW) model generates text representation by summing its constituent word representations.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s03::p001",
+   "summary": "The text description is denoted as word sequence x_{1:n} = x_1,...,x_n, where x_i is the word at position i, and the NBOW encoder is given.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s03::p002",
+   "summary": "Equation 7 defines enc_1(x_{1:n}) as the sum of word embeddings x_i from i = 1 to n.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s03::p003",
+   "summary": "The word embedding x_i of x_i lies in R^d.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s04::p000",
+   "summary": "To address modelling issues with NBOW, the paper considers a bidirectional long short-term memory network (LSTM) for text descriptions.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s04::p001",
+   "summary": "LSTM was proposed to address learning long-term dependencies in RNN and maintains a separate memory cell updated and exposed only when deemed necessary.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s04::p002",
+   "summary": "Bidirectional LSTM consists of two LSTMs modeling text from left to right and right to left, with outputs z_i in each direction at time step i.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s04::p003",
+   "summary": "The combined BLSTM output at position i is z_i = forward z_i concatenated with backward z_i.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s04::p004",
+   "summary": "The LSTM encoder combines all BLSTM outputs z_i in R^d at different positions.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s04::p005",
+   "summary": "Equation 9 defines enc_2(x_{1:n}) as the sum of z_i from i = 1 to n.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s05::p000",
+   "summary": "The LSTM encoder has richer capacity than NBOW but produces the same text representation regardless of contexts, while descriptions and relations involve fractional aspects.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s05::p001",
+   "summary": "Because not all words or phrases are useful for a given relation, the paper introduces an attention mechanism to construct contextual text encodings according to different relations.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s05::p002",
+   "summary": "For each text position i, attention for a given relation r is defined as alpha_i(r).",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s05::p003",
+   "summary": "Equation 12 defines e_i(r), alpha_i(r) via softmax, and the normalized exponential over n positions.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s05::p004",
+   "summary": "The relation embedding r, BLSTM output z_i, parameter matrices W_a and U_a, and parameter vector v_a have specified dimensions.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s05::p005",
+   "summary": "The attention alpha_i(r) is interpreted as the degree to which the network attends to partial representation z_i for given relation r.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s05::p006",
+   "summary": "The contextual encoding of a text description is formed by a weighted sum of z_i with attention.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s05::p007",
+   "summary": "Equation 13 defines enc_3(x_{1:n};r) as the sum from i = 1 to n of alpha_i(r) times z_i.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s06::p000",
+   "summary": "Since structure and text descriptions both provide valuable entity information, the paper wishes to integrate them into a joint representation.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s06::p001",
+   "summary": "The paper proposes a united model to learn a joint representation of structure and text information that can be trained end-to-end.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s06::p002",
+   "summary": "For entity e, e_s denotes its structure embedding, e_d denotes its text description encoding, and the main concern is combining e_s and e_d.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s06::p003",
+   "summary": "A gating mechanism decides how much the joint representation depends on structure or text.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s06::p004",
+   "summary": "The joint representation e is a linear interpolation between e_s and e_d.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s06::p005",
+   "summary": "Equation 14 defines e as g_e element-wise multiplied by e_s plus (1 - g_e) element-wise multiplied by e_d.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s06::p006",
+   "summary": "The gate g_e balances two information sources with elements in [0,1], and a gate close to 0 forces the joint representation to ignore structure information.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s07::p000",
+   "summary": "The model is trained with a contrastive max-margin criterion that favors training triplets over triplets with one element replaced by a random element.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s07::p001",
+   "summary": "There are n_t training triplets denoted (h_i, r_i, t_i), each with label y_i indicating positive (y_i = 1) or negative (y_i = 0).",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s07::p002",
+   "summary": "Golden and negative triplet sets are defined, negative examples are generated by replacing h, t, or r, sampling follows Bernoulli distribution, and all parameters are Theta.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s07::p003",
+   "summary": "Equation 22 defines J(Theta) as a max-margin objective over golden and negative triplets plus eta times the squared L2 norm of Theta.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s07::p004",
+   "summary": "The margin gamma > 0 separates golden and negative triplets, f(h,r,t) is the score function, and standard L2 regularization is weighted by eta.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s08::p000",
+   "summary": "The experiments study empirical performance on two benchmark tasks: triplet classification and link prediction.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s09::p000",
+   "summary": "The paper uses WordNet and Freebase, specifically WN18 and FB15K, because their text descriptions are easily publicly available, with statistics in Table 1.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p000",
+   "summary": "Link prediction completes a triplet with h or t missing and emphasizes ranking candidate entities rather than requiring one best answer.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p001",
+   "summary": "Evaluation uses Mean Rank and Hits@p, with p=10 for entities and p=1 for relations, under “Raw” and “Filter” settings.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p002",
+   "summary": "Hyperparameters include gamma in {1, 2}, d in {20, 50, 100}, eta in {0, 1E{-5}, 1E{-6}}, learning rates in {0.001, 0.01, 0.05}, and L_1 or {1, 2}0 distance.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p003",
+   "summary": "Structure embeddings are initialized with TransE results, word embeddings by averaging linked entity embeddings, and remaining parameters uniformly in [-0.1, 0.1].",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p004",
+   "summary": "Final configurations are gamma = 2, d=20, eta =1E{-5}, lambda_s = 0.01, lambda_t = 0.1, and L_1 distance on WN18, with specified settings on FB15K.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p005",
+   "summary": "Table 2 reports WN18 and FB15k results for “Jointly(CBOW)”, “Jointly(LSTM)” and “Jointly(A-LSTM)”, with TransE as the baseline.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p006",
+   "summary": "The proposed models surpass TransE on all metrics, indicating that knowledge representation benefits greatly from text description.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p007",
+   "summary": "On WN18, “Jointly(A-LSTM)” is slightly worse than “Jointly(LSTM)” probably due to limited relations, while on FB15K it achieves the best performance and significantly higher mean rank.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p008",
+   "summary": "Although Hits@10 is worse than TransD, the models use a TransE-based score function and are compatible with other state-of-the-art knowledge embedding models.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p009",
+   "summary": "Textual information largely alleviates sparsity and substantially improves Mean Rank over TransD, but may slightly degrade frequent entities and explain worse Hits@10.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p010",
+   "summary": "For Hits@10 comparison, relationships are categorized by head and tail cardinalities into 1-to-1, 1-to-many, many-to-1, and many-to-many.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p011",
+   "summary": "Table 3 shows FB15k results where models outperform TransE in all relation types, especially for “1-to-1” relations and predicting the 1 side for “1-to-N” and “N-to-1” relations.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p012",
+   "summary": "To understand joint representation, gate activations are observed after sorting entities by frequency into 50 equal-size groups and averaging gate values in each group.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s10::p013",
+   "summary": "Figure 3 gives average gates in ten groups from high- to low-frequency, showing text information plays a more important role for low-frequency entities.",
+   "group_id": "1611.08661::g00"
+  },
+  {
+   "passage_id": "1611.08661::s11::p000",
+   "summary": "Triplet classification judges whether a given triplet $(h, r, t)$ is correct, with negative triplets constructed for WN18 and FB15K following BIBREF3.",
+   "group_id": "1611.08661::g01"
+  },
+  {
+   "passage_id": "1611.08661::s11::p001",
+   "summary": "For triplets classification, a relation-specific threshold $\\delta _r$ maximizes valid set accuracies and classifies triplets by score.",
+   "group_id": "1611.08661::g01"
+  },
+  {
+   "passage_id": "1611.08661::s11::p002",
+   "summary": "Table 4 shows triplets classification results revealing that joint encoding models are effective and outperform the baseline method.",
+   "group_id": "1611.08661::g01"
+  },
+  {
+   "passage_id": "1611.08661::s11::p003",
+   "summary": "On WN18, “Jointly(A-LSTM)” performs best, while on FB15K its classification accuracy reaches 91.5%, the best and significantly higher than state-of-the-art methods.",
+   "group_id": "1611.08661::g01"
+  },
+  {
+   "passage_id": "1611.08661::s12::p000",
+   "summary": "Jointly learning embeddings of knowledge graph and text information has gained interest, with several methods using textual information for KG representation learning.",
+   "group_id": "1611.08661::g01"
+  },
+  {
+   "passage_id": "1611.08661::s12::p001",
+   "summary": "BIBREF3 represents an entity as the average of word embeddings in its entity name, sharing textual information in similar entity names.",
+   "group_id": "1611.08661::g01"
+  },
+  {
+   "passage_id": "1611.08661::s12::p002",
+   "summary": "BIBREF5 and BIBREF6 jointly embed knowledge and text but align embeddings on word level, losing phrase- or sentence-level semantic information.",
+   "group_id": "1611.08661::g01"
+  },
+  {
+   "passage_id": "1611.08661::s12::p003",
+   "summary": "BIBREF25, BIBREF7, and BIBREF26 use descriptions, names, CNN, or combined representations, with noted limitations involving word orders, ambiguity, separate objectives, and weight coefficients.",
+   "group_id": "1611.08661::g01"
+  },
+  {
+   "passage_id": "1611.08661::s12::p004",
+   "summary": "Works BIBREF27, BIBREF28, and BIBREF29 map textual relations and knowledge base relations to the same vector space with substantial improvements.",
+   "group_id": "1611.08661::g01"
+  },
+  {
+   "passage_id": "1611.08661::s12::p005",
+   "summary": "BIBREF30 proposes a similar attention model evaluated on link prediction and triplet classification, while this work encodes text description as a whole.",
+   "group_id": "1611.08661::g01"
+  },
+  {
+   "passage_id": "1611.08661::s13::p000",
+   "summary": "The paper proposes a united knowledge graph representation using structure and text description information, with experiments showing effective jointly representation learning with gating mechanism.",
+   "group_id": "1611.08661::g01"
+  },
+  {
+   "passage_id": "1611.08661::s13::p001",
+   "summary": "The authors state that future research directions will be considered to improve their model.",
+   "group_id": "1611.08661::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1611.08661::g00",
+   "summaries": [
+    {
+     "passage_id": "1611.08661::s00::p000",
+     "summary": "Knowledge graphs benefit artificial intelligence applications, consist of multi-relational triplets, and large-scale examples like WordNet and Freebase often suffer from incompleteness and sparseness.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s00::p001",
+     "summary": "Knowledge graph completion predicts relations from existing triplets, while a recent paradigm encodes entities and relations into low-dimensional vectors for algebraic reasoning.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s00::p002",
+     "summary": "Existing embedding methods struggle with sparse entities, and text-informed joint embeddings still face three problems involving combination, relation-specific text selection, and balancing structure with text.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s00::p003",
+     "summary": "The paper proposes a deep architecture combining structure and text representations with a gating mechanism and attention, outperforming baselines on link prediction and triplet classification.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s00::p004",
+     "summary": "The paper states that its contributions are summarized as follows.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s01::p000",
+     "summary": "This section briefly introduces background knowledge about knowledge graph embedding.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s01::p001",
+     "summary": "Knowledge graph embedding models entities and relations in a continuous low-dimensional vector space using a score function f(h,r,t) to distinguish golden triplets from negative triplets.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s01::p002",
+     "summary": "Existing methods differ between linear and nonlinear score functions in the low-dimensional vector space.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s01::p003",
+     "summary": "TransE is a simple effective approach that learns entity and relationship embeddings by treating relations as translations, with h + r approximately t when (h,r,t) holds.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s01::p004",
+     "summary": "TransE's score function is defined as follows.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s01::p005",
+     "summary": "Equation 5 defines f(h,r,t) as the negative squared L2 norm of h + r - t.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s01::p006",
+     "summary": "The embeddings h, t, and r lie in R^d, satisfy norm constraints on h and t, and are indexed by lookup tables.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s02::p000",
+     "summary": "Most existing knowledge bases provide entity text descriptions with valuable semantic information that can beneficially supplement entity representation.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s02::p001",
+     "summary": "Encoding entity text descriptions requires mapping variable-length sentences to fixed-length vectors using neural models such as NBOW, RNN, and CNN.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s02::p002",
+     "summary": "The paper uses three encoders, NBOW, LSTM and attentive LSTM, to model text descriptions.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s03::p000",
+     "summary": "The neural bag-of-words (NBOW) model generates text representation by summing its constituent word representations.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s03::p001",
+     "summary": "The text description is denoted as word sequence x_{1:n} = x_1,...,x_n, where x_i is the word at position i, and the NBOW encoder is given.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s03::p002",
+     "summary": "Equation 7 defines enc_1(x_{1:n}) as the sum of word embeddings x_i from i = 1 to n.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s03::p003",
+     "summary": "The word embedding x_i of x_i lies in R^d.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s04::p000",
+     "summary": "To address modelling issues with NBOW, the paper considers a bidirectional long short-term memory network (LSTM) for text descriptions.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s04::p001",
+     "summary": "LSTM was proposed to address learning long-term dependencies in RNN and maintains a separate memory cell updated and exposed only when deemed necessary.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s04::p002",
+     "summary": "Bidirectional LSTM consists of two LSTMs modeling text from left to right and right to left, with outputs z_i in each direction at time step i.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s04::p003",
+     "summary": "The combined BLSTM output at position i is z_i = forward z_i concatenated with backward z_i.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s04::p004",
+     "summary": "The LSTM encoder combines all BLSTM outputs z_i in R^d at different positions.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s04::p005",
+     "summary": "Equation 9 defines enc_2(x_{1:n}) as the sum of z_i from i = 1 to n.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s05::p000",
+     "summary": "The LSTM encoder has richer capacity than NBOW but produces the same text representation regardless of contexts, while descriptions and relations involve fractional aspects.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s05::p001",
+     "summary": "Because not all words or phrases are useful for a given relation, the paper introduces an attention mechanism to construct contextual text encodings according to different relations.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s05::p002",
+     "summary": "For each text position i, attention for a given relation r is defined as alpha_i(r).",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s05::p003",
+     "summary": "Equation 12 defines e_i(r), alpha_i(r) via softmax, and the normalized exponential over n positions.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s05::p004",
+     "summary": "The relation embedding r, BLSTM output z_i, parameter matrices W_a and U_a, and parameter vector v_a have specified dimensions.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s05::p005",
+     "summary": "The attention alpha_i(r) is interpreted as the degree to which the network attends to partial representation z_i for given relation r.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s05::p006",
+     "summary": "The contextual encoding of a text description is formed by a weighted sum of z_i with attention.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s05::p007",
+     "summary": "Equation 13 defines enc_3(x_{1:n};r) as the sum from i = 1 to n of alpha_i(r) times z_i.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s06::p000",
+     "summary": "Since structure and text descriptions both provide valuable entity information, the paper wishes to integrate them into a joint representation.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s06::p001",
+     "summary": "The paper proposes a united model to learn a joint representation of structure and text information that can be trained end-to-end.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s06::p002",
+     "summary": "For entity e, e_s denotes its structure embedding, e_d denotes its text description encoding, and the main concern is combining e_s and e_d.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s06::p003",
+     "summary": "A gating mechanism decides how much the joint representation depends on structure or text.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s06::p004",
+     "summary": "The joint representation e is a linear interpolation between e_s and e_d.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s06::p005",
+     "summary": "Equation 14 defines e as g_e element-wise multiplied by e_s plus (1 - g_e) element-wise multiplied by e_d.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s06::p006",
+     "summary": "The gate g_e balances two information sources with elements in [0,1], and a gate close to 0 forces the joint representation to ignore structure information.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s07::p000",
+     "summary": "The model is trained with a contrastive max-margin criterion that favors training triplets over triplets with one element replaced by a random element.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s07::p001",
+     "summary": "There are n_t training triplets denoted (h_i, r_i, t_i), each with label y_i indicating positive (y_i = 1) or negative (y_i = 0).",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s07::p002",
+     "summary": "Golden and negative triplet sets are defined, negative examples are generated by replacing h, t, or r, sampling follows Bernoulli distribution, and all parameters are Theta.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s07::p003",
+     "summary": "Equation 22 defines J(Theta) as a max-margin objective over golden and negative triplets plus eta times the squared L2 norm of Theta.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s07::p004",
+     "summary": "The margin gamma > 0 separates golden and negative triplets, f(h,r,t) is the score function, and standard L2 regularization is weighted by eta.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s08::p000",
+     "summary": "The experiments study empirical performance on two benchmark tasks: triplet classification and link prediction.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s09::p000",
+     "summary": "The paper uses WordNet and Freebase, specifically WN18 and FB15K, because their text descriptions are easily publicly available, with statistics in Table 1.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p000",
+     "summary": "Link prediction completes a triplet with h or t missing and emphasizes ranking candidate entities rather than requiring one best answer.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p001",
+     "summary": "Evaluation uses Mean Rank and Hits@p, with p=10 for entities and p=1 for relations, under “Raw” and “Filter” settings.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p002",
+     "summary": "Hyperparameters include gamma in {1, 2}, d in {20, 50, 100}, eta in {0, 1E{-5}, 1E{-6}}, learning rates in {0.001, 0.01, 0.05}, and L_1 or {1, 2}0 distance.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p003",
+     "summary": "Structure embeddings are initialized with TransE results, word embeddings by averaging linked entity embeddings, and remaining parameters uniformly in [-0.1, 0.1].",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p004",
+     "summary": "Final configurations are gamma = 2, d=20, eta =1E{-5}, lambda_s = 0.01, lambda_t = 0.1, and L_1 distance on WN18, with specified settings on FB15K.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p005",
+     "summary": "Table 2 reports WN18 and FB15k results for “Jointly(CBOW)”, “Jointly(LSTM)” and “Jointly(A-LSTM)”, with TransE as the baseline.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p006",
+     "summary": "The proposed models surpass TransE on all metrics, indicating that knowledge representation benefits greatly from text description.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p007",
+     "summary": "On WN18, “Jointly(A-LSTM)” is slightly worse than “Jointly(LSTM)” probably due to limited relations, while on FB15K it achieves the best performance and significantly higher mean rank.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p008",
+     "summary": "Although Hits@10 is worse than TransD, the models use a TransE-based score function and are compatible with other state-of-the-art knowledge embedding models.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p009",
+     "summary": "Textual information largely alleviates sparsity and substantially improves Mean Rank over TransD, but may slightly degrade frequent entities and explain worse Hits@10.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p010",
+     "summary": "For Hits@10 comparison, relationships are categorized by head and tail cardinalities into 1-to-1, 1-to-many, many-to-1, and many-to-many.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p011",
+     "summary": "Table 3 shows FB15k results where models outperform TransE in all relation types, especially for “1-to-1” relations and predicting the 1 side for “1-to-N” and “N-to-1” relations.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p012",
+     "summary": "To understand joint representation, gate activations are observed after sorting entities by frequency into 50 equal-size groups and averaging gate values in each group.",
+     "group_id": "1611.08661::g00"
+    },
+    {
+     "passage_id": "1611.08661::s10::p013",
+     "summary": "Figure 3 gives average gates in ten groups from high- to low-frequency, showing text information plays a more important role for low-frequency entities.",
+     "group_id": "1611.08661::g00"
+    }
+   ],
+   "n_raw": 61,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5820,
+    "completion_tokens": 2890,
+    "total_tokens": 8710,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1611.08661::g01",
+   "summaries": [
+    {
+     "passage_id": "1611.08661::s11::p000",
+     "summary": "Triplet classification judges whether a given triplet $(h, r, t)$ is correct, with negative triplets constructed for WN18 and FB15K following BIBREF3.",
+     "group_id": "1611.08661::g01"
+    },
+    {
+     "passage_id": "1611.08661::s11::p001",
+     "summary": "For triplets classification, a relation-specific threshold $\\delta _r$ maximizes valid set accuracies and classifies triplets by score.",
+     "group_id": "1611.08661::g01"
+    },
+    {
+     "passage_id": "1611.08661::s11::p002",
+     "summary": "Table 4 shows triplets classification results revealing that joint encoding models are effective and outperform the baseline method.",
+     "group_id": "1611.08661::g01"
+    },
+    {
+     "passage_id": "1611.08661::s11::p003",
+     "summary": "On WN18, “Jointly(A-LSTM)” performs best, while on FB15K its classification accuracy reaches 91.5%, the best and significantly higher than state-of-the-art methods.",
+     "group_id": "1611.08661::g01"
+    },
+    {
+     "passage_id": "1611.08661::s12::p000",
+     "summary": "Jointly learning embeddings of knowledge graph and text information has gained interest, with several methods using textual information for KG representation learning.",
+     "group_id": "1611.08661::g01"
+    },
+    {
+     "passage_id": "1611.08661::s12::p001",
+     "summary": "BIBREF3 represents an entity as the average of word embeddings in its entity name, sharing textual information in similar entity names.",
+     "group_id": "1611.08661::g01"
+    },
+    {
+     "passage_id": "1611.08661::s12::p002",
+     "summary": "BIBREF5 and BIBREF6 jointly embed knowledge and text but align embeddings on word level, losing phrase- or sentence-level semantic information.",
+     "group_id": "1611.08661::g01"
+    },
+    {
+     "passage_id": "1611.08661::s12::p003",
+     "summary": "BIBREF25, BIBREF7, and BIBREF26 use descriptions, names, CNN, or combined representations, with noted limitations involving word orders, ambiguity, separate objectives, and weight coefficients.",
+     "group_id": "1611.08661::g01"
+    },
+    {
+     "passage_id": "1611.08661::s12::p004",
+     "summary": "Works BIBREF27, BIBREF28, and BIBREF29 map textual relations and knowledge base relations to the same vector space with substantial improvements.",
+     "group_id": "1611.08661::g01"
+    },
+    {
+     "passage_id": "1611.08661::s12::p005",
+     "summary": "BIBREF30 proposes a similar attention model evaluated on link prediction and triplet classification, while this work encodes text description as a whole.",
+     "group_id": "1611.08661::g01"
+    },
+    {
+     "passage_id": "1611.08661::s13::p000",
+     "summary": "The paper proposes a united knowledge graph representation using structure and text description information, with experiments showing effective jointly representation learning with gating mechanism.",
+     "group_id": "1611.08661::g01"
+    },
+    {
+     "passage_id": "1611.08661::s13::p001",
+     "summary": "The authors state that future research directions will be considered to improve their model.",
+     "group_id": "1611.08661::g01"
+    }
+   ],
+   "n_raw": 12,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1112,
+    "completion_tokens": 587,
+    "total_tokens": 1699,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

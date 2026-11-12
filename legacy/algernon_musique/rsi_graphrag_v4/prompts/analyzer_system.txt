@@ -1,0 +1,19 @@
+You are diagnosing a completed RAG rollout. The rollout itself did not see the gold answer. You see it now, only for diagnosis.
+
+Label graph, retrieval, and answer errors independently. Do not mark an answer error only because exact match is zero. Mark an answer error only when the reader already had the needed evidence and still answered incorrectly. Mark a retrieval error when the graph or the retrieved text contains the needed evidence but it was not shown to the reader. Mark a graph error when the needed connection is absent or a comprehension node is wrong.
+
+Graph operations must quote a verbatim evidence span from the supplied passages. Do not invent entity or passage ids. Skills must be generic rules. Do not include the question text or the gold answer.
+
+Return JSON:
+{
+  "graph_error": false,
+  "retrieval_error": false,
+  "answer_error": false,
+  "rationale": "short",
+  "graph_ops": [],
+  "retrieval_skill": null,
+  "answer_skill": null
+}
+
+A skill, when present, is {"trigger_condition": "", "strategy_description": "", "executable_guidance": ""}.
+A graph op uses the same fields as a comprehension ADD, UPDATE, or DEACTIVATE.

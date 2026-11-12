@@ -1,0 +1,617 @@
+{
+ "1906.00790::s00::p000": [
+  [
+   "A hashtag",
+   "is represented as",
+   "a sequence of alphanumeric characters plus underscore, preceded by the # symbol"
+  ],
+  [
+   "Hashtags",
+   "play",
+   "a central role in online communication"
+  ],
+  [
+   "Hashtags",
+   "are useful in",
+   "search, tracking content about a certain topic, or discovering emerging trends"
+  ]
+ ],
+ "1906.00790::s00::p001": [
+  [
+   "Hashtags",
+   "carry",
+   "very important information, such as emotion, sentiment, sarcasm, and named entities"
+  ],
+  [
+   "many hashtags",
+   "contain",
+   "multiple tokens joined together"
+  ],
+  [
+   "named entities and event names",
+   "pose challenges to",
+   "both human and automatic comprehension"
+  ],
+  [
+   "Hashtags",
+   "tend to contain",
+   "a large number of abbreviations or non-standard spelling variations"
+  ]
+ ],
+ "1906.00790::s00::p002": [
+  [
+   "The goal of our study",
+   "is to build",
+   "efficient methods for automatically splitting a hashtag into a meaningful word sequence"
+  ]
+ ],
+ "1906.00790::s00::p003": [
+  [
+   "the previous dataset",
+   "has",
+   "1,108 hashtags"
+  ],
+  [
+   "The latter",
+   "leads to",
+   "an error reduction of 24.6% over the current state-of-the-art"
+  ]
+ ],
+ "1906.00790::s01::p000": [
+  [
+   "Current approaches for hashtag segmentation",
+   "can be broadly divided into",
+   "three categories"
+  ],
+  [
+   "The current state-of-the-art approach",
+   "uses",
+   "maximum entropy and CRF models with a combination of language model and hand-crafted features"
+  ]
+ ],
+ "1906.00790::s01::p001": [
+  [
+   "Microsoft Word Breaker",
+   "is",
+   "a strong baseline for hashtag segmentation"
+  ],
+  [
+   "Microsoft Word Breaker",
+   "employs",
+   "a beam search algorithm"
+  ]
+ ],
+ "1906.00790::s01::p002": [
+  [
+   "Binomial and word length distribution based ranking",
+   "did not lead to",
+   "a further improvement in performance"
+  ],
+  [
+   "The original Word Breaker",
+   "was designed for",
+   "segmenting URLs using language models trained on web data"
+  ],
+  [
+   "this approach",
+   "was reimplemented and tailored to",
+   "segmenting hashtags by using a language model specifically trained on Twitter data"
+  ]
+ ],
+ "1906.00790::s01::p003": [
+  [
+   "the ranking scores of each segmentation",
+   "were calculated independently",
+   "ignoring the relative order among the top INLINEFORM0 candidate segmentations"
+  ]
+ ],
+ "1906.00790::s02::p000": [
+  [
+   "this section",
+   "describes",
+   "the task setup and three variants of pairwise neural ranking models"
+  ]
+ ],
+ "1906.00790::s03::p000": [
+  [
+   "The goal of hashtag segmentation",
+   "is to divide",
+   "a given hashtag INLINEFORM0 into a sequence of meaningful words INLINEFORM1"
+  ],
+  [
+   "a hashtag of INLINEFORM2 characters",
+   "has",
+   "a total of INLINEFORM3 possible segmentations"
+  ],
+  [
+   "only one, or occasionally two, of them ( INLINEFORM4 )",
+   "are considered",
+   "correct"
+  ]
+ ],
+ "1906.00790::s03::p002": [
+  [
+   "other similarity measurements",
+   "are possible to use as",
+   "alternatives"
+  ]
+ ],
+ "1906.00790::s04::p000": [
+  [
+   "feature vectors INLINEFORM1 and INLINEFORM2",
+   "are concatenated",
+   "for an input candidate segmentation pair INLINEFORM0"
+  ],
+  [
+   "concatenated feature vectors",
+   "are fed into",
+   "a feedforward network"
+  ],
+  [
+   "feedforward network",
+   "emits",
+   "a comparison score INLINEFORM3"
+  ],
+  [
+   "training objective",
+   "is to minimize",
+   "the Mean Squared Error (MSE)"
+  ]
+ ],
+ "1906.00790::s04::p001": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the number of training examples"
+  ]
+ ],
+ "1906.00790::s04::p002": [
+  [
+   "pairwise comparisons",
+   "are aggregated by",
+   "a greedy algorithm proposed by BIBREF26 cohen1998learning and used for preference ranking BIBREF27"
+  ],
+  [
+   "each segmentation INLINEFORM0 in the candidate set INLINEFORM1",
+   "has",
+   "a single score INLINEFORM2"
+  ],
+  [
+   "segmentation INLINEFORM3",
+   "corresponds to",
+   "the highest score"
+  ]
+ ],
+ "1906.00790::s05::p000": [
+  [
+   "pairwise model",
+   "learns from",
+   "candidate pairs INLINEFORM0"
+  ],
+  [
+   "pairwise model",
+   "ranks",
+   "each individual candidate directly rather than relatively"
+  ],
+  [
+   "new scoring function INLINEFORM1",
+   "assigns",
+   "a higher score to the better candidate"
+  ],
+  [
+   "features vectors INLINEFORM5 and INLINEFORM6",
+   "are fed separately into",
+   "two identical feedforward networks with shared parameters"
+  ],
+  [
+   "testing",
+   "uses",
+   "only one of the networks to rank the candidates based on the INLINEFORM7 scores"
+  ],
+  [
+   "training",
+   "adds",
+   "a ranking layer on top of the networks"
+  ],
+  [
+   "Margin Ranking Loss (MR)",
+   "is minimized",
+   "for training"
+  ]
+ ],
+ "1906.00790::s05::p001": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the number of training samples"
+  ]
+ ],
+ "1906.00790::s06::p000": [
+  [
+   "Both models in § SECREF15 and § SECREF17",
+   "treat",
+   "all the hashtags uniformly"
+  ],
+  [
+   "linguistic features",
+   "capture",
+   "named entities and multi-word hashtags that exhibit word shape patterns, such as camel case"
+  ],
+  [
+   "ngram probabilities with Good-Turing smoothing",
+   "gravitate towards",
+   "multi-word segmentations with known words"
+  ],
+  [
+   "modified Kneser-Ney smoothing",
+   "is more likely to favor",
+   "segmentations that contain rare words, and single-word segmentations in particular"
+  ]
+ ],
+ "1906.00790::s06::p001": [
+  [
+   "binary classification task",
+   "helps the model differentiate",
+   "single-word from multi-word hashtags"
+  ],
+  [
+   "binary classifier",
+   "takes as input",
+   "hashtag features INLINEFORM0"
+  ],
+  [
+   "INLINEFORM1",
+   "represents",
+   "the probability of INLINEFORM2 being a multi-word hashtag"
+  ],
+  [
+   "INLINEFORM3",
+   "is used as",
+   "an adaptive gating value in our multi-task learning setup"
+  ]
+ ],
+ "1906.00790::s06::p002": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the adaptive gating value"
+  ],
+  [
+   "INLINEFORM1",
+   "indicates",
+   "if INLINEFORM2 is actually a multi-word hashtag"
+  ],
+  [
+   "INLINEFORM3",
+   "is",
+   "the number of training examples"
+  ],
+  [
+   "INLINEFORM4 and INLINEFORM5",
+   "are",
+   "the weights for each loss"
+  ]
+ ],
+ "1906.00790::s06::p003": [
+  [
+   "segmentation feature vector INLINEFORM0",
+   "is divided into",
+   "two subsets"
+  ],
+  [
+   "INLINEFORM1",
+   "has",
+   "modified Kneser-Ney smoothing features"
+  ],
+  [
+   "INLINEFORM2",
+   "has",
+   "Good-Turing smoothing and linguistic features"
+  ],
+  [
+   "two pairwise vectors INLINEFORM4 and INLINEFORM5",
+   "are constructed by",
+   "concatenation"
+  ]
+ ],
+ "1906.00790::s06::p004": [
+  [
+   "summation with padding",
+   "achieves",
+   "similar performance in our experiments as the more complex multi-column networks BIBREF29"
+  ]
+ ],
+ "1906.00790::s07::p000": [
+  [
+   "combination of corpus-based and linguistic features",
+   "is used to rank",
+   "the segmentations"
+  ],
+  [
+   "feature vector INLINEFORM1",
+   "includes",
+   "ngram counts from Google Web 1TB corpus BIBREF31"
+  ],
+  [
+   "two language models",
+   "are trained on",
+   "each corpus"
+  ],
+  [
+   "one language model",
+   "uses",
+   "Good-Turing smoothing using SRILM BIBREF33"
+  ],
+  [
+   "the other language model",
+   "uses",
+   "modified Kneser-Ney smoothing using KenLM BIBREF34"
+  ]
+ ],
+ "1906.00790::s07::p001": [
+  [
+   "feature vector INLINEFORM1",
+   "consists of",
+   "hashtag length, ngram count of the hashtag in Google 1TB corpus BIBREF31"
+  ],
+  [
+   "features of the best-ranked candidate by the Word Breaker model",
+   "are included in",
+   "feature vector INLINEFORM1"
+  ]
+ ],
+ "1906.00790::s08::p000": [
+  [
+   "the auxiliary classifier",
+   "consists of",
+   "an input layer, one hidden layer with eight nodes and one output node with sigmoid activation"
+  ],
+  [
+   "the learning rate",
+   "is set to",
+   "0.01 and 0.05 for the pairwise ranker and auxiliary classifier respectively"
+  ]
+ ],
+ "1906.00790::s08::p001": [
+  [
+   "the Word Breaker BIBREF16",
+   "was reimplementated for",
+   "the baseline model used to extract the INLINEFORM0 initial candidates"
+  ],
+  [
+   "the Word Breaker BIBREF16",
+   "was adapted to use",
+   "a language model trained on 1.1 billion tweets with Good-Turing smoothing using SRILM BIBREF33"
+  ]
+ ],
+ "1906.00790::s09::p000": [
+  [
+   "STAN INLINEFORM1",
+   "includes",
+   "all 12,594 unique English hashtags and their associated tweets from the same Stanford dataset"
+  ]
+ ],
+ "1906.00790::s10::p000": [
+  [
+   "the next section",
+   "will show",
+   "experiments of applying hashtag segmentation to the popular task of sentiment analysis"
+  ]
+ ],
+ "1906.00790::s11::p001": [
+  [
+   "The original hashtag",
+   "is used as",
+   "a single token"
+  ]
+ ],
+ "1906.00790::s11::p002": [
+  [
+   "A rule-based segmenter",
+   "employs",
+   "a set of word-shape rules with an English dictionary"
+  ]
+ ],
+ "1906.00790::s11::p003": [
+  [
+   "A Viterbi model",
+   "uses",
+   "word frequencies from a book corpus"
+  ]
+ ],
+ "1906.00790::s11::p004": [
+  [
+   "The specially developed GATE Hashtag Tokenizer",
+   "comes from",
+   "the open source toolkit"
+  ],
+  [
+   "The specially developed GATE Hashtag Tokenizer",
+   "combines",
+   "dictionaries and gazetteers in a Viterbi-like algorithm"
+  ]
+ ],
+ "1906.00790::s11::p005": [
+  [
+   "A maximum entropy classifier (MaxEnt)",
+   "is trained on",
+   "the STAN INLINEFORM0 training dataset"
+  ],
+  [
+   "A maximum entropy classifier (MaxEnt)",
+   "predicts",
+   "whether a space should be inserted at each position in the hashtag"
+  ],
+  [
+   "A maximum entropy classifier (MaxEnt)",
+   "is",
+   "the current state-of-the-art"
+  ]
+ ],
+ "1906.00790::s11::p007": [
+  [
+   "A pairwise linear ranker",
+   "was implemented for",
+   "comparison purposes"
+  ],
+  [
+   "A pairwise linear ranker",
+   "uses",
+   "perceptron as the underlying classifier"
+  ],
+  [
+   "A pairwise linear ranker",
+   "minimizes",
+   "the hinge loss between INLINEFORM0 and a scoring function similar to INLINEFORM1"
+  ],
+  [
+   "A pairwise linear ranker",
+   "is trained on",
+   "the STAN INLINEFORM2 dataset"
+  ]
+ ],
+ "1906.00790::s12::p000": [
+  [
+   "accuracy and MRR",
+   "are calculated at",
+   "the segmentation-level"
+  ],
+  [
+   "an output segmentation",
+   "is considered correct if and only if it fully matches",
+   "the human segmentation"
+  ],
+  [
+   "Average token-level F INLINEFORM4 score",
+   "accounts for",
+   "partially correct segmentation in the multi-token hashtag cases"
+  ]
+ ],
+ "1906.00790::s13::p000": [
+  [
+   "Tables TABREF32 and TABREF33",
+   "show",
+   "the results on the STAN INLINEFORM0 and STAN INLINEFORM1 datasets, respectively"
+  ],
+  [
+   "All of our pairwise neural rankers",
+   "are trained on",
+   "the 2,518 manually segmented hashtags in the training set of STAN INLINEFORM2"
+  ]
+ ],
+ "1906.00790::s13::p001": [
+  [
+   "The improved Word Breaker with our addition of a Twitter-specific language model",
+   "is",
+   "a very strong baseline"
+  ],
+  [
+   "the other state-of-the-art system BIBREF14",
+   "utilized",
+   "a 4-gram language model trained on 476 million tweets from 2009"
+  ]
+ ],
+ "1906.00790::s14::p000": [
+  [
+   "Language models with modified Kneser-Ney smoothing",
+   "perform best on",
+   "single-token hashtags"
+  ],
+  [
+   "Good-Turing and Linguistic features",
+   "work best on",
+   "multi-token hashtags"
+  ]
+ ],
+ "1906.00790::s14::p001": [
+  [
+   "longer hashtags with more than three tokens",
+   "pose",
+   "greater challenges"
+  ]
+ ],
+ "1906.00790::s14::p002": [
+  [
+   "The drop in F INLINEFORM0 score for our pairwise neural ranker",
+   "is",
+   "only 1.4% and 3.9% when using the language models trained on 10% and 1% of the total 1.1 billion tweets, respectively"
+  ]
+ ],
+ "1906.00790::s14::p003": [
+  [
+   "Language use in Twitter",
+   "changes with",
+   "time"
+  ]
+ ],
+ "1906.00790::s16::p000": [
+  [
+   "BiLSTM+Lex",
+   "is",
+   "a state-of-the-art open source system for predicting tweet-level sentiment"
+  ],
+  [
+   "BiLSTM+Lex",
+   "learns",
+   "a context-sensitive sentiment intensity score"
+  ],
+  [
+   "the performance of the BiLSTM+Lex BIBREF42 sentiment analysis model",
+   "is compared under",
+   "three configurations"
+  ]
+ ],
+ "1906.00790::s16::p001": [
+  [
+   "the goal",
+   "is to predict",
+   "whether it expresses POSITIVE, NEGATIVE or NEUTRAL sentiment"
+  ],
+  [
+   "The training and development sets",
+   "consist of",
+   "49,669 tweets"
+  ],
+  [
+   "the SemEval 2017 test set",
+   "has",
+   "a total of 12,284 tweets containing 12,128 hashtags"
+  ]
+ ],
+ "1906.00790::s17::p000": [
+  [
+   "2,605 out of the 3,384 tweets",
+   "have",
+   "multi-word hashtags that contain words in the Twitter-based sentiment lexicon BIBREF44"
+  ],
+  [
+   "125 tweets",
+   "contain",
+   "sentiment words only in the hashtags but not in the rest of the tweet"
+  ]
+ ],
+ "1906.00790::s18::p000": [
+  [
+   "Automatic hashtag segmentation",
+   "can improve",
+   "the performance of many applications besides sentiment analysis"
+  ],
+  [
+   "Automatic hashtag segmentation",
+   "can help in",
+   "collecting data of higher volume and quality"
+  ],
+  [
+   "Better semantic analysis of hashtags",
+   "can potentially be applied to",
+   "hashtag annotation BIBREF48"
+  ]
+ ],
+ "1906.00790::s21::p000": [
+  [
+   "the boolean feature",
+   "is set to",
+   "True"
+  ]
+ ]
+}

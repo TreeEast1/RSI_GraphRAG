@@ -1,0 +1,62 @@
+{
+ "paper_id": "1910.14076",
+ "title": "A Neural Topic-Attention Model for Medical Term Abbreviation Disambiguation",
+ "abstract": "Automated analysis of clinical notes is attracting increasing attention. However, there has not been much work on medical term abbreviation disambiguation. Such abbreviations are abundant, and highly ambiguous, in clinical documents. One of the main obstacles is the lack of large scale, balance labeled data sets. To address the issue, we propose a few-shot learning approach to take advantage of limited labeled data. Specifically, a neural topic-attention model is applied to learn improved contextualized sentence representations for medical term abbreviation disambiguation. Another vital issue is that the existing scarce annotations are noisy and missing. We re-examine and correct an existing dataset for training and collect a test set to evaluate the models fairly especially for rare senses. We train our model on the training set which contains 30 abbreviation terms as categories (on average, 479 samples and 3.24 classes in each term) selected from a public abbreviation disambiguation dataset, and then test on a manually-created balanced dataset (each class in each term has 15 samples). We show that enhancing the sentence representation with topic information improves the performance on small-scale unbalanced training datasets by a large margin, compared to a number of baseline models.",
+ "sections": [
+  "Introduction",
+  "Datasets",
+  "Baselines",
+  "Topic-attention Model",
+  "Evaluation",
+  "Conclusion",
+  "Dataset Details",
+  "Testing Dataset",
+  "Case Study"
+ ],
+ "n_paragraphs": 22,
+ "n_tokens": 3915,
+ "figures_and_tables": [
+  {
+   "caption_id": "1910.14076::fig000",
+   "paper_id": "1910.14076",
+   "file": "2-Table1-1.png",
+   "caption": "Table 1: Examples showing the abbreviation term MR: MR from Note 1 is the abbreviation of ‘mental retardation’. One could easily misinterpret it as ‘mitral regurgitation’which may lead to further imaging studies with subsequent delaying or avoidance of non-urgent interventions due to higher risk of complications. In Note 2, MR means ‘mitral regurgitation’[6].",
+   "n_tokens": 80
+  },
+  {
+   "caption_id": "1910.14076::fig001",
+   "paper_id": "1910.14076",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1: Topic-attention Model",
+   "n_tokens": 8
+  },
+  {
+   "caption_id": "1910.14076::fig002",
+   "paper_id": "1910.14076",
+   "file": "7-Figure2-1.png",
+   "caption": "Figure 2: Comparison of sample numbers. X-axis: all the 93 term-sense pairs (due to space limits, we did not list the pairs in the plot). Y-axis: how many samples in each pair.",
+   "n_tokens": 46
+  },
+  {
+   "caption_id": "1910.14076::fig003",
+   "paper_id": "1910.14076",
+   "file": "7-Figure3-1.png",
+   "caption": "Figure 3: The term-sense pair count distribution histogram among 93 pairs.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1910.14076::fig004",
+   "paper_id": "1910.14076",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: Training and Testing sample distribution among classes in category AC and IM.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1910.14076::fig005",
+   "paper_id": "1910.14076",
+   "file": "9-Figure5-1.png",
+   "caption": "Figure 5: ROC curve plots on two selected terms: AC and IM. We compare results of the base model and our best model. Here we plot the ROC curve for each class.",
+   "n_tokens": 38
+  }
+ ]
+}

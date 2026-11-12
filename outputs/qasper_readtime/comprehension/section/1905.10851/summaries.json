@@ -1,0 +1,422 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1905.10851::s00::p000",
+   "summary": "MOOCs aim to bridge higher education's social gap, but massive online scaling disrupts co-located, synchronous two-way communication between students and instructors.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s00::p001",
+   "summary": "MOOC forums enable student discussion and instructor intervention, but high student–instructor ratios prevent monitoring all discussions, motivating systems for selective intervention.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s00::p002",
+   "summary": "The paper proposes first neural models for instructor intervention prediction, modelling thread structure and post sequences and using attention to infer latent intervention-triggering context.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s01::p000",
+   "summary": "A thread consists of posts, is intervened if an instructor posted at least once, and intervention prediction is binary classification.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s01::p001",
+   "summary": "A secondary problem infers the appropriate intervention context as a linear contiguous post series from candidate contexts.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s02::p000",
+   "summary": "Prior forum work models context through discourse, reply structure, conditional random fields, and attention, while this paper infers general dependencies between a reply and previous context.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s02::p001",
+   "summary": "Unlike graph structured LSTM and document classification models, this work assumes no explicit reply structure and hierarchically encodes post-thread layout while inferring reply structure with attention.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s03::p000",
+   "summary": "Prior MOOC intervention work proposed the problem, evaluated baselines across MOOCs, used discourse features, and addressed position bias in Coursera forums.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s03::p001",
+   "summary": "Prior works did not investigate structure and sequence in threaded discussions, while this paper proposes context-inferring models without preset context lengths that generalise BIBREF0 assumptions.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s03::p002",
+   "summary": "BIBREF7 is chosen for comparison against a state-of-the-art and competing baselines because BIBREF0's system and data are unavailable.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s04::p000",
+   "summary": "Evaluation uses 12 MOOC iterations on Coursera.org, includes selected subject-matter sub-forums, omits social and instructor-started threads, normalises labels, replaces tokens, and truncates intervened threads.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s05::p000",
+   "summary": "The key innovation decomposes intervention prediction into discovering proper reply context and predicting intervention status, implicitly assessing thread context importance or urgency.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s05::p001",
+   "summary": "Context scope inference predicts whether intervention is necessary without the instructor's reply, using only available posts to identify the most plausible motivating subsequence.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s05::p002",
+   "summary": "Because the actual instructor intervention is unavailable at decision timing, attention uses surrogate text as the query, with model variants assessing surrogate suitability.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s05::p003",
+   "summary": "All proposed models hierarchically encode threads by passing GloVe word vectors through an LSTM and using its last layer output as the post vector.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s05::p004",
+   "summary": "Each post vector passes through another LSTM whose last layer encodes the entire thread, while hidden unit outputs represent contexts as thread snapshots.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s05::p005",
+   "summary": "The two LSTMs constitute the hierarchical LSTM (hLSTM) model, which serves as the basis for subsequent model exploration.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s06::p000",
+   "summary": "Instructors attend to specific posts or post series triggering replies, but rarely indicate them, so the secondary objective infers appropriate context from binary thread-level intervention signals.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s06::p001",
+   "summary": "Contexts are limited to linear contiguous post series starting with the original post, unlike tree or graph-like forums such as Reddit.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s06::p002",
+   "summary": "Three neural attention variants are proposed based on how instructors might attend and reply: ultimate, penultimate and any post attention models.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s06::p003",
+   "summary": "Ultimate Post Attention (UPA) uses the post prior to the instructor's reply as a query over contexts, treating the final post as equivalent to the prospective intervention.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s06::p004",
+   "summary": "If one post is the instructor's reply, the preceding post queries over the contexts, with the model schematic shown in Figure FIGREF12.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s06::p005",
+   "summary": "The attended context representations are computed as DISPLAYFORM0.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s06::p006",
+   "summary": "The attended representation is passed through a fully connected softmax layer to yield the binary prediction.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s06::p007",
+   "summary": "Penultimate Post Attention (PPA) models the ultimate post as having prior posts as potential context, using the penultimate post to maximise available information.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s06::p009",
+   "summary": "Any Post Attention (APA) relaxes UPA and PPA by letting each post query its previous context and normalising attention weights over different queries.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s06::p010",
+   "summary": "In APA, the attention context is computed via DISPLAYFORM0.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s07::p000",
+   "summary": "Baseline and models are evaluated on 12 MOOC discussion forums using 80% training data and held-out 20% test data, reporting positive-class scores and prioritising recall.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s07::p001",
+   "summary": "Neural models use Adam optimizer with learning rate 0.001, cross-entropy loss, per-instance updates, one epoch, 300-dimensional GloVe vectors, and hidden dimension size 128.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s07::p002",
+   "summary": "Baselines include hierarchical LSTM (hLSTM), a feature-rich BIBREF7 logistic regression classifier, and aggregated hLSTM results using only the last post as context.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s08::p000",
+   "summary": "On the 12 MOOC dataset, UPA and PPA outperform the neural baseline, with mixed course-level results linked to course size and intervention ratio.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s08::p001",
+   "summary": "UPA's best performance indicates the instructor's reply context strongly correlates with the previous post's context, consistent with normal conversation structure.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s09::p000",
+   "summary": "The discussion further investigates models' ability to infer context and its effect on intervention prediction through research questions.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s09::p001",
+   "summary": "RQ1 asks whether context inference helps intervention prediction.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s09::p002",
+   "summary": "Ablating attention shows UPA and PPA improve over vanilla hLSTM by 5% and 2% on average, indicating context inference improves prediction over full context.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s09::p003",
+   "summary": "RQ2 bins threads by length across ml-5, rprog-3 and calc-1, finding UPA better on shorter threads and PPA and APA better on longer threads.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s09::p005",
+   "summary": "RQ3 asks whether models trained with different context lengths perform better than models trained on a single context length.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s09::p006",
+   "summary": "Context length regularises test performance; single-length training drops sharply, while a multi-objective loss with context length 3 achieves INLINEFORM1 of 0.45, precision 0.47 and recall 0.43.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s10::p000",
+   "summary": "The paper predicts instructor intervention by inferring optimal context size, shows structured thread representation beats bag-of-words features, and proposes attention models including APA for varying pedagogical styles.",
+   "group_id": "1905.10851::g00"
+  },
+  {
+   "passage_id": "1905.10851::s10::p001",
+   "summary": "Recall for longer threads of length greater 2 can still improve, and future work plans an ensemble model or multi-objective loss function.",
+   "group_id": "1905.10851::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1905.10851::g00",
+   "summaries": [
+    {
+     "passage_id": "1905.10851::s00::p000",
+     "summary": "MOOCs aim to bridge higher education's social gap, but massive online scaling disrupts co-located, synchronous two-way communication between students and instructors.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s00::p001",
+     "summary": "MOOC forums enable student discussion and instructor intervention, but high student–instructor ratios prevent monitoring all discussions, motivating systems for selective intervention.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s00::p002",
+     "summary": "The paper proposes first neural models for instructor intervention prediction, modelling thread structure and post sequences and using attention to infer latent intervention-triggering context.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s01::p000",
+     "summary": "A thread consists of posts, is intervened if an instructor posted at least once, and intervention prediction is binary classification.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s01::p001",
+     "summary": "A secondary problem infers the appropriate intervention context as a linear contiguous post series from candidate contexts.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s02::p000",
+     "summary": "Prior forum work models context through discourse, reply structure, conditional random fields, and attention, while this paper infers general dependencies between a reply and previous context.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s02::p001",
+     "summary": "Unlike graph structured LSTM and document classification models, this work assumes no explicit reply structure and hierarchically encodes post-thread layout while inferring reply structure with attention.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s03::p000",
+     "summary": "Prior MOOC intervention work proposed the problem, evaluated baselines across MOOCs, used discourse features, and addressed position bias in Coursera forums.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s03::p001",
+     "summary": "Prior works did not investigate structure and sequence in threaded discussions, while this paper proposes context-inferring models without preset context lengths that generalise BIBREF0 assumptions.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s03::p002",
+     "summary": "BIBREF7 is chosen for comparison against a state-of-the-art and competing baselines because BIBREF0's system and data are unavailable.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s04::p000",
+     "summary": "Evaluation uses 12 MOOC iterations on Coursera.org, includes selected subject-matter sub-forums, omits social and instructor-started threads, normalises labels, replaces tokens, and truncates intervened threads.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s05::p000",
+     "summary": "The key innovation decomposes intervention prediction into discovering proper reply context and predicting intervention status, implicitly assessing thread context importance or urgency.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s05::p001",
+     "summary": "Context scope inference predicts whether intervention is necessary without the instructor's reply, using only available posts to identify the most plausible motivating subsequence.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s05::p002",
+     "summary": "Because the actual instructor intervention is unavailable at decision timing, attention uses surrogate text as the query, with model variants assessing surrogate suitability.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s05::p003",
+     "summary": "All proposed models hierarchically encode threads by passing GloVe word vectors through an LSTM and using its last layer output as the post vector.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s05::p004",
+     "summary": "Each post vector passes through another LSTM whose last layer encodes the entire thread, while hidden unit outputs represent contexts as thread snapshots.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s05::p005",
+     "summary": "The two LSTMs constitute the hierarchical LSTM (hLSTM) model, which serves as the basis for subsequent model exploration.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s06::p000",
+     "summary": "Instructors attend to specific posts or post series triggering replies, but rarely indicate them, so the secondary objective infers appropriate context from binary thread-level intervention signals.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s06::p001",
+     "summary": "Contexts are limited to linear contiguous post series starting with the original post, unlike tree or graph-like forums such as Reddit.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s06::p002",
+     "summary": "Three neural attention variants are proposed based on how instructors might attend and reply: ultimate, penultimate and any post attention models.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s06::p003",
+     "summary": "Ultimate Post Attention (UPA) uses the post prior to the instructor's reply as a query over contexts, treating the final post as equivalent to the prospective intervention.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s06::p004",
+     "summary": "If one post is the instructor's reply, the preceding post queries over the contexts, with the model schematic shown in Figure FIGREF12.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s06::p005",
+     "summary": "The attended context representations are computed as DISPLAYFORM0.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s06::p006",
+     "summary": "The attended representation is passed through a fully connected softmax layer to yield the binary prediction.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s06::p007",
+     "summary": "Penultimate Post Attention (PPA) models the ultimate post as having prior posts as potential context, using the penultimate post to maximise available information.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s06::p009",
+     "summary": "Any Post Attention (APA) relaxes UPA and PPA by letting each post query its previous context and normalising attention weights over different queries.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s06::p010",
+     "summary": "In APA, the attention context is computed via DISPLAYFORM0.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s07::p000",
+     "summary": "Baseline and models are evaluated on 12 MOOC discussion forums using 80% training data and held-out 20% test data, reporting positive-class scores and prioritising recall.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s07::p001",
+     "summary": "Neural models use Adam optimizer with learning rate 0.001, cross-entropy loss, per-instance updates, one epoch, 300-dimensional GloVe vectors, and hidden dimension size 128.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s07::p002",
+     "summary": "Baselines include hierarchical LSTM (hLSTM), a feature-rich BIBREF7 logistic regression classifier, and aggregated hLSTM results using only the last post as context.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s08::p000",
+     "summary": "On the 12 MOOC dataset, UPA and PPA outperform the neural baseline, with mixed course-level results linked to course size and intervention ratio.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s08::p001",
+     "summary": "UPA's best performance indicates the instructor's reply context strongly correlates with the previous post's context, consistent with normal conversation structure.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s09::p000",
+     "summary": "The discussion further investigates models' ability to infer context and its effect on intervention prediction through research questions.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s09::p001",
+     "summary": "RQ1 asks whether context inference helps intervention prediction.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s09::p002",
+     "summary": "Ablating attention shows UPA and PPA improve over vanilla hLSTM by 5% and 2% on average, indicating context inference improves prediction over full context.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s09::p003",
+     "summary": "RQ2 bins threads by length across ml-5, rprog-3 and calc-1, finding UPA better on shorter threads and PPA and APA better on longer threads.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s09::p005",
+     "summary": "RQ3 asks whether models trained with different context lengths perform better than models trained on a single context length.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s09::p006",
+     "summary": "Context length regularises test performance; single-length training drops sharply, while a multi-objective loss with context length 3 achieves INLINEFORM1 of 0.45, precision 0.47 and recall 0.43.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s10::p000",
+     "summary": "The paper predicts instructor intervention by inferring optimal context size, shows structured thread representation beats bag-of-words features, and proposes attention models including APA for varying pedagogical styles.",
+     "group_id": "1905.10851::g00"
+    },
+    {
+     "passage_id": "1905.10851::s10::p001",
+     "summary": "Recall for longer threads of length greater 2 can still improve, and future work plans an ensemble model or multi-objective loss function.",
+     "group_id": "1905.10851::g00"
+    }
+   ],
+   "n_raw": 40,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5785,
+    "completion_tokens": 1905,
+    "total_tokens": 7690,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

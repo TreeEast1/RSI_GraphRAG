@@ -1,0 +1,243 @@
+{
+  "role": "new_02",
+  "cluster_id": "cc-00646",
+  "unit_id": "cc-00646-u000",
+  "method": "A",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 1481,
+    "completion_tokens": 1185,
+    "reasoning_tokens": 377,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r3_new_ac_new_02_A",
+    "cache_key": "070396458b630414620108840a17fe4cf691ffb6c287c262fb449b9fa33c0274"
+  },
+  "n_updates": 3,
+  "n_add": 3,
+  "n_accept": 3,
+  "n_reject": 0,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "EXTRACTION_REPAIR": 3
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "local-1",
+      "comprehension_text": "Murrah River flows generally east before entering Murrah Lagoon.",
+      "new_semantic_relation": "flows generally east",
+      "linked_entity_ids": [
+        "entity-e45ac0af9298e40ab7ece8c9c7c1c2d1"
+      ],
+      "source_triple_ids": [
+        "triple-b75b04de02e249ec29a112111040113a"
+      ],
+      "source_passage_ids": [
+        "chunk-7740d2e807869b06cc99c15d60e880bf"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-7740d2e807869b06cc99c15d60e880bf",
+          "span": "the Murrah River flows generally east, before flowing into Murrah Lagoon"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "reasoning_summary": "The passage explicitly states the Murrah River flows generally east, while the existing triples record its confluence, location, and destinations but not this general flow direction.",
+      "novelty_justification": "The directional fact is distinct from the existing statement that the river flows generally southeast by south of Quaama.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "local-2",
+      "comprehension_text": "Pambula River flows generally east through Pambula Lake toward the Tasman Sea.",
+      "new_semantic_relation": "flows generally east",
+      "linked_entity_ids": [
+        "entity-7fdd6a04dde606983076a59f0fb1a09a"
+      ],
+      "source_triple_ids": [
+        "triple-e0d9b1e76b4c9c7beab56eadb502c4f3",
+        "triple-0eba5dfd07bc338c74e28f4b6519a58b"
+      ],
+      "source_passage_ids": [
+        "chunk-abe611d30c695c2351d21c457be01cad"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-abe611d30c695c2351d21c457be01cad",
+          "span": "flows generally east, flowing through Pambula Lake, before reaching its mouth into the Tasman Sea"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "reasoning_summary": "The passage explicitly gives the Pambula River's general eastward flow, whereas the existing triples only state that it flows through Pambula Lake and into the Tasman Sea.",
+      "novelty_justification": "The eastward direction is not stated by the existing flow-through or flow-into triples.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "local-3",
+      "comprehension_text": "Tomaga River flows generally southwest and then southeast.",
+      "new_semantic_relation": "flows generally southwest and then southeast",
+      "linked_entity_ids": [
+        "entity-997d34fcf6a825ea75a141168c9f8403"
+      ],
+      "source_triple_ids": [
+        "triple-07544819a4fdc7980d202b6a91e66479",
+        "triple-95da99e8ede00e3cd8509d92d6c742ed"
+      ],
+      "source_passage_ids": [
+        "chunk-e07fff3fd8f53d1b98fe0aff72695b03"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-e07fff3fd8f53d1b98fe0aff72695b03",
+          "span": "flows generally southwest and then southeast, joined by one minor tributary"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "reasoning_summary": "The passage explicitly describes the Tomaga River's two-stage general flow direction, which is absent from the existing rise and mouth triples.",
+      "novelty_justification": "The existing triples specify where Tomaga River rises and reaches its mouth, not the directions in which it flows along its course.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "local-1",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: east, before, entering",
+      "residue": [
+        "east",
+        "before",
+        "entering"
+      ],
+      "evidence_sentences": [
+        "Murrah River\nFormed by the confluence of the Mumbulla Creek and Dry River, approximately southeast by south of Quaama, the Murrah River flows generally east, before flowing into Murrah Lagoon and reaching its mouth into the Tasman Sea of the South Pacific Ocean north of Murrah Beach."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Murrah River\nFormed by the confluence of the Mumbulla Creek and Dry River, approximately southeast by south of Quaama, the Murrah River flows generally east, before flowing into Murrah Lagoon and reaching its mouth into the Tasman Sea of the South Pacific Ocean north of Murrah Beach."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "east",
+            "before",
+            "entering"
+          ],
+          "n_passage_triples": 7,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "local-2",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: generally, east, toward",
+      "residue": [
+        "generally",
+        "east",
+        "toward"
+      ],
+      "evidence_sentences": [
+        "Pambula River\nPambula River rises in timbered highlands near the locality of Lochiel and flows generally east, flowing through Pambula Lake, before reaching its mouth into the Tasman Sea of the South Pacific Ocean near the locality of Pambula Beach."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Pambula River\nPambula River rises in timbered highlands near the locality of Lochiel and flows generally east, flowing through Pambula Lake, before reaching its mouth into the Tasman Sea of the South Pacific Ocean near the locality of Pambula Beach."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "generally",
+            "east",
+            "toward"
+          ],
+          "n_passage_triples": 5,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "local-3",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: flows, generally, southwest, then, southeast",
+      "residue": [
+        "flows",
+        "generally",
+        "southwest",
+        "then",
+        "southeast"
+      ],
+      "evidence_sentences": [
+        "Tomaga River\nTomaga River rises about northeast of Mogo Hill and flows generally southwest and then southeast, joined by one minor tributary, before reaching its mouth at the Tasman Sea of the South Pacific Ocean at Mossy Point."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Tomaga River\nTomaga River rises about northeast of Mogo Hill and flows generally southwest and then southeast, joined by one minor tributary, before reaching its mouth at the Tasman Sea of the South Pacific Ocean at Mossy Point."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "flows",
+            "generally",
+            "southwest",
+            "then",
+            "southeast"
+          ],
+          "n_passage_triples": 4,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

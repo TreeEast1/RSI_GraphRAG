@@ -1,0 +1,60 @@
+{
+ "paper_id": "1702.03856",
+ "title": "Towards speech-to-text translation without speech recognition",
+ "abstract": "We explore the problem of translating speech to text in low-resource scenarios where neither automatic speech recognition (ASR) nor machine translation (MT) are available, but we have training data in the form of audio paired with text translations. We present the first system for this problem applied to a realistic multi-speaker dataset, the CALLHOME Spanish-English speech translation corpus. Our approach uses unsupervised term discovery (UTD) to cluster repeated patterns in the audio, creating a pseudotext, which we pair with translations to create a parallel text and train a simple bag-of-words MT model. We identify the challenges faced by the system, finding that the difficulty of cross-speaker UTD results in low recall, but that our system is still able to correctly translate some content words in test data.",
+ "sections": [
+  "Introduction",
+  "From unsupervised term discovery to direct speech-to-text translation",
+  "Dataset",
+  "Analysis of challenges from UTD",
+  "Assigning wrong words to a cluster",
+  "Splitting words across different clusters",
+  "UTD is sparse, giving low coverage"
+ ],
+ "n_paragraphs": 14,
+ "n_tokens": 1934,
+ "figures_and_tables": [
+  {
+   "caption_id": "1702.03856::fig000",
+   "paper_id": "1702.03856",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: Example utterances from our data, showing UTD matches, corresponding pseudotext, and English translation. For clarity, we also show Spanish transcripts with the approximate alignment of each pseudoterm underlined, though these transcripts are unavailable to our system. Stopwords (in gray) are ignored in our evaluations. These examples illustrate the difficulties of UTD: it does not match the full audio, and it incorrectly clusters part of utterance B with a good pair in C and D.",
+   "n_tokens": 101
+  },
+  {
+   "caption_id": "1702.03856::fig001",
+   "paper_id": "1702.03856",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1: UTD matches within utterances, within calls and within the corpus. Matches within an utterance or call are usually from the same speaker.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1702.03856::fig002",
+   "paper_id": "1702.03856",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Number (percent) of out-of-vocabulary (OOV) word tokens or pseudoterms in the test data for different experimental conditions.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1702.03856::fig003",
+   "paper_id": "1702.03856",
+   "file": "5-Table3-1.png",
+   "caption": "Table 3: Source text (left) paired with translations by humans (gold), oracle, and UTD-based system. Underlined words appear in UTD and the corresponding human translations.",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "1702.03856::fig004",
+   "paper_id": "1702.03856",
+   "file": "5-Table4-1.png",
+   "caption": "Table 4: Precision and recall for K = 1 and K = 5 under different conditions.",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "1702.03856::fig005",
+   "paper_id": "1702.03856",
+   "file": "5-Figure2-1.png",
+   "caption": "Figure 2: Precision and Recall @K for the call and utterance level test sets.",
+   "n_tokens": 19
+  }
+ ]
+}

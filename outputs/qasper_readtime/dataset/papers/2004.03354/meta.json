@@ -1,0 +1,66 @@
+{
+ "paper_id": "2004.03354",
+ "title": "Inexpensive Domain Adaptation of Pretrained Language Models: A Case Study on Biomedical Named Entity Recognition",
+ "abstract": "Domain adaptation of Pretrained Language Models (PTLMs) is typically achieved by pretraining on in-domain text. While successful, this approach is expensive in terms of hardware, runtime and CO_2 emissions. Here, we propose a cheaper alternative: We train Word2Vec on in-domain text and align the resulting word vectors with the input space of a general-domain PTLM (here: BERT). We evaluate on eight biomedical Named Entity Recognition (NER) tasks and compare against the recently proposed BioBERT model (Lee et al., 2020). We cover over 50% of the BioBERT-BERT F1 delta, at 5% of BioBERT's CO_2 footprint and 2% of its cloud compute cost.",
+ "sections": [
+  "Introduction",
+  "Related work ::: The BERT PTLM",
+  "Related work ::: Domain-adapted PTLMs",
+  "Related work ::: Word vectors",
+  "Related work ::: Word vector space alignment",
+  "Method",
+  "Method ::: Creating new input vectors",
+  "Method ::: Updating the wordpiece embedding layer",
+  "Method ::: Updating the tokenizer",
+  "Experiment 1: Biomedical NER",
+  "Experiment 1: Biomedical NER ::: Domain adaptation",
+  "Experiment 1: Biomedical NER ::: Finetuning",
+  "Experiment 1: Biomedical NER ::: Results and discussion",
+  "Experiment 2: Covid-19 QA",
+  "Experiment 2: Covid-19 QA ::: Domain adaptation",
+  "Experiment 2: Covid-19 QA ::: Results and discussion",
+  "Conclusion",
+  "Inexpensive Domain Adaptation of Pretrained Language Models (Appendix) ::: Word2Vec training",
+  "Inexpensive Domain Adaptation of Pretrained Language Models (Appendix) ::: Experiment 1: Biomedical NER ::: Pretrained models",
+  "Inexpensive Domain Adaptation of Pretrained Language Models (Appendix) ::: Experiment 1: Biomedical NER ::: Data",
+  "Inexpensive Domain Adaptation of Pretrained Language Models (Appendix) ::: Experiment 1: Biomedical NER ::: Preprocessing",
+  "Inexpensive Domain Adaptation of Pretrained Language Models (Appendix) ::: Experiment 1: Biomedical NER ::: Modeling, training and inference",
+  "Inexpensive Domain Adaptation of Pretrained Language Models (Appendix) ::: Experiment 1: Biomedical NER ::: Note on our reproduction experiments",
+  "Inexpensive Domain Adaptation of Pretrained Language Models (Appendix) ::: Experiment 2: Covid-19 QA ::: Pretrained model",
+  "Inexpensive Domain Adaptation of Pretrained Language Models (Appendix) ::: Experiment 2: Covid-19 QA ::: Data",
+  "Inexpensive Domain Adaptation of Pretrained Language Models (Appendix) ::: Experiment 2: Covid-19 QA ::: Preprocessing",
+  "Inexpensive Domain Adaptation of Pretrained Language Models (Appendix) ::: Experiment 2: Covid-19 QA ::: Modeling and inference"
+ ],
+ "n_paragraphs": 62,
+ "n_tokens": 4507,
+ "figures_and_tables": [
+  {
+   "caption_id": "2004.03354::fig000",
+   "paper_id": "2004.03354",
+   "file": "2-Table1-1.png",
+   "caption": "Table 1: Domain adaptation cost. CO2 emissions are calculated according to Strubell et al. (2019). Since our hardware configuration is not available on Google Cloud, we take an m1-ultramem-40 instance (40 vCPUs, 961GB RAM) to estimate an upper bound on our Google Cloud cost.",
+   "n_tokens": 69
+  },
+  {
+   "caption_id": "2004.03354::fig001",
+   "paper_id": "2004.03354",
+   "file": "3-Table2-1.png",
+   "caption": "Table 2: Top: Examples of within-space and cross-space nearest neighbors (NNs) by cosine similarity in GreenBioBERT’s wordpiece embedding layer. Blue: Original wordpiece space. Green: Aligned Word2Vec space. Bottom: Biomedical NER test set precision / recall / F1 (%) measured with the CoNLL NER scorer. Boldface: Best model in row. Underlined: Best inexpensive model (without target-domain pretraining) in row.",
+   "n_tokens": 97
+  },
+  {
+   "caption_id": "2004.03354::fig002",
+   "paper_id": "2004.03354",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1: NER test set F1, transformed as (x − BERT(ref))/ (BioBERTv1.0(ref) − BERT(ref)). A value of 0.5 means that 50% of the reported BioBERTv1.0 – BERT delta is covered. “ref”: Reference from Lee et al. (2020). “repr”: Our reproduction experiments. Error bars: Standard error of the mean.",
+   "n_tokens": 91
+  },
+  {
+   "caption_id": "2004.03354::fig003",
+   "paper_id": "2004.03354",
+   "file": "4-Table3-1.png",
+   "caption": "Table 3: Top: NER ablation study. Drop in F1 (w.r.t. GreenBioBERT) when using non-aligned or randomly initialized word vectors instead of aligned word vectors. Bottom: Results on Deepset-AI Covid-QA (%). EM (exact match) and F1 are evaluated with the SQuAD scorer. “substr”: Predictions that are a substring of the gold answer. Substring answers are much more frequent than exact matches because not all gold answers are minimal spans (see Appendix for an example).",
+   "n_tokens": 109
+  }
+ ]
+}

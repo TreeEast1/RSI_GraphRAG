@@ -1,0 +1,71 @@
+{
+ "paper_id": "1811.00147",
+ "title": "DOLORES: Deep Contextualized Knowledge Graph Embeddings",
+ "abstract": "We introduce a new method DOLORES for learning knowledge graph embeddings that effectively captures contextual cues and dependencies among entities and relations. First, we note that short paths on knowledge graphs comprising of chains of entities and relations can encode valuable information regarding their contextual usage. We operationalize this notion by representing knowledge graphs not as a collection of triples but as a collection of entity-relation chains, and learn embeddings for entities and relations using deep neural models that capture such contextual usage. In particular, our model is based on Bi-Directional LSTMs and learn deep representations of entities and relations from constructed entity-relation chains. We show that these representations can very easily be incorporated into existing models to significantly advance the state of the art on several knowledge graph prediction tasks like link prediction, triple classification, and missing relation type prediction (in some cases by at least 9.5%).",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Problem Formulation",
+  "Preliminaries",
+  "Dolores: Path Generator",
+  "Dolores: Learner",
+  "Experiments",
+  "Experimental Settings for Dolores",
+  "Evaluation Tasks",
+  "Error Analysis",
+  "Conclusion"
+ ],
+ "n_paragraphs": 55,
+ "n_tokens": 6063,
+ "figures_and_tables": [
+  {
+   "caption_id": "1811.00147::fig000",
+   "paper_id": "1811.00147",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Context independent and dependent embeddings learned by DOLORES. (a) shows context-independent representations of writers (red), philosophers (green), and musicians (blue); (b) shows contextual embeddings with relation ‘/people/nationality’: Austrians (green), Germans (blue), British/Irish (red). (c) shows contextual embeddings with relation ‘/people/place lived/location’, we can see that Beethoven and Brahms (in blue), though Germans (other Germans are in red), lived in Vienna, Austria (Austrians are in green) and lie in between Germans and Austrians.",
+   "n_tokens": 125
+  },
+  {
+   "caption_id": "1811.00147::fig001",
+   "paper_id": "1811.00147",
+   "file": "5-Figure2-1.png",
+   "caption": "Figure 2: Unrolled RNN architecture. The input to the deep Bi-Directional LSTM is entity-relation chains generated from random walks in KG. At each time step, the LSTM consumes the concatenation of entity and relation vectors. The “target” shown in the figure is the training target for the forward direction. Learned contextual representation of entity “Bach” is the concatenation of the embedding layer (green) and a linear combination of internal states of deeper layers (red and blue).",
+   "n_tokens": 101
+  },
+  {
+   "caption_id": "1811.00147::fig002",
+   "paper_id": "1811.00147",
+   "file": "6-Table1-1.png",
+   "caption": "Table 1: Summary of results of incorporating DOLORES embeddings on state-of-the-art models for various tasks. Note that in each case, simply incorporated DOLORES results in a significant improvement over the state of the art in various tasks like link prediction, triple classification and missing relation type prediction sometimes by as much as 9.5%.",
+   "n_tokens": 69
+  },
+  {
+   "caption_id": "1811.00147::fig003",
+   "paper_id": "1811.00147",
+   "file": "6-Table2-1.png",
+   "caption": "Table 2: Performance of incorporating DOLORES on state-of-the-art model for link prediction. Note that we consistently and significantly improve the current state of the art in both subtasks: head entity and tail entity prediction (in some cases by at least 9%). For all metrics except MR (mean rank) higher is better.",
+   "n_tokens": 67
+  },
+  {
+   "caption_id": "1811.00147::fig004",
+   "paper_id": "1811.00147",
+   "file": "7-Table3-1.png",
+   "caption": "Table 3: Experimental results of triple classification on WN11 and FB13 test sets. TransE is implemented by Nguyen et al. (2018a). Except for CONVKB(+ DOLORES), other results are from Nguyen et al. (2018a). Bold results are the best ones and underlined results are second-best.",
+   "n_tokens": 69
+  },
+  {
+   "caption_id": "1811.00147::fig005",
+   "paper_id": "1811.00147",
+   "file": "8-Figure3-1.png",
+   "caption": "Figure 3: Relation Categories with best and worst performance for DOLORES in terms of mean rank (lower is better). DOLORES performs exceedingly well on instances where the head entity is specific and tends to perform sub-optimally when the head entity is very generic and broad belonging to categories base,common. Please refer to Error Analysis section for detailed explanation and discussion.",
+   "n_tokens": 75
+  },
+  {
+   "caption_id": "1811.00147::fig006",
+   "paper_id": "1811.00147",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: Results of missing relation type prediction. RNNPath-entity (Das et al., 2017) is the state of the art which yields an improvement of 9.5% (71.74 vs 74.42) on mean average precision (MAP) when incorporated with DOLORES.",
+   "n_tokens": 64
+  }
+ ]
+}

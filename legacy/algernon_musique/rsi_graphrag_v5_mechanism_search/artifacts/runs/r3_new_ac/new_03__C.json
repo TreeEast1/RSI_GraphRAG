@@ -1,0 +1,162 @@
+{
+  "role": "new_03",
+  "cluster_id": "cc-00000-stable-0026",
+  "unit_id": "cc-00000-stable-0026-u000",
+  "method": "C",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 8047,
+    "completion_tokens": 2296,
+    "reasoning_tokens": 1536,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r3_new_ac_new_03_C",
+    "cache_key": "15efccef1ea5b8cc5c1c499587430a1e298222ee96ecee29b962ac5ea0af1db9"
+  },
+  "n_updates": 2,
+  "n_add": 2,
+  "n_accept": 1,
+  "n_reject": 1,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "INCOMPLETE_CITATION": 1,
+    "EXTRACTION_REPAIR": 1
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "local-001",
+      "comprehension_text": "Wang Shen'ai and Emperor Xiaowu had no children.",
+      "new_semantic_relation": "had no children",
+      "operator": "EXPLICIT_GAP",
+      "chain": [
+        {
+          "fact": "The passage states that Wang Shen'ai and Emperor Xiaowu had no children.",
+          "passage_id": "chunk-24f9ea36a93177e89a6822e3fe9a317f",
+          "span": "in any case, they had no children",
+          "triple_id": ""
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-22edcfb4a7b4fc1192702c6aeb3bda97",
+        "entity-8b9462390380843bc949be611a8d3fab"
+      ],
+      "source_triple_ids": [],
+      "source_passage_ids": [
+        "chunk-24f9ea36a93177e89a6822e3fe9a317f"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-24f9ea36a93177e89a6822e3fe9a317f",
+          "span": "in any case, they had no children"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "novel_part": "had no children",
+      "reasoning_summary": "The quoted sentence explicitly states that the married pair had no children.",
+      "novelty_justification": "No supplied triple states that Wang Shen'ai and Emperor Xiaowu had no children.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "local-002",
+      "comprehension_text": "Gao Wei became emperor at age eight.",
+      "new_semantic_relation": "became emperor at age eight",
+      "operator": "EXPLICIT_GAP",
+      "chain": [
+        {
+          "fact": "The passage states that Gao Wei became emperor at age eight.",
+          "passage_id": "chunk-6b895eca5cb386be83d72d32dede88f1",
+          "span": "Gao Wei, at age eight, became emperor",
+          "triple_id": ""
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-001d00353b61486708b1ccd2a30d96dd"
+      ],
+      "source_triple_ids": [],
+      "source_passage_ids": [
+        "chunk-6b895eca5cb386be83d72d32dede88f1"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-6b895eca5cb386be83d72d32dede88f1",
+          "span": "Gao Wei, at age eight, became emperor"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "novel_part": "at age eight",
+      "reasoning_summary": "The quoted passage explicitly gives Gao Wei's age when he became emperor.",
+      "novelty_justification": "The supplied triple records that Gao Wei became emperor in 565 but does not state that he was eight years old.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "local-001",
+      "decision": "REJECT",
+      "failure_stage": "V2",
+      "faithfulness": "incomplete_citation",
+      "novelty": "unclear",
+      "audit_type": "INCOMPLETE_CITATION",
+      "reason": "The cited sentences do not contain Wang Shen'ai, Emperor Xiaowu. Those names occur elsewhere in the cited passage, but no token of the name is in the cited sentence.",
+      "missing_names": [
+        "Wang Shen'ai",
+        "Emperor Xiaowu"
+      ],
+      "recoverable_in_passage": [
+        "Wang Shen'ai",
+        "Emperor Xiaowu"
+      ],
+      "evidence_sentences": [
+        "As he was described to be so developmentally disabled that he could not speak or dress himself, or express whether he was full or hungry, it was unlikely that their marriage was consummated; in any case, they had no children."
+      ]
+    },
+    {
+      "candidate_id": "local-002",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: age, eight",
+      "residue": [
+        "age",
+        "eight"
+      ],
+      "evidence_sentences": [
+        "Emperor Wucheng agreed, and Gao Wei, at age eight, became emperor, although Emperor Wucheng, carrying the title of \"Taishang Huang\" (retired emperor), retained the actual powers."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Emperor Wucheng agreed, and Gao Wei, at age eight, became emperor, although Emperor Wucheng, carrying the title of \"Taishang Huang\" (retired emperor), retained the actual powers."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "age",
+            "eight"
+          ],
+          "n_passage_triples": 12,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

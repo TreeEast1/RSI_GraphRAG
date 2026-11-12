@@ -1,0 +1,660 @@
+{
+ "kept": [
+  {
+   "insight_id": "1912.01214::g00:i00",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g00",
+   "concise_text": "The proposed cross-lingual pre-training based transfer approach addresses the language space mismatch problem that causes zero-shot translation failure in transfer learning.",
+   "triple": {
+    "subject": "cross-lingual pre-training based transfer approach",
+    "predicate": "addresses",
+    "object": "language space mismatch problem"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1912.01214::s00::p002",
+    "1912.01214::s00::p003",
+    "1912.01214::s01::p005"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g00:b0:f08",
+    "1912.01214::g00:b0:f09",
+    "1912.01214::g00:b2:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "All cited passages exist and jointly support that the proposed cross-lingual pre-training transfer approach targets/relieves the language space/domain shift mismatch causing zero-shot failure; composed across problem and solution paragraphs."
+   },
+   "unit_id": "1912.01214::u000"
+  },
+  {
+   "insight_id": "1912.01214::g00:i01",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g00",
+   "concise_text": "BRLM uses source↔pivot bilingual data to obtain a universal encoder, enabling the pivot→target parent model to translate source sentences into target sentences directly.",
+   "triple": {
+    "subject": "BRidge Language Modeling (BRLM)",
+    "predicate": "enables",
+    "object": "direct source→target translation by the pivot→target parent model"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1912.01214::s00::p003",
+    "1912.01214::s02::p002",
+    "1912.01214::s02::p003"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g00:b0:f12",
+    "1912.01214::g00:b0:f13",
+    "1912.01214::g00:b2:f07",
+    "1912.01214::g00:b2:f10",
+    "1912.01214::g00:b2:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "Cited passages jointly support that BRLM uses source-pivot bilingual data to build a universal encoder, after which a pivot→target parent model can directly translate source→target; composed from method and protocol paragraphs."
+   },
+   "unit_id": "1912.01214::u001"
+  },
+  {
+   "insight_id": "1912.01214::g00:i05",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g00",
+   "concise_text": "The approach is evaluated with BLEU on Europarl and MultiUN, and its approaches consistently outperform pivoting, MNMT, and cross-lingual transfer without pretraining.",
+   "triple": {
+    "subject": "cross-lingual pre-training based transfer approach",
+    "predicate": "evaluated_on",
+    "object": "Europarl and MultiUN with BLEU"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1912.01214::s06::p000",
+    "1912.01214::s09::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g00:b5:f00",
+    "1912.01214::g00:b5:f01",
+    "1912.01214::g00:b5:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Cited passages jointly support evaluation on Europarl and MultiUN with BLEU and consistent outperformance of pivoting, MNMT, and transfer without pretraining; composed across setup and results."
+   },
+   "unit_id": "1912.01214::u005"
+  },
+  {
+   "insight_id": "1912.01214::g00:i06",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g00",
+   "concise_text": "Pivoting requires doubled decoding time and suffers from error propagation, while the proposed approaches use one encoder-decoder model and are more efficient than pivoting.",
+   "triple": {
+    "subject": "cross-lingual pre-training based transfer approach",
+    "predicate": "improves_on",
+    "object": "pivoting efficiency"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1912.01214::s00::p000",
+    "1912.01214::s09::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g00:b0:f02",
+    "1912.01214::g00:b0:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Cited passages jointly support that pivoting has doubled decoding time/error propagation and that the proposed one encoder-decoder approaches are more efficient than pivoting; composed across motivation and results."
+   },
+   "unit_id": "1912.01214::u006"
+  },
+  {
+   "insight_id": "1912.01214::g00:i07",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g00",
+   "concise_text": "The pretraining phase builds a cross-lingual encoder shared by source and pivot languages, addressing the key difficulty of making universal encoder representations language invariant.",
+   "triple": {
+    "subject": "pretraining phase",
+    "predicate": "addresses",
+    "object": "language invariant intermediate representations of the universal encoder"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1912.01214::s02::p004",
+    "1912.01214::s05::p001"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g00:b2:f12",
+    "1912.01214::g00:b4:f10"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Cited passages jointly support that the key difficulty is language-invariant universal encoder representations and that the pretraining phase builds a cross-lingual encoder shared by source and pivot languages; inferred problem-solution link is reasonable."
+   },
+   "unit_id": "1912.01214::u007"
+  },
+  {
+   "insight_id": "1912.01214::g00:i09",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g00",
+   "concise_text": "On Europarl, English acts as the pivot language, and the shared encoder trained on large-scale monolingual data and parallel data between multiple languages improves supervised pivot→target performance.",
+   "triple": {
+    "subject": "shared encoder",
+    "predicate": "improves_on",
+    "object": "original supervised Transformer in pivot→target direction"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1912.01214::s07::p000",
+    "1912.01214::s10::p001"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g00:b5:f04",
+    "1912.01214::g00:b6:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Cited passages jointly support that English is the pivot on Europarl and that the shared encoder trained on large-scale monolingual and multilingual parallel data yields better supervised pivot→target performance than the original supervised Transformer."
+   },
+   "unit_id": "1912.01214::u009"
+  },
+  {
+   "insight_id": "1912.01214::g01:i02",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g01",
+   "concise_text": "The paper's aim of building language invariant representation is supported by MLM+BRLM-SA showing stable sentence-pair representations and better word-level representation alignment.",
+   "triple": {
+    "subject": "language invariant representation",
+    "predicate": "evaluated_on",
+    "object": "sentence level and word level neural representations of MLM+BRLM-SA"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1912.01214::s12::p000",
+    "1912.01214::s13::p000",
+    "1912.01214::s15::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g01:b0:f03",
+    "1912.01214::g01:b0:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "Cited passages jointly support the paper's aim of language-invariant representation and the conclusion that experiments manifest language invariance at sentence and word levels, with sentence-pair and aligned-word analyses providing the evidence."
+   },
+   "unit_id": "1912.01214::u012"
+  },
+  {
+   "insight_id": "1912.01214::g01:i03",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g01",
+   "concise_text": "Because all freezing experiments are based on MLM+BRLM-SA, freezing the first four layers balances pre-training and fine-tuning for the best-performing proposed approach.",
+   "triple": {
+    "subject": "Freezing the first four layers of the transformer",
+    "predicate": "improves_on",
+    "object": "MLM+BRLM-SA transfer learning by balancing pre-training and fine-tuning"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1912.01214::s11::p000",
+    "1912.01214::s14::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g01:b0:f00",
+    "1912.01214::g01:b0:f10",
+    "1912.01214::g01:b0:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Cited passages jointly support that all freezing experiments use MLM+BRLM-SA, that MLM+BRLM-SA is best among proposed approaches, and that freezing the first four layers gives best performance by balancing pre-training and fine-tuning."
+   },
+   "unit_id": "1912.01214::u013"
+  },
+  {
+   "insight_id": "1912.01214::g01:i04",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g01",
+   "concise_text": "The conclusion that the approaches manifest language invariance in sentence level and word level neural representations is jointly evidenced by sentence-pair and aligned-word analyses.",
+   "triple": {
+    "subject": "sentence-pair and aligned-word analyses",
+    "predicate": "evaluated_on",
+    "object": "language invariance characteristics in sentence level and word level neural representations"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1912.01214::s12::p000",
+    "1912.01214::s13::p000",
+    "1912.01214::s15::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g01:b0:f03",
+    "1912.01214::g01:b0:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Cited passages jointly support that sentence-pair representation analysis and aligned-word visualization evidence the conclusion that the approaches manifest language invariance at sentence and word levels."
+   },
+   "unit_id": "1912.01214::u014"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1912.01214::g00:i02",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g00",
+   "concise_text": "Because the zero-shot scenario has no source↔target parallel data, the approach trains a pivot→target parent model and transfers it to source→target translation via a shared encoder.",
+   "triple": {
+    "subject": "no source↔target parallel data",
+    "predicate": "requires",
+    "object": "transfer of a pivot→target parent model via a shared encoder"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1912.01214::s02::p000",
+    "1912.01214::s05::p000",
+    "1912.01214::s05::p002"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g00:b2:f04",
+    "1912.01214::g00:b4:f09",
+    "1912.01214::g00:b4:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.55,
+    "causality_error": true,
+    "reason": "Sources state the zero-shot scenario lacks source-target data and that the method trains/transfers a pivot→target model via a shared encoder, but do not say the lack of data 'requires' this transfer; causal/necessity relation is unsupported."
+   },
+   "unit_id": "1912.01214::u002"
+  },
+  {
+   "insight_id": "1912.01214::g00:i03",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g00",
+   "concise_text": "MLM+BRLM-SA, which continues MLM with BRLM on source-pivot bilingual data, improves by 0.9-4.8 BLEU points over pivoting on Europarl zero-shot directions.",
+   "triple": {
+    "subject": "MLM+BRLM-SA",
+    "predicate": "improves_on",
+    "object": "pivoting by 0.9-4.8 BLEU points"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1912.01214::s08::p001",
+    "1912.01214::s10::p001"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g00:b5:f20",
+    "1912.01214::g00:b6:f04",
+    "1912.01214::g00:b6:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.35,
+    "causality_error": false,
+    "reason": "The 0.9-4.8 BLEU improvement over pivoting is directly stated in s10:p001, but the added claim that MLM+BRLM-SA 'continues MLM with BRLM on source-pivot bilingual data' is only generally described for MLM+BRLM, and 'Europarl zero-shot directions' is not specified in the cited result paragraph; also largely restates a single result."
+   },
+   "unit_id": "1912.01214::u003"
+  },
+  {
+   "insight_id": "1912.01214::g00:i04",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g00",
+   "concise_text": "BRLM-SA avoids external wrong alignment information and enables many-to-one soft alignment, and MLM+BRLM-SA is better than MLM+BRLM-HA.",
+   "triple": {
+    "subject": "BRLM-SA",
+    "predicate": "outperforms",
+    "object": "MLM+BRLM-HA"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1912.01214::s04::p003",
+    "1912.01214::s10::p002"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g00:b4:f01",
+    "1912.01214::g00:b4:f02",
+    "1912.01214::g00:b6:f11",
+    "1912.01214::g00:b6:f12"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.25,
+    "causality_error": false,
+    "reason": "Both facts are explicitly stated in the cited paragraphs, but the concise_text/triple mainly restates the single result that MLM+BRLM-SA is better than MLM+BRLM-HA; insufficient novelty."
+   },
+   "unit_id": "1912.01214::u004"
+  },
+  {
+   "insight_id": "1912.01214::g00:i08",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g00",
+   "concise_text": "MLM alone does not use source↔pivot parallel data and achieves comparable results to pivoting, while combining MLM with TLM or BRLM further improves performance.",
+   "triple": {
+    "subject": "combining MLM with TLM or BRLM",
+    "predicate": "improves_on",
+    "object": "MLM alone"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1912.01214::s08::p001",
+    "1912.01214::s10::p002"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g00:b6:f07",
+    "1912.01214::g00:b6:f09",
+    "1912.01214::g00:b6:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "The insight is essentially a direct restatement of s10:p002: MLM alone does not use source-pivot parallel data, is comparable to pivoting, and combining MLM with TLM/BRLM further improves performance."
+   },
+   "unit_id": "1912.01214::u008"
+  },
+  {
+   "insight_id": "1912.01214::g01:i00",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g01",
+   "concise_text": "MLM+BRLM-SA's best zero-shot translation performance is supported by its most stable and similar cross-lingual sentence-pair representations on all layers.",
+   "triple": {
+    "subject": "MLM+BRLM-SA",
+    "predicate": "improves_on",
+    "object": "zero-shot translation through stable cross-lingual sentence-pair representations"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1912.01214::s11::p000",
+    "1912.01214::s12::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g01:b0:f00",
+    "1912.01214::g01:b0:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.55,
+    "causality_error": true,
+    "reason": "Sources report co-occurrence: MLM+BRLM-SA has stable/similar sentence-pair representations and best zero-shot performance, and say better representations 'can benefit' transfer; the insight asserts a stronger causal 'supported by/through' mechanism than justified."
+   },
+   "unit_id": "1912.01214::u010"
+  },
+  {
+   "insight_id": "1912.01214::g01:i01",
+   "paper_id": "1912.01214",
+   "group_id": "1912.01214::g01",
+   "concise_text": "MLM+BRLM-SA's better word-level representation alignment between source and pivot languages helps explain its best performance among proposed cross-lingual pretraining based transfer approaches.",
+   "triple": {
+    "subject": "MLM+BRLM-SA",
+    "predicate": "improves_on",
+    "object": "proposed cross-lingual pretraining based transfer approaches through better word-level representation alignment"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1912.01214::s11::p000",
+    "1912.01214::s13::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.01214::g01:b0:f00",
+    "1912.01214::g01:b0:f06"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.55,
+    "causality_error": true,
+    "reason": "Sources state MLM+BRLM-SA performs best and has better word-level alignment that relieves domain shift, but do not explicitly establish that this alignment explains its best performance among proposed approaches; causal explanatory link is inferred."
+   },
+   "unit_id": "1912.01214::u011"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1912.01214::g00:i00",
+    "verdict": {
+     "insight_id": "1912.01214::g00:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "All cited passages exist and jointly support that the proposed cross-lingual pre-training transfer approach targets/relieves the language space/domain shift mismatch causing zero-shot failure; composed across problem and solution paragraphs."
+    }
+   },
+   {
+    "insight_id": "1912.01214::g00:i01",
+    "verdict": {
+     "insight_id": "1912.01214::g00:i01",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "Cited passages jointly support that BRLM uses source-pivot bilingual data to build a universal encoder, after which a pivot→target parent model can directly translate source→target; composed from method and protocol paragraphs."
+    }
+   },
+   {
+    "insight_id": "1912.01214::g00:i02",
+    "verdict": {
+     "insight_id": "1912.01214::g00:i02",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.55,
+     "causality_error": true,
+     "reason": "Sources state the zero-shot scenario lacks source-target data and that the method trains/transfers a pivot→target model via a shared encoder, but do not say the lack of data 'requires' this transfer; causal/necessity relation is unsupported."
+    },
+    "reason": "Sources state the zero-shot scenario lacks source-target data and that the method trains/transfers a pivot→target model via a shared encoder, but do not say the lack of data 'requires' this transfer; causal/necessity relation is unsupported."
+   },
+   {
+    "insight_id": "1912.01214::g00:i03",
+    "verdict": {
+     "insight_id": "1912.01214::g00:i03",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.35,
+     "causality_error": false,
+     "reason": "The 0.9-4.8 BLEU improvement over pivoting is directly stated in s10:p001, but the added claim that MLM+BRLM-SA 'continues MLM with BRLM on source-pivot bilingual data' is only generally described for MLM+BRLM, and 'Europarl zero-shot directions' is not specified in the cited result paragraph; also largely restates a single result."
+    },
+    "reason": "The 0.9-4.8 BLEU improvement over pivoting is directly stated in s10:p001, but the added claim that MLM+BRLM-SA 'continues MLM with BRLM on source-pivot bilingual data' is only generally described for MLM+BRLM, and 'Europarl zero-shot directions' is not specified in the cited result paragraph; also largely restates a single result."
+   },
+   {
+    "insight_id": "1912.01214::g00:i04",
+    "verdict": {
+     "insight_id": "1912.01214::g00:i04",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.25,
+     "causality_error": false,
+     "reason": "Both facts are explicitly stated in the cited paragraphs, but the concise_text/triple mainly restates the single result that MLM+BRLM-SA is better than MLM+BRLM-HA; insufficient novelty."
+    },
+    "reason": "Both facts are explicitly stated in the cited paragraphs, but the concise_text/triple mainly restates the single result that MLM+BRLM-SA is better than MLM+BRLM-HA; insufficient novelty."
+   },
+   {
+    "insight_id": "1912.01214::g00:i05",
+    "verdict": {
+     "insight_id": "1912.01214::g00:i05",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Cited passages jointly support evaluation on Europarl and MultiUN with BLEU and consistent outperformance of pivoting, MNMT, and transfer without pretraining; composed across setup and results."
+    }
+   },
+   {
+    "insight_id": "1912.01214::g00:i06",
+    "verdict": {
+     "insight_id": "1912.01214::g00:i06",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Cited passages jointly support that pivoting has doubled decoding time/error propagation and that the proposed one encoder-decoder approaches are more efficient than pivoting; composed across motivation and results."
+    }
+   },
+   {
+    "insight_id": "1912.01214::g00:i07",
+    "verdict": {
+     "insight_id": "1912.01214::g00:i07",
+     "keep": true,
+     "support": 0.85,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Cited passages jointly support that the key difficulty is language-invariant universal encoder representations and that the pretraining phase builds a cross-lingual encoder shared by source and pivot languages; inferred problem-solution link is reasonable."
+    }
+   },
+   {
+    "insight_id": "1912.01214::g00:i08",
+    "verdict": {
+     "insight_id": "1912.01214::g00:i08",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "The insight is essentially a direct restatement of s10:p002: MLM alone does not use source-pivot parallel data, is comparable to pivoting, and combining MLM with TLM/BRLM further improves performance."
+    },
+    "reason": "The insight is essentially a direct restatement of s10:p002: MLM alone does not use source-pivot parallel data, is comparable to pivoting, and combining MLM with TLM/BRLM further improves performance."
+   },
+   {
+    "insight_id": "1912.01214::g00:i09",
+    "verdict": {
+     "insight_id": "1912.01214::g00:i09",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Cited passages jointly support that English is the pivot on Europarl and that the shared encoder trained on large-scale monolingual and multilingual parallel data yields better supervised pivot→target performance than the original supervised Transformer."
+    }
+   },
+   {
+    "insight_id": "1912.01214::g01:i00",
+    "verdict": {
+     "insight_id": "1912.01214::g01:i00",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.55,
+     "causality_error": true,
+     "reason": "Sources report co-occurrence: MLM+BRLM-SA has stable/similar sentence-pair representations and best zero-shot performance, and say better representations 'can benefit' transfer; the insight asserts a stronger causal 'supported by/through' mechanism than justified."
+    },
+    "reason": "Sources report co-occurrence: MLM+BRLM-SA has stable/similar sentence-pair representations and best zero-shot performance, and say better representations 'can benefit' transfer; the insight asserts a stronger causal 'supported by/through' mechanism than justified."
+   },
+   {
+    "insight_id": "1912.01214::g01:i01",
+    "verdict": {
+     "insight_id": "1912.01214::g01:i01",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.55,
+     "causality_error": true,
+     "reason": "Sources state MLM+BRLM-SA performs best and has better word-level alignment that relieves domain shift, but do not explicitly establish that this alignment explains its best performance among proposed approaches; causal explanatory link is inferred."
+    },
+    "reason": "Sources state MLM+BRLM-SA performs best and has better word-level alignment that relieves domain shift, but do not explicitly establish that this alignment explains its best performance among proposed approaches; causal explanatory link is inferred."
+   },
+   {
+    "insight_id": "1912.01214::g01:i02",
+    "verdict": {
+     "insight_id": "1912.01214::g01:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "Cited passages jointly support the paper's aim of language-invariant representation and the conclusion that experiments manifest language invariance at sentence and word levels, with sentence-pair and aligned-word analyses providing the evidence."
+    }
+   },
+   {
+    "insight_id": "1912.01214::g01:i03",
+    "verdict": {
+     "insight_id": "1912.01214::g01:i03",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Cited passages jointly support that all freezing experiments use MLM+BRLM-SA, that MLM+BRLM-SA is best among proposed approaches, and that freezing the first four layers gives best performance by balancing pre-training and fine-tuning."
+    }
+   },
+   {
+    "insight_id": "1912.01214::g01:i04",
+    "verdict": {
+     "insight_id": "1912.01214::g01:i04",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Cited passages jointly support that sentence-pair representation analysis and aligned-word visualization evidence the conclusion that the approaches manifest language invariance at sentence and word levels."
+    }
+   }
+  ],
+  "calls": [
+   {
+    "n": 15,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 6913,
+     "completion_tokens": 1320,
+     "total_tokens": 8233,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

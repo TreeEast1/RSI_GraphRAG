@@ -1,0 +1,56 @@
+{
+ "paper_id": "1802.08636",
+ "title": "Ranking Sentences for Extractive Summarization with Reinforcement Learning",
+ "abstract": "Single document summarization is the task of producing a shorter version of a document while preserving its principal information content. In this paper we conceptualize extractive summarization as a sentence ranking task and propose a novel training algorithm which globally optimizes the ROUGE evaluation metric through a reinforcement learning objective. We use our algorithm to train a neural summarization model on the CNN and DailyMail datasets and demonstrate experimentally that it outperforms state-of-the-art extractive and abstractive systems when evaluated automatically and by humans.",
+ "sections": [
+  "Introduction",
+  "Summarization as Sentence Ranking",
+  "The Pitfalls of Cross-Entropy Loss",
+  "Sentence Ranking with Reinforcement Learning",
+  "Policy Learning",
+  "Training with High Probability Samples",
+  "Experimental Setup",
+  "Results",
+  "Related Work",
+  "Conclusions"
+ ],
+ "n_paragraphs": 27,
+ "n_tokens": 3693,
+ "figures_and_tables": [
+  {
+   "caption_id": "1802.08636::fig000",
+   "paper_id": "1802.08636",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1: Extractive summarization model with reinforcement learning: a hierarchical encoder-decoder model ranks sentences for their extract-worthiness and a candidate summary is assembled from the top ranked sentences; the REWARD generator compares the candidate against the gold summary to give a reward which is used in the REINFORCE algorithm (Williams, 1992) to update the model.",
+   "n_tokens": 75
+  },
+  {
+   "caption_id": "1802.08636::fig001",
+   "paper_id": "1802.08636",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: An abridged CNN article (only first 15 out of 31 sentences are shown) and its “story highlights”. The latter are typically written by journalists to allow readers to quickly gather information on stories. Highlights are often used as gold standard abstractive summaries in the summarization literature.",
+   "n_tokens": 62
+  },
+  {
+   "caption_id": "1802.08636::fig002",
+   "paper_id": "1802.08636",
+   "file": "7-Figure2-1.png",
+   "caption": "Figure 2: Summaries produced by the LEAD baseline, the abstractive system of See et al. (2017) and REFRESH for a CNN (test) article. GOLD presents the human-authored summary; the bottom block shows manually written questions using the gold summary and their answers in parentheses.",
+   "n_tokens": 62
+  },
+  {
+   "caption_id": "1802.08636::fig003",
+   "paper_id": "1802.08636",
+   "file": "9-Table2-1.png",
+   "caption": "Table 2: Results on the CNN and DailyMail test sets. We report ROUGE-1 (R1), ROUGE-2 (R2), and ROUGE-L (RL) F1 scores. Extractive systems are in the first block and abstractive systems in the second. Table cells are filled with — whenever results are not available. Models marked with ∗ are not directly comparable to ours as they are based on an anonymized version of the dataset.",
+   "n_tokens": 96
+  },
+  {
+   "caption_id": "1802.08636::fig004",
+   "paper_id": "1802.08636",
+   "file": "9-Table3-1.png",
+   "caption": "Table 3: System ranking and QA-based evaluations. Rankings (1st, 2nd, 3rd and 4th) are shown as proportions. Rank 1 is the best and Rank 4, the worst. The column QA shows the percentage of questions that participants answered correctly by reading system summaries.",
+   "n_tokens": 64
+  }
+ ]
+}

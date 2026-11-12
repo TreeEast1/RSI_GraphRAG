@@ -1,0 +1,462 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1808.10245::s00::p000",
+   "summary": "Abusive language is defined as insults, vulgarity, or profanity that debases targets, and is often reframed as offensive language, cyberbullying, othering language, and hate speech.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s00::p001",
+   "summary": "Increasing online harassment and offensive behaviors have led Facebook and Twitter to use multiple resources to censor offensive language, yet resolving the issue seems nearly impossible.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s00::p002",
+   "summary": "Abusive language detection fails because of subjectivity and context dependence, making human annotation laborious and large reliable datasets difficult to build.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s00::p003",
+   "summary": "Previous Twitter abusive language datasets ranged from 10K to 35K, while Hate and Abusive Speech on Twitter contains 100K tweets with cross-validated labels but no baseline reports.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s00::p004",
+   "summary": "This paper compares accuracy of machine learning classifiers and neural network models, presents reliable baseline results, and examines features, variants, and ensemble models.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s01::p000",
+   "summary": "Prior work applied Naïve Bayes, Support Vector Machine (SVM), and Latent Dirichlet Allocation with word-level features to classify offensive language and offensive tweets.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s01::p001",
+   "summary": "Recent work applied distributed word representations and neural network models, including Continuous Bag Of Words, paragraph2vec, Gradient Boosted Decision Trees, and character-level representations.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s01::p002",
+   "summary": "Neural-based models with larger datasets have outperformed Logistic Regression and SVM, but no studies examine neural model efficiency with large-scale datasets over 100K.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s02::p000",
+   "summary": "This section details implementations of traditional machine learning classifiers, neural network based models, additional features, and variant models.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s03::p000",
+   "summary": "Five feature engineering based machine learning classifiers use BOW representations, TF-IDF normalization, word-level 1 to 3 n-grams, and character-level 3 to 8-grams.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s03::p001",
+   "summary": "Naïve Bayes (NB) is implemented as Multinomial NB with additive smoothing constant 1.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s03::p002",
+   "summary": "Logistic Regression (LR) is implemented as Linear LR with L2 regularization constant 1 and limited-memory BFGS optimization.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s03::p003",
+   "summary": "Support Vector Machine (SVM) is implemented as Linear SVM with L2 regularization constant 1 and logistic loss function.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s03::p004",
+   "summary": "Random Forests (RF) average probabilistic predictions of 10 randomized decision trees.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s03::p005",
+   "summary": "Gradient Boosted Trees (GBT) use tree boosting with learning rate 1 and logistic loss function.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s04::p000",
+   "summary": "Neural network based models evaluate Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), and variants on a larger dataset using pre-trained GloVe word-level features.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s04::p001",
+   "summary": "Kim's CNN baseline uses word-level filters [1,2,3] with ReLU and max-pooling, and character-level filters [3,4,5,6,7,8] with max-pooling and a 1024-dimensional fully-connected layer.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s04::p002",
+   "summary": "HybridCNN concatenates max-pooled outputs from word-level and character-level CNN and feeds the vector to a fully-connected layer for prediction.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s04::p003",
+   "summary": "All three CNN models use cross entropy with softmax as their loss function and Adam as the optimizer.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s04::p004",
+   "summary": "The bidirectional RNN baseline uses a GRU cell, 1 encoding layer, 50 dimensional hidden states, input dropout probability 0.3, cross entropy with sigmoid, and Adam.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s04::p005",
+   "summary": "Self-matching attention and Latent Topic Clustering (LTC) are investigated to improve RNN baselines by retrieving text sequences twice and extracting latent topic information.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s05::p000",
+   "summary": "Manual analysis found that replied-to or quoted tweets, called “context tweets”, provide significant contextual information and may help computers detect abusive language.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s05::p001",
+   "summary": "Example (2) is labeled abusive due to vulgar language, but its intention is better understood with context tweet (1).",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s05::p002",
+   "summary": "Context tweet (1) says, “I hate when I'm sitting in front of the bus and somebody with a wheelchair get on.”",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s05::p003",
+   "summary": "INLINEFORM0 (2) says, “I hate it when I'm trying to board a bus and there's already an as**ole on it.”",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s05::p005",
+   "summary": "Context tweet (3) is important for understanding abusive tweet (4), especially in identifying the target of the malice.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s05::p006",
+   "summary": "Context tweet (3) says, “Survivors of #Syria Gas Attack Recount `a Cruel Scene'.”",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s05::p007",
+   "summary": "INLINEFORM0 (4) says, “Who the HELL is “LIKE",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s05::p009",
+   "summary": "Huang et al. used context tweet attributes to improve a baseline LSTM model, but their meta-information approach was limited by high data dependency.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s05::p010",
+   "summary": "To avoid data dependency, context tweet text sequences are converted to vectors and concatenated with labeled tweet outputs for CNN and RNN models.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s06::p000",
+   "summary": "Hate and Abusive Speech on Twitter classifies tweets into 4 labels, “normal”, “spam”, “hateful” and “abusive”, and 70,904 tweets were crawled from 99,996 tweet IDs.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s07::p000",
+   "summary": "Preprocessing replaces user IDs, URLs, and frequently used emojis with special tokens, and uses a segmentation library for hashtags.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s07::p001",
+   "summary": "Character-level representations use Zhang et al.'s method with one-hot encoded vectors over 70 character dimensions: 26 lower-cased alphabets, 10 digits, and 34 special characters including whitespace.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s08::p000",
+   "summary": "Training truncates TF-IDF vectors to the top 14,000 word-level and 53,000 character-level representations, while neural network models replace words appearing only once as unknown tokens.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s08::p001",
+   "summary": "Evaluation uses 10-fold cross validation averaged over 5 tries, random 85:5:10 splits, and weighted average precision, recall, and F1 scores for all four labels.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s09::p000",
+   "summary": "Neural network models are more accurate than feature engineering based models except LR, whose best model has the same F1 score as the best CNN model.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s09::p001",
+   "summary": "Among traditional machine learning models, LR is most accurate, followed by GBT and RF, while character-level representations improve F1 scores of SVM and RF only.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s09::p002",
+   "summary": "RNN with LTC modules has the highest accuracy score, but variants show no significant improvements, and character-level features significantly decrease CNN and RNN accuracy.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s09::p003",
+   "summary": "Context tweets generally have little effect on baseline models but noticeably improve several metrics, including CNN highest recall and F1 for “hateful” and RNN highest recall for “abusive”.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s10::p000",
+   "summary": "Character-level features reduce neural network accuracy for Hate and Abusive Speech on Twitter due to lack of labeled data and label imbalance, but help traditional classifiers using TF-IDF-selected elements.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s10::p001",
+   "summary": "Neural network variants suffer from data insufficiency but perform positively on “spam” (14%) and “hateful” (4%) tweets, with highest F1 scores 0.551 from RNN-LTC and 0.309 from CNN with context tweets.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s10::p002",
+   "summary": "The paper reports baseline accuracy of learning models and variants on Hate and Abusive Speech on Twitter, finding bidirectional GRU networks with LTC most accurate and suggesting ensemble models.",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s11::p000",
+   "summary": "K. Jung is with Seoul National University, and the work was supported by NRF (No. 2016M3C4A7952632) and the Technology Innovation Program (10073144).",
+   "group_id": "1808.10245::g00"
+  },
+  {
+   "passage_id": "1808.10245::s11::p001",
+   "summary": "The authors thank Yongkeun Hwang and Ji Ho Park for helpful discussions and valuable insights.",
+   "group_id": "1808.10245::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1808.10245::g00",
+   "summaries": [
+    {
+     "passage_id": "1808.10245::s00::p000",
+     "summary": "Abusive language is defined as insults, vulgarity, or profanity that debases targets, and is often reframed as offensive language, cyberbullying, othering language, and hate speech.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s00::p001",
+     "summary": "Increasing online harassment and offensive behaviors have led Facebook and Twitter to use multiple resources to censor offensive language, yet resolving the issue seems nearly impossible.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s00::p002",
+     "summary": "Abusive language detection fails because of subjectivity and context dependence, making human annotation laborious and large reliable datasets difficult to build.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s00::p003",
+     "summary": "Previous Twitter abusive language datasets ranged from 10K to 35K, while Hate and Abusive Speech on Twitter contains 100K tweets with cross-validated labels but no baseline reports.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s00::p004",
+     "summary": "This paper compares accuracy of machine learning classifiers and neural network models, presents reliable baseline results, and examines features, variants, and ensemble models.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s01::p000",
+     "summary": "Prior work applied Naïve Bayes, Support Vector Machine (SVM), and Latent Dirichlet Allocation with word-level features to classify offensive language and offensive tweets.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s01::p001",
+     "summary": "Recent work applied distributed word representations and neural network models, including Continuous Bag Of Words, paragraph2vec, Gradient Boosted Decision Trees, and character-level representations.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s01::p002",
+     "summary": "Neural-based models with larger datasets have outperformed Logistic Regression and SVM, but no studies examine neural model efficiency with large-scale datasets over 100K.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s02::p000",
+     "summary": "This section details implementations of traditional machine learning classifiers, neural network based models, additional features, and variant models.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s03::p000",
+     "summary": "Five feature engineering based machine learning classifiers use BOW representations, TF-IDF normalization, word-level 1 to 3 n-grams, and character-level 3 to 8-grams.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s03::p001",
+     "summary": "Naïve Bayes (NB) is implemented as Multinomial NB with additive smoothing constant 1.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s03::p002",
+     "summary": "Logistic Regression (LR) is implemented as Linear LR with L2 regularization constant 1 and limited-memory BFGS optimization.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s03::p003",
+     "summary": "Support Vector Machine (SVM) is implemented as Linear SVM with L2 regularization constant 1 and logistic loss function.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s03::p004",
+     "summary": "Random Forests (RF) average probabilistic predictions of 10 randomized decision trees.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s03::p005",
+     "summary": "Gradient Boosted Trees (GBT) use tree boosting with learning rate 1 and logistic loss function.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s04::p000",
+     "summary": "Neural network based models evaluate Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), and variants on a larger dataset using pre-trained GloVe word-level features.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s04::p001",
+     "summary": "Kim's CNN baseline uses word-level filters [1,2,3] with ReLU and max-pooling, and character-level filters [3,4,5,6,7,8] with max-pooling and a 1024-dimensional fully-connected layer.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s04::p002",
+     "summary": "HybridCNN concatenates max-pooled outputs from word-level and character-level CNN and feeds the vector to a fully-connected layer for prediction.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s04::p003",
+     "summary": "All three CNN models use cross entropy with softmax as their loss function and Adam as the optimizer.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s04::p004",
+     "summary": "The bidirectional RNN baseline uses a GRU cell, 1 encoding layer, 50 dimensional hidden states, input dropout probability 0.3, cross entropy with sigmoid, and Adam.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s04::p005",
+     "summary": "Self-matching attention and Latent Topic Clustering (LTC) are investigated to improve RNN baselines by retrieving text sequences twice and extracting latent topic information.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s05::p000",
+     "summary": "Manual analysis found that replied-to or quoted tweets, called “context tweets”, provide significant contextual information and may help computers detect abusive language.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s05::p001",
+     "summary": "Example (2) is labeled abusive due to vulgar language, but its intention is better understood with context tweet (1).",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s05::p002",
+     "summary": "Context tweet (1) says, “I hate when I'm sitting in front of the bus and somebody with a wheelchair get on.”",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s05::p003",
+     "summary": "INLINEFORM0 (2) says, “I hate it when I'm trying to board a bus and there's already an as**ole on it.”",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s05::p005",
+     "summary": "Context tweet (3) is important for understanding abusive tweet (4), especially in identifying the target of the malice.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s05::p006",
+     "summary": "Context tweet (3) says, “Survivors of #Syria Gas Attack Recount `a Cruel Scene'.”",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s05::p007",
+     "summary": "INLINEFORM0 (4) says, “Who the HELL is “LIKE",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s05::p009",
+     "summary": "Huang et al. used context tweet attributes to improve a baseline LSTM model, but their meta-information approach was limited by high data dependency.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s05::p010",
+     "summary": "To avoid data dependency, context tweet text sequences are converted to vectors and concatenated with labeled tweet outputs for CNN and RNN models.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s06::p000",
+     "summary": "Hate and Abusive Speech on Twitter classifies tweets into 4 labels, “normal”, “spam”, “hateful” and “abusive”, and 70,904 tweets were crawled from 99,996 tweet IDs.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s07::p000",
+     "summary": "Preprocessing replaces user IDs, URLs, and frequently used emojis with special tokens, and uses a segmentation library for hashtags.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s07::p001",
+     "summary": "Character-level representations use Zhang et al.'s method with one-hot encoded vectors over 70 character dimensions: 26 lower-cased alphabets, 10 digits, and 34 special characters including whitespace.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s08::p000",
+     "summary": "Training truncates TF-IDF vectors to the top 14,000 word-level and 53,000 character-level representations, while neural network models replace words appearing only once as unknown tokens.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s08::p001",
+     "summary": "Evaluation uses 10-fold cross validation averaged over 5 tries, random 85:5:10 splits, and weighted average precision, recall, and F1 scores for all four labels.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s09::p000",
+     "summary": "Neural network models are more accurate than feature engineering based models except LR, whose best model has the same F1 score as the best CNN model.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s09::p001",
+     "summary": "Among traditional machine learning models, LR is most accurate, followed by GBT and RF, while character-level representations improve F1 scores of SVM and RF only.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s09::p002",
+     "summary": "RNN with LTC modules has the highest accuracy score, but variants show no significant improvements, and character-level features significantly decrease CNN and RNN accuracy.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s09::p003",
+     "summary": "Context tweets generally have little effect on baseline models but noticeably improve several metrics, including CNN highest recall and F1 for “hateful” and RNN highest recall for “abusive”.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s10::p000",
+     "summary": "Character-level features reduce neural network accuracy for Hate and Abusive Speech on Twitter due to lack of labeled data and label imbalance, but help traditional classifiers using TF-IDF-selected elements.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s10::p001",
+     "summary": "Neural network variants suffer from data insufficiency but perform positively on “spam” (14%) and “hateful” (4%) tweets, with highest F1 scores 0.551 from RNN-LTC and 0.309 from CNN with context tweets.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s10::p002",
+     "summary": "The paper reports baseline accuracy of learning models and variants on Hate and Abusive Speech on Twitter, finding bidirectional GRU networks with LTC most accurate and suggesting ensemble models.",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s11::p000",
+     "summary": "K. Jung is with Seoul National University, and the work was supported by NRF (No. 2016M3C4A7952632) and the Technology Innovation Program (10073144).",
+     "group_id": "1808.10245::g00"
+    },
+    {
+     "passage_id": "1808.10245::s11::p001",
+     "summary": "The authors thank Yongkeun Hwang and Ji Ho Park for helpful discussions and valuable insights.",
+     "group_id": "1808.10245::g00"
+    }
+   ],
+   "n_raw": 44,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3913,
+    "completion_tokens": 2241,
+    "total_tokens": 6154,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,590 @@
+{
+ "1803.09123::s00::p000": [
+  [
+   "Equations",
+   "are",
+   "an important part of scientific articles"
+  ],
+  [
+   "many existing machine learning methods",
+   "do not easily handle",
+   "equations"
+  ],
+  [
+   "most equations",
+   "occur only",
+   "once"
+  ],
+  [
+   "Useful representations of equations",
+   "can help improve",
+   "retrieval of scientific texts"
+  ]
+ ],
+ "1803.09123::s00::p001": [
+  [
+   "The idea",
+   "is to treat",
+   "the equation as a \"singleton word,\""
+  ],
+  [
+   "The surrounding text of the equation",
+   "provides",
+   "the data we need to develop a useful representation of the equation"
+  ]
+ ],
+ "1803.09123::s00::p002": [
+  [
+   "this particular equation",
+   "only occurs",
+   "once in the collection of articles (from arXiv)"
+  ],
+  [
+   "The representations of the surrounding text",
+   "provide",
+   "a meaningful context for the equation"
+  ],
+  [
+   "The resulting representation",
+   "helps find",
+   "both related equations and related words"
+  ]
+ ],
+ "1803.09123::s00::p003": [
+  [
+   "EqEmbs",
+   "build on",
+   "exponential family embeddings BIBREF1"
+  ],
+  [
+   "EqEmbs",
+   "include",
+   "equations as singleton observations"
+  ],
+  [
+   "the context for the words",
+   "is",
+   "a small window, such as four or eight words"
+  ],
+  [
+   "the context of an equation",
+   "is",
+   "a larger window, such as sixteen words"
+  ]
+ ],
+ "1803.09123::s00::p004": [
+  [
+   "four computer science domains",
+   "are",
+   "natural language processing (NLP), information retrieval (IR), artificial intelligence (AI) and machine learning (ML)"
+  ],
+  [
+   "EqEmbs",
+   "provide",
+   "more efficient modeling than existing word embedding methods"
+  ],
+  [
+   "EqEmbs",
+   "provide",
+   "better models when compared to existing word embedding approaches"
+  ],
+  [
+   "EqEmbs",
+   "provide",
+   "coherent semantic representations of equations"
+  ]
+ ],
+ "1803.09123::s01::p000": [
+  [
+   "words",
+   "can be represented by",
+   "latent feature vectors"
+  ],
+  [
+   "EqEmb",
+   "expand",
+   "the idea of word embeddings to a new type of data points – equations"
+  ]
+ ],
+ "1803.09123::s01::p001": [
+  [
+   "the symbol layout tree",
+   "encodes",
+   "the spatial relationship of variables and operators"
+  ],
+  [
+   "the symbol layout tree",
+   "is for",
+   "indexing and retrieving mathematical equations"
+  ],
+  [
+   "mathematical language processing (MLP)",
+   "has first step",
+   "converting mathematical solutions into a series of numerical features"
+  ]
+ ],
+ "1803.09123::s02::p000": [
+  [
+   "EqEmb",
+   "are based on",
+   "word embeddings BIBREF5 or specifically Bernoulli embeddings (b-embs) BIBREF1"
+  ],
+  [
+   "Word embeddings",
+   "models",
+   "the probability of a word INLINEFORM0 given its context INLINEFORM1 as a conditional distribution INLINEFORM2"
+  ],
+  [
+   "the context",
+   "is defined as",
+   "the set of words INLINEFORM3 in a window of size INLINEFORM4 that surrounds it"
+  ],
+  [
+   "each word",
+   "is assigned to",
+   "two types of latent feature vectors, the embedding ( INLINEFORM5 ) and context ( INLINEFORM6 ) vectors"
+  ],
+  [
+   "the embedding ( INLINEFORM5 ) and context ( INLINEFORM6 ) vectors",
+   "are",
+   "INLINEFORM7 dimensional"
+  ]
+ ],
+ "1803.09123::s02::p001": [
+  [
+   "B-emb",
+   "is",
+   "an exponential family embedding model where the conditional distribution is a Bernoulli"
+  ]
+ ],
+ "1803.09123::s02::p002": [
+  [
+   "The parameter INLINEFORM0",
+   "is defined using",
+   "the word embedding INLINEFORM1 and the word context INLINEFORM2 vectors"
+  ]
+ ],
+ "1803.09123::s02::p003": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the logistic function"
+  ]
+ ],
+ "1803.09123::s03::p000": [
+  [
+   "the goal of the EqEmb models",
+   "is to derive",
+   "a semantic representation of each equation"
+  ],
+  [
+   "EqEmb",
+   "model",
+   "equations in the context of words"
+  ]
+ ],
+ "1803.09123::s03::p001": [
+  [
+   "The objective function",
+   "contains",
+   "conditionals over the observed words and equations: DISPLAYFORM0"
+  ]
+ ],
+ "1803.09123::s03::p002": [
+  [
+   "This",
+   "is",
+   "a sum of two sets of conditional distributions"
+  ],
+  [
+   "INLINEFORM2 and INLINEFORM3",
+   "are referred to as",
+   "embedding and context vectors"
+  ],
+  [
+   "Here",
+   "use",
+   "the interaction INLINEFORM4 and feature vector INLINEFORM5"
+  ]
+ ],
+ "1803.09123::s03::p003": [
+  [
+   "the context of the word INLINEFORM0",
+   "is defined to index",
+   "the surrounding words in a small window around it"
+  ],
+  [
+   "the context of the word INLINEFORM1",
+   "will be",
+   "the original context ( INLINEFORM2 ) and any equations ( INLINEFORM3 ) that are in a possibly larger window around it"
+  ],
+  [
+   "This",
+   "is referred to as",
+   "the word-equation context window"
+  ]
+ ],
+ "1803.09123::s03::p004": [
+  [
+   "Both conditionals",
+   "are",
+   "Bernoulli distributions"
+  ],
+  [
+   "The first conditional",
+   "is defined over",
+   "the words in the collection"
+  ]
+ ],
+ "1803.09123::s03::p005": [
+  [
+   "The word context function",
+   "is",
+   "DISPLAYFORM0"
+  ]
+ ],
+ "1803.09123::s03::p007": [
+  [
+   "The second term in the objective",
+   "corresponds to",
+   "the sum of the log conditional probabilities of each equation"
+  ]
+ ],
+ "1803.09123::s03::p009": [
+  [
+   "The equation context",
+   "can have",
+   "a larger window than the word context"
+  ]
+ ],
+ "1803.09123::s03::p010": [
+  [
+   "The left side of Figure FIGREF1",
+   "shows",
+   "an example equation in a scientific article"
+  ],
+  [
+   "the context",
+   "contains",
+   "the words that appear two words before (\"current\" and \"word\") and after (\"recurrent\" and \"version\") this word"
+  ],
+  [
+   "the term for the word \"embedding\"",
+   "would have",
+   "the feature vector of the equation as one of its components"
+  ]
+ ],
+ "1803.09123::s04::p000": [
+  [
+   "EqEmb-U",
+   "models equations by treating them as",
+   "sentences where the words are the equation variables, symbols and operators which we refer to as units"
+  ],
+  [
+   "The first step in representing equations using equation units",
+   "is to",
+   "tokenize them"
+  ]
+ ],
+ "1803.09123::s04::p001": [
+  [
+   "Each equation INLINEFORM0",
+   "is",
+   "a sequence of equation units INLINEFORM1 , INLINEFORM2 similar to a sentence where the words are the equation units"
+  ]
+ ],
+ "1803.09123::s04::p002": [
+  [
+   "its unit context INLINEFORM3",
+   "is defined to be",
+   "the set of surrounding equation units in a small window INLINEFORM4 around it"
+  ]
+ ],
+ "1803.09123::s04::p003": [
+  [
+   "The objective",
+   "is over",
+   "two conditionals, one for each context type"
+  ]
+ ],
+ "1803.09123::s04::p004": [
+  [
+   "The two parameters",
+   "are",
+   "DISPLAYFORM0"
+  ]
+ ],
+ "1803.09123::s04::p005": [
+  [
+   "equation-level representations",
+   "are defined by averaging",
+   "the representations of their constituent units"
+  ]
+ ],
+ "1803.09123::s05::p000": [
+  [
+   "The first term",
+   "contains",
+   "the non-zero entries ( INLINEFORM0 )"
+  ],
+  [
+   "the second term",
+   "contains",
+   "the zero entries ( INLINEFORM1 )"
+  ],
+  [
+   "negative sampling BIBREF5",
+   "down-weights",
+   "the contributions of the zero points"
+  ]
+ ],
+ "1803.09123::s06::p000": [
+  [
+   "EqEmb models",
+   "provide",
+   "better fits than existing embedding approaches"
+  ],
+  [
+   "EqEmb models",
+   "infer",
+   "meaningful semantic relationships between equations and words in the collection"
+  ]
+ ],
+ "1803.09123::s06::p001": [
+  [
+   "the proposed models",
+   "are compared to",
+   "existing word embeddings approaches"
+  ]
+ ],
+ "1803.09123::s07::p000": [
+  [
+   "The sets",
+   "contain",
+   "articles (in LaTeX format) from four computer science domains: NLP, IR, AI, and ML"
+  ],
+  [
+   "the four collections",
+   "used categories",
+   "cs.cl for NLP; cs.ir for IR; cs.ai for AI and stat.ml, stat.co, stat.me or cs.lg for ML"
+  ]
+ ],
+ "1803.09123::s07::p001": [
+  [
+   "The equations",
+   "are",
+   "display equations that were enumerated in the LaTeX version of the articles"
+  ],
+  [
+   "the empirical study",
+   "used",
+   "a random subset of 2k singletons from the total collection, along with all equations that occur more than once"
+  ],
+  [
+   "the qualitative analysis",
+   "used",
+   "all equations"
+  ]
+ ],
+ "1803.09123::s07::p002": [
+  [
+   "words",
+   "were extracted by",
+   "tokenizing articles using the NLTK package BIBREF12"
+  ],
+  [
+   "the vocabulary",
+   "was restricted to",
+   "noun phrases and adjectives"
+  ]
+ ],
+ "1803.09123::s07::p003": [
+  [
+   "The vocabulary",
+   "was selected by",
+   "removing common stopwords"
+  ]
+ ],
+ "1803.09123::s07::p004": [
+  [
+   "The vocabulary",
+   "was selected by",
+   "treating the top 25 most frequent words as stop words and removing them"
+  ]
+ ],
+ "1803.09123::s07::p005": [
+  [
+   "words",
+   "have term frequency",
+   "greater than or equal to 10"
+  ],
+  [
+   "words",
+   "have character length",
+   "greater than or equal to 4"
+  ]
+ ],
+ "1803.09123::s07::p006": [
+  [
+   "top 50 most frequent abbreviations",
+   "are",
+   "an exception to our previous rule"
+  ]
+ ],
+ "1803.09123::s07::p007": [
+  [
+   "The vocabulary",
+   "contains",
+   "all equation units whose frequency count is greater than INLINEFORM0"
+  ]
+ ],
+ "1803.09123::s08::p000": [
+  [
+   "The held out set",
+   "contains",
+   "the sampled words and their context window which also includes the equation"
+  ]
+ ],
+ "1803.09123::s08::p001": [
+  [
+   "A fitted model",
+   "is",
+   "a collection of interaction and feature vectors for each equation and word"
+  ],
+  [
+   "the log probability of a held out word",
+   "is computed using",
+   "the following formula: DISPLAYFORM0"
+  ]
+ ],
+ "1803.09123::s08::p002": [
+  [
+   "the softmax function",
+   "is computed over",
+   "a set of negative samples INLINEFORM0 and the held out word"
+  ]
+ ],
+ "1803.09123::s08::p003": [
+  [
+   "EqEmb modeling of equations",
+   "performs",
+   "two passes over the collection"
+  ],
+  [
+   "the first pass",
+   "models",
+   "words while ignoring equations"
+  ],
+  [
+   "the second pass",
+   "models",
+   "equations while holding fixed the interaction and feature vectors of all words"
+  ],
+  [
+   "EqEmb",
+   "treats",
+   "equations as singleton words"
+  ]
+ ],
+ "1803.09123::s08::p004": [
+  [
+   "Model performance",
+   "was compared with",
+   "4 existing embedding models: b-emb, CBOW, GloVe and PV-DM"
+  ],
+  [
+   "the first 3 embedding models",
+   "treat",
+   "equations as regular words in the collection"
+  ]
+ ],
+ "1803.09123::s09::p000": [
+  [
+   "performance results",
+   "are shown on",
+   "4 latent dimension values (K=25, 50, 75 and 100)"
+  ],
+  [
+   "the EqEmb, EqEmb-U and PV-DM models",
+   "varied",
+   "the word-equation window size (E=8 and 16)"
+  ],
+  [
+   "Comparisons across models",
+   "are performed using",
+   "the pseudo log-likelihood measure BIBREF14"
+  ]
+ ],
+ "1803.09123::s09::p001": [
+  [
+   "the validation set",
+   "is used to select",
+   "the best model configuration (i.e. combination of context window sizes)"
+  ]
+ ],
+ "1803.09123::s09::p002": [
+  [
+   "EqEmb",
+   "outperform",
+   "previous embedding models"
+  ],
+  [
+   "EqEmb-U",
+   "further improves",
+   "performance"
+  ]
+ ],
+ "1803.09123::s10::p000": [
+  [
+   "EqEmb",
+   "help obtain",
+   "word descriptions of the equations"
+  ]
+ ],
+ "1803.09123::s10::p001": [
+  [
+   "embedding representation of a set of query words",
+   "is generated by",
+   "taking the average of the embedding representation of each word"
+  ],
+  [
+   "Cosine distance",
+   "is computed across",
+   "all the equations embeddings"
+  ],
+  [
+   "example query",
+   "consists of",
+   "three words"
+  ]
+ ],
+ "1803.09123::s11::p000": [
+  [
+   "EqEmb models",
+   "capture",
+   "the semantic similarity between equations in the collection"
+  ],
+  [
+   "qualitative analysis of the model performance",
+   "used",
+   "all discovered equations across the 4 collection"
+  ]
+ ],
+ "1803.09123::s12::p000": [
+  [
+   "unsupervised approaches",
+   "were presented for",
+   "semantic representations of mathematical equations using their surrounding words"
+  ],
+  [
+   "out methods",
+   "offer",
+   "more effective modeling compared to existing embedding models"
+  ],
+  [
+   "future plan",
+   "is to explore",
+   "how EqEmb could be expend to represent other objects such as images, captions and inline figures"
+  ]
+ ]
+}

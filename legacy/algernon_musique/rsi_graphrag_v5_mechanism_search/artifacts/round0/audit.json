@@ -1,0 +1,1785 @@
+{
+  "summary": {
+    "n_add": 14,
+    "new_accept": 6,
+    "new_reject": 8,
+    "new_other": 0,
+    "synthetic_pass": 3,
+    "synthetic_n": 3,
+    "old_faithfulness_disagreements": [
+      "medium_A:local-002",
+      "medium_A:local-003",
+      "medium_B:local-004",
+      "large_A:candidate-2",
+      "large_B:cand-1",
+      "large_B:cand-2",
+      "large_B:cand-3"
+    ],
+    "new_store_disagreements": [
+      {
+        "id": "large_B:cand-3",
+        "new": "ACCEPT",
+        "stage": "",
+        "should_store": false,
+        "type": "COMPOSITIONAL_REASONING",
+        "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: approved, show, broadcast"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "run": "small_A",
+      "candidate_id": "local-1",
+      "operation": "NO_OP",
+      "text": "",
+      "gold": null,
+      "new_verifier": null
+    },
+    {
+      "run": "small_B",
+      "candidate_id": "local-1",
+      "text": "Tristan von Lahnstein first appeared before Ludwig von Lahnstein, on 23 October 2009 and 22 December 2009 respectively.",
+      "relation": "earlier first appearance than",
+      "generator_type": "derived",
+      "spans": [
+        {
+          "passage_id": "chunk-5531a128df4a1d94732e682316b73430",
+          "span": "He first appeared on 23 October 2009."
+        },
+        {
+          "passage_id": "chunk-429ba54878382d30bf5cb2e822a01def",
+          "span": "He appeared from 22 December 2009 to the character's death"
+        }
+      ],
+      "gold": {
+        "audit_class": "Correct & Novel",
+        "type": "CROSS_PASSAGE_REASONING",
+        "faithful_passage": true,
+        "citation_ok": true,
+        "novel": true,
+        "old_decision": "ACCEPT",
+        "note": "Tristan's passage says he first appeared on 23 October 2009. Ludwig's passage says he appeared from 22 December 2009 until his death. The comparison is not a stored triple. It is not a causal claim. OpenIE already inferred 'first appeared' for Ludwig from 'appeared from'."
+      },
+      "new_verifier": {
+        "candidate_id": "local-1",
+        "decision": "ACCEPT",
+        "failure_stage": "",
+        "faithfulness": "supported",
+        "novelty": "new",
+        "audit_type": "CROSS_PASSAGE_REASONING",
+        "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: before",
+        "residue": [
+          "before"
+        ],
+        "evidence_sentences": [
+          "He first appeared on 23 October 2009.",
+          "He appeared from 22 December 2009 to the character's death on 23 April 2013."
+        ],
+        "warning": "",
+        "stages": [
+          {
+            "stage": "V2",
+            "anchored_partial_names": [],
+            "missing_names": [],
+            "evidence_sentences": [
+              "He first appeared on 23 October 2009.",
+              "He appeared from 22 December 2009 to the character's death on 23 April 2013."
+            ]
+          },
+          {
+            "stage": "V3",
+            "logic_failures": [],
+            "dates": [
+              [
+                2009,
+                10,
+                23
+              ],
+              [
+                2009,
+                12,
+                22
+              ]
+            ]
+          },
+          {
+            "stage": "V4",
+            "residue": [
+              "before"
+            ],
+            "n_passage_triples": 11,
+            "novel": true
+          }
+        ]
+      },
+      "passages": {
+        "chunk-5531a128df4a1d94732e682316b73430": {
+          "content": "Tristan von Lahnstein\nTristan von Lahnstein is a fictional character of the German soap opera \"Verbotene Liebe (Forbidden Love)\". The character is played by actor Jens Hartwig. He first appeared on 23 October 2009.",
+          "triples": [
+            [
+              "Tristan von Lahnstein",
+              "is a fictional character in",
+              "Verbotene Liebe"
+            ],
+            [
+              "Verbotene Liebe",
+              "is also known as",
+              "Forbidden Love"
+            ],
+            [
+              "Tristan von Lahnstein",
+              "is played by",
+              "Jens Hartwig"
+            ],
+            [
+              "Tristan von Lahnstein",
+              "first appeared on",
+              "23 October 2009"
+            ]
+          ]
+        },
+        "chunk-429ba54878382d30bf5cb2e822a01def": {
+          "content": "Ludwig von Lahnstein\nLudwig von Lahnstein is a fictional character of the German soap opera \"Verbotene Liebe (Forbidden Love)\". The character is played by actor Krystian Martinek. He appeared from 22 December 2009 to the character's death on 23 April 2013.",
+          "triples": [
+            [
+              "Ludwig von Lahnstein",
+              "is a fictional character in",
+              "Verbotene Liebe"
+            ],
+            [
+              "Verbotene Liebe",
+              "is also known as",
+              "Forbidden Love"
+            ],
+            [
+              "Verbotene Liebe",
+              "is a",
+              "German soap opera"
+            ],
+            [
+              "Ludwig von Lahnstein",
+              "is played by",
+              "Krystian Martinek"
+            ],
+            [
+              "Ludwig von Lahnstein",
+              "first appeared on",
+              "22 December 2009"
+            ],
+            [
+              "Ludwig von Lahnstein",
+              "died on",
+              "23 April 2013"
+            ],
+            [
+              "Ludwig von Lahnstein",
+              "appeared until",
+              "23 April 2013"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": true,
+      "new_accepts": true
+    },
+    {
+      "run": "medium_A",
+      "candidate_id": "local-001",
+      "text": "Bobby Morley was initially contracted for six months to play Aidan Foster.",
+      "relation": "initial contract duration",
+      "generator_type": "explicit_restatement",
+      "spans": [
+        {
+          "passage_id": "chunk-56664711c1c4de235b820a051107fb2f",
+          "span": "Morley was initially contracted for six months"
+        }
+      ],
+      "gold": {
+        "audit_class": "Extraction Repair",
+        "type": "EXTRACTION_REPAIR",
+        "faithful_passage": true,
+        "citation_ok": false,
+        "novel": true,
+        "old_decision": "ACCEPT",
+        "note": "The contract sentence states the six-month term and says Morley, but it does not say Aidan Foster. The role is explicit elsewhere on the page. The full claim 'contracted to play Aidan Foster' cites only the duration sentence. No OpenIE triple stores the contract length. The old verifier accepted the role join from a casting triple."
+      },
+      "new_verifier": {
+        "candidate_id": "local-001",
+        "decision": "REJECT",
+        "failure_stage": "V2",
+        "faithfulness": "incomplete_citation",
+        "novelty": "unclear",
+        "audit_type": "INCOMPLETE_CITATION",
+        "reason": "The cited sentences do not contain Aidan Foster.. Those names occur elsewhere in the cited passage, but no token of the name is in the cited sentence.",
+        "missing_names": [
+          "Aidan Foster."
+        ],
+        "recoverable_in_passage": [
+          "Aidan Foster."
+        ],
+        "evidence_sentences": [
+          "Morley was initially contracted for six months and he stated that he was happy to stay with the soap for longer."
+        ]
+      },
+      "passages": {
+        "chunk-56664711c1c4de235b820a051107fb2f": {
+          "content": "Aidan Foster\nAidan Foster is a fictional character from the Australian soap opera \"Neighbours\", played by Bobby Morley. Both the character and Morley's casting was announced on 19 June 2011. The actor began filming his first scenes that same week. Aidan was introduced to \"Neighbours\" as a love interest for established character Chris Pappas (James Mason). Morley revealed that Aidan's sexuality did not affect his decision in accepting the role, as it does not define him. Morley was initially contracted for six months and he stated that he was happy to stay with the soap for longer. He made his first screen appearance as Aidan during the episode broadcast on 19 August 2011. Morley took a ten-week break from \"Neighbours\" in April 2012 to appear in the feature film, \"Blinder\". He made his final appearance as Aidan on 17 January 2013.",
+          "triples": [
+            [
+              "Aidan Foster",
+              "is a fictional character in",
+              "Neighbours"
+            ],
+            [
+              "Neighbours",
+              "is an",
+              "Australian soap opera"
+            ],
+            [
+              "Aidan Foster",
+              "played by",
+              "Bobby Morley"
+            ],
+            [
+              "Aidan Foster",
+              "casting announced on",
+              "19 June 2011"
+            ],
+            [
+              "Bobby Morley",
+              "casting announced on",
+              "19 June 2011"
+            ],
+            [
+              "Bobby Morley",
+              "began filming Aidan Foster's first scenes in",
+              "June 2011"
+            ],
+            [
+              "Aidan Foster",
+              "introduced as a love interest for",
+              "Chris Pappas"
+            ],
+            [
+              "Chris Pappas",
+              "played by",
+              "James Mason"
+            ],
+            [
+              "Bobby Morley",
+              "took a break from",
+              "Neighbours"
+            ],
+            [
+              "Bobby Morley",
+              "took a break in",
+              "April 2012"
+            ],
+            [
+              "Bobby Morley",
+              "appeared in",
+              "Blinder"
+            ],
+            [
+              "Aidan Foster",
+              "first appeared on screen on",
+              "19 August 2011"
+            ],
+            [
+              "Aidan Foster",
+              "final appearance on",
+              "17 January 2013"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": true,
+      "new_accepts": false
+    },
+    {
+      "run": "medium_A",
+      "candidate_id": "local-002",
+      "text": "Taylor Glockner was given a two-year contract to play Mason Turner.",
+      "relation": "contract duration",
+      "generator_type": "explicit_restatement",
+      "spans": [
+        {
+          "passage_id": "chunk-5d3d787bca10ff123105226827a4e2e2",
+          "span": "Glockner was given a two-year contract with \"Neighbours\""
+        }
+      ],
+      "gold": {
+        "audit_class": "Extraction Repair",
+        "type": "EXTRACTION_REPAIR",
+        "faithful_passage": true,
+        "citation_ok": true,
+        "novel": true,
+        "old_decision": "REJECT",
+        "note": "The contract sentence continues 'and he began filming his first scenes as Mason'. The passage opens by saying Mason Turner is played by Taylor Glockner. The old verifier rejected because the short quote omitted Mason. The full sentence includes Mason."
+      },
+      "new_verifier": {
+        "candidate_id": "local-002",
+        "decision": "ACCEPT",
+        "failure_stage": "",
+        "faithfulness": "supported",
+        "novelty": "new",
+        "audit_type": "EXTRACTION_REPAIR",
+        "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: two, year, contract, play",
+        "residue": [
+          "two",
+          "year",
+          "contract",
+          "play"
+        ],
+        "evidence_sentences": [
+          "Glockner was given a two-year contract with \"Neighbours\" and he began filming his first scenes as Mason in November 2012."
+        ],
+        "warning": "partial_name_anchored:Taylor Glockner,Mason Turner.",
+        "stages": [
+          {
+            "stage": "V2",
+            "anchored_partial_names": [
+              "Taylor Glockner",
+              "Mason Turner."
+            ],
+            "missing_names": [],
+            "evidence_sentences": [
+              "Glockner was given a two-year contract with \"Neighbours\" and he began filming his first scenes as Mason in November 2012."
+            ]
+          },
+          {
+            "stage": "V3",
+            "logic_failures": [],
+            "dates": []
+          },
+          {
+            "stage": "V4",
+            "residue": [
+              "two",
+              "year",
+              "contract",
+              "play"
+            ],
+            "n_passage_triples": 11,
+            "novel": true
+          }
+        ]
+      },
+      "passages": {
+        "chunk-5d3d787bca10ff123105226827a4e2e2": {
+          "content": "Mason Turner\nMason Turner is a fictional character from the Australian soap opera \"Neighbours\", played by Taylor Glockner. The actor previously auditioned for guest roles on the show, but the producers decided to develop a long-term character specifically for him instead. Glockner's character, Mason, was created and introduced along with the Turner family, as part of a major overhaul of the show's cast. Glockner was given a two-year contract with \"Neighbours\" and he began filming his first scenes as Mason in November 2012. Glockner made his first screen appearance as Mason during the episode broadcast on 22 February 2013. In December 2013, it was announced that Glockner was to leave \"Neighbours\" and Mason departed on 28 February 2014.",
+          "triples": [
+            [
+              "Mason Turner",
+              "is a fictional character in",
+              "Neighbours"
+            ],
+            [
+              "Mason Turner",
+              "is played by",
+              "Taylor Glockner"
+            ],
+            [
+              "Taylor Glockner",
+              "auditioned for guest roles on",
+              "Neighbours"
+            ],
+            [
+              "Taylor Glockner",
+              "was given a long-term character in",
+              "Neighbours"
+            ],
+            [
+              "Mason Turner",
+              "was created and introduced with",
+              "Turner family"
+            ],
+            [
+              "Taylor Glockner",
+              "began filming as Mason Turner in",
+              "November 2012"
+            ],
+            [
+              "Taylor Glockner",
+              "made a first screen appearance as Mason Turner on",
+              "22 February 2013"
+            ],
+            [
+              "Taylor Glockner",
+              "announced departure from",
+              "Neighbours"
+            ],
+            [
+              "Taylor Glockner",
+              "announced departure in",
+              "December 2013"
+            ],
+            [
+              "Mason Turner",
+              "departed from",
+              "Neighbours"
+            ],
+            [
+              "Mason Turner",
+              "departed on",
+              "28 February 2014"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": false,
+      "new_accepts": true
+    },
+    {
+      "run": "medium_A",
+      "candidate_id": "local-003",
+      "text": "The Sisters of St Joseph of Nazareth have their main centre in Whanganui, New Zealand.",
+      "relation": "main centre in",
+      "generator_type": "explicit_restatement",
+      "spans": [
+        {
+          "passage_id": "chunk-c926f13fe5e0380cb9cc662ed5f246df",
+          "span": "have their main centre in Whanganui, New Zealand"
+        }
+      ],
+      "gold": {
+        "audit_class": "Correct but Redundant",
+        "type": "REDUNDANT",
+        "faithful_passage": true,
+        "citation_ok": true,
+        "novel": false,
+        "old_decision": "REJECT",
+        "note": "The opening sentence names the Sisters of Saint Joseph of Nazareth and says they have their main centre in Whanganui, New Zealand. OpenIE already has that triple. The old verifier treated the subject as unbound and pointed at Sisters of St Joseph Whanganui, which is a later fusion sentence."
+      },
+      "new_verifier": {
+        "candidate_id": "local-003",
+        "decision": "REJECT",
+        "failure_stage": "V4",
+        "faithfulness": "supported",
+        "novelty": "duplicate",
+        "audit_type": "REDUNDANT",
+        "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+        "residue": [],
+        "evidence_sentences": [
+          "Sisters of St Joseph of Nazareth\nThe Sisters of Saint Joseph of Nazareth, also called simply the Sisters of St Joseph or Josephites (\"Black Josephites\"), are a religious congregation who have their main centre in Whanganui, New Zealand."
+        ],
+        "warning": ""
+      },
+      "passages": {
+        "chunk-c926f13fe5e0380cb9cc662ed5f246df": {
+          "content": "Sisters of St Joseph of Nazareth\nThe Sisters of Saint Joseph of Nazareth, also called simply the Sisters of St Joseph or Josephites (\"Black Josephites\"), are a religious congregation who have their main centre in Whanganui, New Zealand. The congregation was a member of the Federation of the Sisters of St. Joseph which disbanded in 2013. The Sisters of St Joseph Whanganui received the Decree of Fusion with the Sisters of St Joseph of the Sacred Heart on 22 February 2013.",
+          "triples": [
+            [
+              "Sisters of St Joseph of Nazareth",
+              "also called",
+              "Sisters of Saint Joseph of Nazareth"
+            ],
+            [
+              "Sisters of St Joseph of Nazareth",
+              "also called",
+              "Sisters of St Joseph"
+            ],
+            [
+              "Sisters of St Joseph of Nazareth",
+              "also called",
+              "Josephites"
+            ],
+            [
+              "Sisters of St Joseph of Nazareth",
+              "has main centre in",
+              "Whanganui"
+            ],
+            [
+              "Whanganui",
+              "located in",
+              "New Zealand"
+            ],
+            [
+              "Sisters of St Joseph of Nazareth",
+              "was a member of",
+              "Federation of the Sisters of St. Joseph"
+            ],
+            [
+              "Federation of the Sisters of St. Joseph",
+              "disbanded in",
+              "2013"
+            ],
+            [
+              "Sisters of St Joseph Whanganui",
+              "received Decree of Fusion with",
+              "Sisters of St Joseph of the Sacred Heart"
+            ],
+            [
+              "Sisters of St Joseph Whanganui",
+              "received Decree of Fusion on",
+              "22 February 2013"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": false,
+      "new_accepts": false
+    },
+    {
+      "run": "medium_A",
+      "candidate_id": "local-004",
+      "text": "KPBD began broadcasting in June 2005.",
+      "relation": "began broadcasting in",
+      "generator_type": "explicit_restatement",
+      "spans": [
+        {
+          "passage_id": "chunk-ed22e931f32904f9af5775fa847dedd6",
+          "span": "The station began broadcasting in June 2005"
+        }
+      ],
+      "gold": {
+        "audit_class": "Correct but Redundant",
+        "type": "REDUNDANT",
+        "faithful_passage": true,
+        "citation_ok": true,
+        "novel": false,
+        "old_decision": "ACCEPT",
+        "note": "OpenIE already stores KPBD began broadcasting in June 2005. The old verifier accepted it as new. The passage identifies KPBD as the station in the same short article."
+      },
+      "new_verifier": {
+        "candidate_id": "local-004",
+        "decision": "REJECT",
+        "failure_stage": "V4",
+        "faithfulness": "supported",
+        "novelty": "duplicate",
+        "audit_type": "REDUNDANT",
+        "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+        "residue": [],
+        "evidence_sentences": [
+          "The station began broadcasting in June 2005 and went dark in May 2009 which led to the cancellation of the station's broadcast license in June 2011."
+        ],
+        "warning": ""
+      },
+      "passages": {
+        "chunk-ed22e931f32904f9af5775fa847dedd6": {
+          "content": "KPBD\nKPBD (89.3 FM) is a defunct American non-commercial educational radio station that was licensed to serve the community of Big Spring, the county seat of Howard County, Texas. The station's broadcast license was held by Paulino Bernal Evangelism. The station began broadcasting in June 2005 and went dark in May 2009 which led to the cancellation of the station's broadcast license in June 2011.",
+          "triples": [
+            [
+              "KPBD",
+              "has frequency",
+              "89.3 FM"
+            ],
+            [
+              "KPBD",
+              "is located in",
+              "United States"
+            ],
+            [
+              "KPBD",
+              "was licensed to serve",
+              "Big Spring"
+            ],
+            [
+              "Big Spring",
+              "is the county seat of",
+              "Howard County"
+            ],
+            [
+              "Howard County",
+              "is located in",
+              "Texas"
+            ],
+            [
+              "KPBD",
+              "broadcast license held by",
+              "Paulino Bernal Evangelism"
+            ],
+            [
+              "KPBD",
+              "began broadcasting in",
+              "June 2005"
+            ],
+            [
+              "KPBD",
+              "went dark in",
+              "May 2009"
+            ],
+            [
+              "May 2009",
+              "led to cancellation of license in",
+              "June 2011"
+            ],
+            [
+              "KPBD",
+              "broadcast license canceled in",
+              "June 2011"
+            ],
+            [
+              "KPBD",
+              "is",
+              "defunct American non-commercial educational radio station"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": true,
+      "new_accepts": false
+    },
+    {
+      "run": "medium_B",
+      "candidate_id": "local-001",
+      "text": "Gemma Ramsay moved to Erinsborough to live with her aunt Madge Bishop after her mother’s death.",
+      "relation": "move motivated by family circumstances",
+      "generator_type": "derived",
+      "spans": [
+        {
+          "passage_id": "chunk-1a2f9e9e4d0a9f1c7cdb872540133c08",
+          "span": "She moves to Erinsborough to live with her aunt, following her mother's death."
+        }
+      ],
+      "gold": {
+        "audit_class": "Correct & Novel",
+        "type": "SINGLE_PASSAGE_CONSOLIDATION",
+        "faithful_passage": true,
+        "citation_ok": false,
+        "novel": true,
+        "old_decision": "ACCEPT",
+        "note": "The cited sentence says she moves to Erinsborough to live with her aunt following her mother's death. 'Following' supports 'after', not the relation label 'motivated by'. Madge Bishop is named only in the previous sentence. The old verifier accepted the Madge binding from a separate casting triple."
+      },
+      "new_verifier": {
+        "candidate_id": "local-001",
+        "decision": "REJECT",
+        "failure_stage": "V2",
+        "faithfulness": "incomplete_citation",
+        "novelty": "unclear",
+        "audit_type": "INCOMPLETE_CITATION",
+        "reason": "The cited sentences do not contain Madge Bishop. Those names occur elsewhere in the cited passage, but no token of the name is in the cited sentence.",
+        "missing_names": [
+          "Madge Bishop"
+        ],
+        "recoverable_in_passage": [
+          "Madge Bishop"
+        ],
+        "evidence_sentences": [
+          "She moves to Erinsborough to live with her aunt, following her mother's death. She is portrayed as intelligent, care free, independent, and someone who will stand up for her friends."
+        ]
+      },
+      "passages": {
+        "chunk-1a2f9e9e4d0a9f1c7cdb872540133c08": {
+          "content": "Gemma Ramsay\nGemma Ramsay (also Willis) is a fictional character from the Australian soap opera \"Neighbours\", played by Beth Buchanan. The actress was not sure about a long term commitment to the serial and initially signed a six-month contract. She made her first appearance during the episode broadcast on 20 June 1990. Gemma was introduced as Madge Bishop's (Anne Charleston) niece. She moves to Erinsborough to live with her aunt, following her mother's death. She is portrayed as intelligent, care free, independent, and someone who will stand up for her friends. Producers soon established a relationship between Gemma and Matt Robinson (Ashley Paske), and later with Adam Willis (Ian Williams). Buchanan reprised the role for a brief guest stint in 2019 to facilitate the introduction of her daughter, Roxy Willis (Zima Anderson).",
+          "triples": [
+            [
+              "Gemma Ramsay",
+              "is also known as",
+              "Willis"
+            ],
+            [
+              "Gemma Ramsay",
+              "is a fictional character in",
+              "Neighbours"
+            ],
+            [
+              "Gemma Ramsay",
+              "is played by",
+              "Beth Buchanan"
+            ],
+            [
+              "Gemma Ramsay",
+              "first appeared on",
+              "20 June 1990"
+            ],
+            [
+              "Gemma Ramsay",
+              "was introduced as the niece of",
+              "Madge Bishop"
+            ],
+            [
+              "Madge Bishop",
+              "is played by",
+              "Anne Charleston"
+            ],
+            [
+              "Gemma Ramsay",
+              "moves to",
+              "Erinsborough"
+            ],
+            [
+              "Gemma Ramsay",
+              "had a relationship with",
+              "Matt Robinson"
+            ],
+            [
+              "Matt Robinson",
+              "is played by",
+              "Ashley Paske"
+            ],
+            [
+              "Gemma Ramsay",
+              "later had a relationship with",
+              "Adam Willis"
+            ],
+            [
+              "Adam Willis",
+              "is played by",
+              "Ian Williams"
+            ],
+            [
+              "Beth Buchanan",
+              "reprised the role of Gemma Ramsay in",
+              "2019"
+            ],
+            [
+              "Roxy Willis",
+              "is the daughter of",
+              "Gemma Ramsay"
+            ],
+            [
+              "Roxy Willis",
+              "is played by",
+              "Zima Anderson"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": true,
+      "new_accepts": false
+    },
+    {
+      "run": "medium_B",
+      "candidate_id": "local-002",
+      "text": "Bobby Morley played Aidan Foster, who was introduced to Neighbours as a love interest for Chris Pappas.",
+      "relation": "actor-character plot association",
+      "generator_type": "derived",
+      "spans": [
+        {
+          "passage_id": "chunk-56664711c1c4de235b820a051107fb2f",
+          "span": "Aidan was introduced to \"Neighbours\" as a love interest for established character Chris Pappas (James Mason)."
+        }
+      ],
+      "gold": {
+        "audit_class": "Correct but Redundant",
+        "type": "REDUNDANT",
+        "faithful_passage": true,
+        "citation_ok": true,
+        "novel": false,
+        "old_decision": "ACCEPT",
+        "note": "OpenIE already has both 'Aidan Foster played by Bobby Morley' and 'Aidan Foster introduced as a love interest for Chris Pappas'. The candidate verbalizes a two-hop path."
+      },
+      "new_verifier": {
+        "candidate_id": "local-002",
+        "decision": "REJECT",
+        "failure_stage": "V4",
+        "faithfulness": "supported",
+        "novelty": "duplicate",
+        "audit_type": "REDUNDANT",
+        "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+        "residue": [],
+        "evidence_sentences": [
+          "Aidan was introduced to \"Neighbours\" as a love interest for established character Chris Pappas (James Mason). Morley revealed that Aidan's sexuality did not affect his decision in accepting the role, as it does not define him."
+        ],
+        "warning": "partial_name_anchored:Bobby Morley,Aidan Foster"
+      },
+      "passages": {
+        "chunk-56664711c1c4de235b820a051107fb2f": {
+          "content": "Aidan Foster\nAidan Foster is a fictional character from the Australian soap opera \"Neighbours\", played by Bobby Morley. Both the character and Morley's casting was announced on 19 June 2011. The actor began filming his first scenes that same week. Aidan was introduced to \"Neighbours\" as a love interest for established character Chris Pappas (James Mason). Morley revealed that Aidan's sexuality did not affect his decision in accepting the role, as it does not define him. Morley was initially contracted for six months and he stated that he was happy to stay with the soap for longer. He made his first screen appearance as Aidan during the episode broadcast on 19 August 2011. Morley took a ten-week break from \"Neighbours\" in April 2012 to appear in the feature film, \"Blinder\". He made his final appearance as Aidan on 17 January 2013.",
+          "triples": [
+            [
+              "Aidan Foster",
+              "is a fictional character in",
+              "Neighbours"
+            ],
+            [
+              "Neighbours",
+              "is an",
+              "Australian soap opera"
+            ],
+            [
+              "Aidan Foster",
+              "played by",
+              "Bobby Morley"
+            ],
+            [
+              "Aidan Foster",
+              "casting announced on",
+              "19 June 2011"
+            ],
+            [
+              "Bobby Morley",
+              "casting announced on",
+              "19 June 2011"
+            ],
+            [
+              "Bobby Morley",
+              "began filming Aidan Foster's first scenes in",
+              "June 2011"
+            ],
+            [
+              "Aidan Foster",
+              "introduced as a love interest for",
+              "Chris Pappas"
+            ],
+            [
+              "Chris Pappas",
+              "played by",
+              "James Mason"
+            ],
+            [
+              "Bobby Morley",
+              "took a break from",
+              "Neighbours"
+            ],
+            [
+              "Bobby Morley",
+              "took a break in",
+              "April 2012"
+            ],
+            [
+              "Bobby Morley",
+              "appeared in",
+              "Blinder"
+            ],
+            [
+              "Aidan Foster",
+              "first appeared on screen on",
+              "19 August 2011"
+            ],
+            [
+              "Aidan Foster",
+              "final appearance on",
+              "17 January 2013"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": true,
+      "new_accepts": false
+    },
+    {
+      "run": "medium_B",
+      "candidate_id": "local-003",
+      "text": "Aleksandr Golovko became the new commander of the Aerospace Defence Forces Branch after Oleg Ostapenko was promoted to Deputy Minister of Defence.",
+      "relation": "commander succession",
+      "generator_type": "derived",
+      "spans": [
+        {
+          "passage_id": "chunk-bdff4e9a69ee9bf8c09cf8574391ba71",
+          "span": "Oleg Ostapenko, who was promoted to Deputy Minister of Defence in November 2012. On 24 December 2012, Aleksandr Golovko was appointed the new commander."
+        }
+      ],
+      "gold": {
+        "audit_class": "Correct & Novel",
+        "type": "SINGLE_PASSAGE_CONSOLIDATION",
+        "faithful_passage": true,
+        "citation_ok": true,
+        "novel": true,
+        "old_decision": "ACCEPT",
+        "note": "The passage says the branch was first commanded by Ostapenko, who was promoted in November 2012, and that on 24 December 2012 Golovko was appointed the new commander. 'The new commander' plus 'first commanded by' supports succession. It is stronger than a bare pair of dates. The quoted span cuts off the 'first commanded' clause, but that clause is in the same sentence as the promotion."
+      },
+      "new_verifier": {
+        "candidate_id": "local-003",
+        "decision": "ACCEPT",
+        "failure_stage": "",
+        "faithfulness": "supported",
+        "novelty": "new",
+        "audit_type": "EXTRACTION_REPAIR",
+        "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: new, after",
+        "residue": [
+          "new",
+          "after"
+        ],
+        "evidence_sentences": [
+          "The ASDFB was first commanded by former Space Forces commander Colonel General Oleg Ostapenko, who was promoted to Deputy Minister of Defence in November 2012. On 24 December 2012, Aleksandr Golovko was appointed the new commander. Although it is officially translated as aerospace in English, it covers both attacks from the air and from (outer) space, and some Russian writers translate it as \"air and space\" instead."
+        ],
+        "warning": "partial_name_anchored:Aerospace Defence Forces Branch",
+        "stages": [
+          {
+            "stage": "V2",
+            "anchored_partial_names": [
+              "Aerospace Defence Forces Branch"
+            ],
+            "missing_names": [],
+            "evidence_sentences": [
+              "The ASDFB was first commanded by former Space Forces commander Colonel General Oleg Ostapenko, who was promoted to Deputy Minister of Defence in November 2012. On 24 December 2012, Aleksandr Golovko was appointed the new commander. Although it is officially translated as aerospace in English, it covers both attacks from the air and from (outer) space, and some Russian writers translate it as \"air and space\" instead."
+            ]
+          },
+          {
+            "stage": "V3",
+            "logic_failures": [],
+            "dates": []
+          },
+          {
+            "stage": "V4",
+            "residue": [
+              "new",
+              "after"
+            ],
+            "n_passage_triples": 13,
+            "novel": true
+          }
+        ]
+      },
+      "passages": {
+        "chunk-bdff4e9a69ee9bf8c09cf8574391ba71": {
+          "content": "Russian Aerospace Defence Forces\nThe Aerospace Defence Forces Branch, \"short\": ASDFB ( was a branch of the Armed Forces of the Russian Federation responsible for aerospace defence, and the operation of Russian military satellites and the Plesetsk Cosmodrome. It was established on the 1 December 2011 and replaced the Russian Space Forces. The ASDFB was first commanded by former Space Forces commander Colonel General Oleg Ostapenko, who was promoted to Deputy Minister of Defence in November 2012. On 24 December 2012, Aleksandr Golovko was appointed the new commander. Although it is officially translated as aerospace in English, it covers both attacks from the air and from (outer) space, and some Russian writers translate it as \"air and space\" instead.",
+          "triples": [
+            [
+              "Aerospace Defence Forces Branch",
+              "abbreviated as",
+              "ASDFB"
+            ],
+            [
+              "Aerospace Defence Forces Branch",
+              "was a branch of",
+              "Armed Forces of the Russian Federation"
+            ],
+            [
+              "Aerospace Defence Forces Branch",
+              "responsible for",
+              "aerospace defence"
+            ],
+            [
+              "Aerospace Defence Forces Branch",
+              "operated",
+              "Plesetsk Cosmodrome"
+            ],
+            [
+              "Aerospace Defence Forces Branch",
+              "was established on",
+              "1 December 2011"
+            ],
+            [
+              "Aerospace Defence Forces Branch",
+              "replaced",
+              "Russian Space Forces"
+            ],
+            [
+              "Aerospace Defence Forces Branch",
+              "was first commanded by",
+              "Oleg Ostapenko"
+            ],
+            [
+              "Oleg Ostapenko",
+              "was formerly commander of",
+              "Russian Space Forces"
+            ],
+            [
+              "Oleg Ostapenko",
+              "was promoted to",
+              "Deputy Minister of Defence"
+            ],
+            [
+              "Oleg Ostapenko",
+              "was promoted in",
+              "November 2012"
+            ],
+            [
+              "Aleksandr Golovko",
+              "was appointed commander of",
+              "Aerospace Defence Forces Branch"
+            ],
+            [
+              "Aleksandr Golovko",
+              "was appointed on",
+              "24 December 2012"
+            ],
+            [
+              "Russian Aerospace Defence Forces",
+              "also refers to",
+              "Aerospace Defence Forces Branch"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": true,
+      "new_accepts": true
+    },
+    {
+      "run": "medium_B",
+      "candidate_id": "local-004",
+      "text": "Tuareg rebels took control of northern Mali before declaring the secession of Azawad in April 2012.",
+      "relation": "territorial takeover preceding secession",
+      "generator_type": "derived",
+      "spans": [
+        {
+          "passage_id": "chunk-9498c40a3a45abafaadf924367b5e688",
+          "span": "Tuareg rebels took control of by April and declared the secession of a new state, Azawad."
+        }
+      ],
+      "gold": {
+        "audit_class": "Uncertain",
+        "type": "UNSUPPORTED_HYPOTHESIS",
+        "faithful_passage": false,
+        "citation_ok": false,
+        "novel": false,
+        "old_decision": "ACCEPT",
+        "note": "The full sentence is 'northern Mali, which Tuareg rebels took control of by April and declared the secession of a new state, Azawad.' The quote drops 'northern Mali, which', so the quoted span has no object. Both events are already separate triples. 'Before' is not entailed by 'and'. The old verifier accepted the broken quote."
+      },
+      "new_verifier": {
+        "candidate_id": "local-004",
+        "decision": "REJECT",
+        "failure_stage": "V3",
+        "faithfulness": "unsupported",
+        "novelty": "unclear",
+        "audit_type": "UNSUPPORTED_HYPOTHESIS",
+        "reason": "Logical check failed: before_not_entailed_by_coordination",
+        "logic_failures": [
+          "before_not_entailed_by_coordination"
+        ],
+        "evidence_sentences": [
+          "Mali\nIn January 2012, an armed conflict broke out in northern Mali, which Tuareg rebels took control of by April and declared the secession of a new state, Azawad. The conflict was complicated by a military coup that took place in March and later fighting between Tuareg and Islamist rebels."
+        ]
+      },
+      "passages": {
+        "chunk-9498c40a3a45abafaadf924367b5e688": {
+          "content": "Mali\nIn January 2012, an armed conflict broke out in northern Mali, which Tuareg rebels took control of by April and declared the secession of a new state, Azawad. The conflict was complicated by a military coup that took place in March and later fighting between Tuareg and Islamist rebels. In response to Islamist territorial gains, the French military launched Opération Serval in January 2013. A month later, Malian and French forces recaptured most of the north. Presidential elections were held on 28 July 2013, with a second round run-off held on 11 August, and legislative elections were held on 24 November and 15 December 2013.",
+          "triples": [
+            [
+              "Mali",
+              "experienced armed conflict beginning in",
+              "January 2012"
+            ],
+            [
+              "Tuareg",
+              "took control of northern Mali in",
+              "April 2012"
+            ],
+            [
+              "Tuareg",
+              "declared the secession of",
+              "Azawad"
+            ],
+            [
+              "Mali",
+              "experienced a military coup in",
+              "March 2012"
+            ],
+            [
+              "Mali",
+              "experienced fighting between",
+              "Tuareg"
+            ],
+            [
+              "Tuareg",
+              "fought against",
+              "Islamist rebels"
+            ],
+            [
+              "French",
+              "launched",
+              "Opération Serval"
+            ],
+            [
+              "Opération Serval",
+              "was launched in response to Islamist territorial gains in",
+              "Mali"
+            ],
+            [
+              "Opération Serval",
+              "was launched in",
+              "January 2013"
+            ],
+            [
+              "French",
+              "recaptured most of northern Mali with Malian forces in",
+              "February 2013"
+            ],
+            [
+              "Mali",
+              "held presidential elections on",
+              "28 July 2013"
+            ],
+            [
+              "Mali",
+              "held the second round of presidential elections on",
+              "11 August 2013"
+            ],
+            [
+              "Mali",
+              "held legislative elections on",
+              "24 November 2013"
+            ],
+            [
+              "Mali",
+              "held legislative elections on",
+              "15 December 2013"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": false,
+      "new_accepts": false
+    },
+    {
+      "run": "large_A",
+      "candidate_id": "candidate-1",
+      "text": "Shades of Blue was renewed for a third season on March 17, 2017.",
+      "relation": "renewed for third season",
+      "generator_type": "explicit_restatement",
+      "spans": [
+        {
+          "passage_id": "chunk-11b375ea69e06d1107ef5ec409d4cb32",
+          "span": "On March 17, 2017, the series was renewed for a third season."
+        }
+      ],
+      "gold": {
+        "audit_class": "Correct but Redundant",
+        "type": "REDUNDANT",
+        "faithful_passage": true,
+        "citation_ok": true,
+        "novel": false,
+        "old_decision": "ACCEPT",
+        "note": "OpenIE already stores that NBC renewed Shades of Blue for a third season and that the third season was renewed on March 17, 2017. The old verifier said the triples only mentioned the second season."
+      },
+      "new_verifier": {
+        "candidate_id": "candidate-1",
+        "decision": "REJECT",
+        "failure_stage": "V4",
+        "faithfulness": "supported",
+        "novelty": "duplicate",
+        "audit_type": "REDUNDANT",
+        "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+        "residue": [],
+        "evidence_sentences": [
+          "On March 17, 2017, the series was renewed for a third season."
+        ],
+        "warning": ""
+      },
+      "passages": {
+        "chunk-11b375ea69e06d1107ef5ec409d4cb32": {
+          "content": "Shades of Blue (TV series)\nOn February 5, 2016, NBC renewed Shades of Blue for a 13 - episode second season, which premiered on March 5, 2017. On March 17, 2017, the series was renewed for a third season.",
+          "triples": [
+            [
+              "NBC",
+              "renewed",
+              "Shades of Blue"
+            ],
+            [
+              "NBC",
+              "renewed Shades of Blue for",
+              "13-episode second season"
+            ],
+            [
+              "13-episode second season",
+              "renewed on",
+              "February 5, 2016"
+            ],
+            [
+              "13-episode second season",
+              "premiered on",
+              "March 5, 2017"
+            ],
+            [
+              "NBC",
+              "renewed Shades of Blue for",
+              "third season"
+            ],
+            [
+              "third season",
+              "renewed on",
+              "March 17, 2017"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": true,
+      "new_accepts": false
+    },
+    {
+      "run": "large_A",
+      "candidate_id": "candidate-2",
+      "text": "Lipshitz Saves the World was not picked up for air.",
+      "relation": "not picked up for air",
+      "generator_type": "explicit_restatement",
+      "spans": [
+        {
+          "passage_id": "chunk-c48d38af96b2654659443d02f43dc84f",
+          "span": "The show was not picked up for air."
+        }
+      ],
+      "gold": {
+        "audit_class": "Correct but Redundant",
+        "type": "REDUNDANT",
+        "faithful_passage": true,
+        "citation_ok": true,
+        "novel": false,
+        "old_decision": "REJECT",
+        "note": "The passage says 'The show was not picked up for air.' OpenIE already has that triple. The old verifier said the span was absent. The smoke verifier truncates the unit to 12,000 characters, and passages are placed after the entity and triple lists."
+      },
+      "new_verifier": {
+        "candidate_id": "candidate-2",
+        "decision": "REJECT",
+        "failure_stage": "V4",
+        "faithfulness": "supported",
+        "novelty": "duplicate",
+        "audit_type": "REDUNDANT",
+        "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+        "residue": [],
+        "evidence_sentences": [
+          "The show was not picked up for air."
+        ],
+        "warning": "partial_name_anchored:Lipshitz Saves [title coreference]"
+      },
+      "passages": {
+        "chunk-c48d38af96b2654659443d02f43dc84f": {
+          "content": "Lipshitz Saves the World\nLipshitz Saves the World is a comedy television pilot that was produced for NBC. The show was given the green light to shoot a pilot by NBC in July 2006. The show was not picked up for air.",
+          "triples": [
+            [
+              "Lipshitz Saves the World",
+              "is a",
+              "comedy television pilot"
+            ],
+            [
+              "Lipshitz Saves the World",
+              "was produced for",
+              "NBC"
+            ],
+            [
+              "NBC",
+              "gave approval to shoot a pilot for",
+              "Lipshitz Saves the World"
+            ],
+            [
+              "NBC",
+              "gave approval in",
+              "July 2006"
+            ],
+            [
+              "Lipshitz Saves the World",
+              "was not picked up for",
+              "air"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": false,
+      "new_accepts": false
+    },
+    {
+      "run": "large_B",
+      "candidate_id": "cand-1",
+      "text": "Andrea Kremer and Hannah Storm became part of the first all-women booth to call a major men's team sport while calling Thursday Night Football for Amazon Prime Video.",
+      "relation": "part of first all-women major-sport broadcast booth",
+      "generator_type": "derived",
+      "spans": [
+        {
+          "passage_id": "chunk-c30c674749748e4a1b36f06ffa6bed8a",
+          "span": "making sports history, along with Hannah Storm, by becoming the first all-women booth to call any major men's team sport"
+        },
+        {
+          "passage_id": "chunk-c30c674749748e4a1b36f06ffa6bed8a",
+          "span": "currently calls \"Thursday Night Football\" games for Amazon Prime Video"
+        }
+      ],
+      "gold": {
+        "audit_class": "Correct & Novel",
+        "type": "SINGLE_PASSAGE_CONSOLIDATION",
+        "faithful_passage": true,
+        "citation_ok": true,
+        "novel": true,
+        "old_decision": "REJECT",
+        "note": "One sentence says Kremer currently calls Thursday Night Football for Amazon Prime Video, making sports history with Hannah Storm as the first all-women booth to call any major men's team sport. OpenIE has the co-calling facts and not the 'first all-women booth' status. The old verifier said no supplied passage supported it."
+      },
+      "new_verifier": {
+        "candidate_id": "cand-1",
+        "decision": "ACCEPT",
+        "failure_stage": "",
+        "faithfulness": "supported",
+        "novelty": "new",
+        "audit_type": "EXTRACTION_REPAIR",
+        "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: first, all, women, booth, call, major, men, s, team, sport, calling",
+        "residue": [
+          "first",
+          "all",
+          "women",
+          "booth",
+          "call",
+          "major",
+          "men",
+          "s",
+          "team",
+          "sport",
+          "calling"
+        ],
+        "evidence_sentences": [
+          "She currently calls \"Thursday Night Football\" games for Amazon Prime Video making sports history, along with Hannah Storm, by becoming the first all-women booth to call any major men's team sport, not just football.",
+          "She currently calls \"Thursday Night Football\" games for Amazon Prime Video making sports history, along with Hannah Storm, by becoming the first all-women booth to call any major men's team sport, not just football."
+        ],
+        "warning": "partial_name_anchored:Andrea Kremer [title coreference]",
+        "stages": [
+          {
+            "stage": "V2",
+            "anchored_partial_names": [
+              "Andrea Kremer [title coreference]"
+            ],
+            "missing_names": [],
+            "evidence_sentences": [
+              "She currently calls \"Thursday Night Football\" games for Amazon Prime Video making sports history, along with Hannah Storm, by becoming the first all-women booth to call any major men's team sport, not just football.",
+              "She currently calls \"Thursday Night Football\" games for Amazon Prime Video making sports history, along with Hannah Storm, by becoming the first all-women booth to call any major men's team sport, not just football."
+            ]
+          },
+          {
+            "stage": "V3",
+            "logic_failures": [],
+            "dates": []
+          },
+          {
+            "stage": "V4",
+            "residue": [
+              "first",
+              "all",
+              "women",
+              "booth",
+              "call",
+              "major",
+              "men",
+              "s",
+              "team",
+              "sport",
+              "calling"
+            ],
+            "n_passage_triples": 17,
+            "novel": true
+          }
+        ]
+      },
+      "passages": {
+        "chunk-c30c674749748e4a1b36f06ffa6bed8a": {
+          "content": "Andrea Kremer\nAndrea Kremer (born February 25, 1959 in Philadelphia, Pennsylvania) is a multi-Emmy Award Winning American television sports journalist. She currently calls \"Thursday Night Football\" games for Amazon Prime Video making sports history, along with Hannah Storm, by becoming the first all-women booth to call any major men's team sport, not just football.. Kremer is also Chief Correspondent for the NFL Network and previously led the network's coverage and in-depth reporting on health and safety. Her other current roles include correspondent for HBO's \"Real Sports with Bryant Gumbel\" as well as co-host of \"We Need To Talk\", the first ever all-female nationally televised weekly sports show on CBS. Until the 2011 season, she worked as a sideline reporter for NBC on the network's coverage of \"Sunday Night Football\".",
+          "triples": [
+            [
+              "Andrea Kremer",
+              "was born on",
+              "February 25, 1959"
+            ],
+            [
+              "Andrea Kremer",
+              "was born in",
+              "Philadelphia"
+            ],
+            [
+              "Philadelphia",
+              "is located in",
+              "Pennsylvania"
+            ],
+            [
+              "Andrea Kremer",
+              "is a",
+              "American television sports journalist"
+            ],
+            [
+              "Andrea Kremer",
+              "has won",
+              "Emmy Award"
+            ],
+            [
+              "Andrea Kremer",
+              "calls",
+              "Thursday Night Football"
+            ],
+            [
+              "Andrea Kremer",
+              "calls games for",
+              "Amazon Prime Video"
+            ],
+            [
+              "Andrea Kremer",
+              "calls Thursday Night Football with",
+              "Hannah Storm"
+            ],
+            [
+              "Andrea Kremer",
+              "is Chief Correspondent for",
+              "NFL Network"
+            ],
+            [
+              "Andrea Kremer",
+              "reported on health and safety for",
+              "NFL Network"
+            ],
+            [
+              "Andrea Kremer",
+              "is a correspondent for",
+              "HBO"
+            ],
+            [
+              "Andrea Kremer",
+              "is a correspondent on",
+              "Real Sports with Bryant Gumbel"
+            ],
+            [
+              "Andrea Kremer",
+              "is co-host of",
+              "We Need To Talk"
+            ],
+            [
+              "We Need To Talk",
+              "is broadcast on",
+              "CBS"
+            ],
+            [
+              "Andrea Kremer",
+              "worked as a sideline reporter for",
+              "NBC"
+            ],
+            [
+              "Andrea Kremer",
+              "reported on",
+              "Sunday Night Football"
+            ],
+            [
+              "Sunday Night Football",
+              "was covered by",
+              "NBC"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": false,
+      "new_accepts": true
+    },
+    {
+      "run": "large_B",
+      "candidate_id": "cand-2",
+      "text": "Pat Sajak succeeded Chuck Woolery as host of Wheel of Fortune after Woolery's December 25, 1981 departure.",
+      "relation": "succeeded as host after departure",
+      "generator_type": "derived",
+      "spans": [
+        {
+          "passage_id": "chunk-d4e0062d70b935f8f0f9e503b45bdf7e",
+          "span": "Chuck Woolery, who hosted the series from its 1975 premiere until December 25, 1981"
+        },
+        {
+          "passage_id": "chunk-d4e0062d70b935f8f0f9e503b45bdf7e",
+          "span": "On December 28, 1981, Pat Sajak made his debut as the host of Wheel"
+        }
+      ],
+      "gold": {
+        "audit_class": "Correct & Novel",
+        "type": "SINGLE_PASSAGE_CONSOLIDATION",
+        "faithful_passage": true,
+        "citation_ok": true,
+        "novel": true,
+        "old_decision": "REJECT",
+        "note": "Woolery hosted until 25 December 1981 and his contract was not renewed. Sajak made his debut as host on 28 December 1981. That is the next host of the same show, not two unrelated dates. The old verifier said no quoted support was supplied."
+      },
+      "new_verifier": {
+        "candidate_id": "cand-2",
+        "decision": "ACCEPT",
+        "failure_stage": "",
+        "faithfulness": "supported",
+        "novelty": "new",
+        "audit_type": "COMPOSITIONAL_REASONING",
+        "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: succeeded, after, s, departure",
+        "residue": [
+          "succeeded",
+          "after",
+          "s",
+          "departure"
+        ],
+        "evidence_sentences": [
+          "Wheel of Fortune (American game show)\nThe original host of Wheel of Fortune was Chuck Woolery, who hosted the series from its 1975 premiere until December 25, 1981, save for one week in August 1980 when Alex Trebek hosted in his place.",
+          "On December 28, 1981, Pat Sajak made his debut as the host of Wheel."
+        ],
+        "warning": "",
+        "stages": [
+          {
+            "stage": "V2",
+            "anchored_partial_names": [],
+            "missing_names": [],
+            "evidence_sentences": [
+              "Wheel of Fortune (American game show)\nThe original host of Wheel of Fortune was Chuck Woolery, who hosted the series from its 1975 premiere until December 25, 1981, save for one week in August 1980 when Alex Trebek hosted in his place.",
+              "On December 28, 1981, Pat Sajak made his debut as the host of Wheel."
+            ]
+          },
+          {
+            "stage": "V3",
+            "logic_failures": [],
+            "dates": [
+              [
+                1981,
+                12,
+                25
+              ]
+            ]
+          },
+          {
+            "stage": "V4",
+            "residue": [
+              "succeeded",
+              "after",
+              "s",
+              "departure"
+            ],
+            "n_passage_triples": 18,
+            "novel": true
+          }
+        ]
+      },
+      "passages": {
+        "chunk-d4e0062d70b935f8f0f9e503b45bdf7e": {
+          "content": "Wheel of Fortune (American game show)\nThe original host of Wheel of Fortune was Chuck Woolery, who hosted the series from its 1975 premiere until December 25, 1981, save for one week in August 1980 when Alex Trebek hosted in his place. Woolery's departure came over a salary dispute with show creator Merv Griffin, and his contract was not renewed. On December 28, 1981, Pat Sajak made his debut as the host of Wheel. Griffin said that he chose Sajak for his ``odd ''sense of humor. NBC president and CEO Fred Silverman objected as he felt Sajak, who at the time of his hiring was the weatherman for KNBC - TV, was`` too local'' for a national audience. Griffin countered by telling Silverman he would stop production if Sajak was not allowed to become host, and Silverman acquiesced.",
+          "triples": [
+            [
+              "Chuck Woolery",
+              "was the original host of",
+              "Wheel of Fortune"
+            ],
+            [
+              "Chuck Woolery",
+              "hosted",
+              "Wheel of Fortune"
+            ],
+            [
+              "Chuck Woolery",
+              "hosted Wheel of Fortune until",
+              "December 25, 1981"
+            ],
+            [
+              "Alex Trebek",
+              "hosted Wheel of Fortune during",
+              "August 1980"
+            ],
+            [
+              "Alex Trebek",
+              "hosted Wheel of Fortune in place of",
+              "Chuck Woolery"
+            ],
+            [
+              "Chuck Woolery",
+              "left as host of",
+              "Wheel of Fortune"
+            ],
+            [
+              "Merv Griffin",
+              "created",
+              "Wheel of Fortune"
+            ],
+            [
+              "Chuck Woolery",
+              "had a salary dispute with",
+              "Merv Griffin"
+            ],
+            [
+              "Merv Griffin",
+              "chose",
+              "Pat Sajak"
+            ],
+            [
+              "Pat Sajak",
+              "debuted as host of Wheel of Fortune on",
+              "December 28, 1981"
+            ],
+            [
+              "Pat Sajak",
+              "became host of",
+              "Wheel of Fortune"
+            ],
+            [
+              "Merv Griffin",
+              "selected",
+              "Pat Sajak"
+            ],
+            [
+              "Fred Silverman",
+              "was president and CEO of",
+              "NBC"
+            ],
+            [
+              "Fred Silverman",
+              "objected to Pat Sajak becoming host of",
+              "Wheel of Fortune"
+            ],
+            [
+              "Pat Sajak",
+              "was the weatherman for",
+              "KNBC-TV"
+            ],
+            [
+              "KNBC-TV",
+              "was associated with",
+              "NBC"
+            ],
+            [
+              "Merv Griffin",
+              "insisted that",
+              "Pat Sajak"
+            ],
+            [
+              "Fred Silverman",
+              "allowed",
+              "Pat Sajak"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": false,
+      "new_accepts": true
+    },
+    {
+      "run": "large_B",
+      "candidate_id": "cand-3",
+      "text": "NBC approved the Lipshitz Saves the World pilot in July 2006, but the show was not picked up for broadcast.",
+      "relation": "approved pilot but did not pick up series",
+      "generator_type": "derived",
+      "spans": [
+        {
+          "passage_id": "chunk-c48d38af96b2654659443d02f43dc84f",
+          "span": "The show was given the green light to shoot a pilot by NBC in July 2006."
+        },
+        {
+          "passage_id": "chunk-c48d38af96b2654659443d02f43dc84f",
+          "span": "The show was not picked up for air."
+        }
+      ],
+      "gold": {
+        "audit_class": "Correct but Redundant",
+        "type": "REDUNDANT",
+        "faithful_passage": true,
+        "citation_ok": true,
+        "novel": false,
+        "old_decision": "REJECT",
+        "note": "Both sentences are explicit and both are already triples: NBC approved the pilot in July 2006, and the show was not picked up for air. The candidate paraphrases 'air' as 'broadcast'. The old verifier rejected the second half as absent."
+      },
+      "new_verifier": {
+        "candidate_id": "cand-3",
+        "decision": "ACCEPT",
+        "failure_stage": "",
+        "faithfulness": "supported",
+        "novelty": "new",
+        "audit_type": "COMPOSITIONAL_REASONING",
+        "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: approved, show, broadcast",
+        "residue": [
+          "approved",
+          "show",
+          "broadcast"
+        ],
+        "evidence_sentences": [
+          "The show was given the green light to shoot a pilot by NBC in July 2006. The show was not picked up for air.",
+          "The show was not picked up for air."
+        ],
+        "warning": "partial_name_anchored:Lipshitz Saves [title coreference]",
+        "stages": [
+          {
+            "stage": "V2",
+            "anchored_partial_names": [
+              "Lipshitz Saves [title coreference]"
+            ],
+            "missing_names": [],
+            "evidence_sentences": [
+              "The show was given the green light to shoot a pilot by NBC in July 2006. The show was not picked up for air.",
+              "The show was not picked up for air."
+            ]
+          },
+          {
+            "stage": "V3",
+            "logic_failures": [],
+            "dates": [
+              [
+                2006,
+                7,
+                1
+              ]
+            ]
+          },
+          {
+            "stage": "V4",
+            "residue": [
+              "approved",
+              "show",
+              "broadcast"
+            ],
+            "n_passage_triples": 5,
+            "novel": true
+          }
+        ]
+      },
+      "passages": {
+        "chunk-c48d38af96b2654659443d02f43dc84f": {
+          "content": "Lipshitz Saves the World\nLipshitz Saves the World is a comedy television pilot that was produced for NBC. The show was given the green light to shoot a pilot by NBC in July 2006. The show was not picked up for air.",
+          "triples": [
+            [
+              "Lipshitz Saves the World",
+              "is a",
+              "comedy television pilot"
+            ],
+            [
+              "Lipshitz Saves the World",
+              "was produced for",
+              "NBC"
+            ],
+            [
+              "NBC",
+              "gave approval to shoot a pilot for",
+              "Lipshitz Saves the World"
+            ],
+            [
+              "NBC",
+              "gave approval in",
+              "July 2006"
+            ],
+            [
+              "Lipshitz Saves the World",
+              "was not picked up for",
+              "air"
+            ]
+          ]
+        }
+      },
+      "old_matches_faithfulness": false,
+      "new_accepts": true
+    }
+  ],
+  "synthetic": [
+    {
+      "candidate_id": "SYN-DUP",
+      "decision": "REJECT",
+      "failure_stage": "V4",
+      "faithfulness": "supported",
+      "novelty": "duplicate",
+      "audit_type": "REDUNDANT",
+      "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+      "residue": [],
+      "evidence_sentences": [
+        "He first appeared on 23 October 2009."
+      ],
+      "warning": "",
+      "synthetic": true,
+      "expect": "REJECT",
+      "expect_met": true
+    },
+    {
+      "candidate_id": "SYN-CAUSE",
+      "decision": "REJECT",
+      "failure_stage": "V3",
+      "faithfulness": "unsupported",
+      "novelty": "unclear",
+      "audit_type": "UNSUPPORTED_HYPOTHESIS",
+      "reason": "Logical check failed: causal_or_motive_not_in_evidence",
+      "logic_failures": [
+        "causal_or_motive_not_in_evidence"
+      ],
+      "evidence_sentences": [
+        "He first appeared on 23 October 2009.",
+        "He appeared from 22 December 2009 to the character's death on 23 April 2013."
+      ],
+      "synthetic": true,
+      "expect": "REJECT",
+      "expect_met": true
+    },
+    {
+      "candidate_id": "SYN-MISS",
+      "decision": "EVIDENCE_MISMATCH",
+      "failure_stage": "V1",
+      "faithfulness": "unlocated",
+      "novelty": "unclear",
+      "audit_type": "UNLOCATED",
+      "reason": "A cited span is not a verbatim substring of the named passage.",
+      "missing_spans": [
+        {
+          "passage_id": "chunk-5531a128df4a1d94732e682316b73430",
+          "span": "He won a prize in Berlin in 2010.",
+          "problem": "span_not_in_passage"
+        }
+      ],
+      "located": [],
+      "synthetic": true,
+      "expect": "EVIDENCE_MISMATCH",
+      "expect_met": true
+    }
+  ]
+}

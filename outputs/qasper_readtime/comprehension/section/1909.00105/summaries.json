@@ -1,0 +1,422 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1909.00105::s00::p000",
+   "summary": "Existing recipe generation approaches require complete ingredients and a recipe name, ignoring personal preferences and incomplete details, so the authors propose personalized generation using preferences from previously consumed recipes.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s00::p001",
+   "summary": "The model combines data-to-text generation and personalized recommendation, taking a dish name, key ingredients, and calorie level, and using user profiles in an attention fusion layer.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s00::p002",
+   "summary": "The authors are the first to consider personalized text generation for recipe generation, where output quality depends heavily on ingredients and cooking techniques.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s00::p003",
+   "summary": "The paragraph introduces the paper's main contributions.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s00::p004",
+   "summary": "The authors explore generating plausible and personalized recipes from incomplete input specifications by leveraging historical user preferences.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s00::p005",
+   "summary": "The authors release a new dataset of 180K+ recipes and 700K+ user reviews for this task.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s00::p006",
+   "summary": "The authors introduce evaluation strategies for instructional text generation quality centered on quantitative coherence measures and show personalized models generate high-quality, specific recipes aligned with historical user preferences.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s01::p000",
+   "summary": "Large-scale transformer-based language models and hierarchical narrative-conditioned methods generate long texts, while this work generates procedurally structured recipes instead of free-form narratives.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s01::p001",
+   "summary": "Recipe generation is situated in data-to-text natural language generation, and prior ingredient-constrained hierarchical approaches are unsuitable for personalization with 10K+ possible ingredients.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s01::p002",
+   "summary": "Aspect-aware review generation combines contextual language generation with personalization, while this work attends over historical user preferences from previously consumed recipes to generate recipe content.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s02::p000",
+   "summary": "The model inputs a recipe name, partial ingredient list, and caloric level (high, medium, low), outputs recipe instructions, and uses historical recipe interactions of a user u.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s02::p001",
+   "summary": "The encoder uses vocabulary embedding V, ingredient embedding I, and caloric-level embedding C, with two-layered BiGRUs for names and ingredients and a projection layer for calories.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s02::p002",
+   "summary": "Ingredient attention applies attention over encoded ingredients to use encoder outputs at each decoding time step, defining an attention-score function α with key K and query Q.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s02::p003",
+   "summary": "With trainable weights Wα, bias bα, and normalization term Z, the ingredient context a_t^i is calculated at decoding time t.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s02::p004",
+   "summary": "The decoder is a two-layer GRU conditioned on the previous hidden state and input token, with concatenated encoder outputs projected as the initial decoder hidden state.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s02::p005",
+   "summary": "To bias generation toward user preferences, the model attends over previously reviewed recipes and considers recipe interactions and techniques seen therein.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s02::p006",
+   "summary": "Prior Recipe Attention uses a user's k-most recent prior recipes, represented by recipe embeddings or averaged name-token embeddings, in the Prior Recipe and Prior Name models.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s02::p007",
+   "summary": "Given a recipe representation r, the prior recipe attention context a_t^{r_u} is calculated.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s02::p008",
+   "summary": "Prior Technique Attention normalizes co-occurrence between users and techniques in R^+_u to obtain preference vector ρ_u, embeds each technique x via X, and calculates prior technique attention.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s02::p009",
+   "summary": "Inspired by copy mechanisms, the model adds ρ_{u,x} for technique x to emphasize attention by the user's prior technique preference.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s02::p010",
+   "summary": "The Attention Fusion Layer fuses all contexts at time t by concatenating them with decoder GRU output and previous token embedding.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s02::p011",
+   "summary": "The model then calculates the token probability.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s02::p012",
+   "summary": "The model maximizes log-likelihood of the generated sequence conditioned on input specifications and user preferences, and fig:ex shows Prior Name attending to savory recipes to suggest cilantro.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s03::p000",
+   "summary": "The authors collect 230K+ recipe texts and 1M+ user interactions over 18 years (2000-2018) from Food.com, then filter to 180K+ recipes and 700K+ reviews.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s03::p001",
+   "summary": "Training data has average recipe length 117 tokens, maximum 256, 13K unique ingredients, 95% of words appearing <100 times, BPE vocabulary of 15K tokens across 19M mentions, and diverse user profiles.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s03::p002",
+   "summary": "Reviews are ordered by timestamp for sequential leave-one-out evaluation, with the most recent review for test, second most recent for validation, and the remainder for training, evaluating only on recipes not in training.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s03::p003",
+   "summary": "The authors manually construct 58 cooking techniques from 384 cooking actions, with bake, combine, pour, and boil accounting for 36.5% of technique mentions, and approximate technique adherence via string match.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s04::p000",
+   "summary": "Training uses the first 3-5 ingredients, top-k sampling with k=3, hidden size d_h=256, specified embedding dimensions, k=20 for prior recipe attention, Adam with learning rate 10^{-3}, decay rate 0.9, and teacher-forcing.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s04::p001",
+   "summary": "Personalized models are compared against NN and Enc-Dec baselines, outperform baseline in BPE perplexity with Prior Name best, and show comparable BLEU-1/4 and ROUGE-L but more diverse and acceptable recipes.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s04::p002",
+   "summary": "Personalized models make more diverse recipes, performing better in BLEU-1 with more ingredient mentions but worse in BLEU-4, while Prior Name generates more unigram-diverse recipes and lower BLEU-1.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s04::p003",
+   "summary": "Sample outputs show generation quality improving from generic baseline output to a blended cocktail, with prior-recipe models referencing ingredients and Prior Name suggesting lemon and mint.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s04::p004",
+   "summary": "Personalization is measured with UMA and MRR using one gold user and nine randomly generated user profiles, with all personalized models beating baselines and Prior Name achieving the best UMA and MRR.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s04::p005",
+   "summary": "Recipe-level coherence is evaluated with a neural scoring model using BERT-encoded steps and a GRU, with personalized models scoring 1.78-1.82 versus baseline 1.77.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s04::p006",
+   "summary": "Local coherence is modeled as an entailment task using consecutive and non-consecutive step pairs, a BERT model with [SEP] and [CLS], and an average step entailment score.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s04::p007",
+   "summary": "Human evaluators compared 310 pairs of recipes, preferred personalized outputs to baseline 63% of the time, and in a 90-recipe coherence survey found personalized recipes more coherent and preferable 60% of the time.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s05::p000",
+   "summary": "The paper proposes generating personalized recipes from incomplete input specifications and user histories, shows on 180K recipes and 700K reviews that personalized models generate plausible, personalized, coherent recipes preferred by human evaluators, and introduces automatic coherence and personalization metrics.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s05::p001",
+   "summary": "The work is partly supported by NSF #1750063, and the authors thank reviewers and named individuals for feedback.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s06::p000",
+   "summary": "Raw data consists of 270K recipes and 1.4M user-recipe interactions (reviews) scraped from Food.com over 18 years (January 2000 to December 2018).",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s07::p000",
+   "summary": "The appendix points to tab:samplechx for a sample chicken chili recipe and tab:samplewaffle for a sample sweet waffles recipe.",
+   "group_id": "1909.00105::g00"
+  },
+  {
+   "passage_id": "1909.00105::s08::p000",
+   "summary": "Human evaluation used 15 pairwise comparisons per session and collected 930 pairwise evaluations (310 per personalized model) over 62 sessions, comparing baseline recipes with Prior Tech, Prior Name, and Prior Recipe outputs.",
+   "group_id": "1909.00105::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1909.00105::g00",
+   "summaries": [
+    {
+     "passage_id": "1909.00105::s00::p000",
+     "summary": "Existing recipe generation approaches require complete ingredients and a recipe name, ignoring personal preferences and incomplete details, so the authors propose personalized generation using preferences from previously consumed recipes.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s00::p001",
+     "summary": "The model combines data-to-text generation and personalized recommendation, taking a dish name, key ingredients, and calorie level, and using user profiles in an attention fusion layer.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s00::p002",
+     "summary": "The authors are the first to consider personalized text generation for recipe generation, where output quality depends heavily on ingredients and cooking techniques.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s00::p003",
+     "summary": "The paragraph introduces the paper's main contributions.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s00::p004",
+     "summary": "The authors explore generating plausible and personalized recipes from incomplete input specifications by leveraging historical user preferences.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s00::p005",
+     "summary": "The authors release a new dataset of 180K+ recipes and 700K+ user reviews for this task.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s00::p006",
+     "summary": "The authors introduce evaluation strategies for instructional text generation quality centered on quantitative coherence measures and show personalized models generate high-quality, specific recipes aligned with historical user preferences.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s01::p000",
+     "summary": "Large-scale transformer-based language models and hierarchical narrative-conditioned methods generate long texts, while this work generates procedurally structured recipes instead of free-form narratives.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s01::p001",
+     "summary": "Recipe generation is situated in data-to-text natural language generation, and prior ingredient-constrained hierarchical approaches are unsuitable for personalization with 10K+ possible ingredients.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s01::p002",
+     "summary": "Aspect-aware review generation combines contextual language generation with personalization, while this work attends over historical user preferences from previously consumed recipes to generate recipe content.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s02::p000",
+     "summary": "The model inputs a recipe name, partial ingredient list, and caloric level (high, medium, low), outputs recipe instructions, and uses historical recipe interactions of a user u.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s02::p001",
+     "summary": "The encoder uses vocabulary embedding V, ingredient embedding I, and caloric-level embedding C, with two-layered BiGRUs for names and ingredients and a projection layer for calories.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s02::p002",
+     "summary": "Ingredient attention applies attention over encoded ingredients to use encoder outputs at each decoding time step, defining an attention-score function α with key K and query Q.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s02::p003",
+     "summary": "With trainable weights Wα, bias bα, and normalization term Z, the ingredient context a_t^i is calculated at decoding time t.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s02::p004",
+     "summary": "The decoder is a two-layer GRU conditioned on the previous hidden state and input token, with concatenated encoder outputs projected as the initial decoder hidden state.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s02::p005",
+     "summary": "To bias generation toward user preferences, the model attends over previously reviewed recipes and considers recipe interactions and techniques seen therein.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s02::p006",
+     "summary": "Prior Recipe Attention uses a user's k-most recent prior recipes, represented by recipe embeddings or averaged name-token embeddings, in the Prior Recipe and Prior Name models.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s02::p007",
+     "summary": "Given a recipe representation r, the prior recipe attention context a_t^{r_u} is calculated.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s02::p008",
+     "summary": "Prior Technique Attention normalizes co-occurrence between users and techniques in R^+_u to obtain preference vector ρ_u, embeds each technique x via X, and calculates prior technique attention.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s02::p009",
+     "summary": "Inspired by copy mechanisms, the model adds ρ_{u,x} for technique x to emphasize attention by the user's prior technique preference.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s02::p010",
+     "summary": "The Attention Fusion Layer fuses all contexts at time t by concatenating them with decoder GRU output and previous token embedding.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s02::p011",
+     "summary": "The model then calculates the token probability.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s02::p012",
+     "summary": "The model maximizes log-likelihood of the generated sequence conditioned on input specifications and user preferences, and fig:ex shows Prior Name attending to savory recipes to suggest cilantro.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s03::p000",
+     "summary": "The authors collect 230K+ recipe texts and 1M+ user interactions over 18 years (2000-2018) from Food.com, then filter to 180K+ recipes and 700K+ reviews.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s03::p001",
+     "summary": "Training data has average recipe length 117 tokens, maximum 256, 13K unique ingredients, 95% of words appearing <100 times, BPE vocabulary of 15K tokens across 19M mentions, and diverse user profiles.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s03::p002",
+     "summary": "Reviews are ordered by timestamp for sequential leave-one-out evaluation, with the most recent review for test, second most recent for validation, and the remainder for training, evaluating only on recipes not in training.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s03::p003",
+     "summary": "The authors manually construct 58 cooking techniques from 384 cooking actions, with bake, combine, pour, and boil accounting for 36.5% of technique mentions, and approximate technique adherence via string match.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s04::p000",
+     "summary": "Training uses the first 3-5 ingredients, top-k sampling with k=3, hidden size d_h=256, specified embedding dimensions, k=20 for prior recipe attention, Adam with learning rate 10^{-3}, decay rate 0.9, and teacher-forcing.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s04::p001",
+     "summary": "Personalized models are compared against NN and Enc-Dec baselines, outperform baseline in BPE perplexity with Prior Name best, and show comparable BLEU-1/4 and ROUGE-L but more diverse and acceptable recipes.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s04::p002",
+     "summary": "Personalized models make more diverse recipes, performing better in BLEU-1 with more ingredient mentions but worse in BLEU-4, while Prior Name generates more unigram-diverse recipes and lower BLEU-1.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s04::p003",
+     "summary": "Sample outputs show generation quality improving from generic baseline output to a blended cocktail, with prior-recipe models referencing ingredients and Prior Name suggesting lemon and mint.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s04::p004",
+     "summary": "Personalization is measured with UMA and MRR using one gold user and nine randomly generated user profiles, with all personalized models beating baselines and Prior Name achieving the best UMA and MRR.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s04::p005",
+     "summary": "Recipe-level coherence is evaluated with a neural scoring model using BERT-encoded steps and a GRU, with personalized models scoring 1.78-1.82 versus baseline 1.77.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s04::p006",
+     "summary": "Local coherence is modeled as an entailment task using consecutive and non-consecutive step pairs, a BERT model with [SEP] and [CLS], and an average step entailment score.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s04::p007",
+     "summary": "Human evaluators compared 310 pairs of recipes, preferred personalized outputs to baseline 63% of the time, and in a 90-recipe coherence survey found personalized recipes more coherent and preferable 60% of the time.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s05::p000",
+     "summary": "The paper proposes generating personalized recipes from incomplete input specifications and user histories, shows on 180K recipes and 700K reviews that personalized models generate plausible, personalized, coherent recipes preferred by human evaluators, and introduces automatic coherence and personalization metrics.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s05::p001",
+     "summary": "The work is partly supported by NSF #1750063, and the authors thank reviewers and named individuals for feedback.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s06::p000",
+     "summary": "Raw data consists of 270K recipes and 1.4M user-recipe interactions (reviews) scraped from Food.com over 18 years (January 2000 to December 2018).",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s07::p000",
+     "summary": "The appendix points to tab:samplechx for a sample chicken chili recipe and tab:samplewaffle for a sample sweet waffles recipe.",
+     "group_id": "1909.00105::g00"
+    },
+    {
+     "passage_id": "1909.00105::s08::p000",
+     "summary": "Human evaluation used 15 pairwise comparisons per session and collected 930 pairwise evaluations (310 per personalized model) over 62 sessions, comparing baseline recipes with Prior Tech, Prior Name, and Prior Recipe outputs.",
+     "group_id": "1909.00105::g00"
+    }
+   ],
+   "n_raw": 40,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4769,
+    "completion_tokens": 2104,
+    "total_tokens": 6873,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

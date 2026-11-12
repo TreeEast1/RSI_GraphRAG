@@ -1,0 +1,87 @@
+{
+ "paper_id": "1909.04002",
+ "title": "The Trumpiest Trump? Identifying a Subject's Most Characteristic Tweets",
+ "abstract": "The sequence of documents produced by any given author varies in style and content, but some documents are more typical or representative of the source than others. We quantify the extent to which a given short text is characteristic of a specific person, using a dataset of tweets from fifteen celebrities. Such analysis is useful for generating excerpts of high-volume Twitter profiles, and understanding how representativeness relates to tweet popularity. We first consider the related task of binary author detection (is x the author of text T?), and report a test accuracy of 90.37% for the best of five approaches to this problem. We then use these models to compute characterization scores among all of an author's texts. A user study shows human evaluators agree with our characterization model for all 15 celebrities in our dataset, each with p-value < 0.05. We use these classifiers to show surprisingly strong correlations between characterization scores and the popularity of the associated texts. Indeed, we demonstrate a statistically significant correlation between this score and tweet popularity (likes/replies/retweets) for 13 of the 15 celebrities in our study.",
+ "sections": [
+  "Introduction",
+  "Problem Formulation",
+  "Problem Formulation ::: Methodology",
+  "Problem Formulation ::: Data",
+  "Related work ::: Author identification and verification",
+  "Related work ::: Predicting tweet popularity",
+  "Related work ::: Training with imbalanced datasets",
+  "Approaches to authorship verification",
+  "Approaches to authorship verification ::: Approach 1: Compression",
+  "Approaches to authorship verification ::: Approach 2: Topic modeling",
+  "Approaches to authorship verification ::: Approach 3: n-gram probability",
+  "Approaches to authorship verification ::: Approach 4: Document embeddings",
+  "Approaches to authorship verification ::: Approach 5: Token embeddings and sequential modeling",
+  "Approaches to authorship verification ::: Results and Comparison",
+  "User study",
+  "User study ::: Setup",
+  "User study ::: Results",
+  "Mapping with popularity ::: Correlation",
+  "Mapping with popularity ::: Interpretation",
+  "Mapping with popularity ::: Qualitative Analysis"
+ ],
+ "n_paragraphs": 73,
+ "n_tokens": 4905,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.04002::fig000",
+   "paper_id": "1909.04002",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Plot of log mean number of likes against tweet score percentile for Donald Trump and Justin Bieber. Node color denotes the year for which the maximum number of tweets are present in each percentile bucket, demonstrating that this is not merely a temporal correlation.",
+   "n_tokens": 51
+  },
+  {
+   "caption_id": "1909.04002::fig001",
+   "paper_id": "1909.04002",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Twitter celebrities in our dataset, with tweet counts before and after filtering (Foll. denotes followers in millions)",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "1909.04002::fig002",
+   "paper_id": "1909.04002",
+   "file": "6-Figure2-1.png",
+   "caption": "Figure 2: Mean accuracy of the BERT + MLP classifier for all users over 40 iterations",
+   "n_tokens": 20
+  },
+  {
+   "caption_id": "1909.04002::fig003",
+   "paper_id": "1909.04002",
+   "file": "6-Table2-1.png",
+   "caption": "Table 2: Test accuracy (%) of five approaches to classify user vs. non-user tweets (The best performing approach is shown in bold for each user) [Note that for each user, the test set contains an equal number of positive and negative examples.]",
+   "n_tokens": 51
+  },
+  {
+   "caption_id": "1909.04002::fig004",
+   "paper_id": "1909.04002",
+   "file": "7-Table3-1.png",
+   "caption": "Table 3: MTurk user study results: For each of these 15 celebrities, human evaluators support our representativeness scores with a significance level above 0.05. (p-values < 10−5 are shown in bold.)",
+   "n_tokens": 51
+  },
+  {
+   "caption_id": "1909.04002::fig005",
+   "paper_id": "1909.04002",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: Pearson correlation coefficients between mean popularity measure and percentile, for each user (Coefficients with p-value < 0.01 are shown in bold color). Green values exhibit significant positive correlation, and red values significant negative correlation.",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "1909.04002::fig006",
+   "paper_id": "1909.04002",
+   "file": "8-Figure3-1.png",
+   "caption": "Figure 3: Log mean likes vs. percentile for users of positive correlation (The color denotes the year for which maximum tweets are present in the percentile bucket).",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1909.04002::fig007",
+   "paper_id": "1909.04002",
+   "file": "8-Figure4-1.png",
+   "caption": "Figure 4: Log mean likes vs. percentile for users of negative correlation (The color denotes the year for which maximum tweets are present in the percentile bucket).",
+   "n_tokens": 32
+  }
+ ]
+}

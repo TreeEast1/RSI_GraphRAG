@@ -1,0 +1,62 @@
+{
+ "paper_id": "1704.06194",
+ "title": "Improved Neural Relation Detection for Knowledge Base Question Answering",
+ "abstract": "Relation detection is a core component for many NLP applications including Knowledge Base Question Answering (KBQA). In this paper, we propose a hierarchical recurrent neural network enhanced by residual learning that detects KB relations given an input question. Our method uses deep residual bidirectional LSTMs to compare questions and relation names via different hierarchies of abstraction. Additionally, we propose a simple KBQA system that integrates entity linking and our proposed relation detector to enable one enhance another. Experimental results evidence that our approach achieves not only outstanding relation detection performance, but more importantly, it helps our KBQA system to achieve state-of-the-art accuracy for both single-relation (SimpleQuestions) and multi-relation (WebQSP) QA benchmarks.",
+ "sections": [
+  "Introduction",
+  "Background: Different Granularity in KB Relations",
+  "Improved KB Relation Detection",
+  "Relation Representations from Different Granularity",
+  "Different Abstractions of Questions Representations",
+  "Hierarchical Matching between Relation and Question",
+  "KBQA Enhanced by Relation Detection",
+  "Entity Re-Ranking",
+  "Relation Detection",
+  "Query Generation",
+  "Constraint Detection",
+  "Experiments",
+  "Task Introduction & Settings",
+  "Relation Detection Results",
+  "KBQA End-Task Results",
+  "Conclusion"
+ ],
+ "n_paragraphs": 54,
+ "n_tokens": 6563,
+ "figures_and_tables": [
+  {
+   "caption_id": "1704.06194::fig000",
+   "paper_id": "1704.06194",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: KBQA examples and its three key components. (a) A single relation example. We first identify the topic entity with entity linking and then detect the relation asked by the question with relation detection (from all relations connecting the topic entity). Based on the detected entity and relation, we form a query to search the KB for the correct answer “Love Will Find a Way”. (b) A more complex question containing two entities. By using “Grant Show” as the topic entity, we could detect a chain of relations “starring roles-series” pointing to the answer. An additional constraint detection takes the other entity “2008” as a constraint, to filter the correct answer “SwingTown” from all candidates found by the topic entity and relation.",
+   "n_tokens": 155
+  },
+  {
+   "caption_id": "1704.06194::fig001",
+   "paper_id": "1704.06194",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1: An example of KB relation (episodes written) with two types of relation tokens (relation names and words), and two questions asking this relation. The topic entity is replaced with token <e> which could give the position information to the deep networks. The italics show the evidence phrase for each relation token in the question.",
+   "n_tokens": 70
+  },
+  {
+   "caption_id": "1704.06194::fig002",
+   "paper_id": "1704.06194",
+   "file": "5-Figure2-1.png",
+   "caption": "Figure 2: The proposed Hierarchical Residual BiLSTM (HR-BiLSTM) model for relation detection. Note that without the dotted arrows of shortcut connections between two layers, the model will only compute the similarity between the second-layer of questions representations and the relation, thus is not doing hierarchical matching.",
+   "n_tokens": 63
+  },
+  {
+   "caption_id": "1704.06194::fig003",
+   "paper_id": "1704.06194",
+   "file": "8-Table2-1.png",
+   "caption": "Table 2: Accuracy on the SimpleQuestions and WebQSP relation detection tasks (test sets). The top shows performance of baselines. On the bottom we give the results of our proposed model together with the ablation tests.",
+   "n_tokens": 46
+  },
+  {
+   "caption_id": "1704.06194::fig004",
+   "paper_id": "1704.06194",
+   "file": "9-Table3-1.png",
+   "caption": "Table 3: KBQA results on SimpleQuestions (SQ) and WebQSP (WQ) test sets. The numbers in green color are directly comparable to our results since we start with the same entity linking results.",
+   "n_tokens": 45
+  }
+ ]
+}

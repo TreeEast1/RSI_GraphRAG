@@ -1,0 +1,60 @@
+{
+ "paper_id": "1703.07090",
+ "title": "Deep LSTM for Large Vocabulary Continuous Speech Recognition",
+ "abstract": "Recurrent neural networks (RNNs), especially long short-term memory (LSTM) RNNs, are effective network for sequential task like speech recognition. Deeper LSTM models perform well on large vocabulary continuous speech recognition, because of their impressive learning ability. However, it is more difficult to train a deeper network. We introduce a training framework with layer-wise training and exponential moving average methods for deeper LSTM models. It is a competitive framework that LSTM models of more than 7 layers are successfully trained on Shenma voice search data in Mandarin and they outperform the deep LSTM models trained by conventional approach. Moreover, in order for online streaming speech recognition applications, the shallow model with low real time factor is distilled from the very deep model. The recognition accuracy have little loss in the distillation process. Therefore, the model trained with the proposed training framework reduces relative 14\\% character error rate, compared to original model which has the similar real-time capability. Furthermore, the novel transfer learning strategy with segmental Minimum Bayes-Risk is also introduced in the framework. The strategy makes it possible that training with only a small part of dataset could outperform full dataset training from the beginning.",
+ "sections": [
+  "Introduction",
+  "Layer-wise Training with Soft Target and Hard Target",
+  "Differential Saturation Check",
+  "Sequence Discriminative Training",
+  "Parallel Training",
+  "Deployment",
+  "Distillation",
+  "Transfer Learning with sMBR",
+  "Training Data",
+  "Experimental setup",
+  "Results",
+  "Layer-wise Training",
+  "Transfer Learning",
+  "Conclusion"
+ ],
+ "n_paragraphs": 42,
+ "n_tokens": 5392,
+ "figures_and_tables": [
+  {
+   "caption_id": "1703.07090::fig000",
+   "paper_id": "1703.07090",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1. The time summation of different sets of Shenma voice search and Amap.",
+   "n_tokens": 20
+  },
+  {
+   "caption_id": "1703.07090::fig001",
+   "paper_id": "1703.07090",
+   "file": "5-Figure1-1.png",
+   "caption": "Fig. 1. Mesh AllReduce of model averaging and BMUF.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1703.07090::fig002",
+   "paper_id": "1703.07090",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3. The CER and RTF of 9-layers, 2-layers regular-trained and 2-laryers distilled LSTM.",
+   "n_tokens": 31
+  },
+  {
+   "caption_id": "1703.07090::fig003",
+   "paper_id": "1703.07090",
+   "file": "6-Table2-1.png",
+   "caption": "Table 2. The CER of 6 to 9-layers models trained by regular Xavier Initialization, layer-wise training with CE criterion and CE + sMBR criteria. The teacher of 9-layer model is 8-layers sMBR model, while the others’ teacher is CE model.",
+   "n_tokens": 62
+  },
+  {
+   "caption_id": "1703.07090::fig004",
+   "paper_id": "1703.07090",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4. The CER of different 2-layers models, which are Shenma distilled model, Amap model further trained with Amap dataset, and Shenma model trained with sMBR on Amap dataset.",
+   "n_tokens": 46
+  }
+ ]
+}

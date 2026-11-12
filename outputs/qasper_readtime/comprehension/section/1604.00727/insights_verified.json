@@ -1,0 +1,661 @@
+{
+ "kept": [
+  {
+   "insight_id": "1604.00727::g00:i01",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g00",
+   "concise_text": "Character-level modeling is chosen to make the model robust to unseen KB entries because it has been previously shown to generalize well to new words not seen during training.",
+   "triple": {
+    "subject": "character-level modeling",
+    "predicate": "addresses",
+    "object": "unseen KB entries"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1604.00727::s00::p002",
+    "1604.00727::s00::p003"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g00:b0:f04",
+    "1604.00727::g00:b0:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Cited ids exist; p002 identifies unseen KB entries as an issue and p003 explicitly says character-level representations are used to make the model robust to unseen KB entries because character-level modeling generalizes to new words. Supported and composed across paragraphs."
+   },
+   "unit_id": "1604.00727::u001"
+  },
+  {
+   "insight_id": "1604.00727::g00:i02",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g00",
+   "concise_text": "The semantic relevance function addresses the scale problem of millions of entities and thousands of predicates by avoiding a large output layer in the decoder.",
+   "triple": {
+    "subject": "semantic relevance function",
+    "predicate": "addresses",
+    "object": "millions of entities and thousands of predicates"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1604.00727::s00::p002",
+    "1604.00727::s00::p003"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g00:b0:f05",
+    "1604.00727::g00:b0:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Cited ids exist; p002 states the scale problem of millions of entities and thousands of predicates, and p003 says a general interaction/semantic relevance function is used instead of a large decoder output layer to scale to that problem. Supported and composed."
+   },
+   "unit_id": "1604.00727::u002"
+  },
+  {
+   "insight_id": "1604.00727::g00:i06",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g00",
+   "concise_text": "The model's semantic relevance function is implemented as cosine similarity between decoder hidden states and KB entry embeddings to avoid an output layer with millions of nodes.",
+   "triple": {
+    "subject": "cosine-similarity metric: $cos(x_1, x_2)$",
+    "predicate": "addresses",
+    "object": "an output layer with millions of nodes"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1604.00727::s05::p007",
+    "1604.00727::s05::p008"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g00:b5:f01",
+    "1604.00727::g00:b5:f02",
+    "1604.00727::g00:b5:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Cited ids exist; p007 says direct prediction would require an output layer with millions of nodes, so they use a relevance function, and in current experiments use cosine similarity. p008 confirms the cosine metric in likelihoods. Supported and composed."
+   },
+   "unit_id": "1604.00727::u006"
+  },
+  {
+   "insight_id": "1604.00727::g00:i07",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g00",
+   "concise_text": "The model decodes a KB query consisting of exactly the topic entity and predicate by selecting the most likely (entity, predicate) pair from generated candidate entities and predicates.",
+   "triple": {
+    "subject": "model",
+    "predicate": "decodes",
+    "object": "the most likely (entity, predicate) pair"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1604.00727::s02::p000",
+    "1604.00727::s06::p000",
+    "1604.00727::s06::p002"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g00:b6:f00",
+    "1604.00727::g00:b6:f02",
+    "1604.00727::g00:b6:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Cited ids exist; p000 says the model decodes questions into a KB query with exactly topic entity and predicate, and p000 in s06 says it decodes the most likely entity-predicate pair from generated candidate sets. Supported and composed."
+   },
+   "unit_id": "1604.00727::u007"
+  },
+  {
+   "insight_id": "1604.00727::g00:i09",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g00",
+   "concise_text": "In random-sampling experiments with 200 entities and predicates as noise samples, character-level models achieve 96.6% accuracy in predicting the correct entity while word-level models predict 45% of entities accurately.",
+   "triple": {
+    "subject": "character-level models",
+    "predicate": "outperform",
+    "object": "word-level models on entity prediction"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1604.00727::s10::p000",
+    "1604.00727::s10::p002",
+    "1604.00727::s10::p003"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g00:b7:f05",
+    "1604.00727::g00:b7:f10",
+    "1604.00727::g00:b7:f12"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.95,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Cited ids exist; p000 describes random-sampling experiments with 200 noise entities/predicates, p002 gives word-level 45% entity accuracy, and p003 gives character-level 96.6% correct entity accuracy. Jointly supports the comparative outcome."
+   },
+   "unit_id": "1604.00727::u009"
+  },
+  {
+   "insight_id": "1604.00727::g01:i01",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g01",
+   "concise_text": "The conclusion that character-level modeling gives a compact model that is robust to unseen entities is evidenced by identifying phrenology, whose English aliases were never seen in training.",
+   "triple": {
+    "subject": "identifying phrenology, whose English aliases were never seen in training",
+    "predicate": "supports",
+    "object": "the conclusion that character-level modeling gives a compact model that is robust to unseen entities"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1604.00727::s11::p003",
+    "1604.00727::s13::p000"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g01:b0:f08",
+    "1604.00727::g01:b1:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Cited ids exist; p003 gives the example of identifying phrenology with aliases never seen in training, and p000 concludes character-level modeling yields a compact model robust to unseen entities. Jointly supports the evidence relation."
+   },
+   "unit_id": "1604.00727::u011"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1604.00727::g00:i00",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g00",
+   "concise_text": "The character-level encoder-decoder framework addresses the challenging automatic mapping of natural language questions to KB queries by significantly improving performance over state-of-the-art word-level neural models.",
+   "triple": {
+    "subject": "character-level encoder-decoder framework",
+    "predicate": "addresses",
+    "object": "automatic mapping of natural language questions to KB queries"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1604.00727::s00::p001",
+    "1604.00727::s00::p002"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g00:b0:f02",
+    "1604.00727::g00:b0:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "All cited ids exist and passages support the claim, but it is essentially a restatement/paraphrase of p001-p002 facts about the challenging mapping and the framework addressing the issues."
+   },
+   "unit_id": "1604.00727::u000"
+  },
+  {
+   "insight_id": "1604.00727::g00:i03",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g00",
+   "concise_text": "The model trained only on SimpleQuestions training questions, which cover about 24% of words in entity aliases on the test set, achieves 70.9% accuracy in the Freebase2M setting and 70.3% accuracy in the Freebase5M setting.",
+   "triple": {
+    "subject": "character-level encoder-decoder model",
+    "predicate": "achieves",
+    "object": "70.9% accuracy in the Freebase2M setting and 70.3% accuracy in the Freebase5M setting"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1604.00727::s00::p004",
+    "1604.00727::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g00:b0:f10",
+    "1604.00727::g00:b6:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "All cited ids exist and the numbers/settings are supported by p004 and p001, but the insight is a direct restatement of facts contained in p004 alone."
+   },
+   "unit_id": "1604.00727::u003"
+  },
+  {
+   "insight_id": "1604.00727::g00:i04",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g00",
+   "concise_text": "The character-level model uses no data augmentation unlike MemNNs, and its 1.2M parameters contrast with the word-level model's 19.9M parameters and best SQ accuracy of 53.9%.",
+   "triple": {
+    "subject": "character-level model",
+    "predicate": "outperforms",
+    "object": "word-level model"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1604.00727::s08::p001",
+    "1604.00727::s09::p000"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g00:b6:f10",
+    "1604.00727::g00:b7:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "Cited ids exist and passages support no data augmentation/only 76K training questions and parameter/accuracy contrasts, but the concise_text/triple mismatch: the triple says character-level model outperforms word-level model, while concise_text is a combined fact about no augmentation and parameter/accuracy contrast. Not consistent exactly as written."
+   },
+   "unit_id": "1604.00727::u004"
+  },
+  {
+   "insight_id": "1604.00727::g00:i05",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g00",
+   "concise_text": "The OOV problem from word-level embeddings explains why previous approaches rely on significant data augmentation from sources such as Paralex, which contains 18 million question-paraphrase pairs scraped from WikiAnswers.",
+   "triple": {
+    "subject": "out-of-vocabulary (OOV) problem",
+    "predicate": "causes",
+    "object": "reliance on significant data augmentation from sources such as Paralex"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1604.00727::s01::p003",
+    "1604.00727::s01::p004"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g00:b1:f08",
+    "1604.00727::g00:b1:f09",
+    "1604.00727::g00:b1:f10",
+    "1604.00727::g00:b1:f11"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.35,
+    "causality_error": true,
+    "reason": "Cited ids exist and p003 says word-level embeddings might suffer from OOV and consequently approaches often rely on data augmentation, but the insight overstates this as a definite causal 'explains why' relation and generalizes to 'previous approaches' relying on significant augmentation."
+   },
+   "unit_id": "1604.00727::u005"
+  },
+  {
+   "insight_id": "1604.00727::g00:i08",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g00",
+   "concise_text": "The severe OOV issue for entities is supported by SimpleQuestions having only 10,843 of the 45,335 unique words in entity aliases present in the train set and by the word-level model predicting only 45% of entities accurately.",
+   "triple": {
+    "subject": "SimpleQuestions train-test vocabulary gap",
+    "predicate": "limits",
+    "object": "word-level entity prediction to 45%"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1604.00727::s08::p000",
+    "1604.00727::s10::p002"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g00:b6:f09",
+    "1604.00727::g00:b7:f09",
+    "1604.00727::g00:b7:f10",
+    "1604.00727::g00:b7:f11"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.55,
+    "causality_error": true,
+    "reason": "Cited ids exist and the vocabulary gap and 45% entity accuracy are present, but the passages do not explicitly support the causal claim that the train-test vocabulary gap 'limits' word-level entity prediction to 45%; they only co-occur as evidence about OOV severity."
+   },
+   "unit_id": "1604.00727::u008"
+  },
+  {
+   "insight_id": "1604.00727::g01:i00",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g01",
+   "concise_text": "The attention distribution peaks at empty spaces because the blue and green curves visualize attention over question characters when generating the entity and predicate.",
+   "triple": {
+    "subject": "the attention distribution peaks at empty spaces",
+    "predicate": "evaluated_on",
+    "object": "the blue and green curves visualizing attention over question characters when generating the entity and predicate"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1604.00727::s11::p000",
+    "1604.00727::s11::p001"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g01:b0:f00",
+    "1604.00727::g01:b0:f02",
+    "1604.00727::g01:b0:f03",
+    "1604.00727::g01:b0:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.35,
+    "causality_error": false,
+    "reason": "Cited ids exist, but the relation is wrong: the blue/green curves visualize attention distributions; they are not an evaluation setting on which 'peaks at empty spaces' is evaluated. The concise_text also awkwardly links two facts without the claimed evaluated_on relation."
+   },
+   "unit_id": "1604.00727::u010"
+  },
+  {
+   "insight_id": "1604.00727::g01:i02",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g01",
+   "concise_text": "Because the blue curve is entity attention and the green curve is predicate attention, entity attention distributions are usually less sharp and span longer portions of words than predicate attention distributions.",
+   "triple": {
+    "subject": "the blue curve",
+    "predicate": "outperforms",
+    "object": "the green curve in spanning longer portions of words"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1604.00727::s11::p000",
+    "1604.00727::s11::p002"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g01:b0:f02",
+    "1604.00727::g01:b0:f03",
+    "1604.00727::g01:b0:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.45,
+    "causality_error": false,
+    "reason": "Cited ids exist and p002 supports that entity attention is less sharp and spans longer portions than predicate attention, but the triple's subject/predicate/object are wrong: the blue curve does not 'outperform' the green curve, and the causal 'because' in concise_text is not supported."
+   },
+   "unit_id": "1604.00727::u012"
+  },
+  {
+   "insight_id": "1604.00727::g01:i03",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g01",
+   "concise_text": "The hidden state of the LSTM encoder at a space likely summarizes content before that space, explaining why attention distribution typically peaks at empty spaces.",
+   "triple": {
+    "subject": "the hidden state of the LSTM encoder at a space likely summarizes content before that space",
+    "predicate": "causes",
+    "object": "the attention distribution typically peaks at empty spaces"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1604.00727::s11::p000",
+    "1604.00727::s11::p001"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g01:b0:f02",
+    "1604.00727::g01:b0:f03",
+    "1604.00727::g01:b0:f04",
+    "1604.00727::g01:b0:f06"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.35,
+    "causality_error": true,
+    "reason": "Cited ids exist and p001 says hidden states at spaces likely summarize prior content and therefore contain important semantic information, but the insight asserts a causal explanation for why attention peaks at empty spaces more strongly than the text's interpretive 'indicates/likely/therefore' supports."
+   },
+   "unit_id": "1604.00727::u013"
+  },
+  {
+   "insight_id": "1604.00727::g01:i04",
+   "paper_id": "1604.00727",
+   "group_id": "1604.00727::g01",
+   "concise_text": "The attention model's capability to attend disjoint regions of the question supports the proposed model not needing to make a hard categorization between predicate and entity mentions.",
+   "triple": {
+    "subject": "the attention model's capability to attend disjoint regions of the question",
+    "predicate": "supports",
+    "object": "the proposed model not needing to make a hard categorization between predicate and entity mentions"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1604.00727::s11::p004",
+    "1604.00727::s13::p000"
+   ],
+   "supporting_fact_ids": [
+    "1604.00727::g01:b0:f09",
+    "1604.00727::g01:b0:f12",
+    "1604.00727::g01:b1:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.76,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.5,
+    "causality_error": false,
+    "reason": "Cited ids exist and p004 says the attention model can attend disjoint regions and that the proposed model does not need hard categorization, but it does not state that the former supports/evidences the latter; the support relation is inferred from co-occurrence in the same paragraph."
+   },
+   "unit_id": "1604.00727::u014"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1604.00727::g00:i00",
+    "verdict": {
+     "insight_id": "1604.00727::g00:i00",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "All cited ids exist and passages support the claim, but it is essentially a restatement/paraphrase of p001-p002 facts about the challenging mapping and the framework addressing the issues."
+    },
+    "reason": "All cited ids exist and passages support the claim, but it is essentially a restatement/paraphrase of p001-p002 facts about the challenging mapping and the framework addressing the issues."
+   },
+   {
+    "insight_id": "1604.00727::g00:i01",
+    "verdict": {
+     "insight_id": "1604.00727::g00:i01",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Cited ids exist; p002 identifies unseen KB entries as an issue and p003 explicitly says character-level representations are used to make the model robust to unseen KB entries because character-level modeling generalizes to new words. Supported and composed across paragraphs."
+    }
+   },
+   {
+    "insight_id": "1604.00727::g00:i02",
+    "verdict": {
+     "insight_id": "1604.00727::g00:i02",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Cited ids exist; p002 states the scale problem of millions of entities and thousands of predicates, and p003 says a general interaction/semantic relevance function is used instead of a large decoder output layer to scale to that problem. Supported and composed."
+    }
+   },
+   {
+    "insight_id": "1604.00727::g00:i03",
+    "verdict": {
+     "insight_id": "1604.00727::g00:i03",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "All cited ids exist and the numbers/settings are supported by p004 and p001, but the insight is a direct restatement of facts contained in p004 alone."
+    },
+    "reason": "All cited ids exist and the numbers/settings are supported by p004 and p001, but the insight is a direct restatement of facts contained in p004 alone."
+   },
+   {
+    "insight_id": "1604.00727::g00:i04",
+    "verdict": {
+     "insight_id": "1604.00727::g00:i04",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "Cited ids exist and passages support no data augmentation/only 76K training questions and parameter/accuracy contrasts, but the concise_text/triple mismatch: the triple says character-level model outperforms word-level model, while concise_text is a combined fact about no augmentation and parameter/accuracy contrast. Not consistent exactly as written."
+    },
+    "reason": "Cited ids exist and passages support no data augmentation/only 76K training questions and parameter/accuracy contrasts, but the concise_text/triple mismatch: the triple says character-level model outperforms word-level model, while concise_text is a combined fact about no augmentation and parameter/accuracy contrast. Not consistent exactly as written."
+   },
+   {
+    "insight_id": "1604.00727::g00:i05",
+    "verdict": {
+     "insight_id": "1604.00727::g00:i05",
+     "keep": false,
+     "support": 0.85,
+     "novelty": 0.35,
+     "causality_error": true,
+     "reason": "Cited ids exist and p003 says word-level embeddings might suffer from OOV and consequently approaches often rely on data augmentation, but the insight overstates this as a definite causal 'explains why' relation and generalizes to 'previous approaches' relying on significant augmentation."
+    },
+    "reason": "Cited ids exist and p003 says word-level embeddings might suffer from OOV and consequently approaches often rely on data augmentation, but the insight overstates this as a definite causal 'explains why' relation and generalizes to 'previous approaches' relying on significant augmentation."
+   },
+   {
+    "insight_id": "1604.00727::g00:i06",
+    "verdict": {
+     "insight_id": "1604.00727::g00:i06",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Cited ids exist; p007 says direct prediction would require an output layer with millions of nodes, so they use a relevance function, and in current experiments use cosine similarity. p008 confirms the cosine metric in likelihoods. Supported and composed."
+    }
+   },
+   {
+    "insight_id": "1604.00727::g00:i07",
+    "verdict": {
+     "insight_id": "1604.00727::g00:i07",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Cited ids exist; p000 says the model decodes questions into a KB query with exactly topic entity and predicate, and p000 in s06 says it decodes the most likely entity-predicate pair from generated candidate sets. Supported and composed."
+    }
+   },
+   {
+    "insight_id": "1604.00727::g00:i08",
+    "verdict": {
+     "insight_id": "1604.00727::g00:i08",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.55,
+     "causality_error": true,
+     "reason": "Cited ids exist and the vocabulary gap and 45% entity accuracy are present, but the passages do not explicitly support the causal claim that the train-test vocabulary gap 'limits' word-level entity prediction to 45%; they only co-occur as evidence about OOV severity."
+    },
+    "reason": "Cited ids exist and the vocabulary gap and 45% entity accuracy are present, but the passages do not explicitly support the causal claim that the train-test vocabulary gap 'limits' word-level entity prediction to 45%; they only co-occur as evidence about OOV severity."
+   },
+   {
+    "insight_id": "1604.00727::g00:i09",
+    "verdict": {
+     "insight_id": "1604.00727::g00:i09",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Cited ids exist; p000 describes random-sampling experiments with 200 noise entities/predicates, p002 gives word-level 45% entity accuracy, and p003 gives character-level 96.6% correct entity accuracy. Jointly supports the comparative outcome."
+    }
+   },
+   {
+    "insight_id": "1604.00727::g01:i00",
+    "verdict": {
+     "insight_id": "1604.00727::g01:i00",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.35,
+     "causality_error": false,
+     "reason": "Cited ids exist, but the relation is wrong: the blue/green curves visualize attention distributions; they are not an evaluation setting on which 'peaks at empty spaces' is evaluated. The concise_text also awkwardly links two facts without the claimed evaluated_on relation."
+    },
+    "reason": "Cited ids exist, but the relation is wrong: the blue/green curves visualize attention distributions; they are not an evaluation setting on which 'peaks at empty spaces' is evaluated. The concise_text also awkwardly links two facts without the claimed evaluated_on relation."
+   },
+   {
+    "insight_id": "1604.00727::g01:i01",
+    "verdict": {
+     "insight_id": "1604.00727::g01:i01",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Cited ids exist; p003 gives the example of identifying phrenology with aliases never seen in training, and p000 concludes character-level modeling yields a compact model robust to unseen entities. Jointly supports the evidence relation."
+    }
+   },
+   {
+    "insight_id": "1604.00727::g01:i02",
+    "verdict": {
+     "insight_id": "1604.00727::g01:i02",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.45,
+     "causality_error": false,
+     "reason": "Cited ids exist and p002 supports that entity attention is less sharp and spans longer portions than predicate attention, but the triple's subject/predicate/object are wrong: the blue curve does not 'outperform' the green curve, and the causal 'because' in concise_text is not supported."
+    },
+    "reason": "Cited ids exist and p002 supports that entity attention is less sharp and spans longer portions than predicate attention, but the triple's subject/predicate/object are wrong: the blue curve does not 'outperform' the green curve, and the causal 'because' in concise_text is not supported."
+   },
+   {
+    "insight_id": "1604.00727::g01:i03",
+    "verdict": {
+     "insight_id": "1604.00727::g01:i03",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.35,
+     "causality_error": true,
+     "reason": "Cited ids exist and p001 says hidden states at spaces likely summarize prior content and therefore contain important semantic information, but the insight asserts a causal explanation for why attention peaks at empty spaces more strongly than the text's interpretive 'indicates/likely/therefore' supports."
+    },
+    "reason": "Cited ids exist and p001 says hidden states at spaces likely summarize prior content and therefore contain important semantic information, but the insight asserts a causal explanation for why attention peaks at empty spaces more strongly than the text's interpretive 'indicates/likely/therefore' supports."
+   },
+   {
+    "insight_id": "1604.00727::g01:i04",
+    "verdict": {
+     "insight_id": "1604.00727::g01:i04",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.5,
+     "causality_error": false,
+     "reason": "Cited ids exist and p004 says the attention model can attend disjoint regions and that the proposed model does not need hard categorization, but it does not state that the former supports/evidences the latter; the support relation is inferred from co-occurrence in the same paragraph."
+    },
+    "reason": "Cited ids exist and p004 says the attention model can attend disjoint regions and that the proposed model does not need hard categorization, but it does not state that the former supports/evidences the latter; the support relation is inferred from co-occurrence in the same paragraph."
+   }
+  ],
+  "calls": [
+   {
+    "n": 15,
+    "parsed": true,
+    "usage": {
+     "prompt_tokens": 6396,
+     "completion_tokens": 1407,
+     "total_tokens": 7803,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

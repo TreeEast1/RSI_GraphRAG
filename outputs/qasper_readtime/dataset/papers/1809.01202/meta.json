@@ -1,0 +1,95 @@
+{
+ "paper_id": "1809.01202",
+ "title": "Causal Explanation Analysis on Social Media",
+ "abstract": "Understanding causal explanations - reasons given for happenings in one's life - has been found to be an important psychological factor linked to physical and mental health. Causal explanations are often studied through manual identification of phrases over limited samples of personal writing. Automatic identification of causal explanations in social media, while challenging in relying on contextual and sequential cues, offers a larger-scale alternative to expensive manual ratings and opens the door for new applications (e.g. studying prevailing beliefs about causes, such as climate change). Here, we explore automating causal explanation analysis, building on discourse parsing, and presenting two novel subtasks: causality detection (determining whether a causal explanation exists at all) and causal explanation identification (identifying the specific phrase that is the explanation). We achieve strong accuracies for both tasks but find different approaches best: an SVM for causality prediction (F1 = 0.791) and a hierarchy of Bidirectional LSTMs for causal explanation identification (F1 = 0.853). Finally, we explore applications of our complete pipeline (F1 = 0.868), showing demographic differences in mentions of causal explanation and that the association between a word and sentiment can change when it is used within a causal explanation.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Methods",
+  "Dataset",
+  "Model",
+  "Experiment",
+  "Results",
+  "Causality Prediction",
+  "Causal Explanation Identification",
+  "Architectural Variants",
+  "Complete Pipeline",
+  "Exploration",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 39,
+ "n_tokens": 5071,
+ "figures_and_tables": [
+  {
+   "caption_id": "1809.01202::fig000",
+   "paper_id": "1809.01202",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: A casual relation characterizes the connection between two discourse arguments, one of which is the causal explanation.",
+   "n_tokens": 24
+  },
+  {
+   "caption_id": "1809.01202::fig001",
+   "paper_id": "1809.01202",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1: Number of messages containing causality or not in our dataset.",
+   "n_tokens": 16
+  },
+  {
+   "caption_id": "1809.01202::fig002",
+   "paper_id": "1809.01202",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: The number of discourse arguments in causality messages. Across 1,598 total causality messages, we found 7,015 discourse arguments (Total DA) and the one which covers annotated causal explanation are used as causal explanation discourse arguments (CE DA)",
+   "n_tokens": 55
+  },
+  {
+   "caption_id": "1809.01202::fig003",
+   "paper_id": "1809.01202",
+   "file": "5-Figure2-1.png",
+   "caption": "Figure 2: LSTM classifier for causality detection and explanation identification",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1809.01202::fig004",
+   "paper_id": "1809.01202",
+   "file": "6-Table5-1.png",
+   "caption": "Table 5: Causal explanation identification performance. Bold indicates significant imrpovement over next best model (p < .05)",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "1809.01202::fig005",
+   "paper_id": "1809.01202",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3: Causality prediction performance across different predictive models. Bold indicates significant improvement over the LSTM",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "1809.01202::fig006",
+   "paper_id": "1809.01202",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: Feature ablation test of Linear SVM for causality prediction",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1809.01202::fig007",
+   "paper_id": "1809.01202",
+   "file": "7-Table6-1.png",
+   "caption": "Table 6: The effect of Word-level LSTM (Word LSTM) and discourse argument LSTM (DA AVG LSTM) for causality prediction (CP) and causal explanation identification (CEI). Note that, as described in methods, there are architectural differences for CP and CEI models with the same names, most notably that the output layer is always a single classification for CP and a sequence of classifications for CEI.",
+   "n_tokens": 83
+  },
+  {
+   "caption_id": "1809.01202::fig008",
+   "paper_id": "1809.01202",
+   "file": "7-Table7-1.png",
+   "caption": "Table 7: The effect of Linear SVM Cauality model (CP) within our pipeline. CEIall: LSTM CEI models trained on all messages; CEIcausal: LSTM CEI models trained only on causality messages (CEIcausal); CP + CEIall|causal: the combination of Linear SVM and each LSTM model. Bold: significant (p < .05) increase in F1 over the next best model, suggesting the two-step approach worked best.",
+   "n_tokens": 99
+  },
+  {
+   "caption_id": "1809.01202::fig009",
+   "paper_id": "1809.01202",
+   "file": "8-Table8-1.png",
+   "caption": "Table 8: Top words most associated with negative reviews from within causal explanations (CE) and outside of causal explanation (Non-CE).",
+   "n_tokens": 28
+  }
+ ]
+}

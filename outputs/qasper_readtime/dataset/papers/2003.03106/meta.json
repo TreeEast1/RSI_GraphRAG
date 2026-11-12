@@ -1,0 +1,100 @@
+{
+ "paper_id": "2003.03106",
+ "title": "Sensitive Data Detection and Classification in Spanish Clinical Text: Experiments with BERT",
+ "abstract": "Massive digital data processing provides a wide range of opportunities and benefits, but at the cost of endangering personal data privacy. Anonymisation consists in removing or replacing sensitive information from data, enabling its exploitation for different purposes while preserving the privacy of individuals. Over the years, a lot of automatic anonymisation systems have been proposed; however, depending on the type of data, the target language or the availability of training documents, the task remains challenging still. The emergence of novel deep-learning models during the last two years has brought large improvements to the state of the art in the field of Natural Language Processing. These advancements have been most noticeably led by BERT, a model proposed by Google in 2018, and the shared language models pre-trained on millions of documents. In this paper, we use a BERT-based sequence labelling model to conduct a series of anonymisation experiments on several clinical datasets in Spanish. We also compare BERT to other algorithms. The experiments show that a simple BERT-based model with general-domain pre-training obtains highly competitive results without any domain specific feature engineering.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Materials and Methods",
+  "Materials and Methods ::: Data",
+  "Materials and Methods ::: Data ::: NUBes-PHI",
+  "Materials and Methods ::: Data ::: The MEDDOCAN corpus",
+  "Materials and Methods ::: Systems",
+  "Materials and Methods ::: Systems ::: Baseline",
+  "Materials and Methods ::: Systems ::: CRF",
+  "Materials and Methods ::: Systems ::: spaCy",
+  "Materials and Methods ::: Systems ::: BERT",
+  "Materials and Methods ::: Experimental design",
+  "Materials and Methods ::: Experimental design ::: Experiment A: NUBes-PHI",
+  "Materials and Methods ::: Experimental design ::: Experiment B: MEDDOCAN",
+  "Results",
+  "Results ::: Experiment A: NUBes-PHI",
+  "Results ::: Experiment B: MEDDOCAN",
+  "Conclusions and Future Work",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 68,
+ "n_tokens": 5852,
+ "figures_and_tables": [
+  {
+   "caption_id": "2003.03106::fig000",
+   "paper_id": "2003.03106",
+   "file": "2-Table1-1.png",
+   "caption": "Table 1: Anonymization examples of “64-year-old patient operated on a hernia on the 12/01/2016 by Dr Lopez”; sensitive data and their substitutions are highlighted in bold.",
+   "n_tokens": 42
+  },
+  {
+   "caption_id": "2003.03106::fig001",
+   "paper_id": "2003.03106",
+   "file": "3-Table2-1.png",
+   "caption": "Table 2: Size of the NUBES-PHI corpus",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "2003.03106::fig002",
+   "paper_id": "2003.03106",
+   "file": "3-Table4-1.png",
+   "caption": "Table 4: Size of the MEDDOCAN corpus",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "2003.03106::fig003",
+   "paper_id": "2003.03106",
+   "file": "3-Table3-1.png",
+   "caption": "Table 3: Label distribution in the NUBES-PHI corpus",
+   "n_tokens": 14
+  },
+  {
+   "caption_id": "2003.03106::fig004",
+   "paper_id": "2003.03106",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1: Pre-trained BERT with a Fully Connected layer on top to perform the fine-tuning",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "2003.03106::fig005",
+   "paper_id": "2003.03106",
+   "file": "5-Table5-1.png",
+   "caption": "Table 5: Results of Experiment A: NUBES-PHI",
+   "n_tokens": 14
+  },
+  {
+   "caption_id": "2003.03106::fig006",
+   "paper_id": "2003.03106",
+   "file": "6-Table6-1.png",
+   "caption": "Table 6: Confusion matrices for the sensitive information classification task on the NUBES-PHI corpus",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "2003.03106::fig007",
+   "paper_id": "2003.03106",
+   "file": "6-Table7-1.png",
+   "caption": "Table 7: BERT error examples (only BIO-tags are shown; differences between gold annotations and predictions are highlighted in bold)",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "2003.03106::fig008",
+   "paper_id": "2003.03106",
+   "file": "7-Figure2-1.png",
+   "caption": "Figure 2: Performance decay with decreasing amounts of training data on the sensitive information detection task in the NUBES-PHI corpus",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "2003.03106::fig009",
+   "paper_id": "2003.03106",
+   "file": "7-Table8-1.png",
+   "caption": "Table 8: Results of Experiment B: MEDDOCAN",
+   "n_tokens": 12
+  }
+ ]
+}

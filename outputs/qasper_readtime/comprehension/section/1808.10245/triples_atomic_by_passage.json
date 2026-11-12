@@ -1,0 +1,496 @@
+{
+ "1808.10245::s00::p000": [
+  [
+   "Abusive language",
+   "refers to",
+   "any type of insult, vulgarity, or profanity that debases the target"
+  ],
+  [
+   "Abusive language",
+   "is often reframed as",
+   "offensive language, cyberbullying, othering language, and hate speech"
+  ]
+ ],
+ "1808.10245::s00::p001": [
+  [
+   "Major social media companies (i.e. Facebook, Twitter)",
+   "have utilized",
+   "multiple resources—artificial intelligence, human reviewers, user reporting processes, etc."
+  ]
+ ],
+ "1808.10245::s00::p002": [
+  [
+   "The major reason of the failure in abusive language detection",
+   "comes from",
+   "its subjectivity and context-dependent characteristics"
+  ],
+  [
+   "This aspect",
+   "makes",
+   "detecting abusive language extremely laborious even for human annotators"
+  ]
+ ],
+ "1808.10245::s00::p003": [
+  [
+   "datasets openly available in abusive language detection research on Twitter",
+   "ranged from",
+   "10K to 35K in size"
+  ],
+  [
+   "This quantity",
+   "is not sufficient to train",
+   "the significant number of parameters in deep learning models"
+  ],
+  [
+   "these datasets",
+   "have been mainly studied by",
+   "traditional machine learning methods"
+  ],
+  [
+   "Founta et al.",
+   "introduced",
+   "Hate and Abusive Speech on Twitter"
+  ],
+  [
+   "Hate and Abusive Speech on Twitter",
+   "contains",
+   "100K tweets with cross-validated labels"
+  ]
+ ],
+ "1808.10245::s00::p004": [
+  [
+   "Reliable baseline results",
+   "are presented with",
+   "the first comparative study on this dataset"
+  ]
+ ],
+ "1808.10245::s01::p000": [
+  [
+   "Razavi et al.",
+   "applied",
+   "Naïve Bayes"
+  ],
+  [
+   "Warner and Hirschberg",
+   "used",
+   "Support Vector Machine (SVM)"
+  ],
+  [
+   "Razavi et al. and Warner and Hirschberg",
+   "used",
+   "word-level features to classify offensive language"
+  ],
+  [
+   "Xiang et al.",
+   "generated",
+   "topic distributions with Latent Dirichlet Allocation"
+  ],
+  [
+   "Xiang et al.",
+   "used",
+   "word-level features in order to classify offensive tweets"
+  ]
+ ],
+ "1808.10245::s01::p001": [
+  [
+   "distributed word representations and neural network models",
+   "have been widely applied for",
+   "abusive language detection"
+  ],
+  [
+   "Djuric et al.",
+   "used",
+   "the Continuous Bag Of Words model with paragraph2vec algorithm"
+  ],
+  [
+   "Badjatiya et al.",
+   "implemented",
+   "Gradient Boosted Decision Trees classifiers using word representations trained by deep learning models"
+  ],
+  [
+   "Other researchers",
+   "have investigated",
+   "character-level representations and their effectiveness compared to word-level representations"
+  ]
+ ],
+ "1808.10245::s01::p002": [
+  [
+   "traditional machine learning methods",
+   "have relied on",
+   "feature engineering, (i.e. n-grams, POS tags, user information)"
+  ],
+  [
+   "Convolutional Neural Networks and Recurrent Neural Networks",
+   "have been applied to detect",
+   "abusive language"
+  ],
+  [
+   "Convolutional Neural Networks and Recurrent Neural Networks",
+   "have outperformed",
+   "traditional machine learning classifiers such as Logistic Regression and SVM"
+  ],
+  [
+   "studies investigating the efficiency of neural models with large-scale datasets over 100K",
+   "are absent",
+   "no studies"
+  ]
+ ],
+ "1808.10245::s03::p000": [
+  [
+   "text sequences",
+   "are converted into",
+   "Bag Of Words (BOW) representations"
+  ],
+  [
+   "text sequences",
+   "are normalized with",
+   "Term Frequency-Inverse Document Frequency (TF-IDF) values"
+  ]
+ ],
+ "1808.10245::s03::p001": [
+  [
+   "Naïve Bayes (NB)",
+   "is",
+   "Multinomial NB with additive smoothing constant 1"
+  ]
+ ],
+ "1808.10245::s03::p002": [
+  [
+   "Logistic Regression (LR)",
+   "is",
+   "Linear LR with L2 regularization constant 1 and limited-memory BFGS optimization"
+  ]
+ ],
+ "1808.10245::s03::p003": [
+  [
+   "Linear SVM",
+   "has logistic loss function",
+   "logistic loss function"
+  ]
+ ],
+ "1808.10245::s03::p004": [
+  [
+   "Random Forests (RF)",
+   "averages probabilistic predictions of",
+   "10 randomized decision trees"
+  ]
+ ],
+ "1808.10245::s03::p005": [
+  [
+   "Gradient Boosted Trees (GBT)",
+   "has logistic loss function",
+   "logistic loss function"
+  ]
+ ],
+ "1808.10245::s04::p000": [
+  [
+   "A pre-trained GloVe BIBREF17 representation",
+   "is used for",
+   "word-level features"
+  ]
+ ],
+ "1808.10245::s04::p001": [
+  [
+   "The word-level CNN models",
+   "have",
+   "3 convolutional filters of different sizes [1,2,3] with ReLU activation, and a max-pooling layer"
+  ],
+  [
+   "the character-level CNN",
+   "uses",
+   "6 convolutional filters of various sizes [3,4,5,6,7,8]"
+  ],
+  [
+   "the character-level CNN",
+   "adds",
+   "max-pooling layers followed by 1 fully-connected layer with a dimension of 1024"
+  ]
+ ],
+ "1808.10245::s04::p002": [
+  [
+   "Park and Fung park2017one",
+   "proposed",
+   "a HybridCNN model"
+  ],
+  [
+   "a HybridCNN model",
+   "outperformed",
+   "both word-level and character-level CNNs in abusive language detection"
+  ]
+ ],
+ "1808.10245::s04::p003": [
+  [
+   "All three CNN models (word-level, character-level, and hybrid)",
+   "use",
+   "cross entropy with softmax as their loss function"
+  ],
+  [
+   "All three CNN models (word-level, character-level, and hybrid)",
+   "use",
+   "Adam BIBREF18 as the optimizer"
+  ]
+ ],
+ "1808.10245::s04::p004": [
+  [
+   "RNN",
+   "uses",
+   "bidirectional RNN BIBREF19 as the baseline"
+  ],
+  [
+   "RNN",
+   "implements",
+   "a GRU BIBREF20 cell for each recurrent unit"
+  ],
+  [
+   "parameter-search experiments",
+   "chose",
+   "1 encoding layer with 50 dimensional hidden states and an input dropout probability of 0.3"
+  ],
+  [
+   "The RNN models",
+   "use",
+   "cross entropy with sigmoid as their loss function and Adam as the optimizer"
+  ]
+ ],
+ "1808.10245::s04::p005": [
+  [
+   "The LTC method",
+   "extracts",
+   "latent topic information from the hidden states of RNN"
+  ],
+  [
+   "The LTC method",
+   "uses",
+   "it for additional information in classifying the text data"
+  ]
+ ],
+ "1808.10245::s05::p000": [
+  [
+   "looking at the tweet one has replied to or has quoted",
+   "provides",
+   "significant contextual information"
+  ]
+ ],
+ "1808.10245::s05::p001": [
+  [
+   "the intention of the user",
+   "can be better understood with",
+   "its context tweet (1)"
+  ]
+ ],
+ "1808.10245::s05::p005": [
+  [
+   "context tweet (3)",
+   "is important in understanding",
+   "the abusive tweet (4)"
+  ],
+  [
+   "context tweet (3)",
+   "is important in identifying",
+   "the target of the malice"
+  ]
+ ],
+ "1808.10245::s05::p009": [
+  [
+   "Huang et al. huang2016modeling",
+   "used",
+   "several attributes of context tweets for sentiment analysis"
+  ],
+  [
+   "Huang et al. huang2016modeling",
+   "used several attributes of context tweets for sentiment analysis to improve",
+   "the baseline LSTM model"
+  ]
+ ],
+ "1808.10245::s05::p010": [
+  [
+   "text sequences of context tweets",
+   "are directly used as",
+   "an additional feature of neural network models"
+  ],
+  [
+   "the last hidden states of context and labeled tweets",
+   "are concatenated",
+   "for RNN"
+  ]
+ ],
+ "1808.10245::s06::p000": [
+  [
+   "Hate and Abusive Speech on Twitter BIBREF10",
+   "classifies tweets into",
+   "4 labels, “normal\", “spam\", “hateful\" and “abusive\""
+  ],
+  [
+   "the tweet",
+   "was deleted or",
+   "the user account had been suspended"
+  ]
+ ],
+ "1808.10245::s07::p000": [
+  [
+   "user IDs, URLs, and frequently used emojis",
+   "are replaced as",
+   "special tokens"
+  ],
+  [
+   "hashtags",
+   "tend to have",
+   "a high correlation with the content of the tweet BIBREF23"
+  ]
+ ],
+ "1808.10245::s07::p001": [
+  [
+   "Tweets",
+   "are transformed into",
+   "one-hot encoded vectors using 70 character dimensions"
+  ],
+  [
+   "70 character dimensions",
+   "include",
+   "26 lower-cased alphabets, 10 digits, and 34 special characters including whitespace"
+  ]
+ ],
+ "1808.10245::s08::p000": [
+  [
+   "words that appear only once",
+   "are replaced as",
+   "unknown tokens"
+  ]
+ ],
+ "1808.10245::s08::p001": [
+  [
+   "the dataset used",
+   "is not split into",
+   "train, development, and test sets"
+  ]
+ ],
+ "1808.10245::s09::p000": [
+  [
+   "neural network models",
+   "are more accurate than",
+   "feature engineering based models (i.e. NB, SVM, etc.)"
+  ],
+  [
+   "the best LR model",
+   "has",
+   "the same F1 score as the best CNN model"
+  ]
+ ],
+ "1808.10245::s09::p001": [
+  [
+   "LR model",
+   "is the most accurate in classifying abusive language among traditional machine learning models",
+   "traditional machine learning models"
+  ],
+  [
+   "ensemble models such as GBT and RF",
+   "follow",
+   "LR model"
+  ],
+  [
+   "Character-level representations",
+   "improve F1 scores of",
+   "SVM and RF classifiers"
+  ],
+  [
+   "Character-level representations",
+   "have no positive effect on",
+   "other models"
+  ]
+ ],
+ "1808.10245::s09::p002": [
+  [
+   "RNN with LTC modules",
+   "have the highest accuracy score",
+   "neural network models"
+  ],
+  [
+   "RNN with LTC modules",
+   "have no significant improvements from",
+   "its baseline model and its attention-added model"
+  ],
+  [
+   "HybridCNN",
+   "does not improve",
+   "the baseline CNN model"
+  ],
+  [
+   "character-level features",
+   "significantly decrease the accuracy of classification for",
+   "both CNN and RNN models"
+  ]
+ ],
+ "1808.10245::s09::p003": [
+  [
+   "The use of context tweets",
+   "generally have little effect on",
+   "baseline models"
+  ],
+  [
+   "context tweets",
+   "noticeably improve",
+   "the scores of several metrics"
+  ],
+  [
+   "CNN with context tweets",
+   "score the highest recall and F1 for",
+   "“hateful\" labels"
+  ],
+  [
+   "RNN models with context tweets",
+   "have the highest recall for",
+   "“abusive\" tweets"
+  ]
+ ],
+ "1808.10245::s10::p000": [
+  [
+   "character-level features",
+   "reduce classification accuracy for",
+   "Hate and Abusive Speech on Twitter"
+  ],
+  [
+   "the lack of labeled data as well as the significant imbalance among the different labels",
+   "is concluded as the reason for",
+   "reduced classification accuracy"
+  ],
+  [
+   "character-level features in traditional machine learning classifiers",
+   "have positive results because of training with",
+   "the most significant character elements using TF-IDF values"
+  ]
+ ],
+ "1808.10245::s10::p001": [
+  [
+   "Variants of neural network models",
+   "suffer from",
+   "data insufficiency"
+  ],
+  [
+   "these models",
+   "show positive performances on",
+   "“spam\" (14%) and “hateful\" (4%) tweets—the lower distributed labels"
+  ],
+  [
+   "The highest F1 score for “spam\"",
+   "is from",
+   "the RNN-LTC model (0.551)"
+  ],
+  [
+   "the highest for “hateful\"",
+   "is",
+   "CNN with context tweets (0.309)"
+  ]
+ ],
+ "1808.10245::s10::p002": [
+  [
+   "Hate and Abusive Speech on Twitter",
+   "is",
+   "the recently introduced dataset"
+  ],
+  [
+   "bidirectional GRU networks with LTC",
+   "provide the most accurate results in",
+   "detecting abusive language"
+  ]
+ ]
+}

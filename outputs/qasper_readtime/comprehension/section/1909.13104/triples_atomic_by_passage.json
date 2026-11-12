@@ -1,0 +1,318 @@
+{
+ "1909.13104::s00::p000": [
+  [
+   "Twitter",
+   "has been doomed for",
+   "abuse and harassment toward users specifically women"
+  ],
+  [
+   "online harassment",
+   "is usually in",
+   "verbal or graphical formats"
+  ],
+  [
+   "Monitoring the contents including sexism and sexual harassment in traditional media",
+   "is easier than",
+   "monitoring on the online social media platforms like Twitter"
+  ],
+  [
+   "the large amount of user generated content in these media",
+   "is",
+   "The main reason"
+  ]
+ ],
+ "1909.13104::s00::p001": [
+  [
+   "Previous studies",
+   "have been focused on",
+   "collecting data about sexism and racism in very broad terms"
+  ],
+  [
+   "Previous studies",
+   "have proposed",
+   "two categories of sexism as benevolent or hostile sexism BIBREF0"
+  ]
+ ],
+ "1909.13104::s00::p002": [
+  [
+   "the competition",
+   "is divided in",
+   "two tasks"
+  ]
+ ],
+ "1909.13104::s01::p000": [
+  [
+   "Waseem et al. BIBREF1",
+   "were the first who collected",
+   "hateful tweets"
+  ],
+  [
+   "Waseem et al. BIBREF1",
+   "categorized hateful tweets into",
+   "being sexist, racist or neither"
+  ],
+  [
+   "Jha and Mamidi BIBREF0",
+   "proposed",
+   "two categories of hostile and benevolent sexism"
+  ],
+  [
+   "Sharifirad S. and Matwin S. BIBREF2",
+   "categorized the sexist tweets into",
+   "the categories of indirect harassment, information threat, sexual harassment and physical harassment"
+  ]
+ ],
+ "1909.13104::s01::p001": [
+  [
+   "Jha and Mamidi BIBREF0",
+   "tested",
+   "support vector machine, bi-directional RNN encoder-decoder and FastText on hostile and benevolent sexist tweets"
+  ],
+  [
+   "Sharifirad et al. BIBREF4",
+   "trained, tested and evaluated",
+   "different classification methods on the SemEval2018 dataset"
+  ],
+  [
+   "Sharifirad S. et al. BIBREF5",
+   "have applied",
+   "text augmentation and text generation with certain success"
+  ],
+  [
+   "Zhang et al. BIBREF6",
+   "combined",
+   "convolutional and gated recurrent networks to detect hate speech in tweets"
+  ]
+ ],
+ "1909.13104::s02::p000": [
+  [
+   "The dataset from Twitter",
+   "consists of",
+   "a train set, a validation set and a test set"
+  ],
+  [
+   "The dataset from Twitter",
+   "was published for",
+   "the \"First workshop on categorizing different types of online harassment languages in social media\""
+  ],
+  [
+   "The whole dataset",
+   "is divided into",
+   "two categories, which are harassment and non-harassment tweets"
+  ],
+  [
+   "the tweets",
+   "are divided into",
+   "three sub-categories which are indirect harassment, sexual and physical harassment"
+  ],
+  [
+   "the categories of indirect and physical harassment",
+   "seem to be more rare in",
+   "the train set than in the validation and test sets"
+  ],
+  [
+   "the dataset",
+   "is",
+   "imbalanced"
+  ]
+ ],
+ "1909.13104::s03::p000": [
+  [
+   "the given dataset",
+   "is",
+   "imbalanced"
+  ],
+  [
+   "indirect and physical harassment categories",
+   "have",
+   "only a few instances in the train set"
+  ],
+  [
+   "back-translation method BIBREF13",
+   "translates",
+   "indirect and physical harassment tweets of the train set from english to german, french and greek"
+  ],
+  [
+   "These \"noisy\" data",
+   "boost significantly",
+   "the performance of our models"
+  ]
+ ],
+ "1909.13104::s03::p001": [
+  [
+   "pre-trained word embeddings from 2B Twitter data BIBREF14",
+   "have",
+   "27B tokens"
+  ],
+  [
+   "pre-trained word embeddings from 2B Twitter data BIBREF14",
+   "are used for",
+   "the initialization of the embedding layer"
+  ]
+ ],
+ "1909.13104::s04::p000": [
+  [
+   "the given tweets",
+   "are processed using",
+   "a tweet pre-processor"
+  ],
+  [
+   "The scope here",
+   "is",
+   "the cleaning and tokenization of the dataset"
+  ]
+ ],
+ "1909.13104::s05::p000": [
+  [
+   "RNN models",
+   "are used because of",
+   "their ability to deal with sequence information"
+  ],
+  [
+   "The RNN model",
+   "is",
+   "a chain of GRU cells BIBREF15"
+  ],
+  [
+   "an LR Layer",
+   "uses",
+   "$h_{k}$ to classify the tweet as harassment or non-harassment"
+  ]
+ ],
+ "1909.13104::s05::p001": [
+  [
+   "the LR Layer",
+   "estimates",
+   "the probability that tweet w should be considered as harassment"
+  ]
+ ],
+ "1909.13104::s05::p002": [
+  [
+   "the LR Layer",
+   "will consider",
+   "the weighted sum $h_{sum}$ of all the hidden states instead of $h_{k}$"
+  ]
+ ],
+ "1909.13104::s05::p005": [
+  [
+   "the LR layer",
+   "will estimate",
+   "the corresponding probability"
+  ]
+ ],
+ "1909.13104::s05::p007": [
+  [
+   "The weights $\\alpha _{t}$",
+   "are produced by",
+   "an attention mechanism presented in BIBREF9"
+  ]
+ ],
+ "1909.13104::s06::p000": [
+  [
+   "The Embedding Layer",
+   "is initialized using",
+   "pre-trained word embeddings of dimension 200 from Twitter data"
+  ],
+  [
+   "a Spatial Dropout Layer",
+   "drops",
+   "a certain percentage of dimensions from each word vector in the training sample"
+  ],
+  [
+   "the word embeddings",
+   "are passing through",
+   "a one-layer MLP, which has tanh as activation function and 128 hidden units"
+  ],
+  [
+   "the embeddings",
+   "are fed in",
+   "a unidirectional GRU having 1 Stacked Layer and size 128"
+  ]
+ ],
+ "1909.13104::s07::p001": [
+  [
+   "average AUC",
+   "is chosen as",
+   "early stopping criterion"
+  ]
+ ],
+ "1909.13104::s07::p002": [
+  [
+   "The training process",
+   "is based on",
+   "the optimization of the loss function mentioned below"
+  ],
+  [
+   "The training process",
+   "is carried out with",
+   "the Adam optimizer BIBREF20"
+  ]
+ ],
+ "1909.13104::s07::p004": [
+  [
+   "BCE",
+   "is",
+   "the binary cross-entropy loss function"
+  ]
+ ],
+ "1909.13104::s07::p006": [
+  [
+   "the loss function",
+   "has applied",
+   "equal weight to both tasks"
+  ]
+ ],
+ "1909.13104::s08::p000": [
+  [
+   "Each model",
+   "produces",
+   "four scores"
+  ],
+  [
+   "the harassment label",
+   "is",
+   "zero"
+  ]
+ ],
+ "1909.13104::s08::p001": [
+  [
+   "Four of them",
+   "have",
+   "a Projected Layer"
+  ],
+  [
+   "LastStateRNN",
+   "is",
+   "the classic RNN model"
+  ],
+  [
+   "the MultiAttentionRNN model",
+   "includes",
+   "four attentions, one for each category"
+  ]
+ ],
+ "1909.13104::s08::p002": [
+  [
+   "the F1 Score",
+   "is",
+   "the harmonic mean of precision and recall"
+  ],
+  [
+   "the models that include the multi-attention mechanism",
+   "outperform",
+   "the others"
+  ],
+  [
+   "the one with the Projected Layer",
+   "has",
+   "the highest performance"
+  ]
+ ],
+ "1909.13104::s09::p000": [
+  [
+   "the multi-attention method having a projected layer",
+   "achieved",
+   "the highest performance"
+  ]
+ ]
+}

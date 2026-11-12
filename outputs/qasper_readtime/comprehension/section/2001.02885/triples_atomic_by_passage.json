@@ -1,0 +1,469 @@
+{
+ "2001.02885::s00::p000": [
+  [
+   "speculation detection and scope resolution",
+   "is critical in",
+   "distinguishing factual information from speculative information"
+  ],
+  [
+   "This task",
+   "is particularly important to",
+   "the biomedical domain"
+  ],
+  [
+   "This task",
+   "is commonly broken down into",
+   "two subtasks"
+  ],
+  [
+   "speculation cue detection",
+   "is to identify",
+   "the uncertainty cue in a sentence"
+  ]
+ ],
+ "2001.02885::s00::p002": [
+  [
+   "The speculation cue",
+   "is",
+   "‘might’"
+  ],
+  [
+   "the scope of the cue ‘might’",
+   "is",
+   "‘rain tomorrow’"
+  ],
+  [
+   "the speculation cue",
+   "is",
+   "the word that expresses the speculation"
+  ],
+  [
+   "the words affected by the speculation",
+   "are in",
+   "the scope of that cue"
+  ]
+ ],
+ "2001.02885::s00::p003": [
+  [
+   "This task",
+   "was",
+   "the CoNLL-2010 Shared Task (BIBREF0)"
+  ],
+  [
+   "the CoNLL-2010 Shared Task (BIBREF0)",
+   "had",
+   "3 different subtasks"
+  ],
+  [
+   "Task 1B",
+   "was",
+   "speculation cue detection on the BioScope Corpus"
+  ],
+  [
+   "Task 2",
+   "was",
+   "speculation scope resolution from the BioScope Corpus"
+  ]
+ ],
+ "2001.02885::s00::p004": [
+  [
+   "the BioScope Abstracts sub corpora",
+   "is referred to as",
+   "BA"
+  ],
+  [
+   "the BioScope Full Papers sub corpora",
+   "is referred to as",
+   "BF"
+  ],
+  [
+   "the SFU Review Corpus (BIBREF2)",
+   "is referred to as",
+   "SFU"
+  ]
+ ],
+ "2001.02885::s00::p005": [
+  [
+   "The approaches used to solve them",
+   "have evolved from",
+   "simple rule-based systems (BIBREF3) based on linguistic information extracted from the sentences"
+  ],
+  [
+   "The approaches used to solve them",
+   "have evolved to",
+   "modern deep-learning based methods"
+  ],
+  [
+   "The Machine Learning techniques used",
+   "varied from",
+   "Maximum Entropy Classifiers (BIBREF4)"
+  ]
+ ],
+ "2001.02885::s00::p006": [
+  [
+   "comparative analysis",
+   "covers",
+   "three popular transformer-based architectures: BERT (BIBREF20), XLNet (BIBREF21) and RoBERTa (BIBREF22)"
+  ],
+  [
+   "three popular transformer-based architectures",
+   "are applied to",
+   "speculation detection and scope resolution"
+  ],
+  [
+   "performance of each model",
+   "is evaluated via",
+   "the single dataset training approach"
+  ],
+  [
+   "all scores including inter-dataset scores",
+   "test",
+   "the generalizability of the models"
+  ],
+  [
+   "This approach",
+   "outperforms",
+   "all existing systems on the task of speculation detection and scope resolution"
+  ]
+ ],
+ "2001.02885::s00::p007": [
+  [
+   "XLNet",
+   "consistently outperforms",
+   "RoBERTa"
+  ],
+  [
+   "these models",
+   "are applied to",
+   "the negation detection and scope resolution task"
+  ],
+  [
+   "state-of-the-art results",
+   "are reported on",
+   "three of four datasets on the negation scope resolution task"
+  ]
+ ],
+ "2001.02885::s01::p000": [
+  [
+   "the methodology by Khandelwal and Sawant (BIBREF12)",
+   "is modified to support",
+   "experimentation with multiple models"
+  ]
+ ],
+ "2001.02885::s01::p002": [
+  [
+   "Input Sentence",
+   "is",
+   "It might rain tomorrow."
+  ]
+ ],
+ "2001.02885::s01::p003": [
+  [
+   "True Labels",
+   "are",
+   "Not-A-Cue, Cue, Not-A-Cue, Not-A-Cue"
+  ]
+ ],
+ "2001.02885::s01::p004": [
+  [
+   "this sentence",
+   "is preprocessed to get",
+   "the target labels"
+  ]
+ ],
+ "2001.02885::s01::p007": [
+  [
+   "Input Sentence",
+   "is",
+   "[It, might, rain, tomorrow]"
+  ]
+ ],
+ "2001.02885::s01::p009": [
+  [
+   "the input",
+   "is preprocessed using",
+   "the tokenizer for the model being used (BERT, XLNet or RoBERTa)"
+  ],
+  [
+   "the tokenizer",
+   "splits",
+   "each word into one or more tokens"
+  ],
+  [
+   "the tokenizer",
+   "converts",
+   "each token to it’s corresponding tokenID"
+  ],
+  [
+   "the input",
+   "is padded to",
+   "the maximum input length of the model"
+  ]
+ ],
+ "2001.02885::s01::p010": [
+  [
+   "Input Sentence",
+   "is",
+   "[wtt(It), wtt(might), wtt(rain), wtt(tom), wtt(## or), wtt(## row), wtt(〈pad 〉),wtt(〈pad 〉)...]"
+  ]
+ ],
+ "2001.02885::s01::p012": [
+  [
+   "The word ‘tomorrow'",
+   "has been split into",
+   "3 tokens, ‘tom', ‘##or' and ‘##row'"
+  ],
+  [
+   "The function to convert the word to tokenID",
+   "is represented by",
+   "wtt"
+  ]
+ ],
+ "2001.02885::s01::p014": [
+  [
+   "each cue's scope",
+   "will be resolved",
+   "individually"
+  ]
+ ],
+ "2001.02885::s01::p016": [
+  [
+   "True Labels",
+   "are",
+   "Out-Of-Scope, Out-Of-Scope, In-Scope, In-Scope"
+  ]
+ ],
+ "2001.02885::s01::p021": [
+  [
+   "cue detection",
+   "preprocesses",
+   "the input using the tokenizer for the model being used"
+  ]
+ ],
+ "2001.02885::s01::p022": [
+  [
+   "Input Sentence",
+   "is",
+   "[wtt(It), wtt(〈token[1]〉), wtt(might), wtt(rain), wtt(tom), wtt(##or), wtt(##row), wtt(〈pad〉), wtt(〈pad〉)...]"
+  ]
+ ],
+ "2001.02885::s01::p027": [
+  [
+   "The W matrix",
+   "is a matrix of size",
+   "n_hidden x num_classes"
+  ],
+  [
+   "n_hidden",
+   "is the size of",
+   "the representation of a token within the model"
+  ],
+  [
+   "These logits",
+   "are fed to",
+   "the loss function"
+  ]
+ ],
+ "2001.02885::s01::p029": [
+  [
+   "BERT",
+   "=",
+   "bert-base-uncaseds3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased.tar.gz"
+  ]
+ ],
+ "2001.02885::s01::p030": [
+  [
+   "RoBERTa-base",
+   "does not have",
+   "an uncased variant"
+  ]
+ ],
+ "2001.02885::s01::p031": [
+  [
+   "XLNet-base",
+   "does not have",
+   "an uncased variant"
+  ]
+ ],
+ "2001.02885::s01::p032": [
+  [
+   "The output of the model",
+   "is",
+   "a vector of probabilities per token"
+  ],
+  [
+   "The loss",
+   "is calculated for",
+   "each token"
+  ]
+ ],
+ "2001.02885::s01::p033": [
+  [
+   "tokens",
+   "could be different for",
+   "different models"
+  ]
+ ],
+ "2001.02885::s01::p034": [
+  [
+   "Average",
+   "averages",
+   "the output vectors (softmax probabilities) for each token that the word was split into by the model's tokenizer"
+  ],
+  [
+   "This",
+   "is compared with",
+   "the true label for the original word"
+  ]
+ ],
+ "2001.02885::s01::p035": [
+  [
+   "First Token",
+   "considers",
+   "the first token's probability vector (among all tokens the word was split into) as the output for that word"
+  ],
+  [
+   "First Token",
+   "gets",
+   "the label by an argmax over this vector"
+  ]
+ ],
+ "2001.02885::s01::p036": [
+  [
+   "cue detection results",
+   "are reported for",
+   "the Average method only"
+  ],
+  [
+   "Scope Resolution scores",
+   "are reported for",
+   "both Average and First Token"
+  ]
+ ],
+ "2001.02885::s01::p037": [
+  [
+   "the same hyperparameters",
+   "are used for",
+   "the entire architecture for all 3 models"
+  ],
+  [
+   "Only the tokenizer and the model",
+   "are changed for",
+   "each model"
+  ],
+  [
+   "the models",
+   "are finetuned for",
+   "60 epochs"
+  ],
+  [
+   "early stopping",
+   "uses",
+   "a patience of 6 on the F1 score (word level) on the validation dataset"
+  ]
+ ],
+ "2001.02885::s01::p038": [
+  [
+   "all our models",
+   "are trained on",
+   "Google Colaboratory"
+  ]
+ ],
+ "2001.02885::s02::p000": [
+  [
+   "default train-validation-test split",
+   "is",
+   "70-15-15 for each dataset"
+  ],
+  [
+   "results for speculation detection and scope resolution subtasks using single-dataset training",
+   "are reported as",
+   "an average of 5 runs of the model"
+  ],
+  [
+   "training the model on multiple datasets",
+   "performs",
+   "a 70-15-15 split of each training dataset"
+  ],
+  [
+   "results for training the model on multiple datasets",
+   "are reported as",
+   "an average of 3 runs of the model"
+  ],
+  [
+   "BF",
+   "gets the best results when trained on",
+   "BA"
+  ],
+  [
+   "BF",
+   "has",
+   "2670 sentences"
+  ],
+  [
+   "BA",
+   "has",
+   "11871 sentences"
+  ]
+ ],
+ "2001.02885::s02::p001": [
+  [
+   "training on multiple datasets",
+   "helps",
+   "the performance of all models on each dataset"
+  ],
+  [
+   "XLNet",
+   "consistently outperforms",
+   "BERT and RoBERTa"
+  ],
+  [
+   "the 2 models",
+   "are applied to",
+   "the related task of negation detection and scope resolution"
+  ]
+ ],
+ "2001.02885::s03::p000": [
+  [
+   "The results for XLNet and RoBERTa",
+   "are averaged across",
+   "5 runs for statistical significance"
+  ]
+ ],
+ "2001.02885::s03::p001": [
+  [
+   "negation and speculation",
+   "are closely related",
+   "subtasks"
+  ],
+  [
+   "Further experimentation on different tasks",
+   "is needed to verify",
+   "this"
+  ]
+ ],
+ "2001.02885::s03::p002": [
+  [
+   "Most benchmark tasks",
+   "are",
+   "sentence classification tasks"
+  ],
+  [
+   "the subtasks we experiment on",
+   "are",
+   "sequence labelling tasks"
+  ],
+  [
+   "the pre-training objective of XLNet",
+   "is",
+   "training on permutations of the input"
+  ]
+ ],
+ "2001.02885::s03::p003": [
+  [
+   "most results",
+   "are reported with",
+   "the large variants of the models"
+  ]
+ ]
+}

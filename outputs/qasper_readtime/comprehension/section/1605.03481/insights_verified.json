@@ -1,0 +1,442 @@
+{
+ "kept": [
+  {
+   "insight_id": "1605.03481::g00:i00",
+   "paper_id": "1605.03481",
+   "group_id": "1605.03481::g00",
+   "concise_text": "tweet2vec uses hashtag-prediction supervision to train character-based tweet embeddings and outperforms the word model on held-out hashtag prediction.",
+   "triple": {
+    "subject": "tweet2vec",
+    "predicate": "outperforms",
+    "object": "the word model on held-out hashtag prediction"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1605.03481::s00::p003",
+    "1605.03481::s00::p004",
+    "1605.03481::s06::p000",
+    "1605.03481::s06::p001"
+   ],
+   "supporting_fact_ids": [
+    "1605.03481::g00:b0:f08",
+    "1605.03481::g00:b0:f09",
+    "1605.03481::g00:b0:f11",
+    "1605.03481::g00:b0:f12",
+    "1605.03481::g00:b4:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Cited paragraphs jointly support hashtag-prediction supervision, character-based Bi-GRU tweet embeddings, and improved held-out hashtag prediction over word-level baseline; composed across passages."
+   },
+   "unit_id": "1605.03481::u000"
+  },
+  {
+   "insight_id": "1605.03481::g00:i01",
+   "paper_id": "1605.03481",
+   "group_id": "1605.03481::g00",
+   "concise_text": "Because the word-level baseline stores only the 20K most common words and groups the rest under `UNK', tweet2vec's significantly better RW test set performance supports its advantage on out-of-vocabulary words.",
+   "triple": {
+    "subject": "tweet2vec's significantly better RW test set performance",
+    "predicate": "supports",
+    "object": "its advantage on out-of-vocabulary words"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1605.03481::s03::p000",
+    "1605.03481::s06::p001"
+   ],
+   "supporting_fact_ids": [
+    "1605.03481::g00:b3:f02",
+    "1605.03481::g00:b4:f00",
+    "1605.03481::g00:b4:f01",
+    "1605.03481::g00:b4:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "Word baseline uses 20K vocabulary with UNK grouping; RW set is defined by maximum OOV words and tweet2vec is significantly better there, jointly supporting advantage on OOV words."
+   },
+   "unit_id": "1605.03481::u001"
+  },
+  {
+   "insight_id": "1605.03481::g00:i02",
+   "paper_id": "1605.03481",
+   "group_id": "1605.03481::g00",
+   "concise_text": "The Bi-GRU encoder's character-stream input creates longer GRU input sequences than words, which increases tweet2vec's training time despite its improved performance.",
+   "triple": {
+    "subject": "character-stream input",
+    "predicate": "causes",
+    "object": "increased training time for tweet2vec"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1605.03481::s02::p001",
+    "1605.03481::s06::p001"
+   ],
+   "supporting_fact_ids": [
+    "1605.03481::g00:b1:f08",
+    "1605.03481::g00:b1:f10",
+    "1605.03481::g00:b4:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Character-stream input is described, and the results paragraph explicitly says moving from words to characters results in longer GRU input sequences and increased training time; causal relation is stated."
+   },
+   "unit_id": "1605.03481::u002"
+  },
+  {
+   "insight_id": "1605.03481::g00:i03",
+   "paper_id": "1605.03481",
+   "group_id": "1605.03481::g00",
+   "concise_text": "The final dataset's 2039 distinct hashtags define the softmax output layer size L used to compute posterior hashtag probabilities from the tweet embedding.",
+   "triple": {
+    "subject": "2039 distinct hashtags",
+    "predicate": "defines",
+    "object": "the softmax output layer size L"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1605.03481::s02::p005",
+    "1605.03481::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1605.03481::g00:b2:f02",
+    "1605.03481::g00:b3:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Softmax output size equals number of hashtags L, and final dataset has 2039 distinct hashtags; jointly supports that 2039 defines L."
+   },
+   "unit_id": "1605.03481::u003"
+  },
+  {
+   "insight_id": "1605.03481::g00:i04",
+   "paper_id": "1605.03481",
+   "group_id": "1605.03481::g00",
+   "concise_text": "tweet2vec extends the C2W model by replacing LSTM units with GRU units and generating vector representations of entire tweets from characters.",
+   "triple": {
+    "subject": "tweet2vec",
+    "predicate": "extends",
+    "object": "the C2W model"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1605.03481::s01::p001",
+    "1605.03481::s02::p000"
+   ],
+   "supporting_fact_ids": [
+    "1605.03481::g00:b1:f02",
+    "1605.03481::g00:b1:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Passages state tweet2vec generates tweet representations from characters and uses a structure similar to C2W with LSTM units replaced by GRU units; supports extension claim."
+   },
+   "unit_id": "1605.03481::u004"
+  },
+  {
+   "insight_id": "1605.03481::g00:i05",
+   "paper_id": "1605.03481",
+   "group_id": "1605.03481::g00",
+   "concise_text": "The word-level baseline's whitespace tokenization and `UNK' grouping instantiate the preprocessing and unseen-word limitations attributed to word-based methods.",
+   "triple": {
+    "subject": "word-level baseline",
+    "predicate": "requires",
+    "object": "whitespace tokenization and `UNK' grouping"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1605.03481::s01::p000",
+    "1605.03481::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1605.03481::g00:b0:f14",
+    "1605.03481::g00:b3:f00",
+    "1605.03481::g00:b3:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Word-based methods are said to require preprocessing for word boundaries and have unseen-word limitations; baseline uses whitespace tokenization and UNK grouping, instantiating those limitations."
+   },
+   "unit_id": "1605.03481::u005"
+  },
+  {
+   "insight_id": "1605.03481::g00:i06",
+   "paper_id": "1605.03481",
+   "group_id": "1605.03481::g00",
+   "concise_text": "The noisy Twitter phenomena of slang, misspellings, emojis and special characters motivate the character based approach, whose predictions show robustness to spelling mistakes and effective interpretation of emojis and other special characters.",
+   "triple": {
+    "subject": "noisy Twitter phenomena",
+    "predicate": "motivate",
+    "object": "the character based approach"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1605.03481::s00::p002",
+    "1605.03481::s06::p004"
+   ],
+   "supporting_fact_ids": [
+    "1605.03481::g00:b4:f10",
+    "1605.03481::g00:b4:f11"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.8,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Noisy Twitter phenomena are explicitly given as reasons Twitter is a testing ground for character models and why word models are expensive; later predictions show robustness to spelling mistakes and interpretation of emojis/special characters."
+   },
+   "unit_id": "1605.03481::u006"
+  },
+  {
+   "insight_id": "1605.03481::g00:i07",
+   "paper_id": "1605.03481",
+   "group_id": "1605.03481::g00",
+   "concise_text": "The assumption that posts with the same hashtags should have close embeddings is operationalized by optimizing categorical cross-entropy loss between predicted and true hashtags.",
+   "triple": {
+    "subject": "same-hashtag embedding closeness assumption",
+    "predicate": "is operationalized by",
+    "object": "categorical cross-entropy loss between predicted and true hashtags"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1605.03481::s00::p003",
+    "1605.03481::s02::p007"
+   ],
+   "supporting_fact_ids": [
+    "1605.03481::g00:b0:f09"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Same-hashtag closeness assumption is followed by 'Hence' formulation of hashtag-prediction objective, and objective function is specified as categorical cross-entropy between predicted and true hashtags."
+   },
+   "unit_id": "1605.03481::u007"
+  },
+  {
+   "insight_id": "1605.03481::g00:i08",
+   "paper_id": "1605.03481",
+   "group_id": "1605.03481::g00",
+   "concise_text": "tweet2vec's character lookup table models 2829 unique characters, whereas the word-level baseline stores word vectors for the 20K most common words.",
+   "triple": {
+    "subject": "tweet2vec",
+    "predicate": "evaluated_on",
+    "object": "2829 unique characters versus 20K most common words"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1605.03481::s03::p000",
+    "1605.03481::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "1605.03481::g00:b3:f02",
+    "1605.03481::g00:b3:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.83,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "One passage states 2829 unique characters modeled independently in character lookup table; another states word-level lookup table stores vectors for 20K most common words."
+   },
+   "unit_id": "1605.03481::u008"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1605.03481::g00:i09",
+   "paper_id": "1605.03481",
+   "group_id": "1605.03481::g00",
+   "concise_text": "The off-the-shelf encoder trained on medium dataset is provided to compute vector-space representations of tweets from the medium setting where tweet2vec outperformed its word-based counterpart.",
+   "triple": {
+    "subject": "off-the-shelf encoder trained on medium dataset",
+    "predicate": "extends",
+    "object": "the medium setting where tweet2vec outperformed its word-based counterpart"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1605.03481::s06::p003",
+    "1605.03481::s07::p000"
+   ],
+   "supporting_fact_ids": [
+    "1605.03481::g00:b4:f07",
+    "1605.03481::g00:b4:f09",
+    "1605.03481::g00:b4:f20"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.76,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.35,
+    "novelty": 0.4,
+    "causality_error": false,
+    "reason": "Sources support an off-the-shelf encoder trained on the medium dataset and that tweet2vec outperformed word-based counterpart in medium setting, but do not support the odd 'extends' relation or the insight as written."
+   },
+   "unit_id": "1605.03481::u009"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1605.03481::g00:i00",
+    "verdict": {
+     "insight_id": "1605.03481::g00:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Cited paragraphs jointly support hashtag-prediction supervision, character-based Bi-GRU tweet embeddings, and improved held-out hashtag prediction over word-level baseline; composed across passages."
+    }
+   },
+   {
+    "insight_id": "1605.03481::g00:i01",
+    "verdict": {
+     "insight_id": "1605.03481::g00:i01",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "Word baseline uses 20K vocabulary with UNK grouping; RW set is defined by maximum OOV words and tweet2vec is significantly better there, jointly supporting advantage on OOV words."
+    }
+   },
+   {
+    "insight_id": "1605.03481::g00:i02",
+    "verdict": {
+     "insight_id": "1605.03481::g00:i02",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Character-stream input is described, and the results paragraph explicitly says moving from words to characters results in longer GRU input sequences and increased training time; causal relation is stated."
+    }
+   },
+   {
+    "insight_id": "1605.03481::g00:i03",
+    "verdict": {
+     "insight_id": "1605.03481::g00:i03",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Softmax output size equals number of hashtags L, and final dataset has 2039 distinct hashtags; jointly supports that 2039 defines L."
+    }
+   },
+   {
+    "insight_id": "1605.03481::g00:i04",
+    "verdict": {
+     "insight_id": "1605.03481::g00:i04",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Passages state tweet2vec generates tweet representations from characters and uses a structure similar to C2W with LSTM units replaced by GRU units; supports extension claim."
+    }
+   },
+   {
+    "insight_id": "1605.03481::g00:i05",
+    "verdict": {
+     "insight_id": "1605.03481::g00:i05",
+     "keep": true,
+     "support": 0.85,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Word-based methods are said to require preprocessing for word boundaries and have unseen-word limitations; baseline uses whitespace tokenization and UNK grouping, instantiating those limitations."
+    }
+   },
+   {
+    "insight_id": "1605.03481::g00:i06",
+    "verdict": {
+     "insight_id": "1605.03481::g00:i06",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Noisy Twitter phenomena are explicitly given as reasons Twitter is a testing ground for character models and why word models are expensive; later predictions show robustness to spelling mistakes and interpretation of emojis/special characters."
+    }
+   },
+   {
+    "insight_id": "1605.03481::g00:i07",
+    "verdict": {
+     "insight_id": "1605.03481::g00:i07",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Same-hashtag closeness assumption is followed by 'Hence' formulation of hashtag-prediction objective, and objective function is specified as categorical cross-entropy between predicted and true hashtags."
+    }
+   },
+   {
+    "insight_id": "1605.03481::g00:i08",
+    "verdict": {
+     "insight_id": "1605.03481::g00:i08",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "One passage states 2829 unique characters modeled independently in character lookup table; another states word-level lookup table stores vectors for 20K most common words."
+    }
+   },
+   {
+    "insight_id": "1605.03481::g00:i09",
+    "verdict": {
+     "insight_id": "1605.03481::g00:i09",
+     "keep": false,
+     "support": 0.35,
+     "novelty": 0.4,
+     "causality_error": false,
+     "reason": "Sources support an off-the-shelf encoder trained on the medium dataset and that tweet2vec outperformed word-based counterpart in medium setting, but do not support the odd 'extends' relation or the insight as written."
+    },
+    "reason": "Sources support an off-the-shelf encoder trained on the medium dataset and that tweet2vec outperformed word-based counterpart in medium setting, but do not support the odd 'extends' relation or the insight as written."
+   }
+  ],
+  "calls": [
+   {
+    "n": 10,
+    "parsed": true,
+    "usage": {
+     "prompt_tokens": 4477,
+     "completion_tokens": 784,
+     "total_tokens": 5261,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

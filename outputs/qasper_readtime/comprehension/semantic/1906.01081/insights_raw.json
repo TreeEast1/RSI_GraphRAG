@@ -1,0 +1,478 @@
+{
+ "insights": [
+  {
+   "insight_id": "1906.01081::s00:i00",
+   "paper_id": "1906.01081",
+   "group_id": "1906.01081::s00",
+   "concise_text": "Because WikiBio is automatically constructed and contains many divergent references, BLEU and ROUGE's gold-standard reference assumption is violated, explaining their weak correlations with human judgments.",
+   "triple": {
+    "subject": "divergent references in WikiBio",
+    "predicate": "limits",
+    "object": "BLEU and ROUGE"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1906.01081::s00::p001",
+    "1906.01081::s05::p000",
+    "1906.01081::s08::p002"
+   ],
+   "supporting_fact_ids": [
+    "1906.01081::s00:b0:f03",
+    "1906.01081::s00:b1:f03",
+    "1906.01081::s00:b1:f04",
+    "1906.01081::s00:b3:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1906.01081::u000"
+  },
+  {
+   "insight_id": "1906.01081::s00:i01",
+   "paper_id": "1906.01081",
+   "group_id": "1906.01081::s00",
+   "concise_text": "PARENT addresses divergent references by using a union of the reference and the table for precision and an intersection for recall, and it achieves the highest correlation for both settings.",
+   "triple": {
+    "subject": "PARENT",
+    "predicate": "improves_on",
+    "object": "reference-only metrics under divergent references"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1906.01081::s00::p002",
+    "1906.01081::s08::p003"
+   ],
+   "supporting_fact_ids": [
+    "1906.01081::s00:b0:f07",
+    "1906.01081::s00:b3:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1906.01081::u001"
+  },
+  {
+   "insight_id": "1906.01081::s00:i02",
+   "paper_id": "1906.01081",
+   "group_id": "1906.01081::s00",
+   "concise_text": "The 8800 pairwise comparisons from 1100 tables were aggregated by Thurstone's method into system-level scores used for Pearson correlation with automatic metric scores.",
+   "triple": {
+    "subject": "8800 pairwise comparisons",
+    "predicate": "evaluated_on",
+    "object": "Pearson correlation with automatic metric scores"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1906.01081::s04::p000",
+    "1906.01081::s06::p000",
+    "1906.01081::s06::p001"
+   ],
+   "supporting_fact_ids": [
+    "1906.01081::s00:b2:f03",
+    "1906.01081::s00:b2:f05",
+    "1906.01081::s00:b2:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1906.01081::u002"
+  },
+  {
+   "insight_id": "1906.01081::s00:i03",
+   "paper_id": "1906.01081",
+   "group_id": "1906.01081::s00",
+   "concise_text": "References received a lower score than PG-Net in human evaluation, supporting the claim that WikiBio contains many divergent references.",
+   "triple": {
+    "subject": "lower reference score than PG-Net",
+    "predicate": "causes",
+    "object": "evidence for divergent references in WikiBio"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1906.01081::s05::p000",
+    "1906.01081::s06::p001"
+   ],
+   "supporting_fact_ids": [
+    "1906.01081::s00:b1:f04",
+    "1906.01081::s00:b2:f11"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1906.01081::u003"
+  },
+  {
+   "insight_id": "1906.01081::s00:i04",
+   "paper_id": "1906.01081",
+   "group_id": "1906.01081::s00",
+   "concise_text": "The open-domain WikiBio dataset invalidates the closed-domain extraction model assumptions, so the authors trained their own extraction model to replicate that evaluation scheme.",
+   "triple": {
+    "subject": "open-domain WikiBio dataset",
+    "predicate": "requires",
+    "object": "a custom extraction model"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1906.01081::s03::p000",
+    "1906.01081::s03::p001",
+    "1906.01081::s14::p000"
+   ],
+   "supporting_fact_ids": [
+    "1906.01081::s00:b0:f14",
+    "1906.01081::s00:b0:f15",
+    "1906.01081::s00:b6:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1906.01081::u004"
+  },
+  {
+   "insight_id": "1906.01081::s00:i05",
+   "paper_id": "1906.01081",
+   "group_id": "1906.01081::s00",
+   "concise_text": "RG-F computes F-score against the table and achieves the highest correlation for both settings, but it needs a full information extraction pipeline.",
+   "triple": {
+    "subject": "RG-F",
+    "predicate": "requires",
+    "object": "a full information extraction pipeline"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1906.01081::s03::p002",
+    "1906.01081::s08::p003"
+   ],
+   "supporting_fact_ids": [
+    "1906.01081::s00:b1:f02",
+    "1906.01081::s00:b3:f06",
+    "1906.01081::s00:b3:f08"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1906.01081::u005"
+  },
+  {
+   "insight_id": "1906.01081::s00:i06",
+   "paper_id": "1906.01081",
+   "group_id": "1906.01081::s00",
+   "concise_text": "On WebNLG, PARENT does best for semantics, where semantics means agreement with the meaning of the underlying RDF triples, supporting its orientation toward content fidelity.",
+   "triple": {
+    "subject": "PARENT",
+    "predicate": "evaluated_on",
+    "object": "semantics on WebNLG"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1906.01081::s10::p001",
+    "1906.01081::s10::p002"
+   ],
+   "supporting_fact_ids": [
+    "1906.01081::s00:b4:f16",
+    "1906.01081::s00:b4:f20",
+    "1906.01081::s00:b4:f21"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1906.01081::u006"
+  },
+  {
+   "insight_id": "1906.01081::s00:i07",
+   "paper_id": "1906.01081",
+   "group_id": "1906.01081::s00",
+   "concise_text": "For WikiBio, low recall of references against the table makes generated-text recall rely more on the table, whereas WebNLG's human-elicited references make recall rely more on the reference.",
+   "triple": {
+    "subject": "reference divergence",
+    "predicate": "causes",
+    "object": "table-based recall in WikiBio and reference-based recall in WebNLG"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1906.01081::s05::p000",
+    "1906.01081::s10::p000",
+    "1906.01081::s10::p003"
+   ],
+   "supporting_fact_ids": [
+    "1906.01081::s00:b1:f04",
+    "1906.01081::s00:b5:f01",
+    "1906.01081::s00:b5:f02",
+    "1906.01081::s00:b5:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.83,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1906.01081::u007"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1906.01081::s00",
+   "insights": [
+    {
+     "insight_id": "1906.01081::s00:i00",
+     "paper_id": "1906.01081",
+     "group_id": "1906.01081::s00",
+     "concise_text": "Because WikiBio is automatically constructed and contains many divergent references, BLEU and ROUGE's gold-standard reference assumption is violated, explaining their weak correlations with human judgments.",
+     "triple": {
+      "subject": "divergent references in WikiBio",
+      "predicate": "limits",
+      "object": "BLEU and ROUGE"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1906.01081::s00::p001",
+      "1906.01081::s05::p000",
+      "1906.01081::s08::p002"
+     ],
+     "supporting_fact_ids": [
+      "1906.01081::s00:b0:f03",
+      "1906.01081::s00:b1:f03",
+      "1906.01081::s00:b1:f04",
+      "1906.01081::s00:b3:f03"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1906.01081::u000"
+    },
+    {
+     "insight_id": "1906.01081::s00:i01",
+     "paper_id": "1906.01081",
+     "group_id": "1906.01081::s00",
+     "concise_text": "PARENT addresses divergent references by using a union of the reference and the table for precision and an intersection for recall, and it achieves the highest correlation for both settings.",
+     "triple": {
+      "subject": "PARENT",
+      "predicate": "improves_on",
+      "object": "reference-only metrics under divergent references"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1906.01081::s00::p002",
+      "1906.01081::s08::p003"
+     ],
+     "supporting_fact_ids": [
+      "1906.01081::s00:b0:f07",
+      "1906.01081::s00:b3:f06"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1906.01081::u001"
+    },
+    {
+     "insight_id": "1906.01081::s00:i02",
+     "paper_id": "1906.01081",
+     "group_id": "1906.01081::s00",
+     "concise_text": "The 8800 pairwise comparisons from 1100 tables were aggregated by Thurstone's method into system-level scores used for Pearson correlation with automatic metric scores.",
+     "triple": {
+      "subject": "8800 pairwise comparisons",
+      "predicate": "evaluated_on",
+      "object": "Pearson correlation with automatic metric scores"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1906.01081::s04::p000",
+      "1906.01081::s06::p000",
+      "1906.01081::s06::p001"
+     ],
+     "supporting_fact_ids": [
+      "1906.01081::s00:b2:f03",
+      "1906.01081::s00:b2:f05",
+      "1906.01081::s00:b2:f07"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1906.01081::u002"
+    },
+    {
+     "insight_id": "1906.01081::s00:i03",
+     "paper_id": "1906.01081",
+     "group_id": "1906.01081::s00",
+     "concise_text": "References received a lower score than PG-Net in human evaluation, supporting the claim that WikiBio contains many divergent references.",
+     "triple": {
+      "subject": "lower reference score than PG-Net",
+      "predicate": "causes",
+      "object": "evidence for divergent references in WikiBio"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1906.01081::s05::p000",
+      "1906.01081::s06::p001"
+     ],
+     "supporting_fact_ids": [
+      "1906.01081::s00:b1:f04",
+      "1906.01081::s00:b2:f11"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1906.01081::u003"
+    },
+    {
+     "insight_id": "1906.01081::s00:i04",
+     "paper_id": "1906.01081",
+     "group_id": "1906.01081::s00",
+     "concise_text": "The open-domain WikiBio dataset invalidates the closed-domain extraction model assumptions, so the authors trained their own extraction model to replicate that evaluation scheme.",
+     "triple": {
+      "subject": "open-domain WikiBio dataset",
+      "predicate": "requires",
+      "object": "a custom extraction model"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1906.01081::s03::p000",
+      "1906.01081::s03::p001",
+      "1906.01081::s14::p000"
+     ],
+     "supporting_fact_ids": [
+      "1906.01081::s00:b0:f14",
+      "1906.01081::s00:b0:f15",
+      "1906.01081::s00:b6:f02"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1906.01081::u004"
+    },
+    {
+     "insight_id": "1906.01081::s00:i05",
+     "paper_id": "1906.01081",
+     "group_id": "1906.01081::s00",
+     "concise_text": "RG-F computes F-score against the table and achieves the highest correlation for both settings, but it needs a full information extraction pipeline.",
+     "triple": {
+      "subject": "RG-F",
+      "predicate": "requires",
+      "object": "a full information extraction pipeline"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1906.01081::s03::p002",
+      "1906.01081::s08::p003"
+     ],
+     "supporting_fact_ids": [
+      "1906.01081::s00:b1:f02",
+      "1906.01081::s00:b3:f06",
+      "1906.01081::s00:b3:f08"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.89,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1906.01081::u005"
+    },
+    {
+     "insight_id": "1906.01081::s00:i06",
+     "paper_id": "1906.01081",
+     "group_id": "1906.01081::s00",
+     "concise_text": "On WebNLG, PARENT does best for semantics, where semantics means agreement with the meaning of the underlying RDF triples, supporting its orientation toward content fidelity.",
+     "triple": {
+      "subject": "PARENT",
+      "predicate": "evaluated_on",
+      "object": "semantics on WebNLG"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1906.01081::s10::p001",
+      "1906.01081::s10::p002"
+     ],
+     "supporting_fact_ids": [
+      "1906.01081::s00:b4:f16",
+      "1906.01081::s00:b4:f20",
+      "1906.01081::s00:b4:f21"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1906.01081::u006"
+    },
+    {
+     "insight_id": "1906.01081::s00:i07",
+     "paper_id": "1906.01081",
+     "group_id": "1906.01081::s00",
+     "concise_text": "For WikiBio, low recall of references against the table makes generated-text recall rely more on the table, whereas WebNLG's human-elicited references make recall rely more on the reference.",
+     "triple": {
+      "subject": "reference divergence",
+      "predicate": "causes",
+      "object": "table-based recall in WikiBio and reference-based recall in WebNLG"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1906.01081::s05::p000",
+      "1906.01081::s10::p000",
+      "1906.01081::s10::p003"
+     ],
+     "supporting_fact_ids": [
+      "1906.01081::s00:b1:f04",
+      "1906.01081::s00:b5:f01",
+      "1906.01081::s00:b5:f02",
+      "1906.01081::s00:b5:f03"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.83,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1906.01081::u007"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "needs_two_passages",
+     "item": {
+      "text": "PARENT-W is significantly better than the other two for systems and can be used out-of-the-box for any dataset, unlike RG-F's full information extraction pipeline.",
+      "triple": [
+       "PARENT-W",
+       "outperforms",
+       "RG-F and PARENT-C for systems"
+      ],
+      "source_passage_ids": [
+       "1906.01081::s08::p003"
+      ]
+     }
+    },
+    {
+     "reason": "invalid_entity",
+     "item": {
+      "text": "PARENT remains stable across the percent of entailed examples because it measures recall against the table in addition to the reference, while BLEU and BLEU-T vary a lot.",
+      "triple": [
+       "table recall in PARENT",
+       "causes",
+       "stable correlation across entailed-example proportions"
+      ],
+      "source_passage_ids": [
+       "1906.01081::s09::p002",
+       "1906.01081::s00::p002"
+      ]
+     }
+    }
+   ],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 14224,
+    "completion_tokens": 1723,
+    "total_tokens": 15947,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

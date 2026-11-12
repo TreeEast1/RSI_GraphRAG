@@ -1,0 +1,89 @@
+{
+ "paper_id": "1903.11283",
+ "title": "Grammatical Error Correction and Style Transfer via Zero-shot Monolingual Translation",
+ "abstract": "Both grammatical error correction and text style transfer can be viewed as monolingual sequence-to-sequence transformation tasks, but the scarcity of directly annotated data for either task makes them unfeasible for most languages. We present an approach that does both tasks within the same trained model, and only uses regular language parallel data, without requiring error-corrected or style-adapted texts. We apply our model to three languages and present a thorough evaluation on both tasks, showing that the model is reliable for a number of error types and style transfer aspects.",
+ "sections": [
+  "Introduction",
+  "Method",
+  "Languages and Data",
+  "Technical Details",
+  "Evaluation",
+  "Grammatical Error Correction",
+  "Test Data and Metrics",
+  "Results",
+  "Qualitative Analysis",
+  "Style Transfer",
+  "Cross-lingual Style Transfer",
+  "Related Work",
+  "Conclusions",
+  "Model Training: Technical Details",
+  "Output Examples"
+ ],
+ "n_paragraphs": 77,
+ "n_tokens": 6095,
+ "figures_and_tables": [
+  {
+   "caption_id": "1903.11283::fig000",
+   "paper_id": "1903.11283",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Schematic illustration of zero-shot monolingual translation. The model is trained on bilingual data in all translation directions (English-to-Estonian, Estonian-to-English, English-to-Latvian, etc.) and then applied in monolingual directions only (English-toEnglish, etc.), without having seen any sentence pairs for them. The illustration is simplified, as it does not show the style (text domain) parametrization.",
+   "n_tokens": 93
+  },
+  {
+   "caption_id": "1903.11283::fig001",
+   "paper_id": "1903.11283",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: BLEU scores of the multilingual MT model on WMT’17 (Latvian↔English) and WMT’18 (Estonian↔English) test sets",
+   "n_tokens": 41
+  },
+  {
+   "caption_id": "1903.11283::fig002",
+   "paper_id": "1903.11283",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: M2 scores on the CoNLL corpus, including precision and recall.",
+   "n_tokens": 19
+  },
+  {
+   "caption_id": "1903.11283::fig003",
+   "paper_id": "1903.11283",
+   "file": "5-Table3-1.png",
+   "caption": "Table 3: GLEU scores for all three languages. No scores have been previously reported elsewhere for Estonian and Latvian.",
+   "n_tokens": 28
+  },
+  {
+   "caption_id": "1903.11283::fig004",
+   "paper_id": "1903.11283",
+   "file": "5-Table4-1.png",
+   "caption": "Table 4: GEC results by error types; “grammar” stands for grammatical mistakes, “lex” stands for lexical choice and “order” – for word order errors.",
+   "n_tokens": 37
+  },
+  {
+   "caption_id": "1903.11283::fig005",
+   "paper_id": "1903.11283",
+   "file": "6-Figure2-1.png",
+   "caption": "Figure 2: Proportions of sentences with token-wise edit distance ≥ 3 from the original when translated monolingually from and into different styles",
+   "n_tokens": 30
+  },
+  {
+   "caption_id": "1903.11283::fig006",
+   "paper_id": "1903.11283",
+   "file": "6-Table5-1.png",
+   "caption": "Table 5: Examples of style transfer",
+   "n_tokens": 8
+  },
+  {
+   "caption_id": "1903.11283::fig007",
+   "paper_id": "1903.11283",
+   "file": "7-Figure3-1.png",
+   "caption": "Figure 3: Number of sentences in which evaluators reported different types of changes",
+   "n_tokens": 16
+  },
+  {
+   "caption_id": "1903.11283::fig008",
+   "paper_id": "1903.11283",
+   "file": "11-Table6-1.png",
+   "caption": "Table 6: Training set sizes (number of sentence pairs)",
+   "n_tokens": 13
+  }
+ ]
+}

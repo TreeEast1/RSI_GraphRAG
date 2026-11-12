@@ -1,0 +1,555 @@
+{
+ "1810.08699::s00::p000": [
+  [
+   "Named entity recognition",
+   "is",
+   "an important task of natural language processing"
+  ],
+  [
+   "most of existing approaches",
+   "require",
+   "large annotated corpora"
+  ],
+  [
+   "no such work",
+   "has been done for",
+   "the Armenian language"
+  ]
+ ],
+ "1810.08699::s00::p001": [
+  [
+   "Projection based transfer schemes",
+   "have been shown to be",
+   "very effective"
+  ],
+  [
+   "Projection based transfer schemes",
+   "use",
+   "resource-rich language's corpora to generate annotated data for the low-resource language"
+  ],
+  [
+   "the annotations of high-resource language",
+   "are projected over",
+   "the corresponding tokens of the parallel low-resource language's texts"
+  ],
+  [
+   "that approach",
+   "would not work for",
+   "Armenian"
+  ]
+ ],
+ "1810.08699::s00::p002": [
+  [
+   "Klesti Hoxha and Artur Baxhaku",
+   "employ",
+   "gazetteers extracted from Wikipedia to generate an annotated corpus for Albanian"
+  ],
+  [
+   "Weber and Pötzl",
+   "propose",
+   "a rule-based system for German that leverages the information from Wikipedia"
+  ],
+  [
+   "the latter",
+   "relies on",
+   "external tools such as part-of-speech taggers"
+  ],
+  [
+   "the latter",
+   "is",
+   "nonviable for the Armenian language"
+  ]
+ ],
+ "1810.08699::s00::p003": [
+  [
+   "Nothman et al.",
+   "generated",
+   "a silver-standard corpus for 9 languages"
+  ],
+  [
+   "Nothman et al.",
+   "turned",
+   "those links into named entity annotations based on the target article's type"
+  ],
+  [
+   "Sysoev and Andrianov",
+   "used",
+   "a similar approach for the Russian language"
+  ]
+ ],
+ "1810.08699::s00::p005": [
+  [
+   "popular entity recognition models",
+   "were applied to",
+   "the mentioned data"
+  ],
+  [
+   "popular entity recognition models",
+   "were applied to obtain",
+   "baseline results for future research in the area"
+  ],
+  [
+   "GloVe word embeddings",
+   "were developed to train and evaluate",
+   "the deep learning models in our experiments"
+  ]
+ ],
+ "1810.08699::s00::p006": [
+  [
+   "contributions of this work",
+   "include",
+   "the silver-standard training corpus"
+  ],
+  [
+   "contributions of this work",
+   "include",
+   "the gold-standard test corpus"
+  ],
+  [
+   "contributions of this work",
+   "include",
+   "GloVe word embeddings"
+  ],
+  [
+   "contributions of this work",
+   "include",
+   "baseline results for 3 different models on the proposed benchmark data set"
+  ],
+  [
+   "All aforementioned resources",
+   "are available on",
+   "GitHub"
+  ]
+ ],
+ "1810.08699::s01::p000": [
+  [
+   "Sysoev and Andrianov's modification of the Nothman et al. approach",
+   "automatically generate",
+   "data for training a named entity recognizer"
+  ],
+  [
+   "This approach",
+   "uses",
+   "links between Wikipedia articles"
+  ]
+ ],
+ "1810.08699::s02::p001": [
+  [
+   "each Wikipedia article",
+   "is assigned",
+   "a named entity class"
+  ],
+  [
+   "the article Քիմ Քաշքաշյան (Kim Kashkashian)",
+   "is classified as",
+   "PER (person)"
+  ],
+  [
+   "Ազգերի լիգա(League of Nations)",
+   "is classified as",
+   "ORG (organization)"
+  ]
+ ],
+ "1810.08699::s02::p002": [
+  [
+   "outgoing links in articles",
+   "are assigned",
+   "the article's type they are leading to"
+  ],
+  [
+   "Sentences",
+   "are included in",
+   "the training corpus"
+  ],
+  [
+   "additional links",
+   "are inferred",
+   "to include more sentences"
+  ],
+  [
+   "An article's aliases",
+   "include",
+   "its title, titles of disambiguation pages with the article, and texts of links leading to the article"
+  ],
+  [
+   "The list of aliases",
+   "is compiled for",
+   "all PER, ORG, LOC articles"
+  ]
+ ],
+ "1810.08699::s02::p003": [
+  [
+   "link boundaries",
+   "are adjusted by removing",
+   "the labels for expressions in parentheses, the text after a comma"
+  ],
+  [
+   "[LOC Աբովյան (քաղաք)] (Abovyan (town))",
+   "is reworked into",
+   "[LOC Աբովյան] (քաղաք)"
+  ]
+ ],
+ "1810.08699::s03::p000": [
+  [
+   "a rule-based classifier",
+   "used",
+   "an article's Wikidata instance of and subclass of attributes"
+  ]
+ ],
+ "1810.08699::s04::p000": [
+  [
+   "7455 annotated sentences with 163247 tokens",
+   "were based on",
+   "20 February 2018 dump of Armenian Wikipedia"
+  ]
+ ],
+ "1810.08699::s04::p001": [
+  [
+   "The generated data",
+   "is significantly smaller than",
+   "the manually annotated corpora from CoNLL 2002 and 2003"
+  ],
+  [
+   "the train set of English CoNLL 2003 corpus",
+   "contains",
+   "203621 tokens"
+  ],
+  [
+   "the Spanish and Dutch corpora from CoNLL 2002",
+   "contain respectively",
+   "273037 and 218737 lines"
+  ]
+ ],
+ "1810.08699::s04::p002": [
+  [
+   "The accuracy of annotation in the generated corpus",
+   "heavily relies on",
+   "the quality of links in Wikipedia articles"
+  ],
+  [
+   "the train set",
+   "contained",
+   "sentences where not all named entities are labeled"
+  ],
+  [
+   "Annotation inaccuracies",
+   "stemmed from",
+   "wrongly assigned link boundaries"
+  ]
+ ],
+ "1810.08699::s05::p000": [
+  [
+   "a named entities dataset",
+   "was selected from",
+   "over 250 news texts from ilur.am"
+  ],
+  [
+   "Included sentences",
+   "are from",
+   "political, sports, local and world news"
+  ],
+  [
+   "Included sentences",
+   "cover",
+   "the period between August 2012 and July 2018"
+  ],
+  [
+   "The dataset",
+   "provides annotations for",
+   "3 popular named entity classes: people (PER), organizations (ORG), and locations (LOC)"
+  ],
+  [
+   "The dataset",
+   "is released in",
+   "CoNLL03 format with IOB tagging scheme"
+  ]
+ ],
+ "1810.08699::s05::p001": [
+  [
+   "annotation",
+   "relied on",
+   "categories and guidelines assembled by BBN Technologies for TREC 2002 question answering track"
+  ],
+  [
+   "named entities corresponding to BBN's person name category",
+   "were tagged as",
+   "PER"
+  ],
+  [
+   "organization name categories",
+   "were marked as",
+   "ORG"
+  ],
+  [
+   "BBN's gpe name, facility name, location name categories",
+   "were combined and annotated as",
+   "LOC"
+  ]
+ ],
+ "1810.08699::s05::p002": [
+  [
+   "entities of other categories",
+   "were ignored",
+   "works of art, law, or events"
+  ],
+  [
+   "ՀՀ (RA) in ՀՀ Քրեական Օրենսգիրք (RA Criminal Code)",
+   "was not annotated as",
+   "LOC"
+  ]
+ ],
+ "1810.08699::s05::p003": [
+  [
+   "Quotation marks around a named entity",
+   "were not annotated unless",
+   "those quotations were a part of that entity's full official name"
+  ]
+ ],
+ "1810.08699::s05::p004": [
+  [
+   "metonyms such as Կրեմլ (Kremlin), Բաղրամյան 26 (Baghramyan 26)",
+   "were annotated as",
+   "ORG"
+  ],
+  [
+   "country or city names",
+   "were tagged as",
+   "ORG"
+  ]
+ ],
+ "1810.08699::s06::p000": [
+  [
+   "word embeddings for the Armenian language",
+   "were used to",
+   "train and evaluate named entity recognition algorithms"
+  ],
+  [
+   "GloVe",
+   "was used to",
+   "train word embeddings"
+  ],
+  [
+   "dataset of Armenian texts",
+   "contained",
+   "79 million tokens"
+  ],
+  [
+   "Included texts",
+   "covered",
+   "topics such as economics, politics, weather forecast, IT, law, society and politics"
+  ]
+ ],
+ "1810.08699::s06::p001": [
+  [
+   "50-, 100-, 200- and 300-dimensional word vectors for Armenian",
+   "are released with",
+   "a vocabulary size of 400000"
+  ],
+  [
+   "all the words in the dataset",
+   "were lowercased",
+   "before training"
+  ],
+  [
+   "final models",
+   "used",
+   "15 window size and 20 training epochs"
+  ]
+ ],
+ "1810.08699::s07::p000": [
+  [
+   "a recurrent model",
+   "uses",
+   "bidirectional LSTM cells for character-based feature extraction and CRF"
+  ]
+ ],
+ "1810.08699::s08::p000": [
+  [
+   "Stanford NER",
+   "is",
+   "conditional random fields (CRF) classifier based on lexical and contextual features"
+  ],
+  [
+   "character-level n-grams",
+   "have length up to",
+   "length 6"
+  ]
+ ],
+ "1810.08699::s08::p001": [
+  [
+   "spaCy 2.0",
+   "uses",
+   "a CNN-based transition system for named entity recognition"
+  ],
+  [
+   "a contextual representation of that token",
+   "potentially draws information from",
+   "up to 4 tokens from each side"
+  ],
+  [
+   "This approach",
+   "reportedly performs within",
+   "1% of the current state-of-the-art for English"
+  ]
+ ],
+ "1810.08699::s08::p002": [
+  [
+   "The main model",
+   "was",
+   "the recurrent model with a CRF top layer"
+  ],
+  [
+   "character-based representation",
+   "is extracted using",
+   "a bidirectional LSTM"
+  ],
+  [
+   "This representation",
+   "gets concatenated with",
+   "a distributional word vector such as GloVe"
+  ],
+  [
+   "a CRF layer",
+   "labels",
+   "the sequence of these contextual representations"
+  ]
+ ],
+ "1810.08699::s09::p000": [
+  [
+   "IOB tagging scheme",
+   "has",
+   "a total of 7 class tags: O, B-PER, I-PER, B-LOC, I-LOC, B-ORG, I-ORG"
+  ]
+ ],
+ "1810.08699::s09::p001": [
+  [
+   "The models with the best F1 score on the development set",
+   "were tested on",
+   "the manually annotated gold dataset"
+  ]
+ ],
+ "1810.08699::s10::p000": [
+  [
+   "the recurrent model using a batch size of 8 and Adam optimizer with an initial learning rate of 0.001",
+   "achieved",
+   "the highest F1 score"
+  ],
+  [
+   "Updating word embeddings during training",
+   "noticeably improved",
+   "the performance"
+  ],
+  [
+   "GloVe word vector models of four different sizes (50, 100, 200, and 300)",
+   "were tested",
+   "with vectors of size 50 producing the best results"
+  ]
+ ],
+ "1810.08699::s10::p001": [
+  [
+   "the same word embedding models",
+   "were tested for",
+   "spaCy 2.0 named entity recognizer"
+  ],
+  [
+   "the performance of 200-dimensional embeddings",
+   "was highest",
+   "for spaCy 2.0 named entity recognizer"
+  ],
+  [
+   "both deep learning models",
+   "outperformed in recall",
+   "the feature-based Stanford recognizer"
+  ],
+  [
+   "the feature-based Stanford recognizer",
+   "demonstrated",
+   "noticeably higher precision"
+  ]
+ ],
+ "1810.08699::s10::p002": [
+  [
+   "the development set of automatically generated examples",
+   "was not",
+   "an ideal indicator of models' performance on gold-standard test set"
+  ],
+  [
+   "Higher development set scores",
+   "often led to",
+   "lower test scores"
+  ],
+  [
+   "Analysis of errors on the development set",
+   "revealed",
+   "that many were caused by the incompleteness of annotations"
+  ],
+  [
+   "the recognizers",
+   "often correctly ignored",
+   "non-entities that are incorrectly labeled in data"
+  ]
+ ],
+ "1810.08699::s10::p003": [
+  [
+   "tested models",
+   "demonstrated",
+   "relatively high precision of recognizing tokens that started named entities"
+  ],
+  [
+   "tested models",
+   "failed to do so with",
+   "descriptor words for organizations and, to a certain degree, locations"
+  ],
+  [
+   "The confusion matrix for one of the trained recurrent models",
+   "illustrates",
+   "that difference"
+  ],
+  [
+   "descriptor words",
+   "are sometimes superfluously labeled",
+   "in generated data"
+  ]
+ ],
+ "1810.08699::s11::p000": [
+  [
+   "a silver-standard corpus",
+   "is for",
+   "training NER models"
+  ],
+  [
+   "a gold-standard corpus",
+   "is for",
+   "testing"
+  ]
+ ],
+ "1810.08699::s11::p001": [
+  [
+   "The results",
+   "reinforce",
+   "the ability of deep learning approaches in achieving relatively high recall values for this specific task"
+  ],
+  [
+   "The results",
+   "reinforce",
+   "the power of using character-extracted embeddings alongside conventional word embeddings"
+  ]
+ ],
+ "1810.08699::s11::p002": [
+  [
+   "There",
+   "are",
+   "several avenues of future work"
+  ],
+  [
+   "more efficient methods of exploiting Wikipedia",
+   "have been proposed",
+   "namely WiNER BIBREF19"
+  ],
+  [
+   "WiNER BIBREF19",
+   "could help increase",
+   "both the quantity and quality of the training corpus"
+  ]
+ ]
+}

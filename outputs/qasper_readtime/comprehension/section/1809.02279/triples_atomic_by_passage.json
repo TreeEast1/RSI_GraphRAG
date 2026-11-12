@@ -1,0 +1,678 @@
+{
+ "1809.02279::s00::p000": [
+  [
+   "recurrent neural networks (RNNs)",
+   "are the most prevalent neural approach to obtaining",
+   "sentence representations"
+  ],
+  [
+   "words in a sentence",
+   "are processed in",
+   "a sequential and recurrent manner"
+  ],
+  [
+   "RNNs",
+   "have shown outstanding performance across",
+   "various NLP tasks"
+  ]
+ ],
+ "1809.02279::s00::p001": [
+  [
+   "gated recurrent architectures such as long short-term memory (LSTM) and gated recurrent unit (GRU)",
+   "have been accepted as",
+   "de-facto standard choices for RNNs"
+  ],
+  [
+   "gated recurrent architectures",
+   "address",
+   "the vanishing and exploding gradient problem"
+  ],
+  [
+   "Gated RNNs",
+   "achieve these properties by introducing",
+   "additional gating units"
+  ],
+  [
+   "additional gating units",
+   "learn to control",
+   "the amount of information to be transferred or forgotten"
+  ]
+ ],
+ "1809.02279::s00::p002": [
+  [
+   "the common practice for further enhancing the expressiveness of RNNs",
+   "is to stack",
+   "multiple RNN layers"
+  ],
+  [
+   "each of multiple RNN layers",
+   "has",
+   "distinct parameter sets"
+  ],
+  [
+   "the hidden states of a layer",
+   "are fed as input to",
+   "the subsequent layer"
+  ],
+  [
+   "stacked RNNs",
+   "are shown to work well due to",
+   "increased depth"
+  ]
+ ],
+ "1809.02279::s00::p003": [
+  [
+   "this setting of stacking RNNs",
+   "might hinder",
+   "the possibility of more sophisticated recurrence-based structures"
+  ],
+  [
+   "the information from lower layers",
+   "is simply treated as",
+   "input to the next layer"
+  ],
+  [
+   "layer-to-layer connections",
+   "cannot fully benefit from",
+   "the carefully constructed gating mechanism used in temporal transitions"
+  ],
+  [
+   "Some recent work on stacking RNNs",
+   "suggests",
+   "alternative methods that encourage direct and effective interaction between RNN layers"
+  ]
+ ],
+ "1809.02279::s00::p004": [
+  [
+   "This system",
+   "utilizes",
+   "states from the left and the lower context equally in computation of the new state"
+  ],
+  [
+   "the information from lower layers",
+   "is elaborately filtered and reflected through",
+   "a soft gating mechanism"
+  ]
+ ],
+ "1809.02279::s00::p005": [
+  [
+   "the proposed architecture",
+   "is called",
+   "Cell-aware Stacked LSTM, or CAS-LSTM"
+  ],
+  [
+   "the CAS-LSTMs",
+   "consistently outperform",
+   "typical stacked LSTMs"
+  ]
+ ],
+ "1809.02279::s02::p000": [
+  [
+   "matrices",
+   "are denoted as",
+   "boldface capital letters ( INLINEFORM0 )"
+  ],
+  [
+   "vectors",
+   "are denoted as",
+   "boldface lowercase letters ( INLINEFORM1 )"
+  ],
+  [
+   "scalars",
+   "are denoted as",
+   "normal italic letters ( INLINEFORM2 )"
+  ],
+  [
+   "All vectors",
+   "are assumed to be",
+   "column vectors"
+  ]
+ ],
+ "1809.02279::s03::p001": [
+  [
+   "INLINEFORM0 , INLINEFORM1 , and INLINEFORM2 , INLINEFORM3 , INLINEFORM4",
+   "are",
+   "trainable parameters"
+  ],
+  [
+   "INLINEFORM5",
+   "is",
+   "the sigmoid activation"
+  ],
+  [
+   "INLINEFORM6",
+   "is",
+   "the hyperbolic tangent activation function"
+  ]
+ ],
+ "1809.02279::s03::p002": [
+  [
+   "the output gate INLINEFORM5",
+   "soft-selects",
+   "which portion of the cell state INLINEFORM6 is to be used in the final hidden state"
+  ]
+ ],
+ "1809.02279::s03::p003": [
+  [
+   "cell states ( INLINEFORM0 , INLINEFORM1 , INLINEFORM2 )",
+   "play",
+   "a crucial role in forming horizontal recurrence"
+  ],
+  [
+   "the current formulation",
+   "does not consider",
+   "INLINEFORM3 , the cell state from INLINEFORM4 -th layer, in computation"
+  ],
+  [
+   "the lower context",
+   "is reflected only through",
+   "the rudimentary way"
+  ]
+ ],
+ "1809.02279::s04::p000": [
+  [
+   "the additional forget gate INLINEFORM0",
+   "determines",
+   "whether to accept or ignore the signals coming from the previous layer"
+  ],
+  [
+   "the proposed Cell-aware Stacked LSTM",
+   "is formulated as follows",
+   "DISPLAYFORM0 DISPLAYFORM1"
+  ]
+ ],
+ "1809.02279::s04::p001": [
+  [
+   "INLINEFORM2",
+   "can either be",
+   "a vector of constants or parameters"
+  ],
+  [
+   "the equations defined in the previous subsection",
+   "are used",
+   "When INLINEFORM3"
+  ],
+  [
+   "each non-bottom layer of CAS-LSTM",
+   "accepts",
+   "two sets of hidden and cell states—one from the left context and the other from the below context"
+  ],
+  [
+   "The left and the below context",
+   "participate in",
+   "computation with the equivalent procedure"
+  ]
+ ],
+ "1809.02279::s04::p002": [
+  [
+   "considering INLINEFORM0 in computation",
+   "is beneficial",
+   "for the following reasons"
+  ],
+  [
+   "INLINEFORM1",
+   "contains",
+   "additional information compared to INLINEFORM2"
+  ],
+  [
+   "a model that directly uses INLINEFORM4",
+   "does not rely solely on",
+   "INLINEFORM5 for extracting information"
+  ],
+  [
+   "the burden of selecting information",
+   "is shared with",
+   "INLINEFORM8"
+  ]
+ ],
+ "1809.02279::s04::p003": [
+  [
+   "Another advantage of using the INLINEFORM0",
+   "lies in",
+   "the fact that it directly connects INLINEFORM1 and INLINEFORM2"
+  ],
+  [
+   "This direct connection",
+   "helps and stabilizes",
+   "training"
+  ],
+  [
+   "the terminal error signals",
+   "can be easily backpropagated to",
+   "model parameters"
+  ]
+ ],
+ "1809.02279::s04::p004": [
+  [
+   "letting INLINEFORM0 be constant and letting it be trainable parameters",
+   "has",
+   "little difference"
+  ],
+  [
+   "the architecture without INLINEFORM2",
+   "leads to",
+   "performance degradation and unstable convergence"
+  ],
+  [
+   "two cell states",
+   "are combined by",
+   "unweighted summation similar to multidimensional RNNs BIBREF27"
+  ],
+  [
+   "mismatch in the range of cell state values between layers",
+   "is likely due to",
+   "INLINEFORM3 for the first layer and INLINEFORM4 for the others"
+  ]
+ ],
+ "1809.02279::s04::p005": [
+  [
+   "tree-structured LSTMs (Tree-LSTMs)",
+   "use",
+   "both hidden and cell states from children nodes"
+  ],
+  [
+   "states for all children nodes",
+   "are regarded as",
+   "input"
+  ],
+  [
+   "states for all children nodes",
+   "participate in the computation equally through",
+   "weight-shared (in Child-Sum Tree-LSTMs) or weight-unshared (in INLINEFORM0 -ary Tree-LSTMs) projection"
+  ],
+  [
+   "each CAS-LSTM layer (where INLINEFORM1 )",
+   "can be seen as",
+   "a binary Tree-LSTM where the structures it operates on are fixed to right-branching trees"
+  ]
+ ],
+ "1809.02279::s04::p006": [
+  [
+   "Multidimensional RNNs (MDRNN)",
+   "are",
+   "an extension of 1D sequential RNNs that can accept multidimensional input e.g. images"
+  ],
+  [
+   "Multidimensional RNNs (MDRNN)",
+   "have been successfully applied to",
+   "image segmentation BIBREF26 and handwriting recognition BIBREF27"
+  ],
+  [
+   "CAS-LSTM",
+   "can be seen as",
+   "a certain kind of MDLSTM that accepts a 2D input INLINEFORM1"
+  ],
+  [
+   "Grid LSTMs BIBREF21",
+   "take",
+   "INLINEFORM2 inputs"
+  ],
+  [
+   "Grid LSTMs BIBREF21",
+   "emit",
+   "INLINEFORM3 outputs"
+  ]
+ ],
+ "1809.02279::s05::p000": [
+  [
+   "The sentence encoder network",
+   "takes",
+   "INLINEFORM0 words (assumed to be one-hot vectors) as input"
+  ],
+  [
+   "The words",
+   "are projected to",
+   "corresponding word representations: INLINEFORM1 where INLINEFORM2"
+  ],
+  [
+   "INLINEFORM3",
+   "is fed to",
+   "a INLINEFORM4 -layer CAS-LSTM model"
+  ],
+  [
+   "The sentence representation, INLINEFORM6",
+   "is computed by",
+   "max-pooling INLINEFORM7 over time as in the work of BIBREF35"
+  ],
+  [
+   "the max-pooling",
+   "performs consistently better than",
+   "mean- and last-pooling"
+  ]
+ ],
+ "1809.02279::s05::p001": [
+  [
+   "a bidirectional CAS-LSTM network",
+   "may also be used",
+   "To make models more expressive"
+  ],
+  [
+   "the forward representations INLINEFORM0 and the backward representations INLINEFORM1",
+   "are concatenated and max-pooled to yield",
+   "the sentence representation INLINEFORM2"
+  ],
+  [
+   "this bidirectional architecture",
+   "is called",
+   "Bi-CAS-LSTM in experiments"
+  ]
+ ],
+ "1809.02279::s06::p000": [
+  [
+   "the natural language inference experiments",
+   "use",
+   "the following heuristic function proposed by BIBREF36 in feature extraction: DISPLAYFORM0"
+  ]
+ ],
+ "1809.02279::s06::p001": [
+  [
+   "INLINEFORM0",
+   "means",
+   "vector concatenation"
+  ],
+  [
+   "INLINEFORM1 and INLINEFORM2",
+   "are applied",
+   "element-wise"
+  ]
+ ],
+ "1809.02279::s06::p005": [
+  [
+   "the fully-connected softmax layer",
+   "predicts",
+   "the label distribution: DISPLAYFORM0"
+  ]
+ ],
+ "1809.02279::s06::p006": [
+  [
+   "INLINEFORM1",
+   "is",
+   "the number of label classes"
+  ],
+  [
+   "INLINEFORM2",
+   "is",
+   "the dimension of the MLP output"
+  ]
+ ],
+ "1809.02279::s07::p001": [
+  [
+   "the applicability of CAS-LSTM",
+   "is not limited to",
+   "sentence encoding based approaches"
+  ]
+ ],
+ "1809.02279::s08::p000": [
+  [
+   "SNLI BIBREF22 and MultiNLI BIBREF23 datasets",
+   "are used for",
+   "the evaluation of performance of the proposed method on the NLI task"
+  ],
+  [
+   "the objective of both datasets",
+   "is to predict",
+   "the relationship between a premise and a hypothesis sentence: entailment, contradiction, and neutral"
+  ],
+  [
+   "SNLI and MultiNLI datasets",
+   "are composed of",
+   "about 570k and 430k premise-hypothesis pairs respectively"
+  ]
+ ],
+ "1809.02279::s08::p001": [
+  [
+   "GloVe pretrained word embeddings BIBREF49",
+   "remain",
+   "fixed during training"
+  ],
+  [
+   "dropout BIBREF50",
+   "is applied to",
+   "the word embeddings and the MLP layers"
+  ]
+ ],
+ "1809.02279::s08::p002": [
+  [
+   "only the GloVe word vectors",
+   "are used as",
+   "word representations"
+  ]
+ ],
+ "1809.02279::s09::p000": [
+  [
+   "Quora Question Pairs dataset BIBREF24",
+   "is used in",
+   "evaluating the performance of our method on the PI task"
+  ],
+  [
+   "The dataset",
+   "consists of",
+   "over 400k question pairs"
+  ],
+  [
+   "each pair",
+   "is annotated with",
+   "whether the two sentences are paraphrase of each other or not"
+  ]
+ ],
+ "1809.02279::s09::p001": [
+  [
+   "PI experiments",
+   "use",
+   "GloVe pretrained vectors, 300D encoders, and 1024D MLP"
+  ],
+  [
+   "The number of CAS-LSTM layers",
+   "is fixed to",
+   "2 in PI experiments"
+  ]
+ ],
+ "1809.02279::s10::p000": [
+  [
+   "The Stanford Sentiment Treebank (SST)",
+   "is used in",
+   "evaluating sentiment classification performance"
+  ],
+  [
+   "The Stanford Sentiment Treebank (SST)",
+   "consists of",
+   "about 12,000 binary-parsed sentences"
+  ],
+  [
+   "constituents (phrases) of each parse tree",
+   "are annotated with",
+   "a sentiment label (very positive, positive, neutral, negative, very negative)"
+  ],
+  [
+   "all phrases and their labels",
+   "are used in",
+   "training"
+  ]
+ ],
+ "1809.02279::s10::p001": [
+  [
+   "SST-2",
+   "ignores",
+   "data samples annotated with `neutral' from training and evaluation"
+  ],
+  [
+   "The two positive labels (very positive, positive)",
+   "are considered as",
+   "the same label"
+  ],
+  [
+   "98,794/872/1,821 data samples",
+   "are used in",
+   "training/validation/test"
+  ],
+  [
+   "All 318,582/1,101/2,210 data samples for training/validation/test",
+   "are used in",
+   "the SST-5 setting"
+  ]
+ ],
+ "1809.02279::s10::p002": [
+  [
+   "the models",
+   "use",
+   "300D GloVe vectors, 2-layer 150D or 300D encoders, and a 300D MLP classifier"
+  ],
+  [
+   "word embeddings",
+   "are tuned during",
+   "training"
+  ]
+ ],
+ "1809.02279::s11::p000": [
+  [
+   "the 3-layer CAS-LSTM model trained on the SNLI dataset",
+   "is used to compute",
+   "gate values"
+  ]
+ ],
+ "1809.02279::s11::p001": [
+  [
+   "all values from a vertical forget gate INLINEFORM0 were to be 0",
+   "would mean",
+   "that the introduction of the additional forget gate is meaningless and the model would reduce to a plain stacked LSTM"
+  ],
+  [
+   "all values were 1",
+   "would mean",
+   "that the vertical forget gates were always open"
+  ]
+ ],
+ "1809.02279::s11::p002": [
+  [
+   "the trained model",
+   "does not fall into",
+   "the degenerate case where vertical forget gates are ignored"
+  ],
+  [
+   "the values",
+   "are",
+   "right-skewed"
+  ]
+ ],
+ "1809.02279::s11::p003": [
+  [
+   "the distribution of the range of values per time step",
+   "is computed as",
+   "INLINEFORM0"
+  ],
+  [
+   "a vertical forget gate",
+   "controls",
+   "the amount of information flow effectively"
+  ]
+ ],
+ "1809.02279::s11::p004": [
+  [
+   "the distribution of the values from INLINEFORM0",
+   "indicates",
+   "how differently the vertical forget gate and the previous output gate select information from INLINEFORM1"
+  ],
+  [
+   "the two gates",
+   "make",
+   "fairly different decisions"
+  ],
+  [
+   "the direct path between INLINEFORM2 and INLINEFORM3",
+   "enables",
+   "a model to utilize signals overlooked by INLINEFORM4"
+  ]
+ ],
+ "1809.02279::s12::p000": [
+  [
+   "the best performing configuration",
+   "is used as",
+   "a baseline for modifications"
+  ],
+  [
+   "the following variants",
+   "include",
+   "models that use plain stacked LSTMs"
+  ],
+  [
+   "the following variants",
+   "include",
+   "models without INLINEFORM1"
+  ]
+ ],
+ "1809.02279::s12::p001": [
+  [
+   "Variant (iv)",
+   "integrates",
+   "lower contexts via the following equations: DISPLAYFORM0 DISPLAYFORM1"
+  ]
+ ],
+ "1809.02279::s12::p002": [
+  [
+   "INLINEFORM0",
+   "represent",
+   "peephole weights that take cell states into account"
+  ],
+  [
+   "INLINEFORM2",
+   "affects",
+   "the value of INLINEFORM3 only via peephole connections"
+  ],
+  [
+   "peephole connections",
+   "make",
+   "INLINEFORM4 independent of INLINEFORM5"
+  ]
+ ],
+ "1809.02279::s12::p003": [
+  [
+   "the use of cell states",
+   "clearly improves",
+   "sentence modeling performance"
+  ],
+  [
+   "the selection of INLINEFORM0",
+   "does not significantly affect",
+   "performance"
+  ],
+  [
+   "introducing INLINEFORM1",
+   "is beneficial",
+   "performance"
+  ],
+  [
+   "the proposed way of combining the left and the lower contexts",
+   "leads to",
+   "better modeling of sentence representations than that of BIBREF20 in encoding sentences"
+  ]
+ ],
+ "1809.02279::s13::p000": [
+  [
+   "CAS-LSTM",
+   "uses",
+   "not only hidden states but also cell states from the previous layer"
+  ],
+  [
+   "The proposed architecture",
+   "can replace",
+   "any stacked LSTM under one weak restriction—the size of states should be identical across all layers"
+  ]
+ ],
+ "1809.02279::s13::p001": [
+  [
+   "future work",
+   "plans to apply",
+   "the CAS-LSTM architecture beyond sentence modeling tasks"
+  ],
+  [
+   "sequence labeling, sequence generation, and language modeling",
+   "might benefit from",
+   "sophisticated modulation on context integration"
+  ],
+  [
+   "Aggregating diverse contexts from sequential data",
+   "could also be",
+   "an intriguing research direction"
+  ]
+ ]
+}

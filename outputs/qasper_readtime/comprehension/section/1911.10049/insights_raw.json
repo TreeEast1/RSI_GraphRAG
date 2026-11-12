@@ -1,0 +1,455 @@
+{
+ "insights": [
+  {
+   "insight_id": "1911.10049::g00:i00",
+   "paper_id": "1911.10049",
+   "group_id": "1911.10049::g00",
+   "concise_text": "Because ELMoForManyLangs used only 20 million tokens while EMBEDDIA Latvian ELMo used 270 million tokens, the ELMoForManyLangs Latvian model performed significantly worse on all word analogy categories.",
+   "triple": {
+    "subject": "20 million tokens",
+    "predicate": "causes",
+    "object": "significantly worse Latvian word analogy performance"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1911.10049::s06::p003",
+    "1911.10049::s06::p004"
+   ],
+   "supporting_fact_ids": [
+    "1911.10049::g00:b3:f16",
+    "1911.10049::g00:b4:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1911.10049::u000"
+  },
+  {
+   "insight_id": "1911.10049::g00:i01",
+   "paper_id": "1911.10049",
+   "group_id": "1911.10049::g00",
+   "concise_text": "The conclusion that existing publicly available ELMo embeddings are inadequate is supported by ELMoForManyLangs Latvian embeddings performing significantly worse than EMBEDDIA ELMo Latvian model on all word analogy categories.",
+   "triple": {
+    "subject": "ELMoForManyLangs Latvian word analogy results",
+    "predicate": "provides evidence for",
+    "object": "inadequate existing publicly available ELMo embeddings"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1911.10049::s06::p004",
+    "1911.10049::s08::p000"
+   ],
+   "supporting_fact_ids": [
+    "1911.10049::g00:b4:f00",
+    "1911.10049::g00:b5:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1911.10049::u001"
+  },
+  {
+   "insight_id": "1911.10049::g00:i02",
+   "paper_id": "1911.10049",
+   "group_id": "1911.10049::g00",
+   "concise_text": "The conclusion that training set size importantly affects embedding quality is supported by 20-million token corpora being too small and a few hundred million tokens being sufficiently large for word analogy.",
+   "triple": {
+    "subject": "20-million token corpora and a few hundred million tokens",
+    "predicate": "provides evidence for",
+    "object": "training set size affects embedding quality"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1911.10049::s06::p004",
+    "1911.10049::s08::p000"
+   ],
+   "supporting_fact_ids": [
+    "1911.10049::g00:b4:f02",
+    "1911.10049::g00:b4:f03",
+    "1911.10049::g00:b5:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1911.10049::u002"
+  },
+  {
+   "insight_id": "1911.10049::g00:i03",
+   "paper_id": "1911.10049",
+   "group_id": "1911.10049::g00",
+   "concise_text": "The conclusion that newly produced contextual embeddings produce substantially better results than fastText is supported by ELMo improving NER results on all EMBEDDIA languages except Slovenian.",
+   "triple": {
+    "subject": "ELMo NER improvements on all EMBEDDIA languages except Slovenian",
+    "predicate": "provides evidence for",
+    "object": "substantially better results compared to fastText"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1911.10049::s07::p004",
+    "1911.10049::s08::p000"
+   ],
+   "supporting_fact_ids": [
+    "1911.10049::g00:b5:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1911.10049::u003"
+  },
+  {
+   "insight_id": "1911.10049::g00:i04",
+   "paper_id": "1911.10049",
+   "group_id": "1911.10049::g00",
+   "concise_text": "The NER evaluation used a time distributed softmax layer with 4 neurons because NER datasets had PER, LOC, ORG, and 'O' labels.",
+   "triple": {
+    "subject": "PER, LOC, ORG, and 'O' labels",
+    "predicate": "requires",
+    "object": "time distributed softmax layer with 4 neurons"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1911.10049::s07::p000",
+    "1911.10049::s07::p001"
+   ],
+   "supporting_fact_ids": [
+    "1911.10049::g00:b4:f07",
+    "1911.10049::g00:b4:f08",
+    "1911.10049::g00:b4:f09"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1911.10049::u004"
+  },
+  {
+   "insight_id": "1911.10049::g00:i05",
+   "paper_id": "1911.10049",
+   "group_id": "1911.10049::g00",
+   "concise_text": "The word analogy evaluation of produced ELMo models used accuracy@5 with CSLS to find the closest candidate word.",
+   "triple": {
+    "subject": "word analogy evaluation of produced ELMo models",
+    "predicate": "evaluated_on",
+    "object": "accuracy@5 with CSLS"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1911.10049::s05::p000",
+    "1911.10049::s06::p002"
+   ],
+   "supporting_fact_ids": [
+    "1911.10049::g00:b3:f03",
+    "1911.10049::g00:b3:f14"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1911.10049::u005"
+  },
+  {
+   "insight_id": "1911.10049::g00:i06",
+   "paper_id": "1911.10049",
+   "group_id": "1911.10049::g00",
+   "concise_text": "The NER evaluation of produced ELMo models used Macro F1 score after averaging the three ELMo layer vectors for each token.",
+   "triple": {
+    "subject": "NER evaluation of produced ELMo models",
+    "predicate": "evaluated_on",
+    "object": "Macro F1 score with averaged three ELMo layer vectors"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1911.10049::s05::p000",
+    "1911.10049::s07::p001",
+    "1911.10049::s07::p002"
+   ],
+   "supporting_fact_ids": [
+    "1911.10049::g00:b3:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.83,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1911.10049::u006"
+  },
+  {
+   "insight_id": "1911.10049::g00:i07",
+   "paper_id": "1911.10049",
+   "group_id": "1911.10049::g00",
+   "concise_text": "The Latvian dataset consists only of the Latvian portion of the CoNLL 2017 corpus, making Latvian the only language where EMBEDDIA ELMo and ELMoForManyLangs used exactly the same corpora.",
+   "triple": {
+    "subject": "Latvian portion of the CoNLL 2017 corpus",
+    "predicate": "limits",
+    "object": "direct EMBEDDIA ELMo and ELMoForManyLangs comparison to Latvian"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1911.10049::s03::p004",
+    "1911.10049::s06::p003"
+   ],
+   "supporting_fact_ids": [
+    "1911.10049::g00:b2:f04",
+    "1911.10049::g00:b3:f15"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1911.10049::u007"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1911.10049::g00",
+   "insights": [
+    {
+     "insight_id": "1911.10049::g00:i00",
+     "paper_id": "1911.10049",
+     "group_id": "1911.10049::g00",
+     "concise_text": "Because ELMoForManyLangs used only 20 million tokens while EMBEDDIA Latvian ELMo used 270 million tokens, the ELMoForManyLangs Latvian model performed significantly worse on all word analogy categories.",
+     "triple": {
+      "subject": "20 million tokens",
+      "predicate": "causes",
+      "object": "significantly worse Latvian word analogy performance"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1911.10049::s06::p003",
+      "1911.10049::s06::p004"
+     ],
+     "supporting_fact_ids": [
+      "1911.10049::g00:b3:f16",
+      "1911.10049::g00:b4:f00"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1911.10049::u000"
+    },
+    {
+     "insight_id": "1911.10049::g00:i01",
+     "paper_id": "1911.10049",
+     "group_id": "1911.10049::g00",
+     "concise_text": "The conclusion that existing publicly available ELMo embeddings are inadequate is supported by ELMoForManyLangs Latvian embeddings performing significantly worse than EMBEDDIA ELMo Latvian model on all word analogy categories.",
+     "triple": {
+      "subject": "ELMoForManyLangs Latvian word analogy results",
+      "predicate": "provides evidence for",
+      "object": "inadequate existing publicly available ELMo embeddings"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1911.10049::s06::p004",
+      "1911.10049::s08::p000"
+     ],
+     "supporting_fact_ids": [
+      "1911.10049::g00:b4:f00",
+      "1911.10049::g00:b5:f03"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1911.10049::u001"
+    },
+    {
+     "insight_id": "1911.10049::g00:i02",
+     "paper_id": "1911.10049",
+     "group_id": "1911.10049::g00",
+     "concise_text": "The conclusion that training set size importantly affects embedding quality is supported by 20-million token corpora being too small and a few hundred million tokens being sufficiently large for word analogy.",
+     "triple": {
+      "subject": "20-million token corpora and a few hundred million tokens",
+      "predicate": "provides evidence for",
+      "object": "training set size affects embedding quality"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1911.10049::s06::p004",
+      "1911.10049::s08::p000"
+     ],
+     "supporting_fact_ids": [
+      "1911.10049::g00:b4:f02",
+      "1911.10049::g00:b4:f03",
+      "1911.10049::g00:b5:f02"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1911.10049::u002"
+    },
+    {
+     "insight_id": "1911.10049::g00:i03",
+     "paper_id": "1911.10049",
+     "group_id": "1911.10049::g00",
+     "concise_text": "The conclusion that newly produced contextual embeddings produce substantially better results than fastText is supported by ELMo improving NER results on all EMBEDDIA languages except Slovenian.",
+     "triple": {
+      "subject": "ELMo NER improvements on all EMBEDDIA languages except Slovenian",
+      "predicate": "provides evidence for",
+      "object": "substantially better results compared to fastText"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1911.10049::s07::p004",
+      "1911.10049::s08::p000"
+     ],
+     "supporting_fact_ids": [
+      "1911.10049::g00:b5:f04"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1911.10049::u003"
+    },
+    {
+     "insight_id": "1911.10049::g00:i04",
+     "paper_id": "1911.10049",
+     "group_id": "1911.10049::g00",
+     "concise_text": "The NER evaluation used a time distributed softmax layer with 4 neurons because NER datasets had PER, LOC, ORG, and 'O' labels.",
+     "triple": {
+      "subject": "PER, LOC, ORG, and 'O' labels",
+      "predicate": "requires",
+      "object": "time distributed softmax layer with 4 neurons"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1911.10049::s07::p000",
+      "1911.10049::s07::p001"
+     ],
+     "supporting_fact_ids": [
+      "1911.10049::g00:b4:f07",
+      "1911.10049::g00:b4:f08",
+      "1911.10049::g00:b4:f09"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1911.10049::u004"
+    },
+    {
+     "insight_id": "1911.10049::g00:i05",
+     "paper_id": "1911.10049",
+     "group_id": "1911.10049::g00",
+     "concise_text": "The word analogy evaluation of produced ELMo models used accuracy@5 with CSLS to find the closest candidate word.",
+     "triple": {
+      "subject": "word analogy evaluation of produced ELMo models",
+      "predicate": "evaluated_on",
+      "object": "accuracy@5 with CSLS"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1911.10049::s05::p000",
+      "1911.10049::s06::p002"
+     ],
+     "supporting_fact_ids": [
+      "1911.10049::g00:b3:f03",
+      "1911.10049::g00:b3:f14"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1911.10049::u005"
+    },
+    {
+     "insight_id": "1911.10049::g00:i06",
+     "paper_id": "1911.10049",
+     "group_id": "1911.10049::g00",
+     "concise_text": "The NER evaluation of produced ELMo models used Macro F1 score after averaging the three ELMo layer vectors for each token.",
+     "triple": {
+      "subject": "NER evaluation of produced ELMo models",
+      "predicate": "evaluated_on",
+      "object": "Macro F1 score with averaged three ELMo layer vectors"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1911.10049::s05::p000",
+      "1911.10049::s07::p001",
+      "1911.10049::s07::p002"
+     ],
+     "supporting_fact_ids": [
+      "1911.10049::g00:b3:f03"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.83,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1911.10049::u006"
+    },
+    {
+     "insight_id": "1911.10049::g00:i07",
+     "paper_id": "1911.10049",
+     "group_id": "1911.10049::g00",
+     "concise_text": "The Latvian dataset consists only of the Latvian portion of the CoNLL 2017 corpus, making Latvian the only language where EMBEDDIA ELMo and ELMoForManyLangs used exactly the same corpora.",
+     "triple": {
+      "subject": "Latvian portion of the CoNLL 2017 corpus",
+      "predicate": "limits",
+      "object": "direct EMBEDDIA ELMo and ELMoForManyLangs comparison to Latvian"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1911.10049::s03::p004",
+      "1911.10049::s06::p003"
+     ],
+     "supporting_fact_ids": [
+      "1911.10049::g00:b2:f04",
+      "1911.10049::g00:b3:f15"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.89,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1911.10049::u007"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "needs_two_passages",
+     "item": {
+      "text": "Because Croatian and Lithuanian have the smallest NER datasets, ELMo embeddings show the largest improvement over fastText embeddings for those languages.",
+      "triple": [
+       "smallest NER datasets",
+       "causes",
+       "largest ELMo improvement over fastText embeddings"
+      ],
+      "source_passage_ids": [
+       "1911.10049::s07::p004"
+      ]
+     }
+    },
+    {
+     "reason": "needs_two_passages",
+     "item": {
+      "text": "Because each analogy instance contains only four words, the evaluation formed simple sentences using the four analogy words before generating ELMo embeddings.",
+      "triple": [
+       "four-word analogy instances",
+       "requires",
+       "simple sentences using the four analogy words"
+      ],
+      "source_passage_ids": [
+       "1911.10049::s06::p002"
+      ]
+     }
+    }
+   ],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 11817,
+    "completion_tokens": 1681,
+    "total_tokens": 13498,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

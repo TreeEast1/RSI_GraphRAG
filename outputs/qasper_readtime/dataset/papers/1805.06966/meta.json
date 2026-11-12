@@ -1,0 +1,68 @@
+{
+ "paper_id": "1805.06966",
+ "title": "Neural User Simulation for Corpus-based Policy Optimisation for Spoken Dialogue Systems",
+ "abstract": "User Simulators are one of the major tools that enable offline training of task-oriented dialogue systems. For this task the Agenda-Based User Simulator (ABUS) is often used. The ABUS is based on hand-crafted rules and its output is in semantic form. Issues arise from both properties such as limited diversity and the inability to interface a text-level belief tracker. This paper introduces the Neural User Simulator (NUS) whose behaviour is learned from a corpus and which generates natural language, hence needing a less labelled dataset than simulators generating a semantic output. In comparison to much of the past work on this topic, which evaluates user simulators on corpus-based metrics, we use the NUS to train the policy of a reinforcement learning based Spoken Dialogue System. The NUS is compared to the ABUS by evaluating the policies that were trained using the simulators. Cross-model evaluation is performed i.e. training on one simulator and testing on the other. Furthermore, the trained policies are tested on real users. In both evaluation tasks the NUS outperformed the ABUS.",
+ "sections": [
+  "Introduction",
+  "Task-Oriented Dialogue",
+  "Motivation and Related Work",
+  "Neural User Simulator",
+  "Goal Generator",
+  "Feature Extractor",
+  "Sequence-To-Sequence Model",
+  "Training",
+  "Experimental Setup",
+  "Testing with a simulated user",
+  "Testing with real users",
+  "Cross-Model Evaluation",
+  "Human Evaluation",
+  "Conclusion",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 41,
+ "n_tokens": 6151,
+ "figures_and_tables": [
+  {
+   "caption_id": "1805.06966::fig000",
+   "paper_id": "1805.06966",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: General Architecture of the Neural User Simulator. The System Output is passed to the Feature Extractor. It generates a new feature vector that is appended to the Feature History, which is passed to the sequence-to-sequence model to produce the user utterance. At the start of the dialogue the Goal Generator generates a goal, which might change during the course of the dialogue.",
+   "n_tokens": 77
+  },
+  {
+   "caption_id": "1805.06966::fig001",
+   "paper_id": "1805.06966",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: An example of how DSTC2’s turn-specific constraint labels can be transformed such that their behaviour can be replicated when training a dialogue manager.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1805.06966::fig002",
+   "paper_id": "1805.06966",
+   "file": "6-Figure2-1.png",
+   "caption": "Figure 2: Sequence-To-Sequence model of the Neural User Simulator. Here, the NUS is generating the user response to the third system output. The white, light-grey and dark blocks represent the RNN encoder, a fully-connected layer and the RNN decoder respectively. The previous output of the decoder is passed to its input for the next time-step. v3:1 are the first three feature vectors (see Sec. 4.2).",
+   "n_tokens": 92
+  },
+  {
+   "caption_id": "1805.06966::fig003",
+   "paper_id": "1805.06966",
+   "file": "8-Table2-1.png",
+   "caption": "Table 2: Results for policies trained for 4000 dialogues on NUS and ABUS when tested on both USs for 1000 dialogues. Five policies with different initialisations were trained for each US. Both average and best results are shown.",
+   "n_tokens": 53
+  },
+  {
+   "caption_id": "1805.06966::fig004",
+   "paper_id": "1805.06966",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: Real User Evaluation. Results over 250 dialogues with human users. N1 and A1 performed best on the NUS. N2 and A2 performed best on the ABUS. Rewards are not comparable to Table 2 and 3 since all user goals were achievable.",
+   "n_tokens": 60
+  },
+  {
+   "caption_id": "1805.06966::fig005",
+   "paper_id": "1805.06966",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: As Table 2 but trained for 1000 dialogues.",
+   "n_tokens": 17
+  }
+ ]
+}

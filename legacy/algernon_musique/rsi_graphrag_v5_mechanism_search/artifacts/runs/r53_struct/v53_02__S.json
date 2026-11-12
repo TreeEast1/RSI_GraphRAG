@@ -1,0 +1,157 @@
+{
+  "role": "v53_02",
+  "cluster_id": "cc-00000-stable-0109",
+  "unit_id": "cc-00000-stable-0109-u000",
+  "method": "S",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 3342,
+    "completion_tokens": 1332,
+    "reasoning_tokens": 512,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r53_struct_v53_02_S",
+    "cache_key": "2755458711ebb4bf301e2ceafec0a727fb79a326c12e364885ea2aed422b9709"
+  },
+  "n_updates": 4,
+  "n_add": 1,
+  "n_accept": 1,
+  "n_reject": 0,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "SINGLE_PASSAGE_CONSOLIDATION": 1
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "g1",
+      "gap_id": "g1",
+      "comprehension_text": "The election included a candidate distinct from the former prime minister associated with Latvian Way.",
+      "new_semantic_relation": "included candidate distinct from Latvian Way former prime minister",
+      "operator": "COMPOSITIONAL_SHORTCUT",
+      "linked_entity_ids": [
+        "entity-658ea35838a9e05050df2c3919a0af52",
+        "entity-d620d2f02026a6000356f1adf6811dbe"
+      ],
+      "source_triple_ids": [
+        "triple-9518cfdcacc9a307207a4db3e2e50b36",
+        "triple-d9dd440a2959d74cb8b29e66e507a72a"
+      ],
+      "source_passage_ids": [
+        "chunk-b4d60fe460691ba03ad83c18b248456e"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-b4d60fe460691ba03ad83c18b248456e",
+          "span": "not to be confused with Andris Bērziņš, former PM from Latvia's First Party/Latvian Way"
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The election context is linked to Latvian Way through the candidate distinction.",
+      "reasoning_summary": "The candidate participated in the election but was distinct from the former Latvian Way prime minister.",
+      "novelty_justification": "No triple directly links the election with Latvian Way.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "NO_OP",
+      "candidate_id": "g2",
+      "gap_id": "g2",
+      "comprehension_text": "",
+      "new_semantic_relation": "",
+      "operator": "",
+      "linked_entity_ids": [],
+      "source_triple_ids": [],
+      "source_passage_ids": [],
+      "evidence_spans": [],
+      "derivation_type": "",
+      "novel_part": "",
+      "reasoning_summary": "The passages do not support a direct relation between the Estonian Liberal Democratic Party and Latvian Way.",
+      "novelty_justification": "",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "NO_OP",
+      "candidate_id": "g3",
+      "gap_id": "g3",
+      "comprehension_text": "",
+      "new_semantic_relation": "",
+      "operator": "",
+      "linked_entity_ids": [],
+      "source_triple_ids": [],
+      "source_passage_ids": [],
+      "evidence_spans": [],
+      "derivation_type": "",
+      "novel_part": "",
+      "reasoning_summary": "The passages do not connect the Estonian Reform Party directly with Andris Bērziņš.",
+      "novelty_justification": "",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "NO_OP",
+      "candidate_id": "g4",
+      "gap_id": "g4",
+      "comprehension_text": "",
+      "new_semantic_relation": "",
+      "operator": "",
+      "linked_entity_ids": [],
+      "source_triple_ids": [],
+      "source_passage_ids": [],
+      "evidence_spans": [],
+      "derivation_type": "",
+      "novel_part": "",
+      "reasoning_summary": "Both parties formed ties with the Estonian Reform Party, but no direct relation between them is stated.",
+      "novelty_justification": "",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "g1",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "SINGLE_PASSAGE_CONSOLIDATION",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: included, distinct, associated",
+      "residue": [
+        "included",
+        "distinct",
+        "associated"
+      ],
+      "evidence_sentences": [
+        "Incumbent president Valdis Zatlers was standing again, as well as Andris Bērziņš (Saeima member for the Union of Greens and Farmers), a former head of SEB Unibanka (not to be confused with Andris Bērziņš, former PM from Latvia's First Party/Latvian Way); Bērziņš was nominated by five Saeima members of the Union of Greens and Farmers just two days before the nomination deadline, although the party was assumed to back Zatlers for reelection."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Incumbent president Valdis Zatlers was standing again, as well as Andris Bērziņš (Saeima member for the Union of Greens and Farmers), a former head of SEB Unibanka (not to be confused with Andris Bērziņš, former PM from Latvia's First Party/Latvian Way); Bērziņš was nominated by five Saeima members of the Union of Greens and Farmers just two days before the nomination deadline, although the party was assumed to back Zatlers for reelection."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "included",
+            "distinct",
+            "associated"
+          ],
+          "n_passage_triples": 14,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

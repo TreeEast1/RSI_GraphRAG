@@ -1,0 +1,361 @@
+{
+ "1605.07333::s00::p000": [
+  [
+   "Relation classification",
+   "is the task of",
+   "assigning sentences with two marked entities to a predefined set of relations"
+  ],
+  [
+   "The sentence “We poured the <e1>milk</e1> into the <e2>pumpkin mixture</e2>.”",
+   "expresses",
+   "the relation Entity-Destination(e1,e2)"
+  ],
+  [
+   "early research",
+   "mostly focused on",
+   "support vector machines or maximum entropy classifiers"
+  ],
+  [
+   "recent research",
+   "showed",
+   "performance improvements by applying neural networks (NNs) on the benchmark data from SemEval 2010 shared task 8"
+  ]
+ ],
+ "1605.07333::s00::p002": [
+  [
+   "The extended middle context",
+   "pays special attention to",
+   "the middle part"
+  ]
+ ],
+ "1605.07333::s00::p003": [
+  [
+   "connectionist bi-directional RNN models",
+   "combine",
+   "all intermediate hidden layers for their final decision"
+  ],
+  [
+   "the ranking loss function",
+   "is introduced for",
+   "the RNN model optimization"
+  ],
+  [
+   "the ranking loss function",
+   "has not been investigated in",
+   "the literature for relation classification before"
+  ]
+ ],
+ "1605.07333::s01::p000": [
+  [
+   "manually annotated data for relation classification",
+   "was released in",
+   "the context of a SemEval shared task"
+  ],
+  [
+   "Shared task participants",
+   "used",
+   "support vector machines or maximum entropy classifiers"
+  ],
+  [
+   "their results on this data set",
+   "were outperformed by",
+   "applying NNs"
+  ]
+ ],
+ "1605.07333::s01::p001": [
+  [
+   "zeng2014",
+   "built",
+   "a CNN based only on the context between the relation arguments"
+  ],
+  [
+   "kim2014 and others",
+   "used",
+   "convolutional filters of different sizes for CNNs"
+  ],
+  [
+   "nguyen",
+   "obtained",
+   "improvements over single filter sizes"
+  ],
+  [
+   "deSantos2015",
+   "replaced",
+   "the softmax layer of the CNN with a ranking layer"
+  ]
+ ],
+ "1605.07333::s01::p002": [
+  [
+   "socher",
+   "used",
+   "recursive neural networks that built recursive sentence representations based on syntactic parsing"
+  ],
+  [
+   "zhang",
+   "investigated",
+   "a temporal structured RNN with only words as input"
+  ]
+ ],
+ "1605.07333::s02::p000": [
+  [
+   "CNNs",
+   "perform",
+   "a discrete convolution on an input matrix with a set of different filters"
+  ],
+  [
+   "the input matrix",
+   "represents",
+   "a sentence"
+  ],
+  [
+   "Each column of the matrix",
+   "stores",
+   "the word embedding of the corresponding word"
+  ],
+  [
+   "max-pooling",
+   "extracts",
+   "the maximum value for each filter"
+  ]
+ ],
+ "1605.07333::s03::p000": [
+  [
+   "One of our contributions",
+   "is",
+   "a new input representation especially designed for relation classification"
+  ],
+  [
+   "The contexts",
+   "are split into",
+   "three disjoint regions based on the two relation arguments"
+  ],
+  [
+   "The two contexts",
+   "are processed by",
+   "two independent convolutional and max-pooling layers"
+  ]
+ ],
+ "1605.07333::s04::p000": [
+  [
+   "a max pooling operation",
+   "stores",
+   "only the highest activation of each filter"
+  ]
+ ],
+ "1605.07333::s05::p000": [
+  [
+   "Traditional RNNs",
+   "consist of",
+   "an input vector, a history vector and an output vector"
+  ],
+  [
+   "Training",
+   "is performed using",
+   "backpropagation through time BIBREF9"
+  ]
+ ],
+ "1605.07333::s06::p000": [
+  [
+   "using trigrams as input instead of single words",
+   "led to",
+   "superior results"
+  ],
+  [
+   "the trigram INLINEFORM2",
+   "is given by",
+   "concatenating the corresponding word embeddings"
+  ]
+ ],
+ "1605.07333::s07::p000": [
+  [
+   "bi-directional RNNs",
+   "regard",
+   "a history vector of word INLINEFORM0 and a future vector"
+  ]
+ ],
+ "1605.07333::s07::p001": [
+  [
+   "the network",
+   "can be split into",
+   "three parts"
+  ],
+  [
+   "a forward pass",
+   "processes",
+   "the original sentence word by word"
+  ],
+  [
+   "a backward pass",
+   "processes",
+   "the reversed sentence word by word"
+  ],
+  [
+   "All three parts",
+   "are trained",
+   "jointly"
+  ]
+ ],
+ "1605.07333::s08::p000": [
+  [
+   "Words",
+   "are represented by",
+   "concatenated vectors: a word embedding and a position feature vector"
+  ]
+ ],
+ "1605.07333::s08::p001": [
+  [
+   "the embeddings",
+   "are updated during",
+   "model training"
+  ]
+ ],
+ "1605.07333::s09::p000": [
+  [
+   "the ranking loss function",
+   "maximizes",
+   "the distance between the true label INLINEFORM0 and the best competitive label INLINEFORM1"
+  ]
+ ],
+ "1605.07333::s09::p001": [
+  [
+   "The parameter INLINEFORM4",
+   "controls",
+   "the penalization of the prediction errors"
+  ],
+  [
+   "INLINEFORM5 and INLINEFORM6",
+   "are",
+   "margins for the correct and incorrect classes"
+  ]
+ ],
+ "1605.07333::s10::p000": [
+  [
+   "the relation classification dataset of the SemEval 2010 task 8 BIBREF8",
+   "consists of",
+   "sentences which have been manually labeled with 19 relations (9 directed relations and one artificial class Other)"
+  ],
+  [
+   "8,000 sentences",
+   "have been distributed as",
+   "training set"
+  ],
+  [
+   "2,717 sentences",
+   "served as",
+   "test set"
+  ]
+ ],
+ "1605.07333::s10::p001": [
+  [
+   "RNN and CNN models",
+   "were implemented with",
+   "theano BIBREF12 , BIBREF13"
+  ],
+  [
+   "all our models",
+   "use",
+   "L2 regularization with a weight of 0.0001"
+  ],
+  [
+   "CNN training",
+   "uses",
+   "mini batches of 25 training examples"
+  ],
+  [
+   "The initial learning rates",
+   "are",
+   "0.2 for the CNN and 0.01 for the RNN"
+  ]
+ ],
+ "1605.07333::s10::p002": [
+  [
+   "ensemble results",
+   "combined the presented single models with",
+   "a voting process"
+  ]
+ ],
+ "1605.07333::s11::p000": [
+  [
+   "baseline system",
+   "implemented",
+   "a CNN similar to the one described by zeng2014"
+  ]
+ ],
+ "1605.07333::s11::p001": [
+  [
+   "multi-windows for convolution",
+   "have",
+   "window sizes: 2,3,4,5 and 300 feature maps each"
+  ],
+  [
+   "word embedding dimensionality",
+   "increases from",
+   "50 to 400"
+  ],
+  [
+   "position embedding dimensionality",
+   "is",
+   "5 in combination with 50 dimensional word embeddings and 35 with 400 dimensional word embeddings"
+  ],
+  [
+   "ranking layer and the embedding size",
+   "have",
+   "an important impact on the performance"
+  ]
+ ],
+ "1605.07333::s12::p000": [
+  [
+   "baseline for the RNN models",
+   "applies",
+   "a uni-directional RNN which predicts the relation after processing the whole sentence"
+  ],
+  [
+   "uni-directional RNN",
+   "achieves",
+   "an F1 score of 61.2 on the SemEval test set"
+  ]
+ ],
+ "1605.07333::s12::p001": [
+  [
+   "position indicators",
+   "perform",
+   "the best on the SemEval data"
+  ],
+  [
+   "difference to using position embeddings with entity flags",
+   "is not",
+   "statistically significant"
+  ]
+ ],
+ "1605.07333::s12::p003": [
+  [
+   "all of these variations",
+   "lead to",
+   "statistically significant improvements"
+  ],
+  [
+   "the additional hidden layer connections and the integration of the ranking layer",
+   "have",
+   "a large impact on the performance"
+  ]
+ ],
+ "1605.07333::s13::p000": [
+  [
+   "The combination",
+   "achieves",
+   "an F1 score of 84.9"
+  ],
+  [
+   "the RNN",
+   "computes",
+   "a weighted combination of all words in the sentence"
+  ]
+ ],
+ "1605.07333::s16::p001": [
+  [
+   "This research",
+   "was also supported by",
+   "Deutsche Forschungsgemeinschaft: grant SCHU 2246/4-2"
+  ]
+ ]
+}

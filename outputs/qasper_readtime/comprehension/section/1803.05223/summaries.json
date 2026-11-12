@@ -1,0 +1,638 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1803.05223::s00::p000",
+   "summary": "Natural language ambiguity and implicitness challenge computational models, while people use shared common ground, including commonsense knowledge about everyday activities called scripts.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s00::p001",
+   "summary": "This paper introduces MCScript, a dataset assessing script knowledge in machine comprehension, where scripts are sequences of events describing stereotypical human activities.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s00::p002",
+   "summary": "Script knowledge about eating in a restaurant supports inferring that Rachel, likely the customer, ate the ordered food rather than the waitress.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s00::p003",
+   "summary": "Prior script knowledge evaluations covered specific aspects and lacked real-world task connections, whereas MCScript provides extrinsic multiple-choice question answering evaluation without structural or methodical requirements.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s00::p004",
+   "summary": "MCScript contains approx. 2,100 texts and approx. 14,000 questions with answer candidate pairs, crowdsourced, manually validated, and 27.4% requiring commonsense inference.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s01::p000",
+   "summary": "This section describes data collection for texts, questions and answers, including pilot studies, MTurk crowdsourcing, postprocessing, validation, and final dataset statistics.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s02::p000",
+   "summary": "Pilots used texts from the InScript corpus and conducted three studies to determine the best way to collect commonsense inference questions.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s02::p001",
+   "summary": "The first pilot showed texts to workers for question and answer formulation, but too many collected items were lexically close to the text.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s02::p002",
+   "summary": "The second pilot paired questions with other same-scenario texts, while the third collected scenario-centered questions without texts and achieved the desired specificity.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s02::p003",
+   "summary": "The next section describes the final dataset collection mode based on the third pilot in more detail.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s03::p000",
+   "summary": "Final question collection used script scenarios from three collections, selecting 80, adding 20 new scenarios, and combining 10 InScript scenarios for 110 scenarios.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s03::p001",
+   "summary": "Text collection followed modiinscript, collecting 20 texts per scenario, with 20 existing texts randomly selected for each of the 10 InScript scenarios.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s03::p002",
+   "summary": "Workers wrote scenario-independent questions, including 3 temporal, 3 content, 3 reasoning and 6 free questions, totaling 15 questions from 10 participants per scenario.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s03::p003",
+   "summary": "For each text, answers were collected for 15 randomly selected same-scenario questions, with participants first assigning a category to each text–question pair.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s03::p004",
+   "summary": "Answerable questions were labeled text-based or script-based, while nonsensical questions were unfitting and answerable but impossible questions were unknown.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s03::p005",
+   "summary": "Participants formulated correct and incorrect candidates, with final categories decided by majority vote of at least 3 out of 5 and unclear cases excluded.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s03::p006",
+   "summary": "Four post-processing steps were performed on the collected data.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s03::p007",
+   "summary": "Texts that were instructional rather than narrative were manually filtered out.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s03::p008",
+   "summary": "All texts, questions and answers were spellchecked using aSpell with manual inspection of proposed corrections.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s03::p009",
+   "summary": "Common protagonist alternatives such as “I”, “you”, “he”, “she”, “my”, “your”, “his”, “her” and “the person” were manually replaced with “they” or “their”.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s03::p010",
+   "summary": "Invalid questions, including suggestive questions and questions asking for the reader’s personal opinion, were manually filtered out.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s04::p000",
+   "summary": "Final answer selection chose the correct candidate with lowest lexical overlap and the incorrect candidate most often mentioned by majority vote.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s04::p001",
+   "summary": "Candidates were normalized and merged using string identity, containment, or Levenshtein distance of 3 or less, then manually validated, replacing answers for approximately 11.5% of questions and excluding 135 questions (approx. 1%).",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s05::p000",
+   "summary": "Experiments admitted only experienced US-based MTurk workers, with HITs paying $0.50 for text and question collection and $0.60 for answer collection.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s05::p001",
+   "summary": "More than 2,100 texts paired with 15 questions each produced approx. 32,000 annotated questions, with 13% excluded for lacking a 3 out of 5 majority.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s05::p002",
+   "summary": "Of the remaining 87%, 14,074 (52%) questions were answerable, including 10,160 text-based and 3,914 script-based, yielding 13,939 final questions with 3,827 requiring commonsense knowledge (27.4%).",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s05::p003",
+   "summary": "The dataset was split into training (9,731 questions on 1,470 texts), development (1,411 questions on 219 texts), and test set (2,797 questions on 430 texts), with average lengths of 196.0, 7.8 and 3.6 words and 6.7 questions per text.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s05::p004",
+   "summary": "Figure FIGREF21 shows question type distribution identified by heuristics based on first words, with yes/no questions starting with auxiliary or modal verbs.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s05::p005",
+   "summary": "29% of all questions are yes/no questions, detail questions are second most frequent, temporal questions form approx. 11%, and detailed analysis is left for future work.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s06::p000",
+   "summary": "The collection yields many commonsense inference questions, but Figure FIGREF22 also shows text-explicit or semantically related questions such as Q1 and Q2.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s06::p001",
+   "summary": "The following cases require commonsense inference, with answers neither overtly contained nor easily derivable, and only scenario names shown.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s06::p002",
+   "summary": "Examples UID23, UID24, UID25, UID26 and UID27 illustrate script knowledge about library borrowing, event information, parents’ picnic role, and shower duration.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s06::p003",
+   "summary": "Example UID28 can be inferred from text pointers such as I woke up or from commonsense knowledge that breakfast is eaten in the morning.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s06::p004",
+   "summary": "These examples show that the dataset covers a wide difficulty spectrum from simple text-answerable questions to challenging inference problems.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s07::p000",
+   "summary": "Experiments assess baseline models on MCScript using accuracy, comparing text-based and commonsense questions and evaluating each model for each question type.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s08::p000",
+   "summary": "The first baseline selects the answer with highest literal overlap with the text, randomly choosing one answer in case of a tie.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s08::p001",
+   "summary": "The second baseline uses a sliding window over INLINEFORM0 tokens, averaging word embeddings for windows of size INLINEFORM1 and answers, then selecting the lowest cosine distance.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s08::p002",
+   "summary": "The third baseline is a simple neural model averaging word embeddings, applying linear transformations, and constructing INLINEFORM10 with bilinear transformation matrix INLINEFORM11.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s08::p003",
+   "summary": "Answer scores are computed using the dot product and passed through a softmax layer to define the probability INLINEFORM0 for answer INLINEFORM1.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s08::p004",
+   "summary": "The attentive reader uses bilinear weight functions, Bi-directional GRUs, question-based attention scores, and a weighted average text representation INLINEFORM10.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s08::p005",
+   "summary": "The probability INLINEFORM0 of answer INLINEFORM1 being correct is predicted using bilinear weight matrix INLINEFORM2 and softmax over both answer options.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s09::p000",
+   "summary": "Texts, questions and answers were tokenized using NLTK and lowercased, with 100-dimensional GloVe vectors BIBREF16 used for embeddings and INLINEFORM0 set for sliding similarity window.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s09::p001",
+   "summary": "Neural model vocabulary came from training and development data, with vanilla stochastic gradient descent, gradient clipping above 10, hidden layers tuned to 64, dropout INLINEFORM1, batch size 25, and 150 epochs.",
+   "group_id": "1803.05223::g00"
+  },
+  {
+   "passage_id": "1803.05223::s10::p000",
+   "summary": "Two trained annotators labeled all test set instances and agreed with the gold standard in 98.2 % of cases, showing humans easily find correct answers.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s10::p001",
+   "summary": "Table TABREF37 compares baseline models with the human upper bound and random baseline, showing neural models outperform the worst word overlap baseline at INLINEFORM0 accuracy.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s10::p002",
+   "summary": "Low accuracy stems from correct answers having low text overlap by design, while distributional information alone cannot handle complex questions in the dataset.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s10::p003",
+   "summary": "Both neural models outperform unsupervised baselines, but the attentive reader beats the bilinear model by only INLINEFORM0 because it attends only to text.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s10::p004",
+   "summary": "The attentive reader performs better on commonsense-based questions than text questions, apparently by memorizing prototypical answers within scenarios irrespective of the text.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s10::p005",
+   "summary": "Attention values show the attentive reader usually cannot properly attend to relevant text parts, even when the answer is literally given in the text.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s10::p006",
+   "summary": "The attentive reader was built for reconstructing literal text spans, but many correct answers cannot be found verbatim in the text, challenging attention.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s10::p007",
+   "summary": "The attention model only marginally outperforms a simple bilinear baseline, showing MCScript challenges machine comprehension systems and text-only models are insufficient.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s10::p008",
+   "summary": "Figure FIGREF39 gives accuracy values for all baseline systems on frequent question types appearing >25 times in the test data.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s10::p009",
+   "summary": "Neural models outperform other models in most cases, especially for who questions, which often ask for the narrator not literally mentioned in first-person stories.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s10::p010",
+   "summary": "All models perform badly on yes/no questions because answers often consist only of yes or no, without further content words.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s11::p000",
+   "summary": "Reading comprehension datasets including MCTest BIBREF17, BAbI BIBREF18, CBT, CNN/Daily Mail BIBREF14, SQuAD, and RACE BIBREF19 do not explicitly address commonsense knowledge.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s11::p001",
+   "summary": "NewsQA BIBREF20 resembles the authors' data acquisition but differs in domain and genre, requires mostly factual knowledge, and asks for answer-containing document passages.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s11::p002",
+   "summary": "TriviaQA BIBREF21 contains question-answer pairs from 14 trivia and quiz-league websites with Wikipedia and Bing evidence documents, mostly requiring factual world knowledge.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s12::p000",
+   "summary": "The new machine comprehension dataset focuses on commonsense knowledge, with questions collected from script scenarios to assess script knowledge in a real-world evaluation scenario.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s12::p001",
+   "summary": "MCScript is expected to become a standard benchmark, shows reliable human performance, challenges baselines, underlies a SemEval 2018 shared task, and is available online.",
+   "group_id": "1803.05223::g01"
+  },
+  {
+   "passage_id": "1803.05223::s13::p000",
+   "summary": "The authors thank reviewers, Florian Pusse, student assistants, and acknowledge DFG funding through SFB 1102 and EXC 284.",
+   "group_id": "1803.05223::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1803.05223::g00",
+   "summaries": [
+    {
+     "passage_id": "1803.05223::s00::p000",
+     "summary": "Natural language ambiguity and implicitness challenge computational models, while people use shared common ground, including commonsense knowledge about everyday activities called scripts.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s00::p001",
+     "summary": "This paper introduces MCScript, a dataset assessing script knowledge in machine comprehension, where scripts are sequences of events describing stereotypical human activities.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s00::p002",
+     "summary": "Script knowledge about eating in a restaurant supports inferring that Rachel, likely the customer, ate the ordered food rather than the waitress.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s00::p003",
+     "summary": "Prior script knowledge evaluations covered specific aspects and lacked real-world task connections, whereas MCScript provides extrinsic multiple-choice question answering evaluation without structural or methodical requirements.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s00::p004",
+     "summary": "MCScript contains approx. 2,100 texts and approx. 14,000 questions with answer candidate pairs, crowdsourced, manually validated, and 27.4% requiring commonsense inference.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s01::p000",
+     "summary": "This section describes data collection for texts, questions and answers, including pilot studies, MTurk crowdsourcing, postprocessing, validation, and final dataset statistics.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s02::p000",
+     "summary": "Pilots used texts from the InScript corpus and conducted three studies to determine the best way to collect commonsense inference questions.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s02::p001",
+     "summary": "The first pilot showed texts to workers for question and answer formulation, but too many collected items were lexically close to the text.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s02::p002",
+     "summary": "The second pilot paired questions with other same-scenario texts, while the third collected scenario-centered questions without texts and achieved the desired specificity.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s02::p003",
+     "summary": "The next section describes the final dataset collection mode based on the third pilot in more detail.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s03::p000",
+     "summary": "Final question collection used script scenarios from three collections, selecting 80, adding 20 new scenarios, and combining 10 InScript scenarios for 110 scenarios.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s03::p001",
+     "summary": "Text collection followed modiinscript, collecting 20 texts per scenario, with 20 existing texts randomly selected for each of the 10 InScript scenarios.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s03::p002",
+     "summary": "Workers wrote scenario-independent questions, including 3 temporal, 3 content, 3 reasoning and 6 free questions, totaling 15 questions from 10 participants per scenario.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s03::p003",
+     "summary": "For each text, answers were collected for 15 randomly selected same-scenario questions, with participants first assigning a category to each text–question pair.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s03::p004",
+     "summary": "Answerable questions were labeled text-based or script-based, while nonsensical questions were unfitting and answerable but impossible questions were unknown.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s03::p005",
+     "summary": "Participants formulated correct and incorrect candidates, with final categories decided by majority vote of at least 3 out of 5 and unclear cases excluded.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s03::p006",
+     "summary": "Four post-processing steps were performed on the collected data.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s03::p007",
+     "summary": "Texts that were instructional rather than narrative were manually filtered out.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s03::p008",
+     "summary": "All texts, questions and answers were spellchecked using aSpell with manual inspection of proposed corrections.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s03::p009",
+     "summary": "Common protagonist alternatives such as “I”, “you”, “he”, “she”, “my”, “your”, “his”, “her” and “the person” were manually replaced with “they” or “their”.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s03::p010",
+     "summary": "Invalid questions, including suggestive questions and questions asking for the reader’s personal opinion, were manually filtered out.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s04::p000",
+     "summary": "Final answer selection chose the correct candidate with lowest lexical overlap and the incorrect candidate most often mentioned by majority vote.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s04::p001",
+     "summary": "Candidates were normalized and merged using string identity, containment, or Levenshtein distance of 3 or less, then manually validated, replacing answers for approximately 11.5% of questions and excluding 135 questions (approx. 1%).",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s05::p000",
+     "summary": "Experiments admitted only experienced US-based MTurk workers, with HITs paying $0.50 for text and question collection and $0.60 for answer collection.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s05::p001",
+     "summary": "More than 2,100 texts paired with 15 questions each produced approx. 32,000 annotated questions, with 13% excluded for lacking a 3 out of 5 majority.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s05::p002",
+     "summary": "Of the remaining 87%, 14,074 (52%) questions were answerable, including 10,160 text-based and 3,914 script-based, yielding 13,939 final questions with 3,827 requiring commonsense knowledge (27.4%).",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s05::p003",
+     "summary": "The dataset was split into training (9,731 questions on 1,470 texts), development (1,411 questions on 219 texts), and test set (2,797 questions on 430 texts), with average lengths of 196.0, 7.8 and 3.6 words and 6.7 questions per text.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s05::p004",
+     "summary": "Figure FIGREF21 shows question type distribution identified by heuristics based on first words, with yes/no questions starting with auxiliary or modal verbs.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s05::p005",
+     "summary": "29% of all questions are yes/no questions, detail questions are second most frequent, temporal questions form approx. 11%, and detailed analysis is left for future work.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s06::p000",
+     "summary": "The collection yields many commonsense inference questions, but Figure FIGREF22 also shows text-explicit or semantically related questions such as Q1 and Q2.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s06::p001",
+     "summary": "The following cases require commonsense inference, with answers neither overtly contained nor easily derivable, and only scenario names shown.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s06::p002",
+     "summary": "Examples UID23, UID24, UID25, UID26 and UID27 illustrate script knowledge about library borrowing, event information, parents’ picnic role, and shower duration.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s06::p003",
+     "summary": "Example UID28 can be inferred from text pointers such as I woke up or from commonsense knowledge that breakfast is eaten in the morning.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s06::p004",
+     "summary": "These examples show that the dataset covers a wide difficulty spectrum from simple text-answerable questions to challenging inference problems.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s07::p000",
+     "summary": "Experiments assess baseline models on MCScript using accuracy, comparing text-based and commonsense questions and evaluating each model for each question type.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s08::p000",
+     "summary": "The first baseline selects the answer with highest literal overlap with the text, randomly choosing one answer in case of a tie.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s08::p001",
+     "summary": "The second baseline uses a sliding window over INLINEFORM0 tokens, averaging word embeddings for windows of size INLINEFORM1 and answers, then selecting the lowest cosine distance.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s08::p002",
+     "summary": "The third baseline is a simple neural model averaging word embeddings, applying linear transformations, and constructing INLINEFORM10 with bilinear transformation matrix INLINEFORM11.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s08::p003",
+     "summary": "Answer scores are computed using the dot product and passed through a softmax layer to define the probability INLINEFORM0 for answer INLINEFORM1.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s08::p004",
+     "summary": "The attentive reader uses bilinear weight functions, Bi-directional GRUs, question-based attention scores, and a weighted average text representation INLINEFORM10.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s08::p005",
+     "summary": "The probability INLINEFORM0 of answer INLINEFORM1 being correct is predicted using bilinear weight matrix INLINEFORM2 and softmax over both answer options.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s09::p000",
+     "summary": "Texts, questions and answers were tokenized using NLTK and lowercased, with 100-dimensional GloVe vectors BIBREF16 used for embeddings and INLINEFORM0 set for sliding similarity window.",
+     "group_id": "1803.05223::g00"
+    },
+    {
+     "passage_id": "1803.05223::s09::p001",
+     "summary": "Neural model vocabulary came from training and development data, with vanilla stochastic gradient descent, gradient clipping above 10, hidden layers tuned to 64, dropout INLINEFORM1, batch size 25, and 150 epochs.",
+     "group_id": "1803.05223::g00"
+    }
+   ],
+   "n_raw": 43,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5344,
+    "completion_tokens": 2175,
+    "total_tokens": 7519,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1803.05223::g01",
+   "summaries": [
+    {
+     "passage_id": "1803.05223::s10::p000",
+     "summary": "Two trained annotators labeled all test set instances and agreed with the gold standard in 98.2 % of cases, showing humans easily find correct answers.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s10::p001",
+     "summary": "Table TABREF37 compares baseline models with the human upper bound and random baseline, showing neural models outperform the worst word overlap baseline at INLINEFORM0 accuracy.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s10::p002",
+     "summary": "Low accuracy stems from correct answers having low text overlap by design, while distributional information alone cannot handle complex questions in the dataset.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s10::p003",
+     "summary": "Both neural models outperform unsupervised baselines, but the attentive reader beats the bilinear model by only INLINEFORM0 because it attends only to text.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s10::p004",
+     "summary": "The attentive reader performs better on commonsense-based questions than text questions, apparently by memorizing prototypical answers within scenarios irrespective of the text.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s10::p005",
+     "summary": "Attention values show the attentive reader usually cannot properly attend to relevant text parts, even when the answer is literally given in the text.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s10::p006",
+     "summary": "The attentive reader was built for reconstructing literal text spans, but many correct answers cannot be found verbatim in the text, challenging attention.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s10::p007",
+     "summary": "The attention model only marginally outperforms a simple bilinear baseline, showing MCScript challenges machine comprehension systems and text-only models are insufficient.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s10::p008",
+     "summary": "Figure FIGREF39 gives accuracy values for all baseline systems on frequent question types appearing >25 times in the test data.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s10::p009",
+     "summary": "Neural models outperform other models in most cases, especially for who questions, which often ask for the narrator not literally mentioned in first-person stories.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s10::p010",
+     "summary": "All models perform badly on yes/no questions because answers often consist only of yes or no, without further content words.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s11::p000",
+     "summary": "Reading comprehension datasets including MCTest BIBREF17, BAbI BIBREF18, CBT, CNN/Daily Mail BIBREF14, SQuAD, and RACE BIBREF19 do not explicitly address commonsense knowledge.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s11::p001",
+     "summary": "NewsQA BIBREF20 resembles the authors' data acquisition but differs in domain and genre, requires mostly factual knowledge, and asks for answer-containing document passages.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s11::p002",
+     "summary": "TriviaQA BIBREF21 contains question-answer pairs from 14 trivia and quiz-league websites with Wikipedia and Bing evidence documents, mostly requiring factual world knowledge.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s12::p000",
+     "summary": "The new machine comprehension dataset focuses on commonsense knowledge, with questions collected from script scenarios to assess script knowledge in a real-world evaluation scenario.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s12::p001",
+     "summary": "MCScript is expected to become a standard benchmark, shows reliable human performance, challenges baselines, underlies a SemEval 2018 shared task, and is available online.",
+     "group_id": "1803.05223::g01"
+    },
+    {
+     "passage_id": "1803.05223::s13::p000",
+     "summary": "The authors thank reviewers, Florian Pusse, student assistants, and acknowledge DFG funding through SFB 1102 and EXC 284.",
+     "group_id": "1803.05223::g01"
+    }
+   ],
+   "n_raw": 17,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1922,
+    "completion_tokens": 847,
+    "total_tokens": 2769,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

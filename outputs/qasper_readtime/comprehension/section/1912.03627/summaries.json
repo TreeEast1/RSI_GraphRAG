@@ -1,0 +1,508 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1912.03627::s00::p000",
+   "summary": "Deep learning excels in speech tasks, but robust training needs powerful GPUs and standard large-scale datasets, with text-independent speaker verification supported by NIST SRE evaluations and VoxCeleb.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s00::p001",
+   "summary": "Text-dependent speaker recognition lacks large-scale public databases, with RSR2015 containing 300 individuals and RedDots only 64 speakers, motivating DeepMine collection as a standard benchmark.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s00::p002",
+   "summary": "ASR systems need large, variable training data, available for English, Mandarin, and French but not Persian, motivating collection of a large-scale dataset for robust Persian ASR models.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s00::p003",
+   "summary": "The DeepMine project aimed to collect speech from at least a few thousand speakers, began in 2017, finished at the end of 2018, and released its cleaned-up database at the beginning of 2019.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s01::p000",
+   "summary": "DeepMine is publicly available under varied licenses, was crowdsourced using an Android application where respondents recorded phrases across sessions with utterance checks.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s02::p000",
+   "summary": "Database cleanup filtered problematic utterances using an alignment stage similar to LibriSpeech, with custom decoding graphs allowing word skipping and insertion for each phrase.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s02::p001",
+   "summary": "Erroneous utterances were removed from text-dependent and text-prompted lists, while correctly aligned sub-parts were kept for speech recognition, leaving around 190 thousand full-transcription and 10 thousand sub-part utterances.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s03::p000",
+   "summary": "After processing, 1969 respondents remained, including 1149 male and 820 female, with 297 unable to read English and about 13200 female sessions versus about 9500 male sessions.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s03::p001",
+   "summary": "The database website provides its latest status, availability information, and a limited number of samples.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s04::p000",
+   "summary": "DeepMine has three parts for text-dependent speaker verification, text-prompted speaker verification, and text-independent speaker verification or Persian ASR, with English text-dependent phrases selected from part1 of RedDots.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s04::p001",
+   "summary": "“My voice is my password.”",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s04::p002",
+   "summary": "“OK Google.”",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s04::p003",
+   "summary": "“Artificial intelligence is for real.”",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s04::p004",
+   "summary": "“Actions speak louder than words.”",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s04::p005",
+   "summary": "“There is no such thing as a free lunch.”",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s05::p000",
+   "summary": "Part1 contains fixed phrases for text-dependent verification, with each speaker uttering 5 Persian phrases and, if able to read English, 5 phrases from Part1 of RedDots.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s05::p001",
+   "summary": "Three experimental setups use speakers with more recording sessions for evaluation and the rest for background training, with fewer English speakers and a small “dev” set in each setup.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s05::p002",
+   "summary": "Official trial lists vary enrollment utterances from 3 to 6 with one test utterance, and the 100-spk with 3-session enrollment (3-sess) is the main evaluation condition.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s06::p000",
+   "summary": "Part2 presents 3 random Persian month-name sequences per session in enrollment and test modes, with English digit sequences also recorded for respondents who can read English.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s06::p001",
+   "summary": "Three text-prompted setups define trials with 1- to 3-sess enrollment, seq or full test utterances, and the 100-spk with 1-session enrolment (1-sess) as the main evaluation condition.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s07::p000",
+   "summary": "Part3 displays 8 Persian phrases with phone-level transcriptions, mostly from news and Persian Wikipedia, and prompts 8 additional Persian phrases for respondents unable to read English to reach exactly 24 phrases per session.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s07::p001",
+   "summary": "Part3 can support text-independent speaker verification, text-prompted speaker verification using random text, and large vocabulary speech recognition in Persian.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s07::p002",
+   "summary": "Two speaker verification setups assign respondents with at least 17 or at least 8 sessions to evaluation, respondents with 16 or 6 or 7 sessions to development, and the rest to background.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s07::p003",
+   "summary": "Text-independent SV considers 4 enrollment scenarios and 4 test scenarios, with 1sess-1utt and 1sess-1sess for the 438-spk set as main evaluation setups.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s07::p004",
+   "summary": "Text-prompted SV with random text can use the same setup as the text-independent case together with corresponding utterance transcriptions.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s08::p000",
+   "summary": "Part3 supports Persian read speech recognition and speaker recognition applications such as training DNNs for bottleneck features or collecting sufficient statistics for i-vector training.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s08::p001",
+   "summary": "The ASR setup randomly selected 50 speakers, with test-set, large-test-set and train-set containing 5.9, 28.5 and 450 hours of speech respectively.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s08::p002",
+   "summary": "About 8300 Part3 utterances contain only Persian full names, with phoneme transcriptions extracted automatically using a trained Grapheme-to-Phoneme (G2P), for evaluating name recognition.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s09::p000",
+   "summary": "Due to space limitation, results are presented only for Persian text-dependent speaker verification and speech recognition.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s10::p000",
+   "summary": "A text-dependent speaker verification experiment applied an i-vector method to the Persian portion of Part1, using 20-dimensional MFCC features with derivatives from 16 kHz signals via HTK.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s10::p001",
+   "summary": "The reported system uses 400-dimensional gender independent i-vectors, length normalization, RWCCN, cosine distance, s-norm, and monophone HMMs with 3 states and 8 Gaussian components.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s10::p002",
+   "summary": "Speaker verification results use EER, $\\mathrm {NDCF_{0.01}^{min}}$, and $\\mathrm {NDCF_{0.001}^{min}}$, with only correct trials considered for evaluating systems.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s10::p003",
+   "summary": "Table TABREF23 reports Persian 100-spk and 3-sess results filtered by respondents' mobile brand and model, with “NN” target trials and “YY” non-target trials most difficult.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s10::p004",
+   "summary": "DeepMine is more challenging than RSR2015 and RedDots, with EERs without channel-compensation techniques of 2.1 and 3.7% for males and females respectively.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s10::p005",
+   "summary": "DeepMine includes target speakers with more than one mobile device, enabling analysis of channel compensation, with severe degradation for difficult device-model trials, especially females.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s10::p006",
+   "summary": "The third row shows the condition where target speakers use exactly the same device at test time as enrollment, demonstrating improvement over the first row.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s10::p007",
+   "summary": "The fourth row shows imposter speakers using the same device model at test time, with no device mismatch and degradation compared with the third row.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s10::p008",
+   "summary": "The fifth row shows negligible degradation when imposter speakers use the same brand but a different model, indicating different recording channel properties within a brand.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s10::p009",
+   "summary": "The sixth row shows degraded female results from using a different device model from the same brand for target trials, while male filters yield very similar results.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s10::p010",
+   "summary": "Female trials perform significantly worse than males in rows with possible device mismatch, while rows 3 to 6 show comparable performance, suggesting problematic device-mismatch trials.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s10::p011",
+   "summary": "The last row relaxes the second-row condition, requiring different target device models possibly from the same brand and imposter devices only from the same brand, yielding smaller degradation.",
+   "group_id": "1912.03627::g00"
+  },
+  {
+   "passage_id": "1912.03627::s11::p000",
+   "summary": "Speech recognition experiments on Part3 used Kaldi, 20 thousands shortest utterances for HMM-based MonoPhone, whole training data otherwise, a 16-layer F-TDNN, LF-MMI, and a 90,000-word dictionary.",
+   "group_id": "1912.03627::g01"
+  },
+  {
+   "passage_id": "1912.03627::s11::p001",
+   "summary": "Table TABREF26 reports word error rate (WER) results showing the database can train well performing and practically usable Persian ASR models.",
+   "group_id": "1912.03627::g01"
+  },
+  {
+   "passage_id": "1912.03627::s12::p000",
+   "summary": "The final DeepMine database is a crowdsourced large speech corpus claimed as the largest public text-dependent and text-prompted speaker verification database in Persian and English, with phone-level transcription.",
+   "group_id": "1912.03627::g01"
+  },
+  {
+   "passage_id": "1912.03627::s12::p001",
+   "summary": "Evaluation protocols for each database part study channels, duration and phrase text, and two speech recognition test sets include a normal set and a large set with 30 minutes on average.",
+   "group_id": "1912.03627::g01"
+  },
+  {
+   "passage_id": "1912.03627::s12::p002",
+   "summary": "Baseline results include i-vector/HMM on Persian text-dependent part and Kaldi speech recognition experiments, with DeepMine more challenging than RSR2015 and RedDots databases.",
+   "group_id": "1912.03627::g01"
+  },
+  {
+   "passage_id": "1912.03627::s13::p000",
+   "summary": "Sharif DeepMine company mainly supported data collection, while GACR project \"NEUREM3\" No. 19-26934X and NPU II project \"IT4Innovations excellence in science - LQ1602\" supported the paper.",
+   "group_id": "1912.03627::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1912.03627::g00",
+   "summaries": [
+    {
+     "passage_id": "1912.03627::s00::p000",
+     "summary": "Deep learning excels in speech tasks, but robust training needs powerful GPUs and standard large-scale datasets, with text-independent speaker verification supported by NIST SRE evaluations and VoxCeleb.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s00::p001",
+     "summary": "Text-dependent speaker recognition lacks large-scale public databases, with RSR2015 containing 300 individuals and RedDots only 64 speakers, motivating DeepMine collection as a standard benchmark.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s00::p002",
+     "summary": "ASR systems need large, variable training data, available for English, Mandarin, and French but not Persian, motivating collection of a large-scale dataset for robust Persian ASR models.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s00::p003",
+     "summary": "The DeepMine project aimed to collect speech from at least a few thousand speakers, began in 2017, finished at the end of 2018, and released its cleaned-up database at the beginning of 2019.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s01::p000",
+     "summary": "DeepMine is publicly available under varied licenses, was crowdsourced using an Android application where respondents recorded phrases across sessions with utterance checks.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s02::p000",
+     "summary": "Database cleanup filtered problematic utterances using an alignment stage similar to LibriSpeech, with custom decoding graphs allowing word skipping and insertion for each phrase.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s02::p001",
+     "summary": "Erroneous utterances were removed from text-dependent and text-prompted lists, while correctly aligned sub-parts were kept for speech recognition, leaving around 190 thousand full-transcription and 10 thousand sub-part utterances.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s03::p000",
+     "summary": "After processing, 1969 respondents remained, including 1149 male and 820 female, with 297 unable to read English and about 13200 female sessions versus about 9500 male sessions.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s03::p001",
+     "summary": "The database website provides its latest status, availability information, and a limited number of samples.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s04::p000",
+     "summary": "DeepMine has three parts for text-dependent speaker verification, text-prompted speaker verification, and text-independent speaker verification or Persian ASR, with English text-dependent phrases selected from part1 of RedDots.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s04::p001",
+     "summary": "“My voice is my password.”",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s04::p002",
+     "summary": "“OK Google.”",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s04::p003",
+     "summary": "“Artificial intelligence is for real.”",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s04::p004",
+     "summary": "“Actions speak louder than words.”",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s04::p005",
+     "summary": "“There is no such thing as a free lunch.”",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s05::p000",
+     "summary": "Part1 contains fixed phrases for text-dependent verification, with each speaker uttering 5 Persian phrases and, if able to read English, 5 phrases from Part1 of RedDots.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s05::p001",
+     "summary": "Three experimental setups use speakers with more recording sessions for evaluation and the rest for background training, with fewer English speakers and a small “dev” set in each setup.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s05::p002",
+     "summary": "Official trial lists vary enrollment utterances from 3 to 6 with one test utterance, and the 100-spk with 3-session enrollment (3-sess) is the main evaluation condition.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s06::p000",
+     "summary": "Part2 presents 3 random Persian month-name sequences per session in enrollment and test modes, with English digit sequences also recorded for respondents who can read English.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s06::p001",
+     "summary": "Three text-prompted setups define trials with 1- to 3-sess enrollment, seq or full test utterances, and the 100-spk with 1-session enrolment (1-sess) as the main evaluation condition.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s07::p000",
+     "summary": "Part3 displays 8 Persian phrases with phone-level transcriptions, mostly from news and Persian Wikipedia, and prompts 8 additional Persian phrases for respondents unable to read English to reach exactly 24 phrases per session.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s07::p001",
+     "summary": "Part3 can support text-independent speaker verification, text-prompted speaker verification using random text, and large vocabulary speech recognition in Persian.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s07::p002",
+     "summary": "Two speaker verification setups assign respondents with at least 17 or at least 8 sessions to evaluation, respondents with 16 or 6 or 7 sessions to development, and the rest to background.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s07::p003",
+     "summary": "Text-independent SV considers 4 enrollment scenarios and 4 test scenarios, with 1sess-1utt and 1sess-1sess for the 438-spk set as main evaluation setups.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s07::p004",
+     "summary": "Text-prompted SV with random text can use the same setup as the text-independent case together with corresponding utterance transcriptions.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s08::p000",
+     "summary": "Part3 supports Persian read speech recognition and speaker recognition applications such as training DNNs for bottleneck features or collecting sufficient statistics for i-vector training.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s08::p001",
+     "summary": "The ASR setup randomly selected 50 speakers, with test-set, large-test-set and train-set containing 5.9, 28.5 and 450 hours of speech respectively.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s08::p002",
+     "summary": "About 8300 Part3 utterances contain only Persian full names, with phoneme transcriptions extracted automatically using a trained Grapheme-to-Phoneme (G2P), for evaluating name recognition.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s09::p000",
+     "summary": "Due to space limitation, results are presented only for Persian text-dependent speaker verification and speech recognition.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s10::p000",
+     "summary": "A text-dependent speaker verification experiment applied an i-vector method to the Persian portion of Part1, using 20-dimensional MFCC features with derivatives from 16 kHz signals via HTK.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s10::p001",
+     "summary": "The reported system uses 400-dimensional gender independent i-vectors, length normalization, RWCCN, cosine distance, s-norm, and monophone HMMs with 3 states and 8 Gaussian components.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s10::p002",
+     "summary": "Speaker verification results use EER, $\\mathrm {NDCF_{0.01}^{min}}$, and $\\mathrm {NDCF_{0.001}^{min}}$, with only correct trials considered for evaluating systems.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s10::p003",
+     "summary": "Table TABREF23 reports Persian 100-spk and 3-sess results filtered by respondents' mobile brand and model, with “NN” target trials and “YY” non-target trials most difficult.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s10::p004",
+     "summary": "DeepMine is more challenging than RSR2015 and RedDots, with EERs without channel-compensation techniques of 2.1 and 3.7% for males and females respectively.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s10::p005",
+     "summary": "DeepMine includes target speakers with more than one mobile device, enabling analysis of channel compensation, with severe degradation for difficult device-model trials, especially females.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s10::p006",
+     "summary": "The third row shows the condition where target speakers use exactly the same device at test time as enrollment, demonstrating improvement over the first row.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s10::p007",
+     "summary": "The fourth row shows imposter speakers using the same device model at test time, with no device mismatch and degradation compared with the third row.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s10::p008",
+     "summary": "The fifth row shows negligible degradation when imposter speakers use the same brand but a different model, indicating different recording channel properties within a brand.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s10::p009",
+     "summary": "The sixth row shows degraded female results from using a different device model from the same brand for target trials, while male filters yield very similar results.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s10::p010",
+     "summary": "Female trials perform significantly worse than males in rows with possible device mismatch, while rows 3 to 6 show comparable performance, suggesting problematic device-mismatch trials.",
+     "group_id": "1912.03627::g00"
+    },
+    {
+     "passage_id": "1912.03627::s10::p011",
+     "summary": "The last row relaxes the second-row condition, requiring different target device models possibly from the same brand and imposter devices only from the same brand, yielding smaller degradation.",
+     "group_id": "1912.03627::g00"
+    }
+   ],
+   "n_raw": 41,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5590,
+    "completion_tokens": 2104,
+    "total_tokens": 7694,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1912.03627::g01",
+   "summaries": [
+    {
+     "passage_id": "1912.03627::s11::p000",
+     "summary": "Speech recognition experiments on Part3 used Kaldi, 20 thousands shortest utterances for HMM-based MonoPhone, whole training data otherwise, a 16-layer F-TDNN, LF-MMI, and a 90,000-word dictionary.",
+     "group_id": "1912.03627::g01"
+    },
+    {
+     "passage_id": "1912.03627::s11::p001",
+     "summary": "Table TABREF26 reports word error rate (WER) results showing the database can train well performing and practically usable Persian ASR models.",
+     "group_id": "1912.03627::g01"
+    },
+    {
+     "passage_id": "1912.03627::s12::p000",
+     "summary": "The final DeepMine database is a crowdsourced large speech corpus claimed as the largest public text-dependent and text-prompted speaker verification database in Persian and English, with phone-level transcription.",
+     "group_id": "1912.03627::g01"
+    },
+    {
+     "passage_id": "1912.03627::s12::p001",
+     "summary": "Evaluation protocols for each database part study channels, duration and phrase text, and two speech recognition test sets include a normal set and a large set with 30 minutes on average.",
+     "group_id": "1912.03627::g01"
+    },
+    {
+     "passage_id": "1912.03627::s12::p002",
+     "summary": "Baseline results include i-vector/HMM on Persian text-dependent part and Kaldi speech recognition experiments, with DeepMine more challenging than RSR2015 and RedDots databases.",
+     "group_id": "1912.03627::g01"
+    },
+    {
+     "passage_id": "1912.03627::s13::p000",
+     "summary": "Sharif DeepMine company mainly supported data collection, while GACR project \"NEUREM3\" No. 19-26934X and NPU II project \"IT4Innovations excellence in science - LQ1602\" supported the paper.",
+     "group_id": "1912.03627::g01"
+    }
+   ],
+   "n_raw": 6,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 894,
+    "completion_tokens": 364,
+    "total_tokens": 1258,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

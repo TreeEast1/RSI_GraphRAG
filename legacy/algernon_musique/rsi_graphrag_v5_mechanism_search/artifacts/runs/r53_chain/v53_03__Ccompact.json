@@ -1,0 +1,264 @@
+{
+  "role": "v53_03",
+  "cluster_id": "cc-00044",
+  "unit_id": "cc-00044-u000",
+  "method": "Ccompact",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 3449,
+    "completion_tokens": 2747,
+    "reasoning_tokens": 1024,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r53_chain_v53_03_Ccompact",
+    "cache_key": "d358ef022cf3795367d96fb7a808876bcd0b1fd85fe94fe872a63098c8617fda"
+  },
+  "n_updates": 3,
+  "n_add": 3,
+  "n_accept": 2,
+  "n_reject": 1,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "COMPOSITIONAL_REASONING": 2,
+    "UNSUPPORTED_HYPOTHESIS": 1
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "c1",
+      "comprehension_text": "USB 3.0 high-power devices may draw at most six unit loads.",
+      "new_semantic_relation": "USB 3.0 high-power devices draw at most six unit loads",
+      "operator": "COMPOSITIONAL_SHORTCUT",
+      "chain": [
+        {
+          "passage_id": "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea",
+          "span": "A high-power device draws, at most, the maximum number of unit loads the standard permits."
+        },
+        {
+          "passage_id": "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea",
+          "span": "or six unit loads in USB 3.0 (900 mA)."
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-027b5008a95847d369b8c210c057dc9a",
+        "entity-35506ed38a10e1b9cdf4764846187810",
+        "entity-5f220e8f3871d0956b658509dcafb08e"
+      ],
+      "source_triple_ids": [
+        "triple-0f691b704b9b8fa843269775c7b411b0"
+      ],
+      "source_passage_ids": [
+        "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea",
+          "span": "A high-power device draws, at most, the maximum number of unit loads the standard permits."
+        },
+        {
+          "passage_id": "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea",
+          "span": "or six unit loads in USB 3.0 (900 mA)."
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The high-power qualification is connected specifically to USB 3.0's six-unit-load limit.",
+      "reasoning_summary": "Combines the high-power rule with USB 3.0's permitted maximum.",
+      "novelty_justification": "No stored triple directly links USB 3.0 high-power devices with six unit loads.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "c2",
+      "comprehension_text": "USB 2.0 high-power devices may draw at most five unit loads.",
+      "new_semantic_relation": "USB 2.0 high-power devices draw at most five unit loads",
+      "operator": "COMPOSITIONAL_SHORTCUT",
+      "chain": [
+        {
+          "passage_id": "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea",
+          "span": "A high-power device draws, at most, the maximum number of unit loads the standard permits."
+        },
+        {
+          "passage_id": "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea",
+          "span": "A device may draw a maximum of five unit loads from a port in USB 1.x and 2.0"
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-b194390549d94901d3579b308fc8bd7e",
+        "entity-35506ed38a10e1b9cdf4764846187810",
+        "entity-0fdfab6b9ab643daaab826bd99df60d4"
+      ],
+      "source_triple_ids": [
+        "triple-0a884ae6e606ada7df4e5091eaea62c8"
+      ],
+      "source_passage_ids": [
+        "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea",
+          "span": "A high-power device draws, at most, the maximum number of unit loads the standard permits."
+        },
+        {
+          "passage_id": "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea",
+          "span": "A device may draw a maximum of five unit loads from a port in USB 1.x and 2.0"
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The high-power qualification is connected specifically to USB 2.0's five-unit-load limit.",
+      "reasoning_summary": "Combines the high-power rule with USB 2.0's permitted maximum.",
+      "novelty_justification": "No stored triple directly links USB 2.0 high-power devices with five unit loads.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "c3",
+      "comprehension_text": "USB devices begin in low-power operation before requesting high-power operation when bus capacity permits.",
+      "new_semantic_relation": "USB devices succeed from low-power operation to requested high-power operation when available",
+      "operator": "EXPLICIT_SUCCESSION",
+      "chain": [
+        {
+          "passage_id": "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea",
+          "span": "Every device functions initially as low-power"
+        },
+        {
+          "passage_id": "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea",
+          "span": "but may request high-power, and get it if available on the providing bus."
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-62ed973d963913bb55111a7b8116ace1",
+        "entity-fb67fafbfb3a3e58d0f0fc072310f23d",
+        "entity-35506ed38a10e1b9cdf4764846187810",
+        "entity-ee8261d2593e4b825d2ef9d7ed3e95f6"
+      ],
+      "source_triple_ids": [
+        "triple-effe07b6c1e0f2e4f773a6f7b8f77c81",
+        "triple-667afcff43250fa3b9f9411312cb49c3",
+        "triple-3a67531fb29e3b408fef69582b3d6214"
+      ],
+      "source_passage_ids": [
+        "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea",
+          "span": "Every device functions initially as low-power"
+        },
+        {
+          "passage_id": "chunk-e46a1203dbcbc2aa7d6fb7bb0abe3dea",
+          "span": "but may request high-power, and get it if available on the providing bus."
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The operational succession from initial low-power status to possible high-power allocation.",
+      "reasoning_summary": "Orders initial operation, request, and conditional allocation.",
+      "novelty_justification": "Stored triples state these facts separately without their explicit succession.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "c1",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "COMPOSITIONAL_REASONING",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: may",
+      "residue": [
+        "may"
+      ],
+      "evidence_sentences": [
+        "A high-power device draws, at most, the maximum number of unit loads the standard permits. Every device functions initially as low-power (including high-power functions during their low-power enumeration phases), but may request high-power, and get it if available on the providing bus.",
+        "0 (500 mA), or six unit loads in USB 3.0 (900 mA). There are two types of devices: low-power and high-power."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "A high-power device draws, at most, the maximum number of unit loads the standard permits. Every device functions initially as low-power (including high-power functions during their low-power enumeration phases), but may request high-power, and get it if available on the providing bus.",
+            "0 (500 mA), or six unit loads in USB 3.0 (900 mA). There are two types of devices: low-power and high-power."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "may"
+          ],
+          "n_passage_triples": 17,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "c2",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "COMPOSITIONAL_REASONING",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: may",
+      "residue": [
+        "may"
+      ],
+      "evidence_sentences": [
+        "A high-power device draws, at most, the maximum number of unit loads the standard permits. Every device functions initially as low-power (including high-power functions during their low-power enumeration phases), but may request high-power, and get it if available on the providing bus.",
+        "A device may draw a maximum of five unit loads from a port in USB 1.x and 2.0 (500 mA), or six unit loads in USB 3."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "A high-power device draws, at most, the maximum number of unit loads the standard permits. Every device functions initially as low-power (including high-power functions during their low-power enumeration phases), but may request high-power, and get it if available on the providing bus.",
+            "A device may draw a maximum of five unit loads from a port in USB 1.x and 2.0 (500 mA), or six unit loads in USB 3."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "may"
+          ],
+          "n_passage_triples": 17,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "c3",
+      "decision": "REJECT",
+      "failure_stage": "V3",
+      "faithfulness": "unsupported",
+      "novelty": "unclear",
+      "audit_type": "UNSUPPORTED_HYPOTHESIS",
+      "reason": "Logical check failed: before_not_entailed_by_coordination",
+      "logic_failures": [
+        "before_not_entailed_by_coordination"
+      ],
+      "evidence_sentences": [
+        "Every device functions initially as low-power (including high-power functions during their low-power enumeration phases), but may request high-power, and get it if available on the providing bus.",
+        "Every device functions initially as low-power (including high-power functions during their low-power enumeration phases), but may request high-power, and get it if available on the providing bus."
+      ]
+    }
+  ]
+}

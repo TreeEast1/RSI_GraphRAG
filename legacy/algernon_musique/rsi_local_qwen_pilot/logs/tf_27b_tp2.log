@@ -1,0 +1,26 @@
+cuda devices 2
+0 NVIDIA GeForce RTX 3090 (24522063872, 25438126080)
+1 NVIDIA GeForce RTX 3090 (24522063872, 25438126080)
+tokenizer ok
+[transformers] FP8 quantized models is only supported on GPUs with compute capability >= 8.9 (e.g 4090/H100), actual = `8.6`. We will default to dequantizing the model to bf16. Feel free to use a different quantization method like bitsandbytes or torchao
+Loading weights:   0%|          | 0/1184 [00:00<?, ?it/s]Loading weights:   0%|          | 0/1184 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "<stdin>", line 9, in <module>
+  File "/data2-HDD-SATA-20T/nzq/TAG-experiment/experiments/rsi_local_qwen_pilot/.venv-run/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 411, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2-HDD-SATA-20T/nzq/TAG-experiment/experiments/rsi_local_qwen_pilot/.venv-run/lib/python3.12/site-packages/transformers/modeling_utils.py", line 4338, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2-HDD-SATA-20T/nzq/TAG-experiment/experiments/rsi_local_qwen_pilot/.venv-run/lib/python3.12/site-packages/transformers/modeling_utils.py", line 4481, in _load_pretrained_model
+    loading_info, disk_offload_index = convert_and_load_state_dict_in_model(
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2-HDD-SATA-20T/nzq/TAG-experiment/experiments/rsi_local_qwen_pilot/.venv-run/lib/python3.12/site-packages/transformers/core_model_loading.py", line 1771, in convert_and_load_state_dict_in_model
+    disk_offload_index = offload_and_maybe_resave_param(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2-HDD-SATA-20T/nzq/TAG-experiment/experiments/rsi_local_qwen_pilot/.venv-run/lib/python3.12/site-packages/transformers/core_model_loading.py", line 1401, in offload_and_maybe_resave_param
+    disk_offload_index = offload_weight(param, target_name, disk_offload_folder, disk_offload_index)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2-HDD-SATA-20T/nzq/TAG-experiment/experiments/rsi_local_qwen_pilot/.venv-run/lib/python3.12/site-packages/transformers/integrations/accelerate.py", line 531, in offload_weight
+    raise ValueError(
+ValueError: The current `device_map` had weights offloaded to the disk, which needed to be re-saved. This is either because the weights are not in `safetensors` format, or because the model uses an internal weight format different than the one saved (i.e. most MoE models). Please provide an `offload_folder` for them in `from_pretrained`.

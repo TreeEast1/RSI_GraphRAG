@@ -1,0 +1,1046 @@
+{
+ "insights": [
+  {
+   "insight_id": "1907.03060::g00:i00",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g00",
+   "concise_text": "The proposed multistage fine-tuning method combines multilingual modeling and domain adaptation to remedy the severely limited performance of multilingual modeling, back-translation, and pivot-based PBSMT on Ja INLINEFORM1 Ru.",
+   "triple": {
+    "subject": "multistage fine-tuning method",
+    "predicate": "extends",
+    "object": "multilingual modeling and domain adaptation"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1907.03060::s00::p002",
+    "1907.03060::s02::p002"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g00:b0:f08",
+    "1907.03060::g00:b0:f09",
+    "1907.03060::g00:b1:f13"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u000"
+  },
+  {
+   "insight_id": "1907.03060::g00:i01",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g00",
+   "concise_text": "Because Ja INLINEFORM0 En and Ru INLINEFORM1 En in-domain parallel corpora are extremely limited, MT based on pivot languages is infeasible in the Ja INLINEFORM0 Ru setting.",
+   "triple": {
+    "subject": "extremely limited in-domain parallel corpora for Ja INLINEFORM0 En and Ru INLINEFORM1 En pairs",
+    "predicate": "limits",
+    "object": "MT based on pivot languages"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1907.03060::s02::p001",
+    "1907.03060::s00::p002"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g00:b1:f11",
+    "1907.03060::g00:b1:f12",
+    "1907.03060::g00:b0:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u001"
+  },
+  {
+   "insight_id": "1907.03060::g00:i02",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g00",
+   "concise_text": "The poor quality of bilingual word embeddings used to extract phrase tables explains why unsupervised MT is not promising for Japanese and Russian.",
+   "triple": {
+    "subject": "poor quality of the bilingual word embeddings",
+    "predicate": "causes",
+    "object": "failure of phrase tables induced from monolingual data to push the limit"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1907.03060::s02::p001",
+    "1907.03060::s06::p003"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g00:b1:f08",
+    "1907.03060::g00:b1:f09",
+    "1907.03060::g00:b5:f11",
+    "1907.03060::g00:b5:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u002"
+  },
+  {
+   "insight_id": "1907.03060::g00:i03",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g00",
+   "concise_text": "The manually compiled 600 trilingual sentences test set was used for evaluating MT models with case-sensitive and tokenized BLEU BIBREF23.",
+   "triple": {
+    "subject": "600 trilingual sentences test set",
+    "predicate": "evaluated_on",
+    "object": "case-sensitive and tokenized BLEU BIBREF23"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1907.03060::s01::p001",
+    "1907.03060::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g00:b1:f03",
+    "1907.03060::g00:b5:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.83,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u003"
+  },
+  {
+   "insight_id": "1907.03060::g00:i04",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g00",
+   "concise_text": "The M2M Transformer NMT model (b3), examined to cope with the low-resource problem, outperformed standard PBSMT models (c1) and all pivot-based approaches with uni-directional NMT models.",
+   "triple": {
+    "subject": "M2M Transformer NMT model (b3)",
+    "predicate": "outperforms",
+    "object": "standard PBSMT models (c1) and pivot-based approaches with uni-directional NMT models"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1907.03060::s05::p001",
+    "1907.03060::s06::p003",
+    "1907.03060::s06::p004"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g00:b2:f14",
+    "1907.03060::g00:b2:f15",
+    "1907.03060::g00:b5:f10",
+    "1907.03060::g00:b5:f14"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u004"
+  },
+  {
+   "insight_id": "1907.03060::g00:i05",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g00",
+   "concise_text": "The final multistage fine-tuning models V and VII achieved significantly higher BLEU scores than the M2M Transformer NMT model (b3), which had outperformed standard PBSMT models (c1).",
+   "triple": {
+    "subject": "V and VII",
+    "predicate": "improves_on",
+    "object": "M2M Transformer NMT model (b3)"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1907.03060::s06::p003",
+    "1907.03060::s06::p005"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g00:b5:f10",
+    "1907.03060::g00:b6:f00",
+    "1907.03060::g00:b6:f01",
+    "1907.03060::g00:b6:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u005"
+  },
+  {
+   "insight_id": "1907.03060::g00:i06",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g00",
+   "concise_text": "The strongest model was used for back-translated pseudo-parallel data experiments because improving translation quality can increase the likelihood of pseudo-parallel data being useful.",
+   "triple": {
+    "subject": "strongest model",
+    "predicate": "requires",
+    "object": "improved translation quality for pseudo-parallel data usefulness"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1907.03060::s02::p002",
+    "1907.03060::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g00:b1:f13",
+    "1907.03060::g00:b1:f14"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u006"
+  },
+  {
+   "insight_id": "1907.03060::g00:i07",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g00",
+   "concise_text": "The 12k Ja INLINEFORM0 Ru news domain parallel corpus and small indirect in-domain corpora explain why all Ja INLINEFORM2 Ru results were abysmal.",
+   "triple": {
+    "subject": "12k lines of news domain parallel corpus and small indirect in-domain parallel corpora",
+    "predicate": "causes",
+    "object": "abysmal Ja INLINEFORM2 Ru results"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1907.03060::s00::p002",
+    "1907.03060::s06::p001"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g00:b0:f08",
+    "1907.03060::g00:b0:f09",
+    "1907.03060::g00:b5:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.7,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u007"
+  },
+  {
+   "insight_id": "1907.03060::g00:i08",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g00",
+   "concise_text": "The manually compiled development and test sets from News Commentary data are publicly available and were used to tune KB-MIRA BIBREF22 feature weights.",
+   "triple": {
+    "subject": "manually aligned development and test sets",
+    "predicate": "requires",
+    "object": "KB-MIRA BIBREF22 tuning on the development set"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1907.03060::s01::p001",
+    "1907.03060::s01::p002",
+    "1907.03060::s05::p010"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g00:b1:f01",
+    "1907.03060::g00:b1:f04",
+    "1907.03060::g00:b4:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.76,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u008"
+  },
+  {
+   "insight_id": "1907.03060::g01:i00",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g01",
+   "concise_text": "The BLEU scores for Ja INLINEFORM2 Ru and Ru INLINEFORM3 Ja not exceeding 10 BLEU points motivated exploring other types of parallel data.",
+   "triple": {
+    "subject": "BLEU scores for Ja INLINEFORM2 Ru and Ru INLINEFORM3 Ja not exceeding 10 BLEU points",
+    "predicate": "causes",
+    "object": "exploration of other types of parallel data"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1907.03060::s08::p000",
+    "1907.03060::s09::p000"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g01:b1:f06",
+    "1907.03060::g01:b1:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u009"
+  },
+  {
+   "insight_id": "1907.03060::g01:i01",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g01",
+   "concise_text": "Because no out-of-domain data is available for Ja INLINEFORM1 Ru, the proposed multistage fine-tuning method exploits out-of-domain Ja INLINEFORM2 En and Ru INLINEFORM3 En pairs.",
+   "triple": {
+    "subject": "no out-of-domain data for Ja INLINEFORM1 Ru",
+    "predicate": "requires",
+    "object": "multistage fine-tuning using out-of-domain Ja INLINEFORM2 En and Ru INLINEFORM3 En pairs"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1907.03060::s09::p001",
+    "1907.03060::s10::p001"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g01:b1:f10",
+    "1907.03060::g01:b1:f11",
+    "1907.03060::g01:b2:f03",
+    "1907.03060::g01:b2:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u010"
+  },
+  {
+   "insight_id": "1907.03060::g01:i02",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g01",
+   "concise_text": "The multistage fine-tuning method combines domain adaptation for Ja INLINEFORM0 En and Ru INLINEFORM1 En with multilingual transfer for Ja INLINEFORM2 Ru.",
+   "triple": {
+    "subject": "multistage fine-tuning method",
+    "predicate": "combines",
+    "object": "domain adaptation for Ja INLINEFORM0 En and Ru INLINEFORM1 En and multilingual transfer for Ja INLINEFORM2 Ru"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1907.03060::s09::p001",
+    "1907.03060::s10::p001"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g01:b1:f11",
+    "1907.03060::g01:b2:f03",
+    "1907.03060::g01:b2:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u011"
+  },
+  {
+   "insight_id": "1907.03060::g01:i03",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g01",
+   "concise_text": "The multilingual model pre-trained only on Ja INLINEFORM0 En and Ru INLINEFORM1 En out-of-domain parallel data uses ASPEC, UN, and Yandex corpora.",
+   "triple": {
+    "subject": "multilingual model pre-trained only on Ja INLINEFORM0 En and Ru INLINEFORM1 En out-of-domain parallel data (I)",
+    "predicate": "evaluated_on",
+    "object": "cleanest 1.5M sentences from ASPEC and UN and Yandex corpora released for the WMT 2018 News Translation Task"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1907.03060::s10::p002",
+    "1907.03060::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g01:b2:f05",
+    "1907.03060::g01:b3:f00",
+    "1907.03060::g01:b3:f01"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u012"
+  },
+  {
+   "insight_id": "1907.03060::g01:i04",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g01",
+   "concise_text": "The M2M Transformer NMT model (b3) selected for back-translation generated six-way pseudo-parallel data whose all-direction use (#10) improved the base model except En INLINEFORM0 Ru.",
+   "triple": {
+    "subject": "M2M Transformer NMT model (b3) back-translation",
+    "predicate": "causes",
+    "object": "all six-way pseudo-parallel data (#10) to improve the base model except En INLINEFORM0 Ru"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1907.03060::s07::p000",
+    "1907.03060::s07::p007",
+    "1907.03060::s07::p008"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g01:b0:f00",
+    "1907.03060::g01:b1:f01",
+    "1907.03060::g01:b1:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u013"
+  },
+  {
+   "insight_id": "1907.03060::g01:i05",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g01",
+   "concise_text": "The 1:1 ratio between monolingual and parallel data was implemented by setting INLINEFORM0 to the number of lines of parallel data of given language pair.",
+   "triple": {
+    "subject": "1:1 ratio between monolingual and parallel data",
+    "predicate": "requires",
+    "object": "INLINEFORM0 set to the number of lines of parallel data of given language pair"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1907.03060::s07::p005",
+    "1907.03060::s07::p006"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g01:b0:f09",
+    "1907.03060::g01:b1:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u014"
+  },
+  {
+   "insight_id": "1907.03060::g01:i06",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g01",
+   "concise_text": "The in-domain language model trained on all Global Voices data was reused to retain Ru INLINEFORM2 En sentence pairs containing at least one OOV token in both sides.",
+   "triple": {
+    "subject": "in-domain language model trained on all Global Voices data",
+    "predicate": "limits",
+    "object": "retained Ru INLINEFORM2 En sentence pairs containing at least one OOV token in both sides"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1907.03060::s07::p003",
+    "1907.03060::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g01:b0:f06",
+    "1907.03060::g01:b3:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.79,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u015"
+  },
+  {
+   "insight_id": "1907.03060::g01:i07",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g01",
+   "concise_text": "The further back-translation experiment used identical monolingual sentences sampled in Section SECREF34 and repeated generation and fine-tuning five times.",
+   "triple": {
+    "subject": "further back-translation experiment",
+    "predicate": "requires",
+    "object": "identical monolingual sentences sampled in Section SECREF34 and five repetitions"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1907.03060::s12::p000",
+    "1907.03060::s12::p001"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g01:b3:f03",
+    "1907.03060::g01:b3:f04",
+    "1907.03060::g01:b3:f05",
+    "1907.03060::g01:b3:f06"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u016"
+  },
+  {
+   "insight_id": "1907.03060::g01:i08",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g01",
+   "concise_text": "The multilingual multistage fine-tuning approach substantially improves Ja INLINEFORM1 Ru translation by over 3.7 BLEU points compared to a strong baseline after in-domain-only BLEU scores did not exceed 10 BLEU points.",
+   "triple": {
+    "subject": "multilingual multistage fine-tuning approach",
+    "predicate": "improves_on",
+    "object": "in-domain-only models with BLEU scores not exceeding 10 BLEU points by over 3.7 BLEU points"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1907.03060::s08::p000",
+    "1907.03060::s13::p000"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g01:b1:f06",
+    "1907.03060::g01:b3:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.76,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u017"
+  },
+  {
+   "insight_id": "1907.03060::g01:i09",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::g01",
+   "concise_text": "The fine-tuned model VIII surpassed the base NMT model VII, while “new #10” trained from scratch on six-way pseudo-parallel data underperformed VII.",
+   "triple": {
+    "subject": "fine-tuned model VIII",
+    "predicate": "outperforms",
+    "object": "base NMT model VII, which outperformed “new #10”"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1907.03060::s12::p000",
+    "1907.03060::s12::p002"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::g01:b3:f03",
+    "1907.03060::g01:b3:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.83,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1907.03060::u018"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1907.03060::g00",
+   "insights": [
+    {
+     "insight_id": "1907.03060::g00:i00",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g00",
+     "concise_text": "The proposed multistage fine-tuning method combines multilingual modeling and domain adaptation to remedy the severely limited performance of multilingual modeling, back-translation, and pivot-based PBSMT on Ja INLINEFORM1 Ru.",
+     "triple": {
+      "subject": "multistage fine-tuning method",
+      "predicate": "extends",
+      "object": "multilingual modeling and domain adaptation"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1907.03060::s00::p002",
+      "1907.03060::s02::p002"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g00:b0:f08",
+      "1907.03060::g00:b0:f09",
+      "1907.03060::g00:b1:f13"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u000"
+    },
+    {
+     "insight_id": "1907.03060::g00:i01",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g00",
+     "concise_text": "Because Ja INLINEFORM0 En and Ru INLINEFORM1 En in-domain parallel corpora are extremely limited, MT based on pivot languages is infeasible in the Ja INLINEFORM0 Ru setting.",
+     "triple": {
+      "subject": "extremely limited in-domain parallel corpora for Ja INLINEFORM0 En and Ru INLINEFORM1 En pairs",
+      "predicate": "limits",
+      "object": "MT based on pivot languages"
+     },
+     "relation_type": "assumption_limitation",
+     "source_passage_ids": [
+      "1907.03060::s02::p001",
+      "1907.03060::s00::p002"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g00:b1:f11",
+      "1907.03060::g00:b1:f12",
+      "1907.03060::g00:b0:f09"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.92,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u001"
+    },
+    {
+     "insight_id": "1907.03060::g00:i02",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g00",
+     "concise_text": "The poor quality of bilingual word embeddings used to extract phrase tables explains why unsupervised MT is not promising for Japanese and Russian.",
+     "triple": {
+      "subject": "poor quality of the bilingual word embeddings",
+      "predicate": "causes",
+      "object": "failure of phrase tables induced from monolingual data to push the limit"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1907.03060::s02::p001",
+      "1907.03060::s06::p003"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g00:b1:f08",
+      "1907.03060::g00:b1:f09",
+      "1907.03060::g00:b5:f11",
+      "1907.03060::g00:b5:f13"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.78,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u002"
+    },
+    {
+     "insight_id": "1907.03060::g00:i03",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g00",
+     "concise_text": "The manually compiled 600 trilingual sentences test set was used for evaluating MT models with case-sensitive and tokenized BLEU BIBREF23.",
+     "triple": {
+      "subject": "600 trilingual sentences test set",
+      "predicate": "evaluated_on",
+      "object": "case-sensitive and tokenized BLEU BIBREF23"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1907.03060::s01::p001",
+      "1907.03060::s06::p000"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g00:b1:f03",
+      "1907.03060::g00:b5:f01"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.83,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u003"
+    },
+    {
+     "insight_id": "1907.03060::g00:i04",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g00",
+     "concise_text": "The M2M Transformer NMT model (b3), examined to cope with the low-resource problem, outperformed standard PBSMT models (c1) and all pivot-based approaches with uni-directional NMT models.",
+     "triple": {
+      "subject": "M2M Transformer NMT model (b3)",
+      "predicate": "outperforms",
+      "object": "standard PBSMT models (c1) and pivot-based approaches with uni-directional NMT models"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1907.03060::s05::p001",
+      "1907.03060::s06::p003",
+      "1907.03060::s06::p004"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g00:b2:f14",
+      "1907.03060::g00:b2:f15",
+      "1907.03060::g00:b5:f10",
+      "1907.03060::g00:b5:f14"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u004"
+    },
+    {
+     "insight_id": "1907.03060::g00:i05",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g00",
+     "concise_text": "The final multistage fine-tuning models V and VII achieved significantly higher BLEU scores than the M2M Transformer NMT model (b3), which had outperformed standard PBSMT models (c1).",
+     "triple": {
+      "subject": "V and VII",
+      "predicate": "improves_on",
+      "object": "M2M Transformer NMT model (b3)"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1907.03060::s06::p003",
+      "1907.03060::s06::p005"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g00:b5:f10",
+      "1907.03060::g00:b6:f00",
+      "1907.03060::g00:b6:f01",
+      "1907.03060::g00:b6:f02"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u005"
+    },
+    {
+     "insight_id": "1907.03060::g00:i06",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g00",
+     "concise_text": "The strongest model was used for back-translated pseudo-parallel data experiments because improving translation quality can increase the likelihood of pseudo-parallel data being useful.",
+     "triple": {
+      "subject": "strongest model",
+      "predicate": "requires",
+      "object": "improved translation quality for pseudo-parallel data usefulness"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1907.03060::s02::p002",
+      "1907.03060::s03::p000"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g00:b1:f13",
+      "1907.03060::g00:b1:f14"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.72,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u006"
+    },
+    {
+     "insight_id": "1907.03060::g00:i07",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g00",
+     "concise_text": "The 12k Ja INLINEFORM0 Ru news domain parallel corpus and small indirect in-domain corpora explain why all Ja INLINEFORM2 Ru results were abysmal.",
+     "triple": {
+      "subject": "12k lines of news domain parallel corpus and small indirect in-domain parallel corpora",
+      "predicate": "causes",
+      "object": "abysmal Ja INLINEFORM2 Ru results"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1907.03060::s00::p002",
+      "1907.03060::s06::p001"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g00:b0:f08",
+      "1907.03060::g00:b0:f09",
+      "1907.03060::g00:b5:f04"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.7,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u007"
+    },
+    {
+     "insight_id": "1907.03060::g00:i08",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g00",
+     "concise_text": "The manually compiled development and test sets from News Commentary data are publicly available and were used to tune KB-MIRA BIBREF22 feature weights.",
+     "triple": {
+      "subject": "manually aligned development and test sets",
+      "predicate": "requires",
+      "object": "KB-MIRA BIBREF22 tuning on the development set"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1907.03060::s01::p001",
+      "1907.03060::s01::p002",
+      "1907.03060::s05::p010"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g00:b1:f01",
+      "1907.03060::g00:b1:f04",
+      "1907.03060::g00:b4:f09"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.76,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u008"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "needs_two_passages",
+     "item": {
+      "text": "Mixed fine-tuning for the second fine-tuning stage (V and VII) produced consistently better models than conventional fine-tuning (IV and VI), which ignored Ja INLINEFORM2 En and Ru INLINEFORM3 En pair",
+      "triple": [
+       "mixed fine-tuning for the second fine-tuning stage (V and VII)",
+       "outperforms",
+       "conventional fine-tuning (IV and VI)"
+      ],
+      "source_passage_ids": [
+       "1907.03060::s06::p008"
+      ]
+     }
+    }
+   ],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 13337,
+    "completion_tokens": 1844,
+    "total_tokens": 15181,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1907.03060::g01",
+   "insights": [
+    {
+     "insight_id": "1907.03060::g01:i00",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g01",
+     "concise_text": "The BLEU scores for Ja INLINEFORM2 Ru and Ru INLINEFORM3 Ja not exceeding 10 BLEU points motivated exploring other types of parallel data.",
+     "triple": {
+      "subject": "BLEU scores for Ja INLINEFORM2 Ru and Ru INLINEFORM3 Ja not exceeding 10 BLEU points",
+      "predicate": "causes",
+      "object": "exploration of other types of parallel data"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1907.03060::s08::p000",
+      "1907.03060::s09::p000"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g01:b1:f06",
+      "1907.03060::g01:b1:f07"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u009"
+    },
+    {
+     "insight_id": "1907.03060::g01:i01",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g01",
+     "concise_text": "Because no out-of-domain data is available for Ja INLINEFORM1 Ru, the proposed multistage fine-tuning method exploits out-of-domain Ja INLINEFORM2 En and Ru INLINEFORM3 En pairs.",
+     "triple": {
+      "subject": "no out-of-domain data for Ja INLINEFORM1 Ru",
+      "predicate": "requires",
+      "object": "multistage fine-tuning using out-of-domain Ja INLINEFORM2 En and Ru INLINEFORM3 En pairs"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1907.03060::s09::p001",
+      "1907.03060::s10::p001"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g01:b1:f10",
+      "1907.03060::g01:b1:f11",
+      "1907.03060::g01:b2:f03",
+      "1907.03060::g01:b2:f04"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u010"
+    },
+    {
+     "insight_id": "1907.03060::g01:i02",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g01",
+     "concise_text": "The multistage fine-tuning method combines domain adaptation for Ja INLINEFORM0 En and Ru INLINEFORM1 En with multilingual transfer for Ja INLINEFORM2 Ru.",
+     "triple": {
+      "subject": "multistage fine-tuning method",
+      "predicate": "combines",
+      "object": "domain adaptation for Ja INLINEFORM0 En and Ru INLINEFORM1 En and multilingual transfer for Ja INLINEFORM2 Ru"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1907.03060::s09::p001",
+      "1907.03060::s10::p001"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g01:b1:f11",
+      "1907.03060::g01:b2:f03",
+      "1907.03060::g01:b2:f04"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u011"
+    },
+    {
+     "insight_id": "1907.03060::g01:i03",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g01",
+     "concise_text": "The multilingual model pre-trained only on Ja INLINEFORM0 En and Ru INLINEFORM1 En out-of-domain parallel data uses ASPEC, UN, and Yandex corpora.",
+     "triple": {
+      "subject": "multilingual model pre-trained only on Ja INLINEFORM0 En and Ru INLINEFORM1 En out-of-domain parallel data (I)",
+      "predicate": "evaluated_on",
+      "object": "cleanest 1.5M sentences from ASPEC and UN and Yandex corpora released for the WMT 2018 News Translation Task"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1907.03060::s10::p002",
+      "1907.03060::s11::p000"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g01:b2:f05",
+      "1907.03060::g01:b3:f00",
+      "1907.03060::g01:b3:f01"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u012"
+    },
+    {
+     "insight_id": "1907.03060::g01:i04",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g01",
+     "concise_text": "The M2M Transformer NMT model (b3) selected for back-translation generated six-way pseudo-parallel data whose all-direction use (#10) improved the base model except En INLINEFORM0 Ru.",
+     "triple": {
+      "subject": "M2M Transformer NMT model (b3) back-translation",
+      "predicate": "causes",
+      "object": "all six-way pseudo-parallel data (#10) to improve the base model except En INLINEFORM0 Ru"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1907.03060::s07::p000",
+      "1907.03060::s07::p007",
+      "1907.03060::s07::p008"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g01:b0:f00",
+      "1907.03060::g01:b1:f01",
+      "1907.03060::g01:b1:f04"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u013"
+    },
+    {
+     "insight_id": "1907.03060::g01:i05",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g01",
+     "concise_text": "The 1:1 ratio between monolingual and parallel data was implemented by setting INLINEFORM0 to the number of lines of parallel data of given language pair.",
+     "triple": {
+      "subject": "1:1 ratio between monolingual and parallel data",
+      "predicate": "requires",
+      "object": "INLINEFORM0 set to the number of lines of parallel data of given language pair"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1907.03060::s07::p005",
+      "1907.03060::s07::p006"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g01:b0:f09",
+      "1907.03060::g01:b1:f00"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u014"
+    },
+    {
+     "insight_id": "1907.03060::g01:i06",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g01",
+     "concise_text": "The in-domain language model trained on all Global Voices data was reused to retain Ru INLINEFORM2 En sentence pairs containing at least one OOV token in both sides.",
+     "triple": {
+      "subject": "in-domain language model trained on all Global Voices data",
+      "predicate": "limits",
+      "object": "retained Ru INLINEFORM2 En sentence pairs containing at least one OOV token in both sides"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1907.03060::s07::p003",
+      "1907.03060::s11::p000"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g01:b0:f06",
+      "1907.03060::g01:b3:f02"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.79,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u015"
+    },
+    {
+     "insight_id": "1907.03060::g01:i07",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g01",
+     "concise_text": "The further back-translation experiment used identical monolingual sentences sampled in Section SECREF34 and repeated generation and fine-tuning five times.",
+     "triple": {
+      "subject": "further back-translation experiment",
+      "predicate": "requires",
+      "object": "identical monolingual sentences sampled in Section SECREF34 and five repetitions"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1907.03060::s12::p000",
+      "1907.03060::s12::p001"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g01:b3:f03",
+      "1907.03060::g01:b3:f04",
+      "1907.03060::g01:b3:f05",
+      "1907.03060::g01:b3:f06"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.72,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u016"
+    },
+    {
+     "insight_id": "1907.03060::g01:i08",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g01",
+     "concise_text": "The multilingual multistage fine-tuning approach substantially improves Ja INLINEFORM1 Ru translation by over 3.7 BLEU points compared to a strong baseline after in-domain-only BLEU scores did not exceed 10 BLEU points.",
+     "triple": {
+      "subject": "multilingual multistage fine-tuning approach",
+      "predicate": "improves_on",
+      "object": "in-domain-only models with BLEU scores not exceeding 10 BLEU points by over 3.7 BLEU points"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1907.03060::s08::p000",
+      "1907.03060::s13::p000"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g01:b1:f06",
+      "1907.03060::g01:b3:f07"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.76,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u017"
+    },
+    {
+     "insight_id": "1907.03060::g01:i09",
+     "paper_id": "1907.03060",
+     "group_id": "1907.03060::g01",
+     "concise_text": "The fine-tuned model VIII surpassed the base NMT model VII, while “new #10” trained from scratch on six-way pseudo-parallel data underperformed VII.",
+     "triple": {
+      "subject": "fine-tuned model VIII",
+      "predicate": "outperforms",
+      "object": "base NMT model VII, which outperformed “new #10”"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1907.03060::s12::p000",
+      "1907.03060::s12::p002"
+     ],
+     "supporting_fact_ids": [
+      "1907.03060::g01:b3:f03",
+      "1907.03060::g01:b3:f04"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.83,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1907.03060::u018"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 6440,
+    "completion_tokens": 1931,
+    "total_tokens": 8371,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

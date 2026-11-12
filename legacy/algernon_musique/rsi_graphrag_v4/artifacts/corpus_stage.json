@@ -1,0 +1,98 @@
+{
+  "dataset": "musique",
+  "source_questions": "/data2-HDD-SATA-20T/nzq/TAG-experiment/HippoRAG/reproduce/dataset/musique.json",
+  "source_corpus": "/data2-HDD-SATA-20T/nzq/TAG-experiment/HippoRAG/reproduce/dataset/musique_corpus.json",
+  "n_questions": 1000,
+  "n_corpus_rows": 11656,
+  "n_unique_passages": 11656,
+  "duplicate_passage_rows": 0,
+  "corpus_hash": "85652f89891c6f309e8f0d1dda8b3a9d1f67835e6664d20b44930e2010f239a7",
+  "seed": 20261030,
+  "role_counts": {
+    "update": 500,
+    "heldout": 399,
+    "dev": 100,
+    "quarantine_token_identical": 1
+  },
+  "hop_sizes": {
+    "2": 518,
+    "3": 316,
+    "4": 166
+  },
+  "hop_by_role": {
+    "2": {
+      "update": 259,
+      "heldout": 206,
+      "dev": 52,
+      "quarantine_token_identical": 1
+    },
+    "3": {
+      "update": 158,
+      "heldout": 127,
+      "dev": 31
+    },
+    "4": {
+      "update": 83,
+      "heldout": 66,
+      "dev": 17
+    }
+  },
+  "questions_with_all_gold_in_corpus": 1000,
+  "gold_passage_slots": 2648,
+  "gold_passage_slots_missing_from_corpus": 0,
+  "exact_duplicate_groups": {
+    "when did the city that contains the basilica named after the saint who is holding a knife in the last supper become a country": [
+      "3hop1__46571_87694_64412",
+      "3hop1__64957_87694_64412"
+    ]
+  },
+  "quarantined_duplicate_ids": [
+    "2hop__781079_9237"
+  ],
+  "cross_split_near_duplicates_jaccard_0_9": [
+    {
+      "a": "3hop2__87184_90327_76291",
+      "b": "3hop1__90327_73181_68042",
+      "jaccard": 0.9375,
+      "role_a": "update",
+      "role_b": "heldout"
+    },
+    {
+      "a": "3hop2__89854_92991_76291",
+      "b": "3hop1__92991_78276_68042",
+      "jaccard": 0.9444,
+      "role_a": "heldout",
+      "role_b": "dev"
+    },
+    {
+      "a": "3hop1__90327_78276_68042",
+      "b": "3hop1__90327_73181_68042",
+      "jaccard": 0.9375,
+      "role_a": "update",
+      "role_b": "heldout"
+    },
+    {
+      "a": "3hop1__699454_831637_91775",
+      "b": "3hop1__754160_831637_91775",
+      "jaccard": 0.913,
+      "role_a": "heldout",
+      "role_b": "update"
+    },
+    {
+      "a": "2hop__781079_9237",
+      "b": "2hop__9238_9237",
+      "jaccard": 1.0,
+      "role_a": "heldout",
+      "role_b": "update"
+    }
+  ],
+  "cross_split_near_duplicate_count": 5,
+  "dedup_rule": "Passage ids are HippoRAG chunk hashes of title + newline + text. Exact normalized-question duplicates that would cross into held-out are quarantined from held-out. Near-duplicates with token Jaccard >= 0.9 are recorded and left in their sampled split.",
+  "targets": {
+    "adaptation": 600,
+    "update": 500,
+    "dev": 100,
+    "heldout": 400
+  },
+  "heldout_not_for_evolution": true
+}

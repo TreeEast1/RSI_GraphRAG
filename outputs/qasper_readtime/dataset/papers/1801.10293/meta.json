@@ -1,0 +1,63 @@
+{
+ "paper_id": "1801.10293",
+ "title": "Paraphrase-Supervised Models of Compositionality",
+ "abstract": "Compositional vector space models of meaning promise new solutions to stubborn language understanding problems. This paper makes two contributions toward this end: (i) it uses automatically-extracted paraphrase examples as a source of supervision for training compositional models, replacing previous work which relied on manual annotations used for the same purpose, and (ii) develops a context-aware model for scoring phrasal compositionality. Experimental results indicate that these multiple sources of information can be used to learn partial semantic supervision that matches previous techniques in intrinsic evaluation tasks. Our approaches are also evaluated for their impact on a machine translation system where we show improvements in translation quality, demonstrating that compositionality in interpretation correlates with compositionality in translation.",
+ "sections": [
+  "Introduction",
+  "Parametric Composition Functions",
+  "Concatenation Models",
+  "Tensor Models",
+  "Longer Phrases",
+  "Learning",
+  "Supervision from Automatic Paraphrases",
+  "Parameter Estimation",
+  "Measuring of Compositionality",
+  "At the Type Level",
+  "At the Token Level",
+  "Evaluation",
+  "Phrasal Similarity",
+  "Compositionality",
+  "Machine Translation",
+  "Related Work",
+  "Conclusion"
+ ],
+ "n_paragraphs": 43,
+ "n_tokens": 5203,
+ "figures_and_tables": [
+  {
+   "caption_id": "1801.10293::fig000",
+   "paper_id": "1801.10293",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Number of paraphrase examples per POS pair type out of the two-to-one word paraphrases in the SMALL version of PPDB (using the Penn Treebank tag-set). We distinguish between the five most common POS pair types, and group the remaining pairs into the generic other category.",
+   "n_tokens": 60
+  },
+  {
+   "caption_id": "1801.10293::fig001",
+   "paper_id": "1801.10293",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1: Parameter heat-maps for specific POS pair compositional functions. Positive values are blue, negative values red, and zero values are white. Certain phrasal relationships (e.g., DT-NN and VB-VB) exhibit headedness.",
+   "n_tokens": 52
+  },
+  {
+   "caption_id": "1801.10293::fig002",
+   "paper_id": "1801.10293",
+   "file": "6-Figure2-1.png",
+   "caption": "Figure 2: Spearman’s ρ correlation with respect to human judgments for the adjective–noun and noun– noun phrase similarity tasks. Dashed lines correspond to tensor models (and baselines), and solid lines are concatenation models (and additive baseline).",
+   "n_tokens": 52
+  },
+  {
+   "caption_id": "1801.10293::fig003",
+   "paper_id": "1801.10293",
+   "file": "7-Table2-1.png",
+   "caption": "Table 2: Correlation between model judgments on phrase compositionality and human judgments, measured by Spearman’s ρ. Context-dependent (token-based) and concatenation models do better.",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "1801.10293::fig004",
+   "paper_id": "1801.10293",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: MT results. Bold results are statistically significant, and our best context-dependent setup is 0.4 BLEU points better than the baseline.",
+   "n_tokens": 32
+  }
+ ]
+}

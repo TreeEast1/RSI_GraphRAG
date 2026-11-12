@@ -1,0 +1,402 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1603.08594::s00::p000",
+   "summary": "PP attachment disambiguation is important in NLP because incorrect attachments cause incorrect parse trees and serious Machine Translation errors, especially for English.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p002",
+   "summary": "Sentence INLINEFORM0 is \"I washed the jeans with pockets.\"",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p004",
+   "summary": "The correct dependency parse tree for sentence 1 attaches the prepositional phrase with pockets to the noun jeans.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p005",
+   "summary": "Another possible parse tree for the same sentence is shown in Figure FIGREF2.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p006",
+   "summary": "A statistical parser often predicts PP-attachment incorrectly, may lead to incorrect parse trees, and another sentence is introduced.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p008",
+   "summary": "Sentence INLINEFORM0 is \"I washed the jeans with soap.\"",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p010",
+   "summary": "The correct dependency tree for sentence INLINEFORM0 in Figure FIGREF3 attaches the prepositional phrase with soap to the verb washed.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p011",
+   "summary": "Ambiguity requires semantics, since soap as an aid to washed disambiguates attachment to the verb rather than jeans for correct translation.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p012",
+   "summary": "The work proposes a Dual Decomposition (DD) based algorithm using parallel Hindi corpora, where Hindi case markers and sentence construction make ambiguity rarer.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p013",
+   "summary": "Sentence (3) and sentence (4) are the respective Hindi translations of sentence (1) and (2)).",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p014",
+   "summary": "Sentence INLINEFORM0 is \"mn jb vAlF jF06ws DoyF INLINEFORM1\".",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p015",
+   "summary": "Sentence INLINEFORM0 is \"mn sAbn s jF06ws DoyF INLINEFORM1\".",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p017",
+   "summary": "In sentence (3), the prepositional phrase jeb waali attaches to the noun jeans as shown in figure FIGREF4.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p018",
+   "summary": "The parse tree for sentence (4) in figure FIGREF5 attaches the prepositional phrase saabun se to the verb dhoyee.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s00::p019",
+   "summary": "The case markers waali and se clarify Hindi pp-atttachment, and parallel Hindi sentences are used to disambiguate English PP attachments before outlining the paper.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s01::p000",
+   "summary": "Related work includes supervised and unsupervised PP-attachment approaches using Maximum Entropy Model, multilingual aligned data, transformation rules, semantic dictionaries, WSD, and SVMs.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s02::p000",
+   "summary": "A Dual Decomposition based inference algorithm uses English and Hindi MSTParser models and word alignments to enforce agreement between predicted parse trees.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s02::p001",
+   "summary": "Agreement means aligned dependency edges or projected paths correspond across English and Hindi parse trees, ignoring edge direction, under DD constraints.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s02::p002",
+   "summary": "The problem is formulated as below.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s02::p003",
+   "summary": "The formulation defines English and Hindi sentences, parse trees, model parameters, English edges, projected Hindi paths, and projected path scores.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s02::p004",
+   "summary": "The score of a projected path is the sum of scores of all edges in the path, with definitions in both directions.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s02::p005",
+   "summary": "To solve the maximization problem in figure FIGREF7, one tree is assumed given while the other and its projected path score are maximized.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s03::p000",
+   "summary": "An iterative Coordinate Descent algorithm (Algorithm 1) calls the Project Algorithm until convergence, with trees initialized by trained parser models.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s03::p001",
+   "summary": "Coordinate Descent Algorithm [1] initializes INLINEFORM0 and INLINEFORM1 from MSTParser models and includes break and update steps.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s03::p002",
+   "summary": "For INLINEFORM0 iterations, the project function maximizes agreement with one fixed parse tree, and convergence occurs when trees no longer change.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s03::p003",
+   "summary": "The Project algorithm (Algorithm 2) predicts a target-language tree from a source-language parse tree and word alignments.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s03::p004",
+   "summary": "Project Algorithm (tree T, sen S) initializes INLINEFORM0 and INLINEFORM1 = 0 and includes loop steps.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s03::p005",
+   "summary": "INLINEFORM0 ends a loop, and the algorithm returns INLINEFORM2 if INLINEFORM1, else performs INLINEFORM3 and INLINEFORM4.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s03::p006",
+   "summary": "Lagrangian multipliers start at zero, and argmax in step 4 predicts the best target tree using parser parameters and projected path scores.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s04::p000",
+   "summary": "Projected path prediction uses two classifiers in a pipeline: one predicts path length, and the second predicts the path given that length.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s04::p001",
+   "summary": "Path length prediction uses five binary perceptron classifiers for lengths 1, 2, 3, 4 or 5, with words and POS tags as features.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s04::p002",
+   "summary": "Path prediction uses four structured perceptron classifiers for paths of length 2, 3, 4 and 5, trained on separate annotated data.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s05::p000",
+   "summary": "Hindi and English MSTParser models used 18708 Hindi Dependency Treebank sentences and 28188 Penn Treebank sentences, while classifiers used 1500 ILCI English-Hindi Tourism parallel corpus sentences.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s05::p001",
+   "summary": "Testing used 100 parallel sentences with word alignments, manually annotated pp-attachment ambiguity, MSTParser baseline, and iterations 10 to 60 in steps of 10.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s05::p002",
+   "summary": "The MSTParser model correctly disambiguated 54 PP-attachments, while the algorithm marked 64 correctly, improving baseline accuracy from 54% by 10%.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s05::p003",
+   "summary": "Experiments on iteration numbers plotted in figure FIGREF11 showed the algorithm performed best at 30 iterations.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s05::p004",
+   "summary": "Lack of gold standard data led to statistical POS taggers and GIZA++ word alignments, whose errors may cascade and cause underperformance.",
+   "group_id": "1603.08594::g00"
+  },
+  {
+   "passage_id": "1603.08594::s06::p000",
+   "summary": "The approach achieved 10% over baseline but did not beat MSTParser overall, with future work on larger datasets, other domains, languages, wh-clause attachment, and Machine Translation.",
+   "group_id": "1603.08594::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1603.08594::g00",
+   "summaries": [
+    {
+     "passage_id": "1603.08594::s00::p000",
+     "summary": "PP attachment disambiguation is important in NLP because incorrect attachments cause incorrect parse trees and serious Machine Translation errors, especially for English.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p002",
+     "summary": "Sentence INLINEFORM0 is \"I washed the jeans with pockets.\"",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p004",
+     "summary": "The correct dependency parse tree for sentence 1 attaches the prepositional phrase with pockets to the noun jeans.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p005",
+     "summary": "Another possible parse tree for the same sentence is shown in Figure FIGREF2.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p006",
+     "summary": "A statistical parser often predicts PP-attachment incorrectly, may lead to incorrect parse trees, and another sentence is introduced.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p008",
+     "summary": "Sentence INLINEFORM0 is \"I washed the jeans with soap.\"",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p010",
+     "summary": "The correct dependency tree for sentence INLINEFORM0 in Figure FIGREF3 attaches the prepositional phrase with soap to the verb washed.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p011",
+     "summary": "Ambiguity requires semantics, since soap as an aid to washed disambiguates attachment to the verb rather than jeans for correct translation.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p012",
+     "summary": "The work proposes a Dual Decomposition (DD) based algorithm using parallel Hindi corpora, where Hindi case markers and sentence construction make ambiguity rarer.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p013",
+     "summary": "Sentence (3) and sentence (4) are the respective Hindi translations of sentence (1) and (2)).",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p014",
+     "summary": "Sentence INLINEFORM0 is \"mn jb vAlF jF06ws DoyF INLINEFORM1\".",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p015",
+     "summary": "Sentence INLINEFORM0 is \"mn sAbn s jF06ws DoyF INLINEFORM1\".",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p017",
+     "summary": "In sentence (3), the prepositional phrase jeb waali attaches to the noun jeans as shown in figure FIGREF4.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p018",
+     "summary": "The parse tree for sentence (4) in figure FIGREF5 attaches the prepositional phrase saabun se to the verb dhoyee.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s00::p019",
+     "summary": "The case markers waali and se clarify Hindi pp-atttachment, and parallel Hindi sentences are used to disambiguate English PP attachments before outlining the paper.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s01::p000",
+     "summary": "Related work includes supervised and unsupervised PP-attachment approaches using Maximum Entropy Model, multilingual aligned data, transformation rules, semantic dictionaries, WSD, and SVMs.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s02::p000",
+     "summary": "A Dual Decomposition based inference algorithm uses English and Hindi MSTParser models and word alignments to enforce agreement between predicted parse trees.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s02::p001",
+     "summary": "Agreement means aligned dependency edges or projected paths correspond across English and Hindi parse trees, ignoring edge direction, under DD constraints.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s02::p002",
+     "summary": "The problem is formulated as below.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s02::p003",
+     "summary": "The formulation defines English and Hindi sentences, parse trees, model parameters, English edges, projected Hindi paths, and projected path scores.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s02::p004",
+     "summary": "The score of a projected path is the sum of scores of all edges in the path, with definitions in both directions.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s02::p005",
+     "summary": "To solve the maximization problem in figure FIGREF7, one tree is assumed given while the other and its projected path score are maximized.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s03::p000",
+     "summary": "An iterative Coordinate Descent algorithm (Algorithm 1) calls the Project Algorithm until convergence, with trees initialized by trained parser models.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s03::p001",
+     "summary": "Coordinate Descent Algorithm [1] initializes INLINEFORM0 and INLINEFORM1 from MSTParser models and includes break and update steps.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s03::p002",
+     "summary": "For INLINEFORM0 iterations, the project function maximizes agreement with one fixed parse tree, and convergence occurs when trees no longer change.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s03::p003",
+     "summary": "The Project algorithm (Algorithm 2) predicts a target-language tree from a source-language parse tree and word alignments.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s03::p004",
+     "summary": "Project Algorithm (tree T, sen S) initializes INLINEFORM0 and INLINEFORM1 = 0 and includes loop steps.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s03::p005",
+     "summary": "INLINEFORM0 ends a loop, and the algorithm returns INLINEFORM2 if INLINEFORM1, else performs INLINEFORM3 and INLINEFORM4.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s03::p006",
+     "summary": "Lagrangian multipliers start at zero, and argmax in step 4 predicts the best target tree using parser parameters and projected path scores.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s04::p000",
+     "summary": "Projected path prediction uses two classifiers in a pipeline: one predicts path length, and the second predicts the path given that length.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s04::p001",
+     "summary": "Path length prediction uses five binary perceptron classifiers for lengths 1, 2, 3, 4 or 5, with words and POS tags as features.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s04::p002",
+     "summary": "Path prediction uses four structured perceptron classifiers for paths of length 2, 3, 4 and 5, trained on separate annotated data.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s05::p000",
+     "summary": "Hindi and English MSTParser models used 18708 Hindi Dependency Treebank sentences and 28188 Penn Treebank sentences, while classifiers used 1500 ILCI English-Hindi Tourism parallel corpus sentences.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s05::p001",
+     "summary": "Testing used 100 parallel sentences with word alignments, manually annotated pp-attachment ambiguity, MSTParser baseline, and iterations 10 to 60 in steps of 10.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s05::p002",
+     "summary": "The MSTParser model correctly disambiguated 54 PP-attachments, while the algorithm marked 64 correctly, improving baseline accuracy from 54% by 10%.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s05::p003",
+     "summary": "Experiments on iteration numbers plotted in figure FIGREF11 showed the algorithm performed best at 30 iterations.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s05::p004",
+     "summary": "Lack of gold standard data led to statistical POS taggers and GIZA++ word alignments, whose errors may cascade and cause underperformance.",
+     "group_id": "1603.08594::g00"
+    },
+    {
+     "passage_id": "1603.08594::s06::p000",
+     "summary": "The approach achieved 10% over baseline but did not beat MSTParser overall, with future work on larger datasets, other domains, languages, wh-clause attachment, and Machine Translation.",
+     "group_id": "1603.08594::g00"
+    }
+   ],
+   "n_raw": 38,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3888,
+    "completion_tokens": 1744,
+    "total_tokens": 5632,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

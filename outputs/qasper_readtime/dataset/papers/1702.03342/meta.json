@@ -1,0 +1,112 @@
+{
+ "paper_id": "1702.03342",
+ "title": "Learning Concept Embeddings for Efficient Bag-of-Concepts Densification",
+ "abstract": "Explicit concept space models have proven efficacy for text representation in many natural language and text mining applications. The idea is to embed textual structures into a semantic space of concepts which captures the main topics of these structures. That so called bag-of-concepts representation suffers from data sparsity causing low similarity scores between similar texts due to low concept overlap. In this paper we propose two neural embedding models in order to learn continuous concept vectors. Once learned, we propose an efficient vector aggregation method to generate fully dense bag-of-concepts representations. Empirical results on a benchmark dataset for measuring entity semantic relatedness show superior performance over other concept embedding models. In addition, by utilizing our efficient aggregation method, we demonstrate the effectiveness of the densified vector representation over the typical sparse representations for dataless classification where we can achieve at least same or better accuracy with much less dimensions.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Concept Embeddings for BOC Densification",
+  "Concept Raw Context Model (CRC)",
+  "Concept-Concept Context Model (3C)",
+  "Training",
+  "BOC Densification",
+  "Entity Semantic Relatedness",
+  "Dataless Classification",
+  "Conclusion"
+ ],
+ "n_paragraphs": 54,
+ "n_tokens": 5207,
+ "figures_and_tables": [
+  {
+   "caption_id": "1702.03342::fig000",
+   "paper_id": "1702.03342",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1 Top-3 concepts generated using ESA [6] for two 20-newsgroups categories (Hockey and Guns) along with top-3 concepts of sample instances",
+   "n_tokens": 36
+  },
+  {
+   "caption_id": "1702.03342::fig001",
+   "paper_id": "1702.03342",
+   "file": "7-Figure1-1.png",
+   "caption": "Fig. 1 Densification of the bag-of-concepts vector using weighted average of the learned concept embeddings. The concept space is defined by all Wikipedia article titles. The concept vector is created from the top n hits of searching a Wikipedia inverted index with the given text. The weights are the TF-IDF scores from searching Wikipedia",
+   "n_tokens": 66
+  },
+  {
+   "caption_id": "1702.03342::fig002",
+   "paper_id": "1702.03342",
+   "file": "9-Table2-1.png",
+   "caption": "Table 2 Example three sentences along with sample contexts generated from CRX and CCX. Contexts are generated with a context window of length 3",
+   "n_tokens": 30
+  },
+  {
+   "caption_id": "1702.03342::fig003",
+   "paper_id": "1702.03342",
+   "file": "14-Table3-1.png",
+   "caption": "Table 3 Evaluation of concept embeddings for measuring entity semantic relatedness using Spearman rankorder correlation (ρ)",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "1702.03342::fig004",
+   "paper_id": "1702.03342",
+   "file": "15-Table4-1.png",
+   "caption": "Table 4 Top-3 rated entities from CRX & CCX models on sample entities from the 4 domains compared to the ground truth",
+   "n_tokens": 28
+  },
+  {
+   "caption_id": "1702.03342::fig005",
+   "paper_id": "1702.03342",
+   "file": "16-Table5-1.png",
+   "caption": "Table 5 Accuracy of concept categorization",
+   "n_tokens": 8
+  },
+  {
+   "caption_id": "1702.03342::fig006",
+   "paper_id": "1702.03342",
+   "file": "17-Table6-1.png",
+   "caption": "Table 6 20NG category mappings Top-level Low-level",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1702.03342::fig007",
+   "paper_id": "1702.03342",
+   "file": "18-Table7-1.png",
+   "caption": "Table 7 Evaluation results of dataless document classification of fine-grained classes measured in microaveraged F1 alongwith # of dimensions (concepts) in the BoC at which corresponding performance is achieved",
+   "n_tokens": 41
+  },
+  {
+   "caption_id": "1702.03342::fig008",
+   "paper_id": "1702.03342",
+   "file": "19-Figure2-1.png",
+   "caption": "Fig. 2 Micro-averaged F1 scores of fine-grained classes when varying the # of BoC dimensions (color figure online)",
+   "n_tokens": 29
+  },
+  {
+   "caption_id": "1702.03342::fig009",
+   "paper_id": "1702.03342",
+   "file": "19-Table8-1.png",
+   "caption": "Table 8 Evaluation results of dataless document classification of coarse-grained classes measured in micro-averaged F1 along with # of dimensions (concepts) at which corresponding performance is achieved",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "1702.03342::fig010",
+   "paper_id": "1702.03342",
+   "file": "20-Figure3-1.png",
+   "caption": "Fig. 3 Micro-averaged F1 scores of coarse-grained classes when varying the # of concepts (dimensions) in the BoC from 1 to 500 (color figure online)",
+   "n_tokens": 40
+  },
+  {
+   "caption_id": "1702.03342::fig011",
+   "paper_id": "1702.03342",
+   "file": "20-Table9-1.png",
+   "caption": "Table 9 Evaluation results of dataless document classification of coarse-grained classes versus supervised classification with SVM measured in micro-averaged F1 along with # of dimensions (concepts) for CRX & CCX or % of labeled samples for SVM at which corresponding performance is achieved",
+   "n_tokens": 56
+  },
+  {
+   "caption_id": "1702.03342::fig012",
+   "paper_id": "1702.03342",
+   "file": "21-Table10-1.png",
+   "caption": "Table 10 Top-5 related concepts from CRX & CCX models for sample target concepts",
+   "n_tokens": 19
+  }
+ ]
+}

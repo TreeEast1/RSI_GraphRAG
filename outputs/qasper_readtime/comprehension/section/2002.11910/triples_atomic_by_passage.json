@@ -1,0 +1,320 @@
+{
+ "2002.11910::s00::p000": [
+  [
+   "NER",
+   "serves as",
+   "an important step for many popular applications"
+  ],
+  [
+   "NER",
+   "requires",
+   "phrases referring to entities in text be identified and assigned to particular entity types"
+  ],
+  [
+   "NER",
+   "can be naturally modeled as",
+   "a sequence labeling task"
+  ],
+  [
+   "this task",
+   "remains",
+   "a challenging one, especially in social media domain such as tweets"
+  ]
+ ],
+ "2002.11910::s00::p001": [
+  [
+   "Chinese",
+   "consists of",
+   "sequential Chinese characters without capitalization information and delimitation between words"
+  ],
+  [
+   "the equivalence of an English word in Chinese",
+   "may contain",
+   "one or several Chinese characters"
+  ],
+  [
+   "Chinese word segmentation",
+   "is needed as",
+   "a first step before entity mentions can be recognized"
+  ],
+  [
+   "The outputs of Chinese word segmentation",
+   "are often used as",
+   "features to support named entity recognition"
+  ]
+ ],
+ "2002.11910::s00::p002": [
+  [
+   "Chinese word segmentation",
+   "is often influenced by",
+   "the following four factors"
+  ],
+  [
+   "models trained from corpora in other languages",
+   "cannot be directly applied to",
+   "Chinese text"
+  ],
+  [
+   "differences in segmentation criteria",
+   "exist among",
+   "labeled corpora"
+  ],
+  [
+   "current sequential models",
+   "perform poorly in",
+   "identifying named entities with long dependency"
+  ]
+ ],
+ "2002.11910::s00::p003": [
+  [
+   "Errors caused by Chinese word segmentation",
+   "can generate",
+   "a cascading failure"
+  ],
+  [
+   "a cascading failure",
+   "hurt",
+   "the performance of downstream tasks such as NER"
+  ],
+  [
+   "Latest developments in Chinese NER",
+   "have yet shown",
+   "little focus on this issue"
+  ],
+  [
+   "assembling these single words back together",
+   "better reserves",
+   "information groups and sentence structure"
+  ]
+ ],
+ "2002.11910::s00::p004": [
+  [
+   "the integration",
+   "results in",
+   "a 2% absolute improvement on the overall F1 score over current state-of-the-art methods"
+  ]
+ ],
+ "2002.11910::s01::p000": [
+  [
+   "Output of the LSTM module",
+   "are transformed by",
+   "a biased-linear transformation"
+  ],
+  [
+   "The updated boundary information",
+   "is used as",
+   "feature input into the CRF for Chinese word segmentation (CWS)"
+  ],
+  [
+   "CRF for CWS",
+   "provides feedback into",
+   "the LSTM hidden layer and the biased-linear transformation"
+  ]
+ ],
+ "2002.11910::s02::p000": [
+  [
+   "Raw input Chinese text",
+   "is converted from characters to vectors with",
+   "character-positional input embeddings pre-trained by BIBREF5 over 112,971,734 Weibo messages using word2vec BIBREF18"
+  ],
+  [
+   "The embeddings",
+   "contain",
+   "52,057 unique characters in a 100-dimension space"
+  ]
+ ],
+ "2002.11910::s02::p001": [
+  [
+   "The LSTM module",
+   "takes these vectors into",
+   "a single layer that contains 150 nodes"
+  ],
+  [
+   "A biased-linear transformation",
+   "is carried out on",
+   "these likelihood scores"
+  ],
+  [
+   "These labels",
+   "are then modified by",
+   "the Boundary Assembling module"
+  ],
+  [
+   "a transition probability matrix",
+   "is introduced",
+   "because labels are in sequence, and dependency may exist among adjacent labels"
+  ]
+ ],
+ "2002.11910::s03::p000": [
+  [
+   "Chinese characters",
+   "are labeled as",
+   "Begin, Inside, End, or Singleton (BIES labeling)"
+  ],
+  [
+   "The likelihood of individual Chinese characters being labeled as each type",
+   "is calculated by",
+   "the LSTM module described in the previous section"
+  ],
+  [
+   "This strategy",
+   "has the advantage to find",
+   "named entities with long word length"
+  ]
+ ],
+ "2002.11910::s04::p000": [
+  [
+   "A log-bilinear CRF module",
+   "is used for",
+   "the NER task"
+  ],
+  [
+   "The first",
+   "is",
+   "the sequential character-positional embeddings mentioned above"
+  ],
+  [
+   "The second",
+   "is",
+   "the hidden vector from LSTM as dynamic feature inputs"
+  ],
+  [
+   "The third",
+   "is",
+   "lexical features extracted from the input text"
+  ]
+ ],
+ "2002.11910::s05::p000": [
+  [
+   "dataset for word segmentation",
+   "is taken from",
+   "the SIGHAN 2005 bakeoff PKU corpus BIBREF21"
+  ],
+  [
+   "the SIGHAN 2005 bakeoff PKU corpus BIBREF21",
+   "includes",
+   "123,530 sentences for training and 11,697 sentences for testing"
+  ],
+  [
+   "Dataset for named entity recognition",
+   "is",
+   "a corpus composed of 1,890 Sina Weibo (a Chinese social media website) messages"
+  ],
+  [
+   "1,350 messages",
+   "split into",
+   "training set, 270 into validation set, and 270 into test set BIBREF5"
+  ],
+  [
+   "Both named entity and nominal mention",
+   "are annotated with",
+   "four entity types: person, organization, location, and geo-political entity"
+  ]
+ ],
+ "2002.11910::s06::p000": [
+  [
+   "The weights and hyper-parameters in the LSTM module",
+   "are adjusted in each iteration using",
+   "stochastic gradient descent for two stages in tandem"
+  ],
+  [
+   "The first stage",
+   "is based on",
+   "the CWS input text"
+  ],
+  [
+   "each sample",
+   "containing",
+   "13,500 sentences for training step one, and 1,350 sentences for training step two"
+  ],
+  [
+   "Models",
+   "are trained until",
+   "the F1 score of NER model converges on the validation dataset, or up to 30 epochs"
+  ]
+ ],
+ "2002.11910::s06::p001": [
+  [
+   "Models",
+   "are trained on",
+   "a Windows PC with a 2.7 GHz Intel Core i7 CPU"
+  ],
+  [
+   "the average training time for the LSTM module",
+   "is",
+   "1897.6 seconds per iteration"
+  ],
+  [
+   "Time for data loading, pre-processing, or model evaluation",
+   "is not included",
+   "in the average training time"
+  ]
+ ],
+ "2002.11910::s07::p000": [
+  [
+   "This best model performance",
+   "is achieved with",
+   "a dropout rate of 0.1, and a learning rate of 0.05"
+  ]
+ ],
+ "2002.11910::s07::p001": [
+  [
+   "Sentences in the PKU corpus",
+   "are often segmented into",
+   "the smallest word units"
+  ],
+  [
+   "sense group in a sentence",
+   "is better preserved",
+   "by applying the boundary assembling method"
+  ]
+ ],
+ "2002.11910::s07::p002": [
+  [
+   "The PKU corpus used for CWS module",
+   "consists of",
+   "mainly news articles"
+  ],
+  [
+   "Performance of an NLP task",
+   "often drops when tested on",
+   "a different domain or a corpus of different characteristics"
+  ],
+  [
+   "the boundary assembling method",
+   "is not sensitive to",
+   "the specific domain"
+  ],
+  [
+   "the boundary assembling method",
+   "is",
+   "a robust method for cross-domain scenarios"
+  ]
+ ],
+ "2002.11910::s07::p003": [
+  [
+   "The identification of two nouns that are next to each other",
+   "depends on",
+   "the pre-trained lexical features"
+  ]
+ ],
+ "2002.11910::s08::p000": [
+  [
+   "Named Entity Recognition in Chinese social media text",
+   "uses",
+   "a boundary assembling step with an LSTM module and a CRF module"
+  ],
+  [
+   "The improvement in experiment results over existing methods",
+   "clearly shows",
+   "the effectiveness of our approach"
+  ]
+ ],
+ "2002.11910::s09::p000": [
+  [
+   "This research",
+   "was partially funded by",
+   "the Engineering Directorate of the National Science Foundation (1820118)"
+  ]
+ ]
+}

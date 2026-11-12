@@ -1,0 +1,699 @@
+{
+ "1708.01464::s00::p000": [
+  [
+   "Accurate grapheme-to-phoneme conversion (g2p)",
+   "is important for",
+   "any application that depends on the sometimes inconsistent relationship between spoken and written language"
+  ],
+  [
+   "text-to-speech and automatic speech recognition",
+   "are included in",
+   "applications that depend on the sometimes inconsistent relationship between spoken and written language"
+  ],
+  [
+   "Most work on g2p",
+   "has focused on",
+   "a few languages for which extensive pronunciation data is available"
+  ],
+  [
+   "Most languages",
+   "lack",
+   "these resources"
+  ]
+ ],
+ "1708.01464::s00::p001": [
+  [
+   "The source sequences for our system",
+   "are",
+   "words in the standard orthography in any language"
+  ],
+  [
+   "The target sequences",
+   "are",
+   "the corresponding representation in the International Phonetic Alphabet (IPA)"
+  ]
+ ],
+ "1708.01464::s01::p000": [
+  [
+   "These distance metrics",
+   "are computed based on",
+   "data from Phoible BIBREF4 and URIEL BIBREF5"
+  ]
+ ],
+ "1708.01464::s01::p001": [
+  [
+   "Other low resource g2p systems",
+   "have used",
+   "a strategy of combining multiple models"
+  ],
+  [
+   "schlippe2014combining",
+   "trained",
+   "several data-driven g2p systems on varying quantities of monolingual data"
+  ],
+  [
+   "schlippe2014combining",
+   "combined",
+   "their outputs with a phoneme-level voting scheme"
+  ],
+  [
+   "This",
+   "led to",
+   "improvements over the best-performing single system for small quantities of data in some languages"
+  ],
+  [
+   "jyothilow",
+   "trained",
+   "recurrent neural networks for small data sets"
+  ]
+ ],
+ "1708.01464::s01::p002": [
+  [
+   "these phonotactic features",
+   "proved to be more valuable than",
+   "geographical and genetic features drawn from WALS BIBREF6"
+  ]
+ ],
+ "1708.01464::s02::p000": [
+  [
+   "Google's zero-shot neural machine translation system BIBREF7",
+   "shares",
+   "an encoder and decoder across all language pairs"
+  ]
+ ],
+ "1708.01464::s02::p001": [
+  [
+   "Phoneme-level polyglot language models BIBREF8",
+   "train",
+   "a single model on multiple languages"
+  ],
+  [
+   "Phoneme-level polyglot language models BIBREF8",
+   "condition on",
+   "externally constructed typological data about the language"
+  ],
+  [
+   "ostling2017continuous",
+   "trained",
+   "a character-level neural language model on a massively multilingual corpus"
+  ],
+  [
+   "A language embedding vector",
+   "is concatenated to",
+   "the input at each time step"
+  ]
+ ],
+ "1708.01464::s03::p000": [
+  [
+   "A phoneme",
+   "is",
+   "an abstract unit of sound which may have different realizations in different contexts"
+  ],
+  [
+   "the English phoneme",
+   "has",
+   "two phonetic realizations (or allophones)"
+  ]
+ ],
+ "1708.01464::s03::p001": [
+  [
+   "English speakers without linguistic training",
+   "often struggle to perceive",
+   "any difference between these sounds"
+  ],
+  [
+   "Writing systems",
+   "usually do not distinguish between",
+   "allophones"
+  ],
+  [
+   "The sounds",
+   "are written differently in",
+   "languages where they contrast, such as Hindi and Eastern Armenian"
+  ]
+ ],
+ "1708.01464::s03::p002": [
+  [
+   "Most writing systems in use today",
+   "are",
+   "glottographic"
+  ],
+  [
+   "glottographic",
+   "means",
+   "that their symbols encode solely phonological information"
+  ],
+  [
+   "multiple graphemes",
+   "represent",
+   "a single phoneme"
+  ]
+ ],
+ "1708.01464::s03::p004": [
+  [
+   "a single grapheme",
+   "represents",
+   "multiple phonemes"
+  ],
+  [
+   "syllabaries",
+   "have each symbol represent",
+   "a syllable"
+  ]
+ ],
+ "1708.01464::s03::p005": [
+  [
+   "many languages",
+   "have",
+   "silent letters"
+  ]
+ ],
+ "1708.01464::s03::p007": [
+  [
+   "the silent e in English",
+   "affects",
+   "the pronunciation of the previous vowel"
+  ]
+ ],
+ "1708.01464::s03::p008": [
+  [
+   "an orthographic system",
+   "can have",
+   "any or all of the above phenomena while remaining unambiguous"
+  ],
+  [
+   "some orthographic systems",
+   "contain",
+   "ambiguities"
+  ],
+  [
+   "English",
+   "is well-known for",
+   "its spelling ambiguities"
+  ],
+  [
+   "Abjads",
+   "do not give",
+   "full representation to vowels"
+  ]
+ ],
+ "1708.01464::s03::p011": [
+  [
+   "the sequences",
+   "are not necessarily of",
+   "the same length"
+  ],
+  [
+   "Data-driven g2p",
+   "is",
+   "the problem of finding the phoneme sequence that maximizes the likelihood of the grapheme sequence: INLINEFORM0"
+  ]
+ ],
+ "1708.01464::s03::p012": [
+  [
+   "Data-driven approaches",
+   "are especially useful for",
+   "problems in which the rules that govern them are complex and difficult to engineer by hand"
+  ],
+  [
+   "g2p for languages with ambiguous orthographies",
+   "is",
+   "such a problem"
+  ],
+  [
+   "Multilingual g2p",
+   "can be seen as",
+   "an extreme case of that"
+  ],
+  [
+   "a data-driven sequence-to-sequence model",
+   "is",
+   "a natural choice"
+  ]
+ ],
+ "1708.01464::s04::p000": [
+  [
+   "neural encoder–decoder model with attention",
+   "is used to find",
+   "the best phoneme sequence"
+  ],
+  [
+   "the encoder",
+   "compresses",
+   "each source grapheme sequence INLINEFORM0 into a fixed-length vector"
+  ],
+  [
+   "the decoder",
+   "generates",
+   "the output phoneme sequence INLINEFORM1"
+  ]
+ ],
+ "1708.01464::s04::p001": [
+  [
+   "The encoder and decoder",
+   "are implemented as",
+   "recurrent neural networks"
+  ],
+  [
+   "recurrent neural networks",
+   "have the advantage of",
+   "being able to process sequences of arbitrary length and use long histories efficiently"
+  ],
+  [
+   "The encoder and decoder",
+   "are trained jointly to minimize",
+   "cross-entropy on the training data"
+  ],
+  [
+   "a bidirectional encoder",
+   "consists of",
+   "two separate encoders which process the input in forward and reverse directions"
+  ],
+  [
+   "long short-term memory units BIBREF10",
+   "were used for",
+   "both the encoder and decoder"
+  ],
+  [
+   "the general global attention architecture described by luong2015effective",
+   "was used for",
+   "the attention mechanism"
+  ]
+ ],
+ "1708.01464::s04::p002": [
+  [
+   "all models",
+   "were implemented with",
+   "OpenNMT BIBREF11"
+  ]
+ ],
+ "1708.01464::s05::p000": [
+  [
+   "Presenting pronunciation data in several languages to the network",
+   "might create",
+   "problems"
+  ],
+  [
+   "different languages",
+   "have",
+   "different pronunciation patterns"
+  ],
+  [
+   "the string `real'",
+   "is pronounced differently in",
+   "English, German, Spanish, and Portuguese"
+  ]
+ ],
+ "1708.01464::s05::p002": [
+  [
+   "The artificial token",
+   "is treated simply as",
+   "an element of the grapheme sequence"
+  ],
+  [
+   "their source-side artificial tokens",
+   "identify",
+   "the target language"
+  ],
+  [
+   "ours",
+   "identify",
+   "the source language"
+  ],
+  [
+   "An alternative approach, used by ostling2017continuous",
+   "would be to concatenate",
+   "a language embedding to the input at each time step"
+  ]
+ ],
+ "1708.01464::s06::p000": [
+  [
+   "neural g2p system",
+   "needs",
+   "a large quantity of pronunciation data"
+  ],
+  [
+   "Carnegie Mellon Pronouncing Dictionary",
+   "is",
+   "a standard dataset for g2p"
+  ],
+  [
+   "Carnegie Mellon Pronouncing Dictionary",
+   "is",
+   "a monolingual English resource"
+  ],
+  [
+   "multilingual pronunciation corpus",
+   "consists of",
+   "spelling–pronunciation pairs extracted from Wiktionary"
+  ]
+ ],
+ "1708.01464::s06::p001": [
+  [
+   "corpus",
+   "provides",
+   "an automatically cleaned version of transcriptions"
+  ],
+  [
+   "Cleaning",
+   "is",
+   "a necessary step"
+  ],
+  [
+   "data cleaning used here",
+   "attempts to make",
+   "the transcriptions consistent with the phonemic inventories used in Phoible BIBREF4"
+  ],
+  [
+   "cleaning algorithm",
+   "removes",
+   "most suprasegmentals"
+  ]
+ ],
+ "1708.01464::s07::p000": [
+  [
+   "LangID",
+   "prepends",
+   "each training, validation, and test sample with an artificial token identifying the language of the sample"
+  ],
+  [
+   "NoLangID",
+   "omits",
+   "this token"
+  ],
+  [
+   "LangID and NoLangID",
+   "have",
+   "identical structure otherwise"
+  ],
+  [
+   "test corpus translation",
+   "used",
+   "a beam width of 100"
+  ]
+ ],
+ "1708.01464::s08::p003": [
+  [
+   "Word Error Rate 100 (WER 100)",
+   "is",
+   "the percentage of words in the test set for which the correct guess is not in the first 100 guesses of the system"
+  ]
+ ],
+ "1708.01464::s08::p004": [
+  [
+   "WER, WER 100, and PER numbers presented for multiple languages",
+   "are averaged",
+   "weighting each language equally"
+  ]
+ ],
+ "1708.01464::s08::p005": [
+  [
+   "PER",
+   "weights",
+   "all phoneme errors the same"
+  ],
+  [
+   "these statistics",
+   "have not been widely reported for",
+   "other g2p systems"
+  ]
+ ],
+ "1708.01464::s09::p000": [
+  [
+   "Results on LangID and NoLangID",
+   "are compared to",
+   "the system presented by deri2016grapheme"
+  ],
+  [
+   "the system presented by deri2016grapheme",
+   "is identified in our results as",
+   "wFST"
+  ]
+ ],
+ "1708.01464::s09::p001": [
+  [
+   "High resource results",
+   "computed with",
+   "wFSTs trained on a combination of Wiktionary pronunciation data and g2p rules extracted from Wikipedia IPA Help pages"
+  ]
+ ],
+ "1708.01464::s09::p002": [
+  [
+   "Adapted results",
+   "apply",
+   "various mapping strategies in order to adapt high resource models to other languages"
+  ],
+  [
+   "The final adapted results they reported",
+   "include",
+   "most of the 85 languages with high resource results"
+  ],
+  [
+   "The final adapted results they reported",
+   "include",
+   "a total of 229 languages"
+  ]
+ ],
+ "1708.01464::s10::p000": [
+  [
+   "the LangID and NoLangID versions of our model",
+   "are trained each on",
+   "three subsets of the Wiktionary data"
+  ]
+ ],
+ "1708.01464::s10::p001": [
+  [
+   "LangID-High and NoLangID-High",
+   "are Trained on",
+   "data from the 85 languages for which BIBREF13 used non-adapted wFST models"
+  ]
+ ],
+ "1708.01464::s10::p002": [
+  [
+   "LangID-Adapted and NoLangID-Adapted",
+   "are Trained on",
+   "data from any of the 229 languages for which they built adapted models"
+  ],
+  [
+   "the Adapted set",
+   "omits",
+   "23 languages which are in the High test set"
+  ]
+ ],
+ "1708.01464::s10::p003": [
+  [
+   "LangID-All and NoLangID-All",
+   "are Trained on",
+   "data in all 311 languages in the Wiktionary training corpus"
+  ]
+ ],
+ "1708.01464::s10::p004": [
+  [
+   "the maximum number of training words for any language",
+   "is",
+   "9000 for our systems"
+  ]
+ ],
+ "1708.01464::s11::p000": [
+  [
+   "the LangID version of our system",
+   "outperforms",
+   "the baseline by a wide margin"
+  ],
+  [
+   "The best performance",
+   "came with",
+   "the version of our model that was trained on data in all available languages, not just the languages it was tested on"
+  ],
+  [
+   "Using a language ID token",
+   "improves",
+   "results considerably"
+  ],
+  [
+   "NoLangID",
+   "beats",
+   "the baseline in WER and WER 100"
+  ]
+ ],
+ "1708.01464::s12::p000": [
+  [
+   "The wFST models here",
+   "are",
+   "purely monolingual"
+  ],
+  [
+   "The wFST models here",
+   "do not use",
+   "data adaptation"
+  ],
+  [
+   "models trained on the Adapted languages",
+   "performed very poorly on",
+   "high resource languages with unique writing systems"
+  ]
+ ],
+ "1708.01464::s12::p001": [
+  [
+   "none of the sequence-to-sequence approaches",
+   "equal",
+   "the performance of the wFST model in WER and PER"
+  ],
+  [
+   "LangID-High",
+   "does come close",
+   "the performance of the wFST model in WER and PER"
+  ],
+  [
+   "The LangID models",
+   "do beat",
+   "wFST in WER 100"
+  ],
+  [
+   "a monolingual wFST model",
+   "will never generate",
+   "phonemes that are not part of the language's inventory"
+  ],
+  [
+   "A multilingual model",
+   "could potentially generate",
+   "phonemes from the inventories of any language it has been trained on"
+  ]
+ ],
+ "1708.01464::s12::p002": [
+  [
+   "LangID-High",
+   "is",
+   "15.4 MB"
+  ],
+  [
+   "the combined wFST high resource models",
+   "are",
+   "197.5 MB"
+  ]
+ ],
+ "1708.01464::s13::p000": [
+  [
+   "The unseen languages",
+   "are",
+   "any that are present in the test corpus but absent from the training data"
+  ],
+  [
+   "Deri and Knight",
+   "did not report",
+   "results specifically on these languages"
+  ],
+  [
+   "the NoLangID models",
+   "sometimes do better on",
+   "WER 100"
+  ],
+  [
+   "the LangID models",
+   "have",
+   "a slight advantage in WER and PER"
+  ],
+  [
+   "the LangID models",
+   "have not learned",
+   "embeddings for the language ID tokens of unseen languages"
+  ]
+ ],
+ "1708.01464::s14::p000": [
+  [
+   "Adding a language ID token",
+   "always improves",
+   "results in cases where an embedding has been learned for that token"
+  ],
+  [
+   "the power of these embeddings",
+   "is demonstrated by",
+   "what happens when one feeds the same input word to the model with different language tokens"
+  ],
+  [
+   "this",
+   "works when",
+   "the source sequence is in the wrong script for the language"
+  ]
+ ],
+ "1708.01464::s15::p000": [
+  [
+   "the languages closest to German in the vector space",
+   "are",
+   "Luxembourgish, Bavarian, and Yiddish, all close relatives"
+  ],
+  [
+   "the structure of these vectors",
+   "is not",
+   "interpretable"
+  ],
+  [
+   "A more promising way forward",
+   "is to find",
+   "a model that uses an externally constructed typological representation of the language"
+  ]
+ ],
+ "1708.01464::s16::p000": [
+  [
+   "the phoneme embeddings",
+   "appear to show",
+   "many regularities"
+  ],
+  [
+   "These phonemes",
+   "tend to be",
+   "phonetically similar to each other"
+  ]
+ ],
+ "1708.01464::s16::p001": [
+  [
+   "Applying some sort of filtering or reranking of the system output",
+   "might lead to",
+   "better performance"
+  ]
+ ],
+ "1708.01464::s17::p000": [
+  [
+   "the language ID token",
+   "is",
+   "so beneficial to performance"
+  ],
+  [
+   "tokens that identify something other than the language",
+   "include",
+   "typological features about the language's phonemic inventory"
+  ],
+  [
+   "Such typological knowledge",
+   "is readily available in",
+   "databases like Phoible and WALS"
+  ]
+ ],
+ "1708.01464::s17::p001": [
+  [
+   "the artificial token approach",
+   "would be interesting to apply to",
+   "other problems besides multilingual g2p"
+  ],
+  [
+   "One closely related application",
+   "is",
+   "monolingual English g2p"
+  ],
+  [
+   "Some of the ambiguity of English spelling",
+   "is due to",
+   "the wide variety of loanwords in the language"
+  ],
+  [
+   "Knowing the origins of these loanwords",
+   "could provide",
+   "a useful hint for figuring out their pronunciations"
+  ],
+  [
+   "The etymology of a word",
+   "could be tagged in",
+   "an analogous way to how language ID is tagged in multilingual g2p"
+  ]
+ ]
+}

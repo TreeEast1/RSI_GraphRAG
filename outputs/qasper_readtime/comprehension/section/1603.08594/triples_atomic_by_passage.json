@@ -1,0 +1,377 @@
+{
+ "1603.08594::s00::p000": [
+  [
+   "Prepositional Phrase (PP) attachment disambiguation",
+   "is",
+   "an important problem in NLP"
+  ],
+  [
+   "Statistical parsers",
+   "often predict",
+   "incorrect attachment for prepositional phrases"
+  ],
+  [
+   "incorrect PP-attachment",
+   "leads to",
+   "serious errors in translation"
+  ],
+  [
+   "English",
+   "is",
+   "a syntactically ambiguous language with respect to PP attachments"
+  ]
+ ],
+ "1603.08594::s00::p002": [
+  [
+   "Sentence INLINEFORM0",
+   "is",
+   "I washed the jeans with pockets."
+  ]
+ ],
+ "1603.08594::s00::p004": [
+  [
+   "the prepositional phrase with pockets",
+   "is attached to",
+   "the noun jeans"
+  ]
+ ],
+ "1603.08594::s00::p006": [
+  [
+   "A statistical parser",
+   "often predicts",
+   "the PP-attachment incorrectly"
+  ]
+ ],
+ "1603.08594::s00::p008": [
+  [
+   "Sentence INLINEFORM0",
+   "is",
+   "I washed the jeans with soap."
+  ]
+ ],
+ "1603.08594::s00::p010": [
+  [
+   "the prepositional phrase with soap",
+   "attaches to",
+   "the verb washed"
+  ]
+ ],
+ "1603.08594::s00::p011": [
+  [
+   "a case of ambiguity",
+   "can be resolved only if",
+   "the semantics are known"
+  ],
+  [
+   "the fact that soap is an aid to the verb washed",
+   "disambiguates",
+   "its attachment to the verb rather than the noun jeans"
+  ],
+  [
+   "the attachments",
+   "need to be marked correctly",
+   "For correctly translating such an English sentence to another language"
+  ]
+ ],
+ "1603.08594::s00::p012": [
+  [
+   "Hindi",
+   "is",
+   "a syntactically rich language"
+  ],
+  [
+   "The use of case markers and the inherent construction of sentences in Hindi",
+   "make",
+   "cases of ambiguity rarer"
+  ]
+ ],
+ "1603.08594::s00::p013": [
+  [
+   "Sentence (3) and sentence (4)",
+   "are",
+   "the respective Hindi translations of sentence (1) and (2)"
+  ]
+ ],
+ "1603.08594::s00::p017": [
+  [
+   "the prepositional phrase jeb waali",
+   "attaches to",
+   "the noun jeans"
+  ]
+ ],
+ "1603.08594::s00::p018": [
+  [
+   "the prepositional phrase saabun se",
+   "attaches to",
+   "the verb dhoyee"
+  ]
+ ],
+ "1603.08594::s00::p019": [
+  [
+   "The case markers waali and se",
+   "make clear",
+   "the pp-atttachment"
+  ]
+ ],
+ "1603.08594::s01::p000": [
+  [
+   "Ratnaparkhi:94",
+   "use",
+   "a Maximum Entropy Model"
+  ],
+  [
+   "Schwartz:03",
+   "propose",
+   "an unsupervised approach"
+  ],
+  [
+   "Olteanu:05",
+   "have used",
+   "Support Vector Machines (SVMs)"
+  ]
+ ],
+ "1603.08594::s02::p000": [
+  [
+   "Dual decomposition",
+   "is",
+   "a classical method for combinatorial optimization"
+  ],
+  [
+   "The input to the algorithm",
+   "is",
+   "a parallel English-Hindi sentence pair, with its word alignments given"
+  ],
+  [
+   "The DD algorithm",
+   "tries to enforce",
+   "agreement between the two parse trees subject to the given alignments"
+  ]
+ ],
+ "1603.08594::s02::p001": [
+  [
+   "an edge in the parse tree in one language",
+   "can correspond to",
+   "more than one edge, or rather, a path, in the other language parse tree"
+  ],
+  [
+   "the corresponding edge or path in the Hindi parse tree",
+   "is termed",
+   "the projection or projected path of the English edge on the Hindi parse tree"
+  ],
+  [
+   "The dual decomposition inference algorithm",
+   "tries to bring",
+   "the parse trees in the two languages through its constraints"
+  ]
+ ],
+ "1603.08594::s02::p003": [
+  [
+   "INLINEFORM0 and INLINEFORM1",
+   "represent",
+   "a English and Hindi sentence respectively"
+  ],
+  [
+   "INLINEFORM2 and INLINEFORM3",
+   "are",
+   "the corresponding parse trees"
+  ],
+  [
+   "INLINEFORM4 and INLINEFORM5",
+   "are",
+   "the model parameters for the edge-factored parser models trained for English and Hindi respectively"
+  ],
+  [
+   "INLINEFORM11",
+   "stands for",
+   "the score of a projected path in Hindi parse tree INLINEFORM12 for a given English edge INLINEFORM13"
+  ]
+ ],
+ "1603.08594::s02::p004": [
+  [
+   "The score of the projected path",
+   "is calculated as",
+   "the sum of scores of all edges in the path"
+  ],
+  [
+   "INLINEFORM0",
+   "denote",
+   "the projected path on sentence h in Hindi for the edge INLINEFORM1 in the English parse tree"
+  ],
+  [
+   "INLINEFORM3",
+   "is",
+   "the score of edge a in the projected path INLINEFORM4"
+  ]
+ ],
+ "1603.08594::s03::p000": [
+  [
+   "an iterative Coordinate Descent algorithm (Algorithm 1)",
+   "calls",
+   "the Project Algorithm until convergence"
+  ],
+  [
+   "The trees INLINEFORM0 and INLINEFORM1",
+   "are initialized by",
+   "the previously trained parser models for the respective languages"
+  ]
+ ],
+ "1603.08594::s03::p001": [
+  [
+   "Coordinate Descent Algorithm",
+   "Initialize",
+   "INLINEFORM0 and INLINEFORM1 from the MSTParser models"
+  ]
+ ],
+ "1603.08594::s03::p002": [
+  [
+   "project function",
+   "returns",
+   "a parse tree for English"
+  ],
+  [
+   "project function",
+   "maximizes",
+   "the agreement between the English and Hindi parse tree"
+  ],
+  [
+   "algorithm",
+   "converges when",
+   "the trees no longer change"
+  ]
+ ],
+ "1603.08594::s03::p003": [
+  [
+   "Project algorithm (Algorithm 2)",
+   "predicts",
+   "the tree for a sentence in the target language"
+  ],
+  [
+   "Project algorithm (Algorithm 2)",
+   "is given",
+   "the parse tree in the source language, and the word alignments between the parallel sentence"
+  ]
+ ],
+ "1603.08594::s03::p004": [
+  [
+   "Project Algorithm (tree T, sen S)",
+   "takes",
+   "A parse tree T (Hindi) and sentence S (English)"
+  ]
+ ],
+ "1603.08594::s03::p006": [
+  [
+   "lagrangian multipliers",
+   "are initialized to",
+   "zero"
+  ],
+  [
+   "best tree in the target language",
+   "is predicted by",
+   "the argmax computation in step 4"
+  ],
+  [
+   "This maximization",
+   "involves",
+   "the parser model parameters INLINEFORM0 and the score of the best projected path in the source tree for all edges"
+  ],
+  [
+   "INLINEFORM1",
+   "denotes",
+   "the score of the projected path of the edge INLINEFORM2 on the source tree T"
+  ],
+  [
+   "best projected path for every edge of the source tree",
+   "is predicted on",
+   "the target tree"
+  ]
+ ],
+ "1603.08594::s04::p000": [
+  [
+   "projected path in one language for an edge in the other language",
+   "uses",
+   "a set of two classifiers in a pipeline"
+  ],
+  [
+   "first classifier",
+   "predicts",
+   "the length of the projected path"
+  ],
+  [
+   "second classifier",
+   "predicts",
+   "the predicted path itself"
+  ]
+ ],
+ "1603.08594::s04::p001": [
+  [
+   "The classifier for path length prediction",
+   "is",
+   "a set of five binary classifiers"
+  ],
+  [
+   "five binary classifiers",
+   "predict",
+   "the path length to be 1, 2, 3, 4 or 5"
+  ],
+  [
+   "These classifiers",
+   "are",
+   "perceptrons trained on separate annotated data"
+  ]
+ ],
+ "1603.08594::s04::p002": [
+  [
+   "The classifier for path prediction",
+   "is",
+   "a set of four structured perceptron classifiers"
+  ],
+  [
+   "These set of classifiers",
+   "were trained on",
+   "separate annotated data"
+  ]
+ ],
+ "1603.08594::s05::p000": [
+  [
+   "A parser model",
+   "was trained for",
+   "Hindi"
+  ],
+  [
+   "a part of the the Hindi Dependency Treebank data (18708 sentences)",
+   "was used for training",
+   "a parser model"
+  ],
+  [
+   "A part of the Penn Treebank (28188 sentences)",
+   "was used for training",
+   "an English parser"
+  ],
+  [
+   "A part of the ILCI English-Hindi Tourism parallel corpus (1500 sentences)",
+   "was used for training",
+   "the classifiers"
+  ]
+ ],
+ "1603.08594::s05::p001": [
+  [
+   "The baseline system",
+   "is",
+   "the attachment predicted by the parser models trained using the MSTParser"
+  ]
+ ],
+ "1603.08594::s05::p002": [
+  [
+   "The MSTParser model",
+   "was able to correctly disambiguate",
+   "54 number of PP-attachments"
+  ]
+ ],
+ "1603.08594::s06::p000": [
+  [
+   "incorrect pp-attachment",
+   "has",
+   "a direct consequence on Machine Translation"
+  ]
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "paper_id": "1904.07904",
+ "title": "Mitigating the Impact of Speech Recognition Errors on Spoken Question Answering by Adversarial Domain Adaptation",
+ "abstract": "Spoken question answering (SQA) is challenging due to complex reasoning on top of the spoken documents. The recent studies have also shown the catastrophic impact of automatic speech recognition (ASR) errors on SQA. Therefore, this work proposes to mitigate the ASR errors by aligning the mismatch between ASR hypotheses and their corresponding reference transcriptions. An adversarial model is applied to this domain adaptation task, which forces the model to learn domain-invariant features the QA model can effectively utilize in order to improve the SQA results. The experiments successfully demonstrate the effectiveness of our proposed model, and the results are better than the previous best model by 2% EM score.",
+ "sections": [
+  "Introduction",
+  "Spoken Question Answering",
+  "Question Answering Model",
+  "Domain Adaptation Approach",
+  "Corpus",
+  "Experiment Setup",
+  "Results",
+  "Conclusion"
+ ],
+ "n_paragraphs": 28,
+ "n_tokens": 3031,
+ "figures_and_tables": [
+  {
+   "caption_id": "1904.07904::fig000",
+   "paper_id": "1904.07904",
+   "file": "2-Figure1-1.png",
+   "caption": "Fig. 1. Flow diagram of the SQA system.",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1904.07904::fig001",
+   "paper_id": "1904.07904",
+   "file": "2-Figure2-1.png",
+   "caption": "Fig. 2. The overall architecture of the proposed QA model with a domain discriminator. Each layer can be tied or untied between the source and target models.",
+   "n_tokens": 33
+  },
+  {
+   "caption_id": "1904.07904::fig002",
+   "paper_id": "1904.07904",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1. Illustration of domain mismatch, where the models are trained on the source domain (Text-SQuAD; T-SQuAD) or the target domain (Spoken-SQuAD; S-SQuAD) and then evaluated on both source and target domains.",
+   "n_tokens": 56
+  },
+  {
+   "caption_id": "1904.07904::fig003",
+   "paper_id": "1904.07904",
+   "file": "4-Table3-1.png",
+   "caption": "Table 3. Investigation of different layer tying mechanisms, where Xmeans that weights of the layer are tied between the source model and the target model. (L1: embedding encoder, L2: context query attention layer, L3: model encoder layer, L4: output layer.)",
+   "n_tokens": 58
+  },
+  {
+   "caption_id": "1904.07904::fig004",
+   "paper_id": "1904.07904",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2. The EM/F1 scores of proposed adversarial domain adaptation approaches over Spoken-SQuAD.",
+   "n_tokens": 23
+  }
+ ]
+}

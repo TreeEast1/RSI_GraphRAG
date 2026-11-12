@@ -1,0 +1,188 @@
+{
+  "role": "v52_02",
+  "cluster_id": "cc-00000-stable-0103",
+  "unit_id": "cc-00000-stable-0103-u000",
+  "method": "Ccompact",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 1663,
+    "completion_tokens": 1344,
+    "reasoning_tokens": 512,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r52_units_v52_02_Ccompact",
+    "cache_key": "9fc6431c23c18d09db56b1e784818b569b199b8adb9447dee83dedc9341143c4"
+  },
+  "n_updates": 2,
+  "n_add": 2,
+  "n_accept": 2,
+  "n_reject": 0,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "EXTRACTION_REPAIR": 2
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "c1",
+      "comprehension_text": "TVNorge's first broadcast was a live variety show.",
+      "new_semantic_relation": "first broadcast was live variety show",
+      "operator": "EXPLICIT_GAP",
+      "chain": [
+        {
+          "passage_id": "chunk-4307a7a644e425bceaeaf35cc9120869",
+          "span": "The first broadcast was a live variety show from Oslo Cabaret"
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-867572ddcd6b429834509ad3a5535fbe",
+        "entity-9ce122524ea11955893c43461881dbfe"
+      ],
+      "source_triple_ids": [],
+      "source_passage_ids": [
+        "chunk-4307a7a644e425bceaeaf35cc9120869"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-4307a7a644e425bceaeaf35cc9120869",
+          "span": "The first broadcast was a live variety show from Oslo Cabaret"
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The broadcast's live variety-show format is unstated in existing triples.",
+      "reasoning_summary": "The passage directly characterizes the first broadcast.",
+      "novelty_justification": "Existing triples identify its venue but not its format.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "c2",
+      "comprehension_text": "TVNorge's first broadcast featured Lill-Babs and Tomboy as musical guests.",
+      "new_semantic_relation": "first broadcast featured musical guests",
+      "operator": "COMPOSITIONAL_SHORTCUT",
+      "chain": [
+        {
+          "passage_id": "chunk-4307a7a644e425bceaeaf35cc9120869",
+          "span": "The first broadcast was a live variety show from Oslo Cabaret with Swedish singer Lill-Babs and Norwegian pop group Tomboy as musical guests."
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-867572ddcd6b429834509ad3a5535fbe",
+        "entity-dec6ec10ce1c2c8d5f741630addfec15",
+        "entity-dc6dd4e93125907fd7df51fffc811b7d"
+      ],
+      "source_triple_ids": [
+        "triple-5ca4e733881eff16c078590004e67499",
+        "triple-08dacf84022cdc82bf495fbfbf334308",
+        "triple-fe194c3c29c654f0af430adf6a682b58"
+      ],
+      "source_passage_ids": [
+        "chunk-4307a7a644e425bceaeaf35cc9120869"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-4307a7a644e425bceaeaf35cc9120869",
+          "span": "The first broadcast was a live variety show from Oslo Cabaret with Swedish singer Lill-Babs and Norwegian pop group Tomboy as musical guests."
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The existing triples do not connect either guest to TVNorge's first broadcast.",
+      "reasoning_summary": "The passage links both named guests to the first broadcast.",
+      "novelty_justification": "Guest appearances and first-program status are stored separately.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "c1",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: s, live, variety, show",
+      "residue": [
+        "s",
+        "live",
+        "variety",
+        "show"
+      ],
+      "evidence_sentences": [
+        "The first broadcast was a live variety show from Oslo Cabaret with Swedish singer Lill-Babs and Norwegian pop group Tomboy as musical guests."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "The first broadcast was a live variety show from Oslo Cabaret with Swedish singer Lill-Babs and Norwegian pop group Tomboy as musical guests."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "s",
+            "live",
+            "variety",
+            "show"
+          ],
+          "n_passage_triples": 13,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "c2",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: s, guests",
+      "residue": [
+        "s",
+        "guests"
+      ],
+      "evidence_sentences": [
+        "The first broadcast was a live variety show from Oslo Cabaret with Swedish singer Lill-Babs and Norwegian pop group Tomboy as musical guests. Originally TVNorge broadcast via satellite and cable, later they have affiliated several local television broadcasters."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "The first broadcast was a live variety show from Oslo Cabaret with Swedish singer Lill-Babs and Norwegian pop group Tomboy as musical guests. Originally TVNorge broadcast via satellite and cable, later they have affiliated several local television broadcasters."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "s",
+            "guests"
+          ],
+          "n_passage_triples": 13,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

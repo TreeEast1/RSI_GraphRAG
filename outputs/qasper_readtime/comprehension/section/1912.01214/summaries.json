@@ -1,0 +1,498 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1912.01214::s00::p000",
+   "summary": "NMT relies on large-scale parallel data, performs poorly on low-resource or zero-resource pairs, and pivot-based methods double decoding time and propagate translation errors.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s00::p001",
+   "summary": "Transfer learning initializes a low-resource source→target child model from a high-resource pivot→target parent model but performs very poorly without child training data.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s00::p002",
+   "summary": "The language space mismatch problem, also named domain shift problem, causes zero-shot transfer failure because source and pivot feature distributions are not explicitly aligned.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s00::p003",
+   "summary": "The paper studies zero-shot transfer with source↔pivot and pivot↔target data but no source↔target data, proposing cross-lingual pre-training and BRidge Language Modeling (BRLM).",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s00::p004",
+   "summary": "The paper proposes a new transfer learning approach for NMT using cross-lingual language model pre-training to enable high performance on zero-shot translation.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s00::p005",
+   "summary": "The paper proposes a novel pre-training method called BRLM that effectively alleviates the distance between different source language spaces.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s00::p006",
+   "summary": "The proposed approach significantly improves zero-shot translation performance, consistently surpassing pivoting and multilingual approaches while maintaining or improving supervised translation direction performance.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s01::p000",
+   "summary": "Zero-shot translation in NMT has attracted widespread attention, with existing methods divided into pivot-based method, transfer learning, multilingual NMT, and unsupervised NMT.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s01::p001",
+   "summary": "Pivot-based Method includes pivoting and pivot-synthetic, but faces quadratic growth in source languages, computation expense, parameter vastness, and error propagation.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s01::p002",
+   "summary": "Transfer Learning for NMT uses a high-resource parent model to initialize a low-resource child model, with shared vocabularies or cross-lingual word embedding, but has limited zero-shot effects.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s01::p003",
+   "summary": "Multilingual NMT (MNMT) supports multiple source and target languages and unseen pairs, but zero-shot translation easily fails, is sensitive to hyper-parameter setting, and often underperforms pivoting.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s01::p004",
+   "summary": "Unsupervised NMT (UNMT) uses only large-scale monolingual corpora and performs well between similar languages, but distant-language performance remains far from expectation.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s01::p005",
+   "summary": "The proposed method belongs to transfer learning but uses cross-lingual pre-training before parent model training to make all source languages share the same feature space.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s02::p000",
+   "summary": "The section presents a cross-lingual pre-training based transfer approach for zero-shot scenarios with source↔pivot and pivot↔target bilingual data but no source↔target parallel data.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s02::p001",
+   "summary": "The first step pre-trains a universal encoder with source/pivot monolingual or source↔pivot bilingual data.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s02::p002",
+   "summary": "The second step trains a pivot→target parent model on the pre-trained universal encoder with available parallel data while freezing several layers to avoid degeneracy.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s02::p003",
+   "summary": "The third step directly translates source sentences into target sentences with the parent model, benefiting from the universal encoder.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s02::p004",
+   "summary": "The key difficulty is ensuring language-invariant intermediate representations, and the section presents two existing methods, a new cross-lingual pre-training method, and the transfer protocol.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s03::p000",
+   "summary": "Masked Language Modeling (MLM) and Translation Language Modeling (TLM) are effective on XNLI cross-lingual classification but understudied for zero-shot cross-lingual generation tasks.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s03::p001",
+   "summary": "MLM adopts the Cloze objective of BERT, predicts randomly masked words replaced with [MASK] token on monolingual corpora, and maps shared word pieces into a shared space.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s03::p002",
+   "summary": "TLM extends MLM by concatenating sentence pairs, masking words in both source and target sentences, and resetting target sentence positions to count from zero.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s04::p000",
+   "summary": "BRidge Language Modeling (BRLM) is proposed to obtain word-level representation alignment by inferring masked words from aligned words on the other language side.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s04::p001",
+   "summary": "BRLM stacks a shared encoder over both side sentences separately and includes Hard Alignment (BRLM-HA) and Soft Alignment (BRLM-SA) structures.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s04::p002",
+   "summary": "Hard Alignment (BRLM-HA) uses an external aligner tool on source↔pivot parallel data and predicts masked words from surrounding words and aligned encoder outputs.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s04::p003",
+   "summary": "Soft Alignment (BRLM-SA) uses an additional attention layer to learn alignment information, avoid wrong external alignments, and enable many-to-one soft alignment.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s04::p004",
+   "summary": "MLM and TLM learn implicit alignment inefficiently or lack explicit source-target alignment, while BRLM uses alignment information for better word-level representation alignment.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s05::p000",
+   "summary": "The typical zero-shot translation scenario has a high resource pivot language parallel with source and target languages, and the approach has pretraining and transfer phases.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s05::p001",
+   "summary": "The pretraining phase pretrains MLM on source and pivot monolingual corpora, then continues TLM or BRLM on source-pivot parallel data to build a shared cross-lingual encoder.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s05::p002",
+   "summary": "The transfer phase trains a pivot→target NMT model initialized by the cross-lingually pre-trained encoder, freezes several layers, and transfers it to source→target translation.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s05::p003",
+   "summary": "For scenarios with multiple languages on the source or target side, the encoder and decoder are shared across each side languages for efficient deployment.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s06::p000",
+   "summary": "The approach is evaluated against strong baselines on Europarl and MultiUN, which contain multi-parallel evaluation data, using BLEU as the automatic metric.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s07::p000",
+   "summary": "Europarl evaluates Fr-En-Es, De-En-Fr and Ro-En-De with English as pivot, using devtest2006, test2006, 1,000 overlapping newstest2016 sentences, 2,000 validation sentences, and 60K BPE sub-word tokens.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s07::p001",
+   "summary": "MultiUN uses English (En) as pivot with Arabic (Ar), Spanish (Es), and Russian (Ru), six zero-shot directions, 80K BPE splits, tokenize.perl tokenization, and lowercased data.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s08::p000",
+   "summary": "Baselines are traditional transfer learning, pivot-based method and multilingual NMT, with Transformer-big, 1024 embedding/hidden units, 4096 feed-forward filter size, 6 layers, 8 heads, batch size 2400, 100 BPE tokens, attn_drop=0, XLM initialization, Adam with lr=0.0001, t_warm_up=4000, dropout=0.1, and length penalty α=1.0.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s08::p001",
+   "summary": "MLM+TLM and MLM+BRLM initialize TLM and BRLM from MLM, mask 15% of BPE tokens with 80% [MASK], 10% random BPE token, 10% unchanged, use masked-word prediction accuracy for stopping, and use fastalign for BRLM-HA.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s09::p000",
+   "summary": "Table TABREF19 and TABREF26 show the approaches consistently outperform pivoting, multilingual NMT (MNMT), and cross-lingual transfer without pretraining across languages and datasets.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s10::p000",
+   "summary": "On Europarl, pivoting is the strongest baseline, while cross-lingual transfer for languages without shared vocabularies performs worst because it does not use source↔pivot parallel data.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s10::p001",
+   "summary": "MLM+BRLM-SA achieves superior zero-shot performance on Europarl, improving by 0.9-4.8 BLEU points over pivoting and outperforming the original supervised Transformer in pivot→target.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s10::p002",
+   "summary": "MLM alone outperforms cross-lingual transfer and is comparable to pivoting, while MLM+BRLM-SA performs best and shows soft alignment is more helpful than hard alignment.",
+   "group_id": "1912.01214::g00"
+  },
+  {
+   "passage_id": "1912.01214::s11::p000",
+   "summary": "On MultiUN, MLM+BRLM-SA performs best among proposed cross-lingual pretraining transfer approaches and significantly outperforms MNMT BIBREF19 for one encoder-decoder model zero-shot translation.",
+   "group_id": "1912.01214::g01"
+  },
+  {
+   "passage_id": "1912.01214::s11::p001",
+   "summary": "MLM+BRLM-SA exceeds strong pivoting_m on Es → Ar and Es → Ru, and with back translation surpasses pivoting_m by 2.4 BLEU points averagely and MNMT BIBREF22 by 4.6 BLEU points averagely.",
+   "group_id": "1912.01214::g01"
+  },
+  {
+   "passage_id": "1912.01214::s12::p000",
+   "summary": "Using max-pooling and cosine similarity on Europarl validation sets, MLM+BRLM-SA shows the most stable similar cross-lingual sentence representations on all layers and best zero-shot translation performance.",
+   "group_id": "1912.01214::g01"
+  },
+  {
+   "passage_id": "1912.01214::s13::p000",
+   "summary": "Visualizing an English-Russian MultiUN validation sentence pair, MLM+BRLM-SA hidden states show higher similarity for two aligned words, indicating better word-level representation alignment.",
+   "group_id": "1912.01214::g01"
+  },
+  {
+   "passage_id": "1912.01214::s14::p000",
+   "summary": "On MultiUN test set with MLM+BRLM-SA, freezing the first four transformer layers performs best, balancing pre-training and fine-tuning between zero-shot and supervised directions.",
+   "group_id": "1912.01214::g01"
+  },
+  {
+   "passage_id": "1912.01214::s15::p000",
+   "summary": "The paper proposes a cross-lingual pretraining based transfer approach for zero-shot translation, introducing one monolingual and two bilingual pretraining methods to build a universal encoder.",
+   "group_id": "1912.01214::g01"
+  },
+  {
+   "passage_id": "1912.01214::s16::p000",
+   "summary": "The authors thank anonymous reviewers and acknowledge support from National Key R&D Program of China, National Natural Science Foundation of China, Alibaba Group, and PAPD.",
+   "group_id": "1912.01214::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1912.01214::g00",
+   "summaries": [
+    {
+     "passage_id": "1912.01214::s00::p000",
+     "summary": "NMT relies on large-scale parallel data, performs poorly on low-resource or zero-resource pairs, and pivot-based methods double decoding time and propagate translation errors.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s00::p001",
+     "summary": "Transfer learning initializes a low-resource source→target child model from a high-resource pivot→target parent model but performs very poorly without child training data.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s00::p002",
+     "summary": "The language space mismatch problem, also named domain shift problem, causes zero-shot transfer failure because source and pivot feature distributions are not explicitly aligned.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s00::p003",
+     "summary": "The paper studies zero-shot transfer with source↔pivot and pivot↔target data but no source↔target data, proposing cross-lingual pre-training and BRidge Language Modeling (BRLM).",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s00::p004",
+     "summary": "The paper proposes a new transfer learning approach for NMT using cross-lingual language model pre-training to enable high performance on zero-shot translation.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s00::p005",
+     "summary": "The paper proposes a novel pre-training method called BRLM that effectively alleviates the distance between different source language spaces.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s00::p006",
+     "summary": "The proposed approach significantly improves zero-shot translation performance, consistently surpassing pivoting and multilingual approaches while maintaining or improving supervised translation direction performance.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s01::p000",
+     "summary": "Zero-shot translation in NMT has attracted widespread attention, with existing methods divided into pivot-based method, transfer learning, multilingual NMT, and unsupervised NMT.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s01::p001",
+     "summary": "Pivot-based Method includes pivoting and pivot-synthetic, but faces quadratic growth in source languages, computation expense, parameter vastness, and error propagation.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s01::p002",
+     "summary": "Transfer Learning for NMT uses a high-resource parent model to initialize a low-resource child model, with shared vocabularies or cross-lingual word embedding, but has limited zero-shot effects.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s01::p003",
+     "summary": "Multilingual NMT (MNMT) supports multiple source and target languages and unseen pairs, but zero-shot translation easily fails, is sensitive to hyper-parameter setting, and often underperforms pivoting.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s01::p004",
+     "summary": "Unsupervised NMT (UNMT) uses only large-scale monolingual corpora and performs well between similar languages, but distant-language performance remains far from expectation.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s01::p005",
+     "summary": "The proposed method belongs to transfer learning but uses cross-lingual pre-training before parent model training to make all source languages share the same feature space.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s02::p000",
+     "summary": "The section presents a cross-lingual pre-training based transfer approach for zero-shot scenarios with source↔pivot and pivot↔target bilingual data but no source↔target parallel data.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s02::p001",
+     "summary": "The first step pre-trains a universal encoder with source/pivot monolingual or source↔pivot bilingual data.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s02::p002",
+     "summary": "The second step trains a pivot→target parent model on the pre-trained universal encoder with available parallel data while freezing several layers to avoid degeneracy.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s02::p003",
+     "summary": "The third step directly translates source sentences into target sentences with the parent model, benefiting from the universal encoder.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s02::p004",
+     "summary": "The key difficulty is ensuring language-invariant intermediate representations, and the section presents two existing methods, a new cross-lingual pre-training method, and the transfer protocol.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s03::p000",
+     "summary": "Masked Language Modeling (MLM) and Translation Language Modeling (TLM) are effective on XNLI cross-lingual classification but understudied for zero-shot cross-lingual generation tasks.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s03::p001",
+     "summary": "MLM adopts the Cloze objective of BERT, predicts randomly masked words replaced with [MASK] token on monolingual corpora, and maps shared word pieces into a shared space.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s03::p002",
+     "summary": "TLM extends MLM by concatenating sentence pairs, masking words in both source and target sentences, and resetting target sentence positions to count from zero.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s04::p000",
+     "summary": "BRidge Language Modeling (BRLM) is proposed to obtain word-level representation alignment by inferring masked words from aligned words on the other language side.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s04::p001",
+     "summary": "BRLM stacks a shared encoder over both side sentences separately and includes Hard Alignment (BRLM-HA) and Soft Alignment (BRLM-SA) structures.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s04::p002",
+     "summary": "Hard Alignment (BRLM-HA) uses an external aligner tool on source↔pivot parallel data and predicts masked words from surrounding words and aligned encoder outputs.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s04::p003",
+     "summary": "Soft Alignment (BRLM-SA) uses an additional attention layer to learn alignment information, avoid wrong external alignments, and enable many-to-one soft alignment.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s04::p004",
+     "summary": "MLM and TLM learn implicit alignment inefficiently or lack explicit source-target alignment, while BRLM uses alignment information for better word-level representation alignment.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s05::p000",
+     "summary": "The typical zero-shot translation scenario has a high resource pivot language parallel with source and target languages, and the approach has pretraining and transfer phases.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s05::p001",
+     "summary": "The pretraining phase pretrains MLM on source and pivot monolingual corpora, then continues TLM or BRLM on source-pivot parallel data to build a shared cross-lingual encoder.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s05::p002",
+     "summary": "The transfer phase trains a pivot→target NMT model initialized by the cross-lingually pre-trained encoder, freezes several layers, and transfers it to source→target translation.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s05::p003",
+     "summary": "For scenarios with multiple languages on the source or target side, the encoder and decoder are shared across each side languages for efficient deployment.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s06::p000",
+     "summary": "The approach is evaluated against strong baselines on Europarl and MultiUN, which contain multi-parallel evaluation data, using BLEU as the automatic metric.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s07::p000",
+     "summary": "Europarl evaluates Fr-En-Es, De-En-Fr and Ro-En-De with English as pivot, using devtest2006, test2006, 1,000 overlapping newstest2016 sentences, 2,000 validation sentences, and 60K BPE sub-word tokens.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s07::p001",
+     "summary": "MultiUN uses English (En) as pivot with Arabic (Ar), Spanish (Es), and Russian (Ru), six zero-shot directions, 80K BPE splits, tokenize.perl tokenization, and lowercased data.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s08::p000",
+     "summary": "Baselines are traditional transfer learning, pivot-based method and multilingual NMT, with Transformer-big, 1024 embedding/hidden units, 4096 feed-forward filter size, 6 layers, 8 heads, batch size 2400, 100 BPE tokens, attn_drop=0, XLM initialization, Adam with lr=0.0001, t_warm_up=4000, dropout=0.1, and length penalty α=1.0.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s08::p001",
+     "summary": "MLM+TLM and MLM+BRLM initialize TLM and BRLM from MLM, mask 15% of BPE tokens with 80% [MASK], 10% random BPE token, 10% unchanged, use masked-word prediction accuracy for stopping, and use fastalign for BRLM-HA.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s09::p000",
+     "summary": "Table TABREF19 and TABREF26 show the approaches consistently outperform pivoting, multilingual NMT (MNMT), and cross-lingual transfer without pretraining across languages and datasets.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s10::p000",
+     "summary": "On Europarl, pivoting is the strongest baseline, while cross-lingual transfer for languages without shared vocabularies performs worst because it does not use source↔pivot parallel data.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s10::p001",
+     "summary": "MLM+BRLM-SA achieves superior zero-shot performance on Europarl, improving by 0.9-4.8 BLEU points over pivoting and outperforming the original supervised Transformer in pivot→target.",
+     "group_id": "1912.01214::g00"
+    },
+    {
+     "passage_id": "1912.01214::s10::p002",
+     "summary": "MLM alone outperforms cross-lingual transfer and is comparable to pivoting, while MLM+BRLM-SA performs best and shows soft alignment is more helpful than hard alignment.",
+     "group_id": "1912.01214::g00"
+    }
+   ],
+   "n_raw": 39,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5306,
+    "completion_tokens": 2192,
+    "total_tokens": 7498,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1912.01214::g01",
+   "summaries": [
+    {
+     "passage_id": "1912.01214::s11::p000",
+     "summary": "On MultiUN, MLM+BRLM-SA performs best among proposed cross-lingual pretraining transfer approaches and significantly outperforms MNMT BIBREF19 for one encoder-decoder model zero-shot translation.",
+     "group_id": "1912.01214::g01"
+    },
+    {
+     "passage_id": "1912.01214::s11::p001",
+     "summary": "MLM+BRLM-SA exceeds strong pivoting_m on Es → Ar and Es → Ru, and with back translation surpasses pivoting_m by 2.4 BLEU points averagely and MNMT BIBREF22 by 4.6 BLEU points averagely.",
+     "group_id": "1912.01214::g01"
+    },
+    {
+     "passage_id": "1912.01214::s12::p000",
+     "summary": "Using max-pooling and cosine similarity on Europarl validation sets, MLM+BRLM-SA shows the most stable similar cross-lingual sentence representations on all layers and best zero-shot translation performance.",
+     "group_id": "1912.01214::g01"
+    },
+    {
+     "passage_id": "1912.01214::s13::p000",
+     "summary": "Visualizing an English-Russian MultiUN validation sentence pair, MLM+BRLM-SA hidden states show higher similarity for two aligned words, indicating better word-level representation alignment.",
+     "group_id": "1912.01214::g01"
+    },
+    {
+     "passage_id": "1912.01214::s14::p000",
+     "summary": "On MultiUN test set with MLM+BRLM-SA, freezing the first four transformer layers performs best, balancing pre-training and fine-tuning between zero-shot and supervised directions.",
+     "group_id": "1912.01214::g01"
+    },
+    {
+     "passage_id": "1912.01214::s15::p000",
+     "summary": "The paper proposes a cross-lingual pretraining based transfer approach for zero-shot translation, introducing one monolingual and two bilingual pretraining methods to build a universal encoder.",
+     "group_id": "1912.01214::g01"
+    },
+    {
+     "passage_id": "1912.01214::s16::p000",
+     "summary": "The authors thank anonymous reviewers and acknowledge support from National Key R&D Program of China, National Natural Science Foundation of China, Alibaba Group, and PAPD.",
+     "group_id": "1912.01214::g01"
+    }
+   ],
+   "n_raw": 7,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1372,
+    "completion_tokens": 419,
+    "total_tokens": 1791,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

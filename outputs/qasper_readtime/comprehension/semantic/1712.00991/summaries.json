@@ -1,0 +1,392 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1712.00991::s00::p000",
+   "summary": "Performance appraisal (PA) is an important HR process that measures employee performance, links organizational goals to daily activities, and is actively researched.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s00::p001",
+   "summary": "Modern PA systems record interactions in computer-readable databases, enabling automated statistical, data-mining and text-mining analysis for large organizations with thousands of distributed employees.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s00::p002",
+   "summary": "A typical PA process involves multi-step multi-modal communication through self-appraisal, supervisor assessment, and peer feedback, with several business questions of interest to managers.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s00::p003",
+   "summary": "The paper develops text mining techniques for HR executives requiring minimum training data and parameter experimentation, implemented in a PA system at a large multi-national IT company.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s00::p004",
+   "summary": "The paper is organized around related work, the PA dataset, sentence classification, attribute mapping, peer feedback summarization, conclusions, and further work.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s01::p000",
+   "summary": "Related work reviews semantically classifying sentences by purpose using SVM and other classifiers across biomedical abstracts, emails, message boards, legal documents, and linguistic patterns.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s01::p001",
+   "summary": "The paper notes extensive work on dialogue acts but does not review it, citing Cotterill BIBREF17 on classifying email questions into dialogue acts.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s01::p002",
+   "summary": "Little work exists on mining performance appraisals data, including sentence classification, goal-description matching, and label propagation for discovering aspects in supervisor assessments.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s02::p000",
+   "summary": "The paper used supervisor assessment and peer feedback text from performance appraisals of 4528 employees, with 26972 supervisor assessment sentences and word-count statistics min:4 max:217 average:15.5 STDEV:9.2 Q1:9 Q2:14 Q3:19.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s03::p000",
+   "summary": "The paper focuses on three sentence classes in the PA corpus: STRENGTH, WEAKNESS, and SUGGESTION, noting overlap between WEAKNESS and SUGGESTION.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s03::p001",
+   "summary": "STRENGTH:",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s03::p002",
+   "summary": "WEAKNESS:",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s03::p003",
+   "summary": "SUGGESTION:",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s03::p004",
+   "summary": "The paper describes linguistic aspects of STRENGTH, WEAKNESS, and SUGGESTION sentences and builds POS-tagged pattern-based unsupervised classifiers with tie-breaking rules.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s03::p005",
+   "summary": "The authors randomly selected 2000 sentences as dataset D1, with 705 STRENGTH, 103 WEAKNESS, 822 SUGGESTION, and 370 OTHER labels, and trained several multi-class classifiers using 5-fold cross-validation.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s04::p000",
+   "summary": "Using TextBlob polarity scores as a sentiment baseline showed similar positive and negative sentiment distributions in STRENGTH and SUGGESTION, making sentiment information not much useful.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s05::p000",
+   "summary": "From 12742 predicted STRENGTH sentences and 9160 WEAKNESS or SUGGESTION sentences, noun and sentence clusters were compared, with users finding noun clusters more meaningful.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s06::p000",
+   "summary": "PA can be done along predefined attributes, with HR managers defining 15 attributes, including FUNCTIONAL_EXCELLENCE covering software engineering life-cycle tasks and technologies.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s06::p001",
+   "summary": "Mapping each sentence in the 3 classes to zero, one, two or more attributes is a multi-class multi-label classification problem needed to answer the second question.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s06::p002",
+   "summary": "The same 2000 sentences in Dataset D1 were manually tagged with attributes as dataset D2, with label counts and sentence counts for 0, 1, 2, or more than 2 attributes reported.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s06::p003",
+   "summary": "Precision, Recall and F-measure for multi-label classification are computed using a strategy similar to BIBREF21 with predicted and actual label sets.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s06::p004",
+   "summary": "Undefined instance-level precision and recall are excluded from averaging, and overall F-measure is computed using overall precision and recall.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s07::p000",
+   "summary": "The PA system includes peer feedback comments for each employee, requiring a summary of all comments about a given employee to answer the third question.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s07::p001",
+   "summary": "Peer comment sentences are identified and POS-tagged, candidate phrases are extracted, and Integer Linear Programming (ILP) selects a subset as the final summary.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s07::p002",
+   "summary": "humble nature, effective communication, technical expertise, always supportive, vast knowledge",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s07::p004",
+   "summary": "Following rules are used to identify candidate phrases:",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s07::p005",
+   "summary": "Various parameters are used to evaluate a candidate phrase for its importance.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s07::p006",
+   "summary": "A complete list of parameters is described in detail in Table TABREF36.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s07::p007",
+   "summary": "ILP constraints govern phrase selection, leadership attributes, shared headwords, single-word phrases, and soft-constraint penalties through slack variables.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s07::p008",
+   "summary": "The objective function maximizes total importance score of selected candidate phrases while minimizing the sum of all slack variables.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s07::p009",
+   "summary": "INLINEFORM0 : No. of candidate phrases INLINEFORM1 : No. of phrases to select as part of summary",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s07::p010",
+   "summary": "INLINEFORM0 INLINEFORM1 INLINEFORM2 INLINEFORM3 INLINEFORM4 INLINEFORM5 INLINEFORM6 INLINEFORM7 INLINEFORM8",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s07::p011",
+   "summary": "INLINEFORM0 and INLINEFORM1 INLINEFORM2 INLINEFORM3 INLINEFORM4 INLINEFORM5 INLINEFORM6",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s07::p012",
+   "summary": "INLINEFORM0 (For determining number of phrases to select to include in summary)",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s08::p000",
+   "summary": "On a dataset of 100 employees, ILP-based summaries were compared with manual summaries using ROUGE unigram score and Sumy algorithms, showing comparable performance and human preference for phrase-based summaries.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s09::p000",
+   "summary": "The paper analyzed PA text using sentence classification, clustering, multi-class multi-label classification, and ILP-based peer feedback summarization, with SVM with ADWS kernel BIBREF18 and Logistic Regression producing best results.",
+   "group_id": "1712.00991::s00"
+  },
+  {
+   "passage_id": "1712.00991::s09::p001",
+   "summary": "Further work includes comparing and combining insights from structured data and unstructured text, and automatically discovering additional performance attributes beyond the 15 attributes currently used by HR.",
+   "group_id": "1712.00991::s00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1712.00991::s00",
+   "summaries": [
+    {
+     "passage_id": "1712.00991::s00::p000",
+     "summary": "Performance appraisal (PA) is an important HR process that measures employee performance, links organizational goals to daily activities, and is actively researched.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s00::p001",
+     "summary": "Modern PA systems record interactions in computer-readable databases, enabling automated statistical, data-mining and text-mining analysis for large organizations with thousands of distributed employees.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s00::p002",
+     "summary": "A typical PA process involves multi-step multi-modal communication through self-appraisal, supervisor assessment, and peer feedback, with several business questions of interest to managers.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s00::p003",
+     "summary": "The paper develops text mining techniques for HR executives requiring minimum training data and parameter experimentation, implemented in a PA system at a large multi-national IT company.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s00::p004",
+     "summary": "The paper is organized around related work, the PA dataset, sentence classification, attribute mapping, peer feedback summarization, conclusions, and further work.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s01::p000",
+     "summary": "Related work reviews semantically classifying sentences by purpose using SVM and other classifiers across biomedical abstracts, emails, message boards, legal documents, and linguistic patterns.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s01::p001",
+     "summary": "The paper notes extensive work on dialogue acts but does not review it, citing Cotterill BIBREF17 on classifying email questions into dialogue acts.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s01::p002",
+     "summary": "Little work exists on mining performance appraisals data, including sentence classification, goal-description matching, and label propagation for discovering aspects in supervisor assessments.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s02::p000",
+     "summary": "The paper used supervisor assessment and peer feedback text from performance appraisals of 4528 employees, with 26972 supervisor assessment sentences and word-count statistics min:4 max:217 average:15.5 STDEV:9.2 Q1:9 Q2:14 Q3:19.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s03::p000",
+     "summary": "The paper focuses on three sentence classes in the PA corpus: STRENGTH, WEAKNESS, and SUGGESTION, noting overlap between WEAKNESS and SUGGESTION.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s03::p001",
+     "summary": "STRENGTH:",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s03::p002",
+     "summary": "WEAKNESS:",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s03::p003",
+     "summary": "SUGGESTION:",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s03::p004",
+     "summary": "The paper describes linguistic aspects of STRENGTH, WEAKNESS, and SUGGESTION sentences and builds POS-tagged pattern-based unsupervised classifiers with tie-breaking rules.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s03::p005",
+     "summary": "The authors randomly selected 2000 sentences as dataset D1, with 705 STRENGTH, 103 WEAKNESS, 822 SUGGESTION, and 370 OTHER labels, and trained several multi-class classifiers using 5-fold cross-validation.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s04::p000",
+     "summary": "Using TextBlob polarity scores as a sentiment baseline showed similar positive and negative sentiment distributions in STRENGTH and SUGGESTION, making sentiment information not much useful.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s05::p000",
+     "summary": "From 12742 predicted STRENGTH sentences and 9160 WEAKNESS or SUGGESTION sentences, noun and sentence clusters were compared, with users finding noun clusters more meaningful.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s06::p000",
+     "summary": "PA can be done along predefined attributes, with HR managers defining 15 attributes, including FUNCTIONAL_EXCELLENCE covering software engineering life-cycle tasks and technologies.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s06::p001",
+     "summary": "Mapping each sentence in the 3 classes to zero, one, two or more attributes is a multi-class multi-label classification problem needed to answer the second question.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s06::p002",
+     "summary": "The same 2000 sentences in Dataset D1 were manually tagged with attributes as dataset D2, with label counts and sentence counts for 0, 1, 2, or more than 2 attributes reported.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s06::p003",
+     "summary": "Precision, Recall and F-measure for multi-label classification are computed using a strategy similar to BIBREF21 with predicted and actual label sets.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s06::p004",
+     "summary": "Undefined instance-level precision and recall are excluded from averaging, and overall F-measure is computed using overall precision and recall.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s07::p000",
+     "summary": "The PA system includes peer feedback comments for each employee, requiring a summary of all comments about a given employee to answer the third question.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s07::p001",
+     "summary": "Peer comment sentences are identified and POS-tagged, candidate phrases are extracted, and Integer Linear Programming (ILP) selects a subset as the final summary.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s07::p002",
+     "summary": "humble nature, effective communication, technical expertise, always supportive, vast knowledge",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s07::p004",
+     "summary": "Following rules are used to identify candidate phrases:",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s07::p005",
+     "summary": "Various parameters are used to evaluate a candidate phrase for its importance.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s07::p006",
+     "summary": "A complete list of parameters is described in detail in Table TABREF36.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s07::p007",
+     "summary": "ILP constraints govern phrase selection, leadership attributes, shared headwords, single-word phrases, and soft-constraint penalties through slack variables.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s07::p008",
+     "summary": "The objective function maximizes total importance score of selected candidate phrases while minimizing the sum of all slack variables.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s07::p009",
+     "summary": "INLINEFORM0 : No. of candidate phrases INLINEFORM1 : No. of phrases to select as part of summary",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s07::p010",
+     "summary": "INLINEFORM0 INLINEFORM1 INLINEFORM2 INLINEFORM3 INLINEFORM4 INLINEFORM5 INLINEFORM6 INLINEFORM7 INLINEFORM8",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s07::p011",
+     "summary": "INLINEFORM0 and INLINEFORM1 INLINEFORM2 INLINEFORM3 INLINEFORM4 INLINEFORM5 INLINEFORM6",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s07::p012",
+     "summary": "INLINEFORM0 (For determining number of phrases to select to include in summary)",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s08::p000",
+     "summary": "On a dataset of 100 employees, ILP-based summaries were compared with manual summaries using ROUGE unigram score and Sumy algorithms, showing comparable performance and human preference for phrase-based summaries.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s09::p000",
+     "summary": "The paper analyzed PA text using sentence classification, clustering, multi-class multi-label classification, and ILP-based peer feedback summarization, with SVM with ADWS kernel BIBREF18 and Logistic Regression producing best results.",
+     "group_id": "1712.00991::s00"
+    },
+    {
+     "passage_id": "1712.00991::s09::p001",
+     "summary": "Further work includes comparing and combining insights from structured data and unstructured text, and automatically discovering additional performance attributes beyond the 15 attributes currently used by HR.",
+     "group_id": "1712.00991::s00"
+    }
+   ],
+   "n_raw": 37,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5138,
+    "completion_tokens": 1761,
+    "total_tokens": 6899,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "paper_id": "2003.11563",
+ "title": "Cost-Sensitive BERT for Generalisable Sentence Classification with Imbalanced Data",
+ "abstract": "The automatic identification of propaganda has gained significance in recent years due to technological and social changes in the way news is generated and consumed. That this task can be addressed effectively using BERT, a powerful new architecture which can be fine-tuned for text classification tasks, is not surprising. However, propaganda detection, like other tasks that deal with news documents and other forms of decontextualized social communication (e.g. sentiment analysis), inherently deals with data whose categories are simultaneously imbalanced and dissimilar. We show that BERT, while capable of handling imbalanced classes with no additional data augmentation, does not generalise well when the training and test data are sufficiently dissimilar (as is often the case with news sources, whose topics evolve over time). We show how to address this problem by providing a statistical measure of similarity between datasets and a method of incorporating cost-weighting into BERT when the training and test sets are dissimilar. We test these methods on the Propaganda Techniques Corpus (PTC) and achieve the second-highest score on sentence-level propaganda classification.",
+ "sections": [
+  "Introduction",
+  "Introduction ::: Detecting Propaganda",
+  "Related work ::: Propaganda detection",
+  "Related work ::: Class imbalance",
+  "Related work ::: Class imbalance ::: Cost-sensitive learning",
+  "Related work ::: Class imbalance ::: Data augmentation",
+  "Dataset",
+  "Dataset ::: Data Distribution",
+  "Methodology",
+  "Methodology ::: Class Imbalance in Sentence Level Classification",
+  "Methodology ::: Cost-sensitive Classification",
+  "Methodology ::: Fragment-level classification (FLC)",
+  "Results",
+  "Results ::: Results on the SLC task",
+  "Results ::: Results on the FLC task",
+  "Issues of Decontextualization in Automated Propaganda Detection",
+  "Conclusions and Future Work",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 58,
+ "n_tokens": 5581,
+ "figures_and_tables": [
+  {
+   "caption_id": "2003.11563::fig000",
+   "paper_id": "2003.11563",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1: p-values representing the similarity between (parts of) the train, test and development sets.",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "2003.11563::fig001",
+   "paper_id": "2003.11563",
+   "file": "5-Figure1-1.png",
+   "caption": "Figure 1: Excerpt of an example (truncated) news document with three separate field-level classification (FLC) tags, for LOADED LANGUAGE, FLAG-WAVING, AND WHATABOUTISM.",
+   "n_tokens": 42
+  },
+  {
+   "caption_id": "2003.11563::fig002",
+   "paper_id": "2003.11563",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: F1 scores on an unseen (not used for training) part of the training set and the development set on BERT using different augmentation techniques.",
+   "n_tokens": 33
+  },
+  {
+   "caption_id": "2003.11563::fig003",
+   "paper_id": "2003.11563",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3: Class-wise precision and recall with and without oversampling (OS) achieved on unseen part of the training set.",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "2003.11563::fig004",
+   "paper_id": "2003.11563",
+   "file": "7-Figure2-1.png",
+   "caption": "Figure 2: The impact of modifying the minority class weights on the performance on similar (subset of training set) and dissimilar (development) datasets. The method of increasing minority class weights is able to push the model towards generalisation while maintaining precision.",
+   "n_tokens": 51
+  },
+  {
+   "caption_id": "2003.11563::fig005",
+   "paper_id": "2003.11563",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: Our results on the SLC task (2nd, in bold) alongside comparable results from the competition leaderboard.",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "2003.11563::fig006",
+   "paper_id": "2003.11563",
+   "file": "8-Table5-1.png",
+   "caption": "Table 5: Our results on the FLC task (7th, in bold) alongside those of better performing teams from the competition leaderboard.",
+   "n_tokens": 29
+  }
+ ]
+}

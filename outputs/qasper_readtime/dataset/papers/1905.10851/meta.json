@@ -1,0 +1,85 @@
+{
+ "paper_id": "1905.10851",
+ "title": "When to reply? Context Sensitive Models to Predict Instructor Interventions in MOOC Forums",
+ "abstract": "Due to time constraints, course instructors often need to selectively participate in student discussion threads, due to their limited bandwidth and lopsided student--instructor ratio on online forums. We propose the first deep learning models for this binary prediction problem. We propose novel attention based models to infer the amount of latent context necessary to predict instructor intervention. Such models also allow themselves to be tuned to instructor's preference to intervene early or late. Our three proposed attentive model variants to infer the latent context improve over the state-of-the-art by a significant, large margin of 11% in F1 and 10% in recall, on average. Further, introspection of attention help us better understand what aspects of a discussion post propagate through the discussion thread that prompts instructor intervention.",
+ "sections": [
+  "Introduction",
+  "Problem Statement",
+  "Modelling Context in Forums",
+  "Instructor Intervention in MOOC forums",
+  "Data and Preprocessing",
+  "Model",
+  "Contextual Attention Models",
+  "Evaluation",
+  "Results",
+  "Discussion",
+  "Conclusion"
+ ],
+ "n_paragraphs": 40,
+ "n_tokens": 4664,
+ "figures_and_tables": [
+  {
+   "caption_id": "1905.10851::fig000",
+   "paper_id": "1905.10851",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: An example discussion thread from the ml005 MOOC where latent context candidates are marked with dotted red lines for instructor’s reply.",
+   "n_tokens": 29
+  },
+  {
+   "caption_id": "1905.10851::fig001",
+   "paper_id": "1905.10851",
+   "file": "2-Figure2-1.png",
+   "caption": "Figure 2: Structure of the discussion threads on Coursera with posts and one level of comments. Our models are aimed at capturing the structure at this level.",
+   "n_tokens": 33
+  },
+  {
+   "caption_id": "1905.10851::fig002",
+   "paper_id": "1905.10851",
+   "file": "4-Figure3-1.png",
+   "caption": "Figure 3: An LSTM post encoder whose last layer output is taken as the post representation or post vector Pi.",
+   "n_tokens": 23
+  },
+  {
+   "caption_id": "1905.10851::fig003",
+   "paper_id": "1905.10851",
+   "file": "5-Figure4-1.png",
+   "caption": "Figure 4: Ultimate Post Attention model: The last post before the instructor’s post is set as a query to attend over all the contexts prior to the post. The model hypothesises that the instructor is likely reply to the same context that the post that immediately precedes the instructor’s post, since natural language conversations are typically structured that way. The post vector Pi in this model are obtained from lstmpost, as shown in Figure 3.",
+   "n_tokens": 91
+  },
+  {
+   "caption_id": "1905.10851::fig004",
+   "paper_id": "1905.10851",
+   "file": "6-Figure5-1.png",
+   "caption": "Figure 5: The APA model is an extension of the UPA model in Figure 4. In this model, each post pi is set as a query to attend to its previous context ci−1, e.g., p2 will attend to c1 It hypothesises that the instructor may reply to a context that any previous post replied to.",
+   "n_tokens": 71
+  },
+  {
+   "caption_id": "1905.10851::fig005",
+   "paper_id": "1905.10851",
+   "file": "7-Table1-1.png",
+   "caption": "Table 1: Prediction performance for the positive class (intervened threads) of the three proposed models versus a neural baseline hLSTM, using hierarchical encoding of the discussion thread. Best performance in F1 and Recall is bolded. Column 2 shows # of threads in each course and the intervention ratio, the ratio of intervened to nonintervened threads, in parentheses.",
+   "n_tokens": 77
+  },
+  {
+   "caption_id": "1905.10851::fig006",
+   "paper_id": "1905.10851",
+   "file": "7-Table2-1.png",
+   "caption": "Table 2: Comparison across baseline models.",
+   "n_tokens": 9
+  },
+  {
+   "caption_id": "1905.10851::fig007",
+   "paper_id": "1905.10851",
+   "file": "8-Figure6-1.png",
+   "caption": "Figure 6: Recall scores plotted across different thread lengths. UPA’s performance drops steeply on threads of length > 1. Although APA’s performance on short threads is worse than others, it is better at predicting long threads which is a key objective of the model.",
+   "n_tokens": 55
+  },
+  {
+   "caption_id": "1905.10851::fig008",
+   "paper_id": "1905.10851",
+   "file": "8-Figure7-1.png",
+   "caption": "Figure 7: An example of a long thread from smac1 with nine posts that the APA model accurately predicted but not by UPA and PPA.",
+   "n_tokens": 32
+  }
+ ]
+}

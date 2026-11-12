@@ -1,0 +1,638 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1909.10012::s00::p000",
+   "summary": "Twitter user profiles comprise identity and connectivity attributes, and profile changes may reflect identity choices or indicate broader social movements.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s00::p001",
+   "summary": "The paper studies Twitter profile changes during India's 2019 general elections, held in 7 phases from 11th April, 2019 to 19th May, 2019, citing Narendra Modi's 49 million followers.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s00::p002",
+   "summary": "The authors examine #MainBhiChowkidar during #LokSabhaElections2019, launched by BJP after “Chowkidar chor hai,” focusing on display name changes after Narendra Modi added Chowkidar on 17th March 2019.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s00::p003",
+   "summary": "Figure FIGREF3 compares @narendramodi and @RahulGandhi profiles before, during, and after Lok Sabha Elections in 2019, showing the ruling leader changed profile information while the opposition did not.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s00::p004",
+   "summary": "The authors aim to understand political discourse through profile attributes on social media and introduce the questions addressed.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s01::p000",
+   "summary": "Analyzing user-profiles in elections requires distinguishing profile change behavior between political accounts and follower accounts, motivating the first research question.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s01::p001",
+   "summary": "RQ1 [Comparison] asks how often political accounts and common user accounts change profile information and which profile attributes are changed the most.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s01::p002",
+   "summary": "Although political inclination can be classified from past tweets and community detection, the authors note this analysis has not been extended in detail to user-profiles.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s01::p003",
+   "summary": "RQ2 [Political Inclination] asks whether users reveal political inclination on Twitter directly or indirectly using only their user profiles.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s01::p004",
+   "summary": "Behavior contagion is defined as adopting a behavior after an opinion leader adopts it, motivating analysis of the “Chowkidar” movement and the third research question.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s01::p005",
+   "summary": "RQ3 [Behavior Contagion] asks whether profile change behavior can be catered to behavior contagion effect where followers adopt an opinion as their opinion leader adopts it.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s01::p006",
+   "summary": "To characterize people in the chowkidar movement, the authors say major topic patterns must be analyzed, leading to another question.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s01::p007",
+   "summary": "RQ4 [Topic Modelling] asks what the most discussed topics are amongst users that were part of the Chowkidar campaign.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s02::p000",
+   "summary": "The authors state that their main contributions are summarized in the following points.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s02::p001",
+   "summary": "They collect daily and weekly profile snapshots of $1,293$ political handles and over 55 million followers over two months during and after #LokSabhaElections2019, promising data and code.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s02::p002",
+   "summary": "They analyze political and follower handles for profile changes, showing political handles change profiles more and certain attributes change more frequently with subtle behavioral differences.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s02::p003",
+   "summary": "They show Twitter users support political parties organically through party name mentions and inorganically through movements like #MainBhiChowkidar, analyzing Chowkidar as contagion behavior.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s02::p004",
+   "summary": "They perform topic modelling of Chowkidar movement users and show they were most likely Narendra Modi supporters and mostly discussed political topics on Twitter.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s03::p000",
+   "summary": "Data collection has two stages: manually curating political accounts on Twitter, then using them as a seed set to collect profile information of all followers.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s03::p001",
+   "summary": "For RQ1, $2,577$ Twitter handles were curated as $\\mathbf {U}$, of which $1,293$ verified handles formed $\\mathbf {P}$, snapshotted daily from 5th April - 5th June 2019.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s03::p002",
+   "summary": "Using $\\mathbf {P}$ as seed, 600 million followers yielded $55,830,844$ unique users, with 9 weekly snapshots from April 5 - June 5, 2019, and $\\mathbf {S}$ containing 49,433,640 accounts present in all snapshots.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s03::p003",
+   "summary": "The dataset contains daily and weekly snapshots for $\\mathbf {S}$ and $\\mathbf {P}$, collected via Twitter API with 34 attributes, then pre-processed to remove long-inactive handles.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s03::p004",
+   "summary": "In $\\mathbf {S}$, more than 15 million of 49 million users had no tweets or favourites, leaving 34 million Active users, of which only 5 million tweeted in 2019; the authors use 34 million for analysis.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s04::p000",
+   "summary": "This section characterizes profile change behavior of political accounts in Set $P$ and follower accounts in Set $S$.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s05::p000",
+   "summary": "In Set $U$, 54 handles got verified throughout 61 snapshots, and average followers of Set $P$ rose from $3,08,716.84$ to $3,19,881.09$, approximately $3\\%$ over 61 days.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s05::p001",
+   "summary": "The authors consider 5 major profile attributes—username, display name, profile image, location, and description—because these identity elements saliently define users' likes and values.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s05::p002",
+   "summary": "For $\\mathbf {P}$, 974 changes occurred across 5 attributes over 61 snapshots, with profile image most changed, display name second, a 23rd May, 2019 spike, and no username changes.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s06::p000",
+   "summary": "To characterize follower profile changing behavior, the authors study profile snapshots of all users in set $S$ over 9 snapshots.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s06::p001",
+   "summary": "Among active accounts, $1,363,499$ users made at least one profile attribute change over 9 snapshots, over $3\\%$, with more than $95\\%$ making only 1 change, around 275 making more than 20, and about 2 changes on average with standard deviation $1.42$.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s06::p002",
+   "summary": "Over the same 9 snapshots, $54.9\\%$ of $\\mathbf {P}$ users made at least one change versus $3\\%$ of $\\mathbf {S}$, and $\\mathbf {P}$ made $75.32\\%$ changes on average, 25 times more than $\\mathbf {S}$.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s06::p003",
+   "summary": "INSIGHT 1 states political handles are more likely than their followers to engage in profile changing behavior.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s06::p004",
+   "summary": "Figure FIGREF15 shows profile image and Location are most changed in set $S$, accounting for nearly $34\\%$ and $25\\%$, while follower handles often change usernames unlike political handles.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s06::p005",
+   "summary": "Follower handles use usernames to support a movement or person and later revert; of $79,991$ username changes, $1,711$ users of set ${S}$ went back and forth to the same name with Election related keywords.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s06::p006",
+   "summary": "INSIGHT 2 states users do not change all profile attributes equally, and political and follower handles focus on different profile attributes.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s07::p000",
+   "summary": "The authors analyze similarity between current and new display names and usernames in $\\mathbf {P}$ and $\\mathbf {S}$ using Longest Common Subsequence (LCS), where high average LCS scores indicate less significant changes.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s07::p001",
+   "summary": "Figure FIGREF18 shows nearly $80\\%$ of set $S$ users made more significant Display Name changes than political handles, with unrelated attributes at LCS score < $0.5$ for around $10\\%$ of $\\mathbf {P}$ and $30\\%$ of $\\mathbf {S}$.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s07::p002",
+   "summary": "INSIGHT 3 states political handles make new changes related to previous attribute values, while followers make comparatively less related changes.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s08::p000",
+   "summary": "This section describes political party name mentions and specific political handle mentions in profile attributes as organic support, then studies #MainBhiChowkidar and associated profile changes.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s09::p000",
+   "summary": "For Indian National Congress (INC) and Bhartiya Janta Party (BJP), $50,432$ users mentioned “BJP” in descriptions in the first snapshot, approximately $1\\%$ of active users, with $2,638$ adding and $1,638$ removing “BJP” later.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s10::p000",
+   "summary": "The authors observe many users wrote in their description that they are proud to be followed by a famous political handle, with examples in Table TABREF22.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s10::p001",
+   "summary": "An exhaustive search found $1,164$ instances of such description mentions, supporting with party mention analysis that people display political inclination via profile attributes.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s10::p002",
+   "summary": "INSIGHT 4 states Twitter users often display political inclinations in their profile attributes itself and are pretty open about it.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s11::p000",
+   "summary": "@narendramodi added “Chowkidar” after “Chowkidar chor hai,” BJP leaders and ministers followed, and users adopted several Chowkidar variants in an inorganic campaign catalyzed by political leaders.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s11::p001",
+   "summary": "A regular expression search found $2,60,607$ instances in set $S$ adding Chowkidar variants to display names, comprising 241 unique variants with 225 used fewer than 500 times; $14,409$ added it to description, $12,651$ to username, with union 270,945 and intersection 727.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s11::p002",
+   "summary": "The authors view profile changes following the Prime Minister's campaign as inorganic behavior contagion, noting opinion diffuses easily from opinion leaders with very high follower counts.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s11::p003",
+   "summary": "Figure FIGREF18 shows an LCS spike between $0.6$-$0.8$, mostly political handles adding Chowkidar, with $95.7\\%$ of users in that region, 373 people in set $P$ adding Chowkidar, 315 in that LCS range, and around $57\\%$ of set $S$ users in the region adding Chowkidar.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s11::p004",
+   "summary": "On 23rd May, Narendra Modi removed Chowkidar and urged others to do the same; most users followed, though some continued adding it, and the majority of set $\\mathbf {S}$ removed it too.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s11::p005",
+   "summary": "INSIGHT 5 states the Chowkidar movement was very widespread and illustrated contagion behavior.",
+   "group_id": "1909.10012::g00"
+  },
+  {
+   "passage_id": "1909.10012::s12::p000",
+   "summary": "LDA Mallet topic modelling with 10 topics and tSNE shows Chowkidar movement users were mostly BJP or Narendra Modi supporters, including students.",
+   "group_id": "1909.10012::g01"
+  },
+  {
+   "passage_id": "1909.10012::s12::p001",
+   "summary": "INSIGHT 6 states Chowkidar movement users were mostly Narendra Modi supporters and engaged in political topics.",
+   "group_id": "1909.10012::g01"
+  },
+  {
+   "passage_id": "1909.10012::s13::p000",
+   "summary": "The Related Work section reviews Twitter profile attribute changes, Social Media movements, contagion behavior adaptation through opinion leaders, and this work's contribution.",
+   "group_id": "1909.10012::g01"
+  },
+  {
+   "passage_id": "1909.10012::s14::p000",
+   "summary": "Previous studies examine Twitter username changes, reasons for changes, name squatting, and profile attributes representing oneself or social movements.",
+   "group_id": "1909.10012::g01"
+  },
+  {
+   "passage_id": "1909.10012::s15::p000",
+   "summary": "Studies of Social Media in movements describe participation, expression, Twitter tweet insights, LGBT decriminalization reactions, and Gezi Park username changes.",
+   "group_id": "1909.10012::g01"
+  },
+  {
+   "passage_id": "1909.10012::s15::p001",
+   "summary": "Alternative for Deutschland(AFD)'s success in German Federal Elections, 2017 is linked to online presence, tweet and retweet networks, communities, information flows, and influential leaders.",
+   "group_id": "1909.10012::g01"
+  },
+  {
+   "passage_id": "1909.10012::s16::p000",
+   "summary": "Opinion leaders influence online behavior adoption, with their performance affecting contagion and their Twitter activity contributing to political involvement.",
+   "group_id": "1909.10012::g01"
+  },
+  {
+   "passage_id": "1909.10012::s16::p001",
+   "summary": "The work contributes by investigating profile attribute changes relative to influential leaders and profile information changes during the election in the largest democracy in the world.",
+   "group_id": "1909.10012::g01"
+  },
+  {
+   "passage_id": "1909.10012::s17::p000",
+   "summary": "The paper studies Twitter profile attributes during #LokSabhaElectios2019 using 1,293 verified political leader's profile, 49,433,640 unique followers, 9 follower snapshots, and 61 Political handles.",
+   "group_id": "1909.10012::g01"
+  },
+  {
+   "passage_id": "1909.10012::s17::p001",
+   "summary": "Most users made at-most 4 changes, profile image changed most, political handles changed more, and about 80% follower changes related to #LokSabhaElectios2019.",
+   "group_id": "1909.10012::g01"
+  },
+  {
+   "passage_id": "1909.10012::s17::p002",
+   "summary": "Profile attributes can predict political inclination, party names signal organic support, campaign keywords signal inorganic behavior, and the “Chowkidar movement” showed behavior contagion after @narendramodi.",
+   "group_id": "1909.10012::g01"
+  },
+  {
+   "passage_id": "1909.10012::s17::p003",
+   "summary": "The analysis may help understand how election movements are perceived and sustained through profile attributes and provides baseline data on election campaigns.",
+   "group_id": "1909.10012::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1909.10012::g00",
+   "summaries": [
+    {
+     "passage_id": "1909.10012::s00::p000",
+     "summary": "Twitter user profiles comprise identity and connectivity attributes, and profile changes may reflect identity choices or indicate broader social movements.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s00::p001",
+     "summary": "The paper studies Twitter profile changes during India's 2019 general elections, held in 7 phases from 11th April, 2019 to 19th May, 2019, citing Narendra Modi's 49 million followers.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s00::p002",
+     "summary": "The authors examine #MainBhiChowkidar during #LokSabhaElections2019, launched by BJP after “Chowkidar chor hai,” focusing on display name changes after Narendra Modi added Chowkidar on 17th March 2019.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s00::p003",
+     "summary": "Figure FIGREF3 compares @narendramodi and @RahulGandhi profiles before, during, and after Lok Sabha Elections in 2019, showing the ruling leader changed profile information while the opposition did not.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s00::p004",
+     "summary": "The authors aim to understand political discourse through profile attributes on social media and introduce the questions addressed.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s01::p000",
+     "summary": "Analyzing user-profiles in elections requires distinguishing profile change behavior between political accounts and follower accounts, motivating the first research question.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s01::p001",
+     "summary": "RQ1 [Comparison] asks how often political accounts and common user accounts change profile information and which profile attributes are changed the most.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s01::p002",
+     "summary": "Although political inclination can be classified from past tweets and community detection, the authors note this analysis has not been extended in detail to user-profiles.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s01::p003",
+     "summary": "RQ2 [Political Inclination] asks whether users reveal political inclination on Twitter directly or indirectly using only their user profiles.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s01::p004",
+     "summary": "Behavior contagion is defined as adopting a behavior after an opinion leader adopts it, motivating analysis of the “Chowkidar” movement and the third research question.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s01::p005",
+     "summary": "RQ3 [Behavior Contagion] asks whether profile change behavior can be catered to behavior contagion effect where followers adopt an opinion as their opinion leader adopts it.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s01::p006",
+     "summary": "To characterize people in the chowkidar movement, the authors say major topic patterns must be analyzed, leading to another question.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s01::p007",
+     "summary": "RQ4 [Topic Modelling] asks what the most discussed topics are amongst users that were part of the Chowkidar campaign.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s02::p000",
+     "summary": "The authors state that their main contributions are summarized in the following points.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s02::p001",
+     "summary": "They collect daily and weekly profile snapshots of $1,293$ political handles and over 55 million followers over two months during and after #LokSabhaElections2019, promising data and code.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s02::p002",
+     "summary": "They analyze political and follower handles for profile changes, showing political handles change profiles more and certain attributes change more frequently with subtle behavioral differences.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s02::p003",
+     "summary": "They show Twitter users support political parties organically through party name mentions and inorganically through movements like #MainBhiChowkidar, analyzing Chowkidar as contagion behavior.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s02::p004",
+     "summary": "They perform topic modelling of Chowkidar movement users and show they were most likely Narendra Modi supporters and mostly discussed political topics on Twitter.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s03::p000",
+     "summary": "Data collection has two stages: manually curating political accounts on Twitter, then using them as a seed set to collect profile information of all followers.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s03::p001",
+     "summary": "For RQ1, $2,577$ Twitter handles were curated as $\\mathbf {U}$, of which $1,293$ verified handles formed $\\mathbf {P}$, snapshotted daily from 5th April - 5th June 2019.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s03::p002",
+     "summary": "Using $\\mathbf {P}$ as seed, 600 million followers yielded $55,830,844$ unique users, with 9 weekly snapshots from April 5 - June 5, 2019, and $\\mathbf {S}$ containing 49,433,640 accounts present in all snapshots.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s03::p003",
+     "summary": "The dataset contains daily and weekly snapshots for $\\mathbf {S}$ and $\\mathbf {P}$, collected via Twitter API with 34 attributes, then pre-processed to remove long-inactive handles.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s03::p004",
+     "summary": "In $\\mathbf {S}$, more than 15 million of 49 million users had no tweets or favourites, leaving 34 million Active users, of which only 5 million tweeted in 2019; the authors use 34 million for analysis.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s04::p000",
+     "summary": "This section characterizes profile change behavior of political accounts in Set $P$ and follower accounts in Set $S$.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s05::p000",
+     "summary": "In Set $U$, 54 handles got verified throughout 61 snapshots, and average followers of Set $P$ rose from $3,08,716.84$ to $3,19,881.09$, approximately $3\\%$ over 61 days.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s05::p001",
+     "summary": "The authors consider 5 major profile attributes—username, display name, profile image, location, and description—because these identity elements saliently define users' likes and values.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s05::p002",
+     "summary": "For $\\mathbf {P}$, 974 changes occurred across 5 attributes over 61 snapshots, with profile image most changed, display name second, a 23rd May, 2019 spike, and no username changes.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s06::p000",
+     "summary": "To characterize follower profile changing behavior, the authors study profile snapshots of all users in set $S$ over 9 snapshots.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s06::p001",
+     "summary": "Among active accounts, $1,363,499$ users made at least one profile attribute change over 9 snapshots, over $3\\%$, with more than $95\\%$ making only 1 change, around 275 making more than 20, and about 2 changes on average with standard deviation $1.42$.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s06::p002",
+     "summary": "Over the same 9 snapshots, $54.9\\%$ of $\\mathbf {P}$ users made at least one change versus $3\\%$ of $\\mathbf {S}$, and $\\mathbf {P}$ made $75.32\\%$ changes on average, 25 times more than $\\mathbf {S}$.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s06::p003",
+     "summary": "INSIGHT 1 states political handles are more likely than their followers to engage in profile changing behavior.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s06::p004",
+     "summary": "Figure FIGREF15 shows profile image and Location are most changed in set $S$, accounting for nearly $34\\%$ and $25\\%$, while follower handles often change usernames unlike political handles.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s06::p005",
+     "summary": "Follower handles use usernames to support a movement or person and later revert; of $79,991$ username changes, $1,711$ users of set ${S}$ went back and forth to the same name with Election related keywords.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s06::p006",
+     "summary": "INSIGHT 2 states users do not change all profile attributes equally, and political and follower handles focus on different profile attributes.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s07::p000",
+     "summary": "The authors analyze similarity between current and new display names and usernames in $\\mathbf {P}$ and $\\mathbf {S}$ using Longest Common Subsequence (LCS), where high average LCS scores indicate less significant changes.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s07::p001",
+     "summary": "Figure FIGREF18 shows nearly $80\\%$ of set $S$ users made more significant Display Name changes than political handles, with unrelated attributes at LCS score < $0.5$ for around $10\\%$ of $\\mathbf {P}$ and $30\\%$ of $\\mathbf {S}$.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s07::p002",
+     "summary": "INSIGHT 3 states political handles make new changes related to previous attribute values, while followers make comparatively less related changes.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s08::p000",
+     "summary": "This section describes political party name mentions and specific political handle mentions in profile attributes as organic support, then studies #MainBhiChowkidar and associated profile changes.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s09::p000",
+     "summary": "For Indian National Congress (INC) and Bhartiya Janta Party (BJP), $50,432$ users mentioned “BJP” in descriptions in the first snapshot, approximately $1\\%$ of active users, with $2,638$ adding and $1,638$ removing “BJP” later.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s10::p000",
+     "summary": "The authors observe many users wrote in their description that they are proud to be followed by a famous political handle, with examples in Table TABREF22.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s10::p001",
+     "summary": "An exhaustive search found $1,164$ instances of such description mentions, supporting with party mention analysis that people display political inclination via profile attributes.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s10::p002",
+     "summary": "INSIGHT 4 states Twitter users often display political inclinations in their profile attributes itself and are pretty open about it.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s11::p000",
+     "summary": "@narendramodi added “Chowkidar” after “Chowkidar chor hai,” BJP leaders and ministers followed, and users adopted several Chowkidar variants in an inorganic campaign catalyzed by political leaders.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s11::p001",
+     "summary": "A regular expression search found $2,60,607$ instances in set $S$ adding Chowkidar variants to display names, comprising 241 unique variants with 225 used fewer than 500 times; $14,409$ added it to description, $12,651$ to username, with union 270,945 and intersection 727.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s11::p002",
+     "summary": "The authors view profile changes following the Prime Minister's campaign as inorganic behavior contagion, noting opinion diffuses easily from opinion leaders with very high follower counts.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s11::p003",
+     "summary": "Figure FIGREF18 shows an LCS spike between $0.6$-$0.8$, mostly political handles adding Chowkidar, with $95.7\\%$ of users in that region, 373 people in set $P$ adding Chowkidar, 315 in that LCS range, and around $57\\%$ of set $S$ users in the region adding Chowkidar.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s11::p004",
+     "summary": "On 23rd May, Narendra Modi removed Chowkidar and urged others to do the same; most users followed, though some continued adding it, and the majority of set $\\mathbf {S}$ removed it too.",
+     "group_id": "1909.10012::g00"
+    },
+    {
+     "passage_id": "1909.10012::s11::p005",
+     "summary": "INSIGHT 5 states the Chowkidar movement was very widespread and illustrated contagion behavior.",
+     "group_id": "1909.10012::g00"
+    }
+   ],
+   "n_raw": 48,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 6185,
+    "completion_tokens": 2813,
+    "total_tokens": 8998,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1909.10012::g01",
+   "summaries": [
+    {
+     "passage_id": "1909.10012::s12::p000",
+     "summary": "LDA Mallet topic modelling with 10 topics and tSNE shows Chowkidar movement users were mostly BJP or Narendra Modi supporters, including students.",
+     "group_id": "1909.10012::g01"
+    },
+    {
+     "passage_id": "1909.10012::s12::p001",
+     "summary": "INSIGHT 6 states Chowkidar movement users were mostly Narendra Modi supporters and engaged in political topics.",
+     "group_id": "1909.10012::g01"
+    },
+    {
+     "passage_id": "1909.10012::s13::p000",
+     "summary": "The Related Work section reviews Twitter profile attribute changes, Social Media movements, contagion behavior adaptation through opinion leaders, and this work's contribution.",
+     "group_id": "1909.10012::g01"
+    },
+    {
+     "passage_id": "1909.10012::s14::p000",
+     "summary": "Previous studies examine Twitter username changes, reasons for changes, name squatting, and profile attributes representing oneself or social movements.",
+     "group_id": "1909.10012::g01"
+    },
+    {
+     "passage_id": "1909.10012::s15::p000",
+     "summary": "Studies of Social Media in movements describe participation, expression, Twitter tweet insights, LGBT decriminalization reactions, and Gezi Park username changes.",
+     "group_id": "1909.10012::g01"
+    },
+    {
+     "passage_id": "1909.10012::s15::p001",
+     "summary": "Alternative for Deutschland(AFD)'s success in German Federal Elections, 2017 is linked to online presence, tweet and retweet networks, communities, information flows, and influential leaders.",
+     "group_id": "1909.10012::g01"
+    },
+    {
+     "passage_id": "1909.10012::s16::p000",
+     "summary": "Opinion leaders influence online behavior adoption, with their performance affecting contagion and their Twitter activity contributing to political involvement.",
+     "group_id": "1909.10012::g01"
+    },
+    {
+     "passage_id": "1909.10012::s16::p001",
+     "summary": "The work contributes by investigating profile attribute changes relative to influential leaders and profile information changes during the election in the largest democracy in the world.",
+     "group_id": "1909.10012::g01"
+    },
+    {
+     "passage_id": "1909.10012::s17::p000",
+     "summary": "The paper studies Twitter profile attributes during #LokSabhaElectios2019 using 1,293 verified political leader's profile, 49,433,640 unique followers, 9 follower snapshots, and 61 Political handles.",
+     "group_id": "1909.10012::g01"
+    },
+    {
+     "passage_id": "1909.10012::s17::p001",
+     "summary": "Most users made at-most 4 changes, profile image changed most, political handles changed more, and about 80% follower changes related to #LokSabhaElectios2019.",
+     "group_id": "1909.10012::g01"
+    },
+    {
+     "passage_id": "1909.10012::s17::p002",
+     "summary": "Profile attributes can predict political inclination, party names signal organic support, campaign keywords signal inorganic behavior, and the “Chowkidar movement” showed behavior contagion after @narendramodi.",
+     "group_id": "1909.10012::g01"
+    },
+    {
+     "passage_id": "1909.10012::s17::p003",
+     "summary": "The analysis may help understand how election movements are perceived and sustained through profile attributes and provides baseline data on election campaigns.",
+     "group_id": "1909.10012::g01"
+    }
+   ],
+   "n_raw": 12,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 2146,
+    "completion_tokens": 613,
+    "total_tokens": 2759,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

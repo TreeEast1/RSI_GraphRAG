@@ -1,0 +1,352 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1810.12085::s00::p000",
+   "summary": "Clinical summarization is essential in medicine, with handoff summaries, progress notes, oral case presentations, and discharge summaries supporting communication and coordinated care.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s00::p001",
+   "summary": "Poor quality clinical summaries, limited EHR functionality, fragmented data, dictation readability issues, and incomplete discharge summaries can cause communication failures and medical errors.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s00::p002",
+   "summary": "Automated summary generation may save clinician time, avoid medical errors, and aid decisions; this work assesses extractive summarization upper bounds and develops an HPI topic classifier.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s01::p000",
+   "summary": "Summarization methods progressed from frequency-based sentence extraction to topic modeling, cue word dictionaries, title methods, and recent sequence-to-sequence abstractive approaches.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s01::p001",
+   "summary": "EHR summarization approaches have largely been extractive and indicative, with few deployments, limited demonstrated outcomes impact, and no known neural network literature.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s02::p000",
+   "summary": "MIMIC-III contains deidentified ICU EHRs from Beth Israel Deaconess Medical Center between 2001 and 2012, including 55,177 discharge reports and 4,475 addendums for 41,127 patients.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s03::p000",
+   "summary": "The first aim determines the upper bound of extractive summarization because discharge summaries may contain information discussed but never documented elsewhere in the EHR.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s03::p001",
+   "summary": "Discharge summaries were compared with current admission and entire record notes using UMLS CUIs extracted by Apache cTAKES and filtered to remove subsumed CUIs.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s03::p002",
+   "summary": "CUI overlap was calculated separately for chief complaint, major surgical or invasive procedure, discharge medication, and history of present illness sections, plus recorded genders.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s03::p003",
+   "summary": "For each of 55,177 discharge summary reports, CUI recall was calculated for current admission notes and entire longitudinal records, with low recall suggesting undocumented information.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s03::p004",
+   "summary": "Table TABREF14 shows section recall, with procedure highest at 0.807 and all five section recalls much higher than overall recall in Table TABREF13.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s03::p005",
+   "summary": "The upper bound analysis suggests extractive summarization alone may not recreate discharge summaries, while imperfect cTAKES CUI labelling requires further work.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p000",
+   "summary": "A classifier was developed for HPI topics using 515 manually annotated notes, with 40% labeled by clinicians, 60% by non-clinicians, and 10 labels.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p001",
+   "summary": "The LSTM model, adopted from Dernoncourt et al, jointly classifies each HPI word using token embedding, contextual representation, label scoring, and label sequence optimization layers.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p002",
+   "summary": "Lowercase italics denote scalars, lowercase bold denotes vectors, and uppercase italics denotes matrices in the following descriptions.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p003",
+   "summary": "The token embedding layer combines pretrained word2vec word embeddings from MIMIC (v30) and discharge notes with learned character embeddings, exploring CBOW and skip gram models.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p004",
+   "summary": "Each character in a word is mapped to an embedding and input into a bidirectional LSTM that outputs the word's character embedding.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p005",
+   "summary": "The token embedding layer outputs vector e by concatenating word embedding t and character embedding c.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p006",
+   "summary": "The contextual representation layer feeds word embeddings into a bi-directional LSTM and outputs concatenated hidden states for each HPI word.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p007",
+   "summary": "The label scoring layer uses a fully connected neural network with one hidden layer to output scores for each of the 10 categories for each word.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p008",
+   "summary": "The Label Sequence Optimization Layer uses a linear chain CRF to compute labeling sequence probability and find the highest probability sequence.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p009",
+   "summary": "T is a transition matrix, and INLINEFORM1 and INLINEFORM2 are score vectors describing the cost of beginning or ending with a label.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p010",
+   "summary": "The probability of a sequence of labels is calculated by applying a softmax layer.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p011",
+   "summary": "Cross-entropy loss is the objective function, using the correct label sequence and probability calculated according to the CRF.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p012",
+   "summary": "The model was evaluated on 515 annotated HPI notes split 70% train, 15% development, and 15% test, using Adam, learning rate = 0.001, decay = 0.9, dropout rate of 0.5, batch size = 20, 20 epochs, and early halting after 3 epochs.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p013",
+   "summary": "The impact of character embeddings, pretrained w2v embeddings, and learned word embeddings was evaluated on the dev set, with the best model reported on the test set.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p014",
+   "summary": "Table TABREF16 shows dev set results: discharge summary embeddings outperformed all MIMIC notes, CBOW outperformed skip gram, character embeddings increased performance by approximately 3%, and learned word embeddings achieved 0.886.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p015",
+   "summary": "The Learned Word Embeddings model achieved accuracy of 0.88 and F1-Score of 0.876 on the test set, with demographics and patient movement highest and vitals/labs and medication history lowest.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p016",
+   "summary": "Diagnosis history, patient movement, and procedure/results words were frequently labeled as symptoms/signs, with misclassifications possibly due to inconsistent manual labelling and needing further standardization.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p017",
+   "summary": "Future work should examine mislabeled categories and alternative architectures, because word level prediction can assign multiple labels to phrases and phrase segmentation is difficult.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s04::p018",
+   "summary": "Supplementing LSTM word embeddings with CUIs may improve performance by combining contextual word information with explicit medical domain expertise.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s05::p000",
+   "summary": "The paper developed a CUI-based upper bound on extractive summarization and a NN architecture jointly classifying HPI words, achieving excellent performance on a small heterogeneous dataset.",
+   "group_id": "1810.12085::g00"
+  },
+  {
+   "passage_id": "1810.12085::s06::p000",
+   "summary": "The authors thank named annotators, Pete Szolovits for guidance and pretrained word embeddings, and Tristan Naumann for providing the MIMIC CUIs.",
+   "group_id": "1810.12085::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1810.12085::g00",
+   "summaries": [
+    {
+     "passage_id": "1810.12085::s00::p000",
+     "summary": "Clinical summarization is essential in medicine, with handoff summaries, progress notes, oral case presentations, and discharge summaries supporting communication and coordinated care.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s00::p001",
+     "summary": "Poor quality clinical summaries, limited EHR functionality, fragmented data, dictation readability issues, and incomplete discharge summaries can cause communication failures and medical errors.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s00::p002",
+     "summary": "Automated summary generation may save clinician time, avoid medical errors, and aid decisions; this work assesses extractive summarization upper bounds and develops an HPI topic classifier.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s01::p000",
+     "summary": "Summarization methods progressed from frequency-based sentence extraction to topic modeling, cue word dictionaries, title methods, and recent sequence-to-sequence abstractive approaches.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s01::p001",
+     "summary": "EHR summarization approaches have largely been extractive and indicative, with few deployments, limited demonstrated outcomes impact, and no known neural network literature.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s02::p000",
+     "summary": "MIMIC-III contains deidentified ICU EHRs from Beth Israel Deaconess Medical Center between 2001 and 2012, including 55,177 discharge reports and 4,475 addendums for 41,127 patients.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s03::p000",
+     "summary": "The first aim determines the upper bound of extractive summarization because discharge summaries may contain information discussed but never documented elsewhere in the EHR.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s03::p001",
+     "summary": "Discharge summaries were compared with current admission and entire record notes using UMLS CUIs extracted by Apache cTAKES and filtered to remove subsumed CUIs.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s03::p002",
+     "summary": "CUI overlap was calculated separately for chief complaint, major surgical or invasive procedure, discharge medication, and history of present illness sections, plus recorded genders.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s03::p003",
+     "summary": "For each of 55,177 discharge summary reports, CUI recall was calculated for current admission notes and entire longitudinal records, with low recall suggesting undocumented information.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s03::p004",
+     "summary": "Table TABREF14 shows section recall, with procedure highest at 0.807 and all five section recalls much higher than overall recall in Table TABREF13.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s03::p005",
+     "summary": "The upper bound analysis suggests extractive summarization alone may not recreate discharge summaries, while imperfect cTAKES CUI labelling requires further work.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p000",
+     "summary": "A classifier was developed for HPI topics using 515 manually annotated notes, with 40% labeled by clinicians, 60% by non-clinicians, and 10 labels.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p001",
+     "summary": "The LSTM model, adopted from Dernoncourt et al, jointly classifies each HPI word using token embedding, contextual representation, label scoring, and label sequence optimization layers.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p002",
+     "summary": "Lowercase italics denote scalars, lowercase bold denotes vectors, and uppercase italics denotes matrices in the following descriptions.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p003",
+     "summary": "The token embedding layer combines pretrained word2vec word embeddings from MIMIC (v30) and discharge notes with learned character embeddings, exploring CBOW and skip gram models.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p004",
+     "summary": "Each character in a word is mapped to an embedding and input into a bidirectional LSTM that outputs the word's character embedding.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p005",
+     "summary": "The token embedding layer outputs vector e by concatenating word embedding t and character embedding c.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p006",
+     "summary": "The contextual representation layer feeds word embeddings into a bi-directional LSTM and outputs concatenated hidden states for each HPI word.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p007",
+     "summary": "The label scoring layer uses a fully connected neural network with one hidden layer to output scores for each of the 10 categories for each word.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p008",
+     "summary": "The Label Sequence Optimization Layer uses a linear chain CRF to compute labeling sequence probability and find the highest probability sequence.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p009",
+     "summary": "T is a transition matrix, and INLINEFORM1 and INLINEFORM2 are score vectors describing the cost of beginning or ending with a label.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p010",
+     "summary": "The probability of a sequence of labels is calculated by applying a softmax layer.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p011",
+     "summary": "Cross-entropy loss is the objective function, using the correct label sequence and probability calculated according to the CRF.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p012",
+     "summary": "The model was evaluated on 515 annotated HPI notes split 70% train, 15% development, and 15% test, using Adam, learning rate = 0.001, decay = 0.9, dropout rate of 0.5, batch size = 20, 20 epochs, and early halting after 3 epochs.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p013",
+     "summary": "The impact of character embeddings, pretrained w2v embeddings, and learned word embeddings was evaluated on the dev set, with the best model reported on the test set.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p014",
+     "summary": "Table TABREF16 shows dev set results: discharge summary embeddings outperformed all MIMIC notes, CBOW outperformed skip gram, character embeddings increased performance by approximately 3%, and learned word embeddings achieved 0.886.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p015",
+     "summary": "The Learned Word Embeddings model achieved accuracy of 0.88 and F1-Score of 0.876 on the test set, with demographics and patient movement highest and vitals/labs and medication history lowest.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p016",
+     "summary": "Diagnosis history, patient movement, and procedure/results words were frequently labeled as symptoms/signs, with misclassifications possibly due to inconsistent manual labelling and needing further standardization.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p017",
+     "summary": "Future work should examine mislabeled categories and alternative architectures, because word level prediction can assign multiple labels to phrases and phrase segmentation is difficult.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s04::p018",
+     "summary": "Supplementing LSTM word embeddings with CUIs may improve performance by combining contextual word information with explicit medical domain expertise.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s05::p000",
+     "summary": "The paper developed a CUI-based upper bound on extractive summarization and a NN architecture jointly classifying HPI words, achieving excellent performance on a small heterogeneous dataset.",
+     "group_id": "1810.12085::g00"
+    },
+    {
+     "passage_id": "1810.12085::s06::p000",
+     "summary": "The authors thank named annotators, Pete Szolovits for guidance and pretrained word embeddings, and Tristan Naumann for providing the MIMIC CUIs.",
+     "group_id": "1810.12085::g00"
+    }
+   ],
+   "n_raw": 33,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4838,
+    "completion_tokens": 1694,
+    "total_tokens": 6532,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

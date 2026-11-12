@@ -1,0 +1,542 @@
+{
+ "summaries": [
+  {
+   "passage_id": "2001.02885::s00::p000",
+   "summary": "Speculation detection and scope resolution distinguish factual from speculative information, support veracity and requirement analysis, especially in biomedical text, and split into cue detection and scope resolution.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s00::p001",
+   "summary": "The example sentence is “It might rain tomorrow.”",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s00::p002",
+   "summary": "In the example, ‘might’ is the speculation cue, ‘rain tomorrow’ is its scope, and scope words are affected by speculation.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s00::p003",
+   "summary": "The CoNLL-2010 Shared Task had 3 subtasks: Task 1B, Task 1W, and Task 2, with train and test sets called Task 1B CoNLL and Task 2 CoNLL.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s00::p004",
+   "summary": "Experiments use BioScope Abstracts sub corpora BA, BioScope Full Papers sub corpora BF, and SFU Review Corpus SFU.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s00::p005",
+   "summary": "Speculation and negation detection and scope resolution approaches evolved from rule-based systems through Maximum Entropy Classifiers, Support Vector Machines, Recursive Neural Networks, Convolutional Neural Networks, and BERT.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s00::p006",
+   "summary": "Inspired by BERT for negation detection and scope resolution, the authors compare BERT, XLNet, and RoBERTa on speculation detection and scope resolution using single and multiple dataset training.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s00::p007",
+   "summary": "Contrary to benchmark GLUE tasks, XLNet consistently outperforms RoBERTa, and negation experiments continue this trend with state-of-the-art results on three of four datasets.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s00::p008",
+   "summary": "Section 2 describes methodology, Section 3 presents speculation results, Section 4 shows negation results and explains XLNet, and Section 5 gives future scope and conclusion.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p000",
+   "summary": "The methodology by Khandelwal and Sawant (BIBREF12) is modified to support experimentation with multiple models.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p001",
+   "summary": "The section introduces Speculation Cue Detection.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p002",
+   "summary": "The input sentence is “It might rain tomorrow.”",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p003",
+   "summary": "The true labels are Not-A-Cue, Cue, Not-A-Cue, Not-A-Cue.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p004",
+   "summary": "The sentence is preprocessed to get target labels according to an annotation schema.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p005",
+   "summary": "The annotation schema is 1 – Normal Cue, 2 – Multiword Cue, 3 – Not a cue, 4 – Pad token.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p006",
+   "summary": "The preprocessed sequence is presented next.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p007",
+   "summary": "The preprocessed input sentence is [It, might, rain, tomorrow].",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p008",
+   "summary": "The preprocessed true labels are [3,1,3,3].",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p009",
+   "summary": "Input is preprocessed with the tokenizer for BERT, XLNet or RoBERTa by splitting words, converting tokens to tokenIDs, and padding to maximum input length.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p010",
+   "summary": "The tokenized input sentence is [wtt(It), wtt(might), wtt(rain), wtt(tom), wtt(## or), wtt(## row), wtt(〈pad 〉),wtt(〈pad 〉)...].",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p011",
+   "summary": "The tokenized true labels are [3,1,3,3,3,3,4,4,4,4,...].",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p012",
+   "summary": "‘tomorrow' is split into 3 tokens, ‘tom', ‘##or' and ‘##row', and wtt represents the word-to-tokenID conversion function.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p013",
+   "summary": "The section introduces Speculation Scope Resolution.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p014",
+   "summary": "If a sentence has multiple cues, each cue's scope is resolved individually.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p016",
+   "summary": "The true labels are Out-Of-Scope, Out-Of-Scope, In-Scope, In-Scope.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p018",
+   "summary": "The scope annotation schema is 0 – Out-Of-Scope and 1 – In-Scope.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p020",
+   "summary": "The true scope labels are [0,0,1,1].",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p021",
+   "summary": "Scope resolution preprocessing uses the model tokenizer and inserts a special token representing token type before the cue word whose scope is being resolved.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p022",
+   "summary": "The input sentence is [wtt(It), wtt(〈token[1]〉), wtt(might), wtt(rain), wtt(tom), wtt(##or), wtt(##row), wtt(〈pad〉), wtt(〈pad〉)...].",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p023",
+   "summary": "The true scope labels are [0,0,1,1,1,1,0,0,0,0,...].",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p024",
+   "summary": "The preprocessed input for cue detection and similarly for scope detection is fed to the model.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p025",
+   "summary": "The model output is X = Model (Input).",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p026",
+   "summary": "The logits are Y = W*X + b.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p027",
+   "summary": "The W matrix has size n_hidden x num_classes, and these logits are fed to the loss function.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p028",
+   "summary": "The following variants of each model are used.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p029",
+   "summary": "BERT uses bert-base-uncaseds3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased.tar.gz, the model used by BIBREF12.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p030",
+   "summary": "RoBERTa uses roberta-bases3.amazonaws.com/models.huggingface.co/bert/roberta-base-pytorch_model.bin, and RoBERTa-base does not have an uncased variant.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p031",
+   "summary": "XLNet uses xlnet-base-caseds3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin, and XLNet-base does not have an uncased variant.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p032",
+   "summary": "The model outputs probabilities per token, loss is calculated per token, and class weights set label 4 to 0 and all other labels to 1 for cue detection only.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p033",
+   "summary": "Precision, Recall, F1 are calculated per word rather than per token, and 2 methods are experimented with to find each word's label.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p034",
+   "summary": "Average averages softmax probabilities for each token a word was split into, takes an argmax, and compares with the original word's true label.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p035",
+   "summary": "First Token considers only the first token's probability vector as the word output and gets the label by argmax.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p036",
+   "summary": "Cue detection results are reported for Average only, while Scope Resolution reports scores for both Average and First Token.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p037",
+   "summary": "All 3 models use the same hyperparameters, finetune for 60 epochs with early stopping patience of 6 on word-level F1, learning rate 3e-5, batch size 8, and Categorical Cross Entropy loss.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s01::p038",
+   "summary": "Models use Huggingface’s Pytorch Transformer library (BIBREF23) and are trained on Google Colaboratory.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s02::p000",
+   "summary": "A default 70-15-15 split is used, single-dataset results average 5 runs, multiple-dataset results average 3 runs, and models perform best when trained on the same dataset except BF.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s02::p001",
+   "summary": "Figure FIGREF11 shows multiple-dataset training helps all models on each dataset, and XLNet consistently outperforms BERT and RoBERTa.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s03::p000",
+   "summary": "Negation experiments use a 70-15-15 split, all 4 datasets BF, BA, SFU and Sherlock, BERT results from BIBREF12, XLNet and RoBERTa averaged across 5 runs, and state-of-the-art negation scope resolution on BF, BA and SFU.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s03::p001",
+   "summary": "Domain specificity is a possible reason because negation and speculation are closely related subtasks, requiring further experimentation on different tasks.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s03::p002",
+   "summary": "Most benchmark tasks are sentence classification, while these subtasks are sequence labelling, and XLNet's permutation pre-training may capture long-term dependencies better.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s03::p003",
+   "summary": "The authors work with base variants of the models, while most results are reported with large variants.",
+   "group_id": "2001.02885::g00"
+  },
+  {
+   "passage_id": "2001.02885::s04::p000",
+   "summary": "The paper expands Khandelwal and Sawant (BIBREF12), reports F1 gains on BF, BA and SFU for speculation detection, scope resolution, multiple-dataset training, and negation scope resolution, and advances state-of-the-art.",
+   "group_id": "2001.02885::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "2001.02885::g00",
+   "summaries": [
+    {
+     "passage_id": "2001.02885::s00::p000",
+     "summary": "Speculation detection and scope resolution distinguish factual from speculative information, support veracity and requirement analysis, especially in biomedical text, and split into cue detection and scope resolution.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s00::p001",
+     "summary": "The example sentence is “It might rain tomorrow.”",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s00::p002",
+     "summary": "In the example, ‘might’ is the speculation cue, ‘rain tomorrow’ is its scope, and scope words are affected by speculation.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s00::p003",
+     "summary": "The CoNLL-2010 Shared Task had 3 subtasks: Task 1B, Task 1W, and Task 2, with train and test sets called Task 1B CoNLL and Task 2 CoNLL.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s00::p004",
+     "summary": "Experiments use BioScope Abstracts sub corpora BA, BioScope Full Papers sub corpora BF, and SFU Review Corpus SFU.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s00::p005",
+     "summary": "Speculation and negation detection and scope resolution approaches evolved from rule-based systems through Maximum Entropy Classifiers, Support Vector Machines, Recursive Neural Networks, Convolutional Neural Networks, and BERT.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s00::p006",
+     "summary": "Inspired by BERT for negation detection and scope resolution, the authors compare BERT, XLNet, and RoBERTa on speculation detection and scope resolution using single and multiple dataset training.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s00::p007",
+     "summary": "Contrary to benchmark GLUE tasks, XLNet consistently outperforms RoBERTa, and negation experiments continue this trend with state-of-the-art results on three of four datasets.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s00::p008",
+     "summary": "Section 2 describes methodology, Section 3 presents speculation results, Section 4 shows negation results and explains XLNet, and Section 5 gives future scope and conclusion.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p000",
+     "summary": "The methodology by Khandelwal and Sawant (BIBREF12) is modified to support experimentation with multiple models.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p001",
+     "summary": "The section introduces Speculation Cue Detection.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p002",
+     "summary": "The input sentence is “It might rain tomorrow.”",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p003",
+     "summary": "The true labels are Not-A-Cue, Cue, Not-A-Cue, Not-A-Cue.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p004",
+     "summary": "The sentence is preprocessed to get target labels according to an annotation schema.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p005",
+     "summary": "The annotation schema is 1 – Normal Cue, 2 – Multiword Cue, 3 – Not a cue, 4 – Pad token.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p006",
+     "summary": "The preprocessed sequence is presented next.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p007",
+     "summary": "The preprocessed input sentence is [It, might, rain, tomorrow].",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p008",
+     "summary": "The preprocessed true labels are [3,1,3,3].",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p009",
+     "summary": "Input is preprocessed with the tokenizer for BERT, XLNet or RoBERTa by splitting words, converting tokens to tokenIDs, and padding to maximum input length.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p010",
+     "summary": "The tokenized input sentence is [wtt(It), wtt(might), wtt(rain), wtt(tom), wtt(## or), wtt(## row), wtt(〈pad 〉),wtt(〈pad 〉)...].",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p011",
+     "summary": "The tokenized true labels are [3,1,3,3,3,3,4,4,4,4,...].",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p012",
+     "summary": "‘tomorrow' is split into 3 tokens, ‘tom', ‘##or' and ‘##row', and wtt represents the word-to-tokenID conversion function.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p013",
+     "summary": "The section introduces Speculation Scope Resolution.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p014",
+     "summary": "If a sentence has multiple cues, each cue's scope is resolved individually.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p016",
+     "summary": "The true labels are Out-Of-Scope, Out-Of-Scope, In-Scope, In-Scope.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p018",
+     "summary": "The scope annotation schema is 0 – Out-Of-Scope and 1 – In-Scope.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p020",
+     "summary": "The true scope labels are [0,0,1,1].",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p021",
+     "summary": "Scope resolution preprocessing uses the model tokenizer and inserts a special token representing token type before the cue word whose scope is being resolved.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p022",
+     "summary": "The input sentence is [wtt(It), wtt(〈token[1]〉), wtt(might), wtt(rain), wtt(tom), wtt(##or), wtt(##row), wtt(〈pad〉), wtt(〈pad〉)...].",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p023",
+     "summary": "The true scope labels are [0,0,1,1,1,1,0,0,0,0,...].",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p024",
+     "summary": "The preprocessed input for cue detection and similarly for scope detection is fed to the model.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p025",
+     "summary": "The model output is X = Model (Input).",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p026",
+     "summary": "The logits are Y = W*X + b.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p027",
+     "summary": "The W matrix has size n_hidden x num_classes, and these logits are fed to the loss function.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p028",
+     "summary": "The following variants of each model are used.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p029",
+     "summary": "BERT uses bert-base-uncaseds3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased.tar.gz, the model used by BIBREF12.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p030",
+     "summary": "RoBERTa uses roberta-bases3.amazonaws.com/models.huggingface.co/bert/roberta-base-pytorch_model.bin, and RoBERTa-base does not have an uncased variant.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p031",
+     "summary": "XLNet uses xlnet-base-caseds3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin, and XLNet-base does not have an uncased variant.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p032",
+     "summary": "The model outputs probabilities per token, loss is calculated per token, and class weights set label 4 to 0 and all other labels to 1 for cue detection only.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p033",
+     "summary": "Precision, Recall, F1 are calculated per word rather than per token, and 2 methods are experimented with to find each word's label.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p034",
+     "summary": "Average averages softmax probabilities for each token a word was split into, takes an argmax, and compares with the original word's true label.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p035",
+     "summary": "First Token considers only the first token's probability vector as the word output and gets the label by argmax.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p036",
+     "summary": "Cue detection results are reported for Average only, while Scope Resolution reports scores for both Average and First Token.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p037",
+     "summary": "All 3 models use the same hyperparameters, finetune for 60 epochs with early stopping patience of 6 on word-level F1, learning rate 3e-5, batch size 8, and Categorical Cross Entropy loss.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s01::p038",
+     "summary": "Models use Huggingface’s Pytorch Transformer library (BIBREF23) and are trained on Google Colaboratory.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s02::p000",
+     "summary": "A default 70-15-15 split is used, single-dataset results average 5 runs, multiple-dataset results average 3 runs, and models perform best when trained on the same dataset except BF.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s02::p001",
+     "summary": "Figure FIGREF11 shows multiple-dataset training helps all models on each dataset, and XLNet consistently outperforms BERT and RoBERTa.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s03::p000",
+     "summary": "Negation experiments use a 70-15-15 split, all 4 datasets BF, BA, SFU and Sherlock, BERT results from BIBREF12, XLNet and RoBERTa averaged across 5 runs, and state-of-the-art negation scope resolution on BF, BA and SFU.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s03::p001",
+     "summary": "Domain specificity is a possible reason because negation and speculation are closely related subtasks, requiring further experimentation on different tasks.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s03::p002",
+     "summary": "Most benchmark tasks are sentence classification, while these subtasks are sequence labelling, and XLNet's permutation pre-training may capture long-term dependencies better.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s03::p003",
+     "summary": "The authors work with base variants of the models, while most results are reported with large variants.",
+     "group_id": "2001.02885::g00"
+    },
+    {
+     "passage_id": "2001.02885::s04::p000",
+     "summary": "The paper expands Khandelwal and Sawant (BIBREF12), reports F1 gains on BF, BA and SFU for speculation detection, scope resolution, multiple-dataset training, and negation scope resolution, and advances state-of-the-art.",
+     "group_id": "2001.02885::g00"
+    }
+   ],
+   "n_raw": 52,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4530,
+    "completion_tokens": 2459,
+    "total_tokens": 6989,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

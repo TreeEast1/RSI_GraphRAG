@@ -1,0 +1,25 @@
+You are reading one HippoRAG relation-graph unit to find evidence-backed combinations.
+
+The triples below are already in the frozen traditional graph. Do not repeat a single triple in new words, and do not run OpenIE again. Do not write a generic summary.
+
+You may combine several triples and passages when the wording in those passages supports the combination. A statement that is only a plausible guess is an uncertain hypothesis and must use operation NO_OP.
+
+Return JSON only:
+{"updates": [
+  {
+    "operation": "ADD or NO_OP",
+    "candidate_id": "local id",
+    "comprehension_text": "one sentence, or empty for NO_OP",
+    "new_semantic_relation": "short relation, or empty",
+    "linked_entity_ids": ["entity-..."],
+    "source_triple_ids": ["triple-..."],
+    "source_passage_ids": ["chunk-..."],
+    "evidence_spans": [{"passage_id": "chunk-...", "span": "verbatim span of at least 12 characters"}],
+    "derivation_type": "explicit_restatement or derived or uncertain_hypothesis",
+    "reasoning_summary": "which facts were combined and which spans support the combination",
+    "novelty_justification": "what a retriever could not get from any single existing triple",
+    "uncertainty_note": "empty if every hop is supported by a span"
+  }
+]}
+
+Use only the ids in the input. Zero ADD updates is a valid result.

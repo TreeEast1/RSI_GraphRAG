@@ -1,0 +1,836 @@
+{
+ "kept": [
+  {
+   "insight_id": "1908.06267::g00:i01",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g00",
+   "concise_text": "Because MP iterations correspond to network depth and basic MPAD uses two MP iterations ($T$=2), basic MPAD has depth two.",
+   "triple": {
+    "subject": "basic MPAD",
+    "predicate": "requires",
+    "object": "network depth two"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1908.06267::s01::p004",
+    "1908.06267::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g00:b1:f02",
+    "1908.06267::g00:b9:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "Jointly supported: p004 says MP iterations correspond to network depth, and p008 says basic MPAD uses T=2; composing these yields depth two."
+   },
+   "unit_id": "1908.06267::u001"
+  },
+  {
+   "insight_id": "1908.06267::g00:i02",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g00",
+   "concise_text": "With two MP iterations ($T$=2), basic MPAD final vertex representations are based on messages propagated from subtrees of height 2 rooted at each vertex.",
+   "triple": {
+    "subject": "basic MPAD with $T$=2",
+    "predicate": "causes",
+    "object": "final vertex representations based on subtrees of height 2"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1908.06267::s01::p004",
+    "1908.06267::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g00:b1:f03",
+    "1908.06267::g00:b9:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "Jointly supported: p004 states final h_v^T is based on messages from subtree height T, and p008 states basic MPAD uses T=2. The 'causes' wording is acceptable as a setting-to-outcome relation explicitly defined by the text."
+   },
+   "unit_id": "1908.06267::u002"
+  },
+  {
+   "insight_id": "1908.06267::g00:i03",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g00",
+   "concise_text": "The multi-readout applied to all time steps takes into account local and global features because node features capture more and more global information as one iterates.",
+   "triple": {
+    "subject": "multi-readout applied to all time steps",
+    "predicate": "causes",
+    "object": "local and global features to be taken into account"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1908.06267::s04::p006",
+    "1908.06267::s04::p008"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g00:b4:f00",
+    "1908.06267::g00:b4:f01",
+    "1908.06267::g00:b4:f02",
+    "1908.06267::g00:b4:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Supported by p006 and p008: multi-readout applies readout to all time steps because features become more global while earlier local information may be useful, and p008 says this takes into account local and global features."
+   },
+   "unit_id": "1908.06267::u003"
+  },
+  {
+   "insight_id": "1908.06267::g00:i07",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g00",
+   "concise_text": "The hierarchical MPAD variants are compared fairly against hierarchical baselines including LSTM-GRNN BIBREF26 and HN-ATT.",
+   "triple": {
+    "subject": "hierarchical MPAD variants",
+    "predicate": "evaluated_on",
+    "object": "hierarchical baselines including LSTM-GRNN BIBREF26 and HN-ATT"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1908.06267::s07::p000",
+    "1908.06267::s07::p012",
+    "1908.06267::s07::p013"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g00:b6:f06",
+    "1908.06267::g00:b8:f08",
+    "1908.06267::g00:b9:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Jointly supported: p000 says hierarchical baselines are included for fair comparison with hierarchical MPAD variants, and p012/p013 identify LSTM-GRNN and HN-ATT as hierarchical models."
+   },
+   "unit_id": "1908.06267::u007"
+  },
+  {
+   "insight_id": "1908.06267::g00:i08",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g00",
+   "concise_text": "The experimental directed word co-occurrence network built from each document with a window of size 2 implements MPAD's statistical word co-occurrence network with a sliding window of size 2.",
+   "triple": {
+    "subject": "experimental directed word co-occurrence network",
+    "predicate": "extends",
+    "object": "MPAD's statistical word co-occurrence network with a sliding window of size 2"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1908.06267::s02::p000",
+    "1908.06267::s08::p000"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g00:b1:f06",
+    "1908.06267::g00:b9:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Jointly supported: p000 defines MPAD's statistical word co-occurrence network with sliding window size 2, and p008 says experiments build a directed word co-occurrence network from each document with window size 2."
+   },
+   "unit_id": "1908.06267::u008"
+  },
+  {
+   "insight_id": "1908.06267::g01:i00",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g01",
+   "concise_text": "MPAD reaches best performance on 7 out of 10 datasets, supporting the conclusion that experiments on 10 standard text classification datasets show the architecture is competitive with the state-of-the-art.",
+   "triple": {
+    "subject": "MPAD reaching best performance on 7 out of 10 datasets",
+    "predicate": "supports",
+    "object": "competitive with the state-of-the-art on 10 standard text classification datasets"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1908.06267::s09::p000",
+    "1908.06267::s12::p000"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g01:b0:f01",
+    "1908.06267::g01:b2:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Jointly supported: p000 reports best performance on 7/10 datasets and close second elsewhere, supporting p000 in s12's conclusion that experiments on 10 standard text classification datasets show competitiveness with state of the art."
+   },
+   "unit_id": "1908.06267::u010"
+  },
+  {
+   "insight_id": "1908.06267::g01:i01",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g01",
+   "concise_text": "One or more hierarchical variants outperform vanilla MPAD on 9 datasets out of 10, supporting the conclusion that three hierarchical variants bring improvements over the vanilla architecture.",
+   "triple": {
+    "subject": "hierarchical variants outperforming vanilla MPAD on 9 datasets out of 10",
+    "predicate": "supports",
+    "object": "three hierarchical variants bring improvements over the vanilla architecture"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1908.06267::s09::p001",
+    "1908.06267::s12::p000"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g01:b0:f03"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Jointly supported: p001 says one or more hierarchical variants outperform vanilla MPAD on 9/10 datasets, supporting the conclusion in s12 that three hierarchical variants bring improvements."
+   },
+   "unit_id": "1908.06267::u011"
+  },
+  {
+   "insight_id": "1908.06267::g01:i02",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g01",
+   "concise_text": "Additional experiments on Reuters, Polarity, and IMDB with non-hierarchical MPAD found that using an undirected graph improves Reuters but has the opposite effect on Polarity and IMDB.",
+   "triple": {
+    "subject": "non-hierarchical MPAD on Reuters, Polarity, and IMDB",
+    "predicate": "evaluated_on",
+    "object": "undirected graph ablation"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1908.06267::s10::p000",
+    "1908.06267::s10::p002"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g01:b0:f08",
+    "1908.06267::g01:b0:f09",
+    "1908.06267::g01:b0:f14",
+    "1908.06267::g01:b0:f15"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Jointly supported: p000 establishes the additional experiments on Reuters, Polarity, and IMDB with non-hierarchical MPAD, and p002 reports the undirected graph ablation results."
+   },
+   "unit_id": "1908.06267::u012"
+  },
+  {
+   "insight_id": "1908.06267::g01:i03",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g01",
+   "concise_text": "Additional experiments on Reuters, Polarity, and IMDB with non-hierarchical MPAD found that varying message passing iterations from 1 to 4 improves performance with more iterations.",
+   "triple": {
+    "subject": "non-hierarchical MPAD on Reuters, Polarity, and IMDB",
+    "predicate": "evaluated_on",
+    "object": "message passing iterations from 1 to 4"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1908.06267::s10::p000",
+    "1908.06267::s10::p001"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g01:b0:f08",
+    "1908.06267::g01:b0:f09",
+    "1908.06267::g01:b0:f10",
+    "1908.06267::g01:b0:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.94,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Jointly supported: p000 establishes the experimental setting, and p001 says iterations were varied from 1 to 4 and that more iterations improve performance."
+   },
+   "unit_id": "1908.06267::u013"
+  },
+  {
+   "insight_id": "1908.06267::g01:i04",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g01",
+   "concise_text": "Additional experiments on Reuters, Polarity, and IMDB with non-hierarchical MPAD found that removing the master node deteriorates performance across all datasets.",
+   "triple": {
+    "subject": "non-hierarchical MPAD on Reuters, Polarity, and IMDB",
+    "predicate": "evaluated_on",
+    "object": "removing the master node"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1908.06267::s10::p000",
+    "1908.06267::s10::p003"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g01:b0:f08",
+    "1908.06267::g01:b0:f09",
+    "1908.06267::g01:b1:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Jointly supported: p000 establishes the experimental setting, and p003 states removing the master node deteriorates performance across all datasets."
+   },
+   "unit_id": "1908.06267::u014"
+  },
+  {
+   "insight_id": "1908.06267::g01:i05",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g01",
+   "concise_text": "Additional experiments on Reuters, Polarity, and IMDB with non-hierarchical MPAD found that using sum instead of mean decreases performance everywhere.",
+   "triple": {
+    "subject": "non-hierarchical MPAD on Reuters, Polarity, and IMDB",
+    "predicate": "evaluated_on",
+    "object": "using sum instead of mean"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1908.06267::s10::p000",
+    "1908.06267::s10::p004"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g01:b0:f08",
+    "1908.06267::g01:b0:f09",
+    "1908.06267::g01:b1:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Both cited passages exist and jointly support that additional non-hierarchical MPAD experiments on Reuters, Polarity, and IMDB found sum instead of mean decreases performance everywhere; composed across experimental setup and result."
+   },
+   "unit_id": "1908.06267::u015"
+  },
+  {
+   "insight_id": "1908.06267::g01:i06",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g01",
+   "concise_text": "Additional experiments on Reuters, Polarity, and IMDB with non-hierarchical MPAD found that replacing the GRU combine function with the identity function makes performance always suffer except on Reuters.",
+   "triple": {
+    "subject": "non-hierarchical MPAD on Reuters, Polarity, and IMDB",
+    "predicate": "evaluated_on",
+    "object": "replacing the GRU combine function with the identity function"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1908.06267::s10::p000",
+    "1908.06267::s10::p005"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g01:b0:f08",
+    "1908.06267::g01:b0:f09",
+    "1908.06267::g01:b1:f06",
+    "1908.06267::g01:b1:f08"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Both cited passages exist and jointly support that additional non-hierarchical MPAD experiments on the three datasets found replacing GRU combine with identity hurts performance except on Reuters; composed across setup and result."
+   },
+   "unit_id": "1908.06267::u016"
+  },
+  {
+   "insight_id": "1908.06267::g01:i07",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g01",
+   "concise_text": "Because Reuters is a topic classification task while Polarity and IMDB are sentiment analysis tasks, undirected edges help Reuters but hurt sentiment tasks where modeling word order is crucial.",
+   "triple": {
+    "subject": "topic classification versus sentiment analysis tasks",
+    "predicate": "causes",
+    "object": "undirected edges helping Reuters but having opposite performance on Polarity and IMDB"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1908.06267::s10::p002",
+    "1908.06267::s12::p000"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g01:b0:f14",
+    "1908.06267::g01:b0:f15",
+    "1908.06267::g01:b0:f16",
+    "1908.06267::g01:b0:f17",
+    "1908.06267::g01:b0:f18",
+    "1908.06267::g01:b2:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "Cited passages exist; p002 explicitly explains the Reuters versus Polarity/IMDB performance difference by task type and word-order importance, and p000 supports MPAD sensitivity to word order. Causal explanation is stated, not merely inferred from co-occurrence."
+   },
+   "unit_id": "1908.06267::u017"
+  },
+  {
+   "insight_id": "1908.06267::g01:i08",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g01",
+   "concise_text": "BIBREF53 requires computing PMI for every word pair in the vocabulary, while MPAD complexity does not depend on vocabulary size, avoiding a limitation on datasets with very large vocabularies.",
+   "triple": {
+    "subject": "MPAD complexity not depending on vocabulary size",
+    "predicate": "limits",
+    "object": "the PMI vocabulary-size limitation of BIBREF53"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1908.06267::s11::p004",
+    "1908.06267::s11::p005"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g01:b2:f01",
+    "1908.06267::g01:b2:f04",
+    "1908.06267::g01:b2:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Both cited passages exist and jointly support the composed limitation: BIBREF53 requires PMI for every vocabulary word pair, potentially prohibitive for large vocabularies, while MPAD complexity does not depend on vocabulary size."
+   },
+   "unit_id": "1908.06267::u018"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1908.06267::g00:i00",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g00",
+   "concise_text": "MPAD addresses the limited application of the MP framework to representation learning on text by representing documents as word co-occurrence networks and developing an expressive MP GNN.",
+   "triple": {
+    "subject": "MPAD",
+    "predicate": "addresses",
+    "object": "the limited application of the MP framework to representation learning on text"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1908.06267::s00::p002",
+    "1908.06267::s02::p000"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g00:b0:f07",
+    "1908.06267::g00:b1:f06"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Supported by p002, but it is essentially a restatement/paraphrase of the paper's stated problem and proposed application."
+   },
+   "unit_id": "1908.06267::u000"
+  },
+  {
+   "insight_id": "1908.06267::g00:i04",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g00",
+   "concise_text": "The special document node linked to all other nodes via unit weight bi-directional edges is the master node vector that bypasses the attention mechanism.",
+   "triple": {
+    "subject": "special document node",
+    "predicate": "extends",
+    "object": "master node vector that bypasses the attention mechanism"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1908.06267::s02::p002",
+    "1908.06267::s04::p005"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g00:b1:f12",
+    "1908.06267::g00:b3:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.4,
+    "causality_error": false,
+    "reason": "The sources identify the special document node as the master node and say the master node vector bypasses attention, but the triple's 'extends' relation is not supported and the concise_text conflates the node with its vector."
+   },
+   "unit_id": "1908.06267::u004"
+  },
+  {
+   "insight_id": "1908.06267::g00:i05",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g00",
+   "concise_text": "The master node skip connection directly injects global information about the document into its final representation because the special document node is linked to all other nodes.",
+   "triple": {
+    "subject": "master node skip connection",
+    "predicate": "causes",
+    "object": "global information about the document to be directly injected into its final representation"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1908.06267::s02::p002",
+    "1908.06267::s04::p005"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g00:b1:f12",
+    "1908.06267::g00:b3:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.35,
+    "causality_error": true,
+    "reason": "p005 supports that the skip connection directly injects global information, but the stated reason is that the special document node is expected to learn a high-level summary; the causal claim 'because linked to all other nodes' is only hypothesized/indirectly related."
+   },
+   "unit_id": "1908.06267::u005"
+  },
+  {
+   "insight_id": "1908.06267::g00:i06",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g00",
+   "concise_text": "MPAD and SPGK BIBREF44 both model documents as word co-occurrence networks, but SPGK BIBREF44 uses a graph kernel and a SVM to categorize documents.",
+   "triple": {
+    "subject": "SPGK BIBREF44",
+    "predicate": "evaluated_on",
+    "object": "documents as word co-occurrence networks with a graph kernel and a SVM"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1908.06267::s02::p000",
+    "1908.06267::s07::p008"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g00:b1:f06",
+    "1908.06267::g00:b8:f02",
+    "1908.06267::g00:b8:f03",
+    "1908.06267::g00:b8:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.45,
+    "causality_error": false,
+    "reason": "Sources support that SPGK models documents as word co-occurrence networks and uses a graph kernel plus SVM, but the triple's predicate 'evaluated_on' and object wording are inconsistent with the concise_text and source facts."
+   },
+   "unit_id": "1908.06267::u006"
+  },
+  {
+   "insight_id": "1908.06267::g00:i09",
+   "paper_id": "1908.06267",
+   "group_id": "1908.06267::g00",
+   "concise_text": "On all datasets except Yelp2013, MPAD initializes node representations $\\mathbf {H}^0$ with the publicly available 300-dimensional pre-trained Google News vectors ($D$=300) BIBREF50.",
+   "triple": {
+    "subject": "MPAD on all datasets except Yelp2013",
+    "predicate": "requires",
+    "object": "the publicly available 300-dimensional pre-trained Google News vectors ($D$=300) BIBREF50"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1908.06267::s06::p000",
+    "1908.06267::s08::p003"
+   ],
+   "supporting_fact_ids": [
+    "1908.06267::g00:b5:f00",
+    "1908.06267::g00:b9:f13"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.83,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Directly restates p003; no meaningful composition or inference beyond a single paragraph."
+   },
+   "unit_id": "1908.06267::u009"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1908.06267::g00:i00",
+    "verdict": {
+     "insight_id": "1908.06267::g00:i00",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Supported by p002, but it is essentially a restatement/paraphrase of the paper's stated problem and proposed application."
+    },
+    "reason": "Supported by p002, but it is essentially a restatement/paraphrase of the paper's stated problem and proposed application."
+   },
+   {
+    "insight_id": "1908.06267::g00:i01",
+    "verdict": {
+     "insight_id": "1908.06267::g00:i01",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "Jointly supported: p004 says MP iterations correspond to network depth, and p008 says basic MPAD uses T=2; composing these yields depth two."
+    }
+   },
+   {
+    "insight_id": "1908.06267::g00:i02",
+    "verdict": {
+     "insight_id": "1908.06267::g00:i02",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "Jointly supported: p004 states final h_v^T is based on messages from subtree height T, and p008 states basic MPAD uses T=2. The 'causes' wording is acceptable as a setting-to-outcome relation explicitly defined by the text."
+    }
+   },
+   {
+    "insight_id": "1908.06267::g00:i03",
+    "verdict": {
+     "insight_id": "1908.06267::g00:i03",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Supported by p006 and p008: multi-readout applies readout to all time steps because features become more global while earlier local information may be useful, and p008 says this takes into account local and global features."
+    }
+   },
+   {
+    "insight_id": "1908.06267::g00:i04",
+    "verdict": {
+     "insight_id": "1908.06267::g00:i04",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.4,
+     "causality_error": false,
+     "reason": "The sources identify the special document node as the master node and say the master node vector bypasses attention, but the triple's 'extends' relation is not supported and the concise_text conflates the node with its vector."
+    },
+    "reason": "The sources identify the special document node as the master node and say the master node vector bypasses attention, but the triple's 'extends' relation is not supported and the concise_text conflates the node with its vector."
+   },
+   {
+    "insight_id": "1908.06267::g00:i05",
+    "verdict": {
+     "insight_id": "1908.06267::g00:i05",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.35,
+     "causality_error": true,
+     "reason": "p005 supports that the skip connection directly injects global information, but the stated reason is that the special document node is expected to learn a high-level summary; the causal claim 'because linked to all other nodes' is only hypothesized/indirectly related."
+    },
+    "reason": "p005 supports that the skip connection directly injects global information, but the stated reason is that the special document node is expected to learn a high-level summary; the causal claim 'because linked to all other nodes' is only hypothesized/indirectly related."
+   },
+   {
+    "insight_id": "1908.06267::g00:i06",
+    "verdict": {
+     "insight_id": "1908.06267::g00:i06",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.45,
+     "causality_error": false,
+     "reason": "Sources support that SPGK models documents as word co-occurrence networks and uses a graph kernel plus SVM, but the triple's predicate 'evaluated_on' and object wording are inconsistent with the concise_text and source facts."
+    },
+    "reason": "Sources support that SPGK models documents as word co-occurrence networks and uses a graph kernel plus SVM, but the triple's predicate 'evaluated_on' and object wording are inconsistent with the concise_text and source facts."
+   },
+   {
+    "insight_id": "1908.06267::g00:i07",
+    "verdict": {
+     "insight_id": "1908.06267::g00:i07",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Jointly supported: p000 says hierarchical baselines are included for fair comparison with hierarchical MPAD variants, and p012/p013 identify LSTM-GRNN and HN-ATT as hierarchical models."
+    }
+   },
+   {
+    "insight_id": "1908.06267::g00:i08",
+    "verdict": {
+     "insight_id": "1908.06267::g00:i08",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Jointly supported: p000 defines MPAD's statistical word co-occurrence network with sliding window size 2, and p008 says experiments build a directed word co-occurrence network from each document with window size 2."
+    }
+   },
+   {
+    "insight_id": "1908.06267::g00:i09",
+    "verdict": {
+     "insight_id": "1908.06267::g00:i09",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Directly restates p003; no meaningful composition or inference beyond a single paragraph."
+    },
+    "reason": "Directly restates p003; no meaningful composition or inference beyond a single paragraph."
+   },
+   {
+    "insight_id": "1908.06267::g01:i00",
+    "verdict": {
+     "insight_id": "1908.06267::g01:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Jointly supported: p000 reports best performance on 7/10 datasets and close second elsewhere, supporting p000 in s12's conclusion that experiments on 10 standard text classification datasets show competitiveness with state of the art."
+    }
+   },
+   {
+    "insight_id": "1908.06267::g01:i01",
+    "verdict": {
+     "insight_id": "1908.06267::g01:i01",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Jointly supported: p001 says one or more hierarchical variants outperform vanilla MPAD on 9/10 datasets, supporting the conclusion in s12 that three hierarchical variants bring improvements."
+    }
+   },
+   {
+    "insight_id": "1908.06267::g01:i02",
+    "verdict": {
+     "insight_id": "1908.06267::g01:i02",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Jointly supported: p000 establishes the additional experiments on Reuters, Polarity, and IMDB with non-hierarchical MPAD, and p002 reports the undirected graph ablation results."
+    }
+   },
+   {
+    "insight_id": "1908.06267::g01:i03",
+    "verdict": {
+     "insight_id": "1908.06267::g01:i03",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Jointly supported: p000 establishes the experimental setting, and p001 says iterations were varied from 1 to 4 and that more iterations improve performance."
+    }
+   },
+   {
+    "insight_id": "1908.06267::g01:i04",
+    "verdict": {
+     "insight_id": "1908.06267::g01:i04",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Jointly supported: p000 establishes the experimental setting, and p003 states removing the master node deteriorates performance across all datasets."
+    }
+   },
+   {
+    "insight_id": "1908.06267::g01:i05",
+    "verdict": {
+     "insight_id": "1908.06267::g01:i05",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Both cited passages exist and jointly support that additional non-hierarchical MPAD experiments on Reuters, Polarity, and IMDB found sum instead of mean decreases performance everywhere; composed across experimental setup and result."
+    }
+   },
+   {
+    "insight_id": "1908.06267::g01:i06",
+    "verdict": {
+     "insight_id": "1908.06267::g01:i06",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Both cited passages exist and jointly support that additional non-hierarchical MPAD experiments on the three datasets found replacing GRU combine with identity hurts performance except on Reuters; composed across setup and result."
+    }
+   },
+   {
+    "insight_id": "1908.06267::g01:i07",
+    "verdict": {
+     "insight_id": "1908.06267::g01:i07",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "Cited passages exist; p002 explicitly explains the Reuters versus Polarity/IMDB performance difference by task type and word-order importance, and p000 supports MPAD sensitivity to word order. Causal explanation is stated, not merely inferred from co-occurrence."
+    }
+   },
+   {
+    "insight_id": "1908.06267::g01:i08",
+    "verdict": {
+     "insight_id": "1908.06267::g01:i08",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Both cited passages exist and jointly support the composed limitation: BIBREF53 requires PMI for every vocabulary word pair, potentially prohibitive for large vocabularies, while MPAD complexity does not depend on vocabulary size."
+    }
+   }
+  ],
+  "calls": [
+   {
+    "n": 15,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 5071,
+     "completion_tokens": 1209,
+     "total_tokens": 6280,
+     "reasoning_tokens": null
+    }
+   },
+   {
+    "n": 4,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 1746,
+     "completion_tokens": 352,
+     "total_tokens": 2098,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

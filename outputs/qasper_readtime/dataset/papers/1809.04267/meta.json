@@ -1,0 +1,92 @@
+{
+ "paper_id": "1809.04267",
+ "title": "Knowledge Based Machine Reading Comprehension",
+ "abstract": "Machine reading comprehension (MRC) requires reasoning about both the knowledge involved in a document and knowledge about the world. However, existing datasets are typically dominated by questions that can be well solved by context matching, which fail to test this capability. To encourage the progress on knowledge-based reasoning in MRC, we present knowledge-based MRC in this paper, and build a new dataset consisting of 40,047 question-answer pairs. The annotation of this dataset is designed so that successfully answering the questions requires understanding and the knowledge involved in a document. We implement a framework consisting of both a question answering model and a question generation model, both of which take the knowledge extracted from the document as well as relevant facts from an external knowledge base such as Freebase/ProBase/Reverb/NELL. Results show that incorporating side information from external KB improves the accuracy of the baseline question answer system. We compare it with a standard MRC model BiDAF, and also provide the difficulty of the dataset and lay out remaining challenges.",
+ "sections": [
+  "Introduction",
+  "Task Definition and Dataset",
+  "Approach Overview",
+  "The Question Answering Model",
+  "QA Model 1: PCNet",
+  "QA Model 2: KVMemNet",
+  "Training and Inference",
+  "The Question Generation Model",
+  "Hierarchical seq2seq Generation Model",
+  "The Paraphrasing Model",
+  "Incorporating External Knowledge",
+  "Related Work",
+  "Experiments",
+  "Settings",
+  "Analysis: Question Answering Models",
+  "Analysis: Generative Models",
+  "Future Opportunities for Future Research",
+  "Conclusion"
+ ],
+ "n_paragraphs": 56,
+ "n_tokens": 5371,
+ "figures_and_tables": [
+  {
+   "caption_id": "1809.04267::fig000",
+   "paper_id": "1809.04267",
+   "file": "2-Table1-1.png",
+   "caption": "Table 1: Statistics of the dataset we create for KBMRC.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1809.04267::fig001",
+   "paper_id": "1809.04267",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: An example that illustrates the task.",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "1809.04267::fig002",
+   "paper_id": "1809.04267",
+   "file": "2-Table2-1.png",
+   "caption": "Table 2: Distribution of questions in our dataset.",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "1809.04267::fig003",
+   "paper_id": "1809.04267",
+   "file": "3-Figure2-1.png",
+   "caption": "Figure 2: Approach overview.",
+   "n_tokens": 7
+  },
+  {
+   "caption_id": "1809.04267::fig004",
+   "paper_id": "1809.04267",
+   "file": "4-Figure3-1.png",
+   "caption": "Figure 3: The question generation model.",
+   "n_tokens": 9
+  },
+  {
+   "caption_id": "1809.04267::fig005",
+   "paper_id": "1809.04267",
+   "file": "6-Figure4-1.png",
+   "caption": "Figure 4: Model output of KVMemNet on the dev set. We show key-value pairs in the memory, and the probabilities of each hop used during inference. (s), (p) and (o) stand for subject, predicate, and object, respectively.",
+   "n_tokens": 56
+  },
+  {
+   "caption_id": "1809.04267::fig006",
+   "paper_id": "1809.04267",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3: Performances (P@1) of different approaches on dev and test sets.",
+   "n_tokens": 20
+  },
+  {
+   "caption_id": "1809.04267::fig007",
+   "paper_id": "1809.04267",
+   "file": "7-Table4-1.png",
+   "caption": "Table 4: Performances of different question generation based systems on the test set.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1809.04267::fig008",
+   "paper_id": "1809.04267",
+   "file": "7-Figure5-1.png",
+   "caption": "Figure 5: Example prediction of QGNet on the dev set, in which the first candidate is the correct answer while the second is incorrect.",
+   "n_tokens": 30
+  }
+ ]
+}

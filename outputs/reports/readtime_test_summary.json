@@ -1,0 +1,177 @@
+{
+  "timestamp": "2026-11-07T12:09:26",
+  "args": {
+    "convs": "conv-26,conv-41,conv-42",
+    "split": "dev",
+    "variants": "cluster_hybrid_0.5_b8192_comp:triple",
+    "budget": 4096,
+    "top_k": 20,
+    "max_questions": null,
+    "max_workers": 3,
+    "out_prefix": "readtime_test",
+    "force_build": false,
+    "include_relations": "false",
+    "no_qa": false,
+    "variant_suffix": "_triple"
+  },
+  "summaries": {
+    "cluster_hybrid_0.5_b8192_comp_triple": {
+      "method": "cluster_hybrid_0.5_b8192_comp_triple",
+      "n": 652,
+      "recall@1": 0.5923533152346712,
+      "recall@3": 0.8128781764374986,
+      "recall@5": 0.8761415608873234,
+      "recall@10": 0.9426113434588009,
+      "recall@20": 0.9872049795778609,
+      "mrr": 0.768210249255272,
+      "ndcg@10": 0.7977209708291,
+      "evidence_full@2048": 0.7395993836671803,
+      "evidence_partial@2048": 0.7819698192579548,
+      "session_full@2048": 0.7395993836671803,
+      "evidence_full@4096": 0.8412942989214176,
+      "evidence_partial@4096": 0.8834164893486929,
+      "session_full@4096": 0.8412942989214176,
+      "evidence_full@8192": 0.9152542372881356,
+      "evidence_partial@8192": 0.9474686330618534,
+      "session_full@8192": 0.9152542372881356,
+      "em": 0.3696319018404908,
+      "f1": 0.5785895303082438,
+      "em_answerable": 0.20278330019880716,
+      "f1_answerable": 0.4736389140377236,
+      "n_answerable": 503,
+      "refusal_rate": 0.9328859060402684,
+      "n_adversarial": 149,
+      "by_category": {
+        "1": {
+          "n": 100,
+          "em": 0.07,
+          "f1": 0.3745547562597637,
+          "recall@5": 0.7099246432579766,
+          "evidence_full@4096": 0.46464646464646464
+        },
+        "2": {
+          "n": 104,
+          "em": 0.08653846153846154,
+          "f1": 0.27618284493284495,
+          "recall@5": 0.9326923076923077,
+          "evidence_full@4096": 0.9326923076923077
+        },
+        "3": {
+          "n": 32,
+          "em": 0.09375,
+          "f1": 0.18311870421245421,
+          "recall@5": 0.6444444444444444,
+          "evidence_full@4096": 0.5666666666666667
+        },
+        "4": {
+          "n": 267,
+          "em": 0.31086142322097376,
+          "f1": 0.6224797143340232,
+          "recall@5": 0.9438202247191011,
+          "evidence_full@4096": 0.9550561797752809
+        },
+        "5": {
+          "n": 149,
+          "em": 0.9328859060402684,
+          "f1": 0.9328859060402684,
+          "recall@5": 0.87248322147651,
+          "evidence_full@4096": 0.8791946308724832
+        }
+      },
+      "by_conversation": {
+        "conv-26": {
+          "n": 199,
+          "em": 0.3165829145728643,
+          "f1": 0.5062283469656729,
+          "recall@5": 0.8968537414965986
+        },
+        "conv-41": {
+          "n": 193,
+          "em": 0.40414507772020725,
+          "f1": 0.6623460406029377,
+          "recall@5": 0.8803972366148531
+        },
+        "conv-42": {
+          "n": 260,
+          "em": 0.38461538461538464,
+          "f1": 0.5718005649170734,
+          "recall@5": 0.8573687423687424
+        }
+      }
+    }
+  },
+  "builds": [
+    {
+      "conv_id": "conv-26",
+      "variant": "cluster_hybrid_0.5_b8192_comp_triple",
+      "reused": false,
+      "save_dir": "/group/40150/licochen/Memory/RSI_GraphRAG/outputs/raw_graphs/conv-26/variants/cluster_hybrid_0.5_b8192_comp_triple",
+      "injection": {
+        "added": 302,
+        "chunks_touched": 19,
+        "skipped_duplicate": 33
+      },
+      "graph_info": {
+        "num_phrase_nodes": 685,
+        "num_passage_nodes": 19,
+        "num_total_nodes": 704,
+        "num_extracted_triples": 1022,
+        "num_triples_with_passage_node": 844,
+        "num_synonymy_triples": 2172,
+        "num_total_triples": 3741
+      },
+      "build_seconds": 7.0
+    },
+    {
+      "conv_id": "conv-41",
+      "variant": "cluster_hybrid_0.5_b8192_comp_triple",
+      "reused": false,
+      "save_dir": "/group/40150/licochen/Memory/RSI_GraphRAG/outputs/raw_graphs/conv-41/variants/cluster_hybrid_0.5_b8192_comp_triple",
+      "injection": {
+        "added": 419,
+        "chunks_touched": 32,
+        "skipped_duplicate": 51
+      },
+      "graph_info": {
+        "num_phrase_nodes": 844,
+        "num_passage_nodes": 32,
+        "num_total_nodes": 876,
+        "num_extracted_triples": 1348,
+        "num_triples_with_passage_node": 1043,
+        "num_synonymy_triples": 2819,
+        "num_total_triples": 4792
+      },
+      "build_seconds": 6.4
+    },
+    {
+      "conv_id": "conv-42",
+      "variant": "cluster_hybrid_0.5_b8192_comp_triple",
+      "reused": false,
+      "save_dir": "/group/40150/licochen/Memory/RSI_GraphRAG/outputs/raw_graphs/conv-42/variants/cluster_hybrid_0.5_b8192_comp_triple",
+      "injection": {
+        "added": 362,
+        "chunks_touched": 29,
+        "skipped_duplicate": 45
+      },
+      "graph_info": {
+        "num_phrase_nodes": 874,
+        "num_passage_nodes": 29,
+        "num_total_nodes": 903,
+        "num_extracted_triples": 1229,
+        "num_triples_with_passage_node": 1035,
+        "num_synonymy_triples": 2171,
+        "num_total_triples": 4094
+      },
+      "build_seconds": 6.0
+    }
+  ],
+  "hy4": {
+    "calls": 1226,
+    "cache_hits": 0,
+    "errors": 0,
+    "prompt_tokens": 2797018,
+    "completion_tokens": 5447,
+    "reasoning_tokens": 0,
+    "latency_s": 1403.19704079628
+  }
+}

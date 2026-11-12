@@ -1,0 +1,818 @@
+{
+ "1611.01576::s00::p000": [
+  [
+   "Recurrent neural networks (RNNs)",
+   "have become",
+   "the standard model architecture for deep learning approaches to sequence modeling tasks"
+  ],
+  [
+   "RNNs",
+   "repeatedly apply",
+   "a function with trainable parameters to a hidden state"
+  ],
+  [
+   "Recurrent layers",
+   "can be stacked",
+   "increasing network depth, representational power and often accuracy"
+  ],
+  [
+   "standard RNNs, including LSTMs",
+   "are limited in",
+   "their capability to handle tasks involving very long sequences"
+  ]
+ ],
+ "1611.01576::s00::p001": [
+  [
+   "Convolutional neural networks (CNNs)",
+   "have been applied to",
+   "sequence encoding tasks"
+  ],
+  [
+   "Such models",
+   "apply",
+   "time-invariant filter functions in parallel to windows along the input sequence"
+  ],
+  [
+   "CNNs",
+   "possess",
+   "increased parallelism and better scaling to long sequences"
+  ],
+  [
+   "traditional max- and average-pooling approaches",
+   "assume",
+   "time invariance"
+  ]
+ ],
+ "1611.01576::s00::p002": [
+  [
+   "QRNNs",
+   "allow for",
+   "parallel computation across both timestep and minibatch dimensions"
+  ],
+  [
+   "QRNNs",
+   "allow",
+   "the output to depend on the overall order of elements in the sequence"
+  ],
+  [
+   "These models",
+   "outperform",
+   "strong LSTM baselines on all three tasks"
+  ]
+ ],
+ "1611.01576::s01::p000": [
+  [
+   "Each layer of a quasi-recurrent neural network",
+   "consists of",
+   "two kinds of subcomponents"
+  ],
+  [
+   "The convolutional component",
+   "allows",
+   "fully parallel computation across both minibatches and spatial dimensions"
+  ],
+  [
+   "The pooling component",
+   "lacks",
+   "trainable parameters"
+  ],
+  [
+   "The pooling component",
+   "allows",
+   "fully parallel computation across minibatch and feature dimensions"
+  ]
+ ],
+ "1611.01576::s01::p001": [
+  [
+   "the convolutional subcomponent of a QRNN",
+   "performs",
+   "convolutions in the timestep dimension with a bank of INLINEFORM4 filters"
+  ],
+  [
+   "the filters",
+   "must not allow",
+   "the computation for any given timestep to access information from future timesteps"
+  ],
+  [
+   "each INLINEFORM9",
+   "depends only on",
+   "INLINEFORM10 through INLINEFORM11"
+  ],
+  [
+   "a masked convolution",
+   "is implemented by",
+   "padding the input to the left by the convolution's filter size minus one"
+  ]
+ ],
+ "1611.01576::s01::p002": [
+  [
+   "the candidate vectors",
+   "are passed through",
+   "a INLINEFORM0 nonlinearity"
+  ],
+  [
+   "the gates",
+   "use",
+   "an elementwise sigmoid"
+  ],
+  [
+   "the pooling function",
+   "requires",
+   "a forget gate INLINEFORM1 and an output gate INLINEFORM2 at each timestep"
+  ]
+ ],
+ "1611.01576::s01::p003": [
+  [
+   "INLINEFORM4",
+   "denotes",
+   "a masked convolution along the timestep dimension"
+  ],
+  [
+   "filter width",
+   "reduces equations to",
+   "the LSTM-like DISPLAYFORM0"
+  ]
+ ],
+ "1611.01576::s01::p004": [
+  [
+   "Convolution filters of larger width",
+   "effectively compute",
+   "higher INLINEFORM0 -gram features at each timestep"
+  ],
+  [
+   "larger widths",
+   "are especially important for",
+   "character-level tasks"
+  ]
+ ],
+ "1611.01576::s01::p005": [
+  [
+   "Suitable functions for the pooling subcomponent",
+   "can be constructed from",
+   "the familiar elementwise gates of the traditional LSTM cell"
+  ],
+  [
+   "function controlled by gates",
+   "can mix",
+   "states across timesteps"
+  ],
+  [
+   "function controlled by gates",
+   "acts independently on",
+   "each channel of the state vector"
+  ],
+  [
+   "The simplest option",
+   "uses only",
+   "a forget gate"
+  ]
+ ],
+ "1611.01576::s01::p006": [
+  [
+   "these three options",
+   "are termed",
+   "f-pooling, fo-pooling, and ifo-pooling respectively"
+  ],
+  [
+   "INLINEFORM0 or INLINEFORM1",
+   "are initialized to",
+   "zero"
+  ],
+  [
+   "the recurrent parts of these functions",
+   "must be calculated for",
+   "each timestep in sequence"
+  ],
+  [
+   "evaluating them over even long sequences",
+   "requires",
+   "a negligible amount of computation time"
+  ]
+ ],
+ "1611.01576::s01::p007": [
+  [
+   "A single QRNN layer",
+   "performs",
+   "an input-dependent pooling"
+  ],
+  [
+   "A single QRNN layer",
+   "performs",
+   "a gated linear combination of convolutional features"
+  ],
+  [
+   "two or more QRNN layers",
+   "should be stacked to create",
+   "a model with the capacity to approximate more complex functions"
+  ]
+ ],
+ "1611.01576::s02::p000": [
+  [
+   "many extensions to both recurrent and convolutional models",
+   "can be applied directly to",
+   "the QRNN"
+  ],
+  [
+   "the QRNN",
+   "combines",
+   "elements of both model types"
+  ]
+ ],
+ "1611.01576::s02::p001": [
+  [
+   "robust regularization scheme",
+   "is an important extension to",
+   "the stacked QRNN"
+  ]
+ ],
+ "1611.01576::s02::p002": [
+  [
+   "dropout's relative lack of efficacy when applied to recurrent connections",
+   "led to the development of",
+   "recurrent dropout schemes"
+  ],
+  [
+   "recurrent dropout schemes",
+   "include",
+   "variational inference–based dropout BIBREF13 and zoneout BIBREF14"
+  ],
+  [
+   "These schemes",
+   "extend",
+   "dropout to the recurrent setting"
+  ]
+ ],
+ "1611.01576::s02::p003": [
+  [
+   "Variational inference–based dropout",
+   "locks",
+   "the dropout mask used for the recurrent connections across timesteps"
+  ],
+  [
+   "a single RNN pass",
+   "uses",
+   "a single stochastic subset of the recurrent weights"
+  ],
+  [
+   "Zoneout",
+   "stochastically chooses",
+   "a new subset of channels to “zone out” at each timestep"
+  ],
+  [
+   "the network",
+   "copies",
+   "states from one timestep to the next without modification"
+  ]
+ ],
+ "1611.01576::s02::p004": [
+  [
+   "QRNNs",
+   "lack",
+   "recurrent weights"
+  ],
+  [
+   "the variational inference approach",
+   "does not apply to",
+   "QRNNs"
+  ],
+  [
+   "modifying the pooling function",
+   "keeps",
+   "the previous pooling state for a stochastic subset of channels"
+  ],
+  [
+   "this",
+   "is equivalent to",
+   "stochastically setting a subset of the QRNN's INLINEFORM0 gate channels to 1"
+  ]
+ ],
+ "1611.01576::s02::p005": [
+  [
+   "the pooling function itself",
+   "need not be modified",
+   "at all"
+  ],
+  [
+   "automatic rescaling functionality",
+   "is important to remove from",
+   "the implementation"
+  ],
+  [
+   "ordinary dropout",
+   "is applied between",
+   "word embeddings and the first QRNN layer"
+  ]
+ ],
+ "1611.01576::s02::p006": [
+  [
+   "the QRNN architecture",
+   "can be extended using",
+   "techniques introduced for convolutional networks"
+  ],
+  [
+   "skip-connections between every QRNN layer",
+   "were helpful for",
+   "sequence classification tasks"
+  ],
+  [
+   "skip-connections between every QRNN layer",
+   "is termed",
+   "“dense convolution” by BIBREF15"
+  ],
+  [
+   "traditional feed-forward or convolutional networks",
+   "have",
+   "connections only between subsequent layers"
+  ],
+  [
+   "a “DenseNet” with INLINEFORM0 layers",
+   "has",
+   "feed-forward or convolutional connections between every pair of layers"
+  ],
+  [
+   "This",
+   "can improve",
+   "gradient flow and convergence properties"
+  ],
+  [
+   "This",
+   "requires",
+   "a parameter count that is quadratic in the number of layers"
+  ]
+ ],
+ "1611.01576::s02::p007": [
+  [
+   "this technique",
+   "includes connections between",
+   "the input embeddings and every QRNN layer"
+  ],
+  [
+   "this technique",
+   "includes connections between",
+   "every pair of QRNN layers"
+  ],
+  [
+   "The output of the last layer alone",
+   "is used as",
+   "the overall encoding result"
+  ]
+ ],
+ "1611.01576::s02::p008": [
+  [
+   "QRNNs",
+   "are extended to",
+   "sequence-to-sequence tasks, such as machine translation"
+  ],
+  [
+   "the model architecture",
+   "uses",
+   "a QRNN as encoder"
+  ],
+  [
+   "the model architecture",
+   "uses",
+   "a modified QRNN, enhanced with attention, as decoder"
+  ],
+  [
+   "simply feeding the last encoder hidden state into the decoder's recurrent pooling layer",
+   "would not allow",
+   "the encoder state to affect the gate or update values"
+  ],
+  [
+   "This",
+   "would substantially limit",
+   "the representational power of the decoder"
+  ]
+ ],
+ "1611.01576::s02::p009": [
+  [
+   "the output of each decoder QRNN layer's convolution functions",
+   "is supplemented at every timestep with",
+   "the final encoder hidden state"
+  ],
+  [
+   "This",
+   "is accomplished by adding",
+   "the result of the convolution for layer INLINEFORM0"
+  ]
+ ],
+ "1611.01576::s02::p010": [
+  [
+   "the tilde",
+   "denotes that",
+   "INLINEFORM0 is an encoder variable"
+  ],
+  [
+   "Encoder–decoder models which operate on long sequences",
+   "are made significantly more powerful with",
+   "the addition of soft attention BIBREF3"
+  ],
+  [
+   "soft attention BIBREF3",
+   "removes",
+   "the need for the entire input representation to fit into a fixed-length encoding vector"
+  ],
+  [
+   "This context, and the decoder state",
+   "are fed into",
+   "a linear layer followed by the output gate"
+  ]
+ ],
+ "1611.01576::s02::p011": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the last layer"
+  ]
+ ],
+ "1611.01576::s02::p012": [
+  [
+   "the first step of this attention procedure",
+   "is quadratic in",
+   "the sequence length"
+  ],
+  [
+   "the first step of this attention procedure",
+   "takes significantly less computation time than",
+   "the model's linear and convolutional layers"
+  ],
+  [
+   "the simple and highly parallel dot-product scoring function",
+   "accounts for",
+   "significantly less computation time"
+  ]
+ ],
+ "1611.01576::s03::p000": [
+  [
+   "the QRNN",
+   "is evaluated on",
+   "document-level sentiment classification, language modeling, and character-based neural machine translation"
+  ]
+ ],
+ "1611.01576::s04::p000": [
+  [
+   "the QRNN architecture",
+   "is evaluated on",
+   "the IMDb movie review dataset"
+  ],
+  [
+   "The dataset",
+   "consists of",
+   "a balanced sample of 25,000 positive and 25,000 negative reviews"
+  ],
+  [
+   "The dataset",
+   "has",
+   "an average document length of 231 words"
+  ]
+ ],
+ "1611.01576::s04::p001": [
+  [
+   "word vectors",
+   "were initialized using",
+   "300-dimensional cased GloVe embeddings"
+  ],
+  [
+   "Dropout of 0.3",
+   "was applied",
+   "between layers"
+  ],
+  [
+   "Optimization",
+   "was performed on",
+   "minibatches of 24 examples using RMSprop"
+  ]
+ ],
+ "1611.01576::s04::p002": [
+  [
+   "Small batch sizes and long sequence lengths",
+   "provide",
+   "an ideal situation for demonstrating the QRNN's performance advantages over traditional recurrent architectures"
+  ],
+  [
+   "a 16x speed gain",
+   "is possible for",
+   "specific batch sizes and sequence lengths"
+  ]
+ ],
+ "1611.01576::s04::p003": [
+  [
+   "changes in the hidden state",
+   "are",
+   "visible and interpretable in regards to the input"
+  ],
+  [
+   "the elementwise nature of the recurrent pooling function",
+   "delays",
+   "direct interaction between different channels of the hidden state until the computation of the next QRNN layer"
+  ]
+ ],
+ "1611.01576::s05::p000": [
+  [
+   "The experiment",
+   "uses",
+   "a standard preprocessed version of the Penn Treebank (PTB)"
+  ]
+ ],
+ "1611.01576::s05::p001": [
+  [
+   "gated QRNN model with medium hidden size",
+   "has",
+   "2 layers with 640 units in each layer"
+  ],
+  [
+   "Both QRNN layers",
+   "use",
+   "a convolutional filter width INLINEFORM0 of two timesteps"
+  ],
+  [
+   "“medium” models used in other work BIBREF2 , BIBREF13",
+   "consist of",
+   "650 units in each layer"
+  ]
+ ],
+ "1611.01576::s05::p002": [
+  [
+   "Optimization",
+   "was performed by",
+   "stochastic gradient descent (SGD) without momentum"
+  ],
+  [
+   "The learning rate",
+   "was set at",
+   "1 for six epochs"
+  ],
+  [
+   "Zoneout",
+   "was applied by performing",
+   "dropout with ratio 0.1 on the forget gates of the QRNN"
+  ],
+  [
+   "Batches",
+   "consist of",
+   "20 examples, each 105 timesteps"
+  ]
+ ],
+ "1611.01576::s05::p003": [
+  [
+   "the QRNN",
+   "is",
+   "highly competitive"
+  ],
+  [
+   "The QRNN without zoneout",
+   "strongly outperforms",
+   "both our medium LSTM and the medium LSTM of BIBREF2"
+  ]
+ ],
+ "1611.01576::s05::p004": [
+  [
+   "early stopping based upon validation loss",
+   "was required",
+   "as the QRNN would begin overfitting"
+  ],
+  [
+   "the QRNN",
+   "achieves",
+   "competitive levels of perplexity to the variational LSTM of BIBREF13"
+  ],
+  [
+   "the variational LSTM of BIBREF13",
+   "had",
+   "variational inference based dropout of 0.2 applied recurrently"
+  ],
+  [
+   "Their best performing variation",
+   "used",
+   "Monte Carlo (MC) dropout averaging at test time of 1000 different masks"
+  ]
+ ],
+ "1611.01576::s05::p005": [
+  [
+   "the QRNN",
+   "is",
+   "substantially faster than a standard LSTM"
+  ],
+  [
+   "running time",
+   "was dominated by",
+   "the RNN computations"
+  ],
+  [
+   "the “RNN” layers",
+   "are no longer",
+   "the bottleneck"
+  ],
+  [
+   "the softmax",
+   "is",
+   "over a vocabulary size of only 10,000 words"
+  ]
+ ],
+ "1611.01576::s05::p006": [
+  [
+   "the cuDNN library's RNN primitives",
+   "do not natively support",
+   "any form of recurrent dropout"
+  ],
+  [
+   "running an LSTM that uses a state-of-the-art regularization scheme at cuDNN-like speeds",
+   "would likely require",
+   "an entirely custom kernel"
+  ]
+ ],
+ "1611.01576::s06::p000": [
+  [
+   "the sequence-to-sequence QRNN architecture",
+   "was evaluated on",
+   "IWSLT German–English spoken-domain translation"
+  ],
+  [
+   "This dataset",
+   "consists of",
+   "209,772 sentence pairs of parallel training data from transcribed TED and TEDx presentations"
+  ],
+  [
+   "mean sentence length",
+   "was",
+   "103 characters for German and 93 for English"
+  ],
+  [
+   "training sentences with more than 300 characters in English or German",
+   "were removed",
+   "a unified vocabulary of 187 Unicode code points"
+  ]
+ ],
+ "1611.01576::s06::p001": [
+  [
+   "gradient rescaling",
+   "was to",
+   "a maximum magnitude of 5"
+  ],
+  [
+   "Optimization",
+   "was performed for",
+   "10 epochs on minibatches of 16 examples using Adam"
+  ],
+  [
+   "Decoding",
+   "was performed using",
+   "beam search with beam width 8"
+  ]
+ ],
+ "1611.01576::s06::p002": [
+  [
+   "Results using this architecture",
+   "were compared to",
+   "an equal-sized four-layer encoder–decoder LSTM with attention"
+  ],
+  [
+   "the equal-sized four-layer encoder–decoder LSTM with attention",
+   "applied",
+   "dropout of 0.2"
+  ],
+  [
+   "the QRNN",
+   "almost matched",
+   "the performance of a word-level attentional baseline"
+  ]
+ ],
+ "1611.01576::s07::p000": [
+  [
+   "Quasi-recurrent neural networks",
+   "are related to",
+   "strongly-typed recurrent neural networks (T-RNN)"
+  ],
+  [
+   "all strongly-typed RNN architectures (including the T-RNN, T-GRU, and T-LSTM)",
+   "are also",
+   "quasi-recurrent"
+  ],
+  [
+   "some QRNN models (including those with attention or skip-connections)",
+   "are not",
+   "“strongly typed”"
+  ],
+  [
+   "a T-RNN",
+   "differs from",
+   "a QRNN as described in this paper with filter size 1 and f-pooling only"
+  ]
+ ],
+ "1611.01576::s07::p001": [
+  [
+   "The parallelism of the convolutional, pooling, and highway layers",
+   "allows",
+   "training speed comparable to subword-level models without hard-coded text segmentation"
+  ]
+ ],
+ "1611.01576::s07::p002": [
+  [
+   "The QRNN encoder–decoder model",
+   "shares",
+   "the favorable parallelism and path-length properties exhibited by the ByteNet"
+  ],
+  [
+   "the ByteNet",
+   "is",
+   "an architecture for character-level machine translation based on residual convolutions over binary trees"
+  ],
+  [
+   "Their model",
+   "was constructed to achieve",
+   "three desired properties: parallelism, linear-time computational complexity, and short paths between any pair of words"
+  ]
+ ],
+ "1611.01576::s08::p000": [
+  [
+   "many aspects of the semantics of long sequences",
+   "are",
+   "context-invariant"
+  ],
+  [
+   "many aspects of the semantics of long sequences",
+   "can be computed in",
+   "parallel"
+  ],
+  [
+   "some aspects",
+   "require",
+   "long-distance context"
+  ],
+  [
+   "QRNNs",
+   "have better predictive accuracy than",
+   "LSTM-based models of equal hidden size"
+  ]
+ ],
+ "1611.01576::s08::p001": [
+  [
+   "Extensions to both CNNs and RNNs",
+   "are often directly applicable to",
+   "the QRNN"
+  ],
+  [
+   "the model's hidden states",
+   "are more interpretable than",
+   "those of other recurrent architectures"
+  ],
+  [
+   "its channels",
+   "maintain",
+   "their independence across timesteps"
+  ],
+  [
+   "QRNNs",
+   "can serve as",
+   "a building block for long-sequence tasks"
+  ]
+ ],
+ "1611.01576::s09::p000": [
+  [
+   "The modified log-probability ranking criterion",
+   "was used in",
+   "beam search for translation experiments"
+  ]
+ ],
+ "1611.01576::s09::p001": [
+  [
+   "INLINEFORM0",
+   "is",
+   "a length normalization parameter BIBREF34"
+  ],
+  [
+   "INLINEFORM1",
+   "is",
+   "the INLINEFORM2 th output character"
+  ],
+  [
+   "INLINEFORM3",
+   "is",
+   "a “target length” equal to the source sentence length plus five characters"
+  ],
+  [
+   "this ranking criterion",
+   "reduces at INLINEFORM4 to",
+   "ordinary beam search with probabilities"
+  ]
+ ],
+ "1611.01576::s09::p002": [
+  [
+   "this ranking criterion",
+   "reduces at INLINEFORM0 to",
+   "beam search with probabilities normalized by length (up to the target length)"
+  ]
+ ],
+ "1611.01576::s09::p003": [
+  [
+   "this ranking criterion",
+   "can be computed at",
+   "intermediate beam-search timesteps"
+  ],
+  [
+   "this ranking criterion",
+   "obviates",
+   "the need to apply a separate reranking on complete hypotheses"
+  ]
+ ]
+}

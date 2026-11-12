@@ -1,0 +1,75 @@
+{
+ "paper_id": "1906.08593",
+ "title": "Conflict as an Inverse of Attention in Sequence Relationship",
+ "abstract": "Attention is a very efficient way to model the relationship between two sequences by comparing how similar two intermediate representations are. Initially demonstrated in NMT, it is a standard in all NLU tasks today when efficient interaction between sequences is considered. However, we show that attention, by virtue of its composition, works best only when it is given that there is a match somewhere between two sequences. It does not very well adapt to cases when there is no similarity between two sequences or if the relationship is contrastive. We propose an Conflict model which is very similar to how attention works but which emphasizes mostly on how well two sequences repel each other and finally empirically show how this method in conjunction with attention can boost the overall performance.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "How attention works",
+  "Limits of using only Attention",
+  "Conflict model",
+  "Combination of attention and conflict",
+  "Relation to Multi-Head attention",
+  "Visualizing attention and conflict",
+  "The model",
+  "Task 1: Quora Duplicate Question Pair Detection",
+  "Task 2: Ranking questions in Bing's People Also Ask",
+  "Quantitative Analysis",
+  "Qualitative Comparison",
+  "Analyzing the gains",
+  "Conclusion"
+ ],
+ "n_paragraphs": 42,
+ "n_tokens": 3040,
+ "figures_and_tables": [
+  {
+   "caption_id": "1906.08593::fig000",
+   "paper_id": "1906.08593",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Attention Heatmaps",
+   "n_tokens": 7
+  },
+  {
+   "caption_id": "1906.08593::fig001",
+   "paper_id": "1906.08593",
+   "file": "2-Figure2-1.png",
+   "caption": "Figure 2: Conflict Heatmaps",
+   "n_tokens": 7
+  },
+  {
+   "caption_id": "1906.08593::fig002",
+   "paper_id": "1906.08593",
+   "file": "3-Figure3-1.png",
+   "caption": "Figure 3: Generic Model containing interaction layer. We use attention, conflict or conjunction of attention and conflict as the interaction layer.",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "1906.08593::fig003",
+   "paper_id": "1906.08593",
+   "file": "4-Figure5-1.png",
+   "caption": "Figure 5: Training loss curve for Task 2",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "1906.08593::fig004",
+   "paper_id": "1906.08593",
+   "file": "4-Figure4-1.png",
+   "caption": "Figure 4: Training loss curve for Task 1",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "1906.08593::fig005",
+   "paper_id": "1906.08593",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Result on Quora Dataset",
+   "n_tokens": 9
+  },
+  {
+   "caption_id": "1906.08593::fig006",
+   "paper_id": "1906.08593",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Result on PAA click data",
+   "n_tokens": 10
+  }
+ ]
+}

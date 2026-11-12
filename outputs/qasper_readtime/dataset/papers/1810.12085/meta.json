@@ -1,0 +1,67 @@
+{
+ "paper_id": "1810.12085",
+ "title": "Extractive Summarization of EHR Discharge Notes",
+ "abstract": "Patient summarization is essential for clinicians to provide coordinated care and practice effective communication. Automated summarization has the potential to save time, standardize notes, aid clinical decision making, and reduce medical errors. Here we provide an upper bound on extractive summarization of discharge notes and develop an LSTM model to sequentially label topics of history of present illness notes. We achieve an F1 score of 0.876, which indicates that this model can be employed to create a dataset for evaluation of extractive summarization methods.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Data",
+  "Upper Bound on Summarization",
+  "Labeling History of Present Illness Notes",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 33,
+ "n_tokens": 3820,
+ "figures_and_tables": [
+  {
+   "caption_id": "1810.12085::fig000",
+   "paper_id": "1810.12085",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1. HPI Categories and Annotation Instructions",
+   "n_tokens": 10
+  },
+  {
+   "caption_id": "1810.12085::fig001",
+   "paper_id": "1810.12085",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1. LSTM Model for sequential HPI word classification. Xi: token i, Z1 to Zl: characters of Xi, t: word embeddings, c: character embeddings, e1:k: hybrid token embeddings, h1:j : contextual representation embedings, s1:m",
+   "n_tokens": 58
+  },
+  {
+   "caption_id": "1810.12085::fig002",
+   "paper_id": "1810.12085",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2. Relationship between the number of non-discharge notes (top), number of non-discharge CUIs (middle), or the number of hours the patient spent outside the ICU (bottom) and the recall for each discharge summary.",
+   "n_tokens": 49
+  },
+  {
+   "caption_id": "1810.12085::fig003",
+   "paper_id": "1810.12085",
+   "file": "5-Table3-1.png",
+   "caption": "Table 3. Average Recall for five sections of the discharge summary. Recall for each patient’s sex was calculated by examining the structured data for the patient’s current admission, and recall for the remaining sections was calculated by comparing CUI overlap between the section and the remaining notes for the current admission.",
+   "n_tokens": 59
+  },
+  {
+   "caption_id": "1810.12085::fig004",
+   "paper_id": "1810.12085",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2. Discharge CUI recall for each patient’s current hospital admission (by hadm id) and their entire EHR (by subject id), averaged across all discharge summaries",
+   "n_tokens": 37
+  },
+  {
+   "caption_id": "1810.12085::fig005",
+   "paper_id": "1810.12085",
+   "file": "6-Figure3-1.png",
+   "caption": "Figure 3. Confusion Matrix for the Learned Word Embedding model on the test set. True labels are on the x-axis, and predicted labels are on the y-axis.",
+   "n_tokens": 36
+  },
+  {
+   "caption_id": "1810.12085::fig006",
+   "paper_id": "1810.12085",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4. F1-Scores on the development set under various model architectures. The first model in each section is the same model described in the methods section. Top performing models in each section are in bold.",
+   "n_tokens": 43
+  }
+ ]
+}

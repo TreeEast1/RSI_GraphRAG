@@ -1,0 +1,448 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1805.06966::s00::p000",
+   "summary": "Spoken Dialogue Systems (SDS) enable natural speech interaction, and task-oriented systems help users achieve goals such as finding restaurants or booking flights.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s00::p001",
+   "summary": "Task-oriented dialogue management is often formulated as reinforcement learning (RL), where User Simulators train a dialogue manager (DM) policy without real users and enable unlimited faster dialogues.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s00::p002",
+   "summary": "The Neural User Simulator (NUS) outputs natural language, learns behaviour from a corpus, uses a feature extractor and sequence-to-sequence model, generates goals, and transforms DSTC2 goal-labels.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s00::p003",
+   "summary": "The NUS is trained on restaurant recommendation dialogues, used to train a reinforcement learning based SDS policy, and outperforms the Agenda-Based User-Simulator (ABUS) in cross-model evaluation and real-user tests.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s00::p004",
+   "summary": "The paper is organised with Section 2 on task-oriented dialogue, Section 3 on motivation and related work, Section 4 on the NUS, Sections 5 and 6 on experiments and results, and Section 7 on conclusions.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s01::p000",
+   "summary": "A Task-Oriented SDS uses a structured ontology defining informable slots, requestable slots, restaurants, and slot-value pairs such as area=north.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s01::p001",
+   "summary": "Using RL, the DM policy maximises cumulative future reward, typically with a small per-turn penalty and a large positive reward for successful interactions.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s02::p000",
+   "summary": "Training a DM's policy with real users is impractical for most RL algorithms, so learning from a dataset recorded once and reused repeatedly is natural.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s02::p001",
+   "summary": "Recorded dialogue corpora have limited visited state spaces, often insufficient corpus sizes, and may not contain the optimal dialogue strategy.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s02::p002",
+   "summary": "A user simulator (US) trained on a dialogue corpus with supervised learning can generate unlimited dialogues and train the DM's policy using feedback from the US or a separate evaluator.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s02::p003",
+   "summary": "Most user-simulators operate on user semantics, and prior models include bi-gram, graph-based, Markov, hidden Markov, inverse reinforcement learning, Agenda-Based User Simulator, and sequence-to-sequence approaches with various goal limitations.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s02::p004",
+   "summary": "Semantic-level user simulation raises issues for annotation, joint SLU and belief tracking in DSTC2, and error modelling, motivating natural language user simulators and word-level approaches.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s03::p000",
+   "summary": "The NUS generates a random goal, uses a Feature Extractor to create feature vectors from SDS output, current goal, and dialogue history, and generates delexicalised utterances while allowing goal changes.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s04::p000",
+   "summary": "The Goal Generator samples DSTC2 goals with constraints and requests, using probabilities 0.66, 0.62 and 0.58 for food, area and pricerange, and re-samples empty goals.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s04::p001",
+   "summary": "During sequence-to-sequence training, DSTC2 goal labels are used, but final goals are insufficient for goal changes and turn-specific labels would predict the future.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s04::p002",
+   "summary": "The proposed update strategy modifies DSTC2 turn-specific constraint labels backwards so goal changes can be replicated during DM policy training, with goals updated when the SDS outputs the canthelp dialogue act.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s05::p000",
+   "summary": "The Feature Extractor generates feature vectors for the Feature History using DM output, current goal, accepted venue, and current and initial request-vector.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s05::p001",
+   "summary": "The feature vector consists of four sub-vectors designed to embed the system response while preserving all necessary value-independent information.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s05::p002",
+   "summary": "The machine-act vector encodes system dialogue acts and slots, with binary representations whose lengths depend on possible system dialogue acts and four times the number of informable slots.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s05::p003",
+   "summary": "The request-vector tracks unfulfilled requests, is remembered across turns, is reset when a new venue is proposed, and has length equal to the number of requestable slots.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s05::p004",
+   "summary": "The inconsistency-vector represents misunderstood slots between the system response and the goal, has length equal to the number of informable slots, and lets the NUS correct the system.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s05::p005",
+   "summary": "The fourth vector is a binary representation of slots in the constraints, has length equal to the number of informable slots, and lets the NUS inform about its preferred venue.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s06::p000",
+   "summary": "The sequence-to-sequence model consists of an RNN encoder, a fully-connect layer, and an RNN decoder.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s06::p001",
+   "summary": "At each time-step an RNN uses an input and internal state to produce output and a new state, and this work uses a single layer LSTM with a forget gate without bias and no peep-holes.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s06::p002",
+   "summary": "The first RNN takes one feature vector at a time, and its final encoder output at the current dialogue turn is passed through a fully-connected layer with linear activation.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s06::p003",
+   "summary": "For a given encoding, the sequence-to-sequence model defines a probability distribution over sequences, allowing the NUS to generate diverse sentences for the same dialogue context.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s06::p004",
+   "summary": "The decoder RNN uses 1-hot embeddings of previous words, <SOS> and <EOS> tokens, an affine transform and softmax, and generates words by highest probability or sampling.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s06::p005",
+   "summary": "During training, true words from the dataset are used instead of sampled words, a technique called teacher-forcing.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s06::p006",
+   "summary": "Beam-search is deterministic and limits user behaviour diversity, so the NUS uses beam-search with sampling, with 2 beams giving a good trade-off between reasonable responses and diversity.",
+   "group_id": "1805.06966::g00"
+  },
+  {
+   "passage_id": "1805.06966::s07::p000",
+   "summary": "The neural sequence-to-sequence model is trained to maximize the log probability assigned to user utterances in the training data set.",
+   "group_id": "1805.06966::g01"
+  },
+  {
+   "passage_id": "1805.06966::s07::p001",
+   "summary": "The network was implemented in Tensorflow, optimized with Adam, used widths of 100, tuned learning rate on validation, used no regularization, and shuffled dialogue turns.",
+   "group_id": "1805.06966::g01"
+  },
+  {
+   "passage_id": "1805.06966::s07::p002",
+   "summary": "Manual DSTC2 transcriptions were corrected and cleaned, yielding 1609 dialogues with 11638 turns, 505 validation dialogues with 3896 turns, maximum sequence length 22, and maximum dialogue length 30 turns.",
+   "group_id": "1805.06966::g01"
+  },
+  {
+   "passage_id": "1805.06966::s07::p003",
+   "summary": "Policies were trained in PyDial with NUS or ABUS using GP-SARSA, reward 20 for success and -1 per turn, maximum length 25 turns, metrics SR and average reward, for 4000 dialogues.",
+   "group_id": "1805.06966::g01"
+  },
+  {
+   "passage_id": "1805.06966::s08::p000",
+   "summary": "The paper argues that fair comparison between a new US model and the ABUS requires indirect evaluation of policies trained with each US.",
+   "group_id": "1805.06966::g01"
+  },
+  {
+   "passage_id": "1805.06966::s09::p000",
+   "summary": "Cross-model evaluation trains five policies per US with different seeds, reports best and average performance on 1000 test dialogues, and resamples NUS sentences when the new goal is not mentioned.",
+   "group_id": "1805.06966::g01"
+  },
+  {
+   "passage_id": "1805.06966::s10::p000",
+   "summary": "Human evaluation selected two policies per US, gathered 1000 dialogues with 250 per policy through AMT, used a commercial ASR system, and translated user success judgments into reward.",
+   "group_id": "1805.06966::g01"
+  },
+  {
+   "passage_id": "1805.06966::s11::p000",
+   "summary": "After 4000 training dialogues, NUS-trained policies achieved average SRs of 94.0% on ABUS and 96.6% on NUS, while ABUS-trained policies achieved 99.5% and 45.5%.",
+   "group_id": "1805.06966::g01"
+  },
+  {
+   "passage_id": "1805.06966::s11::p001",
+   "summary": "Policies trained on NUS for 1000 dialogues averaged 97.3% SR on ABUS versus 94.0% after 4000 dialogues, indicating overfitting to the NUS across all five seeds.",
+   "group_id": "1805.06966::g01"
+  },
+  {
+   "passage_id": "1805.06966::s12::p000",
+   "summary": "In human evaluation over 250 dialogues per policy, the best NUS-trained policy achieved 93.4% success rate and 13.8 average rewards, versus 90.0% and 13.3 for ABUS.",
+   "group_id": "1805.06966::g01"
+  },
+  {
+   "passage_id": "1805.06966::s13::p000",
+   "summary": "The Neural User Simulator uses semantic system responses as input, produces natural language responses, requires less labelling, and excelled in simulated-user and real-user policy evaluations.",
+   "group_id": "1805.06966::g01"
+  },
+  {
+   "passage_id": "1805.06966::s14::p000",
+   "summary": "The research was partly funded by EPSRC grant EP/M018946/1 Open Domain Statistical Spoken Dialogue Systems, with support for Florian Kreyssig and Paweł Budzianowski from named organizations.",
+   "group_id": "1805.06966::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1805.06966::g00",
+   "summaries": [
+    {
+     "passage_id": "1805.06966::s00::p000",
+     "summary": "Spoken Dialogue Systems (SDS) enable natural speech interaction, and task-oriented systems help users achieve goals such as finding restaurants or booking flights.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s00::p001",
+     "summary": "Task-oriented dialogue management is often formulated as reinforcement learning (RL), where User Simulators train a dialogue manager (DM) policy without real users and enable unlimited faster dialogues.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s00::p002",
+     "summary": "The Neural User Simulator (NUS) outputs natural language, learns behaviour from a corpus, uses a feature extractor and sequence-to-sequence model, generates goals, and transforms DSTC2 goal-labels.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s00::p003",
+     "summary": "The NUS is trained on restaurant recommendation dialogues, used to train a reinforcement learning based SDS policy, and outperforms the Agenda-Based User-Simulator (ABUS) in cross-model evaluation and real-user tests.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s00::p004",
+     "summary": "The paper is organised with Section 2 on task-oriented dialogue, Section 3 on motivation and related work, Section 4 on the NUS, Sections 5 and 6 on experiments and results, and Section 7 on conclusions.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s01::p000",
+     "summary": "A Task-Oriented SDS uses a structured ontology defining informable slots, requestable slots, restaurants, and slot-value pairs such as area=north.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s01::p001",
+     "summary": "Using RL, the DM policy maximises cumulative future reward, typically with a small per-turn penalty and a large positive reward for successful interactions.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s02::p000",
+     "summary": "Training a DM's policy with real users is impractical for most RL algorithms, so learning from a dataset recorded once and reused repeatedly is natural.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s02::p001",
+     "summary": "Recorded dialogue corpora have limited visited state spaces, often insufficient corpus sizes, and may not contain the optimal dialogue strategy.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s02::p002",
+     "summary": "A user simulator (US) trained on a dialogue corpus with supervised learning can generate unlimited dialogues and train the DM's policy using feedback from the US or a separate evaluator.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s02::p003",
+     "summary": "Most user-simulators operate on user semantics, and prior models include bi-gram, graph-based, Markov, hidden Markov, inverse reinforcement learning, Agenda-Based User Simulator, and sequence-to-sequence approaches with various goal limitations.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s02::p004",
+     "summary": "Semantic-level user simulation raises issues for annotation, joint SLU and belief tracking in DSTC2, and error modelling, motivating natural language user simulators and word-level approaches.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s03::p000",
+     "summary": "The NUS generates a random goal, uses a Feature Extractor to create feature vectors from SDS output, current goal, and dialogue history, and generates delexicalised utterances while allowing goal changes.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s04::p000",
+     "summary": "The Goal Generator samples DSTC2 goals with constraints and requests, using probabilities 0.66, 0.62 and 0.58 for food, area and pricerange, and re-samples empty goals.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s04::p001",
+     "summary": "During sequence-to-sequence training, DSTC2 goal labels are used, but final goals are insufficient for goal changes and turn-specific labels would predict the future.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s04::p002",
+     "summary": "The proposed update strategy modifies DSTC2 turn-specific constraint labels backwards so goal changes can be replicated during DM policy training, with goals updated when the SDS outputs the canthelp dialogue act.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s05::p000",
+     "summary": "The Feature Extractor generates feature vectors for the Feature History using DM output, current goal, accepted venue, and current and initial request-vector.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s05::p001",
+     "summary": "The feature vector consists of four sub-vectors designed to embed the system response while preserving all necessary value-independent information.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s05::p002",
+     "summary": "The machine-act vector encodes system dialogue acts and slots, with binary representations whose lengths depend on possible system dialogue acts and four times the number of informable slots.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s05::p003",
+     "summary": "The request-vector tracks unfulfilled requests, is remembered across turns, is reset when a new venue is proposed, and has length equal to the number of requestable slots.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s05::p004",
+     "summary": "The inconsistency-vector represents misunderstood slots between the system response and the goal, has length equal to the number of informable slots, and lets the NUS correct the system.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s05::p005",
+     "summary": "The fourth vector is a binary representation of slots in the constraints, has length equal to the number of informable slots, and lets the NUS inform about its preferred venue.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s06::p000",
+     "summary": "The sequence-to-sequence model consists of an RNN encoder, a fully-connect layer, and an RNN decoder.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s06::p001",
+     "summary": "At each time-step an RNN uses an input and internal state to produce output and a new state, and this work uses a single layer LSTM with a forget gate without bias and no peep-holes.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s06::p002",
+     "summary": "The first RNN takes one feature vector at a time, and its final encoder output at the current dialogue turn is passed through a fully-connected layer with linear activation.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s06::p003",
+     "summary": "For a given encoding, the sequence-to-sequence model defines a probability distribution over sequences, allowing the NUS to generate diverse sentences for the same dialogue context.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s06::p004",
+     "summary": "The decoder RNN uses 1-hot embeddings of previous words, <SOS> and <EOS> tokens, an affine transform and softmax, and generates words by highest probability or sampling.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s06::p005",
+     "summary": "During training, true words from the dataset are used instead of sampled words, a technique called teacher-forcing.",
+     "group_id": "1805.06966::g00"
+    },
+    {
+     "passage_id": "1805.06966::s06::p006",
+     "summary": "Beam-search is deterministic and limits user behaviour diversity, so the NUS uses beam-search with sampling, with 2 beams giving a good trade-off between reasonable responses and diversity.",
+     "group_id": "1805.06966::g00"
+    }
+   ],
+   "n_raw": 29,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5187,
+    "completion_tokens": 1552,
+    "total_tokens": 6739,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1805.06966::g01",
+   "summaries": [
+    {
+     "passage_id": "1805.06966::s07::p000",
+     "summary": "The neural sequence-to-sequence model is trained to maximize the log probability assigned to user utterances in the training data set.",
+     "group_id": "1805.06966::g01"
+    },
+    {
+     "passage_id": "1805.06966::s07::p001",
+     "summary": "The network was implemented in Tensorflow, optimized with Adam, used widths of 100, tuned learning rate on validation, used no regularization, and shuffled dialogue turns.",
+     "group_id": "1805.06966::g01"
+    },
+    {
+     "passage_id": "1805.06966::s07::p002",
+     "summary": "Manual DSTC2 transcriptions were corrected and cleaned, yielding 1609 dialogues with 11638 turns, 505 validation dialogues with 3896 turns, maximum sequence length 22, and maximum dialogue length 30 turns.",
+     "group_id": "1805.06966::g01"
+    },
+    {
+     "passage_id": "1805.06966::s07::p003",
+     "summary": "Policies were trained in PyDial with NUS or ABUS using GP-SARSA, reward 20 for success and -1 per turn, maximum length 25 turns, metrics SR and average reward, for 4000 dialogues.",
+     "group_id": "1805.06966::g01"
+    },
+    {
+     "passage_id": "1805.06966::s08::p000",
+     "summary": "The paper argues that fair comparison between a new US model and the ABUS requires indirect evaluation of policies trained with each US.",
+     "group_id": "1805.06966::g01"
+    },
+    {
+     "passage_id": "1805.06966::s09::p000",
+     "summary": "Cross-model evaluation trains five policies per US with different seeds, reports best and average performance on 1000 test dialogues, and resamples NUS sentences when the new goal is not mentioned.",
+     "group_id": "1805.06966::g01"
+    },
+    {
+     "passage_id": "1805.06966::s10::p000",
+     "summary": "Human evaluation selected two policies per US, gathered 1000 dialogues with 250 per policy through AMT, used a commercial ASR system, and translated user success judgments into reward.",
+     "group_id": "1805.06966::g01"
+    },
+    {
+     "passage_id": "1805.06966::s11::p000",
+     "summary": "After 4000 training dialogues, NUS-trained policies achieved average SRs of 94.0% on ABUS and 96.6% on NUS, while ABUS-trained policies achieved 99.5% and 45.5%.",
+     "group_id": "1805.06966::g01"
+    },
+    {
+     "passage_id": "1805.06966::s11::p001",
+     "summary": "Policies trained on NUS for 1000 dialogues averaged 97.3% SR on ABUS versus 94.0% after 4000 dialogues, indicating overfitting to the NUS across all five seeds.",
+     "group_id": "1805.06966::g01"
+    },
+    {
+     "passage_id": "1805.06966::s12::p000",
+     "summary": "In human evaluation over 250 dialogues per policy, the best NUS-trained policy achieved 93.4% success rate and 13.8 average rewards, versus 90.0% and 13.3 for ABUS.",
+     "group_id": "1805.06966::g01"
+    },
+    {
+     "passage_id": "1805.06966::s13::p000",
+     "summary": "The Neural User Simulator uses semantic system responses as input, produces natural language responses, requires less labelling, and excelled in simulated-user and real-user policy evaluations.",
+     "group_id": "1805.06966::g01"
+    },
+    {
+     "passage_id": "1805.06966::s14::p000",
+     "summary": "The research was partly funded by EPSRC grant EP/M018946/1 Open Domain Statistical Spoken Dialogue Systems, with support for Florian Kreyssig and Paweł Budzianowski from named organizations.",
+     "group_id": "1805.06966::g01"
+    }
+   ],
+   "n_raw": 12,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 2264,
+    "completion_tokens": 710,
+    "total_tokens": 2974,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

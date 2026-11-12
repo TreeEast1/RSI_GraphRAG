@@ -1,0 +1,65 @@
+{
+ "paper_id": "1811.08603",
+ "title": "Neural Collective Entity Linking",
+ "abstract": "Entity Linking aims to link entity mentions in texts to knowledge bases, and neural models have achieved recent success in this task. However, most existing methods rely on local contexts to resolve entities independently, which may usually fail due to the data sparsity of local information. To address this issue, we propose a novel neural model for collective entity linking, named as NCEL. NCEL applies Graph Convolutional Network to integrate both local contextual features and global coherence information for entity linking. To improve the computation efficiency, we approximately perform graph convolution on a subgraph of adjacent entity mentions instead of those in the entire text. We further introduce an attention scheme to improve the robustness of NCEL to data noise and train the model on Wikipedia hyperlinks to avoid overfitting and domain bias. In experiments, we evaluate NCEL on five publicly available datasets to verify the linking performance as well as generalization ability. We also conduct an extensive analysis of time complexity, the impact of key modules, and qualitative results, which demonstrate the effectiveness and efficiency of our proposed method.",
+ "sections": [
+  "Introduction",
+  "Preliminaries and Framework",
+  "Candidate Generation",
+  "Feature Extraction",
+  "Learning Joint Embeddings of Word and Entity",
+  "Local Features",
+  "Global Features",
+  "Neural Collective Entity Linking",
+  "Graph Convolutional Network",
+  "Model Architecture",
+  "Training",
+  "Experiments",
+  "Baselines and Datasets",
+  "Training Details and Running Time Analysis",
+  "Results on GERBIL",
+  "Results on TAC2010 and WW",
+  "Qualitative Analysis",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 65,
+ "n_tokens": 5466,
+ "figures_and_tables": [
+  {
+   "caption_id": "1811.08603::fig000",
+   "paper_id": "1811.08603",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Illustration of named entity disambiguation for three mentions England, Hussain, and Essex. The nodes linked by arrowed lines are the candidate entities, where red solid lines denote target entities.",
+   "n_tokens": 44
+  },
+  {
+   "caption_id": "1811.08603::fig001",
+   "paper_id": "1811.08603",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2: Framework of NCEL. The inputs of a set of mentions in a document are listed in the left side. The words in red indicate the current mention mi, where mi−1,mi+1 are neighbor mentions, and Φ(mi) = {ei1, ei2, ei3} denotes the candidate entity set for mi.",
+   "n_tokens": 72
+  },
+  {
+   "caption_id": "1811.08603::fig002",
+   "paper_id": "1811.08603",
+   "file": "8-Table1-1.png",
+   "caption": "Table 1: Micro F1 (above) and Macro F1 (bottom) on GERBIL.",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "1811.08603::fig003",
+   "paper_id": "1811.08603",
+   "file": "9-Table2-1.png",
+   "caption": "Table 2: Precision on WW",
+   "n_tokens": 7
+  },
+  {
+   "caption_id": "1811.08603::fig004",
+   "paper_id": "1811.08603",
+   "file": "9-Table4-1.png",
+   "caption": "Table 4: Qualitative Analysis of the Example England.",
+   "n_tokens": 12
+  }
+ ]
+}

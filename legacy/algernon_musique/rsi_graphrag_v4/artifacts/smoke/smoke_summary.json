@@ -1,0 +1,499 @@
+{
+  "graph": {
+    "source_label": "luna_openie_g_raw",
+    "n_records": 11622,
+    "official_idx_mismatches": 0,
+    "n_relation_nodes": 84654,
+    "n_relation_edges": 122343,
+    "n_ner_entities": 67007,
+    "n_isolated_ner_entities": 653,
+    "isolated_ner_ratio": 0.009745250496216813,
+    "n_triples": 136732,
+    "n_uncovered_passages": 4,
+    "uncovered_passage_ratio": 0.00034417484081913615,
+    "relation_component_count": 1134,
+    "relation_component_size_histogram": {
+      "1": 6,
+      "2-5": 930,
+      "6-20": 196,
+      "21-100": 1,
+      "101-1000": 0,
+      "1000+": 1
+    },
+    "relation_largest_component_ratio": 0.9501382096534127,
+    "relation_largest_component_nodes": 80433,
+    "full_graph_definition": "relation edges plus passage-context edges; synonymy not included",
+    "full_component_count": 245,
+    "full_component_size_histogram": {
+      "1": 4,
+      "2-5": 37,
+      "6-20": 200,
+      "21-100": 3,
+      "101-1000": 0,
+      "1000+": 1
+    },
+    "full_largest_component_nodes": 94210,
+    "n_clusters_after_leiden": 1134,
+    "clusters_over_budget": 1,
+    "leiden_skipped_components_over_8000_nodes": 1,
+    "leiden_errors": 0
+  },
+  "top_predicates": [
+    [
+      "is located in",
+      4000
+    ],
+    [
+      "located in",
+      2947
+    ],
+    [
+      "is a",
+      2874
+    ],
+    [
+      "also known as",
+      1463
+    ],
+    [
+      "was released in",
+      944
+    ],
+    [
+      "stars",
+      920
+    ],
+    [
+      "is also known as",
+      862
+    ],
+    [
+      "is",
+      827
+    ],
+    [
+      "was born in",
+      740
+    ],
+    [
+      "won",
+      736
+    ],
+    [
+      "was born on",
+      726
+    ],
+    [
+      "was a",
+      696
+    ],
+    [
+      "is in",
+      655
+    ],
+    [
+      "is part of",
+      642
+    ],
+    [
+      "died on",
+      621
+    ]
+  ],
+  "leiden": {
+    "n_leiden_communities": 106,
+    "leiden_size_max": 3440,
+    "communities_over_16000_tokens": 75
+  },
+  "selection_rule": "median structural component/community; questions were not loaded",
+  "fresh_cap": 20,
+  "ledger": {
+    "max_fresh_calls": 20,
+    "fresh_calls": 8,
+    "cached_calls": 3,
+    "errors": 0,
+    "by_stage": {
+      "smoke_A": {
+        "fresh_calls": 2,
+        "cached_calls": 1,
+        "errors": 0,
+        "prompt_tokens": 19245.0,
+        "completion_tokens": 3246.0,
+        "reasoning_tokens": 1581.0
+      },
+      "smoke_B": {
+        "fresh_calls": 2,
+        "cached_calls": 1,
+        "errors": 0,
+        "prompt_tokens": 19242.0,
+        "completion_tokens": 5839.0,
+        "reasoning_tokens": 2736.0
+      },
+      "smoke_verify": {
+        "fresh_calls": 4,
+        "cached_calls": 1,
+        "errors": 0,
+        "prompt_tokens": 26483.0,
+        "completion_tokens": 2853.0,
+        "reasoning_tokens": 1670.0
+      }
+    },
+    "response_model_ids": {
+      "gpt-5.6-luna-2026-07-09": 8
+    }
+  },
+  "response_model": "gpt-5.6-luna-2026-07-09",
+  "clusters": [
+    {
+      "role": "small",
+      "cluster_id": "cc-00029",
+      "n_nodes": 10,
+      "n_passages": 2,
+      "estimated_tokens": 121,
+      "n_triples": 10,
+      "n_units": 1,
+      "core_coverage_complete": true,
+      "boundary_retention_rate": 1.0,
+      "cross_unit_edges": 0,
+      "selected_unit": {
+        "unit_id": "cc-00029-u000",
+        "n_core": 10,
+        "n_overlap": 0,
+        "input_tokens": 1165,
+        "over_budget": false
+      },
+      "protocols": [
+        {
+          "protocol": "A",
+          "status": "completed",
+          "n_updates": 1,
+          "accepted": 0,
+          "rejected": 0,
+          "uncertain": 0,
+          "raw_hash_unchanged": true,
+          "rollback_ok": true,
+          "active_nodes": 0,
+          "examples": [],
+          "rejections": [],
+          "prompt_tokens": 1177,
+          "completion_tokens": 177
+        },
+        {
+          "protocol": "B",
+          "status": "completed",
+          "n_updates": 1,
+          "accepted": 1,
+          "rejected": 0,
+          "uncertain": 0,
+          "raw_hash_unchanged": true,
+          "rollback_ok": true,
+          "active_nodes": 1,
+          "examples": [
+            {
+              "text": "Tristan von Lahnstein first appeared before Ludwig von Lahnstein, on 23 October 2009 and 22 December 2009 respectively.",
+              "derivation_type": "derived",
+              "evidence": [
+                {
+                  "passage_id": "chunk-5531a128df4a1d94732e682316b73430",
+                  "span": "He first appeared on 23 October 2009."
+                },
+                {
+                  "passage_id": "chunk-429ba54878382d30bf5cb2e822a01def",
+                  "span": "He appeared from 22 December 2009 to the character's death"
+                }
+              ],
+              "verifier": {
+                "candidate_id": "local-1",
+                "decision": "ACCEPT",
+                "faithfulness": "supported",
+                "novelty": "new",
+                "consistency": "consistent",
+                "reason": "The passages state that Tristan first appeared on 23 October 2009 and Ludwig appeared from 22 December 2009, supporting that Tristan appeared earlier, and no triple states this ordering."
+              }
+            }
+          ],
+          "rejections": [],
+          "prompt_tokens": 1176,
+          "completion_tokens": 809
+        }
+      ],
+      "openie_files_unchanged": true,
+      "cluster_graph_hash_unchanged": true
+    },
+    {
+      "role": "medium",
+      "cluster_id": "cc-00000-leiden-0099",
+      "n_nodes": 99,
+      "n_passages": 24,
+      "estimated_tokens": 3441,
+      "n_triples": 110,
+      "n_units": 1,
+      "core_coverage_complete": true,
+      "boundary_retention_rate": 1.0,
+      "cross_unit_edges": 0,
+      "selected_unit": {
+        "unit_id": "cc-00000-leiden-0099-u000",
+        "n_core": 99,
+        "n_overlap": 0,
+        "input_tokens": 9584,
+        "over_budget": false
+      },
+      "protocols": [
+        {
+          "protocol": "A",
+          "status": "completed",
+          "n_updates": 4,
+          "accepted": 2,
+          "rejected": 0,
+          "uncertain": 2,
+          "raw_hash_unchanged": true,
+          "rollback_ok": true,
+          "active_nodes": 2,
+          "examples": [
+            {
+              "text": "Bobby Morley was initially contracted for six months to play Aidan Foster.",
+              "derivation_type": "explicit_restatement",
+              "evidence": [
+                {
+                  "passage_id": "chunk-56664711c1c4de235b820a051107fb2f",
+                  "span": "Morley was initially contracted for six months"
+                }
+              ],
+              "verifier": {
+                "candidate_id": "local-001",
+                "decision": "ACCEPT",
+                "faithfulness": "supported",
+                "novelty": "new",
+                "consistency": "consistent",
+                "reason": "The span states that Morley was initially contracted for six months, and triple-2b8bd66f576fee8bca73822ecf494fbf identifies Morley as the actor who played Aidan Foster."
+              }
+            },
+            {
+              "text": "KPBD began broadcasting in June 2005.",
+              "derivation_type": "explicit_restatement",
+              "evidence": [
+                {
+                  "passage_id": "chunk-ed22e931f32904f9af5775fa847dedd6",
+                  "span": "The station began broadcasting in June 2005"
+                }
+              ],
+              "verifier": {
+                "candidate_id": "local-004",
+                "decision": "ACCEPT",
+                "faithfulness": "supported",
+                "novelty": "new",
+                "consistency": "consistent",
+                "reason": "The span explicitly states that the station began broadcasting in June 2005, while triple-7006d2ea2c59b028d7c6cb96b97fa51a identifies KPBD as the station."
+              }
+            }
+          ],
+          "rejections": [
+            {
+              "text": "Taylor Glockner was given a two-year contract to play Mason Turner.",
+              "reason": "verifier_reject",
+              "verifier": {
+                "candidate_id": "local-002",
+                "decision": "REJECT",
+                "faithfulness": "unsupported",
+                "novelty": "unclear",
+                "consistency": "unclear",
+                "reason": "The supplied span only says Glockner received a two-year contract with Neighbours and does not state that he played Mason Turner."
+              }
+            },
+            {
+              "text": "The Sisters of St Joseph of Nazareth have their main centre in Whanganui, New Zealand.",
+              "reason": "verifier_reject",
+              "verifier": {
+                "candidate_id": "local-003",
+                "decision": "REJECT",
+                "faithfulness": "unsupported",
+                "novelty": "unclear",
+                "consistency": "unclear",
+                "reason": "Although the span states that an unnamed subject had its main centre in Whanganui, it does not establish that the subject was the Sisters of St Joseph of Nazareth, and the supplied entity is instead Sisters of St Joseph Whanganui."
+              }
+            }
+          ],
+          "prompt_tokens": 9596,
+          "completion_tokens": 2004
+        },
+        {
+          "protocol": "B",
+          "status": "completed",
+          "n_updates": 4,
+          "accepted": 4,
+          "rejected": 0,
+          "uncertain": 0,
+          "raw_hash_unchanged": true,
+          "rollback_ok": true,
+          "active_nodes": 4,
+          "examples": [
+            {
+              "text": "Gemma Ramsay moved to Erinsborough to live with her aunt Madge Bishop after her mother’s death.",
+              "derivation_type": "derived",
+              "evidence": [
+                {
+                  "passage_id": "chunk-1a2f9e9e4d0a9f1c7cdb872540133c08",
+                  "span": "She moves to Erinsborough to live with her aunt, following her mother's death."
+                }
+              ],
+              "verifier": {
+                "candidate_id": "local-001",
+                "decision": "ACCEPT",
+                "faithfulness": "supported",
+                "novelty": "new",
+                "consistency": "consistent",
+                "reason": "The span states that Gemma moves to Erinsborough to live with her aunt following her mother’s death, while the triples only separately state her move and Madge’s casting."
+              }
+            },
+            {
+              "text": "Bobby Morley played Aidan Foster, who was introduced to Neighbours as a love interest for Chris Pappas.",
+              "derivation_type": "derived",
+              "evidence": [
+                {
+                  "passage_id": "chunk-56664711c1c4de235b820a051107fb2f",
+                  "span": "Aidan was introduced to \"Neighbours\" as a love interest for established character Chris Pappas (James Mason)."
+                }
+              ],
+              "verifier": {
+                "candidate_id": "local-002",
+                "decision": "ACCEPT",
+                "faithfulness": "supported",
+                "novelty": "new",
+                "consistency": "consistent",
+                "reason": "The span states that Aidan was introduced to Neighbours as Chris Pappas’s love interest, and triple-2b8bd66f states that Bobby Morley played Aidan Foster; their combination is not stated in one existing triple."
+              }
+            }
+          ],
+          "rejections": [],
+          "prompt_tokens": 9595,
+          "completion_tokens": 2688
+        }
+      ],
+      "openie_files_unchanged": true,
+      "cluster_graph_hash_unchanged": true
+    },
+    {
+      "role": "large",
+      "cluster_id": "cc-00000-leiden-0088",
+      "n_nodes": 670,
+      "n_passages": 196,
+      "estimated_tokens": 26899,
+      "n_triples": 825,
+      "n_units": 26,
+      "core_coverage_complete": true,
+      "boundary_retention_rate": 1.0,
+      "cross_unit_edges": 43,
+      "selected_unit": {
+        "unit_id": "cc-00000-leiden-0088-u010",
+        "n_core": 50,
+        "n_overlap": 13,
+        "input_tokens": 8460,
+        "over_budget": false
+      },
+      "protocols": [
+        {
+          "protocol": "A",
+          "status": "completed",
+          "n_updates": 2,
+          "accepted": 1,
+          "rejected": 0,
+          "uncertain": 1,
+          "raw_hash_unchanged": true,
+          "rollback_ok": true,
+          "active_nodes": 1,
+          "examples": [
+            {
+              "text": "Shades of Blue was renewed for a third season on March 17, 2017.",
+              "derivation_type": "explicit_restatement",
+              "evidence": [
+                {
+                  "passage_id": "chunk-11b375ea69e06d1107ef5ec409d4cb32",
+                  "span": "On March 17, 2017, the series was renewed for a third season."
+                }
+              ],
+              "verifier": {
+                "candidate_id": "candidate-1",
+                "decision": "ACCEPT",
+                "faithfulness": "supported",
+                "novelty": "new",
+                "consistency": "consistent",
+                "reason": "The passage explicitly states, “On March 17, 2017, the series was renewed for a third season,” and the triples only state renewal for a 13-episode second season."
+              }
+            }
+          ],
+          "rejections": [
+            {
+              "text": "Lipshitz Saves the World was not picked up for air.",
+              "reason": "verifier_reject",
+              "verifier": {
+                "candidate_id": "candidate-2",
+                "decision": "REJECT",
+                "faithfulness": "unsupported",
+                "novelty": "new",
+                "consistency": "consistent",
+                "reason": "The cited evidence span, “The show was not picked up for air,” is not present in the supplied passages, so the claim is unsupported despite not conflicting with the triples."
+              }
+            }
+          ],
+          "prompt_tokens": 8472,
+          "completion_tokens": 1065
+        },
+        {
+          "protocol": "B",
+          "status": "completed",
+          "n_updates": 3,
+          "accepted": 0,
+          "rejected": 0,
+          "uncertain": 3,
+          "raw_hash_unchanged": true,
+          "rollback_ok": true,
+          "active_nodes": 0,
+          "examples": [],
+          "rejections": [
+            {
+              "text": "Andrea Kremer and Hannah Storm became part of the first all-women booth to call a major men's team sport while calling Thursday Night Football for Amazon Prime Video.",
+              "reason": "verifier_reject",
+              "verifier": {
+                "candidate_id": "cand-1",
+                "decision": "REJECT",
+                "faithfulness": "partial",
+                "novelty": "new",
+                "consistency": "consistent",
+                "reason": "The triples support that Kremer and Storm called Thursday Night Football and that Kremer worked for Amazon Prime Video (triple-6cb8ed77e8a047470f04d6faea7ce9c7; triple-38266d6411ef74c18c9394ada576f999), but no supplied passage supports the claimed first all-women booth distinction."
+              }
+            },
+            {
+              "text": "Pat Sajak succeeded Chuck Woolery as host of Wheel of Fortune after Woolery's December 25, 1981 departure.",
+              "reason": "verifier_reject",
+              "verifier": {
+                "candidate_id": "cand-2",
+                "decision": "REJECT",
+                "faithfulness": "partial",
+                "novelty": "new",
+                "consistency": "consistent",
+                "reason": "The triples establish Woolery's hosting ended on December 25, 1981 and Sajak debuted as host on December 28, 1981 (triple-6971785be79c1c6820f44deebf82ddc1; triple-25008e2d1ffabe19bee706bb72d077b9), but no supplied passage provides the required quoted support for the succession sentence."
+              }
+            },
+            {
+              "text": "NBC approved the Lipshitz Saves the World pilot in July 2006, but the show was not picked up for broadcast.",
+              "reason": "verifier_reject",
+              "verifier": {
+                "candidate_id": "cand-3",
+                "decision": "REJECT",
+                "faithfulness": "partial",
+                "novelty": "new",
+                "consistency": "consistent",
+                "reason": "The approval in July 2006 is supported by triple-16df68bbdc707d1a2d5c104fc178c71b and the pilot approval by triple-27bfdbe590cfb74362578307c1391d52, but no supplied passage supports that the show was not picked up for broadcast."
+              }
+            }
+          ],
+          "prompt_tokens": 8471,
+          "completion_tokens": 2342
+        }
+      ],
+      "openie_files_unchanged": true,
+      "cluster_graph_hash_unchanged": true
+    }
+  ],
+  "question_time": "not_run"
+}

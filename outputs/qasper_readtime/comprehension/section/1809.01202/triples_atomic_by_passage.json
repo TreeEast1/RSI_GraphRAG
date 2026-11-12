@@ -1,0 +1,512 @@
+{
+ "1809.01202::s00::p000": [
+  [
+   "causal explanations",
+   "are an important topic of study in",
+   "social, psychological, economic, and behavioral sciences"
+  ],
+  [
+   "psychologists",
+   "found strong negative relationships with",
+   "depression, passivity, and hostility"
+  ],
+  [
+   "psychologists",
+   "found positive relationships with",
+   "life satisfaction, quality of life, and length of life"
+  ]
+ ],
+ "1809.01202::s00::p001": [
+  [
+   "causal explanations",
+   "are applied to measuring",
+   "optimism (and its converse, pessimism)"
+  ],
+  [
+   "the emphasized text span",
+   "is considered",
+   "a causal explanation which indicates pessimistic personality"
+  ],
+  [
+   "the explanation",
+   "would be considered",
+   "a signal of optimistic personality"
+  ]
+ ],
+ "1809.01202::s00::p002": [
+  [
+   "Language-based models",
+   "can detect",
+   "causal explanations from everyday social media language"
+  ],
+  [
+   "Language-based assessments",
+   "would enable",
+   "other large-scale downstream tasks"
+  ]
+ ],
+ "1809.01202::s00::p003": [
+  [
+   "the ungrammatical texts in social media",
+   "incur",
+   "poor syntactic parsing results"
+  ],
+  [
+   "Many causal relations",
+   "are",
+   "implicit and do not contain any discourse markers (e.g., `because')"
+  ]
+ ],
+ "1809.01202::s00::p004": [
+  [
+   "Prevailing approaches for social media analyses",
+   "utilize",
+   "traditional linear models or bag of words models"
+  ],
+  [
+   "traditional linear models or bag of words models",
+   "cannot segment",
+   "the text into meaningful discourse units or discourse arguments"
+  ],
+  [
+   "parsers",
+   "may still fail to accurately identify",
+   "discourse relations"
+  ],
+  [
+   "the content of social media",
+   "is quite different than",
+   "that of newswire"
+  ]
+ ],
+ "1809.01202::s00::p005": [
+  [
+   "RNNs",
+   "are effective for utilizing",
+   "discourse structures for their downstream tasks"
+  ],
+  [
+   "RNNs",
+   "have yet to be directly used for",
+   "discourse relation prediction in social media"
+  ],
+  [
+   "the SVM and random forest classifiers",
+   "work better than",
+   "the LSTM classifier for the causality detection"
+  ],
+  [
+   "the LSTM classifier",
+   "outperforms",
+   "other models for identifying causal explanation"
+  ]
+ ],
+ "1809.01202::s00::p006": [
+  [
+   "contributions of this work",
+   "include",
+   "the proposal of models for both (a) causality prediction and (b) causal explanation identification"
+  ],
+  [
+   "feature-based models",
+   "work best for",
+   "causality prediction"
+  ],
+  [
+   "RNNs",
+   "are superior for",
+   "the more difficult task of causal explanation identification"
+  ]
+ ],
+ "1809.01202::s01::p000": [
+  [
+   "Identifying causal explanations in documents",
+   "can be viewed as",
+   "discourse relation parsing"
+  ],
+  [
+   "The Penn Discourse Treebank (PDTB)",
+   "has",
+   "a `Cause' and `Pragmatic Cause' discourse type under a general `Contingency' class"
+  ],
+  [
+   "Rhetorical Structure Theory (RST)",
+   "has",
+   "a `Relations of Cause'"
+  ],
+  [
+   "These corpora",
+   "consist of",
+   "documents from Wall Street Journal (WSJ) which are much more well-organized and grammatical than social media texts"
+  ]
+ ],
+ "1809.01202::s01::p001": [
+  [
+   "Ji and Bhatia",
+   "used",
+   "models which are pretrained with RST DT for building discourse structures from movie reviews"
+  ],
+  [
+   "Son",
+   "adapted",
+   "the PDTB discourse relation parsing approach for capturing counterfactual conditionals from tweets"
+  ],
+  [
+   "Ji's model",
+   "performed worse than",
+   "the baseline on the categorization of legislative bills"
+  ],
+  [
+   "Son",
+   "manually developed",
+   "seven surface forms of counterfactual thinking for the rule-based system"
+  ]
+ ],
+ "1809.01202::s01::p002": [
+  [
+   "Past research",
+   "has found",
+   "that different types of models and features yield varying performance for each subtask"
+  ]
+ ],
+ "1809.01202::s01::p003": [
+  [
+   "simpler models such as SVMs and logistic regression",
+   "obtained",
+   "the state-of-the-art performances for text categorization tasks in social media"
+  ]
+ ],
+ "1809.01202::s02::p000": [
+  [
+   "PDTB",
+   "has",
+   "a relatively simpler text segmentation method"
+  ]
+ ],
+ "1809.01202::s03::p000": [
+  [
+   "Three well-trained annotators",
+   "obtained",
+   "1,598 causality messages with substantial agreement ( $\\kappa =0.61$ )"
+  ],
+  [
+   "annotators",
+   "identified",
+   "which text spans are causal explanations"
+  ]
+ ],
+ "1809.01202::s04::p000": [
+  [
+   "feature-based models",
+   "utilize",
+   "features of the successful models in social media analysis and causal relation discourse parsing"
+  ],
+  [
+   "a recursive neural network model",
+   "uses",
+   "distributed representation of discourse arguments"
+  ]
+ ],
+ "1809.01202::s04::p001": [
+  [
+   "emojis (`E' tag)",
+   "are",
+   "crucial for discourse relation in social media"
+  ]
+ ],
+ "1809.01202::s04::p002": [
+  [
+   "First-Last, First3 features",
+   "are",
+   "first and last word and first three words of two discourse arguments of the relation"
+  ],
+  [
+   "Word Pairs",
+   "are",
+   "the cross product of words of those discourse arguments"
+  ]
+ ],
+ "1809.01202::s04::p004": [
+  [
+   "the first model variant",
+   "inputs",
+   "all word embeddings of a whole message to a BiLSTM layer"
+  ],
+  [
+   "Word LSTM",
+   "makes prediction without",
+   "the help of the distributional vector representations of discourse arguments"
+  ],
+  [
+   "the second model variant",
+   "takes",
+   "the average of all word embeddings of each discourse argument"
+  ],
+  [
+   "DA AVG LSTM",
+   "uses as inputs to a BiLSTM layer",
+   "the average vector of embeddings"
+  ]
+ ],
+ "1809.01202::s05::p000": [
+  [
+   "low frequency Word Pairs features",
+   "were filtered out as",
+   "noisy and sparse"
+  ],
+  [
+   "univariate feature selection",
+   "restricts all remaining features to",
+   "those showing at least a small relationship with the outcome"
+  ]
+ ],
+ "1809.01202::s05::p001": [
+  [
+   "the discourse arguments for causal explanation",
+   "can show up",
+   "either before and after the effected events or results"
+  ],
+  [
+   "the dataset",
+   "is",
+   "relatively small for the high complexity of the model"
+  ]
+ ],
+ "1809.01202::s05::p002": [
+  [
+   "pretrained GLOVE vectors",
+   "were trained in",
+   "this setting"
+  ],
+  [
+   "learning rates",
+   "are",
+   "0.01 and 0.001"
+  ]
+ ],
+ "1809.01202::s05::p003": [
+  [
+   "Average embeddings",
+   "have performed well for",
+   "representing text sequences in other tasks"
+  ]
+ ],
+ "1809.01202::s06::p000": [
+  [
+   "performance analysis",
+   "reported",
+   "weighted F1 of classes"
+  ]
+ ],
+ "1809.01202::s07::p000": [
+  [
+   "off-the-shelf PDTB parsers",
+   "achieved",
+   "the lowest accuracies"
+  ],
+  [
+   "SVM and random forest classifier",
+   "performed better than",
+   "LSTM"
+  ]
+ ],
+ "1809.01202::s07::p001": [
+  [
+   "POS tags",
+   "caused",
+   "the largest drop in F1"
+  ],
+  [
+   "N-gram features",
+   "caused",
+   "0.022 F1 drop"
+  ],
+  [
+   "sentiment tags",
+   "did not affect",
+   "the model when removed"
+  ]
+ ],
+ "1809.01202::s08::p000": [
+  [
+   "The Linear SVM",
+   "obtained",
+   "lowest F1"
+  ],
+  [
+   "the LSTM model",
+   "made",
+   "the best identification performance"
+  ]
+ ],
+ "1809.01202::s09::p000": [
+  [
+   "only word tokens in the whole message without help of Word-level LSTM layer (Word LSTM)",
+   "caused",
+   "F1 dropped by 0.064"
+  ],
+  [
+   "the average of the sequence of word embeddings of each discourse argument as an input to the DA-level LSTM",
+   "caused",
+   "F1 drop of 0.073"
+  ]
+ ],
+ "1809.01202::s09::p002": [
+  [
+   "DA AVG LSTM",
+   "had higher performance than",
+   "Word LSTM"
+  ],
+  [
+   "DA AVG LSTM",
+   "ran on",
+   "the sequence representation of discourse argument"
+  ],
+  [
+   "Word LSTM",
+   "ran on",
+   "the plain sequence of word embeddings"
+  ],
+  [
+   "Full LSTM",
+   "obtained",
+   "the highest performance"
+  ]
+ ],
+ "1809.01202::s10::p000": [
+  [
+   "Evaluations thus far",
+   "zeroed-in on",
+   "each subtask of causal explanation analysis"
+  ],
+  [
+   "CEI",
+   "only focused on",
+   "data already identified to contain causal explanations"
+  ],
+  [
+   "complete pipeline of CP and CEI",
+   "starts from",
+   "all of test data"
+  ],
+  [
+   "complete pipeline of CP and CEI",
+   "evaluates",
+   "the final accuracy of CEI predictions"
+  ]
+ ],
+ "1809.01202::s10::p001": [
+  [
+   "CEI Only",
+   "runs",
+   "CEI prediction by itself"
+  ],
+  [
+   "CP + CEI",
+   "runs CEI on",
+   "documents predicted as causal"
+  ],
+  [
+   "CEI model",
+   "could be trained on",
+   "those documents annotated causal"
+  ],
+  [
+   "CEI model",
+   "could be trained on",
+   "all training documents including many that are not causal"
+  ]
+ ],
+ "1809.01202::s10::p002": [
+  [
+   "CP + CEI $_{causal}$",
+   "yielded",
+   "the strongest results"
+  ],
+  [
+   "approximately 2/3 of documents",
+   "will never need",
+   "the CEI step applied"
+  ]
+ ],
+ "1809.01202::s10::p003": [
+  [
+   "size of our dataset",
+   "had",
+   "an inevitable limitation"
+  ],
+  [
+   "annotation",
+   "required",
+   "an intensive iterative process"
+  ],
+  [
+   "combination of the linear model and the RNN-based model of our pipeline",
+   "obtained",
+   "both the high performance and efficiency for the practical applications to downstream tasks"
+  ],
+  [
+   "linear model",
+   "could still be used for",
+   "a first-pass, computationally efficient labeling"
+  ]
+ ],
+ "1809.01202::s11::p000": [
+  [
+   "causal explanation analysis",
+   "is explored for",
+   "downstream tasks"
+  ],
+  [
+   "relationship between use of causal explanation and one's demographics",
+   "includes",
+   "age and gender"
+  ],
+  [
+   "their use in sentiment analysis",
+   "is for",
+   "extracting the causes of polarity ratings"
+  ],
+  [
+   "Research involving human subjects",
+   "was approved by",
+   "the University of Pennsylvania Institutional Review Board"
+  ]
+ ],
+ "1809.01202::s12::p000": [
+  [
+   "pipeline for causal explanation analysis over social media text",
+   "includes",
+   "both causality prediction and causal explanation identification"
+  ],
+  [
+   "SVM",
+   "was best for",
+   "causality prediction"
+  ],
+  [
+   "hierarchy of BiLSTMs",
+   "was best for",
+   "causal explanation identification"
+  ],
+  [
+   "Results of our whole pipeline of causal explanation analysis",
+   "achieved",
+   "an $F1=0.868$ at identifying discourse arguments that are causal explanations"
+  ]
+ ],
+ "1809.01202::s12::p001": [
+  [
+   "Utilization of discourse structure in social media analysis",
+   "has been",
+   "a largely untapped area of exploration"
+  ]
+ ],
+ "1809.01202::s13::p000": [
+  [
+   "The funders",
+   "had no role in",
+   "study design, data collection and analysis, decision to publish, or preparation of the manuscript"
+  ]
+ ]
+}

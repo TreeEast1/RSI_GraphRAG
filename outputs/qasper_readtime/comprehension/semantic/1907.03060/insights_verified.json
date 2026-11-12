@@ -1,0 +1,880 @@
+{
+ "kept": [
+  {
+   "insight_id": "1907.03060::s01:i09",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s01",
+   "concise_text": "The conclusion that well-established solutions have limited success when restricted to in-domain data is supported by all Ja INLINEFORM2 Ru results being abysmal and BLEU scores not exceeding 10 BLEU points.",
+   "triple": {
+    "subject": "abysmal Ja INLINEFORM2 Ru results and BLEU scores not exceeding 10 BLEU points",
+    "predicate": "supports",
+    "object": "limited success of well-established solutions restricted to in-domain data"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1907.03060::s06::p001",
+    "1907.03060::s08::p000",
+    "1907.03060::s13::p000"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s01:b1:f21",
+    "1907.03060::s01:b3:f02",
+    "1907.03060::s01:b5:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Cited paragraphs exist and jointly support the composed evidence-to-conclusion link: in-domain-only models had abysmal Ja-Ru results and BLEU scores not exceeding 10, while the conclusion states limited success of well-established solutions restricted to in-domain data. No unsupported numbers/entities or causal overreach beyond the paper's own 'implying/confirmed' framing."
+   },
+   "unit_id": "1907.03060::u019"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1907.03060::s00:i00",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s00",
+   "concise_text": "The novel multilingual multistage fine-tuning approach combines multilingual modeling and domain adaptation, the two transfer learning solutions whose step-wise fine-tuning combination the paper explores.",
+   "triple": {
+    "subject": "novel multilingual multistage fine-tuning approach",
+    "predicate": "extends",
+    "object": "multilingual modeling and domain adaptation"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1907.03060::s00::p004",
+    "1907.03060::s02::p002"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s00:b1:f00",
+    "1907.03060::s00:b1:f01"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.4,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "Sources say the approach involves/combines multilingual modeling and domain adaptation, not that it 'extends' them; also largely a paraphrase/entity-resolution restatement."
+   },
+   "unit_id": "1907.03060::u000"
+  },
+  {
+   "insight_id": "1907.03060::s00:i01",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s00",
+   "concise_text": "Because the M2M Transformer NMT model (b3) achieved best results for most translation directions, it was selected to translate monolingual sentences into pseudo-parallel data.",
+   "triple": {
+    "subject": "M2M Transformer NMT model (b3)",
+    "predicate": "causes",
+    "object": "selection for generating pseudo-parallel data"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1907.03060::s07::p000",
+    "1907.03060::s07::p007"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s00:b4:f06",
+    "1907.03060::s00:b5:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.3,
+    "causality_error": true,
+    "reason": "Passages jointly show b3 had best results and was used to translate monolingual sentences, but do not explicitly state that best results caused its selection; causal relation is inferred."
+   },
+   "unit_id": "1907.03060::u001"
+  },
+  {
+   "insight_id": "1907.03060::s00:i02",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s00",
+   "concise_text": "Training new NMT models from scratch on original parallel and pseudo-parallel data yielded all six-way pseudo-parallel data (#10) significantly improving the base model except En INLINEFORM0 Ru.",
+   "triple": {
+    "subject": "new NMT models trained from scratch on original parallel and pseudo-parallel data",
+    "predicate": "causes",
+    "object": "all six-way pseudo-parallel data (#10) significantly improving the base model except En INLINEFORM0 Ru"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1907.03060::s07::p007",
+    "1907.03060::s07::p008"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s00:b5:f04",
+    "1907.03060::s00:b5:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.6,
+    "novelty": 0.3,
+    "causality_error": true,
+    "reason": "The training setup and the observed improvement of #10 are described, but the causal claim that training from scratch caused #10's significant improvement is not explicitly supported; #10 is a combination result in a table."
+   },
+   "unit_id": "1907.03060::u002"
+  },
+  {
+   "insight_id": "1907.03060::s00:i03",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s00",
+   "concise_text": "The final multistage fine-tuning models V and VII significantly outperformed both (b3), a weak baseline without monolingual data, and #10, a strong baseline with monolingual data.",
+   "triple": {
+    "subject": "final models of our multistage fine-tuning, i.e., V and VII",
+    "predicate": "outperforms",
+    "object": "(b3) and #10 in Table TABREF33"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1907.03060::s06::p005",
+    "1907.03060::s07::p008"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s00:b4:f03",
+    "1907.03060::s00:b4:f04",
+    "1907.03060::s00:b4:f05",
+    "1907.03060::s00:b5:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Direct restatement of p006005: final models V and VII achieved significantly higher BLEU scores than b3 and #10; no novel composed insight."
+   },
+   "unit_id": "1907.03060::u003"
+  },
+  {
+   "insight_id": "1907.03060::s00:i04",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s00",
+   "concise_text": "The limitation of relying only on in-domain data motivates exploring out-of-domain data, which domain adaptation incorporates as one of the two useful transfer learning solutions.",
+   "triple": {
+    "subject": "limitation of relying only on in-domain data",
+    "predicate": "requires",
+    "object": "domain adaptation to incorporate out-of-domain data"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1907.03060::s09::p000",
+    "1907.03060::s02::p002"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s00:b5:f07",
+    "1907.03060::s00:b1:f01"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.83,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.5,
+    "novelty": 0.3,
+    "causality_error": true,
+    "reason": "Text says the limitation motivates exploring out-of-domain data and that domain adaptation incorporates out-of-domain data, but not that the limitation 'requires' domain adaptation; causal/necessity relation unsupported."
+   },
+   "unit_id": "1907.03060::u004"
+  },
+  {
+   "insight_id": "1907.03060::s00:i05",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s00",
+   "concise_text": "The M2M Transformer NMT model (b3) was evaluated with case-sensitive and tokenized BLEU using Moses's multi-bleu.perl and achieved best results for most translation directions.",
+   "triple": {
+    "subject": "M2M Transformer NMT model (b3)",
+    "predicate": "evaluated_on",
+    "object": "case-sensitive and tokenized BLEU using Moses's multi-bleu.perl"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1907.03060::s06::p000",
+    "1907.03060::s07::p000"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s00:b3:f05",
+    "1907.03060::s00:b4:f06"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "General evaluation metric applies to MT models, and b3 is an MT model with best results, but the specific claim that b3 was evaluated on that metric is inferred; also mostly compositional restatement."
+   },
+   "unit_id": "1907.03060::u005"
+  },
+  {
+   "insight_id": "1907.03060::s00:i06",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s00",
+   "concise_text": "The M2M Transformer NMT model (b3) outperformed standard PBSMT models (c1), while standard PBSMT models (c1) achieved higher BLEU scores than uni-directional NMT models (a1) and (b1).",
+   "triple": {
+    "subject": "M2M Transformer NMT model (b3)",
+    "predicate": "outperforms",
+    "object": "standard PBSMT models (c1) and uni-directional NMT models (a1) and (b1)"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1907.03060::s06::p003",
+    "1907.03060::s06::p004"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s00:b4:f00",
+    "1907.03060::s00:b4:f01",
+    "1907.03060::s00:b4:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "Supported by p006003 and p006004, but it is essentially a combined restatement of explicit comparisons rather than a novel insight."
+   },
+   "unit_id": "1907.03060::u006"
+  },
+  {
+   "insight_id": "1907.03060::s00:i07",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s00",
+   "concise_text": "The paper's claim that NMT is unable to handle low-resource language pairs as opposed to PBSMT is supported by standard PBSMT models (c1) achieving higher BLEU scores than uni-directional NMT models (a1) and (b1).",
+   "triple": {
+    "subject": "standard PBSMT models (c1) achieving higher BLEU scores than uni-directional NMT models (a1) and (b1)",
+    "predicate": "supports",
+    "object": "NMT is unable to handle low-resource language pairs as opposed to PBSMT"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1907.03060::s02::p000",
+    "1907.03060::s06::p003"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s00:b0:f08",
+    "1907.03060::s00:b4:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.87,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.6,
+    "novelty": 0.3,
+    "causality_error": false,
+    "reason": "The cited result is 'as reported by koehn-knowles:2017:NMT' and concerns specific uni-directional NMT models; it does not support the broad claim that NMT is unable to handle low-resource pairs as opposed to PBSMT."
+   },
+   "unit_id": "1907.03060::u007"
+  },
+  {
+   "insight_id": "1907.03060::s00:i08",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s00",
+   "concise_text": "The assumption that solving each sub-problem one by one should enable gradual shift of parameters underlies multistage fine-tuning, whose final models V and VII achieved significantly higher BLEU scores than (b3).",
+   "triple": {
+    "subject": "assumption that solving each sub-problem one by one should enable gradual shift of parameters",
+    "predicate": "supports",
+    "object": "multistage fine-tuning models V and VII achieving significantly higher BLEU scores than (b3)"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1907.03060::s10::p005",
+    "1907.03060::s06::p005"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s00:b4:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.4,
+    "novelty": 0.3,
+    "causality_error": true,
+    "reason": "The assumption is described as a reason for choosing multistage fine-tuning, not as evidence supporting the later BLEU-score outcome; causal/support relation is unsupported."
+   },
+   "unit_id": "1907.03060::u008"
+  },
+  {
+   "insight_id": "1907.03060::s00:i09",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s00",
+   "concise_text": "Repeating generation of six-way pseudo-parallel data and fine-tuning five times produced one more iteration (IX) that further improved BLEU scores for all translation directions except Ru INLINEFORM0 En.",
+   "triple": {
+    "subject": "repeating generation of six-way pseudo-parallel data and fine-tuning five times",
+    "predicate": "causes",
+    "object": "one more iteration (IX) further improving BLEU scores for all translation directions except Ru INLINEFORM0 En"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1907.03060::s12::p001",
+    "1907.03060::s12::p002"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s00:b6:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.3,
+    "causality_error": true,
+    "reason": "Passages describe repeating steps five times and that iteration IX improved scores, but do not explicitly state that the five repetitions caused IX's improvement; causal wording is stronger than the text."
+   },
+   "unit_id": "1907.03060::u009"
+  },
+  {
+   "insight_id": "1907.03060::s01:i00",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s01",
+   "concise_text": "Because no out-of-domain data is available for Ja INLINEFORM1 Ru, the proposed multistage fine-tuning method exploits out-of-domain Ja INLINEFORM2 En and Ru INLINEFORM3 En data through domain adaptation and multilingual transfer.",
+   "triple": {
+    "subject": "multistage fine-tuning method",
+    "predicate": "exploits",
+    "object": "out-of-domain Ja INLINEFORM2 En and Ru INLINEFORM3 En data"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1907.03060::s09::p001",
+    "1907.03060::s10::p001"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s01:b3:f06",
+    "1907.03060::s01:b3:f07",
+    "1907.03060::s01:b4:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Directly restates p009001: no out-of-domain Ja-Ru data, so the method exploits out-of-domain Ja-En and Ru-En data via domain adaptation and multilingual transfer."
+   },
+   "unit_id": "1907.03060::u010"
+  },
+  {
+   "insight_id": "1907.03060::s01:i01",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s01",
+   "concise_text": "The multilingual multistage fine-tuning approach improves Ja INLINEFORM1 Ru translation by over 3.7 BLEU points compared to a strong baseline after in-domain-only models produced BLEU scores not exceeding 10 BLEU points.",
+   "triple": {
+    "subject": "multilingual multistage fine-tuning approach",
+    "predicate": "improves_on",
+    "object": "in-domain-only models for Ja INLINEFORM1 Ru translation"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1907.03060::s08::p000",
+    "1907.03060::s13::p000"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s01:b3:f02",
+    "1907.03060::s01:b5:f01"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.3,
+    "causality_error": false,
+    "reason": "Sources support low in-domain BLEU scores and >3.7 BLEU improvement over a strong baseline, but the triple says 'improves_on in-domain-only models,' which is not the stated comparison and is an inferred conclusion."
+   },
+   "unit_id": "1907.03060::u011"
+  },
+  {
+   "insight_id": "1907.03060::s01:i02",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s01",
+   "concise_text": "The limitation of relying only on in-domain data motivates exploring other types of parallel data, leading to the use of the cleanest 1.5M sentences from ASPEC for Ja INLINEFORM0 En.",
+   "triple": {
+    "subject": "limitation of relying only on in-domain data",
+    "predicate": "causes",
+    "object": "use of the cleanest 1.5M sentences from ASPEC for Ja INLINEFORM0 En"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1907.03060::s09::p000",
+    "1907.03060::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s01:b3:f03",
+    "1907.03060::s01:b4:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.4,
+    "novelty": 0.3,
+    "causality_error": true,
+    "reason": "The limitation motivates exploring other parallel data, and ASPEC 1.5M sentences were used, but the text does not state that the limitation caused that specific dataset choice."
+   },
+   "unit_id": "1907.03060::u012"
+  },
+  {
+   "insight_id": "1907.03060::s01:i03",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s01",
+   "concise_text": "The multistage fine-tuning method pre-trains a multilingual model on Ja INLINEFORM0 En and Ru INLINEFORM1 En out-of-domain parallel data, then fine-tunes it on in-domain Ja INLINEFORM0 En and Ru INLINEFORM1 En parallel data.",
+   "triple": {
+    "subject": "multistage fine-tuning method",
+    "predicate": "requires",
+    "object": "pre-training on out-of-domain data followed by in-domain fine-tuning"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1907.03060::s10::p002",
+    "1907.03060::s10::p003"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s01:b4:f02",
+    "1907.03060::s01:b4:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "The two passages explicitly describe pre-training on out-of-domain data and subsequent fine-tuning on in-domain or mixed data; the insight is a close paraphrase/restatement, and 'requires' is too strong."
+   },
+   "unit_id": "1907.03060::u013"
+  },
+  {
+   "insight_id": "1907.03060::s01:i04",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s01",
+   "concise_text": "Mixed fine-tuning for the second fine-tuning stage (V and VII) resulted in consistently better models than conventional fine-tuning (IV and VI), which used in-domain Ja INLINEFORM0 Ru parallel data only.",
+   "triple": {
+    "subject": "mixed fine-tuning for the second fine-tuning stage (V and VII)",
+    "predicate": "outperforms",
+    "object": "conventional fine-tuning (IV and VI)"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1907.03060::s06::p008",
+    "1907.03060::s10::p004"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s01:b2:f08",
+    "1907.03060::s01:b4:f06",
+    "1907.03060::s01:b4:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.94,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Direct restatement of p006008 plus p010004: mixed fine-tuning V/VII was consistently better than conventional fine-tuning IV/VI; no novel insight."
+   },
+   "unit_id": "1907.03060::u014"
+  },
+  {
+   "insight_id": "1907.03060::s01:i05",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s01",
+   "concise_text": "The first fine-tuning stage significantly improved Ja INLINEFORM0 En and Ru INLINEFORM1 En translation quality but left Ja INLINEFORM2 Ru poor because the models had not yet seen Ja INLINEFORM3 Ru parallel data.",
+   "triple": {
+    "subject": "first fine-tuning stage",
+    "predicate": "limits",
+    "object": "Ja INLINEFORM2 Ru translation quality before Ja INLINEFORM3 Ru parallel data"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1907.03060::s06::p007",
+    "1907.03060::s10::p003"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s01:b2:f03",
+    "1907.03060::s01:b2:f04",
+    "1907.03060::s01:b4:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Cited paragraphs exist, but the insight is essentially a restatement/paraphrase of p007: first fine-tuning improved Ja-En and Ru-En while Ja-Ru remained poor because no Ja-Ru parallel data had been seen."
+   },
+   "unit_id": "1907.03060::u015"
+  },
+  {
+   "insight_id": "1907.03060::s01:i06",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s01",
+   "concise_text": "The initial model (I) cannot achieve minimum quality for Ja INLINEFORM0 Ru because it was pre-trained only on Ja INLINEFORM0 En and Ru INLINEFORM1 En out-of-domain parallel data.",
+   "triple": {
+    "subject": "pre-training only on Ja INLINEFORM0 En and Ru INLINEFORM1 En out-of-domain parallel data",
+    "predicate": "causes",
+    "object": "initial model (I) failure on Ja INLINEFORM0 Ru"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1907.03060::s06::p006",
+    "1907.03060::s10::p002"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s01:b2:f01",
+    "1907.03060::s01:b4:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.2,
+    "causality_error": true,
+    "reason": "Sources say initial model cannot achieve minimum Ja-Ru quality because it never saw parallel data for that pair, and that it was pre-trained only on Ja-En and Ru-En out-of-domain data. The insight adds a causal claim that this specific pre-training setting causes failure, which is only indirectly supported; also concise_text largely restates p006 plus p002."
+   },
+   "unit_id": "1907.03060::u016"
+  },
+  {
+   "insight_id": "1907.03060::s01:i07",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s01",
+   "concise_text": "The manually compiled development and test sets from News Commentary data were used for early stopping, which evaluated models every 1,000 updates and stopped after 10,000 updates without BLEU improvement.",
+   "triple": {
+    "subject": "manually compiled development and test sets",
+    "predicate": "evaluated_on",
+    "object": "early stopping with BLEU score for the development set"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1907.03060::s01::p001",
+    "1907.03060::s05::p012"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s01:b0:f04",
+    "1907.03060::s01:b1:f17",
+    "1907.03060::s01:b1:f18"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "Cited paragraphs exist and jointly support that manually compiled dev/test sets were used and early stopping evaluated BLEU on the development set every 1,000 updates with stopping after 10,000 updates without improvement. However, the triple is an entity-resolution relation that is awkward/unsupported as written: the sets are not 'evaluated_on' early stopping; models are evaluated on the development set. The concise_text is also a near-composition/restatement of the two paragraphs."
+   },
+   "unit_id": "1907.03060::u017"
+  },
+  {
+   "insight_id": "1907.03060::s01:i08",
+   "paper_id": "1907.03060",
+   "group_id": "1907.03060::s01",
+   "concise_text": "MT based on pivot languages requires large in-domain parallel corpora involving the pivot languages, but Ja INLINEFORM2 En and Ru INLINEFORM3 En are also small, making this technique infeasible.",
+   "triple": {
+    "subject": "small Ja INLINEFORM2 En and Ru INLINEFORM3 En corpora",
+    "predicate": "limits",
+    "object": "MT based on pivot languages"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1907.03060::s00::p002",
+    "1907.03060::s02::p001"
+   ],
+   "supporting_fact_ids": [
+    "1907.03060::s01:b0:f01",
+    "1907.03060::s01:b0:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.89,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Cited paragraphs exist and support the limitation, but the insight is a direct paraphrase of p002: pivot-language MT requires large in-domain corpora involving pivots and is infeasible because Ja-En and Ru-En in-domain corpora are extremely limited/small."
+   },
+   "unit_id": "1907.03060::u018"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1907.03060::s00:i00",
+    "verdict": {
+     "insight_id": "1907.03060::s00:i00",
+     "keep": false,
+     "support": 0.4,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "Sources say the approach involves/combines multilingual modeling and domain adaptation, not that it 'extends' them; also largely a paraphrase/entity-resolution restatement."
+    },
+    "reason": "Sources say the approach involves/combines multilingual modeling and domain adaptation, not that it 'extends' them; also largely a paraphrase/entity-resolution restatement."
+   },
+   {
+    "insight_id": "1907.03060::s00:i01",
+    "verdict": {
+     "insight_id": "1907.03060::s00:i01",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.3,
+     "causality_error": true,
+     "reason": "Passages jointly show b3 had best results and was used to translate monolingual sentences, but do not explicitly state that best results caused its selection; causal relation is inferred."
+    },
+    "reason": "Passages jointly show b3 had best results and was used to translate monolingual sentences, but do not explicitly state that best results caused its selection; causal relation is inferred."
+   },
+   {
+    "insight_id": "1907.03060::s00:i02",
+    "verdict": {
+     "insight_id": "1907.03060::s00:i02",
+     "keep": false,
+     "support": 0.6,
+     "novelty": 0.3,
+     "causality_error": true,
+     "reason": "The training setup and the observed improvement of #10 are described, but the causal claim that training from scratch caused #10's significant improvement is not explicitly supported; #10 is a combination result in a table."
+    },
+    "reason": "The training setup and the observed improvement of #10 are described, but the causal claim that training from scratch caused #10's significant improvement is not explicitly supported; #10 is a combination result in a table."
+   },
+   {
+    "insight_id": "1907.03060::s00:i03",
+    "verdict": {
+     "insight_id": "1907.03060::s00:i03",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Direct restatement of p006005: final models V and VII achieved significantly higher BLEU scores than b3 and #10; no novel composed insight."
+    },
+    "reason": "Direct restatement of p006005: final models V and VII achieved significantly higher BLEU scores than b3 and #10; no novel composed insight."
+   },
+   {
+    "insight_id": "1907.03060::s00:i04",
+    "verdict": {
+     "insight_id": "1907.03060::s00:i04",
+     "keep": false,
+     "support": 0.5,
+     "novelty": 0.3,
+     "causality_error": true,
+     "reason": "Text says the limitation motivates exploring out-of-domain data and that domain adaptation incorporates out-of-domain data, but not that the limitation 'requires' domain adaptation; causal/necessity relation unsupported."
+    },
+    "reason": "Text says the limitation motivates exploring out-of-domain data and that domain adaptation incorporates out-of-domain data, but not that the limitation 'requires' domain adaptation; causal/necessity relation unsupported."
+   },
+   {
+    "insight_id": "1907.03060::s00:i05",
+    "verdict": {
+     "insight_id": "1907.03060::s00:i05",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "General evaluation metric applies to MT models, and b3 is an MT model with best results, but the specific claim that b3 was evaluated on that metric is inferred; also mostly compositional restatement."
+    },
+    "reason": "General evaluation metric applies to MT models, and b3 is an MT model with best results, but the specific claim that b3 was evaluated on that metric is inferred; also mostly compositional restatement."
+   },
+   {
+    "insight_id": "1907.03060::s00:i06",
+    "verdict": {
+     "insight_id": "1907.03060::s00:i06",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "Supported by p006003 and p006004, but it is essentially a combined restatement of explicit comparisons rather than a novel insight."
+    },
+    "reason": "Supported by p006003 and p006004, but it is essentially a combined restatement of explicit comparisons rather than a novel insight."
+   },
+   {
+    "insight_id": "1907.03060::s00:i07",
+    "verdict": {
+     "insight_id": "1907.03060::s00:i07",
+     "keep": false,
+     "support": 0.6,
+     "novelty": 0.3,
+     "causality_error": false,
+     "reason": "The cited result is 'as reported by koehn-knowles:2017:NMT' and concerns specific uni-directional NMT models; it does not support the broad claim that NMT is unable to handle low-resource pairs as opposed to PBSMT."
+    },
+    "reason": "The cited result is 'as reported by koehn-knowles:2017:NMT' and concerns specific uni-directional NMT models; it does not support the broad claim that NMT is unable to handle low-resource pairs as opposed to PBSMT."
+   },
+   {
+    "insight_id": "1907.03060::s00:i08",
+    "verdict": {
+     "insight_id": "1907.03060::s00:i08",
+     "keep": false,
+     "support": 0.4,
+     "novelty": 0.3,
+     "causality_error": true,
+     "reason": "The assumption is described as a reason for choosing multistage fine-tuning, not as evidence supporting the later BLEU-score outcome; causal/support relation is unsupported."
+    },
+    "reason": "The assumption is described as a reason for choosing multistage fine-tuning, not as evidence supporting the later BLEU-score outcome; causal/support relation is unsupported."
+   },
+   {
+    "insight_id": "1907.03060::s00:i09",
+    "verdict": {
+     "insight_id": "1907.03060::s00:i09",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.3,
+     "causality_error": true,
+     "reason": "Passages describe repeating steps five times and that iteration IX improved scores, but do not explicitly state that the five repetitions caused IX's improvement; causal wording is stronger than the text."
+    },
+    "reason": "Passages describe repeating steps five times and that iteration IX improved scores, but do not explicitly state that the five repetitions caused IX's improvement; causal wording is stronger than the text."
+   },
+   {
+    "insight_id": "1907.03060::s01:i00",
+    "verdict": {
+     "insight_id": "1907.03060::s01:i00",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Directly restates p009001: no out-of-domain Ja-Ru data, so the method exploits out-of-domain Ja-En and Ru-En data via domain adaptation and multilingual transfer."
+    },
+    "reason": "Directly restates p009001: no out-of-domain Ja-Ru data, so the method exploits out-of-domain Ja-En and Ru-En data via domain adaptation and multilingual transfer."
+   },
+   {
+    "insight_id": "1907.03060::s01:i01",
+    "verdict": {
+     "insight_id": "1907.03060::s01:i01",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.3,
+     "causality_error": false,
+     "reason": "Sources support low in-domain BLEU scores and >3.7 BLEU improvement over a strong baseline, but the triple says 'improves_on in-domain-only models,' which is not the stated comparison and is an inferred conclusion."
+    },
+    "reason": "Sources support low in-domain BLEU scores and >3.7 BLEU improvement over a strong baseline, but the triple says 'improves_on in-domain-only models,' which is not the stated comparison and is an inferred conclusion."
+   },
+   {
+    "insight_id": "1907.03060::s01:i02",
+    "verdict": {
+     "insight_id": "1907.03060::s01:i02",
+     "keep": false,
+     "support": 0.4,
+     "novelty": 0.3,
+     "causality_error": true,
+     "reason": "The limitation motivates exploring other parallel data, and ASPEC 1.5M sentences were used, but the text does not state that the limitation caused that specific dataset choice."
+    },
+    "reason": "The limitation motivates exploring other parallel data, and ASPEC 1.5M sentences were used, but the text does not state that the limitation caused that specific dataset choice."
+   },
+   {
+    "insight_id": "1907.03060::s01:i03",
+    "verdict": {
+     "insight_id": "1907.03060::s01:i03",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "The two passages explicitly describe pre-training on out-of-domain data and subsequent fine-tuning on in-domain or mixed data; the insight is a close paraphrase/restatement, and 'requires' is too strong."
+    },
+    "reason": "The two passages explicitly describe pre-training on out-of-domain data and subsequent fine-tuning on in-domain or mixed data; the insight is a close paraphrase/restatement, and 'requires' is too strong."
+   },
+   {
+    "insight_id": "1907.03060::s01:i04",
+    "verdict": {
+     "insight_id": "1907.03060::s01:i04",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Direct restatement of p006008 plus p010004: mixed fine-tuning V/VII was consistently better than conventional fine-tuning IV/VI; no novel insight."
+    },
+    "reason": "Direct restatement of p006008 plus p010004: mixed fine-tuning V/VII was consistently better than conventional fine-tuning IV/VI; no novel insight."
+   },
+   {
+    "insight_id": "1907.03060::s01:i05",
+    "verdict": {
+     "insight_id": "1907.03060::s01:i05",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Cited paragraphs exist, but the insight is essentially a restatement/paraphrase of p007: first fine-tuning improved Ja-En and Ru-En while Ja-Ru remained poor because no Ja-Ru parallel data had been seen."
+    },
+    "reason": "Cited paragraphs exist, but the insight is essentially a restatement/paraphrase of p007: first fine-tuning improved Ja-En and Ru-En while Ja-Ru remained poor because no Ja-Ru parallel data had been seen."
+   },
+   {
+    "insight_id": "1907.03060::s01:i06",
+    "verdict": {
+     "insight_id": "1907.03060::s01:i06",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.2,
+     "causality_error": true,
+     "reason": "Sources say initial model cannot achieve minimum Ja-Ru quality because it never saw parallel data for that pair, and that it was pre-trained only on Ja-En and Ru-En out-of-domain data. The insight adds a causal claim that this specific pre-training setting causes failure, which is only indirectly supported; also concise_text largely restates p006 plus p002."
+    },
+    "reason": "Sources say initial model cannot achieve minimum Ja-Ru quality because it never saw parallel data for that pair, and that it was pre-trained only on Ja-En and Ru-En out-of-domain data. The insight adds a causal claim that this specific pre-training setting causes failure, which is only indirectly supported; also concise_text largely restates p006 plus p002."
+   },
+   {
+    "insight_id": "1907.03060::s01:i07",
+    "verdict": {
+     "insight_id": "1907.03060::s01:i07",
+     "keep": false,
+     "support": 0.85,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "Cited paragraphs exist and jointly support that manually compiled dev/test sets were used and early stopping evaluated BLEU on the development set every 1,000 updates with stopping after 10,000 updates without improvement. However, the triple is an entity-resolution relation that is awkward/unsupported as written: the sets are not 'evaluated_on' early stopping; models are evaluated on the development set. The concise_text is also a near-composition/restatement of the two paragraphs."
+    },
+    "reason": "Cited paragraphs exist and jointly support that manually compiled dev/test sets were used and early stopping evaluated BLEU on the development set every 1,000 updates with stopping after 10,000 updates without improvement. However, the triple is an entity-resolution relation that is awkward/unsupported as written: the sets are not 'evaluated_on' early stopping; models are evaluated on the development set. The concise_text is also a near-composition/restatement of the two paragraphs."
+   },
+   {
+    "insight_id": "1907.03060::s01:i08",
+    "verdict": {
+     "insight_id": "1907.03060::s01:i08",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Cited paragraphs exist and support the limitation, but the insight is a direct paraphrase of p002: pivot-language MT requires large in-domain corpora involving pivots and is infeasible because Ja-En and Ru-En in-domain corpora are extremely limited/small."
+    },
+    "reason": "Cited paragraphs exist and support the limitation, but the insight is a direct paraphrase of p002: pivot-language MT requires large in-domain corpora involving pivots and is infeasible because Ja-En and Ru-En in-domain corpora are extremely limited/small."
+   },
+   {
+    "insight_id": "1907.03060::s01:i09",
+    "verdict": {
+     "insight_id": "1907.03060::s01:i09",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Cited paragraphs exist and jointly support the composed evidence-to-conclusion link: in-domain-only models had abysmal Ja-Ru results and BLEU scores not exceeding 10, while the conclusion states limited success of well-established solutions restricted to in-domain data. No unsupported numbers/entities or causal overreach beyond the paper's own 'implying/confirmed' framing."
+    }
+   }
+  ],
+  "calls": [
+   {
+    "n": 15,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 5537,
+     "completion_tokens": 1202,
+     "total_tokens": 6739,
+     "reasoning_tokens": null
+    }
+   },
+   {
+    "n": 5,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 2544,
+     "completion_tokens": 567,
+     "total_tokens": 3111,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

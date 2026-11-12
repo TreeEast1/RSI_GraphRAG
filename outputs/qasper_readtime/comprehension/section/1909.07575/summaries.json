@@ -1,0 +1,668 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1909.07575::s00::p000",
+   "summary": "Speech-to-Text translation is important in scenarios like emergency calls and online courses, with cascaded methods dominant but end-to-end methods offering lower latency and theoretically avoiding error propagation.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s00::p001",
+   "summary": "Because large-scale ST datasets are hard to obtain, multi-task learning and pre-training use ASR and MT datasets, but common initialization creates a huge gap between pre-training and fine-tuning.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s00::p002",
+   "summary": "Subnet Waste occurs because the ST system reuses only the ASR encoder and MT decoder, discarding pre-trained subnets such as the MT encoder and its semantic information.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s00::p003",
+   "summary": "Role Mismatch arises because the speech encoder is a pure acoustic model in pre-training but must additionally extract semantic and linguistic features in fine-tuning.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s00::p004",
+   "summary": "Previous work trains attention modules separately for ASR, MT and ST, so the ST attention module does not benefit from pre-training.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s00::p005",
+   "summary": "TCEN reuses all pre-trained subnets, keeps subnet roles consistent, pre-trains attention, uses a CTC-trained ASR encoder, pre-trains text encoder and decoder on MT, then applies multi-task learning.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s00::p006",
+   "summary": "TCEN concatenates an ASR encoder and an MT encoder, omits an ASR decoder, works encoders in tandem, and reuses the pre-trained MT attention module in ST.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s00::p007",
+   "summary": "To ensure speech encoder outputs match word embeddings, TCEN shares the CTC projection matrix with word embeddings and lengthens MT source sentences with repetitions and blank tokens.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s00::p008",
+   "summary": "Experiments on the IWSLT18 speech translation benchmark show component effectiveness and improvements of 3.6 and 2.2 BLEU scores for subword-level and character-level decoding.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s00::p009",
+   "summary": "Contributions are explaining insufficient pre-training knowledge use, proposing a new ST model that alleviates existing shortcomings, and empirically evaluating it on a large-scale public dataset.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s01::p000",
+   "summary": "End-to-end speech translation maps acoustic feature sequence x to target translation y^t without generating intermediate transcription y^s, assuming ASR dataset A, MT dataset M, and ST dataset S are available.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s02::p000",
+   "summary": "Multi-task learning and pre-training leverage large-scale ASR and MT data through one-to-many, many-to-one, and many-to-many strategies for ST.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s02::p001",
+   "summary": "A many-to-many multi-task model has two encoders, two decoders, and three task-specific attentions, and can be jointly trained on ASR, MT, and ST tasks.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s02::p002",
+   "summary": "Since A and M are usually much larger than S, models are pre-trained on ASR and MT then fine-tuned with multi-task learning, but suffer subnet waste, role mismatch, and non-pre-trained attention.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s03::p000",
+   "summary": "This section introduces TCEN's tandem two-encoder architecture and attention decoder, its pre-training and fine-tuning strategy, and solutions for semantic and length inconsistency.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s04::p000",
+   "summary": "TCEN includes speech encoder enc_s, text encoder enc_t, and decoder dec with attention att, disentangling acoustic and linguistic feature extraction while utilizing every pre-trained module.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s04::p001",
+   "summary": "Following BIBREF9 inaguma2018speech, TCEN uses a CNN-BiLSTM architecture where input features x of length T_x pass through two convolutional layers followed by max-pooling.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s04::p002",
+   "summary": "Max-pooling downsamples the sequence by a total factor of four, and the down-sampled sequence is fed into five bidirectional d-dimensional LSTM layers.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s04::p003",
+   "summary": "The speech encoder output is h^s=(h^s_1, ..., h^s_{T_x/4}), where each h_i^s is in R^d.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s04::p004",
+   "summary": "Text encoder enc_t has two bidirectional LSTM layers, consumes h^s in ST and e^s in MT, extracts high-level linguistic features, and faces semantic and length inconsistency.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s04::p005",
+   "summary": "The decoder has two unidirectional LSTM layers with additive attention att and predicts y^t by estimating P(y^t|x).",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s04::p006",
+   "summary": "Here, z_k is the decoder RNN hidden state at step k and c_k is a time-dependent context vector computed by attention att.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s05::p000",
+   "summary": "Training splits into pre-training, where enc_s uses CTC on A and enc_t and dec train on M, and fine-tuning, which jointly trains ASR, MT, and ST.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s06::p000",
+   "summary": "To sufficiently utilize large datasets A and M, the model is pre-trained on CTC-based ASR and MT tasks.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s06::p001",
+   "summary": "For ASR, connectionist temporal classification (CTC) BIBREF8 loss trains the speech encoder, removing the decoder requirement and enabling enc_s to generate subword representations.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s06::p002",
+   "summary": "Given x, enc_s emits h^s, and a softmax classification layer predicts CTC path pi with labels from V_src plus the blank token `-'.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s06::p003",
+   "summary": "W_ctc in R^{d x (|V_src|+1)} is the classification layer weight matrix, and T is the total length of encoder RNN.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s06::p004",
+   "summary": "A legal CTC path pi varies source transcription y^s with blank tokens and repetitions, and the CTC objective maximizes the probability of y^s by summing legal paths.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s06::p005",
+   "summary": "Phi_T(y) is the set of all legal CTC paths for sequence y with length T, and the loss is computed using the forward-backward algorithm.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s06::p006",
+   "summary": "For MT, cross-entropy loss trains the model by converting y^s to e^s through W_E^s, feeding enc_t, and passing h^t to the decoder.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s07::p000",
+   "summary": "In fine-tune stage, the model is jointly updated on ASR, MT, and ST tasks, with ASR and MT following the pre-training process.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s07::p001",
+   "summary": "For ST, enc_s reads x and generates h^s, enc_t learns high-level linguistic knowledge into h^t, and dec predicts the target sentence.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s07::p003",
+   "summary": "Following BIBREF11 luong2015multi, each task has a training ratio alpha_i, and task switching selects task i with probability alpha_i / sum_j alpha_j.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s08::p000",
+   "summary": "Connecting two encoders keeps role consistency but causes semantic inconsistency between e^s and h^s and length inconsistency between their sequence lengths.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s08::p001",
+   "summary": "The countermeasures share weights between the CTC classification layer and source-end word embedding layer, and feed text encoder source sentences in CTC path format generated by a seq2seq model.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s09::p000",
+   "summary": "During multi-task training, enc_t receives e^s in MT and h^s in ST, which may belong to different latent spaces and force compromise that limits individual task performance.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s09::p001",
+   "summary": "To bridge the space gap, W_ctc is shared with W_E^s so W_ctc = W_E^s, and CTC path label probability normalizes the product of h_t^s and the i-th vector in W_E^s.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s09::p002",
+   "summary": "The loss function closes the distance between h^s_t and the golden embedding vector, encouraging h^s to have the same distribution as e^s.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s10::p000",
+   "summary": "Length inconsistency arises because h^s length is proportional to input frame x and much longer than e^s, addressed by training an RNN-based seq2seq model and replacing standard MT with denoising MT.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s10::p001",
+   "summary": "A CTC ASR model trained on A generates CTC-path pi_i by greedy decoding, and reversible operation S(pi)=(u,l) converts paths into unique tokens u and repetition times l.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s10::p002",
+   "summary": "Dataset P is built from decoded A paths, a seq2seq model maps y^s_i to u_i,l_i, noisy MT dataset M' is created, and about 30% pairs are sampled from M' after validation tuning.",
+   "group_id": "1909.07575::g00"
+  },
+  {
+   "passage_id": "1909.07575::s11::p000",
+   "summary": "Experiments are conducted on the IWSLT18 speech translation task, with competitive baselines reproduced based on ESPnet for fair comparison.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s12::p000",
+   "summary": "ST-TED contains 272 hours of English speech with 171k segments, with 2k dev segments and tst2010, tst2013, tst2014, tst2015 as test sets.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s12::p001",
+   "summary": "TED-LIUM2 is provided as speech recognition data, containing 207 hours of English speech and 93k transcript sentences.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s12::p002",
+   "summary": "ST-TED and WIT3 provide 130k and 200k in-domain MT sentence pairs, while WMT2018 provides 41M out-of-domain sentence pairs.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s12::p003",
+   "summary": "Speech preprocessing uses 25 ms windows, 10 ms steps, 83-dimensional features, normalization, 3000-frame filtering, lowercasing, punctuation removal, speed factors 0.9 and 1.1, and text filtering.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s12::p004",
+   "summary": "Subword experiments use English and German sentencepiece vocabularies of 5k tokens, while character experiments represent both languages at character level.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s12::p005",
+   "summary": "Evaluation uses LIUM SpkDiarization, MWER segmentation with RWTH toolkit, and lowercase BLEU as evaluation metric.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s13::p000",
+   "summary": "The method is compared with following baselines.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s13::p001",
+   "summary": "The vanilla ST baseline has only a speech encoder and a decoder and is trained from scratch on ST-TED.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s13::p002",
+   "summary": "Three pre-training baselines initialize the ST encoder, decoder, or both from ASR and MT models trained on specified corpora.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s13::p003",
+   "summary": "Three multi-task baselines use one-to-many, many-to-one, and many-to-many settings with specified task weights and in-domain MT data.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s13::p004",
+   "summary": "Many-to-many+pre-training derives encoders and decoders from pre-trained ASR and MT models, while Triangle+pre-train initializes components from ASR and fine-tunes under its multi-task manner.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s13::p005",
+   "summary": "All baselines and TCEN use ESPnet, RNN size d=1024, dropout 0.3, Adadelta, initial learning rate 1.0, and a maximum of 10 epochs.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s13::p006",
+   "summary": "TCEN pre-training uses α_asr=0.2 and α_mt=0.8, while fine-tuning uses α_st=0.6, α_asr=0.2, and α_mt=0.2.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s13::p007",
+   "summary": "Testing selects the best dev-set speech translation accuracy model and uses beam size 10 with length normalization weight 0.2.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s14::p000",
+   "summary": "Table TABREF29 shows the method outperforms many-to-many+pretrain by 3.6 and 2.2 BLEU, with pre-training, multi-task learning, and char-level models discussed.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s15::p000",
+   "summary": "Table TABREF37 ablations show MT noise, weight sharing, and pre-training benefit translation quality, with pre-training indispensable for end-to-end ST.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s16::p000",
+   "summary": "Figure FIGREF39 shows TCEN achieves a better fine-tuning start-point and outperforms many-to-many+pretrain by about five points throughout fine-tuning.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s17::p000",
+   "summary": "The end-to-end model outperforms the simple cascaded model by over 2 BLEU and is comparable to cascaded+re-seg.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s18::p000",
+   "summary": "Early speech translation pipelines feed ASR output lattices into MT systems, with common ASR and MT models and noise simulation for robustness.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s18::p001",
+   "summary": "Recent end-to-end ST works use pre-training, multi-task learning, curriculum learning, attention-passing, knowledge distillation, ASR/ST data, MT data, and synthesized data.",
+   "group_id": "1909.07575::g01"
+  },
+  {
+   "passage_id": "1909.07575::s19::p000",
+   "summary": "The paper proposes an end-to-end ST method that reuses every sub-net and keeps sub-net roles consistent between pre-training and fine-tuning.",
+   "group_id": "1909.07575::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1909.07575::g00",
+   "summaries": [
+    {
+     "passage_id": "1909.07575::s00::p000",
+     "summary": "Speech-to-Text translation is important in scenarios like emergency calls and online courses, with cascaded methods dominant but end-to-end methods offering lower latency and theoretically avoiding error propagation.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s00::p001",
+     "summary": "Because large-scale ST datasets are hard to obtain, multi-task learning and pre-training use ASR and MT datasets, but common initialization creates a huge gap between pre-training and fine-tuning.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s00::p002",
+     "summary": "Subnet Waste occurs because the ST system reuses only the ASR encoder and MT decoder, discarding pre-trained subnets such as the MT encoder and its semantic information.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s00::p003",
+     "summary": "Role Mismatch arises because the speech encoder is a pure acoustic model in pre-training but must additionally extract semantic and linguistic features in fine-tuning.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s00::p004",
+     "summary": "Previous work trains attention modules separately for ASR, MT and ST, so the ST attention module does not benefit from pre-training.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s00::p005",
+     "summary": "TCEN reuses all pre-trained subnets, keeps subnet roles consistent, pre-trains attention, uses a CTC-trained ASR encoder, pre-trains text encoder and decoder on MT, then applies multi-task learning.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s00::p006",
+     "summary": "TCEN concatenates an ASR encoder and an MT encoder, omits an ASR decoder, works encoders in tandem, and reuses the pre-trained MT attention module in ST.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s00::p007",
+     "summary": "To ensure speech encoder outputs match word embeddings, TCEN shares the CTC projection matrix with word embeddings and lengthens MT source sentences with repetitions and blank tokens.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s00::p008",
+     "summary": "Experiments on the IWSLT18 speech translation benchmark show component effectiveness and improvements of 3.6 and 2.2 BLEU scores for subword-level and character-level decoding.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s00::p009",
+     "summary": "Contributions are explaining insufficient pre-training knowledge use, proposing a new ST model that alleviates existing shortcomings, and empirically evaluating it on a large-scale public dataset.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s01::p000",
+     "summary": "End-to-end speech translation maps acoustic feature sequence x to target translation y^t without generating intermediate transcription y^s, assuming ASR dataset A, MT dataset M, and ST dataset S are available.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s02::p000",
+     "summary": "Multi-task learning and pre-training leverage large-scale ASR and MT data through one-to-many, many-to-one, and many-to-many strategies for ST.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s02::p001",
+     "summary": "A many-to-many multi-task model has two encoders, two decoders, and three task-specific attentions, and can be jointly trained on ASR, MT, and ST tasks.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s02::p002",
+     "summary": "Since A and M are usually much larger than S, models are pre-trained on ASR and MT then fine-tuned with multi-task learning, but suffer subnet waste, role mismatch, and non-pre-trained attention.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s03::p000",
+     "summary": "This section introduces TCEN's tandem two-encoder architecture and attention decoder, its pre-training and fine-tuning strategy, and solutions for semantic and length inconsistency.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s04::p000",
+     "summary": "TCEN includes speech encoder enc_s, text encoder enc_t, and decoder dec with attention att, disentangling acoustic and linguistic feature extraction while utilizing every pre-trained module.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s04::p001",
+     "summary": "Following BIBREF9 inaguma2018speech, TCEN uses a CNN-BiLSTM architecture where input features x of length T_x pass through two convolutional layers followed by max-pooling.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s04::p002",
+     "summary": "Max-pooling downsamples the sequence by a total factor of four, and the down-sampled sequence is fed into five bidirectional d-dimensional LSTM layers.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s04::p003",
+     "summary": "The speech encoder output is h^s=(h^s_1, ..., h^s_{T_x/4}), where each h_i^s is in R^d.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s04::p004",
+     "summary": "Text encoder enc_t has two bidirectional LSTM layers, consumes h^s in ST and e^s in MT, extracts high-level linguistic features, and faces semantic and length inconsistency.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s04::p005",
+     "summary": "The decoder has two unidirectional LSTM layers with additive attention att and predicts y^t by estimating P(y^t|x).",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s04::p006",
+     "summary": "Here, z_k is the decoder RNN hidden state at step k and c_k is a time-dependent context vector computed by attention att.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s05::p000",
+     "summary": "Training splits into pre-training, where enc_s uses CTC on A and enc_t and dec train on M, and fine-tuning, which jointly trains ASR, MT, and ST.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s06::p000",
+     "summary": "To sufficiently utilize large datasets A and M, the model is pre-trained on CTC-based ASR and MT tasks.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s06::p001",
+     "summary": "For ASR, connectionist temporal classification (CTC) BIBREF8 loss trains the speech encoder, removing the decoder requirement and enabling enc_s to generate subword representations.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s06::p002",
+     "summary": "Given x, enc_s emits h^s, and a softmax classification layer predicts CTC path pi with labels from V_src plus the blank token `-'.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s06::p003",
+     "summary": "W_ctc in R^{d x (|V_src|+1)} is the classification layer weight matrix, and T is the total length of encoder RNN.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s06::p004",
+     "summary": "A legal CTC path pi varies source transcription y^s with blank tokens and repetitions, and the CTC objective maximizes the probability of y^s by summing legal paths.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s06::p005",
+     "summary": "Phi_T(y) is the set of all legal CTC paths for sequence y with length T, and the loss is computed using the forward-backward algorithm.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s06::p006",
+     "summary": "For MT, cross-entropy loss trains the model by converting y^s to e^s through W_E^s, feeding enc_t, and passing h^t to the decoder.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s07::p000",
+     "summary": "In fine-tune stage, the model is jointly updated on ASR, MT, and ST tasks, with ASR and MT following the pre-training process.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s07::p001",
+     "summary": "For ST, enc_s reads x and generates h^s, enc_t learns high-level linguistic knowledge into h^t, and dec predicts the target sentence.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s07::p003",
+     "summary": "Following BIBREF11 luong2015multi, each task has a training ratio alpha_i, and task switching selects task i with probability alpha_i / sum_j alpha_j.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s08::p000",
+     "summary": "Connecting two encoders keeps role consistency but causes semantic inconsistency between e^s and h^s and length inconsistency between their sequence lengths.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s08::p001",
+     "summary": "The countermeasures share weights between the CTC classification layer and source-end word embedding layer, and feed text encoder source sentences in CTC path format generated by a seq2seq model.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s09::p000",
+     "summary": "During multi-task training, enc_t receives e^s in MT and h^s in ST, which may belong to different latent spaces and force compromise that limits individual task performance.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s09::p001",
+     "summary": "To bridge the space gap, W_ctc is shared with W_E^s so W_ctc = W_E^s, and CTC path label probability normalizes the product of h_t^s and the i-th vector in W_E^s.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s09::p002",
+     "summary": "The loss function closes the distance between h^s_t and the golden embedding vector, encouraging h^s to have the same distribution as e^s.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s10::p000",
+     "summary": "Length inconsistency arises because h^s length is proportional to input frame x and much longer than e^s, addressed by training an RNN-based seq2seq model and replacing standard MT with denoising MT.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s10::p001",
+     "summary": "A CTC ASR model trained on A generates CTC-path pi_i by greedy decoding, and reversible operation S(pi)=(u,l) converts paths into unique tokens u and repetition times l.",
+     "group_id": "1909.07575::g00"
+    },
+    {
+     "passage_id": "1909.07575::s10::p002",
+     "summary": "Dataset P is built from decoded A paths, a seq2seq model maps y^s_i to u_i,l_i, noisy MT dataset M' is created, and about 30% pairs are sampled from M' after validation tuning.",
+     "group_id": "1909.07575::g00"
+    }
+   ],
+   "n_raw": 41,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5496,
+    "completion_tokens": 2196,
+    "total_tokens": 7692,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1909.07575::g01",
+   "summaries": [
+    {
+     "passage_id": "1909.07575::s11::p000",
+     "summary": "Experiments are conducted on the IWSLT18 speech translation task, with competitive baselines reproduced based on ESPnet for fair comparison.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s12::p000",
+     "summary": "ST-TED contains 272 hours of English speech with 171k segments, with 2k dev segments and tst2010, tst2013, tst2014, tst2015 as test sets.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s12::p001",
+     "summary": "TED-LIUM2 is provided as speech recognition data, containing 207 hours of English speech and 93k transcript sentences.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s12::p002",
+     "summary": "ST-TED and WIT3 provide 130k and 200k in-domain MT sentence pairs, while WMT2018 provides 41M out-of-domain sentence pairs.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s12::p003",
+     "summary": "Speech preprocessing uses 25 ms windows, 10 ms steps, 83-dimensional features, normalization, 3000-frame filtering, lowercasing, punctuation removal, speed factors 0.9 and 1.1, and text filtering.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s12::p004",
+     "summary": "Subword experiments use English and German sentencepiece vocabularies of 5k tokens, while character experiments represent both languages at character level.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s12::p005",
+     "summary": "Evaluation uses LIUM SpkDiarization, MWER segmentation with RWTH toolkit, and lowercase BLEU as evaluation metric.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s13::p000",
+     "summary": "The method is compared with following baselines.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s13::p001",
+     "summary": "The vanilla ST baseline has only a speech encoder and a decoder and is trained from scratch on ST-TED.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s13::p002",
+     "summary": "Three pre-training baselines initialize the ST encoder, decoder, or both from ASR and MT models trained on specified corpora.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s13::p003",
+     "summary": "Three multi-task baselines use one-to-many, many-to-one, and many-to-many settings with specified task weights and in-domain MT data.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s13::p004",
+     "summary": "Many-to-many+pre-training derives encoders and decoders from pre-trained ASR and MT models, while Triangle+pre-train initializes components from ASR and fine-tunes under its multi-task manner.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s13::p005",
+     "summary": "All baselines and TCEN use ESPnet, RNN size d=1024, dropout 0.3, Adadelta, initial learning rate 1.0, and a maximum of 10 epochs.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s13::p006",
+     "summary": "TCEN pre-training uses α_asr=0.2 and α_mt=0.8, while fine-tuning uses α_st=0.6, α_asr=0.2, and α_mt=0.2.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s13::p007",
+     "summary": "Testing selects the best dev-set speech translation accuracy model and uses beam size 10 with length normalization weight 0.2.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s14::p000",
+     "summary": "Table TABREF29 shows the method outperforms many-to-many+pretrain by 3.6 and 2.2 BLEU, with pre-training, multi-task learning, and char-level models discussed.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s15::p000",
+     "summary": "Table TABREF37 ablations show MT noise, weight sharing, and pre-training benefit translation quality, with pre-training indispensable for end-to-end ST.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s16::p000",
+     "summary": "Figure FIGREF39 shows TCEN achieves a better fine-tuning start-point and outperforms many-to-many+pretrain by about five points throughout fine-tuning.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s17::p000",
+     "summary": "The end-to-end model outperforms the simple cascaded model by over 2 BLEU and is comparable to cascaded+re-seg.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s18::p000",
+     "summary": "Early speech translation pipelines feed ASR output lattices into MT systems, with common ASR and MT models and noise simulation for robustness.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s18::p001",
+     "summary": "Recent end-to-end ST works use pre-training, multi-task learning, curriculum learning, attention-passing, knowledge distillation, ASR/ST data, MT data, and synthesized data.",
+     "group_id": "1909.07575::g01"
+    },
+    {
+     "passage_id": "1909.07575::s19::p000",
+     "summary": "The paper proposes an end-to-end ST method that reuses every sub-net and keeps sub-net roles consistent between pre-training and fine-tuning.",
+     "group_id": "1909.07575::g01"
+    }
+   ],
+   "n_raw": 22,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3427,
+    "completion_tokens": 1131,
+    "total_tokens": 4558,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

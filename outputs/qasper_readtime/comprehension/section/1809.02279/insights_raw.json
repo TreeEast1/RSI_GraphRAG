@@ -1,0 +1,321 @@
+{
+ "insights": [
+  {
+   "insight_id": "1809.02279::g00:i00",
+   "paper_id": "1809.02279",
+   "group_id": "1809.02279::g00",
+   "concise_text": "The current stacked LSTM formulation omits the lower-layer cell state, while CAS-LSTM extends it with an additional forget gate that accepts or ignores signals from the previous layer.",
+   "triple": {
+    "subject": "CAS-LSTM",
+    "predicate": "extends",
+    "object": "the stacked LSTM formulation with an additional forget gate for previous-layer signals"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1809.02279::s03::p003",
+    "1809.02279::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1809.02279::g00:b2:f02",
+    "1809.02279::g00:b2:f03",
+    "1809.02279::g00:b2:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.95,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1809.02279::u000"
+  },
+  {
+   "insight_id": "1809.02279::g00:i01",
+   "paper_id": "1809.02279",
+   "group_id": "1809.02279::g00",
+   "concise_text": "Because each non-bottom CAS-LSTM layer accepts hidden and cell states from left and below contexts, the burden of selecting information is shared with INLINEFORM8.",
+   "triple": {
+    "subject": "each non-bottom layer of CAS-LSTM",
+    "predicate": "causes",
+    "object": "the burden of selecting information to be shared with INLINEFORM8"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1809.02279::s04::p001",
+    "1809.02279::s04::p002"
+   ],
+   "supporting_fact_ids": [
+    "1809.02279::g00:b2:f08",
+    "1809.02279::g00:b2:f09",
+    "1809.02279::g00:b2:f12",
+    "1809.02279::g00:b2:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1809.02279::u001"
+  },
+  {
+   "insight_id": "1809.02279::g00:i02",
+   "paper_id": "1809.02279",
+   "group_id": "1809.02279::g00",
+   "concise_text": "For NLI, SNLI and MultiNLI use fixed GloVe pretrained word embeddings, 300D encoder states, and a 1024D MLP, and the best model achieves 87.0% accuracy on SNLI.",
+   "triple": {
+    "subject": "the NLI experiments",
+    "predicate": "produces",
+    "object": "87.0% accuracy on SNLI with fixed GloVe pretrained word embeddings, 300D encoder states, and a 1024D MLP"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1809.02279::s08::p001",
+    "1809.02279::s08::p002"
+   ],
+   "supporting_fact_ids": [
+    "1809.02279::g00:b5:f04",
+    "1809.02279::g00:b5:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1809.02279::u002"
+  },
+  {
+   "insight_id": "1809.02279::g00:i03",
+   "paper_id": "1809.02279",
+   "group_id": "1809.02279::g00",
+   "concise_text": "For SST, models use 300D GloVe vectors, 2-layer 150D or 300D encoders, and a 300D MLP classifier with tuned word embeddings, achieving new state-of-the-art accuracy on SST-2 and competitive accuracy on SST-5.",
+   "triple": {
+    "subject": "the SST models",
+    "predicate": "produces",
+    "object": "new state-of-the-art accuracy on SST-2 and competitive accuracy on SST-5"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1809.02279::s10::p001",
+    "1809.02279::s10::p002"
+   ],
+   "supporting_fact_ids": [
+    "1809.02279::g00:b6:f06",
+    "1809.02279::g00:b6:f09",
+    "1809.02279::g00:b6:f10",
+    "1809.02279::g00:b6:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1809.02279::u003"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1809.02279::g00",
+   "insights": [
+    {
+     "insight_id": "1809.02279::g00:i00",
+     "paper_id": "1809.02279",
+     "group_id": "1809.02279::g00",
+     "concise_text": "The current stacked LSTM formulation omits the lower-layer cell state, while CAS-LSTM extends it with an additional forget gate that accepts or ignores signals from the previous layer.",
+     "triple": {
+      "subject": "CAS-LSTM",
+      "predicate": "extends",
+      "object": "the stacked LSTM formulation with an additional forget gate for previous-layer signals"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1809.02279::s03::p003",
+      "1809.02279::s04::p000"
+     ],
+     "supporting_fact_ids": [
+      "1809.02279::g00:b2:f02",
+      "1809.02279::g00:b2:f03",
+      "1809.02279::g00:b2:f04"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.95,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1809.02279::u000"
+    },
+    {
+     "insight_id": "1809.02279::g00:i01",
+     "paper_id": "1809.02279",
+     "group_id": "1809.02279::g00",
+     "concise_text": "Because each non-bottom CAS-LSTM layer accepts hidden and cell states from left and below contexts, the burden of selecting information is shared with INLINEFORM8.",
+     "triple": {
+      "subject": "each non-bottom layer of CAS-LSTM",
+      "predicate": "causes",
+      "object": "the burden of selecting information to be shared with INLINEFORM8"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1809.02279::s04::p001",
+      "1809.02279::s04::p002"
+     ],
+     "supporting_fact_ids": [
+      "1809.02279::g00:b2:f08",
+      "1809.02279::g00:b2:f09",
+      "1809.02279::g00:b2:f12",
+      "1809.02279::g00:b2:f13"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1809.02279::u001"
+    },
+    {
+     "insight_id": "1809.02279::g00:i02",
+     "paper_id": "1809.02279",
+     "group_id": "1809.02279::g00",
+     "concise_text": "For NLI, SNLI and MultiNLI use fixed GloVe pretrained word embeddings, 300D encoder states, and a 1024D MLP, and the best model achieves 87.0% accuracy on SNLI.",
+     "triple": {
+      "subject": "the NLI experiments",
+      "predicate": "produces",
+      "object": "87.0% accuracy on SNLI with fixed GloVe pretrained word embeddings, 300D encoder states, and a 1024D MLP"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1809.02279::s08::p001",
+      "1809.02279::s08::p002"
+     ],
+     "supporting_fact_ids": [
+      "1809.02279::g00:b5:f04",
+      "1809.02279::g00:b5:f06"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1809.02279::u002"
+    },
+    {
+     "insight_id": "1809.02279::g00:i03",
+     "paper_id": "1809.02279",
+     "group_id": "1809.02279::g00",
+     "concise_text": "For SST, models use 300D GloVe vectors, 2-layer 150D or 300D encoders, and a 300D MLP classifier with tuned word embeddings, achieving new state-of-the-art accuracy on SST-2 and competitive accuracy on SST-5.",
+     "triple": {
+      "subject": "the SST models",
+      "predicate": "produces",
+      "object": "new state-of-the-art accuracy on SST-2 and competitive accuracy on SST-5"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1809.02279::s10::p001",
+      "1809.02279::s10::p002"
+     ],
+     "supporting_fact_ids": [
+      "1809.02279::g00:b6:f06",
+      "1809.02279::g00:b6:f09",
+      "1809.02279::g00:b6:f10",
+      "1809.02279::g00:b6:f11"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1809.02279::u003"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "invalid_entity",
+     "item": {
+      "text": "CAS-LSTM addresses conventional stacked LSTMs' inability to fully benefit from gating in layer-to-layer connections by using cell states to control vertical information flow.",
+      "triple": [
+       "CAS-LSTM",
+       "addresses",
+       "layer-to-layer connections cannot fully benefit from the carefully constructed gating mechanism used in temporal transitions"
+      ],
+      "source_passage_ids": [
+       "1809.02279::s00::p003",
+       "1809.02279::s00::p004"
+      ]
+     }
+    },
+    {
+     "reason": "needs_two_passages",
+     "item": {
+      "text": "The proposed architecture called CAS-LSTM is evaluated on SNLI, MultiNLI, Quora Question Pairs, and SST, where CAS-LSTMs consistently outperform typical stacked LSTMs.",
+      "triple": [
+       "CAS-LSTM",
+       "outperforms",
+       "typical stacked LSTMs on SNLI, MultiNLI, Quora Question Pairs, and SST"
+      ],
+      "source_passage_ids": [
+       "1809.02279::s00::p005"
+      ]
+     }
+    },
+    {
+     "reason": "needs_two_passages",
+     "item": {
+      "text": "The direct connection between INLINEFORM1 and INLINEFORM2 in CAS-LSTM is argued to help and stabilize training because terminal error signals can be easily backpropagated to model parameters.",
+      "triple": [
+       "the direct connection between INLINEFORM1 and INLINEFORM2",
+       "causes",
+       "training to be helped and stabilized"
+      ],
+      "source_passage_ids": [
+       "1809.02279::s04::p003"
+      ]
+     }
+    },
+    {
+     "reason": "needs_two_passages",
+     "item": {
+      "text": "The sentence encoder feeds word representations into a CAS-LSTM model and computes sentence representations by max-pooling, which preliminary experiments found consistently better than mean- and last-",
+      "triple": [
+       "the sentence encoder network",
+       "evaluated_on",
+       "max-pooling over CAS-LSTM representations"
+      ],
+      "source_passage_ids": [
+       "1809.02279::s05::p000"
+      ]
+     }
+    },
+    {
+     "reason": "needs_two_passages",
+     "item": {
+      "text": "Bi-CAS-LSTM is the bidirectional architecture that concatenates forward and backward CAS-LSTM representations and max-pools them to yield the sentence representation.",
+      "triple": [
+       "Bi-CAS-LSTM",
+       "extends",
+       "CAS-LSTM with concatenated forward and backward representations and max-pooling"
+      ],
+      "source_passage_ids": [
+       "1809.02279::s05::p001"
+      ]
+     }
+    },
+    {
+     "reason": "invalid_entity",
+     "item": {
+      "text": "For PI, Quora Question Pairs uses GloVe pretrained vectors, 300D encoders, 1024D MLP, and 2 CAS-LSTM layers, and the models achieve the new state of the art.",
+      "triple": [
+       "the PI experiments",
+       "produces",
+       "the new state of the art on Quora Question Pairs with GloVe pretrained vectors, 300D encoders, 1024D MLP, and 2 CAS-LSTM layers"
+      ],
+      "source_passage_ids": [
+       "1809.02279::s09::p000",
+       "1809.02279::s09::p001"
+      ]
+     }
+    }
+   ],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 14776,
+    "completion_tokens": 1851,
+    "total_tokens": 16627,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

@@ -1,0 +1,342 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1604.03114::s00::p000",
+   "summary": "Public debates juxtapose diverging viewpoints and, unlike monologues, let participants interactively attack opponents' points while defending their own, making idea flow key.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s00::p001",
+   "summary": "This work introduces a computational framework characterizing debates by conversational flow, tracking promoting one's own points and attacking opponents' points to predict audience persuasion.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s00::p002",
+   "summary": "Oxford-style debates provide a convenient setting for studying conversational flow because two teams persuade a live audience whose votes before and after determine the winner.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s00::p003",
+   "summary": "The debate format's opening statements identify participants' prior talking points separately from points introduced spontaneously during discussion.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s00::p004",
+   "summary": "This work introduces a debate dataset with rich metadata, proposes a framework for tracking idea flow, and shows its effectiveness in a predictive setting.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s01::p000",
+   "summary": "The study uses transcripts and results from “Intelligence Squared Debates” (IQ2), Oxford-style debates with two opposing teams, a moderator, and three rounds.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s01::p001",
+   "summary": "The dataset contains transcripts of all IQ2 US debates from September 2006 up to September 2015, totaling 108 debates averaging 12801 words in 117 turns.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s01::p002",
+   "summary": "Winning side labels follow IQ2's criteria using pre- and post-debate audience votes, with the larger “delta” winning; for 30% of debates, delta differences are less than 10%.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s01::p003",
+   "summary": "Audience feedback checks voting results using laughter and applause, finding winning teams receive more laughter during discussion and more applause during conclusion.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s01::p004",
+   "summary": "The running example is the “Millennials don't stand a chance” debate, where the For side won with a delta of 20% versus the Against side's 5%.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s02::p000",
+   "summary": "Promoting one's own points and addressing the opponent's points are two primary debating strategies, and this methodology identifies them to investigate usage and outcome effects.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s02::p001",
+   "summary": "Talking points are identified from introduction words whose usage differs significantly between teams using monroe2008fightin, multinomial distributions, a uniform Dirichlet prior, log-odds ratio, and z-scores.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s02::p003",
+   "summary": "The flow of talking points quantifies strategies by comparing airtime through self-coverage and opponent-coverage fractions of content words in each round.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s02::p004",
+   "summary": "Self-coverage dominates during discussion, but interaction causes a sharp drop in self-coverage and a rise in opponent-coverage once discussion begins.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s02::p005",
+   "summary": "Figure FIGREF11 suggests strategic advantages because winning sides show slightly larger drops in self-coverage and in the sum of self- and opponent-coverage.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s02::p006",
+   "summary": "Discussion points are words introduced during discussion and adopted by opponents at least twice; only 3% of newly introduced words qualify, about 10 discussion points per debate.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s02::p007",
+   "summary": "During discussion, eventual winners adopt more opponent-introduced discussion points than eventual losers, raising topic control and contesting interpretations.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s02::p008",
+   "summary": "A post-hoc manual examination supports contesting opponents' points: 78% of valid discussion points are picked up to be challenged, suggesting winners engage more with opponents' ideas.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s03::p000",
+   "summary": "Predictive power is evaluated in binary classification predicting whether the For or Against side wins, aiming to understand which developed flow features carry predictive power.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s03::p001",
+   "summary": "Flow features include conversational features for each side, their sum, the drop in self-coverage, and the number of discussion points adopted by each side.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s03::p002",
+   "summary": "Baseline features use number of words uttered and number of turns taken by each side (length), plus a unigram baseline (BOW), to test debater verbosity.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s03::p003",
+   "summary": "Audience features use counts of applause and laughter received by each side as rough indicators of how well the audience can foresee a debate's outcome.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s03::p004",
+   "summary": "Prediction accuracy uses leave-one-out (LOO), logistic regression, 3-fold cross-validation, and univariate feature selection on flow features in the Flow* setting.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s03::p005",
+   "summary": "Conversation flow features obtain the best accuracy (Flow: 63%; Flow*: 65%), above a 50% random baseline and comparable to audience features (60%), while length and BOW do not beat chance.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s03::p006",
+   "summary": "Flow* most often selects number of discussion points adopted, recall of talking points during discussion, and drop in usage of own talking points, suggesting audiences favor discussion-emphasizing strategies.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s04::p000",
+   "summary": "Previous work modeled dialogue acts, interleaved conversations, conversation-level traits, and participant-level stances, while known debate stances and turn structure let this work focus on outcome.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s04::p001",
+   "summary": "Existing argumentation strategy research focused on monologic arguments and forum challenges; this work complements it by examining relative persuasiveness in extended multi-turn conversations.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s04::p002",
+   "summary": "Previous influence studies in extended conversations examined political talk shows or presidential debates; this work extends them to idea flow in a highly structured setting controlling confounds.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s05::p000",
+   "summary": "Future research could use topic models or word embeddings, add speakers' linguistic choices, compare monologic and interactive dynamics, and clarify strategic implications of dialogue versus self-promotion.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s05::p001",
+   "summary": "Simplifying assumptions include a basic unigram-based definition of discussion points that ignores context or semantic sense, with annotators finding many referred to differing ideas.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s05::p002",
+   "summary": "The Oxford-style debate dataset is limited in size, and future work could examine flow features in settings like Wikipedia talk pages, education, and cooperative work.",
+   "group_id": "1604.03114::g00"
+  },
+  {
+   "passage_id": "1604.03114::s05::p003",
+   "summary": "Acknowledgements thank reviewers, V. Niculae, I. Arawjo, and D. Sedra, and note support in part by a Google Faculty Research Award.",
+   "group_id": "1604.03114::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1604.03114::g00",
+   "summaries": [
+    {
+     "passage_id": "1604.03114::s00::p000",
+     "summary": "Public debates juxtapose diverging viewpoints and, unlike monologues, let participants interactively attack opponents' points while defending their own, making idea flow key.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s00::p001",
+     "summary": "This work introduces a computational framework characterizing debates by conversational flow, tracking promoting one's own points and attacking opponents' points to predict audience persuasion.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s00::p002",
+     "summary": "Oxford-style debates provide a convenient setting for studying conversational flow because two teams persuade a live audience whose votes before and after determine the winner.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s00::p003",
+     "summary": "The debate format's opening statements identify participants' prior talking points separately from points introduced spontaneously during discussion.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s00::p004",
+     "summary": "This work introduces a debate dataset with rich metadata, proposes a framework for tracking idea flow, and shows its effectiveness in a predictive setting.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s01::p000",
+     "summary": "The study uses transcripts and results from “Intelligence Squared Debates” (IQ2), Oxford-style debates with two opposing teams, a moderator, and three rounds.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s01::p001",
+     "summary": "The dataset contains transcripts of all IQ2 US debates from September 2006 up to September 2015, totaling 108 debates averaging 12801 words in 117 turns.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s01::p002",
+     "summary": "Winning side labels follow IQ2's criteria using pre- and post-debate audience votes, with the larger “delta” winning; for 30% of debates, delta differences are less than 10%.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s01::p003",
+     "summary": "Audience feedback checks voting results using laughter and applause, finding winning teams receive more laughter during discussion and more applause during conclusion.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s01::p004",
+     "summary": "The running example is the “Millennials don't stand a chance” debate, where the For side won with a delta of 20% versus the Against side's 5%.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s02::p000",
+     "summary": "Promoting one's own points and addressing the opponent's points are two primary debating strategies, and this methodology identifies them to investigate usage and outcome effects.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s02::p001",
+     "summary": "Talking points are identified from introduction words whose usage differs significantly between teams using monroe2008fightin, multinomial distributions, a uniform Dirichlet prior, log-odds ratio, and z-scores.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s02::p003",
+     "summary": "The flow of talking points quantifies strategies by comparing airtime through self-coverage and opponent-coverage fractions of content words in each round.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s02::p004",
+     "summary": "Self-coverage dominates during discussion, but interaction causes a sharp drop in self-coverage and a rise in opponent-coverage once discussion begins.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s02::p005",
+     "summary": "Figure FIGREF11 suggests strategic advantages because winning sides show slightly larger drops in self-coverage and in the sum of self- and opponent-coverage.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s02::p006",
+     "summary": "Discussion points are words introduced during discussion and adopted by opponents at least twice; only 3% of newly introduced words qualify, about 10 discussion points per debate.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s02::p007",
+     "summary": "During discussion, eventual winners adopt more opponent-introduced discussion points than eventual losers, raising topic control and contesting interpretations.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s02::p008",
+     "summary": "A post-hoc manual examination supports contesting opponents' points: 78% of valid discussion points are picked up to be challenged, suggesting winners engage more with opponents' ideas.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s03::p000",
+     "summary": "Predictive power is evaluated in binary classification predicting whether the For or Against side wins, aiming to understand which developed flow features carry predictive power.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s03::p001",
+     "summary": "Flow features include conversational features for each side, their sum, the drop in self-coverage, and the number of discussion points adopted by each side.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s03::p002",
+     "summary": "Baseline features use number of words uttered and number of turns taken by each side (length), plus a unigram baseline (BOW), to test debater verbosity.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s03::p003",
+     "summary": "Audience features use counts of applause and laughter received by each side as rough indicators of how well the audience can foresee a debate's outcome.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s03::p004",
+     "summary": "Prediction accuracy uses leave-one-out (LOO), logistic regression, 3-fold cross-validation, and univariate feature selection on flow features in the Flow* setting.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s03::p005",
+     "summary": "Conversation flow features obtain the best accuracy (Flow: 63%; Flow*: 65%), above a 50% random baseline and comparable to audience features (60%), while length and BOW do not beat chance.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s03::p006",
+     "summary": "Flow* most often selects number of discussion points adopted, recall of talking points during discussion, and drop in usage of own talking points, suggesting audiences favor discussion-emphasizing strategies.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s04::p000",
+     "summary": "Previous work modeled dialogue acts, interleaved conversations, conversation-level traits, and participant-level stances, while known debate stances and turn structure let this work focus on outcome.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s04::p001",
+     "summary": "Existing argumentation strategy research focused on monologic arguments and forum challenges; this work complements it by examining relative persuasiveness in extended multi-turn conversations.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s04::p002",
+     "summary": "Previous influence studies in extended conversations examined political talk shows or presidential debates; this work extends them to idea flow in a highly structured setting controlling confounds.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s05::p000",
+     "summary": "Future research could use topic models or word embeddings, add speakers' linguistic choices, compare monologic and interactive dynamics, and clarify strategic implications of dialogue versus self-promotion.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s05::p001",
+     "summary": "Simplifying assumptions include a basic unigram-based definition of discussion points that ignores context or semantic sense, with annotators finding many referred to differing ideas.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s05::p002",
+     "summary": "The Oxford-style debate dataset is limited in size, and future work could examine flow features in settings like Wikipedia talk pages, education, and cooperative work.",
+     "group_id": "1604.03114::g00"
+    },
+    {
+     "passage_id": "1604.03114::s05::p003",
+     "summary": "Acknowledgements thank reviewers, V. Niculae, I. Arawjo, and D. Sedra, and note support in part by a Google Faculty Research Award.",
+     "group_id": "1604.03114::g00"
+    }
+   ],
+   "n_raw": 32,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3993,
+    "completion_tokens": 1641,
+    "total_tokens": 5634,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,621 @@
+{
+ "1612.08205::s00::p000": [
+  [
+   "the emergence of social media",
+   "has enabled",
+   "the proliferation of traceable human behavior"
+  ],
+  [
+   "The content posted by users",
+   "can reflect",
+   "who their friends are, what topics they are interested in, or which company they are working for"
+  ],
+  [
+   "profile information",
+   "can be limited",
+   "depending on the platform"
+  ],
+  [
+   "a number of studies",
+   "have utilized",
+   "social media users' footprints to approximate their profiles"
+  ]
+ ],
+ "1612.08205::s00::p001": [
+  [
+   "The accurate prediction of users' industry",
+   "can have",
+   "a big impact on targeted advertising by minimizing wasted advertising BIBREF4 and improved personalized user experience"
+  ],
+  [
+   "An additional goal of this paper",
+   "is to examine",
+   "such findings, and in particular the link between language and occupational class, through a data-driven approach"
+  ]
+ ],
+ "1612.08205::s00::p004": [
+  [
+   "incorporating textual features from the users' profile metadata using various meta-classification techniques",
+   "significantly improving",
+   "both the overall accuracy and the average per industry accuracy"
+  ]
+ ],
+ "1612.08205::s00::p005": [
+  [
+   "one deviation for each industry",
+   "illustrating",
+   "how meaning is differentiated based on the users' industries"
+  ]
+ ],
+ "1612.08205::s00::p006": [
+  [
+   "these frequencies",
+   "do not statistically significantly correlate with",
+   "an industry's gender dominance ratio"
+  ]
+ ],
+ "1612.08205::s01::p000": [
+  [
+   "Hecht et al. Hecht11",
+   "predicted",
+   "Twitter users' locations using machine learning on nationwide and state levels"
+  ],
+  [
+   "Han et al. Han14",
+   "identified",
+   "location indicative words to predict the location of Twitter users down to the city level"
+  ]
+ ],
+ "1612.08205::s01::p001": [
+  [
+   "Li et al. Li14a",
+   "proposed",
+   "a way to model major life events such as getting married, moving to a new place, or graduating"
+  ]
+ ],
+ "1612.08205::s01::p002": [
+  [
+   "Huang et al. Huang15",
+   "used",
+   "machine learning to classify Sina Weibo users to twelve different platform-defined occupational classes"
+  ],
+  [
+   "Preotiuc-Pietro et al. Preoctiuc15",
+   "predicted",
+   "the occupational class of Twitter users using the Standard Occupational Classification (SOC) system"
+  ],
+  [
+   "the Standard Occupational Classification (SOC) system",
+   "groups",
+   "the different jobs based on skill requirements"
+  ],
+  [
+   "the data collection process",
+   "was limited to",
+   "only users that specifically mentioned their occupation in their self-description"
+  ],
+  [
+   "their method",
+   "was not scalable",
+   "because of the manual annotation step"
+  ],
+  [
+   "only a very small fraction of the Twitter users",
+   "could be included",
+   "5,191 users"
+  ]
+ ],
+ "1612.08205::s01::p003": [
+  [
+   "Both of these recent studies",
+   "are based on",
+   "micro-blogging platforms"
+  ],
+  [
+   "micro-blogging platforms",
+   "inherently restrict",
+   "the number of characters that a post can have"
+  ]
+ ],
+ "1612.08205::s01::p004": [
+  [
+   "both studies",
+   "used",
+   "off-the-shelf occupational taxonomies"
+  ],
+  [
+   "media, welfare and electronic",
+   "are",
+   "three of the twelve Sina Weibo categories"
+  ],
+  [
+   "an assistant accountant",
+   "is in",
+   "a different class from an accountant in SOC"
+  ],
+  [
+   "large blog corpus",
+   "consists of",
+   "over 20K American users, 40K web-blogs, and 560K blog posts"
+  ]
+ ],
+ "1612.08205::s02::p000": [
+  [
+   "scraping",
+   "includes only",
+   "those users that had the industry profile element completed"
+  ]
+ ],
+ "1612.08205::s02::p002": [
+  [
+   "a tomato farmer",
+   "would be categorized into",
+   "a distinct industry from a tobacco farmer"
+  ],
+  [
+   "such groupings",
+   "can cause",
+   "unwarranted misclassifications"
+  ]
+ ],
+ "1612.08205::s02::p003": [
+  [
+   "The Blogger platform",
+   "provides",
+   "a total of 39 different industry options"
+  ],
+  [
+   "a completed industry value",
+   "is",
+   "an implicit text annotation"
+  ],
+  [
+   "some categories",
+   "are",
+   "too broad"
+  ]
+ ],
+ "1612.08205::s02::p004": [
+  [
+   "The resulting dataset",
+   "consists of",
+   "22,880 users, 41,094 blogs, and 561,003 posts"
+  ]
+ ],
+ "1612.08205::s03::p000": [
+  [
+   "dataset",
+   "is split into",
+   "a train set, a development set, and a test set"
+  ],
+  [
+   "sizes of these sets",
+   "are",
+   "17,880, 2,500, and 2,500 users, respectively"
+  ],
+  [
+   "users",
+   "are randomly assigned to",
+   "these sets"
+  ],
+  [
+   "all the experiments",
+   "are performed at",
+   "user level"
+  ]
+ ],
+ "1612.08205::s03::p001": [
+  [
+   "available data",
+   "is skewed across",
+   "categories"
+  ],
+  [
+   "micro-accuracy ( INLINEFORM0 )",
+   "is calculated as",
+   "the percentage of correctly classified instances out of all the instances in the development (test) data"
+  ],
+  [
+   "macro-accuracy ( INLINEFORM1 )",
+   "is calculated as",
+   "the average of the per-category accuracies"
+  ]
+ ],
+ "1612.08205::s04::p000": [
+  [
+   "this section",
+   "seeks",
+   "the effectiveness of using solely textual features obtained from the users' postings to predict their industry"
+  ]
+ ],
+ "1612.08205::s04::p002": [
+  [
+   "AllWords model",
+   "counts",
+   "the frequencies of all the remaining words"
+  ],
+  [
+   "AllWords model",
+   "trains",
+   "a multinomial Naive Bayes classifier"
+  ],
+  [
+   "incorporating basic language signals into machine learning algorithms",
+   "yields",
+   "173% INLINEFORM0 improvement"
+  ]
+ ],
+ "1612.08205::s04::p003": [
+  [
+   "Information Gain Ratio score (IGR)",
+   "is with respect to",
+   "every industry, i"
+  ]
+ ],
+ "1612.08205::s04::p004": [
+  [
+   "using the top 95% of all the features",
+   "exceeds the performance of",
+   "the All Words model on the development data"
+  ],
+  [
+   "the Aggressive Feature Ranking (AFR)",
+   "is defined as",
+   "INLINEFORM0"
+  ]
+ ],
+ "1612.08205::s04::p005": [
+  [
+   "each method",
+   "provides",
+   "both the accuracy ( INLINEFORM0 ) and the average per-class accuracy ( INLINEFORM1 )"
+  ],
+  [
+   "The Majority and All Words methods",
+   "apply to",
+   "all the features"
+  ],
+  [
+   "The IGR and AFR methods",
+   "are applied to",
+   "varying subsets of the features using a 5% step"
+  ]
+ ],
+ "1612.08205::s04::p006": [
+  [
+   "the word choice that the users make in their posts",
+   "correlates with",
+   "their industry"
+  ],
+  [
+   "the INLINEFORM0",
+   "is proportional to",
+   "INLINEFORM1"
+  ],
+  [
+   "the best result on the development set",
+   "is achieved by",
+   "using the top 90% of the features using the AFR method"
+  ],
+  [
+   "the improvements of the IGR and AFR feature selections",
+   "are not substantially better in comparison to",
+   "All Words (at most 5% improvement between All Words and AFR)"
+  ]
+ ],
+ "1612.08205::s04::p007": [
+  [
+   "the classifier found to work best on the development data (AFR feature selection, top 90% features)",
+   "is applied on",
+   "the test data"
+  ],
+  [
+   "the classifier found to work best on the development data (AFR feature selection, top 90% features)",
+   "achieves",
+   "an INLINEFORM0 of 0.534 and INLINEFORM1 of 0.477"
+  ]
+ ],
+ "1612.08205::s05::p000": [
+  [
+   "these additional elements",
+   "explore the potential of incorporating",
+   "users' metadata in our classifiers"
+  ]
+ ],
+ "1612.08205::s05::p001": [
+  [
+   "the remaining metadata elements shown in Table TABREF7",
+   "are completed by",
+   "the users as a freely editable text field"
+  ],
+  [
+   "This",
+   "introduces",
+   "a considerable amount of noise in the set of possible metadata values"
+  ],
+  [
+   "Examples of noise in the occupation field",
+   "include",
+   "values such as “Retired”, “I work.”, or “momma”"
+  ]
+ ],
+ "1612.08205::s05::p002": [
+  [
+   "classifiers",
+   "are built using",
+   "the different metadata elements"
+  ],
+  [
+   "each metadata element that has a textual value",
+   "uses as features",
+   "all the words in the training set for that field"
+  ],
+  [
+   "the state field",
+   "is encoded as",
+   "one feature that can take one out of 50 different values representing the 50 U.S. states"
+  ],
+  [
+   "the gender field",
+   "is encoded as",
+   "a feature with a distinct value for each user gender option: undefined, male, or female"
+  ]
+ ],
+ "1612.08205::s05::p003": [
+  [
+   "four different classifiers",
+   "are built using",
+   "the multinomial NB algorithm"
+  ],
+  [
+   "Occu",
+   "uses",
+   "the words found in the occupation profile element"
+  ],
+  [
+   "Gloc",
+   "combines",
+   "gender, city, state"
+  ]
+ ],
+ "1612.08205::s05::p004": [
+  [
+   "the Occu classifier",
+   "is",
+   "the only metadata classifier that outperforms the content classifier"
+  ],
+  [
+   "the Occu classifier",
+   "exceeds",
+   "the content classifier's performance by an absolute 3.2%"
+  ]
+ ],
+ "1612.08205::s05::p005": [
+  [
+   "inter-prediction agreement",
+   "is calculated using",
+   "Fleiss's Kappa BIBREF25"
+  ],
+  [
+   "lower prediction bounds",
+   "are calculated using",
+   "the double fault measure BIBREF26"
+  ],
+  [
+   "The Kappa values",
+   "express",
+   "the classification agreement for categorical items, in this case the users' industry"
+  ],
+  [
+   "values below 30%",
+   "mean",
+   "smaller agreement"
+  ]
+ ],
+ "1612.08205::s05::p006": [
+  [
+   "the double fault measure values",
+   "express",
+   "the proportion of test cases for which both of the two respective classifiers make false predictions"
+  ],
+  [
+   "the double fault measure values",
+   "provide",
+   "the lowest error bound for the pairwise ensemble classifier performance"
+  ],
+  [
+   "the low double fault measure values",
+   "suggest",
+   "potential gain from a combination of the base classifiers into an ensemble of models"
+  ]
+ ],
+ "1612.08205::s05::p007": [
+  [
+   "two meta-classification approaches",
+   "are implemented",
+   "after establishing the promise of creating an ensemble of classifiers"
+  ],
+  [
+   "all these four feature concatenation ensembles",
+   "outperform",
+   "the content-based classifier in the development set"
+  ],
+  [
+   "all these four feature concatenation ensembles",
+   "fail to outperform",
+   "the Occu classifier"
+  ]
+ ],
+ "1612.08205::s05::p008": [
+  [
+   "stacked generalization",
+   "is also referred to as",
+   "late fusion"
+  ],
+  [
+   "L0 classifiers",
+   "are trained on",
+   "different folds of the training set"
+  ],
+  [
+   "L1 classifier",
+   "is used to produce",
+   "the final prediction on both the development data and the test data"
+  ]
+ ],
+ "1612.08205::s05::p009": [
+  [
+   "Gloc classifier",
+   "slightly reduces",
+   "the performance"
+  ],
+  [
+   "best result",
+   "is achieved using",
+   "an ensemble of the Text, Occu, Intro, and Inter L0 classifiers"
+  ],
+  [
+   "respective performance on the test set",
+   "is",
+   "an INLINEFORM0 of 0.643 and an INLINEFORM1 of 0.564"
+  ],
+  [
+   "Real Estate and Religion industries",
+   "achieve",
+   "accuracy figures above 80%"
+  ],
+  [
+   "Banking industry",
+   "is predicted correctly in",
+   "less than 17% of the time"
+  ],
+  [
+   "misclassifications",
+   "are roughly uniform across",
+   "all other classes"
+  ]
+ ],
+ "1612.08205::s07::p001": [
+  [
+   "top ranked words",
+   "align well with",
+   "what we would intuitively expect for each industry"
+  ],
+  [
+   "AFR method",
+   "distinguishes",
+   "most of these words"
+  ]
+ ],
+ "1612.08205::s08::p001": [
+  [
+   "contextualized word embeddings proposed by Bamman et al. Bamman14",
+   "are based on",
+   "an extension of the “skip-gram\" language model BIBREF28"
+  ]
+ ],
+ "1612.08205::s08::p002": [
+  [
+   "contextualized embeddings",
+   "compute",
+   "one deviation from the common word embedding representation for each contextual variable"
+  ],
+  [
+   "These deviations",
+   "capture",
+   "the terms' meaning variations"
+  ],
+  [
+   "all the embeddings",
+   "are in",
+   "the same vector space"
+  ]
+ ],
+ "1612.08205::s08::p004": [
+  [
+   "The terms that rank highest in each industry",
+   "are",
+   "noticeably different"
+  ],
+  [
+   "food in the Environment industry",
+   "is similar to",
+   "nutritionally and locally"
+  ],
+  [
+   "the same word in the Tourism industry",
+   "relates more to",
+   "terms such as delicious and pastries"
+  ],
+  [
+   "These results",
+   "emphasize",
+   "the existing differences in how people in different industries perceive certain terms"
+  ],
+  [
+   "These results",
+   "demonstrate",
+   "that those differences can effectively be captured in the resulting word embeddings"
+  ]
+ ],
+ "1612.08205::s09::p000": [
+  [
+   "the analysis",
+   "explores",
+   "how words that are emotionally charged relate to different industries"
+  ],
+  [
+   "The LIWC dictionary",
+   "contains",
+   "lists of words that have been shown to correlate with the psychological states of people that use them"
+  ],
+  [
+   "the Positive Emotion category",
+   "contains",
+   "words such as “happy,” “pretty,” and “good.”"
+  ]
+ ],
+ "1612.08205::s09::p002": [
+  [
+   "the industry rankings of the relative frequencies INLINEFORM0 of emotionally charged words for the two genders",
+   "are",
+   "statistically significantly correlated"
+  ]
+ ],
+ "1612.08205::s10::p000": [
+  [
+   "overall accuracy",
+   "is",
+   "up to 0.534"
+  ]
+ ],
+ "1612.08205::s10::p001": [
+  [
+   "concatenation of features drawn both from blog content and profile elements",
+   "did not yield",
+   "any clear improvements over the best individual classifiers"
+  ],
+  [
+   "stacking",
+   "improves",
+   "the prediction accuracy to an overall accuracy of 0.643"
+  ],
+  [
+   "industries such as Real Estate and Religion",
+   "are",
+   "clearly distinguishable with accuracy figures over 0.80"
+  ],
+  [
+   "others such as Banking",
+   "are",
+   "much harder to predict"
+  ]
+ ],
+ "1612.08205::s10::p002": [
+  [
+   "a qualitative analysis",
+   "provide",
+   "some insights into the language of different industries"
+  ]
+ ]
+}

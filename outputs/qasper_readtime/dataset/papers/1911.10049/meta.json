@@ -1,0 +1,56 @@
+{
+ "paper_id": "1911.10049",
+ "title": "High Quality ELMo Embeddings for Seven Less-Resourced Languages",
+ "abstract": "Recent results show that deep neural networks using contextual embeddings significantly outperform non-contextual embeddings on a majority of text classification task. We offer precomputed embeddings from popular contextual ELMo model for seven languages: Croatian, Estonian, Finnish, Latvian, Lithuanian, Slovenian, and Swedish. We demonstrate that the quality of embeddings strongly depends on the size of training set and show that existing publicly available ELMo embeddings for listed languages shall be improved. We train new ELMo embeddings on much larger training sets and show their advantage over baseline non-contextual FastText embeddings. In evaluation, we use two benchmarks, the analogy task and the NER task.",
+ "sections": [
+  "Introduction",
+  "ELMo",
+  "ELMo ::: ELMoForManyLangs",
+  "Training Data",
+  "Preprocessing and Training",
+  "Evaluation",
+  "Evaluation ::: Word Analogy Task",
+  "Evaluation ::: Named Entity Recognition",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 33,
+ "n_tokens": 4452,
+ "figures_and_tables": [
+  {
+   "caption_id": "1911.10049::fig000",
+   "paper_id": "1911.10049",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: The training corpora used. We report their size (in billions of tokens), and ELMo vocabulary size (in millions of tokens).",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1911.10049::fig001",
+   "paper_id": "1911.10049",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1: Comparison of Latvian ELMo model by ELMoForManyLangs (blue, latvian-efml), Latvian ELMo model trained by EMBEDDIA team (yellow, latvian-embeddia), and Estonian ELMo model trained by EMBEDDIA team (black, estonian-embeddia). The performance is measured as accuracy@5 on word analogy task, where categories 1 to 5 are semantic, and categories 6 to 15 are syntactic. The embeddings use weights of the first LSTM layer (ie. the second layer overall).",
+   "n_tokens": 129
+  },
+  {
+   "caption_id": "1911.10049::fig002",
+   "paper_id": "1911.10049",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: The embeddings quality measured on the word analogy task, using acc@5 score. Each language is represented with its 2-letter ISO code. Results are shown for each layer separately and are averaged over all semantic (sem) and all syntactic (syn) categories, so that each category has an equal weight (i.e. results are first averaged for each category, and these averages are then averaged with equal weights).",
+   "n_tokens": 87
+  },
+  {
+   "caption_id": "1911.10049::fig003",
+   "paper_id": "1911.10049",
+   "file": "5-Table3-1.png",
+   "caption": "Table 3: The number of words labeled with each label (PER, LOC, ORG) and the density of these labels (their sum divided by the number of all words) for datasets in all languages.",
+   "n_tokens": 43
+  },
+  {
+   "caption_id": "1911.10049::fig004",
+   "paper_id": "1911.10049",
+   "file": "5-Table4-1.png",
+   "caption": "Table 4: The results of NER evaluation task, averaged over 5 training and evaluation runs. The scores are average F1 score of the three named entity classes. The columns show FastText, ELMo, and the difference between them (∆(E − FT )).",
+   "n_tokens": 58
+  }
+ ]
+}

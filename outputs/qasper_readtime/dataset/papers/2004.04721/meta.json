@@ -1,0 +1,94 @@
+{
+ "paper_id": "2004.04721",
+ "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+ "abstract": "Both human and machine translation play a central role in cross-lingual transfer learning: many multilingual datasets have been created through professional translation services, and using machine translation to translate either the test set or the training set is a widely used transfer technique. In this paper, we show that such translation process can introduce subtle artifacts that have a notable impact in existing cross-lingual models. For instance, in natural language inference, translating the premise and the hypothesis independently can reduce the lexical overlap between them, which current models are highly sensitive to. We show that some previous findings in cross-lingual transfer learning need to be reconsidered in the light of this phenomenon. Based on the gained insights, we also improve the state-of-the-art in XNLI for the translate-test and zero-shot approaches by 4.3 and 2.8 points, respectively.",
+ "sections": [
+  "Introduction",
+  "Related work ::: Cross-lingual transfer learning.",
+  "Related work ::: Multilingual benchmarks.",
+  "Related work ::: Annotation artifacts.",
+  "Related work ::: Translationese.",
+  "Experimental design",
+  "Experimental design ::: Models and transfer methods",
+  "Experimental design ::: Training variants",
+  "Experimental design ::: Tasks and evaluation procedure",
+  "Experimental design ::: Tasks and evaluation procedure ::: Natural Language Inference (NLI).",
+  "Experimental design ::: Tasks and evaluation procedure ::: Question Answering (QA).",
+  "NLI experiments",
+  "NLI experiments ::: Translate-Test results",
+  "NLI experiments ::: Zero-Shot results",
+  "NLI experiments ::: Original vs. translated test sets",
+  "NLI experiments ::: Stress tests",
+  "NLI experiments ::: Output class distribution",
+  "NLI experiments ::: Comparison with the state-of-the-art",
+  "QA experiments",
+  "Discussion",
+  "Discussion ::: The cross-lingual transfer gap on XNLI was overestimated.",
+  "Discussion ::: Overcoming the cross-lingual gap is not what makes Translate-Train work.",
+  "Discussion ::: Improvements previously attributed to data augmentation should be reconsidered.",
+  "Discussion ::: The potential of Translate-Test was underestimated.",
+  "Discussion ::: Future evaluation should better account for translation artifacts.",
+  "Conclusions",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 37,
+ "n_tokens": 5179,
+ "figures_and_tables": [
+  {
+   "caption_id": "2004.04721::fig000",
+   "paper_id": "2004.04721",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1: XNLI dev results (acc). BT-XX and MT-XX consistently outperform ORIG in all cases.",
+   "n_tokens": 28
+  },
+  {
+   "caption_id": "2004.04721::fig001",
+   "paper_id": "2004.04721",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: NLI results on original (OR), human translated (HT) and machine translated (MT) sets (acc). BT-XX and MT-XX outperform ORIG in translated sets, but do not get any clear improvement in original ones.",
+   "n_tokens": 53
+  },
+  {
+   "caption_id": "2004.04721::fig002",
+   "paper_id": "2004.04721",
+   "file": "5-Table3-1.png",
+   "caption": "Table 3: NLI Stress Test results (combined matched & mismatched acc). AT = antonymy, NR = numerical reasoning, WO = word overlap, NG = negation, LN = length mismatch, SE = spelling error. BT-FI and MT-FI are considerably weaker than ORIG in the competence test, but substantially stronger in the distraction test.",
+   "n_tokens": 75
+  },
+  {
+   "caption_id": "2004.04721::fig003",
+   "paper_id": "2004.04721",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: Output class distribution on XNLI dev. All systems are close to the true distribution in English, but ORIG is biased toward neu and con in the transfer languages. BT-FI and MT-FI alleviate this issue.",
+   "n_tokens": 49
+  },
+  {
+   "caption_id": "2004.04721::fig004",
+   "paper_id": "2004.04721",
+   "file": "6-Table5-1.png",
+   "caption": "Table 5: XNLI dev results with class distribution unbiasing (average acc across all languages). Adjusting the bias term of the classifier to match the true class distribution brings large improvements for ORIG, but is less effective for BT-FI and MT-FI.",
+   "n_tokens": 56
+  },
+  {
+   "caption_id": "2004.04721::fig005",
+   "paper_id": "2004.04721",
+   "file": "7-Table6-1.png",
+   "caption": "Table 6: XNLI test results (acc). Results for other methods are taken from their respective papers or, if not provided, from Conneau et al. (2019). For those with multiple variants, we select the one with the best results.",
+   "n_tokens": 53
+  },
+  {
+   "caption_id": "2004.04721::fig006",
+   "paper_id": "2004.04721",
+   "file": "8-Table7-1.png",
+   "caption": "Table 7: MLQA test results (F1 / exact match).",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "2004.04721::fig007",
+   "paper_id": "2004.04721",
+   "file": "8-Table8-1.png",
+   "caption": "Table 8: XQuAD results (F1). Results for the exact match metric are similar.",
+   "n_tokens": 21
+  }
+ ]
+}

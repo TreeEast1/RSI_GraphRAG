@@ -1,0 +1,135 @@
+{
+  "role": "hist_small",
+  "cluster_id": "cc-00029",
+  "unit_id": "cc-00029-u000",
+  "method": "C2",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 1387,
+    "completion_tokens": 790,
+    "reasoning_tokens": 190,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r3_c2_hist_hist_small_C2",
+    "cache_key": "092d0c303138438c33fe8afe09cc8291c03af850496a5ae9223a2cc225bcf51b"
+  },
+  "n_updates": 1,
+  "n_add": 1,
+  "n_accept": 1,
+  "n_reject": 0,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "CROSS_PASSAGE_REASONING": 1
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "candidate-001",
+      "comprehension_text": "23 October 2009 is earlier than 22 December 2009.",
+      "new_semantic_relation": "earlier than",
+      "operator": "CROSS_PASSAGE",
+      "chain": [
+        {
+          "fact": "Tristan von Lahnstein first appeared on 23 October 2009.",
+          "passage_id": "chunk-5531a128df4a1d94732e682316b73430",
+          "span": "He first appeared on 23 October 2009.",
+          "triple_id": "triple-8dcd26efab01dc53c612a8f31351f02d"
+        },
+        {
+          "fact": "Ludwig von Lahnstein appeared from 22 December 2009.",
+          "passage_id": "chunk-429ba54878382d30bf5cb2e822a01def",
+          "span": "He appeared from 22 December 2009 to the character's death on 23 April 2013.",
+          "triple_id": "triple-5a81376950ea0901b337dd632b34cc8a"
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-2d295f077fd09f48309200c2245a4d0a",
+        "entity-1d202652adfd522f7f5994503a2d90c2",
+        "entity-0201f1a87f7a35bf802d63d622825c53",
+        "entity-a5cddac414159b1d739819d5442a8a77"
+      ],
+      "source_triple_ids": [
+        "triple-8dcd26efab01dc53c612a8f31351f02d",
+        "triple-5a81376950ea0901b337dd632b34cc8a"
+      ],
+      "source_passage_ids": [
+        "chunk-5531a128df4a1d94732e682316b73430",
+        "chunk-429ba54878382d30bf5cb2e822a01def"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-5531a128df4a1d94732e682316b73430",
+          "span": "He first appeared on 23 October 2009."
+        },
+        {
+          "passage_id": "chunk-429ba54878382d30bf5cb2e822a01def",
+          "span": "He appeared from 22 December 2009 to the character's death on 23 April 2013."
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The date 23 October 2009 is earlier than 22 December 2009.",
+      "reasoning_summary": "CROSS_PASSAGE compared the two explicit appearance dates from separate passages; the supplied triples state each date but do not compare them.",
+      "novelty_justification": "Neither supplied triple states an ordering between the two dates.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "candidate-001",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "CROSS_PASSAGE_REASONING",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: earlier",
+      "residue": [
+        "earlier"
+      ],
+      "evidence_sentences": [
+        "He first appeared on 23 October 2009.",
+        "He appeared from 22 December 2009 to the character's death on 23 April 2013."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "He first appeared on 23 October 2009.",
+            "He appeared from 22 December 2009 to the character's death on 23 April 2013."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": [
+            [
+              2009,
+              10,
+              23
+            ],
+            [
+              2009,
+              12,
+              22
+            ]
+          ]
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "earlier"
+          ],
+          "n_passage_triples": 11,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

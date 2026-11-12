@@ -1,0 +1,550 @@
+{
+ "insights": [
+  {
+   "insight_id": "1910.07601::g00:i00",
+   "paper_id": "1910.07601",
+   "group_id": "1910.07601::g00",
+   "concise_text": "CJFA predicts temporal context Y from a single centre segment X and significantly outperforms the VAE baseline and CJFS in phone classification and speaker recognition.",
+   "triple": {
+    "subject": "CJFA",
+    "predicate": "outperforms",
+    "object": "VAE baseline and CJFS in phone classification and speaker recognition"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1910.07601::s05::p005",
+    "1910.07601::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1910.07601::g00:b3:f05",
+    "1910.07601::g00:b5:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1910.07601::u000"
+  },
+  {
+   "insight_id": "1910.07601::g00:i01",
+   "paper_id": "1910.07601",
+   "group_id": "1910.07601::g00",
+   "concise_text": "CJFS inputs concatenated neighbour windows Y to a VAE to predict target window X, which explains its poor phone classification because the target frame is absent from the input.",
+   "triple": {
+    "subject": "CJFS input configuration",
+    "predicate": "causes",
+    "object": "poor phone classification because the target frame is absent from the input"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1910.07601::s05::p001",
+    "1910.07601::s11::p001"
+   ],
+   "supporting_fact_ids": [
+    "1910.07601::g00:b2:f08",
+    "1910.07601::g00:b5:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1910.07601::u001"
+  },
+  {
+   "insight_id": "1910.07601::g00:i02",
+   "paper_id": "1910.07601",
+   "group_id": "1910.07601::g00",
+   "concise_text": "The proposed CJFS and CJFA extend the re-implemented VAE baseline that gave 72.0% phone classification accuracy, close to the published 72.2% VAE baseline.",
+   "triple": {
+    "subject": "CJFS and CJFA",
+    "predicate": "extends",
+    "object": "re-implemented VAE baseline with 72.0% phone classification accuracy"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1910.07601::s08::p000",
+    "1910.07601::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1910.07601::g00:b3:f14",
+    "1910.07601::g00:b3:f16",
+    "1910.07601::g00:b3:f17"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1910.07601::u002"
+  },
+  {
+   "insight_id": "1910.07601::g00:i03",
+   "paper_id": "1910.07601",
+   "group_id": "1910.07601::g00",
+   "concise_text": "The RM corpus augmented TIMIT only for embedding training while labelled data remained the same, and classification tasks still benefited from the additional data.",
+   "triple": {
+    "subject": "RM corpus augmentation of TIMIT",
+    "predicate": "improves",
+    "object": "classification tasks with labelled data unchanged"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1910.07601::s11::p004",
+    "1910.07601::s13::p000"
+   ],
+   "supporting_fact_ids": [
+    "1910.07601::g00:b5:f11",
+    "1910.07601::g00:b5:f13",
+    "1910.07601::g00:b6:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1910.07601::u003"
+  },
+  {
+   "insight_id": "1910.07601::g00:i04",
+   "paper_id": "1910.07601",
+   "group_id": "1910.07601::g00",
+   "concise_text": "Because speaker overlap between datasets causes bias, Tasks a,b,c were designed with TIMIT split into 8 blocks to assess that bias.",
+   "triple": {
+    "subject": "speaker overlap bias",
+    "predicate": "requires",
+    "object": "Tasks a,b,c using TIMIT split into 8 blocks"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1910.07601::s09::p001",
+    "1910.07601::s09::p002"
+   ],
+   "supporting_fact_ids": [
+    "1910.07601::g00:b4:f05",
+    "1910.07601::g00:b4:f06",
+    "1910.07601::g00:b4:f09",
+    "1910.07601::g00:b4:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1910.07601::u004"
+  },
+  {
+   "insight_id": "1910.07601::g00:i05",
+   "paper_id": "1910.07601",
+   "group_id": "1910.07601::g00",
+   "concise_text": "The CJFA encoder's better phone classification accuracy is supported by t-SNE visualisation where phonemes belonging to the same sound classes are grouped in closer regions.",
+   "triple": {
+    "subject": "t-SNE visualisation",
+    "predicate": "provides evidence for",
+    "object": "CJFA encoder's better phone classification accuracy"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1910.07601::s11::p000",
+    "1910.07601::s12::p001"
+   ],
+   "supporting_fact_ids": [
+    "1910.07601::g00:b5:f01",
+    "1910.07601::g00:b5:f15",
+    "1910.07601::g00:b5:f16"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1910.07601::u005"
+  },
+  {
+   "insight_id": "1910.07601::g00:i06",
+   "paper_id": "1910.07601",
+   "group_id": "1910.07601::g00",
+   "concise_text": "The paper's claim that including temporal information improves phoneme classification and speaker identification is supported by CJFA outperforming the VAE baseline and CJFS.",
+   "triple": {
+    "subject": "CJFA results",
+    "predicate": "provide evidence for",
+    "object": "temporal information improving phoneme classification and speaker identification"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1910.07601::s00::p003",
+    "1910.07601::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1910.07601::g00:b0:f07",
+    "1910.07601::g00:b0:f08",
+    "1910.07601::g00:b5:f01"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1910.07601::u006"
+  },
+  {
+   "insight_id": "1910.07601::g00:i07",
+   "paper_id": "1910.07601",
+   "group_id": "1910.07601::g00",
+   "concise_text": "The two unsupervised approaches use the VAE framework to find joint latent variables between target acoustic segments and surrounding frames, instantiated as CJFS and CJFA.",
+   "triple": {
+    "subject": "CJFS and CJFA",
+    "predicate": "are instances of",
+    "object": "VAE-based joint latent variable modelling between target acoustic segments and surrounding frames"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1910.07601::s00::p003",
+    "1910.07601::s05::p001",
+    "1910.07601::s05::p005"
+   ],
+   "supporting_fact_ids": [
+    "1910.07601::g00:b0:f07",
+    "1910.07601::g00:b0:f08",
+    "1910.07601::g00:b0:f09",
+    "1910.07601::g00:b2:f08",
+    "1910.07601::g00:b2:f09",
+    "1910.07601::g00:b3:f04",
+    "1910.07601::g00:b3:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1910.07601::u007"
+  },
+  {
+   "insight_id": "1910.07601::g00:i08",
+   "paper_id": "1910.07601",
+   "group_id": "1910.07601::g00",
+   "concise_text": "The contextual models were evaluated on TIMIT with 80 dimensional Mel-scale filter bank coefficients and a 30-frame window, where CJFA obtained significantly better phone classification accuracy.",
+   "triple": {
+    "subject": "CJFA under TIMIT 80 dimensional Mel-scale filter bank coefficients and 30 frames",
+    "predicate": "outperforms",
+    "object": "VAE baseline and CJFS in phone classification accuracy"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1910.07601::s07::p000",
+    "1910.07601::s11::p000"
+   ],
+   "supporting_fact_ids": [
+    "1910.07601::g00:b3:f11",
+    "1910.07601::g00:b5:f00",
+    "1910.07601::g00:b5:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1910.07601::u008"
+  },
+  {
+   "insight_id": "1910.07601::g00:i09",
+   "paper_id": "1910.07601",
+   "group_id": "1910.07601::g00",
+   "concise_text": "The conclusion's 3–6% speaker recognition gain is consistent with experiments where CJFA consistently obtained better speaker recognition results across configurations.",
+   "triple": {
+    "subject": "CJFA speaker recognition results across configurations",
+    "predicate": "provide evidence for",
+    "object": "3–6% gain"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1910.07601::s11::p001",
+    "1910.07601::s13::p000"
+   ],
+   "supporting_fact_ids": [
+    "1910.07601::g00:b5:f03",
+    "1910.07601::g00:b6:f06"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.8,
+   "verification_status": "unverified",
+   "verification": null,
+   "unit_id": "1910.07601::u009"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1910.07601::g00",
+   "insights": [
+    {
+     "insight_id": "1910.07601::g00:i00",
+     "paper_id": "1910.07601",
+     "group_id": "1910.07601::g00",
+     "concise_text": "CJFA predicts temporal context Y from a single centre segment X and significantly outperforms the VAE baseline and CJFS in phone classification and speaker recognition.",
+     "triple": {
+      "subject": "CJFA",
+      "predicate": "outperforms",
+      "object": "VAE baseline and CJFS in phone classification and speaker recognition"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1910.07601::s05::p005",
+      "1910.07601::s11::p000"
+     ],
+     "supporting_fact_ids": [
+      "1910.07601::g00:b3:f05",
+      "1910.07601::g00:b5:f01"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.93,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1910.07601::u000"
+    },
+    {
+     "insight_id": "1910.07601::g00:i01",
+     "paper_id": "1910.07601",
+     "group_id": "1910.07601::g00",
+     "concise_text": "CJFS inputs concatenated neighbour windows Y to a VAE to predict target window X, which explains its poor phone classification because the target frame is absent from the input.",
+     "triple": {
+      "subject": "CJFS input configuration",
+      "predicate": "causes",
+      "object": "poor phone classification because the target frame is absent from the input"
+     },
+     "relation_type": "method_result",
+     "source_passage_ids": [
+      "1910.07601::s05::p001",
+      "1910.07601::s11::p001"
+     ],
+     "supporting_fact_ids": [
+      "1910.07601::g00:b2:f08",
+      "1910.07601::g00:b5:f04"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.86,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1910.07601::u001"
+    },
+    {
+     "insight_id": "1910.07601::g00:i02",
+     "paper_id": "1910.07601",
+     "group_id": "1910.07601::g00",
+     "concise_text": "The proposed CJFS and CJFA extend the re-implemented VAE baseline that gave 72.0% phone classification accuracy, close to the published 72.2% VAE baseline.",
+     "triple": {
+      "subject": "CJFS and CJFA",
+      "predicate": "extends",
+      "object": "re-implemented VAE baseline with 72.0% phone classification accuracy"
+     },
+     "relation_type": "combined_fact",
+     "source_passage_ids": [
+      "1910.07601::s08::p000",
+      "1910.07601::s08::p001"
+     ],
+     "supporting_fact_ids": [
+      "1910.07601::g00:b3:f14",
+      "1910.07601::g00:b3:f16",
+      "1910.07601::g00:b3:f17"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.9,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1910.07601::u002"
+    },
+    {
+     "insight_id": "1910.07601::g00:i03",
+     "paper_id": "1910.07601",
+     "group_id": "1910.07601::g00",
+     "concise_text": "The RM corpus augmented TIMIT only for embedding training while labelled data remained the same, and classification tasks still benefited from the additional data.",
+     "triple": {
+      "subject": "RM corpus augmentation of TIMIT",
+      "predicate": "improves",
+      "object": "classification tasks with labelled data unchanged"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1910.07601::s11::p004",
+      "1910.07601::s13::p000"
+     ],
+     "supporting_fact_ids": [
+      "1910.07601::g00:b5:f11",
+      "1910.07601::g00:b5:f13",
+      "1910.07601::g00:b6:f02"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.88,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1910.07601::u003"
+    },
+    {
+     "insight_id": "1910.07601::g00:i04",
+     "paper_id": "1910.07601",
+     "group_id": "1910.07601::g00",
+     "concise_text": "Because speaker overlap between datasets causes bias, Tasks a,b,c were designed with TIMIT split into 8 blocks to assess that bias.",
+     "triple": {
+      "subject": "speaker overlap bias",
+      "predicate": "requires",
+      "object": "Tasks a,b,c using TIMIT split into 8 blocks"
+     },
+     "relation_type": "problem_solution",
+     "source_passage_ids": [
+      "1910.07601::s09::p001",
+      "1910.07601::s09::p002"
+     ],
+     "supporting_fact_ids": [
+      "1910.07601::g00:b4:f05",
+      "1910.07601::g00:b4:f06",
+      "1910.07601::g00:b4:f09",
+      "1910.07601::g00:b4:f11"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.91,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1910.07601::u004"
+    },
+    {
+     "insight_id": "1910.07601::g00:i05",
+     "paper_id": "1910.07601",
+     "group_id": "1910.07601::g00",
+     "concise_text": "The CJFA encoder's better phone classification accuracy is supported by t-SNE visualisation where phonemes belonging to the same sound classes are grouped in closer regions.",
+     "triple": {
+      "subject": "t-SNE visualisation",
+      "predicate": "provides evidence for",
+      "object": "CJFA encoder's better phone classification accuracy"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1910.07601::s11::p000",
+      "1910.07601::s12::p001"
+     ],
+     "supporting_fact_ids": [
+      "1910.07601::g00:b5:f01",
+      "1910.07601::g00:b5:f15",
+      "1910.07601::g00:b5:f16"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.82,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1910.07601::u005"
+    },
+    {
+     "insight_id": "1910.07601::g00:i06",
+     "paper_id": "1910.07601",
+     "group_id": "1910.07601::g00",
+     "concise_text": "The paper's claim that including temporal information improves phoneme classification and speaker identification is supported by CJFA outperforming the VAE baseline and CJFS.",
+     "triple": {
+      "subject": "CJFA results",
+      "predicate": "provide evidence for",
+      "object": "temporal information improving phoneme classification and speaker identification"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1910.07601::s00::p003",
+      "1910.07601::s11::p000"
+     ],
+     "supporting_fact_ids": [
+      "1910.07601::g00:b0:f07",
+      "1910.07601::g00:b0:f08",
+      "1910.07601::g00:b5:f01"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.84,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1910.07601::u006"
+    },
+    {
+     "insight_id": "1910.07601::g00:i07",
+     "paper_id": "1910.07601",
+     "group_id": "1910.07601::g00",
+     "concise_text": "The two unsupervised approaches use the VAE framework to find joint latent variables between target acoustic segments and surrounding frames, instantiated as CJFS and CJFA.",
+     "triple": {
+      "subject": "CJFS and CJFA",
+      "predicate": "are instances of",
+      "object": "VAE-based joint latent variable modelling between target acoustic segments and surrounding frames"
+     },
+     "relation_type": "entity_resolution",
+     "source_passage_ids": [
+      "1910.07601::s00::p003",
+      "1910.07601::s05::p001",
+      "1910.07601::s05::p005"
+     ],
+     "supporting_fact_ids": [
+      "1910.07601::g00:b0:f07",
+      "1910.07601::g00:b0:f08",
+      "1910.07601::g00:b0:f09",
+      "1910.07601::g00:b2:f08",
+      "1910.07601::g00:b2:f09",
+      "1910.07601::g00:b3:f04",
+      "1910.07601::g00:b3:f05"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.89,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1910.07601::u007"
+    },
+    {
+     "insight_id": "1910.07601::g00:i08",
+     "paper_id": "1910.07601",
+     "group_id": "1910.07601::g00",
+     "concise_text": "The contextual models were evaluated on TIMIT with 80 dimensional Mel-scale filter bank coefficients and a 30-frame window, where CJFA obtained significantly better phone classification accuracy.",
+     "triple": {
+      "subject": "CJFA under TIMIT 80 dimensional Mel-scale filter bank coefficients and 30 frames",
+      "predicate": "outperforms",
+      "object": "VAE baseline and CJFS in phone classification accuracy"
+     },
+     "relation_type": "setting_outcome",
+     "source_passage_ids": [
+      "1910.07601::s07::p000",
+      "1910.07601::s11::p000"
+     ],
+     "supporting_fact_ids": [
+      "1910.07601::g00:b3:f11",
+      "1910.07601::g00:b5:f00",
+      "1910.07601::g00:b5:f01"
+     ],
+     "derivation": "Composed",
+     "confidence": 0.87,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1910.07601::u008"
+    },
+    {
+     "insight_id": "1910.07601::g00:i09",
+     "paper_id": "1910.07601",
+     "group_id": "1910.07601::g00",
+     "concise_text": "The conclusion's 3–6% speaker recognition gain is consistent with experiments where CJFA consistently obtained better speaker recognition results across configurations.",
+     "triple": {
+      "subject": "CJFA speaker recognition results across configurations",
+      "predicate": "provide evidence for",
+      "object": "3–6% gain"
+     },
+     "relation_type": "claim_evidence",
+     "source_passage_ids": [
+      "1910.07601::s11::p001",
+      "1910.07601::s13::p000"
+     ],
+     "supporting_fact_ids": [
+      "1910.07601::g00:b5:f03",
+      "1910.07601::g00:b6:f06"
+     ],
+     "derivation": "Inferred",
+     "confidence": 0.8,
+     "verification_status": "unverified",
+     "verification": null,
+     "unit_id": "1910.07601::u009"
+    }
+   ],
+   "rejects": [],
+   "n_raw": 10,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 14026,
+    "completion_tokens": 1780,
+    "total_tokens": 15806,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ],
+ "skipped_single_paragraph_groups": []
+}

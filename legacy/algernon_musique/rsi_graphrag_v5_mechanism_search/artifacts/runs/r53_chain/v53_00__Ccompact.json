@@ -1,0 +1,278 @@
+{
+  "role": "v53_00",
+  "cluster_id": "cc-00064",
+  "unit_id": "cc-00064-u000",
+  "method": "Ccompact",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 2611,
+    "completion_tokens": 2710,
+    "reasoning_tokens": 1356,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r53_chain_v53_00_Ccompact",
+    "cache_key": "6ce5bc917c682619950f1c783028f042c94011850fa773c73275074ecb9ae8ef"
+  },
+  "n_updates": 3,
+  "n_add": 3,
+  "n_accept": 3,
+  "n_reject": 0,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "EXTRACTION_REPAIR": 3
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "c1",
+      "comprehension_text": "After secondary education, students enroll in schools or junior colleges with higher secondary facilities.",
+      "new_semantic_relation": "secondary education precedes enrollment",
+      "operator": "EXPLICIT_SUCCESSION",
+      "chain": [
+        {
+          "passage_id": "chunk-71cd4c22aa403bdbbfe9652bebaa8a32",
+          "span": "After completing secondary education, students enroll in schools or junior colleges with a higher secondary facility."
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-c8a2c0545dc6e3a41a98cc45fb89c1d1",
+        "entity-7ef21215774bd670134e635868a42cbc"
+      ],
+      "source_triple_ids": [
+        "triple-3765786e23de1bb8a433f57628501597"
+      ],
+      "source_passage_ids": [
+        "chunk-71cd4c22aa403bdbbfe9652bebaa8a32"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-71cd4c22aa403bdbbfe9652bebaa8a32",
+          "span": "After completing secondary education, students enroll in schools or junior colleges with a higher secondary facility."
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "novel_part": "Enrollment follows completion of secondary education.",
+      "reasoning_summary": "The passage explicitly marks enrollment as occurring after secondary education.",
+      "novelty_justification": "No stored triple states this educational succession.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "c2",
+      "comprehension_text": "Greek surnames are static in mainland Greece, while middle-name patronymic usage remains dynamic.",
+      "new_semantic_relation": "static surnames contrast with dynamic middle-name patronymics",
+      "operator": "TEMPORAL_COMPARE",
+      "chain": [
+        {
+          "passage_id": "chunk-3d55bd5399bacbeebbfb1ec4fbe25c05",
+          "span": "Although surnames in mainland Greece are static today"
+        },
+        {
+          "passage_id": "chunk-3d55bd5399bacbeebbfb1ec4fbe25c05",
+          "span": "dynamic and changing patronymic usage survives in middle names"
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-f6d6b949ddbc8d8d74f3dd846eabdaad",
+        "entity-b3849d27a224bb13326134e019d1efc4"
+      ],
+      "source_triple_ids": [
+        "triple-f6d6b949ddbc8d8d74f3dd846eabdaad",
+        "triple-6e360ababa27cb342bfd55ac3130ec5c"
+      ],
+      "source_passage_ids": [
+        "chunk-3d55bd5399bacbeebbfb1ec4fbe25c05"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-3d55bd5399bacbeebbfb1ec4fbe25c05",
+          "span": "Although surnames in mainland Greece are static today"
+        },
+        {
+          "passage_id": "chunk-3d55bd5399bacbeebbfb1ec4fbe25c05",
+          "span": "dynamic and changing patronymic usage survives in middle names"
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The two surname practices are explicitly contrasted.",
+      "reasoning_summary": "The passage contrasts static surnames with continuing dynamic middle-name usage.",
+      "novelty_justification": "Stored triples state each property separately, not their contrast.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "c3",
+      "comprehension_text": "Greek surnames supplanted the ancient tradition of using the father's name.",
+      "new_semantic_relation": "Greek surnames supplanted father-name usage",
+      "operator": "EXPLICIT_GAP",
+      "chain": [
+        {
+          "passage_id": "chunk-3d55bd5399bacbeebbfb1ec4fbe25c05",
+          "span": "Greek surnames were widely in use by the 9th century supplanting the ancient tradition of using the father’s name"
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-f39d163e053350feba5ad87d2686b8b5",
+        "entity-b70a38a9f82cbc6b766a08c0ccc3d9de"
+      ],
+      "source_triple_ids": [
+        "triple-034dc5601f7dd6ff3fdc4957e878c90c",
+        "triple-3e10c946cba5f1a02ccca23b3b6034d0"
+      ],
+      "source_passage_ids": [
+        "chunk-3d55bd5399bacbeebbfb1ec4fbe25c05"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-3d55bd5399bacbeebbfb1ec4fbe25c05",
+          "span": "Greek surnames were widely in use by the 9th century supplanting the ancient tradition of using the father’s name"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "novel_part": "The passage states replacement of father-name usage by Greek surnames.",
+      "reasoning_summary": "The passage explicitly uses 'supplanting' to describe the replacement.",
+      "novelty_justification": "No stored triple states this replacement relation.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "c1",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: after, enroll, junior, higher, facilities",
+      "residue": [
+        "after",
+        "enroll",
+        "junior",
+        "higher",
+        "facilities"
+      ],
+      "evidence_sentences": [
+        "After completing secondary education, students enroll in schools or junior colleges with a higher secondary facility. Admission to professional graduation colleges in Hyderabad, many of which are affiliated with either Jawaharlal Nehru Technological University Hyderabad (JNTUH) or Osmania University (OU), is through the Engineering Agricultural and Medical Common Entrance Test (EAM-CET)."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "After completing secondary education, students enroll in schools or junior colleges with a higher secondary facility. Admission to professional graduation colleges in Hyderabad, many of which are affiliated with either Jawaharlal Nehru Technological University Hyderabad (JNTUH) or Osmania University (OU), is through the Engineering Agricultural and Medical Common Entrance Test (EAM-CET)."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "after",
+            "enroll",
+            "junior",
+            "higher",
+            "facilities"
+          ],
+          "n_passage_triples": 14,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "c2",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: mainland, remains",
+      "residue": [
+        "mainland",
+        "remains"
+      ],
+      "evidence_sentences": [
+        "Although surnames in mainland Greece are static today, dynamic and changing patronymic usage survives in middle names where the genitive of father's first name is commonly the middle name (this usage having been passed on to the Russians).",
+        "Although surnames in mainland Greece are static today, dynamic and changing patronymic usage survives in middle names where the genitive of father's first name is commonly the middle name (this usage having been passed on to the Russians)."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Although surnames in mainland Greece are static today, dynamic and changing patronymic usage survives in middle names where the genitive of father's first name is commonly the middle name (this usage having been passed on to the Russians).",
+            "Although surnames in mainland Greece are static today, dynamic and changing patronymic usage survives in middle names where the genitive of father's first name is commonly the middle name (this usage having been passed on to the Russians)."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "mainland",
+            "remains"
+          ],
+          "n_passage_triples": 11,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "c3",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: supplanted, ancient, using",
+      "residue": [
+        "supplanted",
+        "ancient",
+        "using"
+      ],
+      "evidence_sentences": [
+        "Greeks\nGreek surnames were widely in use by the 9th century supplanting the ancient tradition of using the father’s name, however Greek surnames are most commonly patronymics."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Greeks\nGreek surnames were widely in use by the 9th century supplanting the ancient tradition of using the father’s name, however Greek surnames are most commonly patronymics."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "supplanted",
+            "ancient",
+            "using"
+          ],
+          "n_passage_triples": 11,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,884 @@
+{
+ "1909.00326::s00::p000": [
+  [
+   "Neural machine translation (NMT)",
+   "has achieved",
+   "the state-of-the-art results on a mass of language pairs with varying structural differences"
+  ],
+  [
+   "not much",
+   "is known about",
+   "how and why NMT works"
+  ],
+  [
+   "how and why NMT works",
+   "pose",
+   "great challenges for debugging NMT models and designing optimal architectures"
+  ]
+ ],
+ "1909.00326::s00::p001": [
+  [
+   "The understanding of NMT models",
+   "has been approached primarily from",
+   "two complementary perspectives"
+  ],
+  [
+   "The first thread of work",
+   "aims to understand",
+   "the importance of representations"
+  ],
+  [
+   "Another direction",
+   "focuses on understanding",
+   "the importance of input words"
+  ],
+  [
+   "Previous work",
+   "treats",
+   "NMT models as black-boxes"
+  ],
+  [
+   "recent studies",
+   "reveal that",
+   "attention does not provide meaningful explanations"
+  ]
+ ],
+ "1909.00326::s00::p002": [
+  [
+   "exploiting the gradients in NMT generation",
+   "aims to estimate",
+   "the word importance better"
+  ],
+  [
+   "the integrated gradients method BIBREF9",
+   "attributes",
+   "the output to the input words with the integration of first-order derivatives"
+  ],
+  [
+   "quantitative comparison",
+   "is on",
+   "a couple of perturbation operations, several language pairs, and two representative model architectures"
+  ]
+ ],
+ "1909.00326::s00::p003": [
+  [
+   "Experimental results",
+   "show that",
+   "the gradient-based approach outperforms both the best black-box method and other comparative methods"
+  ],
+  [
+   "words of certain syntactic categories",
+   "have",
+   "higher importance"
+  ],
+  [
+   "the categories",
+   "vary across",
+   "language"
+  ],
+  [
+   "nouns",
+   "are more important for",
+   "Chinese$\\Rightarrow $English translation"
+  ],
+  [
+   "prepositions",
+   "are more important for",
+   "English-French and -Japanese translation"
+  ],
+  [
+   "This finding",
+   "can inspire",
+   "better design principles of NMT architectures for different language pairs"
+  ]
+ ],
+ "1909.00326::s01::p002": [
+  [
+   "word importance",
+   "is useful for",
+   "understanding NMT by identifying under-translated words"
+  ]
+ ],
+ "1909.00326::s01::p003": [
+  [
+   "essential inductive bias (e.g., language characteristics)",
+   "should be considered for",
+   "model design"
+  ]
+ ],
+ "1909.00326::s02::p000": [
+  [
+   "Interpretability of Seq2Seq models",
+   "has recently been explored mainly from",
+   "two perspectives: interpreting internal representations and understanding input-output behaviors"
+  ],
+  [
+   "Most of the existing work",
+   "focus on",
+   "the former thread"
+  ],
+  [
+   "the learned representations",
+   "may depend on",
+   "the model implementation"
+  ]
+ ],
+ "1909.00326::s02::p001": [
+  [
+   "previous work",
+   "generally treats",
+   "Seq2Seq models as black-boxes"
+  ],
+  [
+   "alvarez2017causal",
+   "measure",
+   "the relevance between two input-output tokens by perturbing the input sequence"
+  ],
+  [
+   "the relevance score",
+   "only resembles",
+   "attention scores"
+  ],
+  [
+   "Jain2019AttentionIN",
+   "show",
+   "that attention scores are in weak correlation with the feature importance"
+  ]
+ ],
+ "1909.00326::s03::p000": [
+  [
+   "the intermediate gradients",
+   "have proven to be useful in",
+   "interpreting deep learning models"
+  ],
+  [
+   "the integrated gradients",
+   "does not need",
+   "any instrumentation of the architecture"
+  ],
+  [
+   "the integrated gradients",
+   "can be computed easily by",
+   "calling gradient operations"
+  ],
+  [
+   "several interesting findings",
+   "can potentially help",
+   "debug NMT models and design better architectures for specific language pairs"
+  ]
+ ],
+ "1909.00326::s04::p001": [
+  [
+   "The training objective",
+   "is to minimize",
+   "the negative log-likelihood loss on the training corpus"
+  ],
+  [
+   "beam search",
+   "is employed to decode",
+   "a more optimal translation"
+  ]
+ ],
+ "1909.00326::s05::p000": [
+  [
+   "the notion of “word importance”",
+   "is employed to quantify",
+   "the contribution that a word in the input sentence makes to the NMT generations"
+  ],
+  [
+   "black-box methods",
+   "are without",
+   "the knowledge of the model"
+  ],
+  [
+   "white-box methods",
+   "have access to",
+   "the model internal information (e.g., parameters and gradients)"
+  ]
+ ],
+ "1909.00326::s05::p001": [
+  [
+   "all words",
+   "can be categorized as",
+   "either content or content-free words"
+  ],
+  [
+   "Content words",
+   "consist mostly of",
+   "nouns, verbs, and adjectives"
+  ],
+  [
+   "nouns, verbs, and adjectives",
+   "carry",
+   "descriptive meanings of the sentence"
+  ]
+ ],
+ "1909.00326::s05::p002": [
+  [
+   "the top 50 most frequent words",
+   "are mostly",
+   "punctuation and stop words"
+  ]
+ ],
+ "1909.00326::s05::p003": [
+  [
+   "its scores",
+   "closely resemble",
+   "attention scores in NMT models"
+  ]
+ ],
+ "1909.00326::s06::p000": [
+  [
+   "integrated gradients (IG)",
+   "was originally proposed to",
+   "attribute the model predictions to input features"
+  ],
+  [
+   "IG",
+   "exploits",
+   "the handy model gradient information by integrating first-order derivatives"
+  ],
+  [
+   "IG",
+   "is",
+   "implementation invariant"
+  ]
+ ],
+ "1909.00326::s06::p002": [
+  [
+   "the baseline input $\\textbf {x}^{\\prime }$",
+   "is set as",
+   "a sequence of zero embeddings that has the same sequence length $M$"
+  ],
+  [
+   "the above formula",
+   "is",
+   "intractable for deep neural models"
+  ]
+ ],
+ "1909.00326::s06::p003": [
+  [
+   "The IG",
+   "will be more accurate if",
+   "a larger S is used"
+  ]
+ ],
+ "1909.00326::s06::p004": [
+  [
+   "A negative contribution value",
+   "indicates that",
+   "the input word has negative effects on the output word"
+  ]
+ ],
+ "1909.00326::s07::p000": [
+  [
+   "English, French, and Chinese",
+   "belong to",
+   "the subject-verb-object (SVO) family"
+  ],
+  [
+   "Japanese",
+   "might bring",
+   "some interesting linguistic behaviors in English-Japanese translation"
+  ]
+ ],
+ "1909.00326::s07::p001": [
+  [
+   "WMT17 Chinese-English dataset",
+   "consists of",
+   "$20.6$M sentence pairs"
+  ],
+  [
+   "WMT14 English-French dataset",
+   "comprises",
+   "$35.5$M sentence pairs"
+  ],
+  [
+   "WAT17 English-Japanese dataset",
+   "consists of",
+   "$1.9$M sentence pairs"
+  ],
+  [
+   "standard byte pair encoding (BPE)",
+   "uses",
+   "32K merge operations"
+  ]
+ ],
+ "1909.00326::s08::p000": [
+  [
+   "Transformer BIBREF1 model",
+   "is chosen as",
+   "test bed"
+  ],
+  [
+   "RNN-Search model BIBREF0",
+   "is chosen as",
+   "test bed"
+  ],
+  [
+   "Attribution method",
+   "is implemented based on",
+   "Fairseq-py BIBREF19 framework"
+  ],
+  [
+   "All models",
+   "are trained for",
+   "100k steps"
+  ]
+ ],
+ "1909.00326::s08::p001": [
+  [
+   "IG (Attribution)",
+   "is compared with",
+   "several black-box methods (i.e., Content, Frequency, Attention)"
+  ],
+  [
+   "Random",
+   "serves as",
+   "a baseline"
+  ],
+  [
+   "attention scores",
+   "use",
+   "a max operation"
+  ]
+ ],
+ "1909.00326::s09::p000": [
+  [
+   "effectiveness of estimating word importance",
+   "is evaluated by",
+   "the translation performance decrease"
+  ],
+  [
+   "translation performance decrease",
+   "is measured when perturbing",
+   "a set of important words that are of top-most word importance in a sentence"
+  ]
+ ],
+ "1909.00326::s09::p001": [
+  [
+   "standard BLEU score",
+   "is used as",
+   "the evaluation metric for translation performance"
+  ],
+  [
+   "supervised erasure method",
+   "requires",
+   "ground-truth translations for scoring word importance"
+  ]
+ ],
+ "1909.00326::s10::p000": [
+  [
+   "perturbation on text",
+   "is",
+   "notoriously hard BIBREF20 due to the semantic shifting problem"
+  ],
+  [
+   "this experiment",
+   "investigates",
+   "three types of perturbations"
+  ]
+ ],
+ "1909.00326::s10::p001": [
+  [
+   "Deletion perturbation",
+   "removes",
+   "the selected words from the input sentence"
+  ],
+  [
+   "Deletion perturbation",
+   "can be regarded as",
+   "a specific instantiation of sentence compression"
+  ]
+ ],
+ "1909.00326::s10::p002": [
+  [
+   "Mask perturbation",
+   "replaces",
+   "embedding vectors of the selected words with all-zero vectors"
+  ],
+  [
+   "Mask perturbation",
+   "retains",
+   "the placeholder"
+  ]
+ ],
+ "1909.00326::s10::p003": [
+  [
+   "Grammatical Replacement perturbation",
+   "replaces",
+   "a word by another word of the same linguistic role (i.e., POS tags)"
+  ],
+  [
+   "Grammatical Replacement perturbation",
+   "yields",
+   "a sentence that is grammatically correct but semantically nonsensical"
+  ]
+ ],
+ "1909.00326::s10::p004": [
+  [
+   "Attribution method",
+   "consistently outperforms",
+   "other methods against different perturbations on a various number of operations"
+  ],
+  [
+   "the operation number",
+   "denotes",
+   "the number of perturbed words in a sentence"
+  ]
+ ],
+ "1909.00326::s11::p000": [
+  [
+   "perturbing words of top-most importance",
+   "leads to",
+   "lower BLEU scores than Random selected words"
+  ],
+  [
+   "important words",
+   "have",
+   "greater impacts on translation performance"
+  ],
+  [
+   "perturbing important words identified by Attribution",
+   "outperforms",
+   "the Random method by a large margin (more than 4.0 BLEU under 5 operations)"
+  ]
+ ],
+ "1909.00326::s12::p000": [
+  [
+   "two black-box methods (i.e., Content, Frequency)",
+   "perform",
+   "only slightly better than the Random method"
+  ],
+  [
+   "the Frequency method",
+   "demonstrates",
+   "even worse performances under the Mask perturbation"
+  ],
+  [
+   "linguistic properties (such as POS tags) and the word frequency",
+   "can only partially help identify",
+   "the important words"
+  ]
+ ],
+ "1909.00326::s12::p001": [
+  [
+   "Attention method",
+   "bases on",
+   "the encoder-decoder attention scores at the last layer of Transformer"
+  ],
+  [
+   "Attention method",
+   "is used to simulate",
+   "the best black-box method SOCRAT"
+  ],
+  [
+   "Attribution method",
+   "achieves",
+   "best performances under all three perturbations"
+  ],
+  [
+   "the gap between Attribution and Attention",
+   "is",
+   "around $1.0+$ BLEU difference"
+  ]
+ ],
+ "1909.00326::s12::p002": [
+  [
+   "the perturbation effectiveness of Deletion, Mask, and Grammatical Replacement",
+   "varies from",
+   "strong to weak"
+  ]
+ ],
+ "1909.00326::s13::p000": [
+  [
+   "the proposed approach",
+   "is validated using",
+   "a different NMT architecture RNN-Search on the Chinese$\\Rightarrow $English translation task"
+  ],
+  [
+   "Attribution method",
+   "outperforms",
+   "both Attention method and Random method by a decent margin"
+  ],
+  [
+   "the RNN-Search model",
+   "is",
+   "less robust to these perturbations"
+  ],
+  [
+   "Transformer",
+   "shows",
+   "a relative decrease of $55\\%$ on BLEU scores"
+  ]
+ ],
+ "1909.00326::s14::p000": [
+  [
+   "Attribution",
+   "shows",
+   "the best performance"
+  ],
+  [
+   "Random",
+   "achieves",
+   "the worst result"
+  ],
+  [
+   "Attribution method",
+   "declines to",
+   "around the half of the original BLEU score with five operations"
+  ]
+ ],
+ "1909.00326::s15::p000": [
+  [
+   "Erasure",
+   "directly evaluates",
+   "the word importance by measuring the translation performance degradation of each word"
+  ],
+  [
+   "Erasure",
+   "erases",
+   "one word from the input sentence each time"
+  ],
+  [
+   "Erasure",
+   "uses",
+   "the BLEU score changes to denote the word importance (after normalization)"
+  ]
+ ],
+ "1909.00326::s15::p001": [
+  [
+   "Attribution method",
+   "is less effective than",
+   "Erasure method when only one word is perturbed"
+  ],
+  [
+   "Attribution method",
+   "outperforms",
+   "the Erasure method when perturbing 2 or more words"
+  ],
+  [
+   "the importance calculated by erasing only one word",
+   "cannot be generalized to",
+   "multiple-words scenarios very well"
+  ],
+  [
+   "the Erasure method",
+   "is",
+   "a supervised method which requires ground-truth references"
+  ],
+  [
+   "finding a better words combination",
+   "is",
+   "computation infeasible when erasing multiple words"
+  ]
+ ],
+ "1909.00326::s16::p000": [
+  [
+   "analyses",
+   "are conducted on",
+   "two potential usages of word importance"
+  ],
+  [
+   "two potential usages of word importance",
+   "can help debug",
+   "NMT models"
+  ],
+  [
+   "two potential usages of word importance",
+   "can help design",
+   "better architectures for specific languages"
+  ]
+ ],
+ "1909.00326::s17::p000": [
+  [
+   "under-translated input words",
+   "should contribute little to",
+   "the NMT outputs"
+  ],
+  [
+   "under-translated input words",
+   "yield",
+   "much smaller word importance"
+  ],
+  [
+   "500 Chinese$\\Rightarrow $English sentence pairs",
+   "are translated by",
+   "the Transformer model (BLEU 23.57)"
+  ],
+  [
+   "ten human annotators",
+   "manually label",
+   "the under-translated input words"
+  ],
+  [
+   "at least two annotators",
+   "label",
+   "each input-hypothesis pair"
+  ],
+  [
+   "These annotators",
+   "have",
+   "at least six years of English study experience"
+  ],
+  [
+   "178 sentences",
+   "have",
+   "under-translation errors with 553 under-translated words in total"
+  ]
+ ],
+ "1909.00326::s17::p001": [
+  [
+   "the accuracy",
+   "is not",
+   "high"
+  ],
+  [
+   "This",
+   "is potentially useful for",
+   "debugging NMT models"
+  ]
+ ],
+ "1909.00326::s18::p000": [
+  [
+   "the attribution-based approach",
+   "identifies",
+   "important words"
+  ],
+  [
+   "representative sets of linguistic properties",
+   "include",
+   "POS tags, and fertility, and depth in a syntactic parse tree"
+  ],
+  [
+   "these analyses",
+   "multiply",
+   "the word importance with the corresponding sentence length"
+  ],
+  [
+   "a decision tree based regression model",
+   "calculates",
+   "the correlation between the importance and linguistic properties"
+  ]
+ ],
+ "1909.00326::s18::p001": [
+  [
+   "the syntactic information",
+   "is almost independent of",
+   "the word importance value"
+  ],
+  [
+   "the word importance",
+   "strongly correlates with",
+   "the POS tags and fertility features"
+  ],
+  [
+   "these features",
+   "contribute",
+   "over 95%"
+  ]
+ ],
+ "1909.00326::s19::p000": [
+  [
+   "content words",
+   "are more important on",
+   "Chinese$\\Rightarrow $English"
+  ],
+  [
+   "content-free words",
+   "are more important on",
+   "English$\\Rightarrow $Japanese"
+  ],
+  [
+   "noun",
+   "is more important on",
+   "Chinese$\\Rightarrow $English translation"
+  ],
+  [
+   "preposition",
+   "is more important on",
+   "English$\\Rightarrow $French translation"
+  ],
+  [
+   "preposition and punctuation",
+   "are very important in",
+   "English$\\Rightarrow $Japanese translation"
+  ]
+ ],
+ "1909.00326::s19::p001": [
+  [
+   "Punctuation in NMT",
+   "is",
+   "understudied"
+  ],
+  [
+   "punctuation",
+   "is important on",
+   "English$\\Rightarrow $Japanese translation"
+  ],
+  [
+   "the punctuation",
+   "could affect",
+   "the sense groups in a sentence"
+  ]
+ ],
+ "1909.00326::s20::p000": [
+  [
+   "the fertility distribution",
+   "is compared on",
+   "three language pairs"
+  ],
+  [
+   "a source word that corresponds to multiple target words",
+   "should be",
+   "more important"
+  ]
+ ],
+ "1909.00326::s20::p001": [
+  [
+   "one-to-many fertility",
+   "is consistently more important on",
+   "all three language pairs"
+  ],
+  [
+   "null-aligned words",
+   "receive",
+   "much less attention"
+  ],
+  [
+   "null-aligned input words",
+   "contribute",
+   "almost nothing to the translation outputs"
+  ]
+ ],
+ "1909.00326::s21::p000": [
+  [
+   "the gradient-based method",
+   "bridges",
+   "the gap between word importance and translation performance"
+  ],
+  [
+   "Empirical results",
+   "show",
+   "that the gradient-based method is superior to several black-box methods in estimating the word importance"
+  ]
+ ],
+ "1909.00326::s21::p002": [
+  [
+   "the detected unimportant words",
+   "are possibly",
+   "under-translated"
+  ]
+ ],
+ "1909.00326::s21::p003": [
+  [
+   "more important words",
+   "are assigned with",
+   "more capacity"
+  ]
+ ],
+ "1909.00326::s21::p004": [
+  [
+   "The language-specific inductive bias (e.g., different behaviors on POS)",
+   "should be incorporated into",
+   "the model design"
+  ]
+ ],
+ "1909.00326::s21::p005": [
+  [
+   "model interpretability",
+   "can build",
+   "trust in model predictions"
+  ],
+  [
+   "model interpretability",
+   "can help",
+   "error diagnosis"
+  ],
+  [
+   "model interpretability",
+   "can facilitate",
+   "model refinement"
+  ]
+ ],
+ "1909.00326::s21::p006": [
+  [
+   "The aim of this paper",
+   "is not to",
+   "explore this whole space"
+  ],
+  [
+   "some fairly straightforward implementations",
+   "work",
+   "well"
+  ]
+ ],
+ "1909.00326::s23::p001": [
+  [
+   "reverse directions",
+   "are",
+   "English$\\Rightarrow $Chinese, French$\\Rightarrow $English, and Japanese$\\Rightarrow $English"
+  ]
+ ],
+ "1909.00326::s24::p000": [
+  [
+   "content words",
+   "are more important than",
+   "content-free words"
+  ],
+  [
+   "the situation",
+   "is reversed on",
+   "both French$\\Rightarrow $English and Japanese$\\Rightarrow $English translations"
+  ],
+  [
+   "there",
+   "is",
+   "no clear boundary between Preposition/Determiner and other categories in Japanese"
+  ],
+  [
+   "Punctuation",
+   "is more important on",
+   "Japanese$\\Rightarrow $English"
+  ]
+ ],
+ "1909.00326::s25::p000": [
+  [
+   "The word fertility",
+   "shows",
+   "similar trend as the previously reported results"
+  ],
+  [
+   "one-to-many fertility",
+   "is",
+   "more important"
+  ],
+  [
+   "null-aligned fertility",
+   "is",
+   "less important"
+  ],
+  [
+   "many-to-one fertility",
+   "shows",
+   "an increasing trend on Japanese$\\Rightarrow $English translation"
+  ],
+  [
+   "the proportion",
+   "is",
+   "relatively small"
+  ]
+ ],
+ "1909.00326::s25::p001": [
+  [
+   "the findings on language pairs with reverse directions",
+   "agree with",
+   "the findings in the paper"
+  ],
+  [
+   "the findings on language pairs with reverse directions",
+   "further confirm",
+   "the generality of our experimental findings"
+  ]
+ ]
+}

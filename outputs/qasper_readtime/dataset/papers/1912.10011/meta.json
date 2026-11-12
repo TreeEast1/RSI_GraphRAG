@@ -1,0 +1,58 @@
+{
+ "paper_id": "1912.10011",
+ "title": "A Hierarchical Model for Data-to-Text Generation",
+ "abstract": "Transcribing structured data into natural language descriptions has emerged as a challenging task, referred to as \"data-to-text\". These structures generally regroup multiple elements, as well as their attributes. Most attempts rely on translation encoder-decoder methods which linearize elements into a sequence. This however loses most of the structure contained in the data. In this work, we propose to overpass this limitation with a hierarchical model that encodes the data-structure at the element-level and the structure level. Evaluations on RotoWire show the effectiveness of our model w.r.t. qualitative and quantitative metrics.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Hierarchical Encoder Model for Data-to-Text",
+  "Hierarchical Encoder Model for Data-to-Text ::: Notation and General Overview",
+  "Hierarchical Encoder Model for Data-to-Text ::: Hierarchical Encoding Model",
+  "Hierarchical Encoder Model for Data-to-Text ::: Hierarchical Encoding Model ::: Record Embedding Layer.",
+  "Hierarchical Encoder Model for Data-to-Text ::: Hierarchical attention",
+  "Experimental setup ::: The Rotowire dataset",
+  "Experimental setup ::: Evaluation metrics",
+  "Experimental setup ::: Evaluation metrics ::: BLEU Score.",
+  "Experimental setup ::: Evaluation metrics ::: Information extraction-oriented metrics.",
+  "Experimental setup ::: Baselines",
+  "Experimental setup ::: Baselines ::: Model scenarios",
+  "Experimental setup ::: Implementation details",
+  "Results",
+  "Results ::: Ablation studies",
+  "Results ::: Comparison w.r.t. baselines.",
+  "Conclusion and future work",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 70,
+ "n_tokens": 6644,
+ "figures_and_tables": [
+  {
+   "caption_id": "1912.10011::fig000",
+   "paper_id": "1912.10011",
+   "file": "2-Figure1-1.png",
+   "caption": "Fig. 1: Example of structured data from the RotoWire dataset. Rows are entities (either a team or a player) and each cell a record, its key being the column label and its value the cell content. Factual mentions from the table are boldfaced in the description.",
+   "n_tokens": 60
+  },
+  {
+   "caption_id": "1912.10011::fig001",
+   "paper_id": "1912.10011",
+   "file": "5-Figure2-1.png",
+   "caption": "Fig. 2: Diagram of the proposed hierarchical encoder. Once the records are embedded, the low-level encoder works on each entity independently (A); then the high-level encoder encodes the collection of entities (B). In circles, we represent the hierarchical attention scores: the α scores at the entity level and the β scores at the record level.",
+   "n_tokens": 70
+  },
+  {
+   "caption_id": "1912.10011::fig002",
+   "paper_id": "1912.10011",
+   "file": "9-Table1-1.png",
+   "caption": "Table 1: Evaluation on the RotoWire testset using relation generation (RG) count (#) and precision (P%), content selection (CS) precision (P%) and recall (R%), content ordering (CO), and BLEU. -: number of parameters unavailable.",
+   "n_tokens": 55
+  },
+  {
+   "caption_id": "1912.10011::fig003",
+   "paper_id": "1912.10011",
+   "file": "10-Figure3-1.png",
+   "caption": "Fig. 3: Right: Comparison of a generated sentence from Hierarchical-k and Hierarchicalkv. Left: Attention scores over entities (top) and over records inside the selected entity (bottom) for both variants, during the decoding of respectively 26 or 31 (circled in red).",
+   "n_tokens": 60
+  }
+ ]
+}

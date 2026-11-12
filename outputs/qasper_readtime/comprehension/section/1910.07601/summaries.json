@@ -1,0 +1,392 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1910.07601::s00::p000",
+   "summary": "Word embeddings such as Word2Vec and GloveBIBREF1 succeed by using context information and support downstream NLP tasks and language modelling for speech recognition.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s00::p001",
+   "summary": "Acoustic embeddings compactly represent audio sequence information with latent factors, but interdependent attributes at different abstraction levels make learning them challenging.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s00::p002",
+   "summary": "Prior speech processing work uses context information for acoustic embeddings, focusing on word semantics or speaker representations with Siamese networks.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s00::p003",
+   "summary": "Two unsupervised variational auto-encoder approaches, CJFS and CJFA, model joint latent variables between target acoustic segments and surrounding frames.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s00::p004",
+   "summary": "The paper outlines related work, the two context modelling approaches, experimental framework, results, discussion, conclusions and future work.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s02::p000",
+   "summary": "Acoustic word embeddings map word acoustics into fixed size vectors, with supervised CNN and RNN approaches described.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s02::p001",
+   "summary": "BIBREF12 proposed word similarity Siamese CNNs when word boundaries are known but word labels are unknown.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s02::p002",
+   "summary": "Unsupervised acoustic embedding approaches include a convolutional variational auto-encoder and factorised hierarchical variational auto-encoder evaluated on TIMIT phoneme and speaker classification.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s03::p000",
+   "summary": "Context information affects phonemes through coarticulation and linguistic constraints, while global latent variables such as speaker properties remain common across neighbouring frames.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s03::p001",
+   "summary": "Prior context-based representation learning includes Word2VecBIBREF0, context encoders, sequence-to-sequence speech methods, and Siamese neighbourhood discrimination.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s04::p000",
+   "summary": "Variational auto-encoders can yield good latent space representations and are used here to model joint latent factors between target segments and surroundings.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s04::p001",
+   "summary": "Unlike normal auto-encoders, VAE defines a probabilistic generative process between observation $x$ and latent variable $z$ through encoder and decoder distributions.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s04::p002",
+   "summary": "A recognition model $q(z|x)$ approximates $p(z|x)$ by minimising KL divergence because computing $p(z|x)$ requires difficult marginal likelihood $p(x)$ estimation.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s04::p003",
+   "summary": "The VAE training objective function is derived from Eq DISPLAY_FORM4 and shown in Eq DISPLAY_FORM5.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s04::p004",
+   "summary": "The VAE objective includes reconstruction likelihood $E_{q(z|x)}log[p(x|z)]$ and $D_{KL}(q(z|x)||p(z))$, which keeps $q(z|x)$ close to $p(z)$.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s05::p000",
+   "summary": "The proposed method defines target window $X_t$, neighbour windows, and concatenated $Y_t$ to find joint latent factors between $X_t$ and $Y_t$.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s05::p001",
+   "summary": "Figure FIGREF7 shows two approaches: $Y$ input to a VAE predicting $X$, or $X$ input to a VAE predicting $Y$.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s05::p002",
+   "summary": "The contextual joint factor synthesis encoder synthesises target frame $X$, with its embedding representing joint factors and its objective given in Eq. DISPLAY_FORM8.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s05::p003",
+   "summary": "The CJFS objective's first term is reconstruction likelihood, and the second term measures similarity between $q(z|Y)$ and prior $p(z)$.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s05::p004",
+   "summary": "In practice, CJFS reconstruction uses MSE, and samples for $p(z)$ come from Gaussian distribution with zero mean and variance of one.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s05::p005",
+   "summary": "The contextual joint factor analysis encoder predicts temporal context $Y$ from centre segment $X$, with its objective given in Eq DISPLAY_FORM9.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s07::p000",
+   "summary": "The work uses TIMIT official training and test sets with 630 speakers, 8 utterances each, and 80 dimensional Mel-scale filter bank coefficients.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s08::p000",
+   "summary": "A re-implemented VAE baseline on TIMIT yielded near identical published performance and formed the basis for CJFS and CJFA.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s08::p001",
+   "summary": "Phone classification and speaker recognition follow BIBREF17, with VAE baseline accuracy 72.2% and re-implementation accuracy 72.0%.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s08::p002",
+   "summary": "Three speaker recognition task configurations account for overlap between training and testing, with the BIBREF17 baseline called VAE baseline.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s09::p000",
+   "summary": "Phone classification and speaker recognition use segment-level convolutional networks, with TIMIT training, phone boundaries, fixed size windows, and no phone context or language model.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s09::p001",
+   "summary": "Tasks a,b,c assess speaker overlap bias among embedding training, classifier training, and test datasets.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s09::p002",
+   "summary": "TIMIT was split into 8 subsets A–H, with blocks A,B,C,D containing 462 speakers and 924 utterances and E,F,G,H containing 168 speakers and 336 utterances.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s09::p003",
+   "summary": "Task a uses (A+B+C+E+F+G) for training and (D+H) for test; Task b uses (A+B+E+F), (C+G), and (D+H); Task c uses (A+B+C+D), (E+G), and (F+H).",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s10::p000",
+   "summary": "The implementation follows BIBREF17 with three convolutional layers, one fully-connected layer with 512 nodes, specified filters, batch normalisation, Leaky ReLU, and Adam optimiser settings.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s11::p000",
+   "summary": "With window size 30 frames and embedding dimension 150, CJFA significantly outperforms VAE baseline and CJFS on phone classification and speaker recognition.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s11::p001",
+   "summary": "Variations of window size $N$ and embedding dimension $K$ show CJFA consistently better for speaker recognition, while CJFS performs poorly on phone classification.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s11::p002",
+   "summary": "Larger windows are detrimental in almost all cases except Task b, while contextual models generally outperform VAE baseline and CJFA shows increased stability.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s11::p003",
+   "summary": "For phone classification, increasing embedding $K$ helps but performance remains stable at $K=150$, which is used thereafter; speaker recognition variations are small.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s11::p004",
+   "summary": "Using RM corpus to augment TIMIT embedding training improves results except CJFS phone classification, with CJFA showing 7.9% absolute accuracy improvement for speaker recognition Task b.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s12::p001",
+   "summary": "t-SNE visualisation shows CJFA generates more meaningful phoneme embeddings than VAE baseline and CJFS, grouping same sound classes closer together.",
+   "group_id": "1910.07601::g00"
+  },
+  {
+   "passage_id": "1910.07601::s13::p000",
+   "summary": "Two unsupervised VAE-based acoustic embedding approaches were assessed on TIMIT with RM data, with CJFA performing significantly better and gains up to 3% relative on phone classification and 3–6% on speaker recognition.",
+   "group_id": "1910.07601::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1910.07601::g00",
+   "summaries": [
+    {
+     "passage_id": "1910.07601::s00::p000",
+     "summary": "Word embeddings such as Word2Vec and GloveBIBREF1 succeed by using context information and support downstream NLP tasks and language modelling for speech recognition.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s00::p001",
+     "summary": "Acoustic embeddings compactly represent audio sequence information with latent factors, but interdependent attributes at different abstraction levels make learning them challenging.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s00::p002",
+     "summary": "Prior speech processing work uses context information for acoustic embeddings, focusing on word semantics or speaker representations with Siamese networks.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s00::p003",
+     "summary": "Two unsupervised variational auto-encoder approaches, CJFS and CJFA, model joint latent variables between target acoustic segments and surrounding frames.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s00::p004",
+     "summary": "The paper outlines related work, the two context modelling approaches, experimental framework, results, discussion, conclusions and future work.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s02::p000",
+     "summary": "Acoustic word embeddings map word acoustics into fixed size vectors, with supervised CNN and RNN approaches described.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s02::p001",
+     "summary": "BIBREF12 proposed word similarity Siamese CNNs when word boundaries are known but word labels are unknown.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s02::p002",
+     "summary": "Unsupervised acoustic embedding approaches include a convolutional variational auto-encoder and factorised hierarchical variational auto-encoder evaluated on TIMIT phoneme and speaker classification.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s03::p000",
+     "summary": "Context information affects phonemes through coarticulation and linguistic constraints, while global latent variables such as speaker properties remain common across neighbouring frames.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s03::p001",
+     "summary": "Prior context-based representation learning includes Word2VecBIBREF0, context encoders, sequence-to-sequence speech methods, and Siamese neighbourhood discrimination.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s04::p000",
+     "summary": "Variational auto-encoders can yield good latent space representations and are used here to model joint latent factors between target segments and surroundings.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s04::p001",
+     "summary": "Unlike normal auto-encoders, VAE defines a probabilistic generative process between observation $x$ and latent variable $z$ through encoder and decoder distributions.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s04::p002",
+     "summary": "A recognition model $q(z|x)$ approximates $p(z|x)$ by minimising KL divergence because computing $p(z|x)$ requires difficult marginal likelihood $p(x)$ estimation.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s04::p003",
+     "summary": "The VAE training objective function is derived from Eq DISPLAY_FORM4 and shown in Eq DISPLAY_FORM5.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s04::p004",
+     "summary": "The VAE objective includes reconstruction likelihood $E_{q(z|x)}log[p(x|z)]$ and $D_{KL}(q(z|x)||p(z))$, which keeps $q(z|x)$ close to $p(z)$.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s05::p000",
+     "summary": "The proposed method defines target window $X_t$, neighbour windows, and concatenated $Y_t$ to find joint latent factors between $X_t$ and $Y_t$.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s05::p001",
+     "summary": "Figure FIGREF7 shows two approaches: $Y$ input to a VAE predicting $X$, or $X$ input to a VAE predicting $Y$.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s05::p002",
+     "summary": "The contextual joint factor synthesis encoder synthesises target frame $X$, with its embedding representing joint factors and its objective given in Eq. DISPLAY_FORM8.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s05::p003",
+     "summary": "The CJFS objective's first term is reconstruction likelihood, and the second term measures similarity between $q(z|Y)$ and prior $p(z)$.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s05::p004",
+     "summary": "In practice, CJFS reconstruction uses MSE, and samples for $p(z)$ come from Gaussian distribution with zero mean and variance of one.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s05::p005",
+     "summary": "The contextual joint factor analysis encoder predicts temporal context $Y$ from centre segment $X$, with its objective given in Eq DISPLAY_FORM9.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s07::p000",
+     "summary": "The work uses TIMIT official training and test sets with 630 speakers, 8 utterances each, and 80 dimensional Mel-scale filter bank coefficients.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s08::p000",
+     "summary": "A re-implemented VAE baseline on TIMIT yielded near identical published performance and formed the basis for CJFS and CJFA.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s08::p001",
+     "summary": "Phone classification and speaker recognition follow BIBREF17, with VAE baseline accuracy 72.2% and re-implementation accuracy 72.0%.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s08::p002",
+     "summary": "Three speaker recognition task configurations account for overlap between training and testing, with the BIBREF17 baseline called VAE baseline.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s09::p000",
+     "summary": "Phone classification and speaker recognition use segment-level convolutional networks, with TIMIT training, phone boundaries, fixed size windows, and no phone context or language model.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s09::p001",
+     "summary": "Tasks a,b,c assess speaker overlap bias among embedding training, classifier training, and test datasets.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s09::p002",
+     "summary": "TIMIT was split into 8 subsets A–H, with blocks A,B,C,D containing 462 speakers and 924 utterances and E,F,G,H containing 168 speakers and 336 utterances.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s09::p003",
+     "summary": "Task a uses (A+B+C+E+F+G) for training and (D+H) for test; Task b uses (A+B+E+F), (C+G), and (D+H); Task c uses (A+B+C+D), (E+G), and (F+H).",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s10::p000",
+     "summary": "The implementation follows BIBREF17 with three convolutional layers, one fully-connected layer with 512 nodes, specified filters, batch normalisation, Leaky ReLU, and Adam optimiser settings.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s11::p000",
+     "summary": "With window size 30 frames and embedding dimension 150, CJFA significantly outperforms VAE baseline and CJFS on phone classification and speaker recognition.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s11::p001",
+     "summary": "Variations of window size $N$ and embedding dimension $K$ show CJFA consistently better for speaker recognition, while CJFS performs poorly on phone classification.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s11::p002",
+     "summary": "Larger windows are detrimental in almost all cases except Task b, while contextual models generally outperform VAE baseline and CJFA shows increased stability.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s11::p003",
+     "summary": "For phone classification, increasing embedding $K$ helps but performance remains stable at $K=150$, which is used thereafter; speaker recognition variations are small.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s11::p004",
+     "summary": "Using RM corpus to augment TIMIT embedding training improves results except CJFS phone classification, with CJFA showing 7.9% absolute accuracy improvement for speaker recognition Task b.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s12::p001",
+     "summary": "t-SNE visualisation shows CJFA generates more meaningful phoneme embeddings than VAE baseline and CJFS, grouping same sound classes closer together.",
+     "group_id": "1910.07601::g00"
+    },
+    {
+     "passage_id": "1910.07601::s13::p000",
+     "summary": "Two unsupervised VAE-based acoustic embedding approaches were assessed on TIMIT with RM data, with CJFA performing significantly better and gains up to 3% relative on phone classification and 3–6% on speaker recognition.",
+     "group_id": "1910.07601::g00"
+    }
+   ],
+   "n_raw": 37,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 6042,
+    "completion_tokens": 1862,
+    "total_tokens": 7904,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

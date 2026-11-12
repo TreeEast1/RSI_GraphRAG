@@ -1,0 +1,396 @@
+{
+ "1701.08229::s00::p000": [
+  [
+   "social medial data",
+   "has been leveraged to",
+   "detect, estimate, and track the change in prevalence of disease"
+  ],
+  [
+   "social media",
+   "has been leveraged to monitor",
+   "social risks such as prescription drug and smoking behaviors"
+  ]
+ ],
+ "1701.08229::s01::p000": [
+  [
+   "existing, annotated Twitter dataset",
+   "was constructed based on",
+   "a hierarchical model of depression-related symptoms"
+  ],
+  [
+   "The dataset",
+   "contains",
+   "9,473 annotations for 9,300 tweets"
+  ],
+  [
+   "Each tweet",
+   "is annotated as",
+   "no evidence of depression or evidence of depression"
+  ],
+  [
+   "a tweet annotated evidence of depression",
+   "is further annotated with",
+   "one or more depressive symptoms"
+  ],
+  [
+   "every annotation (9,473 tweets)",
+   "is binarized as",
+   "the positive class e.g., depressed mood=1 or negative class e.g., not depressed mood=0"
+  ]
+ ],
+ "1701.08229::s02::p000": [
+  [
+   "this dataset",
+   "was encoded with",
+   "7 feature groups with associated feature values binarized (i.e., present=1 or absent=0)"
+  ],
+  [
+   "7 feature groups",
+   "represent",
+   "potentially informative features for classifying depression-related classes"
+  ]
+ ],
+ "1701.08229::s02::p001": [
+  [
+   "lexical features",
+   "include",
+   "unigrams, e.g., “depressed”"
+  ]
+ ],
+ "1701.08229::s02::p002": [
+  [
+   "syntactic features",
+   "include",
+   "parts of speech, e.g., “cried” encoded as V for verb"
+  ]
+ ],
+ "1701.08229::s02::p003": [
+  [
+   "emoticons",
+   "encoded as",
+   "SAD"
+  ]
+ ],
+ "1701.08229::s02::p004": [
+  [
+   "demographic features",
+   "include",
+   "age and gender"
+  ],
+  [
+   "“this semester”",
+   "encoded as",
+   "an indicator of 19-22 years of age"
+  ],
+  [
+   "“my girlfriend”",
+   "encoded as",
+   "an indicator of male gender"
+  ]
+ ],
+ "1701.08229::s02::p005": [
+  [
+   "sentiment features",
+   "include",
+   "polarity and subjectivity terms with strengths"
+  ],
+  [
+   "“terrible”",
+   "encoded as",
+   "strongly negative and strongly subjective"
+  ]
+ ],
+ "1701.08229::s02::p006": [
+  [
+   "personality traits",
+   "include",
+   "neuroticism"
+  ],
+  [
+   "“pissed off”",
+   "implies",
+   "neuroticism"
+  ]
+ ],
+ "1701.08229::s02::p007": [
+  [
+   "LIWC Features",
+   "are",
+   "indicators of an individual's thoughts, feelings, personality, and motivations"
+  ],
+  [
+   "“feeling”",
+   "suggests",
+   "perception, feeling, insight, and cognitive mechanisms experienced by the Twitter user"
+  ]
+ ],
+ "1701.08229::s02::p009": [
+  [
+   "support vector machines",
+   "perform with",
+   "the highest F1-score compared to other supervised approaches"
+  ]
+ ],
+ "1701.08229::s03::p000": [
+  [
+   "Feature ablation studies",
+   "quantify",
+   "the change in predictive power"
+  ],
+  [
+   "feature ablation study",
+   "held out",
+   "each feature group"
+  ],
+  [
+   "support vector model",
+   "used",
+   "a linear kernel and 5-fold, stratified cross-validation"
+  ],
+  [
+   "baseline approach",
+   "reported",
+   "the average F1-score"
+  ]
+ ],
+ "1701.08229::s03::p001": [
+  [
+   "sans lexical",
+   "resulted in F1-score drop for",
+   "depressed mood (-35 points)"
+  ],
+  [
+   "sans lexical",
+   "resulted in F1-score drop for",
+   "disturbed sleep (-43 points)"
+  ],
+  [
+   "sans lexical",
+   "resulted in F1-score drop for",
+   "depressive symptoms (-45 points)"
+  ]
+ ],
+ "1701.08229::s03::p002": [
+  [
+   "lexical features (unigrams)",
+   "were",
+   "the largest contributor to feature counts in the dataset"
+  ],
+  [
+   "lexical features",
+   "are critical for",
+   "identifying depressive symptoms"
+  ],
+  [
+   "the classifier",
+   "produced",
+   "consistent F1-scores"
+  ],
+  [
+   "notable changes in F1-score",
+   "were observed for",
+   "the classes lower in the hierarchy including disturbed sleep and fatigue or loss of energy"
+  ]
+ ],
+ "1701.08229::s04::p000": [
+  [
+   "Feature elimination strategies",
+   "remove",
+   "irrelevant or noisy features"
+  ],
+  [
+   "Feature elimination strategies",
+   "improve",
+   "classifier performance"
+  ],
+  [
+   "Feature elimination strategies",
+   "reduce",
+   "training and run times"
+  ]
+ ],
+ "1701.08229::s04::p001": [
+  [
+   "Reduction",
+   "reduced",
+   "the dataset encoded for each class"
+  ],
+  [
+   "Reduction",
+   "eliminated",
+   "features that occur less than twice in the full dataset"
+  ]
+ ],
+ "1701.08229::s04::p002": [
+  [
+   "Chi-Square feature selection",
+   "was iteratively applied on",
+   "the reduced dataset"
+  ],
+  [
+   "the top percentile of highest ranked features",
+   "was selected in increments of",
+   "5 percent"
+  ],
+  [
+   "the support vector model",
+   "was trained and tested using",
+   "a linear kernel and 5-fold, stratified cross-validation"
+  ]
+ ],
+ "1701.08229::s04::p003": [
+  [
+   "the average F1-score performances of each incrementally added percentile of top ranked features",
+   "were cumulatively plotted",
+   "by the authors"
+  ],
+  [
+   "the percentile and count of features resulting in the first occurrence of the highest average F1-score for each class",
+   "was reported",
+   "by the authors"
+  ]
+ ],
+ "1701.08229::s04::p004": [
+  [
+   "All experiments",
+   "were programmed using",
+   "scikit-learn 0.18"
+  ]
+ ],
+ "1701.08229::s04::p005": [
+  [
+   "The initial matrices of almost 17,000 features",
+   "were reduced to",
+   "5,761 features"
+  ],
+  [
+   "features that only occurred once in the full dataset",
+   "were eliminated",
+   "from the initial matrices"
+  ],
+  [
+   "Chi-Square feature selection",
+   "was applied",
+   "to the reduced features"
+  ],
+  [
+   "the top-ranked subset of features for each percentile",
+   "was evaluated using",
+   "the support vector machine with linear kernel and stratified, 5-fold cross validation"
+  ]
+ ],
+ "1701.08229::s04::p006": [
+  [
+   "no evidence of depression",
+   "had optimal F1-score performance at",
+   "F1: 87 (15th percentile, 864 features)"
+  ],
+  [
+   "evidence of depression",
+   "had optimal F1-score performance at",
+   "F1: 59 (30th percentile, 1,728 features)"
+  ],
+  [
+   "depressive symptoms",
+   "had optimal F1-score performance at",
+   "F1: 55 (15th percentile, 864 features)"
+  ],
+  [
+   "depressed mood",
+   "had optimal F1-score performance at",
+   "F1: 39 (55th percentile, 3,168 features)"
+  ],
+  [
+   "disturbed sleep",
+   "had optimal F1-score performance at",
+   "F1: 46 (10th percentile, 576 features)"
+  ],
+  [
+   "fatigue or loss of energy",
+   "had optimal F1-score performance at",
+   "F1: 72 (5th percentile, 288 features)"
+  ],
+  [
+   "F1-score improvements for depressed mood",
+   "were noted from",
+   "F1: 13 at the 1st percentile to F1: 33 at the 20th percentile"
+  ]
+ ],
+ "1701.08229::s04::p007": [
+  [
+   "peak F1-score performances",
+   "occurred at moderate percentiles for",
+   "evidence of depression (30th percentile) and depressed mood (55th percentile)"
+  ],
+  [
+   "depressed mood",
+   "had dramatic F1-score improvements of",
+   "20 point increase from the 1st percentile to the 20th percentile"
+  ],
+  [
+   "evidence of depression",
+   "had gradual F1-score improvements of",
+   "11 point increase from the 1st percentile to the 20th percentile"
+  ]
+ ],
+ "1701.08229::s05::p000": [
+  [
+   "annotated dataset of Twitter tweets",
+   "contained",
+   "n=9,300 tweets"
+  ],
+  [
+   "no evidence of depression",
+   "contained",
+   "n=6,829 tweets"
+  ],
+  [
+   "evidence of depression",
+   "contained",
+   "n=2,644 tweets"
+  ],
+  [
+   "support vector machine",
+   "trained using",
+   "5-fold, stratified cross-validation with all feature groups"
+  ]
+ ],
+ "1701.08229::s06::p000": [
+  [
+   "two feature study experiments",
+   "included",
+   "a feature ablation study to assess the contribution of feature groups"
+  ],
+  [
+   "two feature study experiments",
+   "included",
+   "a feature elimination study to determine the optimal percentile of top ranked features"
+  ]
+ ],
+ "1701.08229::s07::p000": [
+  [
+   "rarer depressive symptoms",
+   "included",
+   "inappropriate guilt, difficulty concentrating, psychomotor agitation or retardation, weight loss or gain, and anhedonia"
+  ],
+  [
+   "Identifying the most discriminating feature sets and natural language processing classifiers for each depression symptom",
+   "is vital for",
+   "this goal"
+  ]
+ ],
+ "1701.08229::s08::p000": [
+  [
+   "simple lexical features and reduced feature sets",
+   "can produce",
+   "comparable results to the much larger feature dataset"
+  ]
+ ],
+ "1701.08229::s09::p000": [
+  [
+   "Example tweets shown",
+   "were generated by",
+   "the researchers as exemplars only"
+  ]
+ ]
+}

@@ -1,0 +1,862 @@
+{
+ "1811.05711::s00::p000": [
+  [
+   "National Health Service (NHS)",
+   "has a long history of documenting extensively",
+   "the different aspects of healthcare provision"
+  ],
+  [
+   "NHS",
+   "is increasing the availability of",
+   "several databases, properly anonymised"
+  ]
+ ],
+ "1811.05711::s00::p001": [
+  [
+   "National Reporting and Learning System (NRLS)",
+   "is",
+   "a central repository of patient safety incident reports from the NHS in England and Wales"
+  ],
+  [
+   "NRLS",
+   "now contains",
+   "more than 13 million detailed records"
+  ],
+  [
+   "incidents",
+   "contain",
+   "a substantial component of free text (unstructured data)"
+  ]
+ ],
+ "1811.05711::s00::p002": [
+  [
+   "statistical analyses",
+   "are routinely performed on",
+   "the structured component of the data (dates, locations, assigned categories, etc)"
+  ],
+  [
+   "free text",
+   "remains largely unused in",
+   "systematic processes"
+  ],
+  [
+   "Free text",
+   "is usually read",
+   "manually"
+  ]
+ ],
+ "1811.05711::s00::p003": [
+  [
+   "algorithmic methodology",
+   "detects",
+   "content-based groups of records in a given dataset in an unsupervised manner"
+  ]
+ ],
+ "1811.05711::s00::p004": [
+  [
+   "records",
+   "had been manually coded by",
+   "the operator upon reporting with up to 170 features per case"
+  ]
+ ],
+ "1811.05711::s01::p001": [
+  [
+   "paragraph vector model",
+   "is trained on",
+   "the whole set (13 million) of preprocessed text records"
+  ],
+  [
+   "training on smaller sets (1 million)",
+   "produces",
+   "good results"
+  ],
+  [
+   "Doc2Vec model",
+   "is used to infer",
+   "high-dimensional vector descriptions for the text of each of the 3229 documents in our target analysis set"
+  ]
+ ],
+ "1811.05711::s02::p000": [
+  [
+   "full dataset",
+   "includes",
+   "more than 13 million confidential reports of patient safety incidents"
+  ],
+  [
+   "Each record",
+   "has",
+   "more than 170 features"
+  ],
+  [
+   "top level",
+   "contains",
+   "15 categories"
+  ]
+ ],
+ "1811.05711::s03::p000": [
+  [
+   "Text preprocessing",
+   "is important to enhance",
+   "the performance of text embedding"
+  ],
+  [
+   "standard preprocessing techniques in natural language processing",
+   "were applied to",
+   "the raw text of all 13 million records in our corpus"
+  ]
+ ],
+ "1811.05711::s04::p001": [
+  [
+   "BoW representations",
+   "tend to be",
+   "high-dimensional and sparse"
+  ]
+ ],
+ "1811.05711::s04::p002": [
+  [
+   "Distributed Bag of Words (DBOW)",
+   "is",
+   "a form of Paragraph Vectors (PV), also known as Doc2Vec BIBREF7"
+  ],
+  [
+   "This method",
+   "represents",
+   "any length of word sequences (i.e. sentences, paragraphs, documents) as $d$ -dimensional vectors"
+  ],
+  [
+   "Training a Doc2Vec model",
+   "starts with",
+   "a random $d$ -dimensional vector assignment for each document in the corpus"
+  ]
+ ],
+ "1811.05711::s04::p003": [
+  [
+   "The Doc2Vec training",
+   "was repeated with",
+   "a variety of training hyper-parameters"
+  ]
+ ],
+ "1811.05711::s04::p004": [
+  [
+   "the benchmarking",
+   "calculated centroids for",
+   "the 15 externally hand-coded categories"
+  ],
+  [
+   "the benchmarking",
+   "selected",
+   "the 100 nearest reports for each centroid"
+  ],
+  [
+   "reducing the size of the corpus from 13 million to 1 million records",
+   "did not affect",
+   "the benchmarking dramatically"
+  ]
+ ],
+ "1811.05711::s05::p001": [
+  [
+   "The similarity matrix",
+   "can be thought of as",
+   "the adjacency matrix of a fully connected weighted graph"
+  ],
+  [
+   "such a graph",
+   "contains",
+   "many edges with small weights reflecting weak similarities in high-dimensional noisy datasets"
+  ],
+  [
+   "These weak similarities",
+   "are in most cases",
+   "redundant"
+  ],
+  [
+   "These weak, redundant edges",
+   "obscure",
+   "the graph structure"
+  ]
+ ],
+ "1811.05711::s05::p002": [
+  [
+   "The MST-kNN algorithm",
+   "starts by computing",
+   "the minimum spanning tree (MST) of the full matrix $\\hat{D}$"
+  ],
+  [
+   "The MST",
+   "is computed using",
+   "the Kruskal algorithm implemented in SciPy BIBREF25"
+  ]
+ ],
+ "1811.05711::s05::p003": [
+  [
+   "highly sparse graphs obtained when the number of neighbours $k$ is very small",
+   "are not",
+   "robust"
+  ],
+  [
+   "MST-kNN graph with $k=13$",
+   "presents",
+   "a reasonable balance between local and global structure"
+  ],
+  [
+   "Relatively sparse graphs that preserve important edges and global connectivity of the dataset",
+   "have",
+   "computational advantages when using community detection algorithms"
+  ]
+ ],
+ "1811.05711::s05::p004": [
+  [
+   "MST-kNN construction",
+   "has been reported to be robust to",
+   "the selection of the parameter $k$"
+  ],
+  [
+   "the construction",
+   "is robust as long as",
+   "$k$ is nor too small (i.e., $k > 13$ )"
+  ]
+ ],
+ "1811.05711::s05::p005": [
+  [
+   "MST-kNN construction",
+   "has",
+   "the advantage of its simplicity and robustness"
+  ],
+  [
+   "MST-kNN construction",
+   "balances",
+   "the local and global structure of the data"
+  ],
+  [
+   "several alternative approaches",
+   "exist based on",
+   "different heuristics"
+  ]
+ ],
+ "1811.05711::s06::p000": [
+  [
+   "community detection",
+   "encompasses",
+   "a variety of graph partitioning approaches"
+  ],
+  [
+   "graph partitioning approaches",
+   "aim to find",
+   "`good' partitions into subgraphs (or communities) according to different cost functions"
+  ],
+  [
+   "The notion of community",
+   "depends on",
+   "the choice of cost function"
+  ],
+  [
+   "Markov Stability",
+   "is",
+   "a dynamics-based, multi-scale community detection methodology"
+  ]
+ ],
+ "1811.05711::s06::p001": [
+  [
+   "The subgraphs detected",
+   "correspond to",
+   "clusters of documents with similar content"
+  ],
+  [
+   "MS",
+   "is",
+   "an unsupervised community detection method"
+  ],
+  [
+   "The Markov time $t$",
+   "acts as",
+   "a resolution parameter"
+  ]
+ ],
+ "1811.05711::s06::p002": [
+  [
+   "a binary membership matrix $H_{N \\times C}$",
+   "maps",
+   "the $N$ nodes into $C$ clusters"
+  ]
+ ],
+ "1811.05711::s06::p007": [
+  [
+   "A partition $H$ that maximises $r(t,H)$",
+   "is comprised of",
+   "communities that preserve the flow within themselves over time $t$"
+  ],
+  [
+   "the diagonal elements of $R(t,H)$",
+   "will be",
+   "large"
+  ],
+  [
+   "the off-diagonal elements",
+   "will be",
+   "small"
+  ]
+ ],
+ "1811.05711::s06::p008": [
+  [
+   "MS",
+   "searches for",
+   "partitions at each Markov time that maximise $r(t,H)$"
+  ],
+  [
+   "the maximisation of ( 5 )",
+   "is",
+   "an NP-hard problem"
+  ],
+  [
+   "the relevant partitions",
+   "are required to be",
+   "persistent across time"
+  ],
+  [
+   "persistence across time",
+   "is given by",
+   "low values of the variation of information between optimised partitions across time $VI(t,t^{\\prime })$"
+  ],
+  [
+   "Robust partitions",
+   "are indicated by",
+   "Markov times where $VI(t)$ shows a dip and $VI(t,t^{\\prime })$ has an extended plateau"
+  ]
+ ],
+ "1811.05711::s07::p000": [
+  [
+   "the ForceAtlas2 BIBREF30 layout",
+   "represents",
+   "the graph of 3229 NRLS Patient Incident reports"
+  ],
+  [
+   "This layout",
+   "follows",
+   "a force-directed iterative method"
+  ]
+ ],
+ "1811.05711::s07::p001": [
+  [
+   "Sankey diagrams",
+   "allow us to visualise",
+   "the relationship of node memberships across different partitions and with respect to the hand-coded categories"
+  ],
+  [
+   "two-layer Sankey diagrams (e.g., Fig. 4 )",
+   "reflect",
+   "the correspondence between MS clusters and the hand-coded external categories"
+  ],
+  [
+   "the multilayer Sankey diagram in Fig. 3",
+   "represents",
+   "the results of the multi-resolution MS community detection across scales"
+  ]
+ ],
+ "1811.05711::s07::p002": [
+  [
+   "This",
+   "allows us to compare",
+   "the relative association of content clusters to the external categories at different resolution levels"
+  ],
+  [
+   "the $NMI$ score introduced in Eq. ( 8 )",
+   "provides",
+   "A quantification of this correspondence"
+  ]
+ ],
+ "1811.05711::s07::p003": [
+  [
+   "This",
+   "can be understood as",
+   "a type of topic detection"
+  ],
+  [
+   "Word clouds",
+   "allow us to evaluate",
+   "the results and extract insights when comparing a posteriori with hand-coded categories"
+  ]
+ ],
+ "1811.05711::s07::p004": [
+  [
+   "The stemming methods described in the Text Preprocessing subsection",
+   "truncate",
+   "words severely"
+  ],
+  [
+   "Such truncation",
+   "enhances",
+   "the power of the language processing computational methods"
+  ]
+ ],
+ "1811.05711::s08::p000": [
+  [
+   "two complementary measures",
+   "are",
+   "an intrinsic measure of topic coherence and a measure of similarity to the external hand-coded categories"
+  ]
+ ],
+ "1811.05711::s08::p001": [
+  [
+   "pointwise mutual information ( $PMI$ )",
+   "is used as",
+   "an intrinsic measure of consistency of word association without any reference to an external `ground truth'"
+  ],
+  [
+   "The $PMI$",
+   "is",
+   "an information-theoretical score that captures the probability of being used together in the same group of documents"
+  ]
+ ],
+ "1811.05711::s08::p003": [
+  [
+   "probabilities of the words $P(w_1)$ , $P(w_2)$ , and of their co-occurrence $P(w_1 w_2)$",
+   "are obtained from",
+   "the corpus"
+  ],
+  [
+   "the $PMI$ for each cluster",
+   "is computed as",
+   "the median $PMI$ between its 10 most common words"
+  ],
+  [
+   "changing the number of words",
+   "gives",
+   "similar results"
+  ],
+  [
+   "the weighted average of the $PMI$ cluster scores",
+   "is obtained for",
+   "the aggregate $\\widehat{PMI}$ for the graph partition $C=\\lbrace c_i\\rbrace $"
+  ]
+ ],
+ "1811.05711::s08::p006": [
+  [
+   "this $\\widehat{PMI}$ score",
+   "is used to evaluate",
+   "partitions without requiring a labelled ground truth"
+  ],
+  [
+   "The $PMI$ score",
+   "has been shown to perform well",
+   "when compared to human interpretation of topics on different corpora"
+  ],
+  [
+   "The $PMI$ score",
+   "is designed to evaluate",
+   "topical coherence for groups of documents"
+  ]
+ ],
+ "1811.05711::s08::p010": [
+  [
+   "a higher value",
+   "corresponds to",
+   "higher similarity of the partitions"
+  ]
+ ],
+ "1811.05711::s09::p000": [
+  [
+   "This layered process of optimisation",
+   "enhances",
+   "the robustness of the outcome given the NP-hard nature of MS optimisation"
+  ]
+ ],
+ "1811.05711::s09::p001": [
+  [
+   "The existence of a long plateau in $VI(t,t^{\\prime })$ coupled to a dip in $VI(t)$",
+   "implies",
+   "the presence of a partition that is robust both to the optimisation and across Markov time"
+  ]
+ ],
+ "1811.05711::s09::p002": [
+  [
+   "MS analysis of the graph of incident reports",
+   "reveals",
+   "a rich multi-level structure of partitions, with a strong quasi-hierarchical organisation"
+  ],
+  [
+   "Markov time",
+   "acts as",
+   "a natural resolution parameter from finer to coarser partitions"
+  ],
+  [
+   "The detection of intrinsic scales within the graph provided by MS",
+   "enables",
+   "clusters of records with high content similarity at different levels of granularity"
+  ]
+ ],
+ "1811.05711::s10::p000": [
+  [
+   "this comparison",
+   "was only done",
+   "a posteriori"
+  ]
+ ],
+ "1811.05711::s10::p001": [
+  [
+   "The partition into 44 communities",
+   "presents",
+   "content clusters with well-defined characterisations"
+  ],
+  [
+   "The content labels for the communities",
+   "were derived by us from",
+   "the word clouds presented in detail in the Supplementary Information (Fig. S1 in the SI)"
+  ],
+  [
+   "this 44-community partition",
+   "provides",
+   "finer groupings of records"
+  ]
+ ],
+ "1811.05711::s10::p002": [
+  [
+   "some of the communities in the 12-way partition",
+   "emerge from",
+   "consistent aggregation of smaller communities in the 44-way partition"
+  ],
+  [
+   "seven of the communities in the 44-way partition",
+   "become",
+   "one larger community (community 2 in Fig. 5 )"
+  ],
+  [
+   "The Nursing community (community 1)",
+   "falls completely under",
+   "the external category `Infrastructure'"
+  ]
+ ],
+ "1811.05711::s10::p003": [
+  [
+   "communities 10 and 11 (Samples/ lab tests/forms and Referrals/appointments)",
+   "fall naturally across",
+   "the external categories `Documentation' and `Clinical Assessment'"
+  ],
+  [
+   "community 9 (Patient transfers)",
+   "sits across",
+   "the `Admission/Transfer' and `Infrastructure' external categories"
+  ],
+  [
+   "The rest of the communities",
+   "contain",
+   "a substantial proportion of records that have been hand-classified under the generic `Treatment/Procedure' class"
+  ]
+ ],
+ "1811.05711::s10::p004": [
+  [
+   "The high specificity of the Radiotherapy, Pressure ulcer and Labour ward communities",
+   "means that they are still preserved as",
+   "separate groups on the next level of coarseness given by the 7-way partition (Figure 6 A)"
+  ],
+  [
+   "The mergers in this case",
+   "lead to",
+   "a larger communities referring to Medication, Referrals/Forms and Staffing/Patient transfers"
+  ],
+  [
+   "the labour ward community",
+   "still on its own as",
+   "a subgroup of incidents with distinctive content"
+  ]
+ ],
+ "1811.05711::s10::p005": [
+  [
+   "agglomeration of content",
+   "is shown explicitly with",
+   "word clouds in Figure 8"
+  ]
+ ],
+ "1811.05711::s11::p000": [
+  [
+   "framework",
+   "consists of",
+   "a series of steps for which there are choices and alternatives"
+  ],
+  [
+   "quantitative comparisons",
+   "include",
+   "LDA-BoW"
+  ]
+ ],
+ "1811.05711::s11::p001": [
+  [
+   "use of fixed-sized vector embeddings (Doc2Vec) instead of standard bag of words (BoW)",
+   "is",
+   "an integral part of our pipeline"
+  ],
+  [
+   "Doc2Vec",
+   "produces",
+   "lower dimensional vector representations (as compared to BoW) with higher semantic and syntactic content"
+  ],
+  [
+   "Doc2Vec",
+   "outperforms",
+   "BoW representations in practical benchmarks of semantic similarity"
+  ]
+ ],
+ "1811.05711::s11::p002": [
+  [
+   "Doc2Vec version",
+   "outperforms",
+   "the BoW version across all resolutions in terms of both $NMI$ and $\\widehat{PMI}$ scores"
+  ]
+ ],
+ "1811.05711::s11::p003": [
+  [
+   "two additional training sets of 1 million and 2 million records",
+   "were randomly chosen from",
+   "the full set of $\\sim $ 13 million records"
+  ],
+  [
+   "performance",
+   "is affected only mildly by",
+   "the size of the Doc2Vec training set"
+  ]
+ ],
+ "1811.05711::s11::p004": [
+  [
+   "both the $NMI$ and $\\widehat{PMI}$ scores of the MS clusterings",
+   "reach",
+   "a similar level of quality for values of $k$ above 13-16"
+  ]
+ ],
+ "1811.05711::s11::p005": [
+  [
+   "standard LDA",
+   "needs a different model trained separately for",
+   "each number of topics pre-determined by the user"
+  ],
+  [
+   "MS and LDA",
+   "give partitions comparably similar to",
+   "the hand-coded categories (as measured with $NMI$ )"
+  ],
+  [
+   "the MS clusterings",
+   "have higher",
+   "topic coherence (as given by $\\widehat{PMI}$ ) across all scales"
+  ]
+ ],
+ "1811.05711::s11::p006": [
+  [
+   "the Doc2Vec model on 13 million records",
+   "takes",
+   "11 hours"
+  ],
+  [
+   "the full MS scan with 400 partitions across all resolutions",
+   "takes",
+   "2 hours"
+  ],
+  [
+   "the time required to train just the 5 LDA models on the same corpus",
+   "amounts to",
+   "30 hours"
+  ]
+ ],
+ "1811.05711::s11::p007": [
+  [
+   "LDA",
+   "computes topics at",
+   "a pre-determined level of resolution"
+  ],
+  [
+   "relevant partitions",
+   "are chosen based on",
+   "their robustness"
+  ],
+  [
+   "the MS partitions at all resolutions",
+   "are available for",
+   "further investigation if so needed"
+  ]
+ ],
+ "1811.05711::s11::p008": [
+  [
+   "several well-known partitioning methods",
+   "give",
+   "just one partition (or two in the case of the Louvain implementation in iGraph) into a particular number of clusters"
+  ],
+  [
+   "MS",
+   "provides improved or equal results to",
+   "other graph partitioning methods for both $NMI$ and $\\widehat{PMI}$ across all scales"
+  ],
+  [
+   "Infomap",
+   "provides",
+   "a slightly improved $NMI$ for that particular scale"
+  ]
+ ],
+ "1811.05711::s12::p000": [
+  [
+   "The method",
+   "uses",
+   "paragraph vectors"
+  ],
+  [
+   "The method",
+   "obtains",
+   "an ensuing similarity graph of documents constructed from their content"
+  ]
+ ],
+ "1811.05711::s12::p001": [
+  [
+   "The clusters of content",
+   "capture",
+   "topics of medical practice"
+  ],
+  [
+   "The clusters of content",
+   "provide",
+   "complementary information to the externally imposed classification categories"
+  ],
+  [
+   "medically-based content clusters",
+   "are associated with",
+   "Labour ward, Pressure ulcer, Chemotherapy, Radiotherapy, among others"
+  ]
+ ],
+ "1811.05711::s12::p002": [
+  [
+   "The categories in the top level (Level 1) of the pre-defined classification hierarchy",
+   "are",
+   "highly diverse in size"
+  ]
+ ],
+ "1811.05711::s12::p003": [
+  [
+   "The insight from analysing the free text entry of the person reporting",
+   "could play",
+   "a valuable role"
+  ],
+  [
+   "The nuanced information and classifications extracted from free text analysis",
+   "suggest",
+   "a complementary axis to existing approaches to characterise patient safety incident reports"
+  ]
+ ],
+ "1811.05711::s12::p004": [
+  [
+   "local incident reporting system",
+   "are used by",
+   "hospitals"
+  ],
+  [
+   "local incident reporting system",
+   "require",
+   "risk managers to improve data quality of reports"
+  ],
+  [
+   "the method",
+   "allows for",
+   "the discovery of emerging topics or classes of incidents directly from the data"
+  ]
+ ],
+ "1811.05711::s12::p005": [
+  [
+   "This part of ongoing research",
+   "requires",
+   "the quantification of in-class text similarities"
+  ],
+  [
+   "This part of ongoing research",
+   "requires",
+   "to dynamically manage the embedding of the reports through updates and recalculation of the vector embedding"
+  ],
+  [
+   "Improvements in the process of robust graph construction",
+   "are",
+   "part of our future work"
+  ]
+ ],
+ "1811.05711::s13::p000": [
+  [
+   "The dataset in this work",
+   "is managed by",
+   "the Big Data and Analytics Unit (BDAU), Imperial College London"
+  ],
+  [
+   "The dataset in this work",
+   "consists of",
+   "incident reports submitted to the NRLS"
+  ],
+  [
+   "Analysis of the data",
+   "was undertaken within",
+   "the Secure Environment of the BDAU"
+  ],
+  [
+   "Only aggregated information",
+   "is used to describe",
+   "the clusters"
+  ]
+ ],
+ "1811.05711::s15::p000": [
+  [
+   "NHS",
+   "stands for",
+   "National Health Service"
+  ],
+  [
+   "NRLS",
+   "stands for",
+   "National Reporting and Learning System"
+  ],
+  [
+   "BoW",
+   "stands for",
+   "Bag of Words"
+  ],
+  [
+   "LDA",
+   "stands for",
+   "Latent Dirichlet Allocation"
+  ]
+ ],
+ "1811.05711::s16::p000": [
+  [
+   "MTA",
+   "conducted",
+   "the computational research"
+  ],
+  [
+   "MTA and MB",
+   "analysed",
+   "the data"
+  ],
+  [
+   "MTA and MB",
+   "designed",
+   "the computational framework"
+  ]
+ ],
+ "1811.05711::s18::p000": [
+  [
+   "MTA",
+   "is",
+   "a PhD student at Imperial College London, Department of Mathematics"
+  ],
+  [
+   "MTA",
+   "holds",
+   "an MSc degree in finance from Sabanci University"
+  ],
+  [
+   "MTA",
+   "holds",
+   "a BSc in Electrical and Electronics Engineering from Bogazici University"
+  ],
+  [
+   "SNY",
+   "is",
+   "a Professor of Theoretical Chemistry in the Department of Chemistry at Imperial College London"
+  ],
+  [
+   "MB",
+   "is",
+   "Professor of Mathematics and Chair in Biomathematics in the Department of Mathematics at Imperial College London"
+  ]
+ ]
+}

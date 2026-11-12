@@ -1,0 +1,443 @@
+{
+ "kept": [
+  {
+   "insight_id": "1810.12085::g00:i00",
+   "paper_id": "1810.12085",
+   "group_id": "1810.12085::g00",
+   "concise_text": "The CUI-based upper bound analysis tested extractive summarization's assumption that discharge summary information is documented elsewhere and suggested extractive summarization alone may not recreate a discharge summary.",
+   "triple": {
+    "subject": "CUI-based upper bound analysis",
+    "predicate": "limits",
+    "object": "extractive summarization alone"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1810.12085::s03::p000",
+    "1810.12085::s03::p001",
+    "1810.12085::s03::p005"
+   ],
+   "supporting_fact_ids": [
+    "1810.12085::g00:b1:f00",
+    "1810.12085::g00:b1:f01",
+    "1810.12085::g00:b1:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "Cited passages jointly support that the CUI-based upper bound tested the extractive assumption and suggested extractive summarization alone may not recreate discharge summaries."
+   },
+   "unit_id": "1810.12085::u000"
+  },
+  {
+   "insight_id": "1810.12085::g00:i03",
+   "paper_id": "1810.12085",
+   "group_id": "1810.12085::g00",
+   "concise_text": "The Learned Word Embeddings model, selected after achieving the highest dev set performance of 0.886, achieved an accuracy of 0.88 and an F1-Score of 0.876 on the test set.",
+   "triple": {
+    "subject": "Learned Word Embeddings model",
+    "predicate": "evaluated_on",
+    "object": "test set"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1810.12085::s04::p013",
+    "1810.12085::s04::p014",
+    "1810.12085::s04::p015"
+   ],
+   "supporting_fact_ids": [
+    "1810.12085::g00:b4:f04",
+    "1810.12085::g00:b4:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Passages jointly support that the Learned Word Embeddings model had highest dev performance 0.886 and was then evaluated on the test set with accuracy 0.88 and F1 0.876."
+   },
+   "unit_id": "1810.12085::u003"
+  },
+  {
+   "insight_id": "1810.12085::g00:i09",
+   "paper_id": "1810.12085",
+   "group_id": "1810.12085::g00",
+   "concise_text": "The paper's NN architecture jointly classifies words in history of present illness notes, while the Dernoncourt model jointly classified each sentence in a medical abstract.",
+   "triple": {
+    "subject": "NN architecture",
+    "predicate": "extends",
+    "object": "Dernoncourt model"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1810.12085::s04::p001",
+    "1810.12085::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "1810.12085::g00:b2:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.8,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Passages jointly support the contrast that the paper's NN/LSTM architecture classifies words in HPI notes whereas Dernoncourt classified sentences in medical abstracts; 'extends' is acceptable as adopted/adapted from prior work."
+   },
+   "unit_id": "1810.12085::u009"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1810.12085::g00:i01",
+   "paper_id": "1810.12085",
+   "group_id": "1810.12085::g00",
+   "concise_text": "The low CUI recall from comparing discharge summaries with remaining notes supports the conclusion that clinicians may incorporate information not previously documented in the EHR.",
+   "triple": {
+    "subject": "low CUI recall",
+    "predicate": "supports",
+    "object": "information not previously documented in the EHR"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1810.12085::s03::p001",
+    "1810.12085::s03::p003"
+   ],
+   "supporting_fact_ids": [
+    "1810.12085::g00:b1:f01",
+    "1810.12085::g00:b1:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "This is essentially a restatement of p003: low recall suggests clinicians may incorporate information not previously documented in the EHR."
+   },
+   "unit_id": "1810.12085::u001"
+  },
+  {
+   "insight_id": "1810.12085::g00:i02",
+   "paper_id": "1810.12085",
+   "group_id": "1810.12085::g00",
+   "concise_text": "The classifier developed to label topics in history of present illness notes can be applied to the 55,000 discharge summaries in MIMIC to create an evaluation dataset.",
+   "triple": {
+    "subject": "classifier",
+    "predicate": "extends",
+    "object": "55,000 discharge summaries in MIMIC"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1810.12085::s04::p000",
+    "1810.12085::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "1810.12085::g00:b2:f00",
+    "1810.12085::g00:b5:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Mostly a restatement of p000 in s05; also the classifier is described as a NN architecture/model, and '55,000' is supported, but no meaningful composed insight beyond the source."
+   },
+   "unit_id": "1810.12085::u002"
+  },
+  {
+   "insight_id": "1810.12085::g00:i04",
+   "paper_id": "1810.12085",
+   "group_id": "1810.12085::g00",
+   "concise_text": "The 515 history of present illness notes manually annotated by one of eight annotators were split into 70% train set, 15% development set, and a 15% test set.",
+   "triple": {
+    "subject": "515 history of present illness notes",
+    "predicate": "evaluated_on",
+    "object": "70% train set, 15% development set, and a 15% test set"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1810.12085::s04::p000",
+    "1810.12085::s04::p012"
+   ],
+   "supporting_fact_ids": [
+    "1810.12085::g00:b2:f01",
+    "1810.12085::g00:b2:f02",
+    "1810.12085::g00:b4:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "This is a direct restatement of p012 combined with p000; no novel composed insight."
+   },
+   "unit_id": "1810.12085::u004"
+  },
+  {
+   "insight_id": "1810.12085::g00:i05",
+   "paper_id": "1810.12085",
+   "group_id": "1810.12085::g00",
+   "concise_text": "Because each of the 515 HPI notes was manually annotated by one of eight annotators, future work needs multiple annotators per HPI note to calculate Cohen's kappa.",
+   "triple": {
+    "subject": "one of eight annotators per HPI note",
+    "predicate": "requires",
+    "object": "additional manual annotations where each HPI note is annotated by multiple annotators"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1810.12085::s04::p000",
+    "1810.12085::s04::p016"
+   ],
+   "supporting_fact_ids": [
+    "1810.12085::g00:b2:f02",
+    "1810.12085::g00:b4:f11",
+    "1810.12085::g00:b4:f12"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.35,
+    "causality_error": true,
+    "reason": "The text says future work is needed for multiple annotations and Cohen's kappa, but does not state this is because each note was annotated by only one of eight annotators; causal link is inferred."
+   },
+   "unit_id": "1810.12085::u005"
+  },
+  {
+   "insight_id": "1810.12085::g00:i06",
+   "paper_id": "1810.12085",
+   "group_id": "1810.12085::g00",
+   "concise_text": "The word level label prediction used by the LSTM model can result in phrases containing multiple labels, so post-processing is needed to create a final label prediction for each phrase.",
+   "triple": {
+    "subject": "word level label prediction",
+    "predicate": "requires",
+    "object": "post-processing"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1810.12085::s04::p001",
+    "1810.12085::s04::p017"
+   ],
+   "supporting_fact_ids": [
+    "1810.12085::g00:b2:f04",
+    "1810.12085::g00:b4:f14",
+    "1810.12085::g00:b4:f15"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Direct restatement of p017: word-level prediction can produce phrases with multiple labels, so post-processing is needed."
+   },
+   "unit_id": "1810.12085::u006"
+  },
+  {
+   "insight_id": "1810.12085::g00:i07",
+   "paper_id": "1810.12085",
+   "group_id": "1810.12085::g00",
+   "concise_text": "The procedure section's highest recall of 0.807 is explained by procedures undergone during an inpatient stay being most likely documented in an EHR.",
+   "triple": {
+    "subject": "procedures undergone during an inpatient stay",
+    "predicate": "causes",
+    "object": "procedure section highest recall of 0.807"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1810.12085::s03::p002",
+    "1810.12085::s03::p004"
+   ],
+   "supporting_fact_ids": [
+    "1810.12085::g00:b1:f07",
+    "1810.12085::g00:b1:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.2,
+    "causality_error": true,
+    "reason": "The passage says the high recall is 'understandable because' procedures are likely documented, but the insight asserts a causal 'causes' relation and reframes an explanatory comment as causal evidence."
+   },
+   "unit_id": "1810.12085::u007"
+  },
+  {
+   "insight_id": "1810.12085::g00:i08",
+   "paper_id": "1810.12085",
+   "group_id": "1810.12085::g00",
+   "concise_text": "The section-specific CUI overlap comparison found recall for five sections much higher than overall recall, suggesting extractive summarization may be easier for some discharge note sections.",
+   "triple": {
+    "subject": "section-specific CUI overlap comparison",
+    "predicate": "supports",
+    "object": "extractive summarization may be easier for some sections"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1810.12085::s03::p002",
+    "1810.12085::s03::p004"
+   ],
+   "supporting_fact_ids": [
+    "1810.12085::g00:b1:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Direct restatement of p004: recall for five sections is much higher than overall recall, suggesting extractive summarization may be easier for some sections."
+   },
+   "unit_id": "1810.12085::u008"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1810.12085::g00:i00",
+    "verdict": {
+     "insight_id": "1810.12085::g00:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "Cited passages jointly support that the CUI-based upper bound tested the extractive assumption and suggested extractive summarization alone may not recreate discharge summaries."
+    }
+   },
+   {
+    "insight_id": "1810.12085::g00:i01",
+    "verdict": {
+     "insight_id": "1810.12085::g00:i01",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "This is essentially a restatement of p003: low recall suggests clinicians may incorporate information not previously documented in the EHR."
+    },
+    "reason": "This is essentially a restatement of p003: low recall suggests clinicians may incorporate information not previously documented in the EHR."
+   },
+   {
+    "insight_id": "1810.12085::g00:i02",
+    "verdict": {
+     "insight_id": "1810.12085::g00:i02",
+     "keep": false,
+     "support": 0.85,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Mostly a restatement of p000 in s05; also the classifier is described as a NN architecture/model, and '55,000' is supported, but no meaningful composed insight beyond the source."
+    },
+    "reason": "Mostly a restatement of p000 in s05; also the classifier is described as a NN architecture/model, and '55,000' is supported, but no meaningful composed insight beyond the source."
+   },
+   {
+    "insight_id": "1810.12085::g00:i03",
+    "verdict": {
+     "insight_id": "1810.12085::g00:i03",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Passages jointly support that the Learned Word Embeddings model had highest dev performance 0.886 and was then evaluated on the test set with accuracy 0.88 and F1 0.876."
+    }
+   },
+   {
+    "insight_id": "1810.12085::g00:i04",
+    "verdict": {
+     "insight_id": "1810.12085::g00:i04",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "This is a direct restatement of p012 combined with p000; no novel composed insight."
+    },
+    "reason": "This is a direct restatement of p012 combined with p000; no novel composed insight."
+   },
+   {
+    "insight_id": "1810.12085::g00:i05",
+    "verdict": {
+     "insight_id": "1810.12085::g00:i05",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.35,
+     "causality_error": true,
+     "reason": "The text says future work is needed for multiple annotations and Cohen's kappa, but does not state this is because each note was annotated by only one of eight annotators; causal link is inferred."
+    },
+    "reason": "The text says future work is needed for multiple annotations and Cohen's kappa, but does not state this is because each note was annotated by only one of eight annotators; causal link is inferred."
+   },
+   {
+    "insight_id": "1810.12085::g00:i06",
+    "verdict": {
+     "insight_id": "1810.12085::g00:i06",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Direct restatement of p017: word-level prediction can produce phrases with multiple labels, so post-processing is needed."
+    },
+    "reason": "Direct restatement of p017: word-level prediction can produce phrases with multiple labels, so post-processing is needed."
+   },
+   {
+    "insight_id": "1810.12085::g00:i07",
+    "verdict": {
+     "insight_id": "1810.12085::g00:i07",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.2,
+     "causality_error": true,
+     "reason": "The passage says the high recall is 'understandable because' procedures are likely documented, but the insight asserts a causal 'causes' relation and reframes an explanatory comment as causal evidence."
+    },
+    "reason": "The passage says the high recall is 'understandable because' procedures are likely documented, but the insight asserts a causal 'causes' relation and reframes an explanatory comment as causal evidence."
+   },
+   {
+    "insight_id": "1810.12085::g00:i08",
+    "verdict": {
+     "insight_id": "1810.12085::g00:i08",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Direct restatement of p004: recall for five sections is much higher than overall recall, suggesting extractive summarization may be easier for some sections."
+    },
+    "reason": "Direct restatement of p004: recall for five sections is much higher than overall recall, suggesting extractive summarization may be easier for some sections."
+   },
+   {
+    "insight_id": "1810.12085::g00:i09",
+    "verdict": {
+     "insight_id": "1810.12085::g00:i09",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Passages jointly support the contrast that the paper's NN/LSTM architecture classifies words in HPI notes whereas Dernoncourt classified sentences in medical abstracts; 'extends' is acceptable as adopted/adapted from prior work."
+    }
+   }
+  ],
+  "calls": [
+   {
+    "n": 10,
+    "parsed": true,
+    "usage": {
+     "prompt_tokens": 4620,
+     "completion_tokens": 763,
+     "total_tokens": 5383,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

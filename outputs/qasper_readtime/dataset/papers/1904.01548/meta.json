@@ -1,0 +1,88 @@
+{
+ "paper_id": "1904.01548",
+ "title": "Understanding language-elicited EEG data by predicting it from a fine-tuned language model",
+ "abstract": "Electroencephalography (EEG) recordings of brain activity taken while participants read or listen to language are widely used within the cognitive neuroscience and psycholinguistics communities as a tool to study language comprehension. Several time-locked stereotyped EEG responses to word-presentations -- known collectively as event-related potentials (ERPs) -- are thought to be markers for semantic or syntactic processes that take place during comprehension. However, the characterization of each individual ERP in terms of what features of a stream of language trigger the response remains controversial. Improving this characterization would make ERPs a more useful tool for studying language comprehension. We take a step towards better understanding the ERPs by fine-tuning a language model to predict them. This new approach to analysis shows for the first time that all of the ERPs are predictable from embeddings of a stream of language. Prior work has only found two of the ERPs to be predictable. In addition to this analysis, we examine which ERPs benefit from sharing parameters during joint training. We find that two pairs of ERPs previously identified in the literature as being related to each other benefit from joint training, while several other pairs of ERPs that benefit from joint training are suggestive of potential relationships. Extensions of this analysis that further examine what kinds of information in the model embeddings relate to each ERP have the potential to elucidate the processes involved in human language comprehension.",
+ "sections": [
+  "Introduction",
+  "Background",
+  "Related Work",
+  "Discussion",
+  "Conclusion",
+  "Acknowledgments",
+  "Appendix"
+ ],
+ "n_paragraphs": 9,
+ "n_tokens": 2281,
+ "figures_and_tables": [
+  {
+   "caption_id": "1904.01548::fig000",
+   "paper_id": "1904.01548",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: The electrodes from which each event-related potential was recorded in the data from Frank et al. (2015) (after figure 3 in (Frank et al., 2015)). The bottom portion of the figure shows a top-down schematic of the electrode locations with the nose facing towards the top of the page. Each ERP is the mean potential from all of the indicated electrodes during a specific time-window, creating a single scalar value per ERP per word. Overlapping circles indicate multiple ERPs recorded from the same electrode. The ELAN is measured from 125-175ms after stimulus onset, the LAN from 300-400ms, the N400 from 300ms-500ms, the EPNP from 400-600ms, the P600 from 500-700ms, and the PNP from 600-700ms.",
+   "n_tokens": 175
+  },
+  {
+   "caption_id": "1904.01548::fig001",
+   "paper_id": "1904.01548",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2: The model uses an encoder based on the architecture and regularization in Merity et al. (2017) and pretrained by Howard and Ruder (2018). Within this architecture 2 independent 3-layer LSTM models encode a sentence. The context-embeddings output from each encoder are then concatenated together to give a single representation to each word in the sentence. These concatenated context-embeddings are fed into a causal-convolution, which learns a function to combine each pair of context-representations into a pair-embedding. A rectified linear unit (ReLU) non-linearity is applied to the pair-embedding, after which independent linear layers map the pairembedding along with the log-probability of a word and the word-length to a prediction of each ERP or behavioral signal.",
+   "n_tokens": 165
+  },
+  {
+   "caption_id": "1904.01548::fig002",
+   "paper_id": "1904.01548",
+   "file": "6-Table1-1.png",
+   "caption": "Table 1: Proportion of variance explained (POVE) for each of the ERP components (mean of 100 training runs). The second column in each cell shows which ERP components in addition to the target ERP component were included in training. All combinations of training signals were explored. Shown is the best combination for each ERP target as well as every combination which is (i) significantly different from training on the target component alone, (ii) not significantly different from the best training combination, and (iii) uses no more than the number of signals used by the best combination. The N400 is predicted best when only the N400 signal is included in training. All values are significantly different from 0. GROUP A refers to (PNP, ELAN, LAN, P600) and GROUP B refers to (EPNP, ELAN, LAN, P600).",
+   "n_tokens": 176
+  },
+  {
+   "caption_id": "1904.01548::fig003",
+   "paper_id": "1904.01548",
+   "file": "7-Figure3-1.png",
+   "caption": "Figure 3: The mean squared error (MSE) for prediction of each of the ERP signals during each epoch of training (mean of 100 training runs). The first 2 epochs have been omitted for clarity. During the first 20 epochs (lavender background), only the decoder parameters are modified. During the next 20 epochs (light blue background), the parameters in the final layer of the encoder are also modified. During the last 20 epochs (pink background), all of the parameters are modified. Note that in this model architecture, information can be shared between ERP signals even when only the decoder is modified. The figure shows the MSE when separate models are trained for each ERP independently (a), the MSE when a single model is trained on all ERPs jointly (b), and the difference between these two scenarios (c). The top row in each column shows the MSE on the training data while the bottom row shows the MSE on the validation data. In the bottom row right, the dotted vertical lines indicate the epoch at which the minimum MSE is reached in the lower of the independent or joint training. The LAN, EPNP, and PNP all show modest benefits from joint training before overfitting sets in (the minimum value occurs in the joint training scenario), while all ERP signals other than the N400 show reduced overfitting in joint training.",
+   "n_tokens": 275
+  },
+  {
+   "caption_id": "1904.01548::fig004",
+   "paper_id": "1904.01548",
+   "file": "7-Table2-1.png",
+   "caption": "Table 2: Proportion of variance explained (POVE) for each of the ERP components (mean of 100 training runs). +ERP indicates the best combination of ERP training signals for the target ERP component, + READ indicates the inclusion of self-paced reading times, +EYE indicates the inclusion of eye-tracking data, and bold font indicates a significant difference from training on the target component alone.",
+   "n_tokens": 80
+  },
+  {
+   "caption_id": "1904.01548::fig005",
+   "paper_id": "1904.01548",
+   "file": "13-Figure4-1.png",
+   "caption": "Figure 4: The proportion of variance explained for prediction of each of the ERP signals (mean of 100 training runs). The target ERP is indicated by color; each group of bars shows performance for a different target ERP. The top bar in each group shows the proportion of variance explained when the model is trained using only the target ERP. The bottom bar in each group shows the maximum proportion of variance explained over all combinations of training ERPs (or in the case of the N400, the second best). Also shown in each group are any training combinations that (i) used no more than the number of ERP signals used by the combination that achieved the maximum, and (ii) which were not significantly different from the maximum. Bars are statistically different from each other if a black dot on one bar is connected by a contiguous vertical line to a white dot on the other bar. The bars in the N400 group are not significantly different from each other. The N400 signal is best predicted when the model is trained on just that signal. In every other group, there is at least one ERP that, when combined with the target ERP during training, improves the prediction of the target ERP. The results suggest that these pairs are related: (LAN, P600), (LAN, EPNP), (LAN, PNP), (ELAN, N400), (ELAN, EPNP), (ELAN, PNP), (ELAN, P600), (EPNP, P600).",
+   "n_tokens": 302
+  },
+  {
+   "caption_id": "1904.01548::fig006",
+   "paper_id": "1904.01548",
+   "file": "13-Table3-1.png",
+   "caption": "Table 3: Proportion of variance explained for each of the ERP components when using only the forward direction of the encoder (mean of 100 training runs). +ERP indicates the best combination of ERP training signals for the target ERP component, + READ indicates the inclusion of self-paced reading times, +EYE indicates the inclusion of eye-tracking data, and bold font indicates a significant difference from training on the target component alone.",
+   "n_tokens": 85
+  },
+  {
+   "caption_id": "1904.01548::fig007",
+   "paper_id": "1904.01548",
+   "file": "14-Figure5-1.png",
+   "caption": "Figure 5: The proportion of variance explained for prediction of each of the ERP signals (mean of 100 training runs). The target ERP is indicated by color; each group of bars shows performance for a different target ERP. The top bar in each group shows the proportion of variance explained when the model is trained using only the target ERP. Moving down, the next bar in each group, labeled ERP shows the proportion of variance explained by the best combination of ERP signals for the target ERP. The other bars in each group moving from top to bottom show training variations that use behavioral data with either just the target ERP, or with the best combination of ERP signals. READ denotes self-paced reading data, and EYE denotes all four eye-tracking measures (in this analysis we use right-bounded pass time, gaze duration, go-past time, and first-fixation duration). Pairs of bars are significantly different from each other (paired t-test, false discovery rate ¡ 0.01) if a black dot on one bar is connected to a white dot on the other bar by a contiguous vertical line. Self-paced reading time benefits prediction of all target ERP components except the N400. In the case of the ELAN, LAN, and PNP, self-paced reading time also has marginal benefit compared to the best combination of ERP training signals. Eye-tracking data benefits prediction of the ELAN, P600, and PNP components.",
+   "n_tokens": 287
+  },
+  {
+   "caption_id": "1904.01548::fig008",
+   "paper_id": "1904.01548",
+   "file": "15-Table4-1.png",
+   "caption": "Table 4: Proportion of variance explained for each of the ERP components when using only the word embeddings as input to the decoder and bypassing the LSTM entirely (mean of 100 training runs). +ERP indicates the best combination of ERP training signals for the target ERP component, + READ indicates the inclusion of self-paced reading times, +EYE indicates the inclusion of eye-tracking data, and bold font indicates a significant difference from training on the target component alone.",
+   "n_tokens": 93
+  },
+  {
+   "caption_id": "1904.01548::fig009",
+   "paper_id": "1904.01548",
+   "file": "15-Table5-1.png",
+   "caption": "Table 5: Raw Pearson’s correlation coefficients (computed on content words after the standardization and participant-averaging) between each neural and behavioral measure and each other measure. FIX indicates firstfixation time, PASS indicates first-pass time, GO indicates go-past time, RIGHT indicates right-bounded reading time, and READ indicates self-paced reading. Many of the measures are highly correlated, but the pattern of correlations is different from the pattern of benefits that we find during joint-training. In particular we note that the N400 is correlated with the other ERP signals, and yet we do not see benefit in prediction of the N400 when jointly training a model to predict it and other signals.",
+   "n_tokens": 138
+  }
+ ]
+}

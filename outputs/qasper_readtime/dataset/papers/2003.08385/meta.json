@@ -1,0 +1,100 @@
+{
+ "paper_id": "2003.08385",
+ "title": "X-Stance: A Multilingual Multi-Target Dataset for Stance Detection",
+ "abstract": "We extract a large-scale stance detection dataset from comments written by candidates of elections in Switzerland. The dataset consists of German, French and Italian text, allowing for a cross-lingual evaluation of stance detection. It contains 67 000 comments on more than 150 political issues (targets). Unlike stance detection models that have specific target issues, we use the dataset to train a single model on all the issues. To make learning across targets possible, we prepend to each instance a natural question that represents the target (e.g.\"Do you support X?\"). Baseline results from multilingual BERT show that zero-shot cross-lingual and cross-target transfer of stance detection is moderately successful with this approach.",
+ "sections": [
+  "Introduction",
+  "Related Work ::: Multilingual Stance Detection",
+  "Related Work ::: Multi-Target Stance Detection",
+  "Related Work ::: Representation Learning for Stance Detection",
+  "The x-stance Dataset ::: Task Definition",
+  "The x-stance Dataset ::: Data Collection ::: Provenance",
+  "The x-stance Dataset ::: Data Collection ::: Preprocessing",
+  "The x-stance Dataset ::: Data Collection ::: Language Identification",
+  "The x-stance Dataset ::: Data Collection ::: Filtering",
+  "The x-stance Dataset ::: Data Collection ::: Topics",
+  "The x-stance Dataset ::: Data Collection ::: Compliance",
+  "The x-stance Dataset ::: Data Split",
+  "The x-stance Dataset ::: Analysis",
+  "The x-stance Dataset ::: Analysis ::: Class Distribution",
+  "The x-stance Dataset ::: Analysis ::: Linguistic Properties",
+  "The x-stance Dataset ::: Analysis ::: Languages",
+  "Baseline Experiments",
+  "Baseline Experiments ::: Majority Class Baselines",
+  "Baseline Experiments ::: Multilingual BERT Baseline",
+  "Baseline Experiments ::: Multilingual BERT Baseline ::: Architecture",
+  "Baseline Experiments ::: Multilingual BERT Baseline ::: Training",
+  "Baseline Experiments ::: Multilingual BERT Baseline ::: Results",
+  "Baseline Experiments ::: How Important is Consistent Language?",
+  "Baseline Experiments ::: How Important are the Segments?",
+  "Baseline Experiments ::: How Important are Spelled-Out Targets?",
+  "Discussion",
+  "Conclusion",
+  "Acknowledgments",
+  "Data Statement ::: Curation rationale",
+  "Data Statement ::: Language variety",
+  "Data Statement ::: Speaker demographic (answers)",
+  "Data Statement ::: Speech situation",
+  "Data Statement ::: Text characteristics"
+ ],
+ "n_paragraphs": 95,
+ "n_tokens": 4593,
+ "figures_and_tables": [
+  {
+   "caption_id": "2003.08385::fig000",
+   "paper_id": "2003.08385",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Example of a question and two answers in the X-stance dataset. The answers were submitted by electoral candidates on a voting advice website. The author of the comment in German declared to be in favor of the issue and added the comment as an explanation. The comment in French has been written by another candidate to explain why a negative stance has been taken towards the issue. While X-stance contains hundreds of answers to this question, we have picked the two comments as examples due to their brevity.",
+   "n_tokens": 104
+  },
+  {
+   "caption_id": "2003.08385::fig001",
+   "paper_id": "2003.08385",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Number of questions and answers per topic.",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "2003.08385::fig002",
+   "paper_id": "2003.08385",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Number of answer instances in the training, validation and test sets. The upper left corner represents a multilingually supervised task, where training, validation and test data are from exactly the same domain. The topto-bottom axis gives rise to a cross-lingual transfer task, where a model trained on German and French is evaluated on Italian answers to the same questions. The left-to-right axis represents a continuous shift of domain: In the middle column, the model is tested on previously unseen questions that belong to the same topics as seen during training. In the right column the model encounters unseen answers to unseen questions within an unseen topic. The two test sets in parentheses are too small for a significant evaluation.",
+   "n_tokens": 144
+  },
+  {
+   "caption_id": "2003.08385::fig003",
+   "paper_id": "2003.08385",
+   "file": "5-Figure2-1.png",
+   "caption": "Figure 2: Proportion of ‘favor’ labels per question, grouped by topic. While the proportion of favorable answers varies from question to question, it is balanced overall.",
+   "n_tokens": 35
+  },
+  {
+   "caption_id": "2003.08385::fig004",
+   "paper_id": "2003.08385",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3: Baseline scores in the cross-lingual setting. No Italian samples were seen during training, making this a case of zero-shot cross-lingual transfer. The scores are reported as the macro-average of the F1scores for ‘favor’ and for ‘against’.",
+   "n_tokens": 58
+  },
+  {
+   "caption_id": "2003.08385::fig005",
+   "paper_id": "2003.08385",
+   "file": "7-Table4-1.png",
+   "caption": "Table 4: Baseline scores in the cross-target setting. For each test set we separately report a German and a French score, as well as their harmonic mean.",
+   "n_tokens": 34
+  },
+  {
+   "caption_id": "2003.08385::fig006",
+   "paper_id": "2003.08385",
+   "file": "7-Table5-1.png",
+   "caption": "Table 5: Results for additional experiments. The cross-lingual score is the F1-score on the Italian test set. For the supervised, cross-question and cross-topic settings we report the harmonic mean of the German and French scores.",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "2003.08385::fig007",
+   "paper_id": "2003.08385",
+   "file": "8-Table6-1.png",
+   "caption": "Table 6: Performance of BERT-like models on different supervised stance detection benchmarks.",
+   "n_tokens": 17
+  }
+ ]
+}

@@ -1,0 +1,877 @@
+{
+ "1908.06267::s00::p000": [
+  [
+   "The concept of message passing over graphs",
+   "has been around for",
+   "many years"
+  ],
+  [
+   "GNNs",
+   "have only recently started to be closely investigated",
+   "following the advent of deep learning"
+  ],
+  [
+   "These approaches",
+   "are known as",
+   "spectral"
+  ]
+ ],
+ "1908.06267::s00::p001": [
+  [
+   "The MP framework",
+   "is based on",
+   "the core idea of recursive neighborhood aggregation"
+  ],
+  [
+   "the representation of each vertex",
+   "is updated based on",
+   "messages received from its neighbors"
+  ],
+  [
+   "All spectral GNNs",
+   "can be described in terms of",
+   "the MP framework"
+  ]
+ ],
+ "1908.06267::s00::p002": [
+  [
+   "GNNs",
+   "have been applied with great success to",
+   "bioinformatics and social network data"
+  ],
+  [
+   "a few studies only",
+   "have focused on",
+   "the application of the MP framework to representation learning on text"
+  ]
+ ],
+ "1908.06267::s01::p000": [
+  [
+   "MP",
+   "consists in",
+   "an aggregation phase followed by a combination phase"
+  ],
+  [
+   "a message vector $\\mathbf {m}_v^{t+1}$",
+   "is computed from",
+   "the representations of the neighbors $\\mathcal {N}(v)$ of $v$"
+  ]
+ ],
+ "1908.06267::s01::p002": [
+  [
+   "The new representation $\\mathbf {h}^{t+1}_v$ of $v$",
+   "is computed by combining",
+   "its current feature vector $\\mathbf {h}^{t}_v$ with the message vector $\\mathbf {m}_v^{t+1}$"
+  ]
+ ],
+ "1908.06267::s01::p004": [
+  [
+   "Messages",
+   "are passed for",
+   "$T$ time steps"
+  ],
+  [
+   "Each step",
+   "is implemented by",
+   "a different layer of the MP network"
+  ],
+  [
+   "iterations",
+   "correspond to",
+   "network depth"
+  ],
+  [
+   "The final feature vector $\\mathbf {h}_v^T$ of $v$",
+   "is based on",
+   "messages propagated from all the nodes in the subtree of height $T$ rooted at $v$"
+  ]
+ ],
+ "1908.06267::s01::p005": [
+  [
+   "a READOUT pooling function",
+   "is applied for",
+   "a graph-level feature vector"
+  ],
+  [
+   "a READOUT pooling function",
+   "must be invariant to",
+   "permutations"
+  ]
+ ],
+ "1908.06267::s02::p000": [
+  [
+   "a document",
+   "is represented as",
+   "a statistical word co-occurrence network BIBREF18, BIBREF19 with a sliding window of size 2 overspanning sentences"
+  ],
+  [
+   "Each unique word in the preprocessed document",
+   "is represented by",
+   "a node in $G$"
+  ],
+  [
+   "an edge",
+   "is added between",
+   "two nodes if they are found together in at least one instantiation of the window"
+  ]
+ ],
+ "1908.06267::s02::p001": [
+  [
+   "immediate neighbors",
+   "are",
+   "consecutive words in the same sentence"
+  ],
+  [
+   "paths of length 2",
+   "correspond to",
+   "bigrams"
+  ],
+  [
+   "Paths of length more than 2",
+   "can correspond to",
+   "traditional $n$-grams or relaxed $n$-grams"
+  ]
+ ],
+ "1908.06267::s02::p002": [
+  [
+   "a special document node",
+   "is linked to",
+   "all other nodes via unit weight bi-directional edges"
+  ]
+ ],
+ "1908.06267::s03::p002": [
+  [
+   "the $i^{th}$ row of $A$",
+   "contains",
+   "the weights of the edges incoming on node $v_i$"
+  ],
+  [
+   "MLP",
+   "denotes",
+   "a multi-layer perceptron"
+  ]
+ ],
+ "1908.06267::s03::p003": [
+  [
+   "MP neural nets with 1-layer perceptrons",
+   "are inferior to",
+   "their MLP counterparts"
+  ],
+  [
+   "1-layer perceptrons",
+   "are not",
+   "universal approximators of multiset functions"
+  ]
+ ],
+ "1908.06267::s03::p004": [
+  [
+   "This",
+   "is equivalent to",
+   "the renormalization trick of BIBREF9"
+  ],
+  [
+   "The coefficients",
+   "are proportional to",
+   "the strength of co-occurrence between words"
+  ],
+  [
+   "averaging",
+   "loses",
+   "injectivity"
+  ],
+  [
+   "Such cases",
+   "include",
+   "neighborhoods in which all nodes have the same representations"
+  ],
+  [
+   "Such cases",
+   "include",
+   "neighborhoods of different sizes containing various representations in equal proportions"
+  ],
+  [
+   "averaging",
+   "is better than",
+   "summing"
+  ]
+ ],
+ "1908.06267::s03::p009": [
+  [
+   "$\\mathbf {W}$ and $\\mathbf {U}$ matrices",
+   "are",
+   "trainable weight matrices not shared across time steps"
+  ]
+ ],
+ "1908.06267::s03::p010": [
+  [
+   "Updating node representations through a GRU",
+   "should in principle allow",
+   "nodes to encode a combination of local and global signals (low and high values of $t$, resp.)"
+  ]
+ ],
+ "1908.06267::s04::p005": [
+  [
+   "the master node vector",
+   "bypasses",
+   "the attention mechanism"
+  ],
+  [
+   "This",
+   "is equivalent to",
+   "a skip or shortcut connection BIBREF23"
+  ],
+  [
+   "making the master node bypass the attention layer",
+   "directly injects",
+   "global information about the document into its final representation"
+  ]
+ ],
+ "1908.06267::s04::p006": [
+  [
+   "node features",
+   "capture",
+   "more and more global information"
+  ],
+  [
+   "the readout function",
+   "is applied to",
+   "all time steps"
+  ]
+ ],
+ "1908.06267::s04::p008": [
+  [
+   "this modification",
+   "takes into account",
+   "features based on information aggregated from subtrees of different heights (from 1 to $T$)"
+  ],
+  [
+   "features based on information aggregated from subtrees of different heights (from 1 to $T$)",
+   "correspond to",
+   "local and global features"
+  ]
+ ],
+ "1908.06267::s05::p000": [
+  [
+   "MPAD",
+   "implicitly captures",
+   "some soft notion of the hierarchical structure of documents"
+  ],
+  [
+   "Hierarchical architectures",
+   "have brought",
+   "significant improvements to many NLP tasks"
+  ]
+ ],
+ "1908.06267::s05::p001": [
+  [
+   "MPAD-sentence-att",
+   "combines",
+   "the sentence embeddings through self-attention"
+  ]
+ ],
+ "1908.06267::s05::p002": [
+  [
+   "MPAD-clique",
+   "builds",
+   "a complete graph where each node represents a sentence"
+  ],
+  [
+   "the feature vectors of the nodes",
+   "are initialized with",
+   "the sentence embeddings previously obtained"
+  ]
+ ],
+ "1908.06267::s05::p003": [
+  [
+   "MPAD-path",
+   "is similar to",
+   "the clique one"
+  ],
+  [
+   "MPAD-path",
+   "builds",
+   "a path according to the natural flow of the text"
+  ],
+  [
+   "two nodes",
+   "are linked by",
+   "a directed edge if the two sentences they represent follow each other in the document"
+  ]
+ ],
+ "1908.06267::s06::p000": [
+  [
+   "10 document classification datasets",
+   "cover",
+   "the topic identification, coarse and fine sentiment analysis and opinion mining, and subjectivity detection tasks"
+  ]
+ ],
+ "1908.06267::s06::p001": [
+  [
+   "Reuters",
+   "contains",
+   "stories collected from the Reuters news agency in 1987"
+  ]
+ ],
+ "1908.06267::s06::p002": [
+  [
+   "BBCSport BIBREF30",
+   "contains",
+   "documents from the BBC Sport website corresponding to 2004-2005 sports news articles"
+  ]
+ ],
+ "1908.06267::s06::p003": [
+  [
+   "Polarity BIBREF31",
+   "features",
+   "positive and negative labeled snippets from Rotten Tomatoes"
+  ]
+ ],
+ "1908.06267::s06::p005": [
+  [
+   "MPQA BIBREF33",
+   "is made of",
+   "positive and negative phrases"
+  ],
+  [
+   "positive and negative phrases",
+   "are annotated as part of",
+   "the summer 2002 NRRC Workshop on Multi-Perspective Question Answering"
+  ]
+ ],
+ "1908.06267::s06::p006": [
+  [
+   "IMDB BIBREF34",
+   "is",
+   "a collection of highly polarized movie reviews from IMDB (positive and negative)"
+  ],
+  [
+   "IMDB BIBREF34",
+   "has",
+   "at most 30 reviews for each movie"
+  ]
+ ],
+ "1908.06267::s06::p007": [
+  [
+   "TREC BIBREF35",
+   "consists of",
+   "questions that are classified into 6 different categories"
+  ]
+ ],
+ "1908.06267::s06::p008": [
+  [
+   "SST-1 BIBREF36",
+   "contains",
+   "the same snippets as Polarity"
+  ]
+ ],
+ "1908.06267::s06::p009": [
+  [
+   "SST-2 BIBREF36",
+   "is",
+   "the same as SST-1 but with neutral reviews removed and snippets classified as positive or negative"
+  ]
+ ],
+ "1908.06267::s06::p010": [
+  [
+   "Yelp2013 BIBREF26",
+   "features",
+   "reviews obtained from the 2013 Yelp Dataset Challenge"
+  ]
+ ],
+ "1908.06267::s07::p000": [
+  [
+   "fair comparison with the hierarchical MPAD variants",
+   "is enabled by",
+   "multiple state-of-the-art baseline models, including hierarchical ones"
+  ]
+ ],
+ "1908.06267::s07::p001": [
+  [
+   "Doc2vec",
+   "is an extension of",
+   "word2vec"
+  ],
+  [
+   "Doc2vec",
+   "learns vectors for",
+   "documents"
+  ],
+  [
+   "Document embeddings",
+   "are fed to",
+   "a logistic regression classifier"
+  ]
+ ],
+ "1908.06267::s07::p002": [
+  [
+   "The convolutional neural network architecture",
+   "is applied to",
+   "text"
+  ],
+  [
+   "There",
+   "is",
+   "one spatial dimension"
+  ],
+  [
+   "the word embeddings",
+   "are used as",
+   "channels (depth dimensions)"
+  ]
+ ],
+ "1908.06267::s07::p003": [
+  [
+   "The Deep Averaging Network",
+   "passes",
+   "the unweighted average of the embeddings of the input words"
+  ],
+  [
+   "The Deep Averaging Network",
+   "passes the unweighted average through",
+   "multiple dense layers and a final softmax"
+  ]
+ ],
+ "1908.06267::s07::p004": [
+  [
+   "Tree-LSTM BIBREF40",
+   "is a generalization of",
+   "the standard LSTM architecture"
+  ],
+  [
+   "Tree-LSTM BIBREF40",
+   "is a generalization to",
+   "constituency and dependency parse trees"
+  ]
+ ],
+ "1908.06267::s07::p005": [
+  [
+   "Recursive neural networks",
+   "are stacked and applied to",
+   "parse trees"
+  ]
+ ],
+ "1908.06267::s07::p006": [
+  [
+   "LSTMN BIBREF42",
+   "is an extension of",
+   "the LSTM model"
+  ],
+  [
+   "the memory cell",
+   "is replaced by",
+   "a memory network"
+  ],
+  [
+   "a memory network",
+   "stores",
+   "word representations"
+  ]
+ ],
+ "1908.06267::s07::p007": [
+  [
+   "C-LSTM BIBREF43",
+   "combines",
+   "convolutional and recurrent neural networks"
+  ],
+  [
+   "region embeddings provided by a CNN",
+   "are fed to",
+   "a LSTM"
+  ]
+ ],
+ "1908.06267::s07::p008": [
+  [
+   "SPGK BIBREF44",
+   "models",
+   "documents as word co-occurrence networks"
+  ],
+  [
+   "SPGK BIBREF44",
+   "computes",
+   "a graph kernel that compares shortest paths extracted from the word co-occurrence networks"
+  ],
+  [
+   "SPGK BIBREF44",
+   "uses",
+   "a SVM to categorize documents"
+  ]
+ ],
+ "1908.06267::s07::p009": [
+  [
+   "WMD BIBREF45",
+   "is",
+   "an application of the well-known Earth Mover's Distance to text"
+  ]
+ ],
+ "1908.06267::s07::p010": [
+  [
+   "S-WMD BIBREF46",
+   "is",
+   "a supervised extension of the Word Mover's Distance"
+  ]
+ ],
+ "1908.06267::s07::p011": [
+  [
+   "a CNN",
+   "is applied to",
+   "semantic units obtained by clustering words in the embedding space"
+  ]
+ ],
+ "1908.06267::s07::p012": [
+  [
+   "LSTM-GRNN BIBREF26",
+   "is",
+   "a hierarchical model"
+  ],
+  [
+   "sentence embeddings",
+   "are obtained with",
+   "a CNN"
+  ],
+  [
+   "a GRU-RNN",
+   "is fed",
+   "the sentence representations to obtain a document vector"
+  ]
+ ],
+ "1908.06267::s07::p013": [
+  [
+   "HN-ATT",
+   "is",
+   "another hierarchical model"
+  ],
+  [
+   "HN-ATT",
+   "uses",
+   "the same encoder architecture (a bidirectional GRU-RNN) for both sentences and documents, with different parameters"
+  ],
+  [
+   "A self-attention mechanism",
+   "is applied to",
+   "the RNN annotations at each level"
+  ]
+ ],
+ "1908.06267::s08::p000": [
+  [
+   "all datasets",
+   "are preprocessed using",
+   "the code of BIBREF38"
+  ],
+  [
+   "all tokens appearing strictly less than 6 times",
+   "are replaced with",
+   "a special UNK token"
+  ],
+  [
+   "a directed word co-occurrence network",
+   "is built from",
+   "each document, with a window of size 2"
+  ]
+ ],
+ "1908.06267::s08::p001": [
+  [
+   "the basic MPAD",
+   "uses",
+   "two MP iterations ($T$=2)"
+  ],
+  [
+   "the hierarchical variants",
+   "use",
+   "two MP iterations at each level"
+  ],
+  [
+   "The final graph representations",
+   "are passed through",
+   "a softmax for classification"
+  ]
+ ],
+ "1908.06267::s08::p002": [
+  [
+   "batch normalization",
+   "is applied after",
+   "concatenating the feature vector of the master node with the self-attentional vector"
+  ],
+  [
+   "dropout BIBREF49",
+   "is used with",
+   "a rate of 0.5"
+  ],
+  [
+   "the best epoch",
+   "is selected based on",
+   "the validation accuracy"
+  ],
+  [
+   "a validation set",
+   "is constructed by",
+   "randomly sampling 10% of the training set of each fold"
+  ]
+ ],
+ "1908.06267::s08::p003": [
+  [
+   "the publicly available 300-dimensional pre-trained Google News vectors ($D$=300) BIBREF50",
+   "are used to initialize",
+   "the node representations $\\mathbf {H}^0$"
+  ]
+ ],
+ "1908.06267::s08::p004": [
+  [
+   "MPAD",
+   "was implemented in",
+   "Python 3.6 using the PyTorch library BIBREF52"
+  ],
+  [
+   "All experiments",
+   "were run on",
+   "a single machine consisting of a 3.4 GHz Intel Core i7 CPU with 16 GB of RAM and an NVidia GeForce Titan Xp GPU"
+  ]
+ ],
+ "1908.06267::s09::p000": [
+  [
+   "best scores reported in each original paper",
+   "are shown for",
+   "the baselines"
+  ],
+  [
+   "MPAD",
+   "reaches best performance on",
+   "7 out of 10 datasets"
+  ],
+  [
+   "the 7 datasets on which MPAD ranks first",
+   "widely differ in",
+   "training set size, number of categories, and prediction task (topic, sentiment, subjectivity)"
+  ]
+ ],
+ "1908.06267::s09::p001": [
+  [
+   "one or more of the hierarchical variants",
+   "outperform on",
+   "9 datasets out of 10"
+  ]
+ ],
+ "1908.06267::s09::p002": [
+  [
+   "standard MPAD",
+   "outperforms on Subjectivity",
+   "all hierarchical variants"
+  ],
+  [
+   "standard MPAD",
+   "reaches on TREC",
+   "the same accuracy"
+  ],
+  [
+   "some words that never appear in the same sentence",
+   "can be connected through",
+   "common neighbors"
+  ],
+  [
+   "each sentence vector",
+   "is produced in",
+   "isolation"
+  ]
+ ],
+ "1908.06267::s10::p000": [
+  [
+   "additional experiments",
+   "were conducted on",
+   "the Reuters, Polarity, and IMDB datasets"
+  ],
+  [
+   "additional experiments",
+   "used",
+   "the non-hierarchical version of MPAD"
+  ]
+ ],
+ "1908.06267::s10::p001": [
+  [
+   "the number of message passing iterations",
+   "was varied from",
+   "1 to 4"
+  ],
+  [
+   "having more iterations",
+   "improves",
+   "performance"
+  ],
+  [
+   "readout at each iteration from 1 to $T$",
+   "enables",
+   "the final graph representation to encode a mixture of low-level and high-level features"
+  ],
+  [
+   "setting $T\\ge 2$",
+   "was always decreasing",
+   "performance"
+  ]
+ ],
+ "1908.06267::s10::p002": [
+  [
+   "using an undirected graph",
+   "leads to better performance on",
+   "Reuters"
+  ],
+  [
+   "using an undirected graph",
+   "leads to opposite performance on",
+   "Polarity and IMDB"
+  ],
+  [
+   "Reuters",
+   "is",
+   "a topic classification task"
+  ],
+  [
+   "Polarity and IMDB",
+   "are",
+   "sentiment analysis tasks"
+  ],
+  [
+   "modeling word order",
+   "is crucial for",
+   "capturing sentiment"
+  ]
+ ],
+ "1908.06267::s10::p003": [
+  [
+   "Removing the master node",
+   "deteriorates",
+   "performance across all datasets"
+  ],
+  [
+   "the special document node",
+   "is connected to",
+   "all other nodes"
+  ],
+  [
+   "the special document node",
+   "is able to encode during message passing",
+   "a summary of the document"
+  ]
+ ],
+ "1908.06267::s10::p004": [
+  [
+   "the sum",
+   "captures",
+   "structural information BIBREF14"
+  ],
+  [
+   "using sum instead of mean",
+   "decreases",
+   "performance everywhere"
+  ],
+  [
+   "statistical word co-occurrence networks",
+   "tend to have",
+   "similar structural properties"
+  ]
+ ],
+ "1908.06267::s10::p005": [
+  [
+   "this experiment",
+   "replaced",
+   "the GRU combine function (see Eq. DISPLAY_FORM14) with the identity function"
+  ],
+  [
+   "the update",
+   "is based entirely on",
+   "its neighbors"
+  ],
+  [
+   "performance",
+   "always suffers",
+   "Except on Reuters (almost no change)"
+  ]
+ ],
+ "1908.06267::s11::p001": [
+  [
+   "nodes",
+   "are",
+   "scientific papers, i.e., textual data"
+  ],
+  [
+   "text",
+   "is only used to derive",
+   "node feature vectors"
+  ],
+  [
+   "The external graph structure",
+   "is completely unrelated to",
+   "text"
+  ]
+ ],
+ "1908.06267::s11::p002": [
+  [
+   "They both",
+   "build",
+   "$k$-nearest neighbor similarity graphs based on the Gaussian diffusion kernel"
+  ],
+  [
+   "Node features",
+   "are then used for",
+   "classification"
+  ],
+  [
+   "All document graphs",
+   "are derived from",
+   "the same underlying structure"
+  ],
+  [
+   "Only node features",
+   "vary",
+   "corresponding to the entries of the documents' BoW vectors"
+  ],
+  [
+   "The underlying, shared structure",
+   "is that of",
+   "a $k$-NN graph where nodes are vocabulary terms and similarity is the cosine of the word embedding vectors"
+  ]
+ ],
+ "1908.06267::s11::p004": [
+  [
+   "Document-word edges",
+   "are weighted by",
+   "TF-IDF"
+  ],
+  [
+   "word-word edges",
+   "are weighted by",
+   "pointwise mutual information derived from co-occurrence within a sliding window"
+  ],
+  [
+   "The GNN",
+   "is trained based on",
+   "the cross-entropy loss computed only for the labeled nodes"
+  ]
+ ],
+ "1908.06267::s11::p005": [
+  [
+   "the node classification approach of BIBREF53",
+   "requires",
+   "all test documents at training time"
+  ],
+  [
+   "the approach of BIBREF53",
+   "requires computing",
+   "the PMI for every word pair in the vocabulary"
+  ],
+  [
+   "the complexity of MPAD",
+   "does not depend on",
+   "vocabulary size"
+  ]
+ ],
+ "1908.06267::s12::p000": [
+  [
+   "Experiments conducted on 10 standard text classification datasets",
+   "show",
+   "that our architecture is competitive with the state-of-the-art"
+  ],
+  [
+   "MPAD",
+   "is sensitive to",
+   "word order and word-word relationship strength"
+  ]
+ ]
+}

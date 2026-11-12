@@ -1,0 +1,748 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1810.05241::s00::p000",
+   "summary": "Keyphrase generation predicts keyphrases from source text, requiring models to distill high-level information and locate specific important snippets.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s00::p001",
+   "summary": "Keyphrases may be present or absent, and keyphrase generation is set generation with variable set size and phrase token size.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s00::p002",
+   "summary": "Prior studies formulate keyphrase generation as Seq2Seq, using beam search over-generation and evaluating a fixed number of top predicted phrases, typically 5 or 10.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s00::p003",
+   "summary": "Beam search lacks dynamic keyphrase-number determination and phrase inter-relation modeling, reducing output diversity despite training-time diversity efforts.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s00::p004",
+   "summary": "Fixed-number evaluation mismatches variable ground truth keyphrases; dataset averages range from 5.3 to 15.7, variances reach 64.6, and KP20k oracle F1 score is 0.858 for INLINEFORM1 and 0.626 for INLINEFORM2.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s00::p005",
+   "summary": "The authors propose novel decoding strategies and evaluation metrics for keyphrase generation and list the work's main contributions.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s01::p000",
+   "summary": "Traditional keyphrase extraction uses candidate identification and ranking, with methods including bagged decision trees, Multi-Layer Perceptron, Support Vector Machine, PageRank, sequence labeling, and Pointer Networks.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s01::p001",
+   "summary": "Extractive models fail on absent keyphrases; CopyRNN, CorrRNN, semi-supervised methods, and structure information improve generation, but none generate variable numbers of phrases.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s02::p000",
+   "summary": "Seq2Seq learning with soft attention is widely used in natural language generation, including summarization, question generation, sentence simplification, and paraphrase generation.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s02::p001",
+   "summary": "The encoder converts source text embeddings INLINEFORM2 into INLINEFORM3 real-valued vectors INLINEFORM4 using a bidirectional GRU BIBREF27.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s02::p002",
+   "summary": "Dropout BIBREF28 is applied to both INLINEFORM0 and INLINEFORM1 for regularization.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s02::p003",
+   "summary": "The decoder is a uni-directional GRU generating a new state INLINEFORM0 at each time-step INLINEFORM1 from word embedding INLINEFORM2 and recurrent state INLINEFORM3.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s02::p004",
+   "summary": "The initial state INLINEFORM0 derives from final encoder state INLINEFORM1 via a single-layer feed-forward neural net, with dropout on embeddings INLINEFORM3 and GRU states INLINEFORM4.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s02::p005",
+   "summary": "An attention mechanism BIBREF18 infers importance INLINEFORM1 of each source word INLINEFORM2 using a 2-layer FNN energy function.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s02::p006",
+   "summary": "Outputs over all decoding steps INLINEFORM0 define a distribution over the source sequence.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s02::p007",
+   "summary": "Attention scores weight source encodings, which are concatenated with decoder state INLINEFORM0 to derive generative distribution INLINEFORM1.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s02::p008",
+   "summary": "The output size of INLINEFORM0 equals the target vocabulary size, and subscript INLINEFORM1 marks the abstractive nature of INLINEFORM2.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s02::p009",
+   "summary": "Pointer softmax BIBREF19 uses scalar switch INLINEFORM1 to interpolate abstractive distribution INLINEFORM2 and extractive distribution INLINEFORM3.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s02::p010",
+   "summary": "INLINEFORM0 is conditioned on attention-weighted source representation INLINEFORM1 and decoder state INLINEFORM2.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s03::p000",
+   "summary": "The objective is to generate a variable number of multi-word phrases using Seq2Seq with attention and pointer softmax mechanisms in the decoder.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s03::p001",
+   "summary": "One2Many examples can be divided into One2One examples, producing models like CopyRNN that generate one phrase and rely on beam search for more unique phrases.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s03::p002",
+   "summary": "One2Seq concatenates multiple phrases into a single sequence with delimiter INLINEFORM0 SEP INLINEFORM1 as the training target for sequence generation.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s04::p000",
+   "summary": "Notations define input text tokens, token embeddings, hidden states, output text tokens, time-steps, encoder or decoder subscripts, transformations, and concatenation.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s05::p000",
+   "summary": "Multiple keyphrases represent different text aspects, so diversity is desired, but over-generation with beam search is prone to similar phrases.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s05::p001",
+   "summary": "Delimiter-separated sequences cause identical tokens after delimiters due to homogeneous decoder states INLINEFORM2, motivating two plug-in components.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s05::p002",
+   "summary": "Semantic coverage introduces a uni-directional target encoder INLINEFORM0 encoding decoder-generated tokens INLINEFORM1 into hidden states INLINEFORM3 as extra decoder GRU input.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s05::p003",
+   "summary": "The target encoder is trained self-supervised by maximizing mutual information between phrase representations and source encoder final state INLINEFORM2 using classification loss.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s05::p004",
+   "summary": "INLINEFORM0 is bi-linear transformation.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s05::p005",
+   "summary": "Semantic coverage constrains generated keyphrase representations to be semantically close to source meaning and may guide generation.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s05::p006",
+   "summary": "Orthogonal regularization encourages delimiter-generating decoder states to differ by stacking them into matrix INLINEFORM0 and applying an orthogonal regularization loss.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s05::p007",
+   "summary": "The loss prefers orthogonality among hidden states INLINEFORM8 and improves diversity in tokens following delimiters.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s05::p008",
+   "summary": "The model adopts negative log-likelihood loss INLINEFORM0 and combines it into an overall loss.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s05::p009",
+   "summary": "INLINEFORM0 and INLINEFORM1 are hyper-parameters.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s06::p000",
+   "summary": "Exhaustive Decoding and Self-terminating Decoding differ in whether a model controls the number of phrases to output.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s06::p001",
+   "summary": "Fixed top-ranked evaluation requires beam search over-generation, with beam sizes 150 and 200 in BIBREF3 and BIBREF0, and One2Seq needs additional processes.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s06::p002",
+   "summary": "Beam search time complexity is INLINEFORM0, making exhaustive decoding expensive for One2Seq, where less than 5% of generated phrases are unique.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s06::p003",
+   "summary": "Self-terminating decoding generates a variable number of delimiter-joined phrases in one sequence and outputs INLINEFORM0 EOS INLINEFORM1 when adequate phrases are generated.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s06::p004",
+   "summary": "Self-terminating decoding conditions generation on previous phrases, models output dependency explicitly, and can decode more efficiently using greedy search or beam search on the top-scored sequence.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s07::p000",
+   "summary": "Precision, recall, and F INLINEFORM5 score are defined for top INLINEFORM3 predictions INLINEFORM4 against oracle set INLINEFORM2.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s07::p001",
+   "summary": "The number of generated keyphrases used for evaluation critically affects metrics, and three choices of INLINEFORM0 are compared.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s07::p002",
+   "summary": "A simple remedy sets INLINEFORM0 as a variable number specific to each data example and defines two new metrics.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s07::p003",
+   "summary": "F INLINEFORM1 @ INLINEFORM2 and F INLINEFORM3 @ INLINEFORM4 reflect variable phrase numbers, allow maximum INLINEFORM5 score of INLINEFORM6 only for exact phrase matches, and F INLINEFORM7 @ INLINEFORM8 is independent from model outputs.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s08::p000",
+   "summary": "Experiments report results on multiple datasets, with INLINEFORM0 denoting the delimiter-concatenated sequence-to-sequences model and INLINEFORM1 the model augmented with orthogonal regularization and semantic coverage.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s08::p001",
+   "summary": "Target sequences sort ground truth keyphrases by first occurrence in source text and append absent keyphrases to the end.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s08::p002",
+   "summary": "Baselines include four non-neural extractive models, CopyRNN, CopyRNN*, KEA, and Maui, with KEA and Maui trained on 50,000 documents from KP20k or StackEx.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s08::p003",
+   "summary": "Self-terminating decoding results are reported only for proposed models because no existing model supports such decoding strategy.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s09::p000",
+   "summary": "Scientific publication datasets include KP20k, Inspec, Krapivin, NUS, and SemEval; KP20k comprises more than half a million publications and uses abstracts, titles, and author keywords.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s09::p001",
+   "summary": "KP20k present-keyphrase results report INLINEFORM0 and INLINEFORM1 scores, and F INLINEFORM2 @ INLINEFORM3 shows consistent ranking with INLINEFORM4 for most cases.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s09::p002",
+   "summary": "Neural-based models outperform non-neural models by large margins, and implemented CopyRNN achieves better or comparable performance, especially on NUS and SemEval.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s09::p003",
+   "summary": "INLINEFORM0 and INLINEFORM1 yield comparable results to CopyRNN, INLINEFORM2 outperforms INLINEFORM3 on all metrics, and INLINEFORM5 outperforms One2One baselines on F INLINEFORM4 @10 for KP20k and Krapivin.",
+   "group_id": "1810.05241::g00"
+  },
+  {
+   "passage_id": "1810.05241::s10::p000",
+   "summary": "Inspired by the StackLite tag recommendation task on Kaggle, the authors build a StackExchange benchmark using question titles as source and user-assigned tags as target keyphrases.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s10::p001",
+   "summary": "StackEx has fewer keyphrases per data point and more general terminology such as Linux and Java, challenging models to distill major topics rather than select specific snippets.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s10::p002",
+   "summary": "Table TABREF37 reports StackEx performance, where INLINEFORM0 performs best and outperforms INLINEFORM1 by a large margin on absent-keyphrase generation tasks.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s11::p000",
+   "summary": "Experiments on KP20k and StackEx present keyphrase generation tasks in Table TABREF39 study predicting keyphrase number using self-terminating decoding and F INLINEFORM0 @ INLINEFORM1 and F INLINEFORM2 @ INLINEFORM3.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s11::p001",
+   "summary": "These experiments use beam search with only the top ranked prediction sequence as output, compare greedy search, and report only INLINEFORM0 and INLINEFORM1 for variable number generation.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s11::p002",
+   "summary": "Table TABREF39 shows greedy search consistently outperforms beam search, possibly because beam search generates short similar sequences, while lower F INLINEFORM0 @ INLINEFORM1 scores suggest over-generation may benefit recall.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s12::p000",
+   "summary": "Table TABREF44 shows semantic coverage significantly boosts INLINEFORM1 on all datasets, orthogonal regularization alone hurts INLINEFORM2, and INLINEFORM3 outperforms INLINEFORM4 on all datasets.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s13::p000",
+   "summary": "The authors use one quantitative and one qualitative metric to verify that target encoding and orthogonal regularization boost diversity of generated sequences.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s13::p001",
+   "summary": "Average unique predictions are 20.38 and 89.70 for INLINEFORM2 and INLINEFORM3, and t-SNE BIBREF35 on 2000 KP20k validation decoder hidden states shows INLINEFORM6 clusters more easily than INLINEFORM7.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s14::p000",
+   "summary": "A KP20k validation example with 29 ground truth phrases shows INLINEFORM0 predictions all start with “test”, while INLINEFORM1 predictions are diverse.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s15::p000",
+   "summary": "The paper proposes a recurrent generative model with two diversity-enhancing modules, new metrics, competitive performance on keyphrase generation datasets, and future work on target phrase order and order invariant set generation.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s16::p000",
+   "summary": "Generating absent keyphrases on scientific publication datasets is challenging, and existing studies often measure recall on tens or hundreds of keyphrases from exhaustive decoding with a large beam size while ignoring precision.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s16::p001",
+   "summary": "Table TABREF48 reports models' R@10/50 scores on the absent portion of five scientific paper datasets to align with previous studies.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s16::p002",
+   "summary": "CopyRNN with beam size of 200 suits absent keyphrase prediction, while INLINEFORM0 performs comparably with exhaustive decoding and diverse mechanisms and generally works better for top predictions.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s17::p000",
+   "summary": "Implementation uses 100-dimensional random word embeddings, 150 hidden units in encoder and decoder GRU, 150 hidden units in target encoder GRU, and vocabulary size 50,000.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s17::p001",
+   "summary": "Negative sampling randomly samples 16 samples from the same batch, making target encoding loss in Equation EQREF23 a 17-way classification loss; INLINEFORM0 sets INLINEFORM1 and INLINEFORM2 in Equation EQREF27 to 0.3, with dropout rate 0.1.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s17::p002",
+   "summary": "Optimization uses Adam BIBREF36 with learning rate INLINEFORM0, and the model is implemented using PyTorch BIBREF38 and OpenNMT BIBREF37.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s17::p003",
+   "summary": "Exhaustive decoding uses a beam size of 50 and a maximum sequence length of 40.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s17::p004",
+   "summary": "Following BIBREF0, lowercase and stemming are performed on both ground truth and generated keyphrases during evaluation.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s17::p005",
+   "summary": "The authors leave out 2,000 data examples as validation set for both KP20k and StackEx and report scores from checkpoints with best F INLINEFORM0 @ INLINEFORM1 validation performance.",
+   "group_id": "1810.05241::g01"
+  },
+  {
+   "passage_id": "1810.05241::s18::p000",
+   "summary": "See Table TABREF49.",
+   "group_id": "1810.05241::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1810.05241::g00",
+   "summaries": [
+    {
+     "passage_id": "1810.05241::s00::p000",
+     "summary": "Keyphrase generation predicts keyphrases from source text, requiring models to distill high-level information and locate specific important snippets.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s00::p001",
+     "summary": "Keyphrases may be present or absent, and keyphrase generation is set generation with variable set size and phrase token size.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s00::p002",
+     "summary": "Prior studies formulate keyphrase generation as Seq2Seq, using beam search over-generation and evaluating a fixed number of top predicted phrases, typically 5 or 10.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s00::p003",
+     "summary": "Beam search lacks dynamic keyphrase-number determination and phrase inter-relation modeling, reducing output diversity despite training-time diversity efforts.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s00::p004",
+     "summary": "Fixed-number evaluation mismatches variable ground truth keyphrases; dataset averages range from 5.3 to 15.7, variances reach 64.6, and KP20k oracle F1 score is 0.858 for INLINEFORM1 and 0.626 for INLINEFORM2.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s00::p005",
+     "summary": "The authors propose novel decoding strategies and evaluation metrics for keyphrase generation and list the work's main contributions.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s01::p000",
+     "summary": "Traditional keyphrase extraction uses candidate identification and ranking, with methods including bagged decision trees, Multi-Layer Perceptron, Support Vector Machine, PageRank, sequence labeling, and Pointer Networks.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s01::p001",
+     "summary": "Extractive models fail on absent keyphrases; CopyRNN, CorrRNN, semi-supervised methods, and structure information improve generation, but none generate variable numbers of phrases.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s02::p000",
+     "summary": "Seq2Seq learning with soft attention is widely used in natural language generation, including summarization, question generation, sentence simplification, and paraphrase generation.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s02::p001",
+     "summary": "The encoder converts source text embeddings INLINEFORM2 into INLINEFORM3 real-valued vectors INLINEFORM4 using a bidirectional GRU BIBREF27.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s02::p002",
+     "summary": "Dropout BIBREF28 is applied to both INLINEFORM0 and INLINEFORM1 for regularization.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s02::p003",
+     "summary": "The decoder is a uni-directional GRU generating a new state INLINEFORM0 at each time-step INLINEFORM1 from word embedding INLINEFORM2 and recurrent state INLINEFORM3.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s02::p004",
+     "summary": "The initial state INLINEFORM0 derives from final encoder state INLINEFORM1 via a single-layer feed-forward neural net, with dropout on embeddings INLINEFORM3 and GRU states INLINEFORM4.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s02::p005",
+     "summary": "An attention mechanism BIBREF18 infers importance INLINEFORM1 of each source word INLINEFORM2 using a 2-layer FNN energy function.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s02::p006",
+     "summary": "Outputs over all decoding steps INLINEFORM0 define a distribution over the source sequence.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s02::p007",
+     "summary": "Attention scores weight source encodings, which are concatenated with decoder state INLINEFORM0 to derive generative distribution INLINEFORM1.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s02::p008",
+     "summary": "The output size of INLINEFORM0 equals the target vocabulary size, and subscript INLINEFORM1 marks the abstractive nature of INLINEFORM2.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s02::p009",
+     "summary": "Pointer softmax BIBREF19 uses scalar switch INLINEFORM1 to interpolate abstractive distribution INLINEFORM2 and extractive distribution INLINEFORM3.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s02::p010",
+     "summary": "INLINEFORM0 is conditioned on attention-weighted source representation INLINEFORM1 and decoder state INLINEFORM2.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s03::p000",
+     "summary": "The objective is to generate a variable number of multi-word phrases using Seq2Seq with attention and pointer softmax mechanisms in the decoder.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s03::p001",
+     "summary": "One2Many examples can be divided into One2One examples, producing models like CopyRNN that generate one phrase and rely on beam search for more unique phrases.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s03::p002",
+     "summary": "One2Seq concatenates multiple phrases into a single sequence with delimiter INLINEFORM0 SEP INLINEFORM1 as the training target for sequence generation.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s04::p000",
+     "summary": "Notations define input text tokens, token embeddings, hidden states, output text tokens, time-steps, encoder or decoder subscripts, transformations, and concatenation.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s05::p000",
+     "summary": "Multiple keyphrases represent different text aspects, so diversity is desired, but over-generation with beam search is prone to similar phrases.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s05::p001",
+     "summary": "Delimiter-separated sequences cause identical tokens after delimiters due to homogeneous decoder states INLINEFORM2, motivating two plug-in components.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s05::p002",
+     "summary": "Semantic coverage introduces a uni-directional target encoder INLINEFORM0 encoding decoder-generated tokens INLINEFORM1 into hidden states INLINEFORM3 as extra decoder GRU input.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s05::p003",
+     "summary": "The target encoder is trained self-supervised by maximizing mutual information between phrase representations and source encoder final state INLINEFORM2 using classification loss.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s05::p004",
+     "summary": "INLINEFORM0 is bi-linear transformation.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s05::p005",
+     "summary": "Semantic coverage constrains generated keyphrase representations to be semantically close to source meaning and may guide generation.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s05::p006",
+     "summary": "Orthogonal regularization encourages delimiter-generating decoder states to differ by stacking them into matrix INLINEFORM0 and applying an orthogonal regularization loss.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s05::p007",
+     "summary": "The loss prefers orthogonality among hidden states INLINEFORM8 and improves diversity in tokens following delimiters.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s05::p008",
+     "summary": "The model adopts negative log-likelihood loss INLINEFORM0 and combines it into an overall loss.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s05::p009",
+     "summary": "INLINEFORM0 and INLINEFORM1 are hyper-parameters.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s06::p000",
+     "summary": "Exhaustive Decoding and Self-terminating Decoding differ in whether a model controls the number of phrases to output.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s06::p001",
+     "summary": "Fixed top-ranked evaluation requires beam search over-generation, with beam sizes 150 and 200 in BIBREF3 and BIBREF0, and One2Seq needs additional processes.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s06::p002",
+     "summary": "Beam search time complexity is INLINEFORM0, making exhaustive decoding expensive for One2Seq, where less than 5% of generated phrases are unique.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s06::p003",
+     "summary": "Self-terminating decoding generates a variable number of delimiter-joined phrases in one sequence and outputs INLINEFORM0 EOS INLINEFORM1 when adequate phrases are generated.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s06::p004",
+     "summary": "Self-terminating decoding conditions generation on previous phrases, models output dependency explicitly, and can decode more efficiently using greedy search or beam search on the top-scored sequence.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s07::p000",
+     "summary": "Precision, recall, and F INLINEFORM5 score are defined for top INLINEFORM3 predictions INLINEFORM4 against oracle set INLINEFORM2.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s07::p001",
+     "summary": "The number of generated keyphrases used for evaluation critically affects metrics, and three choices of INLINEFORM0 are compared.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s07::p002",
+     "summary": "A simple remedy sets INLINEFORM0 as a variable number specific to each data example and defines two new metrics.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s07::p003",
+     "summary": "F INLINEFORM1 @ INLINEFORM2 and F INLINEFORM3 @ INLINEFORM4 reflect variable phrase numbers, allow maximum INLINEFORM5 score of INLINEFORM6 only for exact phrase matches, and F INLINEFORM7 @ INLINEFORM8 is independent from model outputs.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s08::p000",
+     "summary": "Experiments report results on multiple datasets, with INLINEFORM0 denoting the delimiter-concatenated sequence-to-sequences model and INLINEFORM1 the model augmented with orthogonal regularization and semantic coverage.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s08::p001",
+     "summary": "Target sequences sort ground truth keyphrases by first occurrence in source text and append absent keyphrases to the end.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s08::p002",
+     "summary": "Baselines include four non-neural extractive models, CopyRNN, CopyRNN*, KEA, and Maui, with KEA and Maui trained on 50,000 documents from KP20k or StackEx.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s08::p003",
+     "summary": "Self-terminating decoding results are reported only for proposed models because no existing model supports such decoding strategy.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s09::p000",
+     "summary": "Scientific publication datasets include KP20k, Inspec, Krapivin, NUS, and SemEval; KP20k comprises more than half a million publications and uses abstracts, titles, and author keywords.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s09::p001",
+     "summary": "KP20k present-keyphrase results report INLINEFORM0 and INLINEFORM1 scores, and F INLINEFORM2 @ INLINEFORM3 shows consistent ranking with INLINEFORM4 for most cases.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s09::p002",
+     "summary": "Neural-based models outperform non-neural models by large margins, and implemented CopyRNN achieves better or comparable performance, especially on NUS and SemEval.",
+     "group_id": "1810.05241::g00"
+    },
+    {
+     "passage_id": "1810.05241::s09::p003",
+     "summary": "INLINEFORM0 and INLINEFORM1 yield comparable results to CopyRNN, INLINEFORM2 outperforms INLINEFORM3 on all metrics, and INLINEFORM5 outperforms One2One baselines on F INLINEFORM4 @10 for KP20k and Krapivin.",
+     "group_id": "1810.05241::g00"
+    }
+   ],
+   "n_raw": 50,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5970,
+    "completion_tokens": 2513,
+    "total_tokens": 8483,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1810.05241::g01",
+   "summaries": [
+    {
+     "passage_id": "1810.05241::s10::p000",
+     "summary": "Inspired by the StackLite tag recommendation task on Kaggle, the authors build a StackExchange benchmark using question titles as source and user-assigned tags as target keyphrases.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s10::p001",
+     "summary": "StackEx has fewer keyphrases per data point and more general terminology such as Linux and Java, challenging models to distill major topics rather than select specific snippets.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s10::p002",
+     "summary": "Table TABREF37 reports StackEx performance, where INLINEFORM0 performs best and outperforms INLINEFORM1 by a large margin on absent-keyphrase generation tasks.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s11::p000",
+     "summary": "Experiments on KP20k and StackEx present keyphrase generation tasks in Table TABREF39 study predicting keyphrase number using self-terminating decoding and F INLINEFORM0 @ INLINEFORM1 and F INLINEFORM2 @ INLINEFORM3.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s11::p001",
+     "summary": "These experiments use beam search with only the top ranked prediction sequence as output, compare greedy search, and report only INLINEFORM0 and INLINEFORM1 for variable number generation.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s11::p002",
+     "summary": "Table TABREF39 shows greedy search consistently outperforms beam search, possibly because beam search generates short similar sequences, while lower F INLINEFORM0 @ INLINEFORM1 scores suggest over-generation may benefit recall.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s12::p000",
+     "summary": "Table TABREF44 shows semantic coverage significantly boosts INLINEFORM1 on all datasets, orthogonal regularization alone hurts INLINEFORM2, and INLINEFORM3 outperforms INLINEFORM4 on all datasets.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s13::p000",
+     "summary": "The authors use one quantitative and one qualitative metric to verify that target encoding and orthogonal regularization boost diversity of generated sequences.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s13::p001",
+     "summary": "Average unique predictions are 20.38 and 89.70 for INLINEFORM2 and INLINEFORM3, and t-SNE BIBREF35 on 2000 KP20k validation decoder hidden states shows INLINEFORM6 clusters more easily than INLINEFORM7.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s14::p000",
+     "summary": "A KP20k validation example with 29 ground truth phrases shows INLINEFORM0 predictions all start with “test”, while INLINEFORM1 predictions are diverse.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s15::p000",
+     "summary": "The paper proposes a recurrent generative model with two diversity-enhancing modules, new metrics, competitive performance on keyphrase generation datasets, and future work on target phrase order and order invariant set generation.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s16::p000",
+     "summary": "Generating absent keyphrases on scientific publication datasets is challenging, and existing studies often measure recall on tens or hundreds of keyphrases from exhaustive decoding with a large beam size while ignoring precision.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s16::p001",
+     "summary": "Table TABREF48 reports models' R@10/50 scores on the absent portion of five scientific paper datasets to align with previous studies.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s16::p002",
+     "summary": "CopyRNN with beam size of 200 suits absent keyphrase prediction, while INLINEFORM0 performs comparably with exhaustive decoding and diverse mechanisms and generally works better for top predictions.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s17::p000",
+     "summary": "Implementation uses 100-dimensional random word embeddings, 150 hidden units in encoder and decoder GRU, 150 hidden units in target encoder GRU, and vocabulary size 50,000.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s17::p001",
+     "summary": "Negative sampling randomly samples 16 samples from the same batch, making target encoding loss in Equation EQREF23 a 17-way classification loss; INLINEFORM0 sets INLINEFORM1 and INLINEFORM2 in Equation EQREF27 to 0.3, with dropout rate 0.1.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s17::p002",
+     "summary": "Optimization uses Adam BIBREF36 with learning rate INLINEFORM0, and the model is implemented using PyTorch BIBREF38 and OpenNMT BIBREF37.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s17::p003",
+     "summary": "Exhaustive decoding uses a beam size of 50 and a maximum sequence length of 40.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s17::p004",
+     "summary": "Following BIBREF0, lowercase and stemming are performed on both ground truth and generated keyphrases during evaluation.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s17::p005",
+     "summary": "The authors leave out 2,000 data examples as validation set for both KP20k and StackEx and report scores from checkpoints with best F INLINEFORM0 @ INLINEFORM1 validation performance.",
+     "group_id": "1810.05241::g01"
+    },
+    {
+     "passage_id": "1810.05241::s18::p000",
+     "summary": "See Table TABREF49.",
+     "group_id": "1810.05241::g01"
+    }
+   ],
+   "n_raw": 21,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 2191,
+    "completion_tokens": 1165,
+    "total_tokens": 3356,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

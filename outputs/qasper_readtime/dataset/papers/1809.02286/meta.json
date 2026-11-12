@@ -1,0 +1,65 @@
+{
+ "paper_id": "1809.02286",
+ "title": "Dynamic Compositionality in Recursive Neural Networks with Structure-aware Tag Representations",
+ "abstract": "Most existing recursive neural network (RvNN) architectures utilize only the structure of parse trees, ignoring syntactic tags which are provided as by-products of parsing. We present a novel RvNN architecture that can provide dynamic compositionality by considering comprehensive syntactic information derived from both the structure and linguistic tags. Specifically, we introduce a structure-aware tag representation constructed by a separate tag-level tree-LSTM. With this, we can control the composition function of the existing word-level tree-LSTM by augmenting the representation as a supplementary input to the gate functions of the tree-LSTM. In extensive experiments, we show that models built upon the proposed architecture obtain superior or competitive performance on several sentence-level tasks such as sentiment analysis and natural language inference when compared against previous tree-structured models and other sophisticated neural models.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Model",
+  "Tree-LSTM",
+  "Structure-aware Tag Representation",
+  "Leaf-LSTM",
+  "SATA Tree-LSTM",
+  "Quantitative Analysis",
+  "Ablation Study",
+  "Qualitative Analysis",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 83,
+ "n_tokens": 7976,
+ "figures_and_tables": [
+  {
+   "caption_id": "1809.02286::fig000",
+   "paper_id": "1809.02286",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: A constituency tree example from Stanford Sentiment Treebank.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1809.02286::fig001",
+   "paper_id": "1809.02286",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2: A diagram of SATA Tree-LSTM. The model has two separate tree-LSTM modules, the right of which (tag tree-LSTM) extracts a structure-aware tag representation to control the composition function of the remaining tree-LSTM (word tree-LSTM). Fully-connected: onelayered non-linear transformation.",
+   "n_tokens": 66
+  },
+  {
+   "caption_id": "1809.02286::fig002",
+   "paper_id": "1809.02286",
+   "file": "6-Table1-1.png",
+   "caption": "Table 1: The comparison of various models on different sentence classification tasks. We report the test accuracy of each model in percentage. Our SATA Tree-LSTM shows superior or competitive performance on all tasks, compared to previous treestructured models as well as other sophisticated models. ?: Latent tree-structured models. †: Models which are pre-trained with large external corpora.",
+   "n_tokens": 76
+  },
+  {
+   "caption_id": "1809.02286::fig003",
+   "paper_id": "1809.02286",
+   "file": "6-Table2-1.png",
+   "caption": "Table 2: The accuracy of diverse models on Stanford Natural Language Inference. For fair comparison, we only consider sentence-encoding based models. Our model achieves a comparable result with a moderate number of parameters. ?: Latent tree models.",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "1809.02286::fig004",
+   "paper_id": "1809.02286",
+   "file": "7-Figure4-1.png",
+   "caption": "Figure 4: A scatter plot whose points represent the intermediate representations for each node of the tree in Figure 1. From this figure, we can see the tendency of constructing the representations recursively from the low to the high level.",
+   "n_tokens": 46
+  },
+  {
+   "caption_id": "1809.02286::fig005",
+   "paper_id": "1809.02286",
+   "file": "7-Figure3-1.png",
+   "caption": "Figure 3: An ablation study on the core modules of our model. The test accuracy of each model on SST-2 is reported. The results demonstrate that the modules play an important role for achieving the superior performance of our model. FC: A fully connected-layer with a tanh function. w/o tags: Tag embeddings are not used. w/ tags: The naive tag embeddings are directly inserted into each node of a tree.",
+   "n_tokens": 88
+  }
+ ]
+}

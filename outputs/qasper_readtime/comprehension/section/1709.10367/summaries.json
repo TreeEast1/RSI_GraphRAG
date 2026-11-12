@@ -1,0 +1,482 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1709.10367::s00::p000",
+   "summary": "Word embeddings are unsupervised methods for latent semantic structure, distributed representations, co-occurrence statistics, and extensions beyond text; efe provides a probabilistic perspective.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s00::p001",
+   "summary": "sefe extends efe to study embedding variation across groups, discovering per-group representations while sharing information to avoid lack of data.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s00::p002",
+   "summary": "Figure FIGREF1 shows sefe on ArXiv abstracts grouped by cs, q-fin, and nlin, illustrating field-specific similar words to 1.10intelligence.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s00::p003",
+   "summary": "Embedding methods use embedding and context vectors; sefe uses group-specific embedding vectors and shared context vectors to keep embeddings in the same space.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s00::p004",
+   "summary": "Two methods share statistical strength among embedding vectors: hierarchical modeling with a global embedding and amortization with deterministic functions, fit using stochastic optimization.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s00::p005",
+   "summary": "The work relates to language evolution over time and multilingual embeddings, differing by focusing on words appearing in all groups and their variations.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s00::p006",
+   "summary": "Contributions include sefe, hierarchical modeling and amortization, experiments on ArXiv papers, U.S. Congressional speeches, and grocery data, with sefe outperforming efe in held-out log-likelihood.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s01::p000",
+   "summary": "sefe builds on efe to capture semantic variations across groups by learning separate embedding vectors for each object and group.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s01::p001",
+   "summary": "sefe extends efe with group-specific embedding vectors and shared context vectors, with Section SECREF4 reviewing efe and Section SECREF8 presenting hierarchical structures.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s02::p000",
+   "summary": "Exponential family embeddings learn vector representations of objects based on their co-occurrence patterns.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s02::p001",
+   "summary": "A dataset is a typically sparse matrix INLINEFORM0 with columns as datapoints, rows as objects, and binary entries INLINEFORM1 for word INLINEFORM2 at location INLINEFORM3.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s02::p002",
+   "summary": "efe represents each object INLINEFORM0 with embedding vectors INLINEFORM1 and context vectors INLINEFORM2, requiring a context, conditional exponential family, and parameter sharing structure.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s02::p003",
+   "summary": "Exponential family embeddings learn representations from conditional probabilities conditioned on context observations, with context INLINEFORM0 varying by application and text using a fixed-size window.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s02::p004",
+   "summary": "Given context INLINEFORM0 and observations INLINEFORM1 indexed by INLINEFORM2, the distribution for INLINEFORM3 is in the exponential family, DISPLAYFORM0.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s02::p005",
+   "summary": "With sufficient statistics INLINEFORM0 and natural parameter INLINEFORM1, embedding vectors INLINEFORM3 and context vectors INLINEFORM4 combine to form the natural parameter, DISPLAYFORM0.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s02::p006",
+   "summary": "INLINEFORM0 is the link function; exponential family embeddings resemble a bank of glm, with context vectors as covariates, embedding vectors as regression coefficients, and the identity link used.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s02::p007",
+   "summary": "The parameter sharing structure indicates how embedding vectors are shared across observations; standard efe uses INLINEFORM0 and INLINEFORM1 for all columns of INLINEFORM2.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s02::p008",
+   "summary": "The efe objective sums log-conditional likelihoods from Eq. EQREF5 and adds an INLINEFORM0-regularization term over embedding and context vectors, yielding DISPLAYFORM0.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s02::p009",
+   "summary": "Maximizing regularized conditional likelihood is not maximum a posteriori but resembles pseudo-likelihood maximization in conditionally specified models BIBREF26, BIBREF10.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p000",
+   "summary": "sefe models grouped data partitioned into INLINEFORM0 groups, associating each instance INLINEFORM1 with group INLINEFORM2 and learning separate embedding vectors for each group.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p001",
+   "summary": "sefe shares context vectors across groups, INLINEFORM0, while embedding vectors are shared at the group level, INLINEFORM3, with Figure FIGREF1 showing a graphical representation.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p002",
+   "summary": "Sharing context vectors INLINEFORM0 reduces parameters, captures group differences, unites embeddings in one space, and avoids ad-hoc alignment needed by separate models.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p003",
+   "summary": "With INLINEFORM0 groups, sefe has INLINEFORM1 times as many embedding vectors, motivating hierarchical embedding structure and amortization using global embedding vectors INLINEFORM4.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p004",
+   "summary": "Hierarchical embedding structure assumes each INLINEFORM0, with INLINEFORM1 a fixed hyperparameter, and replaces the efe objective in Eq. EQREF7 with DISPLAYFORM0.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p005",
+   "summary": "The INLINEFORM0-regularization term now applies only on INLINEFORM1 and the global vectors INLINEFORM2.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p006",
+   "summary": "Fitting the hierarchical model maximizes Eq. EQREF11 with respect to INLINEFORM0, INLINEFORM1, and INLINEFORM2 using stochastic gradient ascent, tying parameters through a common prior.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p007",
+   "summary": "Amortization sets per-group embeddings INLINEFORM0 as deterministic functions INLINEFORM1 of global embeddings, using group-specific neural networks INLINEFORM2 with unobserved inputs estimated jointly.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p008",
+   "summary": "Amortization can significantly reduce parameters from INLINEFORM0 to INLINEFORM4, where INLINEFORM5 is neural network parameters, while retaining group-specific flexibility.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p009",
+   "summary": "The amortized sefe model introduces parameters INLINEFORM0 for each group INLINEFORM1, obtaining group-specific embedding vectors INLINEFORM2 as DISPLAYFORM0.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p010",
+   "summary": "Two architectures for INLINEFORM0 are compared: fully connected feed-forward neural networks and residual networks BIBREF32, both with one hidden layer of INLINEFORM1 units.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p011",
+   "summary": "The network parameters INLINEFORM2 are two weight matrices, DISPLAYFORM0, and the network maps global embedding vector INLINEFORM1 to group-specific embedding vectors INLINEFORM2.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p012",
+   "summary": "Using hyperbolic tangent nonlinearity, residual networks model differences from global vectors INLINEFORM1, while zero weights yield 0 for feed-forward networks and INLINEFORM2 for residual networks.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p013",
+   "summary": "The objective function under amortization is given by DISPLAYFORM0.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p014",
+   "summary": "The objective is maximized with respect to INLINEFORM0, INLINEFORM1, and INLINEFORM2 using stochastic gradient ascent, with hierarchical and amortized sefe implemented in TensorFlow BIBREF33.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p015",
+   "summary": "Structured Bernoulli embeddings for grouped text use binary matrix INLINEFORM0 and group indicators INLINEFORM1, conditional Bernoulli distributions, and negative sampling for zeros.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p016",
+   "summary": "The context INLINEFORM0 at each position INLINEFORM1 is the set of surrounding words in the document according to a fixed-size window.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p017",
+   "summary": "Structured Poisson embeddings model supermarket purchases by month, with rows indexing items, columns indexing shopping trips, and context INLINEFORM7 as purchased items excluding INLINEFORM9.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s03::p018",
+   "summary": "Poisson conditional distribution is used for count data, and Poisson sefe downweighs zeros to focus inference on positive purchase signal BIBREF10, BIBREF2.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s04::p000",
+   "summary": "The experimental study fits sefe on three datasets against efe BIBREF10, showing benefits from shared context vectors, amortization, and hierarchical structure.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s04::p001",
+   "summary": "sefe is applied to ArXiv papers, U.S. Senate speeches, and supermarket grocery shopping data, summarized in Table TABREF17.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s04::p002",
+   "summary": "ArXiv papers contains abstracts under 19 different tags between April 2007 and June 2015, treating each tag as a group and splitting into training, validation, and test sets.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s04::p003",
+   "summary": "Senate speeches contains U.S. Senate speeches from 1994 to mid 2009, grouped by state and Republican or Democratic affiliation into 83 groups.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s04::p004",
+   "summary": "Grocery shopping data contains purchases of INLINEFORM0 customers over 97 weeks, with INLINEFORM1 unique items at the 1.10upc level after removing low-frequency items.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s04::p005",
+   "summary": "For text corpora, vocabulary is fixed to the 15k most frequent terms, non-vocabulary words removed, and words downsampled with probability INLINEFORM0 based on frequency INLINEFORM1.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s04::p006",
+   "summary": "For text data, Bernoulli distribution is the conditional exponential family; for shopping data, Poisson distribution is used for count data.",
+   "group_id": "1709.10367::g00"
+  },
+  {
+   "passage_id": "1709.10367::s04::p007",
+   "summary": "On each dataset, four sefe-based approaches are compared with two efe BIBREF10 baselines, all fit using sgd BIBREF34.",
+   "group_id": "1709.10367::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1709.10367::g00",
+   "summaries": [
+    {
+     "passage_id": "1709.10367::s00::p000",
+     "summary": "Word embeddings are unsupervised methods for latent semantic structure, distributed representations, co-occurrence statistics, and extensions beyond text; efe provides a probabilistic perspective.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s00::p001",
+     "summary": "sefe extends efe to study embedding variation across groups, discovering per-group representations while sharing information to avoid lack of data.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s00::p002",
+     "summary": "Figure FIGREF1 shows sefe on ArXiv abstracts grouped by cs, q-fin, and nlin, illustrating field-specific similar words to 1.10intelligence.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s00::p003",
+     "summary": "Embedding methods use embedding and context vectors; sefe uses group-specific embedding vectors and shared context vectors to keep embeddings in the same space.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s00::p004",
+     "summary": "Two methods share statistical strength among embedding vectors: hierarchical modeling with a global embedding and amortization with deterministic functions, fit using stochastic optimization.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s00::p005",
+     "summary": "The work relates to language evolution over time and multilingual embeddings, differing by focusing on words appearing in all groups and their variations.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s00::p006",
+     "summary": "Contributions include sefe, hierarchical modeling and amortization, experiments on ArXiv papers, U.S. Congressional speeches, and grocery data, with sefe outperforming efe in held-out log-likelihood.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s01::p000",
+     "summary": "sefe builds on efe to capture semantic variations across groups by learning separate embedding vectors for each object and group.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s01::p001",
+     "summary": "sefe extends efe with group-specific embedding vectors and shared context vectors, with Section SECREF4 reviewing efe and Section SECREF8 presenting hierarchical structures.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s02::p000",
+     "summary": "Exponential family embeddings learn vector representations of objects based on their co-occurrence patterns.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s02::p001",
+     "summary": "A dataset is a typically sparse matrix INLINEFORM0 with columns as datapoints, rows as objects, and binary entries INLINEFORM1 for word INLINEFORM2 at location INLINEFORM3.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s02::p002",
+     "summary": "efe represents each object INLINEFORM0 with embedding vectors INLINEFORM1 and context vectors INLINEFORM2, requiring a context, conditional exponential family, and parameter sharing structure.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s02::p003",
+     "summary": "Exponential family embeddings learn representations from conditional probabilities conditioned on context observations, with context INLINEFORM0 varying by application and text using a fixed-size window.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s02::p004",
+     "summary": "Given context INLINEFORM0 and observations INLINEFORM1 indexed by INLINEFORM2, the distribution for INLINEFORM3 is in the exponential family, DISPLAYFORM0.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s02::p005",
+     "summary": "With sufficient statistics INLINEFORM0 and natural parameter INLINEFORM1, embedding vectors INLINEFORM3 and context vectors INLINEFORM4 combine to form the natural parameter, DISPLAYFORM0.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s02::p006",
+     "summary": "INLINEFORM0 is the link function; exponential family embeddings resemble a bank of glm, with context vectors as covariates, embedding vectors as regression coefficients, and the identity link used.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s02::p007",
+     "summary": "The parameter sharing structure indicates how embedding vectors are shared across observations; standard efe uses INLINEFORM0 and INLINEFORM1 for all columns of INLINEFORM2.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s02::p008",
+     "summary": "The efe objective sums log-conditional likelihoods from Eq. EQREF5 and adds an INLINEFORM0-regularization term over embedding and context vectors, yielding DISPLAYFORM0.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s02::p009",
+     "summary": "Maximizing regularized conditional likelihood is not maximum a posteriori but resembles pseudo-likelihood maximization in conditionally specified models BIBREF26, BIBREF10.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p000",
+     "summary": "sefe models grouped data partitioned into INLINEFORM0 groups, associating each instance INLINEFORM1 with group INLINEFORM2 and learning separate embedding vectors for each group.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p001",
+     "summary": "sefe shares context vectors across groups, INLINEFORM0, while embedding vectors are shared at the group level, INLINEFORM3, with Figure FIGREF1 showing a graphical representation.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p002",
+     "summary": "Sharing context vectors INLINEFORM0 reduces parameters, captures group differences, unites embeddings in one space, and avoids ad-hoc alignment needed by separate models.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p003",
+     "summary": "With INLINEFORM0 groups, sefe has INLINEFORM1 times as many embedding vectors, motivating hierarchical embedding structure and amortization using global embedding vectors INLINEFORM4.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p004",
+     "summary": "Hierarchical embedding structure assumes each INLINEFORM0, with INLINEFORM1 a fixed hyperparameter, and replaces the efe objective in Eq. EQREF7 with DISPLAYFORM0.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p005",
+     "summary": "The INLINEFORM0-regularization term now applies only on INLINEFORM1 and the global vectors INLINEFORM2.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p006",
+     "summary": "Fitting the hierarchical model maximizes Eq. EQREF11 with respect to INLINEFORM0, INLINEFORM1, and INLINEFORM2 using stochastic gradient ascent, tying parameters through a common prior.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p007",
+     "summary": "Amortization sets per-group embeddings INLINEFORM0 as deterministic functions INLINEFORM1 of global embeddings, using group-specific neural networks INLINEFORM2 with unobserved inputs estimated jointly.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p008",
+     "summary": "Amortization can significantly reduce parameters from INLINEFORM0 to INLINEFORM4, where INLINEFORM5 is neural network parameters, while retaining group-specific flexibility.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p009",
+     "summary": "The amortized sefe model introduces parameters INLINEFORM0 for each group INLINEFORM1, obtaining group-specific embedding vectors INLINEFORM2 as DISPLAYFORM0.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p010",
+     "summary": "Two architectures for INLINEFORM0 are compared: fully connected feed-forward neural networks and residual networks BIBREF32, both with one hidden layer of INLINEFORM1 units.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p011",
+     "summary": "The network parameters INLINEFORM2 are two weight matrices, DISPLAYFORM0, and the network maps global embedding vector INLINEFORM1 to group-specific embedding vectors INLINEFORM2.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p012",
+     "summary": "Using hyperbolic tangent nonlinearity, residual networks model differences from global vectors INLINEFORM1, while zero weights yield 0 for feed-forward networks and INLINEFORM2 for residual networks.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p013",
+     "summary": "The objective function under amortization is given by DISPLAYFORM0.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p014",
+     "summary": "The objective is maximized with respect to INLINEFORM0, INLINEFORM1, and INLINEFORM2 using stochastic gradient ascent, with hierarchical and amortized sefe implemented in TensorFlow BIBREF33.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p015",
+     "summary": "Structured Bernoulli embeddings for grouped text use binary matrix INLINEFORM0 and group indicators INLINEFORM1, conditional Bernoulli distributions, and negative sampling for zeros.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p016",
+     "summary": "The context INLINEFORM0 at each position INLINEFORM1 is the set of surrounding words in the document according to a fixed-size window.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p017",
+     "summary": "Structured Poisson embeddings model supermarket purchases by month, with rows indexing items, columns indexing shopping trips, and context INLINEFORM7 as purchased items excluding INLINEFORM9.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s03::p018",
+     "summary": "Poisson conditional distribution is used for count data, and Poisson sefe downweighs zeros to focus inference on positive purchase signal BIBREF10, BIBREF2.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s04::p000",
+     "summary": "The experimental study fits sefe on three datasets against efe BIBREF10, showing benefits from shared context vectors, amortization, and hierarchical structure.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s04::p001",
+     "summary": "sefe is applied to ArXiv papers, U.S. Senate speeches, and supermarket grocery shopping data, summarized in Table TABREF17.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s04::p002",
+     "summary": "ArXiv papers contains abstracts under 19 different tags between April 2007 and June 2015, treating each tag as a group and splitting into training, validation, and test sets.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s04::p003",
+     "summary": "Senate speeches contains U.S. Senate speeches from 1994 to mid 2009, grouped by state and Republican or Democratic affiliation into 83 groups.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s04::p004",
+     "summary": "Grocery shopping data contains purchases of INLINEFORM0 customers over 97 weeks, with INLINEFORM1 unique items at the 1.10upc level after removing low-frequency items.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s04::p005",
+     "summary": "For text corpora, vocabulary is fixed to the 15k most frequent terms, non-vocabulary words removed, and words downsampled with probability INLINEFORM0 based on frequency INLINEFORM1.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s04::p006",
+     "summary": "For text data, Bernoulli distribution is the conditional exponential family; for shopping data, Poisson distribution is used for count data.",
+     "group_id": "1709.10367::g00"
+    },
+    {
+     "passage_id": "1709.10367::s04::p007",
+     "summary": "On each dataset, four sefe-based approaches are compared with two efe BIBREF10 baselines, all fit using sgd BIBREF34.",
+     "group_id": "1709.10367::g00"
+    }
+   ],
+   "n_raw": 46,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5509,
+    "completion_tokens": 2403,
+    "total_tokens": 7912,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

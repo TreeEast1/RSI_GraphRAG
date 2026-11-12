@@ -1,0 +1,459 @@
+{
+ "kept": [
+  {
+   "insight_id": "1707.05236::g00:i00",
+   "paper_id": "1707.05236",
+   "group_id": "1707.05236::g00",
+   "concise_text": "Because available annotated data is very limited and additional training data has the biggest impact on improving performance, the paper's artificial error generation methods address a key bottleneck for error detection.",
+   "triple": {
+    "subject": "artificial error generation methods",
+    "predicate": "addresses",
+    "object": "limited annotated data bottleneck"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1707.05236::s00::p000",
+    "1707.05236::s00::p001",
+    "1707.05236::s00::p003"
+   ],
+   "supporting_fact_ids": [
+    "1707.05236::g00:b0:f02",
+    "1707.05236::g00:b0:f03",
+    "1707.05236::g00:b0:f04",
+    "1707.05236::g00:b0:f12",
+    "1707.05236::g00:b0:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Cited passages jointly support that limited annotated data and the impact of additional training data motivate artificial error generation; inferred problem-solution relation is supported."
+   },
+   "unit_id": "1707.05236::u000"
+  },
+  {
+   "insight_id": "1707.05236::g00:i01",
+   "paper_id": "1707.05236",
+   "group_id": "1707.05236::g00",
+   "concise_text": "The SMT framework that trains a model to translate from correct into incorrect sentences is implemented by treating error-corrected sentences as source and original learner sentences as target.",
+   "triple": {
+    "subject": "SMT framework",
+    "predicate": "requires",
+    "object": "error-corrected sentences as source and original learner sentences as target"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1707.05236::s00::p003",
+    "1707.05236::s02::p001"
+   ],
+   "supporting_fact_ids": [
+    "1707.05236::g00:b0:f12",
+    "1707.05236::g00:b1:f03",
+    "1707.05236::g00:b1:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Passage s02:p001 explicitly states the SMT system treats error-corrected sentences as source and original learner sentences as target; composed with s00:p003 identifying the SMT framework."
+   },
+   "unit_id": "1707.05236::u001"
+  },
+  {
+   "insight_id": "1707.05236::g00:i02",
+   "paper_id": "1707.05236",
+   "group_id": "1707.05236::g00",
+   "concise_text": "The pattern-based method extends Felice2014a by relaxing the restriction to only five error types, and its all-error-type coverage is credited with consistently improving performance.",
+   "triple": {
+    "subject": "pattern-based method",
+    "predicate": "extends",
+    "object": "Felice2014a by generating all error types"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1707.05236::s00::p002",
+    "1707.05236::s03::p000",
+    "1707.05236::s05::p003"
+   ],
+   "supporting_fact_ids": [
+    "1707.05236::g00:b0:f10",
+    "1707.05236::g00:b1:f09",
+    "1707.05236::g00:b2:f14",
+    "1707.05236::g00:b2:f13"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Passages support that the pattern-based method relaxes Felice2014a's five-type restriction to all error types and that all-type methods consistently improve performance."
+   },
+   "unit_id": "1707.05236::u002"
+  },
+  {
+   "insight_id": "1707.05236::g00:i07",
+   "paper_id": "1707.05236",
+   "group_id": "1707.05236::g00",
+   "concise_text": "The artificial data evaluated on FCE test data and two alternative annotations of the CoNLL 2014 Shared Task dataset was generated from 450K corrected FCE tokens and 270K English Vocabulary Profile tokens.",
+   "triple": {
+    "subject": "artificial data evaluation",
+    "predicate": "evaluated_on",
+    "object": "FCE test data and two alternative annotations of the CoNLL 2014 Shared Task dataset"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1707.05236::s05::p000",
+    "1707.05236::s05::p001",
+    "1707.05236::s07::p001"
+   ],
+   "supporting_fact_ids": [
+    "1707.05236::g00:b2:f07",
+    "1707.05236::g00:b2:f08",
+    "1707.05236::g00:b2:f09",
+    "1707.05236::g00:b2:f10",
+    "1707.05236::g00:b3:f10"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Cited passages jointly support the evaluation benchmarks and the two sources of grammatically correct text with 450K and 270K tokens used to generate artificial data."
+   },
+   "unit_id": "1707.05236::u007"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1707.05236::g00:i03",
+   "paper_id": "1707.05236",
+   "group_id": "1707.05236::g00",
+   "concise_text": "Felice2014a's five error types cover only 35.74% of all errors in the CoNLL 2014 training dataset, motivating the paper's all-types AEG methods that consistently improve performance.",
+   "triple": {
+    "subject": "35.74% coverage of CoNLL 2014 training dataset errors",
+    "predicate": "causes",
+    "object": "need for all-types AEG methods"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1707.05236::s00::p002",
+    "1707.05236::s00::p003",
+    "1707.05236::s05::p003"
+   ],
+   "supporting_fact_ids": [
+    "1707.05236::g00:b0:f11",
+    "1707.05236::g00:b0:f14",
+    "1707.05236::g00:b2:f14"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "The sources state limited coverage and importance of all-types AEG, but do not explicitly support a causal 'causes need' relation; this is an inferred motivation/causal claim."
+   },
+   "unit_id": "1707.05236::u003"
+  },
+  {
+   "insight_id": "1707.05236::g00:i04",
+   "paper_id": "1707.05236",
+   "group_id": "1707.05236::g00",
+   "concise_text": "Automatically labeled data from Levenshtein-aligned alternative sentence versions is used to train error detection models, whose performance is substantially improved by artificially generated data.",
+   "triple": {
+    "subject": "Levenshtein-aligned automatically labeled data",
+    "predicate": "improves_on",
+    "object": "error detection models trained with only manual annotation"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1707.05236::s01::p000",
+    "1707.05236::s01::p001",
+    "1707.05236::s05::p003",
+    "1707.05236::s05::p004"
+   ],
+   "supporting_fact_ids": [
+    "1707.05236::g00:b0:f18",
+    "1707.05236::g00:b0:f21",
+    "1707.05236::g00:b2:f13",
+    "1707.05236::g00:b3:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.45,
+    "novelty": 0.5,
+    "causality_error": false,
+    "reason": "The cited passages say automatically labeled data is used to train models and artificial data improves over manual annotation, but the triple claims Levenshtein-aligned data improves on models trained only with manual annotation, which is not stated."
+   },
+   "unit_id": "1707.05236::u004"
+  },
+  {
+   "insight_id": "1707.05236::g00:i05",
+   "paper_id": "1707.05236",
+   "group_id": "1707.05236::g00",
+   "concise_text": "The combination of both AEG methods gives an absolute improvement of 4.3% in INLINEFORM0 and is identified as Ann+PAT+MT, the best overall system on all datasets.",
+   "triple": {
+    "subject": "Ann+PAT+MT",
+    "predicate": "outperforms",
+    "object": "all datasets with an absolute improvement of 4.3% in INLINEFORM0"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1707.05236::s00::p003",
+    "1707.05236::s05::p003"
+   ],
+   "supporting_fact_ids": [
+    "1707.05236::g00:b0:f15",
+    "1707.05236::g00:b2:f15"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.4,
+    "causality_error": false,
+    "reason": "The passages separately state a 4.3% improvement for a combination of both methods and that Ann+PAT+MT gave best overall performance, but do not explicitly identify the 4.3% improvement as Ann+PAT+MT or as outperforming all datasets."
+   },
+   "unit_id": "1707.05236::u005"
+  },
+  {
+   "insight_id": "1707.05236::g00:i06",
+   "paper_id": "1707.05236",
+   "group_id": "1707.05236::g00",
+   "concise_text": "Because the two frameworks learn to generate different types of errors, combining the pattern-based approach with the machine translation system gives the best overall performance on all datasets.",
+   "triple": {
+    "subject": "different error types learned by two frameworks",
+    "predicate": "causes",
+    "object": "best overall performance of Ann+PAT+MT on all datasets"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1707.05236::s05::p003",
+    "1707.05236::s07::p001"
+   ],
+   "supporting_fact_ids": [
+    "1707.05236::g00:b2:f15",
+    "1707.05236::g00:b2:f16",
+    "1707.05236::g00:b3:f12"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "The text says the frameworks learn different error types and that taking advantage of both leads to improvements, but the concise causal claim that this causes best overall performance on all datasets is stronger than the co-occurring statements."
+   },
+   "unit_id": "1707.05236::u006"
+  },
+  {
+   "insight_id": "1707.05236::g00:i08",
+   "paper_id": "1707.05236",
+   "group_id": "1707.05236::g00",
+   "concise_text": "The final combination system is significantly better than Felice2014a on all three datasets, supporting the claim that relaxing type restrictions and generating all types of errors consistently outperforms Felice2014a.",
+   "triple": {
+    "subject": "final combination system significance over Felice2014a",
+    "predicate": "provides evidence for",
+    "object": "all-types pattern-based method outperforming Felice2014a"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1707.05236::s05::p004",
+    "1707.05236::s07::p001"
+   ],
+   "supporting_fact_ids": [
+    "1707.05236::g00:b3:f01",
+    "1707.05236::g00:b3:f12"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.5,
+    "causality_error": false,
+    "reason": "The final combination system's significance over Felice2014a is not evidence specifically for the all-types pattern-based method outperforming Felice2014a; the cited passages state these as separate findings."
+   },
+   "unit_id": "1707.05236::u008"
+  },
+  {
+   "insight_id": "1707.05236::g00:i09",
+   "paper_id": "1707.05236",
+   "group_id": "1707.05236::g00",
+   "concise_text": "The SMT system's n-best list of alternative translations enables multiple error-generated versions of the same input text, and showing such versions gives a distinct improvement on the development set.",
+   "triple": {
+    "subject": "SMT n-best list",
+    "predicate": "causes",
+    "object": "distinct improvement from multiple error-generated versions on the development set"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1707.05236::s05::p005",
+    "1707.05236::s05::p003"
+   ],
+   "supporting_fact_ids": [
+    "1707.05236::g00:b3:f02",
+    "1707.05236::g00:b3:f04",
+    "1707.05236::g00:b2:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.6,
+    "novelty": 0.5,
+    "causality_error": true,
+    "reason": "The passage says the n-best list enables alternative translations and that multiple versions give a distinct improvement, but the causal triple overstates this by making the n-best list itself cause the improvement; the text only says likely assists."
+   },
+   "unit_id": "1707.05236::u009"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1707.05236::g00:i00",
+    "verdict": {
+     "insight_id": "1707.05236::g00:i00",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Cited passages jointly support that limited annotated data and the impact of additional training data motivate artificial error generation; inferred problem-solution relation is supported."
+    }
+   },
+   {
+    "insight_id": "1707.05236::g00:i01",
+    "verdict": {
+     "insight_id": "1707.05236::g00:i01",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Passage s02:p001 explicitly states the SMT system treats error-corrected sentences as source and original learner sentences as target; composed with s00:p003 identifying the SMT framework."
+    }
+   },
+   {
+    "insight_id": "1707.05236::g00:i02",
+    "verdict": {
+     "insight_id": "1707.05236::g00:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Passages support that the pattern-based method relaxes Felice2014a's five-type restriction to all error types and that all-type methods consistently improve performance."
+    }
+   },
+   {
+    "insight_id": "1707.05236::g00:i03",
+    "verdict": {
+     "insight_id": "1707.05236::g00:i03",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "The sources state limited coverage and importance of all-types AEG, but do not explicitly support a causal 'causes need' relation; this is an inferred motivation/causal claim."
+    },
+    "reason": "The sources state limited coverage and importance of all-types AEG, but do not explicitly support a causal 'causes need' relation; this is an inferred motivation/causal claim."
+   },
+   {
+    "insight_id": "1707.05236::g00:i04",
+    "verdict": {
+     "insight_id": "1707.05236::g00:i04",
+     "keep": false,
+     "support": 0.45,
+     "novelty": 0.5,
+     "causality_error": false,
+     "reason": "The cited passages say automatically labeled data is used to train models and artificial data improves over manual annotation, but the triple claims Levenshtein-aligned data improves on models trained only with manual annotation, which is not stated."
+    },
+    "reason": "The cited passages say automatically labeled data is used to train models and artificial data improves over manual annotation, but the triple claims Levenshtein-aligned data improves on models trained only with manual annotation, which is not stated."
+   },
+   {
+    "insight_id": "1707.05236::g00:i05",
+    "verdict": {
+     "insight_id": "1707.05236::g00:i05",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.4,
+     "causality_error": false,
+     "reason": "The passages separately state a 4.3% improvement for a combination of both methods and that Ann+PAT+MT gave best overall performance, but do not explicitly identify the 4.3% improvement as Ann+PAT+MT or as outperforming all datasets."
+    },
+    "reason": "The passages separately state a 4.3% improvement for a combination of both methods and that Ann+PAT+MT gave best overall performance, but do not explicitly identify the 4.3% improvement as Ann+PAT+MT or as outperforming all datasets."
+   },
+   {
+    "insight_id": "1707.05236::g00:i06",
+    "verdict": {
+     "insight_id": "1707.05236::g00:i06",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "The text says the frameworks learn different error types and that taking advantage of both leads to improvements, but the concise causal claim that this causes best overall performance on all datasets is stronger than the co-occurring statements."
+    },
+    "reason": "The text says the frameworks learn different error types and that taking advantage of both leads to improvements, but the concise causal claim that this causes best overall performance on all datasets is stronger than the co-occurring statements."
+   },
+   {
+    "insight_id": "1707.05236::g00:i07",
+    "verdict": {
+     "insight_id": "1707.05236::g00:i07",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Cited passages jointly support the evaluation benchmarks and the two sources of grammatically correct text with 450K and 270K tokens used to generate artificial data."
+    }
+   },
+   {
+    "insight_id": "1707.05236::g00:i08",
+    "verdict": {
+     "insight_id": "1707.05236::g00:i08",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.5,
+     "causality_error": false,
+     "reason": "The final combination system's significance over Felice2014a is not evidence specifically for the all-types pattern-based method outperforming Felice2014a; the cited passages state these as separate findings."
+    },
+    "reason": "The final combination system's significance over Felice2014a is not evidence specifically for the all-types pattern-based method outperforming Felice2014a; the cited passages state these as separate findings."
+   },
+   {
+    "insight_id": "1707.05236::g00:i09",
+    "verdict": {
+     "insight_id": "1707.05236::g00:i09",
+     "keep": false,
+     "support": 0.6,
+     "novelty": 0.5,
+     "causality_error": true,
+     "reason": "The passage says the n-best list enables alternative translations and that multiple versions give a distinct improvement, but the causal triple overstates this by making the n-best list itself cause the improvement; the text only says likely assists."
+    },
+    "reason": "The passage says the n-best list enables alternative translations and that multiple versions give a distinct improvement, but the causal triple overstates this by making the n-best list itself cause the improvement; the text only says likely assists."
+   }
+  ],
+  "calls": [
+   {
+    "n": 10,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 4981,
+     "completion_tokens": 822,
+     "total_tokens": 5803,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,598 @@
+{
+ "1603.09631::s00::p000": [
+  [
+   "dialog systems",
+   "are usually designed for",
+   "a single domain"
+  ],
+  [
+   "data in this format",
+   "can be stored as",
+   "a two-dimensional table within a relational database"
+  ],
+  [
+   "This data representation",
+   "allows",
+   "the system to query the database in a simple and efficient way"
+  ],
+  [
+   "This data representation",
+   "allows to keep",
+   "the dialog state in the form of slots"
+  ]
+ ],
+ "1603.09631::s00::p001": [
+  [
+   "the well-defined structure of the database of a typical dialog system",
+   "comes with",
+   "a high cost of extending it"
+  ],
+  [
+   "every piece of new information",
+   "has to fit",
+   "the format"
+  ],
+  [
+   "entities",
+   "could have",
+   "different attributes"
+  ]
+ ],
+ "1603.09631::s00::p002": [
+  [
+   "A dialog system based on knowledge bases",
+   "offers",
+   "many advantages"
+  ],
+  [
+   "the knowledge base",
+   "can be represented as",
+   "knowledge graph containing entities connected by relations"
+  ],
+  [
+   "the knowledge base",
+   "is much more flexible than",
+   "the relational database"
+  ],
+  [
+   "freely available knowledge bases, such as Freebase, Wikidata, etc.",
+   "contain",
+   "an enormous amount of structured information"
+  ],
+  [
+   "freely available knowledge bases, such as Freebase, Wikidata, etc.",
+   "are still growing",
+   "still growing"
+  ]
+ ],
+ "1603.09631::s01::p000": [
+  [
+   "the most limiting factor",
+   "is",
+   "that a large portion of the questions is understood poorly"
+  ]
+ ],
+ "1603.09631::s01::p001": [
+  [
+   "Current approaches BIBREF3 , BIBREF4",
+   "can only achieve",
+   "around 50% accuracy on some question answering datasets"
+  ],
+  [
+   "improvements",
+   "can be achieved by",
+   "interactively asking for additional information in conversational dialogs with users"
+  ],
+  [
+   "This extra information",
+   "can be used for",
+   "improving policies of dialog systems"
+  ],
+  [
+   "this approach",
+   "is called",
+   "the interactive learning from dialogs"
+  ]
+ ],
+ "1603.09631::s01::p002": [
+  [
+   "interactive learning in a direct interaction with users",
+   "can improve",
+   "dialog systems in several aspects"
+  ],
+  [
+   "the most straightforward way",
+   "is getting",
+   "the correct answer for questions that the system does not know"
+  ],
+  [
+   "the system",
+   "can ask",
+   "the user for a broader explanation of a question"
+  ],
+  [
+   "rephrasing",
+   "could help when",
+   "the system does know the concept but does not know the correct wording"
+  ]
+ ],
+ "1603.09631::s01::p003": [
+  [
+   "The main purpose of the collected dataset",
+   "is to enable",
+   "interactive learning using the steps proposed above"
+  ],
+  [
+   "The main purpose of the collected dataset",
+   "is to potentially evaluate",
+   "how different systems perform on this task"
+  ]
+ ],
+ "1603.09631::s02::p000": [
+  [
+   "The obvious difficulty when developing a dialog system",
+   "is finding",
+   "a way how to identify the piece of information that the user is interested in"
+  ],
+  [
+   "This",
+   "is especially a problem for",
+   "dialog systems based on knowledge graphs containing a large amount of complex structured information"
+  ],
+  [
+   "a dialog system",
+   "can ask for",
+   "additional information during the dialog"
+  ]
+ ],
+ "1603.09631::s02::p002": [
+  [
+   "A combination of the above approaches",
+   "is also possible",
+   "also possible"
+  ],
+  [
+   "creating hand-crafted policies",
+   "does not scale well",
+   "well"
+  ],
+  [
+   "machine learning approaches",
+   "are gaining on",
+   "popularity"
+  ],
+  [
+   "no public datasets for interactive learning",
+   "are available",
+   "available"
+  ]
+ ],
+ "1603.09631::s03::p000": [
+  [
+   "Offline evaluation of interactive dialogs on real data",
+   "is difficult because",
+   "different policies can lead to different variants of the dialog"
+  ]
+ ],
+ "1603.09631::s03::p001": [
+  [
+   "dialog variants",
+   "differ only in",
+   "presence of several parts of the dialog"
+  ]
+ ],
+ "1603.09631::s03::p002": [
+  [
+   "dataset",
+   "enables",
+   "simulation where the policy can decide how much extra information to the question it requests"
+  ],
+  [
+   "system",
+   "can attempt to answer",
+   "the question without any other information"
+  ],
+  [
+   "system",
+   "can ask for",
+   "a broader explanation with a possibility to answer the question afterwards"
+  ]
+ ],
+ "1603.09631::s03::p003": [
+  [
+   "simulated user’s answer",
+   "can be",
+   "incorrect"
+  ],
+  [
+   "human users",
+   "naturally made",
+   "mistakes"
+  ],
+  [
+   "real systems",
+   "must address",
+   "them as well"
+  ]
+ ],
+ "1603.09631::s04::p000": [
+  [
+   "perfect data collection scenario",
+   "would use",
+   "real running dialog system providing general information from the knowledge base to real users"
+  ],
+  [
+   "system",
+   "could ask for",
+   "explanations and answers for questions which it is not able to answer"
+  ]
+ ],
+ "1603.09631::s04::p001": [
+  [
+   "getting access to systems with real users",
+   "is usually",
+   "hard"
+  ]
+ ],
+ "1603.09631::s04::p002": [
+  [
+   "A CF worker",
+   "gets",
+   "a task instructing them to use our chat-like interface to help the system with a question"
+  ],
+  [
+   "question",
+   "is randomly selected from",
+   "training examples of Simple questions BIBREF7 dataset"
+  ],
+  [
+   "user",
+   "has to communicate with",
+   "the system through the three phase dialog"
+  ],
+  [
+   "three phase dialog",
+   "discusses",
+   "question paraphrase, explanation and answer of the question"
+  ],
+  [
+   "collected dialogs",
+   "has been annotated by",
+   "expert annotators afterwards"
+  ]
+ ],
+ "1603.09631::s04::p003": [
+  [
+   "the described procedure",
+   "leads to",
+   "dialogs like the one shown in the Figure 2"
+  ]
+ ],
+ "1603.09631::s05::p000": [
+  [
+   "the system",
+   "is requesting",
+   "the user to paraphrase question that the system does not understand"
+  ],
+  [
+   "the main goal of this first phase",
+   "is to let",
+   "the user get familiar with the presented question and to get alternative wordings of the posed question"
+  ]
+ ],
+ "1603.09631::s06::p000": [
+  [
+   "the user",
+   "is asked for",
+   "an explanation of the question"
+  ],
+  [
+   "the user",
+   "is notified that",
+   "their explanation is not broad enough and they must provide a better one"
+  ]
+ ],
+ "1603.09631::s07::p000": [
+  [
+   "the dialog",
+   "turns into",
+   "the last phase"
+  ],
+  [
+   "the user",
+   "is asked for",
+   "a correct answer to the original question"
+  ],
+  [
+   "The system",
+   "requires",
+   "the user to answer with a full sentence"
+  ],
+  [
+   "this",
+   "improves",
+   "system's ability to reveal cheaters"
+  ],
+  [
+   "This",
+   "allows to reject",
+   "completely irrelevant answers"
+  ]
+ ],
+ "1603.09631::s08::p000": [
+  [
+   "The correct answer for question in each dialog",
+   "is available from",
+   "Simple questions dataset"
+  ],
+  [
+   "Answers",
+   "are in form of",
+   "Freebase entities identified by unique id"
+  ]
+ ],
+ "1603.09631::s09::p000": [
+  [
+   "The collection system",
+   "needs to recognize",
+   "following dialog acts from user utterances during all phases of the dialog"
+  ]
+ ],
+ "1603.09631::s09::p001": [
+  [
+   "user",
+   "does not want to provide",
+   "requested information"
+  ]
+ ],
+ "1603.09631::s09::p002": [
+  [
+   "user",
+   "agrees to provide",
+   "requested information"
+  ]
+ ],
+ "1603.09631::s09::p003": [
+  [
+   "user",
+   "does not know",
+   "the requested information"
+  ]
+ ],
+ "1603.09631::s09::p004": [
+  [
+   "user",
+   "tries chit chat with",
+   "the system (hello, bye, who are you...)"
+  ]
+ ],
+ "1603.09631::s09::p005": [
+  [
+   "none of the above",
+   "is interpreted as",
+   "user is giving information requested by the system"
+  ]
+ ],
+ "1603.09631::s09::p006": [
+  [
+   "Parsing of the dialog acts",
+   "is made by",
+   "hand written rules using templates and keyword spotting"
+  ],
+  [
+   "The templates and keywords",
+   "were manually collected from",
+   "frequent expressions used by CF workers during preparation runs of the dataset collection process"
+  ]
+ ],
+ "1603.09631::s10::p000": [
+  [
+   "dataset",
+   "was collected with",
+   "1900 dialogs and 8533 turns"
+  ],
+  [
+   "Topics discussed in dialogs",
+   "are",
+   "questions randomly chosen from training examples of Simple questions BIBREF7 dataset"
+  ],
+  [
+   "correct answers",
+   "were taken in form of",
+   "Freebase entities"
+  ]
+ ],
+ "1603.09631::s10::p002": [
+  [
+   "Each file",
+   "contains",
+   "complete dialogs enriched by outputs of NLU"
+  ],
+  [
+   "outputs of NLU",
+   "were used during",
+   "the data collection"
+  ],
+  [
+   "each dialog",
+   "is labeled by",
+   "the correct answer for the question and expert annotation of the user answer hint"
+  ],
+  [
+   "expert annotation of the user answer hint",
+   "tells whether",
+   "the hint points to the correct answer, incorrect answer, or no answer at all"
+  ]
+ ],
+ "1603.09631::s10::p003": [
+  [
+   "351 of all collected dialogs",
+   "contain",
+   "correct answer provided by users"
+  ],
+  [
+   "702 dialogs",
+   "have",
+   "incorrect answer"
+  ],
+  [
+   "users",
+   "did not want to answer the question in",
+   "the remaining 847 dialogs"
+  ],
+  [
+   "The collected dialogs",
+   "contain",
+   "1828 paraphrases and 1539 explanations for 1870 questions"
+  ]
+ ],
+ "1603.09631::s10::p004": [
+  [
+   "a large amount of questions from that dataset",
+   "is",
+   "quite general - with many possible answers"
+  ],
+  [
+   "lot of answers from users",
+   "were labeled as",
+   "incorrect"
+  ]
+ ],
+ "1603.09631::s11::p000": [
+  [
+   "A perfect interactive learning model",
+   "would be able to learn",
+   "anything interactively from test dialogs during testing"
+  ],
+  [
+   "a development of such model",
+   "would be",
+   "unnecessarily hard"
+  ],
+  [
+   "training dialogs",
+   "can be used for",
+   "feature extraction and other engineering related to interactive learning from dialogs in natural language"
+  ],
+  [
+   "Model development",
+   "is further supported with",
+   "labeled validation data for parameter tuning"
+  ]
+ ],
+ "1603.09631::s11::p001": [
+  [
+   "First metric",
+   "scores",
+   "amount of information required by the model"
+  ],
+  [
+   "second metric",
+   "is",
+   "accuracy of answer extraction from user utterances"
+  ],
+  [
+   "All models",
+   "must base",
+   "their answers only on information gained from training dialogs and testing dialogs seen during the simulation so far"
+  ]
+ ],
+ "1603.09631::s12::p000": [
+  [
+   "The simulation of dialogs from our dataset",
+   "allows to evaluate",
+   "how efficient a dialog system is in using information gained from users"
+  ],
+  [
+   "The dialog system",
+   "should maximize",
+   "the number of correctly answered questions without requesting too many explanations and answers from users"
+  ]
+ ],
+ "1603.09631::s12::p003": [
+  [
+   "The penalization weights",
+   "are used to compensate for",
+   "different costs of obtaining different types of information from the user"
+  ],
+  [
+   "gaining broader explanation from the user",
+   "is",
+   "relatively simple"
+  ],
+  [
+   "obtaining correct answers from users",
+   "is",
+   "significantly more difficult"
+  ]
+ ],
+ "1603.09631::s12::p005": [
+  [
+   "incorrect answers",
+   "are penalized",
+   "significantly"
+  ]
+ ],
+ "1603.09631::s12::p006": [
+  [
+   "explanations",
+   "are",
+   "quite cheap"
+  ],
+  [
+   "explanations",
+   "will be penalized",
+   "just slightly"
+  ]
+ ],
+ "1603.09631::s12::p007": [
+  [
+   "gaining question’s answer from users",
+   "is harder than",
+   "gaining explanations"
+  ]
+ ],
+ "1603.09631::s13::p000": [
+  [
+   "finding appropriate entity in the knowledge base",
+   "is",
+   "quite challenging"
+  ],
+  [
+   "This metric",
+   "is",
+   "the accuracy of entity extraction"
+  ]
+ ],
+ "1603.09631::s14::p000": [
+  [
+   "a baseline system for interactive learning",
+   "will be evaluated on",
+   "the dataset"
+  ],
+  [
+   "dialog management",
+   "is used to gain",
+   "explanations during the data collection"
+  ]
+ ],
+ "1603.09631::s15::p000": [
+  [
+   "The evaluation",
+   "covers",
+   "two challenging aspects of interactive learning"
+  ]
+ ],
+ "1603.09631::s15::p001": [
+  [
+   "Those dialogs",
+   "were annotated with",
+   "expert annotators"
+  ],
+  [
+   "Those dialogs",
+   "were published under",
+   "Creative Commons 4.0 BY-SA license on lindat"
+  ]
+ ]
+}

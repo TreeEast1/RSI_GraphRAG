@@ -1,0 +1,460 @@
+{
+ "kept": [
+  {
+   "insight_id": "1910.09982::g00:i01",
+   "paper_id": "1910.09982",
+   "group_id": "1910.09982::g00",
+   "concise_text": "Unlike earlier article-level propaganda work whose labels used distant supervision and introduced noise, the shared task corpus was annotated by professional annotators.",
+   "triple": {
+    "subject": "shared task corpus",
+    "predicate": "improves_on",
+    "object": "article-level propaganda work"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1910.09982::s01::p000",
+    "1910.09982::s24::p000"
+   ],
+   "supporting_fact_ids": [
+    "1910.09982::g00:b0:f07",
+    "1910.09982::g00:b4:f09",
+    "1910.09982::g00:b4:f11"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Passages jointly support the contrast: earlier article-level work used noisy distant supervision, while the shared task input was annotated by professional annotators; this is a composed contrast, not a single-paragraph restatement."
+   },
+   "unit_id": "1910.09982::u001"
+  },
+  {
+   "insight_id": "1910.09982::g00:i09",
+   "paper_id": "1910.09982",
+   "group_id": "1910.09982::g00",
+   "concise_text": "Task 11 at SemEval 2020 follows up the shared task by splitting FLC's span detection and technique identification into binary sequence labeling and multi-class classification.",
+   "triple": {
+    "subject": "Task 11 at SemEval 2020",
+    "predicate": "extends",
+    "object": "Fragment-Level Classification task (FLC)"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1910.09982::s22::p000",
+    "1910.09982::s34::p002",
+    "1910.09982::s34::p003",
+    "1910.09982::s34::p004",
+    "1910.09982::s34::p005"
+   ],
+   "supporting_fact_ids": [
+    "1910.09982::g00:b4:f04",
+    "1910.09982::g00:b4:f05",
+    "1910.09982::g00:b10:f00",
+    "1910.09982::g00:b10:f01",
+    "1910.09982::g00:b10:f02",
+    "1910.09982::g00:b10:f03"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.87,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "Passages jointly support that SemEval 2020 Task 11 is a follow-up splitting FLC's span detection and technique identification into two complementary tasks, with binary sequence labeling and multi-class classification."
+   },
+   "unit_id": "1910.09982::u009"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1910.09982::g00:i00",
+   "paper_id": "1910.09982",
+   "group_id": "1910.09982::g00",
+   "concise_text": "The shared task's corpus of news articles annotated with 18 propagandist techniques at the fragment level operationalizes the fine-grained analysis claimed to yield more reliable systems and explanations.",
+   "triple": {
+    "subject": "corpus of news articles annotated with an inventory of 18 propagandist techniques at the fragment level",
+    "predicate": "extends",
+    "object": "fine-grained level"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1910.09982::s00::p001",
+    "1910.09982::s00::p002"
+   ],
+   "supporting_fact_ids": [
+    "1910.09982::g00:b0:f03",
+    "1910.09982::g00:b0:f04",
+    "1910.09982::g00:b0:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.6,
+    "novelty": 0.3,
+    "causality_error": false,
+    "reason": "Cited passages state fine-grained analysis can yield reliable systems/explanations and that the task corpus has 18 fragment-level techniques, but do not support that the corpus 'extends' or operationalizes that claimed fine-grained level as a novel relation."
+   },
+   "unit_id": "1910.09982::u000"
+  },
+  {
+   "insight_id": "1910.09982::g00:i02",
+   "paper_id": "1910.09982",
+   "group_id": "1910.09982::g00",
+   "concise_text": "The shared task corpus uses 18 techniques annotated on the same set of news articles and identifies minimal fragments, whereas Argotario has $1.3k$ arguments annotated with five fallacies.",
+   "triple": {
+    "subject": "shared task corpus",
+    "predicate": "extends",
+    "object": "Argotario"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1910.09982::s01::p001",
+    "1910.09982::s01::p002"
+   ],
+   "supporting_fact_ids": [
+    "1910.09982::g00:b0:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.5,
+    "causality_error": false,
+    "reason": "Passages support the factual contrast between Argotario and the shared task corpus, but not the triple's claim that the shared task corpus 'extends' Argotario; 'Unlike' indicates difference, not extension."
+   },
+   "unit_id": "1910.09982::u002"
+  },
+  {
+   "insight_id": "1910.09982::g00:i03",
+   "paper_id": "1910.09982",
+   "group_id": "1910.09982::g00",
+   "concise_text": "Because FLC detects all spans and identifies the applied technique, its evaluation modified F$_1$ to account for partial matching between the spans.",
+   "triple": {
+    "subject": "FLC",
+    "predicate": "requires",
+    "object": "modified F$_1$ measure"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1910.09982::s22::p000",
+    "1910.09982::s26::p000"
+   ],
+   "supporting_fact_ids": [
+    "1910.09982::g00:b4:f04",
+    "1910.09982::g00:b4:f05",
+    "1910.09982::g00:b6:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.4,
+    "causality_error": true,
+    "reason": "The text says FLC detects spans and techniques and that F1 was modified for partial matching, but does not explicitly support the causal 'Because FLC detects all spans...' relation; also the concise_text is essentially a paraphrase of the evaluation paragraph."
+   },
+   "unit_id": "1910.09982::u003"
+  },
+  {
+   "insight_id": "1910.09982::g00:i04",
+   "paper_id": "1910.09982",
+   "group_id": "1910.09982::g00",
+   "concise_text": "Because SLC is a binary classification task with imbalanced data, the official evaluation measure for the task is the standard F$_1$ measure.",
+   "triple": {
+    "subject": "SLC",
+    "predicate": "requires",
+    "object": "standard F$_1$ measure"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1910.09982::s23::p000",
+    "1910.09982::s27::p000"
+   ],
+   "supporting_fact_ids": [
+    "1910.09982::g00:b4:f07",
+    "1910.09982::g00:b6:f01",
+    "1910.09982::g00:b6:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.92,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "This is a direct restatement/paraphrase of the single evaluation paragraph: SLC is binary and imbalanced, therefore official measure is standard F1."
+   },
+   "unit_id": "1910.09982::u004"
+  },
+  {
+   "insight_id": "1910.09982::g00:i05",
+   "paper_id": "1910.09982",
+   "group_id": "1910.09982::g00",
+   "concise_text": "The development phase's live leaderboard and best-performance goal contrast with phase 2, where no immediate feedback was provided and the winner was determined on the test set.",
+   "triple": {
+    "subject": "development phase",
+    "predicate": "limits",
+    "object": "phase 2"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1910.09982::s25::p001",
+    "1910.09982::s25::p003"
+   ],
+   "supporting_fact_ids": [
+    "1910.09982::g00:b5:f07",
+    "1910.09982::g00:b5:f08",
+    "1910.09982::g00:b5:f10",
+    "1910.09982::g00:b5:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.4,
+    "causality_error": false,
+    "reason": "The passages support a contrast between development-phase live leaderboard/best dev performance and phase 2 no feedback/test-set winner, but the triple's 'limits' relation is unsupported and vague."
+   },
+   "unit_id": "1910.09982::u005"
+  },
+  {
+   "insight_id": "1910.09982::g00:i06",
+   "paper_id": "1910.09982",
+   "group_id": "1910.09982::g00",
+   "concise_text": "Team newspeak achieved the best results on the test set for the FLC task using 20-way word-level classification based on BERT, with oversampling of the least represented classes crucial for final performance.",
+   "triple": {
+    "subject": "20-way word-level classification based on BERT",
+    "predicate": "outperforms",
+    "object": "FLC task"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1910.09982::s30::p000",
+    "1910.09982::s33::p001"
+   ],
+   "supporting_fact_ids": [
+    "1910.09982::g00:b7:f00",
+    "1910.09982::g00:b7:f01",
+    "1910.09982::g00:b7:f03",
+    "1910.09982::g00:b9:f11",
+    "1910.09982::g00:b9:f12"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.3,
+    "causality_error": false,
+    "reason": "The cited paragraph directly states newspeak achieved best FLC test results using 20-way word-level BERT classification and that oversampling was crucial; the insight is a restatement, and the triple misstates the method as outperforming the task rather than achieving best results on it."
+   },
+   "unit_id": "1910.09982::u006"
+  },
+  {
+   "insight_id": "1910.09982::g00:i07",
+   "paper_id": "1910.09982",
+   "group_id": "1910.09982::g00",
+   "concise_text": "The general decrease of F$_1$ values between the development and test set could indicate overfitting, while the winning team ltuorp used an attention transformer using BERT trained on Wikipedia and BookCorpus.",
+   "triple": {
+    "subject": "attention transformer using BERT trained on Wikipedia and BookCorpus",
+    "predicate": "outperforms",
+    "object": "SLC task"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1910.09982::s31::p008",
+    "1910.09982::s33::p000"
+   ],
+   "supporting_fact_ids": [
+    "1910.09982::g00:b8:f08",
+    "1910.09982::g00:b9:f08",
+    "1910.09982::g00:b9:f09"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.8,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.6,
+    "novelty": 0.4,
+    "causality_error": false,
+    "reason": "Passages mention possible overfitting and ltuorp's BERT-based attention transformer, but do not support that this method 'outperforms' the SLC task; winning team is mentioned only in the results paragraph, not tied as a method-result claim to the architecture."
+   },
+   "unit_id": "1910.09982::u007"
+  },
+  {
+   "insight_id": "1910.09982::g00:i08",
+   "paper_id": "1910.09982",
+   "group_id": "1910.09982::g00",
+   "concise_text": "The FLC task's lower absolute scores and greater challenge are consistent with its random baseline generating spans and selecting one of the 18 techniques randomly.",
+   "triple": {
+    "subject": "random baseline",
+    "predicate": "limits",
+    "object": "FLC task"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1910.09982::s28::p001",
+    "1910.09982::s34::p000"
+   ],
+   "supporting_fact_ids": [
+    "1910.09982::g00:b6:f05",
+    "1910.09982::g00:b6:f06",
+    "1910.09982::g00:b6:f07",
+    "1910.09982::g00:b9:f16",
+    "1910.09982::g00:b9:f17"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.74,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.5,
+    "novelty": 0.3,
+    "causality_error": false,
+    "reason": "The passages state the random baseline and that FLC was more challenging with lower scores, but do not support that the random baseline 'limits' FLC or that lower scores are caused by/consistent with that baseline in the claimed relation."
+   },
+   "unit_id": "1910.09982::u008"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1910.09982::g00:i00",
+    "verdict": {
+     "insight_id": "1910.09982::g00:i00",
+     "keep": false,
+     "support": 0.6,
+     "novelty": 0.3,
+     "causality_error": false,
+     "reason": "Cited passages state fine-grained analysis can yield reliable systems/explanations and that the task corpus has 18 fragment-level techniques, but do not support that the corpus 'extends' or operationalizes that claimed fine-grained level as a novel relation."
+    },
+    "reason": "Cited passages state fine-grained analysis can yield reliable systems/explanations and that the task corpus has 18 fragment-level techniques, but do not support that the corpus 'extends' or operationalizes that claimed fine-grained level as a novel relation."
+   },
+   {
+    "insight_id": "1910.09982::g00:i01",
+    "verdict": {
+     "insight_id": "1910.09982::g00:i01",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Passages jointly support the contrast: earlier article-level work used noisy distant supervision, while the shared task input was annotated by professional annotators; this is a composed contrast, not a single-paragraph restatement."
+    }
+   },
+   {
+    "insight_id": "1910.09982::g00:i02",
+    "verdict": {
+     "insight_id": "1910.09982::g00:i02",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.5,
+     "causality_error": false,
+     "reason": "Passages support the factual contrast between Argotario and the shared task corpus, but not the triple's claim that the shared task corpus 'extends' Argotario; 'Unlike' indicates difference, not extension."
+    },
+    "reason": "Passages support the factual contrast between Argotario and the shared task corpus, but not the triple's claim that the shared task corpus 'extends' Argotario; 'Unlike' indicates difference, not extension."
+   },
+   {
+    "insight_id": "1910.09982::g00:i03",
+    "verdict": {
+     "insight_id": "1910.09982::g00:i03",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.4,
+     "causality_error": true,
+     "reason": "The text says FLC detects spans and techniques and that F1 was modified for partial matching, but does not explicitly support the causal 'Because FLC detects all spans...' relation; also the concise_text is essentially a paraphrase of the evaluation paragraph."
+    },
+    "reason": "The text says FLC detects spans and techniques and that F1 was modified for partial matching, but does not explicitly support the causal 'Because FLC detects all spans...' relation; also the concise_text is essentially a paraphrase of the evaluation paragraph."
+   },
+   {
+    "insight_id": "1910.09982::g00:i04",
+    "verdict": {
+     "insight_id": "1910.09982::g00:i04",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "This is a direct restatement/paraphrase of the single evaluation paragraph: SLC is binary and imbalanced, therefore official measure is standard F1."
+    },
+    "reason": "This is a direct restatement/paraphrase of the single evaluation paragraph: SLC is binary and imbalanced, therefore official measure is standard F1."
+   },
+   {
+    "insight_id": "1910.09982::g00:i05",
+    "verdict": {
+     "insight_id": "1910.09982::g00:i05",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.4,
+     "causality_error": false,
+     "reason": "The passages support a contrast between development-phase live leaderboard/best dev performance and phase 2 no feedback/test-set winner, but the triple's 'limits' relation is unsupported and vague."
+    },
+    "reason": "The passages support a contrast between development-phase live leaderboard/best dev performance and phase 2 no feedback/test-set winner, but the triple's 'limits' relation is unsupported and vague."
+   },
+   {
+    "insight_id": "1910.09982::g00:i06",
+    "verdict": {
+     "insight_id": "1910.09982::g00:i06",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.3,
+     "causality_error": false,
+     "reason": "The cited paragraph directly states newspeak achieved best FLC test results using 20-way word-level BERT classification and that oversampling was crucial; the insight is a restatement, and the triple misstates the method as outperforming the task rather than achieving best results on it."
+    },
+    "reason": "The cited paragraph directly states newspeak achieved best FLC test results using 20-way word-level BERT classification and that oversampling was crucial; the insight is a restatement, and the triple misstates the method as outperforming the task rather than achieving best results on it."
+   },
+   {
+    "insight_id": "1910.09982::g00:i07",
+    "verdict": {
+     "insight_id": "1910.09982::g00:i07",
+     "keep": false,
+     "support": 0.6,
+     "novelty": 0.4,
+     "causality_error": false,
+     "reason": "Passages mention possible overfitting and ltuorp's BERT-based attention transformer, but do not support that this method 'outperforms' the SLC task; winning team is mentioned only in the results paragraph, not tied as a method-result claim to the architecture."
+    },
+    "reason": "Passages mention possible overfitting and ltuorp's BERT-based attention transformer, but do not support that this method 'outperforms' the SLC task; winning team is mentioned only in the results paragraph, not tied as a method-result claim to the architecture."
+   },
+   {
+    "insight_id": "1910.09982::g00:i08",
+    "verdict": {
+     "insight_id": "1910.09982::g00:i08",
+     "keep": false,
+     "support": 0.5,
+     "novelty": 0.3,
+     "causality_error": false,
+     "reason": "The passages state the random baseline and that FLC was more challenging with lower scores, but do not support that the random baseline 'limits' FLC or that lower scores are caused by/consistent with that baseline in the claimed relation."
+    },
+    "reason": "The passages state the random baseline and that FLC was more challenging with lower scores, but do not support that the random baseline 'limits' FLC or that lower scores are caused by/consistent with that baseline in the claimed relation."
+   },
+   {
+    "insight_id": "1910.09982::g00:i09",
+    "verdict": {
+     "insight_id": "1910.09982::g00:i09",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "Passages jointly support that SemEval 2020 Task 11 is a follow-up splitting FLC's span detection and technique identification into two complementary tasks, with binary sequence labeling and multi-class classification."
+    }
+   }
+  ],
+  "calls": [
+   {
+    "n": 10,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 3187,
+     "completion_tokens": 879,
+     "total_tokens": 4066,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

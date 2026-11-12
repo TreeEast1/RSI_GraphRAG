@@ -1,0 +1,105 @@
+{
+ "paper_id": "1808.09111",
+ "title": "Unsupervised Learning of Syntactic Structure with Invertible Neural Projections",
+ "abstract": "Unsupervised learning of syntactic structure is typically performed using generative models with discrete latent variables and multinomial parameters. In most cases, these models have not leveraged continuous word representations. In this work, we propose a novel generative model that jointly learns discrete syntactic structure and continuous word representations in an unsupervised fashion by cascading an invertible neural network with a structured generative prior. We show that the invertibility condition allows for efficient exact inference and marginal likelihood computation in our model so long as the prior is well-behaved. In experiments we instantiate our approach with both Markov and tree-structured priors, evaluating on two tasks: part-of-speech (POS) induction, and unsupervised dependency parsing without gold POS annotation. On the Penn Treebank, our Markov-structured model surpasses state-of-the-art results on POS induction. Similarly, we find that our tree-structured model achieves state-of-the-art performance on unsupervised dependency parsing for the difficult training condition where neither gold POS annotation nor punctuation-based constraints are available.",
+ "sections": [
+  "Introduction",
+  "Model",
+  "Example: Gaussian HMM",
+  "Markov Structure with Neural Projector",
+  "General Structure with Neural Projector",
+  "Learning & Inference",
+  "Learning with Invertibility",
+  "Invertible Volume-Preserving Neural Net",
+  "Experiments",
+  "Data",
+  "General Experimental Setup",
+  "Unsupervised POS tagging",
+  "Unsupervised Dependency Parsing without gold POS tags",
+  "Sensitivity Analysis",
+  "Qualitative Analysis of Embeddings",
+  "Related Work",
+  "Conclusion"
+ ],
+ "n_paragraphs": 56,
+ "n_tokens": 5624,
+ "figures_and_tables": [
+  {
+   "caption_id": "1808.09111::fig000",
+   "paper_id": "1808.09111",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: Visualization (t-SNE) of skip-gram embeddings (trained on one billion words with context window size equal to 1) and latent embeddings learned by our approach with a Markov-structured prior. Each node represents a word and is colored according to the most likely gold POS tag from the Penn Treebank (best seen in color).",
+   "n_tokens": 72
+  },
+  {
+   "caption_id": "1808.09111::fig001",
+   "paper_id": "1808.09111",
+   "file": "2-Figure2-1.png",
+   "caption": "Figure 2: Depiction of proposed generative model. The syntax model is composed of discrete random variables, zi. Each ei is a latent continuous embeddings sampled from Gaussian distribution conditioned on zi, while xi is the observed embedding, deterministically derived from ei. The left portion depicts how the neural projector maps the simple Gaussian to a more complex distribution in the output space. The right portion depicts two instantiations of the syntax model in our approach: one is Markov-structured and the other is DMV-structured. For DMV, ztree is the latent dependency tree structure.",
+   "n_tokens": 117
+  },
+  {
+   "caption_id": "1808.09111::fig002",
+   "paper_id": "1808.09111",
+   "file": "5-Figure3-1.png",
+   "caption": "Figure 3: Depiction of the architecture of the inverse projection f−1φ that composes multiple volume-preserving coupling layers, with which we parameterize our model. On the right, we schematically depict how the inverse projection transforms the observed word embedding xi to a point ei in a new embedding space.",
+   "n_tokens": 63
+  },
+  {
+   "caption_id": "1808.09111::fig003",
+   "paper_id": "1808.09111",
+   "file": "6-Table1-1.png",
+   "caption": "Table 1: Unsupervised POS tagging results on entire WSJ, compared with other baselines and state-of-the-art systems. Standard deviation is given in parentheses when available.",
+   "n_tokens": 36
+  },
+  {
+   "caption_id": "1808.09111::fig004",
+   "paper_id": "1808.09111",
+   "file": "6-Figure4-1.png",
+   "caption": "Figure 4: Normalized Confusion matrix for POS tagging experiments, row label represents the gold tag.",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "1808.09111::fig005",
+   "paper_id": "1808.09111",
+   "file": "7-Table2-1.png",
+   "caption": "Table 2: Directed dependency accuracy on section 23 of WSJ, evaluating on sentences of length 6 10 and all lengths. Starred entries (∗) denote that the system benefits from additional punctuation-based constraints. Standard deviation is given in parentheses when available.",
+   "n_tokens": 54
+  },
+  {
+   "caption_id": "1808.09111::fig006",
+   "paper_id": "1808.09111",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: Unsupervised POS tagging results of our approach on WSJ, with random initialization of syntax model.",
+   "n_tokens": 24
+  },
+  {
+   "caption_id": "1808.09111::fig007",
+   "paper_id": "1808.09111",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: Unsupervised POS tagging results on WSJ, with fastText vectors as the observed embeddings.",
+   "n_tokens": 23
+  },
+  {
+   "caption_id": "1808.09111::fig008",
+   "paper_id": "1808.09111",
+   "file": "8-Table5-1.png",
+   "caption": "Table 5: Directed dependency accuracy on section 23 of WSJ, with fastText vectors as the observed embeddings.",
+   "n_tokens": 24
+  },
+  {
+   "caption_id": "1808.09111::fig009",
+   "paper_id": "1808.09111",
+   "file": "9-Table6-1.png",
+   "caption": "Table 6: Target words and their 5 nearest neighbors, based on skip-gram embeddings and our learned latent embeddings with Markov-structured syntax model.",
+   "n_tokens": 32
+  },
+  {
+   "caption_id": "1808.09111::fig010",
+   "paper_id": "1808.09111",
+   "file": "9-Figure5-1.png",
+   "caption": "Figure 5: Visualization (t-SNE) of learned latent embeddings with DMV-structured syntax model. Each node represents a word and is colored according to the most likely gold POS tag in the Penn Treebank (best seen in color).",
+   "n_tokens": 49
+  }
+ ]
+}

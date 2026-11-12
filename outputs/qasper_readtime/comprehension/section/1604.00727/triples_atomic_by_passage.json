@@ -1,0 +1,531 @@
+{
+ "1604.00727::s00::p000": [
+  [
+   "Single-relation factoid questions",
+   "are",
+   "the most common form of questions found in search query logs and community question answering websites"
+  ],
+  [
+   "A knowledge-base (KB) such as Freebase, DBpedia, or Wikidata",
+   "can help answer",
+   "such questions after users reformulate them as queries"
+  ]
+ ],
+ "1604.00727::s00::p001": [
+  [
+   "automatically mapping a natural language question such as Where was Barack Obama born? to its corresponding KB query",
+   "remains",
+   "a challenging task"
+  ]
+ ],
+ "1604.00727::s00::p002": [
+  [
+   "There",
+   "are",
+   "three key issues that make learning this mapping non-trivial"
+  ],
+  [
+   "many of the KB entries",
+   "are unseen during",
+   "training time"
+  ],
+  [
+   "a KB such as Freebase",
+   "typically contains",
+   "millions of entities and thousands of predicates"
+  ],
+  [
+   "a character-level encoder-decoder framework",
+   "significantly improves",
+   "performance over state-of-the-art word-level neural models"
+  ]
+ ],
+ "1604.00727::s00::p003": [
+  [
+   "Character-level modeling",
+   "has been previously shown to generalize well to",
+   "new words not seen during training"
+  ],
+  [
+   "The combined use of character-level modeling and a semantic relevance function",
+   "allows us to successfully produce",
+   "likelihood scores for the KB entries that are not present in our vocabulary"
+  ]
+ ],
+ "1604.00727::s00::p004": [
+  [
+   "the previous state-of-arts",
+   "are",
+   "62.7% and 63.9%"
+  ],
+  [
+   "the training questions provided in SimpleQuestions",
+   "cover",
+   "about 24% of words in entity aliases on the test set"
+  ]
+ ],
+ "1604.00727::s01::p001": [
+  [
+   "Semantic parsing for open-domain question answering",
+   "translates",
+   "a question into a structured KB query"
+  ],
+  [
+   "Semantic parsing for open-domain question answering",
+   "is",
+   "a key component in question answering with a KB"
+  ],
+  [
+   "early approaches",
+   "relied on",
+   "building high-quality lexicons for domain-specific databases such as GeoQuery"
+  ],
+  [
+   "recent work",
+   "has focused on",
+   "building semantic parsing frameworks for general knowledge bases such as Freebase"
+  ]
+ ],
+ "1604.00727::s01::p002": [
+  [
+   "Semantic parsing frameworks for large-scale knowledge bases",
+   "have to be able to successfully generate queries for",
+   "the millions of entities and thousands of predicates in the KB"
+  ],
+  [
+   "many of which",
+   "are",
+   "unseen during training"
+  ],
+  [
+   "recent work",
+   "relies on",
+   "producing embeddings for predicates and entities in a KB based on their textual descriptions"
+  ],
+  [
+   "A general interaction function",
+   "can be used to measure",
+   "the semantic relevance of these embedded KB entries to the question"
+  ]
+ ],
+ "1604.00727::s01::p003": [
+  [
+   "Most of these approaches",
+   "use",
+   "word-level embeddings to encode entities and predicates"
+  ],
+  [
+   "Most of these approaches",
+   "might suffer from",
+   "the out-of-vocabulary (OOV) problem"
+  ],
+  [
+   "Paralex",
+   "contains",
+   "18 million question-paraphrase pairs scraped from WikiAnswers"
+  ]
+ ],
+ "1604.00727::s01::p004": [
+  [
+   "character-level modeling",
+   "can be used to handle",
+   "the OOV issue"
+  ],
+  [
+   "character-level modeling",
+   "has not been applied to",
+   "factoid question answering before"
+  ],
+  [
+   "character-level modeling",
+   "has been successfully applied to",
+   "information retrieval, machine translation, sentiment analysis, classification, and named entity recognition"
+  ],
+  [
+   "gated-feedback LSTMs on top of character-level embeddings",
+   "can capture",
+   "long-term dependencies in language modeling"
+  ]
+ ],
+ "1604.00727::s01::p005": [
+  [
+   "encoder-decoder networks",
+   "have been applied to",
+   "many structured machine learning tasks"
+  ],
+  [
+   "a source sequence",
+   "is first encoded with",
+   "a recurrent neural network (RNN) into a fixed-length vector"
+  ],
+  [
+   "a fixed-length vector",
+   "intuitively captures",
+   "its meaning"
+  ],
+  [
+   "a source sequence",
+   "is then decoded into",
+   "a desired target sequence"
+  ]
+ ],
+ "1604.00727::s01::p006": [
+  [
+   "the whole system",
+   "is optimized",
+   "end-to-end"
+  ]
+ ],
+ "1604.00727::s03::p002": [
+  [
+   "the outputs at all time steps",
+   "are kept as",
+   "the embeddings for the question"
+  ],
+  [
+   "the embeddings for the question",
+   "are",
+   "the vectors $s_1,...,s_n$"
+  ]
+ ],
+ "1604.00727::s04::p000": [
+  [
+   "encoding an entity or predicate in the KB",
+   "takes",
+   "two steps"
+  ]
+ ],
+ "1604.00727::s04::p004": [
+  [
+   "entities and predicates",
+   "typically have",
+   "significantly different styles (e.g., Barack Obama vs. /people/person/place_of_birth)"
+  ]
+ ],
+ "1604.00727::s05::p001": [
+  [
+   "The initial hidden state $h_0$",
+   "is set to",
+   "the zero vector: $\\vec{0}$"
+  ]
+ ],
+ "1604.00727::s05::p002": [
+  [
+   "A pairwise semantic relevance function",
+   "measures",
+   "the similarity between the hidden units of the LSTM and the embedding of an entity or predicate candidate"
+  ],
+  [
+   "A pairwise semantic relevance function",
+   "returns",
+   "the mostly likely entity or predicate based on the similarity score"
+  ]
+ ],
+ "1604.00727::s05::p004": [
+  [
+   "The attention-based LSTM decoder",
+   "uses",
+   "a similar architecture as the one described in aligntranslate"
+  ],
+  [
+   "the input vector",
+   "is",
+   "the embedding of the true entity"
+  ],
+  [
+   "the input vector",
+   "is",
+   "the embedding of the most likely entity as determined at the previous time step"
+  ]
+ ],
+ "1604.00727::s05::p005": [
+  [
+   "The context vector $c_i$",
+   "represents",
+   "the attention-weighted content of the question"
+  ]
+ ],
+ "1604.00727::s05::p007": [
+  [
+   "the KB",
+   "has",
+   "millions of entries"
+  ],
+  [
+   "the decoder",
+   "will need",
+   "an output layer with millions of nodes"
+  ],
+  [
+   "a relevance function",
+   "measures",
+   "the semantic similarity between the decoder's hidden state and the embeddings of KB entries"
+  ],
+  [
+   "current experiments",
+   "use",
+   "a simple cosine-similarity metric: $cos(x_1, x_2)$"
+  ]
+ ],
+ "1604.00727::s06::p002": [
+  [
+   "candidate entities generation",
+   "takes",
+   "all entities whose English alias is a substring of the question"
+  ],
+  [
+   "candidate entities generation",
+   "removes",
+   "all entities whose alias is a substring of another entity"
+  ],
+  [
+   "candidate entities generation",
+   "appends",
+   "the top 10 entities from this list"
+  ],
+  [
+   "All predicates ${p_j}$ for each entity in our candidate entity set",
+   "become",
+   "the set of candidate predicates"
+  ]
+ ],
+ "1604.00727::s07::p001": [
+  [
+   "All the parameters of our model",
+   "are learned jointly without",
+   "pre-training"
+  ],
+  [
+   "These parameters",
+   "include",
+   "the weights of the character-level embeddings, CNNs, and LSTMs"
+  ],
+  [
+   "Weights",
+   "are randomly initialized before",
+   "training"
+  ],
+  [
+   "each weight",
+   "is sampled from",
+   "a uniform distribution between $-\\frac{1}{|l^i|}$ and $\\frac{1}{|l^i|}$"
+  ]
+ ],
+ "1604.00727::s08::p000": [
+  [
+   "The dataset",
+   "consists of",
+   "108,442 single-relation questions and their corresponding (topic entity, predicate, answer entity) triples from Freebase"
+  ],
+  [
+   "Only 10,843 of the 45,335 unique words in entity aliases and 886 out of 1,034 unique predicates in the test set",
+   "were present in",
+   "the train set"
+  ]
+ ],
+ "1604.00727::s08::p001": [
+  [
+   "the Memory Neural Networks (MemNNs) proposed in babidataset",
+   "serve as",
+   "the baselines"
+  ]
+ ],
+ "1604.00727::s08::p002": [
+  [
+   "the CNNs for entity and predicate embeddings",
+   "have",
+   "a hidden layer of size 200 and an output layer of size 100"
+  ],
+  [
+   "The CNNs for entity and predicate embeddings",
+   "use",
+   "a receptive field of size 4, $\\lambda =5$ , and $m=100$"
+  ]
+ ],
+ "1604.00727::s08::p003": [
+  [
+   "each predicate or entity",
+   "is padded using",
+   "three padding symbols $P$ , a special start symbol, and a special end symbol"
+  ],
+  [
+   "the same padding",
+   "is applied to",
+   "the questions"
+  ]
+ ],
+ "1604.00727::s09::p000": [
+  [
+   "results on the SimpleQuestions dataset",
+   "are reported in terms of",
+   "SQ accuracy"
+  ],
+  [
+   "SQ accuracy",
+   "is defined as",
+   "the percentage of questions for which the model generates a correct KB query"
+  ],
+  [
+   "the character-level model",
+   "only has",
+   "1.2M parameters"
+  ]
+ ],
+ "1604.00727::s10::p000": [
+  [
+   "ablation studies",
+   "are carried out through",
+   "a set of random-sampling experiments"
+  ]
+ ],
+ "1604.00727::s10::p001": [
+  [
+   "word-level models",
+   "are explored as an alternative to",
+   "character-level models"
+  ]
+ ],
+ "1604.00727::s10::p002": [
+  [
+   "Both word-level and character-level models",
+   "perform comparably well when predicting",
+   "the predicate"
+  ],
+  [
+   "Both word-level and character-level models",
+   "reach an accuracy of",
+   "around 80% (Table 3)"
+  ],
+  [
+   "the word-level model",
+   "has considerable difficulty generalizing to",
+   "unseen entities"
+  ],
+  [
+   "the word-level model",
+   "is only able to predict",
+   "45% of the entities accurately from the mixed set"
+  ],
+  [
+   "the OOV issue",
+   "is much more severe for",
+   "entities than predicates"
+  ]
+ ],
+ "1604.00727::s10::p003": [
+  [
+   "character-level models",
+   "achieve",
+   "a 96.6% accuracy in predicting the correct entity on the mixed set"
+  ],
+  [
+   "character-level models",
+   "encode",
+   "the semantic representation of entities"
+  ]
+ ],
+ "1604.00727::s10::p004": [
+  [
+   "the ablation experiments",
+   "compare",
+   "the performance of a single-layer LSTM to a two-layer LSTM to encode the question"
+  ],
+  [
+   "the ablation experiments",
+   "compare",
+   "a single-layer vs. two-layer CNN to encode the KB entries"
+  ],
+  [
+   "a two-layer LSTM",
+   "boosts",
+   "joint accuracy by over 6%"
+  ]
+ ],
+ "1604.00727::s11::p000": [
+  [
+   "the x-axis",
+   "is",
+   "the character sequence of the question"
+  ],
+  [
+   "the y-axis",
+   "is",
+   "the attention weight distribution $\\lbrace \\alpha _i\\rbrace $"
+  ],
+  [
+   "The blue curve",
+   "is",
+   "the attention distribution when generating the entity"
+  ],
+  [
+   "green curve",
+   "is",
+   "the attention distribution when generating the predicate"
+  ]
+ ],
+ "1604.00727::s11::p001": [
+  [
+   "the attention distribution",
+   "typically peaks at",
+   "empty spaces"
+  ],
+  [
+   "the character-level model",
+   "learns that",
+   "a space defines an ending point of a complete linguistic unit"
+  ],
+  [
+   "the hidden state of the LSTM encoder at a space",
+   "likely summarizes",
+   "content about the character sequence before that space"
+  ]
+ ],
+ "1604.00727::s11::p002": [
+  [
+   "entity attention distributions",
+   "are usually less sharp and span longer portions of words than",
+   "predicate attention distributions"
+  ]
+ ],
+ "1604.00727::s11::p003": [
+  [
+   "a character-level model",
+   "can identify",
+   "entities whose English aliases were never seen in training, such as phrenology"
+  ]
+ ],
+ "1604.00727::s11::p004": [
+  [
+   "the attention model",
+   "is capable of attending",
+   "disjoint regions of the question"
+  ],
+  [
+   "predicate attention",
+   "often peaks at",
+   "the padding symbols after the last character of the question"
+  ],
+  [
+   "previous semantic parsing-based QA approaches BIBREF10 , BIBREF1",
+   "assume that",
+   "there is a clear separation between the predicate and entity mentions in the question"
+  ],
+  [
+   "the proposed model",
+   "does not need to make",
+   "this hard categorization"
+  ]
+ ],
+ "1604.00727::s13::p000": [
+  [
+   "embeddings of questions, entities, and predicates",
+   "are jointly learned to directly optimize",
+   "the likelihood of generating the correct KB query"
+  ],
+  [
+   "character-level modeling",
+   "gives",
+   "a compact model that is robust to unseen entities"
+  ]
+ ]
+}

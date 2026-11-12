@@ -1,0 +1,152 @@
+QA scope: 30 papers, 96 questions
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.11s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.04it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.07it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.42it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.24it/s]
+[1/30] 1503.00841: 4 q x 8 methods, 35s
+[2/30] 1603.01514: 7 q x 8 methods, 150s
+[3/30] 1603.08594: 2 q x 8 methods, 190s
+[4/30] 1603.09631: 2 q x 8 methods, 229s
+[5/30] 1604.00727: 2 q x 8 methods, 267s
+[6/30] 1604.03114: 2 q x 8 methods, 306s
+[7/30] 1605.03481: 5 q x 8 methods, 404s
+[8/30] 1605.07333: 5 q x 8 methods, 504s
+[9/30] 1608.01884: 4 q x 8 methods, 582s
+/group/40150/licochen/Memory/RSI_GraphRAG/cache/hf/modules/transformers_modules/NV-Embed-v2/modeling_nvembed.py:347: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  'input_ids': torch.tensor(batch_dict.get('input_ids').to(batch_dict.get('input_ids')).long()),
+/usr/local/python3/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[10/30] 1608.06757: 2 q x 8 methods, 623s
+[11/30] 1609.00425: 2 q x 8 methods, 662s
+[12/30] 1611.01576: 3 q x 8 methods, 720s
+[13/30] 1611.02988: 3 q x 8 methods, 779s
+/group/40150/licochen/Memory/RSI_GraphRAG/cache/hf/modules/transformers_modules/NV-Embed-v2/modeling_nvembed.py:347: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  'input_ids': torch.tensor(batch_dict.get('input_ids').to(batch_dict.get('input_ids')).long()),
+[14/30] 1611.08661: 4 q x 8 methods, 857s
+[15/30] 1612.02482: 2 q x 8 methods, 897s
+[16/30] 1612.08205: 5 q x 8 methods, 995s
+[17/30] 1701.02962: 1 q x 8 methods, 1014s
+[18/30] 1701.05574: 5 q x 8 methods, 1104s
+[19/30] 1701.08229: 4 q x 8 methods, 1184s
+[20/30] 1704.06194: 4 q x 8 methods, 1263s
+[21/30] 1705.01214: 3 q x 8 methods, 1323s
+[22/30] 1706.00139: 2 q x 8 methods, 1363s
+[23/30] 1706.06894: 5 q x 8 methods, 1463s
+[24/30] 1706.08198: 2 q x 8 methods, 1502s
+[25/30] 1707.05236: 5 q x 8 methods, 1600s
+[26/30] 1708.06185: 3 q x 8 methods, 1659s
+[27/30] 1712.05999: 6 q x 8 methods, 1776s
+[28/30] 1804.11346: 4 q x 8 methods, 1852s
+[29/30] 1808.10245: 4 q x 8 methods, 1930s
+[30/30] 1810.12085: 3 q x 8 methods, 1988s
+{
+ "m0_dense": {
+  "n": 105,
+  "answer_f1": 0.4630984806569098,
+  "evidence_f1": 0.11657270390778637,
+  "em": 0.20952380952380953,
+  "answer_f1_extractive": 0.5394606426405621,
+  "n_extractive": 54,
+  "answer_f1_abstractive": 0.279053075171845,
+  "n_abstractive": 33,
+  "answer_f1_boolean": 0.32857142857142857,
+  "n_boolean": 10,
+  "answer_f1_none": 0.875,
+  "n_none": 8
+ },
+ "m1_raw": {
+  "n": 105,
+  "answer_f1": 0.4480240138685542,
+  "evidence_f1": 0.11455765546416649,
+  "em": 0.18095238095238095,
+  "answer_f1_extractive": 0.5289451259095753,
+  "n_extractive": 55,
+  "answer_f1_abstractive": 0.29421328892053944,
+  "n_abstractive": 32,
+  "answer_f1_boolean": 0.2305194805194805,
+  "n_boolean": 11,
+  "answer_f1_none": 0.8571428571428571,
+  "n_none": 7
+ },
+ "m2_atom": {
+  "n": 105,
+  "answer_f1": 0.449905288499281,
+  "evidence_f1": 0.11455765546416649,
+  "em": 0.18095238095238095,
+  "answer_f1_extractive": 0.5352309905322212,
+  "n_extractive": 52,
+  "answer_f1_abstractive": 0.2973726795642574,
+  "n_abstractive": 35,
+  "answer_f1_boolean": 0.2727272727272727,
+  "n_boolean": 11,
+  "answer_f1_none": 0.8571428571428571,
+  "n_none": 7
+ },
+ "m3_atom_comp": {
+  "n": 105,
+  "answer_f1": 0.45063585191647315,
+  "evidence_f1": 0.1139624173689284,
+  "em": 0.19047619047619047,
+  "answer_f1_extractive": 0.5304806132829397,
+  "n_extractive": 54,
+  "answer_f1_abstractive": 0.29305488890760406,
+  "n_abstractive": 33,
+  "answer_f1_boolean": 0.2727272727272727,
+  "n_boolean": 11,
+  "answer_f1_none": 0.8571428571428571,
+  "n_none": 7
+ },
+ "m4_units": {
+  "n": 105,
+  "answer_f1": 0.44158764271193107,
+  "evidence_f1": 0.10663616012031091,
+  "em": 0.17142857142857143,
+  "answer_f1_extractive": 0.48488300115537875,
+  "n_extractive": 56,
+  "answer_f1_abstractive": 0.2972017554855341,
+  "n_abstractive": 31,
+  "answer_f1_boolean": 0.3,
+  "n_boolean": 10,
+  "answer_f1_none": 0.875,
+  "n_none": 8
+ },
+ "m5_units_graph": {
+  "n": 105,
+  "answer_f1": 0.43278760220691176,
+  "evidence_f1": 0.10513389254661476,
+  "em": 0.17142857142857143,
+  "answer_f1_extractive": 0.5138095895853819,
+  "n_extractive": 56,
+  "answer_f1_abstractive": 0.2704402235235503,
+  "n_abstractive": 31,
+  "answer_f1_boolean": 0.12857142857142856,
+  "n_boolean": 10,
+  "answer_f1_none": 0.875,
+  "n_none": 8
+ },
+ "m5_units_graph_B": {
+  "n": 105,
+  "answer_f1": 0.41390120962052335,
+  "evidence_f1": 0.10513389254661476,
+  "em": 0.1619047619047619,
+  "answer_f1_extractive": 0.4682263077297555,
+  "n_extractive": 56,
+  "answer_f1_abstractive": 0.2657727024931823,
+  "n_abstractive": 31,
+  "answer_f1_boolean": 0.2,
+  "n_boolean": 10,
+  "answer_f1_none": 0.875,
+  "n_none": 8
+ },
+ "oracle": {
+  "n": 105,
+  "answer_f1": 0.47404639117733344,
+  "evidence_f1": 0.96145880574452,
+  "em": 0.23809523809523808,
+  "answer_f1_extractive": 0.5601662482344107,
+  "n_extractive": 55,
+  "answer_f1_abstractive": 0.28017898189773194,
+  "n_abstractive": 32,
+  "answer_f1_boolean": 0.2,
+  "n_boolean": 10,
+  "answer_f1_none": 1.0,
+  "n_none": 8
+ }
+}

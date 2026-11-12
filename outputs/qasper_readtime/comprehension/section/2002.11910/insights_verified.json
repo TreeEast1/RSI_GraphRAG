@@ -1,0 +1,440 @@
+{
+ "kept": [
+  {
+   "insight_id": "2002.11910::g00:i00",
+   "paper_id": "2002.11910",
+   "group_id": "2002.11910::g00",
+   "concise_text": "Integrating boundary assembling into the LSTM-CRF pipeline yields a 2% absolute improvement on overall F1 score over current state-of-the-art methods on the Sina Weibo training and test datasets.",
+   "triple": {
+    "subject": "boundary assembling integrated into the LSTM-CRF pipeline",
+    "predicate": "improves_on",
+    "object": "current state-of-the-art methods by 2% absolute overall F1 score on the Sina Weibo training and test datasets"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "2002.11910::s00::p004",
+    "2002.11910::s07::p000"
+   ],
+   "supporting_fact_ids": [
+    "2002.11910::g00:b0:f16",
+    "2002.11910::g00:b2:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Both passages jointly support integrating boundary assembling into LSTM/CRF and the 2% absolute F1 improvement over state-of-the-art methods on Sina Weibo train/test datasets."
+   },
+   "unit_id": "2002.11910::u000"
+  },
+  {
+   "insight_id": "2002.11910::g00:i01",
+   "paper_id": "2002.11910",
+   "group_id": "2002.11910::g00",
+   "concise_text": "Boundary assembling addresses Chinese word segmentation errors that can cause cascading failure in NER by preserving sense groups and improving downstream NER results.",
+   "triple": {
+    "subject": "boundary assembling",
+    "predicate": "limits",
+    "object": "cascading failure in NER from Chinese word segmentation errors"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "2002.11910::s00::p003",
+    "2002.11910::s07::p001"
+   ],
+   "supporting_fact_ids": [
+    "2002.11910::g00:b0:f12",
+    "2002.11910::g00:b0:f13",
+    "2002.11910::g00:b2:f09"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "Passages jointly support that segmentation errors cause cascading NER failure and that boundary assembling preserves sense groups/information groups and improves downstream NER results."
+   },
+   "unit_id": "2002.11910::u001"
+  },
+  {
+   "insight_id": "2002.11910::g00:i02",
+   "paper_id": "2002.11910",
+   "group_id": "2002.11910::g00",
+   "concise_text": "The boundary assembling strategy reduces the influence of different segmentation criteria and finds named entities with long word length, addressing two Chinese word segmentation challenges.",
+   "triple": {
+    "subject": "boundary assembling strategy",
+    "predicate": "extends",
+    "object": "Chinese word segmentation by reducing segmentation-criteria influence and finding named entities with long word length"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "2002.11910::s00::p002",
+    "2002.11910::s03::p000"
+   ],
+   "supporting_fact_ids": [
+    "2002.11910::g00:b0:f10",
+    "2002.11910::g00:b0:f11",
+    "2002.11910::g00:b1:f11"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "The first passage lists segmentation-criteria differences and long-range/long named entities as challenges; the second says the strategy finds long-word-length named entities and reduces segmentation-criteria influence."
+   },
+   "unit_id": "2002.11910::u002"
+  },
+  {
+   "insight_id": "2002.11910::g00:i03",
+   "paper_id": "2002.11910",
+   "group_id": "2002.11910::g00",
+   "concise_text": "The model trains CWS on the SIGHAN 2005 bakeoff PKU corpus and NER on 1,890 Sina Weibo messages, so its 2% absolute F1 improvement supports cross-domain robustness.",
+   "triple": {
+    "subject": "2% absolute F1 improvement",
+    "predicate": "evaluated_on",
+    "object": "CWS from the SIGHAN 2005 bakeoff PKU corpus and NER from 1,890 Sina Weibo messages"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "2002.11910::s05::p000",
+    "2002.11910::s07::p000",
+    "2002.11910::s07::p002"
+   ],
+   "supporting_fact_ids": [
+    "2002.11910::g00:b1:f16",
+    "2002.11910::g00:b1:f18",
+    "2002.11910::g00:b2:f10",
+    "2002.11910::g00:b2:f12",
+    "2002.11910::g00:b2:f13"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.78,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "Passages jointly support the datasets, the 2% F1 improvement, and the authors' conclusion that the improvement indicates cross-domain robustness despite PKU news vs Weibo social media domains."
+   },
+   "unit_id": "2002.11910::u003"
+  },
+  {
+   "insight_id": "2002.11910::g00:i05",
+   "paper_id": "2002.11910",
+   "group_id": "2002.11910::g00",
+   "concise_text": "The boundary assembling method depends on pre-trained lexical features to identify adjacent nouns, so out-of-vocabulary datasets may limit model performance.",
+   "triple": {
+    "subject": "pre-trained lexical features",
+    "predicate": "limits",
+    "object": "boundary assembling on out-of-vocabulary dataset"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "2002.11910::s03::p000",
+    "2002.11910::s07::p003"
+   ],
+   "supporting_fact_ids": [
+    "2002.11910::g00:b2:f14"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "Passages jointly support that adjacent-noun identification depends on pre-trained lexical features and that out-of-vocabulary datasets may perform poorly due to lack of lexical information."
+   },
+   "unit_id": "2002.11910::u005"
+  },
+  {
+   "insight_id": "2002.11910::g00:i06",
+   "paper_id": "2002.11910",
+   "group_id": "2002.11910::g00",
+   "concise_text": "The best model performance with dropout rate 0.1 and learning rate 0.05 was trained until the F1 score of NER model converged on the validation dataset, or up to 30 epochs.",
+   "triple": {
+    "subject": "best model performance with dropout rate 0.1 and learning rate 0.05",
+    "predicate": "requires",
+    "object": "training until the F1 score of NER model converges on the validation dataset, or up to 30 epochs"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "2002.11910::s06::p000",
+    "2002.11910::s07::p000"
+   ],
+   "supporting_fact_ids": [
+    "2002.11910::g00:b2:f03",
+    "2002.11910::g00:b2:f07"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.85,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "One passage gives the general training stopping rule; the other identifies the best model performance settings. Jointly they support the composed setting-outcome, though 'requires' is somewhat strong."
+   },
+   "unit_id": "2002.11910::u006"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "2002.11910::g00:i04",
+   "paper_id": "2002.11910",
+   "group_id": "2002.11910::g00",
+   "concise_text": "The NER CRF uses the LSTM hidden vector as dynamic feature input, and that hidden vector contains segmentation information updated by the boundary assembling method.",
+   "triple": {
+    "subject": "LSTM hidden vector",
+    "predicate": "requires",
+    "object": "boundary assembling-updated segmentation information as dynamic feature input to CRF for NER"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "2002.11910::s01::p000",
+    "2002.11910::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "2002.11910::g00:b1:f14"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.4,
+    "causality_error": false,
+    "reason": "The passages say the LSTM hidden vector is dynamic feature input to NER CRF and contains boundary-assembling-updated segmentation information, but do not support the 'requires' relation or that the hidden vector itself requires this as input."
+   },
+   "unit_id": "2002.11910::u004"
+  },
+  {
+   "insight_id": "2002.11910::g00:i07",
+   "paper_id": "2002.11910",
+   "group_id": "2002.11910::g00",
+   "concise_text": "The LSTM module uses character-positional embeddings pre-trained over 112,971,734 Weibo messages, while the NER dataset contains 1,890 Sina Weibo messages.",
+   "triple": {
+    "subject": "character-positional embeddings pre-trained over 112,971,734 Weibo messages",
+    "predicate": "evaluated_on",
+    "object": "NER dataset of 1,890 Sina Weibo messages"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "2002.11910::s02::p000",
+    "2002.11910::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "2002.11910::g00:b1:f03",
+    "2002.11910::g00:b1:f18"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.8,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.45,
+    "novelty": 0.35,
+    "causality_error": false,
+    "reason": "The passages state the embeddings were pre-trained over 112,971,734 Weibo messages and that the NER dataset has 1,890 Sina Weibo messages, but do not support an 'evaluated_on' relation between them."
+   },
+   "unit_id": "2002.11910::u007"
+  },
+  {
+   "insight_id": "2002.11910::g00:i08",
+   "paper_id": "2002.11910",
+   "group_id": "2002.11910::g00",
+   "concise_text": "The two-stage training uses 13,500 sentences for training step one and 1,350 sentences for training step two, matching the NER corpus training split of 1,350 messages.",
+   "triple": {
+    "subject": "training step two with 1,350 sentences",
+    "predicate": "evaluated_on",
+    "object": "NER corpus training split of 1,350 messages"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "2002.11910::s05::p000",
+    "2002.11910::s06::p000"
+   ],
+   "supporting_fact_ids": [
+    "2002.11910::g00:b1:f19",
+    "2002.11910::g00:b2:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.72,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.5,
+    "novelty": 0.45,
+    "causality_error": false,
+    "reason": "The passages give matching numbers but do not state that training step two is evaluated on the NER corpus training split; 'sentences' and 'messages' are also not explicitly equated."
+   },
+   "unit_id": "2002.11910::u008"
+  },
+  {
+   "insight_id": "2002.11910::g00:i09",
+   "paper_id": "2002.11910",
+   "group_id": "2002.11910::g00",
+   "concise_text": "The conclusion that the approach is effective is supported by the experiment result showing an absolute improvement of 2% for the overall F1 score.",
+   "triple": {
+    "subject": "absolute improvement of 2% for the overall F1 score",
+    "predicate": "causes",
+    "object": "conclusion that the approach is effective"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "2002.11910::s07::p000",
+    "2002.11910::s08::p000"
+   ],
+   "supporting_fact_ids": [
+    "2002.11910::g00:b3:f01"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.83,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.3,
+    "causality_error": true,
+    "reason": "The conclusion says experimental improvement shows effectiveness, but the insight's 'causes' relation is an unsupported causal framing; it is also essentially a restatement of the conclusion plus result."
+   },
+   "unit_id": "2002.11910::u009"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "2002.11910::g00:i00",
+    "verdict": {
+     "insight_id": "2002.11910::g00:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Both passages jointly support integrating boundary assembling into LSTM/CRF and the 2% absolute F1 improvement over state-of-the-art methods on Sina Weibo train/test datasets."
+    }
+   },
+   {
+    "insight_id": "2002.11910::g00:i01",
+    "verdict": {
+     "insight_id": "2002.11910::g00:i01",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "Passages jointly support that segmentation errors cause cascading NER failure and that boundary assembling preserves sense groups/information groups and improves downstream NER results."
+    }
+   },
+   {
+    "insight_id": "2002.11910::g00:i02",
+    "verdict": {
+     "insight_id": "2002.11910::g00:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "The first passage lists segmentation-criteria differences and long-range/long named entities as challenges; the second says the strategy finds long-word-length named entities and reduces segmentation-criteria influence."
+    }
+   },
+   {
+    "insight_id": "2002.11910::g00:i03",
+    "verdict": {
+     "insight_id": "2002.11910::g00:i03",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "Passages jointly support the datasets, the 2% F1 improvement, and the authors' conclusion that the improvement indicates cross-domain robustness despite PKU news vs Weibo social media domains."
+    }
+   },
+   {
+    "insight_id": "2002.11910::g00:i04",
+    "verdict": {
+     "insight_id": "2002.11910::g00:i04",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.4,
+     "causality_error": false,
+     "reason": "The passages say the LSTM hidden vector is dynamic feature input to NER CRF and contains boundary-assembling-updated segmentation information, but do not support the 'requires' relation or that the hidden vector itself requires this as input."
+    },
+    "reason": "The passages say the LSTM hidden vector is dynamic feature input to NER CRF and contains boundary-assembling-updated segmentation information, but do not support the 'requires' relation or that the hidden vector itself requires this as input."
+   },
+   {
+    "insight_id": "2002.11910::g00:i05",
+    "verdict": {
+     "insight_id": "2002.11910::g00:i05",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "Passages jointly support that adjacent-noun identification depends on pre-trained lexical features and that out-of-vocabulary datasets may perform poorly due to lack of lexical information."
+    }
+   },
+   {
+    "insight_id": "2002.11910::g00:i06",
+    "verdict": {
+     "insight_id": "2002.11910::g00:i06",
+     "keep": true,
+     "support": 0.85,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "One passage gives the general training stopping rule; the other identifies the best model performance settings. Jointly they support the composed setting-outcome, though 'requires' is somewhat strong."
+    }
+   },
+   {
+    "insight_id": "2002.11910::g00:i07",
+    "verdict": {
+     "insight_id": "2002.11910::g00:i07",
+     "keep": false,
+     "support": 0.45,
+     "novelty": 0.35,
+     "causality_error": false,
+     "reason": "The passages state the embeddings were pre-trained over 112,971,734 Weibo messages and that the NER dataset has 1,890 Sina Weibo messages, but do not support an 'evaluated_on' relation between them."
+    },
+    "reason": "The passages state the embeddings were pre-trained over 112,971,734 Weibo messages and that the NER dataset has 1,890 Sina Weibo messages, but do not support an 'evaluated_on' relation between them."
+   },
+   {
+    "insight_id": "2002.11910::g00:i08",
+    "verdict": {
+     "insight_id": "2002.11910::g00:i08",
+     "keep": false,
+     "support": 0.5,
+     "novelty": 0.45,
+     "causality_error": false,
+     "reason": "The passages give matching numbers but do not state that training step two is evaluated on the NER corpus training split; 'sentences' and 'messages' are also not explicitly equated."
+    },
+    "reason": "The passages give matching numbers but do not state that training step two is evaluated on the NER corpus training split; 'sentences' and 'messages' are also not explicitly equated."
+   },
+   {
+    "insight_id": "2002.11910::g00:i09",
+    "verdict": {
+     "insight_id": "2002.11910::g00:i09",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.3,
+     "causality_error": true,
+     "reason": "The conclusion says experimental improvement shows effectiveness, but the insight's 'causes' relation is an unsupported causal framing; it is also essentially a restatement of the conclusion plus result."
+    },
+    "reason": "The conclusion says experimental improvement shows effectiveness, but the insight's 'causes' relation is an unsupported causal framing; it is also essentially a restatement of the conclusion plus result."
+   }
+  ],
+  "calls": [
+   {
+    "n": 10,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 4427,
+     "completion_tokens": 807,
+     "total_tokens": 5234,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

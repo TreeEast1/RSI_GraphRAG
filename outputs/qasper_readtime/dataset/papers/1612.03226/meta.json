@@ -1,0 +1,40 @@
+{
+ "paper_id": "1612.03226",
+ "title": "Active Learning for Speech Recognition: the Power of Gradients",
+ "abstract": "In training speech recognition systems, labeling audio clips can be expensive, and not all data is equally valuable. Active learning aims to label only the most informative samples to reduce cost. For speech recognition, confidence scores and other likelihood-based active learning methods have been shown to be effective. Gradient-based active learning methods, however, are still not well-understood. This work investigates the Expected Gradient Length (EGL) approach in active learning for end-to-end speech recognition. We justify EGL from a variance reduction perspective, and observe that EGL's measure of informativeness picks novel samples uncorrelated with confidence scores. Experimentally, we show that EGL can reduce word errors by 11\\%, or alternatively, reduce the number of samples to label by 50\\%, when compared to random sampling.",
+ "sections": [
+  "Introduction",
+  "Problem Formulation",
+  "Confidence Scores",
+  "Expected Gradient Length",
+  "Variance in the Asymptote",
+  "Experiments",
+  "Similarity between Query Methods",
+  "Conclusion and Future Work"
+ ],
+ "n_paragraphs": 24,
+ "n_tokens": 2137,
+ "figures_and_tables": [
+  {
+   "caption_id": "1612.03226::fig000",
+   "paper_id": "1612.03226",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: Performance metrics at various percentages of queries. EGL shows a greater reduction in error for smaller amounts of data. By definition, all strategies converge as the query percentage approaches 100%.",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1612.03226::fig001",
+   "paper_id": "1612.03226",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2: The difference in how active learning methods rank informativeness of samples. Rankings are normalized to [0, 1], with 1 being the most informative. In (a), pCTC and entropy are shown to be very correlated. In (b), EGL appears uncorrelated with entropy (and pCTC). Data samples highlighted in the red circle are considered very informative by EGL, but uninformative by entropy.",
+   "n_tokens": 89
+  },
+  {
+   "caption_id": "1612.03226::fig002",
+   "paper_id": "1612.03226",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Performance metrics at various query percentages (smaller is better, best in bold)",
+   "n_tokens": 20
+  }
+ ]
+}

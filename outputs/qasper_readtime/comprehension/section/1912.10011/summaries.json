@@ -1,0 +1,257 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1912.10011::s11::p000",
+   "summary": "The hierarchical model is compared against three systems, reporting each paper's best performing model results.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s11::p001",
+   "summary": "Wiseman BIBREF10 is a standard encoder-decoder system with copy mechanism.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s11::p002",
+   "summary": "Li BIBREF28 is a standard encoder-decoder with delayed copy mechanism using placeholders replaced by salient records extracted by a pointer network.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s11::p003",
+   "summary": "Puduppully-plan BIBREF12 uses two steps: a standard encoder-decoder generates a plan, then another generates text from this plan.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s11::p004",
+   "summary": "Puduppully-updt BIBREF13 is a standard encoder-decoder with a module updating record representations during generation via a gated recurrent network.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s12::p000",
+   "summary": "The importance of input structure is tested by training different variants of the proposed architecture.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s12::p001",
+   "summary": "Flat feeds input sequentially to the encoder, loses hierarchy, uses standard attention, and uses a Transformer instead of an RNN unlike Wiseman.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s12::p002",
+   "summary": "Hierarchical-kv is the full hierarchical model with traditional hierarchical attention over records computed on the full record encoding, as in equation (SECREF16).",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s12::p003",
+   "summary": "Hierarchical-k is the full hierarchical model with key-guided hierarchical attention over records computed only on record key representations, as in equation (DISPLAY_FORM17).",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s13::p000",
+   "summary": "Implementation details specify decoder hyperparameters, two-layers multi-head self-attention with two heads, embedding size 20 for 39 record keys, size 300, dropout 0.5, batch size 64, 25K updates, last 5 checkpoints at every 1K updates, Adam BIBREF37, initial learning rate 0.001 reduced by half every 10K steps, beam size 5, OpenNMT-py BIBREF38, and code at https://github.com/KaijuML/data-to-text-hierarchical.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s14::p001",
+   "summary": "RotoWire testset results in Table TABREF25 report mean scores over ten runs with standard deviations, baselines BIBREF12, BIBREF13, BIBREF10, variants, and oracle metrics, with gold descriptions obtaining 100% except RG, IE failing 4% of the time, and RG-# an absolute count.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s15::p000",
+   "summary": "Comparing Flat, Hierarchical-k, and Hierarchical-kv shows Flat lower results, such as BLEU 16.7 vs. 17.5 for Flat and Hierarchical-k, suggesting hierarchy effectiveness.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s15::p001",
+   "summary": "Hierarchical-k performs slightly better than Hierarchical-kv in all metrics except CS-R%, with sharp attention on (PTS_QTR1, 26) versus distributed PTS_QTR records.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s16::p000",
+   "summary": "Table TABREF25 shows scenarios significantly higher in BLEU, with Hierarchical-k reaching 17.5 vs. 16.5 against the best baseline, while generated texts still contain incorrect facts and hallucinations.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s16::p001",
+   "summary": "Specific statements regarding all baselines are outlined.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s16::p002",
+   "summary": "Hierarchical models achieve significantly better scores than Wiseman on all metrics, with RG# 16.83 vs. 17.31, Wiseman 75.62% precision and 22.25 records, and Hierarchical-k 89.46% precision and 23.66 total mentions.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s16::p003",
+   "summary": "Flat and Wiseman differ by bi-LSTM vs. Transformer, with Flat obtaining higher BLEU 16.7 vs. 14.5 and accurate RG-P% mentions included in gold descriptions as CS-R%.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s16::p004",
+   "summary": "Hierarchical models outperform Li and Puduppully-plan on BLEU and all qualitative metrics, while Puduppully-plan reaches 34.28 mentions on average.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s16::p005",
+   "summary": "Puduppully-updt improves Content Ordering (CO) and RG-P%, but Hierarchical-k obtains slightly better Content Selection (CS), with Puduppully-updt RG-# score of 30.11.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s16::p006",
+   "summary": "The scenarios use 14 millions parameters compared to baselines ranging from 23 to 45 millions, outlining effectiveness of structure encoding.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s17::p000",
+   "summary": "The proposed hierarchical encoder leverages structure, synergizes with hierarchical attention, outperforms competitive RotoWire baselines in BLEU and qualitative metrics, but can still produce erroneous facts or hallucinations.",
+   "group_id": "1912.10011::g01"
+  },
+  {
+   "passage_id": "1912.10011::s18::p000",
+   "summary": "The H2020 project AI4EU (825619) partially supports Laure Soulier and Patrick Gallinari.",
+   "group_id": "1912.10011::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1912.10011::g00",
+   "summaries": [],
+   "n_raw": 0,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "length",
+   "usage": {
+    "prompt_tokens": 5893,
+    "completion_tokens": 8192,
+    "total_tokens": 14085,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1912.10011::g01",
+   "summaries": [
+    {
+     "passage_id": "1912.10011::s11::p000",
+     "summary": "The hierarchical model is compared against three systems, reporting each paper's best performing model results.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s11::p001",
+     "summary": "Wiseman BIBREF10 is a standard encoder-decoder system with copy mechanism.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s11::p002",
+     "summary": "Li BIBREF28 is a standard encoder-decoder with delayed copy mechanism using placeholders replaced by salient records extracted by a pointer network.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s11::p003",
+     "summary": "Puduppully-plan BIBREF12 uses two steps: a standard encoder-decoder generates a plan, then another generates text from this plan.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s11::p004",
+     "summary": "Puduppully-updt BIBREF13 is a standard encoder-decoder with a module updating record representations during generation via a gated recurrent network.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s12::p000",
+     "summary": "The importance of input structure is tested by training different variants of the proposed architecture.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s12::p001",
+     "summary": "Flat feeds input sequentially to the encoder, loses hierarchy, uses standard attention, and uses a Transformer instead of an RNN unlike Wiseman.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s12::p002",
+     "summary": "Hierarchical-kv is the full hierarchical model with traditional hierarchical attention over records computed on the full record encoding, as in equation (SECREF16).",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s12::p003",
+     "summary": "Hierarchical-k is the full hierarchical model with key-guided hierarchical attention over records computed only on record key representations, as in equation (DISPLAY_FORM17).",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s13::p000",
+     "summary": "Implementation details specify decoder hyperparameters, two-layers multi-head self-attention with two heads, embedding size 20 for 39 record keys, size 300, dropout 0.5, batch size 64, 25K updates, last 5 checkpoints at every 1K updates, Adam BIBREF37, initial learning rate 0.001 reduced by half every 10K steps, beam size 5, OpenNMT-py BIBREF38, and code at https://github.com/KaijuML/data-to-text-hierarchical.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s14::p001",
+     "summary": "RotoWire testset results in Table TABREF25 report mean scores over ten runs with standard deviations, baselines BIBREF12, BIBREF13, BIBREF10, variants, and oracle metrics, with gold descriptions obtaining 100% except RG, IE failing 4% of the time, and RG-# an absolute count.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s15::p000",
+     "summary": "Comparing Flat, Hierarchical-k, and Hierarchical-kv shows Flat lower results, such as BLEU 16.7 vs. 17.5 for Flat and Hierarchical-k, suggesting hierarchy effectiveness.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s15::p001",
+     "summary": "Hierarchical-k performs slightly better than Hierarchical-kv in all metrics except CS-R%, with sharp attention on (PTS_QTR1, 26) versus distributed PTS_QTR records.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s16::p000",
+     "summary": "Table TABREF25 shows scenarios significantly higher in BLEU, with Hierarchical-k reaching 17.5 vs. 16.5 against the best baseline, while generated texts still contain incorrect facts and hallucinations.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s16::p001",
+     "summary": "Specific statements regarding all baselines are outlined.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s16::p002",
+     "summary": "Hierarchical models achieve significantly better scores than Wiseman on all metrics, with RG# 16.83 vs. 17.31, Wiseman 75.62% precision and 22.25 records, and Hierarchical-k 89.46% precision and 23.66 total mentions.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s16::p003",
+     "summary": "Flat and Wiseman differ by bi-LSTM vs. Transformer, with Flat obtaining higher BLEU 16.7 vs. 14.5 and accurate RG-P% mentions included in gold descriptions as CS-R%.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s16::p004",
+     "summary": "Hierarchical models outperform Li and Puduppully-plan on BLEU and all qualitative metrics, while Puduppully-plan reaches 34.28 mentions on average.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s16::p005",
+     "summary": "Puduppully-updt improves Content Ordering (CO) and RG-P%, but Hierarchical-k obtains slightly better Content Selection (CS), with Puduppully-updt RG-# score of 30.11.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s16::p006",
+     "summary": "The scenarios use 14 millions parameters compared to baselines ranging from 23 to 45 millions, outlining effectiveness of structure encoding.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s17::p000",
+     "summary": "The proposed hierarchical encoder leverages structure, synergizes with hierarchical attention, outperforms competitive RotoWire baselines in BLEU and qualitative metrics, but can still produce erroneous facts or hallucinations.",
+     "group_id": "1912.10011::g01"
+    },
+    {
+     "passage_id": "1912.10011::s18::p000",
+     "summary": "The H2020 project AI4EU (825619) partially supports Laure Soulier and Patrick Gallinari.",
+     "group_id": "1912.10011::g01"
+    }
+   ],
+   "n_raw": 22,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3027,
+    "completion_tokens": 1244,
+    "total_tokens": 4271,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

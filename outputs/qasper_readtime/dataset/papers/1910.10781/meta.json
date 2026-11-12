@@ -1,0 +1,94 @@
+{
+ "paper_id": "1910.10781",
+ "title": "Hierarchical Transformers for Long Document Classification",
+ "abstract": "BERT, which stands for Bidirectional Encoder Representations from Transformers, is a recently introduced language representation model based upon the transfer learning paradigm. We extend its fine-tuning procedure to address one of its major limitations - applicability to inputs longer than a few hundred words, such as transcripts of human call conversations. Our method is conceptually simple. We segment the input into smaller chunks and feed each of them into the base model. Then, we propagate each output through a single recurrent layer, or another transformer, followed by a softmax activation. We obtain the final classification decision after the last segment has been consumed. We show that both BERT extensions are quick to fine-tune and converge after as little as 1 epoch of training on a small, domain-specific data set. We successfully apply them in three different tasks involving customer call satisfaction prediction and topic classification, and obtain a significant improvement over the baseline models in two of them.",
+ "sections": [
+  "Introduction",
+  "Related work",
+  "Method ::: BERT",
+  "Method ::: Recurrence over BERT",
+  "Method ::: Transformer over BERT",
+  "Experiments",
+  "Experiments ::: CSAT",
+  "Experiments ::: 20 newsgroups",
+  "Experiments ::: Fisher",
+  "Experiments ::: Dataset Statistics",
+  "Experiments ::: Architecture and Training Details",
+  "Results",
+  "Conclusions"
+ ],
+ "n_paragraphs": 39,
+ "n_tokens": 3515,
+ "figures_and_tables": [
+  {
+   "caption_id": "1910.10781::fig000",
+   "paper_id": "1910.10781",
+   "file": "2-Figure1-1.png",
+   "caption": "Fig. 1. BERT model for classification. H denotes BERT segment representations from last transformer block, P denotes segment posterior probabilities. Figure inspired from [2]",
+   "n_tokens": 34
+  },
+  {
+   "caption_id": "1910.10781::fig001",
+   "paper_id": "1910.10781",
+   "file": "3-Figure2-1.png",
+   "caption": "Fig. 2. Histogram of customer ratings. Rating 9 corresponds to extremely satisfied and 1 to extremely dissatisfied",
+   "n_tokens": 24
+  },
+  {
+   "caption_id": "1910.10781::fig002",
+   "paper_id": "1910.10781",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2. Results using segment representations (H) from a pre-trained BERT (without fine-tuning).",
+   "n_tokens": 23
+  },
+  {
+   "caption_id": "1910.10781::fig003",
+   "paper_id": "1910.10781",
+   "file": "4-Table3-1.png",
+   "caption": "Table 3. Results using segment representations (H) from a fine-tuned BERT.",
+   "n_tokens": 19
+  },
+  {
+   "caption_id": "1910.10781::fig004",
+   "paper_id": "1910.10781",
+   "file": "4-Figure3-1.png",
+   "caption": "Fig. 3. Cumulative distribution of document lengths.",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1910.10781::fig005",
+   "paper_id": "1910.10781",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1. Dataset statistics. C indicates number of Classes, N the Number of documents, AW the Average number of Words per document and L the Longest document length.",
+   "n_tokens": 35
+  },
+  {
+   "caption_id": "1910.10781::fig006",
+   "paper_id": "1910.10781",
+   "file": "5-Table4-1.png",
+   "caption": "Table 4. Comparison of models using fine-tuned BERT segment-level predictions (P) instead of segment representations (H).",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "1910.10781::fig007",
+   "paper_id": "1910.10781",
+   "file": "5-Table5-1.png",
+   "caption": "Table 5. The effect of including positional embeddings in ToBERT model. Fine-tuned BERT segment representations were used for these results.",
+   "n_tokens": 28
+  },
+  {
+   "caption_id": "1910.10781::fig008",
+   "paper_id": "1910.10781",
+   "file": "5-Figure4-1.png",
+   "caption": "Fig. 4. Comparison of average voting and ToBERT for various document length ranges for Fisher dataset.",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "1910.10781::fig009",
+   "paper_id": "1910.10781",
+   "file": "5-Table6-1.png",
+   "caption": "Table 6. Comparison of our results with previous works.",
+   "n_tokens": 12
+  }
+ ]
+}

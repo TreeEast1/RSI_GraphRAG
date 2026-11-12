@@ -1,0 +1,312 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1909.01296::s00::p000",
+   "summary": "Task-oriented dialogue systems use manually engineered task-specific ontologies with slots and values as semantic representations in modular and end-to-end systems.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s00::p001",
+   "summary": "Explicit semantics create challenges including scarce annotated domain-specific data, constrained dialogue types, and expensive in-domain data collection for new domains.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s00::p002",
+   "summary": "The paper presents PolyResponse, a non-generative response retrieval conversational search engine trained on hundreds of millions of Reddit conversations for restaurant search and booking.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s00::p003",
+   "summary": "The demo focuses on PolyResponse's practical restaurant search usefulness, multi-modal extension, booking assistance, and retrieval-based avoidance of ontology, generation, and policy modules.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s00::p004",
+   "summary": "PolyResponse combines text responses with visual information, supports voice input and visual output, and is deployed in 8 languages for restaurants in 8 cities.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s01::p000",
+   "summary": "PolyResponse is a ranking model scoring replies and photos in conversational context using scaled cosine similarities S(r,c) and S(p,c).",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s02::p000",
+   "summary": "The text model trains on hundreds of millions context-reply (c,r) pairs using lower-cased tokenised unigrams and bigrams with wildcard replacements and a Reddit-based vocabulary.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s02::p001",
+   "summary": "Training learns d=320 shared features, transformer-based 320-dimensional encodings, three 1,024-dimensional hidden layers, and final l=512 representations h_c and h_r.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s02::p002",
+   "summary": "Training constrains C between 0 and sqrt(l), maximises context-reply similarity, minimises random pairings, and uses SGD batches of 500 pairs with 1 positive and 499 negatives.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s03::p000",
+   "summary": "Photos use ImageNet-pretrained CNN models, specifically MobileNet with depth multiplier 1.4 and 224 x 224 input, producing a 1,792-dimensional representation mapped to h_p.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s04::p000",
+   "summary": "The Reddit dataset spans January 2015 to December 2018 and almost 3.7B comments, yielding more than 727M context-reply (c,r) pairs after preprocessing.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s05::p000",
+   "summary": "A photo encoder is learned on pretrained MobileNet CNN using around 200K Yelp Open dataset photos and captions to maximise caption-photo similarity.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s06::p000",
+   "summary": "At inference, the Yelp dataset supplies city-limited candidates; English Edinburgh uses 396 restaurants, 4,225 photos, 6,725 responses, and 125,830 review sentences.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s07::p000",
+   "summary": "PolyResponse jointly trains f(context) and g(reply) on Reddit, freezes g(), learns t(photo) on Yelp, and retrieves plausible text replies and photo responses.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s07::p001",
+   "summary": "Inference computes h_c and finds nearby h_r and h_p vectors, with pre-computed response vectors and optimised nearest neighbour search scaling to billions of candidates.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s07::p002",
+   "summary": "PolyResponse offers voice and text input and output, with Google Cloud tools supporting speech-to-text and text-to-speech conversion.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s08::p000",
+   "summary": "Restaurant-browsing dialogue flow represents state as a monotonically decreasing set of relevant restaurants, where valid restaurants have relevant responses to new user input.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s08::p002",
+   "summary": "S1 initialises R as all restaurants in the city and ranks all responses in the response pool pertaining to restaurants in R.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s08::p004",
+   "summary": "S2 retrieves the top N responses r_1, r_2, ..., r_N with sorted cosine similarity scores s_1 >= s_2 >= ... >= s_N.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s08::p006",
+   "summary": "S3 computes probability scores p_i proportional to exp(a * s_i) with sum from i=1 to N of p_i, where a>0 is tunable.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s08::p008",
+   "summary": "S4 computes q_e for each restaurant/entity e in R as q_e = sum over i: r_i in e of p_i.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s08::p010",
+   "summary": "S5 updates R to the smallest set of restaurants with highest q whose q-values sum to more than predefined threshold t.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s08::p012",
+   "summary": "S6 displays the most relevant responses associated with the updated R and returns to S2.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s08::p013",
+   "summary": "The system displays responses from multiple relevant restaurants or top N responses and photos for one restaurant, using internal narrowing and templatic spoken rules without dedicated modules or explicit task-tailored semantics.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s08::p014",
+   "summary": "Intent classifiers can reset the dialogue state or activate the separate restaurant booking dialogue flow.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s09::p000",
+   "summary": "PolyResponse restaurant search is available in 8 languages for 8 cities, using a Google Translate translate-to-source approach for foreign language responses and user utterances.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s10::p000",
+   "summary": "Voice-controlled menu search ranks available menu items and retrieves those semantically relevant to the current user utterance using the same methodology as other responses.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s11::p000",
+   "summary": "Two binary intent classifiers using h_c, a single-layer neural net with ReLU and 100 hidden nodes, and sets of 20 paraphrases support resetting R and switching to slot-based booking.",
+   "group_id": "1909.01296::g00"
+  },
+  {
+   "passage_id": "1909.01296::s12::p000",
+   "summary": "The paper presents search-based dialogue without explicit semantic representations, allowing multi-modal responses, with future work on more tasks, languages, encoders, ranking functions, and complex flows.",
+   "group_id": "1909.01296::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1909.01296::g00",
+   "summaries": [
+    {
+     "passage_id": "1909.01296::s00::p000",
+     "summary": "Task-oriented dialogue systems use manually engineered task-specific ontologies with slots and values as semantic representations in modular and end-to-end systems.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s00::p001",
+     "summary": "Explicit semantics create challenges including scarce annotated domain-specific data, constrained dialogue types, and expensive in-domain data collection for new domains.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s00::p002",
+     "summary": "The paper presents PolyResponse, a non-generative response retrieval conversational search engine trained on hundreds of millions of Reddit conversations for restaurant search and booking.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s00::p003",
+     "summary": "The demo focuses on PolyResponse's practical restaurant search usefulness, multi-modal extension, booking assistance, and retrieval-based avoidance of ontology, generation, and policy modules.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s00::p004",
+     "summary": "PolyResponse combines text responses with visual information, supports voice input and visual output, and is deployed in 8 languages for restaurants in 8 cities.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s01::p000",
+     "summary": "PolyResponse is a ranking model scoring replies and photos in conversational context using scaled cosine similarities S(r,c) and S(p,c).",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s02::p000",
+     "summary": "The text model trains on hundreds of millions context-reply (c,r) pairs using lower-cased tokenised unigrams and bigrams with wildcard replacements and a Reddit-based vocabulary.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s02::p001",
+     "summary": "Training learns d=320 shared features, transformer-based 320-dimensional encodings, three 1,024-dimensional hidden layers, and final l=512 representations h_c and h_r.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s02::p002",
+     "summary": "Training constrains C between 0 and sqrt(l), maximises context-reply similarity, minimises random pairings, and uses SGD batches of 500 pairs with 1 positive and 499 negatives.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s03::p000",
+     "summary": "Photos use ImageNet-pretrained CNN models, specifically MobileNet with depth multiplier 1.4 and 224 x 224 input, producing a 1,792-dimensional representation mapped to h_p.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s04::p000",
+     "summary": "The Reddit dataset spans January 2015 to December 2018 and almost 3.7B comments, yielding more than 727M context-reply (c,r) pairs after preprocessing.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s05::p000",
+     "summary": "A photo encoder is learned on pretrained MobileNet CNN using around 200K Yelp Open dataset photos and captions to maximise caption-photo similarity.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s06::p000",
+     "summary": "At inference, the Yelp dataset supplies city-limited candidates; English Edinburgh uses 396 restaurants, 4,225 photos, 6,725 responses, and 125,830 review sentences.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s07::p000",
+     "summary": "PolyResponse jointly trains f(context) and g(reply) on Reddit, freezes g(), learns t(photo) on Yelp, and retrieves plausible text replies and photo responses.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s07::p001",
+     "summary": "Inference computes h_c and finds nearby h_r and h_p vectors, with pre-computed response vectors and optimised nearest neighbour search scaling to billions of candidates.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s07::p002",
+     "summary": "PolyResponse offers voice and text input and output, with Google Cloud tools supporting speech-to-text and text-to-speech conversion.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s08::p000",
+     "summary": "Restaurant-browsing dialogue flow represents state as a monotonically decreasing set of relevant restaurants, where valid restaurants have relevant responses to new user input.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s08::p002",
+     "summary": "S1 initialises R as all restaurants in the city and ranks all responses in the response pool pertaining to restaurants in R.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s08::p004",
+     "summary": "S2 retrieves the top N responses r_1, r_2, ..., r_N with sorted cosine similarity scores s_1 >= s_2 >= ... >= s_N.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s08::p006",
+     "summary": "S3 computes probability scores p_i proportional to exp(a * s_i) with sum from i=1 to N of p_i, where a>0 is tunable.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s08::p008",
+     "summary": "S4 computes q_e for each restaurant/entity e in R as q_e = sum over i: r_i in e of p_i.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s08::p010",
+     "summary": "S5 updates R to the smallest set of restaurants with highest q whose q-values sum to more than predefined threshold t.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s08::p012",
+     "summary": "S6 displays the most relevant responses associated with the updated R and returns to S2.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s08::p013",
+     "summary": "The system displays responses from multiple relevant restaurants or top N responses and photos for one restaurant, using internal narrowing and templatic spoken rules without dedicated modules or explicit task-tailored semantics.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s08::p014",
+     "summary": "Intent classifiers can reset the dialogue state or activate the separate restaurant booking dialogue flow.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s09::p000",
+     "summary": "PolyResponse restaurant search is available in 8 languages for 8 cities, using a Google Translate translate-to-source approach for foreign language responses and user utterances.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s10::p000",
+     "summary": "Voice-controlled menu search ranks available menu items and retrieves those semantically relevant to the current user utterance using the same methodology as other responses.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s11::p000",
+     "summary": "Two binary intent classifiers using h_c, a single-layer neural net with ReLU and 100 hidden nodes, and sets of 20 paraphrases support resetting R and switching to slot-based booking.",
+     "group_id": "1909.01296::g00"
+    },
+    {
+     "passage_id": "1909.01296::s12::p000",
+     "summary": "The paper presents search-based dialogue without explicit semantic representations, allowing multi-modal responses, with future work on more tasks, languages, encoders, ranking functions, and complex flows.",
+     "group_id": "1909.01296::g00"
+    }
+   ],
+   "n_raw": 29,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4522,
+    "completion_tokens": 1465,
+    "total_tokens": 5987,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "paper_id": "1912.01852",
+ "title": "PitchNet: Unsupervised Singing Voice Conversion with Pitch Adversarial Network",
+ "abstract": "Singing voice conversion is to convert a singer's voice to another one's voice without changing singing content. Recent work shows that unsupervised singing voice conversion can be achieved with an autoencoder-based approach [1]. However, the converted singing voice can be easily out of key, showing that the existing approach can not model the pitch information precisely. In this paper, we propose to advance the existing unsupervised singing voice conversion method proposed in [1] to achieve more accurate pitch translation and flexible pitch manipulation. Specifically, the proposed PitchNet added an adversarially trained pitch regression network to enforce the encoder network to learn pitch invariant phoneme representation, and a separate module to feed pitch extracted from the source audio to the decoder network. Our evaluation shows that the proposed method can greatly improve the quality of the converted singing voice (2.92 vs 3.75 in MOS). We also demonstrate that the pitch of converted singing can be easily controlled during generation by changing the levels of extracted pitch before passing it to the decoder network.",
+ "sections": [
+  "Introduction",
+  "Method",
+  "Method ::: Training Loss",
+  "Method ::: The architecture of the Sub-Networks",
+  "Experiments",
+  "Experiments ::: Dataset and Preprocessing",
+  "Experiments ::: Training",
+  "Experiments ::: Evaluation",
+  "Conclusion",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 31,
+ "n_tokens": 2851,
+ "figures_and_tables": [
+  {
+   "caption_id": "1912.01852::fig000",
+   "paper_id": "1912.01852",
+   "file": "2-Figure2-1.png",
+   "caption": "Fig. 2: The architecture of the singer classification network and pitch regression network. Left: Singer classification network; Right: Pitch regression network.",
+   "n_tokens": 29
+  },
+  {
+   "caption_id": "1912.01852::fig001",
+   "paper_id": "1912.01852",
+   "file": "2-Figure1-1.png",
+   "caption": "Fig. 1: The overall architecture of PitchNet. PitchNet consists of five parts, an encoder, a decoder, a Look Up Table (LUT) of singer embedding vectors, a singer classification network and a pitch regression network. The audio waveform is directly fed into the encoder. The output of the encoder, the singer embedding vector retrieved from LUT and the input pitch are concatenated together to condition on the WaveNet decoder to output audio waveform.",
+   "n_tokens": 91
+  },
+  {
+   "caption_id": "1912.01852::fig002",
+   "paper_id": "1912.01852",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Automatic quality scores",
+   "n_tokens": 7
+  },
+  {
+   "caption_id": "1912.01852::fig003",
+   "paper_id": "1912.01852",
+   "file": "3-Table2-1.png",
+   "caption": "Table 2: MOS scores",
+   "n_tokens": 6
+  },
+  {
+   "caption_id": "1912.01852::fig004",
+   "paper_id": "1912.01852",
+   "file": "4-Figure3-1.png",
+   "caption": "Fig. 3: The pitch of the source audio and converted audio with different pitch as input",
+   "n_tokens": 19
+  }
+ ]
+}

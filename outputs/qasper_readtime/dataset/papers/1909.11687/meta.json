@@ -1,0 +1,53 @@
+{
+ "paper_id": "1909.11687",
+ "title": "Extreme Language Model Compression with Optimal Subwords and Shared Projections",
+ "abstract": "Pre-trained deep neural network language models such as ELMo, GPT, BERT and XLNet have recently achieved state-of-the-art performance on a variety of language understanding tasks. However, their size makes them impractical for a number of scenarios, especially on mobile and edge devices. In particular, the input word embedding matrix accounts for a significant proportion of the model's memory footprint, due to the large input vocabulary and embedding dimensions. Knowledge distillation techniques have had success at compressing large neural network models, but they are ineffective at yielding student models with vocabularies different from the original teacher models. We introduce a novel knowledge distillation technique for training a student model with a significantly smaller vocabulary as well as lower embedding and hidden state dimensions. Specifically, we employ a dual-training mechanism that trains the teacher and student models simultaneously to obtain optimal word embeddings for the student vocabulary. We combine this approach with learning shared projection matrices that transfer layer-wise knowledge from the teacher model to the student model. Our method is able to compress the BERT_BASE model by more than 60x, with only a minor drop in downstream task metrics, resulting in a language model with a footprint of under 7MB. Experimental results also demonstrate higher compression efficiency and accuracy when compared with other state-of-the-art compression techniques.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Methodology",
+  "Methodology ::: Optimal Subword Embeddings via Knowledge Distillation",
+  "Methodology ::: Dual Training",
+  "Methodology ::: Shared Projections",
+  "Methodology ::: Optimization Objective",
+  "Experiments",
+  "Experiments ::: Language Model Training",
+  "Experiments ::: Models and Baselines",
+  "Experiments ::: Evaluation Tasks and Datasets",
+  "Results",
+  "Discussion",
+  "Conclusion"
+ ],
+ "n_paragraphs": 46,
+ "n_tokens": 4672,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.11687::fig000",
+   "paper_id": "1909.11687",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: Knowledge Distillation on BERT with smaller student vocabulary. (Left) A pre-trained teacher BERT model with default BERT parameters (e.g., 30K vocab, 768 hidden state dimension). (Right) A student BERT model trained from scratch with smaller vocab (5K) and hidden state dimension (e.g., 48). During distillation, the teacher model randomly selects a vocabulary to segment each input word. The red and green square nexts to the transformer layers indicate trainable parameters for both the student and teacher models - note that our student models have smaller model dimensions. The projection matrices U and V, shown as having representative shapes, are shared across all layers for model parameters that have the same dimensions.",
+   "n_tokens": 150
+  },
+  {
+   "caption_id": "1909.11687::fig001",
+   "paper_id": "1909.11687",
+   "file": "6-Table1-1.png",
+   "caption": "Table 1: A summary of our student models’ sizes compared to BERTBASE. #Params indicates the number of parameters in the student model, model size is measured in megabytes, and FLOPS ratio measures the relative ratio of floating point operations required for inference on the model.",
+   "n_tokens": 58
+  },
+  {
+   "caption_id": "1909.11687::fig002",
+   "paper_id": "1909.11687",
+   "file": "6-Table2-1.png",
+   "caption": "Table 2: Masked language modeling task accuracy for the distilled student models and a fine-tunefrom-scratch baseline. We observe consistently better performance for our proposed approaches.",
+   "n_tokens": 36
+  },
+  {
+   "caption_id": "1909.11687::fig003",
+   "paper_id": "1909.11687",
+   "file": "7-Table3-1.png",
+   "caption": "Table 3: Results of the distilled models, the teacher model and baselines on the downstream language understanding task test sets, obtained from the GLUE server, along with the size parameters and compression ratios of the respective models compared to the teacher BERTBASE. MNLI-m and MNLI-mm refer to the genre-matched and genre-mismatched test sets for MNLI.",
+   "n_tokens": 76
+  }
+ ]
+}

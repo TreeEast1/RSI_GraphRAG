@@ -1,0 +1,405 @@
+{
+ "1909.01296::s00::p000": [
+  [
+   "Task-oriented dialogue systems",
+   "are primarily designed to",
+   "search and interact with large databases"
+  ],
+  [
+   "Task-oriented dialogue systems",
+   "assist users in accomplishing",
+   "a well-defined task"
+  ],
+  [
+   "Conversations",
+   "are modelled as",
+   "a sequence of actions that constrain slots to particular values"
+  ],
+  [
+   "This explicit semantic space",
+   "is manually engineered by",
+   "the system designer"
+  ]
+ ],
+ "1909.01296::s00::p001": [
+  [
+   "annotated datasets",
+   "are",
+   "few and far between, as well as limited in size and the number of domains covered"
+  ],
+  [
+   "the current approach",
+   "constrains",
+   "the types of dialogue the system can support"
+  ]
+ ],
+ "1909.01296::s00::p002": [
+  [
+   "the PolyResponse conversational search engine",
+   "relies on",
+   "non-generative response retrieval"
+  ],
+  [
+   "The engine",
+   "is trained on",
+   "hundreds of millions of real conversations from a general domain (i.e., Reddit)"
+  ],
+  [
+   "The engine",
+   "uses",
+   "an implicit representation of semantics that directly optimizes the task at hand"
+  ]
+ ],
+ "1909.01296::s00::p003": [
+  [
+   "This demo",
+   "puts focus on",
+   "the actual practical usefulness of the search engine"
+  ],
+  [
+   "a PolyReponse system",
+   "assists users in",
+   "finding a relevant restaurant according to their preference"
+  ],
+  [
+   "a PolyReponse system",
+   "helps users to",
+   "make a booking in the selected restaurant"
+  ],
+  [
+   "the PolyResponse engine",
+   "has no need to engineer",
+   "a structured ontology"
+  ],
+  [
+   "This design",
+   "bypasses",
+   "the construction of dedicated decision-making policy modules"
+  ]
+ ],
+ "1909.01296::s00::p004": [
+  [
+   "the PolyResponse restaurant search engine",
+   "is able to combine",
+   "text responses with relevant visual information"
+  ],
+  [
+   "This setup",
+   "uses",
+   "voice as input, and responding visually"
+  ],
+  [
+   "the PolyResponse restaurant search engine",
+   "is",
+   "multilingual"
+  ],
+  [
+   "the PolyResponse restaurant search engine",
+   "is currently deployed in",
+   "8 languages"
+  ],
+  [
+   "the PolyResponse restaurant search engine",
+   "enables search over restaurants in",
+   "8 cities around the world"
+  ]
+ ],
+ "1909.01296::s01::p000": [
+  [
+   "The PolyResponse system",
+   "is powered by",
+   "a single large conversational search engine"
+  ],
+  [
+   "The PolyResponse system",
+   "is",
+   "a ranking model that learns to score conversational replies and images in a given conversational context"
+  ],
+  [
+   "The system",
+   "computes",
+   "two sets of similarity scores"
+  ]
+ ],
+ "1909.01296::s02::p000": [
+  [
+   "All input text",
+   "is first",
+   "lower-cased and tokenised"
+  ],
+  [
+   "numbers with 5 or more digits",
+   "get their digits replaced by",
+   "a wildcard symbol #"
+  ],
+  [
+   "words longer than 16 characters",
+   "are replaced by",
+   "a wildcard token LONGWORD"
+  ]
+ ],
+ "1909.01296::s02::p001": [
+  [
+   "unigram and bigram vectors",
+   "are averaged to form",
+   "the final 320-dimensional encoding"
+  ],
+  [
+   "That encoding",
+   "is passed through",
+   "three fully-connected non-linear hidden layers of dimensionality $1,024$"
+  ],
+  [
+   "The final layer",
+   "maps the text into",
+   "the final $l$-dimensional ($l=512$) representation: $h_c$ and $h_r$"
+  ]
+ ],
+ "1909.01296::s02::p002": [
+  [
+   "the constant $C$",
+   "is constrained to lie between",
+   "0 and $\\sqrt{l}$"
+  ],
+  [
+   "the scoring function in the training objective",
+   "aims to maximise",
+   "the similarity score of context-reply pairs that go together"
+  ],
+  [
+   "the scoring function in the training objective",
+   "aims to minimise",
+   "the score of random pairings: negative examples"
+  ],
+  [
+   "Training",
+   "proceeds via",
+   "SGD with batches comprising 500 pairs (1 positive and 499 negatives)"
+  ]
+ ],
+ "1909.01296::s03::p000": [
+  [
+   "Photos",
+   "are represented using",
+   "convolutional neural net (CNN) models pretrained on ImageNet BIBREF17"
+  ],
+  [
+   "This",
+   "provides",
+   "a $1,280 \\times 1.4 = 1,792$-dimensional representation of a photo"
+  ],
+  [
+   "a $1,280 \\times 1.4 = 1,792$-dimensional representation of a photo",
+   "is passed through",
+   "a single hidden layer of dimensionality $1,024$ with ReLU activation"
+  ]
+ ],
+ "1909.01296::s04::p000": [
+  [
+   "all Reddit data from January 2015 to December 2018",
+   "span",
+   "almost 3.7B comments BIBREF12"
+  ]
+ ],
+ "1909.01296::s05::p000": [
+  [
+   "a photo encoder",
+   "is learned on top of",
+   "a pretrained MobileNet CNN"
+  ],
+  [
+   "the Yelp Open dataset",
+   "contains",
+   "around 200K photos and their captions"
+  ],
+  [
+   "Training of the multi-modal sub-network",
+   "maximises",
+   "the similarity of captions encoded with the response encoder $h_r$ to the photo representation $h_p$"
+  ],
+  [
+   "A photo",
+   "will be scored highly if",
+   "it looks like its caption would be a good response to the current context"
+  ]
+ ],
+ "1909.01296::s06::p000": [
+  [
+   "The Yelp dataset",
+   "is used at inference time to provide",
+   "text and photo candidates to display to the user at each step in the conversation"
+  ]
+ ],
+ "1909.01296::s07::p000": [
+  [
+   "The system",
+   "jointly trains",
+   "two encoding functions (with shared word embeddings) $f(context)$ and $g(reply)$"
+  ]
+ ],
+ "1909.01296::s07::p001": [
+  [
+   "finding relevant candidates given a context",
+   "reduces to",
+   "computing $h_c$ for the context $c$ , and finding nearby $h_r$ and $h_p$ vectors"
+  ],
+  [
+   "the nearest neighbour search",
+   "can be further optimised using",
+   "standard libraries such as Faiss BIBREF19 or approximate nearest neighbour retrieval BIBREF20"
+  ]
+ ],
+ "1909.01296::s07::p002": [
+  [
+   "The system",
+   "offers",
+   "both voice and text input and output"
+  ],
+  [
+   "Speech-to-text and text-to-speech conversion in the PolyResponse system",
+   "is currently supported by",
+   "the off-the-shelf Google Cloud tools"
+  ]
+ ],
+ "1909.01296::s08::p000": [
+  [
+   "The ranking model",
+   "lends itself to",
+   "the one-shot task of finding the most relevant responses in a given context"
+  ],
+  [
+   "a restaurant-browsing system",
+   "needs to support",
+   "a dialogue flow where the user finds a restaurant, and then asks questions about it"
+  ],
+  [
+   "The dialogue state for each search scenario",
+   "is represented as",
+   "the set of restaurants that are considered relevant"
+  ],
+  [
+   "A restaurant",
+   "is only considered valid in the context of a new user input if it has",
+   "relevant responses corresponding to it"
+  ]
+ ],
+ "1909.01296::s08::p010": [
+  [
+   "$q$-values",
+   "sum up to more than",
+   "a predefined threshold $t$"
+  ]
+ ],
+ "1909.01296::s08::p013": [
+  [
+   "multiple relevant restaurants",
+   "show",
+   "one response from each"
+  ],
+  [
+   "only one restaurant is relevant",
+   "shows",
+   "the top $N$ responses"
+  ],
+  [
+   "relevant photos",
+   "are displayed when",
+   "only one restaurant is relevant"
+  ],
+  [
+   "The system",
+   "does not require",
+   "dedicated understanding, decision-making, and generation modules"
+  ]
+ ],
+ "1909.01296::s08::p014": [
+  [
+   "The system",
+   "can use",
+   "a set of intent classifiers"
+  ],
+  [
+   "a set of intent classifiers",
+   "allow",
+   "resetting the dialogue state"
+  ],
+  [
+   "a set of intent classifiers",
+   "activate",
+   "the separate restaurant booking dialogue flow"
+  ]
+ ],
+ "1909.01296::s09::p000": [
+  [
+   "The PolyResponse restaurant search",
+   "is currently available in",
+   "8 languages and for 8 cities around the world"
+  ],
+  [
+   "A simple MT-based translate-to-source approach at inference time",
+   "is currently used to enable",
+   "the deployment of the system in other languages"
+  ],
+  [
+   "the pool of responses in each language",
+   "is translated to English by",
+   "Google Translate beforehand"
+  ],
+  [
+   "a provided user utterance (i.e., context)",
+   "is translated to English on-the-fly",
+   "its encoding $h_c$ is then learned"
+  ]
+ ],
+ "1909.01296::s10::p000": [
+  [
+   "An additional functionality",
+   "enables",
+   "the user to get parts of the restaurant menu relevant to the current user utterance as responses"
+  ],
+  [
+   "This",
+   "is achieved by performing",
+   "an additional ranking step of available menu items"
+  ]
+ ],
+ "1909.01296::s11::p000": [
+  [
+   "The restaurant search system",
+   "needs to support",
+   "the discrete actions of restarting the conversation (i.e., resetting the set $R$)"
+  ],
+  [
+   "The restaurant search system",
+   "should enable",
+   "transferring to the slot-based table booking flow"
+  ],
+  [
+   "two binary intent classifiers",
+   "are run at",
+   "each step in the dialogue"
+  ],
+  [
+   "A single-layer neural net",
+   "is learned on top of",
+   "the 512-dimensional encoding, with a ReLU activation and 100 hidden nodes"
+  ],
+  [
+   "sets of 20 relevant paraphrases",
+   "are provided as",
+   "positive examples"
+  ]
+ ],
+ "1909.01296::s12::p000": [
+  [
+   "a general approach to search-based dialogue",
+   "does not rely on",
+   "explicit semantic representations such as dialogue acts or slot-value ontologies"
+  ],
+  [
+   "a general approach to search-based dialogue",
+   "allows for",
+   "multi-modal responses"
+  ]
+ ]
+}

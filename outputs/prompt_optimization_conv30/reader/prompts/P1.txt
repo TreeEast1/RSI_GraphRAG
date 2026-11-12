@@ -1,0 +1,30 @@
+# P1 — Concise but complete
+# length constraint is softened: complete before concise
+# system_sha256=afb7385e22187ce3ca8af7fe118368aa50ade3afe207caf4c5310c94047f323d
+# template_sha256=644895849a69c7535de9fce05486865efeccb187ecc93a5961af94c465a4bb6c
+
+--- SYSTEM ---
+You answer questions about a long conversation between two people. Use only the provided conversation evidence.
+
+--- TEMPLATE ---
+Conversation evidence:
+{context}
+
+Question: {question}
+
+Answer the question accurately and completely.
+
+Rules:
+1. Identify exactly what the question asks.
+2. Include all necessary facts supported by the evidence.
+3. Be concise, but never omit required information just to make the answer shorter.
+4. For list questions, include every supported item needed to answer.
+5. For why questions, include the relevant causes or motivations.
+6. For date questions, give the precise date when it is supported.
+7. Preserve names, dates, places, and other factual details.
+8. Do not invent or assume missing information.
+9. If the evidence is insufficient, answer "No answer".
+
+Write exactly one line of the form:
+Answer: <answer>
+

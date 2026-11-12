@@ -1,0 +1,39 @@
+You are reading one frozen HippoRAG unit. The triples are already stored. Do not repeat them. Do not write a summary.
+
+Work in this order inside one JSON object.
+
+First list at most 6 gaps. A gap is a specific proposition that a passage states and that no supplied triple states. Quote the span. Do not list a guess, a cause inferred from time order, or a succession inferred only from two dates.
+
+Then write at most 3 ADD updates. Every ADD must cite one gap_id. Do not add anything that is not one of those gaps. If a gap only repeats a triple, drop it.
+
+COMPOSITION is allowed only when two quoted spans are both required and neither span contains the conclusion. Otherwise set gap_kind to EXTRACTION.
+
+Return JSON only:
+{"gaps": [
+  {
+    "gap_id": "g1",
+    "missing_proposition": "what the triples do not say",
+    "passage_id": "chunk-...",
+    "span": "verbatim span of at least 12 characters",
+    "gap_kind": "EXTRACTION or COMPOSITION"
+  }
+],
+"updates": [
+  {
+    "operation": "ADD or NO_OP",
+    "candidate_id": "local id",
+    "gap_id": "g1",
+    "comprehension_text": "one sentence filling that gap, or empty",
+    "new_semantic_relation": "short relation, or empty",
+    "linked_entity_ids": ["entity-..."],
+    "source_triple_ids": ["triple-..."],
+    "source_passage_ids": ["chunk-..."],
+    "evidence_spans": [{"passage_id": "chunk-...", "span": "verbatim span of at least 12 characters"}],
+    "derivation_type": "explicit_restatement or derived",
+    "reasoning_summary": "which gap this fills",
+    "novelty_justification": "which supplied triples were checked and why they do not already say this",
+    "uncertainty_note": ""
+  }
+]}
+
+Use only ids from the input. Zero gaps is valid. Then return one NO_OP update and an empty gap list.

@@ -1,0 +1,322 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1605.03481::s00::p000",
+   "summary": "Zipf's Law motivates character-composed distributed representations of social media posts to generalize to out-of-vocabulary words and unseen sequences at test time.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s00::p001",
+   "summary": "Traditional NNLMs use fixed word vocabularies and `UNKNOWN', while BIBREF2's bidirectional LSTM composes word vectors from characters.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s00::p002",
+   "summary": "The authors extend character modeling to unicode Twitter text, citing noisy slang, misspellings, emojis, 2 million tweets, and about 0.92 million unique word types.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s00::p003",
+   "summary": "Hashtags provide supervision for learning text representations, so the training objective predicts hashtags from latent representations using cross-entropy loss.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s00::p004",
+   "summary": "The proposed Bi-GRU tweet2vec combines final forward and backward GRU states into tweet embeddings and predicts hashtags through a softmax layer.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s01::p000",
+   "summary": "Neural distributed word representations from BIBREF0 and word2vec require large vector tables, struggle with unseen words, and need word-boundary preprocessing.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s01::p001",
+   "summary": "BIBREF2's bidirectional LSTM composes word embeddings from characters, whereas tweet2vec generates vector representations of entire tweets from characters.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s01::p002",
+   "summary": "This work adds to character models applied to Named Entity Recognition, POS tagging, text classification, and language modeling.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s01::p003",
+   "summary": "BIBREF14 estimated rare word representations from morphemes, but required a morpheme parser and faced a still-large morpheme space.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s01::p004",
+   "summary": "Earlier hashtag prediction work includes BIBREF15 and BIBREF16, with BIBREF15 using word lookup embeddings and showing generalization to document recommendation.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s02::p000",
+   "summary": "Figure 1 shows the Bi-GRU Encoder, which resembles the C2W model in BIBREF2 but replaces LSTM units with GRU units.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s02::p001",
+   "summary": "Characters from alphabet $C$ are one-hot encoded, projected by $P_C \\in \\mathbb {R}^{|C| \\times d_c}$, and processed by forward-GRU and backward-GRU equations.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s02::p002",
+   "summary": "Reset and update gates, candidate output state, matrix dimensions, and final forward-GRU and backward GRU states are described for the GRU encoder.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s02::p003",
+   "summary": "Eq. 3 defines $e_t = W^f h_m^f + W^b h_0^b$.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s02::p004",
+   "summary": "$W^f, W^b$ are $d_t \\times d_h$, $b$ is $d_t \\times 1$, $d_t=d_h$ in experiments, and all parameters are learned using gradient descent.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s02::p005",
+   "summary": "The tweet embedding passes through a linear layer sized to the number of hashtags $L$, followed by a softmax layer.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s02::p006",
+   "summary": "Eq. 4 gives $P(y=j |e) = \\frac{exp(w_j^Te + b_j)}{\\sum _{i=1}^L exp(w_i^Te + b_j)}$.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s02::p007",
+   "summary": "The objective function optimizes categorical cross-entropy loss between predicted and true hashtags.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s02::p008",
+   "summary": "Eq. 5 defines $J = \\frac{1}{B} \\sum _{i=1}^{B} \\sum _{j=1}^{L} -t_{i,j}log(p_{i,j}) + \\lambda \\Vert \\Theta \\Vert ^2$.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s02::p009",
+   "summary": "$B$ is batch size, $L$ is number of classes, $p_{i,j}$ is predicted probability, $t_{i,j} \\in \\lbrace 0,1\\rbrace $ is ground truth, and L2-regularization is weighted by $\\lambda $.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s03::p000",
+   "summary": "A word-level encoder splits tweets on white-spaces, uses the same architecture as tweet2vec, and stores vectors for the $V$ (20K here) most common words.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s04::p000",
+   "summary": "The Twitter dataset spans June 1, 2013 to June 5, 2013, filters hashtags $<500$ and $>19K$ posts, and contains 2 million training, 10K validation, 50K testing tweets, and 2039 distinct hashtags.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s05::p000",
+   "summary": "Word and character vectors use $d_L=150$, with 2829 unique characters, $B=64$, $\\eta _0=0.01$, $\\mu _0=0.9$, $\\lambda =0.001$, $\\sigma =0.1$, and convergence in about 20 epochs.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s06::p000",
+   "summary": "Hashtag prediction on a held-out test set reports average precision@1, recall@10, and mean rank of correct hashtags in Table 3.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s06::p001",
+   "summary": "Two test sets each containing 2,000 posts evaluate rare words (RW) and frequent words (FW), with tweet2vec significantly better on RW and comparably on FW.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s06::p002",
+   "summary": "Word model vocabulary sizes $V$ of 8K, 15K and 20K and tweet2vec GRU hidden state sizes 300, 400 and 500 show tweet2vec outperforming the word based model.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s06::p003",
+   "summary": "Table 4 compares models on small, medium and large datasets with increasing numbers of hashtags, and tweet2vec outperforms its word-based counterpart in all three settings.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s06::p004",
+   "summary": "Table 1 predictions highlight tweet2vec's robustness to word segmentation errors, spelling mistakes, emojis, special characters, and comparable performance on in-vocabulary tokens.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s07::p000",
+   "summary": "tweet2vec is a hashtag-supervised character level encoder that outperforms the word based approach, especially with many rare words, and may be extended to other languages and unseen hashtags.",
+   "group_id": "1605.03481::g00"
+  },
+  {
+   "passage_id": "1605.03481::s08::p000",
+   "summary": "The authors thank Alex Smola, Yun Fu, Hsiao-Yu Fish Tung, Ruslan Salakhutdinov, Barnabas Poczos, Juergen Pfeffer, and reviewers.",
+   "group_id": "1605.03481::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1605.03481::g00",
+   "summaries": [
+    {
+     "passage_id": "1605.03481::s00::p000",
+     "summary": "Zipf's Law motivates character-composed distributed representations of social media posts to generalize to out-of-vocabulary words and unseen sequences at test time.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s00::p001",
+     "summary": "Traditional NNLMs use fixed word vocabularies and `UNKNOWN', while BIBREF2's bidirectional LSTM composes word vectors from characters.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s00::p002",
+     "summary": "The authors extend character modeling to unicode Twitter text, citing noisy slang, misspellings, emojis, 2 million tweets, and about 0.92 million unique word types.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s00::p003",
+     "summary": "Hashtags provide supervision for learning text representations, so the training objective predicts hashtags from latent representations using cross-entropy loss.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s00::p004",
+     "summary": "The proposed Bi-GRU tweet2vec combines final forward and backward GRU states into tweet embeddings and predicts hashtags through a softmax layer.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s01::p000",
+     "summary": "Neural distributed word representations from BIBREF0 and word2vec require large vector tables, struggle with unseen words, and need word-boundary preprocessing.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s01::p001",
+     "summary": "BIBREF2's bidirectional LSTM composes word embeddings from characters, whereas tweet2vec generates vector representations of entire tweets from characters.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s01::p002",
+     "summary": "This work adds to character models applied to Named Entity Recognition, POS tagging, text classification, and language modeling.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s01::p003",
+     "summary": "BIBREF14 estimated rare word representations from morphemes, but required a morpheme parser and faced a still-large morpheme space.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s01::p004",
+     "summary": "Earlier hashtag prediction work includes BIBREF15 and BIBREF16, with BIBREF15 using word lookup embeddings and showing generalization to document recommendation.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s02::p000",
+     "summary": "Figure 1 shows the Bi-GRU Encoder, which resembles the C2W model in BIBREF2 but replaces LSTM units with GRU units.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s02::p001",
+     "summary": "Characters from alphabet $C$ are one-hot encoded, projected by $P_C \\in \\mathbb {R}^{|C| \\times d_c}$, and processed by forward-GRU and backward-GRU equations.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s02::p002",
+     "summary": "Reset and update gates, candidate output state, matrix dimensions, and final forward-GRU and backward GRU states are described for the GRU encoder.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s02::p003",
+     "summary": "Eq. 3 defines $e_t = W^f h_m^f + W^b h_0^b$.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s02::p004",
+     "summary": "$W^f, W^b$ are $d_t \\times d_h$, $b$ is $d_t \\times 1$, $d_t=d_h$ in experiments, and all parameters are learned using gradient descent.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s02::p005",
+     "summary": "The tweet embedding passes through a linear layer sized to the number of hashtags $L$, followed by a softmax layer.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s02::p006",
+     "summary": "Eq. 4 gives $P(y=j |e) = \\frac{exp(w_j^Te + b_j)}{\\sum _{i=1}^L exp(w_i^Te + b_j)}$.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s02::p007",
+     "summary": "The objective function optimizes categorical cross-entropy loss between predicted and true hashtags.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s02::p008",
+     "summary": "Eq. 5 defines $J = \\frac{1}{B} \\sum _{i=1}^{B} \\sum _{j=1}^{L} -t_{i,j}log(p_{i,j}) + \\lambda \\Vert \\Theta \\Vert ^2$.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s02::p009",
+     "summary": "$B$ is batch size, $L$ is number of classes, $p_{i,j}$ is predicted probability, $t_{i,j} \\in \\lbrace 0,1\\rbrace $ is ground truth, and L2-regularization is weighted by $\\lambda $.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s03::p000",
+     "summary": "A word-level encoder splits tweets on white-spaces, uses the same architecture as tweet2vec, and stores vectors for the $V$ (20K here) most common words.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s04::p000",
+     "summary": "The Twitter dataset spans June 1, 2013 to June 5, 2013, filters hashtags $<500$ and $>19K$ posts, and contains 2 million training, 10K validation, 50K testing tweets, and 2039 distinct hashtags.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s05::p000",
+     "summary": "Word and character vectors use $d_L=150$, with 2829 unique characters, $B=64$, $\\eta _0=0.01$, $\\mu _0=0.9$, $\\lambda =0.001$, $\\sigma =0.1$, and convergence in about 20 epochs.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s06::p000",
+     "summary": "Hashtag prediction on a held-out test set reports average precision@1, recall@10, and mean rank of correct hashtags in Table 3.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s06::p001",
+     "summary": "Two test sets each containing 2,000 posts evaluate rare words (RW) and frequent words (FW), with tweet2vec significantly better on RW and comparably on FW.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s06::p002",
+     "summary": "Word model vocabulary sizes $V$ of 8K, 15K and 20K and tweet2vec GRU hidden state sizes 300, 400 and 500 show tweet2vec outperforming the word based model.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s06::p003",
+     "summary": "Table 4 compares models on small, medium and large datasets with increasing numbers of hashtags, and tweet2vec outperforms its word-based counterpart in all three settings.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s06::p004",
+     "summary": "Table 1 predictions highlight tweet2vec's robustness to word segmentation errors, spelling mistakes, emojis, special characters, and comparable performance on in-vocabulary tokens.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s07::p000",
+     "summary": "tweet2vec is a hashtag-supervised character level encoder that outperforms the word based approach, especially with many rare words, and may be extended to other languages and unseen hashtags.",
+     "group_id": "1605.03481::g00"
+    },
+    {
+     "passage_id": "1605.03481::s08::p000",
+     "summary": "The authors thank Alex Smola, Yun Fu, Hsiao-Yu Fish Tung, Ruslan Salakhutdinov, Barnabas Poczos, Juergen Pfeffer, and reviewers.",
+     "group_id": "1605.03481::g00"
+    }
+   ],
+   "n_raw": 30,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4190,
+    "completion_tokens": 1679,
+    "total_tokens": 5869,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

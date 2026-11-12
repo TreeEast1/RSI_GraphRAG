@@ -1,0 +1,489 @@
+{
+ "1912.00667::s00::p000": [
+  [
+   "Event detection on microblogging platforms such as Twitter",
+   "aims to detect",
+   "events preemptively"
+  ],
+  [
+   "A main task in event detection",
+   "is detecting",
+   "events of predetermined types BIBREF0"
+  ],
+  [
+   "statistical machine learning models",
+   "require",
+   "a labeled dataset for model training"
+  ],
+  [
+   "Data labeling",
+   "is",
+   "a long, laborious, and usually costly process"
+  ]
+ ],
+ "1912.00667::s00::p001": [
+  [
+   "estimating the expectation associated with a keyword",
+   "is",
+   "a challenging task, even for domain experts"
+  ]
+ ],
+ "1912.00667::s00::p002": [
+  [
+   "The performance of the event detection model",
+   "is constrained by",
+   "the informativeness of the keyword used for model training"
+  ]
+ ],
+ "1912.00667::s00::p005": [
+  [
+   "A novel human-AI loop approach for micropost event detection",
+   "jointly discovers",
+   "informative keywords"
+  ],
+  [
+   "A novel human-AI loop approach for micropost event detection",
+   "estimates",
+   "their expectation"
+  ]
+ ],
+ "1912.00667::s00::p006": [
+  [
+   "A unified probabilistic model",
+   "infers",
+   "keyword expectation"
+  ],
+  [
+   "A unified probabilistic model",
+   "performs",
+   "model training"
+  ]
+ ],
+ "1912.00667::s00::p007": [
+  [
+   "An extensive empirical evaluation of our approach",
+   "is on",
+   "multiple real-world datasets"
+  ]
+ ],
+ "1912.00667::s01::p002": [
+  [
+   "The micropost classification task",
+   "requires",
+   "crowd workers to label the selected microposts into two classes: event-related and non event-related"
+  ],
+  [
+   "workers",
+   "are given",
+   "instructions and examples"
+  ]
+ ],
+ "1912.00667::s01::p004": [
+  [
+   "This micropost",
+   "describes",
+   "an instance of a cyber attack event"
+  ],
+  [
+   "This micropost",
+   "should be considered as",
+   "a positive example"
+  ]
+ ],
+ "1912.00667::s01::p006": [
+  [
+   "This micropost",
+   "does not mention",
+   "an instance of a cyber attack event"
+  ],
+  [
+   "This micropost",
+   "should be considered as",
+   "a negative example"
+  ]
+ ],
+ "1912.00667::s01::p007": [
+  [
+   "each selected micropost",
+   "is labeled by",
+   "multiple crowd workers"
+  ]
+ ],
+ "1912.00667::s01::p010": [
+  [
+   "These selected microposts",
+   "are supposed to contain",
+   "information that can explain the disagreement between the model prediction and keyword-specific expectation"
+  ],
+  [
+   "These selected microposts",
+   "can provide",
+   "information that is most different from the existing set of keywords for model training"
+  ]
+ ],
+ "1912.00667::s01::p011": [
+  [
+   "only 20% of the initial set of microposts retrieved with the keyword",
+   "are",
+   "event-related"
+  ],
+  [
+   "A micropost selected with the highest disagreement (Eq. DISPLAY_FORM7)",
+   "has",
+   "likelihood of being event-related as predicted by the model is $99.9\\%$"
+  ]
+ ],
+ "1912.00667::s01::p013": [
+  [
+   "This micropost",
+   "contains",
+   "keywords that can better indicate the relevance to a cyber security event than the initial keyword `hack'"
+  ],
+  [
+   "keywords",
+   "include",
+   "`securities', `hit', and `attack'"
+  ]
+ ],
+ "1912.00667::s01::p014": [
+  [
+   "the selected microposts",
+   "will be",
+   "the ones that contain keywords indicating the irrelevance of the microposts to an event category"
+  ],
+  [
+   "Such keywords",
+   "are",
+   "also useful for model training"
+  ],
+  [
+   "Such keywords",
+   "help improve",
+   "the model's ability to identify irrelevant microposts"
+  ]
+ ],
+ "1912.00667::s01::p015": [
+  [
+   "workers",
+   "are first asked to find",
+   "those microposts where the model predictions are deemed correct"
+  ],
+  [
+   "workers",
+   "are asked to find",
+   "the keyword that best indicates the class of the microposts as predicted by the model"
+  ],
+  [
+   "The keyword most frequently identified by the workers",
+   "is used as",
+   "the initial keyword for the following iteration"
+  ],
+  [
+   "workers",
+   "will be asked to perform",
+   "$N$ micropost classification tasks for each keyword in the next iteration"
+  ]
+ ],
+ "1912.00667::s02::p001": [
+  [
+   "The annotations",
+   "form",
+   "a matrix $\\mathbf {A}\\in \\mathbb {R}^{M\\times N}$"
+  ],
+  [
+   "An additional parameter of our probabilistic model",
+   "is",
+   "the reliability of crowd workers"
+  ],
+  [
+   "the annotation reliability of worker $c_n$",
+   "is represented by",
+   "a latent confusion matrix $\\pi ^{(n)}$"
+  ],
+  [
+   "the $rs$-th element $\\pi _{rs}^{(n)}$",
+   "denotes",
+   "the probability of $c_n$ labeling a micropost as class $r$ given the true class $s$"
+  ]
+ ],
+ "1912.00667::s03::p000": [
+  [
+   "the objective function of the target model",
+   "is composed of",
+   "two parts"
+  ]
+ ],
+ "1912.00667::s03::p001": [
+  [
+   "The former part",
+   "aims at maximizing",
+   "the likelihood of the labeled microposts"
+  ]
+ ],
+ "1912.00667::s03::p003": [
+  [
+   "expectations of existing keywords",
+   "are used as",
+   "a regularization term to constrain model training"
+  ]
+ ],
+ "1912.00667::s04::p000": [
+  [
+   "likelihood of the crowd-contributed labels $\\mathbf {A}$",
+   "is modeled as",
+   "a function of the keyword-specific expectation $e^{(t)}$ and the crowd worker reliability $\\pi ^{(n)}$ ($1\\le n\\le N$)"
+  ],
+  [
+   "expectation",
+   "is viewed as",
+   "the class prior"
+  ],
+  [
+   "expectation inference",
+   "is performed as",
+   "the learning of the class prior"
+  ],
+  [
+   "expectation inference",
+   "is connected with",
+   "model training"
+  ]
+ ],
+ "1912.00667::s04::p001": [
+  [
+   "likelihood of an arbitrary crowd-contributed label $\\mathbf {A}_{mn}$",
+   "is modeled as",
+   "a mixture of multinomials where the prior is the keyword-specific expectation $e^{(t)}$"
+  ]
+ ],
+ "1912.00667::s05::p002": [
+  [
+   "ground truth labels of crowd-annotated microposts",
+   "are",
+   "unknown"
+  ],
+  [
+   "The learning algorithm",
+   "iteratively takes",
+   "two steps: the E-step and the M-step"
+  ],
+  [
+   "The E-step",
+   "infers",
+   "the ground truth labels given the current model parameters"
+  ],
+  [
+   "The E-step and the crowd parameter update in the M-step",
+   "are similar to",
+   "the Dawid-Skene model BIBREF14"
+  ],
+  [
+   "The keyword expectation",
+   "is inferred by taking into account",
+   "both the crowd-contributed labels and the model prediction"
+  ]
+ ],
+ "1912.00667::s05::p003": [
+  [
+   "The parameter of the target model",
+   "is updated by",
+   "gradient descent"
+  ]
+ ],
+ "1912.00667::s07::p000": [
+  [
+   "The need to create our own dataset",
+   "was motivated by",
+   "the lack of public datasets for event detection on microposts"
+  ],
+  [
+   "the publicly available Events-2012 Twitter dataset BIBREF20",
+   "contains",
+   "generic event descriptions such as Politics, Sports, Culture etc."
+  ],
+  [
+   "Unlabeled microposts",
+   "are collected by using",
+   "the keyword `hack' for CyberAttack"
+  ]
+ ],
+ "1912.00667::s07::p001": [
+  [
+   "other neural network models with more complex network architectures for event detection",
+   "turn out to be less effective than",
+   "a simple feedforward network"
+  ],
+  [
+   "the weakly supervised learning method",
+   "uses",
+   "only one initial keyword with an expectation estimated by an individual expert"
+  ]
+ ],
+ "1912.00667::s07::p002": [
+  [
+   "optimal parameters",
+   "are empirically set based on",
+   "a held-out validation set that contains 20% of the test data"
+  ],
+  [
+   "MLP",
+   "is explored with",
+   "1, 2 and 3 hidden layers"
+  ],
+  [
+   "the coefficient of expectation regularization",
+   "is set to",
+   "$\\lambda =10 \\times $ #labeled examples"
+  ],
+  [
+   "model training",
+   "uses",
+   "the Adam BIBREF22 optimization algorithm for both models"
+  ]
+ ],
+ "1912.00667::s07::p003": [
+  [
+   "accuracy and area under the precision-recall curve (AUC) metrics",
+   "are used to measure",
+   "the performance of our proposed approach"
+  ],
+  [
+   "CyberAttack",
+   "has",
+   "20% positive microposts"
+  ],
+  [
+   "PoliticianDeath",
+   "has",
+   "27% positive microposts"
+  ],
+  [
+   "accuracy",
+   "is dominated by",
+   "negative examples"
+  ],
+  [
+   "AUC",
+   "better characterizes",
+   "the discriminative power of the model"
+  ]
+ ],
+ "1912.00667::s07::p004": [
+  [
+   "the inter-annotator agreement in micropost classification",
+   "is taken into account through",
+   "the EM algorithm"
+  ],
+  [
+   "keywords",
+   "are filtered based on",
+   "the frequency of the keyword being selected by the crowd"
+  ],
+  [
+   "each iteration",
+   "selected",
+   "50 tweets for keyword discovery and 50 tweets for micropost classification per keyword"
+  ],
+  [
+   "800 tweets",
+   "is",
+   "only 1% of the entire dataset"
+  ]
+ ],
+ "1912.00667::s08::p000": [
+  [
+   "each iteration",
+   "starts with",
+   "1 new keyword discovered in the previous iteration"
+  ]
+ ],
+ "1912.00667::s08::p001": [
+  [
+   "the target models",
+   "generally converge between",
+   "the 7th and 9th iteration on both datasets when performance is measured by AUC"
+  ]
+ ],
+ "1912.00667::s09::p000": [
+  [
+   "query expansion",
+   "uses",
+   "pre-trained word embeddings based on a large Google News dataset"
+  ],
+  [
+   "the top keywords resulting from QE for `politician'",
+   "are",
+   "`deputy',`ministry',`secretary', and `minister'"
+  ]
+ ],
+ "1912.00667::s09::p001": [
+  [
+   "microposts that are relevant for PoliticianDeath",
+   "are",
+   "semantically more complex than those for CyberAttack"
+  ],
+  [
+   "QE",
+   "finds",
+   "the keywords `kill' and `murder'"
+  ],
+  [
+   "the increase in QE performance on PoliticianDeath",
+   "is due to",
+   "the keywords `deputy' and `minister'"
+  ]
+ ],
+ "1912.00667::s10::p000": [
+  [
+   "the same cost used for keyword discovery in our approach",
+   "is used to label",
+   "additional microposts for model training"
+  ],
+  [
+   "The model trained in this way",
+   "increases AUC by",
+   "0.87% for CyberAttack, and by 1.06% for PoliticianDeath"
+  ],
+  [
+   "using crowdsourcing for keyword discovery",
+   "is",
+   "significantly more cost-effective than simply using crowdsourcing to get additional labels when training the model"
+  ]
+ ],
+ "1912.00667::s11::p000": [
+  [
+   "workers' annotations",
+   "are of",
+   "high reliability"
+  ]
+ ],
+ "1912.00667::s12::p000": [
+  [
+   "techniques for event extraction from microblogging platforms",
+   "can be classified according to",
+   "their domain specificity and their detection method"
+  ],
+  [
+   "Early works",
+   "mainly focus on",
+   "open domain event detection"
+  ],
+  [
+   "fully-supervised learning methods",
+   "are often limited by",
+   "the size of the training data (e.g., a few hundred examples)"
+  ]
+ ],
+ "1912.00667::s12::p001": [
+  [
+   "Existing human-in-the-loop approaches",
+   "mainly leverage crowds to",
+   "label individual data instances"
+  ],
+  [
+   "Existing human-in-the-loop approaches",
+   "mainly leverage crowds to",
+   "debug the training data"
+  ]
+ ]
+}

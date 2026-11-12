@@ -1,0 +1,688 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1909.00326::s00::p000",
+   "summary": "NMT achieved state-of-the-art results on many language pairs, but how and why NMT works remains largely unknown, challenging debugging and architecture design.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s00::p001",
+   "summary": "NMT understanding has focused on representation importance and input word importance, but attention-based explanations are questioned because their relation to model output is unclear.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s00::p002",
+   "summary": "This paper uses gradients in NMT generation and integrated gradients BIBREF9 to attribute output to input words, showing superiority over black-box methods.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s00::p003",
+   "summary": "Word importance identifies under-translated words and reveals language-varying syntactic importance, with nouns important for Chinese⇒English and prepositions for English-French and -Japanese.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s01::p000",
+   "summary": "The paper states that its main contributions are:",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s01::p001",
+   "summary": "The study demonstrates the necessity and effectiveness of exploiting intermediate gradients for estimating word importance.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s01::p002",
+   "summary": "The study finds word importance useful for understanding NMT by identifying under-translated words.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s01::p003",
+   "summary": "The study supports considering essential inductive bias, such as language characteristics, in NMT architecture design.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s02::p000",
+   "summary": "Seq2Seq interpretability work examines internal representations or input-output behaviors, and this work focuses on input-output behaviors across architectures.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s02::p001",
+   "summary": "Prior black-box input-output interpretation does not use gradients and resembles attention, while this work exploits intermediate gradients to outperform attention.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s03::p000",
+   "summary": "Intermediate gradients aid deep learning interpretation, and integrated gradients BIBREF9 is used here to interpret NMT models and reveal findings.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s04::p000",
+   "summary": "An NMT model F: x → y maximizes the probability of target sequence y given source sentence x.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s04::p001",
+   "summary": "At each time step n, NMT generates the highest-probability output word, uses negative log-likelihood training and beam search, and this study examines each x_m's contribution.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s05::p000",
+   "summary": "Word importance quantifies an input word's contribution to NMT generations, with methods categorized as black-box or white-box, and several black-box methods investigated.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s05::p001",
+   "summary": "Content Words treats nouns, verbs, and adjectives as important because they carry descriptive meanings of the sentence.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s05::p002",
+   "summary": "Frequent Words ranks input words by training-corpus frequency, excluding the top 50 most frequent words as mostly punctuation and stop words.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s05::p003",
+   "summary": "Because Causal Model BIBREF7 is complicated and resembles attention scores, this study uses Attention scores to simulate it.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s05::p004",
+   "summary": "The proposed approach is white-box and exploits intermediate gradients, described in the next section.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s06::p000",
+   "summary": "Integrated gradients BIBREF9 attributes predictions to input features by integrating first-order derivatives and is used to estimate word importance precisely.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s06::p001",
+   "summary": "Integrated gradients is defined as the integral of gradients from baseline x′ to input x for the mth word's contribution to F(x)_n.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s06::p002",
+   "summary": "The gradient concerns the mth word embedding, the baseline is zero embeddings of length M, and the integral is approximated by summing gradients over a multi-step path.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s06::p003",
+   "summary": "S denotes uniformly distributed path steps, larger S improves IG accuracy, and preliminary experiments found 300 steps yielded fairly good performance.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s06::p004",
+   "summary": "Contributions form an M × N matrix, and word importance sums each input word's contributions and normalizes sums through Softmax, with negative values indicating negative effects.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s07::p000",
+   "summary": "The study chooses Chinese-English and English-French datasets and adds Japanese as a subject-object-verb language for English-Japanese translation.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s07::p001",
+   "summary": "WMT17 Chinese-English has 20.6M pairs, WMT14 English-French has 35.5M pairs, WAT17 English-Japanese has 1.9M pairs, and BPE uses 32K merge operations.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s08::p000",
+   "summary": "Transformer BIBREF1 and RNN-Search BIBREF0 are implemented in Fairseq-py BIBREF19, trained for 100k steps, and evaluated on test hypotheses.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s08::p001",
+   "summary": "IG (Attribution) is compared with Content, Frequency, and Attention, with Random and Content repeated 10 times and Attention using a max operation.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s09::p000",
+   "summary": "Word importance effectiveness is evaluated by translation performance decrease when perturbing top-most important words, where greater degradation means greater importance.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s09::p001",
+   "summary": "The standard BLEU score evaluates translation performance across perturbations, architectures, language pairs, and comparison with a supervised erasure method.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s10::p000",
+   "summary": "The experiment investigates word importance estimation under three synthetic perturbations to avoid potential bias from semantic shifting in text perturbation.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s10::p001",
+   "summary": "Deletion perturbation removes selected words from the input sentence and is regarded as a specific instantiation of sentence compression BIBREF21.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s10::p002",
+   "summary": "Mask perturbation replaces selected words' embedding vectors with all-zero vectors BIBREF22, retaining the placeholder unlike Deletion perturbation.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s10::p003",
+   "summary": "Grammatical Replacement perturbation replaces a word with another of the same POS tag, producing grammatical but semantically nonsensical sentences.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s10::p004",
+   "summary": "Figure FIGREF19 shows Attribution consistently outperforms other methods on Chinese⇒English translation with Transformer across perturbations and operation numbers.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s11::p000",
+   "summary": "Perturbing top-most important words lowers BLEU more than Random, and Attribution exceeds Random by more than 4.0 BLEU under 5 operations.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s12::p000",
+   "summary": "Content and Frequency perform only slightly better than Random, with Frequency worse under Mask, so linguistic properties and word frequency only partially identify important words.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s12::p001",
+   "summary": "Attention, simulating SOCRAT, beats black-box methods and Random, but Attribution performs best under all three perturbations with around 1.0+ BLEU difference.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s12::p002",
+   "summary": "Deletion, Mask, and Grammatical Replacement vary from strong to weak, and Mask is chosen as representative for comparing Attribution and Attention.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s13::p000",
+   "summary": "On Chinese⇒English with RNN-Search, Attribution outperforms Attention and Random, while RNN-Search declines 64% versus Transformer's 55% under five operations.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s14::p000",
+   "summary": "Across English⇒French, English⇒Japanese, and reverse directions with Transformer under Mask, Attribution performs best and declines to around half the original BLEU with five operations.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s15::p000",
+   "summary": "Erasure BIBREF7, BIBREF22, BIBREF25 evaluates word importance by masking one word at a time and using normalized BLEU score changes.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s15::p001",
+   "summary": "Attribution is less effective than Erasure for one perturbed word but outperforms it for 2 or more words, while Erasure requires references and is computationally infeasible.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s15::p002",
+   "summary": "The gradient-based method consistently outperforms black-box counterparts and is on par with or better than supervised erasure on multiple-word perturbations without external resources.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s16::p000",
+   "summary": "Analyses examine two uses of word importance for debugging NMT models and designing language-specific architectures, focusing on Chinese⇒English, English⇒French, and English⇒Japanese.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s17::p000",
+   "summary": "Using 500 Chinese⇒English sentence pairs with Transformer BLEU 23.57, ten annotators labeled under-translated words, finding 178 sentences and 553 under-translated words.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s17::p001",
+   "summary": "Table TABREF32 shows Attribution significantly outperforms Erasure and Attention in detecting under-translation errors, enabling automatic identification without human interpreters.",
+   "group_id": "1909.00326::g00"
+  },
+  {
+   "passage_id": "1909.00326::s18::p000",
+   "summary": "This section analyzes linguistic characteristics of important words using POS tags, fertility, syntactic parse tree depth, sentence-length scaling, and decision tree based regression.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s18::p001",
+   "summary": "Table TABREF34 shows syntactic information is almost independent of word importance, while POS tags and fertility contribute over 95% and are analyzed further.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s19::p000",
+   "summary": "Table TABREF35 shows content words matter more on Chinese$\\Rightarrow $English, content-free words on English$\\Rightarrow $Japanese, and little change on English$\\Rightarrow $French.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s19::p001",
+   "summary": "Punctuation is important on English$\\Rightarrow $Japanese translation, possibly because it affects sense groups and benefits syntactic reordering in Japanese.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s20::p000",
+   "summary": "The authors compare fertility distributions by word importance and word frequency on three language pairs, hypothesizing one-to-many source words are more important.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s20::p001",
+   "summary": "Table TABREF36 shows one-to-many fertility is consistently more important on all three language pairs, while null-aligned words receive much less attention.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s21::p000",
+   "summary": "The gradient-based method bridges word importance and translation performance, outperforms several black-box methods, reveals language-pair-specific syntactic categories, and may detect under-translation.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s21::p001",
+   "summary": "This paper is an initiating step towards general understanding of NMT models and may bring potential improvements.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s21::p002",
+   "summary": "Interactive MT and Constraint Decoding BIBREF29, BIBREF26 could pay more attention to detected unimportant words, which are possibly under-translated.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s21::p003",
+   "summary": "Adaptive Input Embedding BIBREF30 could extend adaptive softmax BIBREF31 to variable-capacity input embedding, assigning more capacity to more important words.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s21::p004",
+   "summary": "NMT Architecture Design should incorporate language-specific inductive bias, such as different behaviors on POS, into the model design.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s21::p005",
+   "summary": "Other applications of word importance may improve NMT models through tailored training, while model interpretability can build trust, help error diagnosis, and facilitate refinement.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s21::p006",
+   "summary": "The paper shows straightforward gradient-exploitation implementations work well and leaves advanced exploitation of gradients or other intermediate information to future work.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s22::p000",
+   "summary": "Shilin He and Michael R. Lyu were supported by the Research Grants Council of the Hong Kong Special Administrative Region, China (No. CUHK 14210717 of the General Research Fund), and Microsoft Research Asia (2018 Microsoft Research Asia Collaborative Research Award), and the authors thank anonymous reviewers.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s23::p000",
+   "summary": "2",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s23::p001",
+   "summary": "Reverse-direction analyses on English$\\Rightarrow $Chinese, French$\\Rightarrow $English, and Japanese$\\Rightarrow $English show similar findings in Table TABREF43 and Table TABREF44, using Stanford POS tagger and Kytea.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s24::p000",
+   "summary": "On English$\\Rightarrow $Chinese content words are more important, while content-free words are more important on French$\\Rightarrow $English and Japanese$\\Rightarrow $English, with Punctuation important on Japanese$\\Rightarrow $English.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s25::p000",
+   "summary": "Word fertility shows similar trends, with one-to-many fertility more important, null-aligned fertility less important, and many-to-one fertility increasing on Japanese$\\Rightarrow $English.",
+   "group_id": "1909.00326::g01"
+  },
+  {
+   "passage_id": "1909.00326::s25::p001",
+   "summary": "Findings on language pairs with reverse directions agree with the paper's findings, further confirming the generality of the experimental findings.",
+   "group_id": "1909.00326::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1909.00326::g00",
+   "summaries": [
+    {
+     "passage_id": "1909.00326::s00::p000",
+     "summary": "NMT achieved state-of-the-art results on many language pairs, but how and why NMT works remains largely unknown, challenging debugging and architecture design.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s00::p001",
+     "summary": "NMT understanding has focused on representation importance and input word importance, but attention-based explanations are questioned because their relation to model output is unclear.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s00::p002",
+     "summary": "This paper uses gradients in NMT generation and integrated gradients BIBREF9 to attribute output to input words, showing superiority over black-box methods.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s00::p003",
+     "summary": "Word importance identifies under-translated words and reveals language-varying syntactic importance, with nouns important for Chinese⇒English and prepositions for English-French and -Japanese.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s01::p000",
+     "summary": "The paper states that its main contributions are:",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s01::p001",
+     "summary": "The study demonstrates the necessity and effectiveness of exploiting intermediate gradients for estimating word importance.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s01::p002",
+     "summary": "The study finds word importance useful for understanding NMT by identifying under-translated words.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s01::p003",
+     "summary": "The study supports considering essential inductive bias, such as language characteristics, in NMT architecture design.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s02::p000",
+     "summary": "Seq2Seq interpretability work examines internal representations or input-output behaviors, and this work focuses on input-output behaviors across architectures.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s02::p001",
+     "summary": "Prior black-box input-output interpretation does not use gradients and resembles attention, while this work exploits intermediate gradients to outperform attention.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s03::p000",
+     "summary": "Intermediate gradients aid deep learning interpretation, and integrated gradients BIBREF9 is used here to interpret NMT models and reveal findings.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s04::p000",
+     "summary": "An NMT model F: x → y maximizes the probability of target sequence y given source sentence x.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s04::p001",
+     "summary": "At each time step n, NMT generates the highest-probability output word, uses negative log-likelihood training and beam search, and this study examines each x_m's contribution.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s05::p000",
+     "summary": "Word importance quantifies an input word's contribution to NMT generations, with methods categorized as black-box or white-box, and several black-box methods investigated.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s05::p001",
+     "summary": "Content Words treats nouns, verbs, and adjectives as important because they carry descriptive meanings of the sentence.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s05::p002",
+     "summary": "Frequent Words ranks input words by training-corpus frequency, excluding the top 50 most frequent words as mostly punctuation and stop words.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s05::p003",
+     "summary": "Because Causal Model BIBREF7 is complicated and resembles attention scores, this study uses Attention scores to simulate it.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s05::p004",
+     "summary": "The proposed approach is white-box and exploits intermediate gradients, described in the next section.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s06::p000",
+     "summary": "Integrated gradients BIBREF9 attributes predictions to input features by integrating first-order derivatives and is used to estimate word importance precisely.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s06::p001",
+     "summary": "Integrated gradients is defined as the integral of gradients from baseline x′ to input x for the mth word's contribution to F(x)_n.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s06::p002",
+     "summary": "The gradient concerns the mth word embedding, the baseline is zero embeddings of length M, and the integral is approximated by summing gradients over a multi-step path.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s06::p003",
+     "summary": "S denotes uniformly distributed path steps, larger S improves IG accuracy, and preliminary experiments found 300 steps yielded fairly good performance.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s06::p004",
+     "summary": "Contributions form an M × N matrix, and word importance sums each input word's contributions and normalizes sums through Softmax, with negative values indicating negative effects.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s07::p000",
+     "summary": "The study chooses Chinese-English and English-French datasets and adds Japanese as a subject-object-verb language for English-Japanese translation.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s07::p001",
+     "summary": "WMT17 Chinese-English has 20.6M pairs, WMT14 English-French has 35.5M pairs, WAT17 English-Japanese has 1.9M pairs, and BPE uses 32K merge operations.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s08::p000",
+     "summary": "Transformer BIBREF1 and RNN-Search BIBREF0 are implemented in Fairseq-py BIBREF19, trained for 100k steps, and evaluated on test hypotheses.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s08::p001",
+     "summary": "IG (Attribution) is compared with Content, Frequency, and Attention, with Random and Content repeated 10 times and Attention using a max operation.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s09::p000",
+     "summary": "Word importance effectiveness is evaluated by translation performance decrease when perturbing top-most important words, where greater degradation means greater importance.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s09::p001",
+     "summary": "The standard BLEU score evaluates translation performance across perturbations, architectures, language pairs, and comparison with a supervised erasure method.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s10::p000",
+     "summary": "The experiment investigates word importance estimation under three synthetic perturbations to avoid potential bias from semantic shifting in text perturbation.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s10::p001",
+     "summary": "Deletion perturbation removes selected words from the input sentence and is regarded as a specific instantiation of sentence compression BIBREF21.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s10::p002",
+     "summary": "Mask perturbation replaces selected words' embedding vectors with all-zero vectors BIBREF22, retaining the placeholder unlike Deletion perturbation.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s10::p003",
+     "summary": "Grammatical Replacement perturbation replaces a word with another of the same POS tag, producing grammatical but semantically nonsensical sentences.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s10::p004",
+     "summary": "Figure FIGREF19 shows Attribution consistently outperforms other methods on Chinese⇒English translation with Transformer across perturbations and operation numbers.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s11::p000",
+     "summary": "Perturbing top-most important words lowers BLEU more than Random, and Attribution exceeds Random by more than 4.0 BLEU under 5 operations.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s12::p000",
+     "summary": "Content and Frequency perform only slightly better than Random, with Frequency worse under Mask, so linguistic properties and word frequency only partially identify important words.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s12::p001",
+     "summary": "Attention, simulating SOCRAT, beats black-box methods and Random, but Attribution performs best under all three perturbations with around 1.0+ BLEU difference.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s12::p002",
+     "summary": "Deletion, Mask, and Grammatical Replacement vary from strong to weak, and Mask is chosen as representative for comparing Attribution and Attention.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s13::p000",
+     "summary": "On Chinese⇒English with RNN-Search, Attribution outperforms Attention and Random, while RNN-Search declines 64% versus Transformer's 55% under five operations.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s14::p000",
+     "summary": "Across English⇒French, English⇒Japanese, and reverse directions with Transformer under Mask, Attribution performs best and declines to around half the original BLEU with five operations.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s15::p000",
+     "summary": "Erasure BIBREF7, BIBREF22, BIBREF25 evaluates word importance by masking one word at a time and using normalized BLEU score changes.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s15::p001",
+     "summary": "Attribution is less effective than Erasure for one perturbed word but outperforms it for 2 or more words, while Erasure requires references and is computationally infeasible.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s15::p002",
+     "summary": "The gradient-based method consistently outperforms black-box counterparts and is on par with or better than supervised erasure on multiple-word perturbations without external resources.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s16::p000",
+     "summary": "Analyses examine two uses of word importance for debugging NMT models and designing language-specific architectures, focusing on Chinese⇒English, English⇒French, and English⇒Japanese.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s17::p000",
+     "summary": "Using 500 Chinese⇒English sentence pairs with Transformer BLEU 23.57, ten annotators labeled under-translated words, finding 178 sentences and 553 under-translated words.",
+     "group_id": "1909.00326::g00"
+    },
+    {
+     "passage_id": "1909.00326::s17::p001",
+     "summary": "Table TABREF32 shows Attribution significantly outperforms Erasure and Attention in detecting under-translation errors, enabling automatic identification without human interpreters.",
+     "group_id": "1909.00326::g00"
+    }
+   ],
+   "n_raw": 46,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5489,
+    "completion_tokens": 2158,
+    "total_tokens": 7647,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1909.00326::g01",
+   "summaries": [
+    {
+     "passage_id": "1909.00326::s18::p000",
+     "summary": "This section analyzes linguistic characteristics of important words using POS tags, fertility, syntactic parse tree depth, sentence-length scaling, and decision tree based regression.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s18::p001",
+     "summary": "Table TABREF34 shows syntactic information is almost independent of word importance, while POS tags and fertility contribute over 95% and are analyzed further.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s19::p000",
+     "summary": "Table TABREF35 shows content words matter more on Chinese$\\Rightarrow $English, content-free words on English$\\Rightarrow $Japanese, and little change on English$\\Rightarrow $French.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s19::p001",
+     "summary": "Punctuation is important on English$\\Rightarrow $Japanese translation, possibly because it affects sense groups and benefits syntactic reordering in Japanese.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s20::p000",
+     "summary": "The authors compare fertility distributions by word importance and word frequency on three language pairs, hypothesizing one-to-many source words are more important.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s20::p001",
+     "summary": "Table TABREF36 shows one-to-many fertility is consistently more important on all three language pairs, while null-aligned words receive much less attention.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s21::p000",
+     "summary": "The gradient-based method bridges word importance and translation performance, outperforms several black-box methods, reveals language-pair-specific syntactic categories, and may detect under-translation.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s21::p001",
+     "summary": "This paper is an initiating step towards general understanding of NMT models and may bring potential improvements.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s21::p002",
+     "summary": "Interactive MT and Constraint Decoding BIBREF29, BIBREF26 could pay more attention to detected unimportant words, which are possibly under-translated.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s21::p003",
+     "summary": "Adaptive Input Embedding BIBREF30 could extend adaptive softmax BIBREF31 to variable-capacity input embedding, assigning more capacity to more important words.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s21::p004",
+     "summary": "NMT Architecture Design should incorporate language-specific inductive bias, such as different behaviors on POS, into the model design.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s21::p005",
+     "summary": "Other applications of word importance may improve NMT models through tailored training, while model interpretability can build trust, help error diagnosis, and facilitate refinement.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s21::p006",
+     "summary": "The paper shows straightforward gradient-exploitation implementations work well and leaves advanced exploitation of gradients or other intermediate information to future work.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s22::p000",
+     "summary": "Shilin He and Michael R. Lyu were supported by the Research Grants Council of the Hong Kong Special Administrative Region, China (No. CUHK 14210717 of the General Research Fund), and Microsoft Research Asia (2018 Microsoft Research Asia Collaborative Research Award), and the authors thank anonymous reviewers.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s23::p000",
+     "summary": "2",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s23::p001",
+     "summary": "Reverse-direction analyses on English$\\Rightarrow $Chinese, French$\\Rightarrow $English, and Japanese$\\Rightarrow $English show similar findings in Table TABREF43 and Table TABREF44, using Stanford POS tagger and Kytea.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s24::p000",
+     "summary": "On English$\\Rightarrow $Chinese content words are more important, while content-free words are more important on French$\\Rightarrow $English and Japanese$\\Rightarrow $English, with Punctuation important on Japanese$\\Rightarrow $English.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s25::p000",
+     "summary": "Word fertility shows similar trends, with one-to-many fertility more important, null-aligned fertility less important, and many-to-one fertility increasing on Japanese$\\Rightarrow $English.",
+     "group_id": "1909.00326::g01"
+    },
+    {
+     "passage_id": "1909.00326::s25::p001",
+     "summary": "Findings on language pairs with reverse directions agree with the paper's findings, further confirming the generality of the experimental findings.",
+     "group_id": "1909.00326::g01"
+    }
+   ],
+   "n_raw": 19,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1961,
+    "completion_tokens": 964,
+    "total_tokens": 2925,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,708 @@
+{
+ "1709.10367::s00::p000": [
+  [
+   "Word embeddings",
+   "are",
+   "unsupervised learning methods for capturing latent semantic structure in language"
+  ],
+  [
+   "Word embedding methods",
+   "analyze",
+   "text data"
+  ],
+  [
+   "Word embeddings",
+   "have been extended to",
+   "data beyond text"
+  ],
+  [
+   "efe",
+   "is",
+   "a probabilistic perspective on embeddings"
+  ]
+ ],
+ "1709.10367::s00::p001": [
+  [
+   "sefe",
+   "is",
+   "an extension of efe"
+  ],
+  [
+   "sefe",
+   "discovers",
+   "a per-group embedding representation of objects"
+  ],
+  [
+   "the naïve approach of fitting an individual embedding model for each group",
+   "would typically suffer from",
+   "lack of data"
+  ]
+ ],
+ "1709.10367::s00::p002": [
+  [
+   "sefe",
+   "results in",
+   "a per-section embedding of each term in the vocabulary"
+  ],
+  [
+   "the most similar words in computer science",
+   "include",
+   "1.10artificial and 1.10ai"
+  ],
+  [
+   "similar words in finance",
+   "include",
+   "1.10abilities and 1.10consciousness"
+  ]
+ ],
+ "1709.10367::s00::p003": [
+  [
+   "embedding methods",
+   "posit",
+   "two representation vectors for each term in the vocabulary"
+  ],
+  [
+   "the conditional probability of each observed word",
+   "depends on",
+   "the interaction between the embedding vector and the context vectors of the surrounding words"
+  ],
+  [
+   "sefe",
+   "posits",
+   "a separate set of embedding vectors for each group"
+  ],
+  [
+   "sefe",
+   "posits",
+   "a shared set of context vectors"
+  ]
+ ],
+ "1709.10367::s00::p004": [
+  [
+   "The first approach",
+   "is based on",
+   "hierarchical modeling"
+  ],
+  [
+   "hierarchical modeling",
+   "assumes",
+   "that the group-specific embedding representations are tied through a global embedding"
+  ],
+  [
+   "The second approach",
+   "is based on",
+   "amortization"
+  ]
+ ],
+ "1709.10367::s00::p005": [
+  [
+   "One thread",
+   "is",
+   "embedding methods that study how language evolves over time"
+  ],
+  [
+   "The second thread",
+   "is",
+   "multilingual embeddings"
+  ]
+ ],
+ "1709.10367::s00::p006": [
+  [
+   "sefe model",
+   "extends",
+   "efe to grouped data"
+  ],
+  [
+   "two techniques",
+   "share",
+   "statistical strength among the embedding vectors"
+  ],
+  [
+   "thorough experimental study",
+   "is on",
+   "two text databases, ArXiv papers by section and U.S. Congressional speeches by home state and political party"
+  ],
+  [
+   "sefe",
+   "outperforms",
+   "efe in terms of held-out log-likelihood"
+  ]
+ ],
+ "1709.10367::s01::p000": [
+  [
+   "sefe",
+   "builds on",
+   "efe BIBREF10"
+  ],
+  [
+   "embedding models",
+   "represent",
+   "each object using two sets of vectors, an embedding vector and a context vector"
+  ]
+ ],
+ "1709.10367::s01::p001": [
+  [
+   "The sefe model",
+   "extends",
+   "efe to grouped data"
+  ],
+  [
+   "embedding vectors",
+   "are specific for",
+   "each group"
+  ],
+  [
+   "context vectors",
+   "are shared across",
+   "all groups"
+  ],
+  [
+   "two approaches",
+   "build",
+   "a hierarchical structure over the group-specific embeddings"
+  ]
+ ],
+ "1709.10367::s02::p000": [
+  [
+   "exponential family embeddings",
+   "have",
+   "a collection of objects"
+  ],
+  [
+   "goal",
+   "is to learn",
+   "a vector representation of these objects based on their co-occurrence patterns"
+  ]
+ ],
+ "1709.10367::s02::p001": [
+  [
+   "dataset",
+   "is represented as",
+   "a (typically sparse) matrix INLINEFORM0"
+  ],
+  [
+   "columns",
+   "are",
+   "datapoints"
+  ],
+  [
+   "rows",
+   "are",
+   "objects"
+  ],
+  [
+   "each column",
+   "corresponds to",
+   "a location in the text"
+  ]
+ ],
+ "1709.10367::s02::p002": [
+  [
+   "efe",
+   "represents",
+   "each object INLINEFORM0 with two sets of vectors, embeddings vectors INLINEFORM1 and context vectors INLINEFORM2"
+  ],
+  [
+   "definition of the efe model",
+   "requires",
+   "three ingredients: a context, a conditional exponential family, and a parameter sharing structure"
+  ]
+ ],
+ "1709.10367::s02::p003": [
+  [
+   "Exponential family embeddings",
+   "learn",
+   "the vector representation of objects"
+  ],
+  [
+   "The context INLINEFORM0",
+   "gives",
+   "the indices of the observations that appear in the conditional probability distribution of INLINEFORM1"
+  ],
+  [
+   "The definition of the context",
+   "varies across",
+   "applications"
+  ],
+  [
+   "In text, it",
+   "corresponds to",
+   "the set of words in a fixed-size window centered at location INLINEFORM2"
+  ]
+ ],
+ "1709.10367::s02::p004": [
+  [
+   "the distribution for INLINEFORM3",
+   "is in",
+   "the exponential family"
+  ]
+ ],
+ "1709.10367::s02::p005": [
+  [
+   "The parameter vectors",
+   "interact in",
+   "the conditional probability distributions of each observation INLINEFORM2"
+  ],
+  [
+   "The embedding vectors INLINEFORM3 and the context vectors INLINEFORM4",
+   "are combined to form",
+   "the natural parameter"
+  ]
+ ],
+ "1709.10367::s02::p006": [
+  [
+   "INLINEFORM0",
+   "is",
+   "the link function"
+  ],
+  [
+   "Exponential family embeddings",
+   "can be understood as",
+   "a bank of glm"
+  ],
+  [
+   "The context vectors",
+   "are combined to give",
+   "the covariates"
+  ],
+  [
+   "the “regression coefficients”",
+   "are",
+   "the embedding vectors"
+  ]
+ ],
+ "1709.10367::s02::p007": [
+  [
+   "The third ingredient of the efe model",
+   "is",
+   "the parameter sharing structure"
+  ],
+  [
+   "the parameter sharing structure",
+   "indicates",
+   "how the embedding vectors are shared across observations"
+  ],
+  [
+   "In the standard efe model, we",
+   "use",
+   "INLINEFORM0 and INLINEFORM1 for all columns of INLINEFORM2"
+  ],
+  [
+   "each unique object INLINEFORM3",
+   "has",
+   "a shared representation across all instances"
+  ]
+ ],
+ "1709.10367::s02::p008": [
+  [
+   "In efe, we",
+   "maximize",
+   "the objective function"
+  ],
+  [
+   "the objective function",
+   "is given by",
+   "the sum of the log-conditional likelihoods in Eq. EQREF5"
+  ]
+ ],
+ "1709.10367::s02::p009": [
+  [
+   "maximizing the regularized conditional likelihood",
+   "is not equivalent to",
+   "maximum a posteriori"
+  ],
+  [
+   "maximizing the regularized conditional likelihood",
+   "is similar to",
+   "maximization of the pseudo-likelihood in conditionally specified models"
+  ]
+ ],
+ "1709.10367::s03::p000": [
+  [
+   "Congressional speeches",
+   "are grouped into",
+   "political parties"
+  ],
+  [
+   "scientific documents",
+   "are grouped by",
+   "discipline"
+  ],
+  [
+   "The sefe model",
+   "extends",
+   "efe"
+  ]
+ ],
+ "1709.10367::s03::p001": [
+  [
+   "the context vectors",
+   "are shared across",
+   "groups"
+  ],
+  [
+   "the embedding vectors",
+   "are only shared at",
+   "the group level"
+  ]
+ ],
+ "1709.10367::s03::p002": [
+  [
+   "Sharing the context vectors INLINEFORM0",
+   "has",
+   "two advantages"
+  ],
+  [
+   "the shared structure",
+   "reduces",
+   "the number of parameters"
+  ],
+  [
+   "the resulting sefe model",
+   "is still flexible to capture",
+   "how differently words are used across different groups"
+  ],
+  [
+   "learning a separate embedding model for each group",
+   "would require",
+   "ad-hoc postprocessing steps to align the embeddings"
+  ]
+ ],
+ "1709.10367::s03::p003": [
+  [
+   "the sefe model",
+   "has",
+   "INLINEFORM1 times as many embedding vectors than the standard embedding model"
+  ],
+  [
+   "the naïve approach for building the sefe model without additional structure",
+   "may be detrimental for",
+   "the quality of the embeddings, especially for small-sized groups"
+  ],
+  [
+   "The first approach",
+   "consists in",
+   "a hierarchical embedding structure"
+  ],
+  [
+   "The second approach",
+   "is based on",
+   "amortization"
+  ],
+  [
+   "both methods",
+   "introduce",
+   "a set of global embedding vectors INLINEFORM4"
+  ]
+ ],
+ "1709.10367::s03::p004": [
+  [
+   "Hierarchical embedding structure",
+   "imposes",
+   "a hierarchical structure that allows sharing statistical strength among the per-group variables"
+  ],
+  [
+   "INLINEFORM1",
+   "is",
+   "a fixed hyperparameter"
+  ]
+ ],
+ "1709.10367::s03::p007": [
+  [
+   "The main insight behind amortization",
+   "is to reuse",
+   "inferences about past experiences when presented with a new task"
+  ]
+ ],
+ "1709.10367::s03::p008": [
+  [
+   "the amortization",
+   "can significantly reduce",
+   "the number of parameters in the model"
+  ],
+  [
+   "The number of parameters in the sefe model",
+   "is",
+   "INLINEFORM0"
+  ],
+  [
+   "INLINEFORM1",
+   "is",
+   "the number of groups"
+  ],
+  [
+   "INLINEFORM2",
+   "is",
+   "the dimensionality of the embedding vectors"
+  ]
+ ],
+ "1709.10367::s03::p009": [
+  [
+   "a new set of parameters INLINEFORM0",
+   "corresponds to",
+   "the neural network parameters"
+  ],
+  [
+   "the group-specific embedding vectors INLINEFORM2",
+   "are obtained as",
+   "DISPLAYFORM0"
+  ]
+ ],
+ "1709.10367::s03::p010": [
+  [
+   "two architectures",
+   "are",
+   "fully connected feed-forward neural networks and residual networks BIBREF32"
+  ],
+  [
+   "the network parameters INLINEFORM2",
+   "are",
+   "two weight matrices, DISPLAYFORM0"
+  ]
+ ],
+ "1709.10367::s03::p011": [
+  [
+   "the neural network",
+   "takes as input",
+   "the global embedding vector INLINEFORM1"
+  ],
+  [
+   "the neural network",
+   "outputs",
+   "the group-specific embedding vectors INLINEFORM2"
+  ]
+ ],
+ "1709.10367::s03::p012": [
+  [
+   "the residual network",
+   "focuses on modeling",
+   "how the group-specific embedding vectors INLINEFORM0 differ from the global vectors INLINEFORM1"
+  ],
+  [
+   "the residual network",
+   "would output",
+   "the global vector INLINEFORM2 for all groups"
+  ]
+ ],
+ "1709.10367::s03::p014": [
+  [
+   "TensorFlow BIBREF33",
+   "allows us to leverage",
+   "automatic differentiation"
+  ]
+ ],
+ "1709.10367::s03::p015": [
+  [
+   "the matrix INLINEFORM3",
+   "contains",
+   "one non-zero element per column"
+  ],
+  [
+   "embedding models",
+   "ignore",
+   "this one-hot constraint for computational efficiency"
+  ],
+  [
+   "the observations",
+   "are generated following",
+   "a set of conditional Bernoulli distributions BIBREF2 , BIBREF10"
+  ],
+  [
+   "embedding models",
+   "typically downweigh",
+   "the contribution of the zeros to the objective function"
+  ],
+  [
+   "negative sampling",
+   "consists in",
+   "randomly choosing a subset of the zero observations"
+  ],
+  [
+   "This",
+   "corresponds to",
+   "a biased estimate of the gradient in a Bernoulli exponential family embedding model BIBREF10"
+  ]
+ ],
+ "1709.10367::s03::p016": [
+  [
+   "The context INLINEFORM0",
+   "is given at each position INLINEFORM1 by",
+   "the set of surrounding words in the document, according to a fixed-size window"
+  ]
+ ],
+ "1709.10367::s03::p017": [
+  [
+   "efe and sefe",
+   "extend to",
+   "applications beyond text"
+  ],
+  [
+   "sefe",
+   "is used to model",
+   "supermarket purchases broken down by month"
+  ],
+  [
+   "rows of the data matrix INLINEFORM2",
+   "index",
+   "items"
+  ],
+  [
+   "columns of INLINEFORM6",
+   "may contain",
+   "more than one non-zero element"
+  ]
+ ],
+ "1709.10367::s03::p018": [
+  [
+   "Poisson conditional distribution",
+   "is more appropriate for",
+   "count data"
+  ],
+  [
+   "Poisson sefe",
+   "downweighs",
+   "the contribution of the zeros in the objective function"
+  ],
+  [
+   "downweighing the contribution of the zeros in the objective function",
+   "provides",
+   "better results"
+  ],
+  [
+   "downweighing the contribution of the zeros in the objective function",
+   "allows",
+   "the inference to focus on the positive signal of the actual purchases"
+  ]
+ ],
+ "1709.10367::s04::p000": [
+  [
+   "experimental study",
+   "fits",
+   "the sefe model on three datasets"
+  ],
+  [
+   "experimental study",
+   "compares",
+   "the sefe model against the efe"
+  ],
+  [
+   "quantitative results",
+   "show",
+   "that sharing the context vectors provides better results"
+  ],
+  [
+   "quantitative results",
+   "show",
+   "that amortization and hierarchical structure give further improvements"
+  ]
+ ],
+ "1709.10367::s04::p001": [
+  [
+   "sefe",
+   "is applied on",
+   "three datasets: ArXiv papers, U.S. Senate speeches, and purchases on supermarket grocery shopping data"
+  ]
+ ],
+ "1709.10367::s04::p002": [
+  [
+   "ArXiv papers dataset",
+   "contains",
+   "the abstracts of papers published on the ArXiv under the 19 different tags between April 2007 and June 2015"
+  ],
+  [
+   "each tag",
+   "is treated as",
+   "a group"
+  ],
+  [
+   "sefe",
+   "is fit with the goal of",
+   "uncovering which words have the strongest shift in usage"
+  ],
+  [
+   "abstracts",
+   "are split into",
+   "training, validation, and test sets, with proportions of INLINEFORM0 , INLINEFORM1 , and INLINEFORM2 , respectively"
+  ]
+ ],
+ "1709.10367::s04::p003": [
+  [
+   "Senate speeches dataset",
+   "contains",
+   "U.S. Senate speeches from 1994 to mid 2009"
+  ],
+  [
+   "Senate speeches dataset",
+   "is",
+   "a transcript of spoken language"
+  ],
+  [
+   "data",
+   "are grouped into",
+   "state of origin of the speaker and his or her party affiliation"
+  ],
+  [
+   "affiliations with the Republican and Democratic Party",
+   "are considered",
+   "Only"
+  ],
+  [
+   "groups",
+   "are",
+   "83 groups"
+  ],
+  [
+   "speeches",
+   "are split into",
+   "training ( INLINEFORM0 ), validation ( INLINEFORM1 ), and testing ( INLINEFORM2 )"
+  ]
+ ],
+ "1709.10367::s04::p004": [
+  [
+   "Grocery shopping data",
+   "contains",
+   "the purchases of INLINEFORM0 customers"
+  ],
+  [
+   "The data",
+   "covers",
+   "a period of 97 weeks"
+  ],
+  [
+   "the data",
+   "contains",
+   "INLINEFORM1 unique items at the 1.10upc (Universal Product Code) level"
+  ],
+  [
+   "The training data",
+   "contains",
+   "INLINEFORM5 shopping trips and INLINEFORM6 purchases in total"
+  ]
+ ],
+ "1709.10367::s04::p005": [
+  [
+   "This",
+   "downsamples",
+   "especially the frequent words"
+  ],
+  [
+   "This",
+   "speeds up",
+   "training"
+  ]
+ ],
+ "1709.10367::s04::p006": [
+  [
+   "the Poisson distribution",
+   "is more appropriate for",
+   "count data"
+  ]
+ ],
+ "1709.10367::s04::p007": [
+  [
+   "All",
+   "are fit using",
+   "sgd BIBREF34"
+  ]
+ ]
+}

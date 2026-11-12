@@ -1,0 +1,314 @@
+model=/data2-HDD-SATA-20T/nzq/huggingface_model/Qwen3.8-27B-FP8 name=qwen3.8-27b-fp8 gpus=0,2 tp=2 len=8192 util=0.85
+WARNING 10-28 11:28:37 [config.py:70] Support for Transformers v4 is deprecated. The Transformers v4 codepath will become unmaintained in vLLM v0.22.0 and will be removed in vLLM v0.24.0. Please upgrade to Transformers v5: pip install --upgrade transformers
+(APIServer pid=52539) INFO 10-28 11:28:45 [utils.py:306] 
+(APIServer pid=52539) INFO 10-28 11:28:45 [utils.py:306]        █     █     █▄   ▄█
+(APIServer pid=52539) INFO 10-28 11:28:45 [utils.py:306]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.21.0
+(APIServer pid=52539) INFO 10-28 11:28:45 [utils.py:306]   █▄█▀ █     █     █     █  model   /data2-HDD-SATA-20T/nzq/huggingface_model/Qwen3.8-27B-FP8
+(APIServer pid=52539) INFO 10-28 11:28:45 [utils.py:306]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+(APIServer pid=52539) INFO 10-28 11:28:45 [utils.py:306] 
+(APIServer pid=52539) INFO 10-28 11:28:45 [utils.py:240] non-default args: {'model_tag': '/data2-HDD-SATA-20T/nzq/huggingface_model/Qwen3.8-27B-FP8', 'default_chat_template_kwargs': {'enable_thinking': False}, 'host': '127.0.0.1', 'port': 18183, 'model': '/data2-HDD-SATA-20T/nzq/huggingface_model/Qwen3.8-27B-FP8', 'trust_remote_code': True, 'max_model_len': 8192, 'enforce_eager': True, 'served_model_name': ['qwen3.8-27b-fp8'], 'reasoning_parser': 'qwen3', 'tensor_parallel_size': 2, 'gpu_memory_utilization': 0.85, 'language_model_only': True, 'max_num_seqs': 4}
+(APIServer pid=52539) WARNING 10-28 11:28:45 [system_utils.py:294] Found ulimit of 64000 and failed to automatically increase with error current limit exceeds maximum limit. This can cause fd limit errors like `OSError: [Errno 24] Too many open files`. Consider increasing with ulimit -n
+(APIServer pid=52539) INFO 10-28 11:29:10 [model.py:568] Resolved architecture: Qwen3_5ForConditionalGeneration
+(APIServer pid=52539) INFO 10-28 11:29:10 [model.py:1697] Using max model len 8192
+(APIServer pid=52539) INFO 10-28 11:29:11 [vllm.py:886] Asynchronous scheduling is enabled.
+(APIServer pid=52539) WARNING 10-28 11:29:11 [vllm.py:942] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+(APIServer pid=52539) WARNING 10-28 11:29:11 [vllm.py:960] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(APIServer pid=52539) INFO 10-28 11:29:11 [kernel.py:212] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(APIServer pid=52539) INFO 10-28 11:29:11 [vllm.py:1135] Cudagraph is disabled under eager mode
+(APIServer pid=52539) INFO 10-28 11:29:12 [compilation.py:303] Enabled custom fusions: norm_quant, act_quant
+(APIServer pid=52539) INFO 10-28 11:29:14 [registry.py:134] All limits of multimodal modalities supported by the model are set to 0, running in text-only mode.
+WARNING 10-28 11:29:29 [config.py:70] Support for Transformers v4 is deprecated. The Transformers v4 codepath will become unmaintained in vLLM v0.22.0 and will be removed in vLLM v0.24.0. Please upgrade to Transformers v5: pip install --upgrade transformers
+(EngineCore pid=33178) INFO 10-28 11:29:36 [core.py:109] Initializing a V1 LLM engine (v0.21.0) with config: model='/data2-HDD-SATA-20T/nzq/huggingface_model/Qwen3.8-27B-FP8', speculative_config=None, tokenizer='/data2-HDD-SATA-20T/nzq/huggingface_model/Qwen3.8-27B-FP8', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=2, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=fp8, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='qwen3', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=qwen3.8-27b-fp8, enable_prefix_caching=False, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['+quant_fp8', 'all', '+quant_fp8'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'fuse_act_padding': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=False, moe_backend='auto')
+(EngineCore pid=33178) WARNING 10-28 11:29:36 [multiproc_executor.py:1029] Reducing Torch parallelism from 32 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+(EngineCore pid=33178) INFO 10-28 11:29:36 [multiproc_executor.py:139] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=101.6.43.243 (local), world_size=2, local_world_size=2
+WARNING 10-28 11:29:44 [config.py:70] Support for Transformers v4 is deprecated. The Transformers v4 codepath will become unmaintained in vLLM v0.22.0 and will be removed in vLLM v0.24.0. Please upgrade to Transformers v5: pip install --upgrade transformers
+WARNING 10-28 11:29:46 [config.py:70] Support for Transformers v4 is deprecated. The Transformers v4 codepath will become unmaintained in vLLM v0.22.0 and will be removed in vLLM v0.24.0. Please upgrade to Transformers v5: pip install --upgrade transformers
+INFO 10-28 11:29:51 [registry.py:134] All limits of multimodal modalities supported by the model are set to 0, running in text-only mode.
+(Worker pid=43238) INFO 10-28 11:29:51 [parallel_state.py:1410] world_size=2 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:35159 backend=nccl
+INFO 10-28 11:29:52 [registry.py:134] All limits of multimodal modalities supported by the model are set to 0, running in text-only mode.
+(Worker pid=46361) INFO 10-28 11:29:54 [parallel_state.py:1410] world_size=2 rank=1 local_rank=1 distributed_init_method=tcp://127.0.0.1:35159 backend=nccl
+(Worker pid=43238) <frozen importlib._bootstrap_external>:1241: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+(Worker pid=46361) <frozen importlib._bootstrap_external>:1241: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+(Worker pid=43238) <frozen importlib._bootstrap_external>:1241: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+(Worker pid=46361) <frozen importlib._bootstrap_external>:1241: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+(Worker pid=43238) INFO 10-28 11:29:57 [pynccl.py:111] vLLM is using nccl==2.28.9
+(Worker pid=43238) WARNING 10-28 11:29:59 [symm_mem.py:66] SymmMemCommunicator: Device capability 8.6 not supported, communicator is not available.
+(Worker pid=46361) WARNING 10-28 11:29:59 [symm_mem.py:66] SymmMemCommunicator: Device capability 8.6 not supported, communicator is not available.
+(Worker pid=43238) WARNING 10-28 11:29:59 [custom_all_reduce.py:164] Custom allreduce is disabled because your platform lacks GPU P2P capability or P2P test failed. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+(Worker pid=46361) WARNING 10-28 11:29:59 [custom_all_reduce.py:164] Custom allreduce is disabled because your platform lacks GPU P2P capability or P2P test failed. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+(Worker pid=43238) INFO 10-28 11:29:59 [parallel_state.py:1723] rank 0 in world size 2 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(Worker pid=43238) INFO 10-28 11:30:00 [topk_topp_sampler.py:70] FlashInfer top-p/top-k sampling disabled via VLLM_USE_FLASHINFER_SAMPLER=0; using PyTorch-native sampler.
+(Worker_TP0 pid=43238) INFO 10-28 11:30:00 [gpu_model_runner.py:4857] Starting to load model /data2-HDD-SATA-20T/nzq/huggingface_model/Qwen3.8-27B-FP8...
+(Worker_TP0 pid=43238) INFO 10-28 11:30:00 [cuda.py:427] Using backend AttentionBackendEnum.FLASH_ATTN for vit attention
+(Worker_TP0 pid=43238) INFO 10-28 11:30:00 [mm_encoder_attention.py:372] Using AttentionBackendEnum.FLASH_ATTN for MMEncoderAttention.
+(Worker_TP0 pid=43238) INFO 10-28 11:30:01 [__init__.py:393] Selected MarlinFP8ScaledMMLinearKernel for Fp8LinearMethod
+(Worker_TP0 pid=43238) INFO 10-28 11:30:01 [gdn_linear_attn.py:169] Using Triton/FLA GDN prefill kernel
+(Worker_TP0 pid=43238) INFO 10-28 11:30:01 [cuda.py:372] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(Worker_TP0 pid=43238) INFO 10-28 11:30:01 [flash_attn.py:641] Using FlashAttention version 2
+(Worker_TP0 pid=43238) INFO 10-28 11:30:01 [weight_utils.py:938] Filesystem type for checkpoints: EXT4. Checkpoint size: 28.75 GiB. Available RAM: 824.83 GiB.
+(Worker_TP0 pid=43238) INFO 10-28 11:30:01 [weight_utils.py:961] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:   0% Completed | 0/66 [00:00<?, ?it/s]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:   2% Completed | 1/66 [00:08<09:02,  8.34s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:   3% Completed | 2/66 [00:17<09:16,  8.69s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:   5% Completed | 3/66 [00:25<08:54,  8.48s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:   6% Completed | 4/66 [00:33<08:30,  8.24s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:   8% Completed | 5/66 [00:39<07:27,  7.34s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:   9% Completed | 6/66 [00:39<04:53,  4.89s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  11% Completed | 7/66 [00:39<03:17,  3.34s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  12% Completed | 8/66 [00:39<02:14,  2.32s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  14% Completed | 9/66 [00:39<01:33,  1.64s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  15% Completed | 10/66 [00:39<01:05,  1.17s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  17% Completed | 11/66 [00:48<03:15,  3.56s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  18% Completed | 12/66 [00:56<04:16,  4.74s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  20% Completed | 13/66 [01:02<04:35,  5.20s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  21% Completed | 14/66 [01:12<05:39,  6.53s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  23% Completed | 15/66 [01:20<05:54,  6.95s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  24% Completed | 16/66 [01:26<05:40,  6.81s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  26% Completed | 17/66 [01:35<06:11,  7.59s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  27% Completed | 18/66 [01:43<05:59,  7.48s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  29% Completed | 19/66 [01:50<05:49,  7.44s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  30% Completed | 20/66 [01:57<05:31,  7.21s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  32% Completed | 21/66 [02:04<05:31,  7.37s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  33% Completed | 22/66 [02:12<05:26,  7.42s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  35% Completed | 23/66 [02:20<05:23,  7.53s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  36% Completed | 24/66 [02:27<05:13,  7.45s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  38% Completed | 25/66 [02:34<05:05,  7.44s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  39% Completed | 26/66 [02:42<05:03,  7.59s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  41% Completed | 27/66 [02:48<04:30,  6.93s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  42% Completed | 28/66 [02:56<04:34,  7.22s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  44% Completed | 29/66 [03:01<04:07,  6.69s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  45% Completed | 30/66 [03:08<04:03,  6.76s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  47% Completed | 31/66 [03:16<04:09,  7.14s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  48% Completed | 32/66 [03:22<03:54,  6.89s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  50% Completed | 33/66 [03:27<03:26,  6.27s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  52% Completed | 34/66 [03:37<03:54,  7.34s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  53% Completed | 35/66 [03:42<03:22,  6.54s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  55% Completed | 36/66 [03:49<03:19,  6.65s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  56% Completed | 37/66 [03:54<03:05,  6.41s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  58% Completed | 38/66 [04:02<03:09,  6.78s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  59% Completed | 39/66 [04:07<02:44,  6.11s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  61% Completed | 40/66 [04:13<02:40,  6.18s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  62% Completed | 41/66 [04:22<02:58,  7.15s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  64% Completed | 42/66 [04:35<03:32,  8.85s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  65% Completed | 43/66 [04:50<04:01, 10.51s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  67% Completed | 44/66 [05:01<03:53, 10.63s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  68% Completed | 45/66 [05:02<02:45,  7.88s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  70% Completed | 46/66 [05:05<02:06,  6.34s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  71% Completed | 47/66 [05:05<01:24,  4.47s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  73% Completed | 48/66 [05:05<00:56,  3.16s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  74% Completed | 49/66 [05:05<00:38,  2.25s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  76% Completed | 50/66 [05:05<00:25,  1.61s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  77% Completed | 51/66 [05:05<00:17,  1.16s/it]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  79% Completed | 52/66 [05:05<00:11,  1.18it/s]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  80% Completed | 53/66 [05:06<00:08,  1.59it/s]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  82% Completed | 54/66 [05:06<00:05,  2.11it/s]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  83% Completed | 55/66 [05:06<00:03,  2.76it/s]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  85% Completed | 56/66 [05:06<00:02,  3.52it/s]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  86% Completed | 57/66 [05:06<00:02,  4.36it/s]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  88% Completed | 58/66 [05:06<00:01,  5.25it/s]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  91% Completed | 60/66 [05:06<00:00,  6.78it/s]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  94% Completed | 62/66 [05:06<00:00,  7.92it/s]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards:  97% Completed | 64/66 [05:07<00:00,  8.58it/s]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards: 100% Completed | 66/66 [05:07<00:00,  5.23it/s]
+(Worker_TP0 pid=43238) Loading safetensors checkpoint shards: 100% Completed | 66/66 [05:07<00:00,  4.66s/it]
+(Worker_TP0 pid=43238) 
+(Worker_TP0 pid=43238) INFO 10-28 11:35:09 [default_loader.py:397] Loading weights took 307.94 seconds
+(Worker_TP0 pid=43238) WARNING 10-28 11:35:09 [marlin_utils_fp8.py:97] Your GPU does not have native support for FP8 computation but FP8 quantization is being used. Weight-only FP8 compression will be used leveraging the Marlin kernel. This may degrade performance for compute-heavy workloads.
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870] WorkerProc failed to start.
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870] Traceback (most recent call last):
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/executor/multiproc_executor.py", line 837, in worker_main
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     worker = WorkerProc(*args, **kwargs)
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     return func(*args, **kwargs)
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]            ^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/executor/multiproc_executor.py", line 619, in __init__
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     self.worker.load_model()
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/worker/gpu_worker.py", line 345, in load_model
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     self.model_runner.load_model(load_dummy_weights=load_dummy_weights)
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     return func(*args, **kwargs)
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]            ^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/worker/gpu_model_runner.py", line 4873, in load_model
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     self.model = model_loader.load_model(
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]                  ^^^^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     return func(*args, **kwargs)
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]            ^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/model_executor/model_loader/base_loader.py", line 80, in load_model
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     process_weights_after_loading(model, model_config, target_device)
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/model_executor/model_loader/utils.py", line 111, in process_weights_after_loading
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     quant_method.process_weights_after_loading(module)
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/model_executor/layers/quantization/fp8.py", line 395, in process_weights_after_loading
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     self.fp8_linear.process_weights_after_loading(layer)
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/model_executor/kernels/linear/scaled_mm/marlin.py", line 99, in process_weights_after_loading
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     prepare_fp8_layer_for_marlin(
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/model_executor/layers/quantization/utils/marlin_utils_fp8.py", line 127, in prepare_fp8_layer_for_marlin
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     marlin_qweight = ops.gptq_marlin_repack(
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]                      ^^^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/_custom_ops.py", line 1280, in gptq_marlin_repack
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     return torch.ops._C.gptq_marlin_repack(
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/torch/_ops.py", line 1269, in __call__
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     return self._op(*args, **kwargs)
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP0 pid=43238) ERROR 10-28 11:35:10 [multiproc_executor.py:870] RuntimeError: Expected max_shared_mem > 0 to be true, but got false.  (Could this error message be improved?  If so, please report an enhancement request to PyTorch.)
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870] WorkerProc failed to start.
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870] Traceback (most recent call last):
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/executor/multiproc_executor.py", line 837, in worker_main
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     worker = WorkerProc(*args, **kwargs)
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     return func(*args, **kwargs)
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]            ^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/executor/multiproc_executor.py", line 619, in __init__
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     self.worker.load_model()
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/worker/gpu_worker.py", line 345, in load_model
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     self.model_runner.load_model(load_dummy_weights=load_dummy_weights)
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     return func(*args, **kwargs)
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]            ^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/worker/gpu_model_runner.py", line 4873, in load_model
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     self.model = model_loader.load_model(
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]                  ^^^^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     return func(*args, **kwargs)
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]            ^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/model_executor/model_loader/base_loader.py", line 80, in load_model
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     process_weights_after_loading(model, model_config, target_device)
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/model_executor/model_loader/utils.py", line 111, in process_weights_after_loading
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     quant_method.process_weights_after_loading(module)
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/model_executor/layers/quantization/fp8.py", line 395, in process_weights_after_loading
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     self.fp8_linear.process_weights_after_loading(layer)
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/model_executor/kernels/linear/scaled_mm/marlin.py", line 99, in process_weights_after_loading
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     prepare_fp8_layer_for_marlin(
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/model_executor/layers/quantization/utils/marlin_utils_fp8.py", line 127, in prepare_fp8_layer_for_marlin
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     marlin_qweight = ops.gptq_marlin_repack(
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]                      ^^^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/_custom_ops.py", line 1280, in gptq_marlin_repack
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     return torch.ops._C.gptq_marlin_repack(
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/torch/_ops.py", line 1269, in __call__
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]     return self._op(*args, **kwargs)
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+(Worker_TP1 pid=46361) ERROR 10-28 11:35:10 [multiproc_executor.py:870] RuntimeError: Expected max_shared_mem > 0 to be true, but got false.  (Could this error message be improved?  If so, please report an enhancement request to PyTorch.)
+[rank0]:[W1028 11:35:11.957329306 ProcessGroupNCCL.cpp:1575] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140] EngineCore failed to start.
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140] Traceback (most recent call last):
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 1114, in run_engine_core
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]     return func(*args, **kwargs)
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 880, in __init__
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]     super().__init__(
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 118, in __init__
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]     self.model_executor = executor_class(vllm_config)
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/executor/multiproc_executor.py", line 107, in __init__
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]     super().__init__(vllm_config)
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]     return func(*args, **kwargs)
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/executor/abstract.py", line 109, in __init__
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]     self._init_executor()
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/executor/multiproc_executor.py", line 200, in _init_executor
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]     self.workers = WorkerProc.wait_for_ready(unready_workers)
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/executor/multiproc_executor.py", line 747, in wait_for_ready
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140]     raise e from None
+(EngineCore pid=33178) ERROR 10-28 11:35:13 [core.py:1140] Exception: WorkerProc initialization failed due to an exception in a background process. See stack trace for root cause.
+(EngineCore pid=33178) Process EngineCore:
+(EngineCore pid=33178) Traceback (most recent call last):
+(EngineCore pid=33178)   File "/home/nzq/anaconda3/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+(EngineCore pid=33178)     self.run()
+(EngineCore pid=33178)   File "/home/nzq/anaconda3/lib/python3.11/multiprocessing/process.py", line 108, in run
+(EngineCore pid=33178)     self._target(*self._args, **self._kwargs)
+(EngineCore pid=33178)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 1144, in run_engine_core
+(EngineCore pid=33178)     raise e
+(EngineCore pid=33178)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 1114, in run_engine_core
+(EngineCore pid=33178)     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore pid=33178)                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=33178)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=33178)     return func(*args, **kwargs)
+(EngineCore pid=33178)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=33178)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 880, in __init__
+(EngineCore pid=33178)     super().__init__(
+(EngineCore pid=33178)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 118, in __init__
+(EngineCore pid=33178)     self.model_executor = executor_class(vllm_config)
+(EngineCore pid=33178)                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=33178)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/executor/multiproc_executor.py", line 107, in __init__
+(EngineCore pid=33178)     super().__init__(vllm_config)
+(EngineCore pid=33178)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=33178)     return func(*args, **kwargs)
+(EngineCore pid=33178)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=33178)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/executor/abstract.py", line 109, in __init__
+(EngineCore pid=33178)     self._init_executor()
+(EngineCore pid=33178)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/executor/multiproc_executor.py", line 200, in _init_executor
+(EngineCore pid=33178)     self.workers = WorkerProc.wait_for_ready(unready_workers)
+(EngineCore pid=33178)                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=33178)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/executor/multiproc_executor.py", line 747, in wait_for_ready
+(EngineCore pid=33178)     raise e from None
+(EngineCore pid=33178) Exception: WorkerProc initialization failed due to an exception in a background process. See stack trace for root cause.
+(APIServer pid=52539) Traceback (most recent call last):
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/bin/vllm", line 6, in <module>
+(APIServer pid=52539)     sys.exit(main())
+(APIServer pid=52539)              ^^^^^^
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/entrypoints/cli/main.py", line 92, in main
+(APIServer pid=52539)     args.dispatch_function(args)
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/entrypoints/cli/serve.py", line 122, in cmd
+(APIServer pid=52539)     uvloop.run(run_server(args))
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/uvloop/__init__.py", line 92, in run
+(APIServer pid=52539)     return runner.run(wrapper())
+(APIServer pid=52539)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=52539)   File "/home/nzq/anaconda3/lib/python3.11/asyncio/runners.py", line 118, in run
+(APIServer pid=52539)     return self._loop.run_until_complete(task)
+(APIServer pid=52539)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=52539)   File "uvloop/loop.pyx", line 1515, in uvloop.loop.Loop.run_until_complete
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/uvloop/__init__.py", line 48, in wrapper
+(APIServer pid=52539)     return await main
+(APIServer pid=52539)            ^^^^^^^^^^
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/entrypoints/openai/api_server.py", line 693, in run_server
+(APIServer pid=52539)     await run_server_worker(listen_address, sock, args, **uvicorn_kwargs)
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/entrypoints/openai/api_server.py", line 707, in run_server_worker
+(APIServer pid=52539)     async with build_async_engine_client(
+(APIServer pid=52539)   File "/home/nzq/anaconda3/lib/python3.11/contextlib.py", line 204, in __aenter__
+(APIServer pid=52539)     return await anext(self.gen)
+(APIServer pid=52539)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/entrypoints/openai/api_server.py", line 100, in build_async_engine_client
+(APIServer pid=52539)     async with build_async_engine_client_from_engine_args(
+(APIServer pid=52539)   File "/home/nzq/anaconda3/lib/python3.11/contextlib.py", line 204, in __aenter__
+(APIServer pid=52539)     return await anext(self.gen)
+(APIServer pid=52539)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/entrypoints/openai/api_server.py", line 136, in build_async_engine_client_from_engine_args
+(APIServer pid=52539)     async_llm = AsyncLLM.from_vllm_config(
+(APIServer pid=52539)                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/async_llm.py", line 217, in from_vllm_config
+(APIServer pid=52539)     return cls(
+(APIServer pid=52539)            ^^^^
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/async_llm.py", line 146, in __init__
+(APIServer pid=52539)     self.engine_core = EngineCoreClient.make_async_mp_client(
+(APIServer pid=52539)                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(APIServer pid=52539)     return func(*args, **kwargs)
+(APIServer pid=52539)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/core_client.py", line 130, in make_async_mp_client
+(APIServer pid=52539)     return AsyncMPClient(*client_args)
+(APIServer pid=52539)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(APIServer pid=52539)     return func(*args, **kwargs)
+(APIServer pid=52539)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/core_client.py", line 900, in __init__
+(APIServer pid=52539)     super().__init__(
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/core_client.py", line 535, in __init__
+(APIServer pid=52539)     with launch_core_engines(
+(APIServer pid=52539)   File "/home/nzq/anaconda3/lib/python3.11/contextlib.py", line 144, in __exit__
+(APIServer pid=52539)     next(self.gen)
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/utils.py", line 1128, in launch_core_engines
+(APIServer pid=52539)     wait_for_engine_startup(
+(APIServer pid=52539)   File "/data2-HDD-SATA-20T/nzq/TAG-experiment/rsi_local_qwen_pilot/.venv/lib/python3.11/site-packages/vllm/v1/engine/utils.py", line 1187, in wait_for_engine_startup
+(APIServer pid=52539)     raise RuntimeError(
+(APIServer pid=52539) RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+/home/nzq/anaconda3/lib/python3.11/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

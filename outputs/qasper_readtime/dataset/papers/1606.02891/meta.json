@@ -1,0 +1,73 @@
+{
+ "paper_id": "1606.02891",
+ "title": "Edinburgh Neural Machine Translation Systems for WMT 16",
+ "abstract": "We participated in the WMT 2016 shared news translation task by building neural translation systems for four language pairs, each trained in both directions: English<->Czech, English<->German, English<->Romanian and English<->Russian. Our systems are based on an attentional encoder-decoder, using BPE subword segmentation for open-vocabulary translation with a fixed vocabulary. We experimented with using automatic back-translations of the monolingual News corpus as additional training data, pervasive dropout, and target-bidirectional models. All reported methods give substantial improvements, and we see improvements of 4.3--11.2 BLEU over our baseline systems. In the human evaluation, our systems were the (tied) best constrained system for 7 out of 8 translation directions in which we participated.",
+ "sections": [
+  "Introduction",
+  "Baseline System",
+  "Byte-pair encoding (BPE)",
+  "Synthetic Training Data",
+  "Pervasive Dropout",
+  "Target-bidirectional Translation",
+  "English↔\\leftrightarrow German",
+  "English↔\\leftrightarrow Czech",
+  "English↔\\leftrightarrow Romanian",
+  "English↔\\leftrightarrow Russian",
+  "Shared Task Results",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 33,
+ "n_tokens": 2796,
+ "figures_and_tables": [
+  {
+   "caption_id": "1606.02891::fig000",
+   "paper_id": "1606.02891",
+   "file": "2-Table1-1.png",
+   "caption": "Table 1: Amount of parallel and synthetic training data (number of sentences, in millions) for EN* language pairs. For synthetic data, we separate the data according to whether the original monolingual language is English or not.",
+   "n_tokens": 47
+  },
+  {
+   "caption_id": "1606.02891::fig001",
+   "paper_id": "1606.02891",
+   "file": "3-Table2-1.png",
+   "caption": "Table 2: English↔German translation results (BLEU) on dev (newstest2015) and test (newstest2016). Submitted system in bold.",
+   "n_tokens": 37
+  },
+  {
+   "caption_id": "1606.02891::fig002",
+   "paper_id": "1606.02891",
+   "file": "4-Table3-1.png",
+   "caption": "Table 3: English↔Czech translation results (BLEU) on dev (newstest2015) and test (newstest2016). Submitted system in bold.",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "1606.02891::fig003",
+   "paper_id": "1606.02891",
+   "file": "4-Table5-1.png",
+   "caption": "Table 5: English↔Romanian translation results (BLEU) on dev (newsdev2016), and test (newstest2016). Submitted system in bold.",
+   "n_tokens": 37
+  },
+  {
+   "caption_id": "1606.02891::fig004",
+   "paper_id": "1606.02891",
+   "file": "4-Table4-1.png",
+   "caption": "Table 4: Czech→English translation results (BLEU) on dev (newstest2015) and test (newstest2016), after continued training with increasing amounts of back-translated synthetic data. For each row, training was continued from the baseline model until convergence.",
+   "n_tokens": 58
+  },
+  {
+   "caption_id": "1606.02891::fig005",
+   "paper_id": "1606.02891",
+   "file": "4-Table6-1.png",
+   "caption": "Table 6: English↔Russian translation results (BLEU) on dev (newstest2015) and test (newstest2016). Submitted system in bold.",
+   "n_tokens": 37
+  },
+  {
+   "caption_id": "1606.02891::fig006",
+   "paper_id": "1606.02891",
+   "file": "5-Table7-1.png",
+   "caption": "Table 7: Automatic (BLEU) and human ranking of our submitted systems (uedinnmt) at WMT16 shared news translation task. Automatic rankings are taken from http://matrix.statmt.org , only considering primary systems. Human rankings include anonymous online systems, and for EN↔CS, systems from the tuning task.",
+   "n_tokens": 67
+  }
+ ]
+}

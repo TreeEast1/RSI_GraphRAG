@@ -1,0 +1,75 @@
+{
+ "paper_id": "1701.02962",
+ "title": "Distinguishing Antonyms and Synonyms in a Pattern-based Neural Network",
+ "abstract": "Distinguishing between antonyms and synonyms is a key task to achieve high performance in NLP systems. While they are notoriously difficult to distinguish by distributional co-occurrence models, pattern-based methods have proven effective to differentiate between the relations. In this paper, we present a novel neural network model AntSynNET that exploits lexico-syntactic patterns from syntactic parse trees. In addition to the lexical and syntactic information, we successfully integrate the distance between the related words along the syntactic path as a new pattern feature. The results from classification experiments show that AntSynNET improves the performance over prior pattern-based methods.",
+ "sections": [
+  "Introduction",
+  "AntSynNET: LSTM-based Antonym-Synonym Distinction",
+  "Induction of Patterns",
+  "Recurrent Neural Network with Long Short-Term Memory Units",
+  "The Proposed AntSynNET Model",
+  "Baseline Models",
+  "Distributional Baseline",
+  "Distributed Baseline",
+  "Dataset",
+  "Experimental Settings",
+  "Overall Results",
+  "Effect of the Distance Feature",
+  "Effect of Word Embeddings",
+  "Conclusion",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 44,
+ "n_tokens": 5236,
+ "figures_and_tables": [
+  {
+   "caption_id": "1701.02962::fig000",
+   "paper_id": "1701.02962",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1: Illustration of the syntactic tree for the sentence “My old village has been provided with the new services”. Red lines indicate the path from the word old to the word new.",
+   "n_tokens": 40
+  },
+  {
+   "caption_id": "1701.02962::fig001",
+   "paper_id": "1701.02962",
+   "file": "5-Figure2-1.png",
+   "caption": "Figure 2: Illustration of the AntSynNET model. Each word pair is represented by several patterns, and each pattern represents a path in the graph of the syntactic tree. Patterns consist of several nodes where each node is represented by a vector with four features: lemma, POS, dependency label, and distance label. The mean pooling of the pattern vectors is the vector representation of each word pair, which is then fed to the logistic regression layer to classify antonyms and synonyms.",
+   "n_tokens": 97
+  },
+  {
+   "caption_id": "1701.02962::fig002",
+   "paper_id": "1701.02962",
+   "file": "6-Table1-1.png",
+   "caption": "Table 1: Our dataset.",
+   "n_tokens": 7
+  },
+  {
+   "caption_id": "1701.02962::fig003",
+   "paper_id": "1701.02962",
+   "file": "6-Table2-1.png",
+   "caption": "Table 2: Average number of patterns per word pair across word classes.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1701.02962::fig004",
+   "paper_id": "1701.02962",
+   "file": "7-Table3-1.png",
+   "caption": "Table 3: Performance of the AntSynNET models in comparison to the baseline models.",
+   "n_tokens": 18
+  },
+  {
+   "caption_id": "1701.02962::fig005",
+   "paper_id": "1701.02962",
+   "file": "7-Table4-1.png",
+   "caption": "Table 4: Comparing the novel distance feature with Schwarz et al.’s direction feature, across word classes.",
+   "n_tokens": 23
+  },
+  {
+   "caption_id": "1701.02962::fig006",
+   "paper_id": "1701.02962",
+   "file": "8-Table5-1.png",
+   "caption": "Table 5: Comparing pre-trained GloVe and dLCE word embeddings.",
+   "n_tokens": 17
+  }
+ ]
+}

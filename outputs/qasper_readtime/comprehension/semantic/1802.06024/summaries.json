@@ -1,0 +1,558 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1802.06024::s00::p000",
+   "summary": "Chatbots have evolved from AIML, handcrafted rules, and information retrieval to neural conversation models and KB-grounded systems, but existing systems do not learn new knowledge during conversation.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s00::p001",
+   "summary": "KB completion is binary classification over query triples, but existing approaches assume known entities and relations, preventing new knowledge with unknown entities or relations in conversations.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s00::p002",
+   "summary": "The paper removes the KBC closed-world assumption, defines open-world knowledge base completion (OKBC), and formulates conversational knowledge learning and inference as interactive OKBC.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s00::p003",
+   "summary": "Conversation utterances yield true facts and queries; true facts are incorporated into the KB, while query facts require OKBC when “Obama,” “BornIn,” or “USA” is unknown.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s00::p004",
+   "summary": "OKBC is the core of a conversational knowledge learning engine, and the paper assumes fact/relation extraction, resolution, and related-fact guessing are handled by other sub-systems.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s00::p005",
+   "summary": "LiLi mimics human interactive knowledge acquisition and reasoning through processing and interactive actions, retaining acquired facts and using accumulated knowledge to guide future interaction and learning.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s00::p006",
+   "summary": "This setting is ideal for NLP applications like dialog and question-answering systems that allow human interaction and require real-time inference.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s00::p007",
+   "summary": "LiLi extends closed-world path-ranking and C-PR to OKBC, using bidirectional random walks, source-target context, and an extended compositional vector space model with continual learning.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s00::p008",
+   "summary": "LiLi dynamically formulates questions, uses acquired supporting facts for inference, applies RL for strategy and prediction, and is evaluated on Freebase and WordNet.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s01::p000",
+   "summary": "The authors know of no knowledge learning system that learns new knowledge during conversation, so the section discusses other related work.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s01::p001",
+   "summary": "Existing KB completion, NELL, interactive language learning, question-asking, and dialogue systems differ from LiLi by lacking open-world handling, interactive knowledge learning, query-specific strategies, or lifelong prediction-model training.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s01::p002",
+   "summary": "General lifelong learning methods learn only one task type and are unsuitable for LiLi’s interleaving of RL, supervised, and interactive learning.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s02::p000",
+   "summary": "LiLi combines an RL model for query-specific OKBC inference strategies with a lifelong prediction model, improving through user interaction and knowledge retention while addressing three OKBC challenges.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s02::p001",
+   "summary": "LiLi maps open-world to closed-world by asking users for clues for unknown relations or connecting link queries (CLQs) for unknown entities, reducing OKBC to KBC.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s02::p002",
+   "summary": "To address KB sparseness, LiLi uses “@-?-@” as a missing link marker, extracts complete and incomplete paths, and asks missing link queries (MLQs) for path completion.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s02::p003",
+   "summary": "If users cannot respond to MLQs or CLQs, LiLi uses a guessing mechanism to fill the gap and continue inference.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s03::p000",
+   "summary": "LiLi’s Knowledge Store (KS) contains a Knowledge Graph, Relation-Entity Matrix, Task Experience Store using Matthews correlation coefficient (MCC), and Incomplete Feature DB for MLQs.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s03::p001",
+   "summary": "The RL model updates on unseen states, KS is continuously updated, and the prediction model transfers parameters from similar past tasks while using MCC-based experience to improve poorly learned tasks.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s03::p002",
+   "summary": "LiLi uses an Inference Stack to hold query and RL state information, processing user clues first so prediction models are learned before inference and OKBC becomes KBC.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s04::p000",
+   "summary": "An OKBC query is represented as a data instance containing the query triple, interaction limit, MDP transition history, mode, and feature set, then initialized for RL strategy formulation.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s04::p001",
+   "summary": "Strategy formulation is an inference game where LiLi wins if the relation becomes known and path features are extracted, enabling prediction-model training and inference.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s04::p002",
+   "summary": "LiLi models strategy formulation as an MDP with 10 binary state variables and 6 actions, using Q-learning with an ε-greedy strategy and rewards for valid actions.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s04::p003",
+   "summary": "When unseen states cause repeated invalid actions, LiLi switches to training mode and randomly explores actions to learn the optimal action through fault-tolerant learning.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s04::p004",
+   "summary": "During action execution, LiLi updates stack-top state and experience for invalid actions, while valid actions set the next state, perform operations, monitor interaction limits, and decrement limits for user queries.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s04::p007",
+   "summary": "LiLi selects incomplete paths for MLQs using frequency and contextual similarity, and guesses missing links using thresholds over [-1, 1] when users do not respond.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s04::p008",
+   "summary": "LiLi asks CLQs for unknown entities by selecting the most contextually relevant node using contextual relevance computed with word embedding.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s04::p009",
+   "summary": "LiLi extracts path features, updates incomplete features, trains prediction models with complete features, and monitors requirements to control MLQ interactions.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s04::p011",
+   "summary": "Lifelong relation prediction trains relation-specific models using 10% of instances, LSTM-composed features, cosine similarity, log-likelihood, MCC updates, inverse models, and relation-specific prediction thresholds.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s04::p012",
+   "summary": "LiLi transfers weights from the most similar past task using truncated SVD of the Relation-Entity Matrix, randomly initializing weights when no suitable source relation exists.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s04::p013",
+   "summary": "A Figure 1 example shows LiLi acquiring a “CitizenOf” clue, connecting “Obama,” enumerating paths between “Obama” and “USA,” filling a missing link, and making inference.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s05::p000",
+   "summary": "The experiments evaluate LiLi’s predictive performance and strategy formulation abilities.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s05::p001",
+   "summary": "The evaluation uses Freebase FB15k and WordNet, building large original KB graphs augmented with inverse triples following existing KBC methods.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s05::p003",
+   "summary": "A simulated user is created for each KB, with labeled datasets, simulated user knowledge bases, and base KBs derived from the original KB.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s05::p004",
+   "summary": "For Freebase, 86 relations were found, 50 selected, 25% made unknown, 1000 triples split into 60% training, 10% validation and 20% test, while WordNet uses all 18 relations.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s05::p006",
+   "summary": "Because no existing KBC method solves OKBC, various versions of LiLi are used as baselines.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s05::p010",
+   "summary": "BG fills missing or connecting links with “@-RelatedTo-@” blindly when the user does not respond, without a guessing mechanism.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s05::p011",
+   "summary": "w/o PTS removes LiLi’s requests for additional clues via past task selection for skillset improvement.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s05::p012",
+   "summary": "Strategy formulation is evaluated by Coverage, while predictive performance uses Avg. MCC and avg. +ve F1 score.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s06::p000",
+   "summary": "Table 5 shows Coverage dropping to 0.47 without interaction, rising to 0.97 with one interaction and 1 with more, while Table 6 shows LiLi outperforming baselines.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s06::p001",
+   "summary": "More clues significantly improve LiLi, while user responses to MLQs and CLQs help modestly; guessing and continual learning yield avg. +ve F1 of 0.57 and 0.62 on FB and WN.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s07::p000",
+   "summary": "The paper formulates continuous conversational knowledge learning as OKBC, proposes LiLi using RL and lifelong interaction, and reports effectiveness in predictive quality and strategy formulation.",
+   "group_id": "1802.06024::s00"
+  },
+  {
+   "passage_id": "1802.06024::s04::p005",
+   "summary": "LiLi searches INLINEFORM1, INLINEFORM2, INLINEFORM3 in INLINEFORM4, sets bits in INLINEFORM5, randomly sets INLINEFORM14 with probability INLINEFORM15, and updates KS with triple INLINEFORM18.",
+   "group_id": "1802.06024::s01"
+  },
+  {
+   "passage_id": "1802.06024::s04::p006",
+   "summary": "LiLi asks the user for a clue (+ve instance) for INLINEFORM1 and corrupts INLINEFORM2 and INLINEFORM3 to generate -ve instances for training the prediction model for INLINEFORM5.",
+   "group_id": "1802.06024::s01"
+  },
+  {
+   "passage_id": "1802.06024::s04::p010",
+   "summary": "If LiLi wins the episode, it adds INLINEFORM1 to data buffers INLINEFORM2 based on mode INLINEFORM3, populates validation buffer INLINEFORM8 and evaluation buffer INLINEFORM9, or invokes the prediction model for INLINEFORM11.",
+   "group_id": "1802.06024::s01"
+  },
+  {
+   "passage_id": "1802.06024::s04::p011",
+   "summary": "For Lifelong Relation Prediction, LiLi trains a prediction model using INLINEFORM1 and INLINEFORM2, takes 10% of instances from INLINEFORM10, uses a LSTM BIBREF40, computes INLINEFORM16, maximizes log-likelihood of INLINEFORM19, updates INLINEFORM21, trains an inverse model, and uses relation-specific prediction threshold INLINEFORM29.",
+   "group_id": "1802.06024::s01"
+  },
+  {
+   "passage_id": "1802.06024::s05::p002",
+   "summary": "Parameter settings for LiLi include empirically set parameters in Table 1, INLINEFORM11-greedy strategy, pre-training steps=50000, Keras, batch-size 128, max. training epoch 150, dropout 0.2, hidden units and embedding size 300, learning rate 5e-3, factor 0.5, patience 5, Adam optimizer, early stopping, shuffling INLINEFORM14, and class weights adjusted inversely proportional to class frequencies in INLINEFORM15.",
+   "group_id": "1802.06024::s01"
+  },
+  {
+   "passage_id": "1802.06024::s05::p005",
+   "summary": "For relation INLINEFORM0 and observed triple (INLINEFORM1, INLINEFORM2, INLINEFORM3), pair (INLINEFORM4, INLINEFORM5) is a +ve instance, and two negative ones are generated by corrupting source INLINEFORM9 and target INLINEFORM10.",
+   "group_id": "1802.06024::s01"
+  },
+  {
+   "passage_id": "1802.06024::s05::p007",
+   "summary": "Single is the version of LiLi where a single prediction model INLINEFORM0 is trained for all test relations.",
+   "group_id": "1802.06024::s01"
+  },
+  {
+   "passage_id": "1802.06024::s05::p008",
+   "summary": "Sep does not transfer past learned weights for initializing INLINEFORM0, disabling LL.",
+   "group_id": "1802.06024::s01"
+  },
+  {
+   "passage_id": "1802.06024::s05::p009",
+   "summary": "F-th) uses a fixed prediction threshold 0.5 instead of relation-specific threshold INLINEFORM0.",
+   "group_id": "1802.06024::s01"
+  },
+  {
+   "passage_id": "1802.06024::s05::p012",
+   "summary": "Evaluation Metrics introduce Coverage(INLINEFORM0), where INLINEFORM1 is 1.0 if LiLi wins all episodes, and use Avg. MCC and avg. +ve F1 score for predictive performance.",
+   "group_id": "1802.06024::s01"
+  },
+  {
+   "passage_id": "1802.06024::s08::p000",
+   "summary": "This work was supported in part by National Science Foundation (NSF) under grant no. IIS-1407927 and IIS-1650900, and a gift from Huawei Technologies Co Ltd.",
+   "group_id": "1802.06024::s01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1802.06024::s00",
+   "summaries": [
+    {
+     "passage_id": "1802.06024::s00::p000",
+     "summary": "Chatbots have evolved from AIML, handcrafted rules, and information retrieval to neural conversation models and KB-grounded systems, but existing systems do not learn new knowledge during conversation.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s00::p001",
+     "summary": "KB completion is binary classification over query triples, but existing approaches assume known entities and relations, preventing new knowledge with unknown entities or relations in conversations.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s00::p002",
+     "summary": "The paper removes the KBC closed-world assumption, defines open-world knowledge base completion (OKBC), and formulates conversational knowledge learning and inference as interactive OKBC.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s00::p003",
+     "summary": "Conversation utterances yield true facts and queries; true facts are incorporated into the KB, while query facts require OKBC when “Obama,” “BornIn,” or “USA” is unknown.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s00::p004",
+     "summary": "OKBC is the core of a conversational knowledge learning engine, and the paper assumes fact/relation extraction, resolution, and related-fact guessing are handled by other sub-systems.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s00::p005",
+     "summary": "LiLi mimics human interactive knowledge acquisition and reasoning through processing and interactive actions, retaining acquired facts and using accumulated knowledge to guide future interaction and learning.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s00::p006",
+     "summary": "This setting is ideal for NLP applications like dialog and question-answering systems that allow human interaction and require real-time inference.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s00::p007",
+     "summary": "LiLi extends closed-world path-ranking and C-PR to OKBC, using bidirectional random walks, source-target context, and an extended compositional vector space model with continual learning.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s00::p008",
+     "summary": "LiLi dynamically formulates questions, uses acquired supporting facts for inference, applies RL for strategy and prediction, and is evaluated on Freebase and WordNet.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s01::p000",
+     "summary": "The authors know of no knowledge learning system that learns new knowledge during conversation, so the section discusses other related work.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s01::p001",
+     "summary": "Existing KB completion, NELL, interactive language learning, question-asking, and dialogue systems differ from LiLi by lacking open-world handling, interactive knowledge learning, query-specific strategies, or lifelong prediction-model training.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s01::p002",
+     "summary": "General lifelong learning methods learn only one task type and are unsuitable for LiLi’s interleaving of RL, supervised, and interactive learning.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s02::p000",
+     "summary": "LiLi combines an RL model for query-specific OKBC inference strategies with a lifelong prediction model, improving through user interaction and knowledge retention while addressing three OKBC challenges.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s02::p001",
+     "summary": "LiLi maps open-world to closed-world by asking users for clues for unknown relations or connecting link queries (CLQs) for unknown entities, reducing OKBC to KBC.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s02::p002",
+     "summary": "To address KB sparseness, LiLi uses “@-?-@” as a missing link marker, extracts complete and incomplete paths, and asks missing link queries (MLQs) for path completion.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s02::p003",
+     "summary": "If users cannot respond to MLQs or CLQs, LiLi uses a guessing mechanism to fill the gap and continue inference.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s03::p000",
+     "summary": "LiLi’s Knowledge Store (KS) contains a Knowledge Graph, Relation-Entity Matrix, Task Experience Store using Matthews correlation coefficient (MCC), and Incomplete Feature DB for MLQs.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s03::p001",
+     "summary": "The RL model updates on unseen states, KS is continuously updated, and the prediction model transfers parameters from similar past tasks while using MCC-based experience to improve poorly learned tasks.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s03::p002",
+     "summary": "LiLi uses an Inference Stack to hold query and RL state information, processing user clues first so prediction models are learned before inference and OKBC becomes KBC.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s04::p000",
+     "summary": "An OKBC query is represented as a data instance containing the query triple, interaction limit, MDP transition history, mode, and feature set, then initialized for RL strategy formulation.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s04::p001",
+     "summary": "Strategy formulation is an inference game where LiLi wins if the relation becomes known and path features are extracted, enabling prediction-model training and inference.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s04::p002",
+     "summary": "LiLi models strategy formulation as an MDP with 10 binary state variables and 6 actions, using Q-learning with an ε-greedy strategy and rewards for valid actions.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s04::p003",
+     "summary": "When unseen states cause repeated invalid actions, LiLi switches to training mode and randomly explores actions to learn the optimal action through fault-tolerant learning.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s04::p004",
+     "summary": "During action execution, LiLi updates stack-top state and experience for invalid actions, while valid actions set the next state, perform operations, monitor interaction limits, and decrement limits for user queries.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s04::p007",
+     "summary": "LiLi selects incomplete paths for MLQs using frequency and contextual similarity, and guesses missing links using thresholds over [-1, 1] when users do not respond.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s04::p008",
+     "summary": "LiLi asks CLQs for unknown entities by selecting the most contextually relevant node using contextual relevance computed with word embedding.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s04::p009",
+     "summary": "LiLi extracts path features, updates incomplete features, trains prediction models with complete features, and monitors requirements to control MLQ interactions.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s04::p011",
+     "summary": "Lifelong relation prediction trains relation-specific models using 10% of instances, LSTM-composed features, cosine similarity, log-likelihood, MCC updates, inverse models, and relation-specific prediction thresholds.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s04::p012",
+     "summary": "LiLi transfers weights from the most similar past task using truncated SVD of the Relation-Entity Matrix, randomly initializing weights when no suitable source relation exists.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s04::p013",
+     "summary": "A Figure 1 example shows LiLi acquiring a “CitizenOf” clue, connecting “Obama,” enumerating paths between “Obama” and “USA,” filling a missing link, and making inference.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s05::p000",
+     "summary": "The experiments evaluate LiLi’s predictive performance and strategy formulation abilities.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s05::p001",
+     "summary": "The evaluation uses Freebase FB15k and WordNet, building large original KB graphs augmented with inverse triples following existing KBC methods.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s05::p003",
+     "summary": "A simulated user is created for each KB, with labeled datasets, simulated user knowledge bases, and base KBs derived from the original KB.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s05::p004",
+     "summary": "For Freebase, 86 relations were found, 50 selected, 25% made unknown, 1000 triples split into 60% training, 10% validation and 20% test, while WordNet uses all 18 relations.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s05::p006",
+     "summary": "Because no existing KBC method solves OKBC, various versions of LiLi are used as baselines.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s05::p010",
+     "summary": "BG fills missing or connecting links with “@-RelatedTo-@” blindly when the user does not respond, without a guessing mechanism.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s05::p011",
+     "summary": "w/o PTS removes LiLi’s requests for additional clues via past task selection for skillset improvement.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s05::p012",
+     "summary": "Strategy formulation is evaluated by Coverage, while predictive performance uses Avg. MCC and avg. +ve F1 score.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s06::p000",
+     "summary": "Table 5 shows Coverage dropping to 0.47 without interaction, rising to 0.97 with one interaction and 1 with more, while Table 6 shows LiLi outperforming baselines.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s06::p001",
+     "summary": "More clues significantly improve LiLi, while user responses to MLQs and CLQs help modestly; guessing and continual learning yield avg. +ve F1 of 0.57 and 0.62 on FB and WN.",
+     "group_id": "1802.06024::s00"
+    },
+    {
+     "passage_id": "1802.06024::s07::p000",
+     "summary": "The paper formulates continuous conversational knowledge learning as OKBC, proposes LiLi using RL and lifelong interaction, and reports effectiveness in predictive quality and strategy formulation.",
+     "group_id": "1802.06024::s00"
+    }
+   ],
+   "n_raw": 41,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 8897,
+    "completion_tokens": 2110,
+    "total_tokens": 11007,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1802.06024::s01",
+   "summaries": [
+    {
+     "passage_id": "1802.06024::s04::p005",
+     "summary": "LiLi searches INLINEFORM1, INLINEFORM2, INLINEFORM3 in INLINEFORM4, sets bits in INLINEFORM5, randomly sets INLINEFORM14 with probability INLINEFORM15, and updates KS with triple INLINEFORM18.",
+     "group_id": "1802.06024::s01"
+    },
+    {
+     "passage_id": "1802.06024::s04::p006",
+     "summary": "LiLi asks the user for a clue (+ve instance) for INLINEFORM1 and corrupts INLINEFORM2 and INLINEFORM3 to generate -ve instances for training the prediction model for INLINEFORM5.",
+     "group_id": "1802.06024::s01"
+    },
+    {
+     "passage_id": "1802.06024::s04::p010",
+     "summary": "If LiLi wins the episode, it adds INLINEFORM1 to data buffers INLINEFORM2 based on mode INLINEFORM3, populates validation buffer INLINEFORM8 and evaluation buffer INLINEFORM9, or invokes the prediction model for INLINEFORM11.",
+     "group_id": "1802.06024::s01"
+    },
+    {
+     "passage_id": "1802.06024::s04::p011",
+     "summary": "For Lifelong Relation Prediction, LiLi trains a prediction model using INLINEFORM1 and INLINEFORM2, takes 10% of instances from INLINEFORM10, uses a LSTM BIBREF40, computes INLINEFORM16, maximizes log-likelihood of INLINEFORM19, updates INLINEFORM21, trains an inverse model, and uses relation-specific prediction threshold INLINEFORM29.",
+     "group_id": "1802.06024::s01"
+    },
+    {
+     "passage_id": "1802.06024::s05::p002",
+     "summary": "Parameter settings for LiLi include empirically set parameters in Table 1, INLINEFORM11-greedy strategy, pre-training steps=50000, Keras, batch-size 128, max. training epoch 150, dropout 0.2, hidden units and embedding size 300, learning rate 5e-3, factor 0.5, patience 5, Adam optimizer, early stopping, shuffling INLINEFORM14, and class weights adjusted inversely proportional to class frequencies in INLINEFORM15.",
+     "group_id": "1802.06024::s01"
+    },
+    {
+     "passage_id": "1802.06024::s05::p005",
+     "summary": "For relation INLINEFORM0 and observed triple (INLINEFORM1, INLINEFORM2, INLINEFORM3), pair (INLINEFORM4, INLINEFORM5) is a +ve instance, and two negative ones are generated by corrupting source INLINEFORM9 and target INLINEFORM10.",
+     "group_id": "1802.06024::s01"
+    },
+    {
+     "passage_id": "1802.06024::s05::p007",
+     "summary": "Single is the version of LiLi where a single prediction model INLINEFORM0 is trained for all test relations.",
+     "group_id": "1802.06024::s01"
+    },
+    {
+     "passage_id": "1802.06024::s05::p008",
+     "summary": "Sep does not transfer past learned weights for initializing INLINEFORM0, disabling LL.",
+     "group_id": "1802.06024::s01"
+    },
+    {
+     "passage_id": "1802.06024::s05::p009",
+     "summary": "F-th) uses a fixed prediction threshold 0.5 instead of relation-specific threshold INLINEFORM0.",
+     "group_id": "1802.06024::s01"
+    },
+    {
+     "passage_id": "1802.06024::s05::p012",
+     "summary": "Evaluation Metrics introduce Coverage(INLINEFORM0), where INLINEFORM1 is 1.0 if LiLi wins all episodes, and use Avg. MCC and avg. +ve F1 score for predictive performance.",
+     "group_id": "1802.06024::s01"
+    },
+    {
+     "passage_id": "1802.06024::s08::p000",
+     "summary": "This work was supported in part by National Science Foundation (NSF) under grant no. IIS-1407927 and IIS-1650900, and a gift from Huawei Technologies Co Ltd.",
+     "group_id": "1802.06024::s01"
+    }
+   ],
+   "n_raw": 11,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1684,
+    "completion_tokens": 766,
+    "total_tokens": 2450,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

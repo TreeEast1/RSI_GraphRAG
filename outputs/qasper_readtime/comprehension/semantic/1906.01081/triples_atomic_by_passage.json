@@ -1,0 +1,633 @@
+{
+ "1906.01081::s00::p001": [
+  [
+   "the only gold standard metric",
+   "is",
+   "to show the output to humans for judging its quality"
+  ],
+  [
+   "automatic metrics",
+   "compare",
+   "the generated text to one or more reference texts"
+  ],
+  [
+   "automatic evaluation",
+   "has largely relied on",
+   "BLEU and ROUGE"
+  ],
+  [
+   "the reference text",
+   "is",
+   "gold-standard"
+  ]
+ ],
+ "1906.01081::s00::p002": [
+  [
+   "existing automatic metrics, including BLEU",
+   "correlate poorly with",
+   "human judgments"
+  ],
+  [
+   "the tables themselves",
+   "are in",
+   "a pseudo-natural language format"
+  ],
+  [
+   "PARENT",
+   "is",
+   "Precision And Recall of Entailed N-grams from the Table"
+  ],
+  [
+   "PARENT",
+   "uses",
+   "a union of the reference and the table"
+  ]
+ ],
+ "1906.01081::s01::p000": [
+  [
+   "Tables",
+   "can be expressed as",
+   "set of records INLINEFORM0"
+  ],
+  [
+   "each record",
+   "is",
+   "a tuple (entity, attribute, value)"
+  ],
+  [
+   "the records",
+   "can be truncated to",
+   "(attribute, value) pairs"
+  ],
+  [
+   "the task",
+   "is to generate",
+   "a text INLINEFORM1 which summarizes the records in a fluent and grammatical manner"
+  ]
+ ],
+ "1906.01081::s02::p000": [
+  [
+   "PARENT",
+   "evaluates",
+   "each instance INLINEFORM0 separately"
+  ],
+  [
+   "PARENT",
+   "computes",
+   "the precision and recall of INLINEFORM1 against both INLINEFORM2 and INLINEFORM3"
+  ]
+ ],
+ "1906.01081::s03::p000": [
+  [
+   "the extraction model presented in that work",
+   "is limited to",
+   "the closed-domain setting of basketball game tables and summaries"
+  ],
+  [
+   "These assumptions",
+   "are not valid for",
+   "the open-domain WikiBio dataset"
+  ]
+ ],
+ "1906.01081::s03::p001": [
+  [
+   "The network",
+   "learns",
+   "which attributes need to be populated in the output table, along with their values"
+  ]
+ ],
+ "1906.01081::s03::p002": [
+  [
+   "Relation Generation (RG)",
+   "is",
+   "Precision for the (attribute, value) pairs extracted from the generated text compared to those in the ground truth table"
+  ],
+  [
+   "RG-F",
+   "computes",
+   "the F-score of the extracted pairs to those in the table"
+  ]
+ ],
+ "1906.01081::s05::p000": [
+  [
+   "the WikiBio dataset",
+   "is",
+   "automatically constructed"
+  ],
+  [
+   "the WikiBio dataset",
+   "contains",
+   "many divergent references"
+  ]
+ ],
+ "1906.01081::s05::p001": [
+  [
+   "All neural models",
+   "were trained on",
+   "the WikiBio training set"
+  ]
+ ],
+ "1906.01081::s05::p002": [
+  [
+   "WikiBio-Systems",
+   "includes",
+   "one model each from the four families listed in Table TABREF32"
+  ],
+  [
+   "WikiBio-Hyperparams",
+   "includes",
+   "13 different hyperparameter settings of PG-Net"
+  ]
+ ],
+ "1906.01081::s06::p000": [
+  [
+   "human judgments",
+   "were collected on",
+   "the quality of the 16 models trained for WikiBio, plus the reference texts"
+  ],
+  [
+   "Workers on a crowd-sourcing platform, proficient in English",
+   "were shown",
+   "a table with pairs of generated texts, or a generated text and the reference"
+  ],
+  [
+   "Paired comparisons",
+   "have been shown to be superior to",
+   "rating scales for comparing generated texts"
+  ],
+  [
+   "Thurstone's method",
+   "assigns",
+   "a score to each model based on how many times it was preferred over an alternative"
+  ]
+ ],
+ "1906.01081::s06::p001": [
+  [
+   "The data collection",
+   "was performed separately for",
+   "models in the WikiBio-Systems and WikiBio-Hyperparams categories"
+  ],
+  [
+   "1100 tables",
+   "were sampled from",
+   "the development set"
+  ],
+  [
+   "8 different sentence pairs",
+   "were annotated across",
+   "the two categories"
+  ],
+  [
+   "the annotation",
+   "resulted in",
+   "a total of 8800 pairwise comparisons"
+  ],
+  [
+   "Each pair",
+   "was judged by",
+   "one worker only"
+  ],
+  [
+   "the aggregated system-level scores",
+   "had",
+   "low variance"
+  ],
+  [
+   "around 500 different workers",
+   "were involved in",
+   "the annotation"
+  ],
+  [
+   "References",
+   "received",
+   "a lower score than PG-Net"
+  ]
+ ],
+ "1906.01081::s07::p002": [
+  [
+   "BLEU-T",
+   "is",
+   "a variant of BLEU"
+  ],
+  [
+   "the values from the table",
+   "are used as",
+   "additional references"
+  ],
+  [
+   "BLEU-T",
+   "draws inspiration from",
+   "iBLEU BIBREF26"
+  ],
+  [
+   "BLEU-T",
+   "rewards",
+   "n-grams which match the table"
+  ],
+  [
+   "PARENT*-W/C",
+   "denotes",
+   "versions where a single INLINEFORM0 is tuned on the entire dataset to maximize correlation with human judgments"
+  ]
+ ],
+ "1906.01081::s08::p000": [
+  [
+   "the 1100 tables",
+   "had",
+   "human annotations"
+  ]
+ ],
+ "1906.01081::s08::p001": [
+  [
+   "the William's test",
+   "has",
+   "very weak power in our case"
+  ]
+ ],
+ "1906.01081::s08::p002": [
+  [
+   "Correlations",
+   "are higher for",
+   "the systems category than the hyperparams category"
+  ],
+  [
+   "the hyperparams category",
+   "is",
+   "a more difficult setting"
+  ],
+  [
+   "Commonly used metrics which only rely on the reference (BLEU, ROUGE, METEOR, CIDEr)",
+   "have",
+   "only weak correlations with human judgments"
+  ],
+  [
+   "BLEU",
+   "performs",
+   "the best among these"
+  ]
+ ],
+ "1906.01081::s08::p003": [
+  [
+   "CS",
+   "has",
+   "poor correlation in the hyperparams category"
+  ],
+  [
+   "RG-F, and both variants of the PARENT metric",
+   "achieve",
+   "the highest correlation for both settings"
+  ],
+  [
+   "PARENT-W",
+   "is significantly better than",
+   "the other two"
+  ],
+  [
+   "RG-F",
+   "needs",
+   "a full information extraction pipeline in its implementation"
+  ],
+  [
+   "PARENT-C",
+   "only relies on",
+   "co-occurrence counts"
+  ],
+  [
+   "PARENT-W",
+   "can be used",
+   "out-of-the-box for any dataset"
+  ]
+ ],
+ "1906.01081::s08::p004": [
+  [
+   "the word-overlap model",
+   "showed",
+   "higher correlation than the co-occurrence model for entailment"
+  ],
+  [
+   "the heuristic for selecting INLINEFORM0",
+   "is sufficient to produce",
+   "high correlations for PARENT"
+  ],
+  [
+   "human annotations",
+   "can be tuned to produce",
+   "significantly higher correlations (PARENT*-W/C)"
+  ]
+ ],
+ "1906.01081::s09::p001": [
+  [
+   "Each table and reference pair",
+   "was judged by",
+   "3 independent workers"
+  ],
+  [
+   "only INLINEFORM0 of the references",
+   "were labeled as",
+   "entailed by the table"
+  ],
+  [
+   "Fleiss' INLINEFORM1",
+   "was",
+   "INLINEFORM2"
+  ],
+  [
+   "the workers",
+   "sometimes disagreed on",
+   "what information can be reasonably entailed by the table"
+  ]
+ ],
+ "1906.01081::s09::p002": [
+  [
+   "PARENT and RG-F",
+   "remain stable and show",
+   "a high correlation across the entire range"
+  ],
+  [
+   "BLEU and BLEU-T",
+   "vary",
+   "a lot"
+  ],
+  [
+   "the latter two",
+   "have",
+   "the worst correlation when the evaluation set contains only entailed examples"
+  ],
+  [
+   "PARENT",
+   "overcomes",
+   "this issue by measuring recall against the table in addition to the reference"
+  ]
+ ],
+ "1906.01081::s09::p003": [
+  [
+   "the average correlation for PARENT-W",
+   "drops to",
+   "INLINEFORM5"
+  ],
+  [
+   "a variant of PARENT with INLINEFORM6",
+   "removes",
+   "the contribution of Table Recall (Eq. EQREF22 )"
+  ],
+  [
+   "the average correlation",
+   "is",
+   "INLINEFORM7"
+  ],
+  [
+   "the correlation",
+   "is",
+   "INLINEFORM8"
+  ]
+ ],
+ "1906.01081::s09::p004": [
+  [
+   "Both variants of PARENT",
+   "are significantly better than",
+   "the other metrics"
+  ],
+  [
+   "the best accuracy",
+   "is only",
+   "INLINEFORM0 for the binary task"
+  ],
+  [
+   "Achieving higher instance-level accuracies",
+   "will require",
+   "more sophisticated language understanding models for evaluation"
+  ]
+ ],
+ "1906.01081::s10::p000": [
+  [
+   "the task",
+   "is to generate",
+   "text describing 1-5 RDF triples"
+  ],
+  [
+   "human ratings",
+   "were collected for",
+   "the outputs of 9 participating systems on 223 instances"
+  ],
+  [
+   "These systems",
+   "include",
+   "a mix of pipelined, statistical and neural methods"
+  ],
+  [
+   "Each instance",
+   "has",
+   "upto 3 reference texts associated with the RDF triples"
+  ]
+ ],
+ "1906.01081::s10::p001": [
+  [
+   "The human ratings",
+   "were collected on",
+   "3 distinct aspects – grammaticality, fluency and semantics"
+  ],
+  [
+   "semantics",
+   "corresponds to",
+   "the degree to which a generated text agrees with the meaning of the underlying RDF triples"
+  ],
+  [
+   "Both variants of PARENT",
+   "are",
+   "either competitive or better than the other metrics in terms of the average correlation to all three aspects"
+  ],
+  [
+   "PARENT",
+   "is applicable for",
+   "high quality references as well"
+  ]
+ ],
+ "1906.01081::s10::p002": [
+  [
+   "BLEU",
+   "has",
+   "the highest correlation for the grammar and fluency aspects"
+  ],
+  [
+   "PARENT",
+   "does best for",
+   "semantics"
+  ],
+  [
+   "the inclusion of source tables into the evaluation",
+   "orients",
+   "the metric more towards measuring the fidelity of the content of the generation"
+  ],
+  [
+   "A similar trend",
+   "is seen comparing",
+   "BLEU and BLEU-T"
+  ],
+  [
+   "PARENT-C",
+   "is better due to",
+   "its higher correlation with the grammaticality and fluency aspects"
+  ]
+ ],
+ "1906.01081::s10::p003": [
+  [
+   "INLINEFORM0 parameter",
+   "decides",
+   "whether to compute recall against the table or the reference"
+  ],
+  [
+   "recall of the references against the table",
+   "is generally low",
+   "for WikiBio"
+  ],
+  [
+   "recall of the generated text",
+   "relies more on",
+   "the table"
+  ],
+  [
+   "recall of the generated text",
+   "relies more on",
+   "the reference"
+  ]
+ ],
+ "1906.01081::s11::p000": [
+  [
+   "no single metric",
+   "is suitable across",
+   "all tasks"
+  ],
+  [
+   "metrics like BLEU and NIST",
+   "are not suitable for judging",
+   "content quality in NLG"
+  ],
+  [
+   "several metrics",
+   "showed acceptable correlation with",
+   "human judgments at the system level"
+  ],
+  [
+   "several metrics",
+   "failed to show any correlation at",
+   "the sentence level"
+  ]
+ ],
+ "1906.01081::s11::p001": [
+  [
+   "Divergence",
+   "can be viewed as",
+   "hallucination in the reference text itself"
+  ],
+  [
+   "PARENT",
+   "deals with",
+   "hallucination"
+  ]
+ ],
+ "1906.01081::s11::p002": [
+  [
+   "PARENT",
+   "draws inspiration from",
+   "iBLEU"
+  ],
+  [
+   "iBLEU",
+   "compares",
+   "the generated text to both the source text and the reference"
+  ],
+  [
+   "iBLEU",
+   "penalizes",
+   "texts which match the source"
+  ],
+  [
+   "PARENT",
+   "falls under",
+   "the category of task-specific metrics"
+  ]
+ ],
+ "1906.01081::s12::p000": [
+  [
+   "PARENT",
+   "shows",
+   "the highest correlation with humans across a range of settings with divergent references in WikiBio"
+  ],
+  [
+   "RG-F",
+   "is",
+   "effective"
+  ],
+  [
+   "PARENT",
+   "is comparable to",
+   "the best existing metrics when references are elicited by humans on the WebNLG data"
+  ]
+ ],
+ "1906.01081::s14::p000": [
+  [
+   "a model for WikiBio",
+   "accepts",
+   "text as input"
+  ],
+  [
+   "a model for WikiBio",
+   "generates",
+   "a table as the output"
+  ],
+  [
+   "Tables in WikiBio",
+   "are",
+   "open-domain, without any fixed schema for which attributes may be present or absent in an instance"
+  ],
+  [
+   "the encoder and decoder",
+   "are",
+   "both single-layer bi-directional LSTMs"
+  ]
+ ],
+ "1906.01081::s14::p001": [
+  [
+   "this system",
+   "can be used for",
+   "evaluating generated texts"
+  ],
+  [
+   "the output sequence",
+   "can be parsed along",
+   "the special tokens INLINEFORM0 R INLINEFORM1 and INLINEFORM2 C INLINEFORM3"
+  ]
+ ],
+ "1906.01081::s15::p000": [
+  [
+   "the same set of hyperparameters",
+   "was found to work well for",
+   "both the table-to-text PG-Net, and the inverse information extraction PG-Net"
+  ],
+  [
+   "The input and output vocabularies",
+   "were set to",
+   "50000 most common words in the corpus"
+  ],
+  [
+   "The embeddings of the tokens in the vocabulary",
+   "were initialized with",
+   "Glove BIBREF43"
+  ],
+  [
+   "Maximum length of a decoded text",
+   "was set to",
+   "40 tokens"
+  ],
+  [
+   "that of the tables",
+   "was set to",
+   "120 tokens"
+  ],
+  [
+   "a beam size of 8 and no length penalty",
+   "was found to produce",
+   "the highest F-score on the dev set"
+  ]
+ ]
+}

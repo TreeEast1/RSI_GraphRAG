@@ -1,0 +1,242 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1708.06185::s00::p000",
+   "summary": "Twitter generates nearly 500 million tweets per day, and its short, informal, metadata-rich, grammatically irregular data poses interesting NLP challenges and use cases.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s00::p001",
+   "summary": "Task 1 of WASSA-2017 BIBREF0 asks for emotion intensity of anger, fear, joy, sadness from tweets, and this paper describes its approach and experiments.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s01::p000",
+   "summary": "Preprocessing uses tweetokenize, replaces Twitter-specific features with USERNAME, PHONENUMBER, NUMBER, URL and TIME, splits emoji sequences, and lowercases tokens.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s02::p000",
+   "summary": "Sentiment or emotion tasks use affect, opinion, sentiment, sense and emotion lexicons, low dimensional vectors, and traditional NLP features like word N-grams, character N-grams, Part-Of-Speech N-grams and word clusters.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s02::p001",
+   "summary": "Feature extraction is implemented in the Python program EmoInt as fourteen independent feature extractors with baseline features, additional extractors and bi-gram support, grouped into 3 major categories.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s02::p002",
+   "summary": "The paragraph contains only the text [noitemsep].",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s02::p003",
+   "summary": "The paragraph names Lexicon Features.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s02::p004",
+   "summary": "The paragraph names Word Vectors.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s02::p005",
+   "summary": "The paragraph names Syntax Features.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s02::p006",
+   "summary": "Lexicon Features include AFINN BIBREF3, Bing Liu BIBREF4, +/-EffectWordNet BIBREF5, NRC Affect Intensity BIBREF6, NRC Word-Emotion Association Lexicon BIBREF7, Expanded NRC Word-Emotion Association Lexicon BIBREF8, NRC Hashtag Emotion Lexicon BIBREF9, NRC Hashtag Sentiment Lexicon and Sentiment140 Lexicon BIBREF10, SentiWordNet BIBREF11, negation lexicons and SentiStrength BIBREF12.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s02::p007",
+   "summary": "Word Vectors integrate 200-dimensional GloVe embeddings trained on 2 Billion tweets, Edinburgh embeddings BIBREF14, and Emoji embeddings BIBREF16, with tweet embeddings formed by averaging word vectors.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s02::p008",
+   "summary": "Syntactic Features integrate Word N-grams, Part-Of-Speech N-grams BIBREF17 and Brown Cluster N-grams BIBREF18 obtained using TweetNLP project.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s02::p009",
+   "summary": "The final feature vector concatenates individual features, and scaling is not required for gradient boosted trees but standard scaling may benefit neural networks.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s02::p010",
+   "summary": "A total of fourteen different feature extractors have been implemented, each individually enabled or disabled to extract features from a given tweet.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s03::p000",
+   "summary": "Train and dev sets were merged for 10-fold cross validation, predictions averaged across folds, and sklearn BIBREF20 regressors evaluated using Pearson's Correlation Coefficient and Spearman's rank-order correlation.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s04::p000",
+   "summary": "Grid search through scikit-Learn over shuffled training subsets used stratified 10-fold cross validation and optimized Pearson's Correlation score, with best results from AdaBoost meta regressor with XGBoost BIBREF21, 1000 estimators and 0.1 learning rate.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s05::p000",
+   "summary": "Syntax features were dropped, Emoji embeddings BIBREF16 outperformed plain GloVe and Edinburgh embeddings, the official submission ranked 3 overall and 2 on scores greater than or equal to 0.5, and averaging the top 2 models outperformed individual models.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s06::p000",
+   "summary": "Feature importance is assessed by decision-node depth across randomized trees, and +/-EffectWordNet BIBREF5, NRC Hashtag Sentiment Lexicon, Sentiment140 Lexicon BIBREF10 and NRC Hashtag Emotion Lexicon BIBREF9 play the most important role.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s07::p000",
+   "summary": "Mostly lexicon based features cause difficulties with overall sentiment, sarcastic tweets, deeper emotion and sentiment, very short sentences, and amplifying or vanishing intensity signals.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s08::p000",
+   "summary": "The paper studies affect lexicons and word embeddings for emotional intensity in tweets and open-sources EmoInt, a light-weight affect computing framework with feature extractors and ensemble scripts.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s08::p001",
+   "summary": "Sentence embeddings may resolve context problems, generic features may apply to other social media affective computing tasks, and benchmarking run-time performance may support real-world deployment.",
+   "group_id": "1708.06185::g00"
+  },
+  {
+   "passage_id": "1708.06185::s09::p000",
+   "summary": "The authors thank the organizers of the WASSA-2017 Shared Task on Emotion Intensity for data, guidelines and timely support.",
+   "group_id": "1708.06185::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1708.06185::g00",
+   "summaries": [
+    {
+     "passage_id": "1708.06185::s00::p000",
+     "summary": "Twitter generates nearly 500 million tweets per day, and its short, informal, metadata-rich, grammatically irregular data poses interesting NLP challenges and use cases.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s00::p001",
+     "summary": "Task 1 of WASSA-2017 BIBREF0 asks for emotion intensity of anger, fear, joy, sadness from tweets, and this paper describes its approach and experiments.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s01::p000",
+     "summary": "Preprocessing uses tweetokenize, replaces Twitter-specific features with USERNAME, PHONENUMBER, NUMBER, URL and TIME, splits emoji sequences, and lowercases tokens.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s02::p000",
+     "summary": "Sentiment or emotion tasks use affect, opinion, sentiment, sense and emotion lexicons, low dimensional vectors, and traditional NLP features like word N-grams, character N-grams, Part-Of-Speech N-grams and word clusters.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s02::p001",
+     "summary": "Feature extraction is implemented in the Python program EmoInt as fourteen independent feature extractors with baseline features, additional extractors and bi-gram support, grouped into 3 major categories.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s02::p002",
+     "summary": "The paragraph contains only the text [noitemsep].",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s02::p003",
+     "summary": "The paragraph names Lexicon Features.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s02::p004",
+     "summary": "The paragraph names Word Vectors.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s02::p005",
+     "summary": "The paragraph names Syntax Features.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s02::p006",
+     "summary": "Lexicon Features include AFINN BIBREF3, Bing Liu BIBREF4, +/-EffectWordNet BIBREF5, NRC Affect Intensity BIBREF6, NRC Word-Emotion Association Lexicon BIBREF7, Expanded NRC Word-Emotion Association Lexicon BIBREF8, NRC Hashtag Emotion Lexicon BIBREF9, NRC Hashtag Sentiment Lexicon and Sentiment140 Lexicon BIBREF10, SentiWordNet BIBREF11, negation lexicons and SentiStrength BIBREF12.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s02::p007",
+     "summary": "Word Vectors integrate 200-dimensional GloVe embeddings trained on 2 Billion tweets, Edinburgh embeddings BIBREF14, and Emoji embeddings BIBREF16, with tweet embeddings formed by averaging word vectors.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s02::p008",
+     "summary": "Syntactic Features integrate Word N-grams, Part-Of-Speech N-grams BIBREF17 and Brown Cluster N-grams BIBREF18 obtained using TweetNLP project.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s02::p009",
+     "summary": "The final feature vector concatenates individual features, and scaling is not required for gradient boosted trees but standard scaling may benefit neural networks.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s02::p010",
+     "summary": "A total of fourteen different feature extractors have been implemented, each individually enabled or disabled to extract features from a given tweet.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s03::p000",
+     "summary": "Train and dev sets were merged for 10-fold cross validation, predictions averaged across folds, and sklearn BIBREF20 regressors evaluated using Pearson's Correlation Coefficient and Spearman's rank-order correlation.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s04::p000",
+     "summary": "Grid search through scikit-Learn over shuffled training subsets used stratified 10-fold cross validation and optimized Pearson's Correlation score, with best results from AdaBoost meta regressor with XGBoost BIBREF21, 1000 estimators and 0.1 learning rate.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s05::p000",
+     "summary": "Syntax features were dropped, Emoji embeddings BIBREF16 outperformed plain GloVe and Edinburgh embeddings, the official submission ranked 3 overall and 2 on scores greater than or equal to 0.5, and averaging the top 2 models outperformed individual models.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s06::p000",
+     "summary": "Feature importance is assessed by decision-node depth across randomized trees, and +/-EffectWordNet BIBREF5, NRC Hashtag Sentiment Lexicon, Sentiment140 Lexicon BIBREF10 and NRC Hashtag Emotion Lexicon BIBREF9 play the most important role.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s07::p000",
+     "summary": "Mostly lexicon based features cause difficulties with overall sentiment, sarcastic tweets, deeper emotion and sentiment, very short sentences, and amplifying or vanishing intensity signals.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s08::p000",
+     "summary": "The paper studies affect lexicons and word embeddings for emotional intensity in tweets and open-sources EmoInt, a light-weight affect computing framework with feature extractors and ensemble scripts.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s08::p001",
+     "summary": "Sentence embeddings may resolve context problems, generic features may apply to other social media affective computing tasks, and benchmarking run-time performance may support real-world deployment.",
+     "group_id": "1708.06185::g00"
+    },
+    {
+     "passage_id": "1708.06185::s09::p000",
+     "summary": "The authors thank the organizers of the WASSA-2017 Shared Task on Emotion Intensity for data, guidelines and timely support.",
+     "group_id": "1708.06185::g00"
+    }
+   ],
+   "n_raw": 22,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 2915,
+    "completion_tokens": 1241,
+    "total_tokens": 4156,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

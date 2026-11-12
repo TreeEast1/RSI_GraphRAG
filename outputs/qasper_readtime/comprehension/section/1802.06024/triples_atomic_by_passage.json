@@ -1,0 +1,802 @@
+{
+ "1802.06024::s00::p000": [
+  [
+   "Early such systems",
+   "were mostly built using",
+   "markup languages such as AIML, handcrafted conversation generation rules, and/or information retrieval techniques"
+  ],
+  [
+   "Recent neural conversation models",
+   "are able to perform",
+   "open-ended conversations"
+  ],
+  [
+   "Recent neural conversation models",
+   "do not use",
+   "explicit knowledge bases"
+  ],
+  [
+   "all existing chat systems",
+   "do not explicitly or implicitly learn",
+   "new knowledge in the conversation process"
+  ]
+ ],
+ "1802.06024::s00::p001": [
+  [
+   "KB completion (KBC)",
+   "is defined as",
+   "a binary classification problem"
+  ],
+  [
+   "KB completion",
+   "means",
+   "inferring new facts (knowledge) automatically from existing facts in a KB"
+  ],
+  [
+   "existing approaches",
+   "solve this problem under",
+   "the closed-world assumption"
+  ],
+  [
+   "KBC",
+   "is not sufficient for",
+   "knowledge learning in conversations"
+  ]
+ ],
+ "1802.06024::s00::p002": [
+  [
+   "the new problem",
+   "is called",
+   "open-world knowledge base completion (OKBC)"
+  ],
+  [
+   "OKBC",
+   "generalizes",
+   "KBC"
+  ]
+ ],
+ "1802.06024::s00::p003": [
+  [
+   "knowledge learning in conversations",
+   "can extract",
+   "two key types of information, true facts and queries, from the user utterances"
+  ],
+  [
+   "Queries",
+   "are",
+   "facts whose truth values need to be determined"
+  ],
+  [
+   "a true fact",
+   "will be incorporated into",
+   "the KB"
+  ]
+ ],
+ "1802.06024::s00::p004": [
+  [
+   "OKBC",
+   "is",
+   "the core of a knowledge learning engine for conversation"
+  ],
+  [
+   "other tasks such as fact/relation extraction and resolution and guessing of related facts of an extracted fact",
+   "are assumed to be solved by",
+   "other sub-systems"
+  ]
+ ],
+ "1802.06024::s00::p005": [
+  [
+   "A processing action",
+   "can be",
+   "the selection of related facts, deriving inference chain, etc."
+  ],
+  [
+   "An interactive action",
+   "can be",
+   "deciding what to ask, formulating a suitable question, etc."
+  ],
+  [
+   "this lifelong interactive learning and inference",
+   "is called",
+   "LiLi"
+  ],
+  [
+   "newly acquired facts",
+   "are retained in",
+   "the KB"
+  ]
+ ],
+ "1802.06024::s00::p006": [
+  [
+   "This setting",
+   "is ideal for",
+   "many NLP applications like dialog and question-answering systems"
+  ],
+  [
+   "dialog and question-answering systems",
+   "demand",
+   "real-time inference"
+  ]
+ ],
+ "1802.06024::s00::p007": [
+  [
+   "LiLi",
+   "starts with",
+   "the closed-world KBC approach path-ranking (PR)"
+  ],
+  [
+   "LiLi",
+   "extends KBC to",
+   "open-world knowledge base completion (OKBC)"
+  ],
+  [
+   "C-PR",
+   "enumerates paths by",
+   "performing bidirectional random walks over the KB graph while leveraging the context of the source-target entity-pair"
+  ]
+ ],
+ "1802.06024::s00::p008": [
+  [
+   "LiLi",
+   "interacts with",
+   "the user (if needed)"
+  ],
+  [
+   "LiLi",
+   "leverages",
+   "the interactively acquired knowledge (supporting facts (SFs) in the figure)"
+  ],
+  [
+   "LiLi",
+   "is designed in",
+   "a Reinforcement Learning (RL) setting"
+  ],
+  [
+   "Experimental results",
+   "show",
+   "that LiLi is highly effective in terms of its predictive performance and strategy formulation ability"
+  ]
+ ],
+ "1802.06024::s01::p001": [
+  [
+   "the method",
+   "cannot handle",
+   "unknown relations"
+  ],
+  [
+   "None of the existing KB inference methods",
+   "perform",
+   "interactive knowledge learning like LiLi"
+  ],
+  [
+   "NELL BIBREF23",
+   "continuously updates",
+   "its KB using facts extracted from the Web"
+  ],
+  [
+   "LiLi",
+   "formulates",
+   "query-specific inference strategies which embed interaction behaviors"
+  ],
+  [
+   "no existing dialogue systems BIBREF4 , BIBREF27 , BIBREF28 , BIBREF29 , BIBREF30",
+   "employ",
+   "lifelong learning to train prediction models by using information/knowledge retained in the past"
+  ]
+ ],
+ "1802.06024::s02::p000": [
+  [
+   "LiLi",
+   "is designed as",
+   "a combination of two interconnected models"
+  ],
+  [
+   "a RL model",
+   "learns to formulate",
+   "a query-specific inference strategy for performing the OKBC task"
+  ],
+  [
+   "a lifelong prediction model",
+   "predicts whether",
+   "a triple should be in the KB"
+  ],
+  [
+   "The framework",
+   "improves",
+   "its performance over time through user interaction and knowledge retention"
+  ]
+ ],
+ "1802.06024::s02::p001": [
+  [
+   "C-PR",
+   "cannot extract path features and learn a prediction model when",
+   "any of INLINEFORM0 , INLINEFORM1 or INLINEFORM2 is unknown"
+  ],
+  [
+   "LiLi",
+   "solves this problem through",
+   "interactive knowledge acquisition"
+  ],
+  [
+   "LiLi",
+   "asks the user to provide",
+   "a clue (an example of INLINEFORM4 )"
+  ],
+  [
+   "The acquired knowledge",
+   "reduces",
+   "OKBC to KBC"
+  ]
+ ],
+ "1802.06024::s02::p002": [
+  [
+   "path enumeration of C-PR",
+   "gets stuck and inference becomes infeasible when",
+   "there is no path connecting INLINEFORM0 and INLINEFORM1 in the graph"
+  ],
+  [
+   "LiLi",
+   "uses",
+   "a template relation (“@-?-@\") as the missing link marker"
+  ],
+  [
+   "A path containing “@-?-@\"",
+   "is called",
+   "an incomplete path"
+  ],
+  [
+   "the extracted feature set",
+   "contains",
+   "both complete (no missing link) and incomplete paths"
+  ]
+ ],
+ "1802.06024::s02::p003": [
+  [
+   "LiLi",
+   "uses",
+   "a guessing mechanism (discussed later) to fill the gap"
+  ],
+  [
+   "This",
+   "enables",
+   "LiLi to continue its inference even if the user cannot answer a system question"
+  ]
+ ],
+ "1802.06024::s03::p000": [
+  [
+   "LiLi",
+   "uses",
+   "a Knowledge Store (KS) for knowledge retention"
+  ],
+  [
+   "KS",
+   "has",
+   "four components"
+  ],
+  [
+   "INLINEFORM1 (the KB)",
+   "is initialized with",
+   "base KB triples (see §4)"
+  ],
+  [
+   "INLINEFORM3",
+   "is",
+   "a sparse matrix, with rows as relations and columns as entity-pairs"
+  ]
+ ],
+ "1802.06024::s03::p001": [
+  [
+   "The RL model",
+   "learns even after training whenever it encounters",
+   "an unseen state (in testing)"
+  ],
+  [
+   "KS",
+   "is updated",
+   "continuously over time as a result of the execution of LiLi"
+  ],
+  [
+   "The prediction model",
+   "uses",
+   "lifelong learning (LL)"
+  ],
+  [
+   "Similar tasks",
+   "are identified by",
+   "factorizing INLINEFORM0 and computing a task similarity matrix INLINEFORM1"
+  ],
+  [
+   "LiLi",
+   "uses",
+   "INLINEFORM2 to identify poorly learned past tasks and acquire more clues for them"
+  ]
+ ],
+ "1802.06024::s03::p002": [
+  [
+   "LiLi",
+   "uses",
+   "a stack, called Inference Stack ( INLINEFORM0 )"
+  ],
+  [
+   "Inference Stack ( INLINEFORM0 )",
+   "holds",
+   "query and its state information for RL"
+  ],
+  [
+   "LiLi",
+   "always processes",
+   "stack top ( INLINEFORM1 [top])"
+  ]
+ ],
+ "1802.06024::s04::p000": [
+  [
+   "an OKBC query ( INLINEFORM0 , INLINEFORM1 , INLINEFORM2 )",
+   "is represented as",
+   "a data instance INLINEFORM3"
+  ],
+  [
+   "LiLi",
+   "starts its initialization by setting",
+   "the state as INLINEFORM22 (based on INLINEFORM23 , explained later)"
+  ]
+ ],
+ "1802.06024::s04::p001": [
+  [
+   "solving the strategy formulation problem",
+   "is viewed as",
+   "learning to play an inference game"
+  ],
+  [
+   "the goal",
+   "is to formulate",
+   "a strategy that \"makes the inference task possible\""
+  ],
+  [
+   "LiLi",
+   "wins and trains",
+   "the prediction model for INLINEFORM6"
+  ]
+ ],
+ "1802.06024::s04::p002": [
+  [
+   "LiLi's strategy formulation",
+   "is modeled as",
+   "a Markov Decision Process (MDP) with finite state ( INLINEFORM0 ) and action ( INLINEFORM1 ) spaces"
+  ],
+  [
+   "A state INLINEFORM2",
+   "consists of",
+   "10 binary state variables (Table 2)"
+  ],
+  [
+   "INLINEFORM4",
+   "is",
+   "the initial state with all state bits set as 0"
+  ],
+  [
+   "INLINEFORM7",
+   "consists of",
+   "6 actions (Table 3)"
+  ]
+ ],
+ "1802.06024::s04::p003": [
+  [
+   "the training dataset",
+   "may not be enough to learn",
+   "optimal policy for all INLINEFORM0"
+  ],
+  [
+   "encountering an unseen state during test",
+   "can make",
+   "RL-model clueless about the action"
+  ],
+  [
+   "LiLi",
+   "remains in",
+   "INLINEFORM3"
+  ],
+  [
+   "RL-model",
+   "instantly switches to",
+   "the training mode"
+  ]
+ ],
+ "1802.06024::s04::p004": [
+  [
+   "LiLi",
+   "only updates",
+   "INLINEFORM10 [top] with ( INLINEFORM11 , INLINEFORM12 )"
+  ],
+  [
+   "LiLi",
+   "adds",
+   "experience ( INLINEFORM14 , INLINEFORM15 , INLINEFORM16 , INLINEFORM17 ) in INLINEFORM18"
+  ],
+  [
+   "LiLi",
+   "first sets",
+   "the next state INLINEFORM24"
+  ]
+ ],
+ "1802.06024::s04::p005": [
+  [
+   "LiLi",
+   "searches",
+   "INLINEFORM1 , INLINEFORM2 , INLINEFORM3 in INLINEFORM4"
+  ],
+  [
+   "LiLi",
+   "sets",
+   "appropriate bits in INLINEFORM5"
+  ],
+  [
+   "LiLi",
+   "randomly sets",
+   "INLINEFORM14 with probability INLINEFORM15"
+  ],
+  [
+   "LiLi",
+   "updates",
+   "KS with triple INLINEFORM18"
+  ]
+ ],
+ "1802.06024::s04::p006": [
+  [
+   "LiLi",
+   "asks",
+   "the user to provide a clue (+ve instance) for INLINEFORM1"
+  ],
+  [
+   "LiLi",
+   "corrupts",
+   "INLINEFORM2 and INLINEFORM3 of the clue once at a time"
+  ],
+  [
+   "LiLi",
+   "generates",
+   "-ve instances by sampling nodes from INLINEFORM4"
+  ],
+  [
+   "These instances",
+   "help in training",
+   "prediction model for INLINEFORM5"
+  ]
+ ],
+ "1802.06024::s04::p007": [
+  [
+   "LiLi",
+   "selects",
+   "an incomplete path INLINEFORM1 from INLINEFORM2"
+  ],
+  [
+   "INLINEFORM7",
+   "denotes",
+   "the contextual similarity BIBREF16 of entity-pair INLINEFORM8"
+  ],
+  [
+   "LiLi",
+   "divides",
+   "the similarity range [-1, 1] into three segments"
+  ],
+  [
+   "LiLi",
+   "replaces",
+   "the missing link with INLINEFORM14 in INLINEFORM15"
+  ]
+ ],
+ "1802.06024::s04::p008": [
+  [
+   "LiLi",
+   "asks",
+   "CLQs for connecting unknown entities INLINEFORM1 and/or INLINEFORM2 with INLINEFORM3"
+  ],
+  [
+   "LiLi",
+   "selects",
+   "the most contextually relevant node (wrt INLINEFORM4 , INLINEFORM5 ) from INLINEFORM6"
+  ],
+  [
+   "the contextual relevance idea in BIBREF16",
+   "is computed using",
+   "word embedding BIBREF39"
+  ]
+ ],
+ "1802.06024::s04::p009": [
+  [
+   "LiLi",
+   "extracts",
+   "path features INLINEFORM1 between ( INLINEFORM2 , INLINEFORM3 )"
+  ],
+  [
+   "LiLi",
+   "updates",
+   "INLINEFORM4 with incomplete features from INLINEFORM5"
+  ],
+  [
+   "LiLi",
+   "always trains",
+   "the prediction model with complete features INLINEFORM6"
+  ],
+  [
+   "LiLi",
+   "stops asking",
+   "MLQs"
+  ]
+ ],
+ "1802.06024::s04::p010": [
+  [
+   "LiLi",
+   "adds",
+   "INLINEFORM1 in one of data buffers INLINEFORM2"
+  ],
+  [
+   "INLINEFORM6",
+   "is used for training and added to",
+   "INLINEFORM7"
+  ],
+  [
+   "validation buffer INLINEFORM8 and evaluation buffer INLINEFORM9",
+   "are populated",
+   "similarly"
+  ],
+  [
+   "LiLi",
+   "invokes",
+   "the prediction model for INLINEFORM11"
+  ]
+ ],
+ "1802.06024::s04::p011": [
+  [
+   "LiLi",
+   "populates",
+   "INLINEFORM9 by taking 10% (see §4) of the instances from INLINEFORM10"
+  ],
+  [
+   "LiLi",
+   "uses",
+   "a LSTM BIBREF40 to compose the vector representation of each feature INLINEFORM12 as INLINEFORM13"
+  ],
+  [
+   "LiLi",
+   "computes",
+   "the prediction value, INLINEFORM16 as sigmoid of the mean cosine similarity of all features and INLINEFORM17"
+  ]
+ ],
+ "1802.06024::s04::p012": [
+  [
+   "Models trained on a few examples",
+   "often perform poorly due to",
+   "underfitting"
+  ],
+  [
+   "LiLi",
+   "computes",
+   "trancated SVD of INLINEFORM4 as INLINEFORM5 and then, the similarity matrix INLINEFORM6"
+  ],
+  [
+   "LiLi",
+   "uses",
+   "INLINEFORM19 as initial weights and fine-tunes INLINEFORM20 with a low learning rate"
+  ]
+ ],
+ "1802.06024::s04::p013": [
+  [
+   "LiLi",
+   "detects",
+   "that the source entity “Obama\" and query relation “CitizenOf\" are unknown"
+  ],
+  [
+   "LiLi",
+   "pushes",
+   "the clue (+ve example) and two generated -ve examples into INLINEFORM2"
+  ],
+  [
+   "LiLi",
+   "becomes aware of",
+   "“CitizenOf\""
+  ],
+  [
+   "LiLi",
+   "enumerates",
+   "paths between “Obama\" and “USA\" by performing INLINEFORM6"
+  ]
+ ],
+ "1802.06024::s05::p000": [
+  [
+   "LiLi",
+   "is evaluated in terms of",
+   "predictive performance and strategy formulation abilities"
+  ]
+ ],
+ "1802.06024::s05::p001": [
+  [
+   "Data",
+   "uses",
+   "two standard datasets"
+  ],
+  [
+   "two standard datasets",
+   "include",
+   "Freebase FB15k"
+  ],
+  [
+   "two standard datasets",
+   "include",
+   "WordNet INLINEFORM0"
+  ],
+  [
+   "each dataset",
+   "is used to build",
+   "a fairly large graph"
+  ]
+ ],
+ "1802.06024::s05::p002": [
+  [
+   "Keras deep learning library",
+   "was used to implement and train",
+   "the prediction model"
+  ],
+  [
+   "learning rate",
+   "is reduced gradually on plateau with",
+   "factor 0.5 and patience 5"
+  ],
+  [
+   "Adam optimizer and early stopping",
+   "were used in",
+   "training"
+  ]
+ ],
+ "1802.06024::s05::p003": [
+  [
+   "INLINEFORM3",
+   "is used as",
+   "the initial KB graph ( INLINEFORM4 ) of LiLi"
+  ]
+ ],
+ "1802.06024::s05::p004": [
+  [
+   "For Freebase",
+   "found",
+   "86 relations with INLINEFORM0 triples"
+  ],
+  [
+   "For Freebase",
+   "randomly selected",
+   "50 from various domains"
+  ],
+  [
+   "25% of them",
+   "are selected as",
+   "unknown relations"
+  ],
+  [
+   "the rest (75%)",
+   "are considered as",
+   "known relations"
+  ],
+  [
+   "For each known relation INLINEFORM1",
+   "choose",
+   "1000 triples"
+  ],
+  [
+   "1000 triples",
+   "are split into",
+   "60% training, 10% validation and 20% test"
+  ],
+  [
+   "WordNet dataset",
+   "selects",
+   "all 18 relations for evaluation"
+  ]
+ ],
+ "1802.06024::s05::p006": [
+  [
+   "none of the existing KBC methods",
+   "can solve",
+   "the OKBC problem"
+  ]
+ ],
+ "1802.06024::s05::p007": [
+  [
+   "Single",
+   "is",
+   "Version of LiLi where we train a single prediction model INLINEFORM0 for all test relations"
+  ]
+ ],
+ "1802.06024::s05::p008": [
+  [
+   "Sep",
+   "does not transfer",
+   "(past learned) weights for initializing INLINEFORM0"
+  ],
+  [
+   "Sep",
+   "disables",
+   "LL"
+  ]
+ ],
+ "1802.06024::s05::p009": [
+  [
+   "F-th)",
+   "uses",
+   "a fixed prediction threshold 0.5"
+  ],
+  [
+   "F-th)",
+   "uses instead of",
+   "relation-specific threshold INLINEFORM0"
+  ]
+ ],
+ "1802.06024::s05::p010": [
+  [
+   "The missing or connecting links (when the user does not respond)",
+   "are filled with",
+   "“@-RelatedTo-@\" blindly, no guessing mechanism"
+  ]
+ ],
+ "1802.06024::s05::p011": [
+  [
+   "w/o PTS",
+   "does not ask for",
+   "additional clues via past task selection for skillset improvement"
+  ]
+ ],
+ "1802.06024::s05::p012": [
+  [
+   "Coverage( INLINEFORM0 )",
+   "is defined as",
+   "the fraction of total query data instances, for which LiLi has successfully formulated strategies that lead to winning"
+  ],
+  [
+   "predictive performance",
+   "uses",
+   "Avg. MCC and avg. +ve F1 score"
+  ]
+ ],
+ "1802.06024::s06::p001": [
+  [
+   "Freebase",
+   "is used for tuning",
+   "INLINEFORM1"
+  ],
+  [
+   "LiLi’s performance",
+   "improves significantly as it acquires",
+   "more clues from the user"
+  ],
+  [
+   "simulated user’s query satisfaction rate",
+   "is",
+   "1% MLQs and 10% CLQs"
+  ],
+  [
+   "LiLi’s guessing mechanism and continual learning ability",
+   "help in achieving",
+   "avg. +ve F1 of 0.57 and 0.62 on FB and WN respectively"
+  ]
+ ],
+ "1802.06024::s07::p000": [
+  [
+   "the problem underlying the engine",
+   "can be formulated as",
+   "an open-world knowledge base completion (OKBC) problem"
+  ],
+  [
+   "LiLi",
+   "is proposed for solving",
+   "the OKBC problem"
+  ],
+  [
+   "OKBC",
+   "is a generalization of",
+   "KBC"
+  ],
+  [
+   "LiLi",
+   "solves",
+   "the OKBC problem"
+  ]
+ ]
+}

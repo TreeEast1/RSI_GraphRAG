@@ -1,0 +1,285 @@
+{
+  "role": "new_overlap",
+  "cluster_id": "cc-00000-stable-0068",
+  "unit_id": "cc-00000-stable-0068-u003",
+  "method": "A",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 9934,
+    "completion_tokens": 2373,
+    "reasoning_tokens": 1023,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r3_new_ac_new_overlap_A",
+    "cache_key": "e1ec6fdff6a7b6758d132e41812f2b84031bf982345d094fd6316b7e0e330dc1"
+  },
+  "n_updates": 5,
+  "n_add": 5,
+  "n_accept": 2,
+  "n_reject": 3,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "REDUNDANT": 3,
+    "EXTRACTION_REPAIR": 2
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "cand-1",
+      "comprehension_text": "Kreindler & Kreindler LLP was founded in 1950.",
+      "new_semantic_relation": "founded in",
+      "linked_entity_ids": [
+        "entity-32618829b1c362c99c838a54dcc0caf8"
+      ],
+      "source_triple_ids": [
+        "triple-6c659d5d67a0c08a1350a8b9826dc8d5"
+      ],
+      "source_passage_ids": [
+        "chunk-0b684f6cacbe5c1dbb0bcd71ae2f0e53"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-0b684f6cacbe5c1dbb0bcd71ae2f0e53",
+          "span": "Kreindler & Kreindler LLP is a U.S. law firm founded in 1950"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "reasoning_summary": "The passage states the firm's founding year, which is absent from the existing triples.",
+      "novelty_justification": "Existing triples describe the firm's type, offices, specialties, and litigation representation but do not state when it was founded.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "cand-2",
+      "comprehension_text": "Lee Kreindler was considered the founder of air disaster law.",
+      "new_semantic_relation": "considered founder of",
+      "linked_entity_ids": [
+        "entity-fb1c532edbf47c6863d54b781320f088"
+      ],
+      "source_triple_ids": [
+        "triple-1f3411913a1c722f045428c8b5b668c8",
+        "triple-51a23b6c73e46e72b9d0e520a7cadbb6"
+      ],
+      "source_passage_ids": [
+        "chunk-0b684f6cacbe5c1dbb0bcd71ae2f0e53"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-0b684f6cacbe5c1dbb0bcd71ae2f0e53",
+          "span": "Lee Kreindler, a named partner of the firm, was \"considered the founder of air disaster law.\""
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "reasoning_summary": "The passage attributes a founder status in air disaster law to Lee Kreindler, a fact not present in the triples.",
+      "novelty_justification": "The existing triples identify Lee Kreindler as a named partner and describe the firm's air-disaster specialization, but do not state this founder attribution.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "cand-3",
+      "comprehension_text": "The Patriots are headquartered at Gillette Stadium.",
+      "new_semantic_relation": "headquartered at",
+      "linked_entity_ids": [
+        "entity-cf0387291504d78a6ac7a13147d2f229",
+        "entity-148857c904ec5249af2cd3249562d517"
+      ],
+      "source_triple_ids": [
+        "triple-c92de71bef214f40a3aa0ff79cdefdba",
+        "triple-3888464a5fa05bc07ef6292649d14df0"
+      ],
+      "source_passage_ids": [
+        "chunk-cc78d8ec5e2f3d17fe6927caaf348232"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-cc78d8ec5e2f3d17fe6927caaf348232",
+          "span": "The Patriots are also headquartered at Gillette Stadium."
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "reasoning_summary": "The passage explicitly states the Patriots' headquarters location, which is not stated by the existing stadium-related triples.",
+      "novelty_justification": "Existing triples say the Patriots play at Gillette Stadium and have a logo there, but do not say the stadium is their headquarters.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "cand-4",
+      "comprehension_text": "William Cooper Nell was an African-American abolitionist.",
+      "new_semantic_relation": "was an abolitionist",
+      "linked_entity_ids": [
+        "entity-407385aa643a4aabf8ac8b7c1c5a183d"
+      ],
+      "source_triple_ids": [
+        "triple-73c323d339daeaffc9f694539ba3693b",
+        "triple-ba8efb6cead3071e50b741c6b1ab46a4"
+      ],
+      "source_passage_ids": [
+        "chunk-068a41538f918f53e97a551f13ec1a28"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-068a41538f918f53e97a551f13ec1a28",
+          "span": "was an African-American abolitionist, journalist, publisher"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "reasoning_summary": "The passage directly identifies William Cooper Nell as an African-American abolitionist, a role omitted from the existing triples.",
+      "novelty_justification": "Existing triples identify him as an author, journalist, publisher, and civil servant but do not state that he was an abolitionist.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "cand-5",
+      "comprehension_text": "The Juventas New Music Ensemble is devoted to performing musical works by composers under the age of 35.",
+      "new_semantic_relation": "devoted to performing works by",
+      "linked_entity_ids": [
+        "entity-3b2cacb19a1c5ac54b8a62b861561423"
+      ],
+      "source_triple_ids": [
+        "triple-0f2d687330b58d4c7f44f59ae63008e8"
+      ],
+      "source_passage_ids": [
+        "chunk-bed1cec3eefb0b9b4397d34fcf464463"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-bed1cec3eefb0b9b4397d34fcf464463",
+          "span": "devoted to performing musical works by composers under the age of 35"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "reasoning_summary": "The passage gives the ensemble's specific artistic mission, which is absent from the existing location triple.",
+      "novelty_justification": "The existing triple only states that the ensemble is located in Boston and does not describe its repertoire or mission.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "cand-1",
+      "decision": "REJECT",
+      "failure_stage": "V4",
+      "faithfulness": "supported",
+      "novelty": "duplicate",
+      "audit_type": "REDUNDANT",
+      "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+      "residue": [],
+      "evidence_sentences": [
+        "Kreindler & Kreindler\nKreindler & Kreindler LLP is a U.S. law firm founded in 1950 with offices in New York, California and Massachusetts."
+      ],
+      "warning": ""
+    },
+    {
+      "candidate_id": "cand-2",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: considered",
+      "residue": [
+        "considered"
+      ],
+      "evidence_sentences": [
+        "According to the New York Times, Lee Kreindler, a named partner of the firm, was \"considered the founder of air disaster law.\""
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "According to the New York Times, Lee Kreindler, a named partner of the firm, was \"considered the founder of air disaster law.\""
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "considered"
+          ],
+          "n_passage_triples": 10,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "cand-3",
+      "decision": "REJECT",
+      "failure_stage": "V4",
+      "faithfulness": "supported",
+      "novelty": "duplicate",
+      "audit_type": "REDUNDANT",
+      "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+      "residue": [],
+      "evidence_sentences": [
+        "The Patriots are also headquartered at Gillette Stadium."
+      ],
+      "warning": ""
+    },
+    {
+      "candidate_id": "cand-4",
+      "decision": "REJECT",
+      "failure_stage": "V4",
+      "faithfulness": "supported",
+      "novelty": "duplicate",
+      "audit_type": "REDUNDANT",
+      "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+      "residue": [],
+      "evidence_sentences": [
+        "William Cooper Nell\nWilliam Cooper Nell (December 16, 1816 – May 25, 1874) was an African-American abolitionist, journalist, publisher, author, and civil servant of Boston, Massachusetts, who worked for integration of schools and public facilities in the state."
+      ],
+      "warning": ""
+    },
+    {
+      "candidate_id": "cand-5",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: devoted, performing",
+      "residue": [
+        "devoted",
+        "performing"
+      ],
+      "evidence_sentences": [
+        "Juventas New Music Ensemble\nThe Juventas New Music Ensemble is an instrumental ensemble located in Boston, Massachusetts devoted to performing musical works by composers under the age of 35."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Juventas New Music Ensemble\nThe Juventas New Music Ensemble is an instrumental ensemble located in Boston, Massachusetts devoted to performing musical works by composers under the age of 35."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "devoted",
+            "performing"
+          ],
+          "n_passage_triples": 6,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

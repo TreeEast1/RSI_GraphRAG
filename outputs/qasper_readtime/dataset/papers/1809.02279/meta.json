@@ -1,0 +1,89 @@
+{
+ "paper_id": "1809.02279",
+ "title": "Cell-aware Stacked LSTMs for Modeling Sentences",
+ "abstract": "We propose a method of stacking multiple long short-term memory (LSTM) layers for modeling sentences. In contrast to the conventional stacked LSTMs where only hidden states are fed as input to the next layer, our architecture accepts both hidden and memory cell states of the preceding layer and fuses information from the left and the lower context using the soft gating mechanism of LSTMs. Thus the proposed stacked LSTM architecture modulates the amount of information to be delivered not only in horizontal recurrence but also in vertical connections, from which useful features extracted from lower layers are effectively conveyed to upper layers. We dub this architecture Cell-aware Stacked LSTM (CAS-LSTM) and show from experiments that our models achieve state-of-the-art results on benchmark datasets for natural language inference, paraphrase detection, and sentiment classification.",
+ "sections": [
+  "Introduction",
+  "Model Description",
+  "Notation",
+  "Stacked LSTMs",
+  "Cell-aware Stacked LSTMs",
+  "Sentence Encoders",
+  "Top-layer Classifiers",
+  "Experiments",
+  "Natural Language Inference",
+  "Paraphrase Identification",
+  "Sentiment Classification",
+  "Forget Gate Analysis",
+  "Model Variations",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 52,
+ "n_tokens": 4306,
+ "figures_and_tables": [
+  {
+   "caption_id": "1809.02279::fig000",
+   "paper_id": "1809.02279",
+   "file": "1-Figure1-1.png",
+   "caption": "Figure 1: Visualization of (a) plain stacked LSTM and (b) CAS-LSTM. The red nodes indicate the blocks whose cell states directly affect the cell state clt.",
+   "n_tokens": 37
+  },
+  {
+   "caption_id": "1809.02279::fig001",
+   "paper_id": "1809.02279",
+   "file": "2-Figure2-1.png",
+   "caption": "Figure 2: Schematic diagram of a CAS-LSTM block.",
+   "n_tokens": 14
+  },
+  {
+   "caption_id": "1809.02279::fig002",
+   "paper_id": "1809.02279",
+   "file": "3-Figure3-1.png",
+   "caption": "Figure 3: Visualization of paths between cl−1t and c l t. In CAS-LSTM, the direct connection between cl−1t and c l t exists (denoted as red dashed lines).",
+   "n_tokens": 43
+  },
+  {
+   "caption_id": "1809.02279::fig003",
+   "paper_id": "1809.02279",
+   "file": "4-Figure4-1.png",
+   "caption": "Figure 4: (a), (b): Histograms of vertical forget gate values. (c), (d): Histograms of the ranges of vertical forget gate per time step. (e), (f): Histograms of the absolute difference between the previous output gate and the current vertical forget gate values.",
+   "n_tokens": 62
+  },
+  {
+   "caption_id": "1809.02279::fig004",
+   "paper_id": "1809.02279",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Results of the models on the SNLI dataset.",
+   "n_tokens": 14
+  },
+  {
+   "caption_id": "1809.02279::fig005",
+   "paper_id": "1809.02279",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Results of the models on the MultiNLI dataset. ‘In Acc.’ and ‘Cross Acc.’ represent accuracy calculated from the matched and mismatched test set respectively. ∗: SNLI dataset is used as additional training data. ∗∗: computed from hyperparameters provided by the authors.",
+   "n_tokens": 64
+  },
+  {
+   "caption_id": "1809.02279::fig006",
+   "paper_id": "1809.02279",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3: Results of the models on the Quora Question Pairs dataset.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1809.02279::fig007",
+   "paper_id": "1809.02279",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: Results of the models on the SST dataset. ∗: models pretrained on large external corpora are used.",
+   "n_tokens": 26
+  },
+  {
+   "caption_id": "1809.02279::fig008",
+   "paper_id": "1809.02279",
+   "file": "6-Table5-1.png",
+   "caption": "Table 5: Results of model variants.",
+   "n_tokens": 9
+  }
+ ]
+}

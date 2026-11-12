@@ -1,0 +1,242 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1811.00383::s00::p000",
+   "summary": "Deep Learning excels in NLP but is less effective for low-resource languages, motivating multi-task, multilingual, semi-supervised, and transfer learning approaches that reduce child-task data needs.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s00::p001",
+   "summary": "Transfer learning in multilingual Neural Machine Translation uses an assisting source language, but language divergence, especially unexamined word order divergence, can reduce benefits.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s00::p002",
+   "summary": "In standard RNN (Bi-LSTM) encoder-attention-decoder architecture, word-order-dependent contextual representations become inconsistent across assisting and source languages, hindering knowledge transfer.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s00::p003",
+   "summary": "Visualizations of an English to Hindi NMT system show very different encoder representations for original SVO and Bengali SOV word orders.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s00::p004",
+   "summary": "The authors propose pre-ordering assisting language sentences to match source word order in an extremely resource constrained scenario using only a bilingual dictionary.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s01::p000",
+   "summary": "Prior work addresses lexical divergence in transfer learning for NMT using BPE, character-level NMT, bilingual embeddings, and mixture of universal token embeddings.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s02::p000",
+   "summary": "No work has addressed word order divergence in transfer learning for multilingual NMT, though self-attention for NER and adversarial training for question-question similarity ranking exist.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s03::p000",
+   "summary": "Pre-ordering has been used for Phrase-Based SMT and NMT source-target divergence, with mixed NMT results, but not source-language divergence in multilingual NMT.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s04::p000",
+   "summary": "The proposed solution trains an English-Hindi parent model and, with no child-task parallel corpus, translates source sentences word-by-word into English at test time.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s04::p001",
+   "summary": "The authors hypothesize SVO English and SOV source languages cause inconsistent encoder contextual representations and propose pre-ordering English sentences to match source word-order.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s04::p002",
+   "summary": "A pre-ordering rule swaps a noun phrase followed by a transitive verb, yielding Anurag Thakur will meet from Anurag will meet Thakur.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s04::p003",
+   "summary": "Pre-ordering may benefit other word order divergence scenarios such as SOV to SVO, but verification is left for future work.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s05::p000",
+   "summary": "This section describes the languages, datasets, and network hyper-parameters used in the experiments.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s06::p000",
+   "summary": "Experiments use English INLINEFORM0 Hindi as the parent task and Bengali, Gujarati, Marathi, Malayalam, and Tamil to Hindi as child tasks.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s07::p000",
+   "summary": "Training uses IITB English-Hindi parallel corpus and ILCI English-Hindi parallel corpus, with a 520-sentence dev-set and INLINEFORM2 ILCI test sentences per child task.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s08::p000",
+   "summary": "OpenNMT-Torch trains a sequence-to-sequence attention model with two-layer bidirectional LSTMs, 500 neurons, mini-batch size 50, dropout, and fastText English embeddings.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s08::p001",
+   "summary": "English and Hindi vocabularies use frequency thresholds, while source words are translated into English using a bilingual dictionary because bilingual embeddings were not useful.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s08::p002",
+   "summary": "The CFILT-preorder system reorders English sentences using generic rules for all Indian languages and hindi-tuned rules for English-Hindi reordering improvements.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s09::p000",
+   "summary": "Results on X-Hindi pairs report BLEU scores and LeBLEU scores, showing both pre-ordering configurations significantly improve BLEU scores, with larger gains from generic rules.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s09::p001",
+   "summary": "The results support the hypothesis that word-order divergence limits multilingual translation benefits and that reducing it improves extremely low-resource translation.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s09::p002",
+   "summary": "Output analysis shows pre-ordering significantly reduces UNK tokens, attributed to better contextual representations, fewer unknown words, better translation, and improved BLEU scores.",
+   "group_id": "1811.00383::g00"
+  },
+  {
+   "passage_id": "1811.00383::s10::p000",
+   "summary": "The paper concludes that handling word-order divergence and pre-ordering the assisting language significantly improves extremely low-resource multilingual NMT, with broader language validation desired.",
+   "group_id": "1811.00383::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1811.00383::g00",
+   "summaries": [
+    {
+     "passage_id": "1811.00383::s00::p000",
+     "summary": "Deep Learning excels in NLP but is less effective for low-resource languages, motivating multi-task, multilingual, semi-supervised, and transfer learning approaches that reduce child-task data needs.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s00::p001",
+     "summary": "Transfer learning in multilingual Neural Machine Translation uses an assisting source language, but language divergence, especially unexamined word order divergence, can reduce benefits.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s00::p002",
+     "summary": "In standard RNN (Bi-LSTM) encoder-attention-decoder architecture, word-order-dependent contextual representations become inconsistent across assisting and source languages, hindering knowledge transfer.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s00::p003",
+     "summary": "Visualizations of an English to Hindi NMT system show very different encoder representations for original SVO and Bengali SOV word orders.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s00::p004",
+     "summary": "The authors propose pre-ordering assisting language sentences to match source word order in an extremely resource constrained scenario using only a bilingual dictionary.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s01::p000",
+     "summary": "Prior work addresses lexical divergence in transfer learning for NMT using BPE, character-level NMT, bilingual embeddings, and mixture of universal token embeddings.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s02::p000",
+     "summary": "No work has addressed word order divergence in transfer learning for multilingual NMT, though self-attention for NER and adversarial training for question-question similarity ranking exist.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s03::p000",
+     "summary": "Pre-ordering has been used for Phrase-Based SMT and NMT source-target divergence, with mixed NMT results, but not source-language divergence in multilingual NMT.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s04::p000",
+     "summary": "The proposed solution trains an English-Hindi parent model and, with no child-task parallel corpus, translates source sentences word-by-word into English at test time.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s04::p001",
+     "summary": "The authors hypothesize SVO English and SOV source languages cause inconsistent encoder contextual representations and propose pre-ordering English sentences to match source word-order.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s04::p002",
+     "summary": "A pre-ordering rule swaps a noun phrase followed by a transitive verb, yielding Anurag Thakur will meet from Anurag will meet Thakur.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s04::p003",
+     "summary": "Pre-ordering may benefit other word order divergence scenarios such as SOV to SVO, but verification is left for future work.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s05::p000",
+     "summary": "This section describes the languages, datasets, and network hyper-parameters used in the experiments.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s06::p000",
+     "summary": "Experiments use English INLINEFORM0 Hindi as the parent task and Bengali, Gujarati, Marathi, Malayalam, and Tamil to Hindi as child tasks.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s07::p000",
+     "summary": "Training uses IITB English-Hindi parallel corpus and ILCI English-Hindi parallel corpus, with a 520-sentence dev-set and INLINEFORM2 ILCI test sentences per child task.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s08::p000",
+     "summary": "OpenNMT-Torch trains a sequence-to-sequence attention model with two-layer bidirectional LSTMs, 500 neurons, mini-batch size 50, dropout, and fastText English embeddings.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s08::p001",
+     "summary": "English and Hindi vocabularies use frequency thresholds, while source words are translated into English using a bilingual dictionary because bilingual embeddings were not useful.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s08::p002",
+     "summary": "The CFILT-preorder system reorders English sentences using generic rules for all Indian languages and hindi-tuned rules for English-Hindi reordering improvements.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s09::p000",
+     "summary": "Results on X-Hindi pairs report BLEU scores and LeBLEU scores, showing both pre-ordering configurations significantly improve BLEU scores, with larger gains from generic rules.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s09::p001",
+     "summary": "The results support the hypothesis that word-order divergence limits multilingual translation benefits and that reducing it improves extremely low-resource translation.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s09::p002",
+     "summary": "Output analysis shows pre-ordering significantly reduces UNK tokens, attributed to better contextual representations, fewer unknown words, better translation, and improved BLEU scores.",
+     "group_id": "1811.00383::g00"
+    },
+    {
+     "passage_id": "1811.00383::s10::p000",
+     "summary": "The paper concludes that handling word-order divergence and pre-ordering the assisting language significantly improves extremely low-resource multilingual NMT, with broader language validation desired.",
+     "group_id": "1811.00383::g00"
+    }
+   ],
+   "n_raw": 22,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3498,
+    "completion_tokens": 1111,
+    "total_tokens": 4609,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

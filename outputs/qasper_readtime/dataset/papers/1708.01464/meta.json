@@ -1,0 +1,85 @@
+{
+ "paper_id": "1708.01464",
+ "title": "Massively Multilingual Neural Grapheme-to-Phoneme Conversion",
+ "abstract": "Grapheme-to-phoneme conversion (g2p) is necessary for text-to-speech and automatic speech recognition systems. Most g2p systems are monolingual: they require language-specific data or handcrafting of rules. Such systems are difficult to extend to low resource languages, for which data and handcrafted rules are not available. As an alternative, we present a neural sequence-to-sequence approach to g2p which is trained on spelling--pronunciation pairs in hundreds of languages. The system shares a single encoder and decoder across all languages, allowing it to utilize the intrinsic similarities between different writing systems. We show an 11% improvement in phoneme error rate over an approach based on adapting high-resource monolingual g2p models to low-resource languages. Our model is also much more compact relative to previous approaches.",
+ "sections": [
+  "Introduction",
+  "Low Resource g2p",
+  "Multilingual Neural NLP",
+  "Grapheme-to-Phoneme",
+  "Encoder–Decoder Models",
+  "Training Multilingual Models",
+  "Data",
+  "Experiments",
+  "Evaluation",
+  "Baseline",
+  "Training",
+  "Adapted Results",
+  "High Resource Results",
+  "Results on Unseen Languages",
+  "Language ID Tokens",
+  "Language Embeddings",
+  "Phoneme Embeddings",
+  "Future Work"
+ ],
+ "n_paragraphs": 52,
+ "n_tokens": 4094,
+ "figures_and_tables": [
+  {
+   "caption_id": "1708.01464::fig000",
+   "paper_id": "1708.01464",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Hyperparameters for multilingual g2p models",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1708.01464::fig001",
+   "paper_id": "1708.01464",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Corpus Statistics",
+   "n_tokens": 6
+  },
+  {
+   "caption_id": "1708.01464::fig002",
+   "paper_id": "1708.01464",
+   "file": "4-Table3-1.png",
+   "caption": "Table 3: Example entries from the Wiktionary training corpus",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1708.01464::fig003",
+   "paper_id": "1708.01464",
+   "file": "5-Table4-1.png",
+   "caption": "Table 4: Adapted Results",
+   "n_tokens": 7
+  },
+  {
+   "caption_id": "1708.01464::fig004",
+   "paper_id": "1708.01464",
+   "file": "6-Table7-1.png",
+   "caption": "Table 7: The word ‘juice’ translated by the LangID-All model with various language ID tokens. The incorrect English pronunciation rhymes with the system’s result for ‘ice’",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1708.01464::fig005",
+   "paper_id": "1708.01464",
+   "file": "6-Table5-1.png",
+   "caption": "Table 5: High Resource Results",
+   "n_tokens": 7
+  },
+  {
+   "caption_id": "1708.01464::fig006",
+   "paper_id": "1708.01464",
+   "file": "6-Table6-1.png",
+   "caption": "Table 6: Results on languages not in the training corpus",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1708.01464::fig007",
+   "paper_id": "1708.01464",
+   "file": "7-Table8-1.png",
+   "caption": "Table 8: Selected phonemes and the most similar phonemes, measured by the cosine similarity of the embeddings learned by the LangID-All model",
+   "n_tokens": 30
+  }
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "paper_id": "1910.01863",
+ "title": "Template-free Data-to-Text Generation of Finnish Sports News",
+ "abstract": "News articles such as sports game reports are often thought to closely follow the underlying game statistics, but in practice they contain a notable amount of background knowledge, interpretation, insight into the game, and quotes that are not present in the official statistics. This poses a challenge for automated data-to-text news generation with real-world news corpora as training data. We report on the development of a corpus of Finnish ice hockey news, edited to be suitable for training of end-to-end news generation methods, as well as demonstrate generation of text, which was judged by journalists to be relatively close to a viable product. The new dataset and system source code are available for research purposes at this https URL.",
+ "sections": [
+  "Introduction",
+  "Ice Hockey News Dataset",
+  "Ice Hockey News Dataset ::: Extraction of Game Events",
+  "Ice Hockey News Dataset ::: Manual Alignment",
+  "Ice Hockey News Dataset ::: Corpus Statistics",
+  "Event Selection Model",
+  "Text Generation",
+  "Text Generation ::: Model Architecture",
+  "Text Generation ::: Baseline Experiments on the E2E Dataset",
+  "Text Generation ::: Hockey Data Representation",
+  "Text Generation ::: Training and Optimization",
+  "Text Generation ::: Automatic Evaluation of Hockey Generation",
+  "Human evaluation",
+  "Human evaluation ::: Minimum Edit Evaluation",
+  "Human evaluation ::: Minimum Edit Evaluation ::: Factual Correctness",
+  "Human evaluation ::: Minimum Edit Evaluation ::: Fluency",
+  "Human evaluation ::: Product-Readiness Evaluation",
+  "Conclusions and Future Work",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 50,
+ "n_tokens": 5708,
+ "figures_and_tables": [
+  {
+   "caption_id": "1910.01863::fig000",
+   "paper_id": "1910.01863",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: A representative example of events extracted from game statistics and the corresponding report in the news corpus. Events that are mentioned in the article are boldfaced (left) and the aligned text spans are highlighted in blue (right). Event references are indicated at the end of each alignment (e.g., [E1]).",
+   "n_tokens": 66
+  },
+  {
+   "caption_id": "1910.01863::fig001",
+   "paper_id": "1910.01863",
+   "file": "4-Table1-1.png",
+   "caption": "Table 1: Event alignment statistics.",
+   "n_tokens": 8
+  },
+  {
+   "caption_id": "1910.01863::fig002",
+   "paper_id": "1910.01863",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Comparison of the original hockey news and the aligned sentences, including analysis of lexical diversity.",
+   "n_tokens": 21
+  },
+  {
+   "caption_id": "1910.01863::fig003",
+   "paper_id": "1910.01863",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3: Performance of our generation model on the E2E test set compared to the shared task baseline (TGen) and winners on each metric (*Juraska et al. (2018), **Puzikov and Gurevych (2018), †Zhang et al. (2018), ‡Gong (2018)), as well as our model in an adapted evaluation setup (Ours single ref.).",
+   "n_tokens": 90
+  },
+  {
+   "caption_id": "1910.01863::fig004",
+   "paper_id": "1910.01863",
+   "file": "7-Figure2-1.png",
+   "caption": "Figure 2: An example input–output pair for the text generation model, derived from manual alignment. The original, untokenized output sentence is Blues vei voiton Ässistä maalein 4–0 (3–0, 0–0, 1–0). (Literal English translation: Blues took a win from Ässät with goals 4–0 (3–0, 0–0, 1–0).)",
+   "n_tokens": 103
+  },
+  {
+   "caption_id": "1910.01863::fig005",
+   "paper_id": "1910.01863",
+   "file": "7-Table5-1.png",
+   "caption": "Table 5: Types of factual errors in the generated output for 59 games.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1910.01863::fig006",
+   "paper_id": "1910.01863",
+   "file": "7-Figure3-1.png",
+   "caption": "Figure 3: Learning curve demonstrating the effect of training data size on generation performance.",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1910.01863::fig007",
+   "paper_id": "1910.01863",
+   "file": "7-Table4-1.png",
+   "caption": "Table 4: Automatic evaluation metrics on hockey corpus test set.",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1910.01863::fig008",
+   "paper_id": "1910.01863",
+   "file": "9-Figure4-1.png",
+   "caption": "Figure 4: Generated reports with manual corrections for two example games. Insertions in manual corrections are marked in green and deletions in red and struck through. English translations are based on original, uncorrected generation output. English translations for input events: Lopputulos (End result), Maali (Goal), Jäähy (Penalty), Torjunnat (Saves), ja (overtime), yv (power play), av (short-handed), tm (empty net).",
+   "n_tokens": 104
+  }
+ ]
+}

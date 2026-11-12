@@ -1,0 +1,356 @@
+{
+ "kept": [
+  {
+   "insight_id": "1905.12801::s00:i00",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::s00",
+   "concise_text": "The new loss function equalizes predicted probabilities of gender pairs and, at INLINEFORM2 value of 1, reduces INLINEFORM3 by 58.95%, INLINEFORM4 by 45.74%, INLINEFORM5 by 100%, INLINEFORM6 by 98.52% and INLINEFORM7 by 98.98%.",
+   "triple": {
+    "subject": "the new loss function",
+    "predicate": "reduces",
+    "object": "bias metrics at INLINEFORM2 value of 1"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1905.12801::s00::p002",
+    "1905.12801::s04::p002",
+    "1905.12801::s08::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::s00:b0:f05",
+    "1905.12801::s00:b1:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "Cited paragraphs jointly support that the new loss equalizes gender-pair probabilities and that at INLINEFORM2=1 it reduces the listed bias metrics by the stated percentages."
+   },
+   "unit_id": "1905.12801::u000"
+  },
+  {
+   "insight_id": "1905.12801::s00:i02",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::s00",
+   "concise_text": "Although the new loss function does not explicitly address the bias in the embedding layer, it results in the most debiased embedding as compared to other methods.",
+   "triple": {
+    "subject": "the new loss function",
+    "predicate": "causes",
+    "object": "the most debiased embedding as compared to other methods"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1905.12801::s05::p013",
+    "1905.12801::s08::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::s00:b0:f06"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "The cited paragraphs support that the approach does not explicitly address embedding bias but results in the most debiased embedding compared with other methods; 'causes' is consistent with the reported result."
+   },
+   "unit_id": "1905.12801::u002"
+  },
+  {
+   "insight_id": "1905.12801::s00:i03",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::s00",
+   "concise_text": "CDA creates a dataset twice the size of the original data, while our method requires less time to train than CDA since its training data has a smaller size without data augmentation.",
+   "triple": {
+    "subject": "CDA data augmentation",
+    "predicate": "causes",
+    "object": "longer training time than our method"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1905.12801::s06::p000",
+    "1905.12801::s08::p002"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::s00:b4:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "The passages jointly support that CDA doubles the dataset and that the proposed method requires less training time than CDA because it avoids data augmentation and uses smaller training data."
+   },
+   "unit_id": "1905.12801::u003"
+  },
+  {
+   "insight_id": "1905.12801::s00:i05",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::s00",
+   "concise_text": "The experiments evaluate co-occurrence bias from model-generated texts consisting of 10,000 documents of 500 words each, using a sliding window of size 10 extending equally in both directions.",
+   "triple": {
+    "subject": "co-occurrence bias evaluation",
+    "predicate": "evaluated_on",
+    "object": "10,000 documents of 500 words each with a sliding window of size 10"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1905.12801::s05::p001",
+    "1905.12801::s05::p002",
+    "1905.12801::s07::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::s00:b2:f04",
+    "1905.12801::s00:b2:f08",
+    "1905.12801::s00:b4:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "The cited paragraphs jointly support that co-occurrence bias is evaluated from model-generated texts of 10,000 documents of 500 words each and uses a sliding window of size 10 extending equally in both directions."
+   },
+   "unit_id": "1905.12801::u005"
+  },
+  {
+   "insight_id": "1905.12801::s00:i06",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::s00",
+   "concise_text": "The baseline model amplifies the bias in the training data set, which is claimed to be biased and sensational BIBREF5.",
+   "triple": {
+    "subject": "the baseline model",
+    "predicate": "amplifies",
+    "object": "bias in the biased and sensational BIBREF5 training data set"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1905.12801::s02::p000",
+    "1905.12801::s08::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::s00:b0:f10",
+    "1905.12801::s00:b5:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "The passages jointly support that the training dataset is claimed to be biased and sensational and that the baseline model amplifies bias in the training data set."
+   },
+   "unit_id": "1905.12801::u006"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1905.12801::s00:i01",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::s00",
+   "concise_text": "The combination of CDA and our loss function outperforms all the methods in all measures of biases without compromising perplexity, supporting the claim that the method combined with counterfactual data augmentation achieves the best result.",
+   "triple": {
+    "subject": "the combination of CDA and our loss function",
+    "predicate": "outperforms",
+    "object": "all the methods in all measures of biases without compromising perplexity"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.12801::s00::p003",
+    "1905.12801::s08::p003"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::s00:b5:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.95,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "This is essentially a restatement/paraphrase of p003 plus p003's claim; it does not add a composed insight beyond the cited text."
+   },
+   "unit_id": "1905.12801::u001"
+  },
+  {
+   "insight_id": "1905.12801::s00:i04",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::s00",
+   "concise_text": "All the debiasing techniques experimented in this paper rely on a predefined set of gender pairs, and the evaluation list contains 223 pairs, all other words considered gender-neutral.",
+   "triple": {
+    "subject": "the debiasing techniques experimented in this paper",
+    "predicate": "requires",
+    "object": "a predefined set of 223 gender pairs"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1905.12801::s05::p000",
+    "1905.12801::s09::p001"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::s00:b2:f03",
+    "1905.12801::s00:b5:f11",
+    "1905.12801::s00:b5:f14"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "The sources say all techniques rely on a predefined set of gender pairs and that the evaluation list contains 223 pairs, but they do not state that all techniques require the specific 223-pair evaluation list."
+   },
+   "unit_id": "1905.12801::u004"
+  },
+  {
+   "insight_id": "1905.12801::s00:i07",
+   "paper_id": "1905.12801",
+   "group_id": "1905.12801::s00",
+   "concise_text": "The combination of CDA and our loss function outperforms all the methods in all measures of biases without compromising perplexity, so a cascade of these approaches can be used to optimally debias the language models.",
+   "triple": {
+    "subject": "a cascade of CDA and our loss function",
+    "predicate": "extends",
+    "object": "optimal debiasing of the language models"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1905.12801::s08::p003",
+    "1905.12801::s09::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.12801::s00:b5:f05",
+    "1905.12801::s00:b5:f06",
+    "1905.12801::s00:b5:f08"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "This is a direct restatement/paraphrase of a single cited paragraph, including its conclusion about a cascade optimally debiasing language models."
+   },
+   "unit_id": "1905.12801::u007"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1905.12801::s00:i00",
+    "verdict": {
+     "insight_id": "1905.12801::s00:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "Cited paragraphs jointly support that the new loss equalizes gender-pair probabilities and that at INLINEFORM2=1 it reduces the listed bias metrics by the stated percentages."
+    }
+   },
+   {
+    "insight_id": "1905.12801::s00:i01",
+    "verdict": {
+     "insight_id": "1905.12801::s00:i01",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "This is essentially a restatement/paraphrase of p003 plus p003's claim; it does not add a composed insight beyond the cited text."
+    },
+    "reason": "This is essentially a restatement/paraphrase of p003 plus p003's claim; it does not add a composed insight beyond the cited text."
+   },
+   {
+    "insight_id": "1905.12801::s00:i02",
+    "verdict": {
+     "insight_id": "1905.12801::s00:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "The cited paragraphs support that the approach does not explicitly address embedding bias but results in the most debiased embedding compared with other methods; 'causes' is consistent with the reported result."
+    }
+   },
+   {
+    "insight_id": "1905.12801::s00:i03",
+    "verdict": {
+     "insight_id": "1905.12801::s00:i03",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "The passages jointly support that CDA doubles the dataset and that the proposed method requires less training time than CDA because it avoids data augmentation and uses smaller training data."
+    }
+   },
+   {
+    "insight_id": "1905.12801::s00:i04",
+    "verdict": {
+     "insight_id": "1905.12801::s00:i04",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "The sources say all techniques rely on a predefined set of gender pairs and that the evaluation list contains 223 pairs, but they do not state that all techniques require the specific 223-pair evaluation list."
+    },
+    "reason": "The sources say all techniques rely on a predefined set of gender pairs and that the evaluation list contains 223 pairs, but they do not state that all techniques require the specific 223-pair evaluation list."
+   },
+   {
+    "insight_id": "1905.12801::s00:i05",
+    "verdict": {
+     "insight_id": "1905.12801::s00:i05",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "The cited paragraphs jointly support that co-occurrence bias is evaluated from model-generated texts of 10,000 documents of 500 words each and uses a sliding window of size 10 extending equally in both directions."
+    }
+   },
+   {
+    "insight_id": "1905.12801::s00:i06",
+    "verdict": {
+     "insight_id": "1905.12801::s00:i06",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "The passages jointly support that the training dataset is claimed to be biased and sensational and that the baseline model amplifies bias in the training data set."
+    }
+   },
+   {
+    "insight_id": "1905.12801::s00:i07",
+    "verdict": {
+     "insight_id": "1905.12801::s00:i07",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "This is a direct restatement/paraphrase of a single cited paragraph, including its conclusion about a cascade optimally debiasing language models."
+    },
+    "reason": "This is a direct restatement/paraphrase of a single cited paragraph, including its conclusion about a cascade optimally debiasing language models."
+   }
+  ],
+  "calls": [
+   {
+    "n": 8,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 3661,
+     "completion_tokens": 621,
+     "total_tokens": 4282,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

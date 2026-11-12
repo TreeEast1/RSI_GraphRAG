@@ -1,0 +1,54 @@
+{
+ "paper_id": "1909.06162",
+ "title": "Neural Architectures for Fine-Grained Propaganda Detection in News",
+ "abstract": "This paper describes our system (MIC-CIS) details and results of participation in the fine-grained propaganda detection shared task 2019. To address the tasks of sentence (SLC) and fragment level (FLC) propaganda detection, we explore different neural architectures (e.g., CNN, LSTM-CRF and BERT) and extract linguistic (e.g., part-of-speech, named entity, readability, sentiment, emotion, etc.), layout and topical features. Specifically, we have designed multi-granularity and multi-tasking neural architectures to jointly perform both the sentence and fragment level propaganda detection. Additionally, we investigate different ensemble schemes such as majority-voting, relax-voting, etc. to boost overall system performance. Compared to the other participating systems, our submissions are ranked 3rd and 4th in FLC and SLC tasks, respectively.",
+ "sections": [
+  "Introduction",
+  "System Description ::: Linguistic, Layout and Topical Features",
+  "System Description ::: Sentence-level Propaganda Detection",
+  "System Description ::: Fragment-level Propaganda Detection",
+  "Experiments and Evaluation",
+  "Experiments and Evaluation ::: Results: Sentence-Level Propaganda",
+  "Experiments and Evaluation ::: Results: Fragment-Level Propaganda",
+  "Conclusion and Future Work"
+ ],
+ "n_paragraphs": 20,
+ "n_tokens": 2305,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.06162::fig000",
+   "paper_id": "1909.06162",
+   "file": "2-Table1-1.png",
+   "caption": "Table 1: Features used in SLC and FLC tasks",
+   "n_tokens": 13
+  },
+  {
+   "caption_id": "1909.06162::fig001",
+   "paper_id": "1909.06162",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: (Left): System description for SLC, including features, transfer learning using pre-trained word embeddings from FastText and BERT and classifiers: LogisticRegression, CNN and BERT fine-tuning. (Right): System description for FLC, including multi-tasking LSTM-CRF architecture consisting of Propaganda Fragment Detection (PFD) and FLC layers. Observe, a binary classification component at the last hidden layer in the recurrent architecture that jointly performs PFD, FLC and SLC tasks (i.e., multi-grained propaganda detection). Here, P: Propaganda, NP: Non-propaganda, B/I/O: Begin, Intermediate and Other tags of BIO tagging scheme.",
+   "n_tokens": 144
+  },
+  {
+   "caption_id": "1909.06162::fig002",
+   "paper_id": "1909.06162",
+   "file": "3-Table2-1.png",
+   "caption": "Table 2: Comparison of our system (MIC-CIS) with top-5 participants: Scores on Test set for SLC and FLC",
+   "n_tokens": 29
+  },
+  {
+   "caption_id": "1909.06162::fig003",
+   "paper_id": "1909.06162",
+   "file": "4-Table4-1.png",
+   "caption": "Table 4: FLC: Scores on Dev (internal) of Fold1 and Dev (external) with different models, features and ensembles. PFD: Propaganda Fragment Detection.",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1909.06162::fig004",
+   "paper_id": "1909.06162",
+   "file": "4-Table3-1.png",
+   "caption": "Table 3: SLC: Scores on Dev (internal) of Fold1 and Dev (external) using different classifiers and features.",
+   "n_tokens": 27
+  }
+ ]
+}

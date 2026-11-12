@@ -1,0 +1,97 @@
+{
+ "paper_id": "1905.07791",
+ "title": "Predicting Annotation Difficulty to Improve Task Routing and Model Performance for Biomedical Information Extraction",
+ "abstract": "Modern NLP systems require high-quality annotated data. In specialized domains, expert annotations may be prohibitively expensive. An alternative is to rely on crowdsourcing to reduce costs at the risk of introducing noise. In this paper we demonstrate that directly modeling instance difficulty can be used to improve model performance, and to route instances to appropriate annotators. Our difficulty prediction model combines two learned representations: a `universal' encoder trained on out-of-domain data, and a task-specific encoder. Experiments on a complex biomedical information extraction task using expert and lay annotators show that: (i) simply excluding from the training data instances predicted to be difficult yields a small boost in performance; (ii) using difficulty scores to weight instances during training provides further, consistent gains; (iii) assigning instances predicted to be difficult to domain experts is an effective strategy for task routing. Our experiments confirm the expectation that for specialized tasks expert annotations are higher quality than crowd labels, and hence preferable to obtain if practical. Moreover, augmenting small amounts of expert data with a larger set of lay annotations leads to further improvements in model performance.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Application Domain",
+  "Quantifying Task Difficulty",
+  "Difficulty is not Worker Agreement",
+  "Predicting Annotation Difficulty",
+  "Experimental Setup and Results",
+  "Better IE with Difficulty Prediction",
+  "Removing Difficult Examples",
+  "Re-weighting by Difficulty",
+  "Involving Expert Annotators",
+  "Expert annotations of Random and Difficult Instances",
+  "Routing To Experts or Crowd",
+  "How Many Expert Annotations?",
+  "Conclusions",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 54,
+ "n_tokens": 5542,
+ "figures_and_tables": [
+  {
+   "caption_id": "1905.07791::fig000",
+   "paper_id": "1905.07791",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Example sentences are difficult or easy to annotate for crowd workers. The underlined text are reference annotations from domain experts.",
+   "n_tokens": 27
+  },
+  {
+   "caption_id": "1905.07791::fig001",
+   "paper_id": "1905.07791",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Average inter-worker agreement.",
+   "n_tokens": 9
+  },
+  {
+   "caption_id": "1905.07791::fig002",
+   "paper_id": "1905.07791",
+   "file": "4-Figure1-1.png",
+   "caption": "Figure 1: Distributions of difficulty scores over all sentences that contain any span annotations",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1905.07791::fig003",
+   "paper_id": "1905.07791",
+   "file": "5-Table3-1.png",
+   "caption": "Table 3: Pearson correlation coefficients of sentence difficulty predictions.",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1905.07791::fig004",
+   "paper_id": "1905.07791",
+   "file": "5-Figure2-1.png",
+   "caption": "Figure 2: Model architecture.",
+   "n_tokens": 7
+  },
+  {
+   "caption_id": "1905.07791::fig005",
+   "paper_id": "1905.07791",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: Medical IE performance by re-weighting sentences according to predicted agreement or difficulty scores.",
+   "n_tokens": 20
+  },
+  {
+   "caption_id": "1905.07791::fig006",
+   "paper_id": "1905.07791",
+   "file": "6-Figure3-1.png",
+   "caption": "Figure 3: F1 scores achieved when removing increasingly large fractions of the training data.",
+   "n_tokens": 18
+  },
+  {
+   "caption_id": "1905.07791::fig007",
+   "paper_id": "1905.07791",
+   "file": "8-Figure4-1.png",
+   "caption": "Figure 4: Precision/Recall/F1 as a function of the number of articles re-annotated by expert, in decreasing order of difficulty.",
+   "n_tokens": 31
+  },
+  {
+   "caption_id": "1905.07791::fig008",
+   "paper_id": "1905.07791",
+   "file": "8-Table5-1.png",
+   "caption": "Table 5: Interventions IE model performance trained crowd or expert. The first four models are trained with a subset of 1k abstracts and the base model is trained with all 5k abstracts.",
+   "n_tokens": 44
+  },
+  {
+   "caption_id": "1905.07791::fig009",
+   "paper_id": "1905.07791",
+   "file": "8-Table6-1.png",
+   "caption": "Table 6: Interventions IE model performance trained by mixing annotations from experts and crowd workers. [D]: Difficult-Expert; [R]: Random-Expert; [Other]: the rest of the abstracts with crowd annotation only.",
+   "n_tokens": 49
+  }
+ ]
+}

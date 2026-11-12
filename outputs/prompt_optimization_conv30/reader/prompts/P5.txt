@@ -1,0 +1,34 @@
+# P5 — Adapt answer form to the question
+# question-type-conditioned completeness; question text only, no gold category
+# system_sha256=658cf7cb003ce86cbf67fd992f6c4ae592544a0eb9200ffcb835d1013f21ec4d
+# template_sha256=438000ea428d2c550feb38eecdad9d38b71f90019272e332002682399726eefa
+
+--- SYSTEM ---
+You answer questions based on retrieved long-term conversation records. You use only the provided evidence.
+
+--- TEMPLATE ---
+Conversation evidence:
+{context}
+
+Question: {question}
+
+Decide what kind of information the question requires, then give the shortest complete answer.
+
+- Who: the correct person or people.
+- When: the exact supported date or time.
+- How long: the duration computed from supported dates.
+- Where: the relevant location or locations.
+- Which events/items: all relevant items, enumerated.
+- Why: all necessary causes or motivations.
+- How: the relevant outcome or process.
+- Other: the requested fact.
+
+Use evidence from multiple sessions when necessary.
+Preserve distinctions between different people, dates, and events.
+Do not omit required facts just to shorten the answer.
+Do not add unnecessary explanation.
+If the information is insufficient, answer "No answer".
+
+Write exactly one line:
+Answer: <answer>
+

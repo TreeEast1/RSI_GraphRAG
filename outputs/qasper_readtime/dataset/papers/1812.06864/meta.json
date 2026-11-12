@@ -1,0 +1,70 @@
+{
+ "paper_id": "1812.06864",
+ "title": "Fully Convolutional Speech Recognition",
+ "abstract": "Current state-of-the-art speech recognition systems build on recurrent neural networks for acoustic and/or language modeling, and rely on feature extraction pipelines to extract mel-filterbanks or cepstral coefficients. In this paper we present an alternative approach based solely on convolutional neural networks, leveraging recent advances in acoustic models from the raw waveform and language modeling. This fully convolutional approach is trained end-to-end to predict characters from the raw waveform, removing the feature extraction step altogether. An external convolutional language model is used to decode words. On Wall Street Journal, our model matches the current state-of-the-art. On Librispeech, we report state-of-the-art performance among end-to-end models, including Deep Speech 2 trained with 12 times more acoustic data and significantly more linguistic data.",
+ "sections": [
+  "Introduction",
+  "Model",
+  "Convolutional Front end",
+  "Convolutional Acoustic Model",
+  "Convolutional Language Model",
+  "Beam-search decoder",
+  "Experiments",
+  "Word Error Rate results",
+  "Analysis of the convolutional language model",
+  "Conclusion"
+ ],
+ "n_paragraphs": 23,
+ "n_tokens": 2620,
+ "figures_and_tables": [
+  {
+   "caption_id": "1812.06864::fig000",
+   "paper_id": "1812.06864",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Overview of the fully convolutional architecture.",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1812.06864::fig001",
+   "paper_id": "1812.06864",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: WER (%) on the open vocabulary task of WSJ.",
+   "n_tokens": 16
+  },
+  {
+   "caption_id": "1812.06864::fig002",
+   "paper_id": "1812.06864",
+   "file": "3-Table2-1.png",
+   "caption": "Table 2: WER (%) on Librispeech.",
+   "n_tokens": 12
+  },
+  {
+   "caption_id": "1812.06864::fig003",
+   "paper_id": "1812.06864",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2: Evolution of WER (%) on Librispeech with the perplexity of the language model.",
+   "n_tokens": 22
+  },
+  {
+   "caption_id": "1812.06864::fig004",
+   "paper_id": "1812.06864",
+   "file": "4-Figure3-1.png",
+   "caption": "Figure 3: Center frequency of the front-end filters, for the melfilterbank baseline and the learnable front-ends.",
+   "n_tokens": 27
+  },
+  {
+   "caption_id": "1812.06864::fig005",
+   "paper_id": "1812.06864",
+   "file": "4-Figure4-1.png",
+   "caption": "Figure 4: Power heatmap of the 40 mel-filters (left) and of the frequency response of the 40 convolutional filters learned from the raw waveform on Librispeech (right).",
+   "n_tokens": 40
+  },
+  {
+   "caption_id": "1812.06864::fig006",
+   "paper_id": "1812.06864",
+   "file": "4-Table3-1.png",
+   "caption": "Table 3: Evolution of WER (%) on Librispeech with the context size of the language model.",
+   "n_tokens": 22
+  }
+ ]
+}

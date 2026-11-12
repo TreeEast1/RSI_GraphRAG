@@ -1,0 +1,203 @@
+{
+  "role": "new_overlap",
+  "cluster_id": "cc-00000-stable-0068",
+  "unit_id": "cc-00000-stable-0068-u003",
+  "method": "C",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 10182,
+    "completion_tokens": 1408,
+    "reasoning_tokens": 246,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r51_effort_low_new_overlap_C",
+    "cache_key": "415f1a8f3f6dd6db844ef6183c593dfef658a088d6a7a1e6e7d0111b074e76c7"
+  },
+  "n_updates": 3,
+  "n_add": 3,
+  "n_accept": 1,
+  "n_reject": 2,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "REDUNDANT": 2,
+    "EXTRACTION_REPAIR": 1
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "local-1",
+      "comprehension_text": "Kreindler & Kreindler LLP was founded in 1950.",
+      "new_semantic_relation": "founded in 1950",
+      "operator": "EXPLICIT_GAP",
+      "chain": [
+        {
+          "fact": "Kreindler & Kreindler LLP was founded in 1950",
+          "passage_id": "chunk-0b684f6cacbe5c1dbb0bcd71ae2f0e53",
+          "span": "Kreindler & Kreindler LLP is a U.S. law firm founded in 1950",
+          "triple_id": ""
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-32618829b1c362c99c838a54dcc0caf8"
+      ],
+      "source_triple_ids": [],
+      "source_passage_ids": [
+        "chunk-0b684f6cacbe5c1dbb0bcd71ae2f0e53"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-0b684f6cacbe5c1dbb0bcd71ae2f0e53",
+          "span": "Kreindler & Kreindler LLP is a U.S. law firm founded in 1950"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "novel_part": "founded in 1950",
+      "reasoning_summary": "The passage explicitly states the firm's founding year.",
+      "novelty_justification": "No supplied triple states that Kreindler & Kreindler LLP was founded in 1950.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "local-2",
+      "comprehension_text": "The New England Patriots are headquartered at Gillette Stadium.",
+      "new_semantic_relation": "headquartered at",
+      "operator": "EXPLICIT_GAP",
+      "chain": [
+        {
+          "fact": "The Patriots are headquartered at Gillette Stadium",
+          "passage_id": "chunk-cc78d8ec5e2f3d17fe6927caaf348232",
+          "span": "The Patriots are also headquartered at Gillette Stadium.",
+          "triple_id": ""
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-cf0387291504d78a6ac7a13147d2f229",
+        "entity-148857c904ec5249af2cd3249562d517"
+      ],
+      "source_triple_ids": [],
+      "source_passage_ids": [
+        "chunk-cc78d8ec5e2f3d17fe6927caaf348232"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-cc78d8ec5e2f3d17fe6927caaf348232",
+          "span": "The Patriots are also headquartered at Gillette Stadium."
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "novel_part": "headquartered at Gillette Stadium",
+      "reasoning_summary": "The passage directly states the Patriots' headquarters location.",
+      "novelty_justification": "Supplied triples state that the Patriots play at Gillette Stadium and that the stadium is in Foxborough, but none states that the Patriots are headquartered there.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "local-3",
+      "comprehension_text": "Great Quittacas Pond is a lake, reservoir, or pond.",
+      "new_semantic_relation": "is a lake, reservoir, or pond",
+      "operator": "EXPLICIT_GAP",
+      "chain": [
+        {
+          "fact": "Great Quittacas Pond is a lake, reservoir, or pond",
+          "passage_id": "chunk-d542f5d900df6960e13b38a2460c3ea9",
+          "span": "Great Quittacas Pond is a lake, reservoir, or pond within the towns",
+          "triple_id": ""
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-e0338d2dbfa04e78844701715c475427"
+      ],
+      "source_triple_ids": [],
+      "source_passage_ids": [
+        "chunk-d542f5d900df6960e13b38a2460c3ea9"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-d542f5d900df6960e13b38a2460c3ea9",
+          "span": "Great Quittacas Pond is a lake, reservoir, or pond within the towns"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "novel_part": "is a lake, reservoir, or pond",
+      "reasoning_summary": "The passage explicitly classifies Great Quittacas Pond.",
+      "novelty_justification": "Supplied triples describe its locations and water-sharing relations but do not state this classification.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "local-1",
+      "decision": "REJECT",
+      "failure_stage": "V4",
+      "faithfulness": "supported",
+      "novelty": "duplicate",
+      "audit_type": "REDUNDANT",
+      "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+      "residue": [],
+      "evidence_sentences": [
+        "Kreindler & Kreindler\nKreindler & Kreindler LLP is a U.S. law firm founded in 1950 with offices in New York, California and Massachusetts."
+      ],
+      "warning": ""
+    },
+    {
+      "candidate_id": "local-2",
+      "decision": "REJECT",
+      "failure_stage": "V4",
+      "faithfulness": "supported",
+      "novelty": "duplicate",
+      "audit_type": "REDUNDANT",
+      "reason": "The claim is supported by the cited sentences, and its content words are already covered by OpenIE triples of those passages.",
+      "residue": [],
+      "evidence_sentences": [
+        "The Patriots are also headquartered at Gillette Stadium."
+      ],
+      "warning": "partial_name_anchored:The New England Patriots"
+    },
+    {
+      "candidate_id": "local-3",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: lake, reservoir",
+      "residue": [
+        "lake",
+        "reservoir"
+      ],
+      "evidence_sentences": [
+        "Great Quittacas Pond\nGreat Quittacas Pond is a lake, reservoir, or pond within the towns of Lakeville, Middleboro, and Rochester, in southeastern Massachusetts."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Great Quittacas Pond\nGreat Quittacas Pond is a lake, reservoir, or pond within the towns of Lakeville, Middleboro, and Rochester, in southeastern Massachusetts."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": []
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "lake",
+            "reservoir"
+          ],
+          "n_passage_triples": 12,
+          "novel": true
+        }
+      ]
+    }
+  ]
+}

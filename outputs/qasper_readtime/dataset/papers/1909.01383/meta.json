@@ -1,0 +1,117 @@
+{
+ "paper_id": "1909.01383",
+ "title": "Context-Aware Monolingual Repair for Neural Machine Translation",
+ "abstract": "Modern sentence-level NMT systems often produce plausible translations of isolated sentences. However, when put in context, these translations may end up being inconsistent with each other. We propose a monolingual DocRepair model to correct inconsistencies between sentence-level translations. DocRepair performs automatic post-editing on a sequence of sentence-level translations, refining translations of sentences in context of each other. For training, the DocRepair model requires only monolingual document-level data in the target language. It is trained as a monolingual sequence-to-sequence model that maps inconsistent groups of sentences into consistent ones. The consistent groups come from the original training data; the inconsistent groups are obtained by sampling round-trip translations for each isolated sentence. We show that this approach successfully imitates inconsistencies we aim to fix: using contrastive evaluation, we show large improvements in the translation of several contextual phenomena in an English-Russian translation task, as well as improvements in the BLEU score. We also conduct a human evaluation and show a strong preference of the annotators to corrected translations over the baseline ones. Moreover, we analyze which discourse phenomena are hard to capture using monolingual data only.",
+ "sections": [
+  "Introduction",
+  "Our Approach: Document-level Repair",
+  "Evaluation of Contextual Phenomena",
+  "Evaluation of Contextual Phenomena ::: Test sets",
+  "Evaluation of Contextual Phenomena ::: Phenomena overview",
+  "Experimental Setup ::: Data preprocessing",
+  "Experimental Setup ::: Models",
+  "Experimental Setup ::: Generating round-trip translations",
+  "Experimental Setup ::: Optimizer",
+  "Results ::: General results",
+  "Results ::: Consistency results",
+  "Results ::: Human evaluation",
+  "Varying Training Data",
+  "Varying Training Data ::: The amount of training data",
+  "Varying Training Data ::: One-way vs round-trip translations",
+  "Varying Training Data ::: Filtering: monolingual (no filtering) or parallel",
+  "Learning Dynamics",
+  "Related Work",
+  "Related Work ::: Automatic post-editing",
+  "Related Work ::: Document-level NMT",
+  "Conclusions",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 59,
+ "n_tokens": 4822,
+ "figures_and_tables": [
+  {
+   "caption_id": "1909.01383::fig000",
+   "paper_id": "1909.01383",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Training procedure of DocRepair. First, round-trip translations of individual sentences are produced to form an inconsistent text fragment (in the example, both genders of the speaker and the cat became inconsistent). Then, a repair model is trained to produce an original text from the inconsistent one.",
+   "n_tokens": 60
+  },
+  {
+   "caption_id": "1909.01383::fig001",
+   "paper_id": "1909.01383",
+   "file": "2-Figure2-1.png",
+   "caption": "Figure 2: The process of producing document-level translations at test time is two-step: (1) sentences are translated independently using a sentence-level model, (2) DocRepair model corrects translation of the resulting text fragment.",
+   "n_tokens": 46
+  },
+  {
+   "caption_id": "1909.01383::fig002",
+   "paper_id": "1909.01383",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Size of test sets: total number of test instances and with regard to the distance between sentences requiring consistency (in the number of sentences). For ellipsis, the two sets correspond to whether a model has to predict correct NP inflection, or correct verb sense (VP ellipsis).",
+   "n_tokens": 60
+  },
+  {
+   "caption_id": "1909.01383::fig003",
+   "paper_id": "1909.01383",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: BLEU scores. For CADec, the original implementation was used.",
+   "n_tokens": 18
+  },
+  {
+   "caption_id": "1909.01383::fig004",
+   "paper_id": "1909.01383",
+   "file": "5-Table3-1.png",
+   "caption": "Table 3: Results on contrastive test sets for specific contextual phenomena (deixis, lexical consistency, ellipsis (inflection), and VP ellipsis).",
+   "n_tokens": 33
+  },
+  {
+   "caption_id": "1909.01383::fig005",
+   "paper_id": "1909.01383",
+   "file": "5-Table4-1.png",
+   "caption": "Table 4: Detailed accuracy on deixis and lexical cohesion test sets.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "1909.01383::fig006",
+   "paper_id": "1909.01383",
+   "file": "5-Table5-1.png",
+   "caption": "Table 5: Human evaluation results, comparing DocRepair with baseline.",
+   "n_tokens": 14
+  },
+  {
+   "caption_id": "1909.01383::fig007",
+   "paper_id": "1909.01383",
+   "file": "6-Table6-1.png",
+   "caption": "Table 6: Results for DocRepair trained on different amount of data. For ellipsis, we show inflection/VP scores.",
+   "n_tokens": 27
+  },
+  {
+   "caption_id": "1909.01383::fig008",
+   "paper_id": "1909.01383",
+   "file": "6-Table7-1.png",
+   "caption": "Table 7: Consistency scores for the DocRepair model trained on 2.5m instances, among which 1.5m are parallel instances. Compare round-trip and one-way translations of the parallel part.",
+   "n_tokens": 45
+  },
+  {
+   "caption_id": "1909.01383::fig009",
+   "paper_id": "1909.01383",
+   "file": "6-Table8-1.png",
+   "caption": "Table 8: DocRepair trained on 2.5m instances, either randomly chosen from monolingual data or from the part where each utterance in a group has a translation.",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "1909.01383::fig010",
+   "paper_id": "1909.01383",
+   "file": "7-Figure4-1.png",
+   "caption": "Figure 4: (a) BLEU scores progression in training. BLEU evaluated with the target translations and with the context-agnostic baseline translations (which DocRepair learns to correct). (b) Distribution in the test set of the number of changed sentences in 4-sentence fragments.",
+   "n_tokens": 58
+  },
+  {
+   "caption_id": "1909.01383::fig011",
+   "paper_id": "1909.01383",
+   "file": "7-Figure5-1.png",
+   "caption": "Figure 5: Consistency scores progression in training.",
+   "n_tokens": 11
+  }
+ ]
+}

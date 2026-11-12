@@ -1,0 +1,442 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1909.09067::s00::p000",
+   "summary": "Simplified language reduces lexical and syntactic complexity, adds explanations, uses clear layout, and targets several groups including persons with cognitive impairment, prelingually deaf persons, functionally illiterate persons, and foreign language learners.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s00::p001",
+   "summary": "Automatic readability assessment and automatic text simplification address simplified language, with readability assessment using measures, school grades, or CEFR levels and newer models employing deeper linguistic features.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s00::p002",
+   "summary": "Automatic text simplification began in the late 1990s, uses rule-based, statistical, and neural machine translation methods, and lacks a productive German system.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s00::p003",
+   "summary": "Machine learning approaches to readability assessment and text simplification require corpora, with machine translation simplification needing sentence-level aligned standard-language/simplified-language parallel corpora.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s00::p004",
+   "summary": "The paper introduces a German corpus for automatic readability assessment and automatic text simplification emphasizing text structure, typography, and image information, and outlines the paper structure.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s01::p000",
+   "summary": "Existing corpora include PWKP with around 108,000 sentence pairs, an updated version with 280,000 matches, and the Newsela Corpus with 1,130 news articles and four school grade levels.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s01::p001",
+   "summary": "The PorSimples Corpus contains 2,116 Brazilian Portuguese sentences with natural and strong simplifications, while the Simplext Corpus contains 200 Spanish/simplified Spanish document pairs.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s02::p000",
+   "summary": "The only available simplified German corpus is klaper-ebling-volk-2013, while legal and political developments such as BITV 2.0 and CRPD spurred more simplified German data.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s02::p001",
+   "summary": "The corpus contains more parallel data.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s02::p002",
+   "summary": "The corpus additionally contains monolingual-only data in simplified German.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s02::p003",
+   "summary": "The corpus newly contains information on text structure, typography, and images.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s02::p004",
+   "summary": "Simplified German parallel and monolingual-only data support automatic readability assessment, while parallel data supports rule-based and machine translation simplification and back-translation can create synthetic parallel data.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s03::p000",
+   "summary": "The corpus contains PDFs and webpages collected at the end of 2018/beginning of 2019 from 92 different domains in Germany, Austria, and Switzerland.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s03::p001",
+   "summary": "Webpages were statically dumped, manually checked, and processed with Beautiful Soup for Python while retaining text structure, typography, and image information.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s03::p002",
+   "summary": "For PDFs, the PDFlib Text and Image Extraction Toolkit (TET) extracted plain text and recorded text structure, typography, and images in TETML XML.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p000",
+   "summary": "Metadata was collected automatically from HTML and TETML files, complemented manually, and recorded in OLAC using 12 of the 15 Simple Dublin Core elements.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p001",
+   "summary": "The title element records the document title, xml:lang language, and dcterms:alternative alternatives such as translations.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p002",
+   "summary": "The contributor element records person entities linked to document creation with olac:code values from the OLAC role vocabulary.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p003",
+   "summary": "The date element records dates from HTML or PDF metadata or news and blog article bodies in W3C date and time format.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p004",
+   "summary": "The description element records an HTML metadata description or a PDF section list using the Dublin Core qualifier TableOfContents.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p005",
+   "summary": "The format element distinguishes the Internet Media Types text/html for webpages and application/pdf for PDFs.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p006",
+   "summary": "The identifier element records the document URL or International Standard Book Number (ISBN) for books or brochures.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p007",
+   "summary": "The language element records the document language as olac:code de conforming to ISO 639, with optional CEFR level content.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p008",
+   "summary": "The publisher element records the organization or person that made the document available.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p009",
+   "summary": "The relation element links German and simplified German parallel documents using Dublin Core qualifiers hasVersion and isVersionOf.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p010",
+   "summary": "The rights element records any available information about the rights of a document.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p011",
+   "summary": "The source element records the source document, HTML for web documents and TETML for PDFs.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p012",
+   "summary": "The type element records content genre as Text, sometimes StillImage, and linguistic type as primary_text or lexicon.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p013",
+   "summary": "The elements coverage, creator, and subject were not used.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p014",
+   "summary": "Figure FIGREF11 shows OLAC metadata for a PDF with chapters, CEFR level A2 text, and images, and OLAC metadata can be converted to CMDI.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s04::p015",
+   "summary": "Language level information, typically A1, A2, or B1, supports automatic readability assessment and graded automatic text simplification, with 52 websites and 233 PDFs explicitly labeled.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s05::p000",
+   "summary": "Annotations were added in TCF developed as part of CLARIN, which supports standoff annotation, stores source text and annotation layers jointly, and links layers to a token layer.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s05::p001",
+   "summary": "Annotations include text structure, fonts, images, tokens, parts of speech, morphological units, lemmas, sentences, and dependency parses, requiring TCF extensions.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s05::p002",
+   "summary": "Font type, font style, and physical page position for PDFs were specified as attributes to token elements in the tokens layer.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s05::p003",
+   "summary": "Physical page segmentation for PDFs, paragraph segmentation, and line segmentation were added as a textspan element in the textstructure layer.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s05::p004",
+   "summary": "A separate images layer holds image elements with x and y coordinates, width and height dimensions, and page number attributes.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s05::p005",
+   "summary": "A separate fonts layer preserves detailed information on font configurations referenced in the tokens layer.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s05::p006",
+   "summary": "Linguistic annotation used ParZu, NLTK, TreeTagger, and Zmorge, and metadata from Figure FIGREF11 plus annotations from Figure FIGREF34 constitute a complete TCF file.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s06::p000",
+   "summary": "The corpus contains 6,217 documents, with 5,461 monolingual documents plus 378 documents for each parallel side, and shows lexical simplification of 51%.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s07::p000",
+   "summary": "battisti-2019 found structural features such as number of images, paragraphs, lines, font-type words, and one-sentence-per-line adherence predictive of simplified German text difficulty.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s08::p000",
+   "summary": "The paper introduced a German corpus for automatic readability assessment and automatic text simplification that includes text structure, typography, and image information shown theoretically and empirically indicative of simple vs. complex texts.",
+   "group_id": "1909.09067::g00"
+  },
+  {
+   "passage_id": "1909.09067::s08::p001",
+   "summary": "Text structure, typography, and image information can support neural machine translation simplification, but sentence alignments are missing and will be added using CATS.",
+   "group_id": "1909.09067::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1909.09067::g00",
+   "summaries": [
+    {
+     "passage_id": "1909.09067::s00::p000",
+     "summary": "Simplified language reduces lexical and syntactic complexity, adds explanations, uses clear layout, and targets several groups including persons with cognitive impairment, prelingually deaf persons, functionally illiterate persons, and foreign language learners.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s00::p001",
+     "summary": "Automatic readability assessment and automatic text simplification address simplified language, with readability assessment using measures, school grades, or CEFR levels and newer models employing deeper linguistic features.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s00::p002",
+     "summary": "Automatic text simplification began in the late 1990s, uses rule-based, statistical, and neural machine translation methods, and lacks a productive German system.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s00::p003",
+     "summary": "Machine learning approaches to readability assessment and text simplification require corpora, with machine translation simplification needing sentence-level aligned standard-language/simplified-language parallel corpora.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s00::p004",
+     "summary": "The paper introduces a German corpus for automatic readability assessment and automatic text simplification emphasizing text structure, typography, and image information, and outlines the paper structure.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s01::p000",
+     "summary": "Existing corpora include PWKP with around 108,000 sentence pairs, an updated version with 280,000 matches, and the Newsela Corpus with 1,130 news articles and four school grade levels.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s01::p001",
+     "summary": "The PorSimples Corpus contains 2,116 Brazilian Portuguese sentences with natural and strong simplifications, while the Simplext Corpus contains 200 Spanish/simplified Spanish document pairs.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s02::p000",
+     "summary": "The only available simplified German corpus is klaper-ebling-volk-2013, while legal and political developments such as BITV 2.0 and CRPD spurred more simplified German data.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s02::p001",
+     "summary": "The corpus contains more parallel data.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s02::p002",
+     "summary": "The corpus additionally contains monolingual-only data in simplified German.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s02::p003",
+     "summary": "The corpus newly contains information on text structure, typography, and images.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s02::p004",
+     "summary": "Simplified German parallel and monolingual-only data support automatic readability assessment, while parallel data supports rule-based and machine translation simplification and back-translation can create synthetic parallel data.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s03::p000",
+     "summary": "The corpus contains PDFs and webpages collected at the end of 2018/beginning of 2019 from 92 different domains in Germany, Austria, and Switzerland.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s03::p001",
+     "summary": "Webpages were statically dumped, manually checked, and processed with Beautiful Soup for Python while retaining text structure, typography, and image information.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s03::p002",
+     "summary": "For PDFs, the PDFlib Text and Image Extraction Toolkit (TET) extracted plain text and recorded text structure, typography, and images in TETML XML.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p000",
+     "summary": "Metadata was collected automatically from HTML and TETML files, complemented manually, and recorded in OLAC using 12 of the 15 Simple Dublin Core elements.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p001",
+     "summary": "The title element records the document title, xml:lang language, and dcterms:alternative alternatives such as translations.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p002",
+     "summary": "The contributor element records person entities linked to document creation with olac:code values from the OLAC role vocabulary.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p003",
+     "summary": "The date element records dates from HTML or PDF metadata or news and blog article bodies in W3C date and time format.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p004",
+     "summary": "The description element records an HTML metadata description or a PDF section list using the Dublin Core qualifier TableOfContents.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p005",
+     "summary": "The format element distinguishes the Internet Media Types text/html for webpages and application/pdf for PDFs.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p006",
+     "summary": "The identifier element records the document URL or International Standard Book Number (ISBN) for books or brochures.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p007",
+     "summary": "The language element records the document language as olac:code de conforming to ISO 639, with optional CEFR level content.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p008",
+     "summary": "The publisher element records the organization or person that made the document available.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p009",
+     "summary": "The relation element links German and simplified German parallel documents using Dublin Core qualifiers hasVersion and isVersionOf.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p010",
+     "summary": "The rights element records any available information about the rights of a document.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p011",
+     "summary": "The source element records the source document, HTML for web documents and TETML for PDFs.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p012",
+     "summary": "The type element records content genre as Text, sometimes StillImage, and linguistic type as primary_text or lexicon.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p013",
+     "summary": "The elements coverage, creator, and subject were not used.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p014",
+     "summary": "Figure FIGREF11 shows OLAC metadata for a PDF with chapters, CEFR level A2 text, and images, and OLAC metadata can be converted to CMDI.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s04::p015",
+     "summary": "Language level information, typically A1, A2, or B1, supports automatic readability assessment and graded automatic text simplification, with 52 websites and 233 PDFs explicitly labeled.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s05::p000",
+     "summary": "Annotations were added in TCF developed as part of CLARIN, which supports standoff annotation, stores source text and annotation layers jointly, and links layers to a token layer.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s05::p001",
+     "summary": "Annotations include text structure, fonts, images, tokens, parts of speech, morphological units, lemmas, sentences, and dependency parses, requiring TCF extensions.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s05::p002",
+     "summary": "Font type, font style, and physical page position for PDFs were specified as attributes to token elements in the tokens layer.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s05::p003",
+     "summary": "Physical page segmentation for PDFs, paragraph segmentation, and line segmentation were added as a textspan element in the textstructure layer.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s05::p004",
+     "summary": "A separate images layer holds image elements with x and y coordinates, width and height dimensions, and page number attributes.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s05::p005",
+     "summary": "A separate fonts layer preserves detailed information on font configurations referenced in the tokens layer.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s05::p006",
+     "summary": "Linguistic annotation used ParZu, NLTK, TreeTagger, and Zmorge, and metadata from Figure FIGREF11 plus annotations from Figure FIGREF34 constitute a complete TCF file.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s06::p000",
+     "summary": "The corpus contains 6,217 documents, with 5,461 monolingual documents plus 378 documents for each parallel side, and shows lexical simplification of 51%.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s07::p000",
+     "summary": "battisti-2019 found structural features such as number of images, paragraphs, lines, font-type words, and one-sentence-per-line adherence predictive of simplified German text difficulty.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s08::p000",
+     "summary": "The paper introduced a German corpus for automatic readability assessment and automatic text simplification that includes text structure, typography, and image information shown theoretically and empirically indicative of simple vs. complex texts.",
+     "group_id": "1909.09067::g00"
+    },
+    {
+     "passage_id": "1909.09067::s08::p001",
+     "summary": "Text structure, typography, and image information can support neural machine translation simplification, but sentence alignments are missing and will be added using CATS.",
+     "group_id": "1909.09067::g00"
+    }
+   ],
+   "n_raw": 42,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5100,
+    "completion_tokens": 1976,
+    "total_tokens": 7076,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

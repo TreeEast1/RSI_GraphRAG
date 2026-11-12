@@ -1,0 +1,108 @@
+{
+ "paper_id": "2001.08868",
+ "title": "Exploration Based Language Learning for Text-Based Games",
+ "abstract": "This work presents an exploration and imitation-learning-based agent capable of state-of-the-art performance in playing text-based computer games. Text-based computer games describe their world to the player through natural language and expect the player to interact with the game using text. These games are of interest as they can be seen as a testbed for language understanding, problem-solving, and language generation by artificial agents. Moreover, they provide a learning environment in which these skills can be acquired through interactions with an environment rather than using fixed corpora. One aspect that makes these games particularly challenging for learning agents is the combinatorially large action space. Existing methods for solving text-based games are limited to games that are either very simple or have an action space restricted to a predetermined set of admissible actions. In this work, we propose to use the exploration approach of Go-Explore for solving text-based games. More specifically, in an initial exploration phase, we first extract trajectories with high rewards, after which we train a policy to solve the game by imitating these trajectories. Our experiments show that this approach outperforms existing solutions in solving text-based games, and it is more sample efficient in terms of the number of interactions with the environment. Moreover, we show that the learned policy can generalize better than existing solutions to unseen games without using any restriction on the action space.",
+ "sections": [
+  "Introduction",
+  "Introduction ::: Reinforcement Learning Based Approaches for Text-Based Games",
+  "Introduction ::: Exploration in Reinforcement Learning",
+  "Methodology",
+  "Methodology ::: Phase 1: Exploration",
+  "Methodology ::: Phase 2: Generalization",
+  "Experiments ::: Games and experiments setup",
+  "Experiments ::: Baselines",
+  "Experiments ::: Hyper-parameters",
+  "Results ::: CoinCollector",
+  "Results ::: CookingWorld",
+  "Results ::: CookingWorld ::: Single",
+  "Results ::: CookingWorld ::: Joint",
+  "Results ::: CookingWorld ::: Zero-Shot",
+  "Discussion",
+  "Discussion ::: State Representation",
+  "Discussion ::: Language Based Exploration",
+  "Conclusion",
+  "Appendix ::: Text-Games ::: CoinCollector",
+  "Appendix ::: Text-Games ::: CookingWorld"
+ ],
+ "n_paragraphs": 57,
+ "n_tokens": 6636,
+ "figures_and_tables": [
+  {
+   "caption_id": "2001.08868::fig000",
+   "paper_id": "2001.08868",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Example of the observations provided by the CookingWorld environment.",
+   "n_tokens": 15
+  },
+  {
+   "caption_id": "2001.08868::fig001",
+   "paper_id": "2001.08868",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Statistics of the two families of text-based games used in the experiments. The average is among the different games in CookingWorld and among different instance of the same game for CoinCollector.",
+   "n_tokens": 40
+  },
+  {
+   "caption_id": "2001.08868::fig002",
+   "paper_id": "2001.08868",
+   "file": "6-Figure1-1.png",
+   "caption": "Figure 1: CoinCollector results of DQN++ and DRQN++ (Yuan et al., 2018) versus Go-Explore Phase1, i.e. just exploration.",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "2001.08868::fig003",
+   "paper_id": "2001.08868",
+   "file": "7-Table3-1.png",
+   "caption": "Table 3: CookingWorld results on the three evaluated settings single, joint and zero-shot.",
+   "n_tokens": 19
+  },
+  {
+   "caption_id": "2001.08868::fig004",
+   "paper_id": "2001.08868",
+   "file": "12-Figure3-1.png",
+   "caption": "Figure 3: High level intuition of the Go-Exlore algorithm. Figure taken from Ecoffet et al. (2019) with permission.",
+   "n_tokens": 31
+  },
+  {
+   "caption_id": "2001.08868::fig005",
+   "paper_id": "2001.08868",
+   "file": "13-Figure4-1.png",
+   "caption": "Figure 4: LSTM-DQN high level schema.",
+   "n_tokens": 11
+  },
+  {
+   "caption_id": "2001.08868::fig006",
+   "paper_id": "2001.08868",
+   "file": "14-Figure7-1.png",
+   "caption": "Figure 7: Breakdown of results for the CookingWorld games in the Single setting. The results are normalized and sorted by increasing difficulty level from left to right, averaged among the 20 games of each level.",
+   "n_tokens": 43
+  },
+  {
+   "caption_id": "2001.08868::fig007",
+   "paper_id": "2001.08868",
+   "file": "14-Figure8-1.png",
+   "caption": "Figure 8: Breakdown of results for the CookingWorld games in the Zero-Shot setting. The results are normalized and sorted by increasing difficulty level from left to right, averaged among the 20 games of each level.",
+   "n_tokens": 45
+  },
+  {
+   "caption_id": "2001.08868::fig008",
+   "paper_id": "2001.08868",
+   "file": "15-Figure9-1.png",
+   "caption": "Figure 9: Single all the games",
+   "n_tokens": 8
+  },
+  {
+   "caption_id": "2001.08868::fig009",
+   "paper_id": "2001.08868",
+   "file": "16-Figure10-1.png",
+   "caption": "Figure 10: Joint all the games",
+   "n_tokens": 8
+  },
+  {
+   "caption_id": "2001.08868::fig010",
+   "paper_id": "2001.08868",
+   "file": "17-Figure11-1.png",
+   "caption": "Figure 11: Zero-Shot all the games",
+   "n_tokens": 10
+  }
+ ]
+}

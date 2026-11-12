@@ -1,0 +1,4401 @@
+{
+ "facts": [
+  {
+   "fact_id": "1908.06267::g00:b0:f00",
+   "subject": "The concept of message passing over graphs",
+   "predicate": "has been around for",
+   "object": "many years",
+   "source_passage_ids": [
+    "1908.06267::s00::p000"
+   ],
+   "source_section": "Introduction",
+   "evidence": "The concept of message passing over graphs has been around for many years BIBREF0, BIBREF1",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b0:f01",
+   "subject": "GNNs",
+   "predicate": "have only recently started to be closely investigated",
+   "object": "following the advent of deep learning",
+   "source_passage_ids": [
+    "1908.06267::s00::p000"
+   ],
+   "source_section": "Introduction",
+   "evidence": "However, GNNs have only recently started to be closely investigated, following the advent of deep learning.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b0:f02",
+   "subject": "These approaches",
+   "predicate": "are known as",
+   "object": "spectral",
+   "source_passage_ids": [
+    "1908.06267::s00::p000"
+   ],
+   "source_section": "Introduction",
+   "evidence": "These approaches are known as spectral.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b0:f03",
+   "subject": "The MP framework",
+   "predicate": "is based on",
+   "object": "the core idea of recursive neighborhood aggregation",
+   "source_passage_ids": [
+    "1908.06267::s00::p001"
+   ],
+   "source_section": "Introduction",
+   "evidence": "The MP framework is based on the core idea of recursive neighborhood aggregation.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b0:f04",
+   "subject": "the representation of each vertex",
+   "predicate": "is updated based on",
+   "object": "messages received from its neighbors",
+   "source_passage_ids": [
+    "1908.06267::s00::p001"
+   ],
+   "source_section": "Introduction",
+   "evidence": "at every iteration, the representation of each vertex is updated based on messages received from its neighbors.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b0:f05",
+   "subject": "All spectral GNNs",
+   "predicate": "can be described in terms of",
+   "object": "the MP framework",
+   "source_passage_ids": [
+    "1908.06267::s00::p001"
+   ],
+   "source_section": "Introduction",
+   "evidence": "All spectral GNNs can be described in terms of the MP framework.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b0:f06",
+   "subject": "GNNs",
+   "predicate": "have been applied with great success to",
+   "object": "bioinformatics and social network data",
+   "source_passage_ids": [
+    "1908.06267::s00::p002"
+   ],
+   "source_section": "Introduction",
+   "evidence": "GNNs have been applied with great success to bioinformatics and social network data, for node classification, link prediction, and graph classification.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b0:f07",
+   "subject": "a few studies only",
+   "predicate": "have focused on",
+   "object": "the application of the MP framework to representation learning on text",
+   "source_passage_ids": [
+    "1908.06267::s00::p002"
+   ],
+   "source_section": "Introduction",
+   "evidence": "However, a few studies only have focused on the application of the MP framework to representation learning on text.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b0:f08",
+   "subject": "MP",
+   "predicate": "consists in",
+   "object": "an aggregation phase followed by a combination phase",
+   "source_passage_ids": [
+    "1908.06267::s01::p000"
+   ],
+   "source_section": "Message Passing Neural Networks",
+   "evidence": "MP consists in an aggregation phase followed by a combination phase BIBREF14.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b0:f09",
+   "subject": "a message vector $\\mathbf {m}_v^{t+1}$",
+   "predicate": "is computed from",
+   "object": "the representations of the neighbors $\\mathcal {N}(v)$ of $v$",
+   "source_passage_ids": [
+    "1908.06267::s01::p000"
+   ],
+   "source_section": "Message Passing Neural Networks",
+   "evidence": "At time $t+1$, a message vector $\\mathbf {m}_v^{t+1}$ is computed from the representations of the neighbors $\\mathcal {N}(v)$ of $v$:",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b0:f10",
+   "subject": "The new representation $\\mathbf {h}^{t+1}_v$ of $v$",
+   "predicate": "is computed by combining",
+   "object": "its current feature vector $\\mathbf {h}^{t}_v$ with the message vector $\\mathbf {m}_v^{t+1}$",
+   "source_passage_ids": [
+    "1908.06267::s01::p002"
+   ],
+   "source_section": "Message Passing Neural Networks",
+   "evidence": "The new representation $\\mathbf {h}^{t+1}_v$ of $v$ is then computed by combining its current feature vector $\\mathbf {h}^{t}_v$ with the message vector $\\mathbf {m}_v^{t+1}$:",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b1:f00",
+   "subject": "Messages",
+   "predicate": "are passed for",
+   "object": "$T$ time steps",
+   "source_passage_ids": [
+    "1908.06267::s01::p004"
+   ],
+   "source_section": "Message Passing Neural Networks",
+   "evidence": "Messages are passed for $T$ time steps.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b1:f01",
+   "subject": "Each step",
+   "predicate": "is implemented by",
+   "object": "a different layer of the MP network",
+   "source_passage_ids": [
+    "1908.06267::s01::p004"
+   ],
+   "source_section": "Message Passing Neural Networks",
+   "evidence": "Each step is implemented by a different layer of the MP network.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b1:f02",
+   "subject": "iterations",
+   "predicate": "correspond to",
+   "object": "network depth",
+   "source_passage_ids": [
+    "1908.06267::s01::p004"
+   ],
+   "source_section": "Message Passing Neural Networks",
+   "evidence": "Hence, iterations correspond to network depth.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b1:f03",
+   "subject": "The final feature vector $\\mathbf {h}_v^T$ of $v$",
+   "predicate": "is based on",
+   "object": "messages propagated from all the nodes in the subtree of height $T$ rooted at $v$",
+   "source_passage_ids": [
+    "1908.06267::s01::p004"
+   ],
+   "source_section": "Message Passing Neural Networks",
+   "evidence": "The final feature vector $\\mathbf {h}_v^T$ of $v$ is based on messages propagated from all the nodes in the subtree of height $T$ rooted at $v$.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b1:f04",
+   "subject": "a READOUT pooling function",
+   "predicate": "is applied for",
+   "object": "a graph-level feature vector",
+   "source_passage_ids": [
+    "1908.06267::s01::p005"
+   ],
+   "source_section": "Message Passing Neural Networks",
+   "evidence": "If a graph-level feature vector is needed, e.g., for classification or regression, a READOUT pooling function, that must be invariant to permutations, is applied:",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b1:f05",
+   "subject": "a READOUT pooling function",
+   "predicate": "must be invariant to",
+   "object": "permutations",
+   "source_passage_ids": [
+    "1908.06267::s01::p005"
+   ],
+   "source_section": "Message Passing Neural Networks",
+   "evidence": "a READOUT pooling function, that must be invariant to permutations, is applied:",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b1:f06",
+   "subject": "a document",
+   "predicate": "is represented as",
+   "object": "a statistical word co-occurrence network BIBREF18, BIBREF19 with a sliding window of size 2 overspanning sentences",
+   "source_passage_ids": [
+    "1908.06267::s02::p000"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+   "evidence": "We represent a document as a statistical word co-occurrence network BIBREF18, BIBREF19 with a sliding window of size 2 overspanning sentences.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b1:f07",
+   "subject": "Each unique word in the preprocessed document",
+   "predicate": "is represented by",
+   "object": "a node in $G$",
+   "source_passage_ids": [
+    "1908.06267::s02::p000"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+   "evidence": "Each unique word in the preprocessed document is represented by a node in $G$",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b1:f08",
+   "subject": "an edge",
+   "predicate": "is added between",
+   "object": "two nodes if they are found together in at least one instantiation of the window",
+   "source_passage_ids": [
+    "1908.06267::s02::p000"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+   "evidence": "and an edge is added between two nodes if they are found together in at least one instantiation of the window.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b1:f09",
+   "subject": "immediate neighbors",
+   "predicate": "are",
+   "object": "consecutive words in the same sentence",
+   "source_passage_ids": [
+    "1908.06267::s02::p001"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+   "evidence": "In $G$, immediate neighbors are consecutive words in the same sentence.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b1:f10",
+   "subject": "paths of length 2",
+   "predicate": "correspond to",
+   "object": "bigrams",
+   "source_passage_ids": [
+    "1908.06267::s02::p001"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+   "evidence": "That is, paths of length 2 correspond to bigrams.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b1:f11",
+   "subject": "Paths of length more than 2",
+   "predicate": "can correspond to",
+   "object": "traditional $n$-grams or relaxed $n$-grams",
+   "source_passage_ids": [
+    "1908.06267::s02::p001"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+   "evidence": "Paths of length more than 2 can correspond either to traditional $n$-grams or to relaxed $n$-grams",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b1:f12",
+   "subject": "a special document node",
+   "predicate": "is linked to",
+   "object": "all other nodes via unit weight bi-directional edges",
+   "source_passage_ids": [
+    "1908.06267::s02::p002"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+   "evidence": "a special document node, linked to all other nodes via unit weight bi-directional edges.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b2:f00",
+   "subject": "the $i^{th}$ row of $A$",
+   "predicate": "contains",
+   "object": "the weights of the edges incoming on node $v_i$",
+   "source_passage_ids": [
+    "1908.06267::s03::p002"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+   "evidence": "Since $G$ is weighted, the $i^{th}$ row of $A$ contains the weights of the edges incoming on node $v_i$.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b2:f01",
+   "subject": "MLP",
+   "predicate": "denotes",
+   "object": "a multi-layer perceptron",
+   "source_passage_ids": [
+    "1908.06267::s03::p002"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+   "evidence": "MLP denotes a multi-layer perceptron",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b2:f02",
+   "subject": "MP neural nets with 1-layer perceptrons",
+   "predicate": "are inferior to",
+   "object": "their MLP counterparts",
+   "source_passage_ids": [
+    "1908.06267::s03::p003"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+   "evidence": "for graph classification, MP neural nets with 1-layer perceptrons are inferior to their MLP counterparts BIBREF14",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b2:f03",
+   "subject": "1-layer perceptrons",
+   "predicate": "are not",
+   "object": "universal approximators of multiset functions",
+   "source_passage_ids": [
+    "1908.06267::s03::p003"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+   "evidence": "Indeed, 1-layer perceptrons are not universal approximators of multiset functions.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b2:f04",
+   "subject": "This",
+   "predicate": "is equivalent to",
+   "object": "the renormalization trick of BIBREF9",
+   "source_passage_ids": [
+    "1908.06267::s03::p004"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+   "evidence": "This is equivalent to the renormalization trick of BIBREF9, but using only the in-degrees.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b2:f05",
+   "subject": "The coefficients",
+   "predicate": "are proportional to",
+   "object": "the strength of co-occurrence between words",
+   "source_passage_ids": [
+    "1908.06267::s03::p004"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+   "evidence": "The coefficients are proportional to the strength of co-occurrence between words.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b2:f06",
+   "subject": "averaging",
+   "predicate": "loses",
+   "object": "injectivity",
+   "source_passage_ids": [
+    "1908.06267::s03::p004"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+   "evidence": "by averaging, we lose the ability to distinguish between different neighborhood structures in some special cases, that is, we lose injectivity",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b2:f07",
+   "subject": "Such cases",
+   "predicate": "include",
+   "object": "neighborhoods in which all nodes have the same representations",
+   "source_passage_ids": [
+    "1908.06267::s03::p004"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+   "evidence": "Such cases include neighborhoods in which all nodes have the same representations",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b2:f08",
+   "subject": "Such cases",
+   "predicate": "include",
+   "object": "neighborhoods of different sizes containing various representations in equal proportions",
+   "source_passage_ids": [
+    "1908.06267::s03::p004"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+   "evidence": "and neighborhoods of different sizes containing various representations in equal proportions BIBREF14",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b2:f09",
+   "subject": "averaging",
+   "predicate": "is better than",
+   "object": "summing",
+   "source_passage_ids": [
+    "1908.06267::s03::p004"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+   "evidence": "As suggested by the results of an ablation experiment, averaging is better than summing in our application",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b3:f00",
+   "subject": "$\\mathbf {W}$ and $\\mathbf {U}$ matrices",
+   "predicate": "are",
+   "object": "trainable weight matrices not shared across time steps",
+   "source_passage_ids": [
+    "1908.06267::s03::p009"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+   "evidence": "where the $\\mathbf {W}$ and $\\mathbf {U}$ matrices are trainable weight matrices not shared across time steps",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b3:f01",
+   "subject": "Updating node representations through a GRU",
+   "predicate": "should in principle allow",
+   "object": "nodes to encode a combination of local and global signals (low and high values of $t$, resp.)",
+   "source_passage_ids": [
+    "1908.06267::s03::p010"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+   "evidence": "Updating node representations through a GRU should in principle allow nodes to encode a combination of local and global signals",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b3:f02",
+   "subject": "the master node vector",
+   "predicate": "bypasses",
+   "object": "the attention mechanism",
+   "source_passage_ids": [
+    "1908.06267::s04::p005"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+   "evidence": "the master node vector bypasses the attention mechanism",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b3:f03",
+   "subject": "This",
+   "predicate": "is equivalent to",
+   "object": "a skip or shortcut connection BIBREF23",
+   "source_passage_ids": [
+    "1908.06267::s04::p005"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+   "evidence": "This is equivalent to a skip or shortcut connection BIBREF23",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b3:f04",
+   "subject": "making the master node bypass the attention layer",
+   "predicate": "directly injects",
+   "object": "global information about the document into its final representation",
+   "source_passage_ids": [
+    "1908.06267::s04::p005"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+   "evidence": "by making the master node bypass the attention layer, we directly inject global information about the document into its final representation",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b4:f00",
+   "subject": "node features",
+   "predicate": "capture",
+   "object": "more and more global information",
+   "source_passage_ids": [
+    "1908.06267::s04::p006"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+   "evidence": "as one iterates, node features capture more and more global information",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b4:f01",
+   "subject": "the readout function",
+   "predicate": "is applied to",
+   "object": "all time steps",
+   "source_passage_ids": [
+    "1908.06267::s04::p006"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+   "evidence": "instead of applying the readout function only to $t=T$, we apply it to all time steps",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b4:f02",
+   "subject": "this modification",
+   "predicate": "takes into account",
+   "object": "features based on information aggregated from subtrees of different heights (from 1 to $T$)",
+   "source_passage_ids": [
+    "1908.06267::s04::p008"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+   "evidence": "with this modification, we take into account features based on information aggregated from subtrees of different heights (from 1 to $T$)",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b4:f03",
+   "subject": "features based on information aggregated from subtrees of different heights (from 1 to $T$)",
+   "predicate": "correspond to",
+   "object": "local and global features",
+   "source_passage_ids": [
+    "1908.06267::s04::p008"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+   "evidence": "corresponding to local and global features",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b4:f04",
+   "subject": "MPAD",
+   "predicate": "implicitly captures",
+   "object": "some soft notion of the hierarchical structure of documents",
+   "source_passage_ids": [
+    "1908.06267::s05::p000"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+   "evidence": "it could be argued that MPAD implicitly captures some soft notion of the hierarchical structure of documents",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b4:f05",
+   "subject": "Hierarchical architectures",
+   "predicate": "have brought",
+   "object": "significant improvements to many NLP tasks",
+   "source_passage_ids": [
+    "1908.06267::s05::p000"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+   "evidence": "Hierarchical architectures have brought significant improvements to many NLP tasks",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b4:f06",
+   "subject": "MPAD-sentence-att",
+   "predicate": "combines",
+   "object": "the sentence embeddings through self-attention",
+   "source_passage_ids": [
+    "1908.06267::s05::p001"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+   "evidence": "Here, the sentence embeddings are simply combined through self-attention",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b4:f07",
+   "subject": "MPAD-clique",
+   "predicate": "builds",
+   "object": "a complete graph where each node represents a sentence",
+   "source_passage_ids": [
+    "1908.06267::s05::p002"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+   "evidence": "In this variant, we build a complete graph where each node represents a sentence",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b4:f08",
+   "subject": "the feature vectors of the nodes",
+   "predicate": "are initialized with",
+   "object": "the sentence embeddings previously obtained",
+   "source_passage_ids": [
+    "1908.06267::s05::p002"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+   "evidence": "where the feature vectors of the nodes are initialized with the sentence embeddings previously obtained",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b4:f09",
+   "subject": "MPAD-path",
+   "predicate": "is similar to",
+   "object": "the clique one",
+   "source_passage_ids": [
+    "1908.06267::s05::p003"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+   "evidence": "This variant is similar to the clique one",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b4:f10",
+   "subject": "MPAD-path",
+   "predicate": "builds",
+   "object": "a path according to the natural flow of the text",
+   "source_passage_ids": [
+    "1908.06267::s05::p003"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+   "evidence": "instead of a complete graph, we build a path according to the natural flow of the text",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b4:f11",
+   "subject": "two nodes",
+   "predicate": "are linked by",
+   "object": "a directed edge if the two sentences they represent follow each other in the document",
+   "source_passage_ids": [
+    "1908.06267::s05::p003"
+   ],
+   "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+   "evidence": "two nodes are linked by a directed edge if the two sentences they represent follow each other in the document",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b5:f00",
+   "subject": "10 document classification datasets",
+   "predicate": "cover",
+   "object": "the topic identification, coarse and fine sentiment analysis and opinion mining, and subjectivity detection tasks",
+   "source_passage_ids": [
+    "1908.06267::s06::p000"
+   ],
+   "source_section": "Experiments ::: Datasets",
+   "evidence": "10 document classification datasets, covering the topic identification, coarse and fine sentiment analysis and opinion mining, and subjectivity detection tasks",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b5:f01",
+   "subject": "Reuters",
+   "predicate": "contains",
+   "object": "stories collected from the Reuters news agency in 1987",
+   "source_passage_ids": [
+    "1908.06267::s06::p001"
+   ],
+   "source_section": "Experiments ::: Datasets",
+   "evidence": "This dataset contains stories collected from the Reuters news agency in 1987.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b5:f02",
+   "subject": "BBCSport BIBREF30",
+   "predicate": "contains",
+   "object": "documents from the BBC Sport website corresponding to 2004-2005 sports news articles",
+   "source_passage_ids": [
+    "1908.06267::s06::p002"
+   ],
+   "source_section": "Experiments ::: Datasets",
+   "evidence": "BBCSport BIBREF30 contains documents from the BBC Sport website corresponding to 2004-2005 sports news articles.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b5:f03",
+   "subject": "Polarity BIBREF31",
+   "predicate": "features",
+   "object": "positive and negative labeled snippets from Rotten Tomatoes",
+   "source_passage_ids": [
+    "1908.06267::s06::p003"
+   ],
+   "source_section": "Experiments ::: Datasets",
+   "evidence": "Polarity BIBREF31 features positive and negative labeled snippets from Rotten Tomatoes.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b5:f04",
+   "subject": "MPQA BIBREF33",
+   "predicate": "is made of",
+   "object": "positive and negative phrases",
+   "source_passage_ids": [
+    "1908.06267::s06::p005"
+   ],
+   "source_section": "Experiments ::: Datasets",
+   "evidence": "MPQA BIBREF33 is made of positive and negative phrases",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b5:f05",
+   "subject": "positive and negative phrases",
+   "predicate": "are annotated as part of",
+   "object": "the summer 2002 NRRC Workshop on Multi-Perspective Question Answering",
+   "source_passage_ids": [
+    "1908.06267::s06::p005"
+   ],
+   "source_section": "Experiments ::: Datasets",
+   "evidence": "positive and negative phrases, annotated as part of the summer 2002 NRRC Workshop on Multi-Perspective Question Answering.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b6:f00",
+   "subject": "IMDB BIBREF34",
+   "predicate": "is",
+   "object": "a collection of highly polarized movie reviews from IMDB (positive and negative)",
+   "source_passage_ids": [
+    "1908.06267::s06::p006"
+   ],
+   "source_section": "Experiments ::: Datasets",
+   "evidence": "IMDB BIBREF34 is a collection of highly polarized movie reviews from IMDB (positive and negative).",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b6:f01",
+   "subject": "IMDB BIBREF34",
+   "predicate": "has",
+   "object": "at most 30 reviews for each movie",
+   "source_passage_ids": [
+    "1908.06267::s06::p006"
+   ],
+   "source_section": "Experiments ::: Datasets",
+   "evidence": "There are at most 30 reviews for each movie.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b6:f02",
+   "subject": "TREC BIBREF35",
+   "predicate": "consists of",
+   "object": "questions that are classified into 6 different categories",
+   "source_passage_ids": [
+    "1908.06267::s06::p007"
+   ],
+   "source_section": "Experiments ::: Datasets",
+   "evidence": "TREC BIBREF35 consists of questions that are classified into 6 different categories.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b6:f03",
+   "subject": "SST-1 BIBREF36",
+   "predicate": "contains",
+   "object": "the same snippets as Polarity",
+   "source_passage_ids": [
+    "1908.06267::s06::p008"
+   ],
+   "source_section": "Experiments ::: Datasets",
+   "evidence": "SST-1 BIBREF36 contains the same snippets as Polarity.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b6:f04",
+   "subject": "SST-2 BIBREF36",
+   "predicate": "is",
+   "object": "the same as SST-1 but with neutral reviews removed and snippets classified as positive or negative",
+   "source_passage_ids": [
+    "1908.06267::s06::p009"
+   ],
+   "source_section": "Experiments ::: Datasets",
+   "evidence": "SST-2 BIBREF36 is the same as SST-1 but with neutral reviews removed and snippets classified as positive or negative.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b6:f05",
+   "subject": "Yelp2013 BIBREF26",
+   "predicate": "features",
+   "object": "reviews obtained from the 2013 Yelp Dataset Challenge",
+   "source_passage_ids": [
+    "1908.06267::s06::p010"
+   ],
+   "source_section": "Experiments ::: Datasets",
+   "evidence": "Yelp2013 BIBREF26 features reviews obtained from the 2013 Yelp Dataset Challenge.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b6:f06",
+   "subject": "fair comparison with the hierarchical MPAD variants",
+   "predicate": "is enabled by",
+   "object": "multiple state-of-the-art baseline models, including hierarchical ones",
+   "source_passage_ids": [
+    "1908.06267::s07::p000"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "to enable fair comparison with the hierarchical MPAD variants.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f00",
+   "subject": "Doc2vec",
+   "predicate": "is an extension of",
+   "object": "word2vec",
+   "source_passage_ids": [
+    "1908.06267::s07::p001"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "Doc2vec (or paragraph vector) is an extension of word2vec that learns vectors for documents in a fully unsupervised manner.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f01",
+   "subject": "Doc2vec",
+   "predicate": "learns vectors for",
+   "object": "documents",
+   "source_passage_ids": [
+    "1908.06267::s07::p001"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "Doc2vec (or paragraph vector) is an extension of word2vec that learns vectors for documents in a fully unsupervised manner.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f02",
+   "subject": "Document embeddings",
+   "predicate": "are fed to",
+   "object": "a logistic regression classifier",
+   "source_passage_ids": [
+    "1908.06267::s07::p001"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "Document embeddings are then fed to a logistic regression classifier.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f03",
+   "subject": "The convolutional neural network architecture",
+   "predicate": "is applied to",
+   "object": "text",
+   "source_passage_ids": [
+    "1908.06267::s07::p002"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "The convolutional neural network architecture, well-known in computer vision, is applied to text.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f04",
+   "subject": "There",
+   "predicate": "is",
+   "object": "one spatial dimension",
+   "source_passage_ids": [
+    "1908.06267::s07::p002"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "There is one spatial dimension and the word embeddings are used as channels (depth dimensions).",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f05",
+   "subject": "the word embeddings",
+   "predicate": "are used as",
+   "object": "channels (depth dimensions)",
+   "source_passage_ids": [
+    "1908.06267::s07::p002"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "There is one spatial dimension and the word embeddings are used as channels (depth dimensions).",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f06",
+   "subject": "The Deep Averaging Network",
+   "predicate": "passes",
+   "object": "the unweighted average of the embeddings of the input words",
+   "source_passage_ids": [
+    "1908.06267::s07::p003"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "The Deep Averaging Network passes the unweighted average of the embeddings of the input words through multiple dense layers and a final softmax.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f07",
+   "subject": "The Deep Averaging Network",
+   "predicate": "passes the unweighted average through",
+   "object": "multiple dense layers and a final softmax",
+   "source_passage_ids": [
+    "1908.06267::s07::p003"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "The Deep Averaging Network passes the unweighted average of the embeddings of the input words through multiple dense layers and a final softmax.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f08",
+   "subject": "Tree-LSTM BIBREF40",
+   "predicate": "is a generalization of",
+   "object": "the standard LSTM architecture",
+   "source_passage_ids": [
+    "1908.06267::s07::p004"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "Tree-LSTM BIBREF40 is a generalization of the standard LSTM architecture to constituency and dependency parse trees.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f09",
+   "subject": "Tree-LSTM BIBREF40",
+   "predicate": "is a generalization to",
+   "object": "constituency and dependency parse trees",
+   "source_passage_ids": [
+    "1908.06267::s07::p004"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "Tree-LSTM BIBREF40 is a generalization of the standard LSTM architecture to constituency and dependency parse trees.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f10",
+   "subject": "Recursive neural networks",
+   "predicate": "are stacked and applied to",
+   "object": "parse trees",
+   "source_passage_ids": [
+    "1908.06267::s07::p005"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "Recursive neural networks are stacked and applied to parse trees.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f11",
+   "subject": "LSTMN BIBREF42",
+   "predicate": "is an extension of",
+   "object": "the LSTM model",
+   "source_passage_ids": [
+    "1908.06267::s07::p006"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "LSTMN BIBREF42 is an extension of the LSTM model where the memory cell is replaced by a memory network which stores word representations.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f12",
+   "subject": "the memory cell",
+   "predicate": "is replaced by",
+   "object": "a memory network",
+   "source_passage_ids": [
+    "1908.06267::s07::p006"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "LSTMN BIBREF42 is an extension of the LSTM model where the memory cell is replaced by a memory network which stores word representations.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b7:f13",
+   "subject": "a memory network",
+   "predicate": "stores",
+   "object": "word representations",
+   "source_passage_ids": [
+    "1908.06267::s07::p006"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "LSTMN BIBREF42 is an extension of the LSTM model where the memory cell is replaced by a memory network which stores word representations.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b8:f00",
+   "subject": "C-LSTM BIBREF43",
+   "predicate": "combines",
+   "object": "convolutional and recurrent neural networks",
+   "source_passage_ids": [
+    "1908.06267::s07::p007"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "C-LSTM BIBREF43 combines convolutional and recurrent neural networks.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b8:f01",
+   "subject": "region embeddings provided by a CNN",
+   "predicate": "are fed to",
+   "object": "a LSTM",
+   "source_passage_ids": [
+    "1908.06267::s07::p007"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "The region embeddings provided by a CNN are fed to a LSTM.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b8:f02",
+   "subject": "SPGK BIBREF44",
+   "predicate": "models",
+   "object": "documents as word co-occurrence networks",
+   "source_passage_ids": [
+    "1908.06267::s07::p008"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "SPGK BIBREF44 also models documents as word co-occurrence networks.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b8:f03",
+   "subject": "SPGK BIBREF44",
+   "predicate": "computes",
+   "object": "a graph kernel that compares shortest paths extracted from the word co-occurrence networks",
+   "source_passage_ids": [
+    "1908.06267::s07::p008"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "It computes a graph kernel that compares shortest paths extracted from the word co-occurrence networks",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b8:f04",
+   "subject": "SPGK BIBREF44",
+   "predicate": "uses",
+   "object": "a SVM to categorize documents",
+   "source_passage_ids": [
+    "1908.06267::s07::p008"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "and then uses a SVM to categorize documents.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b8:f05",
+   "subject": "WMD BIBREF45",
+   "predicate": "is",
+   "object": "an application of the well-known Earth Mover's Distance to text",
+   "source_passage_ids": [
+    "1908.06267::s07::p009"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "WMD BIBREF45 is an application of the well-known Earth Mover's Distance to text.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b8:f06",
+   "subject": "S-WMD BIBREF46",
+   "predicate": "is",
+   "object": "a supervised extension of the Word Mover's Distance",
+   "source_passage_ids": [
+    "1908.06267::s07::p010"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "S-WMD BIBREF46 is a supervised extension of the Word Mover's Distance.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b8:f07",
+   "subject": "a CNN",
+   "predicate": "is applied to",
+   "object": "semantic units obtained by clustering words in the embedding space",
+   "source_passage_ids": [
+    "1908.06267::s07::p011"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "Here, a CNN is applied to semantic units obtained by clustering words in the embedding space.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b8:f08",
+   "subject": "LSTM-GRNN BIBREF26",
+   "predicate": "is",
+   "object": "a hierarchical model",
+   "source_passage_ids": [
+    "1908.06267::s07::p012"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "LSTM-GRNN BIBREF26 is a hierarchical model",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b8:f09",
+   "subject": "sentence embeddings",
+   "predicate": "are obtained with",
+   "object": "a CNN",
+   "source_passage_ids": [
+    "1908.06267::s07::p012"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "sentence embeddings are obtained with a CNN",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b8:f10",
+   "subject": "a GRU-RNN",
+   "predicate": "is fed",
+   "object": "the sentence representations to obtain a document vector",
+   "source_passage_ids": [
+    "1908.06267::s07::p012"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "a GRU-RNN is fed the sentence representations to obtain a document vector.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f00",
+   "subject": "HN-ATT",
+   "predicate": "is",
+   "object": "another hierarchical model",
+   "source_passage_ids": [
+    "1908.06267::s07::p013"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "HN-ATT BIBREF27 is another hierarchical model",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f01",
+   "subject": "HN-ATT",
+   "predicate": "uses",
+   "object": "the same encoder architecture (a bidirectional GRU-RNN) for both sentences and documents, with different parameters",
+   "source_passage_ids": [
+    "1908.06267::s07::p013"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "the same encoder architecture (a bidirectional GRU-RNN) is used for both sentences and documents, with different parameters",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f02",
+   "subject": "A self-attention mechanism",
+   "predicate": "is applied to",
+   "object": "the RNN annotations at each level",
+   "source_passage_ids": [
+    "1908.06267::s07::p013"
+   ],
+   "source_section": "Experiments ::: Baselines",
+   "evidence": "A self-attention mechanism is applied to the RNN annotations at each level.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f03",
+   "subject": "all datasets",
+   "predicate": "are preprocessed using",
+   "object": "the code of BIBREF38",
+   "source_passage_ids": [
+    "1908.06267::s08::p000"
+   ],
+   "source_section": "Experiments ::: Model configuration and training",
+   "evidence": "We preprocess all datasets using the code of BIBREF38.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f04",
+   "subject": "all tokens appearing strictly less than 6 times",
+   "predicate": "are replaced with",
+   "object": "a special UNK token",
+   "source_passage_ids": [
+    "1908.06267::s08::p000"
+   ],
+   "source_section": "Experiments ::: Model configuration and training",
+   "evidence": "we also replace all tokens appearing strictly less than 6 times with a special UNK token",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f05",
+   "subject": "a directed word co-occurrence network",
+   "predicate": "is built from",
+   "object": "each document, with a window of size 2",
+   "source_passage_ids": [
+    "1908.06267::s08::p000"
+   ],
+   "source_section": "Experiments ::: Model configuration and training",
+   "evidence": "We then build a directed word co-occurrence network from each document, with a window of size 2.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f06",
+   "subject": "the basic MPAD",
+   "predicate": "uses",
+   "object": "two MP iterations ($T$=2)",
+   "source_passage_ids": [
+    "1908.06267::s08::p001"
+   ],
+   "source_section": "Experiments ::: Model configuration and training",
+   "evidence": "We use two MP iterations ($T$=2) for the basic MPAD",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f07",
+   "subject": "the hierarchical variants",
+   "predicate": "use",
+   "object": "two MP iterations at each level",
+   "source_passage_ids": [
+    "1908.06267::s08::p001"
+   ],
+   "source_section": "Experiments ::: Model configuration and training",
+   "evidence": "and two MP iterations at each level, for the hierarchical variants",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f08",
+   "subject": "The final graph representations",
+   "predicate": "are passed through",
+   "object": "a softmax for classification",
+   "source_passage_ids": [
+    "1908.06267::s08::p001"
+   ],
+   "source_section": "Experiments ::: Model configuration and training",
+   "evidence": "The final graph representations are passed through a softmax for classification.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f09",
+   "subject": "batch normalization",
+   "predicate": "is applied after",
+   "object": "concatenating the feature vector of the master node with the self-attentional vector",
+   "source_passage_ids": [
+    "1908.06267::s08::p002"
+   ],
+   "source_section": "Experiments ::: Model configuration and training",
+   "evidence": "we apply batch normalization after concatenating the feature vector of the master node with the self-attentional vector",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f10",
+   "subject": "dropout BIBREF49",
+   "predicate": "is used with",
+   "object": "a rate of 0.5",
+   "source_passage_ids": [
+    "1908.06267::s08::p002"
+   ],
+   "source_section": "Experiments ::: Model configuration and training",
+   "evidence": "we use dropout BIBREF49 with a rate of 0.5",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f11",
+   "subject": "the best epoch",
+   "predicate": "is selected based on",
+   "object": "the validation accuracy",
+   "source_passage_ids": [
+    "1908.06267::s08::p002"
+   ],
+   "source_section": "Experiments ::: Model configuration and training",
+   "evidence": "We select the best epoch, capped at 200, based on the validation accuracy.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f12",
+   "subject": "a validation set",
+   "predicate": "is constructed by",
+   "object": "randomly sampling 10% of the training set of each fold",
+   "source_passage_ids": [
+    "1908.06267::s08::p002"
+   ],
+   "source_section": "Experiments ::: Model configuration and training",
+   "evidence": "we construct a validation set by randomly sampling 10% of the training set of each fold",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f13",
+   "subject": "the publicly available 300-dimensional pre-trained Google News vectors ($D$=300) BIBREF50",
+   "predicate": "are used to initialize",
+   "object": "the node representations $\\mathbf {H}^0$",
+   "source_passage_ids": [
+    "1908.06267::s08::p003"
+   ],
+   "source_section": "Experiments ::: Model configuration and training",
+   "evidence": "we use the publicly available 300-dimensional pre-trained Google News vectors ($D$=300) BIBREF50 to initialize the node representations $\\mathbf {H}^0$",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f14",
+   "subject": "MPAD",
+   "predicate": "was implemented in",
+   "object": "Python 3.6 using the PyTorch library BIBREF52",
+   "source_passage_ids": [
+    "1908.06267::s08::p004"
+   ],
+   "source_section": "Experiments ::: Model configuration and training",
+   "evidence": "MPAD was implemented in Python 3.6 using the PyTorch library BIBREF52.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g00:b9:f15",
+   "subject": "All experiments",
+   "predicate": "were run on",
+   "object": "a single machine consisting of a 3.4 GHz Intel Core i7 CPU with 16 GB of RAM and an NVidia GeForce Titan Xp GPU",
+   "source_passage_ids": [
+    "1908.06267::s08::p004"
+   ],
+   "source_section": "Experiments ::: Model configuration and training",
+   "evidence": "All experiments were run on a single machine consisting of a 3.4 GHz Intel Core i7 CPU with 16 GB of RAM and an NVidia GeForce Titan Xp GPU.",
+   "group_id": "1908.06267::g00"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f00",
+   "subject": "best scores reported in each original paper",
+   "predicate": "are shown for",
+   "object": "the baselines",
+   "source_passage_ids": [
+    "1908.06267::s09::p000"
+   ],
+   "source_section": "Results and ablations ::: Results",
+   "evidence": "For the baselines, the best scores reported in each original paper are shown.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f01",
+   "subject": "MPAD",
+   "predicate": "reaches best performance on",
+   "object": "7 out of 10 datasets",
+   "source_passage_ids": [
+    "1908.06267::s09::p000"
+   ],
+   "source_section": "Results and ablations ::: Results",
+   "evidence": "MPAD reaches best performance on 7 out of 10 datasets, and is close second elsewhere.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f02",
+   "subject": "the 7 datasets on which MPAD ranks first",
+   "predicate": "widely differ in",
+   "object": "training set size, number of categories, and prediction task (topic, sentiment, subjectivity)",
+   "source_passage_ids": [
+    "1908.06267::s09::p000"
+   ],
+   "source_section": "Results and ablations ::: Results",
+   "evidence": "the 7 datasets on which MPAD ranks first widely differ in training set size, number of categories, and prediction task",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f03",
+   "subject": "one or more of the hierarchical variants",
+   "predicate": "outperform on",
+   "object": "9 datasets out of 10",
+   "source_passage_ids": [
+    "1908.06267::s09::p001"
+   ],
+   "source_section": "Results and ablations ::: Results",
+   "evidence": "On 9 datasets out of 10, one or more of the hierarchical variants outperform the vanilla MPAD architecture",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f04",
+   "subject": "standard MPAD",
+   "predicate": "outperforms on Subjectivity",
+   "object": "all hierarchical variants",
+   "source_passage_ids": [
+    "1908.06267::s09::p002"
+   ],
+   "source_section": "Results and ablations ::: Results",
+   "evidence": "However, on Subjectivity, standard MPAD outperforms all hierarchical variants.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f05",
+   "subject": "standard MPAD",
+   "predicate": "reaches on TREC",
+   "object": "the same accuracy",
+   "source_passage_ids": [
+    "1908.06267::s09::p002"
+   ],
+   "source_section": "Results and ablations ::: Results",
+   "evidence": "On TREC, it reaches the same accuracy.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f06",
+   "subject": "some words that never appear in the same sentence",
+   "predicate": "can be connected through",
+   "object": "common neighbors",
+   "source_passage_ids": [
+    "1908.06267::s09::p002"
+   ],
+   "source_section": "Results and ablations ::: Results",
+   "evidence": "some words that never appear in the same sentence can be connected through common neighbors",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f07",
+   "subject": "each sentence vector",
+   "predicate": "is produced in",
+   "object": "isolation",
+   "source_passage_ids": [
+    "1908.06267::s09::p002"
+   ],
+   "source_section": "Results and ablations ::: Results",
+   "evidence": "each sentence vector is produced in isolation, without any contextual information about the other sentences",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f08",
+   "subject": "additional experiments",
+   "predicate": "were conducted on",
+   "object": "the Reuters, Polarity, and IMDB datasets",
+   "source_passage_ids": [
+    "1908.06267::s10::p000"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "we conducted additional experiments on the Reuters, Polarity, and IMDB datasets, with the non-hierarchical version of MPAD",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f09",
+   "subject": "additional experiments",
+   "predicate": "used",
+   "object": "the non-hierarchical version of MPAD",
+   "source_passage_ids": [
+    "1908.06267::s10::p000"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "with the non-hierarchical version of MPAD.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f10",
+   "subject": "the number of message passing iterations",
+   "predicate": "was varied from",
+   "object": "1 to 4",
+   "source_passage_ids": [
+    "1908.06267::s10::p001"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "First, we varied the number of message passing iterations from 1 to 4.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f11",
+   "subject": "having more iterations",
+   "predicate": "improves",
+   "object": "performance",
+   "source_passage_ids": [
+    "1908.06267::s10::p001"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "We can clearly see in Table TABREF29 that having more iterations improves performance.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f12",
+   "subject": "readout at each iteration from 1 to $T$",
+   "predicate": "enables",
+   "object": "the final graph representation to encode a mixture of low-level and high-level features",
+   "source_passage_ids": [
+    "1908.06267::s10::p001"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "which enables the final graph representation to encode a mixture of low-level and high-level features",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f13",
+   "subject": "setting $T\\ge 2$",
+   "predicate": "was always decreasing",
+   "object": "performance",
+   "source_passage_ids": [
+    "1908.06267::s10::p001"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "setting $T\\ge 2$ was always decreasing performance, despite the GRU-based updates",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f14",
+   "subject": "using an undirected graph",
+   "predicate": "leads to better performance on",
+   "object": "Reuters",
+   "source_passage_ids": [
+    "1908.06267::s10::p002"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "On Reuters, using an undirected graph leads to better performance, while on Polarity and IMDB, it is the opposite.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f15",
+   "subject": "using an undirected graph",
+   "predicate": "leads to opposite performance on",
+   "object": "Polarity and IMDB",
+   "source_passage_ids": [
+    "1908.06267::s10::p002"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "while on Polarity and IMDB, it is the opposite.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f16",
+   "subject": "Reuters",
+   "predicate": "is",
+   "object": "a topic classification task",
+   "source_passage_ids": [
+    "1908.06267::s10::p002"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "Reuters is a topic classification task, for which the presence or absence of some patterns is important",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f17",
+   "subject": "Polarity and IMDB",
+   "predicate": "are",
+   "object": "sentiment analysis tasks",
+   "source_passage_ids": [
+    "1908.06267::s10::p002"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "while Polarity and IMDB are sentiment analysis tasks.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b0:f18",
+   "subject": "modeling word order",
+   "predicate": "is crucial for",
+   "object": "capturing sentiment",
+   "source_passage_ids": [
+    "1908.06267::s10::p002"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "To capture sentiment, modeling word order is crucial, e.g., in detecting negation.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f00",
+   "subject": "Removing the master node",
+   "predicate": "deteriorates",
+   "object": "performance across all datasets",
+   "source_passage_ids": [
+    "1908.06267::s10::p003"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "Removing the master node deteriorates performance across all datasets, clearly showing the value of having such a node.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f01",
+   "subject": "the special document node",
+   "predicate": "is connected to",
+   "object": "all other nodes",
+   "source_passage_ids": [
+    "1908.06267::s10::p003"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "We hypothesize that since the special document node is connected to all other nodes",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f02",
+   "subject": "the special document node",
+   "predicate": "is able to encode during message passing",
+   "object": "a summary of the document",
+   "source_passage_ids": [
+    "1908.06267::s10::p003"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "it is able to encode during message passing a summary of the document.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f03",
+   "subject": "the sum",
+   "predicate": "captures",
+   "object": "structural information BIBREF14",
+   "source_passage_ids": [
+    "1908.06267::s10::p004"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "Unlike the mean, which captures distributions, the sum captures structural information BIBREF14.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f04",
+   "subject": "using sum instead of mean",
+   "predicate": "decreases",
+   "object": "performance everywhere",
+   "source_passage_ids": [
+    "1908.06267::s10::p004"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "As shown in Table TABREF29, using sum instead of mean decreases performance everywhere",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f05",
+   "subject": "statistical word co-occurrence networks",
+   "predicate": "tend to have",
+   "object": "similar structural properties",
+   "source_passage_ids": [
+    "1908.06267::s10::p004"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "statistical word co-occurrence networks tend to have similar structural properties",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f06",
+   "subject": "this experiment",
+   "predicate": "replaced",
+   "object": "the GRU combine function (see Eq. DISPLAY_FORM14) with the identity function",
+   "source_passage_ids": [
+    "1908.06267::s10::p005"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "In this experiment, we replaced the GRU combine function (see Eq. DISPLAY_FORM14) with the identity function.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f07",
+   "subject": "the update",
+   "predicate": "is based entirely on",
+   "object": "its neighbors",
+   "source_passage_ids": [
+    "1908.06267::s10::p005"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "That is, the update is based entirely on its neighbors.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f08",
+   "subject": "performance",
+   "predicate": "always suffers",
+   "object": "Except on Reuters (almost no change)",
+   "source_passage_ids": [
+    "1908.06267::s10::p005"
+   ],
+   "source_section": "Results and ablations ::: Ablation studies",
+   "evidence": "Except on Reuters (almost no change), performance always suffers",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f09",
+   "subject": "nodes",
+   "predicate": "are",
+   "object": "scientific papers, i.e., textual data",
+   "source_passage_ids": [
+    "1908.06267::s11::p001"
+   ],
+   "source_section": "Related work",
+   "evidence": "where nodes are scientific papers, i.e., textual data.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f10",
+   "subject": "text",
+   "predicate": "is only used to derive",
+   "object": "node feature vectors",
+   "source_passage_ids": [
+    "1908.06267::s11::p001"
+   ],
+   "source_section": "Related work",
+   "evidence": "However, text is only used to derive node feature vectors.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f11",
+   "subject": "The external graph structure",
+   "predicate": "is completely unrelated to",
+   "object": "text",
+   "source_passage_ids": [
+    "1908.06267::s11::p001"
+   ],
+   "source_section": "Related work",
+   "evidence": "The external graph structure, which plays a central role in determining node labels, is completely unrelated to text.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f12",
+   "subject": "They both",
+   "predicate": "build",
+   "object": "$k$-nearest neighbor similarity graphs based on the Gaussian diffusion kernel",
+   "source_passage_ids": [
+    "1908.06267::s11::p002"
+   ],
+   "source_section": "Related work",
+   "evidence": "They both build $k$-nearest neighbor similarity graphs based on the Gaussian diffusion kernel.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f13",
+   "subject": "Node features",
+   "predicate": "are then used for",
+   "object": "classification",
+   "source_passage_ids": [
+    "1908.06267::s11::p002"
+   ],
+   "source_section": "Related work",
+   "evidence": "Node features are then used for classification.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f14",
+   "subject": "All document graphs",
+   "predicate": "are derived from",
+   "object": "the same underlying structure",
+   "source_passage_ids": [
+    "1908.06267::s11::p002"
+   ],
+   "source_section": "Related work",
+   "evidence": "All document graphs are derived from the same underlying structure.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f15",
+   "subject": "Only node features",
+   "predicate": "vary",
+   "object": "corresponding to the entries of the documents' BoW vectors",
+   "source_passage_ids": [
+    "1908.06267::s11::p002"
+   ],
+   "source_section": "Related work",
+   "evidence": "Only node features, corresponding to the entries of the documents' BoW vectors, vary.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b1:f16",
+   "subject": "The underlying, shared structure",
+   "predicate": "is that of",
+   "object": "a $k$-NN graph where nodes are vocabulary terms and similarity is the cosine of the word embedding vectors",
+   "source_passage_ids": [
+    "1908.06267::s11::p002"
+   ],
+   "source_section": "Related work",
+   "evidence": "The underlying, shared structure is that of a $k$-NN graph where nodes are vocabulary terms and similarity is the cosine of the word embedding vectors.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b2:f00",
+   "subject": "Document-word edges",
+   "predicate": "are weighted by",
+   "object": "TF-IDF",
+   "source_passage_ids": [
+    "1908.06267::s11::p004"
+   ],
+   "source_section": "Related work",
+   "evidence": "Document-word edges are weighted by TF-IDF and word-word edges are weighted by pointwise mutual information",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b2:f01",
+   "subject": "word-word edges",
+   "predicate": "are weighted by",
+   "object": "pointwise mutual information derived from co-occurrence within a sliding window",
+   "source_passage_ids": [
+    "1908.06267::s11::p004"
+   ],
+   "source_section": "Related work",
+   "evidence": "word-word edges are weighted by pointwise mutual information derived from co-occurrence within a sliding window.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b2:f02",
+   "subject": "The GNN",
+   "predicate": "is trained based on",
+   "object": "the cross-entropy loss computed only for the labeled nodes",
+   "source_passage_ids": [
+    "1908.06267::s11::p004"
+   ],
+   "source_section": "Related work",
+   "evidence": "The GNN is trained based on the cross-entropy loss computed only for the labeled nodes",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b2:f03",
+   "subject": "the node classification approach of BIBREF53",
+   "predicate": "requires",
+   "object": "all test documents at training time",
+   "source_passage_ids": [
+    "1908.06267::s11::p005"
+   ],
+   "source_section": "Related work",
+   "evidence": "while the node classification approach of BIBREF53 requires all test documents at training time",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b2:f04",
+   "subject": "the approach of BIBREF53",
+   "predicate": "requires computing",
+   "object": "the PMI for every word pair in the vocabulary",
+   "source_passage_ids": [
+    "1908.06267::s11::p005"
+   ],
+   "source_section": "Related work",
+   "evidence": "the approach of BIBREF53 requires computing the PMI for every word pair in the vocabulary",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b2:f05",
+   "subject": "the complexity of MPAD",
+   "predicate": "does not depend on",
+   "object": "vocabulary size",
+   "source_passage_ids": [
+    "1908.06267::s11::p005"
+   ],
+   "source_section": "Related work",
+   "evidence": "On the other hand, the complexity of MPAD does not depend on vocabulary size.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b2:f06",
+   "subject": "Experiments conducted on 10 standard text classification datasets",
+   "predicate": "show",
+   "object": "that our architecture is competitive with the state-of-the-art",
+   "source_passage_ids": [
+    "1908.06267::s12::p000"
+   ],
+   "source_section": "Conclusion",
+   "evidence": "Experiments conducted on 10 standard text classification datasets show that our architecture is competitive with the state-of-the-art.",
+   "group_id": "1908.06267::g01"
+  },
+  {
+   "fact_id": "1908.06267::g01:b2:f07",
+   "subject": "MPAD",
+   "predicate": "is sensitive to",
+   "object": "word order and word-word relationship strength",
+   "source_passage_ids": [
+    "1908.06267::s12::p000"
+   ],
+   "source_section": "Conclusion",
+   "evidence": "By processing weighted, directed word co-occurrence networks, MPAD is sensitive to word order and word-word relationship strength.",
+   "group_id": "1908.06267::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1908.06267::g00",
+   "facts": [
+    {
+     "fact_id": "1908.06267::g00:b0:f00",
+     "subject": "The concept of message passing over graphs",
+     "predicate": "has been around for",
+     "object": "many years",
+     "source_passage_ids": [
+      "1908.06267::s00::p000"
+     ],
+     "source_section": "Introduction",
+     "evidence": "The concept of message passing over graphs has been around for many years BIBREF0, BIBREF1",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b0:f01",
+     "subject": "GNNs",
+     "predicate": "have only recently started to be closely investigated",
+     "object": "following the advent of deep learning",
+     "source_passage_ids": [
+      "1908.06267::s00::p000"
+     ],
+     "source_section": "Introduction",
+     "evidence": "However, GNNs have only recently started to be closely investigated, following the advent of deep learning.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b0:f02",
+     "subject": "These approaches",
+     "predicate": "are known as",
+     "object": "spectral",
+     "source_passage_ids": [
+      "1908.06267::s00::p000"
+     ],
+     "source_section": "Introduction",
+     "evidence": "These approaches are known as spectral.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b0:f03",
+     "subject": "The MP framework",
+     "predicate": "is based on",
+     "object": "the core idea of recursive neighborhood aggregation",
+     "source_passage_ids": [
+      "1908.06267::s00::p001"
+     ],
+     "source_section": "Introduction",
+     "evidence": "The MP framework is based on the core idea of recursive neighborhood aggregation.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b0:f04",
+     "subject": "the representation of each vertex",
+     "predicate": "is updated based on",
+     "object": "messages received from its neighbors",
+     "source_passage_ids": [
+      "1908.06267::s00::p001"
+     ],
+     "source_section": "Introduction",
+     "evidence": "at every iteration, the representation of each vertex is updated based on messages received from its neighbors.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b0:f05",
+     "subject": "All spectral GNNs",
+     "predicate": "can be described in terms of",
+     "object": "the MP framework",
+     "source_passage_ids": [
+      "1908.06267::s00::p001"
+     ],
+     "source_section": "Introduction",
+     "evidence": "All spectral GNNs can be described in terms of the MP framework.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b0:f06",
+     "subject": "GNNs",
+     "predicate": "have been applied with great success to",
+     "object": "bioinformatics and social network data",
+     "source_passage_ids": [
+      "1908.06267::s00::p002"
+     ],
+     "source_section": "Introduction",
+     "evidence": "GNNs have been applied with great success to bioinformatics and social network data, for node classification, link prediction, and graph classification.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b0:f07",
+     "subject": "a few studies only",
+     "predicate": "have focused on",
+     "object": "the application of the MP framework to representation learning on text",
+     "source_passage_ids": [
+      "1908.06267::s00::p002"
+     ],
+     "source_section": "Introduction",
+     "evidence": "However, a few studies only have focused on the application of the MP framework to representation learning on text.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b0:f08",
+     "subject": "MP",
+     "predicate": "consists in",
+     "object": "an aggregation phase followed by a combination phase",
+     "source_passage_ids": [
+      "1908.06267::s01::p000"
+     ],
+     "source_section": "Message Passing Neural Networks",
+     "evidence": "MP consists in an aggregation phase followed by a combination phase BIBREF14.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b0:f09",
+     "subject": "a message vector $\\mathbf {m}_v^{t+1}$",
+     "predicate": "is computed from",
+     "object": "the representations of the neighbors $\\mathcal {N}(v)$ of $v$",
+     "source_passage_ids": [
+      "1908.06267::s01::p000"
+     ],
+     "source_section": "Message Passing Neural Networks",
+     "evidence": "At time $t+1$, a message vector $\\mathbf {m}_v^{t+1}$ is computed from the representations of the neighbors $\\mathcal {N}(v)$ of $v$:",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b0:f10",
+     "subject": "The new representation $\\mathbf {h}^{t+1}_v$ of $v$",
+     "predicate": "is computed by combining",
+     "object": "its current feature vector $\\mathbf {h}^{t}_v$ with the message vector $\\mathbf {m}_v^{t+1}$",
+     "source_passage_ids": [
+      "1908.06267::s01::p002"
+     ],
+     "source_section": "Message Passing Neural Networks",
+     "evidence": "The new representation $\\mathbf {h}^{t+1}_v$ of $v$ is then computed by combining its current feature vector $\\mathbf {h}^{t}_v$ with the message vector $\\mathbf {m}_v^{t+1}$:",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b1:f00",
+     "subject": "Messages",
+     "predicate": "are passed for",
+     "object": "$T$ time steps",
+     "source_passage_ids": [
+      "1908.06267::s01::p004"
+     ],
+     "source_section": "Message Passing Neural Networks",
+     "evidence": "Messages are passed for $T$ time steps.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b1:f01",
+     "subject": "Each step",
+     "predicate": "is implemented by",
+     "object": "a different layer of the MP network",
+     "source_passage_ids": [
+      "1908.06267::s01::p004"
+     ],
+     "source_section": "Message Passing Neural Networks",
+     "evidence": "Each step is implemented by a different layer of the MP network.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b1:f02",
+     "subject": "iterations",
+     "predicate": "correspond to",
+     "object": "network depth",
+     "source_passage_ids": [
+      "1908.06267::s01::p004"
+     ],
+     "source_section": "Message Passing Neural Networks",
+     "evidence": "Hence, iterations correspond to network depth.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b1:f03",
+     "subject": "The final feature vector $\\mathbf {h}_v^T$ of $v$",
+     "predicate": "is based on",
+     "object": "messages propagated from all the nodes in the subtree of height $T$ rooted at $v$",
+     "source_passage_ids": [
+      "1908.06267::s01::p004"
+     ],
+     "source_section": "Message Passing Neural Networks",
+     "evidence": "The final feature vector $\\mathbf {h}_v^T$ of $v$ is based on messages propagated from all the nodes in the subtree of height $T$ rooted at $v$.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b1:f04",
+     "subject": "a READOUT pooling function",
+     "predicate": "is applied for",
+     "object": "a graph-level feature vector",
+     "source_passage_ids": [
+      "1908.06267::s01::p005"
+     ],
+     "source_section": "Message Passing Neural Networks",
+     "evidence": "If a graph-level feature vector is needed, e.g., for classification or regression, a READOUT pooling function, that must be invariant to permutations, is applied:",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b1:f05",
+     "subject": "a READOUT pooling function",
+     "predicate": "must be invariant to",
+     "object": "permutations",
+     "source_passage_ids": [
+      "1908.06267::s01::p005"
+     ],
+     "source_section": "Message Passing Neural Networks",
+     "evidence": "a READOUT pooling function, that must be invariant to permutations, is applied:",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b1:f06",
+     "subject": "a document",
+     "predicate": "is represented as",
+     "object": "a statistical word co-occurrence network BIBREF18, BIBREF19 with a sliding window of size 2 overspanning sentences",
+     "source_passage_ids": [
+      "1908.06267::s02::p000"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+     "evidence": "We represent a document as a statistical word co-occurrence network BIBREF18, BIBREF19 with a sliding window of size 2 overspanning sentences.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b1:f07",
+     "subject": "Each unique word in the preprocessed document",
+     "predicate": "is represented by",
+     "object": "a node in $G$",
+     "source_passage_ids": [
+      "1908.06267::s02::p000"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+     "evidence": "Each unique word in the preprocessed document is represented by a node in $G$",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b1:f08",
+     "subject": "an edge",
+     "predicate": "is added between",
+     "object": "two nodes if they are found together in at least one instantiation of the window",
+     "source_passage_ids": [
+      "1908.06267::s02::p000"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+     "evidence": "and an edge is added between two nodes if they are found together in at least one instantiation of the window.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b1:f09",
+     "subject": "immediate neighbors",
+     "predicate": "are",
+     "object": "consecutive words in the same sentence",
+     "source_passage_ids": [
+      "1908.06267::s02::p001"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+     "evidence": "In $G$, immediate neighbors are consecutive words in the same sentence.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b1:f10",
+     "subject": "paths of length 2",
+     "predicate": "correspond to",
+     "object": "bigrams",
+     "source_passage_ids": [
+      "1908.06267::s02::p001"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+     "evidence": "That is, paths of length 2 correspond to bigrams.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b1:f11",
+     "subject": "Paths of length more than 2",
+     "predicate": "can correspond to",
+     "object": "traditional $n$-grams or relaxed $n$-grams",
+     "source_passage_ids": [
+      "1908.06267::s02::p001"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+     "evidence": "Paths of length more than 2 can correspond either to traditional $n$-grams or to relaxed $n$-grams",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b1:f12",
+     "subject": "a special document node",
+     "predicate": "is linked to",
+     "object": "all other nodes via unit weight bi-directional edges",
+     "source_passage_ids": [
+      "1908.06267::s02::p002"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Word co-occurrence networks",
+     "evidence": "a special document node, linked to all other nodes via unit weight bi-directional edges.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b2:f00",
+     "subject": "the $i^{th}$ row of $A$",
+     "predicate": "contains",
+     "object": "the weights of the edges incoming on node $v_i$",
+     "source_passage_ids": [
+      "1908.06267::s03::p002"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+     "evidence": "Since $G$ is weighted, the $i^{th}$ row of $A$ contains the weights of the edges incoming on node $v_i$.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b2:f01",
+     "subject": "MLP",
+     "predicate": "denotes",
+     "object": "a multi-layer perceptron",
+     "source_passage_ids": [
+      "1908.06267::s03::p002"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+     "evidence": "MLP denotes a multi-layer perceptron",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b2:f02",
+     "subject": "MP neural nets with 1-layer perceptrons",
+     "predicate": "are inferior to",
+     "object": "their MLP counterparts",
+     "source_passage_ids": [
+      "1908.06267::s03::p003"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+     "evidence": "for graph classification, MP neural nets with 1-layer perceptrons are inferior to their MLP counterparts BIBREF14",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b2:f03",
+     "subject": "1-layer perceptrons",
+     "predicate": "are not",
+     "object": "universal approximators of multiset functions",
+     "source_passage_ids": [
+      "1908.06267::s03::p003"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+     "evidence": "Indeed, 1-layer perceptrons are not universal approximators of multiset functions.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b2:f04",
+     "subject": "This",
+     "predicate": "is equivalent to",
+     "object": "the renormalization trick of BIBREF9",
+     "source_passage_ids": [
+      "1908.06267::s03::p004"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+     "evidence": "This is equivalent to the renormalization trick of BIBREF9, but using only the in-degrees.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b2:f05",
+     "subject": "The coefficients",
+     "predicate": "are proportional to",
+     "object": "the strength of co-occurrence between words",
+     "source_passage_ids": [
+      "1908.06267::s03::p004"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+     "evidence": "The coefficients are proportional to the strength of co-occurrence between words.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b2:f06",
+     "subject": "averaging",
+     "predicate": "loses",
+     "object": "injectivity",
+     "source_passage_ids": [
+      "1908.06267::s03::p004"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+     "evidence": "by averaging, we lose the ability to distinguish between different neighborhood structures in some special cases, that is, we lose injectivity",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b2:f07",
+     "subject": "Such cases",
+     "predicate": "include",
+     "object": "neighborhoods in which all nodes have the same representations",
+     "source_passage_ids": [
+      "1908.06267::s03::p004"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+     "evidence": "Such cases include neighborhoods in which all nodes have the same representations",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b2:f08",
+     "subject": "Such cases",
+     "predicate": "include",
+     "object": "neighborhoods of different sizes containing various representations in equal proportions",
+     "source_passage_ids": [
+      "1908.06267::s03::p004"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+     "evidence": "and neighborhoods of different sizes containing various representations in equal proportions BIBREF14",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b2:f09",
+     "subject": "averaging",
+     "predicate": "is better than",
+     "object": "summing",
+     "source_passage_ids": [
+      "1908.06267::s03::p004"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+     "evidence": "As suggested by the results of an ablation experiment, averaging is better than summing in our application",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b3:f00",
+     "subject": "$\\mathbf {W}$ and $\\mathbf {U}$ matrices",
+     "predicate": "are",
+     "object": "trainable weight matrices not shared across time steps",
+     "source_passage_ids": [
+      "1908.06267::s03::p009"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+     "evidence": "where the $\\mathbf {W}$ and $\\mathbf {U}$ matrices are trainable weight matrices not shared across time steps",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b3:f01",
+     "subject": "Updating node representations through a GRU",
+     "predicate": "should in principle allow",
+     "object": "nodes to encode a combination of local and global signals (low and high values of $t$, resp.)",
+     "source_passage_ids": [
+      "1908.06267::s03::p010"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Message passing",
+     "evidence": "Updating node representations through a GRU should in principle allow nodes to encode a combination of local and global signals",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b3:f02",
+     "subject": "the master node vector",
+     "predicate": "bypasses",
+     "object": "the attention mechanism",
+     "source_passage_ids": [
+      "1908.06267::s04::p005"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+     "evidence": "the master node vector bypasses the attention mechanism",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b3:f03",
+     "subject": "This",
+     "predicate": "is equivalent to",
+     "object": "a skip or shortcut connection BIBREF23",
+     "source_passage_ids": [
+      "1908.06267::s04::p005"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+     "evidence": "This is equivalent to a skip or shortcut connection BIBREF23",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b3:f04",
+     "subject": "making the master node bypass the attention layer",
+     "predicate": "directly injects",
+     "object": "global information about the document into its final representation",
+     "source_passage_ids": [
+      "1908.06267::s04::p005"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+     "evidence": "by making the master node bypass the attention layer, we directly inject global information about the document into its final representation",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b4:f00",
+     "subject": "node features",
+     "predicate": "capture",
+     "object": "more and more global information",
+     "source_passage_ids": [
+      "1908.06267::s04::p006"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+     "evidence": "as one iterates, node features capture more and more global information",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b4:f01",
+     "subject": "the readout function",
+     "predicate": "is applied to",
+     "object": "all time steps",
+     "source_passage_ids": [
+      "1908.06267::s04::p006"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+     "evidence": "instead of applying the readout function only to $t=T$, we apply it to all time steps",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b4:f02",
+     "subject": "this modification",
+     "predicate": "takes into account",
+     "object": "features based on information aggregated from subtrees of different heights (from 1 to $T$)",
+     "source_passage_ids": [
+      "1908.06267::s04::p008"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+     "evidence": "with this modification, we take into account features based on information aggregated from subtrees of different heights (from 1 to $T$)",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b4:f03",
+     "subject": "features based on information aggregated from subtrees of different heights (from 1 to $T$)",
+     "predicate": "correspond to",
+     "object": "local and global features",
+     "source_passage_ids": [
+      "1908.06267::s04::p008"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Readout",
+     "evidence": "corresponding to local and global features",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b4:f04",
+     "subject": "MPAD",
+     "predicate": "implicitly captures",
+     "object": "some soft notion of the hierarchical structure of documents",
+     "source_passage_ids": [
+      "1908.06267::s05::p000"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+     "evidence": "it could be argued that MPAD implicitly captures some soft notion of the hierarchical structure of documents",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b4:f05",
+     "subject": "Hierarchical architectures",
+     "predicate": "have brought",
+     "object": "significant improvements to many NLP tasks",
+     "source_passage_ids": [
+      "1908.06267::s05::p000"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+     "evidence": "Hierarchical architectures have brought significant improvements to many NLP tasks",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b4:f06",
+     "subject": "MPAD-sentence-att",
+     "predicate": "combines",
+     "object": "the sentence embeddings through self-attention",
+     "source_passage_ids": [
+      "1908.06267::s05::p001"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+     "evidence": "Here, the sentence embeddings are simply combined through self-attention",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b4:f07",
+     "subject": "MPAD-clique",
+     "predicate": "builds",
+     "object": "a complete graph where each node represents a sentence",
+     "source_passage_ids": [
+      "1908.06267::s05::p002"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+     "evidence": "In this variant, we build a complete graph where each node represents a sentence",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b4:f08",
+     "subject": "the feature vectors of the nodes",
+     "predicate": "are initialized with",
+     "object": "the sentence embeddings previously obtained",
+     "source_passage_ids": [
+      "1908.06267::s05::p002"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+     "evidence": "where the feature vectors of the nodes are initialized with the sentence embeddings previously obtained",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b4:f09",
+     "subject": "MPAD-path",
+     "predicate": "is similar to",
+     "object": "the clique one",
+     "source_passage_ids": [
+      "1908.06267::s05::p003"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+     "evidence": "This variant is similar to the clique one",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b4:f10",
+     "subject": "MPAD-path",
+     "predicate": "builds",
+     "object": "a path according to the natural flow of the text",
+     "source_passage_ids": [
+      "1908.06267::s05::p003"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+     "evidence": "instead of a complete graph, we build a path according to the natural flow of the text",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b4:f11",
+     "subject": "two nodes",
+     "predicate": "are linked by",
+     "object": "a directed edge if the two sentences they represent follow each other in the document",
+     "source_passage_ids": [
+      "1908.06267::s05::p003"
+     ],
+     "source_section": "Message Passing Attention network for Document understanding (MPAD) ::: Hierarchical variants of MPAD",
+     "evidence": "two nodes are linked by a directed edge if the two sentences they represent follow each other in the document",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b5:f00",
+     "subject": "10 document classification datasets",
+     "predicate": "cover",
+     "object": "the topic identification, coarse and fine sentiment analysis and opinion mining, and subjectivity detection tasks",
+     "source_passage_ids": [
+      "1908.06267::s06::p000"
+     ],
+     "source_section": "Experiments ::: Datasets",
+     "evidence": "10 document classification datasets, covering the topic identification, coarse and fine sentiment analysis and opinion mining, and subjectivity detection tasks",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b5:f01",
+     "subject": "Reuters",
+     "predicate": "contains",
+     "object": "stories collected from the Reuters news agency in 1987",
+     "source_passage_ids": [
+      "1908.06267::s06::p001"
+     ],
+     "source_section": "Experiments ::: Datasets",
+     "evidence": "This dataset contains stories collected from the Reuters news agency in 1987.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b5:f02",
+     "subject": "BBCSport BIBREF30",
+     "predicate": "contains",
+     "object": "documents from the BBC Sport website corresponding to 2004-2005 sports news articles",
+     "source_passage_ids": [
+      "1908.06267::s06::p002"
+     ],
+     "source_section": "Experiments ::: Datasets",
+     "evidence": "BBCSport BIBREF30 contains documents from the BBC Sport website corresponding to 2004-2005 sports news articles.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b5:f03",
+     "subject": "Polarity BIBREF31",
+     "predicate": "features",
+     "object": "positive and negative labeled snippets from Rotten Tomatoes",
+     "source_passage_ids": [
+      "1908.06267::s06::p003"
+     ],
+     "source_section": "Experiments ::: Datasets",
+     "evidence": "Polarity BIBREF31 features positive and negative labeled snippets from Rotten Tomatoes.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b5:f04",
+     "subject": "MPQA BIBREF33",
+     "predicate": "is made of",
+     "object": "positive and negative phrases",
+     "source_passage_ids": [
+      "1908.06267::s06::p005"
+     ],
+     "source_section": "Experiments ::: Datasets",
+     "evidence": "MPQA BIBREF33 is made of positive and negative phrases",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b5:f05",
+     "subject": "positive and negative phrases",
+     "predicate": "are annotated as part of",
+     "object": "the summer 2002 NRRC Workshop on Multi-Perspective Question Answering",
+     "source_passage_ids": [
+      "1908.06267::s06::p005"
+     ],
+     "source_section": "Experiments ::: Datasets",
+     "evidence": "positive and negative phrases, annotated as part of the summer 2002 NRRC Workshop on Multi-Perspective Question Answering.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b6:f00",
+     "subject": "IMDB BIBREF34",
+     "predicate": "is",
+     "object": "a collection of highly polarized movie reviews from IMDB (positive and negative)",
+     "source_passage_ids": [
+      "1908.06267::s06::p006"
+     ],
+     "source_section": "Experiments ::: Datasets",
+     "evidence": "IMDB BIBREF34 is a collection of highly polarized movie reviews from IMDB (positive and negative).",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b6:f01",
+     "subject": "IMDB BIBREF34",
+     "predicate": "has",
+     "object": "at most 30 reviews for each movie",
+     "source_passage_ids": [
+      "1908.06267::s06::p006"
+     ],
+     "source_section": "Experiments ::: Datasets",
+     "evidence": "There are at most 30 reviews for each movie.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b6:f02",
+     "subject": "TREC BIBREF35",
+     "predicate": "consists of",
+     "object": "questions that are classified into 6 different categories",
+     "source_passage_ids": [
+      "1908.06267::s06::p007"
+     ],
+     "source_section": "Experiments ::: Datasets",
+     "evidence": "TREC BIBREF35 consists of questions that are classified into 6 different categories.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b6:f03",
+     "subject": "SST-1 BIBREF36",
+     "predicate": "contains",
+     "object": "the same snippets as Polarity",
+     "source_passage_ids": [
+      "1908.06267::s06::p008"
+     ],
+     "source_section": "Experiments ::: Datasets",
+     "evidence": "SST-1 BIBREF36 contains the same snippets as Polarity.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b6:f04",
+     "subject": "SST-2 BIBREF36",
+     "predicate": "is",
+     "object": "the same as SST-1 but with neutral reviews removed and snippets classified as positive or negative",
+     "source_passage_ids": [
+      "1908.06267::s06::p009"
+     ],
+     "source_section": "Experiments ::: Datasets",
+     "evidence": "SST-2 BIBREF36 is the same as SST-1 but with neutral reviews removed and snippets classified as positive or negative.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b6:f05",
+     "subject": "Yelp2013 BIBREF26",
+     "predicate": "features",
+     "object": "reviews obtained from the 2013 Yelp Dataset Challenge",
+     "source_passage_ids": [
+      "1908.06267::s06::p010"
+     ],
+     "source_section": "Experiments ::: Datasets",
+     "evidence": "Yelp2013 BIBREF26 features reviews obtained from the 2013 Yelp Dataset Challenge.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b6:f06",
+     "subject": "fair comparison with the hierarchical MPAD variants",
+     "predicate": "is enabled by",
+     "object": "multiple state-of-the-art baseline models, including hierarchical ones",
+     "source_passage_ids": [
+      "1908.06267::s07::p000"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "to enable fair comparison with the hierarchical MPAD variants.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f00",
+     "subject": "Doc2vec",
+     "predicate": "is an extension of",
+     "object": "word2vec",
+     "source_passage_ids": [
+      "1908.06267::s07::p001"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "Doc2vec (or paragraph vector) is an extension of word2vec that learns vectors for documents in a fully unsupervised manner.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f01",
+     "subject": "Doc2vec",
+     "predicate": "learns vectors for",
+     "object": "documents",
+     "source_passage_ids": [
+      "1908.06267::s07::p001"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "Doc2vec (or paragraph vector) is an extension of word2vec that learns vectors for documents in a fully unsupervised manner.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f02",
+     "subject": "Document embeddings",
+     "predicate": "are fed to",
+     "object": "a logistic regression classifier",
+     "source_passage_ids": [
+      "1908.06267::s07::p001"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "Document embeddings are then fed to a logistic regression classifier.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f03",
+     "subject": "The convolutional neural network architecture",
+     "predicate": "is applied to",
+     "object": "text",
+     "source_passage_ids": [
+      "1908.06267::s07::p002"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "The convolutional neural network architecture, well-known in computer vision, is applied to text.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f04",
+     "subject": "There",
+     "predicate": "is",
+     "object": "one spatial dimension",
+     "source_passage_ids": [
+      "1908.06267::s07::p002"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "There is one spatial dimension and the word embeddings are used as channels (depth dimensions).",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f05",
+     "subject": "the word embeddings",
+     "predicate": "are used as",
+     "object": "channels (depth dimensions)",
+     "source_passage_ids": [
+      "1908.06267::s07::p002"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "There is one spatial dimension and the word embeddings are used as channels (depth dimensions).",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f06",
+     "subject": "The Deep Averaging Network",
+     "predicate": "passes",
+     "object": "the unweighted average of the embeddings of the input words",
+     "source_passage_ids": [
+      "1908.06267::s07::p003"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "The Deep Averaging Network passes the unweighted average of the embeddings of the input words through multiple dense layers and a final softmax.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f07",
+     "subject": "The Deep Averaging Network",
+     "predicate": "passes the unweighted average through",
+     "object": "multiple dense layers and a final softmax",
+     "source_passage_ids": [
+      "1908.06267::s07::p003"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "The Deep Averaging Network passes the unweighted average of the embeddings of the input words through multiple dense layers and a final softmax.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f08",
+     "subject": "Tree-LSTM BIBREF40",
+     "predicate": "is a generalization of",
+     "object": "the standard LSTM architecture",
+     "source_passage_ids": [
+      "1908.06267::s07::p004"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "Tree-LSTM BIBREF40 is a generalization of the standard LSTM architecture to constituency and dependency parse trees.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f09",
+     "subject": "Tree-LSTM BIBREF40",
+     "predicate": "is a generalization to",
+     "object": "constituency and dependency parse trees",
+     "source_passage_ids": [
+      "1908.06267::s07::p004"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "Tree-LSTM BIBREF40 is a generalization of the standard LSTM architecture to constituency and dependency parse trees.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f10",
+     "subject": "Recursive neural networks",
+     "predicate": "are stacked and applied to",
+     "object": "parse trees",
+     "source_passage_ids": [
+      "1908.06267::s07::p005"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "Recursive neural networks are stacked and applied to parse trees.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f11",
+     "subject": "LSTMN BIBREF42",
+     "predicate": "is an extension of",
+     "object": "the LSTM model",
+     "source_passage_ids": [
+      "1908.06267::s07::p006"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "LSTMN BIBREF42 is an extension of the LSTM model where the memory cell is replaced by a memory network which stores word representations.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f12",
+     "subject": "the memory cell",
+     "predicate": "is replaced by",
+     "object": "a memory network",
+     "source_passage_ids": [
+      "1908.06267::s07::p006"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "LSTMN BIBREF42 is an extension of the LSTM model where the memory cell is replaced by a memory network which stores word representations.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b7:f13",
+     "subject": "a memory network",
+     "predicate": "stores",
+     "object": "word representations",
+     "source_passage_ids": [
+      "1908.06267::s07::p006"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "LSTMN BIBREF42 is an extension of the LSTM model where the memory cell is replaced by a memory network which stores word representations.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b8:f00",
+     "subject": "C-LSTM BIBREF43",
+     "predicate": "combines",
+     "object": "convolutional and recurrent neural networks",
+     "source_passage_ids": [
+      "1908.06267::s07::p007"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "C-LSTM BIBREF43 combines convolutional and recurrent neural networks.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b8:f01",
+     "subject": "region embeddings provided by a CNN",
+     "predicate": "are fed to",
+     "object": "a LSTM",
+     "source_passage_ids": [
+      "1908.06267::s07::p007"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "The region embeddings provided by a CNN are fed to a LSTM.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b8:f02",
+     "subject": "SPGK BIBREF44",
+     "predicate": "models",
+     "object": "documents as word co-occurrence networks",
+     "source_passage_ids": [
+      "1908.06267::s07::p008"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "SPGK BIBREF44 also models documents as word co-occurrence networks.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b8:f03",
+     "subject": "SPGK BIBREF44",
+     "predicate": "computes",
+     "object": "a graph kernel that compares shortest paths extracted from the word co-occurrence networks",
+     "source_passage_ids": [
+      "1908.06267::s07::p008"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "It computes a graph kernel that compares shortest paths extracted from the word co-occurrence networks",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b8:f04",
+     "subject": "SPGK BIBREF44",
+     "predicate": "uses",
+     "object": "a SVM to categorize documents",
+     "source_passage_ids": [
+      "1908.06267::s07::p008"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "and then uses a SVM to categorize documents.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b8:f05",
+     "subject": "WMD BIBREF45",
+     "predicate": "is",
+     "object": "an application of the well-known Earth Mover's Distance to text",
+     "source_passage_ids": [
+      "1908.06267::s07::p009"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "WMD BIBREF45 is an application of the well-known Earth Mover's Distance to text.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b8:f06",
+     "subject": "S-WMD BIBREF46",
+     "predicate": "is",
+     "object": "a supervised extension of the Word Mover's Distance",
+     "source_passage_ids": [
+      "1908.06267::s07::p010"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "S-WMD BIBREF46 is a supervised extension of the Word Mover's Distance.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b8:f07",
+     "subject": "a CNN",
+     "predicate": "is applied to",
+     "object": "semantic units obtained by clustering words in the embedding space",
+     "source_passage_ids": [
+      "1908.06267::s07::p011"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "Here, a CNN is applied to semantic units obtained by clustering words in the embedding space.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b8:f08",
+     "subject": "LSTM-GRNN BIBREF26",
+     "predicate": "is",
+     "object": "a hierarchical model",
+     "source_passage_ids": [
+      "1908.06267::s07::p012"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "LSTM-GRNN BIBREF26 is a hierarchical model",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b8:f09",
+     "subject": "sentence embeddings",
+     "predicate": "are obtained with",
+     "object": "a CNN",
+     "source_passage_ids": [
+      "1908.06267::s07::p012"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "sentence embeddings are obtained with a CNN",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b8:f10",
+     "subject": "a GRU-RNN",
+     "predicate": "is fed",
+     "object": "the sentence representations to obtain a document vector",
+     "source_passage_ids": [
+      "1908.06267::s07::p012"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "a GRU-RNN is fed the sentence representations to obtain a document vector.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f00",
+     "subject": "HN-ATT",
+     "predicate": "is",
+     "object": "another hierarchical model",
+     "source_passage_ids": [
+      "1908.06267::s07::p013"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "HN-ATT BIBREF27 is another hierarchical model",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f01",
+     "subject": "HN-ATT",
+     "predicate": "uses",
+     "object": "the same encoder architecture (a bidirectional GRU-RNN) for both sentences and documents, with different parameters",
+     "source_passage_ids": [
+      "1908.06267::s07::p013"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "the same encoder architecture (a bidirectional GRU-RNN) is used for both sentences and documents, with different parameters",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f02",
+     "subject": "A self-attention mechanism",
+     "predicate": "is applied to",
+     "object": "the RNN annotations at each level",
+     "source_passage_ids": [
+      "1908.06267::s07::p013"
+     ],
+     "source_section": "Experiments ::: Baselines",
+     "evidence": "A self-attention mechanism is applied to the RNN annotations at each level.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f03",
+     "subject": "all datasets",
+     "predicate": "are preprocessed using",
+     "object": "the code of BIBREF38",
+     "source_passage_ids": [
+      "1908.06267::s08::p000"
+     ],
+     "source_section": "Experiments ::: Model configuration and training",
+     "evidence": "We preprocess all datasets using the code of BIBREF38.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f04",
+     "subject": "all tokens appearing strictly less than 6 times",
+     "predicate": "are replaced with",
+     "object": "a special UNK token",
+     "source_passage_ids": [
+      "1908.06267::s08::p000"
+     ],
+     "source_section": "Experiments ::: Model configuration and training",
+     "evidence": "we also replace all tokens appearing strictly less than 6 times with a special UNK token",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f05",
+     "subject": "a directed word co-occurrence network",
+     "predicate": "is built from",
+     "object": "each document, with a window of size 2",
+     "source_passage_ids": [
+      "1908.06267::s08::p000"
+     ],
+     "source_section": "Experiments ::: Model configuration and training",
+     "evidence": "We then build a directed word co-occurrence network from each document, with a window of size 2.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f06",
+     "subject": "the basic MPAD",
+     "predicate": "uses",
+     "object": "two MP iterations ($T$=2)",
+     "source_passage_ids": [
+      "1908.06267::s08::p001"
+     ],
+     "source_section": "Experiments ::: Model configuration and training",
+     "evidence": "We use two MP iterations ($T$=2) for the basic MPAD",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f07",
+     "subject": "the hierarchical variants",
+     "predicate": "use",
+     "object": "two MP iterations at each level",
+     "source_passage_ids": [
+      "1908.06267::s08::p001"
+     ],
+     "source_section": "Experiments ::: Model configuration and training",
+     "evidence": "and two MP iterations at each level, for the hierarchical variants",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f08",
+     "subject": "The final graph representations",
+     "predicate": "are passed through",
+     "object": "a softmax for classification",
+     "source_passage_ids": [
+      "1908.06267::s08::p001"
+     ],
+     "source_section": "Experiments ::: Model configuration and training",
+     "evidence": "The final graph representations are passed through a softmax for classification.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f09",
+     "subject": "batch normalization",
+     "predicate": "is applied after",
+     "object": "concatenating the feature vector of the master node with the self-attentional vector",
+     "source_passage_ids": [
+      "1908.06267::s08::p002"
+     ],
+     "source_section": "Experiments ::: Model configuration and training",
+     "evidence": "we apply batch normalization after concatenating the feature vector of the master node with the self-attentional vector",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f10",
+     "subject": "dropout BIBREF49",
+     "predicate": "is used with",
+     "object": "a rate of 0.5",
+     "source_passage_ids": [
+      "1908.06267::s08::p002"
+     ],
+     "source_section": "Experiments ::: Model configuration and training",
+     "evidence": "we use dropout BIBREF49 with a rate of 0.5",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f11",
+     "subject": "the best epoch",
+     "predicate": "is selected based on",
+     "object": "the validation accuracy",
+     "source_passage_ids": [
+      "1908.06267::s08::p002"
+     ],
+     "source_section": "Experiments ::: Model configuration and training",
+     "evidence": "We select the best epoch, capped at 200, based on the validation accuracy.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f12",
+     "subject": "a validation set",
+     "predicate": "is constructed by",
+     "object": "randomly sampling 10% of the training set of each fold",
+     "source_passage_ids": [
+      "1908.06267::s08::p002"
+     ],
+     "source_section": "Experiments ::: Model configuration and training",
+     "evidence": "we construct a validation set by randomly sampling 10% of the training set of each fold",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f13",
+     "subject": "the publicly available 300-dimensional pre-trained Google News vectors ($D$=300) BIBREF50",
+     "predicate": "are used to initialize",
+     "object": "the node representations $\\mathbf {H}^0$",
+     "source_passage_ids": [
+      "1908.06267::s08::p003"
+     ],
+     "source_section": "Experiments ::: Model configuration and training",
+     "evidence": "we use the publicly available 300-dimensional pre-trained Google News vectors ($D$=300) BIBREF50 to initialize the node representations $\\mathbf {H}^0$",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f14",
+     "subject": "MPAD",
+     "predicate": "was implemented in",
+     "object": "Python 3.6 using the PyTorch library BIBREF52",
+     "source_passage_ids": [
+      "1908.06267::s08::p004"
+     ],
+     "source_section": "Experiments ::: Model configuration and training",
+     "evidence": "MPAD was implemented in Python 3.6 using the PyTorch library BIBREF52.",
+     "group_id": "1908.06267::g00"
+    },
+    {
+     "fact_id": "1908.06267::g00:b9:f15",
+     "subject": "All experiments",
+     "predicate": "were run on",
+     "object": "a single machine consisting of a 3.4 GHz Intel Core i7 CPU with 16 GB of RAM and an NVidia GeForce Titan Xp GPU",
+     "source_passage_ids": [
+      "1908.06267::s08::p004"
+     ],
+     "source_section": "Experiments ::: Model configuration and training",
+     "evidence": "All experiments were run on a single machine consisting of a 3.4 GHz Intel Core i7 CPU with 16 GB of RAM and an NVidia GeForce Titan Xp GPU.",
+     "group_id": "1908.06267::g00"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Their similarity with message passing (MP)",
+      "was observed by",
+      "BIBREF9"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "represent",
+      "documents as word co-occurrence networks"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Evaluation on 10 document classification datasets",
+      "show that",
+      "our architectures learn representations that are competitive with the state-of-the-art"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF13",
+      "proposed",
+      "a MP framework"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$G$",
+      "is",
+      "directed and weighted"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$G$",
+      "is",
+      "a compact representation of its document"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our $G$",
+      "includes",
+      "a special document node"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$n$",
+      "denotes",
+      "the number of nodes in $G$, including the master node"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\mathbf {H}^t$",
+      "contains",
+      "node features"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\mathbf {A}$",
+      "is",
+      "the adjacency matrix of $G$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\mathbf {A}$",
+      "is",
+      "asymmetric"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\mathbf {A}$",
+      "has",
+      "zero diagonal"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\mathbf {D}$",
+      "is",
+      "the diagonal in-degree matrix of $G$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\mathbf {M}^{t+1}$",
+      "is",
+      "the message matrix"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "a different MLP at each layer"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "The rows of $\\mathbf {D}^{-1}\\mathbf {A}$",
+      "sum to",
+      "1"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "compute",
+      "a weighted average of them"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "tried using",
+      "GAT-like attention BIBREF11"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our COMBINE function",
+      "uses",
+      "the Gated Recurrent Unit BIBREF20, BIBREF21"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\sigma (\\mathbf {x}) = 1/(1+\\exp (-\\mathbf {x}))$",
+      "is",
+      "the sigmoid function"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\mathbf {R}$ and $\\mathbf {Z}$",
+      "are",
+      "the parameters of the reset and update gates"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "The reset gate",
+      "controls",
+      "the amount of information from the previous time step (in $\\mathbf {H}^t$) that should propagate to the candidate representations, $\\tilde{\\mathbf {H}}^{t+1}$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "explicitly consider",
+      "node representations at all iterations when reading out"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\mathbf {H}^T \\in \\mathbb {R}^{n \\times d}$",
+      "contains",
+      "the final vertex representations"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\hat{G}$",
+      "is",
+      "graph $G$ without the special document node"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\mathbf {\\hat{H}}^T \\in \\mathbb {R}^{(n-1) \\times d}$",
+      "is",
+      "the corresponding representation matrix (i.e., $\\mathbf {H}^T$ without the row of the document node)"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our READOUT function",
+      "is",
+      "the concatenation of self-attention applied to $\\mathbf {\\hat{H}}^T$ with the final document node representation"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "apply",
+      "a global self-attention mechanism BIBREF22 to the rows of $\\mathbf {\\hat{H}}^T$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\mathbf {\\hat{H}}^T$",
+      "is first passed to",
+      "a dense layer parameterized by matrix $\\mathbf {W}_A^T \\in \\mathbb {R}^{d \\times d}$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "An alignment vector $\\mathbf {a}$",
+      "is derived by",
+      "comparing, via dot products, the rows of the output of the dense layer $\\mathbf {Y}^T \\in \\mathbb {R}^{(n-1) \\times d}$ with a trainable vector $\\mathbf {v}^T \\in \\mathbb {R}^d$ (initialized randomly) and normalizing with a softmax"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "The normalized alignment coefficients",
+      "are finally used to compute",
+      "the attentional vector $\\mathbf {u}^T \\in \\mathbb {R}^d$ as a weighted sum of the final representations $\\mathbf {\\hat{H}}^T$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "tried with",
+      "multiple context vectors, i.e., with a matrix $\\mathbf {V}^T$ instead of a vector $\\mathbf {v}^T$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "results",
+      "were",
+      "not convincing"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "added",
+      "a regularization term to the loss to favor diversity among the rows of $\\mathbf {V}^T$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\mathbf {h}_G^T \\in \\mathbb {R}^{2d}$",
+      "is obtained by",
+      "concatenating $\\mathbf {u}^T$ and the final master node representation"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "expect",
+      "the special document node to learn a high-level summary about the document, such as its size, vocabulary, etc."
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF14",
+      "recommend to not only use",
+      "the final representations when performing readout"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "the results",
+      "are concatenated, finally obtaining",
+      "$\\mathbf {h}_G \\in \\mathbb {R}^{T \\times 2d}$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "propose",
+      "several hierarchical variants of MPAD"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "represent",
+      "each sentence in the document as a word co-occurrence network"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "feed",
+      "that graph to MPAD"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "evaluate",
+      "the quality of the document embeddings learned by MPAD"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Their statistics",
+      "are reported in",
+      "Table TABREF21"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "used",
+      "the ModApte split"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "considered",
+      "only the 10 classes with the highest number of positive training examples"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "removed",
+      "documents belonging to more than one class and then classes left with no document (2 classes)"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Subjectivity BIBREF32",
+      "contains",
+      "movie review snippets from Rotten Tomatoes (subjective sentences), and Internet Movie Database plot summaries (objective sentences)"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "The authors",
+      "used",
+      "the Stanford Parser to parse the snippets and split them into multiple sentences"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "The authors",
+      "used",
+      "Amazon Mechanical Turk to annotate the resulting phrases according to their polarity (very negative, negative, neutral, positive, very positive)"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "evaluate",
+      "MPAD against multiple state-of-the-art baseline models, including hierarchical ones"
+     ]
+    },
+    {
+     "reason": "invalid_fact",
+     "item": {
+      "fact_id": "f7",
+      "subject": "A k-nearest neighbor classifier",
+      "predicate": "is used",
+      "object": "",
+      "source_passage_ids": [
+       "1908.06267::s07::p009"
+      ],
+      "evidence": "A k-nearest neighbor classifier is used."
+     }
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$d$",
+      "is set to",
+      "64, except on IMDB and Yelp on which $d=128$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "MPAD",
+      "is trained in",
+      "an end-to-end fashion by minimizing the cross-entropy loss function with the Adam optimizer BIBREF48 and an initial learning rate of 0.001"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our own word vectors",
+      "are learned from",
+      "the training and validation sets with the gensim implementation of word2vec BIBREF51"
+     ]
+    }
+   ],
+   "n_raw": 159,
+   "error": null,
+   "calls": [
+    {
+     "block": 0,
+     "n_passages": 6,
+     "n_raw": 15,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1029,
+      "completion_tokens": 1200,
+      "total_tokens": 2229,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 578
+    },
+    {
+     "block": 1,
+     "n_passages": 6,
+     "n_raw": 17,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 905,
+      "completion_tokens": 1265,
+      "total_tokens": 2170,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 399
+    },
+    {
+     "block": 2,
+     "n_passages": 6,
+     "n_raw": 21,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1062,
+      "completion_tokens": 1539,
+      "total_tokens": 2601,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 542
+    },
+    {
+     "block": 3,
+     "n_passages": 6,
+     "n_raw": 22,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1293,
+      "completion_tokens": 2040,
+      "total_tokens": 3333,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 825
+    },
+    {
+     "block": 4,
+     "n_passages": 6,
+     "n_raw": 17,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 997,
+      "completion_tokens": 1208,
+      "total_tokens": 2205,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 451
+    },
+    {
+     "block": 5,
+     "n_passages": 6,
+     "n_raw": 12,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 723,
+      "completion_tokens": 910,
+      "total_tokens": 1633,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 243
+    },
+    {
+     "block": 6,
+     "n_passages": 6,
+     "n_raw": 10,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 680,
+      "completion_tokens": 787,
+      "total_tokens": 1467,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 201
+    },
+    {
+     "block": 7,
+     "n_passages": 6,
+     "n_raw": 14,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 665,
+      "completion_tokens": 1011,
+      "total_tokens": 1676,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 192
+    },
+    {
+     "block": 8,
+     "n_passages": 6,
+     "n_raw": 12,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 660,
+      "completion_tokens": 811,
+      "total_tokens": 1471,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 187
+    },
+    {
+     "block": 9,
+     "n_passages": 6,
+     "n_raw": 19,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 974,
+      "completion_tokens": 1505,
+      "total_tokens": 2479,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 487
+    }
+   ]
+  },
+  {
+   "group_id": "1908.06267::g01",
+   "facts": [
+    {
+     "fact_id": "1908.06267::g01:b0:f00",
+     "subject": "best scores reported in each original paper",
+     "predicate": "are shown for",
+     "object": "the baselines",
+     "source_passage_ids": [
+      "1908.06267::s09::p000"
+     ],
+     "source_section": "Results and ablations ::: Results",
+     "evidence": "For the baselines, the best scores reported in each original paper are shown.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f01",
+     "subject": "MPAD",
+     "predicate": "reaches best performance on",
+     "object": "7 out of 10 datasets",
+     "source_passage_ids": [
+      "1908.06267::s09::p000"
+     ],
+     "source_section": "Results and ablations ::: Results",
+     "evidence": "MPAD reaches best performance on 7 out of 10 datasets, and is close second elsewhere.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f02",
+     "subject": "the 7 datasets on which MPAD ranks first",
+     "predicate": "widely differ in",
+     "object": "training set size, number of categories, and prediction task (topic, sentiment, subjectivity)",
+     "source_passage_ids": [
+      "1908.06267::s09::p000"
+     ],
+     "source_section": "Results and ablations ::: Results",
+     "evidence": "the 7 datasets on which MPAD ranks first widely differ in training set size, number of categories, and prediction task",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f03",
+     "subject": "one or more of the hierarchical variants",
+     "predicate": "outperform on",
+     "object": "9 datasets out of 10",
+     "source_passage_ids": [
+      "1908.06267::s09::p001"
+     ],
+     "source_section": "Results and ablations ::: Results",
+     "evidence": "On 9 datasets out of 10, one or more of the hierarchical variants outperform the vanilla MPAD architecture",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f04",
+     "subject": "standard MPAD",
+     "predicate": "outperforms on Subjectivity",
+     "object": "all hierarchical variants",
+     "source_passage_ids": [
+      "1908.06267::s09::p002"
+     ],
+     "source_section": "Results and ablations ::: Results",
+     "evidence": "However, on Subjectivity, standard MPAD outperforms all hierarchical variants.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f05",
+     "subject": "standard MPAD",
+     "predicate": "reaches on TREC",
+     "object": "the same accuracy",
+     "source_passage_ids": [
+      "1908.06267::s09::p002"
+     ],
+     "source_section": "Results and ablations ::: Results",
+     "evidence": "On TREC, it reaches the same accuracy.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f06",
+     "subject": "some words that never appear in the same sentence",
+     "predicate": "can be connected through",
+     "object": "common neighbors",
+     "source_passage_ids": [
+      "1908.06267::s09::p002"
+     ],
+     "source_section": "Results and ablations ::: Results",
+     "evidence": "some words that never appear in the same sentence can be connected through common neighbors",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f07",
+     "subject": "each sentence vector",
+     "predicate": "is produced in",
+     "object": "isolation",
+     "source_passage_ids": [
+      "1908.06267::s09::p002"
+     ],
+     "source_section": "Results and ablations ::: Results",
+     "evidence": "each sentence vector is produced in isolation, without any contextual information about the other sentences",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f08",
+     "subject": "additional experiments",
+     "predicate": "were conducted on",
+     "object": "the Reuters, Polarity, and IMDB datasets",
+     "source_passage_ids": [
+      "1908.06267::s10::p000"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "we conducted additional experiments on the Reuters, Polarity, and IMDB datasets, with the non-hierarchical version of MPAD",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f09",
+     "subject": "additional experiments",
+     "predicate": "used",
+     "object": "the non-hierarchical version of MPAD",
+     "source_passage_ids": [
+      "1908.06267::s10::p000"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "with the non-hierarchical version of MPAD.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f10",
+     "subject": "the number of message passing iterations",
+     "predicate": "was varied from",
+     "object": "1 to 4",
+     "source_passage_ids": [
+      "1908.06267::s10::p001"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "First, we varied the number of message passing iterations from 1 to 4.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f11",
+     "subject": "having more iterations",
+     "predicate": "improves",
+     "object": "performance",
+     "source_passage_ids": [
+      "1908.06267::s10::p001"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "We can clearly see in Table TABREF29 that having more iterations improves performance.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f12",
+     "subject": "readout at each iteration from 1 to $T$",
+     "predicate": "enables",
+     "object": "the final graph representation to encode a mixture of low-level and high-level features",
+     "source_passage_ids": [
+      "1908.06267::s10::p001"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "which enables the final graph representation to encode a mixture of low-level and high-level features",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f13",
+     "subject": "setting $T\\ge 2$",
+     "predicate": "was always decreasing",
+     "object": "performance",
+     "source_passage_ids": [
+      "1908.06267::s10::p001"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "setting $T\\ge 2$ was always decreasing performance, despite the GRU-based updates",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f14",
+     "subject": "using an undirected graph",
+     "predicate": "leads to better performance on",
+     "object": "Reuters",
+     "source_passage_ids": [
+      "1908.06267::s10::p002"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "On Reuters, using an undirected graph leads to better performance, while on Polarity and IMDB, it is the opposite.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f15",
+     "subject": "using an undirected graph",
+     "predicate": "leads to opposite performance on",
+     "object": "Polarity and IMDB",
+     "source_passage_ids": [
+      "1908.06267::s10::p002"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "while on Polarity and IMDB, it is the opposite.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f16",
+     "subject": "Reuters",
+     "predicate": "is",
+     "object": "a topic classification task",
+     "source_passage_ids": [
+      "1908.06267::s10::p002"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "Reuters is a topic classification task, for which the presence or absence of some patterns is important",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f17",
+     "subject": "Polarity and IMDB",
+     "predicate": "are",
+     "object": "sentiment analysis tasks",
+     "source_passage_ids": [
+      "1908.06267::s10::p002"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "while Polarity and IMDB are sentiment analysis tasks.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b0:f18",
+     "subject": "modeling word order",
+     "predicate": "is crucial for",
+     "object": "capturing sentiment",
+     "source_passage_ids": [
+      "1908.06267::s10::p002"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "To capture sentiment, modeling word order is crucial, e.g., in detecting negation.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f00",
+     "subject": "Removing the master node",
+     "predicate": "deteriorates",
+     "object": "performance across all datasets",
+     "source_passage_ids": [
+      "1908.06267::s10::p003"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "Removing the master node deteriorates performance across all datasets, clearly showing the value of having such a node.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f01",
+     "subject": "the special document node",
+     "predicate": "is connected to",
+     "object": "all other nodes",
+     "source_passage_ids": [
+      "1908.06267::s10::p003"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "We hypothesize that since the special document node is connected to all other nodes",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f02",
+     "subject": "the special document node",
+     "predicate": "is able to encode during message passing",
+     "object": "a summary of the document",
+     "source_passage_ids": [
+      "1908.06267::s10::p003"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "it is able to encode during message passing a summary of the document.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f03",
+     "subject": "the sum",
+     "predicate": "captures",
+     "object": "structural information BIBREF14",
+     "source_passage_ids": [
+      "1908.06267::s10::p004"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "Unlike the mean, which captures distributions, the sum captures structural information BIBREF14.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f04",
+     "subject": "using sum instead of mean",
+     "predicate": "decreases",
+     "object": "performance everywhere",
+     "source_passage_ids": [
+      "1908.06267::s10::p004"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "As shown in Table TABREF29, using sum instead of mean decreases performance everywhere",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f05",
+     "subject": "statistical word co-occurrence networks",
+     "predicate": "tend to have",
+     "object": "similar structural properties",
+     "source_passage_ids": [
+      "1908.06267::s10::p004"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "statistical word co-occurrence networks tend to have similar structural properties",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f06",
+     "subject": "this experiment",
+     "predicate": "replaced",
+     "object": "the GRU combine function (see Eq. DISPLAY_FORM14) with the identity function",
+     "source_passage_ids": [
+      "1908.06267::s10::p005"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "In this experiment, we replaced the GRU combine function (see Eq. DISPLAY_FORM14) with the identity function.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f07",
+     "subject": "the update",
+     "predicate": "is based entirely on",
+     "object": "its neighbors",
+     "source_passage_ids": [
+      "1908.06267::s10::p005"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "That is, the update is based entirely on its neighbors.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f08",
+     "subject": "performance",
+     "predicate": "always suffers",
+     "object": "Except on Reuters (almost no change)",
+     "source_passage_ids": [
+      "1908.06267::s10::p005"
+     ],
+     "source_section": "Results and ablations ::: Ablation studies",
+     "evidence": "Except on Reuters (almost no change), performance always suffers",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f09",
+     "subject": "nodes",
+     "predicate": "are",
+     "object": "scientific papers, i.e., textual data",
+     "source_passage_ids": [
+      "1908.06267::s11::p001"
+     ],
+     "source_section": "Related work",
+     "evidence": "where nodes are scientific papers, i.e., textual data.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f10",
+     "subject": "text",
+     "predicate": "is only used to derive",
+     "object": "node feature vectors",
+     "source_passage_ids": [
+      "1908.06267::s11::p001"
+     ],
+     "source_section": "Related work",
+     "evidence": "However, text is only used to derive node feature vectors.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f11",
+     "subject": "The external graph structure",
+     "predicate": "is completely unrelated to",
+     "object": "text",
+     "source_passage_ids": [
+      "1908.06267::s11::p001"
+     ],
+     "source_section": "Related work",
+     "evidence": "The external graph structure, which plays a central role in determining node labels, is completely unrelated to text.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f12",
+     "subject": "They both",
+     "predicate": "build",
+     "object": "$k$-nearest neighbor similarity graphs based on the Gaussian diffusion kernel",
+     "source_passage_ids": [
+      "1908.06267::s11::p002"
+     ],
+     "source_section": "Related work",
+     "evidence": "They both build $k$-nearest neighbor similarity graphs based on the Gaussian diffusion kernel.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f13",
+     "subject": "Node features",
+     "predicate": "are then used for",
+     "object": "classification",
+     "source_passage_ids": [
+      "1908.06267::s11::p002"
+     ],
+     "source_section": "Related work",
+     "evidence": "Node features are then used for classification.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f14",
+     "subject": "All document graphs",
+     "predicate": "are derived from",
+     "object": "the same underlying structure",
+     "source_passage_ids": [
+      "1908.06267::s11::p002"
+     ],
+     "source_section": "Related work",
+     "evidence": "All document graphs are derived from the same underlying structure.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f15",
+     "subject": "Only node features",
+     "predicate": "vary",
+     "object": "corresponding to the entries of the documents' BoW vectors",
+     "source_passage_ids": [
+      "1908.06267::s11::p002"
+     ],
+     "source_section": "Related work",
+     "evidence": "Only node features, corresponding to the entries of the documents' BoW vectors, vary.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b1:f16",
+     "subject": "The underlying, shared structure",
+     "predicate": "is that of",
+     "object": "a $k$-NN graph where nodes are vocabulary terms and similarity is the cosine of the word embedding vectors",
+     "source_passage_ids": [
+      "1908.06267::s11::p002"
+     ],
+     "source_section": "Related work",
+     "evidence": "The underlying, shared structure is that of a $k$-NN graph where nodes are vocabulary terms and similarity is the cosine of the word embedding vectors.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b2:f00",
+     "subject": "Document-word edges",
+     "predicate": "are weighted by",
+     "object": "TF-IDF",
+     "source_passage_ids": [
+      "1908.06267::s11::p004"
+     ],
+     "source_section": "Related work",
+     "evidence": "Document-word edges are weighted by TF-IDF and word-word edges are weighted by pointwise mutual information",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b2:f01",
+     "subject": "word-word edges",
+     "predicate": "are weighted by",
+     "object": "pointwise mutual information derived from co-occurrence within a sliding window",
+     "source_passage_ids": [
+      "1908.06267::s11::p004"
+     ],
+     "source_section": "Related work",
+     "evidence": "word-word edges are weighted by pointwise mutual information derived from co-occurrence within a sliding window.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b2:f02",
+     "subject": "The GNN",
+     "predicate": "is trained based on",
+     "object": "the cross-entropy loss computed only for the labeled nodes",
+     "source_passage_ids": [
+      "1908.06267::s11::p004"
+     ],
+     "source_section": "Related work",
+     "evidence": "The GNN is trained based on the cross-entropy loss computed only for the labeled nodes",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b2:f03",
+     "subject": "the node classification approach of BIBREF53",
+     "predicate": "requires",
+     "object": "all test documents at training time",
+     "source_passage_ids": [
+      "1908.06267::s11::p005"
+     ],
+     "source_section": "Related work",
+     "evidence": "while the node classification approach of BIBREF53 requires all test documents at training time",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b2:f04",
+     "subject": "the approach of BIBREF53",
+     "predicate": "requires computing",
+     "object": "the PMI for every word pair in the vocabulary",
+     "source_passage_ids": [
+      "1908.06267::s11::p005"
+     ],
+     "source_section": "Related work",
+     "evidence": "the approach of BIBREF53 requires computing the PMI for every word pair in the vocabulary",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b2:f05",
+     "subject": "the complexity of MPAD",
+     "predicate": "does not depend on",
+     "object": "vocabulary size",
+     "source_passage_ids": [
+      "1908.06267::s11::p005"
+     ],
+     "source_section": "Related work",
+     "evidence": "On the other hand, the complexity of MPAD does not depend on vocabulary size.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b2:f06",
+     "subject": "Experiments conducted on 10 standard text classification datasets",
+     "predicate": "show",
+     "object": "that our architecture is competitive with the state-of-the-art",
+     "source_passage_ids": [
+      "1908.06267::s12::p000"
+     ],
+     "source_section": "Conclusion",
+     "evidence": "Experiments conducted on 10 standard text classification datasets show that our architecture is competitive with the state-of-the-art.",
+     "group_id": "1908.06267::g01"
+    },
+    {
+     "fact_id": "1908.06267::g01:b2:f07",
+     "subject": "MPAD",
+     "predicate": "is sensitive to",
+     "object": "word order and word-word relationship strength",
+     "source_passage_ids": [
+      "1908.06267::s12::p000"
+     ],
+     "source_section": "Conclusion",
+     "evidence": "By processing weighted, directed word co-occurrence networks, MPAD is sensitive to word order and word-word relationship strength.",
+     "group_id": "1908.06267::g01"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Experimental results",
+      "are shown in",
+      "Table TABREF28"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Results",
+      "are shown in",
+      "Table TABREF29"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Eq. DISPLAY_FORM11",
+      "becomes",
+      "$\\mathbf {M}^{t+1} = \\textsc {MLP}^{t+1}\\big (\\mathbf {A}\\mathbf {H}^{t}\\big )$"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "$\\mathbf {A}$",
+      "has",
+      "zero diagonal"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF9, BIBREF54, BIBREF11, BIBREF10",
+      "conduct",
+      "some node classification experiments on citation networks"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF55, BIBREF7",
+      "experiment on",
+      "traditional document classification tasks"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF55",
+      "build",
+      "one single graph where nodes are documents and distance is computed in the BoW space"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF7",
+      "represent",
+      "each document as a graph"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF7",
+      "perform",
+      "graph classification"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF56",
+      "use",
+      "a GNN for hierarchical classification into a large taxonomy of topics"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "The authors",
+      "represent",
+      "documents as unweighted, undirected word co-occurrence networks with word embeddings as node features"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "They",
+      "use",
+      "the spatial GNN of BIBREF15 to perform graph classification"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "The authors",
+      "adopt",
+      "the semi-supervised node classification approach of BIBREF9"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "They",
+      "build",
+      "one single undirected graph from the entire dataset, with both word and document nodes"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our approach",
+      "is",
+      "inductive, not transductive"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our graph classification model",
+      "is able to perform",
+      "inference on new, never-seen documents"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our directed graphs",
+      "capture",
+      "word ordering"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "We",
+      "have proposed",
+      "an application of the message passing framework to NLP, the Message Passing Attention network for Document understanding (MPAD)"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "propose",
+      "three hierarchical variants of MPAD"
+     ]
+    }
+   ],
+   "n_raw": 63,
+   "error": null,
+   "calls": [
+    {
+     "block": 0,
+     "n_passages": 6,
+     "n_raw": 21,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1245,
+      "completion_tokens": 1443,
+      "total_tokens": 2688,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 758
+    },
+    {
+     "block": 1,
+     "n_passages": 6,
+     "n_raw": 24,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1121,
+      "completion_tokens": 1707,
+      "total_tokens": 2828,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 655
+    },
+    {
+     "block": 2,
+     "n_passages": 5,
+     "n_raw": 18,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 914,
+      "completion_tokens": 1310,
+      "total_tokens": 2224,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 485
+    }
+   ]
+  }
+ ]
+}

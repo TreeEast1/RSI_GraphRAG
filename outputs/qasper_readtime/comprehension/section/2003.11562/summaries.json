@@ -1,0 +1,292 @@
+{
+ "summaries": [
+  {
+   "passage_id": "2003.11562::s00::p000",
+   "summary": "Language modeling provides context for NLP and ASR, while Transformers address LSTM sequential constraints using attention, parallelization, and SOTA language modeling results.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s00::p001",
+   "summary": "Recent standard transformer developments emphasize unsupervised pre-training and state-of-the-art NLP benchmarks, including BERT with a deep bidirectional transformer architecture.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s00::p002",
+   "summary": "Transformer-XL is another architecture of interest that introduces recurrence in a self-attention model.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s00::p003",
+   "summary": "Research has mostly focused on English, making performance on morphologically richer agglutinative Finnish interesting.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s00::p004",
+   "summary": "This project explores BERT and Transformer-XL for Finnish language modeling using BIBREF8 data, BERT probability approximation, and Transformer-XL sub-word units.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s00::p005",
+   "summary": "The work includes approximation of perplexity using a BERT architecture.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s00::p006",
+   "summary": "The work includes using Transformer-XL architecture with sub-word units.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s00::p007",
+   "summary": "The work compares Transformer and LSTM models as language models in comparable settings with an agglutinative language.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s01::p000",
+   "summary": "A language model assigns meaningful probabilities to token sequences by estimating the joint conditional probability P(X).",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s01::p001",
+   "summary": "Perplexity (PPL) is an intrinsic Language Models evaluation defined using inverse token-set probability and the Tth root, where T is token count.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s01::p002",
+   "summary": "The approaches use BERT and Transformer-XL, with auto-regressive P(X) straightforward for unidirectional Transformer-XL but not bidirectional BERT.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s01::p003",
+   "summary": "BERT's bidirectional context complicates auto-regressive joint probability, so masking x_>i loses bidirectional advantage and an approximation is proposed.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s01::p004",
+   "summary": "Such approximations were explored with Bi-directional RNN LM's BIBREF9, and the authors define a pseudo-perplexity score for deep transformer models.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s01::p005",
+   "summary": "Original BERT uses Masked language modelling and next sentence prediction, while Finnish experiments use morfessor, boundary markers, and separate left-marked and left+right-marked models.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s01::p006",
+   "summary": "Next Sentence Prediction (NSP) is omitted from BERT pre-training, and input changes from SEGMENT-PAIR to SINGLE SEGMENT.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s01::p007",
+   "summary": "Transformer-XL uses recurrence, cached hidden states, relative positional embeddings, unidirectional perplexity calculation, and sub-word units for Finnish.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s02::p000",
+   "summary": "Finnish text data from BIBREF13 has around 144 million word tokens, 4.2 million unique tokens, Morfessor 2.0 with α of 0.001, 34K and 19K vocabularies, and 2850 YLE test articles.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s03::p000",
+   "summary": "All BERT experiments were trained for 500K steps in Python with Tensorflow on a single NVIDIA Tesla V100 32 GB graphic card.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s03::p001",
+   "summary": "Optimal BERT parameters used Adam, a maximum sequence length of 300 covering 98 percent of training data, and around 15 days training time.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s03::p002",
+   "summary": "Masked LM loss and accuracy concern masked-token prediction, with Finnish losses differing from English BERT trained on 3.3 Billion words versus 144 million words.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s03::p003",
+   "summary": "Pseudo-perplexity results on the test data-set show both BERT models confident, with lower left-marked values than left-right-marked.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s03::p004",
+   "summary": "BERT perplexity cannot be directly compared with unidirectional LSTM perplexity, but comparisons could use Bi-directional LSTM, downstreaming tasks, or masked-token prediction accuracy.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s04::p000",
+   "summary": "All Transformer-XL experiments were trained for 500K steps in Python with PyTorch on a single NVIDIA Tesla V100 32 GB graphic card.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s04::p001",
+   "summary": "Transformer-XL experiments compare longer Segment and Memory length against larger models, using Adam and a cosine annealing learning rate scheduler.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s04::p002",
+   "summary": "Left+right-marked Transformer-XL models train better, the left-right-marked large model(32-32) performs best, and Transformer-XL outperforms BIBREF19 by 27%.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s05::p000",
+   "summary": "Transformer-XL and BERT have low perplexity and pseudo-perplexity scores but cannot be directly compared, requiring a downstreaming task for fair comparison.",
+   "group_id": "2003.11562::g00"
+  },
+  {
+   "passage_id": "2003.11562::s06::p000",
+   "summary": "Transformer-XL justifies migration from LSTM models with strong perplexity, while BERT pseudo-perplexity is inequitable and future ASR downstreaming comparisons are planned.",
+   "group_id": "2003.11562::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "2003.11562::g00",
+   "summaries": [
+    {
+     "passage_id": "2003.11562::s00::p000",
+     "summary": "Language modeling provides context for NLP and ASR, while Transformers address LSTM sequential constraints using attention, parallelization, and SOTA language modeling results.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s00::p001",
+     "summary": "Recent standard transformer developments emphasize unsupervised pre-training and state-of-the-art NLP benchmarks, including BERT with a deep bidirectional transformer architecture.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s00::p002",
+     "summary": "Transformer-XL is another architecture of interest that introduces recurrence in a self-attention model.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s00::p003",
+     "summary": "Research has mostly focused on English, making performance on morphologically richer agglutinative Finnish interesting.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s00::p004",
+     "summary": "This project explores BERT and Transformer-XL for Finnish language modeling using BIBREF8 data, BERT probability approximation, and Transformer-XL sub-word units.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s00::p005",
+     "summary": "The work includes approximation of perplexity using a BERT architecture.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s00::p006",
+     "summary": "The work includes using Transformer-XL architecture with sub-word units.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s00::p007",
+     "summary": "The work compares Transformer and LSTM models as language models in comparable settings with an agglutinative language.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s01::p000",
+     "summary": "A language model assigns meaningful probabilities to token sequences by estimating the joint conditional probability P(X).",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s01::p001",
+     "summary": "Perplexity (PPL) is an intrinsic Language Models evaluation defined using inverse token-set probability and the Tth root, where T is token count.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s01::p002",
+     "summary": "The approaches use BERT and Transformer-XL, with auto-regressive P(X) straightforward for unidirectional Transformer-XL but not bidirectional BERT.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s01::p003",
+     "summary": "BERT's bidirectional context complicates auto-regressive joint probability, so masking x_>i loses bidirectional advantage and an approximation is proposed.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s01::p004",
+     "summary": "Such approximations were explored with Bi-directional RNN LM's BIBREF9, and the authors define a pseudo-perplexity score for deep transformer models.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s01::p005",
+     "summary": "Original BERT uses Masked language modelling and next sentence prediction, while Finnish experiments use morfessor, boundary markers, and separate left-marked and left+right-marked models.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s01::p006",
+     "summary": "Next Sentence Prediction (NSP) is omitted from BERT pre-training, and input changes from SEGMENT-PAIR to SINGLE SEGMENT.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s01::p007",
+     "summary": "Transformer-XL uses recurrence, cached hidden states, relative positional embeddings, unidirectional perplexity calculation, and sub-word units for Finnish.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s02::p000",
+     "summary": "Finnish text data from BIBREF13 has around 144 million word tokens, 4.2 million unique tokens, Morfessor 2.0 with α of 0.001, 34K and 19K vocabularies, and 2850 YLE test articles.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s03::p000",
+     "summary": "All BERT experiments were trained for 500K steps in Python with Tensorflow on a single NVIDIA Tesla V100 32 GB graphic card.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s03::p001",
+     "summary": "Optimal BERT parameters used Adam, a maximum sequence length of 300 covering 98 percent of training data, and around 15 days training time.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s03::p002",
+     "summary": "Masked LM loss and accuracy concern masked-token prediction, with Finnish losses differing from English BERT trained on 3.3 Billion words versus 144 million words.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s03::p003",
+     "summary": "Pseudo-perplexity results on the test data-set show both BERT models confident, with lower left-marked values than left-right-marked.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s03::p004",
+     "summary": "BERT perplexity cannot be directly compared with unidirectional LSTM perplexity, but comparisons could use Bi-directional LSTM, downstreaming tasks, or masked-token prediction accuracy.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s04::p000",
+     "summary": "All Transformer-XL experiments were trained for 500K steps in Python with PyTorch on a single NVIDIA Tesla V100 32 GB graphic card.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s04::p001",
+     "summary": "Transformer-XL experiments compare longer Segment and Memory length against larger models, using Adam and a cosine annealing learning rate scheduler.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s04::p002",
+     "summary": "Left+right-marked Transformer-XL models train better, the left-right-marked large model(32-32) performs best, and Transformer-XL outperforms BIBREF19 by 27%.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s05::p000",
+     "summary": "Transformer-XL and BERT have low perplexity and pseudo-perplexity scores but cannot be directly compared, requiring a downstreaming task for fair comparison.",
+     "group_id": "2003.11562::g00"
+    },
+    {
+     "passage_id": "2003.11562::s06::p000",
+     "summary": "Transformer-XL justifies migration from LSTM models with strong perplexity, while BERT pseudo-perplexity is inequitable and future ASR downstreaming comparisons are planned.",
+     "group_id": "2003.11562::g00"
+    }
+   ],
+   "n_raw": 27,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 3380,
+    "completion_tokens": 1304,
+    "total_tokens": 4684,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

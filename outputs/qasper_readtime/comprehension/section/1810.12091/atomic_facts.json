@@ -1,0 +1,2924 @@
+{
+ "facts": [
+  {
+   "fact_id": "1810.12091::g00:b0:f00",
+   "subject": "Users of photo-sharing websites such as Flickr",
+   "predicate": "often provide",
+   "object": "short textual descriptions in the form of tags",
+   "source_passage_ids": [
+    "1810.12091::s00::p000"
+   ],
+   "source_section": "Introduction",
+   "evidence": "Users of photo-sharing websites such as Flickr often provide short textual descriptions in the form of tags",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f01",
+   "subject": "latitude and longitude coordinates",
+   "predicate": "are nowadays commonly made available",
+   "object": "as well",
+   "source_passage_ids": [
+    "1810.12091::s00::p000"
+   ],
+   "source_section": "Introduction",
+   "evidence": "latitude and longitude coordinates are nowadays commonly made available as well",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f02",
+   "subject": "Flickr",
+   "predicate": "can thus be regarded as",
+   "object": "a source of environmental information",
+   "source_passage_ids": [
+    "1810.12091::s00::p000"
+   ],
+   "source_section": "Introduction",
+   "evidence": "Flickr can thus be regarded as a source of environmental information",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f03",
+   "subject": "the usefulness of Flickr for characterizing the natural environment",
+   "predicate": "is",
+   "object": "less well-understood",
+   "source_passage_ids": [
+    "1810.12091::s00::p000"
+   ],
+   "source_section": "Introduction",
+   "evidence": "the usefulness of Flickr for characterizing the natural environment, which is the focus of this paper, is less well-understood",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f04",
+   "subject": "Flickr tags",
+   "predicate": "capture",
+   "object": "valuable ecological information",
+   "source_passage_ids": [
+    "1810.12091::s00::p001"
+   ],
+   "source_section": "Introduction",
+   "evidence": "Many recent studies have highlighted that Flickr tags capture valuable ecological information",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f05",
+   "subject": "ecologists",
+   "predicate": "have mostly used",
+   "object": "social media to conduct manual evaluations of image content",
+   "source_passage_ids": [
+    "1810.12091::s00::p001"
+   ],
+   "source_section": "Introduction",
+   "evidence": "ecologists have mostly used social media to conduct manual evaluations of image content",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f06",
+   "subject": "bag-of-words representations derived from Flickr tags",
+   "predicate": "were found to give",
+   "object": "promising result for predicting a range of different environemental phenomena",
+   "source_passage_ids": [
+    "1810.12091::s00::p001"
+   ],
+   "source_section": "Introduction",
+   "evidence": "bag-of-words representations derived from Flickr tags were found to give promising result for predicting a range of different environemental phenomena",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f07",
+   "subject": "Vector space embeddings",
+   "predicate": "are",
+   "object": "representations in which the objects from a given domain are encoded using relatively low-dimensional vectors",
+   "source_passage_ids": [
+    "1810.12091::s00::p002"
+   ],
+   "source_section": "Introduction",
+   "evidence": "Vector space embeddings are representations in which the objects from a given domain are encoded using relatively low-dimensional vectors",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f08",
+   "subject": "the representation of a location in our model",
+   "predicate": "is determined by",
+   "object": "the tags of the photos that have been taken near that location",
+   "source_passage_ids": [
+    "1810.12091::s00::p002"
+   ],
+   "source_section": "Introduction",
+   "evidence": "the representation of a location in our model is determined by the tags of the photos that have been taken near that location",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f09",
+   "subject": "the off-the-shelf GloVe model",
+   "predicate": "performed",
+   "object": "surprisingly poorly",
+   "source_passage_ids": [
+    "1810.12091::s00::p003"
+   ],
+   "source_section": "Introduction",
+   "evidence": "we found that the off-the-shelf GloVe model performed surprisingly poorly",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f10",
+   "subject": "the number of tags associated with a given location",
+   "predicate": "can be",
+   "object": "quite small",
+   "source_passage_ids": [
+    "1810.12091::s00::p003"
+   ],
+   "source_section": "Introduction",
+   "evidence": "given that the number of tags associated with a given location can be quite small",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f11",
+   "subject": "term selection",
+   "predicate": "is in some cases critical to obtain",
+   "object": "vector spaces that capture the relevant aspects of geographic locations",
+   "source_passage_ids": [
+    "1810.12091::s00::p003"
+   ],
+   "source_section": "Introduction",
+   "evidence": "term selection is in some cases critical to obtain vector spaces that capture the relevant aspects of geographic locations",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f12",
+   "subject": "vector space embeddings learned from Flickr tags alone",
+   "predicate": "are sometimes outperformed by",
+   "object": "bag-of-words representations",
+   "source_passage_ids": [
+    "1810.12091::s00::p003"
+   ],
+   "source_section": "Introduction",
+   "evidence": "vector space embeddings learned from Flickr tags alone are sometimes outperformed by bag-of-words representations",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f13",
+   "subject": "word embeddings",
+   "predicate": "represent",
+   "object": "word meaning using vectors of typically around 300 dimensions",
+   "source_passage_ids": [
+    "1810.12091::s01::p000"
+   ],
+   "source_section": "Vector space embeddings",
+   "evidence": "word embeddings, which represent word meaning using vectors of typically around 300 dimensions",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f14",
+   "subject": "different methods for learning such word embeddings",
+   "predicate": "include",
+   "object": "Skip-gram and the Continuous Bag-of-Words (CBOW) model, GloVe, and fastText",
+   "source_passage_ids": [
+    "1810.12091::s01::p000"
+   ],
+   "source_section": "Vector space embeddings",
+   "evidence": "including Skip-gram and the Continuous Bag-of-Words (CBOW) model BIBREF8 , GloVe BIBREF9 , and fastText BIBREF14",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f15",
+   "subject": "The model we consider in this paper",
+   "predicate": "builds on",
+   "object": "GloVe",
+   "source_passage_ids": [
+    "1810.12091::s01::p000"
+   ],
+   "source_section": "Vector space embeddings",
+   "evidence": "The model we consider in this paper builds on GloVe",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f16",
+   "subject": "GloVe",
+   "predicate": "was designed to capture",
+   "object": "linear regularities of word-word co-occurrence",
+   "source_passage_ids": [
+    "1810.12091::s01::p000"
+   ],
+   "source_section": "Vector space embeddings",
+   "evidence": "GloVe, which was designed to capture linear regularities of word-word co-occurrence",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b0:f17",
+   "subject": "In GloVe",
+   "predicate": "there are",
+   "object": "two word vectors INLINEFORM0 and INLINEFORM1 for each word in the vocabulary",
+   "source_passage_ids": [
+    "1810.12091::s01::p000"
+   ],
+   "source_section": "Vector space embeddings",
+   "evidence": "In GloVe, there are two word vectors INLINEFORM0 and INLINEFORM1 for each word in the vocabulary",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b1:f00",
+   "subject": "The weighting function INLINEFORM6",
+   "predicate": "is used to limit",
+   "object": "the impact of rare terms",
+   "source_passage_ids": [
+    "1810.12091::s01::p001"
+   ],
+   "source_section": "Vector space embeddings",
+   "evidence": "The weighting function INLINEFORM6 is used to limit the impact of rare terms.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b1:f01",
+   "subject": "the target word vectors INLINEFORM11",
+   "predicate": "correspond to",
+   "object": "the actual word representations which we would like to find",
+   "source_passage_ids": [
+    "1810.12091::s01::p001"
+   ],
+   "source_section": "Vector space embeddings",
+   "evidence": "Intuitively, the target word vectors INLINEFORM11 correspond to the actual word representations which we would like to find",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b1:f02",
+   "subject": "various lexicons",
+   "predicate": "have been used to obtain",
+   "object": "word embeddings that are better suited at modelling sentiment BIBREF15 and antonymy BIBREF29",
+   "source_passage_ids": [
+    "1810.12091::s01::p002"
+   ],
+   "source_section": "Vector space embeddings",
+   "evidence": "Along similar lines, various lexicons have been used to obtain word embeddings that are better suited at modelling sentiment BIBREF15 and antonymy BIBREF29 , among others.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b1:f03",
+   "subject": "the low-dimensional vector representations",
+   "predicate": "lead to",
+   "object": "more faithful predictions than the original high-dimensional census data",
+   "source_passage_ids": [
+    "1810.12091::s02::p000"
+   ],
+   "source_section": "Embeddings for geographic information",
+   "evidence": "the low-dimensional vector representations lead to more faithful predictions than the original high-dimensional census data.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b1:f04",
+   "subject": "Several methods",
+   "predicate": "use word embedding models to learn",
+   "object": "representations of Points-of-Interest (POIs) that can be used for predicting user visits BIBREF33 , BIBREF34 , BIBREF35",
+   "source_passage_ids": [
+    "1810.12091::s02::p002"
+   ],
+   "source_section": "Embeddings for geographic information",
+   "evidence": "Several methods also use word embedding models to learn representations of Points-of-Interest (POIs) that can be used for predicting user visits BIBREF33 , BIBREF34 , BIBREF35 .",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b1:f05",
+   "subject": "many of these approaches",
+   "predicate": "do not actually consider",
+   "object": "any textual information",
+   "source_passage_ids": [
+    "1810.12091::s02::p002"
+   ],
+   "source_section": "Embeddings for geographic information",
+   "evidence": "In other words, despite the use of word embedding models, many of these approaches do not actually consider any textual information.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b1:f06",
+   "subject": "the Skip-gram model",
+   "predicate": "is utilized to create",
+   "object": "a global pattern of users' POIs",
+   "source_passage_ids": [
+    "1810.12091::s02::p002"
+   ],
+   "source_section": "Embeddings for geographic information",
+   "evidence": "For example, in BIBREF34 the Skip-gram model is utilized to create a global pattern of users' POIs.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b1:f07",
+   "subject": "Each location",
+   "predicate": "was treated as",
+   "object": "a word",
+   "source_passage_ids": [
+    "1810.12091::s02::p002"
+   ],
+   "source_section": "Embeddings for geographic information",
+   "evidence": "Each location was treated as a word and the other locations visited before or after were treated as context words.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b1:f08",
+   "subject": "the other locations visited before or after",
+   "predicate": "were treated as",
+   "object": "context words",
+   "source_passage_ids": [
+    "1810.12091::s02::p002"
+   ],
+   "source_section": "Embeddings for geographic information",
+   "evidence": "Each location was treated as a word and the other locations visited before or after were treated as context words.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f00",
+   "subject": "tags of georeferenced Flickr photos",
+   "predicate": "can effectively supplement",
+   "object": "traditional scientific environmental data",
+   "source_passage_ids": [
+    "1810.12091::s03::p000"
+   ],
+   "source_section": "Analyzing Flickr tags",
+   "evidence": "the tags of georeferenced Flickr photos can effectively supplement traditional scientific environmental data",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f01",
+   "subject": "combining both types of information",
+   "predicate": "leads to",
+   "object": "significantly better results than using either of them alone",
+   "source_passage_ids": [
+    "1810.12091::s03::p000"
+   ],
+   "source_section": "Analyzing Flickr tags",
+   "evidence": "combining both types of information leads to significantly better results than using either of them alone",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f02",
+   "subject": "their straightforward way of combining both information sources",
+   "predicate": "is",
+   "object": "far from optimal",
+   "source_passage_ids": [
+    "1810.12091::s03::p000"
+   ],
+   "source_section": "Analyzing Flickr tags",
+   "evidence": "their straightforward way of combining both information sources, by concatenating the two types of feature vectors, is far from optimal",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f03",
+   "subject": "the problem of embedding Flickr tags",
+   "predicate": "has so far received",
+   "object": "very limited attention",
+   "source_passage_ids": [
+    "1810.12091::s03::p001"
+   ],
+   "source_section": "Analyzing Flickr tags",
+   "evidence": "the problem of embedding Flickr tags has so far received very limited attention",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f04",
+   "subject": "their focus",
+   "predicate": "was on",
+   "object": "learning embeddings that capture word meaning",
+   "source_passage_ids": [
+    "1810.12091::s03::p001"
+   ],
+   "source_section": "Analyzing Flickr tags",
+   "evidence": "their focus was on learning embeddings that capture word meaning",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f05",
+   "subject": "INLINEFORM0 and INLINEFORM1",
+   "predicate": "are",
+   "object": "parameters to control the importance of each component in the model",
+   "source_passage_ids": [
+    "1810.12091::s04::p001"
+   ],
+   "source_section": "Model Description",
+   "evidence": "INLINEFORM0 and INLINEFORM1 are parameters to control the importance of each component in the model",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f06",
+   "subject": "Component INLINEFORM2",
+   "predicate": "will be used to constrain",
+   "object": "the representation of the locations based on their textual description (i.e. Flickr tags)",
+   "source_passage_ids": [
+    "1810.12091::s04::p001"
+   ],
+   "source_section": "Model Description",
+   "evidence": "Component INLINEFORM2 will be used to constrain the representation of the locations based on their textual description (i.e. Flickr tags)",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f07",
+   "subject": "INLINEFORM3",
+   "predicate": "will be used to constrain",
+   "object": "the representation of the locations based on their numerical features",
+   "source_passage_ids": [
+    "1810.12091::s04::p001"
+   ],
+   "source_section": "Model Description",
+   "evidence": "INLINEFORM3 will be used to constrain the representation of the locations based on their numerical features",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f08",
+   "subject": "INLINEFORM4",
+   "predicate": "will impose",
+   "object": "the constraint that locations belonging to the same category should be close together in the space",
+   "source_passage_ids": [
+    "1810.12091::s04::p001"
+   ],
+   "source_section": "Model Description",
+   "evidence": "INLINEFORM4 will impose the constraint that locations belonging to the same category should be close together in the space",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f09",
+   "subject": "Many of the tags associated with Flickr photos",
+   "predicate": "describe",
+   "object": "characteristics of the places where these photos were taken",
+   "source_passage_ids": [
+    "1810.12091::s05::p000"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "Many of the tags associated with Flickr photos describe characteristics of the places where these photos were taken",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f10",
+   "subject": "tags",
+   "predicate": "may correspond to",
+   "object": "place names (e.g. Brussels, England, Scandinavia)",
+   "source_passage_ids": [
+    "1810.12091::s05::p000"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "tags may correspond to place names (e.g. Brussels, England, Scandinavia)",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f11",
+   "subject": "all of which",
+   "predicate": "were uploaded to Flickr before",
+   "object": "the end of September 2015",
+   "source_passage_ids": [
+    "1810.12091::s05::p000"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "all of which were uploaded to Flickr before the end of September 2015",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f12",
+   "subject": "INLINEFORM0",
+   "predicate": "is",
+   "object": "a set of geographic locations, each characterized by latitude and longitude coordinates",
+   "source_passage_ids": [
+    "1810.12091::s05::p001"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "Let INLINEFORM0 be a set of geographic locations, each characterized by latitude and longitude coordinates",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b2:f13",
+   "subject": "the weighting scheme from BIBREF7",
+   "predicate": "combines",
+   "object": "a Gaussian kernel (to model spatial proximity) with Positive Pointwise Mutual Information (PPMI)",
+   "source_passage_ids": [
+    "1810.12091::s05::p001"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "which combines a Gaussian kernel (to model spatial proximity) with Positive Pointwise Mutual Information (PPMI)",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b3:f00",
+   "subject": "the number of times INLINEFORM5 occurs in photos near INLINEFORM6",
+   "predicate": "is",
+   "object": "an important criterion",
+   "source_passage_ids": [
+    "1810.12091::s05::p002"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "the number of times INLINEFORM5 occurs in photos near INLINEFORM6 is clearly an important criterion",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b3:f01",
+   "subject": "the threshold INLINEFORM0",
+   "predicate": "is assumed to be",
+   "object": "fixed",
+   "source_passage_ids": [
+    "1810.12091::s05::p003"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "where the threshold INLINEFORM0 is assumed to be fixed",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b3:f02",
+   "subject": "INLINEFORM2",
+   "predicate": "is",
+   "object": "the Haversine distance",
+   "source_passage_ids": [
+    "1810.12091::s05::p003"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "INLINEFORM2 is the Haversine distance",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b3:f03",
+   "subject": "A tag occurrence",
+   "predicate": "is counted only once for",
+   "object": "all photos by the same user at the same location",
+   "source_passage_ids": [
+    "1810.12091::s05::p003"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "A tag occurrence is counted only once for all photos by the same user at the same location",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b3:f04",
+   "subject": "INLINEFORM0",
+   "predicate": "is",
+   "object": "the set of all tags",
+   "source_passage_ids": [
+    "1810.12091::s05::p005"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "with INLINEFORM0 the set of all tags",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b3:f05",
+   "subject": "INLINEFORM1",
+   "predicate": "is",
+   "object": "the set of locations",
+   "source_passage_ids": [
+    "1810.12091::s05::p005"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "and INLINEFORM1 the set of locations",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b3:f06",
+   "subject": "INLINEFORM0",
+   "predicate": "is",
+   "object": "a set of (mutually exclusive) properties of locations in which we are interested",
+   "source_passage_ids": [
+    "1810.12091::s05::p006"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "Let INLINEFORM0 be a set of (mutually exclusive) properties of locations in which we are interested",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b3:f07",
+   "subject": "INLINEFORM0",
+   "predicate": "is",
+   "object": "the probability that a photo with tag INLINEFORM1 has a location near INLINEFORM2",
+   "source_passage_ids": [
+    "1810.12091::s05::p007"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "where INLINEFORM0 is the probability that a photo with tag INLINEFORM1 has a location near INLINEFORM2",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b3:f08",
+   "subject": "INLINEFORM3",
+   "predicate": "is",
+   "object": "the probability that an arbitrary tag occurrence is assigned to a photo near a location in INLINEFORM4",
+   "source_passage_ids": [
+    "1810.12091::s05::p007"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "and INLINEFORM3 is the probability that an arbitrary tag occurrence is assigned to a photo near a location in INLINEFORM4",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b3:f09",
+   "subject": "INLINEFORM5",
+   "predicate": "is estimated using",
+   "object": "Bayesian smoothing",
+   "source_passage_ids": [
+    "1810.12091::s05::p007"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "it is estimated using Bayesian smoothing",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f00",
+   "subject": "INLINEFORM0",
+   "predicate": "controls",
+   "object": "the amount of smoothing",
+   "source_passage_ids": [
+    "1810.12091::s05::p008"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "where INLINEFORM0 is a parameter controlling the amount of smoothing, which will be tuned in the experiments.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f01",
+   "subject": "INLINEFORM0",
+   "predicate": "will be tuned in",
+   "object": "the experiments",
+   "source_passage_ids": [
+    "1810.12091::s05::p008"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "which will be tuned in the experiments.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f02",
+   "subject": "maximum likelihood estimation",
+   "predicate": "can be used for",
+   "object": "INLINEFORM1",
+   "source_passage_ids": [
+    "1810.12091::s05::p008"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "for INLINEFORM1 we can simply use a maximum likelihood estimation",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f03",
+   "subject": "Location embedding",
+   "predicate": "finds",
+   "object": "a vector INLINEFORM0 for each location INLINEFORM1",
+   "source_passage_ids": [
+    "1810.12091::s05::p009"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "We now want to find a vector INLINEFORM0 for each location INLINEFORM1 such that similar locations are represented using similar vectors.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f04",
+   "subject": "similar locations",
+   "predicate": "are represented using",
+   "object": "similar vectors",
+   "source_passage_ids": [
+    "1810.12091::s05::p009"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "such that similar locations are represented using similar vectors.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f05",
+   "subject": "tag occurrences",
+   "predicate": "are treated as",
+   "object": "context words of geographic locations",
+   "source_passage_ids": [
+    "1810.12091::s05::p009"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "where tag occurrences are treated as context words of geographic locations.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f06",
+   "subject": "tags",
+   "predicate": "play the role of",
+   "object": "the context words in the GloVe model",
+   "source_passage_ids": [
+    "1810.12091::s05::p010"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "Note how tags play the role of the context words in the GloVe model",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f07",
+   "subject": "evaluating the full objective above",
+   "predicate": "would not be",
+   "object": "computationally feasible",
+   "source_passage_ids": [
+    "1810.12091::s05::p010"
+   ],
+   "source_section": "Tag Based Location Embedding",
+   "evidence": "In practice, evaluating the full objective above would not be computationally feasible",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f08",
+   "subject": "These",
+   "predicate": "include",
+   "object": "nine (real-valued) numerical features",
+   "source_passage_ids": [
+    "1810.12091::s06::p000"
+   ],
+   "source_section": "Structured Environmental Data",
+   "evidence": "These include nine (real-valued) numerical features, which are latitude, longitude, elevation, population, and five climate related features",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f09",
+   "subject": "five climate related features",
+   "predicate": "are",
+   "object": "avg. temperature, avg. precipitation, avg. solar radiation, avg. wind speed, and avg. water vapor pressure",
+   "source_passage_ids": [
+    "1810.12091::s06::p000"
+   ],
+   "source_section": "Structured Environmental Data",
+   "evidence": "five climate related features (avg. temperature, avg. precipitation, avg. solar radiation, avg. wind speed, and avg. water vapor pressure).",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f10",
+   "subject": "each location",
+   "predicate": "should belong to",
+   "object": "exactly 4 categories",
+   "source_passage_ids": [
+    "1810.12091::s06::p000"
+   ],
+   "source_section": "Structured Environmental Data",
+   "evidence": "Note that each location should belong to exactly 4 categories: one CORINE class at each of the three levels and a soil type.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f11",
+   "subject": "Numerical features",
+   "predicate": "can be treated similarly to",
+   "object": "the tag occurrences",
+   "source_passage_ids": [
+    "1810.12091::s06::p001"
+   ],
+   "source_section": "Structured Environmental Data",
+   "evidence": "Numerical features can be treated similarly to the tag occurrences",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f12",
+   "subject": "the value of a given numerical feature",
+   "predicate": "can be predicted from",
+   "object": "the location vectors using a linear mapping",
+   "source_passage_ids": [
+    "1810.12091::s06::p001"
+   ],
+   "source_section": "Structured Environmental Data",
+   "evidence": "we will assume that the value of a given numerical feature can be predicted from the location vectors using a linear mapping.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f13",
+   "subject": "INLINEFORM0",
+   "predicate": "denotes",
+   "object": "set of all numerical features",
+   "source_passage_ids": [
+    "1810.12091::s06::p002"
+   ],
+   "source_section": "Structured Environmental Data",
+   "evidence": "where we write INLINEFORM0 for set of all numerical features",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b4:f14",
+   "subject": "INLINEFORM1",
+   "predicate": "is",
+   "object": "the value of feature INLINEFORM2 for location INLINEFORM3 , after z-score normalization",
+   "source_passage_ids": [
+    "1810.12091::s06::p002"
+   ],
+   "source_section": "Structured Environmental Data",
+   "evidence": "INLINEFORM1 is the value of feature INLINEFORM2 for location INLINEFORM3 , after z-score normalization.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b5:f00",
+   "subject": "categorical features",
+   "predicate": "are taken into account by",
+   "object": "the constraint that locations belonging to the same category should be close together in the space",
+   "source_passage_ids": [
+    "1810.12091::s06::p003"
+   ],
+   "source_section": "Structured Environmental Data",
+   "evidence": "To take into account the categorical features, we impose the constraint that locations belonging to the same category should be close together in the space.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b5:f01",
+   "subject": "locations belonging to the same category",
+   "predicate": "should be",
+   "object": "close together in the space",
+   "source_passage_ids": [
+    "1810.12091::s06::p003"
+   ],
+   "source_section": "Structured Environmental Data",
+   "evidence": "we impose the constraint that locations belonging to the same category should be close together in the space.",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g00:b5:f02",
+   "subject": "each category type INLINEFORM0",
+   "predicate": "is represented as",
+   "object": "a vector INLINEFORM1",
+   "source_passage_ids": [
+    "1810.12091::s06::p003"
+   ],
+   "source_section": "Structured Environmental Data",
+   "evidence": "we represent each category type INLINEFORM0 as a vector INLINEFORM1",
+   "group_id": "1810.12091::g00"
+  },
+  {
+   "fact_id": "1810.12091::g01:b0:f00",
+   "subject": "the European network of nature protected sites Natura 2000 dataset",
+   "predicate": "is used as",
+   "object": "ground truth",
+   "source_passage_ids": [
+    "1810.12091::s07::p001"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "using the European network of nature protected sites Natura 2000 dataset as ground truth",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b0:f01",
+   "subject": "the distribution of 100 species across Europe",
+   "predicate": "is predicted using",
+   "object": "the European network of nature protected sites Natura 2000 dataset",
+   "source_passage_ids": [
+    "1810.12091::s07::p001"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "Predicting the distribution of 100 species across Europe, using the European network of nature protected sites Natura 2000 dataset as ground truth.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b0:f02",
+   "subject": "each of these species",
+   "predicate": "is considered as",
+   "object": "a binary classification problem",
+   "source_passage_ids": [
+    "1810.12091::s07::p001"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "For each of these species, a binary classification problem is considered.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b0:f03",
+   "subject": "the set of locations INLINEFORM0",
+   "predicate": "is defined as",
+   "object": "the 26,425 distinct sites occurring in the dataset",
+   "source_passage_ids": [
+    "1810.12091::s07::p001"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "The set of locations INLINEFORM0 is defined as the 26,425 distinct sites occurring in the dataset.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b0:f04",
+   "subject": "Predicting soil type",
+   "predicate": "is treated as",
+   "object": "a binary classification problem",
+   "source_passage_ids": [
+    "1810.12091::s07::p002"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "Predicting soil type, again each time treating the task as a binary classification problem",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b0:f05",
+   "subject": "the soil type experiments",
+   "predicate": "use",
+   "object": "the same set of locations INLINEFORM0 as in the species distribution experiments",
+   "source_passage_ids": [
+    "1810.12091::s07::p002"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "using the same set of locations INLINEFORM0 as in the species distribution experiments",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b0:f06",
+   "subject": "none of the soil type features",
+   "predicate": "are used for",
+   "object": "generating the embeddings",
+   "source_passage_ids": [
+    "1810.12091::s07::p002"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "For these experiments, none of the soil type features are used for generating the embeddings.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b0:f07",
+   "subject": "CORINE land cover classes at levels 1, 2 and level 3",
+   "predicate": "are predicted using",
+   "object": "the same set of locations INLINEFORM0 as in the species distribution experiments",
+   "source_passage_ids": [
+    "1810.12091::s07::p003"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "Predicting CORINE land cover classes at levels 1, 2 and level 3, each time treating the task as a binary classification problem, using the same set of locations INLINEFORM0 as in the species distribution experiments.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b0:f08",
+   "subject": "Predicting CORINE land cover classes at levels 1, 2 and level 3",
+   "predicate": "is treated as",
+   "object": "a binary classification problem",
+   "source_passage_ids": [
+    "1810.12091::s07::p003"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "each time treating the task as a binary classification problem",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b0:f09",
+   "subject": "none of the CORINE features",
+   "predicate": "are used for",
+   "object": "generating the embeddings",
+   "source_passage_ids": [
+    "1810.12091::s07::p003"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "For these experiments, none of the CORINE features are used for generating the embeddings.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b0:f10",
+   "subject": "5 climate related features",
+   "predicate": "are",
+   "object": "the average precipitation, temperature, solar radiation, water vapor pressure, and wind speed",
+   "source_passage_ids": [
+    "1810.12091::s07::p005"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "Predicting 5 climate related features: the average precipitation, temperature, solar radiation, water vapor pressure, and wind speed.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b0:f11",
+   "subject": "this experiment",
+   "predicate": "uses",
+   "object": "the same set of locations INLINEFORM0 as for species distribution",
+   "source_passage_ids": [
+    "1810.12091::s07::p005"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "We again use the same set of locations INLINEFORM0 as for species distribution in this experiment.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b0:f12",
+   "subject": "None of the climate features",
+   "predicate": "is used for",
+   "object": "constructing the embeddings for this experiment",
+   "source_passage_ids": [
+    "1810.12091::s07::p005"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "None of the climate features is used for constructing the embeddings for this experiment.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f00",
+   "subject": "the crowdsourced dataset from the ScenicOrNot website",
+   "predicate": "is used as",
+   "object": "ground truth",
+   "source_passage_ids": [
+    "1810.12091::s07::p006"
+   ],
+   "source_section": "Evaluation Tasks",
+   "evidence": "using the crowdsourced dataset from the ScenicOrNot website as ground truth",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f01",
+   "subject": "all experiments",
+   "predicate": "use",
+   "object": "Support Vector Machines (SVMs) for classification problems and Support Vector Regression (SVR) for regression problems",
+   "source_passage_ids": [
+    "1810.12091::s08::p000"
+   ],
+   "source_section": "Experimental Setup",
+   "evidence": "In all experiments, we use Support Vector Machines (SVMs) for classification problems and Support Vector Regression (SVR) for regression problems",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f02",
+   "subject": "the set of locations INLINEFORM1",
+   "predicate": "was split into",
+   "object": "two-thirds for training, one-sixth for testing, and one-sixth for tuning the parameters",
+   "source_passage_ids": [
+    "1810.12091::s08::p000"
+   ],
+   "source_section": "Experimental Setup",
+   "evidence": "the set of locations INLINEFORM1 was split into two-thirds for training, one-sixth for testing, and one-sixth for tuning the parameters",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f03",
+   "subject": "All embedding models",
+   "predicate": "are learned with",
+   "object": "Adagrad using 30 iterations",
+   "source_passage_ids": [
+    "1810.12091::s08::p000"
+   ],
+   "source_section": "Experimental Setup",
+   "evidence": "All embedding models are learned with Adagrad using 30 iterations.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f04",
+   "subject": "the scenicness experiments",
+   "predicate": "considered",
+   "object": "scores 3 and 7 as cut-off points, leading to three classes",
+   "source_passage_ids": [
+    "1810.12091::s08::p000"
+   ],
+   "source_section": "Experimental Setup",
+   "evidence": "For the scenicness experiments, we considered scores 3 and 7 as cut-off points, leading to three classes",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f05",
+   "subject": "EGEL-Tags",
+   "predicate": "only uses",
+   "object": "the information from the Flickr tags",
+   "source_passage_ids": [
+    "1810.12091::s09::p000"
+   ],
+   "source_section": "Variants and Baseline Methods",
+   "evidence": "EGEL-Tags only uses the information from the Flickr tags",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f06",
+   "subject": "EGEL-Tags+NS",
+   "predicate": "is similar to",
+   "object": "EGEL-Tags but with the addition of negative examples",
+   "source_passage_ids": [
+    "1810.12091::s09::p000"
+   ],
+   "source_section": "Variants and Baseline Methods",
+   "evidence": "EGEL-Tags+NS is similar to EGEL-Tags but with the addition of negative examples.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f07",
+   "subject": "binary classification tasks",
+   "predicate": "are presented in terms of",
+   "object": "average precision, average recall and macro average F1 score",
+   "source_passage_ids": [
+    "1810.12091::s10::p000"
+   ],
+   "source_section": "Results and Discussion",
+   "evidence": "We present our results for the binary classification tasks in Tables TABREF23 – TABREF24 in terms of average precision, average recall and macro average F1 score.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f08",
+   "subject": "EGEL-All",
+   "predicate": "outperforms",
+   "object": "the baselines for all the considered tasks",
+   "source_passage_ids": [
+    "1810.12091::s10::p000"
+   ],
+   "source_section": "Results and Discussion",
+   "evidence": "It outperforms the baselines for all the considered tasks.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f09",
+   "subject": "the usefulness of embeddings for predicting environmental features",
+   "predicate": "is only consistently the case for",
+   "object": "the variants that use both the tags and the structured datasets",
+   "source_passage_ids": [
+    "1810.12091::s10::p001"
+   ],
+   "source_section": "Results and Discussion",
+   "evidence": "this is only consistently the case for the variants that use both the tags and the structured datasets",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f10",
+   "subject": "BOW-Tags",
+   "predicate": "sometimes achieves",
+   "object": "the best results",
+   "source_passage_ids": [
+    "1810.12091::s10::p001"
+   ],
+   "source_section": "Results and Discussion",
+   "evidence": "comparing BOW-Tags with EGEL-Tags, we sometimes see that the former achieves the best results",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f11",
+   "subject": "BOW-KL(Tags)",
+   "predicate": "performs worse than",
+   "object": "BOW-Tags",
+   "source_passage_ids": [
+    "1810.12091::s10::p001"
+   ],
+   "source_section": "Results and Discussion",
+   "evidence": "we also find that BOW-KL(Tags) performs worse than BOW-Tags",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f12",
+   "subject": "GloVe",
+   "predicate": "performs better than",
+   "object": "the bag-of-words model for large corpora",
+   "source_passage_ids": [
+    "1810.12091::s10::p002"
+   ],
+   "source_section": "Results and Discussion",
+   "evidence": "GloVe performs better than the bag-of-words model for large corpora and worse for smaller corpora",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b1:f13",
+   "subject": "GloVe",
+   "predicate": "performs worse for",
+   "object": "smaller corpora",
+   "source_passage_ids": [
+    "1810.12091::s10::p002"
+   ],
+   "source_section": "Results and Discussion",
+   "evidence": "GloVe performs better than the bag-of-words model for large corpora and worse for smaller corpora",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b2:f00",
+   "subject": "The experimental results",
+   "predicate": "show",
+   "object": "that our model can integrate Flickr tags with structured information in a more effective way than existing methods",
+   "source_passage_ids": [
+    "1810.12091::s11::p000"
+   ],
+   "source_section": " Conclusions",
+   "evidence": "The experimental results show that our model can integrate Flickr tags with structured information in a more effective way than existing methods",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b2:f01",
+   "subject": "Shelan Jeawak",
+   "predicate": "has been sponsored by",
+   "object": "HCED Iraq",
+   "source_passage_ids": [
+    "1810.12091::s12::p000"
+   ],
+   "source_section": "Acknowledgments",
+   "evidence": "Shelan Jeawak has been sponsored by HCED Iraq.",
+   "group_id": "1810.12091::g01"
+  },
+  {
+   "fact_id": "1810.12091::g01:b2:f02",
+   "subject": "Steven Schockaert",
+   "predicate": "has been supported by",
+   "object": "ERC Starting Grant 637277",
+   "source_passage_ids": [
+    "1810.12091::s12::p000"
+   ],
+   "source_section": "Acknowledgments",
+   "evidence": "Steven Schockaert has been supported by ERC Starting Grant 637277.",
+   "group_id": "1810.12091::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1810.12091::g00",
+   "facts": [
+    {
+     "fact_id": "1810.12091::g00:b0:f00",
+     "subject": "Users of photo-sharing websites such as Flickr",
+     "predicate": "often provide",
+     "object": "short textual descriptions in the form of tags",
+     "source_passage_ids": [
+      "1810.12091::s00::p000"
+     ],
+     "source_section": "Introduction",
+     "evidence": "Users of photo-sharing websites such as Flickr often provide short textual descriptions in the form of tags",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f01",
+     "subject": "latitude and longitude coordinates",
+     "predicate": "are nowadays commonly made available",
+     "object": "as well",
+     "source_passage_ids": [
+      "1810.12091::s00::p000"
+     ],
+     "source_section": "Introduction",
+     "evidence": "latitude and longitude coordinates are nowadays commonly made available as well",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f02",
+     "subject": "Flickr",
+     "predicate": "can thus be regarded as",
+     "object": "a source of environmental information",
+     "source_passage_ids": [
+      "1810.12091::s00::p000"
+     ],
+     "source_section": "Introduction",
+     "evidence": "Flickr can thus be regarded as a source of environmental information",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f03",
+     "subject": "the usefulness of Flickr for characterizing the natural environment",
+     "predicate": "is",
+     "object": "less well-understood",
+     "source_passage_ids": [
+      "1810.12091::s00::p000"
+     ],
+     "source_section": "Introduction",
+     "evidence": "the usefulness of Flickr for characterizing the natural environment, which is the focus of this paper, is less well-understood",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f04",
+     "subject": "Flickr tags",
+     "predicate": "capture",
+     "object": "valuable ecological information",
+     "source_passage_ids": [
+      "1810.12091::s00::p001"
+     ],
+     "source_section": "Introduction",
+     "evidence": "Many recent studies have highlighted that Flickr tags capture valuable ecological information",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f05",
+     "subject": "ecologists",
+     "predicate": "have mostly used",
+     "object": "social media to conduct manual evaluations of image content",
+     "source_passage_ids": [
+      "1810.12091::s00::p001"
+     ],
+     "source_section": "Introduction",
+     "evidence": "ecologists have mostly used social media to conduct manual evaluations of image content",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f06",
+     "subject": "bag-of-words representations derived from Flickr tags",
+     "predicate": "were found to give",
+     "object": "promising result for predicting a range of different environemental phenomena",
+     "source_passage_ids": [
+      "1810.12091::s00::p001"
+     ],
+     "source_section": "Introduction",
+     "evidence": "bag-of-words representations derived from Flickr tags were found to give promising result for predicting a range of different environemental phenomena",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f07",
+     "subject": "Vector space embeddings",
+     "predicate": "are",
+     "object": "representations in which the objects from a given domain are encoded using relatively low-dimensional vectors",
+     "source_passage_ids": [
+      "1810.12091::s00::p002"
+     ],
+     "source_section": "Introduction",
+     "evidence": "Vector space embeddings are representations in which the objects from a given domain are encoded using relatively low-dimensional vectors",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f08",
+     "subject": "the representation of a location in our model",
+     "predicate": "is determined by",
+     "object": "the tags of the photos that have been taken near that location",
+     "source_passage_ids": [
+      "1810.12091::s00::p002"
+     ],
+     "source_section": "Introduction",
+     "evidence": "the representation of a location in our model is determined by the tags of the photos that have been taken near that location",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f09",
+     "subject": "the off-the-shelf GloVe model",
+     "predicate": "performed",
+     "object": "surprisingly poorly",
+     "source_passage_ids": [
+      "1810.12091::s00::p003"
+     ],
+     "source_section": "Introduction",
+     "evidence": "we found that the off-the-shelf GloVe model performed surprisingly poorly",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f10",
+     "subject": "the number of tags associated with a given location",
+     "predicate": "can be",
+     "object": "quite small",
+     "source_passage_ids": [
+      "1810.12091::s00::p003"
+     ],
+     "source_section": "Introduction",
+     "evidence": "given that the number of tags associated with a given location can be quite small",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f11",
+     "subject": "term selection",
+     "predicate": "is in some cases critical to obtain",
+     "object": "vector spaces that capture the relevant aspects of geographic locations",
+     "source_passage_ids": [
+      "1810.12091::s00::p003"
+     ],
+     "source_section": "Introduction",
+     "evidence": "term selection is in some cases critical to obtain vector spaces that capture the relevant aspects of geographic locations",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f12",
+     "subject": "vector space embeddings learned from Flickr tags alone",
+     "predicate": "are sometimes outperformed by",
+     "object": "bag-of-words representations",
+     "source_passage_ids": [
+      "1810.12091::s00::p003"
+     ],
+     "source_section": "Introduction",
+     "evidence": "vector space embeddings learned from Flickr tags alone are sometimes outperformed by bag-of-words representations",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f13",
+     "subject": "word embeddings",
+     "predicate": "represent",
+     "object": "word meaning using vectors of typically around 300 dimensions",
+     "source_passage_ids": [
+      "1810.12091::s01::p000"
+     ],
+     "source_section": "Vector space embeddings",
+     "evidence": "word embeddings, which represent word meaning using vectors of typically around 300 dimensions",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f14",
+     "subject": "different methods for learning such word embeddings",
+     "predicate": "include",
+     "object": "Skip-gram and the Continuous Bag-of-Words (CBOW) model, GloVe, and fastText",
+     "source_passage_ids": [
+      "1810.12091::s01::p000"
+     ],
+     "source_section": "Vector space embeddings",
+     "evidence": "including Skip-gram and the Continuous Bag-of-Words (CBOW) model BIBREF8 , GloVe BIBREF9 , and fastText BIBREF14",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f15",
+     "subject": "The model we consider in this paper",
+     "predicate": "builds on",
+     "object": "GloVe",
+     "source_passage_ids": [
+      "1810.12091::s01::p000"
+     ],
+     "source_section": "Vector space embeddings",
+     "evidence": "The model we consider in this paper builds on GloVe",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f16",
+     "subject": "GloVe",
+     "predicate": "was designed to capture",
+     "object": "linear regularities of word-word co-occurrence",
+     "source_passage_ids": [
+      "1810.12091::s01::p000"
+     ],
+     "source_section": "Vector space embeddings",
+     "evidence": "GloVe, which was designed to capture linear regularities of word-word co-occurrence",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b0:f17",
+     "subject": "In GloVe",
+     "predicate": "there are",
+     "object": "two word vectors INLINEFORM0 and INLINEFORM1 for each word in the vocabulary",
+     "source_passage_ids": [
+      "1810.12091::s01::p000"
+     ],
+     "source_section": "Vector space embeddings",
+     "evidence": "In GloVe, there are two word vectors INLINEFORM0 and INLINEFORM1 for each word in the vocabulary",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b1:f00",
+     "subject": "The weighting function INLINEFORM6",
+     "predicate": "is used to limit",
+     "object": "the impact of rare terms",
+     "source_passage_ids": [
+      "1810.12091::s01::p001"
+     ],
+     "source_section": "Vector space embeddings",
+     "evidence": "The weighting function INLINEFORM6 is used to limit the impact of rare terms.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b1:f01",
+     "subject": "the target word vectors INLINEFORM11",
+     "predicate": "correspond to",
+     "object": "the actual word representations which we would like to find",
+     "source_passage_ids": [
+      "1810.12091::s01::p001"
+     ],
+     "source_section": "Vector space embeddings",
+     "evidence": "Intuitively, the target word vectors INLINEFORM11 correspond to the actual word representations which we would like to find",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b1:f02",
+     "subject": "various lexicons",
+     "predicate": "have been used to obtain",
+     "object": "word embeddings that are better suited at modelling sentiment BIBREF15 and antonymy BIBREF29",
+     "source_passage_ids": [
+      "1810.12091::s01::p002"
+     ],
+     "source_section": "Vector space embeddings",
+     "evidence": "Along similar lines, various lexicons have been used to obtain word embeddings that are better suited at modelling sentiment BIBREF15 and antonymy BIBREF29 , among others.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b1:f03",
+     "subject": "the low-dimensional vector representations",
+     "predicate": "lead to",
+     "object": "more faithful predictions than the original high-dimensional census data",
+     "source_passage_ids": [
+      "1810.12091::s02::p000"
+     ],
+     "source_section": "Embeddings for geographic information",
+     "evidence": "the low-dimensional vector representations lead to more faithful predictions than the original high-dimensional census data.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b1:f04",
+     "subject": "Several methods",
+     "predicate": "use word embedding models to learn",
+     "object": "representations of Points-of-Interest (POIs) that can be used for predicting user visits BIBREF33 , BIBREF34 , BIBREF35",
+     "source_passage_ids": [
+      "1810.12091::s02::p002"
+     ],
+     "source_section": "Embeddings for geographic information",
+     "evidence": "Several methods also use word embedding models to learn representations of Points-of-Interest (POIs) that can be used for predicting user visits BIBREF33 , BIBREF34 , BIBREF35 .",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b1:f05",
+     "subject": "many of these approaches",
+     "predicate": "do not actually consider",
+     "object": "any textual information",
+     "source_passage_ids": [
+      "1810.12091::s02::p002"
+     ],
+     "source_section": "Embeddings for geographic information",
+     "evidence": "In other words, despite the use of word embedding models, many of these approaches do not actually consider any textual information.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b1:f06",
+     "subject": "the Skip-gram model",
+     "predicate": "is utilized to create",
+     "object": "a global pattern of users' POIs",
+     "source_passage_ids": [
+      "1810.12091::s02::p002"
+     ],
+     "source_section": "Embeddings for geographic information",
+     "evidence": "For example, in BIBREF34 the Skip-gram model is utilized to create a global pattern of users' POIs.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b1:f07",
+     "subject": "Each location",
+     "predicate": "was treated as",
+     "object": "a word",
+     "source_passage_ids": [
+      "1810.12091::s02::p002"
+     ],
+     "source_section": "Embeddings for geographic information",
+     "evidence": "Each location was treated as a word and the other locations visited before or after were treated as context words.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b1:f08",
+     "subject": "the other locations visited before or after",
+     "predicate": "were treated as",
+     "object": "context words",
+     "source_passage_ids": [
+      "1810.12091::s02::p002"
+     ],
+     "source_section": "Embeddings for geographic information",
+     "evidence": "Each location was treated as a word and the other locations visited before or after were treated as context words.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f00",
+     "subject": "tags of georeferenced Flickr photos",
+     "predicate": "can effectively supplement",
+     "object": "traditional scientific environmental data",
+     "source_passage_ids": [
+      "1810.12091::s03::p000"
+     ],
+     "source_section": "Analyzing Flickr tags",
+     "evidence": "the tags of georeferenced Flickr photos can effectively supplement traditional scientific environmental data",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f01",
+     "subject": "combining both types of information",
+     "predicate": "leads to",
+     "object": "significantly better results than using either of them alone",
+     "source_passage_ids": [
+      "1810.12091::s03::p000"
+     ],
+     "source_section": "Analyzing Flickr tags",
+     "evidence": "combining both types of information leads to significantly better results than using either of them alone",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f02",
+     "subject": "their straightforward way of combining both information sources",
+     "predicate": "is",
+     "object": "far from optimal",
+     "source_passage_ids": [
+      "1810.12091::s03::p000"
+     ],
+     "source_section": "Analyzing Flickr tags",
+     "evidence": "their straightforward way of combining both information sources, by concatenating the two types of feature vectors, is far from optimal",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f03",
+     "subject": "the problem of embedding Flickr tags",
+     "predicate": "has so far received",
+     "object": "very limited attention",
+     "source_passage_ids": [
+      "1810.12091::s03::p001"
+     ],
+     "source_section": "Analyzing Flickr tags",
+     "evidence": "the problem of embedding Flickr tags has so far received very limited attention",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f04",
+     "subject": "their focus",
+     "predicate": "was on",
+     "object": "learning embeddings that capture word meaning",
+     "source_passage_ids": [
+      "1810.12091::s03::p001"
+     ],
+     "source_section": "Analyzing Flickr tags",
+     "evidence": "their focus was on learning embeddings that capture word meaning",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f05",
+     "subject": "INLINEFORM0 and INLINEFORM1",
+     "predicate": "are",
+     "object": "parameters to control the importance of each component in the model",
+     "source_passage_ids": [
+      "1810.12091::s04::p001"
+     ],
+     "source_section": "Model Description",
+     "evidence": "INLINEFORM0 and INLINEFORM1 are parameters to control the importance of each component in the model",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f06",
+     "subject": "Component INLINEFORM2",
+     "predicate": "will be used to constrain",
+     "object": "the representation of the locations based on their textual description (i.e. Flickr tags)",
+     "source_passage_ids": [
+      "1810.12091::s04::p001"
+     ],
+     "source_section": "Model Description",
+     "evidence": "Component INLINEFORM2 will be used to constrain the representation of the locations based on their textual description (i.e. Flickr tags)",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f07",
+     "subject": "INLINEFORM3",
+     "predicate": "will be used to constrain",
+     "object": "the representation of the locations based on their numerical features",
+     "source_passage_ids": [
+      "1810.12091::s04::p001"
+     ],
+     "source_section": "Model Description",
+     "evidence": "INLINEFORM3 will be used to constrain the representation of the locations based on their numerical features",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f08",
+     "subject": "INLINEFORM4",
+     "predicate": "will impose",
+     "object": "the constraint that locations belonging to the same category should be close together in the space",
+     "source_passage_ids": [
+      "1810.12091::s04::p001"
+     ],
+     "source_section": "Model Description",
+     "evidence": "INLINEFORM4 will impose the constraint that locations belonging to the same category should be close together in the space",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f09",
+     "subject": "Many of the tags associated with Flickr photos",
+     "predicate": "describe",
+     "object": "characteristics of the places where these photos were taken",
+     "source_passage_ids": [
+      "1810.12091::s05::p000"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "Many of the tags associated with Flickr photos describe characteristics of the places where these photos were taken",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f10",
+     "subject": "tags",
+     "predicate": "may correspond to",
+     "object": "place names (e.g. Brussels, England, Scandinavia)",
+     "source_passage_ids": [
+      "1810.12091::s05::p000"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "tags may correspond to place names (e.g. Brussels, England, Scandinavia)",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f11",
+     "subject": "all of which",
+     "predicate": "were uploaded to Flickr before",
+     "object": "the end of September 2015",
+     "source_passage_ids": [
+      "1810.12091::s05::p000"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "all of which were uploaded to Flickr before the end of September 2015",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f12",
+     "subject": "INLINEFORM0",
+     "predicate": "is",
+     "object": "a set of geographic locations, each characterized by latitude and longitude coordinates",
+     "source_passage_ids": [
+      "1810.12091::s05::p001"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "Let INLINEFORM0 be a set of geographic locations, each characterized by latitude and longitude coordinates",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b2:f13",
+     "subject": "the weighting scheme from BIBREF7",
+     "predicate": "combines",
+     "object": "a Gaussian kernel (to model spatial proximity) with Positive Pointwise Mutual Information (PPMI)",
+     "source_passage_ids": [
+      "1810.12091::s05::p001"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "which combines a Gaussian kernel (to model spatial proximity) with Positive Pointwise Mutual Information (PPMI)",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b3:f00",
+     "subject": "the number of times INLINEFORM5 occurs in photos near INLINEFORM6",
+     "predicate": "is",
+     "object": "an important criterion",
+     "source_passage_ids": [
+      "1810.12091::s05::p002"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "the number of times INLINEFORM5 occurs in photos near INLINEFORM6 is clearly an important criterion",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b3:f01",
+     "subject": "the threshold INLINEFORM0",
+     "predicate": "is assumed to be",
+     "object": "fixed",
+     "source_passage_ids": [
+      "1810.12091::s05::p003"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "where the threshold INLINEFORM0 is assumed to be fixed",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b3:f02",
+     "subject": "INLINEFORM2",
+     "predicate": "is",
+     "object": "the Haversine distance",
+     "source_passage_ids": [
+      "1810.12091::s05::p003"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "INLINEFORM2 is the Haversine distance",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b3:f03",
+     "subject": "A tag occurrence",
+     "predicate": "is counted only once for",
+     "object": "all photos by the same user at the same location",
+     "source_passage_ids": [
+      "1810.12091::s05::p003"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "A tag occurrence is counted only once for all photos by the same user at the same location",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b3:f04",
+     "subject": "INLINEFORM0",
+     "predicate": "is",
+     "object": "the set of all tags",
+     "source_passage_ids": [
+      "1810.12091::s05::p005"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "with INLINEFORM0 the set of all tags",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b3:f05",
+     "subject": "INLINEFORM1",
+     "predicate": "is",
+     "object": "the set of locations",
+     "source_passage_ids": [
+      "1810.12091::s05::p005"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "and INLINEFORM1 the set of locations",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b3:f06",
+     "subject": "INLINEFORM0",
+     "predicate": "is",
+     "object": "a set of (mutually exclusive) properties of locations in which we are interested",
+     "source_passage_ids": [
+      "1810.12091::s05::p006"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "Let INLINEFORM0 be a set of (mutually exclusive) properties of locations in which we are interested",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b3:f07",
+     "subject": "INLINEFORM0",
+     "predicate": "is",
+     "object": "the probability that a photo with tag INLINEFORM1 has a location near INLINEFORM2",
+     "source_passage_ids": [
+      "1810.12091::s05::p007"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "where INLINEFORM0 is the probability that a photo with tag INLINEFORM1 has a location near INLINEFORM2",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b3:f08",
+     "subject": "INLINEFORM3",
+     "predicate": "is",
+     "object": "the probability that an arbitrary tag occurrence is assigned to a photo near a location in INLINEFORM4",
+     "source_passage_ids": [
+      "1810.12091::s05::p007"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "and INLINEFORM3 is the probability that an arbitrary tag occurrence is assigned to a photo near a location in INLINEFORM4",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b3:f09",
+     "subject": "INLINEFORM5",
+     "predicate": "is estimated using",
+     "object": "Bayesian smoothing",
+     "source_passage_ids": [
+      "1810.12091::s05::p007"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "it is estimated using Bayesian smoothing",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f00",
+     "subject": "INLINEFORM0",
+     "predicate": "controls",
+     "object": "the amount of smoothing",
+     "source_passage_ids": [
+      "1810.12091::s05::p008"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "where INLINEFORM0 is a parameter controlling the amount of smoothing, which will be tuned in the experiments.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f01",
+     "subject": "INLINEFORM0",
+     "predicate": "will be tuned in",
+     "object": "the experiments",
+     "source_passage_ids": [
+      "1810.12091::s05::p008"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "which will be tuned in the experiments.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f02",
+     "subject": "maximum likelihood estimation",
+     "predicate": "can be used for",
+     "object": "INLINEFORM1",
+     "source_passage_ids": [
+      "1810.12091::s05::p008"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "for INLINEFORM1 we can simply use a maximum likelihood estimation",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f03",
+     "subject": "Location embedding",
+     "predicate": "finds",
+     "object": "a vector INLINEFORM0 for each location INLINEFORM1",
+     "source_passage_ids": [
+      "1810.12091::s05::p009"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "We now want to find a vector INLINEFORM0 for each location INLINEFORM1 such that similar locations are represented using similar vectors.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f04",
+     "subject": "similar locations",
+     "predicate": "are represented using",
+     "object": "similar vectors",
+     "source_passage_ids": [
+      "1810.12091::s05::p009"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "such that similar locations are represented using similar vectors.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f05",
+     "subject": "tag occurrences",
+     "predicate": "are treated as",
+     "object": "context words of geographic locations",
+     "source_passage_ids": [
+      "1810.12091::s05::p009"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "where tag occurrences are treated as context words of geographic locations.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f06",
+     "subject": "tags",
+     "predicate": "play the role of",
+     "object": "the context words in the GloVe model",
+     "source_passage_ids": [
+      "1810.12091::s05::p010"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "Note how tags play the role of the context words in the GloVe model",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f07",
+     "subject": "evaluating the full objective above",
+     "predicate": "would not be",
+     "object": "computationally feasible",
+     "source_passage_ids": [
+      "1810.12091::s05::p010"
+     ],
+     "source_section": "Tag Based Location Embedding",
+     "evidence": "In practice, evaluating the full objective above would not be computationally feasible",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f08",
+     "subject": "These",
+     "predicate": "include",
+     "object": "nine (real-valued) numerical features",
+     "source_passage_ids": [
+      "1810.12091::s06::p000"
+     ],
+     "source_section": "Structured Environmental Data",
+     "evidence": "These include nine (real-valued) numerical features, which are latitude, longitude, elevation, population, and five climate related features",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f09",
+     "subject": "five climate related features",
+     "predicate": "are",
+     "object": "avg. temperature, avg. precipitation, avg. solar radiation, avg. wind speed, and avg. water vapor pressure",
+     "source_passage_ids": [
+      "1810.12091::s06::p000"
+     ],
+     "source_section": "Structured Environmental Data",
+     "evidence": "five climate related features (avg. temperature, avg. precipitation, avg. solar radiation, avg. wind speed, and avg. water vapor pressure).",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f10",
+     "subject": "each location",
+     "predicate": "should belong to",
+     "object": "exactly 4 categories",
+     "source_passage_ids": [
+      "1810.12091::s06::p000"
+     ],
+     "source_section": "Structured Environmental Data",
+     "evidence": "Note that each location should belong to exactly 4 categories: one CORINE class at each of the three levels and a soil type.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f11",
+     "subject": "Numerical features",
+     "predicate": "can be treated similarly to",
+     "object": "the tag occurrences",
+     "source_passage_ids": [
+      "1810.12091::s06::p001"
+     ],
+     "source_section": "Structured Environmental Data",
+     "evidence": "Numerical features can be treated similarly to the tag occurrences",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f12",
+     "subject": "the value of a given numerical feature",
+     "predicate": "can be predicted from",
+     "object": "the location vectors using a linear mapping",
+     "source_passage_ids": [
+      "1810.12091::s06::p001"
+     ],
+     "source_section": "Structured Environmental Data",
+     "evidence": "we will assume that the value of a given numerical feature can be predicted from the location vectors using a linear mapping.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f13",
+     "subject": "INLINEFORM0",
+     "predicate": "denotes",
+     "object": "set of all numerical features",
+     "source_passage_ids": [
+      "1810.12091::s06::p002"
+     ],
+     "source_section": "Structured Environmental Data",
+     "evidence": "where we write INLINEFORM0 for set of all numerical features",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b4:f14",
+     "subject": "INLINEFORM1",
+     "predicate": "is",
+     "object": "the value of feature INLINEFORM2 for location INLINEFORM3 , after z-score normalization",
+     "source_passage_ids": [
+      "1810.12091::s06::p002"
+     ],
+     "source_section": "Structured Environmental Data",
+     "evidence": "INLINEFORM1 is the value of feature INLINEFORM2 for location INLINEFORM3 , after z-score normalization.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b5:f00",
+     "subject": "categorical features",
+     "predicate": "are taken into account by",
+     "object": "the constraint that locations belonging to the same category should be close together in the space",
+     "source_passage_ids": [
+      "1810.12091::s06::p003"
+     ],
+     "source_section": "Structured Environmental Data",
+     "evidence": "To take into account the categorical features, we impose the constraint that locations belonging to the same category should be close together in the space.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b5:f01",
+     "subject": "locations belonging to the same category",
+     "predicate": "should be",
+     "object": "close together in the space",
+     "source_passage_ids": [
+      "1810.12091::s06::p003"
+     ],
+     "source_section": "Structured Environmental Data",
+     "evidence": "we impose the constraint that locations belonging to the same category should be close together in the space.",
+     "group_id": "1810.12091::g00"
+    },
+    {
+     "fact_id": "1810.12091::g00:b5:f02",
+     "subject": "each category type INLINEFORM0",
+     "predicate": "is represented as",
+     "object": "a vector INLINEFORM1",
+     "source_passage_ids": [
+      "1810.12091::s06::p003"
+     ],
+     "source_section": "Structured Environmental Data",
+     "evidence": "we represent each category type INLINEFORM0 as a vector INLINEFORM1",
+     "group_id": "1810.12091::g00"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Our main hypothesis in this paper",
+      "is that by using vector space embeddings instead of bag-of-words representations",
+      "the ecological information which is implicitly captured by Flickr tags can be utilized in a more effective way"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Our main motivation for using vector space embeddings",
+      "is that they allow us to integrate",
+      "the textual information we get from Flickr with available structured information in a very natural way"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "a formulation which is based on spatially smoothed version of pointwise mutual information"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our vector space embeddings",
+      "lead to",
+      "substantially better predictions in cases where structured (scientific) information is also taken into account"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "INLINEFORM9",
+      "is usually fixed to",
+      "100"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "INLINEFORM10",
+      "is usually fixed to",
+      "0.75"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "various methods",
+      "have been proposed for learning",
+      "vector space representations from structured data such as knowledge graphs BIBREF20 , BIBREF21 , BIBREF22 , social networks BIBREF23 , BIBREF24 and taxonomies BIBREF25 , BIBREF26"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "The method proposed by BIBREF30",
+      "imposes",
+      "the condition that words that belong to the same semantic category are closer together than words from different categories"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF31",
+      "used",
+      "principal component analysis and stacked autoencoders to learn low-dimensional vector representations of city neighbourhoods based on census data"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "They",
+      "use these representations to predict",
+      "attributes such as crime"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF32",
+      "proposes",
+      "an approach to learn word embeddings based on the assumption that words which tend to be used in the same geographic locations are likely to be similar"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "they",
+      "use geographic location to learn",
+      "word vectors"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use textual descriptions to learn",
+      "vectors representing geographic locations"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Our work",
+      "is different from",
+      "these studies"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our focus",
+      "is on representing",
+      "locations based on a given text description of that location (in the form of Flickr tags), along with numerical and categorical features from scientific datasets"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF7",
+      "found predictive value of Flickr tags roughly on a par with",
+      "that of the scientific datasets"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "BIBREF44",
+      "is",
+      "the only work that generated embeddings for Flickr tags"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use such embeddings as part of",
+      "our method for representing locations"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our embedding model",
+      "combines",
+      "Flickr tags and structured scientific information"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our embedding model",
+      "represents",
+      "a set of locations INLINEFORM0"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "collected",
+      "the tags and meta-data of 70 million Flickr photos with coordinates in Europe"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "have to weight",
+      "the relevance of each tag to that location"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "have followed",
+      "the weighting scheme from BIBREF7"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "a Gaussian kernel to weight the tag occurrences according to their distance from that location"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "PPMI"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "a term selection method"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "obtained good results with",
+      "a method based on Kullback-Leibler (KL) divergence"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "use",
+      "a close variant of the GloVe model"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our objective",
+      "does not directly refer to",
+      "co-occurrence statistics"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our objective",
+      "uses",
+      "the INLINEFORM0 scores"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "have restricted ourselves to",
+      "the same datasets as BIBREF7"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "180 categorical features",
+      "were used",
+      "CORINE land cover classes at level 1 (5 classes), level 2 (15 classes) and level 3 (44 classes) and 116 soil types (SoilGrids)"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "consider",
+      "a vector INLINEFORM1 and a bias term INLINEFORM2"
+     ]
+    }
+   ],
+   "n_raw": 102,
+   "error": null,
+   "calls": [
+    {
+     "block": 0,
+     "n_passages": 6,
+     "n_raw": 22,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1718,
+      "completion_tokens": 1713,
+      "total_tokens": 3431,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 1239
+    },
+    {
+     "block": 1,
+     "n_passages": 6,
+     "n_raw": 20,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1558,
+      "completion_tokens": 1732,
+      "total_tokens": 3290,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 1063
+    },
+    {
+     "block": 2,
+     "n_passages": 6,
+     "n_raw": 22,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1214,
+      "completion_tokens": 1614,
+      "total_tokens": 2828,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 717
+    },
+    {
+     "block": 3,
+     "n_passages": 6,
+     "n_raw": 14,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1073,
+      "completion_tokens": 991,
+      "total_tokens": 2064,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 545
+    },
+    {
+     "block": 4,
+     "n_passages": 6,
+     "n_raw": 21,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1149,
+      "completion_tokens": 1531,
+      "total_tokens": 2680,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 642
+    },
+    {
+     "block": 5,
+     "n_passages": 1,
+     "n_raw": 3,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 424,
+      "completion_tokens": 236,
+      "total_tokens": 660,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 60
+    }
+   ]
+  },
+  {
+   "group_id": "1810.12091::g01",
+   "facts": [
+    {
+     "fact_id": "1810.12091::g01:b0:f00",
+     "subject": "the European network of nature protected sites Natura 2000 dataset",
+     "predicate": "is used as",
+     "object": "ground truth",
+     "source_passage_ids": [
+      "1810.12091::s07::p001"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "using the European network of nature protected sites Natura 2000 dataset as ground truth",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b0:f01",
+     "subject": "the distribution of 100 species across Europe",
+     "predicate": "is predicted using",
+     "object": "the European network of nature protected sites Natura 2000 dataset",
+     "source_passage_ids": [
+      "1810.12091::s07::p001"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "Predicting the distribution of 100 species across Europe, using the European network of nature protected sites Natura 2000 dataset as ground truth.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b0:f02",
+     "subject": "each of these species",
+     "predicate": "is considered as",
+     "object": "a binary classification problem",
+     "source_passage_ids": [
+      "1810.12091::s07::p001"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "For each of these species, a binary classification problem is considered.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b0:f03",
+     "subject": "the set of locations INLINEFORM0",
+     "predicate": "is defined as",
+     "object": "the 26,425 distinct sites occurring in the dataset",
+     "source_passage_ids": [
+      "1810.12091::s07::p001"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "The set of locations INLINEFORM0 is defined as the 26,425 distinct sites occurring in the dataset.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b0:f04",
+     "subject": "Predicting soil type",
+     "predicate": "is treated as",
+     "object": "a binary classification problem",
+     "source_passage_ids": [
+      "1810.12091::s07::p002"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "Predicting soil type, again each time treating the task as a binary classification problem",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b0:f05",
+     "subject": "the soil type experiments",
+     "predicate": "use",
+     "object": "the same set of locations INLINEFORM0 as in the species distribution experiments",
+     "source_passage_ids": [
+      "1810.12091::s07::p002"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "using the same set of locations INLINEFORM0 as in the species distribution experiments",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b0:f06",
+     "subject": "none of the soil type features",
+     "predicate": "are used for",
+     "object": "generating the embeddings",
+     "source_passage_ids": [
+      "1810.12091::s07::p002"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "For these experiments, none of the soil type features are used for generating the embeddings.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b0:f07",
+     "subject": "CORINE land cover classes at levels 1, 2 and level 3",
+     "predicate": "are predicted using",
+     "object": "the same set of locations INLINEFORM0 as in the species distribution experiments",
+     "source_passage_ids": [
+      "1810.12091::s07::p003"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "Predicting CORINE land cover classes at levels 1, 2 and level 3, each time treating the task as a binary classification problem, using the same set of locations INLINEFORM0 as in the species distribution experiments.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b0:f08",
+     "subject": "Predicting CORINE land cover classes at levels 1, 2 and level 3",
+     "predicate": "is treated as",
+     "object": "a binary classification problem",
+     "source_passage_ids": [
+      "1810.12091::s07::p003"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "each time treating the task as a binary classification problem",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b0:f09",
+     "subject": "none of the CORINE features",
+     "predicate": "are used for",
+     "object": "generating the embeddings",
+     "source_passage_ids": [
+      "1810.12091::s07::p003"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "For these experiments, none of the CORINE features are used for generating the embeddings.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b0:f10",
+     "subject": "5 climate related features",
+     "predicate": "are",
+     "object": "the average precipitation, temperature, solar radiation, water vapor pressure, and wind speed",
+     "source_passage_ids": [
+      "1810.12091::s07::p005"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "Predicting 5 climate related features: the average precipitation, temperature, solar radiation, water vapor pressure, and wind speed.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b0:f11",
+     "subject": "this experiment",
+     "predicate": "uses",
+     "object": "the same set of locations INLINEFORM0 as for species distribution",
+     "source_passage_ids": [
+      "1810.12091::s07::p005"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "We again use the same set of locations INLINEFORM0 as for species distribution in this experiment.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b0:f12",
+     "subject": "None of the climate features",
+     "predicate": "is used for",
+     "object": "constructing the embeddings for this experiment",
+     "source_passage_ids": [
+      "1810.12091::s07::p005"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "None of the climate features is used for constructing the embeddings for this experiment.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f00",
+     "subject": "the crowdsourced dataset from the ScenicOrNot website",
+     "predicate": "is used as",
+     "object": "ground truth",
+     "source_passage_ids": [
+      "1810.12091::s07::p006"
+     ],
+     "source_section": "Evaluation Tasks",
+     "evidence": "using the crowdsourced dataset from the ScenicOrNot website as ground truth",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f01",
+     "subject": "all experiments",
+     "predicate": "use",
+     "object": "Support Vector Machines (SVMs) for classification problems and Support Vector Regression (SVR) for regression problems",
+     "source_passage_ids": [
+      "1810.12091::s08::p000"
+     ],
+     "source_section": "Experimental Setup",
+     "evidence": "In all experiments, we use Support Vector Machines (SVMs) for classification problems and Support Vector Regression (SVR) for regression problems",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f02",
+     "subject": "the set of locations INLINEFORM1",
+     "predicate": "was split into",
+     "object": "two-thirds for training, one-sixth for testing, and one-sixth for tuning the parameters",
+     "source_passage_ids": [
+      "1810.12091::s08::p000"
+     ],
+     "source_section": "Experimental Setup",
+     "evidence": "the set of locations INLINEFORM1 was split into two-thirds for training, one-sixth for testing, and one-sixth for tuning the parameters",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f03",
+     "subject": "All embedding models",
+     "predicate": "are learned with",
+     "object": "Adagrad using 30 iterations",
+     "source_passage_ids": [
+      "1810.12091::s08::p000"
+     ],
+     "source_section": "Experimental Setup",
+     "evidence": "All embedding models are learned with Adagrad using 30 iterations.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f04",
+     "subject": "the scenicness experiments",
+     "predicate": "considered",
+     "object": "scores 3 and 7 as cut-off points, leading to three classes",
+     "source_passage_ids": [
+      "1810.12091::s08::p000"
+     ],
+     "source_section": "Experimental Setup",
+     "evidence": "For the scenicness experiments, we considered scores 3 and 7 as cut-off points, leading to three classes",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f05",
+     "subject": "EGEL-Tags",
+     "predicate": "only uses",
+     "object": "the information from the Flickr tags",
+     "source_passage_ids": [
+      "1810.12091::s09::p000"
+     ],
+     "source_section": "Variants and Baseline Methods",
+     "evidence": "EGEL-Tags only uses the information from the Flickr tags",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f06",
+     "subject": "EGEL-Tags+NS",
+     "predicate": "is similar to",
+     "object": "EGEL-Tags but with the addition of negative examples",
+     "source_passage_ids": [
+      "1810.12091::s09::p000"
+     ],
+     "source_section": "Variants and Baseline Methods",
+     "evidence": "EGEL-Tags+NS is similar to EGEL-Tags but with the addition of negative examples.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f07",
+     "subject": "binary classification tasks",
+     "predicate": "are presented in terms of",
+     "object": "average precision, average recall and macro average F1 score",
+     "source_passage_ids": [
+      "1810.12091::s10::p000"
+     ],
+     "source_section": "Results and Discussion",
+     "evidence": "We present our results for the binary classification tasks in Tables TABREF23 – TABREF24 in terms of average precision, average recall and macro average F1 score.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f08",
+     "subject": "EGEL-All",
+     "predicate": "outperforms",
+     "object": "the baselines for all the considered tasks",
+     "source_passage_ids": [
+      "1810.12091::s10::p000"
+     ],
+     "source_section": "Results and Discussion",
+     "evidence": "It outperforms the baselines for all the considered tasks.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f09",
+     "subject": "the usefulness of embeddings for predicting environmental features",
+     "predicate": "is only consistently the case for",
+     "object": "the variants that use both the tags and the structured datasets",
+     "source_passage_ids": [
+      "1810.12091::s10::p001"
+     ],
+     "source_section": "Results and Discussion",
+     "evidence": "this is only consistently the case for the variants that use both the tags and the structured datasets",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f10",
+     "subject": "BOW-Tags",
+     "predicate": "sometimes achieves",
+     "object": "the best results",
+     "source_passage_ids": [
+      "1810.12091::s10::p001"
+     ],
+     "source_section": "Results and Discussion",
+     "evidence": "comparing BOW-Tags with EGEL-Tags, we sometimes see that the former achieves the best results",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f11",
+     "subject": "BOW-KL(Tags)",
+     "predicate": "performs worse than",
+     "object": "BOW-Tags",
+     "source_passage_ids": [
+      "1810.12091::s10::p001"
+     ],
+     "source_section": "Results and Discussion",
+     "evidence": "we also find that BOW-KL(Tags) performs worse than BOW-Tags",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f12",
+     "subject": "GloVe",
+     "predicate": "performs better than",
+     "object": "the bag-of-words model for large corpora",
+     "source_passage_ids": [
+      "1810.12091::s10::p002"
+     ],
+     "source_section": "Results and Discussion",
+     "evidence": "GloVe performs better than the bag-of-words model for large corpora and worse for smaller corpora",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b1:f13",
+     "subject": "GloVe",
+     "predicate": "performs worse for",
+     "object": "smaller corpora",
+     "source_passage_ids": [
+      "1810.12091::s10::p002"
+     ],
+     "source_section": "Results and Discussion",
+     "evidence": "GloVe performs better than the bag-of-words model for large corpora and worse for smaller corpora",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b2:f00",
+     "subject": "The experimental results",
+     "predicate": "show",
+     "object": "that our model can integrate Flickr tags with structured information in a more effective way than existing methods",
+     "source_passage_ids": [
+      "1810.12091::s11::p000"
+     ],
+     "source_section": " Conclusions",
+     "evidence": "The experimental results show that our model can integrate Flickr tags with structured information in a more effective way than existing methods",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b2:f01",
+     "subject": "Shelan Jeawak",
+     "predicate": "has been sponsored by",
+     "object": "HCED Iraq",
+     "source_passage_ids": [
+      "1810.12091::s12::p000"
+     ],
+     "source_section": "Acknowledgments",
+     "evidence": "Shelan Jeawak has been sponsored by HCED Iraq.",
+     "group_id": "1810.12091::g01"
+    },
+    {
+     "fact_id": "1810.12091::g01:b2:f02",
+     "subject": "Steven Schockaert",
+     "predicate": "has been supported by",
+     "object": "ERC Starting Grant 637277",
+     "source_passage_ids": [
+      "1810.12091::s12::p000"
+     ],
+     "source_section": "Acknowledgments",
+     "evidence": "Steven Schockaert has been supported by ERC Starting Grant 637277.",
+     "group_id": "1810.12091::g01"
+    }
+   ],
+   "rejects": [
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "the method from BIBREF7",
+      "is used as",
+      "our main baseline"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "have used",
+      "the same structured datasets and same tag weighting scheme"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "will consider",
+      "three evaluation tasks"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "will also consider",
+      "the following regression tasks"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "the set INLINEFORM0",
+      "is chosen as",
+      "the set of locations of 191 605 rated locations from the ScenicOrNot dataset for which at least one georeferenced Flickr photo exists within a 1 km radius"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our model",
+      "will be referred to as",
+      "EGEL (Embedding GEographic Locations)"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "EGEL-All",
+      "is",
+      "our full method"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "the results of the regression tasks",
+      "are reported in terms of",
+      "the mean absolute error between the predicted and actual scores, as well as the Spearman INLINEFORM0 correlation between the rankings induced by both sets of scores"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our proposed method (EGEL-All)",
+      "can effectively integrate",
+      "Flickr tags with the available structured information"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our experimental results",
+      "confirm",
+      "the usefulness of embeddings for predicting environmental features"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "Figure TABREF29",
+      "compares",
+      "the performance of the GloVe model with the bag-of-words model for predicting place scenicness"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "This issue",
+      "has been alleviated in",
+      "our embedding method by the addition of negative examples"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "we",
+      "have proposed",
+      "a model to learn geographic location embeddings using Flickr tags, numerical environmental features, and categorical information"
+     ]
+    },
+    {
+     "reason": "invalid_entity",
+     "item": [
+      "our model",
+      "leading to",
+      "substantial improvements over baseline methods on various prediction tasks about the natural environment"
+     ]
+    }
+   ],
+   "n_raw": 44,
+   "error": null,
+   "calls": [
+    {
+     "block": 0,
+     "n_passages": 6,
+     "n_raw": 17,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 788,
+      "completion_tokens": 1254,
+      "total_tokens": 2042,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 315
+    },
+    {
+     "block": 1,
+     "n_passages": 6,
+     "n_raw": 22,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 1792,
+      "completion_tokens": 1747,
+      "total_tokens": 3539,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 1292
+    },
+    {
+     "block": 2,
+     "n_passages": 2,
+     "n_raw": 5,
+     "error": null,
+     "salvaged": false,
+     "finish_reason": "stop",
+     "usage": {
+      "prompt_tokens": 479,
+      "completion_tokens": 385,
+      "total_tokens": 864,
+      "reasoning_tokens": null
+     },
+     "retries": 0,
+     "input_tokens": 93
+    }
+   ]
+  }
+ ]
+}

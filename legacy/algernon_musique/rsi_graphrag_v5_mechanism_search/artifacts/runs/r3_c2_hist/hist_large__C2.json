@@ -1,0 +1,170 @@
+{
+  "role": "hist_large",
+  "cluster_id": "cc-00000-stable-0074",
+  "unit_id": "cc-00000-stable-0074-u010",
+  "method": "C2",
+  "status": "completed",
+  "cache_hit": false,
+  "cache_source": "",
+  "usage": {
+    "prompt_tokens": 9839,
+    "completion_tokens": 1628,
+    "reasoning_tokens": 837,
+    "finish_reason": "stop",
+    "response_model": "gpt-5.6-luna-2026-07-09",
+    "http_attempts_for_call": 1,
+    "stage": "r3_c2_hist_hist_large_C2",
+    "cache_key": "7bf4e416b4d0e758f1f569b9af4c09b4a3d9a484407d6ddf7f7ab60497fabcc7"
+  },
+  "n_updates": 2,
+  "n_add": 2,
+  "n_accept": 1,
+  "n_reject": 1,
+  "n_mismatch": 0,
+  "n_uncertain": 0,
+  "types": {
+    "EXTRACTION_REPAIR": 1,
+    "UNSUPPORTED_HYPOTHESIS": 1
+  },
+  "gaps": [],
+  "updates": [
+    {
+      "operation": "ADD",
+      "candidate_id": "candidate-1",
+      "comprehension_text": "October 1, 1959 was earlier than May 5, 1960.",
+      "new_semantic_relation": "earlier date",
+      "operator": "TEMPORAL_COMPARE",
+      "chain": [
+        {
+          "fact": "Law of the Plainsman aired from October 1, 1959, until May 5, 1960.",
+          "passage_id": "chunk-f56f10c6137c3edb4cd10426a9dc5b4b",
+          "span": "from October 1, 1959, until May 5, 1960.",
+          "triple_id": "triple-8dd3f840150174b05324825d45463676"
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-5905bd15398db1c45ea45bcfb132afde",
+        "entity-ec53b405c095ccf5d2e738e39432659d",
+        "entity-1d3855c9ac6b4a8f5e95f4c8e2658699"
+      ],
+      "source_triple_ids": [
+        "triple-8dd3f840150174b05324825d45463676",
+        "triple-3d236ecd944ac2d338c319bf20a2e551"
+      ],
+      "source_passage_ids": [
+        "chunk-f56f10c6137c3edb4cd10426a9dc5b4b"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-f56f10c6137c3edb4cd10426a9dc5b4b",
+          "span": "from October 1, 1959, until May 5, 1960."
+        }
+      ],
+      "derivation_type": "derived",
+      "novel_part": "The comparison that October 1, 1959 was earlier than May 5, 1960.",
+      "reasoning_summary": "TEMPORAL_COMPARE fired on two explicit dates; the date triples were checked but neither compares their order.",
+      "novelty_justification": "No supplied triple states which of the two Law of the Plainsman dates is earlier.",
+      "uncertainty_note": ""
+    },
+    {
+      "operation": "ADD",
+      "candidate_id": "candidate-2",
+      "comprehension_text": "Cristine Phoebe replaced Juliana Mikael as the trainer for the third season.",
+      "new_semantic_relation": "replaced as trainer",
+      "operator": "EXPLICIT_SUCCESSION",
+      "chain": [
+        {
+          "fact": "Cristine Phoebe was introduced as the new trainer replacing Juliana Mikael.",
+          "passage_id": "chunk-19f254692fd84fbe5f07441b18eb3a01",
+          "span": "This season introduce the new trainer, Cristine Phoebe for replacing Juliana Mikael",
+          "triple_id": ""
+        }
+      ],
+      "linked_entity_ids": [
+        "entity-200163411fefcd4f7e5a19e74607f5aa"
+      ],
+      "source_triple_ids": [],
+      "source_passage_ids": [
+        "chunk-19f254692fd84fbe5f07441b18eb3a01"
+      ],
+      "evidence_spans": [
+        {
+          "passage_id": "chunk-19f254692fd84fbe5f07441b18eb3a01",
+          "span": "This season introduce the new trainer, Cristine Phoebe for replacing Juliana Mikael"
+        }
+      ],
+      "derivation_type": "explicit_restatement",
+      "novel_part": "The succession from Juliana Mikael to Cristine Phoebe as trainer.",
+      "reasoning_summary": "EXPLICIT_SUCCESSION fired on the verb phrase \"new trainer\" and \"replacing\"; no supplied triple states this trainer replacement.",
+      "novelty_justification": "The supplied triples about season 3 and The Biggest Loser do not identify either trainer or their replacement relationship.",
+      "uncertainty_note": ""
+    }
+  ],
+  "judgments": [
+    {
+      "candidate_id": "candidate-1",
+      "decision": "ACCEPT",
+      "failure_stage": "",
+      "faithfulness": "supported",
+      "novelty": "new",
+      "audit_type": "EXTRACTION_REPAIR",
+      "reason": "The expanded source sentences support the claim, and these content words are absent from the passages' OpenIE triples: earlier",
+      "residue": [
+        "earlier"
+      ],
+      "evidence_sentences": [
+        "Law of the Plainsman\nLaw of the Plainsman is a Western television series starring Michael Ansara that aired on the NBC television network from October 1, 1959, until May 5, 1960."
+      ],
+      "warning": "",
+      "stages": [
+        {
+          "stage": "V2",
+          "anchored_partial_names": [],
+          "missing_names": [],
+          "evidence_sentences": [
+            "Law of the Plainsman\nLaw of the Plainsman is a Western television series starring Michael Ansara that aired on the NBC television network from October 1, 1959, until May 5, 1960."
+          ]
+        },
+        {
+          "stage": "V3",
+          "logic_failures": [],
+          "dates": [
+            [
+              1959,
+              10,
+              1
+            ],
+            [
+              1960,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "stage": "V4",
+          "residue": [
+            "earlier"
+          ],
+          "n_passage_triples": 5,
+          "novel": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate-2",
+      "decision": "REJECT",
+      "failure_stage": "V3",
+      "faithfulness": "unsupported",
+      "novelty": "unclear",
+      "audit_type": "UNSUPPORTED_HYPOTHESIS",
+      "reason": "Logical check failed: succession_not_in_evidence",
+      "logic_failures": [
+        "succession_not_in_evidence"
+      ],
+      "evidence_sentences": [
+        "This season introduce the new trainer, Cristine Phoebe for replacing Juliana Mikael which not return for her third season."
+      ]
+    }
+  ]
+}

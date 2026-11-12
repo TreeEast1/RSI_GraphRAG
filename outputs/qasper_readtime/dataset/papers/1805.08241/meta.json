@@ -1,0 +1,51 @@
+{
+ "paper_id": "1805.08241",
+ "title": "Sparse and Constrained Attention for Neural Machine Translation",
+ "abstract": "In NMT, words are sometimes dropped from the source or generated repeatedly in the translation. We explore novel strategies to address the coverage problem that change only the attention transformation. Our approach allocates fertilities to source words, used to bound the attention each word can receive. We experiment with various sparse and constrained attention transformations and propose a new one, constrained sparsemax, shown to be differentiable and sparse. Empirical evaluation is provided in three languages pairs.",
+ "sections": [
+  "Introduction",
+  "Preliminaries",
+  "Sparse and Constrained Attention",
+  "Fertility Bounds",
+  "Experiments",
+  "Conclusions",
+  "Acknowledgments",
+  "Proof of Proposition ",
+  "Forward Propagation",
+  "Gradient Backpropagation",
+  "Linear-Time Evaluation",
+  "Examples of Translations"
+ ],
+ "n_paragraphs": 34,
+ "n_tokens": 2145,
+ "figures_and_tables": [
+  {
+   "caption_id": "1805.08241::fig000",
+   "paper_id": "1805.08241",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: Illustration of the different attention transformations for a toy example with three source words. We show the attention values on the probability simplex. In the first row we assume scores z = (1.2, 0.8,−0.2), and in the second and third rows z = (0.7, 0.9, 0.1) and z = (−0.2, 0.2, 0.9), respectively. For constrained softmax/sparsemax, we set unit fertilities to every word; for each row the upper bounds (represented as green dashed lines) are set as the difference between these fertilities and the cumulative attention each word has received. The last row illustrates the cumulative attention for the three words after all rounds.",
+   "n_tokens": 161
+  },
+  {
+   "caption_id": "1805.08241::fig001",
+   "paper_id": "1805.08241",
+   "file": "4-Figure2-1.png",
+   "caption": "Figure 2: Attention maps for softmax and csparsemax for two DE-EN sentence pairs (white means zero attention). Repeated words are highlighted. The reference translations are “This is Moore’s law over the last hundred years” and “I am going to go ahead and select government.”",
+   "n_tokens": 59
+  },
+  {
+   "caption_id": "1805.08241::fig002",
+   "paper_id": "1805.08241",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: BLEU, METEOR, REP and DROP scores on the test sets for different attention transformations.",
+   "n_tokens": 24
+  },
+  {
+   "caption_id": "1805.08241::fig003",
+   "paper_id": "1805.08241",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Impact of various fertility strategies for the csparsemax attention model (DE-EN).",
+   "n_tokens": 21
+  }
+ ]
+}

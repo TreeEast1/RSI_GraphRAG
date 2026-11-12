@@ -1,0 +1,65 @@
+{
+ "paper_id": "1904.04358",
+ "title": "Deep Learning the EEG Manifold for Phonological Categorization from Active Thoughts",
+ "abstract": "Speech-related Brain Computer Interfaces (BCI) aim primarily at finding an alternative vocal communication pathway for people with speaking disabilities. As a step towards full decoding of imagined speech from active thoughts, we present a BCI system for subject-independent classification of phonological categories exploiting a novel deep learning based hierarchical feature extraction scheme. To better capture the complex representation of high-dimensional electroencephalography (EEG) data, we compute the joint variability of EEG electrodes into a channel cross-covariance matrix. We then extract the spatio-temporal information encoded within the matrix using a mixed deep neural network strategy. Our model framework is composed of a convolutional neural network (CNN), a long-short term network (LSTM), and a deep autoencoder. We train the individual networks hierarchically, feeding their combined outputs in a final gradient boosting classification step. Our best models achieve an average accuracy of 77.9% across five different binary classification tasks, providing a significant 22.5% improvement over previous methods. As we also show visually, our work demonstrates that the speech imagery EEG possesses significant discriminative information about the intended articulatory movements responsible for natural speech synthesis.",
+ "sections": [
+  "Introduction",
+  "Proposed Framework",
+  "Preprocessing step",
+  "Joint variability of electrodes",
+  "CNN & LSTM",
+  "Deep autoencoder for spatio-temporal information",
+  "Classification with Extreme Gradient Boost",
+  "Dataset",
+  "Training and hyperparameter selection",
+  "Performance analysis and discussion",
+  "Conclusion and future direction",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 19,
+ "n_tokens": 3122,
+ "figures_and_tables": [
+  {
+   "caption_id": "1904.04358::fig000",
+   "paper_id": "1904.04358",
+   "file": "2-Figure2-1.png",
+   "caption": "Fig. 2. Cross covariance Matrices : Rows correspond to two different subjects; Columns (from left to right) correspond to sample examples for bilabial, nasal, vowel, /uw/, and /iy/.",
+   "n_tokens": 44
+  },
+  {
+   "caption_id": "1904.04358::fig001",
+   "paper_id": "1904.04358",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1. Selected parameter sets",
+   "n_tokens": 7
+  },
+  {
+   "caption_id": "1904.04358::fig002",
+   "paper_id": "1904.04358",
+   "file": "3-Figure3-1.png",
+   "caption": "Fig. 3. tSNE feature visualization for ±nasal (left) and V/C classification (right). Red and green colours indicate the distribution of two different types of features",
+   "n_tokens": 37
+  },
+  {
+   "caption_id": "1904.04358::fig003",
+   "paper_id": "1904.04358",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2. Results in accuracy on 10% test data in the first study",
+   "n_tokens": 17
+  },
+  {
+   "caption_id": "1904.04358::fig004",
+   "paper_id": "1904.04358",
+   "file": "4-Figure4-1.png",
+   "caption": "Fig. 4. Kappa coefficient values for above-chance accuracy based on Table 2",
+   "n_tokens": 19
+  },
+  {
+   "caption_id": "1904.04358::fig005",
+   "paper_id": "1904.04358",
+   "file": "4-Table3-1.png",
+   "caption": "Table 3. Comparison of classification accuracy",
+   "n_tokens": 8
+  }
+ ]
+}

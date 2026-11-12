@@ -1,0 +1,65 @@
+{
+ "paper_id": "1710.07960",
+ "title": "How big is big enough? Unsupervised word sense disambiguation using a very large corpus",
+ "abstract": "In this paper, the problem of disambiguating a target word for Polish is approached by searching for related words with known meaning. These relatives are used to build a training corpus from unannotated text. This technique is improved by proposing new rich sources of replacements that substitute the traditional requirement of monosemy with heuristics based on wordnet relations. The na\\\"ive Bayesian classifier has been modified to account for an unknown distribution of senses. A corpus of 600 million web documents (594 billion tokens), gathered by the NEKST search engine allows us to assess the relationship between training set size and disambiguation accuracy. The classifier is evaluated using both a wordnet baseline and a corpus with 17,314 manually annotated occurrences of 54 ambiguous words.",
+ "sections": [
+  "Introduction",
+  "Related work",
+  "Method",
+  "Relatives",
+  "Corpus",
+  "Features",
+  "Classification",
+  "Evaluation",
+  "Results",
+  "Discussion",
+  "Conclusions",
+  "Acknowledgements"
+ ],
+ "n_paragraphs": 59,
+ "n_tokens": 4843,
+ "figures_and_tables": [
+  {
+   "caption_id": "1710.07960::fig000",
+   "paper_id": "1710.07960",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: A part of plWordNet network used to extract replacements for the word język in its 6th sense, meaning tongue (animal or human organ). The resulting replacements are underlined.",
+   "n_tokens": 45
+  },
+  {
+   "caption_id": "1710.07960::fig001",
+   "paper_id": "1710.07960",
+   "file": "6-Table1-1.png",
+   "caption": "Table 1: Mean accuracy of the disambiguation algorithm with respect to the features involved in the classification (I0 – interpretation of a disambiguated word, I – interpretations of neighbouring words, Lp – lemmas of neighbouring words, L – lemmas present in the whole sentence).",
+   "n_tokens": 61
+  },
+  {
+   "caption_id": "1710.07960::fig002",
+   "paper_id": "1710.07960",
+   "file": "7-Table2-1.png",
+   "caption": "Table 2: Strategies for generating replacements, each built by adding new elements to the previous step, with the resulting number of replacements (average per word), their occurrences in the corpus (total) and the mean accuracy of disambiguation.",
+   "n_tokens": 49
+  },
+  {
+   "caption_id": "1710.07960::fig003",
+   "paper_id": "1710.07960",
+   "file": "7-Figure2-1.png",
+   "caption": "Figure 2: Mean disambiguation accuracy of models built using corpora of different sizes, created by random selection from 600 million web documents from NEKST search engine: unrestricted or only from the Polish Wikipedia. The best of the baselines, which uses wordnet-based word similarity is also shown.",
+   "n_tokens": 63
+  },
+  {
+   "caption_id": "1710.07960::fig004",
+   "paper_id": "1710.07960",
+   "file": "8-Table4-1.png",
+   "caption": "Table 4: Accuracy of four baseline configurations (selecting senses randomly, basing on sense order in the National Corpus of Polish or the Polish wordnet, and choosing the sense which is the most similar to context according to Leacock&Chodorow measure) and two versions of the classifier proposed in this work (based on the traditional naïve Bayesian model or modified as in section 3.4).",
+   "n_tokens": 82
+  },
+  {
+   "caption_id": "1710.07960::fig005",
+   "paper_id": "1710.07960",
+   "file": "8-Table3-1.png",
+   "caption": "Table 3: Polysemous words used for evaluation with their number of meanings, test cases and obtained disambiguation accuracy in basic configuration.",
+   "n_tokens": 30
+  }
+ ]
+}

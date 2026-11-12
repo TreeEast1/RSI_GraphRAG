@@ -1,0 +1,823 @@
+{
+ "1912.10011::s00::p000": [
+  [
+   "Knowledge and/or data",
+   "is often modeled in",
+   "a structure, such as indexes, tables, key-value pairs, or triplets"
+  ],
+  [
+   "These data",
+   "are not easily usable by",
+   "humans"
+  ],
+  [
+   "One emerging research field",
+   "consists in",
+   "transcribing data-structures into natural language in order to ease their understandablity and their usablity"
+  ],
+  [
+   "This field",
+   "is referred to as",
+   "“data-to-text\""
+  ]
+ ],
+ "1912.10011::s00::p001": [
+  [
+   "Designing data-to-text models",
+   "gives rise to",
+   "two main challenges: 1) understanding structured data and 2) generating associated descriptions"
+  ],
+  [
+   "Recent data-to-text models",
+   "mostly rely on",
+   "an encoder-decoder architecture"
+  ],
+  [
+   "the data-structure",
+   "is first encoded sequentially into",
+   "a fixed-size vectorial representation by an encoder"
+  ],
+  [
+   "a decoder",
+   "generates",
+   "words conditioned on this representation"
+  ],
+  [
+   "the attention mechanism",
+   "computes",
+   "a context focused on important elements from the input at each decoding step"
+  ],
+  [
+   "the copy mechanism",
+   "deals with",
+   "unknown or rare words"
+  ],
+  [
+   "these systems",
+   "produce",
+   "fluent and domain comprehensive texts"
+  ],
+  [
+   "Roberti et al.",
+   "train",
+   "a character-wise encoder-decoder to generate descriptions of restaurants based on their attributes"
+  ],
+  [
+   "Puduppully et al.",
+   "design",
+   "a more complex two-step decoder"
+  ]
+ ],
+ "1912.10011::s00::p003": [
+  [
+   "most works",
+   "focus on",
+   "introducing innovating decoding modules"
+  ],
+  [
+   "most works",
+   "represent",
+   "data as a unique sequence of elements to be encoded"
+  ],
+  [
+   "the table from Figure FIGREF1",
+   "would be linearized to",
+   "[(Hawks, H/V, H), ..., (Magic, H/V, V), ...]"
+  ],
+  [
+   "linearization",
+   "effectively leads to",
+   "losing distinction between rows, and therefore entities"
+  ],
+  [
+   "Liu et al.",
+   "propose",
+   "encoders constrained by the structure"
+  ],
+  [
+   "these approaches",
+   "are designed for",
+   "single-entity structures"
+  ]
+ ],
+ "1912.10011::s00::p004": [
+  [
+   "Most data-to-text systems",
+   "use",
+   "RNNs as encoders (such as GRUs or LSTMs)"
+  ],
+  [
+   "these architectures",
+   "require in practice",
+   "their input to be fed sequentially"
+  ],
+  [
+   "This way of encoding unordered sequences (i.e. collections of entities)",
+   "implicitly assumes",
+   "an arbitrary order within the collection"
+  ],
+  [
+   "an arbitrary order within the collection",
+   "significantly impacts",
+   "the learning performance"
+  ]
+ ],
+ "1912.10011::s00::p009": [
+  [
+   "a hierarchical attention mechanism",
+   "computes",
+   "the hierarchical context fed into the decoder"
+  ]
+ ],
+ "1912.10011::s00::p010": [
+  [
+   "the RotoWire benchmark BIBREF10",
+   "contains",
+   "around $5K$ statistical tables of NBA basketball games paired with human-written descriptions"
+  ],
+  [
+   "the proposed architecture",
+   "outperforms previous models on",
+   "BLEU score"
+  ],
+  [
+   "the proposed architecture",
+   "is generally better on",
+   "qualitative metrics"
+  ]
+ ],
+ "1912.10011::s01::p000": [
+  [
+   "efforts to bring out semantics from structured-data",
+   "relied heavily on",
+   "expert knowledge BIBREF22, BIBREF8"
+  ],
+  [
+   "Reiter et al. BIBREF8",
+   "devise",
+   "complex template schemes in collaboration with weather experts"
+  ]
+ ],
+ "1912.10011::s01::p001": [
+  [
+   "Modern approaches to the wide range of tasks based on structured-data",
+   "propose to leverage",
+   "progress in deep learning"
+  ],
+  [
+   "an emerging task, called “data-to-text\"",
+   "aims at describing",
+   "structured data into a natural language description"
+  ],
+  [
+   "This task",
+   "stems from",
+   "the neural machine translation (NMT) domain"
+  ],
+  [
+   "early work BIBREF26, BIBREF27, BIBREF10",
+   "represent",
+   "the data records as a single sequence of facts to be entirely translated into natural language"
+  ],
+  [
+   "Wiseman et al. BIBREF10",
+   "show",
+   "the limits of traditional NMT systems on larger structured-data"
+  ],
+  [
+   "NMT systems",
+   "fail to accurately extract",
+   "salient elements"
+  ]
+ ],
+ "1912.10011::s01::p002": [
+  [
+   "a number of work BIBREF28, BIBREF12, BIBREF29",
+   "proposed",
+   "innovating decoding modules based on planning and templates"
+  ],
+  [
+   "Puduppully et al. BIBREF12",
+   "propose",
+   "a two-step decoder"
+  ],
+  [
+   "Li et al. BIBREF28",
+   "proposed",
+   "a delayed copy mechanism"
+  ],
+  [
+   "a classical LSTM decoder",
+   "generate",
+   "delexicalized text"
+  ]
+ ],
+ "1912.10011::s01::p003": [
+  [
+   "very recent work BIBREF11, BIBREF19, BIBREF13",
+   "have proposed to take into account",
+   "the data structure"
+  ],
+  [
+   "Puduppully et al. BIBREF13",
+   "propose",
+   "a model based on dynamic entity representation at decoding time"
+  ],
+  [
+   "the decoder",
+   "is conditioned on",
+   "entity representations that are updated during inference at each decoding step"
+  ],
+  [
+   "a dual encoder BIBREF19",
+   "encodes separately",
+   "the sequence of element names and the sequence of element values"
+  ],
+  [
+   "These approaches",
+   "are designed for",
+   "single-entity data structures"
+  ],
+  [
+   "These approaches",
+   "do not account for",
+   "delimitation between entities"
+  ]
+ ],
+ "1912.10011::s01::p004": [
+  [
+   "the delimitation between entities",
+   "remains",
+   "clear throughout the process"
+  ],
+  [
+   "explicit hierarchical encoding",
+   "naturally guides",
+   "the decoding process via hierarchical attention"
+  ]
+ ],
+ "1912.10011::s02::p000": [
+  [
+   "the decoding component aiming to generate descriptions",
+   "is considered as",
+   "a black-box module"
+  ]
+ ],
+ "1912.10011::s03::p001": [
+  [
+   "An entity $e_i$",
+   "is",
+   "a set of $J_i$ unordered records $\\lbrace r_{i,1}, ..., r_{i,j}, ..., r_{i,J_i}\\rbrace $"
+  ],
+  [
+   "record $r_{i,j}$",
+   "is defined as",
+   "a pair of key $k_{i,j}$ and value $v_{i,j}$"
+  ]
+ ],
+ "1912.10011::s03::p002": [
+  [
+   "A data-structure $s$",
+   "is",
+   "an unordered set of $I$ entities $e_i$"
+  ]
+ ],
+ "1912.10011::s03::p003": [
+  [
+   "a textual description $y$",
+   "is associated with",
+   "each data-structure"
+  ]
+ ],
+ "1912.10011::s03::p004": [
+  [
+   "The dataset $\\mathcal {D}$",
+   "is",
+   "a collection of $N$ aligned (data-structure, description) pairs $(s,y)$"
+  ]
+ ],
+ "1912.10011::s03::p005": [
+  [
+   "The data-structure",
+   "includes",
+   "a set of entities (Hawks, Magic, Al Horford, Jeff Teague, ...)"
+  ],
+  [
+   "The entity Jeff Teague",
+   "is modeled as",
+   "a set of records {(PTS, 17), (REB, 0), (AST, 7) ...}"
+  ],
+  [
+   "the record (PTS, 17)",
+   "is characterized by",
+   "a key (PTS) and a value (17)"
+  ]
+ ],
+ "1912.10011::s03::p006": [
+  [
+   "the objective function",
+   "aims to generate",
+   "a description $\\hat{y}$ as close as possible to the ground truth $y$"
+  ],
+  [
+   "This objective function",
+   "optimizes",
+   "the following log-likelihood over the whole dataset $\\mathcal {D}$"
+  ]
+ ],
+ "1912.10011::s03::p010": [
+  [
+   "This equation",
+   "is",
+   "intractable in practice"
+  ]
+ ],
+ "1912.10011::s03::p011": [
+  [
+   "the decoding module",
+   "is",
+   "a two-layers LSTM network with a copy mechanism"
+  ]
+ ],
+ "1912.10011::s04::p000": [
+  [
+   "most previous work BIBREF28, BIBREF12, BIBREF13, BIBREF10, BIBREF29",
+   "make use of",
+   "flat encoders that do not exploit the data structure"
+  ],
+  [
+   "low-level encoder",
+   "encodes",
+   "entities on the basis of their records"
+  ],
+  [
+   "high-level encoder",
+   "encodes",
+   "the data-structure on the basis of its underlying entities"
+  ]
+ ],
+ "1912.10011::s05::p000": [
+  [
+   "The first layer of the network",
+   "consists in",
+   "learning two embedding matrices to embed the record keys and values"
+  ],
+  [
+   "each record embedding $\\mathbf {r}_{i,j}$",
+   "is computed by",
+   "a linear projection on the concatenation $[\\mathbf {k}_{i,j}$; $\\mathbf {v}_{i,j}]$ followed by a non linearity"
+  ]
+ ],
+ "1912.10011::s05::p002": [
+  [
+   "The low-level encoder",
+   "aims at encoding",
+   "a collection of records belonging to the same entity"
+  ],
+  [
+   "the high-level encoder",
+   "encodes",
+   "the whole set of entities"
+  ],
+  [
+   "Both the low-level and high-level encoders",
+   "consider",
+   "their input elements as unordered"
+  ]
+ ],
+ "1912.10011::s05::p004": [
+  [
+   "the Low-level encoder",
+   "encodes",
+   "each entity $e_i$"
+  ],
+  [
+   "Each record embedding $\\mathbf {r}_{i,j}$",
+   "is compared to",
+   "other record embeddings"
+  ]
+ ],
+ "1912.10011::s05::p005": [
+  [
+   "the High-level encoder",
+   "encodes",
+   "the data-structure"
+  ],
+  [
+   "the final hidden state $\\mathbf {e_i}$ of an entity",
+   "is computed by comparing",
+   "entity representation $\\mathbf {h}_{i}$ with each others"
+  ],
+  [
+   "The data-structure representation $\\mathbf {z}$",
+   "is computed as",
+   "the mean of these entity representations"
+  ],
+  [
+   "The data-structure representation $\\mathbf {z}$",
+   "is used for",
+   "the decoder initialization"
+  ]
+ ],
+ "1912.10011::s06::p000": [
+  [
+   "two variants of hierarchical attention mechanism",
+   "compute",
+   "the context fed to the decoder module"
+  ]
+ ],
+ "1912.10011::s06::p001": [
+  [
+   "The $\\alpha _{i,t}$ scores",
+   "are normalized to form",
+   "a distribution over all entities $e_i$"
+  ],
+  [
+   "$\\beta _{i,j,t}$ scores",
+   "are normalized to form",
+   "a distribution over records $r_{i,j}$ of entity $e_i$"
+  ],
+  [
+   "Each entity",
+   "is represented as",
+   "a weighted sum of its record embeddings"
+  ],
+  [
+   "the entire data structure",
+   "is represented as",
+   "a weighted sum of the entity representations"
+  ]
+ ],
+ "1912.10011::s06::p005": [
+  [
+   "the $\\beta _{i,j,t}$ scores",
+   "are computed from",
+   "the embedding of the key rather than on the full record representation $\\mathbf {h}_{i,j}$"
+  ]
+ ],
+ "1912.10011::s07::p000": [
+  [
+   "the RotoWire dataset BIBREF10",
+   "includes",
+   "basketball games statistical tables paired with journalistic descriptions of the games"
+  ],
+  [
+   "The descriptions",
+   "average",
+   "337 words with a vocabulary size of $11.3$K"
+  ],
+  [
+   "record keys",
+   "are",
+   "39 different"
+  ],
+  [
+   "the average number of records (resp. entities) in a single data-structure",
+   "is",
+   "628 (resp. 28)"
+  ],
+  [
+   "Entities",
+   "are of",
+   "two types, either team or player"
+  ],
+  [
+   "train/validation/test sets",
+   "are",
+   "respectively $3,398$/727/728 (data-structure, description) pairs"
+  ]
+ ],
+ "1912.10011::s08::p000": [
+  [
+   "The BLEU score BIBREF34",
+   "aims at measuring",
+   "to what extent the generated descriptions are literally closed to the ground truth"
+  ],
+  [
+   "The second category designed by BIBREF10",
+   "is",
+   "more qualitative"
+  ]
+ ],
+ "1912.10011::s09::p000": [
+  [
+   "The BLEU score",
+   "is commonly used as",
+   "an evaluation metric in text generation tasks"
+  ],
+  [
+   "The BLEU score",
+   "estimates",
+   "the correspondence between a machine output and that of a human"
+  ],
+  [
+   "The BLEU score",
+   "computes",
+   "the number of co-occurrences for ngrams ($n \\in {1, 2, 3, 4}$)"
+  ]
+ ],
+ "1912.10011::s10::p000": [
+  [
+   "These metrics",
+   "estimate",
+   "the ability of our model to integrate elements from the table in its descriptions"
+  ],
+  [
+   "These metrics",
+   "compare",
+   "the gold and generated descriptions"
+  ],
+  [
+   "Entity-value pairs",
+   "are extracted from",
+   "the descriptions"
+  ]
+ ],
+ "1912.10011::s10::p001": [
+  [
+   "Relation Generation (RG)",
+   "estimates",
+   "how well the system is able to generate text containing factual (i.e., correct) records"
+  ]
+ ],
+ "1912.10011::s10::p002": [
+  [
+   "Content Selection (CS)",
+   "measures",
+   "how well the generated document matches the gold document in terms of mentioned records"
+  ]
+ ],
+ "1912.10011::s10::p003": [
+  [
+   "Content Ordering (CO)",
+   "analyzes",
+   "how well the system orders the records discussed in the description"
+  ]
+ ],
+ "1912.10011::s10::p004": [
+  [
+   "CS",
+   "primarily targets",
+   "the “what to say\" aspect of evaluation"
+  ],
+  [
+   "CO",
+   "targets",
+   "the “how to say it\" aspect"
+  ],
+  [
+   "RG",
+   "targets",
+   "both"
+  ],
+  [
+   "CS, CO, RG-% and BLEU metrics",
+   "have",
+   "higher is better"
+  ],
+  [
+   "RG-#",
+   "does not have",
+   "higher is better"
+  ],
+  [
+   "The IE system used in the experiments",
+   "is able to extract",
+   "an average of 17 factual records from gold descriptions"
+  ],
+  [
+   "a generative system",
+   "should approach",
+   "this number"
+  ]
+ ],
+ "1912.10011::s11::p001": [
+  [
+   "Wiseman BIBREF10",
+   "is",
+   "a standard encoder-decoder system with copy mechanism"
+  ]
+ ],
+ "1912.10011::s11::p002": [
+  [
+   "Li BIBREF28",
+   "is",
+   "a standard encoder-decoder with a delayed copy mechanism"
+  ],
+  [
+   "text",
+   "is first generated with",
+   "placeholders"
+  ],
+  [
+   "placeholders",
+   "are replaced by",
+   "salient records extracted from the table by a pointer network"
+  ]
+ ],
+ "1912.10011::s11::p003": [
+  [
+   "Puduppully-plan BIBREF12",
+   "acts in",
+   "two steps"
+  ],
+  [
+   "a first standard encoder-decoder",
+   "generates",
+   "a plan"
+  ],
+  [
+   "a plan",
+   "is",
+   "a list of salient records from the table"
+  ],
+  [
+   "a second standard encoder-decoder",
+   "generates",
+   "text from this plan"
+  ]
+ ],
+ "1912.10011::s11::p004": [
+  [
+   "Puduppully-updt BIBREF13",
+   "consists in",
+   "a standard encoder-decoder"
+  ],
+  [
+   "an added module",
+   "is aimed at",
+   "updating record representations during the generation process"
+  ],
+  [
+   "a gated recurrent network",
+   "computes",
+   "which records should be updated and what should be their new representation"
+  ]
+ ],
+ "1912.10011::s12::p001": [
+  [
+   "Flat",
+   "feeds",
+   "the input sequentially to the encoder"
+  ],
+  [
+   "Flat",
+   "uses",
+   "standard attention"
+  ],
+  [
+   "Flat",
+   "uses",
+   "a Transformer to encode the input sequence instead of an RNN"
+  ]
+ ],
+ "1912.10011::s12::p002": [
+  [
+   "attention over records",
+   "is computed on",
+   "the full record encoding"
+  ]
+ ],
+ "1912.10011::s12::p003": [
+  [
+   "attention over records",
+   "is computed only on",
+   "the record key representations"
+  ]
+ ],
+ "1912.10011::s13::p000": [
+  [
+   "both the low-level and high-level encoders",
+   "use",
+   "a two-layers multi-head self-attention with two heads"
+  ],
+  [
+   "The models",
+   "are trained with",
+   "a batch size of 64"
+  ],
+  [
+   "the weights of the last 5 checkpoints",
+   "are averaged at",
+   "every 1K updates"
+  ],
+  [
+   "All models",
+   "were trained with",
+   "the Adam optimizer BIBREF37"
+  ],
+  [
+   "the initial learning rate",
+   "is reduced by",
+   "half every 10K steps"
+  ],
+  [
+   "All the models",
+   "are implemented in",
+   "OpenNMT-py BIBREF38"
+  ]
+ ],
+ "1912.10011::s14::p001": [
+  [
+   "gold descriptions",
+   "trivially obtain",
+   "100% on all metrics expect RG"
+  ],
+  [
+   "the IE system",
+   "fails to extract",
+   "accurate entities 4% of the time"
+  ]
+ ],
+ "1912.10011::s15::p001": [
+  [
+   "Hierarchical-k",
+   "performs slightly better in all metrics excepted",
+   "CS-R%"
+  ],
+  [
+   "Scores of Hierarchical-k",
+   "are",
+   "sharp"
+  ],
+  [
+   "Scores of Hierarchical-kv",
+   "are more distributed over",
+   "all PTS_QTR records"
+  ]
+ ],
+ "1912.10011::s16::p000": [
+  [
+   "generated texts",
+   "still contain",
+   "a number of incorrect facts, as well hallucinations (in blue)"
+  ]
+ ],
+ "1912.10011::s16::p002": [
+  [
+   "Wiseman",
+   "achieves only",
+   "$75.62$% of precision"
+  ],
+  [
+   "Wiseman",
+   "effectively mentioning on average a total of",
+   "$22.25$ records (wrong or accurate)"
+  ]
+ ],
+ "1912.10011::s16::p003": [
+  [
+   "Flat and Wiseman",
+   "share",
+   "the same intuition to flatten the data-structure"
+  ],
+  [
+   "the encoder mechanism",
+   "is",
+   "bi-LSTM vs. Transformer, for Wiseman and Flat respectively"
+  ]
+ ],
+ "1912.10011::s16::p004": [
+  [
+   "the baseline Puduppully-plan",
+   "reaches",
+   "$34.28$ mentions on average"
+  ]
+ ],
+ "1912.10011::s16::p005": [
+  [
+   "dynamically updating the encoding across the generation process",
+   "can lead to better",
+   "Content Ordering (CO) and RG-P%"
+  ],
+  [
+   "Hierarchical-k",
+   "obtains slightly better scores",
+   "Content Selection (CS)"
+  ],
+  [
+   "Puduppully-updt",
+   "updates representations",
+   "after each mention"
+  ]
+ ],
+ "1912.10011::s16::p006": [
+  [
+   "all baselines",
+   "range from",
+   "23 to 45 millions"
+  ]
+ ],
+ "1912.10011::s17::p000": [
+  [
+   "a hierarchical encoder for structured data",
+   "leverages",
+   "the structure"
+  ],
+  [
+   "a hierarchical encoder for structured data",
+   "has strong synergy with",
+   "the hierarchical attention of its associated decoder"
+  ]
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "paper_id": "1910.14599",
+ "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+ "abstract": "We introduce a new large-scale NLI benchmark dataset, collected via an iterative, adversarial human-and-model-in-the-loop procedure. We show that training models on this new dataset leads to state-of-the-art performance on a variety of popular NLI benchmarks, while posing a more difficult challenge with its new test set. Our analysis sheds light on the shortcomings of current state-of-the-art models, and shows that non-expert annotators are successful at finding their weaknesses. The data collection method can be applied in a never-ending learning scenario, becoming a moving target for NLU, rather than a static benchmark that will quickly saturate.",
+ "sections": [
+  "Introduction",
+  "Dataset collection",
+  "Dataset collection ::: HAMLET",
+  "Dataset collection ::: Annotation details",
+  "Dataset collection ::: Round 1",
+  "Dataset collection ::: Round 2",
+  "Dataset collection ::: Round 3",
+  "Dataset collection ::: Comparing with other datasets",
+  "Dataset statistics",
+  "Results",
+  "Results ::: Base model performance is low.",
+  "Results ::: Rounds become increasingly more difficult.",
+  "Results ::: Training on more rounds improves robustness.",
+  "Results ::: RoBERTa achieves state-of-the-art performance...",
+  "Results ::: ...but is outperformed when it is base model.",
+  "Results ::: Continuously augmenting training data does not downgrade performance.",
+  "Results ::: Exclusive test subset difference is small.",
+  "Results ::: Hypothesis-only results",
+  "Results ::: Hypothesis-only results ::: Hypothesis-only models perform poorly on ANLI.",
+  "Results ::: Hypothesis-only results ::: RoBERTa does not outperform hypothesis-only on rounds 2 and 3.",
+  "Analysis",
+  "Analysis ::: Performance on challenge datasets",
+  "Analysis ::: Reasoning types",
+  "Related work ::: Bias in datasets",
+  "Related work ::: Dynamic datasets.",
+  "Discussion & Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 52,
+ "n_tokens": 6317,
+ "figures_and_tables": [
+  {
+   "caption_id": "1910.14599::fig000",
+   "paper_id": "1910.14599",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Adversarial NLI data collection procedure, via human-and-model-in-the-loop entailment training (HAMLET). The four steps make up one round of data collection.",
+   "n_tokens": 38
+  },
+  {
+   "caption_id": "1910.14599::fig001",
+   "paper_id": "1910.14599",
+   "file": "3-Table1-1.png",
+   "caption": "Table 1: Examples from development set. ‘An’ refers to round number, ‘orig.’ is the original annotator’s gold label, ‘pred.’ is the model prediction, ‘valid.’ is the validator labels, ‘reason’ was provided by the original annotator, ‘Annotations’ is the tags determined by linguist expert annotator.",
+   "n_tokens": 70
+  },
+  {
+   "caption_id": "1910.14599::fig002",
+   "paper_id": "1910.14599",
+   "file": "4-Table2-1.png",
+   "caption": "Table 2: Dataset statistics: ‘Model error rate’ is the percentage of examples that model got wrong; ‘unverified’ is the simple percentage, while ‘verified’ is the percentage that were additionally verified by 2 human annotators.",
+   "n_tokens": 49
+  },
+  {
+   "caption_id": "1910.14599::fig003",
+   "paper_id": "1910.14599",
+   "file": "5-Table3-1.png",
+   "caption": "Table 3: Model Performance. ‘Data’ refers to training dataset (‘S’ refers to SNLI, ‘M’ to MNLI dev (-m=matched, -mm=mismatched), and ‘F’ to FEVER); ‘A1–A3’ refer to the rounds respectively. ‘-E’ refers to test set examples written by annotators exclusive to the test set. Datasets marked ‘?n’ were used to train the base model for round n, and their performance on that round is underlined.",
+   "n_tokens": 109
+  },
+  {
+   "caption_id": "1910.14599::fig004",
+   "paper_id": "1910.14599",
+   "file": "6-Table4-1.png",
+   "caption": "Table 4: Analysis of hypothesis-only performance for the different rounds. Hypothesis-only models are marked H . The rows subscripted with X are XLNet models, all other rows are RoBERTa. S=SNLI, M=MNLI. ALL=S,M,F,ANLI.",
+   "n_tokens": 60
+  },
+  {
+   "caption_id": "1910.14599::fig005",
+   "paper_id": "1910.14599",
+   "file": "7-Table5-1.png",
+   "caption": "Table 5: Model Performance on NLI stress tests (tuned on their respective dev. sets). All=S+M+F+ANLI. AT=‘Antonym’; ‘NR’=Numerical Reasoning; ‘LN’=Length; ‘NG’=Negation; ‘WO’=Word Overlap; ‘SE’=Spell Error. Previous models refers to the Naik et al. (2018) implementation of Conneau and Kiela (2018, InferSent) for the Stress Tests, and to the Gururangan et al. (2018) implementation of Gong et al. (2018, DIIN) for SNLI-Hard.",
+   "n_tokens": 139
+  },
+  {
+   "caption_id": "1910.14599::fig006",
+   "paper_id": "1910.14599",
+   "file": "8-Table6-1.png",
+   "caption": "Table 6: Analysis of 500 development set examples per round. ‘Average’ lists the average percentage of each top level category in ANLI.",
+   "n_tokens": 30
+  }
+ ]
+}

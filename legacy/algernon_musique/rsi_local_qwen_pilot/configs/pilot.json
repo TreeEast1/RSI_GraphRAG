@@ -1,0 +1,25 @@
+{
+  "seed": 20261027,
+  "dataset": "musique",
+  "dataset_path": "/data2-HDD-SATA-20T/nzq/TAG-experiment/CogitoRAG-openreview/code/reproduce/dataset/musique.json",
+  "dataset_note": "CogitoRAG-openreview copy of MuSiQue. 1000 answerable questions. Not the full 11,656-passage corpus.",
+  "frozen_pool_n": 100,
+  "read_n": 8,
+  "capability_n": 24,
+  "read_n_reason": "The serving path that actually generates is transformers at about 11 tokens/s. The frozen pool stays 100. Extraction runs on the first 8 questions in that seeded order, because 20 questions would be about 391 documents and would not finish.",
+  "window_size": 10,
+  "retrieval_top_k": 5,
+  "recall_ks": [1, 3, 5],
+  "embedding_model_path": "/data2-HDD-SATA-20T/nzq/huggingface_model/hub/models--nvidia--NV-Embed-v2/snapshots/3fa59658547db50a1e8e3346cf057fd0c77ed6ef",
+  "embedding_python": "/data2-HDD-SATA-20T/nzq/conda_envs/echorag/bin/python",
+  "query_instruction": "Instruct: Given a question, retrieve passages that answer the question\nQuery: ",
+  "max_embed_length": 512,
+  "llm_config": "configs/model.json",
+  "limits": {
+    "corpus": "Retrieval corpus is the union of paragraphs attached to the frozen 100-question pool, including in-question distractors. It is not the full MuSiQue corpus, so Recall is a closed-pool pilot number and is not comparable to the paper's full-corpus Recall@5 of 70.30%.",
+    "extraction": "Traditional triples are extracted only for paragraphs that belong to the first read_n questions. Other pool passages stay in the dense passage index as distractors and are not given triples.",
+    "no_gold_in_read_prompt": true,
+    "query_decomposition": "identity — the raw question is the only query for baseline and evolved",
+    "reader": "same model, same prompt, top-5 raw passages only"
+  }
+}

@@ -1,0 +1,438 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1809.03449::s00::p000",
+   "summary": "MRC requires answering passage questions by predicting answer spans, with datasets including SQuAD, MS MARCO, and TriviaQA and models including BiDAF, R-NET, and QANet.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s00::p001",
+   "summary": "MRC models differ from human beings in data hunger and noise robustness because humans also use general knowledge, especially inter-word semantic connections.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s00::p002",
+   "summary": "Integrating MRC neural networks with human general knowledge requires extraction and utilization, with WordNet chosen for inter-word semantic connections and explicit utilization explored.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s00::p003",
+   "summary": "The paper proposes a WordNet-based data enrichment method and Knowledge Aided Reader (KAR), which is comparable to state-of-the-art models and more robust to noise.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s01::p000",
+   "summary": "This section elaborates a WordNet-based data enrichment method that controllably extracts inter-word semantic connections from each passage-question pair as general knowledge.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s02::p000",
+   "summary": "WordNet organizes words into synsets with sixteen semantic relation types, and semantic relation chains link synsets through concatenated relations with hops.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s03::p000",
+   "summary": "Inter-word semantic connections are determined using extended synsets, a maximum hop count hyper-parameter, and a heuristic rule based on shared extended synsets.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s04::p000",
+   "summary": "General knowledge extraction records positions of semantically connected passage words, with the hyper-parameter controlled by cross validation due to useless extracted results.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s05::p000",
+   "summary": "Knowledge Aided Reader (KAR) explicitly uses extracted general knowledge to assist its knowledge aided mutual attention and knowledge aided self attention mechanisms.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s06::p000",
+   "summary": "The task is to predict an answer span from a passage and relevant question so that the resulting passage subsequence answers the question.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s07::p000",
+   "summary": "KAR is an end-to-end MRC model consisting of five layers.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s07::p001",
+   "summary": "The Lexicon Embedding Layer maps words to lexicon embeddings using pre-trained GloVe word vectors, CNN character embeddings, and a shared dense layer with ReLU activation.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s07::p002",
+   "summary": "The Context Embedding Layer maps lexicon embeddings to context embeddings using a shared bidirectional LSTM (BiLSTM) and concatenating forward and backward outputs.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s07::p003",
+   "summary": "The Coarse Memory Layer uses knowledge aided mutual attention and a BiLSTM to produce coarse memories as question-aware passage representations.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s07::p004",
+   "summary": "The Refined Memory Layer uses knowledge aided self attention and a BiLSTM to produce refined memories as final passage representations.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s07::p005",
+   "summary": "The Answer Span Prediction Layer predicts the answer start position and answer end position based on the above layers.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s07::p006",
+   "summary": "Trainable parameters, refined memories, question summaries, and vector concatenation are used to obtain the answer end position distribution.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s07::p007",
+   "summary": "An answer span prediction matrix is constructed, with training minimizing a loss and inference taking row and column indices of its maximum element.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s08::p000",
+   "summary": "Knowledge aided mutual attention fuses question context embeddings into passage context embeddings by calculating similarities between passage and question context embeddings.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s08::p001",
+   "summary": "The existing similarity function is modified because introducing pre-extracted general knowledge into high-level context embedding similarities should make results more reasonable.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s08::p002",
+   "summary": "Enhanced context embeddings are constructed from pre-extracted general knowledge by gathering matching context embeddings and forming an attended matching vector.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s08::p003",
+   "summary": "Trainable parameters and a dense layer with ReLU activation are used to obtain the enhanced context embedding.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s08::p004",
+   "summary": "Knowledge aided mutual attention constructs a knowledge aided similarity matrix and passage-attended question summaries and question-attended passage summaries.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s08::p005",
+   "summary": "Softmax along row and column dimensions and a dense layer with ReLU activation produce the outputs of knowledge aided mutual attention.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s09::p000",
+   "summary": "Knowledge aided self attention fuses coarse memories using pre-extracted general knowledge to involve only a precise subset of other passage words.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s09::p001",
+   "summary": "Trainable parameters and a dense layer with ReLU activation produce the fusion result and outputs of knowledge aided self attention.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s10::p000",
+   "summary": "Other attention mechanisms include multi-round alignment and using mutual attention as a skip-connector to densely connect pairwise layers.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s10::p001",
+   "summary": "Properly augmenting training examples can improve MRC model performance, as shown by generated questions and back-and-forth translation paraphrasing.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s10::p002",
+   "summary": "Multi-step reasoning addresses difficult MRC tasks using dynamically determined reasoning steps or fixed steps with stochastic dropout to avoid step bias.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s10::p003",
+   "summary": "Linguistic embeddings can be incorporated into MRC input layers, including POS embeddings, NER embeddings, and structural embeddings based on parsing trees.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s10::p004",
+   "summary": "Recent MRC breakthroughs benefit from feature-based transfer learning and fine-tuning-based transfer learning using models pre-trained on large external corpora.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s11::p000",
+   "summary": "The MRC dataset is SQuAD 1.1, with AddSent and AddOneSent adversarial sets used to evaluate robustness to noise from misleading sentences.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s11::p001",
+   "summary": "Implementation uses spaCy 2.0.13, WordNet 3.0, NLTK 3.3, TensorFlow 1.11.0, Adam, Exact Match (EM), F1 score, dropout, and exponential moving average.",
+   "group_id": "1809.03449::g00"
+  },
+  {
+   "passage_id": "1809.03449::s12::p000",
+   "summary": "KAR is compared with five top-20 single SQuAD 1.1 MRC models on development, test, and adversarial sets, showing comparable performance and greater robustness to noise.",
+   "group_id": "1809.03449::g01"
+  },
+  {
+   "passage_id": "1809.03449::s12::p001",
+   "summary": "Increasing INLINEFORM0 from 0 to 5 raises general knowledge monotonically, while KAR performance peaks at INLINEFORM1 3, and ablations and one-epoch results support general knowledge effectiveness.",
+   "group_id": "1809.03449::g01"
+  },
+  {
+   "passage_id": "1809.03449::s12::p002",
+   "summary": "KAR is compared with BIBREF10's encoding-based use of Wikipedia and ConceptNet knowledge, whose best EM INLINEFORM0 and F1 INLINEFORM1 are much lower.",
+   "group_id": "1809.03449::g01"
+  },
+  {
+   "passage_id": "1809.03449::s13::p000",
+   "summary": "Training subsets from sampling 1, 2, 3, and 4 questions per passage contain INLINEFORM0, INLINEFORM1, INLINEFORM2, and INLINEFORM3 examples, where KAR outperforms SAN and QANet.",
+   "group_id": "1809.03449::g01"
+  },
+  {
+   "passage_id": "1809.03449::s14::p000",
+   "summary": "Experimental results show KAR comparable in performance with state-of-the-art MRC models and superior in hunger for data and robustness to noise.",
+   "group_id": "1809.03449::g01"
+  },
+  {
+   "passage_id": "1809.03449::s15::p000",
+   "summary": "KAR integrates WordNet-based inter-word semantic connections into an end-to-end MRC model, achieves comparable performance and superior data efficiency and robustness, with future plans for ConceptNet and Freebase.",
+   "group_id": "1809.03449::g01"
+  },
+  {
+   "passage_id": "1809.03449::s16::p000",
+   "summary": "This work is partially supported by a research donation from iFLYTEK Co., Ltd., Hefei, China, and a discovery grant from Natural Sciences and Engineering Research Council (NSERC) of Canada.",
+   "group_id": "1809.03449::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1809.03449::g00",
+   "summaries": [
+    {
+     "passage_id": "1809.03449::s00::p000",
+     "summary": "MRC requires answering passage questions by predicting answer spans, with datasets including SQuAD, MS MARCO, and TriviaQA and models including BiDAF, R-NET, and QANet.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s00::p001",
+     "summary": "MRC models differ from human beings in data hunger and noise robustness because humans also use general knowledge, especially inter-word semantic connections.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s00::p002",
+     "summary": "Integrating MRC neural networks with human general knowledge requires extraction and utilization, with WordNet chosen for inter-word semantic connections and explicit utilization explored.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s00::p003",
+     "summary": "The paper proposes a WordNet-based data enrichment method and Knowledge Aided Reader (KAR), which is comparable to state-of-the-art models and more robust to noise.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s01::p000",
+     "summary": "This section elaborates a WordNet-based data enrichment method that controllably extracts inter-word semantic connections from each passage-question pair as general knowledge.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s02::p000",
+     "summary": "WordNet organizes words into synsets with sixteen semantic relation types, and semantic relation chains link synsets through concatenated relations with hops.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s03::p000",
+     "summary": "Inter-word semantic connections are determined using extended synsets, a maximum hop count hyper-parameter, and a heuristic rule based on shared extended synsets.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s04::p000",
+     "summary": "General knowledge extraction records positions of semantically connected passage words, with the hyper-parameter controlled by cross validation due to useless extracted results.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s05::p000",
+     "summary": "Knowledge Aided Reader (KAR) explicitly uses extracted general knowledge to assist its knowledge aided mutual attention and knowledge aided self attention mechanisms.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s06::p000",
+     "summary": "The task is to predict an answer span from a passage and relevant question so that the resulting passage subsequence answers the question.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s07::p000",
+     "summary": "KAR is an end-to-end MRC model consisting of five layers.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s07::p001",
+     "summary": "The Lexicon Embedding Layer maps words to lexicon embeddings using pre-trained GloVe word vectors, CNN character embeddings, and a shared dense layer with ReLU activation.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s07::p002",
+     "summary": "The Context Embedding Layer maps lexicon embeddings to context embeddings using a shared bidirectional LSTM (BiLSTM) and concatenating forward and backward outputs.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s07::p003",
+     "summary": "The Coarse Memory Layer uses knowledge aided mutual attention and a BiLSTM to produce coarse memories as question-aware passage representations.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s07::p004",
+     "summary": "The Refined Memory Layer uses knowledge aided self attention and a BiLSTM to produce refined memories as final passage representations.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s07::p005",
+     "summary": "The Answer Span Prediction Layer predicts the answer start position and answer end position based on the above layers.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s07::p006",
+     "summary": "Trainable parameters, refined memories, question summaries, and vector concatenation are used to obtain the answer end position distribution.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s07::p007",
+     "summary": "An answer span prediction matrix is constructed, with training minimizing a loss and inference taking row and column indices of its maximum element.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s08::p000",
+     "summary": "Knowledge aided mutual attention fuses question context embeddings into passage context embeddings by calculating similarities between passage and question context embeddings.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s08::p001",
+     "summary": "The existing similarity function is modified because introducing pre-extracted general knowledge into high-level context embedding similarities should make results more reasonable.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s08::p002",
+     "summary": "Enhanced context embeddings are constructed from pre-extracted general knowledge by gathering matching context embeddings and forming an attended matching vector.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s08::p003",
+     "summary": "Trainable parameters and a dense layer with ReLU activation are used to obtain the enhanced context embedding.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s08::p004",
+     "summary": "Knowledge aided mutual attention constructs a knowledge aided similarity matrix and passage-attended question summaries and question-attended passage summaries.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s08::p005",
+     "summary": "Softmax along row and column dimensions and a dense layer with ReLU activation produce the outputs of knowledge aided mutual attention.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s09::p000",
+     "summary": "Knowledge aided self attention fuses coarse memories using pre-extracted general knowledge to involve only a precise subset of other passage words.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s09::p001",
+     "summary": "Trainable parameters and a dense layer with ReLU activation produce the fusion result and outputs of knowledge aided self attention.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s10::p000",
+     "summary": "Other attention mechanisms include multi-round alignment and using mutual attention as a skip-connector to densely connect pairwise layers.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s10::p001",
+     "summary": "Properly augmenting training examples can improve MRC model performance, as shown by generated questions and back-and-forth translation paraphrasing.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s10::p002",
+     "summary": "Multi-step reasoning addresses difficult MRC tasks using dynamically determined reasoning steps or fixed steps with stochastic dropout to avoid step bias.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s10::p003",
+     "summary": "Linguistic embeddings can be incorporated into MRC input layers, including POS embeddings, NER embeddings, and structural embeddings based on parsing trees.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s10::p004",
+     "summary": "Recent MRC breakthroughs benefit from feature-based transfer learning and fine-tuning-based transfer learning using models pre-trained on large external corpora.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s11::p000",
+     "summary": "The MRC dataset is SQuAD 1.1, with AddSent and AddOneSent adversarial sets used to evaluate robustness to noise from misleading sentences.",
+     "group_id": "1809.03449::g00"
+    },
+    {
+     "passage_id": "1809.03449::s11::p001",
+     "summary": "Implementation uses spaCy 2.0.13, WordNet 3.0, NLTK 3.3, TensorFlow 1.11.0, Adam, Exact Match (EM), F1 score, dropout, and exponential moving average.",
+     "group_id": "1809.03449::g00"
+    }
+   ],
+   "n_raw": 33,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5446,
+    "completion_tokens": 1518,
+    "total_tokens": 6964,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1809.03449::g01",
+   "summaries": [
+    {
+     "passage_id": "1809.03449::s12::p000",
+     "summary": "KAR is compared with five top-20 single SQuAD 1.1 MRC models on development, test, and adversarial sets, showing comparable performance and greater robustness to noise.",
+     "group_id": "1809.03449::g01"
+    },
+    {
+     "passage_id": "1809.03449::s12::p001",
+     "summary": "Increasing INLINEFORM0 from 0 to 5 raises general knowledge monotonically, while KAR performance peaks at INLINEFORM1 3, and ablations and one-epoch results support general knowledge effectiveness.",
+     "group_id": "1809.03449::g01"
+    },
+    {
+     "passage_id": "1809.03449::s12::p002",
+     "summary": "KAR is compared with BIBREF10's encoding-based use of Wikipedia and ConceptNet knowledge, whose best EM INLINEFORM0 and F1 INLINEFORM1 are much lower.",
+     "group_id": "1809.03449::g01"
+    },
+    {
+     "passage_id": "1809.03449::s13::p000",
+     "summary": "Training subsets from sampling 1, 2, 3, and 4 questions per passage contain INLINEFORM0, INLINEFORM1, INLINEFORM2, and INLINEFORM3 examples, where KAR outperforms SAN and QANet.",
+     "group_id": "1809.03449::g01"
+    },
+    {
+     "passage_id": "1809.03449::s14::p000",
+     "summary": "Experimental results show KAR comparable in performance with state-of-the-art MRC models and superior in hunger for data and robustness to noise.",
+     "group_id": "1809.03449::g01"
+    },
+    {
+     "passage_id": "1809.03449::s15::p000",
+     "summary": "KAR integrates WordNet-based inter-word semantic connections into an end-to-end MRC model, achieves comparable performance and superior data efficiency and robustness, with future plans for ConceptNet and Freebase.",
+     "group_id": "1809.03449::g01"
+    },
+    {
+     "passage_id": "1809.03449::s16::p000",
+     "summary": "This work is partially supported by a research donation from iFLYTEK Co., Ltd., Hefei, China, and a discovery grant from Natural Sciences and Engineering Research Council (NSERC) of Canada.",
+     "group_id": "1809.03449::g01"
+    }
+   ],
+   "n_raw": 7,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1464,
+    "completion_tokens": 421,
+    "total_tokens": 1885,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

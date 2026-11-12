@@ -1,0 +1,857 @@
+{
+ "kept": [
+  {
+   "insight_id": "1912.10011::g00:i00",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g00",
+   "concise_text": "The proposed hierarchical encoder addresses linearization and arbitrary ordering limitations by using a two-level architecture with Transformer encoders and hierarchical attention.",
+   "triple": {
+    "subject": "proposed hierarchical encoder",
+    "predicate": "addresses",
+    "object": "linearization and arbitrary ordering limitations"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1912.10011::s00::p003",
+    "1912.10011::s00::p004",
+    "1912.10011::s00::p005",
+    "1912.10011::s00::p007",
+    "1912.10011::s00::p008",
+    "1912.10011::s00::p009"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g00:b0:f16",
+    "1912.10011::g00:b0:f21",
+    "1912.10011::g00:b0:f22",
+    "1912.10011::g00:b1:f00"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.8,
+    "causality_error": false,
+    "reason": "Cited passages jointly identify linearization and arbitrary ordering shortcomings, then state the proposed structured hierarchical encoder addresses them with two-level architecture, Transformer encoders, and hierarchical attention."
+   },
+   "unit_id": "1912.10011::u000"
+  },
+  {
+   "insight_id": "1912.10011::g00:i02",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g00",
+   "concise_text": "The proposed architecture is generally better on qualitative metrics that estimate the ability to integrate elements from the table in descriptions.",
+   "triple": {
+    "subject": "proposed architecture",
+    "predicate": "improves_on",
+    "object": "qualitative metrics"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1912.10011::s00::p010",
+    "1912.10011::s10::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g00:b1:f03",
+    "1912.10011::g00:b7:f03",
+    "1912.10011::g00:b7:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "p010 states the architecture is generally better on qualitative metrics; p010 and s10:p000 jointly specify that these metrics estimate integration of table elements into descriptions."
+   },
+   "unit_id": "1912.10011::u002"
+  },
+  {
+   "insight_id": "1912.10011::g00:i03",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g00",
+   "concise_text": "The Transformer encoder is introduced to avoid arbitrary ordering assumptions that significantly impact learning performance in RNN encoders.",
+   "triple": {
+    "subject": "Transformer encoder",
+    "predicate": "addresses",
+    "object": "arbitrary ordering assumptions"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1912.10011::s00::p004",
+    "1912.10011::s00::p008",
+    "1912.10011::s01::p004"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g00:b0:f19",
+    "1912.10011::g00:b0:f20",
+    "1912.10011::g00:b0:f21",
+    "1912.10011::g00:b0:f22"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.9,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "p004 describes arbitrary ordering assumptions in RNNs and their impact; p008 and s01:p004 explicitly say the Transformer encoder is introduced/exploited to avoid arbitrary ordering assumptions."
+   },
+   "unit_id": "1912.10011::u003"
+  },
+  {
+   "insight_id": "1912.10011::g00:i05",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g00",
+   "concise_text": "The two-level architecture matches the notation where an entity is a set of unordered records and a data-structure is an unordered set of entities.",
+   "triple": {
+    "subject": "two-level architecture",
+    "predicate": "requires",
+    "object": "unordered records within entities and unordered entities within data-structure"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1912.10011::s00::p007",
+    "1912.10011::s03::p001",
+    "1912.10011::s03::p002",
+    "1912.10011::s05::p002"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g00:b2:f13",
+    "1912.10011::g00:b3:f00",
+    "1912.10011::g00:b5:f02"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.84,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "The two-level architecture encodes entities from elements/records and the data-structure from entities; notation and encoder description specify unordered records within entities and unordered entities within the data-structure."
+   },
+   "unit_id": "1912.10011::u005"
+  },
+  {
+   "insight_id": "1912.10011::g00:i06",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g00",
+   "concise_text": "The data-structure representation z computed by the high-level encoder initializes the two-layers LSTM network with a copy mechanism.",
+   "triple": {
+    "subject": "data-structure representation z",
+    "predicate": "initializes",
+    "object": "two-layers LSTM network with a copy mechanism"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1912.10011::s03::p011",
+    "1912.10011::s05::p005"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g00:b4:f01",
+    "1912.10011::g00:b5:f07",
+    "1912.10011::g00:b5:f08"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.89,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "s05:p005 says z is used for decoder initialization; s03:p011 identifies the decoder as a two-layers LSTM network with a copy mechanism."
+   },
+   "unit_id": "1912.10011::u006"
+  },
+  {
+   "insight_id": "1912.10011::g00:i07",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g00",
+   "concise_text": "Traditional Hierarchical Attention implements the hierarchical context by attending first to entities and then to records belonging to those entities.",
+   "triple": {
+    "subject": "Traditional Hierarchical Attention",
+    "predicate": "implements",
+    "object": "hierarchical context fed into the decoder"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1912.10011::s00::p009",
+    "1912.10011::s06::p000",
+    "1912.10011::s06::p001"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g00:b1:f00",
+    "1912.10011::g00:b5:f09",
+    "1912.10011::g00:b5:f10",
+    "1912.10011::g00:b5:f11"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "p009 and s06:p000 establish hierarchical attention computes context fed to decoder; s06:p001 specifies Traditional Hierarchical Attention does so by first attending to entities then records."
+   },
+   "unit_id": "1912.10011::u007"
+  },
+  {
+   "insight_id": "1912.10011::g00:i08",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g00",
+   "concise_text": "Key-guided Hierarchical Attention tests the intuition that once an entity is chosen, only the type of records is important by computing beta scores from key embeddings.",
+   "triple": {
+    "subject": "Key-guided Hierarchical Attention",
+    "predicate": "tests",
+    "object": "intuition that only the type of records is important"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1912.10011::s06::p005",
+    "1912.10011::s05::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g00:b6:f00",
+    "1912.10011::g00:b4:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "s06:p005 explicitly states Key-guided Hierarchical Attention follows/tests the intuition that once an entity is chosen only record type matters, by computing beta scores from key embeddings."
+   },
+   "unit_id": "1912.10011::u008"
+  },
+  {
+   "insight_id": "1912.10011::g01:i00",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g01",
+   "concise_text": "Hierarchical-k, which computes attention over records only on record key representations, performs slightly better in all metrics excepted CS-R% than Hierarchical-kv, which uses the full record encoding.",
+   "triple": {
+    "subject": "Hierarchical-k",
+    "predicate": "outperforms",
+    "object": "Hierarchical-kv in all metrics excepted CS-R%"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1912.10011::s12::p002",
+    "1912.10011::s12::p003",
+    "1912.10011::s15::p001"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g01:b1:f03",
+    "1912.10011::g01:b1:f04",
+    "1912.10011::g01:b2:f00"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "s12:p002-p003 define Hierarchical-kv and Hierarchical-k; s15:p001 states Hierarchical-k performs slightly better in all metrics except CS-R%."
+   },
+   "unit_id": "1912.10011::u010"
+  },
+  {
+   "insight_id": "1912.10011::g01:i01",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g01",
+   "concise_text": "Flat uses a Transformer instead of an RNN and obtains a significant higher BLEU score (16.7 vs. 14.5) than Wiseman, which uses bi-LSTM.",
+   "triple": {
+    "subject": "Flat",
+    "predicate": "outperforms",
+    "object": "Wiseman on BLEU 16.7 vs. 14.5"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1912.10011::s12::p001",
+    "1912.10011::s16::p003"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g01:b1:f02",
+    "1912.10011::g01:b2:f06",
+    "1912.10011::g01:b2:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "s12:p001 defines Flat as Transformer instead of RNN and closest to Wiseman; s16:p003 states Flat obtains significantly higher BLEU 16.7 vs. 14.5 and Wiseman uses bi-LSTM."
+   },
+   "unit_id": "1912.10011::u011"
+  },
+  {
+   "insight_id": "1912.10011::g01:i02",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g01",
+   "concise_text": "The hierarchical models outperform Li and Puduppully-plan, whose delayed copy mechanism and two-step plan generation place structure prediction in the decoder.",
+   "triple": {
+    "subject": "hierarchical models",
+    "predicate": "outperform",
+    "object": "Li and Puduppully-plan"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1912.10011::s11::p002",
+    "1912.10011::s11::p003",
+    "1912.10011::s16::p004"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g01:b0:f01",
+    "1912.10011::g01:b0:f04",
+    "1912.10011::g01:b0:f05",
+    "1912.10011::g01:b0:f07"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.7,
+    "causality_error": false,
+    "reason": "s11:p002-p003 describe Li and Puduppully-plan as decoder-side structure prediction/planning; s16:p004 states hierarchical models outperform them and interprets this as encoder structure capture being more effective."
+   },
+   "unit_id": "1912.10011::u012"
+  },
+  {
+   "insight_id": "1912.10011::g01:i04",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g01",
+   "concise_text": "The hierarchical encoder leverages structure and has strong synergy with hierarchical attention, while the scenarios rely on 14 millions parameters compared to all baselines ranging from 23 to 45 millions.",
+   "triple": {
+    "subject": "hierarchical encoder for structured data",
+    "predicate": "limits",
+    "object": "parameters to 14 millions versus 23 to 45 millions"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1912.10011::s16::p006",
+    "1912.10011::s17::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g01:b3:f03",
+    "1912.10011::g01:b3:f04",
+    "1912.10011::g01:b3:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.79,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.75,
+    "causality_error": false,
+    "reason": "s16:p006 gives 14 million parameters for the scenarios versus 23-45 million baselines and attributes effectiveness to structure encoding; s17:p000 states the hierarchical encoder leverages structure, synergizes with hierarchical attention, and is more light-weight."
+   },
+   "unit_id": "1912.10011::u014"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1912.10011::g00:i01",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g00",
+   "concise_text": "The proposed architecture was evaluated on the RotoWire benchmark and outperformed previous models on BLEU score.",
+   "triple": {
+    "subject": "proposed architecture",
+    "predicate": "outperforms",
+    "object": "previous models on BLEU score"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1912.10011::s00::p010",
+    "1912.10011::s07::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g00:b1:f01",
+    "1912.10011::g00:b1:f02",
+    "1912.10011::g00:b6:f01",
+    "1912.10011::g00:b6:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.93,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "All cited ids exist and support the claim, but the insight is essentially a restatement of p010 plus dataset context; no meaningful composition beyond paraphrase."
+   },
+   "unit_id": "1912.10011::u001"
+  },
+  {
+   "insight_id": "1912.10011::g00:i04",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g00",
+   "concise_text": "The hierarchical encoder preserves delimitation between entities, unlike flat encoders that linearize data and lose distinction between rows and entities.",
+   "triple": {
+    "subject": "hierarchical encoder",
+    "predicate": "extends",
+    "object": "flat encoders by preserving delimitation between entities"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1912.10011::s00::p003",
+    "1912.10011::s01::p004",
+    "1912.10011::s04::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g00:b0:f14",
+    "1912.10011::g00:b0:f16",
+    "1912.10011::g00:b2:f10",
+    "1912.10011::g00:b4:f02",
+    "1912.10011::g00:b4:f03",
+    "1912.10011::g00:b4:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.91,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.55,
+    "causality_error": false,
+    "reason": "Sources support preserving entity delimitation and contrast with flat linearization, but the triple says 'extends flat encoders', which is not supported; the model differs from/replaces flat concatenation rather than extending it."
+   },
+   "unit_id": "1912.10011::u004"
+  },
+  {
+   "insight_id": "1912.10011::g00:i09",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g00",
+   "concise_text": "The RotoWire benchmark contains around 5K statistical tables and uses train/validation/test sets of respectively 3,398/727/728 pairs.",
+   "triple": {
+    "subject": "RotoWire benchmark",
+    "predicate": "evaluated_on",
+    "object": "train/validation/test sets of respectively 3,398/727/728 pairs"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1912.10011::s00::p010",
+    "1912.10011::s07::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g00:b1:f01",
+    "1912.10011::g00:b6:f01",
+    "1912.10011::g00:b6:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "The facts are supported by p010 and s07:p000, but the triple's predicate 'evaluated_on' is mismatched and the concise_text is just a conjunction of two directly stated dataset facts."
+   },
+   "unit_id": "1912.10011::u009"
+  },
+  {
+   "insight_id": "1912.10011::g01:i03",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g01",
+   "concise_text": "Puduppully-updt's added module updates record representations during generation, and dynamically updating the encoding across the generation process can lead to better Content Ordering (CO) and RG-P%.",
+   "triple": {
+    "subject": "Puduppully-updt's added module",
+    "predicate": "causes",
+    "object": "better Content Ordering (CO) and RG-P%"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1912.10011::s11::p004",
+    "1912.10011::s16::p005"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g01:b0:f09",
+    "1912.10011::g01:b3:f00",
+    "1912.10011::g01:b3:f02"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.82,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.55,
+    "causality_error": true,
+    "reason": "The text says dynamic updating can lead to better CO and RG-P%, but the insight attributes this causally specifically to Puduppully-updt's added module; sources support a comparison/correlation and cautious 'can lead', not a strict causal claim."
+   },
+   "unit_id": "1912.10011::u013"
+  },
+  {
+   "insight_id": "1912.10011::g01:i05",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g01",
+   "concise_text": "The Flat scenario feeds input sequentially and uses standard attention, and its lower BLEU 16.7 vs. 17.5 for Hierarchical-k suggests the effectiveness of encoding the data-structure using a hierarchy.",
+   "triple": {
+    "subject": "Flat",
+    "predicate": "evaluated_on",
+    "object": "BLEU 16.7 vs. 17.5 for Hierarchical-k"
+   },
+   "relation_type": "setting_outcome",
+   "source_passage_ids": [
+    "1912.10011::s12::p001",
+    "1912.10011::s15::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g01:b1:f00",
+    "1912.10011::g01:b1:f01"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "Cited passages exist and support the facts, but the insight is essentially a restatement/paraphrase of the two cited paragraphs combined; no meaningful novel inference."
+   },
+   "unit_id": "1912.10011::u015"
+  },
+  {
+   "insight_id": "1912.10011::g01:i06",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g01",
+   "concise_text": "Wiseman is a standard encoder-decoder system with copy mechanism, and the hierarchical models achieve significantly better scores on all metrics when compared to the flat architecture Wiseman.",
+   "triple": {
+    "subject": "hierarchical models",
+    "predicate": "outperform",
+    "object": "Wiseman on all metrics"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1912.10011::s11::p001",
+    "1912.10011::s16::p002"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g01:b0:f00",
+    "1912.10011::g01:b2:f04",
+    "1912.10011::g01:b2:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.1,
+    "causality_error": false,
+    "reason": "All cited passages exist and directly state both Wiseman's architecture and that hierarchical models achieve significantly better scores on all metrics; this is a direct restatement, not a novel inference."
+   },
+   "unit_id": "1912.10011::u016"
+  },
+  {
+   "insight_id": "1912.10011::g01:i07",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g01",
+   "concise_text": "Puduppully-plan generates a plan as a list of salient records from the table, and reaches 34.28 mentions on average, showing that incorporating modules dedicated to entity extraction leads to over-focusing on entities.",
+   "triple": {
+    "subject": "Puduppully-plan",
+    "predicate": "causes",
+    "object": "34.28 mentions on average"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1912.10011::s11::p003",
+    "1912.10011::s16::p004"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g01:b0:f05",
+    "1912.10011::g01:b0:f06",
+    "1912.10011::g01:b2:f08"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.81,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.2,
+    "causality_error": true,
+    "reason": "Passages support that Puduppully-plan generates a plan and reaches 34.28 mentions on average, but the triple's 'causes' relation is unsupported; the text only reports the number and interprets it as showing over-focusing, not that Puduppully-plan causes the mentions."
+   },
+   "unit_id": "1912.10011::u017"
+  },
+  {
+   "insight_id": "1912.10011::g01:i08",
+   "paper_id": "1912.10011",
+   "group_id": "1912.10011::g01",
+   "concise_text": "The conclusion says the approach can still lead to erroneous facts or even hallucinations, supported by generated texts still containing a number of incorrect facts, as well hallucinations (in blue).",
+   "triple": {
+    "subject": "generated texts",
+    "predicate": "causes",
+    "object": "erroneous facts or even hallucinations"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1912.10011::s16::p000",
+    "1912.10011::s17::p000"
+   ],
+   "supporting_fact_ids": [
+    "1912.10011::g01:b2:f03",
+    "1912.10011::g01:b3:f04",
+    "1912.10011::g01:b3:f05"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.76,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.2,
+    "causality_error": true,
+    "reason": "Passages support that generated texts contain incorrect facts/hallucinations and that the approach can lead to them, but the triple reverses this into generated texts causing erroneous facts/hallucinations, which is not supported."
+   },
+   "unit_id": "1912.10011::u018"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1912.10011::g00:i00",
+    "verdict": {
+     "insight_id": "1912.10011::g00:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.8,
+     "causality_error": false,
+     "reason": "Cited passages jointly identify linearization and arbitrary ordering shortcomings, then state the proposed structured hierarchical encoder addresses them with two-level architecture, Transformer encoders, and hierarchical attention."
+    }
+   },
+   {
+    "insight_id": "1912.10011::g00:i01",
+    "verdict": {
+     "insight_id": "1912.10011::g00:i01",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "All cited ids exist and support the claim, but the insight is essentially a restatement of p010 plus dataset context; no meaningful composition beyond paraphrase."
+    },
+    "reason": "All cited ids exist and support the claim, but the insight is essentially a restatement of p010 plus dataset context; no meaningful composition beyond paraphrase."
+   },
+   {
+    "insight_id": "1912.10011::g00:i02",
+    "verdict": {
+     "insight_id": "1912.10011::g00:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "p010 states the architecture is generally better on qualitative metrics; p010 and s10:p000 jointly specify that these metrics estimate integration of table elements into descriptions."
+    }
+   },
+   {
+    "insight_id": "1912.10011::g00:i03",
+    "verdict": {
+     "insight_id": "1912.10011::g00:i03",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "p004 describes arbitrary ordering assumptions in RNNs and their impact; p008 and s01:p004 explicitly say the Transformer encoder is introduced/exploited to avoid arbitrary ordering assumptions."
+    }
+   },
+   {
+    "insight_id": "1912.10011::g00:i04",
+    "verdict": {
+     "insight_id": "1912.10011::g00:i04",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.55,
+     "causality_error": false,
+     "reason": "Sources support preserving entity delimitation and contrast with flat linearization, but the triple says 'extends flat encoders', which is not supported; the model differs from/replaces flat concatenation rather than extending it."
+    },
+    "reason": "Sources support preserving entity delimitation and contrast with flat linearization, but the triple says 'extends flat encoders', which is not supported; the model differs from/replaces flat concatenation rather than extending it."
+   },
+   {
+    "insight_id": "1912.10011::g00:i05",
+    "verdict": {
+     "insight_id": "1912.10011::g00:i05",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "The two-level architecture encodes entities from elements/records and the data-structure from entities; notation and encoder description specify unordered records within entities and unordered entities within the data-structure."
+    }
+   },
+   {
+    "insight_id": "1912.10011::g00:i06",
+    "verdict": {
+     "insight_id": "1912.10011::g00:i06",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "s05:p005 says z is used for decoder initialization; s03:p011 identifies the decoder as a two-layers LSTM network with a copy mechanism."
+    }
+   },
+   {
+    "insight_id": "1912.10011::g00:i07",
+    "verdict": {
+     "insight_id": "1912.10011::g00:i07",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "p009 and s06:p000 establish hierarchical attention computes context fed to decoder; s06:p001 specifies Traditional Hierarchical Attention does so by first attending to entities then records."
+    }
+   },
+   {
+    "insight_id": "1912.10011::g00:i08",
+    "verdict": {
+     "insight_id": "1912.10011::g00:i08",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "s06:p005 explicitly states Key-guided Hierarchical Attention follows/tests the intuition that once an entity is chosen only record type matters, by computing beta scores from key embeddings."
+    }
+   },
+   {
+    "insight_id": "1912.10011::g00:i09",
+    "verdict": {
+     "insight_id": "1912.10011::g00:i09",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "The facts are supported by p010 and s07:p000, but the triple's predicate 'evaluated_on' is mismatched and the concise_text is just a conjunction of two directly stated dataset facts."
+    },
+    "reason": "The facts are supported by p010 and s07:p000, but the triple's predicate 'evaluated_on' is mismatched and the concise_text is just a conjunction of two directly stated dataset facts."
+   },
+   {
+    "insight_id": "1912.10011::g01:i00",
+    "verdict": {
+     "insight_id": "1912.10011::g01:i00",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "s12:p002-p003 define Hierarchical-kv and Hierarchical-k; s15:p001 states Hierarchical-k performs slightly better in all metrics except CS-R%."
+    }
+   },
+   {
+    "insight_id": "1912.10011::g01:i01",
+    "verdict": {
+     "insight_id": "1912.10011::g01:i01",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "s12:p001 defines Flat as Transformer instead of RNN and closest to Wiseman; s16:p003 states Flat obtains significantly higher BLEU 16.7 vs. 14.5 and Wiseman uses bi-LSTM."
+    }
+   },
+   {
+    "insight_id": "1912.10011::g01:i02",
+    "verdict": {
+     "insight_id": "1912.10011::g01:i02",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.7,
+     "causality_error": false,
+     "reason": "s11:p002-p003 describe Li and Puduppully-plan as decoder-side structure prediction/planning; s16:p004 states hierarchical models outperform them and interprets this as encoder structure capture being more effective."
+    }
+   },
+   {
+    "insight_id": "1912.10011::g01:i03",
+    "verdict": {
+     "insight_id": "1912.10011::g01:i03",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.55,
+     "causality_error": true,
+     "reason": "The text says dynamic updating can lead to better CO and RG-P%, but the insight attributes this causally specifically to Puduppully-updt's added module; sources support a comparison/correlation and cautious 'can lead', not a strict causal claim."
+    },
+    "reason": "The text says dynamic updating can lead to better CO and RG-P%, but the insight attributes this causally specifically to Puduppully-updt's added module; sources support a comparison/correlation and cautious 'can lead', not a strict causal claim."
+   },
+   {
+    "insight_id": "1912.10011::g01:i04",
+    "verdict": {
+     "insight_id": "1912.10011::g01:i04",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.75,
+     "causality_error": false,
+     "reason": "s16:p006 gives 14 million parameters for the scenarios versus 23-45 million baselines and attributes effectiveness to structure encoding; s17:p000 states the hierarchical encoder leverages structure, synergizes with hierarchical attention, and is more light-weight."
+    }
+   },
+   {
+    "insight_id": "1912.10011::g01:i05",
+    "verdict": {
+     "insight_id": "1912.10011::g01:i05",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "Cited passages exist and support the facts, but the insight is essentially a restatement/paraphrase of the two cited paragraphs combined; no meaningful novel inference."
+    },
+    "reason": "Cited passages exist and support the facts, but the insight is essentially a restatement/paraphrase of the two cited paragraphs combined; no meaningful novel inference."
+   },
+   {
+    "insight_id": "1912.10011::g01:i06",
+    "verdict": {
+     "insight_id": "1912.10011::g01:i06",
+     "keep": false,
+     "support": 0.95,
+     "novelty": 0.1,
+     "causality_error": false,
+     "reason": "All cited passages exist and directly state both Wiseman's architecture and that hierarchical models achieve significantly better scores on all metrics; this is a direct restatement, not a novel inference."
+    },
+    "reason": "All cited passages exist and directly state both Wiseman's architecture and that hierarchical models achieve significantly better scores on all metrics; this is a direct restatement, not a novel inference."
+   },
+   {
+    "insight_id": "1912.10011::g01:i07",
+    "verdict": {
+     "insight_id": "1912.10011::g01:i07",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.2,
+     "causality_error": true,
+     "reason": "Passages support that Puduppully-plan generates a plan and reaches 34.28 mentions on average, but the triple's 'causes' relation is unsupported; the text only reports the number and interprets it as showing over-focusing, not that Puduppully-plan causes the mentions."
+    },
+    "reason": "Passages support that Puduppully-plan generates a plan and reaches 34.28 mentions on average, but the triple's 'causes' relation is unsupported; the text only reports the number and interprets it as showing over-focusing, not that Puduppully-plan causes the mentions."
+   },
+   {
+    "insight_id": "1912.10011::g01:i08",
+    "verdict": {
+     "insight_id": "1912.10011::g01:i08",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.2,
+     "causality_error": true,
+     "reason": "Passages support that generated texts contain incorrect facts/hallucinations and that the approach can lead to them, but the triple reverses this into generated texts causing erroneous facts/hallucinations, which is not supported."
+    },
+    "reason": "Passages support that generated texts contain incorrect facts/hallucinations and that the approach can lead to them, but the triple reverses this into generated texts causing erroneous facts/hallucinations, which is not supported."
+   }
+  ],
+  "calls": [
+   {
+    "n": 15,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 6353,
+     "completion_tokens": 1215,
+     "total_tokens": 7568,
+     "reasoning_tokens": null
+    }
+   },
+   {
+    "n": 4,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 1788,
+     "completion_tokens": 348,
+     "total_tokens": 2136,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}

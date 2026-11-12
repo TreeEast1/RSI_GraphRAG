@@ -1,0 +1,434 @@
+--- SYSTEM ---
+You are a careful analyst building a cross-document knowledge graph from a long conversation. You only state relations that the cited dialogue turns actually support. You output only valid JSON.
+
+--- USER ---
+You are given several conversation sessions that were grouped together, and the atomic
+facts already extracted from them. Your job is to find relations that the atomic facts do NOT
+explicitly state, but which are jointly supported by facts from *different* sessions.
+
+What counts as a useful new relation:
+* Two facts about the same entity from different sessions that jointly establish a link
+  (e.g. Alice starts a new job at Company X in S5, and meets Bob at Company X in S10
+  -> "Alice" "colleague_of" "Bob" IS NOT allowed unless the text states they are colleagues).
+* A change of state over time (moved_to city, then changed_job, then lives_in ...).
+* Temporal ordering of events described in different sessions.
+* Identity unification: two mentions across sessions that clearly refer to the same event or object.
+* Causal or enabling links asserted or clearly implied by the dialogue text.
+
+Hard requirements:
+1. Every relation MUST cite at least two source_dia_ids from DIFFERENT sessions, or at least one
+   dialogue id plus at least one supporting fact id from another session.
+2. evidence must contain verbatim quotes (max 25 words each) from each cited session.
+3. derivation must be "Composed" when combining explicit facts needs no world knowledge, and
+   "Inferred" when common-sense or semantic inference is needed.
+4. confidence is your calibrated probability (0-1) that the relation is true given the evidence.
+5. Do NOT restate facts that are already in the atomic fact list. Do NOT produce synonyms or
+   paraphrases of existing triples. Do NOT produce vague relations such as "related_to".
+6. If you cannot find any cross-session relation that satisfies rule 1, return {"relations": []}.
+
+Return JSON of exactly this shape:
+{"relations": [
+  {"subject": "Alice", "predicate": "moved_to", "object": "New York",
+   "relation_type": "state_change", "source_dia_ids": ["D1:4", "D5:2"],
+   "supporting_fact_ids": ["f12"],
+   "evidence": ["I'm moving to New York next month", "Since I moved here I started at Acme"],
+   "derivation": "Composed", "confidence": 0.9}
+]}
+
+
+Conversation excerpts:
+=== Session 19 | 6:46 pm on 23 July, 2023 ===
+[D19:1] Jon: Hey Gina! We haven't talked in a few days. Been rehearsing hard and working on business plans. It's been stressful, but dancing has kept me going.
+[D19:2] Gina: Hey Jon! Remember, just do it! You should get to the point where anyone else would quit and you're not going to stop there. No, what are you waiting for? Do it! Just do it!
+[D19:3] Jon: Ha, ha! Thanks, Gina. Sounds familiar, who do those words belong to?
+[D19:4] Gina: It's Shia Labeouf!
+[D19:5] Jon: Ahhahha, really!? Yea, that definitely him.
+[D19:6] Gina: Hah, yeah!) But really having a creative space for dancers is so important. Last Friday at dance class with a group of friends I felt it. Your studio will be a go-to spot for self-expression. Keep up the good work and don't forget your passion for dance.
+[D19:7] Jon: Thanks, Gina! Your words of encouragement keep me motivated. Can't wait 'til my studio starts welcoming dancers of all ages and backgrounds!
+[D19:8] Gina: I'm so happy to see my words motivating you, Jon. <3
+[D19:9] Jon: Thanks a ton, Gina! Your help and encouragement mean a lot. Your support will help me make it happen.
+[D19:10] Gina: You're welcome, Jon! I'm here to support you. Every step's getting you closer to your dream. Never give up! You're doing great.
+[D19:11] Jon: Thanks, Gina! I won't quit. I'm gonna keep going, whatever comes my way.
+[D19:12] Gina: Remember Jon, Just do it!
+[D19:13] Jon: Ah ha ha, yeah, JUST DOING IT!
+[D19:14] Gina: That's the spirit! Bye!
+
+=== Session 16 | 2:15 pm on 21 June, 2023 ===
+[D16:1] Gina: Hey Jon, what's been up? Some pretty cool stuff happened since we talked. I have acquired some new unique pieces for my store.
+[D16:2] Jon: Congrats on your store, Gina! Happy for you! It looks sick - is it a unique piece you're selling?
+[D16:3] Gina: Thanks! This hoodie isn't for sale, it's from my own collection. I made a limited edition line last week to show off my style and creativity - it was tough but worth it!
+[D16:4] Jon: What gave you the idea?
+[D16:5] Gina: This design reminds me of the grit it takes to stand out and face challenges.
+[D16:6] Jon: That's awesome, Gina! Yesterday I chose to go to networking events to make things happen. It's been tough but I'm staying determined and focused.
+[D16:7] Gina: Way to go, Jon! Attending those networking events takes guts and drive. Keep it up!
+[D16:8] Jon: Thanks! It's been tough going since I lost my job, but I'm sure investing my time in my business will pay off eventually. I really appreciate your help.
+[D16:9] Gina: No worries, Jon! You got this! Let me know if you need anything.
+[D16:10] Jon: Your help matters to me. I am writing all my plans down.
+[D16:11] Gina: Nice work! Tracking your plans and goals is key. It's like a picture of all your progress.
+[D16:12] Jon: Thanks, Gina! Seeing my goals written down on paper really helps keep me motivated and focused on what I have to do. I know it won't be easy, but I'm sure it'll pay off. Thanks for the support!
+[D16:13] Gina: No worries, Jon! When things get rough, keep persevering and keep working hard. You'll get there! Don't quit!
+[D16:14] Jon: Thanks, Gina! That sign reminds me to never give up, however hard things get. I'll keep going!
+[D16:15] Gina: Believe in yourself and keep going. You can do it!
+[D16:16] Jon: Thanks! I'm feeling confident and won't give up. Your support means a ton to me.
+
+=== Session 7 | 7:28 pm on 23 March, 2023 ===
+[D7:1] Jon: Hey Gina, how's it going?
+[D7:2] Gina: Hey Jon, my online clothing store has been a roller coaster but rewarding. Starting a business takes courage - you hang in there too!
+[D7:3] Jon: Thanks Gina! It's been tough, but I'm gonna make it happen. It's been great! And hey, you're awesome with your store. How's it going?
+[D7:4] Gina: Thanks! Appreciate your kind words. Store's going good, just been keeping up with fashion trends so I can offer the best pieces to customers. It's been a lot of work, but really enjoying it. Got any advice or tips on running a successful biz?
+[D7:5] Jon: Yeah, brand identity is key. Make sure yours stands out. Also be sure to build relationships with your customers – let them know you care. And don't forget to stay positive and motivate others. Your energy will be contagious!
+[D7:6] Gina: Thanks for the advice, Jon! Building relationships and creating a strong brand image for my store is something I'm always working on. You're right, staying positive is key. What helps you stay motivated with your dance studio business?
+[D7:7] Jon: Seeing my students succeed motivates me. It's awesome to help them learn and reach their goals. Your support, Gina, means a lot too. Here's a photo of us after during one of the dance clases.
+[D7:8] Gina: That's awesome, Jon! Seeing your students grow and succeed must be really fulfilling. Glad I can be part of this journey!
+[D7:9] Jon: Thanks for being there for me! It's really made a huge difference and it feels great.
+[D7:10] Gina: Glad I could help, Jon! It's nice to be part of something positive. Supporting your dreams is awesome!
+[D7:11] Jon: Thanks for being there for me. Your help means a lot.
+[D7:12] Gina: I'm here for you, rooting for you all the way.
+[D7:13] Jon: Thanks, I'm really grateful for your help with staying motivated.
+[D7:14] Gina: Glad to cheer you on. Keep going and never give up!
+[D7:15] Jon: Thanks, Gina! I won't quit - your words motivate me to keep going!
+[D7:16] Gina: Believe in yourself. Even when it's tough, you got this! Keep going!
+[D7:17] Jon: I'm gonna keep on believing in myself. Thanks for the kind words!
+
+=== Session 12 | 7:18 pm on 27 May, 2023 ===
+[D12:1] Gina: Hey Jon! Long time no talk! A lot's happened - I just got accepted for a fashion internship!
+[D12:2] Jon: Congrats, Gina! That's awesome news about the fashion internship. 🎉 So stoked for you. Where is the internship and how're you feelin' about it?
+[D12:3] Gina: Thanks! I'm excited and kinda nervous. Gonna be a big change. It's part-time position in the fashion department of an international company.
+[D12:4] Jon: Way to go, Gina! You really stepped up. What's your plan for the future?
+[D12:5] Gina: Thanks! I'm a mix of excited and scared to get into fashion, but I'm trying to stay upbeat and learn as much as I can. What about you? Got something new?
+[D12:6] Jon: I'm currently reading "The Lean Startup" and hoping it'll give me tips for my biz.
+[D12:7] Gina: It sounds great! Could it spark any ideas for your dance studio?
+[D12:8] Jon: Yeah, the book got me thinking about building a focused and efficient business. Adapting and tweaking from customer feedback is important too, so I'm gonna try it out!
+[D12:9] Gina: Woah, Jon, that whiteboard's got a bunch of good ideas! How you gonna keep track and stay on schedule with those dates?
+[D12:10] Jon: Thanks, Gina! It helps me keep track of ideas and milestones. Gives me a visual of my progress and keeps me organized.
+[D12:11] Gina: Nice idea! Having something visual can help with organizing and motivation. What're you working on currently?
+[D12:12] Jon: I'm wrapping up the business plan and looking for investors. My passion for the project and belief in its success are driving me.
+[D12:13] Gina: Wow, Jon! Impressed by your commitment. How's the hunt for investors going?
+[D12:14] Jon: Thanks! Searching for investors has been tough, but I'm staying hopeful. It's all a process and I'm learning a ton.
+[D12:15] Gina: Yeah Jon, you've got the right attitude! Keep learning and growing through it all. Keep going!
+[D12:16] Jon: Thanks! I really appreciate your help. I'm gonna keep on going and never quit.
+[D12:17] Gina: Keep it up!
+[D12:18] Jon: Thanks! Your words really mean a lot. Don't worry, I won't let anything get me down.
+[D12:19] Gina: Go Jon! Obstacles are inevitable, but you can do awesome things. Keep going!
+
+=== Session 15 | 10:04 am on 19 June, 2023 ===
+[D15:1] Jon: Hey Gina, hope you're doing great! Still working on my biz. Took a short trip last week to Rome to clear my mind a little.
+[D15:2] Gina: Hi! Good for you! It definitely will help you to concentrate on your biz better.
+[D15:3] Jon: Thanks, Gina. Still working on opening a dance studio.
+[D15:4] Gina: When are you opening the studio?
+[D15:5] Jon: The official opening night is tomorrow. I'm working hard to make everything just right. Can't wait to see it all come together!
+[D15:6] Gina: Congrats, Jon! The studio looks amazing. You've put a lot of work into this and I'm so pumped for the launch tomorrow. Don't miss a beat!
+[D15:7] Jon: Thanks, Gina! I'm excited! It's been a wild ride, but I'm feeling good and ready to give it my best.
+[D15:8] Gina: Wow, Jon, you must be so excited! You've come so far since we last talked, and tomorrow's gonna be a blast! All those long nights were worth it - so take some time to savor it. Capture the joy and thrill that dance brings - it's magical!
+[D15:9] Jon: Tomorrow's gonna be an awesome night and I'm not gonna forget a second of it. I put so much into this and I want to savor all the good vibes. Thanks for always having my back. You're the best!
+[D15:10] Gina: I'm always proud of you. Enjoy the good feels tomorrow, you earned it!
+[D15:11] Jon: Thanks! Your pride and support mean a lot. Looking forward to enjoying the moment with you.
+[D15:12] Gina: I'll be right by your side, Jon. Let's live it up and make some great memories tomorrow. So excited!
+[D15:13] Jon: Yeah! Let's make some awesome memories tomorrow at the grand opening!
+[D15:14] Gina: Can't wait to make more memories at your dance studio!
+[D15:15] Jon: Looking forward to more cool memories!
+[D15:16] Gina: I love being around friends and having such a great time. Can't wait to have fun at your dance studio!
+[D15:17] Jon: Agreed!
+[D15:18] Gina: Can't wait for tomorrow's grand opening!
+[D15:19] Jon: Woohoo! Tomorrow's opening will be so much fun. Can't wait for it - and for you to be there!
+[D15:20] Gina: Can't wait too!
+[D15:21] Jon: Definitely! Let's make tomorrow unforgettable, Gina. See you there! Bye!
+[D15:22] Gina: See you tomorrow. Bye!
+
+=== Session 9 | 10:33 am on 9 April, 2023 ===
+[D9:1] Jon: Hey Gina! I'm turning my loves of dance into a business. I'm sunk tons of time into the studio lately, and look at my students - they're already killing it. I'm even learning with them!
+[D9:2] Gina: Hey Jon! Wow, way to take your passion and make it into a biz! The dance studio looks awesome.
+[D9:3] Jon: Thanks, Gina! I'm determined to make this studio work. Losing my job was tough but it gave me the push I needed to do what I love.
+[D9:4] Gina: Woah, Jon! Tough times can be a gateway to awesome things. Glad you worked up the courage to go after your dreams!
+[D9:5] Jon: Yeah, Gina! It's been tough, but I'm living my true self. Dancing makes me so happy, and now I get to share that with other people. Seeing my students get better at it brings me such joy.
+[D9:6] Gina: Wow Jon, you look so happy when you dance! Show the world your true self and keep dancing!
+[D9:7] Jon: Thanks a bunch, Gina! You seriously rock. Dancing for me is like a way to express myself and find my happy place. I used to be scared to death of what people would think, but I learnt that my own happiness is the most important thing. It's been tough but also the best thing ever!
+[D9:8] Gina: Yeah, I do remember those dance classes! I used to love spending time in the studio. That photo looks awesome, brings back lots of memories. It's nice to know, dance is still your happy place.
+[D9:9] Jon: Nice, Gina! I'm happy that dance has such a special meaning to both of us. It's a really cool way to express ourselves. I loved taking lessons with my friends when I was younger. Those memories are so precious. So glad I can still enjoy it with my own studio. Thanks for always being there for me.
+[D9:10] Gina: Hey Jon! Got your back - dance is awesome for expressing yourself and finding happiness. Here's one of my trophies from a dance contest, nice reminder of the hard work, dedication and joy it brings.
+[D9:11] Jon: Wow! It looks awesome! Thanks for the support, it really means a lot.
+[D9:12] Gina: No prob, Jon! You earned all the kudos for your hard work. Keep it up!
+[D9:13] Jon: Thanks! Gonna keep pushing and working hard. Won't let anything hold me back!
+[D9:14] Gina: Way to go, Jon! Keep it up, you're almost there!
+
+=== Session 3 | 12:48 am on 1 February, 2023 ===
+[D3:1] Jon: Hey Gina, hope you're doing ok! Still following my passion for dance. It's been bumpy, but I'm determined to make it work. I'm still searching for a place to open my dance studio.
+[D3:2] Gina: Hi Jon! So happy you're pushing forward with dancing! Inspiring 💪 I emailed some wholesalers and one replied and said yes today! I'm over the moon because now I can expand my clothing store and get closer to my customers. Check it out - here's a pic!
+[D3:3] Jon: Wow, Gina! You found the perfect spot for your store. Way to go, hard work's paying off!
+[D3:4] Gina: Thanks! Glad you like it. Yeah, it's a great spot. Here's a peek at the space I designed. Cozy and inviting - perfect for customers to check out all the trendy pieces.
+[D3:5] Jon: Wow, it looks great! Must've taken you ages to design it. What made you pick out the furniture and decor?
+[D3:6] Gina: Thanks! It took a bit of time but I wanted to make the place look like my own style and make my customers feel cozy. I chose furniture that looks great and is comfy too. The chandelier adds a nice glam feel while matching the style of the store.
+[D3:7] Jon: Your store looks great - your customers will be so comfy.
+[D3:8] Gina: Thanks! Making my spot comfortable and inviting for my customers is key. I want 'em to feel like they're in a cool oasis. Just creating an experience that'll make 'em wanna come back.
+[D3:9] Jon: That's a great goal! Creating a special experience for customers is the key to making them feel welcome and coming back. I think you can create that space you're imagining.
+[D3:10] Gina: Thanks. Your support means a lot. I'm sure with my hard work and effort, I can make a special shopping experience for my customers. It's tough but I'm up for the challenge!
+[D3:11] Jon: I'm always here to support you! Go create something awesome with your store. Keep it up!
+[D3:12] Gina: Thanks, Jon! I'll try my best. You're gonna do great with your dance studio, just keep going and stay positive! We'll get through this!
+[D3:13] Jon: Thanks! Your words mean a lot. I'm staying positive and pushing forward. We've put our hearts into our dreams and I'm sure we'll make it.
+[D3:14] Gina: Sure thing, Jon! Stay motivated and keep going. Hard work pays off eventually. We can do this!
+
+=== Session 4 | 10:43 am on 4 February, 2023 ===
+[D4:1] Jon: Hey Gina! What's up? How's the store going? I gotta tell you about this thing with my biz.
+[D4:2] Gina: Hey Jon! The store's doing great! It's a wild ride. How's the biz?
+[D4:3] Jon: Hey Gina! I'm putting in a lot of work on my business even with the obstacles. I'm gonna make it happen!
+[D4:4] Gina: Wow! You've got drive! Keep it up and you'll definitely make a splash.
+[D4:5] Jon: Thanks Gina! Your help really means a lot. Sometimes it's hard when things don't go my way, but I'm sure if I keep pushing, I'll reach my dreams!
+[D4:6] Gina: Understand where you're at, Jon. Setbacks are just opportunities for comebacks. You got the skills, passion, and drive. Plus my full support. Don't give up, buddy!
+[D4:7] Jon: Thanks! Setbacks can be tough, but with your support, I can handle anything. Appreciate you having my back!
+[D4:8] Gina: I'm here for you no matter what! Anything you want to say about your biz?
+[D4:9] Jon: Searching for a dance studio location has been tricky, but I'm determined to find the right spot - when I do, I'm sure the rest will follow!
+[D4:10] Gina: Searching for the perfect dance studio's a tough job, Jon. Hang in there and you'll find it soon!
+[D4:11] Jon: Thanks! Appreciate your encouragement - it means a lot! I'm working on my business and some new dance routines - rehearsing hard for an upcoming show. I'm passionate about dancing and it brings me so much joy and fulfillment.
+[D4:12] Gina: Wow, Jon! You're so talented! What show ya got planned?
+[D4:13] Jon: I'm getting ready for a dance comp near me next month. It's a great chance for me to show my skillz and, hopefully, get some props from the dance fam. Super stoked!
+[D4:14] Gina: Wow Jon, you're gonna kill it in that competition. Your hard work and talent will pay off! Good luck.
+[D4:15] Jon: Thanks! Your help means a lot. I'll do my best to make you proud!
+[D4:16] Gina: No doubt, Jon you've got this. Your passion and commitment are awesome! Keep it up!
+[D4:17] Jon: Thanks! I'm going for my dreams!
+[D4:18] Gina: Absolutely Jon. I'm always here to cheer you on. Make your dreams happen - keep going and believe in yourself. You got this!
+[D4:19] Jon: Thanks, Gina! Your kind words mean a lot. I won't give up!
+
+=== Session 13 | 8:29 pm on 13 June, 2023 ===
+[D13:1] Jon: Hey Gina, thanks for being there for me and believing in me. It means a lot.
+[D13:2] Gina: Sure, Jon! I'm always around for you. How've you been since we caught up?
+[D13:3] Jon:  I'm prepping for my dance studio more than ever!
+[D13:4] Gina: Proud of you for starting your own business! It takes strength to stay hopeful. What are you doing to prep for your dance studio? I have developed a video presentation to teach how to style my fashion pieces, btw. 
+[D13:5] Jon: Thanks, Gina! It's been so inspiring to work with our young dancers, seeing their passion and commitment. Opening the dance studio's been a great experience - I want it to be a place of support and encouragement for all our dancers. Will you show me this presentation?
+[D13:6] Gina: Shure, I will send it to you later. Starting this studio isn't just a business, it's a place for dancers to grow. What support are you offering them?
+[D13:7] Jon: Besides the dance classes and workshops, I'm offering one-on-one mentoring and training to help dancers reach their full potential.
+[D13:8] Gina: Your one-on-one mentoring and training will really push dancers to reach their goals. I totally get it, I had a mentor too when I was learning how to dance.
+[D13:9] Jon: Yeah, a mentor can do wonders. Guidance and support can help dancers really shine.
+[D13:10] Gina: Nice one, Jon! How've you been using it?
+[D13:11] Jon: I'm using it to stay organized and motivated. It sets goals, tracks my achievements and helps me find areas to improve.
+[D13:12] Gina: Really cool system! Being organized sure is key for getting stuff done. How do you keep up with your goals and progress?
+[D13:13] Jon: I also use whiteboard to stay on track, visualize goals and tokenize successes. It keeps me motivated and focused.
+[D13:14] Gina: Cool! Are you using different colors?
+[D13:15] Jon: Yes. I color-code achievements so I can easily track my progress and stay motivated.
+[D13:16] Gina: Wow, color-coding is a great way to track your progress & stay motivated. Keep it up!
+[D13:17] Jon: Thanks! It helps me stay motivated and reminds me why I'm doing this.
+[D13:18] Gina: Yeah, its a great idea!
+[D13:19] Jon: Thanks!
+[D13:20] Gina: Remember that staying positive is very important.  Rock on!
+[D13:21] Jon: Thanks, Gina! Your support's really been awesome.
+[D13:22] Gina: Thanks! Keep going for your dreams and don't quit!
+[D13:23] Jon: I won't give up, Gina! I'll keep pushing and working to make my dreams happen. Thanks for the support!
+
+=== Session 6 | 2:35 pm on 16 March, 2023 ===
+[D6:1] Jon: Hi Gina! Been hectic for me lately. Started hitting the gym last week to stay on track with the venture. Gotta figure out how to balance it all, but it's going well. How about you?
+[D6:2] Gina: Hey Jon! Great to hear from you. Been having some tough times lately.
+[D6:3] Jon: Oof, sorry to hear that. What's up? Is there anything I can do to help?
+[D6:4] Gina: Thanks, Jon! Appreciate your offer. Since I lost my job at Door Dash, things have been tough. But here's some good news - I've got something to share!
+[D6:5] Jon: Wow, that's awesome! Can't wait to hear it!
+[D6:6] Gina: Yay! My online clothes store is open! I've been dreaming of this for a while now - can't wait to see what happens!
+[D6:7] Jon: Congrats! That's awesome! What gave you the idea to start the online store?
+[D6:8] Gina: Thanks! I'm passionate about fashion trends and finding unique pieces. Plus, I wanted to blend my love for dance and fashion, so it was a perfect match.
+[D6:9] Jon: Wow, that's awesome! Combining your two interests into a store is super cool. Best of luck with it!
+[D6:10] Gina: Thanks! How is biz going? I hope it's going well!
+[D6:11] Jon: Thanks for askin', Gina! Losing my job was hard, but I'm livin' my dreams now. Startin' my biz has been tough but I'm gonna make it! I keep facing new challenges, but I'm sure it'll be worth it in the end.
+[D6:12] Gina: Yeah, starting and running my own biz has had its ups and downs - but it's been an amazing ride!
+[D6:13] Jon: Yeah, it's been a rollercoaster. But your success really inspires me to keep pushing forward. Your determination is awesome!
+[D6:14] Gina: Thanks, Jon! Your words are really encouraging. Glad my journey is inspiring others.
+[D6:15] Jon: Yeah, totally! It's great we both face the same challenges, it motivates us and it's like having a partner to dance with!
+[D6:16] Gina: Yep! We're both on different paths, but it's nice to have someone to root for us. We can do it!
+[D6:17] Jon: Definitely! Having someone back us up is great. Let's keep going and reach success together!
+[D6:18] Gina: Let's keep chasing our dreams, supporting each other, and celebrating achievements. We can do great things together!
+[D6:19] Jon: Yeah, Gina, thanks for having my back. Here's to taking on new heights, and all the trials that come with it. Cheers!
+
+=== Session 10 | 11:24 am on 25 April, 2023 ===
+[D10:1] Jon: Hi Gina! I just wanted to fill you in on my business. Yesterday, I went to a fair to show off my studio, it was both stressful and great! I got some possible leads, so that was awesome. But overall, I've learned that this biz is no cakewalk and having confidence in yourself is important for making it successful!
+[D10:2] Gina: Hey Jon, congrats on the fair! It's awesome to see your hard work paying off. Keep on pushing, pal, you're headed for greatness. Oh, and BTW, I started my own online clothing store not so long ago - pretty cool, huh?
+[D10:3] Jon: Thanks, Gina! Appreciate your support. Your store looks great, I remember it!
+[D10:4] Gina: Thanks, Jon! After losing my job, I wanted to take control of my own destiny and this seemed like the perfect way to do it. It's been a tough journey, but very rewarding.
+[D10:5] Jon: Wow, you're awesome for going for it! Setbacks can help us reach our potential, right? I'm having trouble with my business project. Any advice on staying motivated even when times are tough?
+[D10:6] Gina: Yeah Jon! Challenges are awesome for learning and growth. To stay motivated, I think of the big goal and why I'm doing it. I also get help from people who support me. And of course, I dance it out. Do you need advice on anything in particular?
+[D10:7] Jon: I've been feeling kinda low on confidence lately. It's hard to run a business when you don't have faith in yourself. Any tips on how you stay confident in your business?
+[D10:8] Gina: I get it, Jon. Confidence is important in business. I stay motivated by reminding myself of my successes and progress. It also helps to have a good support system. Just focus on why you started this – because you love it! Have faith in yourself, Jon. I do!
+[D10:9] Jon: Thanks! Your words mean a lot. Gotta focus on success and why I started. You're right, I love it and that'll keep my confidence up.
+[D10:10] Gina: No worries, Jon! Sounds like what I said was helpful. You're incredibly talented and passionate about dance. Don't forget, believe in yourself and your abilities. Tackle any obstacle that comes your way and keep shining!
+[D10:11] Jon: Thanks! Your support means a lot. I'm gonna keep going and reach my dreams no matter what.
+[D10:12] Gina: Go for it, Jon! You got this! Don't let anything stop you. We're in this together!
+[D10:13] Jon: Appreciate your encouragement. We'll keep pushing each other on this path.
+[D10:14] Gina: Yeah! Let's keep each other going. We can do it!
+
+=== Session 17 | 1:25 pm on 9 July, 2023 ===
+[D17:1] Gina: Hey Jon! Long time no chat! How's the dance studio? Last week was wild, I got noticed by fashion editors and it's been amazing but kinda scary. Everything's exciting but it's a lot of pressure to keep going up!
+[D17:2] Jon: Hey Gina! Congrats on the fashion editors reach-out, that's awesome! Dance practice has been fun and exhausting. I'm gonna stay determined and make my own path by going full-time with my biz idea.
+[D17:3] Gina: Just remember that sometimes stumbling blocks can be opened doors. Keep going!
+[D17:4] Jon: Thanks! Your support and encouragement means a lot. Losing my job was a bummer, but it pushed me to take the plunge and go for my biz dreams. Started to learn all these marketing and analytics tools to push the biz forward today. It's been tricky, but I'm up for the challenge and I'm gonna make this work!
+[D17:5] Gina: Go get 'em, Jon!
+[D17:6] Jon: I'm also excited to guide and mentor aspiring dancers on their dreams.
+[D17:7] Gina: Wow, Jon! That's awesome. Loving what you do and bringing joy to others is so rewarding. You're definitely the perfect mentor & guide. Your positivity and determination will make your dance studio a hit!
+[D17:8] Jon: Thanks, Gina - really appreciate your words and encouragement! Dance has the power to bring us together and create sweet moments. Moments like this remind me why I'm chasing my dream and keep me pushing through any struggles.
+[D17:9] Gina: Take comfort in knowing you've got a solid community cheering you on, me included. Keep on pushing!
+[D17:10] Jon: Feeling supported by all of you means so much. It gives me the oomph to keep chasing my dreams. Your faith in me is priceless - I won't let you down!
+[D17:11] Gina: Don't let anything stop you. You have potential!
+[D17:12] Jon: Thanks, Gina! Your faith in me is a real boost. I'm gonna make my dreams come true!
+[D17:13] Gina: Keep pushing and you'll get there. Your dreams are so close!
+[D17:14] Jon: Thanks, Gina! I won't quit, even when it's hard. I'm gonna make it!
+[D17:15] Gina: You got this, Jon! Don't let the bumps in the road bring you down. Keep going and make your dreams a reality! I'm rooting for you!
+[D17:16] Jon: Thanks, Gina! Your belief in me means the world. I'm not gonna let anything or anyone stop me. I'll keep pushing and make my dreams come true. Thanks for being a great friend. You rock!
+[D17:17] Gina: Hey Jon, glad I could help! Always here to cheer you on.
+[D17:18] Jon: Thanks! Glad that you are on my side.
+[D17:19] Gina: Sure, see ya. Bye!
+[D17:20] Jon: Bye!
+[D17:21] Gina: ;)
+
+=== Session 14 | 9:38 pm on 16 June, 2023 ===
+[D14:1] Jon: Gina, you won't believe it - I got mentored by this amazing business dude yesterday! It was really inspiring and now I'm even more pumped to chase my dreams. What's been up with you lately?
+[D14:2] Gina: Wow, Jon! Mentors can really help. I'm working on my online store, growing the customer base. It's tough but I'm determined. How about you? Any new things happening?
+[D14:3] Jon: Been doing some promotion for my business. Crazy ride so far, but I'm hanging in there. Got any tips for marketing?
+[D14:4] Gina: Awesome! Marketing is key. Use social media channels and work with influencers for bigger reach.
+[D14:5] Jon: Thanks for the advice, Gina! I already started doing what you said about social media and posted some of my dance videos. It's creating a bit of a stir.
+[D14:6] Gina: Nice! Glad your dance vids are doing well online. Keep it up!
+[D14:7] Jon: Your help really helps. Hey, have you thought about being an entrepreneur?
+[D14:8] Gina: Ha, yeah, Jon. I've been one 'cause I lost my job. I opened an online clothing store and it's been great! Being my own boss and doing something I love is awesome.
+[D14:9] Jon: Wow, Gina! You did great taking that leap. Congrats! Got any advice for someone just starting out?
+[D14:10] Gina: Thanks, Jon! It was a huge jump, but totally worth it. My advice: stay passionate, focused and resilient. Challenges will come, but believe in yourself and keep going. And stay open to learning and improving.
+[D14:11] Jon: Appreciate your advice. Gotta stay resilient and focused, that's key!
+[D14:12] Gina: Yep Jon, staying resilient and focused is key for any entrepreneur. Keep going and don't give up! You got this!
+[D14:13] Jon: Thanks! I won't quit, no matter what. Your encouragement really motivates me to keep going.
+[D14:14] Gina: Way to go, Jon! Don't quit, remember, failures lead you closer to success. Here's a pic from when I was dancing - it was a tough road, but it was worth it!
+[D14:15] Jon: Wow, that's an awesome pic! You guys look great and passionate about dancing. Reminds me how much I love performing. Thanks for sharing!
+[D14:16] Gina: Thanks! I'm glad the pic reminded you of your love for dancing. Keep going after your dreams!
+[D14:17] Jon: Sure thing, Gina! Your help means a lot to me. I'm not giving up.
+[D14:18] Gina: Go, Jon! I'm here for you. Keep going!
+[D14:19] Jon: Knowing you've got my back really helps keep me going. I won't let you down!
+[D14:20] Gina: No worries, Jon! You're really inspiring with your determination and passion for dance. Keep it up!
+
+=== Session 2 | 2:32 pm on 29 January, 2023 ===
+[D2:1] Gina: Hey Jon! Long time no see! Things have been hectic lately. I just launched an ad campaign for my clothing store in hopes of growing the business. Starting my own store and taking risks is both scary and rewarding. I'm excited to see where it takes me!
+[D2:2] Jon: Hey Gina! Whoa, your store looks great! All your hard work really paid off - congrats! Must be awesome to see your stuff on display.
+[D2:3] Gina: Thanks a bunch! It's awesome seeing my vision happen. How's the dance studio going? Did you find the right spot?
+[D2:4] Jon: Hey Gina! Thanks for asking. I'm on the hunt for the ideal spot for my dance studio and it's been quite a journey! I've been looking at different places and picturing how the space would look. I even found a place with great natural light! Oh, I've been to Paris yesterday! It was sooo cool.
+[D2:5] Gina: Wow, nice spot! Where is it? Got any other features you want to think about before you decide? Paris?! That is really great Jon! Never had a chance to visit it. Been only to Rome once.
+[D2:6] Jon: It's downtown which is awesome cuz it's easy to get to. Plus the natural light! Gotta check the size & floor quality too. We need a good dance floor with enough bounce for me & my students to dance safely.
+[D2:7] Gina: Definitely! Dance floors help avoid injuries and make dancing more enjoyable. You thinking about it is great. Any particular type of flooring you like?
+[D2:8] Jon: Yeah, good flooring's crucial. I'm after Marley flooring, which is what dance studios usually use. It's great 'cause it's grippy but still lets you move, plus it's tough and easy to keep clean.
+[D2:9] Gina: Sounds great! Marley's perfect; it's got the right amount of grip and movement. Can't wait to see your dance studio done!
+[D2:10] Jon: Yeah, can't wait to see it done! Looking for the right place and getting everything ready has been a mix of exciting and nerve-wracking, but I'm determined to make it work. It'll be worth it!
+[D2:11] Gina: Believe in yourself, Jon! The process may be tough, but you got this. Push through and it'll be worth it. Don't forget to take breaks and dance it out when you need to destress!
+[D2:12] Jon: Glad I have you in my corner! Gotta make time to dance and vent, that's for sure. We'll make it through this - hang in there!
+[D2:13] Gina: Thanks, Jon! Appreciate your support!
+[D2:14] Jon: Let's keep going and chase our dreams!
+[D2:15] Gina: Yeah! We've done so much, and there's nothing but good stuff coming. Let's keep going after our goals and making them happen.
+[D2:16] Jon: Success is almost here. We got this!
+
+=== Session 11 | 3:14 pm on 11 May, 2023 ===
+[D11:1] Jon: Hi! Since we last spoke I am still working on the dance studio and things are looking up!
+[D11:2] Gina: Hi! You're so inspiring taking it on and opening your own studio!
+[D11:3] Jon: Thanks! Losing my job gave me the push to finally start my dream business: my own dance studio! Now I'm stepping into the unknown and hoping for the best.
+[D11:4] Gina: It must be scary stepping into the unknown but I know you can do it, Jon. With your determination and drive, your dance studio will be a huge success. Keep that positive outlook and keep going!
+[D11:5] Jon: Thanks! It's a bit scary, but I just think about my love for dance and how it makes me feel. It's been my stress-buster since childhood!
+[D11:6] Gina: Gotcha, Jon! Dance is my stress fix too. As soon as I start, all my worries vanish. It's amazing what we can do for our own mental health with something we enjoy.
+[D11:7] Jon: Yeah, Gina! Dancing helps me de-stress. It's where I'm most alive. It's a must-have in my life.
+[D11:8] Gina: I get it, Jon. Dance is just me -- I can't picture life without it. It's like air.
+[D11:9] Jon: Yep! Dancing is like second nature to me. I'm living my dream by having my own dance studio and teaching others.
+[D11:10] Gina: You're living the dream and inspiring others too! Your studio will totally change things for lots of folks.
+[D11:11] Jon: I hope so, Gina. I want to create a place for people to dance and express themselves - it's been a dream of mine.
+[D11:12] Gina: That's a great dream, Jon! Giving people a place to express themselves with dance is really important. Your studio is gonna make a huge difference. Can't wait to see it happen!
+[D11:13] Jon: Thanks! Your help means a lot. Keep you posted on the dance studio progress.
+[D11:14] Gina: Thanks! Really appreciate you keeping me in the loop on this cool project. Can't wait to hear more and watch it come to life! Oh, btw, I had an interview for a design internship yesterday! It was so cool.
+[D11:15] Jon: Wow, Gina, I'm stoked about this! Taking a risk is scary, but I'm sure following my dreams will pay off in the end. How did the interview go?
+[D11:16] Gina: It was great!
+[D11:17] Jon: Glad to hear it. Been practicing dance routines lately, it keeps my mind focused and motivated.
+[D11:18] Gina: Wow! That's great. Dancing is awesome for staying focused. Wanna show me a routine sometime?
+[D11:19] Jon: Sure, Gina! Wanna see one of my routines? Lemme know when you got time and I'll send you a vid.
+[D11:20] Gina: Yeah, Jon, I'll watch your routine! So proud of you!
+[D11:21] Jon: Thanks a lot! Your help really means a lot. I'll get the video to you soon!
+[D11:22] Gina: No prob! Always here to help. Can't wait to see the vid!
+
+Atomic facts already extracted:
+f0: Jon | rehearsed | dance
+f1: Jon | worked_on | business plans
+f2: dancing | sustained | Jon
+f3: Just do it | belongs_to | Shia Labeouf
+f4: Gina | attended | dance class
+f5: Jon | owns | studio
+f6: Jon | welcomes | dancers of all ages and backgrounds
+f7: Gina | acquired | new unique pieces
+f8: Gina | owns | store
+f9: hoodie | belongs_to | Gina's own collection
+f10: Gina | made | limited edition line
+f11: Jon | attended | networking events
+f12: Jon | lost | job
+f13: Jon | invested_time_in | business
+f14: Jon | wrote_down | plans
+f15: Gina | owns | online clothing store
+f16: Gina | kept_up_with | fashion trends
+f17: Gina | worked_on | brand image
+f18: Jon | owns | dance studio business
+f19: Jon | has | students
+f20: Jon | shared | photo
+f21: Gina | accepted_for | fashion internship
+f22: fashion internship | is | part-time position
+f23: fashion internship | located_in | fashion department of an international company
+f24: Jon | read | The Lean Startup
+f25: Jon | owns | whiteboard
+f26: Jon | wrapped_up | business plan
+f27: Jon | looked_for | investors
+f28: Jon | worked_on | biz
+f29: Jon | took_trip_to | Rome
+f30: Jon | worked_on_opening | dance studio
+f31: official opening night | occurred_on | 20 June, 2023
+f32: studio | looked | amazing
+f33: grand opening | occurred_on | 20 June, 2023
+f34: Jon | turned | loves of dance into a business
+f35: Jon | took | lessons
+f36: Gina | has | trophy
+f37: Jon | searched_for | place to open dance studio
+f38: Gina | emailed | wholesalers
+f39: Gina | expanded | clothing store
+f40: Gina | found | perfect spot
+f41: Gina | designed | space
+f42: Gina | chose | furniture
+f43: chandelier | added | glam feel
+f44: Jon | worked_on | business
+f45: Jon | searched_for | dance studio location
+f46: Jon | worked_on | new dance routines
+f47: Jon | rehearsed_for | upcoming show
+f48: Jon | prepared_for | dance comp
+f49: Jon | prepped_for | dance studio
+f50: Gina | developed | video presentation
+f51: Jon | worked_with | young dancers
+f52: Jon | offered | dance classes and workshops
+f53: Jon | offered | one-on-one mentoring and training
+f54: Gina | had | mentor
+f55: Jon | used | whiteboard
+f56: Jon | color-coded | achievements
+f57: Jon | started | gym
+f58: Gina | lost_job_at | Door Dash
+f59: Gina | opened | online clothes store
+f60: Gina | blended | love for dance and fashion
+f61: Jon | started | biz
+f62: Jon | attended | fair
+f63: Jon | got | possible leads
+f64: Gina | started | own online clothing store
+f65: Gina | lost | job
+f66: Jon | had_trouble_with | business project
+f67: Gina | noticed_by | fashion editors
+f68: Jon | went_full-time_with | biz idea
+f69: Jon | started_learning | marketing and analytics tools
+f70: Jon | mentored | aspiring dancers
+f71: Jon | mentored_by | business dude
+f72: Gina | worked_on | online store
+f73: Jon | did | promotion
+f74: Jon | posted | dance videos
+f75: Gina | opened | online clothing store
+f76: Gina | shared | pic
+f77: Gina | launched | ad campaign
+f78: Gina | started | own store
+f79: Jon | searched_for | ideal spot
+f80: Jon | found | place with great natural light
+f81: Jon | visited | Paris
+f82: Gina | visited | Rome
+f83: place | located_in | downtown
+f84: Jon | wanted | Marley flooring
+f85: Jon | worked_on | dance studio
+f86: Jon | started | dream business
+f87: Jon | owns | dance studio
+f88: Jon | taught | others
+f89: Gina | had | interview for a design internship
+f90: Jon | practiced | dance routines
+f91: Jon | sent | video
+
+Return the JSON now.

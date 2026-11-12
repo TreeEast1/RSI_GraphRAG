@@ -1,0 +1,678 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1706.00139::s00::p000",
+   "summary": "Natural Language Generation (NLG) in Spoken Dialogue Systems (SDS) converts Dialogue Manager meaning representations into utterances, while conventional approaches rely on hand-tuned templates and rules.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s00::p001",
+   "summary": "Recurrent Neural Networks (RNNs) show promise for NLG, but require annotated datasets for dialogue acts (DAs) and use DA conditioning, heuristic gates, or SC-LSTM.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s00::p002",
+   "summary": "Encoder-Decoder networks, especially attentional models and Attentional RNN Encoder-Decoder (ARED), have been explored for NLG and improved other tasks.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s00::p003",
+   "summary": "The proposed ARED extension introduces RALSTM on the decoder side, learns from unaligned data, and outperformed state-of-the-art methods on four NLG domains in BLEU and slot error rate ERR scores.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s00::p004",
+   "summary": "The paper outlines related work, the proposed model, experiments, results and analysis, and conclusion and future work sections.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s01::p000",
+   "summary": "RNNs-based models have shown promising NLG performance and have been applied to Chinese poetry, image captioning, conversational modeling, and machine translation.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s01::p001",
+   "summary": "Task-oriented dialogue generators include BIBREF3, SC-LSTM, and an out-of-domain model using counterfeited data and fine tuning with small in-domain data.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s01::p002",
+   "summary": "RNN encoder-decoder models with attention improved various tasks, including review networks, two attention layers, and attentive slot-value pair generators with domain scalability.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s01::p003",
+   "summary": "Open domain dialogue systems should use existing abilities from other domains, and prior works address multi-domain dialogue state tracking, adaptation steps, and SDS component adaptation.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s02::p000",
+   "summary": "The recurrent language generator has an Encoder, an Aligner, and an RNN Decoder that encode MR inputs, align semantic elements, and generate lexicalizable token sequences.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s03::p000",
+   "summary": "The encoder uses separated slots and values parameters to embed source information into a vector representation z_i.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s03::p001",
+   "summary": "Equation 10 defines z_i as the concatenation of u_i and v_i.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s03::p002",
+   "summary": "A 1-layer Bidirectional LSTM (Bi-LSTM) encodes L slot-value pair embeddings into forward and backward hidden states summed into E.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s03::p003",
+   "summary": "Equation 12 defines e_i as the sum of forward and backward hidden states.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s04::p000",
+   "summary": "The Aligner uses an attention mechanism to calculate the DA representation.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s04::p001",
+   "summary": "Equation 14 defines beta_t,i using exponentials of e_t,i normalized over j.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s04::p002",
+   "summary": "The paragraph introduces the definition where e_t,i is specified.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s04::p003",
+   "summary": "Equation 15 defines e_t,i as a(e_i, h_t-1).",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s04::p004",
+   "summary": "beta_t,i is the attention weight of the i-th slot-value pair, and the alignment model a is computed.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s04::p005",
+   "summary": "Equation 16 defines a(e_i, h_t-1) using v_a, W_a, U_a, tanh, and e_i and h_t-1.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s04::p006",
+   "summary": "v_a, W_a, and U_a are learned weight matrices, and the Aligner calculates dialogue act embedding d_t.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s04::p007",
+   "summary": "Equation 17 defines d_t as a concatenated with the weighted sum of beta_t,i e_i.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s04::p008",
+   "summary": "a is the vector embedding of the action type.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p000",
+   "summary": "The semantic RALSTM cell for the Decoder side consists of a Refinement cell, a traditional LSTM cell, and an Adjustment cell.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p001",
+   "summary": "Instead of feeding original input token w_t into the RNN cell, the input is recomputed using a semantic gate.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p002",
+   "summary": "Equation 19 defines r_t and x_t using W_rd, W_rh, d_t, h_t-1, and element-wise multiplication with w_t.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p003",
+   "summary": "The Refinement gate r_t refines w_t using d_t and h_t-1, with W_rh acting like a key phrase detector.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p004",
+   "summary": "The traditional LSTM network from BIBREF26 introduces input gate i_i, forget gate f_t, and output gates o_t to control information flow.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p005",
+   "summary": "Equation 20 computes i_t, f_t, o_t, and c-hat_t using sigmoids, tanh, W_4n,4n, x_t, d_t, and h_t-1.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p006",
+   "summary": "n is hidden layer size, W_4n,4n is model parameters, and cell memory c_t depends on the DA representation.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p007",
+   "summary": "Equation 21 modifies c_t with W_cr r_t and computes tilde-h_t from o_t and tanh(c_t).",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p008",
+   "summary": "tilde-h_t is the output.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p009",
+   "summary": "An additional gating cell on top of the traditional LSTM gates controlling vector s, starting from 1-hot DA vector s_0 and using LSTM output tilde-h_t.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p010",
+   "summary": "Equation 22 defines a_t and s_t using W_ax, W_ah, x_t, tilde-h_t, and element-wise multiplication with s_t-1.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p011",
+   "summary": "W_ax and W_ah are learned weight matrices, a_t is the Adjustment gate, and an additional output uses o_t on remaining s_t information.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p012",
+   "summary": "Equation 23 computes c_a and tilde-h_a using W_os, s_t, o_t, and tanh.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p013",
+   "summary": "W_os projects the DA presentation into output space, tilde-h_a is the Adjustment cell output, and final RALSTM output combines both cell outputs.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p014",
+   "summary": "Equation 24 defines h_t as tilde-h_t plus tilde-h_a.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p015",
+   "summary": "The output distribution is computed by applying a softmax function g and can be sampled to obtain the next token.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p016",
+   "summary": "Equation 25 defines P(w_t+1 | w_t,...w_0, DA) using g(W_ho h_t) and samples w_t+1 from that distribution.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s05::p017",
+   "summary": "DA is defined as (s, z).",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s06::p000",
+   "summary": "The objective function was the negative log-likelihood.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s06::p001",
+   "summary": "Equation 27 defines F(theta) as the negative sum over T of y_t transpose log p_t.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s06::p002",
+   "summary": "Generators were trained with each sentence as a mini-batch, l_2 regularization every 5 training examples, pretrained Glove word embedding vectors, stochastic gradient descent, back propagation through time, and early stopping.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s07::p000",
+   "summary": "Decoding has over-generation and reranking phases, with beam search generating candidate responses and generator cost forming reranking score R.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s07::p001",
+   "summary": "Equation 29 defines R as F(theta) plus lambda ERR.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s07::p002",
+   "summary": "lambda is a large trade off constant penalizing nonsensical outputs, and slot error rate ERR counts missing or redundant generated slots.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s07::p003",
+   "summary": "Equation 30 defines ERR as (p + q) divided by N.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s07::p004",
+   "summary": "N is the total number of slots in DA, and p and q are the numbers of missing and redundant slots.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s08::p000",
+   "summary": "Experiments assessed the proposed models using several metrics, datasets, and model architectures to compare with prior methods.",
+   "group_id": "1706.00139::g00"
+  },
+  {
+   "passage_id": "1706.00139::s09::p000",
+   "summary": "The models were assessed on four NLG domains, with Restaurant and Hotel from BIBREF4 and harder Laptop and TV datasets from BIBREF22.",
+   "group_id": "1706.00139::g01"
+  },
+  {
+   "passage_id": "1706.00139::s10::p000",
+   "summary": "Generators used TensorFlow, a 3:1:1 split, hidden layer size 80, beam size 10, 70% dropout, 5 runs, early stopping, BLEU-based selection, λ 1000, 20 candidates, top 5 realizations, and four analyses.",
+   "group_id": "1706.00139::g01"
+  },
+  {
+   "passage_id": "1706.00139::s11::p000",
+   "summary": "Generator performance was assessed using BLEU and slot error rate ERR with an open source benchmark toolkit, against three state-of-the-art NLG baselines.",
+   "group_id": "1706.00139::g01"
+  },
+  {
+   "passage_id": "1706.00139::s11::p001",
+   "summary": "HLSTM proposed by BIBREF3 thwsjy15 used a heuristic gate to ensure all slot-value information was accurately captured during generation.",
+   "group_id": "1706.00139::g01"
+  },
+  {
+   "passage_id": "1706.00139::s11::p002",
+   "summary": "SCLSTM proposed by BIBREF4 wensclstm15 can jointly learn the gating signal and language model.",
+   "group_id": "1706.00139::g01"
+  },
+  {
+   "passage_id": "1706.00139::s11::p003",
+   "summary": "Enc-Dec proposed by BIBREF8 wentoward applied the attention-based encoder-decoder architecture.",
+   "group_id": "1706.00139::g01"
+  },
+  {
+   "passage_id": "1706.00139::s12::p000",
+   "summary": "Extensive experiments showed the proposed models consistently achieved better performance on both evaluation metrics across all domains in all test cases.",
+   "group_id": "1706.00139::g01"
+  },
+  {
+   "passage_id": "1706.00139::s12::p001",
+   "summary": "Ablation studies showed Adjustment cell reduces slot error rate ERR, ARED-based models improve BLEU and reduce ERR by about 2% to 4%, and gated models outperform SCLSTM.",
+   "group_id": "1706.00139::g01"
+  },
+  {
+   "passage_id": "1706.00139::s12::p002",
+   "summary": "Figure 3 shows RALSTM outperformed Enc-Dec and SCLSTM on unseen laptop domain from 1% to 100% training data, while Enc-Dec had much greater ERR.",
+   "group_id": "1706.00139::g01"
+  },
+  {
+   "passage_id": "1706.00139::s12::p003",
+   "summary": "Table 4 shows RALSTM and All2* generated appropriate, more complete, and concise sentences, while previous models produced missing and misplaced information errors.",
+   "group_id": "1706.00139::g01"
+  },
+  {
+   "passage_id": "1706.00139::s12::p004",
+   "summary": "The results prove the Refinement cell aggregates and selects attentive information, and the Adjustment cell controls the feature vector.",
+   "group_id": "1706.00139::g01"
+  },
+  {
+   "passage_id": "1706.00139::s12::p005",
+   "summary": "Figure 4 shows RALSTM outperformed Enc-Dec and SCLSTM on all domains in BLEU and ERR, while Enc-Dec struggled to reduce ERR.",
+   "group_id": "1706.00139::g01"
+  },
+  {
+   "passage_id": "1706.00139::s12::p006",
+   "summary": "Figure 5 shows RALSTM outperformed previous models with sufficient or limited laptop in-domain data and adapted faster to a new, unseen domain.",
+   "group_id": "1706.00139::g01"
+  },
+  {
+   "passage_id": "1706.00139::s13::p000",
+   "summary": "The ARED extension introduces RALSTM, improves BLEU and ERR across four NLG domains, extends to unseen domains, and may apply to other encoder-decoder tasks.",
+   "group_id": "1706.00139::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1706.00139::g00",
+   "summaries": [
+    {
+     "passage_id": "1706.00139::s00::p000",
+     "summary": "Natural Language Generation (NLG) in Spoken Dialogue Systems (SDS) converts Dialogue Manager meaning representations into utterances, while conventional approaches rely on hand-tuned templates and rules.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s00::p001",
+     "summary": "Recurrent Neural Networks (RNNs) show promise for NLG, but require annotated datasets for dialogue acts (DAs) and use DA conditioning, heuristic gates, or SC-LSTM.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s00::p002",
+     "summary": "Encoder-Decoder networks, especially attentional models and Attentional RNN Encoder-Decoder (ARED), have been explored for NLG and improved other tasks.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s00::p003",
+     "summary": "The proposed ARED extension introduces RALSTM on the decoder side, learns from unaligned data, and outperformed state-of-the-art methods on four NLG domains in BLEU and slot error rate ERR scores.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s00::p004",
+     "summary": "The paper outlines related work, the proposed model, experiments, results and analysis, and conclusion and future work sections.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s01::p000",
+     "summary": "RNNs-based models have shown promising NLG performance and have been applied to Chinese poetry, image captioning, conversational modeling, and machine translation.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s01::p001",
+     "summary": "Task-oriented dialogue generators include BIBREF3, SC-LSTM, and an out-of-domain model using counterfeited data and fine tuning with small in-domain data.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s01::p002",
+     "summary": "RNN encoder-decoder models with attention improved various tasks, including review networks, two attention layers, and attentive slot-value pair generators with domain scalability.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s01::p003",
+     "summary": "Open domain dialogue systems should use existing abilities from other domains, and prior works address multi-domain dialogue state tracking, adaptation steps, and SDS component adaptation.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s02::p000",
+     "summary": "The recurrent language generator has an Encoder, an Aligner, and an RNN Decoder that encode MR inputs, align semantic elements, and generate lexicalizable token sequences.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s03::p000",
+     "summary": "The encoder uses separated slots and values parameters to embed source information into a vector representation z_i.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s03::p001",
+     "summary": "Equation 10 defines z_i as the concatenation of u_i and v_i.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s03::p002",
+     "summary": "A 1-layer Bidirectional LSTM (Bi-LSTM) encodes L slot-value pair embeddings into forward and backward hidden states summed into E.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s03::p003",
+     "summary": "Equation 12 defines e_i as the sum of forward and backward hidden states.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s04::p000",
+     "summary": "The Aligner uses an attention mechanism to calculate the DA representation.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s04::p001",
+     "summary": "Equation 14 defines beta_t,i using exponentials of e_t,i normalized over j.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s04::p002",
+     "summary": "The paragraph introduces the definition where e_t,i is specified.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s04::p003",
+     "summary": "Equation 15 defines e_t,i as a(e_i, h_t-1).",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s04::p004",
+     "summary": "beta_t,i is the attention weight of the i-th slot-value pair, and the alignment model a is computed.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s04::p005",
+     "summary": "Equation 16 defines a(e_i, h_t-1) using v_a, W_a, U_a, tanh, and e_i and h_t-1.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s04::p006",
+     "summary": "v_a, W_a, and U_a are learned weight matrices, and the Aligner calculates dialogue act embedding d_t.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s04::p007",
+     "summary": "Equation 17 defines d_t as a concatenated with the weighted sum of beta_t,i e_i.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s04::p008",
+     "summary": "a is the vector embedding of the action type.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p000",
+     "summary": "The semantic RALSTM cell for the Decoder side consists of a Refinement cell, a traditional LSTM cell, and an Adjustment cell.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p001",
+     "summary": "Instead of feeding original input token w_t into the RNN cell, the input is recomputed using a semantic gate.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p002",
+     "summary": "Equation 19 defines r_t and x_t using W_rd, W_rh, d_t, h_t-1, and element-wise multiplication with w_t.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p003",
+     "summary": "The Refinement gate r_t refines w_t using d_t and h_t-1, with W_rh acting like a key phrase detector.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p004",
+     "summary": "The traditional LSTM network from BIBREF26 introduces input gate i_i, forget gate f_t, and output gates o_t to control information flow.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p005",
+     "summary": "Equation 20 computes i_t, f_t, o_t, and c-hat_t using sigmoids, tanh, W_4n,4n, x_t, d_t, and h_t-1.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p006",
+     "summary": "n is hidden layer size, W_4n,4n is model parameters, and cell memory c_t depends on the DA representation.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p007",
+     "summary": "Equation 21 modifies c_t with W_cr r_t and computes tilde-h_t from o_t and tanh(c_t).",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p008",
+     "summary": "tilde-h_t is the output.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p009",
+     "summary": "An additional gating cell on top of the traditional LSTM gates controlling vector s, starting from 1-hot DA vector s_0 and using LSTM output tilde-h_t.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p010",
+     "summary": "Equation 22 defines a_t and s_t using W_ax, W_ah, x_t, tilde-h_t, and element-wise multiplication with s_t-1.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p011",
+     "summary": "W_ax and W_ah are learned weight matrices, a_t is the Adjustment gate, and an additional output uses o_t on remaining s_t information.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p012",
+     "summary": "Equation 23 computes c_a and tilde-h_a using W_os, s_t, o_t, and tanh.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p013",
+     "summary": "W_os projects the DA presentation into output space, tilde-h_a is the Adjustment cell output, and final RALSTM output combines both cell outputs.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p014",
+     "summary": "Equation 24 defines h_t as tilde-h_t plus tilde-h_a.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p015",
+     "summary": "The output distribution is computed by applying a softmax function g and can be sampled to obtain the next token.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p016",
+     "summary": "Equation 25 defines P(w_t+1 | w_t,...w_0, DA) using g(W_ho h_t) and samples w_t+1 from that distribution.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s05::p017",
+     "summary": "DA is defined as (s, z).",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s06::p000",
+     "summary": "The objective function was the negative log-likelihood.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s06::p001",
+     "summary": "Equation 27 defines F(theta) as the negative sum over T of y_t transpose log p_t.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s06::p002",
+     "summary": "Generators were trained with each sentence as a mini-batch, l_2 regularization every 5 training examples, pretrained Glove word embedding vectors, stochastic gradient descent, back propagation through time, and early stopping.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s07::p000",
+     "summary": "Decoding has over-generation and reranking phases, with beam search generating candidate responses and generator cost forming reranking score R.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s07::p001",
+     "summary": "Equation 29 defines R as F(theta) plus lambda ERR.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s07::p002",
+     "summary": "lambda is a large trade off constant penalizing nonsensical outputs, and slot error rate ERR counts missing or redundant generated slots.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s07::p003",
+     "summary": "Equation 30 defines ERR as (p + q) divided by N.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s07::p004",
+     "summary": "N is the total number of slots in DA, and p and q are the numbers of missing and redundant slots.",
+     "group_id": "1706.00139::g00"
+    },
+    {
+     "passage_id": "1706.00139::s08::p000",
+     "summary": "Experiments assessed the proposed models using several metrics, datasets, and model architectures to compare with prior methods.",
+     "group_id": "1706.00139::g00"
+    }
+   ],
+   "n_raw": 50,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5161,
+    "completion_tokens": 2238,
+    "total_tokens": 7399,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1706.00139::g01",
+   "summaries": [
+    {
+     "passage_id": "1706.00139::s09::p000",
+     "summary": "The models were assessed on four NLG domains, with Restaurant and Hotel from BIBREF4 and harder Laptop and TV datasets from BIBREF22.",
+     "group_id": "1706.00139::g01"
+    },
+    {
+     "passage_id": "1706.00139::s10::p000",
+     "summary": "Generators used TensorFlow, a 3:1:1 split, hidden layer size 80, beam size 10, 70% dropout, 5 runs, early stopping, BLEU-based selection, λ 1000, 20 candidates, top 5 realizations, and four analyses.",
+     "group_id": "1706.00139::g01"
+    },
+    {
+     "passage_id": "1706.00139::s11::p000",
+     "summary": "Generator performance was assessed using BLEU and slot error rate ERR with an open source benchmark toolkit, against three state-of-the-art NLG baselines.",
+     "group_id": "1706.00139::g01"
+    },
+    {
+     "passage_id": "1706.00139::s11::p001",
+     "summary": "HLSTM proposed by BIBREF3 thwsjy15 used a heuristic gate to ensure all slot-value information was accurately captured during generation.",
+     "group_id": "1706.00139::g01"
+    },
+    {
+     "passage_id": "1706.00139::s11::p002",
+     "summary": "SCLSTM proposed by BIBREF4 wensclstm15 can jointly learn the gating signal and language model.",
+     "group_id": "1706.00139::g01"
+    },
+    {
+     "passage_id": "1706.00139::s11::p003",
+     "summary": "Enc-Dec proposed by BIBREF8 wentoward applied the attention-based encoder-decoder architecture.",
+     "group_id": "1706.00139::g01"
+    },
+    {
+     "passage_id": "1706.00139::s12::p000",
+     "summary": "Extensive experiments showed the proposed models consistently achieved better performance on both evaluation metrics across all domains in all test cases.",
+     "group_id": "1706.00139::g01"
+    },
+    {
+     "passage_id": "1706.00139::s12::p001",
+     "summary": "Ablation studies showed Adjustment cell reduces slot error rate ERR, ARED-based models improve BLEU and reduce ERR by about 2% to 4%, and gated models outperform SCLSTM.",
+     "group_id": "1706.00139::g01"
+    },
+    {
+     "passage_id": "1706.00139::s12::p002",
+     "summary": "Figure 3 shows RALSTM outperformed Enc-Dec and SCLSTM on unseen laptop domain from 1% to 100% training data, while Enc-Dec had much greater ERR.",
+     "group_id": "1706.00139::g01"
+    },
+    {
+     "passage_id": "1706.00139::s12::p003",
+     "summary": "Table 4 shows RALSTM and All2* generated appropriate, more complete, and concise sentences, while previous models produced missing and misplaced information errors.",
+     "group_id": "1706.00139::g01"
+    },
+    {
+     "passage_id": "1706.00139::s12::p004",
+     "summary": "The results prove the Refinement cell aggregates and selects attentive information, and the Adjustment cell controls the feature vector.",
+     "group_id": "1706.00139::g01"
+    },
+    {
+     "passage_id": "1706.00139::s12::p005",
+     "summary": "Figure 4 shows RALSTM outperformed Enc-Dec and SCLSTM on all domains in BLEU and ERR, while Enc-Dec struggled to reduce ERR.",
+     "group_id": "1706.00139::g01"
+    },
+    {
+     "passage_id": "1706.00139::s12::p006",
+     "summary": "Figure 5 shows RALSTM outperformed previous models with sufficient or limited laptop in-domain data and adapted faster to a new, unseen domain.",
+     "group_id": "1706.00139::g01"
+    },
+    {
+     "passage_id": "1706.00139::s13::p000",
+     "summary": "The ARED extension introduces RALSTM, improves BLEU and ERR across four NLG domains, extends to unseen domains, and may apply to other encoder-decoder tasks.",
+     "group_id": "1706.00139::g01"
+    }
+   ],
+   "n_raw": 14,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 2015,
+    "completion_tokens": 722,
+    "total_tokens": 2737,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

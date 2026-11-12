@@ -1,0 +1,498 @@
+{
+ "summaries": [
+  {
+   "passage_id": "2002.07306::s00::p000",
+   "summary": "Pre-trained models attract attention for downstream NLP results, while multilingual models enable zero-shot cross-lingual transfer, including multilingual-BERT on five NLP tasks.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s00::p001",
+   "summary": "Research emphasizes English pre-trained models, with only three multilingual models available: mBERT supporting 104 languages, XLM supporting 100, and LASER supporting 93.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s00::p002",
+   "summary": "The work develops energy-efficient transfer of English pre-trained models to other languages by learning target embeddings, fixing encoder layers, and fine-tuning bilingual LMs.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s00::p003",
+   "summary": "The authors propose fast adaptation producing a bilingual BERT_base of English and a target language within a day using one Tesla V100 16GB GPU.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s00::p004",
+   "summary": "Bilingual LMs are evaluated for six languages on natural language inference and universal dependency parsing, showing competitive or better performance than mBERT.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s00::p005",
+   "summary": "The bilingual LMs can serve as an excellent feature extractor in supervised dependency parsing task.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s01::p000",
+   "summary": "The paragraph defines English word-embeddings, Transformer encoder computations, contextualized representations, and output word prediction for pre-trained LMs.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s01::p001",
+   "summary": "Autoencoding LM predicts masked original tokens, autoregressive LM predicts next tokens, and XLNet factorizes permutations to capture bidirectional context.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s01::p002",
+   "summary": "The three-step approach initializes target embeddings, fine-tunes them with the English encoder fixed, then constructs and fine-tunes a bilingual LM.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s02::p000",
+   "summary": "Foreign word embeddings are initialized by mapping English embeddings so semantically similar foreign and English words have similar embeddings via linear combinations.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s02::p001",
+   "summary": "The sparse vector alpha_i lies in |V_e| dimensions and its components sum to 1.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s02::p002",
+   "summary": "Good estimation of alpha_i can speed convergence and enable zero-shot transfer, estimated under parallel English-foreign data or monolingual data scenarios.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s03::p000",
+   "summary": "With an English-foreign parallel corpus, word translation probability p(e|f) is estimated using word-alignment toolkits such as fast-align.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s03::p001",
+   "summary": "Because alpha_i is estimated from word alignment, it is a sparse vector.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s04::p000",
+   "summary": "For low resource languages without parallel data, monolingual data and fastText word vectors aligned with English estimate word translation probabilities.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s04::p001",
+   "summary": "Sparsemax replaces softmax to assign zero probabilities to most English vocabulary words, improving initialization of foreign embeddings.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s05::p000",
+   "summary": "After initialization, foreign embeddings replace English embeddings, and only foreign embeddings are fine-tuned on monolingual data using the English LM objective.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s06::p000",
+   "summary": "A bilingual LM has separate English and foreign embedding and output layers, a shared encoder, and is fine-tuned on both monolingual datasets.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s07::p000",
+   "summary": "RAMEN bilingual LMs start from BERT_base, BERT_large, RoBERTa_base, and RoBERTa_large, and are evaluated on XNLI and dependency parsing.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s08::p000",
+   "summary": "Six target languages—French, Russian, Arabic, Chinese, Hindi, and Vietnamese—span four language families and different monolingual data conditions.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s08::p001",
+   "summary": "Parallel data come from United Nations Parallel Corpus, IIT Bombay corpus, and OpenSubtitles 2018, while monolingual experiments use fastText vectors and Wikipedias.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s08::p002",
+   "summary": "English uses provided tokenizers, while target languages use fastBPE with 30,000 or 50,000 codes and vocabularies of 32,000 or 50,000.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s08::p003",
+   "summary": "XNLI and Universal Dependencies v2.4 are used, with specified treebanks for English, French, Russian, Arabic, Vietnamese, Hindi, and Chinese.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s09::p000",
+   "summary": "Although shared subwords improve embedding alignments and mBERT transfer, RAMEN does not share subwords, giving identical subwords different embeddings.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s10::p000",
+   "summary": "Subword translation probabilities are estimated by subsampling 2M sentence pairs from each parallel corpus and tokenizing into subwords before fast-align.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s10::p001",
+   "summary": "Subword vectors from aligned fastText word vectors are approximated as weighted averages of word vectors containing the subword.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s10::p002",
+   "summary": "The top 50,000 words in each aligned word-vectors are used to compute subword vectors, with p(w_j) and n_s defined.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s10::p003",
+   "summary": "Foreign vocabulary words not initialized from English word-embeddings are initialized randomly from a Gaussian N(0, 1/d^2).",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s11::p000",
+   "summary": "RAMEN_base is tuned for 175,000 updates and RAMEN_large for 275,000, with sequence length 256 and specified mini-batch sizes.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s11::p001",
+   "summary": "RAMEN_base uses Lookahead wrapped around Adam with learning rate 10^-4, k=5, alpha=0.5, while RAMEN_large uses Adam due to memory limit.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s11::p002",
+   "summary": "Fine-tuning RAMEN on XNLI and UD uses mini-batch size 32, Adam learning rate 10^-5, 4 and 50 epochs, and one Tesla V100 16GB GPU.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s12::p000",
+   "summary": "This section presents model results for two zero-shot cross lingual transfer tasks: XNLI and dependency parsing.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s13::p000",
+   "summary": "Table TABREF32 shows XNLI test accuracy, with the fairest comparison being mBERT versus monolingual-only RAMEN_base+BERT.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s13::p001",
+   "summary": "RAMEN_base initialized from fastText outperforms mBERT by 1.9 points on average and 3.3 points on Arabic, with further gains from parallel data and RAMEN_large.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s13::p002",
+   "summary": "RoBERTa transfer improves zero-shot accuracies, with RAMEN_base+RoBERTa exceeding RAMEN_base+BERT by 2.9 and 2.3 points and state-of-the-art results for five languages.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s13::p003",
+   "summary": "RAMEN currently uses parallel data only to initialize foreign embeddings, and starting from BERT_base yields competitive bilingual LMs with mBERT for zero-shot XNLI.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s14::p000",
+   "summary": "A graph-based dependency parser is built on RAMEN without part-of-speech tags, feeding contextualized representations into Deep-Biaffine layers for LAS evaluation.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s14::p001",
+   "summary": "Monolingually initialized RAMEN_base+BERT outperforms mBERT on five languages except Arabic, with +5.2 LAS for French and +3.1 LAS for Chinese.",
+   "group_id": "2002.07306::g00"
+  },
+  {
+   "passage_id": "2002.07306::s15::p000",
+   "summary": "Randomly initialized foreign embeddings reduce RAMEN_base zero-shot performance by 15.9% for XNLI and 27.8 points for UD parsing versus aligned fastText vectors.",
+   "group_id": "2002.07306::g01"
+  },
+  {
+   "passage_id": "2002.07306::s16::p000",
+   "summary": "The authors evaluate RAMEN contextual representations as a feature extractor for supervised dependency parsing on UD datasets.",
+   "group_id": "2002.07306::g01"
+  },
+  {
+   "passage_id": "2002.07306::s16::p001",
+   "summary": "On UD supervised parsing, RAMEN_base+BERT is competitive with mBERT and exceeds it by +1.2 points for Vietnamese, while RAMEN_large+RoBERTa achieves the best LAS.",
+   "group_id": "2002.07306::g01"
+  },
+  {
+   "passage_id": "2002.07306::s17::p000",
+   "summary": "RAMEN+RoBERTa_base initialized from monolingual data is evaluated at embedding initialization, 25K target-embedding updates, and subsequent 25K-update stages.",
+   "group_id": "2002.07306::g01"
+  },
+  {
+   "passage_id": "2002.07306::s17::p001",
+   "summary": "Without fine-tuning, average XLNI accuracy is 39.7% and average LAS is 3.6, with the biggest leap after 50K updates and 19-30 LAS gains except French.",
+   "group_id": "2002.07306::g01"
+  },
+  {
+   "passage_id": "2002.07306::s17::p002",
+   "summary": "Language similarities affect syntax transfer more than semantics, with French reaching 50.3 LAS while Arabic and Hindi reach 4.2 and 6.4 points.",
+   "group_id": "2002.07306::g01"
+  },
+  {
+   "passage_id": "2002.07306::s18::p000",
+   "summary": "Whether the approach applies to autoregressive LMs such as XLNet remains unresolved and is left for future work.",
+   "group_id": "2002.07306::g01"
+  },
+  {
+   "passage_id": "2002.07306::s19::p000",
+   "summary": "The paper presents RAMEN for rapidly building a bilingual LM under a limited computational budget, outperforming mBERT on two cross-lingual zero-shot tasks and supporting supervised dependency parsing.",
+   "group_id": "2002.07306::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "2002.07306::g00",
+   "summaries": [
+    {
+     "passage_id": "2002.07306::s00::p000",
+     "summary": "Pre-trained models attract attention for downstream NLP results, while multilingual models enable zero-shot cross-lingual transfer, including multilingual-BERT on five NLP tasks.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s00::p001",
+     "summary": "Research emphasizes English pre-trained models, with only three multilingual models available: mBERT supporting 104 languages, XLM supporting 100, and LASER supporting 93.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s00::p002",
+     "summary": "The work develops energy-efficient transfer of English pre-trained models to other languages by learning target embeddings, fixing encoder layers, and fine-tuning bilingual LMs.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s00::p003",
+     "summary": "The authors propose fast adaptation producing a bilingual BERT_base of English and a target language within a day using one Tesla V100 16GB GPU.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s00::p004",
+     "summary": "Bilingual LMs are evaluated for six languages on natural language inference and universal dependency parsing, showing competitive or better performance than mBERT.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s00::p005",
+     "summary": "The bilingual LMs can serve as an excellent feature extractor in supervised dependency parsing task.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s01::p000",
+     "summary": "The paragraph defines English word-embeddings, Transformer encoder computations, contextualized representations, and output word prediction for pre-trained LMs.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s01::p001",
+     "summary": "Autoencoding LM predicts masked original tokens, autoregressive LM predicts next tokens, and XLNet factorizes permutations to capture bidirectional context.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s01::p002",
+     "summary": "The three-step approach initializes target embeddings, fine-tunes them with the English encoder fixed, then constructs and fine-tunes a bilingual LM.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s02::p000",
+     "summary": "Foreign word embeddings are initialized by mapping English embeddings so semantically similar foreign and English words have similar embeddings via linear combinations.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s02::p001",
+     "summary": "The sparse vector alpha_i lies in |V_e| dimensions and its components sum to 1.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s02::p002",
+     "summary": "Good estimation of alpha_i can speed convergence and enable zero-shot transfer, estimated under parallel English-foreign data or monolingual data scenarios.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s03::p000",
+     "summary": "With an English-foreign parallel corpus, word translation probability p(e|f) is estimated using word-alignment toolkits such as fast-align.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s03::p001",
+     "summary": "Because alpha_i is estimated from word alignment, it is a sparse vector.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s04::p000",
+     "summary": "For low resource languages without parallel data, monolingual data and fastText word vectors aligned with English estimate word translation probabilities.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s04::p001",
+     "summary": "Sparsemax replaces softmax to assign zero probabilities to most English vocabulary words, improving initialization of foreign embeddings.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s05::p000",
+     "summary": "After initialization, foreign embeddings replace English embeddings, and only foreign embeddings are fine-tuned on monolingual data using the English LM objective.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s06::p000",
+     "summary": "A bilingual LM has separate English and foreign embedding and output layers, a shared encoder, and is fine-tuned on both monolingual datasets.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s07::p000",
+     "summary": "RAMEN bilingual LMs start from BERT_base, BERT_large, RoBERTa_base, and RoBERTa_large, and are evaluated on XNLI and dependency parsing.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s08::p000",
+     "summary": "Six target languages—French, Russian, Arabic, Chinese, Hindi, and Vietnamese—span four language families and different monolingual data conditions.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s08::p001",
+     "summary": "Parallel data come from United Nations Parallel Corpus, IIT Bombay corpus, and OpenSubtitles 2018, while monolingual experiments use fastText vectors and Wikipedias.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s08::p002",
+     "summary": "English uses provided tokenizers, while target languages use fastBPE with 30,000 or 50,000 codes and vocabularies of 32,000 or 50,000.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s08::p003",
+     "summary": "XNLI and Universal Dependencies v2.4 are used, with specified treebanks for English, French, Russian, Arabic, Vietnamese, Hindi, and Chinese.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s09::p000",
+     "summary": "Although shared subwords improve embedding alignments and mBERT transfer, RAMEN does not share subwords, giving identical subwords different embeddings.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s10::p000",
+     "summary": "Subword translation probabilities are estimated by subsampling 2M sentence pairs from each parallel corpus and tokenizing into subwords before fast-align.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s10::p001",
+     "summary": "Subword vectors from aligned fastText word vectors are approximated as weighted averages of word vectors containing the subword.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s10::p002",
+     "summary": "The top 50,000 words in each aligned word-vectors are used to compute subword vectors, with p(w_j) and n_s defined.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s10::p003",
+     "summary": "Foreign vocabulary words not initialized from English word-embeddings are initialized randomly from a Gaussian N(0, 1/d^2).",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s11::p000",
+     "summary": "RAMEN_base is tuned for 175,000 updates and RAMEN_large for 275,000, with sequence length 256 and specified mini-batch sizes.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s11::p001",
+     "summary": "RAMEN_base uses Lookahead wrapped around Adam with learning rate 10^-4, k=5, alpha=0.5, while RAMEN_large uses Adam due to memory limit.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s11::p002",
+     "summary": "Fine-tuning RAMEN on XNLI and UD uses mini-batch size 32, Adam learning rate 10^-5, 4 and 50 epochs, and one Tesla V100 16GB GPU.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s12::p000",
+     "summary": "This section presents model results for two zero-shot cross lingual transfer tasks: XNLI and dependency parsing.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s13::p000",
+     "summary": "Table TABREF32 shows XNLI test accuracy, with the fairest comparison being mBERT versus monolingual-only RAMEN_base+BERT.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s13::p001",
+     "summary": "RAMEN_base initialized from fastText outperforms mBERT by 1.9 points on average and 3.3 points on Arabic, with further gains from parallel data and RAMEN_large.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s13::p002",
+     "summary": "RoBERTa transfer improves zero-shot accuracies, with RAMEN_base+RoBERTa exceeding RAMEN_base+BERT by 2.9 and 2.3 points and state-of-the-art results for five languages.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s13::p003",
+     "summary": "RAMEN currently uses parallel data only to initialize foreign embeddings, and starting from BERT_base yields competitive bilingual LMs with mBERT for zero-shot XNLI.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s14::p000",
+     "summary": "A graph-based dependency parser is built on RAMEN without part-of-speech tags, feeding contextualized representations into Deep-Biaffine layers for LAS evaluation.",
+     "group_id": "2002.07306::g00"
+    },
+    {
+     "passage_id": "2002.07306::s14::p001",
+     "summary": "Monolingually initialized RAMEN_base+BERT outperforms mBERT on five languages except Arabic, with +5.2 LAS for French and +3.1 LAS for Chinese.",
+     "group_id": "2002.07306::g00"
+    }
+   ],
+   "n_raw": 38,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5283,
+    "completion_tokens": 1871,
+    "total_tokens": 7154,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "2002.07306::g01",
+   "summaries": [
+    {
+     "passage_id": "2002.07306::s15::p000",
+     "summary": "Randomly initialized foreign embeddings reduce RAMEN_base zero-shot performance by 15.9% for XNLI and 27.8 points for UD parsing versus aligned fastText vectors.",
+     "group_id": "2002.07306::g01"
+    },
+    {
+     "passage_id": "2002.07306::s16::p000",
+     "summary": "The authors evaluate RAMEN contextual representations as a feature extractor for supervised dependency parsing on UD datasets.",
+     "group_id": "2002.07306::g01"
+    },
+    {
+     "passage_id": "2002.07306::s16::p001",
+     "summary": "On UD supervised parsing, RAMEN_base+BERT is competitive with mBERT and exceeds it by +1.2 points for Vietnamese, while RAMEN_large+RoBERTa achieves the best LAS.",
+     "group_id": "2002.07306::g01"
+    },
+    {
+     "passage_id": "2002.07306::s17::p000",
+     "summary": "RAMEN+RoBERTa_base initialized from monolingual data is evaluated at embedding initialization, 25K target-embedding updates, and subsequent 25K-update stages.",
+     "group_id": "2002.07306::g01"
+    },
+    {
+     "passage_id": "2002.07306::s17::p001",
+     "summary": "Without fine-tuning, average XLNI accuracy is 39.7% and average LAS is 3.6, with the biggest leap after 50K updates and 19-30 LAS gains except French.",
+     "group_id": "2002.07306::g01"
+    },
+    {
+     "passage_id": "2002.07306::s17::p002",
+     "summary": "Language similarities affect syntax transfer more than semantics, with French reaching 50.3 LAS while Arabic and Hindi reach 4.2 and 6.4 points.",
+     "group_id": "2002.07306::g01"
+    },
+    {
+     "passage_id": "2002.07306::s18::p000",
+     "summary": "Whether the approach applies to autoregressive LMs such as XLNet remains unresolved and is left for future work.",
+     "group_id": "2002.07306::g01"
+    },
+    {
+     "passage_id": "2002.07306::s19::p000",
+     "summary": "The paper presents RAMEN for rapidly building a bilingual LM under a limited computational budget, outperforming mBERT on two cross-lingual zero-shot tasks and supporting supervised dependency parsing.",
+     "group_id": "2002.07306::g01"
+    }
+   ],
+   "n_raw": 8,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1253,
+    "completion_tokens": 429,
+    "total_tokens": 1682,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

@@ -1,0 +1,379 @@
+{
+  "timestamp": "2026-11-09T04:33:03",
+  "dataset": {
+    "path": "data/raw/locomo/locomo10.json",
+    "sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "conversation": "conv-30",
+    "n_questions": 105
+  },
+  "models": {
+    "llm": "hy4",
+    "llm_base_url": "https://tokenlink.woa.com/openapi/v1",
+    "reasoning_effort": "no_think",
+    "embedding": "nvidia/NV-Embed-v2 (local, fp16, dim 4096)"
+  },
+  "generation": {
+    "temperature": 0.0,
+    "reader_max_tokens": 256,
+    "comprehension_max_tokens": 8192
+  },
+  "retrieval": {
+    "num_to_retrieve": 20,
+    "linking_top_k": 5,
+    "passage_node_weight": 0.05,
+    "ppr_damping": 0.5,
+    "context_budget_tokens": 4096,
+    "note": "HippoRAG fact reranking is an LLM call per query (official DSPy filter prompt)"
+  },
+  "split": {
+    "file": "splits/split_dev40_val65.json",
+    "seed": 42,
+    "n_dev": 40,
+    "n_val": 65
+  },
+  "reader_prompts": {
+    "P0": {
+      "name": "Baseline (current project prompt)",
+      "system_sha256": "2893ab72e1ad2300f0df94507899882080b410e099b9cb2a21c92077e20ca602",
+      "template_sha256": "b0efd79e9e395d22d0465537f906f25241fa3ea97b34daf01cb90b663f8edc92"
+    },
+    "P1": {
+      "name": "Concise but complete",
+      "system_sha256": "afb7385e22187ce3ca8af7fe118368aa50ade3afe207caf4c5310c94047f323d",
+      "template_sha256": "644895849a69c7535de9fce05486865efeccb187ecc93a5961af94c465a4bb6c"
+    },
+    "P2": {
+      "name": "Integrate evidence before answering",
+      "system_sha256": "7e61b5947d8796fa4a787c4de34722ea92966db05adac38a53520d3ff3313765",
+      "template_sha256": "735098acecfd0039ef6f026a4defd9fd50a33c9321abe6b28183c82c30f6bfec"
+    },
+    "P3": {
+      "name": "Temporal and event-state sensitive",
+      "system_sha256": "dda1285738d253ec584d853d284267bf6efe8a631f589ca952a1ed93e52397a9",
+      "template_sha256": "051c45d1feb9f1145cd6b222281698c665a411ec55c964e72937d9329fec353f"
+    },
+    "P4": {
+      "name": "Evidence-sufficiency and refusal calibration",
+      "system_sha256": "5a5c25e17eeff3e6415023ffce570d1b28da68ff9c634aa9687378290a9031e9",
+      "template_sha256": "31e049c641c77457df1bee2843e2675a634c5427035ca196ca5260e8dd4bb9ee"
+    },
+    "P5": {
+      "name": "Adapt answer form to the question",
+      "system_sha256": "658cf7cb003ce86cbf67fd992f6c4ae592544a0eb9200ffcb835d1013f21ec4d",
+      "template_sha256": "438000ea428d2c550feb38eecdad9d38b71f90019272e332002682399726eefa"
+    },
+    "P6": {
+      "name": "Official-LoCoMo-style short phrase",
+      "system_sha256": "8eb8038ec134f67fbb9727a3d794ba74e0f5c5a8520355738bdef9e4f188ceca",
+      "template_sha256": "aa0944a4e8b34b3f77172e5a2454012b8312ec8a9115c39385097b2d907b02a5"
+    },
+    "P7": {
+      "name": "Short-span complete (synthesis of P0/P3/P6)",
+      "system_sha256": "1bfa274d8db22fd8fd6da82782ae83b4188d071a15c1c175f0db2f0af79d8755",
+      "template_sha256": "782f4d52c0f094989c7fd4d2196a8c233927b3925894cbb95ee0e7bb4fb43fdd"
+    },
+    "P8": {
+      "name": "Short-span complete + presupposition check",
+      "system_sha256": "1bfa274d8db22fd8fd6da82782ae83b4188d071a15c1c175f0db2f0af79d8755",
+      "template_sha256": "10cc9487438f3cf281b95012bcefbd4ae10935fd275edb8d93a1232856fe3cb0"
+    }
+  },
+  "comprehension_prompts": {
+    "COMP-P0": {
+      "name": "Original comprehension prompt",
+      "instructions_sha256": "ce44250d41d35866e63013c9a20a5191306591527f965085e96d3c7a13e32795",
+      "system_sha256": "346943c7ecad6361b637cb123fae87ab682c2f1f25ef6e7d2497927517076db9"
+    },
+    "COMP-P1": {
+      "name": "Evidence-grounded composition",
+      "instructions_sha256": "11321720649dc3126a28b82b603b9cf818d4cd8240c62a8538288123bf5218fc",
+      "system_sha256": "346943c7ecad6361b637cb123fae87ab682c2f1f25ef6e7d2497927517076db9"
+    },
+    "COMP-P2": {
+      "name": "Cross-session bridge discovery",
+      "instructions_sha256": "4666f4854a2fc29afc196e271b95cc1249a6534b3b8842bbc5d3a717d5d1de90",
+      "system_sha256": "346943c7ecad6361b637cb123fae87ab682c2f1f25ef6e7d2497927517076db9"
+    },
+    "COMP-P3": {
+      "name": "Event and state tracking",
+      "instructions_sha256": "aba417ce2e8c9ab5472756b921e928545167d9afe763a1de205ff5723392ae90",
+      "system_sha256": "346943c7ecad6361b637cb123fae87ab682c2f1f25ef6e7d2497927517076db9"
+    },
+    "COMP-P4": {
+      "name": "Retrieval-oriented comprehension",
+      "instructions_sha256": "ff20d5ec3e5a7cf8ac372b367aa08f9a57cfce5b24c6e45659a195be4cc3ad09",
+      "system_sha256": "346943c7ecad6361b637cb123fae87ab682c2f1f25ef6e7d2497927517076db9"
+    },
+    "COMP-P5": {
+      "name": "Generate then verify",
+      "instructions_sha256": "990663ff369217252cbc1222d369a529886eb9e0379ebebe3c84aff7d7712885",
+      "system_sha256": "346943c7ecad6361b637cb123fae87ab682c2f1f25ef6e7d2497927517076db9"
+    }
+  },
+  "code_sha256": {
+    "src/retrieval/reader.py": "e3c4cfd930668b8e0db669df90035413c7da32fc55f10b026c26cb70e9c58125",
+    "src/comprehension/prompts.py": "3b2b9986c99708a582fb4badb7ee285bb6189ff1eb467fe289af790c5b1d1511",
+    "src/comprehension/extract.py": "a6e5141e4b1cc2e7e6b8249715b5cc3cfefa76bd8980fbe193a3b0eff0e25198",
+    "src/evaluation/metrics.py": "6d5affac750c03f954e695695f30be7e33ee50f300b0905e18c9ef40a1de8fd9",
+    "src/evaluation/pipeline.py": "0f44640799f0d8b04ffaa5fc930138b7fd3a31fa74a14de223592d5d12d686bd",
+    "src/graph/variants.py": "87e288ea72b31539401b70206c888f9493d9f2f6d0ffe544fd4adf06d31cf771",
+    "src/prompt_optimization/official_metrics.py": "a0138e91c678f5c45fe1727c1bed0825548fccad537948fa03b1931997d52885",
+    "src/prompt_optimization/reader_prompts.py": "527ac1240b14b577e0363796581505db5d098830fe26bef7824e9bee33db889d",
+    "src/prompt_optimization/comprehension_prompts.py": "7d9bc60130ba1ac18095a8cfe8f2f81ef823342f8f6cfce9855cefffef34f1e6",
+    "src/prompt_optimization/runner.py": "5a51993a15592a5e7a01a2c7fdf3e372dfdb962658dee2a84b801c1c0426e587",
+    "src/prompt_optimization/retrieval_diag.py": "b5632bd8cc896f2c8d14dffbaf32524052bc5247f69c8a45b3ddb6ff2e3f4f46"
+  },
+  "hy4_logs": {
+    "hy4_calls.jsonl": {
+      "lines": 51,
+      "ok": 51,
+      "errors": 0
+    },
+    "hy4_calls_ab1.jsonl": {
+      "lines": 773,
+      "ok": 490,
+      "errors": 283
+    },
+    "hy4_calls_ab2.jsonl": {
+      "lines": 783,
+      "ok": 490,
+      "errors": 293
+    },
+    "hy4_calls_c2a.jsonl": {
+      "lines": 1226,
+      "ok": 652,
+      "errors": 574
+    },
+    "hy4_calls_c2b.jsonl": {
+      "lines": 954,
+      "ok": 432,
+      "errors": 522
+    },
+    "hy4_calls_c2c.jsonl": {
+      "lines": 952,
+      "ok": 400,
+      "errors": 552
+    },
+    "hy4_calls_c5a.jsonl": {
+      "lines": 1559,
+      "ok": 652,
+      "errors": 907
+    },
+    "hy4_calls_c5b.jsonl": {
+      "lines": 1134,
+      "ok": 432,
+      "errors": 702
+    },
+    "hy4_calls_c5c.jsonl": {
+      "lines": 1123,
+      "ok": 400,
+      "errors": 723
+    },
+    "hy4_calls_g0.jsonl": {
+      "lines": 1105,
+      "ok": 570,
+      "errors": 535
+    },
+    "hy4_calls_g1.jsonl": {
+      "lines": 1330,
+      "ok": 738,
+      "errors": 592
+    },
+    "hy4_calls_g2.jsonl": {
+      "lines": 2121,
+      "ok": 1302,
+      "errors": 819
+    },
+    "hy4_calls_g3.jsonl": {
+      "lines": 1900,
+      "ok": 1207,
+      "errors": 693
+    },
+    "hy4_calls_g4.jsonl": {
+      "lines": 2579,
+      "ok": 1820,
+      "errors": 759
+    },
+    "hy4_calls_j10.jsonl": {
+      "lines": 3224,
+      "ok": 2607,
+      "errors": 617
+    },
+    "hy4_calls_j11.jsonl": {
+      "lines": 2268,
+      "ok": 1728,
+      "errors": 540
+    },
+    "hy4_calls_j12.jsonl": {
+      "lines": 2171,
+      "ok": 1600,
+      "errors": 571
+    },
+    "hy4_calls_j2a.jsonl": {
+      "lines": 1201,
+      "ok": 756,
+      "errors": 445
+    },
+    "hy4_calls_j2b.jsonl": {
+      "lines": 1126,
+      "ok": 854,
+      "errors": 272
+    },
+    "hy4_calls_j2c.jsonl": {
+      "lines": 919,
+      "ok": 912,
+      "errors": 7
+    },
+    "hy4_calls_q1a.jsonl": {
+      "lines": 2649,
+      "ok": 1708,
+      "errors": 941
+    },
+    "hy4_calls_q1b.jsonl": {
+      "lines": 1868,
+      "ok": 1132,
+      "errors": 736
+    },
+    "hy4_calls_q1c.jsonl": {
+      "lines": 1771,
+      "ok": 1066,
+      "errors": 705
+    },
+    "hy4_calls_q2a.jsonl": {
+      "lines": 3666,
+      "ok": 2838,
+      "errors": 828
+    },
+    "hy4_calls_q2b.jsonl": {
+      "lines": 2807,
+      "ok": 1901,
+      "errors": 906
+    },
+    "hy4_calls_q2c.jsonl": {
+      "lines": 2642,
+      "ok": 1780,
+      "errors": 862
+    },
+    "hy4_calls_qt0.jsonl": {
+      "lines": 857,
+      "ok": 727,
+      "errors": 130
+    },
+    "hy4_calls_r0a.jsonl": {
+      "lines": 2404,
+      "ok": 1569,
+      "errors": 835
+    },
+    "hy4_calls_r0b.jsonl": {
+      "lines": 2822,
+      "ok": 2010,
+      "errors": 812
+    },
+    "hy4_calls_r0c.jsonl": {
+      "lines": 2344,
+      "ok": 1544,
+      "errors": 800
+    },
+    "hy4_calls_r0d.jsonl": {
+      "lines": 1422,
+      "ok": 817,
+      "errors": 605
+    },
+    "hy4_calls_rt.jsonl": {
+      "lines": 137,
+      "ok": 42,
+      "errors": 95
+    },
+    "hy4_calls_rt0.jsonl": {
+      "lines": 584,
+      "ok": 237,
+      "errors": 347
+    },
+    "hy4_calls_rt1.jsonl": {
+      "lines": 1165,
+      "ok": 565,
+      "errors": 600
+    },
+    "hy4_calls_rt2.jsonl": {
+      "lines": 839,
+      "ok": 365,
+      "errors": 474
+    },
+    "hy4_calls_ta0.jsonl": {
+      "lines": 1050,
+      "ok": 652,
+      "errors": 398
+    },
+    "hy4_calls_ta1.jsonl": {
+      "lines": 799,
+      "ok": 432,
+      "errors": 367
+    },
+    "hy4_calls_ta2.jsonl": {
+      "lines": 776,
+      "ok": 400,
+      "errors": 376
+    },
+    "hy4_calls_tb3.jsonl": {
+      "lines": 375,
+      "ok": 300,
+      "errors": 75
+    },
+    "hy4_calls_tc0.jsonl": {
+      "lines": 950,
+      "ok": 652,
+      "errors": 298
+    },
+    "hy4_calls_tc1.jsonl": {
+      "lines": 695,
+      "ok": 432,
+      "errors": 263
+    },
+    "hy4_calls_tc2.jsonl": {
+      "lines": 700,
+      "ok": 400,
+      "errors": 300
+    },
+    "hy4_callsco.jsonl": {
+      "lines": 11,
+      "ok": 11,
+      "errors": 0
+    },
+    "hy4_callsjo.jsonl": {
+      "lines": 237,
+      "ok": 237,
+      "errors": 0
+    },
+    "hy4_callsoa.jsonl": {
+      "lines": 96,
+      "ok": 96,
+      "errors": 0
+    },
+    "hy4_callsor.jsonl": {
+      "lines": 266,
+      "ok": 266,
+      "errors": 0
+    },
+    "hy4_callspo.jsonl": {
+      "lines": 450,
+      "ok": 450,
+      "errors": 0
+    },
+    "hy4_callsrp.jsonl": {
+      "lines": 98,
+      "ok": 84,
+      "errors": 14
+    },
+    "hy4_callsts.jsonl": {
+      "lines": 4,
+      "ok": 4,
+      "errors": 0
+    }
+  },
+  "notes": [
+    "All original G_raw/C2/C3/C5/C6 results and graph directories were read-only.",
+    "New graphs live under outputs/raw_graphs/conv-30/variants/cmpo_*.",
+    "Repeats experiment used use_cache=False; all other calls used the SQLite cache.",
+    "Oracle conditions never place gold answers in any prompt."
+  ]
+}

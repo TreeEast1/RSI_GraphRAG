@@ -1,0 +1,322 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1909.13104::s00::p000",
+   "summary": "Twitter faces widespread online harassment, especially toward women, motivating automated sexual harassment content detection to reduce human effort and flag or remove hate speech.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s00::p001",
+   "summary": "Previous studies addressed sexism and racism broadly or used benevolent and hostile sexism, with little focus on different online harassment types using natural language processing.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s00::p002",
+   "summary": "This work participates in the SociaL Media And Harassment Competition of the ECML PKDD 2019 Conference, using competition tweet data and attention-based Recurrent Neural Networks for two classification tasks.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s01::p000",
+   "summary": "Prior work categorized hateful tweets as sexist, racist or neither, then developed broader sexism and online harassment categories including indirect harassment, information threat, sexual harassment, physical harassment and not sexist.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s01::p001",
+   "summary": "Related hate speech detection approaches include SVMs, RNNs, FastText, SemEval2018 evaluations, text augmentation, convolutional and gated recurrent networks, ensemble RNN classifiers, and several attention mechanisms.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s02::p000",
+   "summary": "The Twitter dataset has train, validation and test sets, harassment and non-harassment categories, three harassment sub-categories, and imbalance affecting results.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s03::p000",
+   "summary": "Back-translation of indirect and physical harassment train tweets from english to german, french and greek and back augments data and boosts model performance.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s03::p001",
+   "summary": "Pre-trained word embeddings from 2B Twitter data having 27B tokens initialize the embedding layer.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s04::p000",
+   "summary": "A tweet pre-processor cleans and tokenizes the dataset before model training.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s05::p000",
+   "summary": "The attention-based approach uses RNN models with GRU cells and an LR Layer to classify tweets as harassment or non-harassment and other categories.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s05::p001",
+   "summary": "The paragraph defines GRU hidden state computation terms, gates, functions, matrices, biases, and the LR Layer probability estimate for harassment.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s05::p002",
+   "summary": "An attention mechanism similar to BIBREF9 makes the LR Layer consider the weighted sum h_sum of all hidden states instead of h_k.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s05::p003",
+   "summary": "The weighted sum is defined as h_sum = sum from t=1 to k of alpha_t h_t.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s05::p004",
+   "summary": "The attention RNN probability is defined as P_attentionRNN = sigma(W_p h_sum + b_p).",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s05::p005",
+   "summary": "Alternatively, h_sum can pass through an MLP with k layers before the LR layer estimates the corresponding probability.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s05::p006",
+   "summary": "The alternative attention RNN probability is defined as P_attentionRNN = sigma(W_p h_* + b_p).",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s05::p007",
+   "summary": "The classification-specific attention mechanism uses four attention mechanisms, one per category, assigns larger weights to harassment evidence, and adds a projection layer for word embeddings.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s06::p000",
+   "summary": "The architecture uses 200-dimensional pre-trained Twitter embeddings, Spatial Dropout, a 128-unit tanh MLP, a 128-size unidirectional GRU, four self-attentions, and a 128-node ReLU MLP.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s07::p000",
+   "summary": "This subsection gives training process details and describes the different models compared in the experiments.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s07::p001",
+   "summary": "Training uses batch size 32, epochs = 20, patience = 10, and average AUC as early stopping criterion because the dataset is imbalanced.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s07::p002",
+   "summary": "Training optimizes the loss function with the Adam optimizer and learning rate equal to 0.001.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s07::p003",
+   "summary": "The loss function is L = 1/2 BCE(harassment) + 1/2(1/5 BCE(sexualH) + 2/5 BCE(indirectH) + 2/5 BCE(physicalH)).",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s07::p004",
+   "summary": "BCE is the binary cross-entropy loss function.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s07::p005",
+   "summary": "BCE is defined as -1/n sum from i=1 to n of [y_i log(y'_i) + (1 - y_i) log(1 - y'_i)].",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s07::p006",
+   "summary": "The loss function weights both tasks equally and gives higher weight to harder harassment categories due to class imbalance among training, validation and test sets.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s08::p000",
+   "summary": "Each model produces four scores, and a threshold equal to 0.33 determines harassment labels and the harassment type with the greatest score.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s08::p001",
+   "summary": "Eight models compare LastStateRNN, AvgRNN, AttentionRNN and MultiAttentionRNN, with four having a Projected Layer and four not having one.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s08::p002",
+   "summary": "Models were evaluated using F1 Score averaged over ten runs, with multi-attention models outperforming others and the Projected Layer version achieving the highest F1 Macro.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s09::p000",
+   "summary": "The attention-based RNN approach detects harassment language and harassment types, with multi-attention and a projected layer achieving highest F1 Score and back-translation addressing imbalance.",
+   "group_id": "1909.13104::g00"
+  },
+  {
+   "passage_id": "1909.13104::s09::p001",
+   "summary": "Future work will apply BERT BIBREF21 to this dataset and apply the presented models to other hate speech datasets in social media.",
+   "group_id": "1909.13104::g00"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1909.13104::g00",
+   "summaries": [
+    {
+     "passage_id": "1909.13104::s00::p000",
+     "summary": "Twitter faces widespread online harassment, especially toward women, motivating automated sexual harassment content detection to reduce human effort and flag or remove hate speech.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s00::p001",
+     "summary": "Previous studies addressed sexism and racism broadly or used benevolent and hostile sexism, with little focus on different online harassment types using natural language processing.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s00::p002",
+     "summary": "This work participates in the SociaL Media And Harassment Competition of the ECML PKDD 2019 Conference, using competition tweet data and attention-based Recurrent Neural Networks for two classification tasks.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s01::p000",
+     "summary": "Prior work categorized hateful tweets as sexist, racist or neither, then developed broader sexism and online harassment categories including indirect harassment, information threat, sexual harassment, physical harassment and not sexist.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s01::p001",
+     "summary": "Related hate speech detection approaches include SVMs, RNNs, FastText, SemEval2018 evaluations, text augmentation, convolutional and gated recurrent networks, ensemble RNN classifiers, and several attention mechanisms.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s02::p000",
+     "summary": "The Twitter dataset has train, validation and test sets, harassment and non-harassment categories, three harassment sub-categories, and imbalance affecting results.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s03::p000",
+     "summary": "Back-translation of indirect and physical harassment train tweets from english to german, french and greek and back augments data and boosts model performance.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s03::p001",
+     "summary": "Pre-trained word embeddings from 2B Twitter data having 27B tokens initialize the embedding layer.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s04::p000",
+     "summary": "A tweet pre-processor cleans and tokenizes the dataset before model training.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s05::p000",
+     "summary": "The attention-based approach uses RNN models with GRU cells and an LR Layer to classify tweets as harassment or non-harassment and other categories.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s05::p001",
+     "summary": "The paragraph defines GRU hidden state computation terms, gates, functions, matrices, biases, and the LR Layer probability estimate for harassment.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s05::p002",
+     "summary": "An attention mechanism similar to BIBREF9 makes the LR Layer consider the weighted sum h_sum of all hidden states instead of h_k.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s05::p003",
+     "summary": "The weighted sum is defined as h_sum = sum from t=1 to k of alpha_t h_t.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s05::p004",
+     "summary": "The attention RNN probability is defined as P_attentionRNN = sigma(W_p h_sum + b_p).",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s05::p005",
+     "summary": "Alternatively, h_sum can pass through an MLP with k layers before the LR layer estimates the corresponding probability.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s05::p006",
+     "summary": "The alternative attention RNN probability is defined as P_attentionRNN = sigma(W_p h_* + b_p).",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s05::p007",
+     "summary": "The classification-specific attention mechanism uses four attention mechanisms, one per category, assigns larger weights to harassment evidence, and adds a projection layer for word embeddings.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s06::p000",
+     "summary": "The architecture uses 200-dimensional pre-trained Twitter embeddings, Spatial Dropout, a 128-unit tanh MLP, a 128-size unidirectional GRU, four self-attentions, and a 128-node ReLU MLP.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s07::p000",
+     "summary": "This subsection gives training process details and describes the different models compared in the experiments.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s07::p001",
+     "summary": "Training uses batch size 32, epochs = 20, patience = 10, and average AUC as early stopping criterion because the dataset is imbalanced.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s07::p002",
+     "summary": "Training optimizes the loss function with the Adam optimizer and learning rate equal to 0.001.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s07::p003",
+     "summary": "The loss function is L = 1/2 BCE(harassment) + 1/2(1/5 BCE(sexualH) + 2/5 BCE(indirectH) + 2/5 BCE(physicalH)).",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s07::p004",
+     "summary": "BCE is the binary cross-entropy loss function.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s07::p005",
+     "summary": "BCE is defined as -1/n sum from i=1 to n of [y_i log(y'_i) + (1 - y_i) log(1 - y'_i)].",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s07::p006",
+     "summary": "The loss function weights both tasks equally and gives higher weight to harder harassment categories due to class imbalance among training, validation and test sets.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s08::p000",
+     "summary": "Each model produces four scores, and a threshold equal to 0.33 determines harassment labels and the harassment type with the greatest score.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s08::p001",
+     "summary": "Eight models compare LastStateRNN, AvgRNN, AttentionRNN and MultiAttentionRNN, with four having a Projected Layer and four not having one.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s08::p002",
+     "summary": "Models were evaluated using F1 Score averaged over ten runs, with multi-attention models outperforming others and the Projected Layer version achieving the highest F1 Macro.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s09::p000",
+     "summary": "The attention-based RNN approach detects harassment language and harassment types, with multi-attention and a projected layer achieving highest F1 Score and back-translation addressing imbalance.",
+     "group_id": "1909.13104::g00"
+    },
+    {
+     "passage_id": "1909.13104::s09::p001",
+     "summary": "Future work will apply BERT BIBREF21 to this dataset and apply the presented models to other hate speech datasets in social media.",
+     "group_id": "1909.13104::g00"
+    }
+   ],
+   "n_raw": 30,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 4644,
+    "completion_tokens": 1462,
+    "total_tokens": 6106,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

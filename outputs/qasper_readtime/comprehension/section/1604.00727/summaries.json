@@ -1,0 +1,598 @@
+{
+ "summaries": [
+  {
+   "passage_id": "1604.00727::s00::p000",
+   "summary": "Single-relation factoid questions are common in search query logs and community question answering websites, and KBs such as Freebase, DBpedia, or Wikidata can answer them after query reformulation.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s00::p001",
+   "summary": "Automatically mapping a natural language question such as Where was Barack Obama born? to its corresponding KB query remains challenging.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s00::p002",
+   "summary": "Three issues make learning this mapping non-trivial: paraphrases, unseen KB entries, and millions of entities and thousands of predicates, addressed by a compact character-level encoder-decoder framework.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s00::p003",
+   "summary": "The model uses an LSTM question encoder, character-level representations for questions, predicates and entities, and a semantic relevance interaction function instead of a large decoder output layer.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s00::p004",
+   "summary": "Without ensembles, the compact character-level model achieves 70.9% accuracy in Freebase2M and 70.3% in Freebase5M on SimpleQuestions, outperforming 62.7% and 63.9% by 8.2% and 6.4%.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s01::p000",
+   "summary": "The work is motivated by semantic-parsing for open-domain question answering, character-level language modeling, and encoder-decoder methods.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s01::p001",
+   "summary": "Semantic parsing translates a question into a structured KB query, with early lexicons for GeoQuery and recent frameworks for general knowledge bases such as Freebase.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s01::p002",
+   "summary": "Large-scale semantic parsing frameworks must generate queries for millions of entities and thousands of predicates, often using textual-description embeddings and a general interaction function.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s01::p003",
+   "summary": "Word-level embeddings may suffer from the OOV problem and often rely on significant data augmentation from sources such as Paralex, which contains 18 million question-paraphrase pairs.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s01::p004",
+   "summary": "Character-level modeling can handle the OOV issue and has been applied to information retrieval, machine translation, sentiment analysis, classification, and named entity recognition.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s01::p005",
+   "summary": "Encoder-decoder networks encode a source sequence with an RNN into a fixed-length vector and decode a target sequence, with applications across diverse domains.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s01::p006",
+   "summary": "The authors formulate question answering as decoding the KB query given the question and KB entries encoded in embedding spaces, optimized end-to-end in a unified encoder-decoder framework.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s02::p000",
+   "summary": "For single-relation question answering, the model decodes each question into a KB query with a topic entity and predicate, producing likelihood scores p(e_i, p_j|q).",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s02::p001",
+   "summary": "As illustrated in Figure 1, the model consists of three components.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s02::p002",
+   "summary": "The details of each component are described in the following sections.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s03::p000",
+   "summary": "To encode the question, the authors take two steps.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s03::p001",
+   "summary": "The first step extracts one-hot encoding vectors for characters in the question, keeping space, punctuation and original cases without tokenization.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s03::p002",
+   "summary": "The second step feeds x_1,...,x_n left to right into a two-layer gated-feedback LSTM and keeps outputs s_1,...,s_n as question embeddings.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s04::p000",
+   "summary": "To encode an entity or predicate in the KB, the authors take two steps.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s04::p001",
+   "summary": "The first step extracts one-hot encoding vectors for characters in its English alias, x_1,...,x_n.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s04::p002",
+   "summary": "The second step feeds x_1,...,x_n into a temporal CNN with two alternating convolutional and fully-connected layers, followed by one fully-connected layer.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s04::p003",
+   "summary": "Here f(x_{1...n}) is an embedding vector of size N, W_3 has size R^{N × h}, conv is a temporal convolutional neural network, and max is temporal max pooling.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s04::p004",
+   "summary": "A CNN is used instead of an LSTM for computational efficiency, and two different CNNs encode entities and predicates because their styles differ significantly.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s05::p000",
+   "summary": "To generate the single topic entity and predicate forming the KB query, the decoder uses two key components.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s05::p001",
+   "summary": "An LSTM-based decoder with attention has hidden states h_i of dimensionality N, with initial hidden state h_0 set to the zero vector.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s05::p002",
+   "summary": "A pairwise semantic relevance function measures similarity between LSTM hidden units and entity or predicate candidate embeddings, returning the most likely candidate by similarity score.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s05::p003",
+   "summary": "The following two sections first describe the LSTM decoder with attention, followed by the semantic relevance function.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s05::p004",
+   "summary": "The attention-based LSTM decoder feeds context vector c_i and input vector v_i at each time step, with v_{<S>}=0 at i=1 and entity embeddings at i=2.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s05::p005",
+   "summary": "The context vector c_i represents attention-weighted question content and is recomputed at each time step using h_{i-1}, s_j, n, r, and m.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s05::p006",
+   "summary": "The attention distribution {α} is applied over each hidden unit s_j, with W_a ∈ R^{m × N}, U_a ∈ R^{m × r}, and v_a ∈ R^{1 × m}.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s05::p007",
+   "summary": "Because the KB has millions of entries, the model uses a relevance function with cosine-similarity metric cos(x_1, x_2) instead of a decoder output layer with millions of nodes.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s05::p008",
+   "summary": "Using this similarity metric, likelihoods of generating entity e_j and predicate p_k are defined with exp(λ cos(h_1,e_j)) and exp(λ cos(h_2,p_k)) normalized over candidates.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s05::p009",
+   "summary": "Here λ is a constant, h_1 and h_2 are LSTM hidden states at t=1 and t=2, and e_1,...,e_n and p_1,...,p_m are entity and predicate embeddings.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s05::p010",
+   "summary": "During inference candidates are candidate embeddings, while during training they include the true entity and predicate plus 50 randomly-sampled entities and 50 randomly-sampled predicates.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s06::p000",
+   "summary": "For each question q, candidate entities and predicates are fed through f(q, {e}, {p}), and the most likely (entity, predicate) pair is decoded by argmax P(e_i)*P(p_j).",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s06::p001",
+   "summary": "The decoded most likely (entity, predicate) pair becomes the semantic parse.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s06::p002",
+   "summary": "Candidate entities are English aliases that are substrings of the question, filtered and ranked by facts, with top 10 entities per alias and all predicates for each candidate entity.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s07::p000",
+   "summary": "Learning maximizes the joint likelihood P(e_c) · P(p_c) of the correct entity and predicate pair from randomly sampled entities and predicates using back-propagation.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s07::p001",
+   "summary": "All parameters, including character-level embeddings, CNNs, and LSTMs, are learned jointly without pre-training and randomly initialized from a uniform distribution between -1/|l^i| and 1/|l^i|.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s08::p000",
+   "summary": "The SimpleQuestions dataset has 108,442 questions split into 75,910 train, 10,845 validation, and 21,687 test questions, with FB2M using 2M entities and FB5M using 5M entities.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s08::p001",
+   "summary": "MemNNs baselines use 76K training questions, 3K WebQuestions questions, 15M WikiAnswers paraphrases, and 11M or 12M generated questions, while the proposed models use only 76K questions.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s08::p002",
+   "summary": "The model uses LSTM encoder layers of size 200, decoder hidden layers of size 100, CNN hidden and output layers of 200 and 100, receptive field 4, λ=5, m=100, and RMSProp with learning rate 1e^{-4}.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s08::p003",
+   "summary": "Each predicate or entity is padded with three padding symbols P, a special start symbol, and a special end symbol, with the same padding applied to questions.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s09::p000",
+   "summary": "On SimpleQuestions, SQ accuracy is the percentage of correct KB queries; the single character-level model achieves 70.9% and 70.3% on FB2M and FB5M, outperforming state-of-art by 8.2% and 6.4%.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s10::p000",
+   "summary": "Ablation studies use random-sampling experiments with 200 entities and predicates from the test set as noise samples mixed with the gold entity and predicate.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s10::p001",
+   "summary": "The authors first explore word-level models as an alternative to character-level models for constructing embeddings for questions, entities and predicates.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s10::p002",
+   "summary": "Word-level and character-level models both reach around 80% predicate accuracy, but the word-level model predicts only 45% of entities accurately from the mixed set.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s10::p003",
+   "summary": "Character-level models achieve 96.6% accuracy in predicting the correct entity on the mixed set, demonstrating semantic representation of entities and matching of aliases with mentions.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s10::p004",
+   "summary": "Ablations compare single-layer and two-layer LSTMs and CNNs, finding that a two-layer LSTM boosts joint accuracy by over 6%, mostly through improved predicate predictions.",
+   "group_id": "1604.00727::g00"
+  },
+  {
+   "passage_id": "1604.00727::s11::p000",
+   "summary": "Figure 2 visualizes attention distributions over question characters during decoding, with blue curves for entity generation and green curves for predicate generation.",
+   "group_id": "1604.00727::g01"
+  },
+  {
+   "passage_id": "1604.00727::s11::p001",
+   "summary": "Attention distributions typically peak at empty spaces, indicating that the character-level model learns spaces define endings of complete linguistic units.",
+   "group_id": "1604.00727::g01"
+  },
+  {
+   "passage_id": "1604.00727::s11::p002",
+   "summary": "Entity attention distributions are usually less sharp and span longer word portions than predicate attention distributions, as shown in Figure 2a.",
+   "group_id": "1604.00727::g01"
+  },
+  {
+   "passage_id": "1604.00727::s11::p003",
+   "summary": "A character-level model can identify entities with unseen English aliases, such as phrenology, apparently learning that words ending with nology are likely entity mentions.",
+   "group_id": "1604.00727::g01"
+  },
+  {
+   "passage_id": "1604.00727::s11::p004",
+   "summary": "Figure 2d shows attention to disjoint question regions, predicate attention peaks at padding symbols, and university helps identify both entity and predicate.",
+   "group_id": "1604.00727::g01"
+  },
+  {
+   "passage_id": "1604.00727::s12::p000",
+   "summary": "Among 50 sampled wrong KB queries, 46 had similar predicate aliases, 21 had wrong entities, and 18 had wrong entity and predicate.",
+   "group_id": "1604.00727::g01"
+  },
+  {
+   "passage_id": "1604.00727::s13::p000",
+   "summary": "The proposed character-level, attention-based encoder-decoder model improved state-of-the-art accuracy on SimpleQuestions using much less data and robustly handles unseen entities.",
+   "group_id": "1604.00727::g01"
+  }
+ ],
+ "calls": [
+  {
+   "group_id": "1604.00727::g00",
+   "summaries": [
+    {
+     "passage_id": "1604.00727::s00::p000",
+     "summary": "Single-relation factoid questions are common in search query logs and community question answering websites, and KBs such as Freebase, DBpedia, or Wikidata can answer them after query reformulation.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s00::p001",
+     "summary": "Automatically mapping a natural language question such as Where was Barack Obama born? to its corresponding KB query remains challenging.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s00::p002",
+     "summary": "Three issues make learning this mapping non-trivial: paraphrases, unseen KB entries, and millions of entities and thousands of predicates, addressed by a compact character-level encoder-decoder framework.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s00::p003",
+     "summary": "The model uses an LSTM question encoder, character-level representations for questions, predicates and entities, and a semantic relevance interaction function instead of a large decoder output layer.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s00::p004",
+     "summary": "Without ensembles, the compact character-level model achieves 70.9% accuracy in Freebase2M and 70.3% in Freebase5M on SimpleQuestions, outperforming 62.7% and 63.9% by 8.2% and 6.4%.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s01::p000",
+     "summary": "The work is motivated by semantic-parsing for open-domain question answering, character-level language modeling, and encoder-decoder methods.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s01::p001",
+     "summary": "Semantic parsing translates a question into a structured KB query, with early lexicons for GeoQuery and recent frameworks for general knowledge bases such as Freebase.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s01::p002",
+     "summary": "Large-scale semantic parsing frameworks must generate queries for millions of entities and thousands of predicates, often using textual-description embeddings and a general interaction function.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s01::p003",
+     "summary": "Word-level embeddings may suffer from the OOV problem and often rely on significant data augmentation from sources such as Paralex, which contains 18 million question-paraphrase pairs.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s01::p004",
+     "summary": "Character-level modeling can handle the OOV issue and has been applied to information retrieval, machine translation, sentiment analysis, classification, and named entity recognition.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s01::p005",
+     "summary": "Encoder-decoder networks encode a source sequence with an RNN into a fixed-length vector and decode a target sequence, with applications across diverse domains.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s01::p006",
+     "summary": "The authors formulate question answering as decoding the KB query given the question and KB entries encoded in embedding spaces, optimized end-to-end in a unified encoder-decoder framework.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s02::p000",
+     "summary": "For single-relation question answering, the model decodes each question into a KB query with a topic entity and predicate, producing likelihood scores p(e_i, p_j|q).",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s02::p001",
+     "summary": "As illustrated in Figure 1, the model consists of three components.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s02::p002",
+     "summary": "The details of each component are described in the following sections.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s03::p000",
+     "summary": "To encode the question, the authors take two steps.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s03::p001",
+     "summary": "The first step extracts one-hot encoding vectors for characters in the question, keeping space, punctuation and original cases without tokenization.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s03::p002",
+     "summary": "The second step feeds x_1,...,x_n left to right into a two-layer gated-feedback LSTM and keeps outputs s_1,...,s_n as question embeddings.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s04::p000",
+     "summary": "To encode an entity or predicate in the KB, the authors take two steps.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s04::p001",
+     "summary": "The first step extracts one-hot encoding vectors for characters in its English alias, x_1,...,x_n.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s04::p002",
+     "summary": "The second step feeds x_1,...,x_n into a temporal CNN with two alternating convolutional and fully-connected layers, followed by one fully-connected layer.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s04::p003",
+     "summary": "Here f(x_{1...n}) is an embedding vector of size N, W_3 has size R^{N × h}, conv is a temporal convolutional neural network, and max is temporal max pooling.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s04::p004",
+     "summary": "A CNN is used instead of an LSTM for computational efficiency, and two different CNNs encode entities and predicates because their styles differ significantly.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s05::p000",
+     "summary": "To generate the single topic entity and predicate forming the KB query, the decoder uses two key components.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s05::p001",
+     "summary": "An LSTM-based decoder with attention has hidden states h_i of dimensionality N, with initial hidden state h_0 set to the zero vector.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s05::p002",
+     "summary": "A pairwise semantic relevance function measures similarity between LSTM hidden units and entity or predicate candidate embeddings, returning the most likely candidate by similarity score.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s05::p003",
+     "summary": "The following two sections first describe the LSTM decoder with attention, followed by the semantic relevance function.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s05::p004",
+     "summary": "The attention-based LSTM decoder feeds context vector c_i and input vector v_i at each time step, with v_{<S>}=0 at i=1 and entity embeddings at i=2.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s05::p005",
+     "summary": "The context vector c_i represents attention-weighted question content and is recomputed at each time step using h_{i-1}, s_j, n, r, and m.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s05::p006",
+     "summary": "The attention distribution {α} is applied over each hidden unit s_j, with W_a ∈ R^{m × N}, U_a ∈ R^{m × r}, and v_a ∈ R^{1 × m}.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s05::p007",
+     "summary": "Because the KB has millions of entries, the model uses a relevance function with cosine-similarity metric cos(x_1, x_2) instead of a decoder output layer with millions of nodes.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s05::p008",
+     "summary": "Using this similarity metric, likelihoods of generating entity e_j and predicate p_k are defined with exp(λ cos(h_1,e_j)) and exp(λ cos(h_2,p_k)) normalized over candidates.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s05::p009",
+     "summary": "Here λ is a constant, h_1 and h_2 are LSTM hidden states at t=1 and t=2, and e_1,...,e_n and p_1,...,p_m are entity and predicate embeddings.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s05::p010",
+     "summary": "During inference candidates are candidate embeddings, while during training they include the true entity and predicate plus 50 randomly-sampled entities and 50 randomly-sampled predicates.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s06::p000",
+     "summary": "For each question q, candidate entities and predicates are fed through f(q, {e}, {p}), and the most likely (entity, predicate) pair is decoded by argmax P(e_i)*P(p_j).",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s06::p001",
+     "summary": "The decoded most likely (entity, predicate) pair becomes the semantic parse.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s06::p002",
+     "summary": "Candidate entities are English aliases that are substrings of the question, filtered and ranked by facts, with top 10 entities per alias and all predicates for each candidate entity.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s07::p000",
+     "summary": "Learning maximizes the joint likelihood P(e_c) · P(p_c) of the correct entity and predicate pair from randomly sampled entities and predicates using back-propagation.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s07::p001",
+     "summary": "All parameters, including character-level embeddings, CNNs, and LSTMs, are learned jointly without pre-training and randomly initialized from a uniform distribution between -1/|l^i| and 1/|l^i|.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s08::p000",
+     "summary": "The SimpleQuestions dataset has 108,442 questions split into 75,910 train, 10,845 validation, and 21,687 test questions, with FB2M using 2M entities and FB5M using 5M entities.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s08::p001",
+     "summary": "MemNNs baselines use 76K training questions, 3K WebQuestions questions, 15M WikiAnswers paraphrases, and 11M or 12M generated questions, while the proposed models use only 76K questions.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s08::p002",
+     "summary": "The model uses LSTM encoder layers of size 200, decoder hidden layers of size 100, CNN hidden and output layers of 200 and 100, receptive field 4, λ=5, m=100, and RMSProp with learning rate 1e^{-4}.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s08::p003",
+     "summary": "Each predicate or entity is padded with three padding symbols P, a special start symbol, and a special end symbol, with the same padding applied to questions.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s09::p000",
+     "summary": "On SimpleQuestions, SQ accuracy is the percentage of correct KB queries; the single character-level model achieves 70.9% and 70.3% on FB2M and FB5M, outperforming state-of-art by 8.2% and 6.4%.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s10::p000",
+     "summary": "Ablation studies use random-sampling experiments with 200 entities and predicates from the test set as noise samples mixed with the gold entity and predicate.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s10::p001",
+     "summary": "The authors first explore word-level models as an alternative to character-level models for constructing embeddings for questions, entities and predicates.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s10::p002",
+     "summary": "Word-level and character-level models both reach around 80% predicate accuracy, but the word-level model predicts only 45% of entities accurately from the mixed set.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s10::p003",
+     "summary": "Character-level models achieve 96.6% accuracy in predicting the correct entity on the mixed set, demonstrating semantic representation of entities and matching of aliases with mentions.",
+     "group_id": "1604.00727::g00"
+    },
+    {
+     "passage_id": "1604.00727::s10::p004",
+     "summary": "Ablations compare single-layer and two-layer LSTMs and CNNs, finding that a two-layer LSTM boosts joint accuracy by over 6%, mostly through improved predicate predictions.",
+     "group_id": "1604.00727::g00"
+    }
+   ],
+   "n_raw": 49,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 5519,
+    "completion_tokens": 2561,
+    "total_tokens": 8080,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  },
+  {
+   "group_id": "1604.00727::g01",
+   "summaries": [
+    {
+     "passage_id": "1604.00727::s11::p000",
+     "summary": "Figure 2 visualizes attention distributions over question characters during decoding, with blue curves for entity generation and green curves for predicate generation.",
+     "group_id": "1604.00727::g01"
+    },
+    {
+     "passage_id": "1604.00727::s11::p001",
+     "summary": "Attention distributions typically peak at empty spaces, indicating that the character-level model learns spaces define endings of complete linguistic units.",
+     "group_id": "1604.00727::g01"
+    },
+    {
+     "passage_id": "1604.00727::s11::p002",
+     "summary": "Entity attention distributions are usually less sharp and span longer word portions than predicate attention distributions, as shown in Figure 2a.",
+     "group_id": "1604.00727::g01"
+    },
+    {
+     "passage_id": "1604.00727::s11::p003",
+     "summary": "A character-level model can identify entities with unseen English aliases, such as phrenology, apparently learning that words ending with nology are likely entity mentions.",
+     "group_id": "1604.00727::g01"
+    },
+    {
+     "passage_id": "1604.00727::s11::p004",
+     "summary": "Figure 2d shows attention to disjoint question regions, predicate attention peaks at padding symbols, and university helps identify both entity and predicate.",
+     "group_id": "1604.00727::g01"
+    },
+    {
+     "passage_id": "1604.00727::s12::p000",
+     "summary": "Among 50 sampled wrong KB queries, 46 had similar predicate aliases, 21 had wrong entities, and 18 had wrong entity and predicate.",
+     "group_id": "1604.00727::g01"
+    },
+    {
+     "passage_id": "1604.00727::s13::p000",
+     "summary": "The proposed character-level, attention-based encoder-decoder model improved state-of-the-art accuracy on SimpleQuestions using much less data and robustly handles unseen entities.",
+     "group_id": "1604.00727::g01"
+    }
+   ],
+   "n_raw": 7,
+   "error": null,
+   "salvaged": false,
+   "finish_reason": "stop",
+   "usage": {
+    "prompt_tokens": 1228,
+    "completion_tokens": 334,
+    "total_tokens": 1562,
+    "reasoning_tokens": null
+   },
+   "retries": 0
+  }
+ ]
+}

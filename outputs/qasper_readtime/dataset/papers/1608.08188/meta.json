@@ -1,0 +1,71 @@
+{
+ "paper_id": "1608.08188",
+ "title": "Visual Question: Predicting If a Crowd Will Agree on the Answer",
+ "abstract": "Visual question answering (VQA) systems are emerging from a desire to empower users to ask any natural language question about visual content and receive a valid answer in response. However, close examination of the VQA problem reveals an unavoidable, entangled problem that multiple humans may or may not always agree on a single answer to a visual question. We train a model to automatically predict from a visual question whether a crowd would agree on a single answer. We then propose how to exploit this system in a novel application to efficiently allocate human effort to collect answers to visual questions. Specifically, we propose a crowdsourcing system that automatically solicits fewer human responses when answer agreement is expected and more human responses when answer disagreement is expected. Our system improves upon existing crowdsourcing systems, typically eliminating at least 20% of human effort with no loss to the information collected from the crowd.",
+ "sections": [
+  "Introduction",
+  "Paper Overview",
+  "VQA - Analysis of Answer (Dis)Agreements",
+  "Visual Question - Predicting If a Crowd Will (Dis)Agree on an Answer",
+  "Prediction Systems",
+  "Analysis of Prediction System",
+  "Capturing Answer Diversity with Less Effort",
+  "Answer Collection System",
+  "Analysis of Answer Collection System",
+  "Conclusions",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 45,
+ "n_tokens": 4862,
+ "figures_and_tables": [
+  {
+   "caption_id": "1608.08188::fig000",
+   "paper_id": "1608.08188",
+   "file": "1-Figure1-1.png",
+   "caption": "Fig. 1: Examples of visual questions and corresponding answers, when 10 different people are asked to answer the same question about an image (“visual question”). As observed, the crowd sometimes all agree on a single answer (top) and at other times offer different answers (bottom). Given a visual question, we aim to build a prediction system that automatically decides whether multiple people would give the same answer.",
+   "n_tokens": 81
+  },
+  {
+   "caption_id": "1608.08188::fig001",
+   "paper_id": "1608.08188",
+   "file": "4-TableI-1.png",
+   "caption": "TABLE I: Correlation between answer agreement and visual questions that elicit three different types of answers for VQAs on real images and abstract scenes. Shown for each answer type is the percentage of visual questions that lead to at most one disagreement (row 1), unanimous agreement (row 2), and exactly one disagreement (row 3) from 10 crowdsourced answers. On average, across all answer types for both datasets, the crowd agrees on the answer for nearly half (i.e., 53%) of all VQAs. Moreover, we observe crowd disagreement arises often for all three answer types, highlighting that the significance of crowd disagreement is applicable across various types of visual questions.",
+   "n_tokens": 140
+  },
+  {
+   "caption_id": "1608.08188::fig002",
+   "paper_id": "1608.08188",
+   "file": "4-Figure2-1.png",
+   "caption": "Fig. 2: Summary of answer diversity outcomes showing how frequently different numbers of unique answers arise when asking ten crowd workers to answer a visual question for (a) 369,861 visual questions about real images and (a) 90,000 visual questions about abstract scenes. Results are shown based on different degrees of answer agreement required to make an answer valid: only one person has to offer the answer, at least two people must agree on the answer, and at least three people must agree on the answer. The visual questions most often elicit exactly one answer per visual question but also regularly elicit up to three different answers per visual question.",
+   "n_tokens": 130
+  },
+  {
+   "caption_id": "1608.08188::fig003",
+   "paper_id": "1608.08188",
+   "file": "5-Figure3-1.png",
+   "caption": "Fig. 3: Illustration of visual questions that lead humans to (dis)agree on a single answer. As observed, (a) unanimous answer agreement arises when images are simple, questions are precise, and questions are visually grounded. (b-i) Answer disagreement arises for a variety of reasons: (b) expert skill needed, (c) human mistakes, (d) ambiguous question, (e) ambiguous visual content, (f) insufficient visual evidence, (g) subjective question, (h) answer synonyms, and (i) varying answer granularity.",
+   "n_tokens": 114
+  },
+  {
+   "caption_id": "1608.08188::fig004",
+   "paper_id": "1608.08188",
+   "file": "6-Figure4-1.png",
+   "caption": "Fig. 4: (a) Precision-recall curves and average precision (AP) scores for all benchmarked systems. Our random forest (RF) and deep learning (DL) classifiers outperform a related automated VQA baseline, showing the importance in modeling human disagreement as opposed to system uncertainty. (b) Examples of prediction results from our top-performing RF classifier. Shown are the top three visual questions for the most confidently predicted instances that lead to answer disagreement and agreement along with the observed crowd answers. These examples illustrate a strong language prior for making predictions. (Best viewed on pdf.)",
+   "n_tokens": 120
+  },
+  {
+   "caption_id": "1608.08188::fig005",
+   "paper_id": "1608.08188",
+   "file": "7-Figure5-1.png",
+   "caption": "Fig. 5: Precision-recall curves and average precision (AP) scores for our random forest (RF) and deep learning (DL) classifiers with different features (Question Only - Q; Image Only - I; Q +I) for visual questions that lead to (a-c) three answer types.",
+   "n_tokens": 62
+  },
+  {
+   "caption_id": "1608.08188::fig006",
+   "paper_id": "1608.08188",
+   "file": "8-Figure6-1.png",
+   "caption": "Fig. 6: We propose a novel application of predicting the number of redundant answers to collect from the crowd per visual question to efficiently capture the diversity of all answers for all visual questions. (a) For a batch of visual questions, our system first produces a relative ordering using the predicted confidence in whether a crowd would agree on an answer (upper half). Then, the system allocates a minimum number of annotations to all visual questions (bottom, left half) and then the extra available human budget to visual questions most confidently predicted to lead to crowd disagreement (bottom, right half). (b) For 121,512 visual questions, we show results for our system, a related VQA algorithm, and today’s status quo of random predictions. Boundary conditions are one answer (leftmost) and five answers (rightmost) for all visual questions. Our approach typically accelerates the capture of answer diversity by over 20% from today’s Status Quo selection; e.g., 21% for 70% of the answer diversity and 23% for 86% of the answer diversity. This translates to saving over 19 40-hour work weeks and $1800, assuming 30 seconds and $0.02 per answer.",
+   "n_tokens": 250
+  }
+ ]
+}

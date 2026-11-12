@@ -1,0 +1,56 @@
+{
+ "paper_id": "1608.01084",
+ "title": "To Swap or Not to Swap? Exploiting Dependency Word Pairs for Reordering in Statistical Machine Translation",
+ "abstract": "Reordering poses a major challenge in machine translation (MT) between two languages with significant differences in word order. In this paper, we present a novel reordering approach utilizing sparse features based on dependency word pairs. Each instance of these features captures whether two words, which are related by a dependency link in the source sentence dependency parse tree, follow the same order or are swapped in the translation output. Experiments on Chinese-to-English translation show a statistically significant improvement of 1.21 BLEU point using our approach, compared to a state-of-the-art statistical MT system that incorporates prior reordering approaches.",
+ "sections": [
+  "Introduction",
+  "Dependency Word Pair Features",
+  "Capturing Word Pair Ordering in Phrase-Based Beam Search",
+  "Dependency Swap Features",
+  "Dependency Distortion Penalty",
+  "Modified Future Cost",
+  "Other Sparse Features",
+  "Sparse Reordering Orientation Features",
+  "Dependency Path Features",
+  "Data Set and Toolkits",
+  "Baseline System",
+  "Our Approach",
+  "Experimental Results",
+  "Discussions",
+  "Related Work",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 61,
+ "n_tokens": 5860,
+ "figures_and_tables": [
+  {
+   "caption_id": "1608.01084::fig000",
+   "paper_id": "1608.01084",
+   "file": "2-Figure1-1.png",
+   "caption": "Figure 1: Illustrating example: (a) an aligned Chinese-English parallel sentence pair with Chinese dependency parse and a sequence of beam search hypotheses producing phrases “佐科威 → Jokowi”, “发表 讲话 → made a speech”, “在 → in”, “北京 → Beijing”, and “昨天 → yesterday” (each hypothesis is marked by a grey dashed box and a sequence number in parentheses) (b) sparse features that are equal to 1 when each hypothesis is generated.",
+   "n_tokens": 107
+  },
+  {
+   "caption_id": "1608.01084::fig001",
+   "paper_id": "1608.01084",
+   "file": "3-Figure2-1.png",
+   "caption": "Figure 2: Sparse reordering orientation (HR) features that are equal to 1 when decoding in Fig. 1a generates the phrase “昨天→ yesterday” after “北京→ Beijing”",
+   "n_tokens": 42
+  },
+  {
+   "caption_id": "1608.01084::fig002",
+   "paper_id": "1608.01084",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: The results of our reordering approach using sparse dependency swap (DS) features, in BLEU scores (%) compared to the baseline (Base), on which features are added (∗: significant at p < 0.05; ∗∗: significant at p < 0.01). We also show the results of prior reordering methods, i.e., dependency distortion penalty (+DDP) (Cherry 2008), sparse dependency path features (+Path) (Chang et al. 2009), the combination of both (+DDP+Path), as well as sparse reordering orientation features (+SHR) (Cherry 2013). For all systems involving DDP and other features, comparison is also made to the system with only DDP. (†: significant at p < 0.05; ††: significant at p < 0.01). Note: All systems involving DS always incorporate DDP.",
+   "n_tokens": 195
+  },
+  {
+   "caption_id": "1608.01084::fig003",
+   "paper_id": "1608.01084",
+   "file": "6-Figure3-1.png",
+   "caption": "Figure 3: Translation output comparison between our baseline (Base), prior reordering work (+DDP, +Path, +DDP+Path, and +SHR), and our dependency-swap-driven reordering approach (+DDP+DS and +DDP+Path+DS).",
+   "n_tokens": 58
+  }
+ ]
+}

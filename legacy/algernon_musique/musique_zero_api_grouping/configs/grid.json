@@ -1,0 +1,41 @@
+{
+  "seed": 20261030,
+  "corpus": "/data2-HDD-SATA-20T/nzq/TAG-experiment/experiments/rsi_graphrag_v4/data/corpus.jsonl",
+  "questions": "/data2-HDD-SATA-20T/nzq/TAG-experiment/experiments/rsi_graphrag_v4/data/questions_eval.jsonl",
+  "official_openie": "/data2-HDD-SATA-20T/nzq/TAG-experiment/case_study_musique/traditional/graph/openie_results_ner_gpt-4o-mini.json",
+  "chunk_embeddings": "/data2-HDD-SATA-20T/nzq/TAG-experiment/case_study_musique/traditional/graph/chunk_embeddings/vdb_chunk.parquet",
+  "prior_audit_summary": "/data2-HDD-SATA-20T/nzq/TAG-experiment/experiments/entity_doc_bipartite_audit/artifacts/hipporag2_gpt4o_mini_summary.json",
+  "token_counter": "tiktoken cl100k_base on title+newline+text",
+  "template_tokens_per_group": 200,
+  "group_token_cap_for_overlap": 16000,
+  "overlap_chunk_cap": 16,
+  "entity_pair_cap_for_scores": 30,
+  "entity_pair_cap_for_jaccard_baseline": 50,
+  "knn_k_values": [5, 10, 20, 40],
+  "leiden_objective": "modularity",
+  "leiden_resolutions": [0.5, 1.0, 2.0],
+  "kmeans_target_sizes": [4, 8, 16],
+  "kmeans_n_init": 1,
+  "capacity_chunks": [4, 8, 16],
+  "capacity_tokens": [4000, 8000, 16000],
+  "hybrid_weights": {
+    "emb": [1.0, 0.0, 0.0],
+    "ent": [0.0, 1.0, 0.0],
+    "mix": [0.5, 0.5, 0.0],
+    "mix_title": [0.4, 0.4, 0.2]
+  },
+  "idf_formula": "ln((N+1)/(df+1))",
+  "entity_score": "shared_idf / (shared_idf + ln((N+1)/2))",
+  "overlap_budgets": [1.2, 1.5],
+  "overlap_max_copies": {"1.2": 2, "1.5": 3},
+  "unsupervised_selection": {
+    "passage_multiplier_max": 1.05,
+    "coverage_min": 0.99,
+    "max_chunks": 16,
+    "max_passage_tokens": 16000,
+    "min_fraction_in_groups_of_size_at_least_2": 0.5,
+    "objective": "fraction of chunks whose cosine nearest neighbor is in the same group"
+  },
+  "gold_not_used_for_construction_or_selection": true,
+  "neural_mention_encoder": "not run; only local model is NV-Embed-v2 and chunk embeddings of whole passages already exist"
+}

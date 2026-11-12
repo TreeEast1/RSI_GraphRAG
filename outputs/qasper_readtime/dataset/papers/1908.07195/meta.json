@@ -1,0 +1,98 @@
+{
+ "paper_id": "1908.07195",
+ "title": "ARAML: A Stable Adversarial Training Framework for Text Generation",
+ "abstract": "Most of the existing generative adversarial networks (GAN) for text generation suffer from the instability of reinforcement learning training algorithms such as policy gradient, leading to unstable performance. To tackle this problem, we propose a novel framework called Adversarial Reward Augmented Maximum Likelihood (ARAML). During adversarial training, the discriminator assigns rewards to samples which are acquired from a stationary distribution near the data rather than the generator's distribution. The generator is optimized with maximum likelihood estimation augmented by the discriminator's rewards instead of policy gradient. Experiments show that our model can outperform state-of-the-art text GANs with a more stable training process.",
+ "sections": [
+  "Introduction",
+  "Related Work",
+  "Task Definition and Model Overview",
+  "Discriminator",
+  "Generator",
+  "Extension to Conditional Text Generation",
+  "Comparison with RAML and MaliGAN",
+  "Datasets",
+  "Baselines",
+  "Implementation Details",
+  "Language Generation on COCO and EMNLP2017 WMT",
+  "Dialogue Generation on WeiboDial",
+  "Further Analysis on Stability",
+  "Ablation Study",
+  "Case Study",
+  "Conclusion",
+  "Acknowledgments"
+ ],
+ "n_paragraphs": 69,
+ "n_tokens": 4992,
+ "figures_and_tables": [
+  {
+   "caption_id": "1908.07195::fig000",
+   "paper_id": "1908.07195",
+   "file": "3-Figure1-1.png",
+   "caption": "Figure 1: Overview of ARAML. The training samples are acquired from a stationary distribution Ps based on the real data. The generator is then trained on the samples augmented by the discriminator’s rewards. The discriminator is trained to distinguish real data and generated data.",
+   "n_tokens": 52
+  },
+  {
+   "caption_id": "1908.07195::fig001",
+   "paper_id": "1908.07195",
+   "file": "5-Table2-1.png",
+   "caption": "Table 2: Statistics of COCO, EMNLP2017 WMT and WeiboDial. The average lengths 7.3/10.8 of WeiboDial indicate the lengths of posts and responses, respectively.",
+   "n_tokens": 48
+  },
+  {
+   "caption_id": "1908.07195::fig002",
+   "paper_id": "1908.07195",
+   "file": "5-Table1-1.png",
+   "caption": "Table 1: Training objectives of generators for RAML, MaliGAN and ARAML.",
+   "n_tokens": 18
+  },
+  {
+   "caption_id": "1908.07195::fig003",
+   "paper_id": "1908.07195",
+   "file": "6-Table3-1.png",
+   "caption": "Table 3: Implementation details of ARAML. G/D/LM indicates the generator / discriminator / language model used in constrained sampling, respectively.",
+   "n_tokens": 29
+  },
+  {
+   "caption_id": "1908.07195::fig004",
+   "paper_id": "1908.07195",
+   "file": "7-Table4-1.png",
+   "caption": "Table 4: Automatic evaluation on COCO and EMNLP2017 WMT. Each metric is presented with mean and standard deviation.",
+   "n_tokens": 28
+  },
+  {
+   "caption_id": "1908.07195::fig005",
+   "paper_id": "1908.07195",
+   "file": "7-Figure2-1.png",
+   "caption": "Figure 2: PPL-F/PPL-R curves of ARAML, SeqGAN, LeakGAN, MaliGAN and IRL in the training process. The shade area indicates the standard deviation at each data point. The dotted vertical lines separate pre-training and adversarial training phases (50 for ARAML, IRL and MaliGAN, 80 for SeqGAN and LeakGAN).",
+   "n_tokens": 76
+  },
+  {
+   "caption_id": "1908.07195::fig006",
+   "paper_id": "1908.07195",
+   "file": "8-Table5-1.png",
+   "caption": "Table 5: Human evaluation on WeiboDial. The scores represent the percentages of Win, Lose or Tie when our model is compared with a baseline. κ denotes Fleiss’ kappa (all are moderate agreement). The scores marked with * mean p-value< 0.05 and ** indicates p-value< 0.01 in sign test.",
+   "n_tokens": 71
+  },
+  {
+   "caption_id": "1908.07195::fig007",
+   "paper_id": "1908.07195",
+   "file": "8-Table6-1.png",
+   "caption": "Table 6: PPL-F, PPL-R and S-BLEU of ARAML with random sampling (ARAML-R) and constrained sampling (ARAML-C) on COCO.",
+   "n_tokens": 39
+  },
+  {
+   "caption_id": "1908.07195::fig008",
+   "paper_id": "1908.07195",
+   "file": "9-Table7-1.png",
+   "caption": "Table 7: Examples of generated sentences on COCO. Grammatical errors are in red, while blue text represents repetitive expressions and green part indicates incoherent statements.",
+   "n_tokens": 35
+  },
+  {
+   "caption_id": "1908.07195::fig009",
+   "paper_id": "1908.07195",
+   "file": "9-Table8-1.png",
+   "caption": "Table 8: Examples of generated responses on WeiboDial.",
+   "n_tokens": 14
+  }
+ ]
+}

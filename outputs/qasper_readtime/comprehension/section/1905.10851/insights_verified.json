@@ -1,0 +1,409 @@
+{
+ "kept": [
+  {
+   "insight_id": "1905.10851::g00:i01",
+   "paper_id": "1905.10851",
+   "group_id": "1905.10851::g00",
+   "concise_text": "The attention models proposed to infer latent context are evaluated on a corpus of 12 MOOC discussion forums.",
+   "triple": {
+    "subject": "attention models",
+    "predicate": "evaluated_on",
+    "object": "a corpus of 12 MOOC discussion forums"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1905.10851::s00::p002",
+    "1905.10851::s07::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.10851::g00:b0:f06",
+    "1905.10851::g00:b4:f08"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.82,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "One passage states attention models are proposed to infer latent context; another states baseline and models are evaluated on a corpus of 12 MOOC discussion forums. Jointly supports the composed insight."
+   },
+   "unit_id": "1905.10851::u001"
+  },
+  {
+   "insight_id": "1905.10851::g00:i02",
+   "paper_id": "1905.10851",
+   "group_id": "1905.10851::g00",
+   "concise_text": "Because the actual instructor intervention is unavailable at decision timing, UPA uses the most recent content in the thread as the attentional query for context.",
+   "triple": {
+    "subject": "unavailable actual instructor intervention",
+    "predicate": "requires",
+    "object": "UPA to use the most recent content in the thread as the attentional query for context"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1905.10851::s05::p002",
+    "1905.10851::s06::p003"
+   ],
+   "supporting_fact_ids": [
+    "1905.10851::g00:b2:f02",
+    "1905.10851::g00:b2:f03",
+    "1905.10851::g00:b3:f06"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.91,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.95,
+    "novelty": 0.6,
+    "causality_error": false,
+    "reason": "Passages explicitly say actual intervention is unavailable at decision timing, requiring a surrogate query, and that UPA uses the most recent content in the thread as the attentional query for context."
+   },
+   "unit_id": "1905.10851::u002"
+  },
+  {
+   "insight_id": "1905.10851::g00:i04",
+   "paper_id": "1905.10851",
+   "group_id": "1905.10851::g00",
+   "concise_text": "APA's relaxation to any previous post as a query is consistent with its better prediction on longer threads, which possess more candidate contexts.",
+   "triple": {
+    "subject": "APA",
+    "predicate": "extends",
+    "object": "context inference to any previous post and predicts intervention on longer threads better"
+   },
+   "relation_type": "method_result",
+   "source_passage_ids": [
+    "1905.10851::s06::p009",
+    "1905.10851::s10::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.10851::g00:b4:f03",
+    "1905.10851::g00:b4:f04",
+    "1905.10851::g00:b4:f05",
+    "1905.10851::g00:b6:f05"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.88,
+   "verification_status": "kept",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.65,
+    "causality_error": false,
+    "reason": "One passage says APA relaxes UPA/PPA by allowing any previous post as query/context basis; another says APA predicts intervention better on longer threads with more candidate contexts. Jointly supports the composed insight."
+   },
+   "unit_id": "1905.10851::u004"
+  }
+ ],
+ "rejected": [
+  {
+   "insight_id": "1905.10851::g00:i00",
+   "paper_id": "1905.10851",
+   "group_id": "1905.10851::g00",
+   "concise_text": "Because instructors cannot monitor all student discussions, the paper frames instructor intervention prediction as binary classification to aid selective intervention.",
+   "triple": {
+    "subject": "inability to monitor all student discussions",
+    "predicate": "causes",
+    "object": "binary classification for selective instructor intervention"
+   },
+   "relation_type": "problem_solution",
+   "source_passage_ids": [
+    "1905.10851::s00::p001",
+    "1905.10851::s01::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.10851::g00:b0:f05",
+    "1905.10851::g00:b0:f11"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.86,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.55,
+    "novelty": 0.35,
+    "causality_error": true,
+    "reason": "Sources say inability to monitor all discussions motivates systems for selective intervention and separately cast prediction as binary classification; they do not support the causal claim that the inability causes binary classification."
+   },
+   "unit_id": "1905.10851::u000"
+  },
+  {
+   "insight_id": "1905.10851::g00:i03",
+   "paper_id": "1905.10851",
+   "group_id": "1905.10851::g00",
+   "concise_text": "The UPA and PPA attention models better the vanilla hLSTM by 5% and 2% on average in INLINEFORM0, supporting the claim that context inference improves intervention prediction.",
+   "triple": {
+    "subject": "UPA and PPA attention models",
+    "predicate": "outperform",
+    "object": "vanilla hLSTM by 5% and 2% on average in INLINEFORM0"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.10851::s09::p002",
+    "1905.10851::s10::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.10851::g00:b5:f04",
+    "1905.10851::g00:b5:f05",
+    "1905.10851::g00:b5:f06",
+    "1905.10851::g00:b6:f04"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.94,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.9,
+    "novelty": 0.15,
+    "causality_error": false,
+    "reason": "This is essentially a restatement of a single paragraph, including the exact 5% and 2% improvements and the conclusion that context inference improves prediction."
+   },
+   "unit_id": "1905.10851::u003"
+  },
+  {
+   "insight_id": "1905.10851::g00:i05",
+   "paper_id": "1905.10851",
+   "group_id": "1905.10851::g00",
+   "concise_text": "UPA's overall best performance is explained by its strength on shorter threads and the corpus having most interventions after one post.",
+   "triple": {
+    "subject": "most interventions after one post",
+    "predicate": "causes",
+    "object": "UPA's overall best performance despite weaker longer-thread performance"
+   },
+   "relation_type": "combined_fact",
+   "source_passage_ids": [
+    "1905.10851::s08::p000",
+    "1905.10851::s09::p003"
+   ],
+   "supporting_fact_ids": [
+    "1905.10851::g00:b5:f00",
+    "1905.10851::g00:b5:f07",
+    "1905.10851::g00:b5:f09"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.9,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.75,
+    "novelty": 0.45,
+    "causality_error": true,
+    "reason": "The source says UPA's overall best performance is because most interventions happen after one post and that UPA is stronger on shorter threads, but the insight adds a causal framing about 'despite weaker longer-thread performance' and combines facts in a way not exactly stated."
+   },
+   "unit_id": "1905.10851::u005"
+  },
+  {
+   "insight_id": "1905.10851::g00:i06",
+   "paper_id": "1905.10851",
+   "group_id": "1905.10851::g00",
+   "concise_text": "The paper's hierarchical LSTM basis uses hidden unit outputs as contexts, which the attention models selectively infer instead of using the complete thread.",
+   "triple": {
+    "subject": "hierarchical LSTM (hLSTM) model",
+    "predicate": "extends",
+    "object": "attention models that selectively infer contexts from hidden unit outputs"
+   },
+   "relation_type": "entity_resolution",
+   "source_passage_ids": [
+    "1905.10851::s05::p004",
+    "1905.10851::s05::p005",
+    "1905.10851::s09::p002"
+   ],
+   "supporting_fact_ids": [
+    "1905.10851::g00:b2:f10",
+    "1905.10851::g00:b2:f11",
+    "1905.10851::g00:b2:f12",
+    "1905.10851::g00:b2:f13",
+    "1905.10851::g00:b5:f05",
+    "1905.10851::g00:b5:f06"
+   ],
+   "derivation": "Composed",
+   "confidence": 0.87,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.65,
+    "novelty": 0.4,
+    "causality_error": false,
+    "reason": "Sources support hLSTM hidden unit outputs as contexts and attention models selectively inferring context instead of full thread, but the triple reverses the relation: hLSTM is the basis, not what extends attention models."
+   },
+   "unit_id": "1905.10851::u006"
+  },
+  {
+   "insight_id": "1905.10851::g00:i07",
+   "paper_id": "1905.10851",
+   "group_id": "1905.10851::g00",
+   "concise_text": "Because Coursera forums do not provide reply structure, the proposed hierarchical model infers reply structure using an attention mechanism.",
+   "triple": {
+    "subject": "Coursera forums lacking reply structure",
+    "predicate": "requires",
+    "object": "a hierarchical model that infers reply structure using an attention mechanism"
+   },
+   "relation_type": "assumption_limitation",
+   "source_passage_ids": [
+    "1905.10851::s02::p001",
+    "1905.10851::s05::p003"
+   ],
+   "supporting_fact_ids": [
+    "1905.10851::g00:b1:f00",
+    "1905.10851::g00:b2:f04"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.84,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.7,
+    "novelty": 0.45,
+    "causality_error": true,
+    "reason": "The passage says Coursera forums lack reply structure and that the proposed hierarchical model infers reply structure using attention because layout does not reliably encode it; it does not support the stronger causal 'requires' relation from Coursera lacking reply structure alone."
+   },
+   "unit_id": "1905.10851::u007"
+  },
+  {
+   "insight_id": "1905.10851::g00:i08",
+   "paper_id": "1905.10851",
+   "group_id": "1905.10851::g00",
+   "concise_text": "The evaluation's emphasis on recall of the positive class aligns with the claim that missing an intervention is costlier than false positives.",
+   "triple": {
+    "subject": "recall of the positive class",
+    "predicate": "limits",
+    "object": "evaluation priority because missing an intervention is costlier than false positives"
+   },
+   "relation_type": "claim_evidence",
+   "source_passage_ids": [
+    "1905.10851::s07::p000",
+    "1905.10851::s08::p000"
+   ],
+   "supporting_fact_ids": [
+    "1905.10851::g00:b4:f08",
+    "1905.10851::g00:b5:f01"
+   ],
+   "derivation": "Inferred",
+   "confidence": 0.72,
+   "verification_status": "rejected",
+   "verification": {
+    "support": 0.8,
+    "novelty": 0.2,
+    "causality_error": false,
+    "reason": "The cited paragraph directly states recall is more important than precision because missing an intervention is costlier than false positives; the insight is a near-restatement of a single paragraph and uses an odd 'limits' predicate."
+   },
+   "unit_id": "1905.10851::u008"
+  }
+ ],
+ "verification": {
+  "verdicts": [
+   {
+    "insight_id": "1905.10851::g00:i00",
+    "verdict": {
+     "insight_id": "1905.10851::g00:i00",
+     "keep": false,
+     "support": 0.55,
+     "novelty": 0.35,
+     "causality_error": true,
+     "reason": "Sources say inability to monitor all discussions motivates systems for selective intervention and separately cast prediction as binary classification; they do not support the causal claim that the inability causes binary classification."
+    },
+    "reason": "Sources say inability to monitor all discussions motivates systems for selective intervention and separately cast prediction as binary classification; they do not support the causal claim that the inability causes binary classification."
+   },
+   {
+    "insight_id": "1905.10851::g00:i01",
+    "verdict": {
+     "insight_id": "1905.10851::g00:i01",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "One passage states attention models are proposed to infer latent context; another states baseline and models are evaluated on a corpus of 12 MOOC discussion forums. Jointly supports the composed insight."
+    }
+   },
+   {
+    "insight_id": "1905.10851::g00:i02",
+    "verdict": {
+     "insight_id": "1905.10851::g00:i02",
+     "keep": true,
+     "support": 0.95,
+     "novelty": 0.6,
+     "causality_error": false,
+     "reason": "Passages explicitly say actual intervention is unavailable at decision timing, requiring a surrogate query, and that UPA uses the most recent content in the thread as the attentional query for context."
+    }
+   },
+   {
+    "insight_id": "1905.10851::g00:i03",
+    "verdict": {
+     "insight_id": "1905.10851::g00:i03",
+     "keep": false,
+     "support": 0.9,
+     "novelty": 0.15,
+     "causality_error": false,
+     "reason": "This is essentially a restatement of a single paragraph, including the exact 5% and 2% improvements and the conclusion that context inference improves prediction."
+    },
+    "reason": "This is essentially a restatement of a single paragraph, including the exact 5% and 2% improvements and the conclusion that context inference improves prediction."
+   },
+   {
+    "insight_id": "1905.10851::g00:i04",
+    "verdict": {
+     "insight_id": "1905.10851::g00:i04",
+     "keep": true,
+     "support": 0.9,
+     "novelty": 0.65,
+     "causality_error": false,
+     "reason": "One passage says APA relaxes UPA/PPA by allowing any previous post as query/context basis; another says APA predicts intervention better on longer threads with more candidate contexts. Jointly supports the composed insight."
+    }
+   },
+   {
+    "insight_id": "1905.10851::g00:i05",
+    "verdict": {
+     "insight_id": "1905.10851::g00:i05",
+     "keep": false,
+     "support": 0.75,
+     "novelty": 0.45,
+     "causality_error": true,
+     "reason": "The source says UPA's overall best performance is because most interventions happen after one post and that UPA is stronger on shorter threads, but the insight adds a causal framing about 'despite weaker longer-thread performance' and combines facts in a way not exactly stated."
+    },
+    "reason": "The source says UPA's overall best performance is because most interventions happen after one post and that UPA is stronger on shorter threads, but the insight adds a causal framing about 'despite weaker longer-thread performance' and combines facts in a way not exactly stated."
+   },
+   {
+    "insight_id": "1905.10851::g00:i06",
+    "verdict": {
+     "insight_id": "1905.10851::g00:i06",
+     "keep": false,
+     "support": 0.65,
+     "novelty": 0.4,
+     "causality_error": false,
+     "reason": "Sources support hLSTM hidden unit outputs as contexts and attention models selectively inferring context instead of full thread, but the triple reverses the relation: hLSTM is the basis, not what extends attention models."
+    },
+    "reason": "Sources support hLSTM hidden unit outputs as contexts and attention models selectively inferring context instead of full thread, but the triple reverses the relation: hLSTM is the basis, not what extends attention models."
+   },
+   {
+    "insight_id": "1905.10851::g00:i07",
+    "verdict": {
+     "insight_id": "1905.10851::g00:i07",
+     "keep": false,
+     "support": 0.7,
+     "novelty": 0.45,
+     "causality_error": true,
+     "reason": "The passage says Coursera forums lack reply structure and that the proposed hierarchical model infers reply structure using attention because layout does not reliably encode it; it does not support the stronger causal 'requires' relation from Coursera lacking reply structure alone."
+    },
+    "reason": "The passage says Coursera forums lack reply structure and that the proposed hierarchical model infers reply structure using attention because layout does not reliably encode it; it does not support the stronger causal 'requires' relation from Coursera lacking reply structure alone."
+   },
+   {
+    "insight_id": "1905.10851::g00:i08",
+    "verdict": {
+     "insight_id": "1905.10851::g00:i08",
+     "keep": false,
+     "support": 0.8,
+     "novelty": 0.2,
+     "causality_error": false,
+     "reason": "The cited paragraph directly states recall is more important than precision because missing an intervention is costlier than false positives; the insight is a near-restatement of a single paragraph and uses an odd 'limits' predicate."
+    },
+    "reason": "The cited paragraph directly states recall is more important than precision because missing an intervention is costlier than false positives; the insight is a near-restatement of a single paragraph and uses an odd 'limits' predicate."
+   }
+  ],
+  "calls": [
+   {
+    "n": 9,
+    "parsed": true,
+    "error": null,
+    "usage": {
+     "prompt_tokens": 4612,
+     "completion_tokens": 752,
+     "total_tokens": 5364,
+     "reasoning_tokens": null
+    }
+   }
+  ]
+ }
+}
